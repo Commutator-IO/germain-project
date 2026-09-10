@@ -1,0 +1,127 @@
+[
+  {
+    "key": "elasticity",
+    "path": "/elasticite/",
+    "title": "Cahier d'élasticité",
+    "navTitle": "Élasticité",
+    "subtitle": "The three memoirs on vibrating plates that won the Académie's prize in 1816 — none of which was ever printed as written",
+    "period": "1811 – 1815",
+    "inventoryGroup": null,
+    "rationale": "No catalogue groups these. The Académie filed each memoir under its prize year; the BnF bound her working notes on elasticity in with everything else as « dissertations et problèmes »; Florence has her remarks on Cauchy and Navier. This cahier gathers what concerns the vibration of elastic surfaces, and it is a grouping of our own. Its centre of gravity is not online: the memoirs of 1811, 1813 and 1815 are held at the Archives des prix of the Institut, are not digitised, and have been transcribed by Nathalie Grun in her 2022 thesis — a transcription that is hers, linked here and not reproduced. What this site can put beside a facsimile is the digitised volume Français 9115, in which the leaves on elasticity have yet to be identified by reading.",
+    "sections": [
+      {
+        "title": "The three prize memoirs",
+        "intro": "Sole entrant three times running. The 1811 memoir's equation was wrong; the 1813 memoir's was right and earned an honourable mention; the 1815 memoir took the prize, and she reworked it into the « Recherches » of 1821. Not online. The Archives' portal is consulted on site, and the extracts France Mémoire published are credited to the Archives.",
+        "cotes": ["ads-1811", "ads-1813", "ads-1815"]
+      },
+      {
+        "title": "Working notes, bound with everything else",
+        "intro": "Bucciarelli and Dworsky read the elasticity notes in the BnF's three volumes of « Papiers ». Only the middle volume is digitised. Which of its 750 views concern plates and which concern primes is not published anywhere, and is the first thing a pass over the volume will have to record.",
+        "cotes": ["fr-9115", "fr-9114", "fr-9116"]
+      },
+      {
+        "title": "Remarks on Cauchy and Navier",
+        "intro": "Among the two hundred sheets in Florence, Del Centina reports her remarks on the elasticity papers of Cauchy and Navier — the two men who took the theory past her. Not digitised.",
+        "cotes": ["moreniana-nfl"]
+      }
+    ],
+    "inProgress": false
+  },
+  {
+    "key": "fermat",
+    "path": "/fermat/",
+    "title": "Cahier de Fermat",
+    "navTitle": "Fermat",
+    "subtitle": "The grand plan to prove Fermat's Last Theorem, spread across two libraries and a letter — of which one footnote of Legendre's was all anyone knew for two centuries",
+    "period": "1804 – 1819",
+    "inventoryGroup": null,
+    "rationale": "Laubenbacher and Pengelley (2010) and Del Centina (2008) between them located seven pieces: a fair copy and its draft, an errata, a four-sheet « Démonstration », three polished pages on even exponents, a letter to Legendre and the letter of 12 May 1819 to Gauss that lays the whole plan out. This cahier follows their list, piece by piece, and says who located each. It is a grouping of theirs before it is ours. Of the seven, exactly one is online — the three pages at Français 9115, ff. 348r–349r — and even those have to be found among 750 unlabelled views before they can be read beside a transcription.",
+    "sections": [
+      {
+        "title": "The « Remarques » and their errata",
+        "intro": "Her principal Fermat manuscript: twenty sheets in a fair hand, thirteen labelled sections, the draft of which is in Florence. Both located by Laubenbacher and Pengelley; the draft transcribed by Del Centina. Neither volume is digitised.",
+        "cotes": ["fr-9114", "moreniana-nfl"],
+        "pieces": ["fr-9114-remarques", "fr-9114-errata", "moreniana-remarques"]
+      },
+      {
+        "title": "The « Démonstration » for exponents 2(8n ± 3)",
+        "intro": "Four sheets in which the theorem Legendre attributed to her in 1823 is implicit, inside a much broader claim. In the undigitised first volume.",
+        "cotes": ["fr-9114"],
+        "pieces": ["fr-9114-demonstration"]
+      },
+      {
+        "title": "Even exponents — the one piece online",
+        "intro": "Three polished pages in the digitised volume. Once a pass has found folios 348 and 349 among the views, this is where reading beside the page begins.",
+        "cotes": ["fr-9115"],
+        "pieces": ["fr-9115-even"]
+      },
+      {
+        "title": "The letters that explain the plan",
+        "intro": "The 1819 letter to Gauss summarises the manuscripts; the undated letter to Legendre in New York discusses the same theorem. Neither is in a French library.",
+        "cotes": ["sub-gauss", "nypl-legendre"],
+        "pieces": ["sub-gauss-1819"]
+      }
+    ],
+    "inProgress": true
+  },
+  {
+    "key": "numbers",
+    "path": "/nombres/",
+    "title": "Cahier de théorie des nombres",
+    "navTitle": "Nombres",
+    "subtitle": "Some two hundred pages of number theory beyond Fermat — power residues, the Disquisitiones read line by line — most of it unread since she wrote it",
+    "period": "1801 – 1831",
+    "inventoryGroup": null,
+    "rationale": "Laubenbacher and Pengelley estimate 150 to 200 pages of number theory in the BnF's « Papiers » and say plainly that they read only the part bearing on Fermat. Del Centina and Fiocca found results on power residues in the enclosures to her letters to Gauss that nobody had attributed to her. This cahier is the rest: what is in the volumes and in the enclosures that is number theory and is not the Fermat plan. It is a grouping of our own, and until a pass has gone through Français 9115 it is a promise rather than a list — the volume is the digitised one, and the only place this cahier can start.",
+    "sections": [
+      {
+        "title": "The digitised volume",
+        "intro": "Français 9115, 372 leaves, 750 views, number theory and physics unsorted. This is the working front of the whole site: every batch of twenty views that gets transcribed tells us for the first time what is on those leaves.",
+        "cotes": ["fr-9115"]
+      },
+      {
+        "title": "The two volumes not online",
+        "intro": "Listed so that the count is honest. Nothing can be read beside them here.",
+        "cotes": ["fr-9114", "fr-9116"]
+      },
+      {
+        "title": "The mathematical enclosures to Gauss",
+        "intro": "Results, proofs and conjectures she sent to Gauss between 1804 and 1819, inspired by the Disquisitiones. Edited by Del Centina and Fiocca (2012), whose edition is theirs.",
+        "cotes": ["sub-gauss"]
+      }
+    ],
+    "inProgress": true
+  },
+  {
+    "key": "letters",
+    "path": "/correspondance/",
+    "title": "Correspondance",
+    "subtitle": "What she received from Gauss, Legendre, Cauchy and Fourier, and what she sent — half of it in Paris, half of it wherever her correspondents' papers went",
+    "period": "1804 – 1831",
+    "inventoryGroup": null,
+    "rationale": "The BnF holds the letters she received (Français 9118) and a small volume of letters from Libri's papers (NAF 4073); Göttingen holds her letters to Gauss; Florence her letters to Libri and drafts to Poinsot, Legendre and Lagrange; New York one letter to Legendre. No catalogue unites them, and the editions — Boncompagni 1880, Stupuy 1879, Del Centina 2005, Del Centina and Fiocca 2012 — each take one holder's share. This cahier lists all of it and can show two volumes: the BnF's two, which are digitised and whose images Gallica serves openly.",
+    "sections": [
+      {
+        "title": "Letters received — Français 9118",
+        "intro": "93 leaves, digitised from a black-and-white microfilm: Gauss, Legendre, Cauchy, Delambre, Fourier, d'Ansse de Villoison. The Gauss letters are edited in Del Centina and Fiocca (2012).",
+        "cotes": ["fr-9118"]
+      },
+      {
+        "title": "From Libri's papers — NAF 4073 and 5166",
+        "intro": "32 leaves of letters by Delambre, Fourier, Germain, Lagrange, Lalande and Libri; and a second shelfmark the catalogue cross-references and this site has not yet read.",
+        "cotes": ["naf-4073", "naf-5166"]
+      },
+      {
+        "title": "Her letters to Gauss — Göttingen",
+        "intro": "Ten letters, 1804 to 1819, with mathematical enclosures. Five were printed by Boncompagni in 1880; all are edited by Del Centina and Fiocca.",
+        "cotes": ["sub-gauss"]
+      },
+      {
+        "title": "Florence and New York",
+        "intro": "Nine letters to Libri and drafts to Poinsot, Legendre and Lagrange, edited by Del Centina (2005); one letter to Legendre at the New York Public Library.",
+        "cotes": ["moreniana-palagi", "nypl-legendre"]
+      }
+    ],
+    "inProgress": false
+  }
+]

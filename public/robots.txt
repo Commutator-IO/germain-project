@@ -1,0 +1,9 @@
+# Everything here is meant to be found: the catalogue of Sophie Germain's
+# manuscripts wherever they are held, and the transcriptions made from the
+# digitised ones. Nothing is behind a login, and no facsimile is stored on this
+# origin — those are read from Gallica's IIIF service at view time.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://germain.commutator.io/sitemap.xml

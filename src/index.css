@@ -1,0 +1,152 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Ink blue: the colour of the pen, not of the paper. A complete ramp — a
+     shade used but never defined yields nothing, and the element would
+     inherit in silence. */
+  --color-brand-50: #f1f4fb;
+  --color-brand-100: #dfe6f6;
+  --color-brand-200: #c1cfee;
+  --color-brand-300: #97afe1;
+  --color-brand-400: #6b8ad0;
+  --color-brand-500: #4a6bbd;
+  --color-brand-600: #38539d;
+  --color-brand-700: #2e447f;
+  --color-brand-800: #283a68;
+  --color-brand-900: #223154;
+
+  /* The warm greys of archive paper, a little yellower than an exam's: the
+     scans are in colour, and the site frames them. */
+  --color-ink-50: #f8f7f3;
+  --color-ink-100: #f1efe8;
+  --color-ink-200: #e4e0d5;
+  --color-ink-300: #cbc5b5;
+  --color-ink-400: #9d9787;
+  --color-ink-500: #726d5f;
+  --color-ink-600: #575348;
+  --color-ink-700: #413e36;
+  --color-ink-800: #2a2823;
+  --color-ink-900: #131210;
+
+  /* The archivist's red pencil: what warns, never what decorates. 600 and
+     700 clear 4.5:1 on white as on alerte-50. */
+  --color-alerte-50: #fdf4f1;
+  --color-alerte-100: #fbe3db;
+  --color-alerte-200: #f5cabd;
+  --color-alerte-500: #d9532f;
+  --color-alerte-600: #b53d1d;
+  --color-alerte-700: #8e2f16;
+
+  /* Proofreading green: a batch compared with the facsimile, page by page. */
+  --color-relu-50: #eef9f3;
+  --color-relu-100: #d4f0e1;
+  --color-relu-200: #a7e0c3;
+  --color-relu-500: #1ba86f;
+  --color-relu-600: #128557;
+  --color-relu-700: #0e6744;
+
+  /* Work-in-progress amber: softer than the alert, so that an eye sweeping
+     the page does not mistake a batch in flight for a problem. */
+  --color-encours-50: #fdf8ec;
+  --color-encours-100: #f9eecc;
+  --color-encours-200: #f1dc9f;
+  --color-encours-500: #c9900c;
+  --color-encours-600: #9c6d06;
+  --color-encours-700: #77530a;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  /* Headings stay serif: the fonds is a body of written documents, and this
+     site is its table of contents. A system stack, nothing to download. */
+  --font-serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  --font-mono: 'SF Mono', ui-monospace, Menlo, Consolas, monospace;
+
+  --radius-card: 0.875rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink-50 text-ink-900 font-sans antialiased;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-[var(--radius-card)] border border-ink-200 bg-white;
+    box-shadow:
+      0 1px 2px rgb(19 18 16 / 0.04),
+      0 8px 24px -14px rgb(19 18 16 / 0.14);
+  }
+
+  .titre {
+    @apply font-serif font-semibold tracking-tight;
+  }
+
+  /* Body text for the written pages. 44em is the measure that stays
+     comfortable in continuous reading — and these pages are really read. */
+  .prose-fonds p,
+  .prose-fonds ul,
+  .prose-fonds ol {
+    @apply mb-3.5 max-w-[44em] leading-relaxed text-ink-700;
+  }
+
+  .prose-fonds li {
+    @apply mb-1.5 ml-5 list-disc;
+  }
+
+  .prose-fonds strong {
+    @apply font-semibold text-ink-900;
+  }
+
+  .prose-fonds h3 {
+    @apply mb-2 mt-7 font-serif text-[19px] font-semibold tracking-tight text-ink-900;
+  }
+
+  .prose-fonds code {
+    @apply rounded border border-ink-200 bg-ink-50 px-1 py-0.5 font-mono text-[0.86em] text-ink-800;
+  }
+
+  /* A passage one can link to. The margin mark is positioned against this, and
+     the scroll offset clears the sticky header — without it, following a link
+     lands the paragraph underneath the header, which reads as a broken link. */
+  .anchored {
+    @apply relative scroll-mt-20;
+  }
+
+  /* Arriving on a link, one has to be shown *which* passage was meant: the
+     scroll position alone is ambiguous by a paragraph either way. The halo is
+     drawn with a spread shadow rather than padding, so marking a paragraph
+     does not move the ones below it. */
+  .anchored:target {
+    background-color: var(--color-brand-50);
+    border-radius: 2px;
+    box-shadow: 0 0 0 0.4rem var(--color-brand-50);
+  }
+
+  /* Out of the way until wanted. Forty-four marks showing at once would read as
+     decoration on a page that is mostly argument. */
+  .anchor-mark {
+    opacity: 0;
+  }
+
+  .anchored:hover > .anchor-mark,
+  .anchored:target > .anchor-mark,
+  .anchor-mark:focus-visible {
+    opacity: 1;
+  }
+
+  /* A touch screen has no hover to reveal them with, so there they stay
+     visible — faintly, which is the most a phone's 20px margin affords. */
+  @media (hover: none) {
+    .anchor-mark {
+      opacity: 0.45;
+    }
+  }
+}

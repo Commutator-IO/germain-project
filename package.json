@@ -1,0 +1,39 @@
+{
+  "name": "germain-archives",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run manifest && vite",
+    "build": "npm run manifest && tsc -b && vite build && npm run sitemap",
+    "lint": "oxlint --deny-warnings",
+    "preview": "vite preview",
+    "postinstall": "node scripts/katex.mjs",
+    "catalogue": "node scripts/catalogue.mjs",
+    "archive": "node scripts/archive.mjs",
+    "tiles": "node scripts/tiles.mjs",
+    "render": "node scripts/render.mjs",
+    "manifest": "node scripts/manifest.mjs",
+    "sitemap": "node scripts/sitemap.mjs",
+    "pdf": "node scripts/pdf.mjs",
+    "tei": "node scripts/tei.mjs",
+    "lexicon": "node scripts/lexicon.mjs",
+    "check-sources": "node scripts/check-sources.mjs"
+  },
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "katex": "^0.16.11",
+    "oxlint": "^1.71.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1"
+  }
+}

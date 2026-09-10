@@ -1,0 +1,57 @@
+% SPECIMEN — not a reading of any leaf.
+%
+% This file exists to show the shape of a transcript and to make the rendering
+% chain checkable end to end. It transcribes nothing: the view numbers are
+% plausible, the text is invented in the idiom of the period. Never place a
+% file like this under a real volume in transcripts/ — six months on, nothing
+% would distinguish it from a real reading.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{fr-9115}
+\shelfmark{Français 9115}
+\batch{1}
+\pages{1}{20}
+\dating{1801-1900}
+\watermark{Lecture automatique\\non vérifiée}
+\foldertitle{Papiers de Sophie Germain. — Recueil de dissertations et problèmes mathématiques et physiques.}
+
+\begin{document}
+
+\section{Sur les résidus des puissances}
+
+\page{3}\folio{1r}
+Ce paragraphe montre l'appareil. Un mot illisible s'écrit \ill{}, une lecture
+douteuse \uncertain{résidus}, un ajout de l'éditeur \add{sic}, et un passage
+biffé par l'auteur \struck{en effet}. L'orthographe reste la sienne : il
+seroit inutile de la moderniser.
+
+\page{4}
+Les mathématiques passent telles quelles. Soit $p$ un nombre premier de la
+forme $2Np + 1$ ; on cherche si $x^p + y^p = z^p$ peut avoir lieu en nombres
+entiers.
+
+\page{5}\folio{2r}
+Une formule hors ligne, que le rendu centre :
+\[
+  x^p + y^p + z^p \equiv 0 \pmod{\theta},
+  \qquad \theta = 2Np + 1 .
+\]
+\note{la suite du calcul manque : la feuille s'arrête ici}
+
+\page{6}
+Une liste, quand elle en fait une :
+\begin{itemize}
+  \item les résidus $p$-ièmes de $\theta$ ;
+  \item deux résidus consécutifs, s'il en existe ;
+  \item \uncertain{le point essentiel} est la taille de $\theta$.
+\end{itemize}
+
+% View 7 is a blank verso. It is simply absent: no placeholder, no note. The
+% gap in the numbering is the record.
+
+\page{8}
+\marginal{voir la lettre à Mr Gauss, d'une autre encre}
+La reprise du même argument, sous une forme qu'elle juge plus maniable.
+
+\end{document}

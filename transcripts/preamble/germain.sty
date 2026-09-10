@@ -1,0 +1,150 @@
+% The preamble shared by every transcription of the Sophie Germain papers.
+%
+% It rests on one idea: **uncertainty compounds, it does not resolve.** A
+% transcription that smooths over a doubtful word has destroyed the only thing
+% it was made for — a reader must be able to tell, at every point, what was on
+% the page and what was supplied. The apparatus macros below are therefore the
+% critical apparatus, not decoration.
+%
+% The same commands are recognised by `scripts/render.mjs`, which produces the
+% site's reading view, and by `scripts/tei.mjs`. A macro added here must be
+% added there too, or rendering fails loudly — which is the wanted behaviour.
+%
+% Comments here are English, like the rest of the repository. The documents
+% this preamble sets are French, and that is deliberate: see the skills.
+
+\ProvidesPackage{germain}[2026/09/10 Transcriptions of the Sophie Germain papers]
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+% Kept from the parent preamble so the renderer's diagram support stays
+% available; Germain draws no commutative diagrams, and nothing here uses it.
+\usepackage{tikz-cd}
+\usepackage[english,french]{babel}
+\usepackage{fontspec}
+\usepackage{geometry}
+\geometry{a4paper,margin=25mm,marginparwidth=28mm}
+\usepackage{marginnote}
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}
+\setlength{\emergencystretch}{3em}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=black,pdfborder={0 0 0}}
+
+% --- Batch metadata ---------------------------------------------------------
+% Taken as they stand by the rendering script, which shows them at the head of
+% the reading view. They fix what the file claims to cover. The macro names are
+% the parent project's, so that the scripts stay shared; \folder here means the
+% volume's slug — `fr-9115` — and \pages counts Gallica views.
+
+\newcommand{\folder}[1]{\gdef\grothFolder{#1}}
+\newcommand{\batch}[1]{\gdef\grothBatch{#1}}
+\newcommand{\pages}[2]{\gdef\grothFirst{#1}\gdef\grothLast{#2}}
+\newcommand{\foldertitle}[1]{\gdef\grothFoldertitle{#1}}
+
+% The holder's own shelfmark, printed as they write it: « Français 9115 ».
+\newcommand{\shelfmark}[1]{\gdef\grothShelfmark{#1}}
+
+% The dating, copied verbatim from the holder's catalogue — never inferred
+% here. « XIXe siècle » is the BnF's; a pass that dates a leaf from its content
+% says so in a \note{}, as its own inference.
+\newcommand{\dating}[1]{\gdef\grothDating{#1}}
+
+% The status notice, printed in the title block and repeated as a diagonal
+% watermark on every page of the PDF. The manuscripts are in the public
+% domain; what this line declares is not a right but a quality — an
+% unverified first pass by a machine. The skills write the line; a file
+% without it gets no watermark, so leaving it out is visible in the output.
+\newcommand{\watermark}[1]{\gdef\grothWatermark{#1}}
+
+\gdef\grothFolder{?}\gdef\grothBatch{}\gdef\grothFirst{?}\gdef\grothLast{?}%
+\gdef\grothFoldertitle{}\gdef\grothShelfmark{}\gdef\grothDating{}\gdef\grothWatermark{}
+
+% --- The résumé -------------------------------------------------------------
+\newenvironment{resume}
+  {\small\setlength{\parskip}{0.45em}}
+  {\par\medskip\hrule\medskip}
+
+% --- Keywords ---------------------------------------------------------------
+% In English, closing the modernised reading's résumé: the modern vocabulary
+% under which to search for what the leaves construct. The manifest extracts
+% them to tag the volume — this line is the single source of the tags.
+\newcommand{\keywords}[1]{\par\smallskip\noindent
+  {\footnotesize\textsc{Keywords} --- \textit{#1}}\par}
+
+% --- The critical apparatus -------------------------------------------------
+
+% The Gallica view number, in the margin. This is the anchor that lets a
+% disagreement over a formula be settled by looking at *one* image rather than
+% a volume of 750. The site uses it to turn the facsimile as the transcription
+% is scrolled. A view is one scanned image: usually one side of a leaf.
+\newcommand{\page}[1]{%
+  \marginnote{\footnotesize\color{gray!70}\textsf{v.\,#1}}%
+  \label{page:#1}\ignorespaces}
+
+% The BnF's pencilled foliation, where the leaf carries it and a pass can read
+% it: « 198r ». This is what the literature cites — « ff. 198r–208v » — and
+% the one line that turns a citation into a view. Recorded, never inferred:
+% a folio a pass cannot read is not written.
+\newcommand{\folio}[1]{%
+  \marginnote{\footnotesize\color{gray!50}\textsf{f.\,#1}}\ignorespaces}
+
+% The modernised reading's coarser counterpart to \page{}: which views a
+% section is drawn from.
+\newcommand{\pagerange}[2]{%
+  \marginnote{\footnotesize\color{gray!70}\textsf{v.\,#1--#2}}%
+  \ignorespaces}
+
+% Illegible: never guessed.
+\newcommand{\ill}{\textcolor{red!60!black}{[\,\ldots\,]}}
+
+% A doubtful reading: the word is given, and flagged as uncertain.
+\newcommand{\uncertain}[1]{\uline{#1}}
+
+% An editorial addition — a missing letter, an implied word.
+\newcommand{\add}[1]{\textcolor{blue!50!black}{[#1]}}
+
+% Struck out by Germain herself. What she crossed out is part of the document.
+\newcommand{\struck}[1]{\sout{#1}}
+
+% The transcriber's note, on the state of the page or the mathematics.
+\newcommand{\note}[1]{\par\smallskip{\small\color{gray!60!black}\textit{[#1]}}\par\smallskip}
+
+% A marginal note of hers, distinct from the body of the text.
+\newcommand{\marginal}[1]{\par\smallskip\noindent\hspace{1em}%
+  {\small\color{gray!60!black}#1}\par\smallskip}
+
+% --- Title ------------------------------------------------------------------
+% The title block is French, like the documents themselves.
+
+\AddToHook{shipout/background}{%
+  \ifx\grothWatermark\empty\else
+    \begin{tikzpicture}[remember picture, overlay]
+      \node[rotate=52, scale=3.4, align=center, text=gray!18,
+            font=\sffamily\bfseries]
+        at (current page.center) {\grothWatermark};
+    \end{tikzpicture}%
+  \fi}
+
+\AtBeginDocument{%
+  \begin{center}
+    {\large\bfseries Papiers de Sophie Germain ---
+      \ifx\grothShelfmark\empty\grothFolder\else\grothShelfmark\fi}\\[2pt]
+    {\itshape\grothFoldertitle}\\[4pt]
+    {\small vues \grothFirst--\grothLast
+      \ifx\grothBatch\empty\else\ (lot \grothBatch)\fi}\\[2pt]
+    \ifx\grothDating\empty\else
+      {\small\color{gray!60!black}Datation du catalogue : \grothDating}\\[2pt]
+    \fi
+    \ifx\grothWatermark\empty\else
+      {\small\bfseries\color{red!45!gray}\grothWatermark}\\[2pt]
+    \fi
+    {\footnotesize\color{gray!60!black}Transcription établie d'après les images IIIF de Gallica.
+     Source gallica.bnf.fr / Bibliothèque nationale de France.\\
+     Les lectures incertaines sont soulignées, les illisibles notées [\,\ldots\,],
+     les ajouts entre crochets ; \textsf{v.} numérote les vues de Gallica,
+     \textsf{f.} la foliotation au crayon de la BnF.}
+  \end{center}
+  \vspace{1em}}
+
+\endinput
