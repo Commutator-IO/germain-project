@@ -4,6 +4,10 @@
  *
  *   npm run tiles -- fr-9115 3                   the batch's twenty views
  *   npm run tiles -- fr-9115 3 --views 47-49     only the hard run
+ *   npm run tiles -- fr-9115 3 --views 47 --region 450,780,1250,170
+ *                                                one tighter region, IIIF syntax
+ *                                                x,y,w,h in the view's pixels;
+ *                                                --region may be repeated
  *
  * The parent project rendered PDF pages with poppler and cut them by hand.
  * Here the cutting is Gallica's: the IIIF Image API serves any **region** of a
@@ -97,6 +101,15 @@ async function main() {
   const args = process.argv.slice(2);
   const [id, batchArg] = args.filter((a) => !a.startsWith('--'));
   const vi = args.indexOf('--views');
+  const regions = args
+    .map((a, i) => (a === '--region' ? args[i + 1] : null))
+    .filter(Boolean)
+    .map((r) => {
+      const m = /^(\d+),(\d+),(\d+),(\d+)$/.exec(r);
+      if (!m) throw new Error(`Bad region: ${r} (want x,y,w,h)`);
+      const [x, y, w, h] = m.slice(1).map(Number);
+      return { name: `region-${x},${y},${w},${h}`, x, y, w, h };
+    });
   if (!id || !batchArg) {
     process.stderr.write('Usage: npm run tiles -- <volume> <batch> [--views 47-49]\n');
     process.exit(1);
@@ -115,8 +128,10 @@ async function main() {
     const c = canvases[view - 1];
     const dir = resolve(TILES, id, `f${view}`);
     await mkdir(dir, { recursive: true });
-    const rects = rectangles(c.width, c.height);
-    await writeFile(resolve(dir, 'tiles.json'), JSON.stringify({ view, width: c.width, height: c.height, tiles: rects }, null, 2));
+    const rects = regions.length ? regions : rectangles(c.width, c.height);
+    if (!regions.length) {
+      await writeFile(resolve(dir, 'tiles.json'), JSON.stringify({ view, width: c.width, height: c.height, tiles: rects }, null, 2));
+    }
     for (const rect of rects) {
       if (await fetchRegion(v.ark, view, rect, resolve(dir, `${rect.name}.jpg`))) {
         n++;
