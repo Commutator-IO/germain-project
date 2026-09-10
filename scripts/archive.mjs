@@ -37,7 +37,16 @@ const MIRROR = resolve(ROOT, 'archives');
 const BATCH_SIZE = 20;
 
 /** Between two images. Gallica answered a burst with resets; this is not a burst. */
-const PAUSE_MS = 1500;
+const PAUSE_MS = 3000;
+
+/**
+ * After a 429. Gallica's quota is per minute, not per request: at one image
+ * every 1.5 s it refused roughly every sixth view (10 September 2026), and
+ * three retries a few seconds apart all fell inside the same refused minute.
+ * So a refusal waits well past the minute, and waits longer each time.
+ */
+const RETRY_AFTER_MS = 45_000;
+const ATTEMPTS = 5;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -77,16 +86,24 @@ async function exists(path) {
 
 async function fetchView(ark, view, target) {
   const url = `${GALLICA}/iiif/ark:/12148/${ark}/f${view}/full/full/0/native.jpg`;
-  for (let attempt = 0; attempt < 3; attempt++) {
+  for (let attempt = 0; attempt < ATTEMPTS; attempt++) {
     try {
       const r = await fetch(url, { headers: { 'User-Agent': UA } });
+      if (r.status === 429) {
+        // Honour the server's own figure when it gives one.
+        const hinted = Number(r.headers.get('retry-after')) * 1000;
+        const wait = Math.max(hinted || 0, RETRY_AFTER_MS * (attempt + 1));
+        process.stderr.write(`    f${view}: HTTP 429 — waiting ${Math.round(wait / 1000)} s\n`);
+        await sleep(wait);
+        continue;
+      }
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       const type = r.headers.get('content-type') ?? '';
       if (!type.startsWith('image/')) throw new Error(`not an image (${type})`);
       await writeFile(target, Buffer.from(await r.arrayBuffer()));
       return true;
     } catch (e) {
-      process.stderr.write(`    f${view}: ${e.message}${attempt < 2 ? ' — waiting, then retrying' : ''}\n`);
+      process.stderr.write(`    f${view}: ${e.message}${attempt < ATTEMPTS - 1 ? ' — waiting, then retrying' : ''}\n`);
       await sleep(PAUSE_MS * (attempt + 3));
     }
   }
@@ -95,9 +112,10 @@ async function fetchView(ark, view, target) {
 
 async function main() {
   const args = process.argv.slice(2);
-  const ids = args.filter((a) => !a.startsWith('--'));
   const bi = args.indexOf('--batches');
   const only = bi >= 0 ? args[bi + 1] : null;
+  // The value after --batches is not a volume.
+  const ids = args.filter((a, i) => !a.startsWith('--') && i !== bi + 1);
   if (!ids.length) {
     process.stderr.write('Usage: npm run archive -- <volume> [--batches 1-3]\n');
     process.exit(1);
@@ -105,6 +123,7 @@ async function main() {
 
   const all = await volumes();
   let fetched = 0;
+  const missing = [];
   for (const id of ids) {
     const v = all.find((x) => x.id === id);
     if (!v) throw new Error(`Unknown volume: ${id}`);
@@ -126,6 +145,7 @@ async function main() {
         const target = resolve(dir, `f${String(view).padStart(4, '0')}.jpg`);
         if (await exists(target)) continue;
         if (await fetchView(v.ark, view, target)) fetched++;
+        else missing.push(`${id} f${view}`);
         await sleep(PAUSE_MS);
       }
     }
@@ -133,6 +153,12 @@ async function main() {
 
   process.stdout.write(`${fetched} views fetched from Gallica.\n`);
   await writeManifest();
+  // A mirror with holes is worse than none: a pass would read around them
+  // without knowing. Say so, and fail, so a loop stops here.
+  if (missing.length) {
+    process.stderr.write(`${missing.length} views still missing: ${missing.join(', ')}. Run again.\n`);
+    process.exit(2);
+  }
 }
 
 main().catch((e) => {

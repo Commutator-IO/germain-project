@@ -57,6 +57,11 @@ for k in $(seq "$first" "$last"); do
     continue
   fi
 
+  # The mirror script refuses to finish with a hole, so this is the check
+  # that every view of the batch is on disk before a session reads it.
+  echo "== batch $k: mirror check"
+  npm run archive -- "$vol" --batches "$k"
+
   echo "== batch $k: tiles"
   npm run tiles -- "$vol" "$k"
 
