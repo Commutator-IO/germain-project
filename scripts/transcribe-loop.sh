@@ -35,8 +35,18 @@ if [ -z "$last" ]; then
 fi
 
 model="${MODEL:-claude-fable-5-1}"
+# The CLI to use: Homebrew's regular cask lags the models by weeks, so the
+# one on PATH may be too old for Fable 5.1. Point CLAUDE_BIN at a newer one.
+claude="${CLAUDE_BIN:-claude}"
 
-echo "== $vol, batches $first to $last, on $model"
+echo "== $vol, batches $first to $last, on $model via $("$claude" --version 2>/dev/null | head -1)"
+
+# Fail here, not after ten minutes of mirroring: a CLI too old for the model
+# answers every session with an API error and writes nothing.
+if ! "$claude" -p "Reply with the single word ok." --model "$model" >/dev/null; then
+  echo "cannot open a session on $model with $claude — update it (claude update), or set CLAUDE_BIN" >&2
+  exit 1
+fi
 
 # The working tree must be clean: each batch becomes its own commit, and a
 # stray change would be swept into the first one.
@@ -66,7 +76,7 @@ for k in $(seq "$first" "$last"); do
   npm run tiles -- "$vol" "$k"
 
   echo "== batch $k: fresh session"
-  claude -p "/transcribe-germain $vol $k" \
+  "$claude" -p "/transcribe-germain $vol $k" \
     --model "$model" \
     --permission-mode acceptEdits \
     --allowedTools "Bash(npm run *),Bash(ls *),Bash(cat *),Bash(git status *),Bash(git diff *)" \
