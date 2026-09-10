@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Footer, Header } from './components/Frame.tsx';
+import { CorpusMosaic } from './components/CorpusMosaic.tsx';
 import { FacsimilePane } from './components/FacsimilePane.tsx';
 import { Reader, useReader } from './components/Reader.tsx';
 import { BOOKS, EDITIONS, editionOf, piecesIn } from './content/books.ts';
@@ -145,6 +146,17 @@ export function ArchivePage() {
                   not online
                 </li>
               </ul>
+
+              {/* Only when nothing is being searched: the wall is a view of the
+                  whole, and a wall of three blocks would answer a question
+                  nobody asked. */}
+              {!needle && (
+                <CorpusMosaic
+                  transcribedHere={(id) => (workOn.get(id)?.transcribed ?? 0) > 0}
+                  hasEdition={(id) => Boolean(editionOf(id))}
+                  onOpen={(id) => goTo(id, 1)}
+                />
+              )}
 
               {visible.map((g) => (
                 <section key={g.id} className="mt-9">
