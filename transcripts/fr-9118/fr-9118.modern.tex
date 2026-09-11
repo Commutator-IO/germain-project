@@ -1,0 +1,1234 @@
+% Papiers de Sophie Germain — Français 9118, lecture modernisée du volume entier.
+%
+% Pass: Opus 5 (claude-opus-5), 11 September 2026 — first pass, unchecked
+% against the views by a human, and an interpretation rather than a record.
+% Where this file and the transcriptions differ in substance, the
+% transcriptions (batch-01.fr.tex … batch-06.fr.tex) are the record.
+%
+% Sources read: the six batch transcriptions of this volume and nothing else.
+% No image was consulted, and no published edition — not Grun's, not Del
+% Centina's, not the printed 1821 « Recherches ». Batches 1–3 were transcribed
+% on Fable 5.1, batches 4–6 on Opus 5; batch 6 (views 101–103) is the end of
+% the binding and holds no text at all, which is why nothing below draws on it.
+%
+% What the volume turned out to be. Not a mathematical notebook: the dossier
+% of a career as it arrived from outside. Letters received (Cauchy, Delambre,
+% Fourier, Legendre, Navier, Poisson, Gauss, Pernety, Villoison, Libri), three
+% drafts of her own, a copy of Lagrange's note to the prize commissioners, a
+% tutorial in a third hand, a printed offprint, three dated Institut receipts,
+% and a dozen loose leaves in her hand. The mathematics is therefore mostly
+% other people's, addressed to her — which is exactly what makes it worth
+% reading: the leaves record what was said to her, and what she answered.
+%
+% Two spines carry almost all of it: the vibrating elastic surface (1811–1826)
+% and the arithmetic of the Disquisitiones (1804–1808, with a Fermat coda in
+% 1819). A third, smaller, runs across both: Euler's vibrating lamina, which
+% Legendre and she argue about in four separate pieces.
+%
+% Notation translated here, each with a footnote at its first use: Lagrange's
+% and Legendre's fourth-order operator into the biharmonic; « 1/r + 1/r' »
+% into twice the mean curvature and, at small deflection, into the Laplacian;
+% Legendre's barred e and vinculum into modern exponents and brackets; Gauss's
+% « déterminant » of a form into the determinant of its Gram matrix; his
+% (a, b, c) into ax² + 2bxy + cy²; Germain's « résidu » language, where it
+% occurs, into congruences.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{fr-9118}
+\shelfmark{Français 9118}
+\pages{1}{103}
+\dating{1801-1900}
+\watermark{Lecture automatique\\interprétation non vérifiée}
+\foldertitle{Correspondance de Sophie GERMAIN avec les mathématiciens et savants Cauchy, Delambre, Fourier, Gauss, Le Gendre, d'Ansse de Villoison, etc. — lecture modernisée du volume entier}
+
+\begin{document}
+
+\section*{Résumé}
+
+\begin{resume}
+Ce volume n'est pas un cahier de mathématiques. C'est le dossier extérieur
+d'une carrière : cent trois vues où l'on trouve les lettres qu'elle a reçues —
+Cauchy, Delambre, Fourier, Legendre, Navier, Poisson, Gauss, d'Ansse de
+Villoison, et quelques autres —, trois brouillons des siennes, la copie de la
+note par laquelle Lagrange a jugé son mémoire de 1811, un cours de mécanique
+élémentaire écrit pour elle par une main qui ne se nomme pas, une plaquette
+imprimée, trois récépissés datés de l'Institut, et une douzaine de feuillets
+détachés de sa main. Les mathématiques qu'on y lit sont donc, pour la plus
+grande part, celles que d'autres lui écrivent. C'est ce qui fait leur prix :
+elles disent ce qu'on lui a objecté, et ce qu'elle a répondu.
+
+Deux questions occupent presque tout. La première est physique : quelle
+équation gouverne les vibrations d'une plaque élastique ? En 1811 l'Institut
+met la question au concours ; elle est la seule à concourir ; son mémoire est
+jugé faux, et la note de Lagrange qu'on trouve ici, copiée, donne à sa place
+l'équation qui est encore la nôtre. La seconde est arithmétique : les
+\emph{Disquisitiones arithmeticae} de Gauss, qu'elle lit dès leur parution,
+lui fournissent la matière de deux longues lettres — écrites sous le nom
+d'emprunt « Le Blanc » — dont les brouillons sont ici, avec les réponses de
+Gauss.
+
+De ce qu'elle cherchait, elle a laissé dans ce volume son propre compte rendu.
+Un brouillon non daté, « ce 18 juillet », énumère les trois choses de son
+« petit écrit » qui lui semblent « de quelqu'importance » : la définition
+exacte de la question — quelles expériences en relèvent et lesquelles n'en
+relèvent pas ; les couches dont l'épaisseur d'une plaque est composée ; et la
+courbure moyenne, qu'elle compare à une température moyenne. Cette dernière
+comparaison, qu'elle avance comme une commodité de calcul, est plus juste
+qu'elle ne pouvait le savoir : la somme des deux courbures principales
+$1/r + 1/r'$ est, pour une surface presque plane $z(x,y)$, le laplacien
+$\Delta z$ — l'opérateur même de la théorie de la chaleur qu'elle invoque par
+analogie. L'énergie de flexion $\iint (\Delta z)^2$ conduit alors, en une
+ligne de calcul des variations, à l'équation
+$\partial^2 z/\partial t^2 + k^2\,\Delta^2 z = 0$ que Lagrange écrit dans sa
+note et que Legendre lui transmet. Son hypothèse physique était la bonne ;
+c'est son analyse qui ne l'était pas, et Poisson le lui écrit en toutes
+lettres en 1816.
+
+Du côté de l'arithmétique, les brouillons à Gauss portent trois choses. Une
+généralisation du théorème de l'article 357 des \emph{Disquisitiones} — que
+$4(x^n-1)/(x-1)$ est de la forme $y^2 \pm n z^2$ — qu'elle étend à
+$4(x^{n^s}-1)/(x-1)$, et qui est vraie : elle se déduit en une ligne de la
+composition des formes. Une conjecture sur les formes quadratiques à $n$
+variables, que le déterminant de l'adjointe vaut $D^{n-1}$, qui est vraie
+aussi et qui est aujourd'hui une identité de première année. Et une annonce
+qu'elle raye puis récrit telle quelle : qu'elle croit avoir démontré
+l'impossibilité de $x^n + y^n = z^n$ pour $n = p - 1$, $p$ premier de la forme
+$8k+7$. La démonstration était jointe à la lettre ; elle n'est pas dans le
+volume, et rien ici ne permet de la juger. Trois feuillets détachés, non
+datés, y ajoutent une objection à Gauss sur la composition des formes binaires,
+et deux remarques sur $p^4+4$ et $p^4+q^4$ — la première étant, sous une autre
+démonstration que la sienne, ce qu'on appelle aujourd'hui l'identité de Sophie
+Germain.
+
+Où cela mène. Du côté des plaques : à l'opérateur biharmonique $\Delta^2$, à
+la théorie des plaques minces de Kirchhoff et Love, et aux conditions de bord
+qui ont occupé le reste du siècle. Du côté de la lame vibrante : aux modes
+propres de la poutre d'Euler-Bernoulli, dont les nœuds ne sont pas également
+espacés — ce qu'elle oppose à Euler sur un feuillet, et Legendre sur trois.
+Du côté de l'arithmétique : aux polynômes cyclotomiques et aux sommes de
+Gauss, à la composition des formes quadratiques binaires et au groupe des
+classes, et — pour l'équation de Fermat — à une histoire qui ne s'achève
+qu'en 1995.
+
+\keywords{Kirchhoff–Love plate theory, biharmonic operator, mean curvature,
+Euler–Bernoulli beam vibrations, nodal lines, cyclotomic polynomials,
+composition of binary quadratic forms, Sophie Germain's identity, Fermat's
+last theorem, central binomial coefficient}
+\end{resume}
+
+\section*{Ce que le volume contient}
+
+\pagerange{1}{103}
+Cent trois vues, dont les quatre premières et les trois dernières sont la
+reliure et les gardes.\footnote{Les vues 101 à 103 — verso blanc du dernier
+feuillet, garde et contre-garde, plat inférieur — ne portent aucun texte ;
+c'est ce que constate le lot 6 de la transcription, qui ne transcrit rien et
+le dit. Le texte du volume s'arrête à la vue 100.} Entre les deux,
+quatre-vingt-treize feuillets numérotés au crayon par la Bibliothèque, qui se
+rangent en six espèces.
+
+\begin{itemize}
+  \item \emph{Les lettres reçues}, qui font la moitié du volume : deux de
+    Cauchy (1821, 1826), deux de Delambre (1816, 1821), sept de Fourier (une
+    officielle de 1823, une de 1824, une de 1826, et quatre autographes non
+    datées), huit de Legendre (de 1811 à 1819, plus celle de 1821), une de
+    Navier (1821), une de Poisson (1816), trois de Gauss (1805, 1805, 1808),
+    une du général Pernety avec la lettre d'un officier qu'il avait envoyé
+    chez Gauss (1806), trois de d'Ansse de Villoison (1802), un billet d'un
+    libraire nommé Bernard, et une invitation à dîner non signée. Presque
+    toutes ont conservé leur feuillet d'adresse, plié et cacheté, et ces
+    adresses sont ici le seul registre de ses domiciles successifs.
+  \item \emph{Deux notes mathématiques de Legendre} sans en-tête ni date,
+    sur un problème d'Euler (ff. 42r–43r et ff. 58–59, vues 47 à 48 et 63 à
+    64) ; et \emph{une note signée G. Libri}, datée 1824 (f. 60, vue 65).
+  \item \emph{Trois brouillons de sa main} : une lettre « ce 18 juillet » à un
+    correspondant que le feuillet ne nomme pas (ff. 1r–2r, vues 5 et 6), et
+    deux lettres à Gauss signées « Le Blanc » (ff. 38r–41v, vues 43 à 47).
+  \item \emph{Une copie}, d'une main qui n'est pas la sienne, de la « Note
+    communiquée aux commissaires pour le prix de la surface élastique
+    (décembre 1811) », avec la mention « cette note est de Mr la grange »
+    (f. 34r, vue 39).
+  \item \emph{Un cours}, « Réponse aux questions de Mlle \ldots », d'une
+    troisième main : le levier, l'infini, l'hyperbole, $0/0$, et deux
+    indications de librairie (ff. 35r–36v, vues 40 à 42).
+  \item \emph{Des pièces imprimées et administratives} : une plaquette de huit
+    pages, les vers latins de Villoison pour l'anniversaire de Lalande, où une
+    note en bas de page la nomme (ff. 74–78, vues 81 à 85) ; et trois
+    récépissés de l'Institut, datés du 21 septembre 1811, du 21 septembre 1813
+    et du 8 novembre 1821 (ff. 78, 80, 82, vues 85 à 89).
+  \item \emph{Des feuillets détachés de sa main}, à la fin : deux rédactions
+    d'un problème de centre de gravité, trois notes de lecture
+    d'arithmétique, trois feuillets de physique d'une écriture plus ronde, et
+    un feuillet contre Euler sur les lignes nodales (ff. 84–93, vues 91 à 99).
+\end{itemize}
+
+Le classement n'est pas chronologique et n'est pas thématique : les lettres de
+Legendre de 1811, 1813 et 1819 se suivent, mais celle de 1821 est vingt vues
+plus loin ; les feuillets d'arithmétique et ceux de physique alternent sans
+raison lisible. Ce qui suit est rangé par matière, non par vues.
+
+\section*{Les surfaces élastiques : ce qu'elle cherchait, dans ses termes}
+
+\pagerange{5}{6}
+Le brouillon « ce 18 juillet » est la seule page du volume où elle explique
+son propre projet. Elle vient d'imprimer un « petit écrit » — ses « nouvelles
+remarques » — sur le conseil du correspondant, et lui en signale trois
+points.\footnote{Le feuillet ne nomme pas le destinataire. Il parle des
+expériences de Savart, mentionne Ampère comme intermédiaire, et demande où
+trouver ce que le correspondant a publié « sur le cas général du mouvement des
+corps élastiques ». Le mot « nouvelles remarques » est celui du titre que
+Fourier accuse réception le 24 juillet 1826 — les \emph{Remarques sur la
+nature, les bornes et l'étendue de la question des surfaces élastiques} — et
+c'est Cauchy qui fut alors désigné pour en faire un rapport verbal. Cela ne
+suffit pas à identifier le destinataire, et la présente lecture ne
+l'identifie pas.}
+
+Le premier est la délimitation de la question. Elle tient à dire que les
+expériences de Savart sont « étrangères à cette question » et ne pourroient
+s'expliquer que par une théorie plus étendue : ce qu'elle traite est un cas
+particulier du mouvement des solides élastiques, non la totalité du
+phénomène. C'est, en langage d'aujourd'hui, la déclaration d'un domaine de
+validité — la théorie linéaire des petits déplacements d'une plaque mince —
+et l'aveu que ce qui sort de ce domaine sort de sa théorie.
+
+Le deuxième est l'épaisseur. « Si dans les expériences dont je parle on
+parvenoit à séparer les différentes couches dont on peut concevoir que
+l'épaisseur soit composée, chacune d'elles présenteroit des figures
+particulières. » C'est la question de la variation des grandeurs à travers
+l'épaisseur, à laquelle elle consacrera un mémoire entier, le \emph{Mémoire
+sur l'emploi de l'épaisseur dans la théorie des surfaces élastiques} lu le 9
+mars 1824.\footnote{La lettre officielle de Fourier du 15 mars 1824 (f. 16r,
+vue 20) en donne le titre, la date de lecture et la commission : Laplace,
+Prony, Poisson. Le billet autographe « vendredi matin » (ff. 24r–25r, vues 28
+et 29) rapporte la même séance et la même commission ; la transcription en
+infère qu'il serait du 12 mars 1824, et le dit inférence.} La cinématique
+moderne des plaques minces — les fibres normales restent droites et normales
+— est précisément une hypothèse sur ces couches ; elle est due à Kirchhoff
+(1850) et à Love, et l'anachronisme doit être marqué : le feuillet ne l'a pas.
+
+Le troisième est la courbure moyenne, et c'est le seul des trois qui soit une
+idée mathématique. Elle écrit que « l'état réel des points dont la position
+est également éloignée de ceux auxquels appartiennent les manières d'être
+extrêmes donne l'état moyen du système », et prend son exemple dans un anneau
+chauffé : la température des points également éloignés du maximum et du
+minimum est la température moyenne de la pièce. De même, dit-elle, il faut des
+forces égales pour changer une courbure moyenne donnée, « ensorte que la
+courbure de la sphère est toujours comparable à celle d'une surface de figure
+quelconque » — et cette remarque « m'a servi à donner une forme assez simple à
+l'équation générale des surfaces ».
+
+En termes actuels : la quantité $1/r + 1/r'$, somme des deux courbures
+principales, est deux fois la courbure moyenne $H$, c'est-à-dire la trace de
+l'opérateur de forme. C'est bien une moyenne, au sens exact : la courbure
+normale, prise dans une direction faisant l'angle $\theta$ avec la première
+direction principale, vaut $k_1\cos^2\theta + k_2\sin^2\theta$, dont la
+moyenne sur toutes les directions est $(k_1+k_2)/2 = H$. C'est aussi une
+grandeur intrinsèquement associée au point, indépendante du repère choisi,
+et la sphère est la surface où elle est constante. Et pour un graphe
+$z(x,y)$ presque plan,
+\[
+  \frac{1}{r} + \frac{1}{r'} \;=\; \Delta z + O\!\left(|\nabla z|^2\right),
+  \qquad \Delta = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2},
+\]
+de sorte que sa mesure de la courbure est, au premier ordre, le laplacien —
+l'opérateur même qui gouverne la propagation de la chaleur dans l'anneau
+qu'elle prend pour terme de comparaison.\footnote{L'analogie est la sienne ;
+l'identification de $1/r+1/r'$ au laplacien linéarisé est de la présente
+lecture. Le mot du feuillet est « l'armille », que la transcription souligne
+comme une lecture douteuse. Rien sur la page ne dit qu'elle ait vu dans les
+deux cas le même opérateur : elle dit seulement que la même manière de
+raisonner s'y applique.}
+
+\section*{L'équation de la plaque : la note de Lagrange et la lettre de Legendre du 4 décembre 1811}
+
+\pagerange{39}{54}
+C'est le nœud du volume, et il s'y trouve deux fois : dans la copie de la note
+de Lagrange (f. 34r, vue 39) et dans la lettre où Legendre la lui rapporte
+(ff. 48r–49r, vues 53 et 54). Les deux textes donnent la même équation.
+
+\subsection*{Ce que Lagrange écrit}
+
+La note commence par un refus : « L'équation fondamentale pour le mouvement de
+la surface vibrante ne me paraît pas exacte, et la manière dont on cherche à
+la déduire de celle d'une lame élastique en passant d'une ligne à une surface
+ne paraît peu juste. » Elle donne ensuite ce à quoi se réduit, pour $z$ très
+petit, l'équation du mémoire :
+\[
+  \frac{\partial^2 z}{\partial t^2}
+  + C\left(\frac{\partial^6 z}{\partial x^4\,\partial y^2}
+         + \frac{\partial^6 z}{\partial y^4\,\partial x^2}\right),
+\]
+puis, en adoptant $1/r + 1/r'$ comme mesure de la courbure à laquelle
+l'élasticité est supposée proportionnelle, celle qu'il trouve lui-même :
+\[
+  \frac{\partial^2 z}{\partial t^2}
+  + k^2\left(\frac{\partial^4 z}{\partial x^4}
+           + 2\,\frac{\partial^4 z}{\partial x^2\,\partial y^2}
+           + \frac{\partial^4 z}{\partial y^4}\right) = 0,
+\]
+« qui est bien différente de la précédente ».\footnote{Deux écarts avec le
+feuillet. Le coefficient de la première équation y est lu « gEbc », dont la
+première lettre pourrait aussi être un 9 ; il est écrit $C$ ici parce qu'aucune
+des deux lectures ne se laisse interpréter, et rien du raisonnement n'en
+dépend. Et la première équation, sur le feuillet, n'est pas une équation : elle
+s'achève sur un point-virgule, sans second membre. On la lit comme
+« $\dots = 0$ » par symétrie avec la seconde, mais c'est une supposition, et la
+transcription ne la fait pas.}
+
+La seconde équation est, en écriture d'aujourd'hui,
+\[
+  \frac{\partial^2 z}{\partial t^2} + k^2\,\Delta^2 z = 0,
+\]
+où $\Delta^2 = \partial^4/\partial x^4 + 2\,\partial^4/\partial x^2\partial y^2
++ \partial^4/\partial y^4$ est l'opérateur biharmonique.\footnote{Lagrange
+écrit le $d$ rond, Legendre le $d$ droit ; les deux notent la même dérivée
+partielle et sont rendus ici par $\partial$. Le nom d'« opérateur
+biharmonique » et la notation $\Delta^2$ sont postérieurs aux feuillets.} La
+forme développée n'est pas seulement plus courte : elle rend visible que
+l'opérateur est le carré du laplacien, donc invariant par rotation du plan —
+ce que la somme de deux dérivées sixièmes croisées n'est pas.
+
+Le chemin qui y mène est celui que l'hypothèse de Germain impose, et il tient
+en quelques lignes de calcul des variations. Si l'élasticité est
+proportionnelle à
+$1/r+1/r'$, l'énergie de flexion est, à petit déplacement,
+\[
+  E[z] = \frac{1}{2}\iint \left(\Delta z\right)^2 dx\,dy,
+\]
+dont la variation première est $\iint (\Delta^2 z)\,\delta z\,dx\,dy$ plus des
+termes de bord ; le principe de d'Alembert donne alors
+$\partial_t^2 z = -k^2\Delta^2 z$.\footnote{Cette dérivation est de la présente
+lecture ; ni la note de Lagrange ni la lettre de Legendre ne l'écrivent — la
+note dit seulement « je trouve », et Legendre ajoute « Je n'ai point vérifié ce
+calcul ». Elle est donnée ici parce qu'elle montre que l'équation de Lagrange
+suit de l'hypothèse de Germain, et que le désaccord de 1811 porte donc sur
+l'analyse et non sur la physique.} L'équation moderne de la plaque mince,
+$\rho h\,\partial_t^2 w + D\,\Delta^2 w = 0$, est la même à la constante près.
+
+\subsection*{La vérification par la lame}
+
+Legendre, qui rapporte la conclusion sans l'avoir vérifiée, donne aussitôt la
+raison qui l'en persuade : « en supposant la surface vibrante réduite à une
+lame d'une largeur constante, ce qui peut s'exprimer en faisant $dz/dy = 0$,
+on retombe sur l'équation
+$\partial^2 z/\partial t^2 + k^2\,\partial^4 z/\partial x^4 = 0$ », celle
+d'Euler pour les lames élastiques vibrantes ; « Votre équation ne donneroit pas
+ce résultat. »
+
+Il a raison, et l'argument est le bon : c'est un test de cohérence par passage
+à la limite d'une dimension. Si $z$ ne dépend pas de $y$, alors
+$\Delta^2 z = \partial^4 z/\partial x^4$ et l'équation de la plaque devient
+celle de la poutre d'Euler-Bernoulli ; tandis que la première équation, où
+chaque terme porte au moins une dérivée en $y$, se réduit à
+$\partial_t^2 z = 0$, c'est-à-dire à rien.\footnote{La condition qu'il écrit,
+$\partial z/\partial y = 0$, ne suffit pas telle quelle : elle n'annule que la
+dérivée première, et les termes en $\partial^4/\partial x^2\partial y^2$
+demandent que les dérivées supérieures en $y$ s'annulent aussi. Ce qu'il faut
+est que $z$ ne dépende pas de $y$, ce qui est manifestement ce qu'il veut dire
+en parlant d'« une lame d'une largeur constante ». La correction est de la
+présente lecture.}
+
+\section*{Où l'analyse a manqué : les intégrales doubles et les « quatre points »}
+
+\pagerange{55}{56}
+La lettre du 4 décembre 1813 est la plus dure du volume, et la plus précise.
+Legendre y dit trois choses.
+
+D'abord que Lagrange a eu raison de considérer, dans la courbe élastique, deux
+éléments consécutifs et de mesurer l'élasticité par l'angle qu'ils
+comprennent. C'est exact : pour une courbe plane, l'angle entre deux éléments
+consécutifs divisé par la longueur d'arc \emph{est} la courbure, et l'énergie
+$\int \kappa^2\,ds$ est celle de l'élastique.
+
+Ensuite qu'« on n'a pas d'Elemens analogues dans les surfaces ». Il précise :
+un élément de surface a pour projection $dx\,dy$, le suivant
+$(dx+ddx)(dy+ddy)$, « ces projections sont deux carrés séparés » ; et
+« l'idée des plans ne s'accommode pas avec ces projections, parcequ'un plan ne
+passe pas par quatre points ». En termes d'aujourd'hui : la courbure d'une
+surface en un point n'est pas un nombre mais une forme quadratique — la
+seconde forme fondamentale — et il n'existe pas d'« angle entre deux éléments
+consécutifs » qui la représente, parce qu'un quadrilatère infinitésimal tracé
+sur une surface n'est en général pas plan. Le défaut de planéité est
+précisément d'ordre deux, c'est-à-dire du même ordre que ce qu'on veut
+mesurer ; passer de la ligne à la surface par transport de l'angle ne peut
+donc pas marcher. La bonne quantité scalaire est la trace de cette forme,
+c'est-à-dire $1/r+1/r'$ — ce que son hypothèse disait déjà — et il faut la
+faire entrer dans une intégrale double avant de varier, non varier la ligne
+puis intégrer.
+
+Enfin que c'est « dans les doubles intégrales » qu'elle s'est égarée, et que
+la méthode à suivre était celle de Lagrange, première édition, page
+148.\footnote{L'identification de l'ouvrage — la \emph{Mécanique analytique} —
+est celle de la transcription, non du feuillet.} Il ajoute, et c'est la
+concession qui compte : « Au reste ces choses sont sujettes à des difficultés
+particulieres qui n'ont pas encore été bien éclaircies, et il y auroit des
+objections à faire contre l'analyse de l'article même que je cite. »
+
+Le partage entre l'hypothèse et le calcul, que la présente lecture a tiré de
+la note de Lagrange, est dit textuellement par Poisson dans sa lettre du 15
+janvier 1816 (ff. 67–68, vues 72 à 74) : « Le reproche que la Commission lui a
+fait porte moins sur l'hypothèse dont vous êtes partie que sur la manière dont
+vous avez appliqué le calcul à cette hypothèse. » Il ajoute que son propre
+résultat et le sien ne s'accordent que « dans le seul cas où la surface
+s'écarte infiniment peu d'un plan ».\footnote{« le mien » est une lecture
+douteuse de la transcription, qui propose aussi « l'ancien ». Le sens du reste
+de la phrase — la comparaison de « mes résultats aux vôtres » deux lignes plus
+bas — favorise « le mien », mais la présente lecture ne tranche pas.} C'est
+exactement la situation moderne : les deux voies, la sienne par la courbure et
+celle de Poisson par les forces moléculaires, donnent la même équation
+linéaire de la plaque et diffèrent hors du régime linéaire, où l'équation
+n'est plus $\partial_t^2 z + k^2\Delta^2 z = 0$.
+
+Deux lettres plus tard, le désaccord a changé d'objet. Fourier, dans le billet
+autographe « vendredi matin » (ff. 24r–25r, vues 28 et 29), écrit : « il m'a
+paru que vous mettez dans tout son jour l'insuffisance de l'hypothèse
+théorique dont on a voulu déduire l'équation du 4\textsuperscript{e} ordre que
+vous avez trouvée ». L'équation du quatrième ordre lui est ici attribuée ; ce
+qui est en cause n'est plus elle, mais l'hypothèse dont on prétend la
+déduire.\footnote{La lettre de Legendre du 4 décembre 1813 va dans le même
+sens : « Il paroit reconnu cependant que votre Equation est réellement celle de
+la surface vibrante ; en mettant l'analyse à part le reste peut etre bon. » Ni
+l'une ni l'autre lettre ne dit de quelle équation il s'agit — celle du mémoire
+de 1811, ou celle que la correction de Lagrange a substituée ; la présente
+lecture ne le décide pas.}
+
+\section*{Euler et la lame vibrante : trois notes de Legendre}
+
+\pagerange{57}{64}
+Trois pièces de Legendre, dont aucune ne porte de date lisible et sûre,
+discutent le même texte d'Euler sur les vibrations d'une lame élastique, cité
+par pages (152 à 157) et par paragraphes (§ 45, § 47).\footnote{Aucun des
+feuillets ne nomme l'ouvrage. La transcription du lot 3 propose le traité
+d'Euler sur les courbes élastiques et le donne pour son identification ; la
+présente lecture s'en tient à « le texte d'Euler que les lettres citent par
+pages ».} Elles ne s'accordent pas entre elles, et l'ordre dans lequel il faut
+les lire n'est pas établi — voir la dernière section.
+
+\subsection*{La racine parasite $\sin\frac{1}{2}\omega = 0$}
+
+La note intitulée « Pag. 155 » (ff. 58–59, vues 63 et 64) part de l'équation
+générale d'Euler, que Legendre récrit\footnote{Legendre surmonte d'un trait
+l'exposant négatif — son $\bar{e}^{x}$ est $e^{-x}$ — et se sert du même trait
+comme d'une parenthèse ; il écrit « cot. » avec le point. La transcription
+conserve ces signes ; ils sont traduits ici sans autre avis.}
+\[
+  0 = 2 - 2e^{2\omega}
+    - \left(e^{\lambda\omega} - e^{(2-\lambda)\omega}\right)
+      \left(e^{\lambda\omega} - e^{-\lambda\omega}\right)
+      \left(\cot \lambda\omega + \cot (1-\lambda)\omega\right).
+\]
+Sa remarque est que $\sin\frac{1}{2}\omega = 0$ n'en est pas une racine :
+« elle vient d'un facteur qui a été introduit par la Multiplication et qui est
+étranger à la solution du problème ». Il a raison, et cela se voit
+directement. Pour $\lambda = \frac12$, le troisième facteur est
+$2\cot\frac{\omega}{2}$, qui devient infini quand $\sin\frac{\omega}{2}$
+s'annule, tandis que les deux autres restent finis et non nuls ; le produit
+diverge et l'égalité ne peut avoir lieu. Legendre ajoute la seule exception :
+elle « le seroit seulement par la supposition $\frac12\omega = 0$, ou
+$\frac12\omega =$ à un infiniment petit » — et en effet, quand $\omega\to 0$,
+$e^{\omega/2}-e^{-\omega/2}\sim\omega$ compense le $\cot\frac\omega2\sim 2/\omega$
+et tout tend vers $0$, mais ce cas est celui du repos.
+
+Il donne ensuite la raison qui rend cette racine inadmissible même comme
+solution formelle : elle « donne des valeurs infinies pour les coefficiens
+$\gamma$ et $\gamma'$, $\delta'$ ». Et il reproche à Euler d'avoir écrit
+« Multiplicemus omnes Coefficientes par $\sin\frac12\omega$ » : « on peut bien
+multiplier l'ordonnée d'une Courbe par une Constante \ldots{} mais on ne peut
+pas multiplier par zéro ». C'est exact, et c'est le diagnostic moderne d'une
+racine parasite : une équation obtenue en multipliant par une quantité qui
+peut s'annuler acquiert les zéros de cette quantité, qui ne sont pas des
+solutions du problème.
+
+Il porte le même reproche à Germain : « Lorsque Mlle Sophie a
+voulu considérer le cas général, elle est ce me semble tombée dans la même
+erreur qu'Euler, en faisant $\sin\lambda\omega = 0$. »
+
+\subsection*{La résolution générale, et le cas $\lambda = 1/3$}
+
+La même note donne alors une méthode pour résoudre l'équation d'Euler sans
+tâtonnement, et c'est la plus jolie page de mathématiques du volume. Passé la
+première racine, dit Legendre, $e^{\omega}$ est si grand qu'on peut négliger
+$e^{-\omega}$ devant $e^{\omega}$ et $e^{-\lambda\omega}$ devant
+$e^{\lambda\omega}$ ; l'équation se réduit à
+\[
+  0 = -2e^{2\omega} + e^{2\omega}\left(\cot\lambda\omega + \cot(1-\lambda)\omega\right),
+  \qquad\text{soit}\qquad
+  \cot\lambda\omega + \cot(1-\lambda)\omega = 2 .
+\]
+C'est un développement asymptotique, mené comme on le mènerait aujourd'hui :
+$e^{\lambda\omega}-e^{(2-\lambda)\omega} \sim -e^{(2-\lambda)\omega}$ et
+$e^{\lambda\omega}-e^{-\lambda\omega} \sim e^{\lambda\omega}$, dont le produit
+est $\sim -e^{2\omega}$, et $2-2e^{2\omega}\sim -2e^{2\omega}$.
+
+Posant $x = \cot\lambda\omega$ et $y = \cot(1-\lambda)\omega$, il observe que
+pour chaque valeur rationnelle de $\lambda$ une relation algébrique lie $x$ et
+$y$, laquelle, jointe à $x+y=2$, donne un nombre fini de racines
+$\lambda\omega = \alpha, \beta, \ldots$, d'où les suites
+$\lambda\omega = \alpha + k\pi$, $\lambda\omega = \beta + k\pi$, \ldots{} Il
+traite $\lambda = \frac13$ : avec $x = \cot\frac{\omega}{3}$, la formule de
+duplication donne $\cot\frac{2\omega}{3} = (x^2-1)/2x$, d'où
+\[
+  x + \frac{x^2-1}{2x} = 2, \qquad 3x^2 - 4x - 1 = 0, \qquad
+  x = \frac{2 \pm \sqrt{7}}{3},
+\]
+et $\omega$ décrit les deux suites $3\alpha + 3k\pi$ et $3\beta + 3k\pi$, où
+$\cot\alpha = (2+\sqrt7)/3$ et $\cot\beta = (2-\sqrt7)/3$. Le calcul est juste
+d'un bout à l'autre.\footnote{Le feuillet écrit l'équation « $3x^2 - 1 = 4x$ »,
+qui est la même. Numériquement, $\alpha \approx 0{,}573$ et
+$\beta \approx 1{,}781$ radians, d'où $\omega \approx 1{,}72$ et
+$\omega \approx 5{,}34$ pour $k = 0$.} Legendre ferme d'ailleurs lui-même la
+seule faiblesse de la méthode : « Dans l'application il faudroit rechercher
+plus exactement les deux premiers termes $3\alpha$, $3\beta$, mais les autres
+seront toujours suffisamment approchés » — c'est-à-dire que l'approximation,
+qui suppose $e^{\omega}$ grand, est médiocre pour les premières racines et
+s'améliore avec $k$. C'est exactement ce qu'on dirait aujourd'hui d'un
+développement pour les grands modes.
+
+\subsection*{$\gamma = \gamma'$ : les deux portions ne font qu'une courbe}
+
+La lettre du 19 janvier (ff. 52r–53r, vues 57 et 58) revient sur une erreur de
+signe d'Euler. Euler trouve $\gamma' = -\gamma$ ; Legendre soutient que les
+équations III et IV de la page 152 donnent $\gamma = \gamma'$, et en tire la
+conséquence : l'équation de la portion de courbe $LF$ n'est pas
+$y = -C\sin(\zeta + \cdots)$ mais
+\[
+  y = C \sin\!\left(\zeta + t\,\frac{\omega c \sqrt{2gb}}{a^2}\right)\sin u\omega,
+\]
+« absolument comme celle de la portion $EL$, c'est-à-dire que ces deux
+portions ne font qu'une seule et même courbe désignée par la même
+équation ».\footnote{Le numérateur $\omega c\sqrt{2gb}$ est d'une lecture
+douteuse, et le feuillet écrit $aa$ pour $a^2$. La transcription note aussi
+que « $LF$ » est écrit par-dessus un « $EF$ ». Rien de ce qui suit ne dépend de
+la valeur de ce coefficient, qui n'est qu'une pulsation.}
+
+L'objection qu'on pourrait faire — que l'équation d'Euler, avec son signe
+moins, indique bien les ordonnées négatives au-delà du nœud — il la lève
+lui-même : « puisque $\sin u\omega$ est zéro lorsqu'on fait $u = \frac12$, les
+deux suppositions $u > \frac12$, $u < \frac12$ donneront deux résultats de
+signes contraires pour $\sin u\omega$, desorte qu'avant et après le point $L$,
+les ordonnées seront de signes différens ».
+
+C'est le raisonnement juste, et c'est celui qu'on ferait aujourd'hui : un mode
+propre est \emph{une} fonction, analytique sur toute la longueur ; un nœud est
+un zéro de cette fonction, et le changement de signe des ordonnées de part et
+d'autre est celui du facteur qui s'annule, non un changement de la loi. Écrire
+deux équations pour les deux arcs, avec des constantes de signes opposés, c'est
+compter deux fois le même changement de signe.
+
+\section*{Sa propre objection à Euler sur les lignes nodales}
+
+\pagerange{99}{99}
+Un feuillet détaché de sa main (f. 93, vue 99) attaque le même auteur sur le
+même point, et par l'autre bout. Euler établit, dit-elle, que les angles que
+les deux portions font avec l'axe au nœud $L$ doivent être égaux, et que les
+rayons osculateurs y sont les mêmes ; elle objecte que pour des extrémités
+libres ou fixes cela n'est pas valable dès que le paramètre diffère de
+$\frac12$, « puisque j'ai trouvé qu'alors les courbures prises à droite et à
+gauche du point $L$ étoient différentes entr'elles, ce qui résulte de ce
+qu'aucune ligne nodale située ailleurs qu'au milieu de la lame n'est à
+distances égales des deux plus voisines ». Elle ajoute qu'il lui semble que
+$dy/ds$ et $d^2y/ds^2$ — « les tangentes et les rayons osculateurs » —
+« doivent être de signes différens pour les deux portions ».\footnote{Le
+feuillet écrit la dérivée seconde $ddy/ds^2$, avec le $d$ droit ; elle est
+rendue ici par $d^2y/ds^2$. Le renvoi entre parenthèses, « § 45 de la
+P. », est d'une lecture douteuse dans la transcription, qui ne parvient
+ni à lire le mot abrégé ni à assurer la lettre.}
+
+Il faut séparer deux affirmations.
+
+La première — que les nœuds ne sont pas également espacés — est vraie, et
+c'est le fait qui distingue la poutre de la corde. Les modes d'une corde sont
+des sinus, dont les zéros sont en progression arithmétique ; ceux d'une poutre
+sont des combinaisons de $\sin$, $\cos$, $\sinh$ et $\cosh$, dont les zéros ne
+le sont pas — ils sont seulement disposés symétriquement de part et d'autre du
+milieu, lorsque les conditions aux deux bouts sont les mêmes. Il en résulte, comme elle
+le dit, que les deux arcs qu'un nœud sépare n'ont pas la même longueur et ne
+sont donc pas superposables : la figure d'Euler, où les deux portions sont
+image l'une de l'autre, ne convient qu'au cas symétrique.
+
+La seconde — que la courbure prise à droite et à gauche de $L$ diffère — ne
+tient pas telle qu'elle est écrite. Un mode est une seule fonction, de classe
+$C^{\infty}$ ; en un nœud intérieur, la tangente et le rayon osculateur ont
+une valeur et une seule.\footnote{C'est exactement la conclusion de la lettre
+de Legendre du 19 janvier lue ci-dessus, à laquelle elle s'oppose ici sans le
+savoir ou sans le dire. Que le volume tienne les deux feuillets est ce qui
+permet de les mettre en regard ; leur ordre chronologique n'est pas établi.}
+Ce qui est vrai, et qui est sans doute ce qu'elle vise, c'est que les deux
+\emph{arcs} sont de courbures opposées : $y$ change de signe en $L$, donc
+$d^2y/ds^2$ aussi de part et d'autre, et la concavité est tournée dans un sens
+sur un arc et dans l'autre sur le suivant. Sa seconde phrase est donc juste
+comme énoncé sur les deux portions, et fausse comme énoncé au point $L$
+lui-même. On notera que $dy/ds$, lui, ne change pas de signe au nœud : c'est
+la pente, qui y est commune aux deux arcs.
+
+\section*{L'arithmétique : les deux brouillons à Gauss}
+
+\pagerange{43}{47}
+Deux brouillons de sa main, sans date, signés « Le Blanc » pour le premier
+(ff. 38r–41v, vues 43 à 47). Ils sont fortement corrigés, avec des débuts de
+phrase annulés et des additions interlinéaires, et la transcription en
+signale plusieurs passages incertains ; ce sont des brouillons, non des
+lettres.\footnote{Aucun des deux feuillets ne porte de date. La transcription
+infère que le premier est le brouillon de la lettre à laquelle Gauss répond le
+16 juin 1805, et que le mémoire dont le second remercie est celui de 1799
+annoncé par Gauss le 20 août 1805 ; elle donne les deux pour ses inférences.
+Les deux lettres de Gauss sont dans le volume (ff. 28r–30r, vues 32 à 35), et
+l'adresse « chez Mr. Sylvestre de Sacy, Rue haute feuille N° 11 » qu'elle
+indique au bas du premier brouillon est celle que porte la lettre de Gauss.}
+
+\subsection*{Le théorème de l'article 357 et la généralisation qu'elle propose}
+
+Elle part du « beau théorème contenu dans l'équation
+$4\frac{(x^n-1)}{x-1} = y^2 \pm n z^2$ » et propose de le généraliser ainsi :
+\[
+  4\,\frac{x^{n^s}-1}{x-1} = y^2 \pm n z^2,
+\]
+« $n$ étant toujours un nombre premier et $s$ un nombre quelconque ». Elle
+ajoute qu'elle joint à sa lettre « deux demonstrations de cette
+généralisation », dont la seconde refait le chemin de l'article 357.
+
+En termes actuels, le théorème de Gauss est le suivant. Pour $p$ premier
+impair, soit $\Phi_p(x) = (x^p-1)/(x-1)$ le $p$-ième polynôme cyclotomique et
+$p^{*} = (-1)^{(p-1)/2}p$. Alors il existe $Y, Z \in \mathbf{Z}[x]$ avec
+\[
+  4\,\Phi_p(x) = Y(x)^2 - p^{*}Z(x)^2 ,
+\]
+c'est-à-dire $Y^2 - pZ^2$ si $p \equiv 1 \pmod 4$ et $Y^2 + pZ^2$ si
+$p \equiv 3 \pmod 4$.\footnote{Le signe que le brouillon laisse ouvert
+(« $\pm$ ») est donc déterminé par $n$ modulo 4 ; l'énoncé est ici rendu plus
+précis que le feuillet. C'est le contenu de l'article 357 des
+\emph{Disquisitiones}, auquel elle renvoie et que la transcription cite : la
+raison de fond en est que $\sqrt{p^{*}}$ appartient au corps cyclotomique
+$\mathbf{Q}(\zeta_p)$ — la somme de Gauss quadratique —, ce qui est un langage
+postérieur au feuillet.} Pour $p = 3$ on a $4\Phi_3 = (2x+1)^2 + 3$ ; pour
+$p = 5$, $4\Phi_5 = (2x^2+x+2)^2 - 5x^2$.
+
+Sa généralisation est vraie, et elle se démontre en une ligne à partir du
+théorème lui-même. Puisque $x^{n^s} - 1 = \prod_{j=0}^{s}\Phi_{n^j}(x)$ avec
+$\Phi_1(x) = x-1$, on a
+\[
+  \frac{x^{n^s}-1}{x-1} \;=\; \prod_{j=1}^{s}\Phi_{n^j}(x),
+  \qquad \Phi_{n^j}(x) = \Phi_n\!\left(x^{n^{j-1}}\right),
+\]
+de sorte que chaque facteur, multiplié par 4, est déjà de la forme voulue :
+$4\Phi_{n^j}(x) = Y\!\left(x^{n^{j-1}}\right)^2 - n^{*}Z\!\left(x^{n^{j-1}}\right)^2$.
+Reste à multiplier ces $s$ formes entre elles, ce que fait l'identité de
+composition
+\[
+  (Y^2 - n^{*}Z^2)(Y'^2 - n^{*}Z'^2)
+  = (YY' + n^{*}ZZ')^2 - n^{*}(YZ' + ZY')^2 ,
+\]
+et à diviser par $4^{s-1}$. La division est licite : si $4$ divise $Y^2 -
+n^{*}Z^2$ alors $Y \equiv Z \pmod 2$, et les deux composantes
+$YY'+n^{*}ZZ'$ et $YZ'+ZY'$ sont alors paires, ce qui permet de sortir un
+facteur 4 à chaque composition — il y en a $s-1$.\footnote{Cette démonstration
+est de la présente lecture. Les deux démonstrations qu'elle annonce étaient
+jointes à la lettre et ne sont pas dans le volume ; on ne sait donc pas si
+c'est celle-ci, ni si les siennes étaient justes. Ce qui est établi ci-dessus
+est que l'énoncé, lui, l'est.} On notera que le signe est le même pour toutes
+les valeurs de $s$, puisque c'est toujours le même $n^{*}$.
+
+\subsection*{Le passage de $Y, Z$ à $Y', Z'$}
+
+Elle remarque ensuite que si l'on connaît $Y$ et $Z$ dans
+$4(x^n-1)/(x-1) = Y^2 \pm nZ^2$ et qu'on veut $Y'$ et $Z'$ dans
+$4(x^n+1)/(x+1) = Y'^2 \pm nZ'^2$, « il est clair qu'il suffiroit de changer
+les signes de tous les termes de $Y$ et $Z$ qui contiennent des puissances
+dont l'exposant est impair ».
+
+C'est juste, et c'est la substitution $x \mapsto -x$. Pour $n$ impair,
+\[
+  \frac{x^n+1}{x+1} = \frac{(-x)^n - 1}{(-x) - 1},
+\]
+donc $\Phi_n(-x)$, et il suffit de poser $Y'(x) = Y(-x)$, $Z'(x) = Z(-x)$ —
+ce qui est exactement changer le signe des termes de degré
+impair.\footnote{L'hypothèse que $n$ est impair n'est pas écrite sur le
+feuillet ; elle est indispensable, sans quoi $(x^n+1)/(x+1)$ n'est même pas un
+polynôme. Le contexte la fournit — $n$ est chez elle un nombre premier impair
+depuis le début du paragraphe —, mais l'énoncé tel qu'il est écrit ne la
+porte pas.}
+
+\subsection*{Fermat, pour l'exposant $n = p - 1$}
+
+Le brouillon contient, une fois biffée d'un trait oblique et une fois récrite
+presque mot pour mot quelques lignes plus bas, cette annonce :
+l'impossibilité de $x^n + y^n = z^n$ en nombres entiers « n'a encore été
+demontrée que pour $n = 3$ et $n = 4$ ; je crois etre parvenu a prouver cette
+impossibilité pour $n = p-1$, $p$ etant un nombre premier de la forme
+$8k+7$ ».\footnote{Le déplacement est significatif : biffée, la phrase ouvrait
+le développement ; récrite, elle le ferme, comme « la derniere » des
+« quelques autres considerations » ajoutées à l'article 357. C'est une
+observation sur l'état du feuillet, non sur les mathématiques.}
+
+Le premier membre de la phrase est exact pour l'époque : au début du siècle,
+seuls les exposants 3 et 4 étaient acquis.
+
+Le second demande à être précisé, car ce que la condition impose n'est pas
+évident. Si $p \equiv 7 \pmod 8$, alors $n = p-1 \equiv 6 \pmod 8$ : $n$ est
+pair, mais $4 \nmid n$, de sorte que le cas $n=4$ ne donne rien. Écrivons
+$n = 2m$ avec $m = (p-1)/2$, qui est impair et $\equiv 3 \pmod 4$. L'équation
+devient
+\[
+  (x^2)^m + (y^2)^m = (z^2)^m ,
+\]
+c'est-à-dire l'exposant impair $m$, restreint aux carrés. Et $p = 2m+1$ : le
+nombre premier qu'elle choisit est précisément un nombre premier auxiliaire
+pour l'exposant $m$, au sens de l'énoncé qu'on appelle aujourd'hui son
+théorème.\footnote{Le nom « théorème de Sophie Germain » vient de
+l'attribution que Legendre en fait en 1823 ; il n'est pas d'elle, et aucun
+feuillet de ce volume n'en énonce le contenu. Le rapprochement fait ici est
+celui de la présente lecture, à partir de la seule forme $p = 2m+1$.}
+
+Dans cette situation, ce qu'on appelle le premier cas — $p \nmid xyz$ — est
+immédiat et ne demande pas la condition $8k+7$ : si $p$ ne divise pas $x$,
+alors $x^n = x^{p-1} \equiv 1 \pmod p$ par le petit théorème de Fermat, de
+sorte que les trois termes valent $0$ ou $1$ modulo $p$, et que
+$1 + 1 \equiv 1 \pmod p$ est impossible. Tout le contenu de son annonce est donc dans
+le second cas, celui où $p$ divise l'un des trois nombres, et c'est là que la
+condition sur $8k+7$ — laquelle équivaut à dire que 2 est résidu quadratique
+et $-1$ non-résidu modulo $p$ — devait servir.\footnote{Ce n'est pas sans
+rapport avec ce que Gauss loue dans sa lettre du 16 juin 1805 : « Votre
+nouvelle demonstration pour les nombres premiers, dont 2 est residu ou non
+residu m'a extremement plu ; elle est très fine, quoique elle semble être
+isolée et ne pouvoir s'appliquer à d'autres nombres. » Le rapprochement est
+de la présente lecture : le feuillet ne dit pas que les deux travaux sont
+liés.}
+
+La démonstration n'est pas dans le volume — elle était jointe à la lettre — et
+rien ici ne permet de dire si elle valait. Deux remarques seulement, qui
+tiennent au seul énoncé. Il est vide pour le plus petit $p$ de la forme
+voulue : $p = 7$ donne $n = 6$, dont l'impossibilité suit du cas $n = 3$
+qu'elle vient de nommer ; et il en va de même chaque fois que $3$ divise
+$p-1$. Il n'a de contenu qu'à partir de $p = 23$, soit $n = 22$, puis
+$p = 47$, soit $n = 46$. Et l'impossibilité pour tous ces exposants est
+aujourd'hui acquise, comme conséquence du théorème démontré par Wiles en
+1995 — deux siècles après le feuillet, et par des moyens qui n'ont aucun
+rapport avec les siens.
+
+\subsection*{La quantité de Lagrange (1775) : un calcul qui s'interrompt}
+
+Le brouillon reproche ensuite à Lagrange, dans le mémoire de l'Académie de
+Berlin pour 1775, de n'avoir pas su réduire la quantité de la page 352
+\[
+  s^{10} - 11\left(s^8 - 4s^6r^2 + 7s^4r^4 - 5s^2r^6 + r^8\right)r^2
+\]
+à la forme $t^2 - 11u^2$, et commence la réduction. Le calcul s'arrête sur une
+parenthèse ouverte, au bout de trois lignes.
+
+La présente lecture ne l'achève pas, et il faut dire pourquoi. La
+transcription porte deux copies de la même quantité à deux lignes de
+distance, et elles diffèrent : la seconde écrit $7s^4$ là où la première écrit
+$7s^4r^4$. L'homogénéité tranche — la première lecture rend l'expression
+homogène de degré 10, la seconde ne l'est pas —, mais elle ne dit pas laquelle
+des deux copies est celle du feuillet et laquelle est une faute de lecture. La
+transcription signale en outre que les exposants de la dernière ligne, et le
+premier terme lu « $r^{10}$ », sont d'une lecture douteuse. Deux copies qui
+divergent, une seule ligne de développement, et ses exposants incertains : il
+n'y a pas là de calcul à vérifier.
+
+Ce qu'on peut dire sans le feuillet : ramener une quantité à la forme
+$t^2 - 11u^2$, c'est la représenter par la forme principale de discriminant
+44, autrement dit l'écrire comme une norme de $\mathbf{Z}[\sqrt{11}]$. Et la
+raison qu'elle donne de sa remarque est la bonne : « Cette remarque est une
+nouvelle preuve de l'avantage de votre methode, qui, s'appliquant a toutes les
+valeurs de $n$, donne pour chaque cas des valeurs de $Y$ et $Z$ independantes
+de tatonnement. » Une méthode qui construit la représentation vaut mieux
+qu'une méthode qui la cherche : c'est ce que la démonstration par composition
+donnée plus haut fait aussi.
+
+\subsection*{Formes ternaires, quaternaires, et le déterminant de l'adjointe}
+
+Le second brouillon porte la plus nette de ses mathématiques. Elle rappelle
+avoir réduit, suivant l'indication de Gauss, les formes ternaires de
+déterminant nul aux formes binaires, et avoir cherché si la même chose vaut
+pour les quaternaires ; puis elle énonce :
+
+\begin{quote}
+Je crois qu'en general $D$ etant la déterminante d'une forme composée d'un
+nombre $n$ de variables, $D^{n-1}$ est la déterminante de l'adjointe de cette
+forme.
+\end{quote}
+
+Elle observe que Gauss a trouvé $D^2$ pour l'adjointe ternaire, que son propre
+calcul donne $D^3$ pour la quaternaire, et — c'est la phrase qui compte —
+que « cette analogie n'est sans doute pas suffisante pour etablir la generalité
+de la proposition ».
+
+Les deux énoncés sont vrais, et tous deux sont aujourd'hui élémentaires.
+
+Le premier : une forme quadratique dont la matrice de Gram est singulière
+possède un radical non nul, et le quotient par ce radical est une forme non
+dégénérée en un nombre strictement plus petit de variables. Une forme
+quaternaire de déterminant nul se ramène donc à une forme en trois variables
+au plus, comme elle le suppose — sur les rationnels sans réserve ; sur les
+entiers, il faut de plus que le radical soit un facteur direct
+primitif.\footnote{Cette réserve est de la présente lecture ; le feuillet
+n'énonce que l'analogie avec le cas ternaire, et la question de l'équivalence
+entière n'y est pas posée.}
+
+Le second est l'identité
+\[
+  \det\left(\operatorname{adj} A\right) = \left(\det A\right)^{n-1}
+\]
+pour une matrice $n \times n$, qui se déduit immédiatement de
+$A \cdot \operatorname{adj} A = (\det A)\,I$ en prenant les déterminants,
+puis en traitant à part le cas $\det A = 0$ par continuité ou par densité des
+matrices inversibles.\footnote{Gauss appelle « déterminante » d'une forme ce
+que nous appelons le déterminant de sa matrice de Gram, à sa normalisation
+près ; l'adjointe est notre comatrice transposée. La correspondance entre son
+vocabulaire et le nôtre est faite ici une fois pour toutes.} Elle vérifie
+$n = 3$ et $n = 4$ et refuse d'en conclure — ce qui est la bonne attitude,
+puisque deux cas ne font pas une démonstration.
+
+Elle donne pourtant un argument, et il faut voir exactement ce qu'il vaut : le
+déterminant d'une forme à $n$ variables est un polynôme de degré $n$ en les
+coefficients, ceux de l'adjointe sont de degré $n-1$, donc le déterminant de
+l'adjointe est de degré $n(n-1)$ — « c'est a dire de l'ordre $n(n-1)$ » — et
+$D^{n-1}$ l'est aussi. C'est un contrôle de degrés, c'est-à-dire une condition
+nécessaire, exactement comme une vérification d'homogénéité : cela ne démontre
+pas l'identité, mais cela l'aurait réfutée si les degrés avaient différé. Elle
+ne prétend pas autre chose.
+
+Le paragraphe suivant descend au cas binaire, et c'est là que le feuillet
+résiste. La proposition donnerait, pour $n = 2$, que la déterminante de
+l'adjointe est celle de la forme même — ce qui est correct, $D^{n-1} = D$ — et
+que les coefficients de l'adjointe sont « de l'ordre $0$ ». Le sens demande
+$n - 1 = 1$, non 0 ; et la transcription, qui donne le chiffre pour une lecture
+douteuse, propose elle-même « $n-1$ » comme autre lecture possible. La présente
+lecture retient ce que les mathématiques exigent sans effacer le
+doute.\footnote{La transcription qualifie tout ce passage de « très remanié,
+dont la lecture est incertaine », signale que « déterminante » est écrit
+au-dessus d'un « l'adjointe » sans qu'on sache lequel des deux il remplace, et
+que la première ligne est peut-être biffée. Aucune restitution du passage n'est
+proposée ici au-delà du chiffre.}
+
+\section*{Trois notes de lecture d'arithmétique}
+
+\pagerange{91}{93}
+Trois petits feuillets détachés, chacun en tête duquel elle écrit le numéro de
+la page d'un livre qu'elle ne nomme pas.\footnote{Les feuillets 85 et 87
+portent « p. 217 » et « p. 220 » ; le feuillet 86 renvoie à « Gauss pag. 272 ».
+Que les trois renvoient au même ouvrage est l'hypothèse de la transcription
+pour les deux premiers ; rien ne l'établit, et le troisième nomme Gauss.}
+
+\subsection*{$p^4 + 4$}
+
+« Aucun nombre de la forme $p^4+4$ excepté 5 n'est un nombre premier, car
+$p^4+4 = (p^2-2)^2 + 4p^2$ et par conséquent ces nombres sont, de plusieurs
+manières, la somme de deux quarrés. » Elle ajoute que pour $p = 1$,
+$(p^2-2)^2 = 1$ et « les deux membres sont identiques ».
+
+L'énoncé est vrai. Son argument repose sur deux représentations du même
+nombre,
+\[
+  p^4 + 4 = (p^2)^2 + 2^2 = (p^2-2)^2 + (2p)^2 ,
+\]
+et sur le théorème d'Euler suivant lequel un entier admettant deux
+représentations essentiellement différentes comme somme de deux carrés est
+composé. Il faut, pour l'appliquer, que les deux paires soient distinctes, et
+elles ne le sont pas toujours : elles coïncident pour $p = 1$, où l'on trouve
+$5 = 1 + 4$ — c'est l'exception qu'elle relève elle-même — mais aussi pour
+$p = 2$, où les deux paires sont $\{4,2\}$ et $\{2,4\}$. Ce second cas ne
+menace pas la conclusion, puisque $p^4+4$ est alors pair, mais la restriction
+manque au feuillet.\footnote{C'est l'un des quatre défauts qu'une lecture
+modernisée doit chercher : une hypothèse tacite. Le feuillet écarte $p=1$ et
+ne dit rien de $p=2$.}
+
+La factorisation explicite que son argument n'exhibe pas est celle qu'on
+appelle aujourd'hui l'identité de Sophie Germain :
+\[
+  a^4 + 4b^4 = \left(a^2 + 2b^2 - 2ab\right)\left(a^2 + 2b^2 + 2ab\right),
+\]
+soit, pour $b = 1$, $p^4 + 4 = (p^2-2p+2)(p^2+2p+2)$. Elle règle les deux cas
+d'un coup : le nombre n'est premier que si le premier facteur vaut 1,
+c'est-à-dire si $p = 1$.\footnote{Le feuillet ne porte pas cette identité : il
+porte la démonstration par les deux sommes de deux carrés, qui est autre. Le
+nom, comme tous les noms modernes, lui est postérieur ; la présente lecture ne
+se prononce pas sur la question de savoir d'où il vient, laquelle relève des
+sources et non des feuillets.}
+
+\subsection*{$p^4 + q^4$ et les nombres de Fermat}
+
+Elle écrit ensuite
+\[
+  p^4 + q^4 = \left(p^2 - q^2\right)^2 + 2(pq)^2 = \left(p^2 + q^2\right)^2 - 2(pq)^2 ,
+\]
+deux identités exactes, et en tire que « lorsque $p^4+q^4$ est un nombre
+premier on peut être assuré que ce nombre n'est que de ces seules manières la
+somme d'un quarré $+$ ou $-$ un double quarré ».
+
+C'est encore juste, et la raison moderne en est que les anneaux
+$\mathbf{Z}[\sqrt{-2}]$ et $\mathbf{Z}[\sqrt{2}]$ sont principaux : un nombre
+premier y a, à unités et conjugaison près, une seule décomposition, de sorte
+que sa représentation par $x^2 + 2y^2$, comme sa représentation par
+$x^2 - 2y^2$, est unique. Les deux représentations qu'elle écrit sont donc
+\emph{les} représentations.
+
+Elle finit par : « Les nombres $2^{2^i}+1$ ne sont qu'un cas particulier de la
+forme $p^4+q^4$. » C'est vrai à partir de $i = 2$, avec
+$p = 2^{2^{i-2}}$ et $q = 1$ : ainsi $17 = 2^4 + 1^4$,
+$257 = 4^4 + 1^4$, $65537 = 16^4 + 1^4$. Ce ne l'est pas pour $i = 0$ et
+$i = 1$, qui donnent 3 et 5.\footnote{L'hypothèse $i \geq 2$ est implicite sur
+le feuillet, qui écrit la remarque sans restriction. C'est le genre de
+restriction qu'une lecture modernisée doit rétablir plutôt que reconduire.}
+La remarque est utile : elle place les nombres de Fermat dans une famille où
+les deux identités ci-dessus s'appliquent, et donc où l'unicité de la
+représentation par $x^2 \pm 2y^2$ fournit un test.
+
+\subsection*{L'objection à Gauss sur la composition des formes binaires}
+
+Le feuillet 86 (vue 92) est le plus intéressant du lot, et le plus discutable.
+Il tient en quatre phrases :
+
+\begin{quote}
+Gauss pag. 272 dit que le produit des deux formes $(16, 3, 19)$, $(8, 1, 37)$
+est $(8, -1, 37)$. Ce produit est aussi $(13, -2, 23)$, on peut s'en assurer.
+En général il y a toujours deux formes qui résultent du produit de deux formes
+données, mais dans les cas particuliers les deux formes se réduisent
+quelquefois à une. Il semble que l'auteur n'a pas fait cette remarque, et alors
+il y auroit plusieurs choses à rectifier dans la théorie qu'il donne du produit
+de plusieurs formes quadratiques binaires.
+\end{quote}
+
+Prenons les quatre formes au sérieux.\footnote{Gauss note $(a,b,c)$ la forme
+$ax^2 + 2bxy + cy^2$ et appelle « déterminante » le nombre $b^2 - ac$ ; le
+discriminant d'aujourd'hui en est le quadruple. La transcription conserve sa
+notation ; elle est conservée ici aussi, faute de quoi la comparaison avec le
+feuillet deviendrait illisible. Les douze nombres sont donnés tels que la
+transcription les lit, sans vérification sur l'image.} Les quatre ont le même
+déterminant : $3^2 - 16\cdot 19 = 1 - 8\cdot 37 = (-1)^2 - 8\cdot 37 =
+(-2)^2 - 13\cdot 23 = -295$. Elles appartiennent donc bien au même ordre, où
+la composition a un sens. Les formes réduites de ce déterminant dans l'ordre
+où Gauss compose sont au nombre de huit :
+\[
+  (1,0,295),\quad (5,0,59),\quad (8,\pm 1,37),\quad (13,\pm 2,23),\quad
+  (16,\pm 3,19),
+\]
+et les deux formes qu'elle nomme, $(8,-1,37)$ et $(13,-2,23)$, sont deux
+d'entre elles — deux formes réduites distinctes, donc deux classes distinctes,
+car deux formes réduites différentes ne sont jamais proprement
+équivalentes.\footnote{Cette énumération et les vérifications qui suivent sont
+de la présente lecture ; le feuillet ne porte aucun calcul, seulement
+l'assertion « on peut s'en assurer ».}
+
+Le calcul donne raison à Gauss. La composée de $(16,3,19)$ et de $(8,1,37)$
+est bien $(8,-1,37)$. Et la seconde forme qu'elle propose n'est pas une
+seconde valeur du même produit : c'est la composée de $(16,-3,19)$ — la forme
+\emph{opposée} de la première — avec $(8,1,37)$ :
+\[
+  (16,3,19) \circ (8,1,37) = (8,-1,37),
+  \qquad
+  (16,-3,19) \circ (8,1,37) = (13,-2,23).
+\]
+Autrement dit, les deux formes qu'elle obtient diffèrent exactement du
+changement de signe du coefficient médian de l'un des deux facteurs,
+c'est-à-dire du passage d'une forme à son opposée ; et les deux résultats
+diffèrent alors de la classe ambiguë $(5,0,59)$, qui est d'ordre 2 dans le groupe des
+classes.\footnote{On vérifie de même que
+$(13,-2,23) = (8,-1,37) \circ (5,0,59)$.}
+
+Ce qui reste de son objection est donc ceci, et c'est réel : si l'on compose
+sans avoir fixé l'orientation des deux formes de départ — si l'on ne distingue
+pas $(a,b,c)$ de $(a,-b,c)$, qui représentent les mêmes nombres et sont
+équivalentes par une substitution de déterminant $-1$ —, alors le produit
+n'est pas déterminé, et l'on obtient deux formes. Ce qui ne reste pas, c'est
+la conclusion : Gauss a fait la remarque, et c'est précisément pour cela qu'il
+impose à sa transformation les conditions de signe de l'article 235. Ce sont
+elles qui font que la composition passe au quotient et définit une opération
+sur les classes pour l'équivalence \emph{propre} — le groupe des classes, qui
+compte ici huit éléments. Rien n'est donc à rectifier dans
+sa théorie ; ce qui manque au feuillet, c'est la distinction entre équivalence
+propre et impropre, qui est le pivot de la construction.
+
+Il faut ajouter la réserve d'usage : les douze nombres du feuillet n'ont pas été
+vérifiés sur l'image, et la démonstration ci-dessus est suspendue à leur
+exactitude. Que les quatre formes aient toutes le même déterminant, ce qui
+n'était nullement garanti d'avance, est un indice sérieux qu'elles sont bien
+lues.
+
+\section*{La note de Libri}
+
+\pagerange{65}{65}
+Un feuillet d'une autre main, signé « G. Libri » et daté 1824 (f. 60), porte
+trois congruences sur la décomposition d'un nombre premier $p = 4k+1$ en
+$a^2+b^2$, $a$ impair et $b$ pair. La dernière, qui est celle qui porte la
+conclusion, est un théorème classique :
+\[
+  \frac{2}{1}\cdot\frac{6}{2}\cdot\frac{10}{3}\cdots\frac{4k-2}{k}
+  \;\equiv\; \pm\,2a \pmod{p},
+\]
+avec le signe $+$ si $a \equiv 1 \pmod 4$ et $-$ si $a \equiv -1 \pmod 4$. Le
+produit de gauche est le coefficient binomial central : en effet
+$\prod_{j=1}^{k}(4j-2)/j = 2^k(2k-1)!!/k! = \binom{2k}{k}$, de sorte que
+l'énoncé est
+\[
+  \binom{2k}{k} \equiv 2a \pmod p, \qquad a \equiv 1 \pmod 4 ,
+\]
+qui est le résultat de Gauss sur le coefficient binomial central. On le
+vérifie sur les premiers cas : $p=13$, $k=3$, $\binom63 = 20 \equiv 7$ et
+$a = -3$, $2a = -6 \equiv 7$ ; $p=17$, $\binom84 = 70 \equiv 2 = 2a$ avec
+$a = 1$ ; $p=29$, $\binom{14}{7} = 3432 \equiv 10 = 2a$ avec $a=5$.
+
+La conclusion qu'il en tire — « On peut décomposer de cette manière
+directement le nombre $p$ en deux carrés » — est juste, et mérite d'être dite
+en clair : comme $a^2 < p$, on a $|2a| < 2\sqrt{p}$, de sorte que le résidu de
+$\binom{2k}{k}$ modulo $p$ détermine $a$ sans ambiguïté dès que
+$4\sqrt{p} < p$, c'est-à-dire dès que $p > 16$ ; et $b$ s'obtient alors par
+$b = \sqrt{p - a^2}$. C'est bien un algorithme de décomposition, et non une
+simple identité.
+
+La deuxième congruence du feuillet,
+\[
+  \left[(k+1)(k+2)\cdots 2k\right]^2 \equiv \pm\,2b \pmod p,
+\]
+est vraie elle aussi, et se déduit de la précédente. Le produit vaut
+$\left(\frac{p-1}{2}\right)!\,/\,k!$ ; comme
+$\left(\frac{p-1}{2}\right)!^{\,2} \equiv -1 \pmod p$ pour $p \equiv 1
+\pmod 4$, son carré vaut $-1/(k!)^2$, c'est-à-dire
+$-2a\,/\,\left(\frac{p-1}{2}\right)!$ d'après la congruence précédente ; et
+comme $\left(\frac{p-1}{2}\right)!$ et $a/b$ sont l'une et l'autre des
+racines carrées de $-1$ modulo $p$, elles ne diffèrent que du signe, ce qui
+laisse $\mp 2b$. On le vérifie : pour $p = 5$ le carré vaut $4 \equiv 2b$ avec
+$b = 2$ ; pour $p = 13$, $3^2 = 9 \equiv -4$ avec $b = 2$ ; pour $p = 17$,
+$14^2 \equiv 9 \equiv -8$ avec $b = 4$ ; pour $p = 29$,
+$27^2 \equiv 4 = 2b$ avec $b = 2$. La première, en revanche — la même sans le
+carré, avec le même second membre $\pm 2b$ — est fausse : pour $p = 5$ elle
+demanderait $2 \equiv \pm 4$, et pour $p = 13$, $120 \equiv 3 \equiv \pm 4$,
+ce qui n'a lieu ni dans un cas ni dans l'autre.\footnote{La transcription
+signale précisément cette anomalie — « les deux premières congruences portent
+le même second membre, bien que la seconde soit le carré de la première : la
+feuille est ainsi, et rien n'y est biffé » — sans la résoudre. La présente
+lecture ne la résout pas davantage : elle constate que la seconde est vraie,
+que la première ne l'est pas, et que la faute peut être du feuillet comme de
+la lecture du feuillet.}
+
+\section*{Le levier, l'infini et l'hyperbole}
+
+\pagerange{40}{42}
+Trois vues portent un texte d'une main qui n'est ni la sienne ni celle
+d'aucun correspondant identifié, intitulé « Réponse aux questions de Mlle
+\ldots{} » — le nom est réduit à un trait ondulé. C'est un cours, écrit pour
+quelqu'un qui apprend, et il vaut d'être lu comme tel : il donne la mesure de
+ce qu'on lui enseignait.
+
+Le problème est celui du levier avec trois puissances $P$, $S$, $R$ appliquées
+en trois points $A$, $C$, $B$ d'une droite et en équilibre ; l'auteur établit
+$S \cdot CB = P \cdot AB$ en prenant $B$ pour point d'appui, puis fait
+s'éloigner $P$ : à distance cent fois plus grande, une force cent fois moindre
+suffit, et « à une distance infiniment grande une force infiniment petite ou
+nulle suffira ». Le paradoxe apparent qui résulte, dit l'auteur, d'une
+proposition de Monge — qu'une droite rigide infinie, heurtée en un point, ne
+peut prendre de mouvement — est alors levé par un argument
+qui est encore le nôtre : « pour que la ligne infinie $BA$ prît quelque
+mouvement, il faudroit que le point $A$ parcourût dans un temps fini un chemin
+infiniment grand ; ce qui est absurde ».
+
+Suit la définition que l'auteur donne de l'infini, et qui est la seule phrase
+du volume qui soit de la logique : « dans le langage rigoureux de la
+geometrie, l'infini n'est qu'une grandeur plus grande que toute grandeur
+donnée ». C'est la définition d'aujourd'hui, celle qui refuse à l'infini le
+statut d'objet et n'en fait qu'une manière de parler d'une famille de
+grandeurs. Tout le reste du morceau en découle. L'hyperbole entre ses
+asymptotes fournit le paradoxe géométrique correspondant : le rectangle
+d'ordonnée $Ee$ et d'abscisse $Ce$ est constant, égal au carré $CB$, quand
+$Ce \to \infty$ et $Ee \to 0$ ; et comme on peut prendre une autre hyperbole
+entre les mêmes asymptotes, « $0 \times \infty$ » vaudrait aussi bien n'importe
+quelle autre grandeur finie. De là, en substituant $\infty = 1/0$, la
+proposition que $0/0$ est « egal a tout ce qu'on veut ». La conclusion de
+l'auteur est exacte : « ces paradoxes n'ont lieu que parceque c'est un
+paradoxe lui meme que de supposer qu'on puisse atteindre l'infini ».
+
+En termes actuels, ce que le morceau décrit est une forme indéterminée : la
+limite d'un produit $f(x)g(x)$ où $f \to 0$ et $g \to \infty$ n'est pas
+déterminée par ces deux données seules, et l'hyperbole en donne la famille
+d'exemples la plus simple, chaque hyperbole $xy = c$ réalisant une valeur
+$c$.\footnote{La reformulation par les limites est de la présente lecture ; le
+feuillet n'a ni le mot ni la notion, et son argument est celui, plus ancien et
+parfaitement valable, du refus d'un infini actuel.}
+
+\section*{Le centre de gravité du triangle}
+
+\pagerange{98}{99}
+Deux feuillets de sa main, l'un une première ébauche (f. 84), l'autre une
+rédaction plus complète (ff. 92r–92v), traitent le même problème sous le
+renvoi « fig 39 » : trouver le centre de gravité d'un triangle. La méthode est
+une méthode d'échelle, et elle est élégante.
+
+Le triangle $ABC$ est coupé par les milieux en un parallélogramme $AFDE$ et
+deux triangles $BFD$, $CED$ semblables à $ABC$ dans le rapport $\frac12$. Posons
+$a = \frac12 AD$, mesurons les distances à la base $BC$ le long de la médiane
+$AD$, et appelons $2x$ la distance cherchée du centre de gravité de $ABC$ à
+$BC$. Par similitude, les centres de gravité des deux petits triangles sont à
+la distance $x$ de leurs bases, donc de $BC$ ; le centre du parallélogramme
+est le milieu $C'$ de $AD$, à la distance $a$. Les deux parts ont même aire —
+le parallélogramme fait la moitié du triangle, les deux petits triangles
+l'autre moitié — de sorte que le centre de gravité de l'ensemble est le milieu
+des deux :
+\[
+  2x = \frac{a + x}{2}, \qquad 4x = a + x, \qquad x = \frac{a}{3},
+\]
+et le centre de gravité est à la distance $2x = \frac{2a}{3} = \frac{AD}{3}$
+de la base : il partage la médiane dans le rapport $2 : 1$. C'est le résultat
+juste, et c'est celui qu'elle écrit, « c. q. f. d. », dans la marge de la vue
+99.\footnote{Le feuillet écrit « $C'X = \frac12(a-x)$ » là où la construction
+donne $C'X = a - x$ ; c'est l'expression suivante, « $x + \frac12(a-x)$ », qui
+est la bonne, et qui vaut bien $(a+x)/2$. La ligne se perd hors du cadre à
+droite, et la transcription signale que la colonne marginale porte encore deux
+ou trois lignes à demi biffées et illisibles. La chaîne complète du calcul est
+donc restituée ici à partir de ses deux extrémités — l'énoncé du feuillet et
+sa conclusion marginale $4x = a + x$ —, et le pas intermédiaire n'est pas lu
+mais reconstruit.}
+
+La première ébauche (f. 84) contient une inadvertance que la transcription
+relève : elle écrit deux fois « $EE'$ » là où le sens demande « $FF'$ » pour la
+seconde des deux médianes.
+
+\section*{Ce qui n'est pas des mathématiques}
+
+\pagerange{7}{89}
+Plus de la moitié du volume. Ces pièces ne sont pas résumées ici pour ce
+qu'elles disent des mathématiques — elles n'en disent rien — mais parce qu'un
+lecteur qui ouvre Français 9118 les rencontrera d'abord, et qu'aucune n'est un
+défaut de la transcription.
+
+\subsection*{Les lettres d'académie}
+
+\pagerange{12}{22}
+Delambre, secrétaire perpétuel, lui envoie deux billets pour la séance
+publique du 6 janvier 1816 et souhaite qu'elle s'y rende elle-même ; il accuse
+réception, le 23 juillet 1821, des \emph{Recherches sur la théorie des surfaces
+élastiques} déposées à la bibliothèque de l'Institut. Fourier lui écrit le 30
+mai 1823 qu'elle sera désormais admise « dans l'une des places reservées au
+centre de la salle », distinction que l'Académie accorde en considération de
+ses travaux et du grand prix qu'elle a obtenu. Cauchy, le 24 juillet 1821,
+accuse réception d'un ouvrage qu'elle lui a adressé et lui envoie en retour son
+\emph{Analyse algébrique} ; le 23 juillet 1826, d'un mémoire. Navier, le 2 août 1821, écrit la
+phrase du volume qu'on citera : « un écrit aussi remarquable, que bien peu
+d'hommes peuvent lire, et qu'une seule femme pouvait faire ». Les billets
+autographes de Fourier sont d'un autre ton — des places de loge aux Italiens,
+un rhume qu'il appelle « une courbature » par plaisanterie de géomètre, et
+l'élection de novembre où il compte les voix de Legendre, de Jussieu et de
+Montmorency.
+
+\subsection*{Les récépissés de l'Institut}
+
+\pagerange{85}{89}
+Trois feuilles de formulaire, signées Cardot, et les seules pièces datées avec
+certitude de tout le dossier du concours. Le 21 septembre 1811 et le 21
+septembre 1813, un mémoire est reçu pour le prix sur les vibrations des
+surfaces élastiques, avec une épigraphe de Newton la première fois, de Bacon
+la seconde ; le 8 novembre 1821, un mémoire est reçu pour le prix de
+mathématiques de 1822, sous une épigraphe de Gauss. Chacun des trois porte
+« que j'ai numéroté I » — ce qui s'accorde avec la lettre de Legendre du 22
+octobre 1811 : « Votre mémoire n'est pas perdu : il est le seul qu'on ait reçu
+sur la question des vibrations des surfaces. »
+
+\subsection*{Gauss vu de Brunswick, novembre 1806}
+
+\pagerange{68}{71}
+Deux lettres qui ne contiennent pas une ligne de mathématiques, et qui portent
+pourtant l'épisode le plus concret du volume. Elle avait chargé le général
+Pernety de s'informer de Gauss, l'armée française occupant Brunswick ; Pernety
+chargea un officier, Chantel, lequel se rendit chez Gauss, le trouva bien portant, « un
+peut Confus » de ne connaître ni le général ni la demoiselle, le recommanda au
+gouverneur de la place et l'emmena dîner. Pernety lui transmet la lettre
+depuis les lignes du siège de Cosel, en décembre, avec une phrase où l'on
+entend son métier : « faisant par Réflexion tout le mal que je peux à qui
+jamais ne m'en fit aucun et que je ne connois pas, mais c'est le métier ». Il
+appelle Gauss « cet émule d'Archimède, mieux traité que lui ».
+
+\subsection*{Villoison, les vers, et la plaquette}
+
+\pagerange{76}{85}
+Trois lettres de d'Ansse de Villoison — des 12 et 14 juillet 1802, la
+troisième sans date —, et la plaquette imprimée à laquelle elles se
+rapportent. L'helléniste avait composé, pour
+l'anniversaire de Lalande, des vers latins où une note en bas de page nommait
+« Mademoiselle Sophie Germain » et disait qu'elle excelle dans les
+mathématiques ; elle exigea qu'il se rétracte. Il répond qu'il a brûlé sa pièce
+de vers grecs, qu'il voudrait pouvoir anéantir de même les latins, et donne
+« ma parole d'honneur que jamais je ne me permettrai de parler de vous \ldots{}
+dans aucun écrit ». L'exemplaire de la plaquette conservé dans le volume porte
+une correction manuscrite à l'encre sur un vers de la page (7). Elle avait donc
+gardé, dans ses papiers, la pièce même qu'elle avait fait retirer.
+
+\subsection*{Trois feuillets de physique}
+
+\pagerange{94}{96}
+Trois feuillets d'une écriture plus ronde et plus posée que celle de ses
+billets de calcul, sur des sujets de physique : un raisonnement de « Monsieur
+Abeille » suivant lequel le froid serait un être réel, puisque l'eau augmente
+de volume en gelant et que le néant ne produit aucun effet positif ; une
+réponse à Abeille sur le feu et la lumière, où l'auteur soutient que
+l'impossibilité de décomposer le feu tient à l'impossibilité de l'obtenir seul
+et non à la simplicité de son essence ; et des « Idées sur les Sens », qui
+ramènent les cinq sens au toucher, l'œil étant sensible « à l'attouchement du
+subtile élément de la lumière ». Ce sont des raisonnements de physique
+qualitative du XVIII\textsuperscript{e} siècle, sans mathématiques ; ils sont
+signalés ici et non modernisés, parce qu'il n'y a rien à y
+moderniser.\footnote{La transcription range ces trois feuillets parmi les
+feuillets détachés de sa main, puis note que l'écriture en est plus ronde et
+plus posée que celle des billets de calcul. Le « mon opinion » de la seconde pièce
+fait de l'auteur du raisonnement celui du feuillet, mais le volume ne le
+nomme pas et la présente lecture ne l'attribue pas.}
+
+\subsection*{Le reste}
+
+\pagerange{74}{75}
+Un billet du libraire Bernard, quai des Augustins, demandant à présenter « le
+citoien Cousin » à sa mère (f. 3r–3v, vues 7 et 8) ; et une invitation à dîner
+d'un correspondant anonyme du Cloître Notre-Dame, dont la signature est un
+paraphe illisible, promettant du beurre
+frais et des betteraves et une parente « qui ne connoît de géométrie que les
+figures les plus naturelles ».\footnote{Le billet est daté « ce 17 pluviôse »
+sans millésime. La transcription observe que « duodi » y désigne le dimanche
+suivant, que le 22 pluviôse ne tombe un dimanche, dans ces années-là, qu'en
+l'an VII, et en conclut le 5 février 1799 ; elle donne cela pour son
+inférence et non pour une donnée du feuillet.}
+
+\section*{Ce que les transcriptions laissent en suspens}
+
+\pagerange{47}{64}
+Cinq questions, que la présente lecture n'a pas pu trancher et n'a pas
+tranchées.
+
+\begin{itemize}
+  \item \emph{La date de la lettre de Legendre du 19 janvier} (ff. 52r–53r).
+    Le millésime se lit « 1814 », mais le feuillet d'adresse au verso porte un
+    timbre de janvier 1811, la note à laquelle la lettre renvoie a été postée
+    en janvier 1811, et 1811 est l'année du premier concours. La transcription
+    donne les deux lectures et laisse la question ouverte ; elle le reste.
+  \item \emph{Laquelle des notes de Legendre est « ma 1ère note »}. La lettre
+    du 19 janvier dit revenir sur « la Multiplication par $\sin\frac12\omega$,
+    contre laquelle je m'étois élevé dans ma 1ère note ». La transcription du
+    lot 3 identifie cette première note à celle du § 47 (ff. 42r–43r) — mais
+    cette note-là ne parle nulle part de $\sin\frac12\omega$, tandis que la
+    note « Pag. 155 » (ff. 58–59), transcrite dans un autre lot, ne parle que
+    de cela. Les deux lots ont été transcrits par deux passes différentes, et
+    aucune n'a vu le feuillet de l'autre. La question de l'ordre des trois
+    notes reste donc entière, et avec elle celle de savoir si Legendre a
+    d'abord objecté puis concédé, ou l'inverse.
+  \item \emph{Une contradiction entre deux de ces notes}. Sous
+    $\sin\frac12\omega = 0$, la note « Pag. 155 » affirme que les coefficients
+    $\gamma$, $\gamma'$, $\delta'$ deviennent infinis ; la lettre du 19 janvier
+    affirme que $\delta'$ est nul et que seuls $\gamma$ et $\gamma'$
+    survivent, indéterminés. Sans le texte d'Euler auquel les deux renvoient —
+    que le volume ne contient pas — il n'y a pas moyen de dire laquelle a
+    raison.
+  \item \emph{Le destinataire du brouillon « ce 18 juillet »}, que le feuillet
+    ne nomme pas.
+  \item \emph{Ce qui manque}. Trois pièces essentielles sont annoncées dans le
+    volume et n'y sont pas : les deux démonstrations de la généralisation du
+    théorème de l'article 357, les « quelques autres considerations » où
+    figurait l'argument sur l'équation de Fermat, et le mémoire de 1811
+    lui-même, dont on n'a ici que le jugement. Le volume est le dossier d'un
+    travail, non le travail.
+\end{itemize}
+
+Deux points de moindre portée, enfin, où le feuillet résiste et où la présente
+lecture a écrit ce que les mathématiques exigent en le disant : le coefficient
+de la première équation de la note de Lagrange, illisible, et le chiffre
+« de l'ordre 0 » du second brouillon à Gauss, qui doit se lire 1.
+
+\end{document}
