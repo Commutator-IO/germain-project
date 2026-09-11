@@ -1,0 +1,801 @@
+% Papiers de Sophie Germain — NAF 4073, lecture modernisée du volume entier.
+%
+% Pass: Opus 5 (claude-opus-5), 11 September 2026 — first pass, unchecked
+% against the views by a human, and an interpretation rather than a record.
+% Where this file and the transcriptions differ in substance, the
+% transcriptions (batch-01.fr.tex … batch-03.fr.tex) are the record.
+%
+% Sources read: the three batch transcriptions of this volume and nothing
+% else. No image was consulted, and no published edition — not Grun's, not
+% Del Centina's, not the printed 1821 « Recherches ». All three batches were
+% transcribed on Opus 5. The volume is complete: views 1–44, folios 1–32.
+%
+% What the volume turned out to be. An incoming dossier, and almost nothing
+% else — the BnF's binding of letters addressed to Germain, out of Libri's
+% papers. Of thirty-two folios, two are in her hand (the letter to Libri of
+% 18 April 1831) and exactly one carries a formula. There is therefore no
+% mathematical spine to follow, and this reading does not invent one: it
+% follows the object. Three threads: the single identity on f. 32v; the
+% mathematics her correspondents send her (Savart, Navier, Libri's heat
+% memoir) without any of her own work being present; and the volume read as a
+% dating instrument, the address leaves fixing what the undated billets do not
+% say.
+%
+% Two datings are computed here and are this reading's own, not the leaves':
+% the germinal note of Lagrange falls on 6 April 1796 or 7 April 1802 and on
+% no other day of the Republican calendar; and the three Berlin leaves are
+% three letters spanning 1776–1778, the last placed in July 1778 by Frederick
+% II's entry into Bohemia. Both are footnoted at the point where they are made,
+% with what would settle them.
+%
+% One correction to the transcriptions, argued rather than read: batch 2's
+% note holds that « 19 = vendredi, 20 = samedi » corroborates the reading
+% « 17 germinal (mercredi) ». That agreement is automatic and corroborates
+% nothing about the numeral. The correction is made in the open, at § Lagrange.
+%
+% Notation translated here, each with a footnote at its first use: the leaf's
+% (n²∓n)/2 into the triangular numbers T_{n−1}, T_n and its right-hand side
+% into T_{n²}; Navier's and Germain's fourth-order equation of the elastic
+% plate into the biharmonic Δ²; Fourier's heat equation set against a
+% hyperbolic (relaxation) model to say where a derivation « from calorific
+% vibrations » cannot be exact; « l'intégrale d'une équation différentielle
+% linéaire » into the solution space and its dimension.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{naf-4073}
+\shelfmark{NAF 4073}
+\pages{1}{44}
+\dating{XVIIIe siècle}
+\watermark{Lecture automatique\\interprétation non vérifiée}
+\foldertitle{Correspondance de Sophie GERMAIN — lecture modernisée du volume entier}
+
+\begin{document}
+
+\section*{Résumé}
+
+\begin{resume}
+Ce volume est un dossier entrant. Quarante-quatre vues, trente-deux feuillets,
+reliés par la Bibliothèque à partir des papiers de Libri : ce sont les lettres
+qu'elle a \emph{reçues} — onze billets de Fourier, deux de Delambre, un de
+Lalande, un de Libri, un de Choron, un de Lagrange —, trois feuillets de
+Lagrange écrits de Berlin en 1776--1778 qui ne lui sont pas adressés du tout,
+une lettre anonyme de 1814, et quatre pages de sa main, la lettre à Libri du
+18 avril 1831. Un seul feuillet de tout le volume porte une formule.
+
+Il faut donc dire d'emblée ce que cette lecture ne peut pas faire. Il n'y a
+pas ici de fil mathématique à suivre, parce qu'il n'y a pas de mathématiques à
+suivre : ni le mémoire de 1811, ni celui de 1813, ni les \emph{Recherches} de
+1821, ni une ligne de son arithmétique. Ce volume ne dit pas ce qu'elle
+cherchait ; il dit ce qu'on lui envoyait, ce qu'on la pressait de publier, et
+ce qu'elle pensait, à la fin, de l'état de la science.
+
+La seule mathématique du volume tient en une ligne, écrite tête-bêche au haut
+d'un feuillet d'adresse, par une main qui n'est pas celle de la lettre, après
+le 13 mars 1814 : « le triangulaire d'un quarré est la somme des quarrés des
+deux Triangulaires consécutifs », avec la formule qui la porte. En écrivant
+$T_k = k(k+1)/2$, c'est l'identité $T_{n-1}^2 + T_n^2 = T_{n^2}$. Elle est
+vraie, et elle se démontre en une ligne dès qu'on remarque les deux faits que
+la phrase française contient déjà : les deux triangulaires consécutifs ont
+pour somme $n^2$ et pour différence $n$, et l'identité du parallélogramme
+$a^2+b^2 = \tfrac12((a+b)^2+(b-a)^2)$ fait le reste. On ignore de qui est la
+main ; la transcription note sa ressemblance avec celle de 1831 et refuse de
+conclure sur quinze mots, et cette lecture ne conclut pas davantage.
+
+Autour de cette ligne, les lettres portent des mathématiques qui sont celles
+des autres. Fourier lui fait passer le mémoire de Savart sur les vibrations
+des lames élastiques et celui, lithographié, de Navier sur la flexion des
+plans élastiques — c'est-à-dire les deux moitiés, l'expérience et l'analyse,
+de la question qui l'occupait ; le nom moderne de leur objet commun est
+l'opérateur biharmonique, et l'équation du mouvement libre d'une plaque mince
+est $\partial^2 z/\partial t^2 + k^2\,\Delta^2 z = 0$. Fourier, en septembre
+1820, l'invite « instamment à publier ». Delambre, en juillet 1821, accuse
+réception d'un mémoire où elle combat les principes d'un « Géomètre célèbre »
+qu'il ne nomme pas, et avoue que personne n'est en état de juger. Libri, de
+Florence en 1825, annonce deux choses dont l'une est fausse — qu'on peut
+donner à l'intégrale d'une équation différentielle linéaire un nombre
+quelconque de constantes arbitraires, alors que leur nombre est exactement
+l'ordre de l'équation — et dont l'autre, une dérivation des équations de la
+chaleur à partir de vibrations, se heurte à ce qu'on formule aujourd'hui comme
+la différence entre une équation parabolique et une équation hyperbolique.
+
+Le volume rend aussi un service qu'on n'attend pas d'une correspondance : il
+date. Presque chaque lettre a gardé sa couverture, et les adresses successives
+— rue Sainte-Croix-de-la-Bretonnerie jusqu'en 1814, rue de Braque à partir de
+1820 au plus tard — situent les onze pièces qui ne portent qu'un jour de la
+semaine. Deux dates se calculent : le billet de Lagrange « ce 17 germinal
+(mercredi) » ne peut être que du 6 avril 1796 ou du 7 avril 1802, ces deux
+jours étant les seuls mercredis 17 germinal de tout le calendrier
+républicain ; et les trois feuillets de Berlin, que la reliure donne à la
+file, sont trois lettres distinctes dont la dernière est de juillet 1778, date
+à laquelle Frédéric II entre en Bohême.
+
+De ce qu'elle pensait, elle a laissé ici son propre compte rendu, et il tient
+en une phrase écrite dix semaines avant sa mort : « décidément il y a un tort
+sur tout ce qui tient aux mathématiques votre préoccupation celle de Cauchy,
+la mort de Mr fourier, pour […] cet élève Gallois qui malgré son impertinence
+annonçoit des dispositions heureuses en a tant fait qu'il a été chassé de
+l'école normale ». Libri en exil, Cauchy parti, Fourier mort, Galois chassé :
+elle fait le compte, et elle range le dernier avec les autres.
+
+Où cela mène, et sous quels noms chercher. Du côté de la ligne du feuillet
+32v : les nombres figurés, l'identité de Nicomaque $1^3+\cdots+n^3 = T_n^2$,
+dont on tire ici le corollaire $T_{n^2} = 2T_n^2 - n^3$, et plus largement les
+identités entre nombres triangulaires et sommes de deux carrés. Du côté des
+plaques : l'opérateur biharmonique, la théorie des plaques minces de
+Kirchhoff et Love, les figures de Chladni et les lignes nodales comme lieux
+des zéros des modes propres. Du côté de la lettre de Libri : la dimension de
+l'espace des solutions d'une équation linéaire, et les modèles hyperboliques
+de la conduction de la chaleur. Et pour la lettre du 18 avril 1831, une
+histoire qui n'est pas mathématique et que les mathématiciens lisent quand
+même.
+
+\keywords{triangular numbers, figurate number identities, sum of two squares,
+Nicomachus's theorem, biharmonic operator, Kirchhoff–Love plate theory,
+Chladni figures, nodal lines, heat equation, hyperbolic heat conduction,
+linear ODE solution space}
+\end{resume}
+
+\section*{Ce que le volume contient}
+
+\pagerange{1}{44}
+Quarante-quatre vues, trente-deux feuillets. Les quatre premières vues et les
+deux dernières sont la reliure, les gardes et les fiches de la
+Bibliothèque\footnote{Vue 1, plat supérieur ; vue 2, contre-plat et l'étiquette
+de cote ; vue 3, les fiches collées sur la garde, « Volume de 32 feuillets,
+15 Mars 1875 » ; vue 4, une table du contenu au crayon d'une main de
+catalogueur ; vues 43 et 44, gardes blanches et plat inférieur. Rien de tout
+cela n'est transcrit, et rien n'en est de la main d'aucun des correspondants.} ;
+entre elles, trente-deux feuillets montés un à un, la plupart des vues
+photographiant deux feuillets à la fois. Le volume vient des papiers de Libri.
+
+Ce n'est pas un cahier de mathématiques, et ce n'est pas non plus, comme
+Français 9118, un dossier mêlé où l'on trouverait ses brouillons à côté des
+lettres reçues. C'est un dossier \emph{entrant}, et presque rien d'autre : sur
+les trente-deux feuillets, deux seulement portent son écriture — les quatre
+pages de la lettre à Libri du 18 avril 1831 —, et un seul feuillet de tout le
+volume porte une formule.
+
+Les pièces se rangent ainsi.
+
+\begin{itemize}
+  \item \emph{Onze billets et lettres de Fourier}, dont deux datés (29
+    septembre 1820, 30 janvier 1827) et les autres portant un jour de la
+    semaine et rien de plus : « vendredi matin », « mardi soir », « jeudi …
+    mai », « mardi matin », « lundi matin ». Ils occupent, avec leurs
+    couvertures, les vues 12 à 27.
+  \item \emph{Deux lettres de Delambre} : 14 mai 1810, sur la médaille de
+    Lalande décernée à Gauss, et 21 juillet 1821, sur un mémoire d'elle et sur
+    les places aux séances publiques de l'Académie.
+  \item \emph{Une lettre de Libri}, Florence, 17 novembre 1825.
+  \item \emph{Une lettre d'elle à Libri}, Paris, 18 avril 1831, signée.
+  \item \emph{Un billet de Lagrange} daté « 17 germinal », et \emph{trois
+    feuillets de Lagrange écrits de Berlin} qui ne lui sont pas adressés et
+    qui sont antérieurs de vingt ans à tout le reste.
+  \item \emph{Un billet de Lalande}, 4 novembre 1797 : la pièce la plus
+    ancienne du volume qui la concerne, et des excuses.
+  \item \emph{Un billet de Choron}, 29 janvier 1818, sur l'enseignement
+    simultané de la lecture et de l'écriture en musique.
+  \item \emph{Une lettre non signée} du 13 mars 1814, en deux feuillets,
+    d'une main qui n'est celle d'aucun des autres, et dont la couverture porte
+    la seule formule du volume.
+\end{itemize}
+
+Deux de ces correspondants ne figurent pas dans la notice de la
+Bibliothèque, qui énumère Delambre, Fourier, Germain, Lagrange, Lalande et
+Libri : Choron, et l'inconnu de 1814.\footnote{Le constat est celui de la
+transcription, au feuillet 1r ; il est répété ici parce qu'il porte sur
+l'objet et non sur le texte. La datation du catalogue, « XVIIIe siècle »,
+copiée telle quelle en tête de cette lecture, ne convient qu'aux feuillets de
+Lagrange (1776--1778) et au billet de Lalande (1797) : tout le reste du volume
+est du XIXe.}
+
+Presque chaque lettre a gardé son feuillet d'adresse, plié et cacheté. Ces
+couvertures, qui ne disent rien de mathématique, sont l'instrument le plus
+utile du volume : elles datent ce qui n'est pas daté. On y revient plus bas.
+
+\section*{La seule mathématique du volume : le triangulaire d'un carré}
+
+\pagerange{42}{42}
+Au haut du feuillet d'adresse de la lettre non signée du 13 mars 1814, écrite
+tête-bêche par rapport à l'adresse et d'une main qui n'est pas celle de la
+lettre, une seule ligne de mathématiques, avec la phrase qui la lit :
+« le triangulaire d'un quarré est la somme des quarrés des deux Triangulaires
+consécutifs ».\footnote{Le dernier mot est pris dans le fond du cahier ; la
+transcription lit « consécu » et supplée le reste. C'est le seul mot supplé
+de toute la note.}
+
+\subsection*{L'énoncé}
+
+Le feuillet écrit
+\[
+\left(\frac{n^2-n}{2}\right)^{\!2} + \left(\frac{n^2+n}{2}\right)^{\!2}
+= \frac{n^4+n^2}{2}.
+\]
+En notant $T_k = k(k+1)/2$ le $k$-ième nombre triangulaire, les deux quantités
+élevées au carré sont $T_{n-1}$ et $T_n$, et le second membre est $T_{n^2}$.
+L'énoncé est donc
+\[
+T_{n-1}^{\,2} + T_n^{\,2} = T_{n^2},
+\]
+c'est-à-dire exactement ce que dit la phrase française : le triangulaire d'un
+carré est la somme des carrés des deux triangulaires consécutifs.\footnote{La
+phrase est plus précise que la formule ne le laisse voir. « Les deux
+Triangulaires consécutifs » ne sont pas deux triangulaires quelconques qui se
+suivent : ce sont les deux dont la somme est le carré en question, puisque
+$T_{n-1} + T_n = n^2$. La formule fixe lesquels, la phrase ne le fait pas.}
+Sous forme binomiale,
+$\binom{n}{2}^{\!2} + \binom{n+1}{2}^{\!2} = \binom{n^2+1}{2}$.
+
+\subsection*{Elle est vraie, et d'une ligne}
+
+Posons $a = T_{n-1}$ et $b = T_n$. Deux faits immédiats :
+\[
+a + b = \frac{n^2-n}{2} + \frac{n^2+n}{2} = n^2,
+\qquad
+b - a = n.
+\]
+L'identité du parallélogramme --- $a^2 + b^2 = \tfrac12\big((a+b)^2 +
+(b-a)^2\big)$, qui n'est que le développement des deux carrés --- donne alors
+\[
+a^2 + b^2 = \tfrac12\big(n^4 + n^2\big) = \frac{n^2(n^2+1)}{2} = T_{n^2}.
+\]
+C'est tout. La démonstration ne demande rien qui ne fût disponible en 1814, et
+la disposition même de la phrase française --- un carré, ses deux triangulaires
+--- est celle du calcul : le carré est la \emph{somme} des deux triangulaires,
+leur \emph{différence} est sa racine, et l'identité du parallélogramme fait le
+reste.
+
+Une conséquence, qu'aucune main ne tire ici mais qui vaut d'être écrite.
+Nicomaque donne $1^3 + 2^3 + \cdots + n^3 = T_n^{\,2}$ ; en portant cela dans
+l'identité, $T_{n-1}^{\,2} = T_n^{\,2} - n^3$, donc
+\[
+T_{n^2} = 2\,T_n^{\,2} - n^3 .
+\]
+Le triangulaire d'un carré vaut deux fois la somme des $n$ premiers cubes,
+moins le dernier.
+
+\subsection*{La ligne de trois nombres}
+
+Sous l'égalité, la note porte une ligne isolée, trois nombres reliés par un
+trait horizontal continu, que la transcription lit $1 + 64 + 49$ en avertissant
+que le second signe est empâté.\footnote{La transcription ajoute : « Rien ne
+rattache cette ligne à l'égalité qui la précède. » La présente lecture n'en
+rattache pas davantage, et ce qui suit est un constat, non une
+reconstruction.}
+
+Aucune lecture de ces trois nombres n'instancie l'identité. La somme vaut
+$114$, qui n'est ni triangulaire --- $T_{14} = 105$, $T_{15} = 120$ --- ni
+carré. Les plus petits cas de l'identité, ceux qu'on écrirait pour la vérifier,
+sont $1 + 9 = 10$ pour $n = 2$ et $9 + 36 = 45$ pour $n = 3$, et ce n'est ni
+l'un ni l'autre. Les trois nombres sont les carrés de $1$, $7$ et $8$ ; si le
+second signe est un signe d'égalité plutôt qu'un plus, $1 + 64 = 49$ est faux,
+en sorte que la lecture de la transcription est la seule qui fasse de la ligne
+un énoncé arithmétique recevable --- une addition posée. Ce qu'elle additionne,
+le feuillet ne le dit pas.
+
+\subsection*{La main, et la date}
+
+Deux choses sont sûres, une troisième ne l'est pas. Sûres : la note a été
+écrite sur ce feuillet \emph{après} qu'il eut servi de couverture, donc après
+le 13 mars 1814 ; et elle n'est pas de la main qui a écrit la lettre, puisque
+l'encre et le module diffèrent et que l'écriture est tête-bêche par rapport à
+l'adresse. Non sûre : de qui elle est. La transcription note que la main
+ressemble à celle de la lettre du 18 avril 1831 --- même inclinaison, même
+$d$ bouclé, mêmes longues liaisons plates --- et refuse d'en conclure, quinze
+mots n'étant pas une attribution. Cette lecture ne conclut pas
+davantage.\footnote{Ce qui trancherait : une comparaison des quinze mots avec
+un corpus daté de sa main --- les brouillons de Français 9118, par exemple ---
+sur les lettres que la note contient en propre, le $q$ de « quarré », le $T$
+majuscule de « Triangulaires », le $C$ de « consécutifs ». La présente
+lecture ne dispose que des transcriptions, et une transcription ne conserve pas
+la forme des lettres.}
+
+\section*{Les surfaces élastiques : ce qu'on lui envoie, et ce qu'on la presse de publier}
+
+\pagerange{10}{19}
+Le volume ne contient pas une ligne de sa théorie des plaques. Il contient ce
+qui l'entoure : deux correspondants qui la poussent à publier, et un troisième
+qui lui fait porter les mémoires des autres.
+
+\subsection*{Fourier, 29 septembre 1820}
+
+Fourier part quinze jours à la campagne et écrit avant de partir :
+\begin{quote}
+Je suis persuadé que vous aurez donné de nouveaux développemens à la théorie
+dont vous vous occupez, et que je vous invite instamment à publier. personne
+ne peut traiter avec plus de succès cette difficile et intéressante question.
+\end{quote}
+« La théorie dont vous vous occupez » n'est pas nommée. Neuf mois plus tard,
+Delambre accuse réception d'un mémoire ; les \emph{Recherches sur la théorie
+des surfaces élastiques} paraissent en 1821. Le rapprochement est
+vraisemblable et il n'est pas écrit sur le feuillet : ni Fourier ni Delambre ne
+nomment l'ouvrage, et cette lecture ne le nomme qu'en le donnant pour ce qu'il
+est, une conjecture.\footnote{C'est aussi ce que fait la transcription, qui
+écrit en note, au feuillet 4r : « le mémoire est vraisemblablement les
+“Recherches sur la théorie des surfaces élastiques”, parues en 1821 ; le
+rapprochement est celui de la présente lecture et non du document ». Les deux
+lectures, indépendamment, s'arrêtent au même point.}
+
+\subsection*{Delambre, 21 juillet 1821, et le « Géomètre célèbre »}
+
+\begin{quote}
+il ne m'appartient pas et peut-être n'appartient-il à personne de prononcer sur
+les questions que vous regardez comme douteuses. mais ce qui obtiendra une
+approbation générale c'est la réserve avec laquelle vous exposez vos opinions
+et vos conjectures, ce sont les égards avec lesquels vous traitez le Géomètre
+célèbre dont vous combattez les principes qui vous ont paru ne pouvoir
+s'accorder avec ce que vous démontrez.
+\end{quote}
+Trois choses se lisent là. D'abord qu'elle a annoncé elle-même ses conclusions
+comme douteuses. Ensuite que le secrétaire perpétuel se déclare hors d'état de
+juger --- « peut-être n'appartient-il à personne » --- ce qui, en 1821 et sur
+la question des plaques, est un aveu et non une politesse. Enfin qu'elle
+combat les \emph{principes} de quelqu'un, c'est-à-dire son point de départ
+physique, et non un résultat.
+
+Qui est ce géomètre ? Le feuillet ne le nomme pas. Le candidat que la
+disposition de la question rend le plus naturel est Poisson, dont le mémoire de
+1814 tire l'équation des surfaces élastiques d'une hypothèse moléculaire, et
+dont les principes sont précisément ce qu'un adversaire attaquerait avant les
+conséquences ; mais c'est une conjecture de cette lecture, elle n'est pas dans
+le feuillet, et elle ne s'appuie sur aucune pièce du volume.\footnote{Ce qui
+trancherait est hors du volume : le texte du mémoire que Delambre accuse
+réception, qui n'y est pas. Le rapprochement est donné ici parce qu'un lecteur
+le fera de toute façon, et qu'il vaut mieux qu'il le lise annoncé comme
+conjecture.}
+
+\subsection*{Savart, Navier, et l'équation}
+
+Un billet de Fourier sans date, « mardi soir », fait passer deux
+imprimés\,:\footnote{Sur la datation de ce billet, voir plus bas : les
+feuillets d'adresse et la santé de sa mère le placent entre 1820 et 1823.}
+\begin{quote}
+j'ai l'honneur d'adresser à mademoiselle germain le dernier numéro des annales
+de physique où se trouve le mémoire de Mr Savart sur les vibrations des lames
+élastiques […] j'espère lui envoyer demain un mémoire qui a été présenté à
+l'académie par Mr Navier et qui a pour objet l'analyse des flexions des plans
+élastiques. l'auteur a fait copier ce manuscrit par les presses
+lithographiques.
+\end{quote}
+Les deux envois sont les deux moitiés de la question telle qu'elle se posait
+alors : l'expérience et l'analyse. Savart continue les figures de Chladni ---
+le sable qui se rassemble sur les lignes où la plaque ne bouge pas ; Navier
+donne l'équation de la flexion.
+
+En termes d'aujourd'hui, l'objet commun est l'opérateur bi\-harmonique. Pour une
+plaque mince, homogène et isotrope, d'épaisseur $h$ et de déplacement
+transversal $w(x,y)$, la flexion statique sous une charge $q$ est régie par
+\[
+D\,\Delta^2 w = q,
+\qquad
+D = \frac{E h^3}{12\,(1-\nu^2)},
+\]
+et le mouvement libre par
+\[
+\frac{\partial^2 z}{\partial t^2} + k^2\,\Delta^2 z = 0 ,
+\]
+$\Delta^2 = \Delta\Delta$ étant le bilaplacien.\footnote{Les noms sont
+postérieurs aux feuillets : « plaque de Kirchhoff--Love » renvoie à Kirchhoff
+(1850) et à Love (1888), et le module de rigidité $D$ sous la forme écrite ici,
+avec le coefficient de Poisson $\nu$, appartient à la seconde moitié du siècle.
+Ni Navier ni Germain n'écrivent $\Delta^2$ ; ce que Navier écrit est une
+équation du quatrième ordre en coordonnées cartésiennes, et la forme compacte
+est une commodité de notation moderne, non une découverte qu'on leur prête.}
+Les lignes nodales que le sable de Savart dessine sont les lieux $z = 0$ des
+modes propres, c'est-à-dire les zéros des solutions de $\Delta^2 \phi =
+\lambda \phi$ sous les conditions de bord de la plaque --- lesquelles ont
+occupé le reste du siècle, et sont la vraie difficulté que ni ce billet ni ce
+volume n'abordent.
+
+Il faut dire ce que le volume ne permet pas de dire. Aucune des pièces
+mathématiques de Germain sur les plaques n'est ici : ni le mémoire de 1811, ni
+celui de 1813, ni les \emph{Recherches} de 1821. La question de savoir où son
+analyse a manqué ne se pose donc pas sur ces feuillets, et cette lecture ne la
+pose pas.\footnote{Elle se pose ailleurs, et le volume Français 9118 en porte
+la trace. Le renvoi est fait ici pour marquer la limite de ce que NAF 4073
+établit, non pour importer une conclusion : rien de ce qui suit dans cette
+lecture ne s'appuie sur un feuillet qui n'est pas dans ce volume.}
+
+\section*{Libri : la chaleur, les constantes arbitraires, et le rapport que Cauchy doit depuis six mois}
+
+\pagerange{16}{39}
+La lettre de Florence du 17 novembre 1825 est la seule pièce du volume, en
+dehors de la note du feuillet 32v, qui avance un énoncé mathématique.
+
+\subsection*{« Un nombre quelconque de constantes arbitraires »}
+
+\begin{quote}
+J'ai envoyé un mémoire à l'Institut sur la théorie de la chaleur, ou je crois
+avoir démontré qu'on peut donner à l'Intégrale d'une équation différentielle
+linéaire un nombre quelconque de constantes arbitraires.
+\end{quote}
+Tel quel, l'énoncé est faux, et il faut le dire. Pour une équation
+différentielle linéaire d'ordre $n$ à coefficients continus sur un intervalle,
+l'ensemble des solutions est un espace vectoriel de dimension exactement $n$ :
+c'est le théorème de Cauchy--Lipschitz appliqué au système du premier ordre
+équivalent, l'application qui à une solution associe le vecteur
+$\big(y(t_0), y'(t_0), \dots, y^{(n-1)}(t_0)\big)$ étant un
+isomorphisme.\footnote{Le nom de Cauchy--Lipschitz est ici anachronique de
+peu : le théorème d'existence et d'unicité sous condition de Lipschitz est de
+Cauchy, dans les années 1820, et Lipschitz l'affine en 1876. Pour les seules
+équations linéaires, le fait que l'intégrale générale dépende de $n$
+constantes et de $n$ seulement était su et admis en 1825, ce qui est
+précisément ce qui rend l'annonce de Libri remarquable.} Le nombre de
+constantes arbitraires \emph{essentielles} est donc un invariant de
+l'équation, égal à son ordre, et aucune démonstration ne peut l'augmenter.
+
+Ce qui peut être vrai, et qui est la seule façon de sauver la phrase, est
+autre chose : une \emph{représentation} d'une solution peut contenir autant de
+paramètres qu'on veut sans que l'ensemble décrit s'agrandisse --- des
+constantes non essentielles, dont la variation ne change pas la fonction,
+comme il en apparaît naturellement dans les solutions écrites sous forme
+d'intégrale définie, où le contour et les bornes sont à disposition. Que ce
+soit là ce que Libri démontre, le feuillet ne le dit pas : il donne l'annonce
+et non la preuve, le mémoire n'est pas dans le volume, et cette lecture ne le
+juge pas sur une phrase de lettre.
+
+\subsection*{« L'hypothèse des vibrations calorifiques »}
+
+\begin{quote}
+J'ai aussi déduit les équations du mouvement de la chaleur de l'hypothèse des
+vibrations calorifiques.
+\end{quote}
+C'est le programme qui oppose, dans les années 1820, une chaleur conçue comme
+vibration de la matière à la chaleur-fluide dont Fourier avait su se passer.
+Le point de difficulté, tel qu'on le formule aujourd'hui, est que les deux
+hypothèses ne conduisent pas au même \emph{type} d'équation. L'équation de
+Fourier
+\[
+\frac{\partial u}{\partial t} = k\,\Delta u
+\]
+est parabolique : irréversible, et de vitesse de propagation infinie. Une
+vibration donne une équation hyperbolique, réversible et de vitesse finie. On
+ne passe de la seconde à la première par aucun calcul exact, mais seulement par
+un passage à la limite : en écrivant, avec un temps de relaxation $\tau$,
+\[
+\tau\,\frac{\partial^2 u}{\partial t^2} + \frac{\partial u}{\partial t}
+= k\,\Delta u ,
+\]
+on retrouve l'équation de Fourier quand $\tau \to 0$, et l'équation des ondes
+quand la conduction est négligeable.\footnote{Cette équation est celle de
+Cattaneo (1948) et Vernotte (1958) ; elle est citée ici pour dire précisément
+où gît la difficulté que la lettre de 1825 ne mentionne pas, et non pour
+suggérer que Libri en disposait. Il ne pouvait pas en disposer.} Ce que la
+lettre annonce est donc une dérivation dont on sait aujourd'hui qu'elle ne peut
+pas être exacte ; ce qu'elle valait dans le mémoire, le volume ne permet pas
+de le dire.
+
+\subsection*{Le rapport de Cauchy, et les billets de Fourier}
+
+La lettre se termine par une demande précise :
+\begin{quote}
+Voudriez vous avoir la bonté de chatouiller un peu Mr. Fourier afin qu'il fasse
+hâter le rapport que Mr. Cauchy doit faire depuis six mois sur le mémoire sur
+la théorie des Nombres que vous avez lu ?
+\end{quote}
+Deux faits de fait, qui ne demandent aucune interprétation : elle a lu le
+mémoire de Libri sur la théorie des nombres, et Libri la tient pour capable de
+faire bouger le secrétaire perpétuel de l'Académie.
+
+Deux billets non datés de Fourier semblent répondre à cette démarche. Dans
+l'un, « lundi matin » : « je n'ai point trouvé chez moi le mémoire de mr.
+libri. […] je vais aujourd'hui à l'académie et je me ferai remettre cet ouvrage
+que j'enverrai à mademoiselle germain. » Dans l'autre, « vendredi matin » : « je
+m'acquitterai de la recommandation que vous me confiez —
+me mande Mr Libri. il m'en avoit aussi parlé dans sa dernière
+lettre. je ferai mon possible pour que ce vœu ne soit pas différé. il nous a
+envoyé un nouveau mémoire sur la théorie de la chaleur. »\footnote{Les deux
+mots soulignés sont donnés par la transcription comme d'une lecture douteuse,
+et la construction de la phrase n'a pas pu y être rétablie. Le sens général ---
+une recommandation transmise par elle, que Libri a lui aussi demandée par
+lettre --- ne dépend d'aucun des deux mots.} Que ces billets soient la suite de
+la lettre du 17 novembre est une conjecture de cette lecture : elle repose sur
+la concordance de trois éléments --- un mémoire de Libri sur la chaleur à
+l'Institut, une démarche qu'elle transmet, un vœu qu'on ne veut pas voir
+différé --- et sur rien qui soit écrit.
+
+\section*{Gauss, la médaille de Lalande et la pendule}
+
+\pagerange{7}{9}
+Le 14 mai 1810, Delambre lui écrit d'une chose qui n'est pas des mathématiques
+et qui en dit long. Gauss vient de recevoir la médaille fondée par Lalande ;
+sur les 500 francs qu'elle vaut, 380 restent en argent, et Gauss préférerait
+une pendule. Delambre cite ses mots :
+\begin{quote}
+qu'il soit de 60 ou de 300 fr. cela m'est indifférent pourvû que la montre soit
+assez élégante pour être offerte en cadeau à mon épouse […] peut-être
+Mademoiselle Sophie Germain ( à laquelle je vous prie de faire mille complimens
+de ma part ) auroit la bonté de se charger du choix.
+\end{quote}
+Delambre corrige au passage l'allemand de Gauss : « il a traduit par
+\emph{montre à Pendule} l'expression allemande Pendeluhr », et ce que Gauss
+veut est une pendule.
+
+Ce qui compte ici est la date. En mai 1810, Gauss demande qu'on s'adresse à
+elle pour un cadeau destiné à sa femme : il sait depuis quelques années qui
+était « M. Le Blanc », et la lettre le montre traitant avec elle sur le pied de
+la familiarité et non de la déférence savante.\footnote{La date à laquelle
+Gauss a appris son nom n'est pas dans ce volume, et cette lecture ne l'y fait
+pas entrer : elle relève de l'épisode Pernety, pendant l'occupation de
+Brunswick, dont les traces sont ailleurs. Ce que NAF 4073 établit, tout seul,
+est qu'en mai 1810 Gauss la nomme spontanément à Delambre comme la personne à
+qui confier ce choix.}
+
+\section*{Lagrange : un billet de germinal, et trois feuillets de Berlin}
+
+\pagerange{29}{34}
+
+\subsection*{Le billet de germinal, et sa date}
+
+\begin{quote}
+Paris ce 17 germinal (mercredi)
+
+Lagrange présente ses respects à Mademoiselle Germaine. […] il se fait un
+devoir de la prévenir qu'il sera à ses ordres le 19 et le 20. (vendredi, et
+samedi)
+\end{quote}
+Le billet donne un quantième républicain et trois jours de la semaine. Cela
+suffit presque à le dater, et il vaut de le faire proprement, parce que la
+manière naturelle de le faire est fausse.
+
+La transcription note que « la lecture “17” s'accorde avec le reste du billet,
+où le 19 est un vendredi et le 20 un samedi ». Cet accord est automatique : si
+le 17 est un mercredi, le 19 est un vendredi et le 20 un samedi, quelle que
+soit l'année et quel que soit le mois. Les trois indications n'en font qu'une,
+et elle ne confirme pas le chiffre 17 --- elle confirme seulement que les trois
+quantièmes ont été lus de façon cohérente entre eux.\footnote{C'est le seul
+point où cette lecture corrige la transcription, et elle le corrige sur un
+raisonnement, non sur une lecture : le feuillet dit ce que la transcription dit
+qu'il dit. La remarque vaut d'être faite parce que l'argument d'accord, s'il
+était laissé tel quel, donnerait à la lecture « 17 » un appui qu'elle n'a pas.}
+
+La contrainte utile est donc unique : \emph{le 17 germinal tombe un mercredi}.
+Le calendrier républicain n'a que quatorze années, et sur ces quatorze, deux
+seulement la satisfont :
+\begin{itemize}
+  \item 17 germinal an IV $=$ mercredi 6 avril 1796 ;
+  \item 17 germinal an X $=$ mercredi 7 avril 1802.
+\end{itemize}
+Rien dans le billet ne sépare les deux. Elle a vingt ans dans le premier cas,
+vingt-six dans le second ; Lagrange est à Paris dans les deux. Ce que cette
+lecture peut affirmer est donc : le billet est du 6 avril 1796 ou du 7 avril
+1802, et d'aucun autre jour.\footnote{Le calcul est celui de cette lecture. Il
+suppose la concordance usuelle du calendrier républicain (1\textsuperscript{er}
+vendémiaire de l'an IV $=$ 23 septembre 1795, de l'an X $=$ 23 septembre 1801),
+et il a été mené sur les quatorze années I à XIV. Il suppose aussi que la
+transcription a bien lu « germinal » et « mercredi », ce que rien ici ne permet
+de contrôler. Ce qui trancherait entre les deux dates : l'adresse au dos du
+billet, qui porte « Mademoiselle Sophie Germain / Paris » et aucune rue.}
+Lagrange écrit son nom « Germaine ».
+
+\subsection*{Les trois feuillets de Berlin : ils ne sont pas d'une seule lettre, ni d'une seule année}
+
+Trois feuillets de Lagrange écrits de Berlin sont reliés ici. Ils ne sont pas
+adressés à Sophie Germain --- le premier est daté du 10 juillet 1776, trois
+mois après sa naissance --- mais à un correspondant de Turin que les feuillets
+ne nomment pas, et qui est de Denina, du docteur Cigna, de Richeri secrétaire
+du comte Fontana, et du père de Lagrange, resté à Turin.\footnote{La
+transcription le note déjà : « Elle n'est pas adressée à Sophie Germain. » On
+le répète parce que la reliure, elle, les présente au milieu de sa
+correspondance, et qu'un catalogue qui date le volume du XVIIIe siècle le doit
+sans doute à ces trois feuillets.}
+
+Le volume les donne à la file, et la reliure invite à les prendre pour une
+seule lettre. Ils sont trois, et de trois moments différents. Le contenu le
+montre.
+
+\begin{itemize}
+  \item \emph{Feuillet 24}, signé « De la Grange », daté « à Berlin ce 10
+    Juillet 1776 ». Le premier feuillet manque : le texte commence sans
+    suscription.
+  \item \emph{Feuillet 25}, sans suscription ni signature : le désagrément de
+    Denina, les lois du pays, Galilée, et l'envoi d'« une medaille de
+    l'Imperatrice de Russie frappée à l'occasion du dernier jubilé
+    Academique ». Le jubilé de l'Académie de Saint-Pétersbourg est celui de
+    1776, et l'affaire qui vaut à Denina son « désagrément » --- un ouvrage
+    dont « il n'a que du chagrin », opposé à « son histoire d'Italie » qui ne
+    lui a valu que de la satisfaction --- est celle de 1777. Ce feuillet est
+    donc de 1777 ou peu après.
+  \item \emph{Feuillet 26}, commençant « Monsieur », sans signature, le
+    feuillet suivant manquant : les estampes du Roi, l'histoire diplomatique
+    de Weguelin, et « les grandes armées qui sont maintenant en campagne »,
+    avec cette phrase --- « comme on assure que le Roi est entré en Boheme on
+    ne tardera pas à apprendre quelque chose d'interessant ». Frédéric II
+    entre en Bohême en juillet 1778, au début de la guerre de Succession de
+    Bavière. Ce feuillet est de l'été 1778.
+\end{itemize}
+
+Les trois feuillets couvrent donc à peu près 1776--1778, et la date portée sur
+le premier ne vaut que pour lui.\footnote{Les rapprochements du dernier
+paragraphe --- le jubilé de Saint-Pétersbourg, l'affaire Denina, l'entrée en
+Bohême --- sont ceux de cette lecture. Ils reposent sur des faits extérieurs au
+volume et vérifiables ailleurs, et non sur une pièce du volume ; c'est
+pourquoi ils sont donnés comme une datation par le contenu, qu'une collation
+avec la correspondance imprimée de Lagrange confirmerait ou renverserait en
+une heure. Cette lecture n'a consulté aucune édition.} On notera aussi que le
+millésime du premier feuillet est lui-même douteux : la transcription lit le
+troisième chiffre « 7 ou 5 », et n'exclut 1756 que parce que Lagrange n'était
+pas à Berlin cette année-là.
+
+\section*{« Cet élève Gallois » : la lettre du 18 avril 1831}
+
+\pagerange{27}{29}
+Quatre pages de sa main, signées, les seules du volume. Elle meurt dix
+semaines plus tard.
+
+La lettre est d'abord celle d'une femme malade qui règle des affaires de
+correspondance : des paquets qui n'arrivent pas, une lettre remise à Madame
+Cauchy, Madame Renaud qui avait perdu son adresse, un domestique qui donne
+reçu. Puis, sans transition :
+\begin{quote}
+Ma santé est dans un état affreux, une mort prompte seroit pour moi un
+soulagement car je souffre des maux inconnus et qui ne me laissent pas un seul
+moment de repos, je voulois lire au moins le 2me v. de la revue mais je ne
+puis, je reste enfermée.
+\end{quote}
+Puis, dans un seul paragraphe, l'état de la science comme elle le voit :
+\begin{quote}
+décidément il y a un tort sur tout ce qui tient aux mathématiques votre
+préoccupation celle de Cauchy, la mort de Mr fourier, pour […] cet élève
+Gallois qui malgré son impertinence annonçoit des dispositions heureuses en a
+tant fait qu'il a été chassé de l'école normale, il est sans fortune et sa mere
+en a fort peu.
+\end{quote}
+Et la suite, sur la mère de Galois quittant sa maison et se plaçant dame de
+compagnie, sur l'insolence dont Libri lui-même avait reçu « un échantillon
+après votre lecture à l'académie », et pour finir : « On dit qu'il devient tout
+à fait fou et je le crains. »
+
+Ce que cette page établit, sans interprétation : qu'en avril 1831 elle tient le
+compte de ce qui est arrivé aux mathématiques françaises en dix mois --- Libri
+en exil, Cauchy parti, Fourier mort l'année précédente, Galois chassé --- et
+qu'elle range le dernier avec les autres, c'est-à-dire qu'elle le tient pour une
+perte pour la science et non pour un fait divers. Elle écrit son nom
+« Gallois », avec deux $l$.\footnote{La transcription signale l'orthographe et
+note qu'elle ne se rencontre nulle part ailleurs dans le volume, ce qui est
+vrai puisque le nom n'y paraît qu'une fois. La lettre est antérieure de trois
+semaines à l'arrestation de Galois, le 10 mai 1831 : la précision est de cette
+lecture et n'est pas dans le feuillet.} Aucune mathématique n'est faite dans
+cette lettre ; c'est pourtant la pièce du volume qu'un mathématicien
+d'aujourd'hui lira le plus attentivement.
+
+\section*{Dater ce qui n'est pas daté : les feuillets d'adresse}
+
+\pagerange{6}{42}
+Onze pièces du volume ne portent pas de date, ou ne portent qu'un jour de la
+semaine. Le volume fournit lui-même de quoi les situer, et c'est son apport le
+moins visible et le plus sûr : les couvertures.
+
+Ses adresses, dans l'ordre où le volume les date :
+\begin{itemize}
+  \item 4 novembre 1797, Lalande : « à la Citoyenne / Sophie germain / rue Ste
+    croix de la Bretonnerie n° 18 ».
+  \item 14 mai 1810, Delambre : même rue, « maison de M. Doulcet d'Egligny
+    maire du 7e arrondissement », n° 25 d'une lecture douteuse.
+  \item 13 mars 1814, l'inconnu : même rue, numéro illisible sous deux larges
+    boucles d'encre.
+  \item 1820 ou 1821 --- 1827, Delambre, Fourier, Libri : « rue de Braque au
+    marais », n° 41.\footnote{Delambre, en juillet 1821, hésite : « N°. 47 ou
+    41 ». Les autres couvertures donnent 41, et la transcription marque le
+    chiffre comme douteux sur trois d'entre elles, le 4 et le 1 étant ligaturés
+    et pouvant se lire « 4 » seul.}
+\end{itemize}
+
+Il suit immédiatement que le déménagement de la rue Sainte-Croix-de-la-
+Bretonnerie à la rue de Braque a eu lieu \emph{entre le 13 mars 1814 et le 21
+juillet 1821}, et que toute pièce du volume dont la couverture porte « rue de
+Braque » est postérieure à 1814.\footnote{La borne se resserre à septembre 1820
+si l'on admet que le feuillet d'adresse 7v est la couverture de la lettre de
+Fourier du 29 septembre 1820, ce que l'ordre du montage indique et ce que la
+transcription affirme dans son en-tête. Cette lecture ne s'appuie que sur la
+borne large, qui ne dépend d'aucune attribution de couverture : la lettre de
+Delambre du 21 juillet 1821 est datée sur elle-même.} Trois des billets non
+datés de Fourier sont dans ce cas.
+
+Deux autres indices, donnés par les feuillets eux-mêmes :
+\begin{itemize}
+  \item \emph{Sa mère est saluée.} Deux billets de Fourier saluent « madame sa
+    mère » ou l'invitent ; sa mère meurt en 1823.\footnote{La date de 1823 est
+    donnée par la transcription en note, comme un fait extérieur au feuillet ;
+    elle n'est écrite nulle part dans le volume. Toute la borne supérieure en
+    dépend, et cette lecture la signale plutôt que de la faire passer pour une
+    lecture.} Ces billets sont donc antérieurs à 1823, et postérieurs à 1814
+    par leur couverture : ils tombent dans la fenêtre 1820--1823.
+  \item \emph{Libri est nommé.} Deux autres billets de Fourier parlent d'un
+    mémoire de Libri et d'une recommandation que Libri lui a écrite ; ils sont
+    donc postérieurs à l'entrée de Libri dans le cercle parisien, et
+    antérieurs à la mort de Fourier en mai 1830. La lettre de Florence du 17
+    novembre 1825 rend 1825--1826 vraisemblable, sans plus.
+\end{itemize}
+
+Deux couvertures ne portent ni rue ni ville : les billets qu'elles fermaient
+ont été portés à la main, et elles ne datent rien.
+
+\section*{Ce qui n'est pas des mathématiques}
+
+\pagerange{6}{41}
+
+\subsection*{Les billets du centre}
+
+La lettre de Delambre du 21 juillet 1821, après le paragraphe sur son mémoire,
+consacre deux pages à une question d'accès. Elle a demandé à assister aux
+séances publiques de l'Académie ; il explique pourquoi c'est difficile. Le
+Bureau dispose de quarante billets et les académiciens sont soixante-quinze ;
+lui-même en a « tout au plus dix » par séance et se fait une loi de les donner
+aux confrères qui en demandent pour leurs femmes ; heureusement, ajoute-t-il,
+« leurs femmes ne montrent pas un grand empressement en sorte que jusqu'ici je
+n'ai pas eu le chagrin d'en refuser une seule ». Il promet de lui en réserver
+un au mois de mars suivant.
+
+Le document se passe de commentaire. On notera seulement qu'il est écrit par le
+secrétaire perpétuel, dans la même lettre où il lui dit que personne n'est en
+état de juger son mémoire.
+
+\subsection*{Lalande, 4 novembre 1797}
+
+Le billet le plus ancien du volume qui la concerne, et le plus étrange : des
+excuses, le lendemain d'une visite.
+\begin{quote}
+il etoit difficile mademoiselle de me faire sentir plus que vous ne l'avez fait
+hier l'indiscretion de ma visite, et l'improbation de mes hommages. […] il ne
+me reste donc qu'à vous faire des excuses de mon imprudence.
+\end{quote}
+Il y mêle deux détails utiles : « mon ami Cousin », qui lui avait annoncé ses
+talents, et le fait qu'elle a lu « le systeme du monde de la place » et ne veut
+pas lire son « abregé d'astronomie ». Elle a vingt et un ans ; le \emph{Système
+du monde} de Laplace a paru l'année précédente. La moitié basse du billet est
+écrite très menu et plusieurs mots n'ont pas pu être lus.
+
+\subsection*{Choron, et la lettre du 13 mars 1814}
+
+Le billet de Choron, du 29 janvier 1818, accompagne un exemplaire de ses
+observations sur l'enseignement simultané de la lecture et de l'écriture en
+musique. Il n'a rien de mathématique et tout de documentaire : Choron ne figure
+pas dans la notice du volume.
+
+La lettre non signée du 13 mars 1814 est, de toutes les pièces, la plus
+personnelle : deux « titres » dont l'auteur a touché le montant, Saint-Denis et
+Montbrison, son cabinet contre sa bibliothèque à elle, une sœur dont elle est
+« la seule ressource », et cette phrase où l'invasion de 1814 passe sans être
+nommée --- « Dans Celui où nous nous trouvons il faut plus de mistère pour
+respirer en liberté ». Elle est signée d'un paraphe sans lettre lisible. Son
+intérêt pour cette lecture est entier et indirect : c'est sur sa couverture, et
+après elle, qu'on a écrit la seule formule du volume.
+
+\section*{Ce que les transcriptions laissent en suspens}
+
+\pagerange{6}{42}
+Ce qui suit n'est pas une liste des mots douteux --- la transcription les porte
+tous --- mais des seuls points dont dépend quelque chose de ce qui précède.
+
+\begin{itemize}
+  \item \emph{Quelle couverture va avec quelle lettre.} L'attachement d'un
+    feuillet d'adresse à une lettre repose sur l'ordre du montage et sur rien
+    d'écrit. La transcription du premier lot l'affirme dans son en-tête pour le
+    feuillet 7v --- couverture de la lettre du 29 septembre 1820 --- et son
+    corps le place, en suivant l'ordre des vues, en tête de la section de la
+    lettre du 30 janvier 1827. Il n'y a pas là de contradiction sur le fait,
+    mais il y a deux présentations du même feuillet, et la datation du
+    déménagement en dépend --- raison pour laquelle cette lecture s'appuie
+    ailleurs.
+  \item \emph{La main de la note mathématique.} Non tranchée, et non
+    tranchable sur quinze mots. Tout ce que cette lecture avance sur la note
+    est indépendant de l'attribution.
+  \item \emph{Le portrait gravé.} Fourier envoie « le portrait d'un de nos
+    prédécesseurs, et l'un des plus illustres fondateurs d'une science que vous
+    aimez et que vous avez augmentée ». Le nom n'est pas donné et cette lecture
+    ne le devine pas. L'exemplaire, s'il est resté dans ses papiers, le dirait.
+  \item \emph{Les mots que la transcription donne pour douteux et dont le sens
+    dépend.} « Jaux » dans la lettre de 1831, deux fois, sans doute
+    une abréviation de « journaux » ; « menues » dans la lettre de
+    1814 ; « confiez » et « me mande » dans le billet
+    « vendredi matin », dont dépend le rattachement de ce billet à la demande
+    de Libri ; « bresslieur » et « vauborel », deux noms
+    d'invitées chez Fourier, qu'aucune lecture n'a arrêtés.
+  \item \emph{Le numéro de la rue sur la couverture de 1814}, recouvert de deux
+    boucles d'encre tracées après coup. C'est le seul document qui pourrait
+    resserrer la date du déménagement par en bas.
+\end{itemize}
+
+\end{document}
