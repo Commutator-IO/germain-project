@@ -1,0 +1,668 @@
+% Français 9115, batch 1 — Gallica views 1–20.
+% Pass: Opus 5 (claude-opus-5), 2026-09-12 — first pass, unchecked against
+% the views by a human.
+%
+% What the twenty views hold. This is the opening of the one digitised volume
+% of the « Papiers de Sophie Germain », and against the volume's reputation
+% for disorder it opens with a clean, continuous, unbroken piece of work: a
+% fair copy, in one regular hand throughout, of the beginning of a treatise
+% headed « Exposition des principes qui servent de base à la théorie des
+% surfaces élastiques ». Eighteen consecutive pages, no gaps, no loose leaves
+% between them, the text running from one view to the next without a break —
+% and it stops in mid-sentence at the foot of view 20, which is the batch
+% boundary and not the end of the piece. Batch 2 continues it.
+%
+%   v. 1      The binding. Absent from the output.
+%   v. 2      A wrapper leaf, numbered 1, carrying one line in a larger and
+%             coarser hand than the memoir's: « Manuscrits de mémoires
+%             imprimés ». Not the memoir's hand; an owner's or an archivist's
+%             label for what follows. Transcribed.
+%   v. 3–9    Title and « Avertissement ». The most personal prose in the
+%             batch and the reason to read it: she sets out, in order, that
+%             two rival hypotheses are in the field, that one of them has « un
+%             nom justement célèbre » behind it, that this is a good reason to
+%             distrust her own, and that she has done her best to give hers
+%             up. Then the history: Chladni's experiments, the prize, the
+%             memoir of January 1814, the Institut's verdict, the memoir of
+%             January 1816 and the restriction the Académie attached to its
+%             approval, Poisson's memoir of August 1814 and his silence about
+%             her work. She announces one correction outright — the sign of
+%             the term representing the natural curvature is the opposite of
+%             the one she had adopted after Euler (« de sono campanorum ») in
+%             the 1816 memoir, so that the observed differences of pitch, far
+%             from contradicting her theory, agree with it.
+%   v. 9–11   « De la nature des hypothèses mathématiques » — two genres of
+%             hypothesis, one a statement of the question itself, the other an
+%             arbitrary way of viewing it; only the first carries its evidence
+%             into its consequences. Her claim is placed here: hers is of the
+%             first kind, the rival's of the second.
+%   v. 12–20  « Examen a priori, de la nature des deux hypothèses proposées
+%             comme devant servir de bases à la théorie des surfaces
+%             élastiques », N° 1 to N° 6 (breaking off inside N° 6).
+%             N° 1 d'Alembert's definition of elasticity, and the term
+%             −(E−N)δ(E−N). N° 2 the repulsive-force surface, and −I δI.
+%             N° 3 the long Euler quotation (« Recherches sur la courbure des
+%             surfaces », M. de Berlin 1760 p. 119) on the ambiguity of the
+%             curvature of a surface, and the reduction of the sum over all
+%             sections to the two principal curvatures. N° 4 the measure of
+%             the irregularity of a surface, reduced to ρ − ρ′. N° 5 the
+%             identification of her N°s 2 and 4 with the hypothesis of the
+%             « savant auteur du mémoire sur les surfaces élastiques », with
+%             his own words quoted at length. N° 6 begins the comparison of
+%             the two hypotheses and is cut off by the batch.
+%
+% The numbering on the leaves, and why no \folio{} is written. Every leaf from
+% view 3 carries an ink number at the head, in the memoir's own ink, and the
+% numbers fall into two series that alternate with the views:
+%
+%   odd views  3  5  7  9 11 13 15 17 19   →  2  3  4  5  6  7  8  9 10
+%   even views 4  6  8 10 12 14 16 18 20   →  2  4  6  8 10 12 14 16 18
+%
+% and on each of the odd views a second number stands beside the first, struck
+% through. The two series are consistent with a leaf count on the rectos and a
+% page count on the versos of the same leaves (leaf N, verso = page 2N−2, so
+% that view 3 is the first page of leaf 2), the struck numbers on the rectos
+% being the odd page numbers cancelled. That reading is this pass's
+% reconstruction, not something any mark on the leaf states, and the numbers
+% are in ink, not in the BnF's pencil. So no \folio{} is written anywhere in
+% this file: the numbers are recorded verbatim in a \note{} at the head of the
+% transcription, and a human checking the views should settle whether this
+% series is the foliation the literature cites for Français 9115.
+%
+% Notation. Radii of curvature ρ, ρ′ (principal, of the strained figure),
+% R, R′ (principal, of the natural figure), ρ_p, ρ′_p, ρ_q, ρ′_q (of curves cut
+% by perpendicular sections); N and E for the natural and the elastic figure
+% taken as 1/R + 1/R′ and 1/ρ + 1/ρ′; I for the irregularity of the surface;
+% δ for the variation. She writes the second derivatives with a straight d —
+% r = d²z/dx², s = d²z/dxdy, t = d²z/dy² — where the modern notation is
+% partial; that is set here as she sets it. Angles are θ and A, and « 45 » and
+% « 45° » both occur for the same angle. Her own underlining, frequent in the
+% quotations, is set \emph{}; \uncertain{} also renders as an underline, so a
+% reader of the PDF should take the header's word for which is which.
+%
+% Nothing here was checked against any published transcription.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{fr-9115}
+\shelfmark{Français 9115}
+\batch{1}
+\pages{1}{20}
+\dating{1801-1900}
+\watermark{Lecture automatique\\non vérifiée}
+\foldertitle{Papiers de Sophie GERMAIN. — Recueil de dissertations et problèmes mathématiques et physiques.}
+
+\begin{document}
+
+\note{Chaque feuillet, à partir de la vue 3, porte à l'encre un numéro en
+tête, et ces numéros se répartissent en deux séries qui alternent avec les
+vues : vues 3, 5, 7, 9, 11, 13, 15, 17, 19 → 2, 3, 4, 5, 6, 7, 8, 9, 10 ; vues
+4, 6, 8, 10, 12, 14, 16, 18, 20 → 2, 4, 6, 8, 10, 12, 14, 16, 18. Sur chacune
+des vues impaires un second nombre, biffé, accompagne le premier. Ces numéros
+ne sont pas au crayon : aucune foliotation de la Bibliothèque n'a été lue sur
+ces vues, et aucun « f. » n'est donc porté dans cette transcription.}
+
+\page{2}
+\note{feuillet de garde, numéroté 1 ; la ligne qui suit est d'une main plus
+grande et plus grasse que celle du mémoire}
+Manuscrits de mémoires imprimés
+
+\page{3}
+\note{cachet « Bibliothèque impériale — Mss » au bas du feuillet}
+
+\section{Exposition des principes qui servent de base à la théorie des surfaces élastiques}
+
+\subsection{Avertissement}
+
+Les phénomènes acoustiques dont on doit la connoissance à Mr Chladny, ont
+dirigé l'attention des géomètres vers la question des surfaces élastiques.
+
+Malgré leurs travaux ; il existe encore quelqu'embarras dans le choix des
+principes qui doivent servir de base à toute cette théorie.
+
+Deux hypothèses essentiellement différentes ont été proposées. L'une d'elle a
+pour appui un nom justement célèbre ; c'est une forte raison de se défier de
+celle qui m'appartient : aussi ai-je fait tous mes efforts pour y renoncer.
+
+Je sens que j'ai besoin de m'étayer d'un jugement étranger. Il ne me reste que
+ce moyen de dissiper le doute qui me poursuit au milieu des recherches que
+j'ai entreprises. En exposant mon sentiment j'y joins mes raisons afin que le
+public éclairé les pèse et m'apprenne à en mieux juger.
+
+Si je prens quelquefois le ton affirmatif c'est uniquement pour m'affranchir
+de l'expression fatiguante du doute. Il suffit d'avertir une fois le lecteur
+que bien loin de prétendre fixer son opinion je sollicite
+
+\page{4}
+de sa part l'examen critique de la mienne. On me pardonnera, sans doute, de ne
+dissimuler ensuite aucun des avantages que je crois reconnoître dans mon
+hypothèse.
+
+Aussi tôt que les premières expériences de Mr Chladny me furent connues, il me
+parut que l'analyse pouvoit déterminer les lois auxquelles elles sont
+assujetties. J'eus occasion d'apprendre d'un grand géomètre dont les premiers
+travaux avoient été consacrés à la théorie du son que cette question contenoit
+des difficultés que je n'avois pas même soupçonnées. Je cessai d'y penser.
+
+À l'époque du séjour à Paris de Mr Chladny, la vue de ses expérience excita de
+nouveau ma curiosité. J'étudiai le mémoire d'Euler sur le cas linéaire, non
+pas certainement dans l'intention de concourir au prix,
+\marginal{extraordinaire,} que l'institut proposa alors, mais avec l'unique
+désir d'apprécier les difficultés dont les termes mêmes du programme me
+renouvelloient l'idée.
+
+Dans le cas linéaire les forces d'élasticité sont hypposées proportionnelles à
+la raison inverse du rayon de courbure. L'hypothèse qui donne au lieu de la
+raison inverse du rayon de courbure d'une simple courbe ; la somme des raisons
+inverses des rayons des deux courbures principales d'une surface me frappa par
+son analogie et par sa simplicité.
+
+Je présentai, au concours du mois de janvier 1814
+
+\page{5}
+un mémoire qui contient : l'hypothèse que j'avais imaginée ; l'équation de la
+plaque vibrante ; et, à l'aide de quelques intégrales particulières, la
+comparaison entre les résultats de la théorie et l'expérience.
+
+L'institut a jugé que cette comparaison étoit satisfesante. Me sera-t-il
+permis de faire remarquer que la question des surfaces élastiques avoit
+dèslors perdu une partie des difficultés mentionnées au programme
+
+\note{appel de note * ; la note occupe le bas des vues 5 et 6 et se lit :
+« p. 4 du programme. \emph{Cette différence essentielle entre les questions de
+mouvement, considérées sous chacun de ces points de vue, dans le simple cas
+linéaire, fait concevoir sur le champ qu'on doit trouver des différences de
+même espèce, et surtout une grande augmentation de difficultés lorsqu'on veut
+introduire deux dimensions dans le calcul} — et plus bas p. 5 et 6. \emph{Voilà
+tout ce que les géomètres ont pu faire sur les problèmes des corps sonores,
+considérés dans le cas de deux dimensions, et en introduisant même des
+simplifications, qui, on ne peut se le dissimuler, changent l'état naturel des
+choses de manière que les résultats de l'analyse n'y peuvent point être
+applicables. Ces simplifications hypothétiques sont surtout inadmissibles
+lorsqu'il s'agit des surfaces vibrantes métalliques, ou jouissant d'une
+élasticité naturelle : prenant le cas le plus simple qui est celui du plan, il
+est manifeste qu'on ne peut pas lui appliquer la supposition d'Euler\ldots{}
+On n'a donc pas même les équations différentielles du mouvement pour cette
+espèce de vibration, en envisageant leurs phénomènes tels que la nature les
+donne et la seule recherche de ces équations offroit aux géomètres un sujet de
+méditation très intéressant\ldots{}} »}
+
+On étoit en possession d'une \emph{hypothèse qui introduisoit deux dimensions
+dans le calcul}. Si cette hypothèse n'étoit pas encore justifiée \emph{a
+priori} elle n'étoit au moins appuyée sur aucune \emph{simplification qui
+changeat l'état naturel des choses}.
+
+L'ignorance la moins excusable, même chez un simple amateur, m'avoit, à la
+vérité, empêchée de déduire, d'une manière régulière mon équation de
+l'hypothèse qui lui sert de base. Une pareille faute ne permettoit sans doute
+pas à la classe d'accorder une aprobation
+
+\page{6}
+entière à mon mémoire ; mais elle ne pouvoit détruire aux yeux des géomètres
+la relation qui existe entre l'hypothèse et l'équation. Enfin personne ne
+contestoit que l'équation différentielle que j'attribuois au mouvement des
+plaques vibrantes n'appartînt réellement à ce genre de vibrations \emph{en
+envisageant leurs phénomènes tels que la nature les donne}. La difficulté
+sembloit être réduite, ou à traiter mon hypothèse conformément aux règles du
+calcul, ou à imaginer une autre hypothèse qui conduisit également à l'équation
+que j'avois donnée. On pouvoit encore désirer que l'hypothèse choisie fut
+justifiée \emph{a priori}.
+
+Au mois d'août 1814, un membre de la classe lut un \emph{mémoire sur les
+surfaces élastiques}. L'auteur adopte une hypothèse nouvelle. Il la traite
+avec le talent qui caractérise tous ses ouvrages ; et, en se bornant au cas
+des surfaces naturellement planes, il parvient à l'équation générale de ce
+genre de surfaces.
+
+Il paroît reconnoître que l'on arriveroit à la même équation en employant la
+somme des raisons inverses
+
+\page{7}
+des deux rayons de courbures principales.
+
+Cette identité de résultat sembleroit devoir me garantir l'exactitude de la
+théorie que j'ai cherché à établir ; mais malheureusement il reste encore
+entre la doctrine de ce savant auteur et la mienne, des différences
+essentielles qui ne peuvent manquer de jetter le doute dans mon esprit.
+
+Dans le mémoire que j'ai envoyé pour le concours du mois de janvier 1816, j'ai
+essayé de justifier \emph{a priori} l'hypothèse que j'avois déja proposée, et
+j'ai taché de montrer comment cette hypothèse pouvoit conduire à l'équation
+d'une surface élastique de figure quelconque.
+
+L'académie, en accordant le prix à ce mémoire, a pourtant mis une certaine
+restriction à son approbation.
+
+Sans avoir jamais bien compris le sens de cette restriction, j'ai dû penser
+que je n'avois pas encore réussi à fixer le point de vue général de toute
+cette théorie.
+
+D'ailleurs le mémoire sur les surfaces élastiques n'a été publié que depuis
+l'époque dont je parle, l'auteur n'y fait aucune mension de mon dernier
+travail. J'ai lieu de croire qu'il n'adoptoit pas mon sentiment, et l'opinion
+d'un si habile géomètre est devenue pour moi un nouveau motif de défiance.
+
+J'ai longtems attendu qu'en publiant, comme il l'avoit fait esperer, la suite
+de ses recherches, ce savant auteur me donnat lieu de reconnoître la source de
+mon erreur.
+
+J'entreprens à regret la discussion à laquelle je vais me livrer, elle suppose
+de ma part un abandon
+
+\page{8}
+d'amour propre que le désir de dissiper mes doutes peut seul expliquer.
+
+Afin de mettre le lecteur à même de prononcer, je me propose d'examiner et de
+comparer, sous trois points de vue différens les deux hypothèses proposées.
+
+D'abord \emph{a priori}. Cet examen sera précédé de quelques reflexions
+générales sur la nature des hypothèses mathématiques.
+
+En me bornant ensuite au cas des plaques vibrantes j'exposerai les conclusions
+analytiques auxquelles conduisent l'une et l'autre hypothèses.
+
+Enfin, je comparerai les résultats du calcul aux phénomènes observés.
+
+Si les principes que je soumets en ce moment au jugement des géomètres, leur
+semblent en effet devoir servir de base à la théorie des surfaces élastiques,
+jespere être dans la suite en état de publier et l'équation générale de ce
+genre de surfaces et une comparaison détaillée de la théorie avec l'expérience
+non seulement dans le cas des surfaces planes, où le travail de Mr Chladny m'a
+déja aidée d'une manière si puissante, mais encore dans d'autres cas où je me
+trouve réduite à mes seules observations.
+
+Je puis annoncer dès à présent que le signe du terme qui représente la
+courbure naturelle, est contraire à celui que j'avois adopté, en suivant
+l'indication d'Euler (\emph{de sono campanorum}) dans mon mémoire pour 1816,
+ensorte que les différences de son observées sur des plaques, avant
+
+\page{9}
+et après leur courbure, différences que j'ai trouvées plus sensibles en
+employant de plus grandes courbures, loin d'être contraires à la théorie que
+je cherchois à établir, comme je l'avois dit N° 15 de ce mémoire, y sont
+entièrement conformes.
+
+\subsection{De la nature des hypothèses mathématiques}
+
+On doit distinguer deux genres d'hypothèses. Les unes ne sont autre chose que
+l'énoncé même de l'état de la question. L'art de les employer se réduit a
+celui de les faire entrer dans le calcul. Elles sont accompagnées de
+l'évidence et la transmettent à toutes les conséquences que l'on peut en
+tirer.
+
+Les autres résultent d'une manière plus ou moins arbitraire d'envisager la
+question. Elles sont assujetties au besoin de l'analyse, il ne s'agit plus
+d'une simple traduction du langage ordinaire dans la langue des calculs, il
+s'agit d'un choix a faire entre les divers points de vues dont la question est
+susceptible et le but de ce choix est de rendre l'analyse applicable.
+
+Il résulte de la nature de pareilles hypothèses que leurs conséquences ont
+besoin d'être confirmées par la comparaison avec des données prises ailleurs.
+
+Avant cette comparaison, non seulement on ne sauroit affirmer qu'elles
+contiennent tout ce qui est de la
+
+\page{10}
+question, mais encore on ne peut pas être sûr qu'elles n'ayent rien introduit
+d'étranger ou même de contraire à l'état de la question.
+
+Les mathématiques pures n'admettent que le premier genre d'hypothèses ; aussi
+l'équation y est-elle considérée comme une définition complette de l'état de
+choses auquel elle s'applique, et n'attend-elle aucune confirmation de la
+comparaison à l'\uncertain{observation}.
+\note{le dernier mot est écrit sur un grattage}
+
+C'est ainsi, par exemple, que les faits usuels qui résultent de l'emploi du
+cercle dans les arts ne sauroient rien ajouter à l'évidence des conséquences
+qu'on tire de l'équation de cette courbe.
+
+Les mathématiques mixtes sont souvent obligés d'employer des hypothèses
+arbitraires, mais les efforts des géomètres tendent à les en affranchir.
+
+Lorsqu'une théorie physicomathématique est déduite des conditions auxquelles
+la question est évidemment assujettie elle tire de cette origine un genre de
+certitude qui ne sauroit appartenir aux théories fondées sur des hypothèses
+arbitraires. On est en état d'affirmer, avant la comparaison avec l'expérience
+que les phénomènes suivront les lois données par le calcul. Il est possible, à
+la vérité que les conditions qui sont entrées dans l'analyse ne soient pas les
+seules auxquelles la question soit physiquement assujettie ; si l'expérience
+révèle
+
+\page{11}
+l'existence d'anomalies étrangères aux erreurs inévitables, il restera à
+complettir la théorie en y introduisant les conditions qui avoient été omises.
+La comparaison avec l'expérience ne sert pas dans ce cas à vérifier si les
+suppositions admises appartiennent réellement à la question, mais si elles la
+contiennent toute entière.
+
+Les géomètres mettent une telle importance à obtenir le genre de certitude
+dont je parle, que même lorsqu'une théorie fondée sur quelque supposition
+arbitraire a reçu la sanction de l'expérience, ils croient rendre service à la
+science en prouvant que la théorie n'avoit pas besoin du secours d'une telle
+hypothèse. C'est ainsi que Mr Biot a prouvé que la théorie des surfaces
+tendues est indépendante de la supposition à l'aide de laquelle Euler l'avoit
+d'abord établie.
+
+Je dois craindre de me faire illusion en pensant, que mon hypothèse, étrangère
+à toute idée arbitraire, peut être regardée comme la définition complette de
+l'état de la question des surfaces élastiques et que l'autre hypothèse n'est
+applicable a la même question que dans les seuls cas où elle est équivalente a
+la mienne. Les \uncertain{§§} suivans seront consacrés au développement de
+cette opinion. Je l'abandonnerai sans regret si les géomètres ne dédaignant
+pas de l'examiner trouvent qu'elle est mal fondée.
+
+\page{12}
+
+\subsection{Examen a priori, de la nature des deux hypothèses proposées comme devant servir de bases à la théorie des surfaces élastiques}
+
+N° 1 Afin d'éviter les objections qui pourroient tomber sur la définition même
+du mot élasticité j'adopterai celle de d'Alembert (encyclopédie méthodique
+art. élasticité)
+
+\begin{quote}
+« Élasticité ou force élastique en mécanique, propriété ou puissance des corps
+naturels au moyen delaquelle ils se rétablissent dans la figure et l'étendue
+que quelque cause extérieure leur avoit fait perdre »
+\end{quote}
+
+Les raisonnemens suivans nous mèneront à l'hypothèse qui doit renfermer la
+mesure des forces d'élasticité.
+
+Il résulte de la définition que les forces d'élasticité tendent à détruire la
+différence qui existe entre la figure et l'étendue naturelles des corps doués
+de ces forces et celles que les mêmes corps ont été contraints de prendre par
+l'action d'une cause extérieure.
+
+Les forces d'élasticité dont un corps quelconque est doué ont donc pour mesure
+la différence qui existe entre la figure et l'étendue naturelles de ce corps
+et celles qu'une cause extérieure l'a forcé de prendre.
+
+Si nous représentons par $N$ la figure et l'étendue naturelles du corps
+élastique et par $E$ la figure et l'étendue qu'une force extérieure l'a forcé
+de prendre, l'action des forces d'élasticité sera proportionnelle à la
+différence $E-N$. Cette action tend à diminuer la différence $E-N$, le terme
+dû aux forces d'élasticité sera donc
+\[
+  -(E-N)\,\delta(E-N).
+\]
+
+\page{13}
+N° 2 Imaginons à présent une surface également épaisse dans toute son étendue,
+dont tous les points soient animés par des forces répulsives égales
+entr'elles, et agissant dans une sphère d'activité d'un rayon donné. L'action
+de telles forces tendra à placer chaque molécule à distance égale des
+molécules voisines et cette distance aura le rayon donné pour mesure.
+
+La grandeur du rayon donné sera la limite de la force
+d'\emph{\uncertain{expansibilité}} d'une telle surface. Quelques soit
+\marginal{quelle que} la grandeur du rayon, les forces supposées tendront à
+rendre la figure de la surface régulière.
+
+Si la grandeur du rayon est insensible, la force d'expansibilité sera
+également insensible ; l'effet de l'action des forces répulsives se réduira à
+détruire l'irrégularité de la surface, et sera par conséquent proportionnel à
+cette irrégularité. Si nous représentons par $I$ l'irrégularité dont il
+s'agit, le terme dû à l'action des forces répulsives sera donc
+$-I\,\delta I$.
+
+N° 3. Pour déterminer la valeur analytique des termes $-(N-E)\,\delta(N-E)$ et
+$-I\,\delta I$ il est nécessaire de connoître l'expression générale de la
+courbure des surfaces.
+\note{l'ordre des lettres est inversé par rapport au N° 1, où le même terme
+est écrit $-(E-N)\,\delta(E-N)$}
+
+Je partirai de l'état de cette question posée par Euler dans son mémoire
+intitulé \emph{Recherches sur la courbure des surfaces} M. de Berlin 1760
+p. 119
+
+\begin{quote}
+« Pour connoître la courbure des lignes courbes » dit cet illustre géomètre,
+« la détermination du rayon
+\end{quote}
+
+\page{14}
+\begin{quote}
+osculateur en fournit la plus juste mesure, en nous présentant pour chaque
+point de la courbe un cercle, dont la courbure est précisément la même. Mais,
+quand on demande la courbure d'une surface, la question est fort équivoque, et
+point du tout susceptible d'une réponse absolue, comme dans le cas précédent.
+Il n'y a que les surfaces sphériques dont on puisse mesurer la courbure,
+attendu que la courbure d'une sphère est la même que celles de ses grands
+cercles, et que son rayon peut en être regardé comme la juste mesure. Mais
+pour les autres surfaces on n'en sauroit même comparer la courbure avec celle
+d'une sphère comme on peut toujours comparer la courbure d'une ligne courbe
+avec celle d'un cercle ; la raison en est évidente puisque, dans chaque point
+d'une surface, il peut y avoir une infinité de courbures différentes\ldots{}
+
+« Donc la question sur la courbure des surfaces n'est pas susceptible d'une
+réponse simple, mais elle exige à la fois une infinité de déterminations :
+car, puisqu'on peut tracer par chaque point d'une surface une infinité de
+directions, il faut connoître la courbure selon chacune, avant qu'on puisse se
+former une juste idée de la courbure de la surface. Or, par chaque point d'une
+surface, on peut faire passer une infinité de sections, et cela non seulement
+par rapport à toutes les directions sur la surface même, mais aussi par
+rapport a leur inclinaison différente sur la surface\ldots{} »
+\end{quote}
+
+\page{15}
+Conformément à l'indication d'Euler, je considérerai l'ensemble des courbes
+qui résulteroient de la section d'un plan passant par le point donné d'une
+surface, et la coupant successivement non seulement dans toutes les
+directions, \marginal{mais encore dans chacune de ces directions,} sous toutes
+les inclinaisons possibles.
+
+La courbure d'une ligne courbe est exprimée par la raison inverse de son rayon
+de courbure ; je chercherai donc \emph{la somme des raisons inverses des
+rayons de courbures de toutes les lignes courbes produites par les différentes
+sections de la surface}.
+
+Soient $\rho_p$ le rayon de courbure de la courbe produite par une section
+perpendiculaire à la surface ; $R$ et $R'$ les rayons de courbures de celles
+des courbes qui ayant une tangente commune avec la première sont produites par
+les sections inclinées de $\theta$ et $\pi-\theta$ degrés ; on aura
+\begin{gather*}
+  \frac{1}{R} = \frac{\cos\theta}{\rho_p}, \qquad
+  \frac{1}{R'} = \frac{\cos(\pi-\theta)}{\rho_p}, \\
+  \frac{1}{R} + \frac{1}{R'} = \frac{\cos\theta + \cos(\pi-\theta)}{\rho_p} = 0 .
+\end{gather*}
+
+Par conséquent la somme des raisons inverses des rayons de courbures de toutes
+les courbes produites par les sections inclinées sera nulle ; et nous n'aurons
+plus à nous occuper que des seules sections perpendiculaires à la surface.
+
+Si $\rho_p$ et $\rho'_p$ sont les rayons de courbures des courbes produites
+par deux sections perpendiculaires entr'elles $\rho$ et $\rho'$ les rayons de
+courbures principales de la surface, $A$ l'angle que le plan qui contient la
+courbe dont le rayon est $\rho_p$ fait avec le plan qui contient la courbe
+dont le rayon est $\rho$, nous aurons, en vertu des relations
+
+\page{16}
+connues
+\begin{align*}
+  \frac{1}{\rho_p} &= \frac{1}{\rho}\sin^2 A + \frac{1}{\rho'}\cos^2 A \\
+  \frac{1}{\rho'_p} &= \frac{1}{\rho}\sin^2\!\left(\frac{\pi}{2}+A\right)
+     + \frac{1}{\rho'}\cos^2\!\left(\frac{\pi}{2}+A\right)
+   = \frac{1}{\rho}\cos^2 A + \frac{1}{\rho'}\sin^2 A
+\end{align*}
+et enfin $\dfrac{1}{\rho_p} + \dfrac{1}{\rho'_p} = \dfrac{1}{\rho} +
+\dfrac{1}{\rho'}$, théorème également connu.
+
+Il en résulte que \emph{la somme des raisons inverses des rayons de courbures
+de toutes les lignes courbes produites par les différentes sections de la
+surface}, se réduit à la somme des raisons inverses des deux rayons de
+principales courbures de la même surface prise une infinité de fois. On
+sentira aisément que l'idée de l'infini est étrangère à la question, et ne se
+présente ici qu'a raison de la répétition d'une seule et même mesure qui est
+en effet celle de la courbure de la surface.
+
+Il est facile à présent de trouver l'expression analytique du terme
+$-(E-N)\,\delta(E-N)$. Car en nommant $R$ et $R'$ les rayons de courbures
+principales de la figure naturelle de la surface, $\rho$ et $\rho'$ les rayons
+de courbures principales de la figure que l'action d'une cause extérieure l'a
+forcé de prendre, figure qu'on pourroit appeller élastique, parceque ce n'est
+que lorsque la surface s'y est pliée qu'elle est douée de forces intérieures
+qui lui soient propres ; on aura par ce qui précède
+$N = \frac{1}{R} + \frac{1}{R'}$, $E = \frac{1}{\rho} + \frac{1}{\rho'}$, et
+par conséquent
+\[
+  -(E-N)\,\delta(E-N) =
+  -\left\{ \frac{1}{\rho} + \frac{1}{\rho'}
+    - \left( \frac{1}{R} + \frac{1}{R'} \right) \right\}
+  \delta\left\{ \frac{1}{\rho} + \frac{1}{\rho'}
+    - \left( \frac{1}{R} + \frac{1}{R'} \right) \right\} .
+\]
+
+N° 4 La valeur analytique du terme $-I\,\delta I$ dépend de l'irrégularité de
+la surface, et la question de l'irrégularité d'une surface semble encore plus
+compliquée que celle
+
+\page{17}
+de la courbure. Je crois cependant que l'on peut également obtenir la mesure
+de ce genre de quantité.
+
+En considérant toujours la totalité des courbes qui passant par le point donné
+sont formées par les diverses sections de la surface, on connoîtra
+l'irrégularité de la surface, si on connoît \emph{la différence de courbure de
+toutes ces courbes comparées chacune à celle qui est produite par la section
+perpendiculaire}.
+
+Par la raison donnée N° 3 on peut exclure les courbes formées par les sections
+obliques. En effet la somme des courbures produites par toutes les
+inclinaisons possibles du plan passant dans une direction donnée, étant nulle,
+la différence entre ces premières courbures et celles également produites par
+toutes les inclinaisons possibles du plan passant dans la direction
+perpendiculaire, sera nécessairement nulle.
+
+Nous n'aurons donc encore à nous occuper que des seules sections normales.
+
+En faisant comme à l'ordinaire $r = \frac{d^2 z}{dx^2}$,
+$s = \frac{d^2 z}{dx\,dy}$, $t = \frac{d^2 z}{dy^2}$ et retenant les
+dénominations du N° précédent suivant lesquelles $\rho_p$ et $\rho'_p$ sont
+les rayons de courbures des courbes produites par deux sections
+perpendiculaires entr'elles $\rho$, $\rho'$ les rayons de principales
+courbures de la surface, et $A$ l'angle que le plan qui contient la courbe
+dont le rayon est $\rho_p$ fait avec le plan qui contient la courbe dont le
+rayon est $\rho$, nous aurons a l'aide des formules connues :
+\begin{align*}
+  \rho_p &= \frac{\sin^2 A + \cos^2 A}
+    {r\cos^2 A + 2s\sin A\cos A + t\sin^2 A} \\
+  \rho'_p &= \frac{\sin^2 A + \cos^2 A}
+    {r\sin^2 A - 2s\sin A\cos A + t\cos^2 A}
+\end{align*}
+
+\page{18}
+et par conséquent
+\begin{align*}
+  \frac{1}{\rho_p} - \frac{1}{\rho'_p}
+   &= (r-t)\{\cos^2 A - \sin^2 A\} + 4s\sin A\cos A \\
+   &= (r-t)\cos 2A + 2s\sin 2A .
+\end{align*}
+
+Soient, à présent, $\rho_q$ et $\rho'_q$ les rayons de courbures de deux
+courbes produites par deux sections perpendiculaires entr'elles et
+$\frac{\pi}{2} - A$, l'angle que le plan qui contient la courbe dont le rayon
+est $\rho_q$ fait avec le plan qui contient la courbe dont le rayon est
+$\rho$, nous aurons également
+\begin{align*}
+  \frac{1}{\rho_q} - \frac{1}{\rho'_q}
+   &= (r-t)\cos(\pi-2A) + 2s\sin(\pi-2A) \\
+   &= -(r-t)\cos 2A + 2s\sin 2A .
+\end{align*}
+
+La somme des deux différences $\frac{1}{\rho_p} - \frac{1}{\rho'_p}$,
+$\frac{1}{\rho_q} - \frac{1}{\rho'_q}$ se réduira donc à $4s\sin 2A$.
+
+Si les plans de plus grande et plus petite courbure coïncident avec les plans
+des $xz$, $yz$ on a, comme on sait, $s=0$ : ainsi la somme des deux
+différences deviendra nulle, et la somme des différences de courbures de
+toutes les courbes formées par les diverses sections de la surface, prises en
+comparant chaque courbure a celle de la courbe produite par la section
+perpendiculaire se réduira enfin à la différence des deux courbures
+principales de la surface.
+
+En effet, si on excepte les deux cas de $A = 45°$ et $A = 0$, les plans qui
+contiennent les courbes dont les rayons sont $\rho_p$ et $\rho'_p$ ne peuvent
+jamais se confondre avec les plans qui contiennent les courbes dont les rayons
+sont $\rho_q$ et $\rho'_q$.
+
+\page{19}
+Lorsque $A = 45$ ; $\frac{\pi}{2} - A = A$ et, à cause de $s=0$ on a
+\[
+  \rho_p - \rho'_p = (r-t)\cos 2A = 0 .
+\]
+Ainsi $\rho - \rho'$ est la seule différence qui ne disparoisse pas ; elle
+pourra donc être considérée comme la mesure de l'irrégularité de la surface.
+Cela posé, on aura
+\[
+  -I\,\delta I = -(\rho-\rho')\,\delta(\rho-\rho') .
+\]
+\note{appel de note * après la première formule ; la note occupe le bas de la
+vue et se lit : « Je crois avoir prouvé N° 3 que la courbure d'une surface a
+pour mesure la somme des raisons inverses des deux rayons de courbures des
+courbes produites par deux quelconques des sections normales perpendiculaires
+entr'elles. À cause de $\frac{1}{\rho_p} = \frac{1}{\rho'_p}$,
+$2\cdot\frac{1}{\rho}$ sera donc aussi la mesure de la même courbure ;
+c'est-à-dire que : quelque soit [en marge : \emph{quelle}] \emph{la courbure
+d'une surface elle aura pour mesure la courbure de la sphère dont le rayon est
+égal au rayon de la courbe formée par la section normale qui fait un angle de
+45° avec les plans de plus grande et de moindre courbures de la même surface.}
+Ce théorème m'a paru d'autant plus remarquable qu'il est appuyé sur les
+principes qui ont porté Euler a penser (voyez le passage cité N° 3) qu'on ne
+sauroit même comparer la courbure d'une surface avec celle d'une sphère. »}
+
+N° 5. L'hypothèse qui fait le sujet des N°s 2 et 4 me paroît être entièrement
+semblable a celle qu'a adopté le savant auteur \emph{du mémoire sur les
+surfaces élastiques}.
+
+En effet on lit (M. de l'Institut 1812. seconde partie p 192
+\uncertain{§§ 11 N° 8} de ce mémoire)
+
+\begin{quote}
+\ldots{} « Or quelque soit la cause de cette qualité de la matière
+(l'élasticité) elle consiste en une tendance des molécules des corps à se
+repousser mutuellement, et l'on peut l'attribuer à une force répulsive qui
+s'exerce entre ces points, suivant une certaine fonction de leurs distances.
+Il est naturel
+\end{quote}
+
+\page{20}
+\begin{quote}
+de penser que cette force, ainsi que toutes les autres action moléculaires,
+n'est sensible que pour des distances imperceptibles ; nous admettrons donc
+cette hypothèse, et nous supposerons, en conséquence, que la fonction des
+distances qui représente la force élastique, n'a de valeur que pour des
+valeurs extrêmement petites de la variable qui exprime les distances, et
+qu'elle devient nulle aussitôt que cette variable devient sensible. D'ailleurs
+cette action répulsive étant censée venir de tous les points matériels qui
+composent la surface, il s'en suit que pour des distances égales, la force
+répulsive entre deux points devra être proportionnelle au produit des
+épaisseurs de la surface qui leur correspondent ; mais par une raison que l'on
+verra bientôt nous nous bornerons à considérer les surfaces également épaisses
+dans toute leur étendue. »
+\end{quote}
+
+On peut voir N°s 12 et suivans par quelle savante analyse l'auteur, après
+avoir pris pour plans des coordonnées ceux des principales courbures de la
+surface parvient à introduire la différence
+$\frac{1}{\rho} - \frac{1}{\rho'}$, dans ses formules.
+
+C'est a l'aide de la même position des plans coordonnés que nous sommes
+arrivés à conclure, N° 4, que l'action des forces d'élasticité sur un des
+points de la surface est exprimée, dans la présente hypothèse, par le terme
+\[
+  -\left( \frac{1}{\rho} - \frac{1}{\rho'} \right)
+  \delta\left( \frac{1}{\rho} - \frac{1}{\rho'} \right) .
+\]
+\note{au N° 4 le même terme est donné sous la forme
+$-(\rho-\rho')\,\delta(\rho-\rho')$, sans les raisons inverses}
+
+N° 6 Arrêtons nous un instant à l'examen de la nature des deux hypothèses
+proposées.
+
+L'une admet simplement que le corps élastique, et par conséquent aussi chacun
+des points matériels dont il est
+
+\note{la vue 20 s'arrête au milieu de la phrase ; le texte se poursuit à la
+vue 21, hors de ce lot}
+
+\end{document}
