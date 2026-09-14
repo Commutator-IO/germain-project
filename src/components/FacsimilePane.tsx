@@ -27,9 +27,9 @@ import type { Volume } from '../lib/types.ts';
  * The attribution Gallica's conditions ask for is printed under every image.
  *
  * Two things the pane cannot do, both said on the pane rather than left to be
- * discovered. It cannot show a volume that is not online — the Académie's
- * memoirs, the Florence papers — and it says instead where they are. And it
- * cannot know the folio: Gallica labels every view « NP », so the pane counts
+ * discovered. It cannot show a volume that is not online — the catalogue lists
+ * none, but the pane still says where one is rather than going blank. And it
+ * cannot know the folio: Gallica labels most views « NP », so the pane counts
  * views, and the foliation pencilled on the leaf is what the transcription
  * records with `\folio{}`.
  */
@@ -377,9 +377,8 @@ function Failed({ ark, view, onRetry }: { ark: string; view: number; onRetry: ()
 /**
  * The volume is not online, and the pane says where it is instead.
  *
- * Deliberately no image and no placeholder: the Académie asserts rights on
- * reproductions of the memoirs, Florence has digitised nothing, and a pane
- * showing anything else would suggest the reader is looking at the manuscript.
+ * Deliberately no image and no placeholder: a pane showing anything else would
+ * suggest the reader is looking at the manuscript.
  */
 function NotOnline({ volume: v }: { volume: Volume }) {
   const holder = holderOf(v);

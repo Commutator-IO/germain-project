@@ -76,7 +76,7 @@ for k in $(seq "$first" "$last"); do
   npm run tiles -- "$vol" "$k"
 
   echo "== batch $k: fresh session"
-  "$claude" -p "/transcribe-germain $vol $k" \
+  "$claude" -p "/transcribe $vol $k" \
     --model "$model" \
     --permission-mode acceptEdits \
     --allowedTools "Bash(npm run *),Bash(ls *),Bash(cat *),Bash(git status *),Bash(git diff *)" \

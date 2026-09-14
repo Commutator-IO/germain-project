@@ -31,28 +31,23 @@ const volumeState = (v: Volume, transcribedHere: boolean, hasEdition: boolean): 
  * The corpus by size, as a wall of blocks.
  *
  * The list below answers "what is there"; it cannot answer "how much", because
- * fourteen rows of equal height flatten a range that runs from three pages to
- * seven hundred and fifty views. A treemap restores the proportion, and the
- * proportion is what decides where to begin: one volume is three quarters of
- * everything that can be read here, and the other three together are a
- * fortnight's batches.
+ * seventy-eight rows of equal height flatten a range that runs from a single
+ * letter to seven hundred and fifty views. A treemap restores the proportion,
+ * and the proportion is what decides where to begin: Fourier's twenty volumes
+ * are a quarter of everything, a letter of Pascal's is a morning.
  *
  * Mondrian rather than a plain treemap because the grammar fits what is
  * being said. Flat blocks of one colour each, separated by heavy black rules,
  * no gradients and no shading: a volume is online or it is not, transcribed or
  * not, and there is nothing continuous to express. Blocks within blocks carry
- * the one structure there is — the holders' own groupings — rather than a
- * second quantity.
+ * the one structure there is — the mathematician whose archive it is — rather
+ * than a second quantity.
  *
- * Three kinds of size, and the drawing keeps them apart. A digitised volume is
- * sized by its Gallica views, the unit the batches are cut in. A BnF volume
- * that is not digitised has a leaf count in its notice, and is drawn at two
- * views to the leaf — the rate the digitised « Papiers » volumes run at
- * (750 views for 372 leaves, 113 for 54) — under a hatch that says the area
- * is estimated. The rest have no count at all — « more than two hundred
- * sheets », « nine letters » — and sit in a rail under the wall at one size
- * each, which is to say at no size, because drawing an area one does not have
- * would be the figure lying about the very thing it is for.
+ * Every volume in the catalogue is digitised, so each is sized by its Gallica
+ * views, the unit the batches are cut in. The code still knows how to hatch a
+ * volume drawn from a leaf count and to rail one with no count at all, should
+ * a volume ever be listed before Gallica serves it; the catalogue's rule is
+ * that none is.
  */
 
 interface Cell {
@@ -102,7 +97,7 @@ const VIEWS_PER_LEAF = 2;
 /** Canvas height, in the same units as the width of 100. */
 const CANVAS_H = 58;
 
-/** The group's name before its dash — « Papiers de Sophie Germain », « Correspondance ». */
+/** The group's name before any dash — « Joseph Fourier ». */
 const shortTitle = (g: ArchiveGroup) => g.title.split(' — ')[0];
 
 /**
@@ -201,9 +196,8 @@ export function CorpusMosaic({
    * The wall: every volume with a size, nested in its group.
    *
    * The outer boxes are the groups, sized by their total; each volume sits
-   * inside the group it belongs to. A group with no sized volume at all — the
-   * Académie's dossiers, Florence, Göttingen, New York — is not on the wall,
-   * and its volumes are in the rail below.
+   * inside the group it belongs to. A group with no sized volume at all would
+   * not be on the wall, and its volumes would be in the rail below.
    */
   const groups = (() => {
     const sized = GROUPS.map((g) => {
@@ -325,12 +319,11 @@ export function CorpusMosaic({
     <section className="mt-8">
       <h2 className="titre text-[19px] text-ink-900">The corpus by size</h2>
       <p className="mt-2 max-w-[52em] text-[13px] leading-relaxed text-ink-600">
-        All {COTES.length} volumes, each block sized by what there is to read and nested in the
-        holder's own grouping. The {online.length} digitised volumes are drawn by their{' '}
-        {views.toLocaleString()} Gallica views, the unit the batches are cut in; the two BnF
-        volumes not yet online are hatched and drawn from their leaf count, at two views to the
-        leaf; the {railCount} whose extent nobody has counted sit in the rail below, all at one
-        size, which is no size. Colour is what has been done to a volume, not what is in it.
+        All {COTES.length} volumes, each block sized by what there is to read and nested under the
+        mathematician whose archive it is. The {online.length} volumes are drawn by their{' '}
+        {views.toLocaleString()} Gallica views, the unit the batches are cut in
+        {railCount > 0 ? `; ${railCount} without a count sit in the rail below` : ''}. Colour is
+        what has been done to a volume, not what is in it.
       </p>
 
       {/* Only the states actually on this wall. A key for a colour that never
@@ -478,9 +471,8 @@ export function CorpusMosaic({
           </p>
         ) : (
           <p className="text-ink-400">
-            Hover a block for its volume, or a group's name for its full title. Nothing is left
-            out: all {COTES.length} volumes are here, in the {GROUPS.length} groups the holders
-            record.
+            Hover a block for its volume, or a name for the mathematician. Nothing is left out:
+            all {COTES.length} volumes are here, under {GROUPS.length} names.
           </p>
         )}
       </div>

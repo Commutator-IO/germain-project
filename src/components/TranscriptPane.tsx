@@ -277,7 +277,7 @@ function MissingTranscript({
       {edition === 'modern' ? (
         <>
           <p className="max-w-[40em] text-[13.5px] leading-relaxed text-ink-600">
-            <Skill>modernize-germain</Skill> derives this edition — a « Résumé » that orients a
+            <Skill>modernize</Skill> derives this edition — a « Résumé » that orients a
             reader new to the subject, then the mathematics in current notation and current
             names, in French. It reads the transcription, never the facsimile, and it takes the
             volume whole rather than one batch: the argument it restates runs across the batch
@@ -286,7 +286,7 @@ function MissingTranscript({
           {folder.complete ? (
             <>
               <code className="w-full max-w-[40em] rounded-lg border border-ink-200 bg-ink-50 px-3 py-2 font-mono text-[12.5px] text-ink-900">
-                /modernize-germain {cote.id}
+                /modernize {cote.id}
               </code>
               <p className="max-w-[40em] text-[12.5px] leading-relaxed text-ink-500">
                 All {folder.total} {folder.total === 1 ? 'batch' : 'batches'} of this volume are
@@ -302,7 +302,7 @@ function MissingTranscript({
                 guess where the argument was going.
               </p>
               <code className="w-full max-w-[40em] rounded-lg border border-ink-200 bg-ink-50 px-3 py-2 font-mono text-[12.5px] text-ink-900">
-                /transcribe-germain {cote.id}, batch {folder.missing[0]}
+                /transcribe {cote.id}, batch {folder.missing[0]}
               </code>
             </>
           )}
@@ -310,14 +310,14 @@ function MissingTranscript({
       ) : (
         <>
           <p className="max-w-[40em] text-[13.5px] leading-relaxed text-ink-600">
-            <Skill>transcribe-germain</Skill> reads the very views shown on the right — mirrored
+            <Skill>transcribe</Skill> reads the very views shown on the right — mirrored
             locally from Gallica's IIIF service — and writes the LaTeX transcription. It works
             one batch at a time, {BATCH_SIZE} views per pass; past that the quality of reading
             falls away with nothing to signal it.
           </p>
           <code className="w-full max-w-[40em] rounded-lg border border-ink-200 bg-ink-50 px-3 py-2 font-mono text-[12.5px] text-ink-900">
             npm run archive -- {cote.id} --batches {batch}
-            {'\n'}/transcribe-germain {cote.id} {batch}
+            {'\n'}/transcribe {cote.id} {batch}
           </code>
           <p className="max-w-[40em] text-[12.5px] leading-relaxed text-ink-500">
             The mirror is for the pass, not for the site: it lands in <code>archives/</code>,

@@ -57,22 +57,39 @@ const SITE = 'https://germain.commutator.io';
 const REPO = 'https://github.com/Commutator-IO/germain-project';
 
 /**
- * Volume slug → Gallica ark, read off the generated catalogue, so that every
- * <pb> can point at the very view in Gallica's reader. A volume with no ark is
- * not online and has no transcription to export; the facs is then omitted.
+ * The catalogue, read off the generated file: each volume's ark, so that every
+ * <pb> can point at the very view in Gallica's reader; the mathematician whose
+ * archive it is, for <author>; and its holder, for <repository>. Parsed as the
+ * JSON arrays the file contains rather than by pattern, so a group's fields can
+ * never be taken for a volume's.
  */
-const ARKS = await (async () => {
+const CATALOGUE = await (async () => {
+  const array = (src, name) => {
+    const i = src.indexOf(`export const ${name}`);
+    if (i < 0) return [];
+    const j = src.indexOf('= [', i) + 2;
+    let depth = 0;
+    for (let k = j; k < src.length; k++) {
+      if (src[k] === '[') depth++;
+      else if (src[k] === ']' && --depth === 0) return JSON.parse(src.slice(j, k + 1));
+    }
+    return [];
+  };
   try {
     const src = await readFile(resolve(ROOT, 'src', 'content', 'catalogue.ts'), 'utf8');
-    const out = {};
-    for (const m of src.matchAll(/"id":\s*"([^"]+)"[\s\S]*?"ark":\s*("([^"]+)"|null)/g)) {
-      if (m[3]) out[m[1]] = m[3];
-    }
-    return out;
+    const holders = new Map(array(src, 'HOLDERS').map((h) => [h.id, h]));
+    const groups = new Map(array(src, 'GROUPS').map((g) => [g.id, g]));
+    return new Map(
+      array(src, 'COTES').map((v) => [
+        v.id,
+        { ark: v.ark, author: groups.get(v.group)?.title ?? null, holder: holders.get(v.holder)?.name ?? null },
+      ]),
+    );
   } catch {
-    return {};
+    return new Map();
   }
 })();
+const ARKS = Object.fromEntries([...CATALOGUE].filter(([, v]) => v.ark).map(([id, v]) => [id, v.ark]));
 const TEI_NS = 'http://www.tei-c.org/ns/1.0';
 
 // ---------------------------------------------------------------------------
@@ -451,7 +468,9 @@ function convert(tex) {
 function document(meta, body) {
   const t = (s) => escapeXml(s);
   const today = new Date().toISOString().slice(0, 10);
-  const title = `Papiers de Sophie Germain, ${meta.shelfmark || meta.folder}, vues ${meta.first}–${meta.last} — transcription`;
+  const entry = CATALOGUE.get(meta.folder) ?? {};
+  const author = entry.author && !/several hands|Académie/i.test(entry.author) ? entry.author : null;
+  const title = `${author ? `Manuscrits de ${author}, ` : ''}${meta.shelfmark || meta.folder}, vues ${meta.first}–${meta.last} — transcription`;
   const ark = ARKS[meta.folder];
   const modelLine = meta.model
     ? `<name xml:id="pass" type="model">${t(meta.model)}${meta.modelId ? ` (${t(meta.modelId)})` : ''}</name>`
@@ -463,7 +482,7 @@ function document(meta, body) {
     <fileDesc>
       <titleStmt>
         <title>${t(title)}</title>
-        <author>Sophie Germain</author>
+        ${author ? `<author>${t(author)}</author>` : ''}
         <respStmt>
           <resp>transcription automatique — première passe, non vérifiée contre les pages par une personne${
             meta.passDate ? ` (<date when="${t(meta.passDate)}">${t(meta.passDate)}</date>)` : ''
@@ -484,7 +503,7 @@ function document(meta, body) {
         <date when="${today}">${today}</date>
         <availability status="free">
           <licence target="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</licence>
-          <p>Les manuscrits de Sophie Germain sont dans le domaine public. Cette
+          <p>Le manuscrit transcrit est dans le domaine public. Cette
           transcription est une première lecture automatique, non vérifiée, placée
           dans le domaine public (CC0) ; aucune image n'est reproduite — le
           fac-similé est celui de Gallica, cité vue par vue. Source gallica.bnf.fr /
@@ -498,8 +517,8 @@ function document(meta, body) {
           <msIdentifier>
             <country>France</country>
             <settlement>Paris</settlement>
-            <repository>Bibliothèque nationale de France, département des Manuscrits</repository>
-            <collection>Papiers de Sophie Germain</collection>
+            <repository>${t(entry.holder || 'Bibliothèque nationale de France, département des Manuscrits')}</repository>
+            ${author ? `<collection>${t(`Manuscrits de ${author}`)}</collection>` : ''}
             <idno type="shelfmark">${t(meta.shelfmark || meta.folder)}</idno>
           </msIdentifier>
           ${meta.title ? `<head>${t(meta.title)}</head>` : ''}
@@ -513,7 +532,7 @@ function document(meta, body) {
           </msContents>
           ${
             meta.dating
-              ? `<history><origin><origDate>${t(meta.dating)}</origDate><note>Datation du catalogue de la BnF, reproduite telle quelle.</note></origin></history>`
+              ? `<history><origin><origDate>${t(meta.dating)}</origDate><note>Datation du catalogue, reproduite telle quelle.</note></origin></history>`
               : ''
           }
           <additional>
@@ -533,9 +552,9 @@ function document(meta, body) {
     </fileDesc>
     <encodingDesc>
       <projectDesc>
-        <p>Transcription des papiers de Sophie Germain, une passe de vingt vues
+        <p>Transcription de manuscrits de mathématiciens numérisés dans Gallica, une passe de vingt vues
         par conversation avec un grand modèle multimodal, sous la procédure
-        <hi rend="monospace">transcribe-germain</hi> du dépôt. Le fichier
+        <hi rend="monospace">transcribe</hi> du dépôt. Le fichier
         LaTeX est la source de référence ; ce TEI en est dérivé mécaniquement
         par <hi rend="monospace">scripts/tei.mjs</hi> et n'a pas été relu.</p>
       </projectDesc>

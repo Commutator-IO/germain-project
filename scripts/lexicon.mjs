@@ -31,7 +31,7 @@
  *   project has never once been confident about, and the file says so.
  * — **Ours, and therefore excluded** — `\note{}`, `\add{}`, every section
  *   heading, and the whole preamble. That prose is the transcriber's French,
- *   not Germain's, and it would otherwise swamp the list with the
+ *   not the author's, and it would otherwise swamp the list with the
  *   vocabulary of the apparatus itself.
  *
  * Only `.fr.tex` is read. The modernised readings are in current notation and
@@ -44,7 +44,7 @@ import { resolve } from 'node:path';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const SOURCE = resolve(ROOT, 'transcripts');
-const OUT = resolve(ROOT, '.claude', 'skills', 'transcribe-germain', 'references');
+const OUT = resolve(ROOT, '.claude', 'skills', 'transcribe', 'references');
 
 /** Below this a word is noise — one bad reading, one proper name. */
 const DEFAULT_MIN = 3;
@@ -325,8 +325,8 @@ design.
 **The corpus is bilingual, and not all of it is his.** Whole runs are in English
 — his own reading notes on a typescript, and correspondence in both directions.
 Letters *to* him are transcribed like everything else and cannot be separated
-out mechanically, so a few hundred words here are Murre's rather than
-Germain's. Grammar words of both languages are filtered; the rest stands.
+out mechanically, so some words here are the correspondents' rather than the
+authors'. Grammar words of both languages are filtered; the rest stands.
 
 ## His register
 

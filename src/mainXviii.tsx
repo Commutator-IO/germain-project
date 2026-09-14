@@ -5,6 +5,6 @@ import { BookPage } from './BookPage.tsx';
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
-    <BookPage bookKey="fermat" />
+    <BookPage bookKey="xviii" />
   </StrictMode>,
 );

@@ -1,125 +1,246 @@
 [
   {
-    "key": "elasticity",
-    "path": "/elasticite/",
-    "title": "Cahier d'élasticité",
-    "navTitle": "Élasticité",
-    "subtitle": "The three memoirs on vibrating plates that won the Académie's prize in 1816 — none of which was ever printed as written",
-    "period": "1811 – 1815",
+    "key": "xvii",
+    "path": "/xvii/",
+    "title": "Cahier du XVIIᵉ siècle",
+    "navTitle": "XVIIᵉ",
+    "subtitle": "Mersenne and his correspondents — Descartes, Fermat, Roberval, Pascal — with Viète before them and L'Hospital and Varignon after",
+    "period": "1575 – 1720",
     "inventoryGroup": null,
-    "rationale": "No catalogue groups these. The Académie filed each memoir under its prize year; the BnF bound her working notes on elasticity in with everything else as « dissertations et problèmes »; Florence has her remarks on Cauchy and Navier. This cahier gathers what concerns the vibration of elastic surfaces, and it is a grouping of our own. Its centre of gravity is not online: the memoirs of 1811, 1813 and 1815 are held at the Archives des prix of the Institut, are not digitised, and have been transcribed by Nathalie Grun in her 2022 thesis — a transcription that is hers, linked here and not reproduced. What this site can put beside a facsimile is the digitised volume Français 9115, in which the leaves on elasticity have yet to be identified by reading.",
+    "rationale": "The volumes of this period came into the BnF by every route the library has — the old royal collection, the Latin series, Libri's papers, later purchases — and are catalogued accordingly, by fonds and number. This cahier puts them back side by side, one mathematician to a section, in the order of their lives. The grouping is ours. Some of what is listed is autograph, some is copy made in the period; the catalogue title says which where it knows, and a volume's note says it again.",
     "sections": [
       {
-        "title": "The three prize memoirs",
-        "intro": "Sole entrant three times running. The 1811 memoir's equation was wrong; the 1813 memoir's was right and earned an honourable mention; the 1815 memoir took the prize, and she reworked it into the « Recherches » of 1821. Not online. The Archives' portal is consulted on site, and the extracts France Mémoire published are credited to the Archives.",
-        "cotes": ["ads-1811", "ads-1813", "ads-1815"]
+        "title": "Francesco Maurolico (1494-1575)",
+        "intro": "Short works on mathematics and astronomy, in one Latin volume.",
+        "cotes": [
+          "latin-17859"
+        ]
       },
       {
-        "title": "Working notes, bound with everything else",
-        "intro": "Bucciarelli and Dworsky read the elasticity notes in the BnF's three volumes of « Papiers ». Only the middle volume is digitised. Which of its 750 views concern plates and which concern primes is not published anywhere, and is the first thing a pass over the volume will have to record.",
-        "cotes": ["fr-9115", "fr-9114", "fr-9116"]
+        "title": "François Viète (1540-1603)",
+        "intro": "A volume of papers under his name.",
+        "cotes": [
+          "nal-1644"
+        ]
       },
       {
-        "title": "Remarks on Cauchy and Navier",
-        "intro": "Among the two hundred sheets in Florence, Del Centina reports her remarks on the elasticity papers of Cauchy and Navier — the two men who took the theory past her. Not digitised.",
-        "cotes": ["moreniana-nfl"]
+        "title": "Claude Mydorge (1585-1647)",
+        "intro": "A treatise of geometry by Descartes's friend and correspondent.",
+        "cotes": [
+          "fr-656"
+        ]
+      },
+      {
+        "title": "Marin Mersenne (1588-1648)",
+        "intro": "The friar through whom half of seventeenth-century science wrote to the other half: his papers, his work on the Bible, his remarks on the Harmonie universelle, the treatise on sound, and three volumes of the letters he received, gathered after his death by Hilarion de Coste.",
+        "cotes": [
+          "nal-2338",
+          "naf-5176",
+          "naf-6204",
+          "naf-6205",
+          "naf-6206",
+          "latin-17261",
+          "latin-17262",
+          "fr-12357",
+          "fr-12358",
+          "arsenal-2884"
+        ]
+      },
+      {
+        "title": "René Descartes (1596-1650)",
+        "intro": "His letters to Mersenne from 1638 to 1647, in two volumes, and his autograph correspondence with Constantijn Huygens.",
+        "cotes": [
+          "naf-5160",
+          "naf-5161",
+          "naf-23084"
+        ]
+      },
+      {
+        "title": "Pierre de Fermat (1601?-1665)",
+        "intro": "Mathematical memoirs under his name, and seventeenth-century copies of his letters and short works with Descartes's and Galileo's.",
+        "cotes": [
+          "nal-2339",
+          "naf-10556"
+        ]
+      },
+      {
+        "title": "Gilles Personne de Roberval (1602-1675)",
+        "intro": "Two volumes of papers; a treatise on mechanics of 1645 with a letter to Fermat; elements of geometry attributed to him; a miscellany with Huygens, Torricelli and Fermat.",
+        "cotes": [
+          "nal-2340",
+          "nal-2341",
+          "latin-7226",
+          "fr-9119",
+          "latin-11195"
+        ]
+      },
+      {
+        "title": "René-François de Sluse (1622-1685)",
+        "intro": "Four volumes of mathematical miscellanies by the canon of Liège.",
+        "cotes": [
+          "latin-10247",
+          "latin-10248",
+          "latin-10249",
+          "latin-10250"
+        ]
+      },
+      {
+        "title": "Blaise Pascal (1623-1662)",
+        "intro": "The « Recueil original » of the Pensées — his own sheets, pasted onto larger leaves — with the first copy and a later one, and a letter of 1643 to his sister. His papers bound with Mersenne's are listed under Mersenne.",
+        "cotes": [
+          "fr-9202",
+          "fr-9203",
+          "fr-12449",
+          "naf-15383"
+        ]
+      },
+      {
+        "title": "Guillaume de L'Hospital (1661-1704)",
+        "intro": "A manuscript of the Analyse des infiniment petits.",
+        "cotes": [
+          "fr-25302"
+        ]
+      },
+      {
+        "title": "Pierre Varignon (1654-1722)",
+        "intro": "A Latin De mecanica.",
+        "cotes": [
+          "latin-10278"
+        ]
+      },
+      {
+        "title": "An album of several hands",
+        "intro": "Autograph letters of d'Alembert, the abbé Bossut, Sophie Germain, Christiaan Huygens and Mersenne, bound together.",
+        "cotes": [
+          "naf-9544"
+        ]
       }
     ],
     "inProgress": false
   },
   {
-    "key": "fermat",
-    "path": "/fermat/",
-    "title": "Cahier de Fermat",
-    "navTitle": "Fermat",
-    "subtitle": "The grand plan to prove Fermat's Last Theorem, spread across two libraries and a letter — of which one footnote of Legendre's was all anyone knew for two centuries",
-    "period": "1804 – 1819",
+    "key": "xviii",
+    "path": "/xviii/",
+    "title": "Cahier du XVIIIᵉ siècle",
+    "navTitle": "XVIIIᵉ",
+    "subtitle": "Émilie du Châtelet's Newton, d'Alembert's lunar theory, Lagrange's papers and Condorcet's",
+    "period": "1734 – 1813",
     "inventoryGroup": null,
-    "rationale": "Laubenbacher and Pengelley (2010) and Del Centina (2008) between them located seven pieces: a fair copy and its draft, an errata, a four-sheet « Démonstration », three polished pages on even exponents, a letter to Legendre and the letter of 12 May 1819 to Gauss that lays the whole plan out. This cahier follows their list, piece by piece, and says who located each. It is a grouping of theirs before it is ours. Of the seven, exactly one is online — the three pages at Français 9115, ff. 348r–349r — and even those have to be found among 750 unlabelled views before they can be read beside a transcription.",
+    "rationale": "Fewer volumes than either neighbour, and larger: the century's mathematicians mostly left their papers to the Académie and to Berlin and Turin, and what the BnF holds of them is what came by gift or purchase. The grouping, one section to a mathematician, is ours.",
     "sections": [
       {
-        "title": "The « Remarques » and their errata",
-        "intro": "Her principal Fermat manuscript: twenty sheets in a fair hand, thirteen labelled sections, the draft of which is in Florence. Both located by Laubenbacher and Pengelley; the draft transcribed by Del Centina. Neither volume is digitised.",
-        "cotes": ["fr-9114", "moreniana-nfl"],
-        "pieces": ["fr-9114-remarques", "fr-9114-errata", "moreniana-remarques"]
+        "title": "Émilie du Châtelet (1706-1749)",
+        "intro": "Her French translation of Newton's Principia in three manuscript volumes, the Institutions physiques, and her letters to Maupertuis.",
+        "cotes": [
+          "fr-12266",
+          "fr-12267",
+          "fr-12268",
+          "fr-12265",
+          "fr-12269"
+        ]
       },
       {
-        "title": "The « Démonstration » for exponents 2(8n ± 3)",
-        "intro": "Four sheets in which the theorem Legendre attributed to her in 1823 is implicit, inside a much broader claim. In the undigitised first volume.",
-        "cotes": ["fr-9114"],
-        "pieces": ["fr-9114-demonstration"]
+        "title": "Jean Le Rond d'Alembert (1717-1783)",
+        "intro": "Mathematical notes, and treatises on the motion of the moon and on questions of mathematics and astronomy.",
+        "cotes": [
+          "naf-13504",
+          "rothschild-2757"
+        ]
       },
       {
-        "title": "Even exponents — the one piece online",
-        "intro": "Three polished pages in the digitised volume. Once a pass has found folios 348 and 349 among the views, this is where reading beside the page begins.",
-        "cotes": ["fr-9115"],
-        "pieces": ["fr-9115-even"]
+        "title": "Joseph-Louis Lagrange (1736-1813)",
+        "intro": "One volume, « Papiers du géomètre J.-L. Lagrange », dated 1813 by the catalogue.",
+        "cotes": [
+          "naf-5166"
+        ]
       },
       {
-        "title": "The letters that explain the plan",
-        "intro": "The 1819 letter to Gauss summarises the manuscripts; the undated letter to Legendre in New York discusses the same theorem. Neither is in a French library.",
-        "cotes": ["sub-gauss", "nypl-legendre"],
-        "pieces": ["sub-gauss-1819"]
+        "title": "Condorcet (1743-1794)",
+        "intro": "Letters and papers, and the notes on the progress of the human mind.",
+        "cotes": [
+          "naf-23639",
+          "naf-4586"
+        ]
+      },
+      {
+        "title": "Papers of the Académie des sciences",
+        "intro": "A volume of the Académie's papers holding memoirs by Clairaut and Laplace, with minutes.",
+        "cotes": [
+          "naf-5153"
+        ]
       }
     ],
-    "inProgress": true
+    "inProgress": false
   },
   {
-    "key": "numbers",
-    "path": "/nombres/",
-    "title": "Cahier de théorie des nombres",
-    "navTitle": "Nombres",
-    "subtitle": "Some two hundred pages of number theory beyond Fermat — power residues, the Disquisitiones read line by line — most of it unread since she wrote it",
-    "period": "1801 – 1831",
+    "key": "xix",
+    "path": "/xix/",
+    "title": "Cahier du XIXᵉ siècle",
+    "navTitle": "XIXᵉ",
+    "subtitle": "Fourier's twenty volumes on equations and heat, Sophie Germain's papers and letters, Libri's correspondence, Prony's journals",
+    "period": "1800 – 1869",
     "inventoryGroup": null,
-    "rationale": "Laubenbacher and Pengelley estimate 150 to 200 pages of number theory in the BnF's « Papiers » and say plainly that they read only the part bearing on Fermat. Del Centina and Fiocca found results on power residues in the enclosures to her letters to Gauss that nobody had attributed to her. This cahier is the rest: what is in the volumes and in the enclosures that is number theory and is not the Fermat plan. It is a grouping of our own, and until a pass has gone through Français 9115 it is a promise rather than a list — the volume is the digitised one, and the only place this cahier can start.",
+    "rationale": "Three archives of very different sizes and one small piece. Fourier's papers came to the BnF as a series; Germain's and part of Libri's came when Libri's collection was seized in 1848; Prony's journals are the École des ponts' and are served by Gallica. One section to a mathematician; the grouping is ours. Germain's volumes are the ones this site has begun to transcribe.",
     "sections": [
       {
-        "title": "The digitised volume",
-        "intro": "Français 9115, 372 leaves, 750 views, number theory and physics unsorted. This is the working front of the whole site: every batch of twenty views that gets transcribed tells us for the first time what is on those leaves.",
-        "cotes": ["fr-9115"]
+        "title": "Joseph Fourier (1768-1830)",
+        "intro": "Twenty volumes of his papers: the analysis of equations, algebra, inequalities, probability and mutual insurance, geometry, mechanics, elastic plates, and seven volumes on the theory of heat. The series runs from Français 22501 to 22529; the volumes not listed here did not come up in Gallica.",
+        "cotes": [
+          "fr-22506",
+          "fr-22507",
+          "fr-22509",
+          "fr-22510",
+          "fr-22511",
+          "fr-22512",
+          "fr-22513",
+          "fr-22514",
+          "fr-22515",
+          "fr-22519",
+          "fr-22520",
+          "fr-22521",
+          "fr-22522",
+          "fr-22523",
+          "fr-22524",
+          "fr-22525",
+          "fr-22526",
+          "fr-22527",
+          "fr-22528",
+          "fr-22529"
+        ]
       },
       {
-        "title": "The two volumes not online",
-        "intro": "Listed so that the count is honest. Nothing can be read beside them here.",
-        "cotes": ["fr-9114", "fr-9116"]
+        "title": "Sophie Germain (1776-1831)",
+        "intro": "Her papers on mathematics and physics, 750 views unsorted; her philosophical essay; the letters she received from Gauss, Legendre, Cauchy, Fourier and others; and a small volume of letters from Libri's papers. All four are transcribed on this site.",
+        "cotes": [
+          "fr-9115",
+          "fr-9117",
+          "fr-9118",
+          "naf-4073"
+        ],
+        "pieces": [
+          "fr-9115-even"
+        ]
       },
       {
-        "title": "The mathematical enclosures to Gauss",
-        "intro": "Results, proofs and conjectures she sent to Gauss between 1804 and 1819, inspired by the Disquisitiones. Edited by Del Centina and Fiocca (2012), whose edition is theirs.",
-        "cotes": ["sub-gauss"]
-      }
-    ],
-    "inProgress": true
-  },
-  {
-    "key": "letters",
-    "path": "/correspondance/",
-    "title": "Correspondance",
-    "subtitle": "What she received from Gauss, Legendre, Cauchy and Fourier, and what she sent — half of it in Paris, half of it wherever her correspondents' papers went",
-    "period": "1804 – 1831",
-    "inventoryGroup": null,
-    "rationale": "The BnF holds the letters she received (Français 9118) and a small volume of letters from Libri's papers (NAF 4073); Göttingen holds her letters to Gauss; Florence her letters to Libri and drafts to Poinsot, Legendre and Lagrange; New York one letter to Legendre. No catalogue unites them, and the editions — Boncompagni 1880, Stupuy 1879, Del Centina 2005, Del Centina and Fiocca 2012 — each take one holder's share. This cahier lists all of it and can show two volumes: the BnF's two, which are digitised and whose images Gallica serves openly.",
-    "sections": [
-      {
-        "title": "Letters received — Français 9118",
-        "intro": "93 leaves, digitised from a black-and-white microfilm: Gauss, Legendre, Cauchy, Delambre, Fourier, d'Ansse de Villoison. The Gauss letters are edited in Del Centina and Fiocca (2012).",
-        "cotes": ["fr-9118"]
+        "title": "Guillaume Libri (1803-1869)",
+        "intro": "Eight volumes of his correspondence and papers: letters received, notes on the manuscripts of provincial libraries, his dealings with booksellers and librarians, mathematical memoirs in three languages.",
+        "cotes": [
+          "naf-3259",
+          "naf-3260",
+          "naf-3263",
+          "naf-3265",
+          "naf-3275",
+          "naf-3276",
+          "naf-3282",
+          "naf-3283"
+        ]
       },
       {
-        "title": "From Libri's papers — NAF 4073 and 5166",
-        "intro": "32 leaves of letters by Delambre, Fourier, Germain, Lagrange, Lalande and Libri; and a second shelfmark the catalogue cross-references and this site has not yet read.",
-        "cotes": ["naf-4073", "naf-5166"]
-      },
-      {
-        "title": "Her letters to Gauss — Göttingen",
-        "intro": "Ten letters, 1804 to 1819, with mathematical enclosures. Five were printed by Boncompagni in 1880; all are edited by Del Centina and Fiocca.",
-        "cotes": ["sub-gauss"]
-      },
-      {
-        "title": "Florence and New York",
-        "intro": "Nine letters to Libri and drafts to Poinsot, Legendre and Lagrange, edited by Del Centina (2005); one letter to Legendre at the New York Public Library.",
-        "cotes": ["moreniana-palagi", "nypl-legendre"]
+        "title": "Gaspard de Prony (1755-1839)",
+        "intro": "The journals of his missions in Italy, from the manuscript collection of the École des ponts et chaussées.",
+        "cotes": [
+          "enpc-1817"
+        ]
       }
     ],
     "inProgress": false

@@ -2,15 +2,20 @@
 /**
  * Rebuilds `src/content/catalogue.ts` from `holdings.json` and Gallica.
  *
- *   npm run catalogue              ask Gallica for every digitised volume
- *   npm run catalogue -- --cached  use the manifests already under archives/
+ *   npm run catalogue               ask Gallica for every digitised volume
+ *   npm run catalogue -- --cached   use the manifests already under archives/
+ *   npm run catalogue -- --missing  use the cache, and ask Gallica only for
+ *                                   the manifests not yet in it
  *
- * The holdings file is the seed and stays hand-kept: it names every place a
- * Germain manuscript is known to be, in the holder's own words. What this
- * script adds is the one fact the seed cannot know — how many views Gallica
- * serves for each digitised volume — read from the IIIF manifest, the same
- * document the facsimile pane will read in the browser. A count typed by
- * hand would be right until the BnF re-digitised a volume; this one follows.
+ * The holdings file is the seed and stays hand-kept: it names every volume
+ * this site reads — mathematicians' archives digitised in Gallica — and which
+ * mathematician it belongs to. What this script adds is what the seed should
+ * not retype: how many views Gallica serves for each volume, read from the
+ * IIIF manifest, the same document the facsimile pane will read in the
+ * browser, and — where the seed leaves them null — the holder's own title,
+ * dating, physical description, leaf count and notice, from the manifest's
+ * metadata. A count typed by hand would be right until the BnF re-digitised a
+ * volume; this one follows.
  *
  * Manifests are cached under `archives/manifests/` (git-ignored, like every
  * other byte fetched from a holder), for two reasons. Gallica rate-limits:
@@ -35,7 +40,11 @@ export const GALLICA = 'https://gallica.bnf.fr';
 export const UA = 'germain.commutator.io catalogue (+https://germain.commutator.io/sources/)';
 
 /** Between two requests. Generous on purpose: nothing here is in a hurry. */
-const PAUSE_MS = 2500;
+const PAUSE_MS = Number(process.env.CATALOGUE_PAUSE_MS ?? 2500);
+
+/** After a 429, as in scripts/archive.mjs: Gallica's quota is per minute. */
+const RETRY_AFTER_MS = 45_000;
+const ATTEMPTS = 4;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -49,26 +58,30 @@ export const manifestUrl = (ark) => `${GALLICA}/iiif/ark:/12148/${ark}/manifest.
  * the volume keeps whatever count the last catalogue recorded, so one bad
  * network day does not zero a volume's views.
  */
-export async function manifest(ark, { cached = false } = {}) {
+export async function manifest(ark, { cached = false, missing = false } = {}) {
   await mkdir(CACHE, { recursive: true });
   const file = resolve(CACHE, `${ark}.json`);
   try {
     const text = await readFile(file, 'utf8');
-    if (cached) return JSON.parse(text);
+    if (cached || missing) return Object.assign(JSON.parse(text), { __cached: true });
   } catch {
     if (cached) return null;
   }
-  for (let attempt = 0; attempt < 3; attempt++) {
+  for (let attempt = 0; attempt < ATTEMPTS; attempt++) {
     try {
       const r = await fetch(manifestUrl(ark), { headers: { 'User-Agent': UA } });
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      if (!r.ok) throw Object.assign(new Error(`HTTP ${r.status}`), { status: r.status });
       const text = await r.text();
       JSON.parse(text); // refuse to cache an error page
       await writeFile(file, text, 'utf8');
       return JSON.parse(text);
     } catch (e) {
-      process.stderr.write(`  ${ark}: ${e.message}${attempt < 2 ? ' — retrying' : ''}\n`);
-      await sleep(PAUSE_MS * (attempt + 2));
+      const last = attempt === ATTEMPTS - 1;
+      process.stderr.write(`  ${ark}: ${e.message}${last ? '' : ' — waiting, then retrying'}\n`);
+      if (last) break;
+      // Gallica's quota is per minute: a 429 is answered by waiting well past
+      // the minute, longer each time, as scripts/archive.mjs does.
+      await sleep(e.status === 429 ? RETRY_AFTER_MS * (attempt + 1) : PAUSE_MS * (attempt + 2));
     }
   }
   try {
@@ -78,20 +91,30 @@ export async function manifest(ark, { cached = false } = {}) {
   }
 }
 
-/** What the catalogue needs from a manifest: the view count and the first image's size. */
+/** What the catalogue needs from a manifest: the view count, the first image's size, and the holder's metadata. */
 export function summarise(m) {
   const canvases = m?.sequences?.[0]?.canvases ?? [];
   const first = canvases[0];
+  const meta = Object.fromEntries((m?.metadata ?? []).map((e) => [e.label, typeof e.value === 'string' ? e.value : '']));
+  const format = meta.Format ?? '';
+  const folios = /(\d+)\s*feuillets/.exec(format);
+  const notice = /https?:\/\/\S+/.exec(meta.Relation ?? '');
   return {
     views: canvases.length,
     width: first?.width ?? 0,
     height: first?.height ?? 0,
     label: m?.label ?? '',
+    title: meta.Title ?? '',
+    date: meta.Date ?? '',
+    extent: format,
+    folios: folios ? Number(folios[1]) : null,
+    notice: notice ? notice[0].replace(/^http:/, 'https:') : null,
   };
 }
 
 async function main() {
   const cached = process.argv.includes('--cached');
+  const missing = process.argv.includes('--missing');
   const seed = JSON.parse(await readFile(SEED, 'utf8'));
 
   // Whatever the last run recorded, so a volume Gallica will not answer for
@@ -99,8 +122,17 @@ async function main() {
   let previous = {};
   try {
     const old = await readFile(OUT, 'utf8');
-    for (const m of old.matchAll(/"id":\s*"([^"]+)"[\s\S]*?"pages":\s*(\d+)/g)) {
-      previous[m[1]] = Number(m[2]);
+    // Parsed as the JSON array it is, so a group's id is never paired with a
+    // volume's count.
+    const i = old.indexOf('export const COTES');
+    const j = old.indexOf('= [', i) + 2;
+    let depth = 0;
+    for (let k = j; i >= 0 && k < old.length; k++) {
+      if (old[k] === '[') depth++;
+      else if (old[k] === ']' && --depth === 0) {
+        for (const v of JSON.parse(old.slice(j, k + 1))) previous[v.id] = v.pages;
+        break;
+      }
     }
   } catch {
     // First run.
@@ -109,25 +141,33 @@ async function main() {
   const volumes = [];
   for (const v of seed.volumes) {
     let pages = 0;
+    let fill = {};
     if (v.ark) {
-      const m = await manifest(v.ark, { cached });
+      const m = await manifest(v.ark, { cached, missing });
       if (m) {
         const s = summarise(m);
         pages = s.views;
+        // The seed's own words win; the manifest's fill only what it left empty.
+        fill = { title: s.title, date: s.date, extent: s.extent, folios: s.folios, notice: s.notice };
         process.stdout.write(`  ${v.id.padEnd(18)} ${v.ark}  ${s.views} views  ${s.width}×${s.height}\n`);
       } else {
         pages = previous[v.id] ?? 0;
         process.stderr.write(`  ${v.id}: no manifest — keeping ${pages} views from the last run\n`);
       }
-      if (!cached) await sleep(PAUSE_MS);
+      if (!cached && !m?.__cached) await sleep(PAUSE_MS);
     }
-    volumes.push({ ...v, pages });
+    const filled = { ...v };
+    for (const [k, val] of Object.entries(fill)) {
+      if ((filled[k] === null || filled[k] === undefined || filled[k] === '') && val) filled[k] = val;
+    }
+    volumes.push({ ...filled, extent: filled.extent ?? '', pages });
   }
 
   const groups = seed.groups.map((g) => ({
     id: g.id,
     title: g.title,
     date: g.date,
+    century: g.century,
     cotes: volumes.filter((v) => v.group === g.id).map((v) => v.id),
   }));
 

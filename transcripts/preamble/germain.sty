@@ -1,4 +1,4 @@
-% The preamble shared by every transcription of the Sophie Germain papers.
+% The preamble shared by every transcription of the mathematicians' manuscripts in Gallica.
 %
 % It rests on one idea: **uncertainty compounds, it does not resolve.** A
 % transcription that smooths over a doubtful word has destroyed the only thing
@@ -13,12 +13,12 @@
 % Comments here are English, like the rest of the repository. The documents
 % this preamble sets are French, and that is deliberate: see the skills.
 
-\ProvidesPackage{germain}[2026/09/10 Transcriptions of the Sophie Germain papers]
+\ProvidesPackage{germain}[2026/09/15 Transcriptions of mathematicians' manuscripts in Gallica]
 
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{mathrsfs}
 % Kept from the parent preamble so the renderer's diagram support stays
-% available; Germain draws no commutative diagrams, and nothing here uses it.
+% available; these manuscripts draw no commutative diagrams, and nothing here uses it.
 \usepackage{tikz-cd}
 \usepackage[english,french]{babel}
 \usepackage{fontspec}
@@ -104,7 +104,7 @@
 % An editorial addition — a missing letter, an implied word.
 \newcommand{\add}[1]{\textcolor{blue!50!black}{[#1]}}
 
-% Struck out by Germain herself. What she crossed out is part of the document.
+% Struck out by the writer. What was crossed out is part of the document.
 \newcommand{\struck}[1]{\sout{#1}}
 
 % The transcriber's note, on the state of the page or the mathematics.
@@ -128,7 +128,7 @@
 
 \AtBeginDocument{%
   \begin{center}
-    {\large\bfseries Papiers de Sophie Germain ---
+    {\large\bfseries Manuscrits de mathématiciens (Gallica) ---
       \ifx\grothShelfmark\empty\grothFolder\else\grothShelfmark\fi}\\[2pt]
     {\itshape\grothFoldertitle}\\[4pt]
     {\small vues \grothFirst--\grothLast

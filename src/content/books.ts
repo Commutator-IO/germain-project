@@ -8,7 +8,7 @@ export const EDITIONS = editionsRaw as PublishedEdition[];
 export const PIECES = piecesRaw as Piece[];
 
 /**
- * The four cahiers, read back from the JSON the mirroring script also reads.
+ * The three cahiers, read back from the JSON the mirroring script also reads.
  *
  * Typing is applied here rather than in the JSON: this is the one place where
  * a volume cited by a cahier but absent from the catalogue would show, and it
@@ -32,8 +32,8 @@ export function book(key: BookKey): Book {
  * site may do next. A volume with a public-domain printed edition can be
  * transcribed here freely, with the print beside it as a check. A volume with
  * a recent scholarly transcription is one where the better reading already
- * exists and belongs to somebody — the memoirs at the Académie are the case —
- * and this site's part is to link to it, not to duplicate it and not to copy.
+ * exists and belongs to somebody, and this site's part is to link to it, not
+ * to duplicate it and not to copy.
  */
 const EDITED = new Map<string, PublishedEdition>();
 for (const e of EDITIONS) {

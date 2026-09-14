@@ -40,7 +40,7 @@ export function Header({ path }: { path: string }) {
         <a href="/" className="flex min-w-0 items-center gap-2.5">
           <Mark />
           <span className="min-w-0 truncate text-[13px] font-semibold tracking-tight text-ink-900">
-            Sophie Germain Archives
+            Mathematicians' Manuscripts in Gallica
           </span>
         </a>
 
@@ -107,10 +107,10 @@ export function Header({ path }: { path: string }) {
  * The mark: a square plate and its nodal lines.
  *
  * Chladni's figures — sand gathering on the lines a vibrating plate leaves
- * still — are the problem the Académie set in 1809 and the one she answered
- * three times. A square plate with the simplest of them, the two diagonals
- * with a ring, is the whole corpus in one glyph: physics on the face of it,
- * and the number theory underneath, which nobody saw for two centuries.
+ * still — were the problem Sophie Germain answered three times, and her papers
+ * were the first this site read. A square with a circle and its diagonals is
+ * also the oldest figure of the mathematics these manuscripts share, from
+ * Viète's geometry to Fourier's heat in a ring; the mark stayed.
  */
 function Mark() {
   return (
@@ -127,13 +127,13 @@ export function Footer() {
     <footer className="mt-16 border-t border-ink-200 bg-white">
       <div className="mx-auto max-w-6xl px-5 py-8 text-[12.5px] leading-relaxed text-ink-500">
         <p className="max-w-[52em]">
-          The facsimiles shown on this site are the{' '}
-          <strong className="font-semibold text-ink-700">Bibliothèque nationale de France's</strong>{' '}
-          digitisations of Sophie Germain's papers, read from Gallica's IIIF service as you turn
-          the pages — <span className="text-ink-700">Source gallica.bnf.fr / Bibliothèque nationale de France</span>.
-          The three prize memoirs at the Archives de l'Académie des sciences, the Florence
-          papers and her letters to Gauss at Göttingen are not online and are not shown; the
-          site says where they are and who has edited them.
+          The facsimiles shown on this site are digitisations in{' '}
+          <strong className="font-semibold text-ink-700">Gallica</strong>, the Bibliothèque nationale de
+          France's digital library — the BnF's own manuscripts and, for one volume, the École des ponts
+          et chaussées' — read from Gallica's IIIF service as you turn the pages:{' '}
+          <span className="text-ink-700">Source gallica.bnf.fr / Bibliothèque nationale de France</span>.
+          Every volume in the catalogue is one anyone can open there; nothing that is not online is
+          listed.
         </p>
         <p className="mt-3 max-w-[52em]">
           This site neither hosts nor redistributes any image of a manuscript. It gives the
@@ -142,12 +142,12 @@ export function Footer() {
         </p>
         <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1">
           <a
-            href="https://gallica.bnf.fr/accueil/fr/html/sophie-germain-une-mathematicienne-a-la-bnf"
+            href="https://gallica.bnf.fr/"
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700"
           >
-            Sophie Germain at the BnF ↗
+            Gallica ↗
           </a>
           <span aria-hidden="true" className="text-ink-300">
             ·

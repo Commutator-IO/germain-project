@@ -10,7 +10,7 @@ import type { Edition, Holder, Manifest, TranscriptEntry, Volume } from './types
  * much as a person re-reads in one sitting when checking a transcription
  * against the page. The unit here is the Gallica **view** — one scanned image,
  * usually one side of a leaf — because that is the only numbering the IIIF
- * manifest exposes: every canvas of every Germain volume is labelled « NP ».
+ * manifest exposes: most canvases are labelled « NP ».
  */
 export const BATCH_SIZE = 20;
 

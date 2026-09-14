@@ -1,15 +1,14 @@
 /**
  * Where a manuscript physically is, and on what terms it can be shown.
  *
- * Sophie Germain had no institution, and her papers went where Guglielmo
- * Libri took them: most to the Bibliothèque nationale (seized from his Paris
- * apartment in 1848), a couple of hundred sheets to Florence (shipped with
- * the collection he kept), her letters to Gauss to Göttingen with Gauss's own
- * papers, and the three prize memoirs to the Académie that received them. So
- * unlike a fonds catalogued in one place, this corpus has five holders, and
- * what this site may do with a page depends on which one holds it.
+ * Every volume this site reads is digitised and freely viewable in Gallica —
+ * that is the whole selection rule. Nearly all are the BnF's own (département
+ * des Manuscrits, Bibliothèque de l'Arsenal); a few belong to partners whose
+ * manuscripts Gallica serves under the same IIIF service (the École des ponts
+ * for Prony). The holder is still named on every volume, because it is whose
+ * catalogue the title comes from and whose conditions apply.
  */
-export type HolderId = 'bnf' | 'academie' | 'moreniana' | 'goettingen' | 'nypl';
+export type HolderId = 'bnf' | 'enpc';
 
 export interface Holder {
   id: HolderId;
@@ -18,13 +17,8 @@ export interface Holder {
   short: string;
   city: string;
   url: string;
-  /**
-   * `iiif` — page images served under an open API this site may display;
-   * `onsite` — no images online, the reading room is the only access;
-   * `database` — a catalogue or letter database with some scans, on terms this
-   * site has not verified and does not embed.
-   */
-  access: 'iiif' | 'onsite' | 'database';
+  /** `iiif` — page images served under an open API this site may display. */
+  access: 'iiif';
   /** What the holder's own conditions say, in one sentence, with the source. */
   terms: string;
   termsUrl?: string | null;
@@ -33,8 +27,8 @@ export interface Holder {
 /**
  * A *volume* — one shelfmark, the catalogue's own unit, and this site's.
  *
- * At the BnF a shelfmark is a bound volume of several hundred leaves; at the
- * Académie it is a prize dossier; in Florence a cassetta and an inserto. The
+ * At the BnF a shelfmark is a bound volume, from a single letter to several
+ * hundred leaves. The
  * field names keep the shape the reading panes expect: `pages` counts what the
  * facsimile can turn — **Gallica views**, one per scanned image, which is the
  * only numbering the IIIF manifest exposes (every canvas is labelled « NP »).
@@ -42,7 +36,7 @@ export interface Holder {
  * transcription with `\folio{}` and never by this catalogue.
  */
 export interface Volume {
-  /** `fr-9115`, `naf-4073`, `ads-1811` — a slug, also the transcripts directory. */
+  /** `fr-9115`, `naf-4073`, `latin-10247` — a slug, also the transcripts directory. */
   id: string;
   holder: HolderId;
   /** As the holder writes it: « Français 9115 », « NAF 4073 ». */
@@ -51,7 +45,7 @@ export interface Volume {
   title: string;
   /** The catalogue's dating, verbatim. */
   date: string;
-  /** Gallica views. Zero when nothing is online. */
+  /** Gallica views. */
   pages: number;
   /** Leaves, as the catalogue counts them; null when the catalogue does not say. */
   folios: number | null;
@@ -63,15 +57,21 @@ export interface Volume {
   ark: string | null;
   /** What the volume holds and how it came to be there, in a sentence or two. */
   note: string;
-  /** The catalogue grouping this belongs to, for the archive page. */
+  /** The mathematician whose archive this is — an `ArchiveGroup` id. */
   group: string;
 }
 
-/** A grouping on the archive page: one holder, or one series within it. */
+/**
+ * A grouping on the archive page: one mathematician's volumes (or an album of
+ * several hands), with the century whose cahier lists them.
+ */
 export interface ArchiveGroup {
   id: string;
+  /** The mathematician, as usually named: « Joseph Fourier ». */
   title: string;
+  /** Life dates. */
   date: string;
+  century: BookKey;
   cotes: string[];
 }
 
@@ -100,16 +100,13 @@ export interface Piece {
 }
 
 /**
- * A *cahier* — this site's unit of reading.
+ * A *cahier* — this site's unit of reading: one period.
  *
- * Nobody catalogued Germain by subject: the BnF bound what Libri had in three
- * volumes of « dissertations et problèmes », the Académie filed three memoirs
- * under three prize years, and the letters are wherever their recipients'
- * papers went. One reads otherwise — the elasticity memoirs together, the
- * Fermat manuscripts together with the 1819 letter that summarises them. A
- * cahier names that thread and says where it comes from. `inventoryGroup`
- * points at a catalogue unit when the cahier is one, and is `null` when the
- * grouping is ours, which for Germain it always is.
+ * The volumes come from a dozen fonds catalogued in as many ways — the BnF's
+ * Français and Nouvelles acquisitions, the Latin series, Rothschild, the
+ * Arsenal, the École des ponts. A cahier puts side by side the mathematicians
+ * of one period, one section each, so that Mersenne's correspondents sit next
+ * to Mersenne. The grouping is ours; `inventoryGroup` stays `null`.
  */
 export interface Book {
   key: BookKey;
@@ -134,14 +131,15 @@ export interface BookSection {
   pieces?: string[];
 }
 
-export type BookKey = 'elasticity' | 'fermat' | 'numbers' | 'letters';
+export type BookKey = 'xvii' | 'xviii' | 'xix';
 
 /**
  * Which register a transcript is written in.
  *
  * Two, in order of distance from the page: the transcription is what is on
  * the paper; `modern` is a reading of it in today's mathematics, opening with a
- * summary for someone who has not met the subject. Both in French — hers.
+ * summary for someone who has not met the subject. Both in the language of the
+ * volume — French for most, Latin transcribed as Latin.
  */
 export type Edition = 'fr' | 'modern';
 
@@ -174,14 +172,13 @@ export interface TranscriptEntry {
  * terms this site may use it.
  *
  * Three kinds, and the distinction is legal before it is scholarly. A
- * `published` work is Germain's own text in print, in the public domain since
- * long before anyone reading this was born: it may be quoted, framed and
- * transcribed freely. A `transcribed` edition is somebody's recent editorial
- * work on her manuscripts — Grun's transcription of the three memoirs, Del
- * Centina's of Manuscript D — and it belongs to them: this site links to it,
- * cites it, and never copies a line of it, however convenient copying would
- * be. An `analysis` is a paper about the manuscripts, cited for what it
- * establishes (where a piece is, what it says) and nothing more.
+ * `published` work is the mathematician's own text in print, in the public
+ * domain: it may be quoted, framed and transcribed freely. A `transcribed`
+ * edition is somebody's recent editorial work on the manuscripts, and it
+ * belongs to them: this site links to it, cites it, and never copies a line of
+ * it, however convenient copying would be. An `analysis` is a paper about the
+ * manuscripts, cited for what it establishes (where a piece is, what it says)
+ * and nothing more.
  */
 export interface PublishedEdition {
   id: string;
@@ -204,10 +201,10 @@ export interface PublishedEdition {
 /**
  * A candidate novelty: something a volume establishes that may not stand in
  * the published literature. See `Finding` in the parent project for the
- * reasoning; one thing changes here. Germain's letters are dated and several
- * manuscripts can be placed by their contents, so a claim about *when* she
- * had a result is sometimes checkable — but only from a date on the page or in
- * a dated letter, never from an inference, and the entry must say which.
+ * reasoning; one thing changes here. Letters are dated and many manuscripts
+ * can be placed by their contents, so a claim about *when* someone had a
+ * result is sometimes checkable — but only from a date on the page or in a
+ * dated letter, never from an inference, and the entry must say which.
  */
 export interface Finding {
   id: string;

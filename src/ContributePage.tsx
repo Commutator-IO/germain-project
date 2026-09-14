@@ -28,20 +28,20 @@ const SKILLS: {
   extra?: string;
 }[] = [
   {
-    name: 'transcribe-germain',
+    name: 'transcribe',
     produces:
       'the transcription — twenty Gallica views at a time, the mathematics and the prose in LaTeX with the critical apparatus that says which words were read and which were guessed, and the folio where the pencil can be read',
     lines: 247,
     extra: 'references/specimen.tex',
   },
   {
-    name: 'modernize-germain',
+    name: 'modernize',
     produces:
       'the modernised reading — a volume at a time: a résumé for someone new to the subject, then the mathematics in current notation and current names, held to being correct as it stands',
     lines: 147,
   },
   {
-    name: 'tag-germain',
+    name: 'tag',
     produces:
       "the volume's tags — three to six English keywords closing the résumé, which the manifest extracts and the archive search matches on",
     lines: 52,
@@ -73,7 +73,7 @@ export function ContributePage() {
             reader who spots a misread word is, at that moment, the only person who knows.
           </p>
           <p className="mt-3 text-[15.5px] leading-relaxed text-ink-700">
-            {untouched} of the {ONLINE.length} digitised volumes have not been touched at all — and the ten volumes that are not online cannot be touched here.
+            {untouched} of the {ONLINE.length} digitised volumes have not been touched at all.
           </p>
         </header>
 
@@ -263,7 +263,7 @@ function Skills() {
           </p>
           <Code>{`git clone ${REPO}.git
 cd germain-project && npm install
-claude   # then type /transcribe-germain`}</Code>
+claude   # then type /transcribe`}</Code>
         </div>
 
         <div className="card min-w-0 px-5 py-4">
@@ -272,14 +272,14 @@ claude   # then type /transcribe-germain`}</Code>
           </h4>
           <p className="mt-1.5 text-[13px] leading-relaxed text-ink-600">
             Copy them under your home directory and they work in any project. Useful for the
-            transcription skill in particular, which is about reading a hand of 1810 and is not
+            transcription skill in particular, which is about reading an old hand and is not
             really specific to this corpus.
           </p>
-          <Code>{`mkdir -p ~/.claude/skills/transcribe-germain/references
-curl -o ~/.claude/skills/transcribe-germain/SKILL.md \\
-  ${RAW}/.claude/skills/transcribe-germain/SKILL.md
-curl -o ~/.claude/skills/transcribe-germain/references/specimen.tex \\
-  ${RAW}/.claude/skills/transcribe-germain/references/specimen.tex`}</Code>
+          <Code>{`mkdir -p ~/.claude/skills/transcribe/references
+curl -o ~/.claude/skills/transcribe/SKILL.md \\
+  ${RAW}/.claude/skills/transcribe/SKILL.md
+curl -o ~/.claude/skills/transcribe/references/specimen.tex \\
+  ${RAW}/.claude/skills/transcribe/references/specimen.tex`}</Code>
         </div>
       </div>
 
@@ -316,9 +316,9 @@ function RunABatch() {
 
       <Code>{`npm run archive -- fr-9115 --batches 1   # mirror twenty views from Gallica, once
 claude                                    # then, in order:
-  /transcribe-germain fr-9115 1           # one batch per conversation
-  /transcribe-germain fr-9115 2           # …until the volume is done (38 batches)
-  /modernize-germain fr-9115              # then the volume, taken whole
+  /transcribe fr-9115 1           # one batch per conversation
+  /transcribe fr-9115 2           # …until the volume is done (38 batches)
+  /modernize fr-9115              # then the volume, taken whole
 npm run render && npm run pdf && npm run manifest
 npm run dev                               # read it beside the facsimile`}</Code>
 
@@ -421,8 +421,8 @@ function Rules() {
       why: 'An invented word that reads like the others is the worst possible outcome: nothing on the page distinguishes it from a sure reading. Illegible stays \\ill{}, doubtful stays \\uncertain{}.',
     },
     {
-      no: 'Correct Germain.',
-      why: 'If a calculation is wrong on the page — and the 1811 equation was — it is wrong in the transcription, with a note. The modernised reading is the one place where the true statement is given instead — and it footnotes what the page has.',
+      no: 'Correct the author.',
+      why: 'If a calculation is wrong on the page, it is wrong in the transcription, with a note. The modernised reading is the one place where the true statement is given instead — and it footnotes what the page has.',
     },
     {
       no: 'Tick a batch as Checked without having done it.',
@@ -430,7 +430,7 @@ function Rules() {
     },
     {
       no: 'Copy anybody else\'s transcription.',
-      why: 'Not Grun\'s of the memoirs, not Del Centina\'s of the Florence draft, not a line. They are theirs. Where the manuscript is not online the honest state of this site is no reading at all, and a link.',
+      why: 'Not a printed edition of the Pensées, not the Adam–Tannery Descartes, not a scholar\'s transcription of a letter, not a line — neither to seed a reading nor to check a word. They are theirs, or they are a different object. The source is the leaf.',
     },
     {
       no: 'Commit an image, a PDF, or any facsimile.',

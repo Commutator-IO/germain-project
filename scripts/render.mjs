@@ -146,7 +146,7 @@ function liftMath(tex) {
  *
  * They are the modernised reading's entire apparatus: that edition drops the
  * brackets and underlines, so everything the transcription said in the margin
- * — an uncertain reading, a notation Germain used differently, a gap in
+ * — an uncertain reading, a notation the author used differently, a gap in
  * the manuscript — has to be said in a footnote instead. Losing one to a
  * paragraph split would silently turn an interpretation into an assertion.
  */
@@ -214,7 +214,7 @@ function dropMathBack(html, held) {
  * `tikz-cd` into a CSS grid of KaTeX nodes, with arrows drawn at read time.
  *
  * These diagrams are not decoration in this fonds — they are the language
- * Germain's algebraic geometry is written in, and a page of them shown as
+ * a geometer's argument is written in, and a page of them shown as
  * LaTeX source is a page the reader has to compile in their head. But KaTeX
  * cannot typeset tikz-cd, and the alternatives are both bad: shipping a TeX
  * engine to the browser costs megabytes, and pre-rendering to images loses the
@@ -292,7 +292,7 @@ function parseArrow(spec) {
       arrow.style = 'double';
       continue;
     }
-    // A headless line is not an arrow at all — Germain's wheels carry
+    // A headless line is not an arrow at all — a figure's wheels carry
     // plain radii as scaffolding, and drawing a head on one would assert a
     // functor nobody wrote.
     if (part === 'no head') {
@@ -455,7 +455,7 @@ function renderDiagram(raw) {
 const BRACED = [
   // The transcription's own vocabulary. These carry the whole honesty of the
   // exercise: what was read, what was guessed, what was added, what was
-  // crossed out by Germain herself.
+  // crossed out by the author.
   ['uncertain', (a) => `<span class="tr-uncertain" title="uncertain reading">${a}</span>`],
   ['add', (a) => `<span class="tr-add" title="editorial addition">[${a}]</span>`],
   ['struck', (a) => `<span class="tr-struck" title="struck out by the author">${a}</span>`],

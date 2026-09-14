@@ -21,15 +21,14 @@ export default defineConfig({
   base: process.env.BASE_PATH ?? '/',
   build: {
     rollupOptions: {
-      // One HTML entry per tab. Hosting is static: /fermat/ is served from its
+      // One HTML entry per tab. Hosting is static: /xix/ is served from its
       // own index.html, with no client-side router. A URL opened on one batch
       // still works in six months.
       input: {
         main: resolve(import.meta.dirname, 'index.html'),
-        elasticite: resolve(import.meta.dirname, 'elasticite/index.html'),
-        fermat: resolve(import.meta.dirname, 'fermat/index.html'),
-        nombres: resolve(import.meta.dirname, 'nombres/index.html'),
-        correspondance: resolve(import.meta.dirname, 'correspondance/index.html'),
+        xvii: resolve(import.meta.dirname, 'xvii/index.html'),
+        xviii: resolve(import.meta.dirname, 'xviii/index.html'),
+        xix: resolve(import.meta.dirname, 'xix/index.html'),
         archive: resolve(import.meta.dirname, 'archive/index.html'),
         sources: resolve(import.meta.dirname, 'sources/index.html'),
         method: resolve(import.meta.dirname, 'method/index.html'),

@@ -1,5 +1,5 @@
 ---
-name: tag-germain
+name: tag
 description: Writes or refreshes a volume's modern English keywords — the \keywords{} line closing the résumé of its modernised reading, which npm run manifest extracts as the volume's tags on the archive and cahier pages. Use when someone asks to tag a volume ("tag fr-9115", "add keywords", "refresh the tags"), when a modernised reading has no \keywords line, or when a revision of the reading has made the tags stale. Tags only — it edits the \keywords line and nothing else.
 ---
 
@@ -14,11 +14,13 @@ search will find it.
 
 ## What a tag is
 
-Three to six terms for a small volume, more for Français 9115, **in English**,
+Three to six terms for a small volume, more for a large one, **in English**,
 naming the vocabulary under which what the volume's leaves construct is known
-today — *Sophie Germain's theorem*, *auxiliary primes*, *power residues*,
-*Kirchhoff–Love plate*, *Chladni figures*, *biharmonic equation*. Search keys,
-not prose; the literature they point into is English.
+today — *Sophie Germain's theorem*, *auxiliary primes*, *Fourier series*,
+*heat equation*, *method of tangents*, *cycloid*, *Descartes's rule of signs*.
+Search keys, not prose; the literature they point into is English. A volume of
+letters is tagged by the mathematics the letters discuss, not by the
+correspondents.
 
 They live in exactly one place:
 

@@ -1,16 +1,14 @@
 import { Footer, Header } from './components/Frame.tsx';
-import { BOOKS, ONLINE, OFFLINE, TOTAL_PAGES, UNEDITED, cotesOf, pagesOf } from './content/books.ts';
-import { COTES, HOLDERS } from './content/catalogue.ts';
+import { BOOKS, TOTAL_PAGES, UNEDITED, cotesOf, pagesOf } from './content/books.ts';
+import { BY_ID, COTES, GROUPS } from './content/catalogue.ts';
 import { availableFor, batchCount, useManifest } from './lib/batches.ts';
 
 /**
- * The front page: what this corpus is, where it is, and where to open it.
+ * The front page: what this corpus is, whose it is, and where to open it.
  *
- * Germain's papers were never catalogued as a fonds. They went where Libri
- * took them, and today they sit with five holders in four countries, of which
- * one — the BnF — has put its share online. So the page has to do something
- * the parent project's did not: say plainly what can be read here and what
- * cannot, before offering a way in.
+ * The volumes were never one fonds: nineteen mathematicians' papers, spread
+ * across the BnF's series and one partner's. So the page leads with the names,
+ * by period, before offering a way in.
  */
 export function HomePage() {
   const manifest = useManifest();
@@ -23,6 +21,7 @@ export function HomePage() {
     transcribed: batches.filter((b) => b.html.includes('fr')).length,
     modernised: batches.filter((b) => b.html.includes('modern')).length,
   };
+  const people = GROUPS.filter((g) => !g.id.startsWith('recueils'));
 
   return (
     <>
@@ -31,46 +30,44 @@ export function HomePage() {
       <main className="mx-auto max-w-6xl px-5 py-12">
         <header className="max-w-[46em]">
           <p className="text-[11px] font-bold uppercase tracking-[0.11em] text-brand-600">
-            Papiers de Sophie Germain · BnF, Académie des sciences, Florence, Göttingen
+            Manuscrits de mathématiciens · Gallica, Bibliothèque nationale de France
           </p>
           <h1 className="titre mt-2 text-[40px] leading-[1.1] text-ink-900">
-            The mathematics Sophie Germain wrote and never published
+            The manuscripts of mathematicians that anyone can open in Gallica
           </h1>
           <p className="mt-4 text-[17px] leading-relaxed text-ink-700">
-            Three memoirs on vibrating plates that won the Académie's prize and were never
-            printed as written; a plan to prove Fermat's Last Theorem that two centuries knew
-            only through a footnote of Legendre's; two hundred pages of number theory nobody has
-            read since. This site gives the catalogue of where all of it is, and puts a
-            transcription beside each digitised leaf so that every reading can be checked
-            against the hand it came from.
+            Mersenne's letters from Descartes, Pascal's own sheets for the Pensées, Émilie du
+            Châtelet's Newton, Fourier's twenty volumes on equations and heat, Sophie Germain's
+            papers: the BnF has put the archives of nineteen mathematicians online, catalogued
+            by fonds and number and read by almost no one. This site gathers them into one
+            catalogue, and puts a transcription beside each leaf so that every reading can be
+            checked against the hand it came from.
           </p>
         </header>
 
         <div className="tabular mt-8 flex flex-wrap gap-x-8 gap-y-2 text-[14px] text-ink-600">
-          <Figure value={COTES.length} label="volumes and dossiers located" />
-          <Figure value={HOLDERS.length} label="holders, in four countries" />
-          <Figure value={ONLINE.length} label="volumes online, all at the BnF" />
+          <Figure value={people.length} label="mathematicians" />
+          <Figure value={COTES.length} label="digitised volumes" />
           <Figure value={TOTAL_PAGES} label="Gallica views to read" />
         </div>
 
-        <WhatIsOnline />
+        <Mathematicians />
 
         <Disclaimer />
 
         <Progress done={done} />
 
         <section className="mt-12">
-          <h2 className="titre text-[24px] text-ink-900">Four cahiers to begin with</h2>
+          <h2 className="titre text-[24px] text-ink-900">Three cahiers, one to a period</h2>
           <p className="mt-2 max-w-[46em] text-[14px] leading-relaxed text-ink-600">
-            All four are groupings of our own, and say so at the head of the page: no catalogue
-            ever sorted Germain by subject. Each names the volumes it draws on, which are
-            online and which are not, and who located what inside them.
+            The groupings are ours, and say so at the head of the page: the BnF catalogues by
+            fonds, not by mathematician. Each cahier gives one section to each mathematician of
+            its period, with every volume Gallica serves of them.
           </p>
 
-          <ul className="mt-6 grid gap-4 md:grid-cols-2">
+          <ul className="mt-6 grid gap-4 md:grid-cols-3">
             {BOOKS.map((b) => {
               const cotes = cotesOf(b);
-              const online = cotes.filter((c) => c.pages > 0).length;
               return (
                 <li key={b.key} className="card flex flex-col p-5">
                   <div className="flex items-baseline gap-2">
@@ -79,9 +76,6 @@ export function HomePage() {
                         {b.title}
                       </a>
                     </h3>
-                    <span className="rounded-full bg-encours-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-encours-700">
-                      editorial
-                    </span>
                   </div>
                   <p className="mt-1 text-[12px] font-medium uppercase tracking-wide text-ink-400">
                     {b.period}
@@ -90,9 +84,9 @@ export function HomePage() {
                     {b.subtitle}
                   </p>
                   <p className="tabular mt-4 flex flex-wrap gap-x-4 text-[12.5px] text-ink-500">
-                    <span>{cotes.length} volumes</span>
+                    <span>{b.sections.length} sections</span>
                     <span>
-                      {online} online · {pagesOf(b).toLocaleString('en-GB')} views
+                      {cotes.length} volumes · {pagesOf(b).toLocaleString('en-GB')} views
                     </span>
                   </p>
                   <a
@@ -109,44 +103,42 @@ export function HomePage() {
 
         <section className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <div className="prose-fonds">
-            <h2 className="titre text-[22px] text-ink-900">What these pages are</h2>
+            <h2 className="titre text-[22px] text-ink-900">What these volumes are</h2>
             <p className="mt-3">
-              <strong>Working papers of a mathematician with no institution.</strong> Germain
-              (1776–1831) taught herself from her father's library, wrote to Lagrange, Legendre
-              and Gauss under a man's name, and was the only entrant, three times running, to
-              the Académie's prize on the vibrations of elastic surfaces. Nothing she wrote was
-              filed anywhere but her own desk.
+              <strong>Working papers, letters and fair copies</strong>, from Maurolico's
+              opuscules to Libri's correspondence: what the mathematicians wrote for themselves
+              and for each other rather than for print. Some volumes are autograph, some are
+              copies made in the period; the catalogue title says which where it knows.
             </p>
             <p>
-              After her death her friend Guglielmo Libri took her papers. Most were seized from
-              his Paris apartment in 1848 and are now the BnF's{' '}
-              <strong>Français 9114–9118</strong>; two hundred sheets went with him to Florence;
-              her letters to Gauss stayed with Gauss's papers in Göttingen; the three memoirs
-              stayed at the Académie that received them.
-            </p>
-            <p>
-              The BnF bound its share as « dissertations et problèmes », unsorted and unnumbered
-              except by the archive. Number theory sits beside physics leaf by leaf. Nobody has
-              published which leaf is which.
+              They came to the BnF by every route it has — the royal collection, the Latin series,
+              purchases, the seizure of Libri's collection in 1848 — and are catalogued
+              accordingly, by fonds and number. The one rule of selection here is that{' '}
+              <strong>Gallica serves the whole volume</strong>, free, to anyone. The{' '}
+              <a
+                href="https://github.com/Commutator-IO/germain-project/issues/1"
+                className="font-medium text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700"
+              >
+                inventory
+              </a>{' '}
+              says how the list was made and what it leaves out.
             </p>
           </div>
 
           <div className="prose-fonds">
             <h2 className="titre text-[22px] text-ink-900">What is being made of them</h2>
             <p className="mt-3">
-              Every digitised volume yields two documents per batch of twenty views, both in
-              French. The <strong>transcription</strong> is the leaves as written — her notation,
-              her spelling (« seroit », « avoit »), her paragraphing, and a critical apparatus
-              that keeps what was read apart from what was guessed. An illegible word stays
-              illegible.
+              Every volume yields two documents per batch of twenty views, in the language of the
+              volume. The <strong>transcription</strong> is the leaves as written — the writer's
+              notation, spelling and paragraphing, and a critical apparatus that keeps what was
+              read apart from what was guessed. An illegible word stays illegible.
             </p>
             <p>
               The <strong>modernised reading</strong> is the same mathematics in current notation
-              and names — congruences where she writes residues, Kirchhoff–Love plates where she
-              writes sums of curvatures — opening with a summary for someone who has not met
-              the subject. It is the one document allowed to depart from the page, and is held to
-              being correct as it stands: where the manuscript is wrong, and the 1811 memoir's
-              equation was, it says what is true and footnotes what the page has.
+              and names, opening with a summary for someone who has not met the subject. It is the
+              one document allowed to depart from the page, and is held to being correct as it
+              stands: where the manuscript is wrong, it says what is true and footnotes what the
+              page has.
             </p>
             <p>
               Both are LaTeX and both open in the browser. Whatever is transcribed is marked in
@@ -157,8 +149,8 @@ export function HomePage() {
           <div className="prose-fonds">
             <h2 className="titre text-[22px] text-ink-900">Why nothing passes through here</h2>
             <p className="mt-3">
-              The facsimile is the BnF's own file, read from Gallica's IIIF service at the moment
-              you turn the page. Gallica answers a browser on any origin — its images carry{' '}
+              The facsimile is Gallica's own file, read from its IIIF service at the moment you
+              turn the page. Gallica answers a browser on any origin — its images carry{' '}
               <code>Access-Control-Allow-Origin: *</code> — so this site needs no relay, no
               mirror and no copy: the bytes go from the BnF to you, and this origin never holds
               them.
@@ -167,29 +159,26 @@ export function HomePage() {
               What Gallica asks in return is the source line, and it is under every image:{' '}
               <em>Source gallica.bnf.fr / Bibliothèque nationale de France</em>. Non-commercial
               reuse of its public-domain digitisations is free on that condition; this site is
-              non-commercial, and the manuscripts of a woman who died in 1831 are as public as a
-              domain gets.
+              non-commercial.
             </p>
             <p>
-              The volumes that are not online are not shown at all — not a thumbnail, not a
-              detail. The{' '}
+              The{' '}
               <a
                 href="/sources/"
                 className="font-medium text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700"
               >
                 sources page
               </a>{' '}
-              says, holder by holder, what each permits and what this site therefore does.
+              says what the conditions permit and what this site therefore does.
             </p>
           </div>
         </section>
 
         <section className="card mt-12 max-w-[52em] px-5 py-4">
           <p className="text-[13.5px] leading-relaxed text-ink-600">
-            Nothing here is an edition. A machine pass over a two-hundred-year-old hand produces
-            a reading, checkable against the facsimile on the same screen — that is its whole
-            value and its whole claim. Where a scholarly transcription already exists — Grun's of
-            the three memoirs, Del Centina's of the Florence draft — the{' '}
+            Nothing here is an edition. A machine pass over a centuries-old hand produces a
+            reading, checkable against the facsimile on the same screen — that is its whole value
+            and its whole claim. Where a scholarly edition of a volume already exists, the{' '}
             <a
               href="/archive/"
               className="font-medium text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700"
@@ -207,55 +196,33 @@ export function HomePage() {
 }
 
 /**
- * What can be read here, and what cannot — before anything else.
- *
- * On the parent site every folder was online and the question did not arise.
- * Here ten of fourteen volumes are not, including the three memoirs the whole
- * elasticity story turns on, and a reader who arrives for those must learn it
- * in the first screen rather than in an empty pane.
+ * The nineteen, by period — the first thing a reader looks for is a name.
  */
-function WhatIsOnline() {
+function Mathematicians() {
   return (
-    <section className="mt-8 grid gap-4 md:grid-cols-2">
-      <div className="card border-l-4 border-l-brand-400 px-5 py-4">
-        <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-brand-700">
-          Online, and readable here
-        </p>
-        <ul className="mt-2 space-y-1.5 text-[13.5px] leading-relaxed text-ink-700">
-          {ONLINE.map((v) => (
-            <li key={v.id}>
-              <strong className="font-semibold text-ink-900">{v.shelfmark}</strong>{' '}
-              <span className="text-ink-500">· {v.pages} views</span> — {shortTitle(v.title)}
-            </li>
-          ))}
-        </ul>
-        <p className="mt-2 text-[12.5px] text-ink-500">
-          All at the BnF, digitised, served by Gallica. These are what the facsimile pane can
-          show and what the skills can read.
-        </p>
-      </div>
-      <div className="card border-l-4 border-l-ink-300 px-5 py-4">
-        <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-ink-500">
-          Located, not online
-        </p>
-        <ul className="mt-2 space-y-1.5 text-[13.5px] leading-relaxed text-ink-700">
-          {OFFLINE.map((v) => (
-            <li key={v.id}>
-              <strong className="font-semibold text-ink-900">{v.shelfmark}</strong>{' '}
-              <span className="text-ink-500">· {HOLDERS.find((h) => h.id === v.holder)?.short}</span>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-2 text-[12.5px] text-ink-500">
-          Catalogued here from the holders' notices and the literature, with who has edited
-          what. Nothing of them is shown, and nothing can be transcribed from them here.
-        </p>
-      </div>
+    <section className="mt-8 grid gap-4 md:grid-cols-3">
+      {BOOKS.map((b) => (
+        <div key={b.key} className="card border-l-4 border-l-brand-400 px-5 py-4">
+          <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-brand-700">
+            <a href={b.path} className="hover:underline">
+              {b.title}
+            </a>
+          </p>
+          <ul className="mt-2 space-y-1.5 text-[13.5px] leading-relaxed text-ink-700">
+            {GROUPS.filter((g) => g.century === b.key).map((g) => (
+              <li key={g.id}>
+                <strong className="font-semibold text-ink-900">{g.title}</strong>{' '}
+                <span className="tabular text-ink-500">
+                  · {g.cotes.length} vol. · {g.cotes.reduce((s, id) => s + (BY_ID.get(id)?.pages ?? 0), 0).toLocaleString('en-GB')} views
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </section>
   );
 }
-
-const shortTitle = (t: string) => (t.length > 70 ? `${t.slice(0, 67).trimEnd()}…` : t);
 
 /**
  * Who made these documents, said plainly and early.
@@ -280,9 +247,8 @@ function Disclaimer() {
       <p className="mt-2 text-[13.5px] leading-relaxed text-ink-700">
         <strong className="font-semibold text-ink-900">None of it is a scholarly edition, and
         none of it has been verified by a person</strong> unless the batch says so. Where a
-        scholar has transcribed a volume — and for the three memoirs one has — that
-        transcription is better than anything here and is theirs; this site links to it and
-        does not copy it.
+        scholar has edited a volume, that edition is better than anything here and is theirs;
+        this site links to it and does not copy it.
       </p>
     </section>
   );

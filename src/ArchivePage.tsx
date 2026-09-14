@@ -22,14 +22,13 @@ const KIND_LABEL: Record<PublishedEdition['kind'], string> = {
 };
 
 /**
- * Every manuscript, wherever it is.
+ * Every manuscript, mathematician by mathematician.
  *
- * The four cahiers are ways in; this page is the thing itself, holder by
- * holder: every volume and dossier a Germain manuscript is known to sit in,
- * with the holder's own title, dating and extent, whether or not anything of
- * it is online and whether or not this site has anything to say about it. It
- * exists so that nobody has to take our groupings on trust — and so that the
- * ten volumes nobody can read here are counted, not hidden.
+ * The three cahiers are ways in by period; this page is the thing itself:
+ * every volume in the catalogue, under the mathematician whose archive it is,
+ * with the holder's own title, dating and extent and whether this site has
+ * anything to say about it yet. It exists so that nobody has to take our
+ * groupings on trust.
  */
 export function ArchivePage() {
   const [query, setQuery] = useState('');
@@ -68,7 +67,8 @@ export function ArchivePage() {
     if (!needle) return true;
     const c = COTES.find((x) => x.id === id);
     if (!c) return false;
-    return `${c.id} ${c.shelfmark} ${c.title} ${c.date} ${c.note} ${folderTags(manifest, id).join(' ')} ${piecesIn(id)
+    const who = GROUPS.find((g) => g.id === c.group);
+    return `${who?.title ?? ''} ${c.id} ${c.shelfmark} ${c.title} ${c.date} ${c.note} ${folderTags(manifest, id).join(' ')} ${piecesIn(id)
       .map((p) => p.title)
       .join(' ')}`
       .toLowerCase()
@@ -111,11 +111,16 @@ export function ArchivePage() {
               <header className="max-w-[48em]">
                 <h1 className="titre text-[34px] leading-tight text-ink-900">All the manuscripts</h1>
                 <p className="mt-3 text-[15.5px] leading-relaxed text-ink-700">
-                  Every volume and dossier a Sophie Germain manuscript is known to sit in, with
-                  its holder, in the holder's own words. Titles in [brackets] are ours, where a
-                  holder gives none. {online} of {COTES.length} are online, all at the BnF; the
-                  rest are catalogued here from the holders' notices and from the literature that
-                  located them, and nothing of them is shown.
+                  Every volume in the catalogue, under the mathematician whose archive it is, in
+                  the holder's own words. All {online} are digitised and served whole by Gallica;
+                  the selection, and what it leaves out, is set out in{' '}
+                  <a
+                    href="https://github.com/Commutator-IO/germain-project/issues/1"
+                    className="font-medium text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700"
+                  >
+                    the inventory
+                  </a>
+                  .
                 </p>
               </header>
 
@@ -124,7 +129,7 @@ export function ArchivePage() {
                   type="search"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Search a title, a shelfmark, a piece, a year…"
+                  placeholder="Search a mathematician, a title, a shelfmark, a year…"
                   className="w-full max-w-md rounded-lg border border-ink-200 bg-white px-3 py-2 text-[14px] text-ink-900 placeholder:text-ink-400 focus:border-brand-500 focus:outline-none"
                 />
                 <p className="tabular text-[12.5px] text-ink-500">
@@ -140,10 +145,6 @@ export function ArchivePage() {
                 <li className="flex items-center gap-1.5">
                   <span aria-hidden="true" className="inline-block h-3.5 w-6 rounded-sm border-l-[3px] border-l-relu-500 bg-relu-50" />
                   edited or in print elsewhere
-                </li>
-                <li className="flex items-center gap-1.5">
-                  <span aria-hidden="true" className="inline-block h-3.5 w-6 rounded-sm border-l-[3px] border-l-ink-300 bg-ink-50" />
-                  not online
                 </li>
               </ul>
 
@@ -298,9 +299,8 @@ export function ArchivePage() {
  *
  * The most useful thing to know before transcribing a volume is whether
  * someone has already done it, and done it better — and, here, whether one
- * may. Grun's 120 pages of the memoirs are the finest reading of them that
- * exists and are hers; the 1821 « Recherches » are Germain's own text and
- * belong to everyone. The list says which is which.
+ * may. A scholar's recent transcription is theirs; a text printed long ago
+ * belongs to everyone. The list says which is which.
  */
 function Literature() {
   const kinds: PublishedEdition['kind'][] = ['transcribed', 'published', 'analysis'];

@@ -162,7 +162,7 @@ export function BookPage({ bookKey }: { bookKey: BookKey }) {
   );
 }
 
-/** Where this grouping comes from — always ours, for Germain, and said so. */
+/** Where this grouping comes from — always ours, and said so. */
 function Provenance({ rationale }: { rationale: string }) {
   return (
     <div className="card mt-7 max-w-[52em] border-l-4 border-l-encours-500 px-5 py-4">

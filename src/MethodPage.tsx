@@ -40,49 +40,49 @@ export function MethodPage() {
 
         <div className="mt-14 grid gap-x-10 gap-y-8 md:grid-cols-2">
           <section className="prose-fonds">
-            <H2 id="how-she-wrote">How Germain wrote</H2>
-            <P id="how-she-wrote-alone">
-              Alone, for herself, with no seminar to write for and no student to write down what
-              she said. The BnF's three volumes are what Libri found on her desk: fair copies next
-              to scratch paper, a Fermat manuscript in a beautiful hand next to a page of
-              arithmetic nobody was meant to see. The archive numbered the leaves and bound them;
-              it did not sort them.
+            <H2 id="how-they-wrote">What the leaves are like</H2>
+            <P id="how-they-wrote-kinds">
+              Three kinds of volume, and a pass reads each differently. <strong>Working
+              papers</strong> — Fourier's calculations, Germain's « dissertations et problèmes »,
+              Roberval's papers — were never meant to be read: fair copies next to scratch paper,
+              unsorted, numbered by the archive and bound as they came. <strong>Letters</strong> —
+              the three volumes addressed to Mersenne, Descartes's to him, Libri's correspondence —
+              are dated, signed and mostly legible, and the prose is transcribed whole.{' '}
+              <strong>Copies and fair copies</strong> — the copies of Pascal's Pensées, the Vicq
+              d'Azyr copies of Fermat — are the easiest hands, and the ones where it matters most to
+              say that the hand is not the author's.
             </P>
             <H3 id="hand">The hand, and the spelling</H3>
             <P id="hand-orthography">
-              A cursive of the first decades of the nineteenth century, regular in the fair copies
-              and fast in the drafts. She writes the imperfect in <em>-oit</em> — « seroit »,
-              « avoit » — as her generation did, and the transcription keeps it. The abbreviations
-              are those of her correspondents: « Mr », « Mlle », the ampersand. What earlier passes
-              learn about the strokes goes into a reference file the skill reads, so that no pass
+              Three centuries of French and Latin cursive, from Maurolico's to Libri's. The spelling
+              of the writer's time stays — « seroit », « avoit », « scavoir », the long <em>s</em>{' '}
+              where it is one — and so do the abbreviations: « Mr », the ampersand, Latin
+              contractions expanded only in a note. What earlier passes learn about a hand goes into
+              a reference file the skill reads, one section per mathematician, so that no pass
               learns it twice.
             </P>
-            <H3 id="notation">Notation of 1800, not of today</H3>
-            <P id="notation-residues">
-              She read the <em>Disquisitiones</em> at twenty-five and adopted Gauss's congruence
-              sign, but she also writes in Legendre's idiom of residues and « nombres premiers de
-              la forme 2Np + 1 ». In the physics she writes partial derivatives with round{' '}
-              <em>d</em>, sums of curvatures where we would write a Laplacian, and an « épaisseur »
-              where we would write a plate's thickness. The transcription keeps every one of these.
-              The modernised reading translates them, and footnotes the translation.
+            <H3 id="notation">The notation of its period, not of today</H3>
+            <P id="notation-period">
+              Viète's cossic signs and « in » for multiplication, Descartes's ∝ for equality,
+              Fermat's « adæqualitas », Legendre's residues in Germain, Fourier's integrals written
+              before the notation settled: the transcription keeps every one of these. The modernised
+              reading translates them, and footnotes the translation.
             </P>
             <H3 id="numbering">Three numberings</H3>
             <P id="numbering-views">
-              Gallica counts <strong>views</strong>, one per image, and labels every one « NP »: it
-              is the only numbering a machine can address, so <code>\page{'{N}'}</code> takes the
-              view number and drives the facsimile. The BnF pencilled a <strong>foliation</strong>{' '}
-              on the leaves, « 198 », recto and verso, and that is what the literature cites —
-              Manuscript A is « ff. 198r–208v ». Where a pass can read the pencil, it records it
-              with <code>\folio{'{198r}'}</code>, and that line is what turns a citation into a
-              view. And Germain <strong>paginated</strong> her fair copies herself; her numbers,
-              where visible, go in a note.
+              Gallica counts <strong>views</strong>, one per image, and labels most « NP »: it is the
+              only numbering a machine can address, so <code>\page{'{N}'}</code> takes the view number
+              and drives the facsimile. The library pencilled a <strong>foliation</strong> on the
+              leaves, « 198 », and that is what the literature cites. Where a pass can read it, it
+              records it with <code>\folio{'{198r}'}</code>, on the recto only, and that line is what
+              turns a citation into a view. And writers <strong>paginated</strong> their own fair
+              copies; their numbers, where visible, go in a note.
             </P>
-            <H3 id="dating">Dates are mostly absent</H3>
+            <H3 id="dating">Dates are often absent</H3>
             <P id="dating-letters">
-              The letters are dated, and the memoirs are — by the Académie's registry. Almost
-              nothing in the three volumes is. The catalogue's « XIXe siècle » is copied verbatim
-              into <code>\dating{'{}'}</code>, and a pass that can date a leaf from its content
-              says so in a note, as its own inference.
+              The letters are dated; the working papers mostly are not. The catalogue's dating —
+              « 1601-1700 », « XIXe siècle » — is copied verbatim into <code>\dating{'{}'}</code>, and
+              a pass that can date a leaf from its content says so in a note, as its own inference.
             </P>
           </section>
 
@@ -93,7 +93,8 @@ export function MethodPage() {
               Twenty views per pass. Past that, a model's reading degrades towards the end of the
               pass with nothing to signal it, and a transcription whose weakening point is unknown
               cannot be used. One batch per conversation, so that view 20 is read as carefully as
-              view 2. Français 9115 is 750 views: thirty-eight passes.
+              view 2. Français 9115 is 750 views: thirty-eight passes; Fourier's twenty volumes are
+              more than three hundred.
             </P>
             <H3 id="mirror">The pass reads a mirror; the reader does not</H3>
             <P id="mirror-why">
@@ -118,10 +119,10 @@ export function MethodPage() {
             </P>
             <H3 id="not-transcribing">What a pass will not read</H3>
             <P id="not-transcribing-offline">
-              Anything that is not online. The skills refuse to work from a publication's
-              reproduction of a page, from a thumbnail, or from somebody else's transcription. Ten
-              of the fourteen volumes are therefore outside their reach, and the site says so on
-              each rather than leaving a pane blank.
+              Anything but Gallica's images of a volume in the catalogue. The skills refuse to work
+              from a publication's reproduction of a page, from a thumbnail, or from somebody
+              else's transcription or edition — a printed Pensées, the Adam–Tannery Descartes, the
+              Œuvres de Fermat — not to seed a reading and not to check a word.
             </P>
           </section>
         </div>
@@ -139,13 +140,13 @@ export function MethodPage() {
               diff.
             </LI>
             <LI id="not-claimed-complete">
-              <strong>That the catalogue is complete.</strong> NAF 5166 is listed from one
-              cross-reference; the Florence holdings from one scholar's description; Bucciarelli
-              and Dworsky's folio citations have not been carried in. The archive page says on each
-              row where the fact came from.
+              <strong>That the catalogue is complete.</strong> It was drawn from Gallica's search by
+              name, and a fonds catalogued under another name can have escaped it; only twenty of
+              Fourier's twenty-nine volumes and eight of Libri's came up. The inventory says how the
+              list was made.
             </LI>
             <LI id="not-claimed-priority">
-              <strong>That Germain was first at anything.</strong> The findings page records
+              <strong>That anyone was first at anything.</strong> The findings page records
               candidates against named sources; a claim of precedence needs a date, and only a
               date on the page or in a dated letter counts.
             </LI>
@@ -240,8 +241,8 @@ function Pipeline() {
   const steps = [
     ['npm run catalogue', 'asks Gallica how many views each digitised volume has and writes the typed catalogue; the seed is holdings.json, in the holders’ words'],
     ['npm run archive -- fr-9115 --batches 1', 'mirrors one batch of twenty views into archives/, git-ignored, with a pause between requests'],
-    ['/transcribe-germain fr-9115 1', 'one batch, one conversation: the LaTeX transcription with the apparatus, French, header naming the model'],
-    ['/modernize-germain fr-9115', 'once every batch of the volume is transcribed: one file for the whole shelfmark, résumé first, keywords last'],
+    ['/transcribe fr-9115 1', 'one batch, one conversation: the LaTeX transcription with the apparatus, French, header naming the model'],
+    ['/modernize fr-9115', 'once every batch of the volume is transcribed: one file for the whole shelfmark, résumé first, keywords last'],
     ['npm run render && npm run pdf && npm run tei && npm run manifest', 'the reading views, the PDFs, the TEI export, and the manifest the site reads at load'],
     ['npm run dev', 'read it beside the facsimile'],
   ];

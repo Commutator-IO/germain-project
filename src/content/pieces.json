@@ -1,51 +1,11 @@
 [
   {
-    "id": "fr-9114-remarques",
-    "volume": "fr-9114",
-    "folios": "ff. 198r–208v",
-    "title": "Remarques sur l'impossibilité de satisfaire en nombres entiers à l'équation x^p + y^p = z^p",
-    "source": "Laubenbacher & Pengelley 2010, § 1.3, « Manuscript A » — 20 sheets numbered in her hand, 13 labelled sections; the fair copy of the Florence draft",
-    "views": null
-  },
-  {
-    "id": "fr-9114-errata",
-    "volume": "fr-9114",
-    "folios": "ff. 214r, 215v",
-    "title": "Errata to the « Remarques »",
-    "source": "Laubenbacher & Pengelley 2010, § 1.3 — two undated sheets headed « errata » or « erratu »",
-    "views": null
-  },
-  {
-    "id": "fr-9114-demonstration",
-    "volume": "fr-9114",
-    "folios": "ff. 92r–94v",
-    "title": "Démonstration de l'impossibilité de satisfaire en nombres entiers à l'équation z^{2(8n±3)} = y^{2(8n±3)} + x^{2(8n±3)}",
-    "source": "Laubenbacher & Pengelley 2010, § 1.3, « Manuscript B » — four sheets; the manuscript in which what Legendre called Sophie Germain's theorem is implicit",
-    "views": null
-  },
-  {
     "id": "fr-9115-even",
     "volume": "fr-9115",
     "folios": "ff. 348r–349r",
     "title": "[Three pages stating and claiming a proof of Fermat's Last Theorem for all even exponents]",
     "source": "Laubenbacher & Pengelley 2010, § 1.3, « Manuscript C »; the bracketed title is theirs in substance and ours in wording",
     "views": null,
-    "note": "The one located Fermat piece that is online. The manifest labels every view « NP », so folios 348–349 have to be found among the 750 images by reading the pencilled foliation; once found, `views` is filled here and the cahier opens on them."
-  },
-  {
-    "id": "moreniana-remarques",
-    "volume": "moreniana-nfl",
-    "folios": "cass. 11, ins. 266",
-    "title": "Remarques sur l'impossibilité de satisfaire à l'équation x^p + y^p = z^p — the draft",
-    "source": "Del Centina 2008 (transcribed in full); Laubenbacher & Pengelley 2010, « Manuscript D » — 25 pages, the 19th blank",
-    "views": null
-  },
-  {
-    "id": "sub-gauss-1819",
-    "volume": "sub-gauss",
-    "folios": "letter of 12 May 1819, eight numbered sheets",
-    "title": "Lettre à Gauss du 12 mai 1819, « Voici ce que j'ai trouvé »",
-    "source": "Del Centina 2008 (transcribed); Laubenbacher & Pengelley 2010, whose title quotes its opening",
-    "views": null
+    "note": "Located by Laubenbacher and Pengelley. The manifest labels every view « NP », so folios 348–349 have to be found among the 750 images by reading the foliation; once found, `views` is filled here and the cahier opens on them."
   }
 ]
