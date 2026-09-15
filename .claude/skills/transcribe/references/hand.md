@@ -132,6 +132,20 @@ in tables; Latin contractions (*q̃*, *p̄*, the *-us* hook) in the Latin volume
 - Mounting sheets (v. 140–160) carry three short oblique pencil strokes at the
   same place on every sheet: not a figure, not foliation.
 
+### The hand of the Euler copy (Français 9115, v. 144–180)
+
+| The stroke looks like | A pass settled on | Where |
+|---|---|---|
+| a 9 with a short tail | 3: the 3 is a short figure whose tail curls like a 9's; the 9 has a long descending tail. Check against the calculation (e^{π/4} = 2,1933; 3π/5 = 108°) | Français 9115, v. 173–179 |
+| a 6 written like « b » | 6, in page numbers and decimals alike (« 126 ») | Français 9115, v. 166 |
+| ζ, and a looped ς | one looped letter serving both for the phase angle and for « signum anguli recti » | Français 9115, v. 162–180 |
+| Φ as a denominator | at v. 161 it stands where ω is meant; left as Φ, flagged uncertain | Français 9115, v. 161 |
+
+Pages of the copy can be bound out of order: v. 167 is (128) between (125) and
+(126), and the copy's own « (voyez p. 126 après 128) » at the foot of v. 166
+says so. Read the parenthesised page numbers before assuming a sentence runs
+from one view to the next.
+
 ### Her fair copy and her drafts
 
 The fair copies are a regular, legible hand; the drafts (Français 9115, v. 93–100)
