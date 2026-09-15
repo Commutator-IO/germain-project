@@ -179,5 +179,55 @@ v. 115–134).
 
 ## Other mathematicians
 
-Empty until a pass reads their volumes. Add a section headed with the name and
-the shelfmarks, in the order of the catalogue.
+Add a section headed with the name and the shelfmarks, in the order of the
+catalogue.
+
+## Francesco Maurolico (Latin 17859)
+
+### The views
+
+- Microfilm, greyscale, landscape (about 7300 × 5850): each view is the volume
+  lying open, a left and a right page. Cut each view in two at the gutter
+  (near x = 3570) before cutting bands; bands of the half page resized to
+  2400 px read the hand end to end.
+- A seventeenth-century copy in one regular italic hand, in Latin, with
+  marginal figures lettered a, b, c… The title page gives the Messina edition
+  of 1558 as source and a Thou provenance note of 1627–28 (v. 2); the line
+  « Compendium Mathematicæ. omittitur quia a P. M. Mersenno editum … » shows
+  the copyist at work after Mersenne (v. 49 L).
+
+### Strokes that mislead
+
+| The stroke looks like | A pass settled on | Where |
+|---|---|---|
+| a final « a », or an « o » with a loop, ending first-declension words | the æ ligature (stellæ, sphæræ, quæsitæ); a plain « a » is a real a — decide by the leaf and the grammar, never by default | Latin 17859, v. 3–49 |
+| a tall capital J or I opening « In », « Iam », « Igitur » mid-sentence | the hand's ordinary initial i; set lower case in a sentence | Latin 17859, throughout |
+| « b » or « v » opening « umbra », « ut », « unus » | the one looped initial u/v; set by sound | Latin 17859, v. 21–48 |
+| a capital S opening « Soc », « Suius », « Sabet » | a looped h: hoc, huius, habet (and the long s is set s) | Latin 17859, v. 21–49 |
+| « z » or « r » before « o » in citations (« per zo. primi ») | the figure 2 (« per 20. primi Theodosij »); the 1 is a plain stroke | Latin 17859, v. 10–13 |
+| a 6 like « b » (« 66. m. 30. », « 16 », « 6 Eucl. ») | 6, in text and tables; 1 and 6 in citations are easily confused — check against the argument | Latin 17859, v. 17, 19, 42 L |
+| « a » among zeros (« 10a000 »), « u » inside a number (« 2u89 ») | the digits 0 and 11 (21189, checked by addition) | Latin 17859, v. 43–49 |
+| p with a bar through the stem; Q with a bar; « q; » after a word | pro (« p̄portionalis »); quod; -que (« sinumq; ») — kept as written | Latin 17859, v. 21–36 |
+| « dria », « declinaẽ », « quantite », « nram », « qdoq » with a stroke | differentia, declinatione, quantitate, nostram, quandoque; set as written with a note | Latin 17859, v. 6, 16–17, 22, 42–47 |
+| a word written above another with no stroke through it | an interlinear correction without a deletion mark; give both words, with a note | Latin 17859, v. 4 R, 20 R |
+| a Roman numeral ending in a blot; XXXX, XXXXI … then XLVII | a correction of the last stroke; the copyist's own switch of numeral style — read the sequence, keep what is written | Latin 17859, v. 21 R, 27–30 |
+| a large crescent « ( » opening a paragraph | the paragraph mark, not a word | Latin 17859, v. 43–47 |
+| a reversed c among figure letters | a letter of its own, distinct from c and z; set $\supset$ | Latin 17859, v. 45 R, 46 L |
+| « c » and « e » as figure letters | nearly identical; give the letter the leaf shows and do not reconcile | Latin 17859, v. 42 L |
+
+### Numbers on the leaves
+
+- One ink number per leaf, top right of the right page: 1 on the title page
+  (view 2), consecutive to 47 (view 48); view N shows N − 1. The guard leaf
+  certifies « Volume de 47 Feuillets. 7 Juin 1870. », which suggests these
+  are the leaves the library counted, but the figures are ink, not pencil: no
+  \folio{} is written until a human settles what they are.
+- Leaves can be bound out of the text's order: the leaves inked 16 and 17 are
+  reversed (views 17–19); the leaves inked 41–43 read as if they belonged
+  between those inked 45 and 46; the Autolycus page at view 48 L continues on
+  view 10 R. Check both seams of every opening before assuming continuity,
+  and keep Gallica's order.
+- Tables (sines, tangents, secants, 1°–90°, radius 100000) and worked
+  examples carry the copyist's errors — a sixtieths column shifted by five
+  rows (v. 19), 2117149915 for 2117249915 (v. 49 L). Check by adding or
+  multiplying, and transcribe as written.
