@@ -30,6 +30,7 @@ export default defineConfig({
         xviii: resolve(import.meta.dirname, 'xviii/index.html'),
         xix: resolve(import.meta.dirname, 'xix/index.html'),
         archive: resolve(import.meta.dirname, 'archive/index.html'),
+        timeline: resolve(import.meta.dirname, 'timeline/index.html'),
         sources: resolve(import.meta.dirname, 'sources/index.html'),
         method: resolve(import.meta.dirname, 'method/index.html'),
         contribute: resolve(import.meta.dirname, 'contribute/index.html'),

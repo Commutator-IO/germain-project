@@ -44,6 +44,7 @@ volumes are transcribed; the rest are waiting.
 | [`/xvii/`](https://germain.commutator.io/xvii/) | **Cahier du XVIIᵉ siècle** — Mersenne and his correspondents, Viète, Sluse, L'Hospital, Varignon |
 | [`/xviii/`](https://germain.commutator.io/xviii/) | **Cahier du XVIIIᵉ siècle** — Émilie du Châtelet, d'Alembert, Lagrange, Condorcet |
 | [`/xix/`](https://germain.commutator.io/xix/) | **Cahier du XIXᵉ siècle** — Fourier, Sophie Germain, Libri, Prony |
+| [`/timeline/`](https://germain.commutator.io/timeline/) | **Timeline** — the nineteen lives on one scale, a paragraph each, with portraits from Wikimedia Commons |
 | [`/archive/`](https://germain.commutator.io/archive/) | Every volume, by mathematician, with the literature that edited, printed or read it |
 | [`/sources/`](https://germain.commutator.io/sources/) | **Sources & rights** — what Gallica permits, what was measured, what this site does |
 | [`/method/`](https://germain.commutator.io/method/) | How transcription proceeds, what it refuses, where it stands |

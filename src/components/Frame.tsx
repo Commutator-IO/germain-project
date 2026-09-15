@@ -10,6 +10,7 @@ import { BOOKS } from '../content/books.ts';
  */
 
 const OTHER_PAGES: { path: string; label: string }[] = [
+  { path: '/timeline/', label: 'Timeline' },
   { path: '/archive/', label: 'All the manuscripts' },
   { path: '/sources/', label: 'Sources & rights' },
   { path: '/method/', label: 'Method & progress' },
@@ -50,7 +51,7 @@ export function Header({ path }: { path: string }) {
               key={b.path}
               href={b.path}
               aria-current={isCurrent(b.path, path) ? 'page' : undefined}
-              className={`rounded-lg px-2.5 py-1.5 transition ${
+              className={`rounded-lg px-2.5 py-1.5 whitespace-nowrap transition ${
                 isCurrent(b.path, path)
                   ? 'font-semibold text-ink-900'
                   : 'hover:bg-ink-50 hover:text-brand-700'
@@ -65,7 +66,7 @@ export function Header({ path }: { path: string }) {
               key={p.path}
               href={p.path}
               aria-current={isCurrent(p.path, path) ? 'page' : undefined}
-              className={`rounded-lg px-2.5 py-1.5 transition ${
+              className={`rounded-lg px-2.5 py-1.5 whitespace-nowrap transition ${
                 isCurrent(p.path, path)
                   ? 'font-semibold text-ink-900'
                   : 'hover:bg-ink-50 hover:text-brand-700'
