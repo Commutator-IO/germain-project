@@ -90,6 +90,8 @@ in tables; Latin contractions (*q̃*, *p̄*, the *-us* hook) in the Latin volume
   couronné qui fut présenté en 1815 », « mes recherches sur la théorie des
   surfaces publiées en 1821 »; Chladni and « Mr Savart » by name. She writes
   « accademie », « complette », « concluerons » — her spelling, not a misreading.
+- **Quotations** repeat « at the head of every quoted line, as was usual
+  (Français 9115, v. 138, 142).
 - **Letters** open « Monsieur » and close with a formula; a date at the head
   or foot, sometimes only the day.
 
@@ -104,6 +106,24 @@ in tables; Latin contractions (*q̃*, *p̄*, the *-us* hook) in the Latin volume
 | a leaf numbered on its blank side | the ink number (55, « 55 bis ») is on the side with no text; the text is on the other view | Français 9115, v. 111–114 |
 | a capital letter alone beside a draft's first line (« A », « B », « D ») | apparently her own sequence marks for the drafts, not a word | Français 9115, v. 101, 103, 107 |
 | additions in a paler ink or in pencil in the left margin, with no sign of insertion | hers; place them against the line they face and say so in a note | Français 9115, v. 101, 112 |
+| « gz » in an equation of equilibrium | a clearly formed « e » after g: « $ge + T.\frac{2}{R}$ » — kept as written | Français 9115, v. 136–137 |
+| a « d » with a curled, looped stem before p, q, z | the variation sign, set $\delta$ | Français 9115, v. 140 |
+| « ébration » | offered as \uncertain{élévation} by the sense | Français 9115, v. 137 |
+| an exponent written as a bar over p in √1+p̄+q² | the square, as the same leaf writes it elsewhere | Français 9115, v. 140 |
+
+### Numbers on her leaves
+
+- Printed pages pasted one side only onto guard leaves (Français 9115,
+  v. 115–134): the ink number of the recto shows through, reversed, top left
+  of the next view and reads like a number written there. Mirror the crop
+  (`magick … -flop`) and lay it on the recto's figure before recording it
+  (v. 123–133). A blank back can carry the next number in its own right
+  (66 at v. 135, which shows through on v. 134).
+- A view can be a second exposure of the same page (v. 122 = v. 121): compare
+  the ink number stroke for stroke before treating it as a new leaf.
+- In the printed Legendre memoir the pagination restarts (88 → 9, v. 123–124)
+  with the text continuous; the signatures (« 11 » at p. 81, « 2 » at p. 9,
+  « 3 » at p. 17) are the clue to two printings. Record, do not reconcile.
 
 ### Her fair copy and her drafts
 
