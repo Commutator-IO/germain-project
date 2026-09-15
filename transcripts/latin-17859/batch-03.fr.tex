@@ -1,0 +1,997 @@
+% Latin 17859, batch 3 — Gallica views 41–49.
+% Pass: Opus 5 (claude-opus-5), 2026-09-15 — first pass, unchecked against
+% the views by a human.
+%
+% What the views are. Every view is a microfilm image (greyscale, landscape,
+% about 7300 × 5850) of the volume lying open: a left page and a right page
+% side by side, the gutter near the middle. Each view was split into its two
+% halves and read as two pages; in the file each \page{N} holds the left page
+% then the right, and a \note{} says where the right page begins. The volume
+% ends inside this batch: view 49 is the last view of Latin 17859, and its
+% right page is blank. No view was skipped; 49 right is the only blank page.
+%
+% What the nine views hold. A copy, in one regular italic hand throughout,
+% of Maurolico's spherical trigonometry and of what he appended to it.
+%
+%   v. 41 L – 42 L, 45 R – 47 L  The end of a book of propositions on
+%             triangles « ex arcubus circulorum majorum in superficie
+%             sphæræ »: the end of Prop. XXIII (continuing view 40), then
+%             XXIIII–XXXII, each with its enunciation, demonstration and
+%             marginal figures, two « Corollaria », and a « Scholium » that
+%             turns to worked examples on declinations and ascensions. The
+%             demonstrations cite « præmissi libelli », « præcedentis libri »,
+%             Euclid's Elements, Theodosius's and Menelaus's Sphaerica.
+%   v. 42 R – 45 L  A continuous text on the tables of « Iohannes de
+%             Monteregio » (Regiomontanus): why his rules for declination,
+%             right ascension and ascensional difference work (the division
+%             by the sinus totus done by striking five figures, the unit
+%             added when the struck figures exceed 50000), then the
+%             « Demonstratio tabulæ beneficæ » — a table made « ad
+%             imitationem tabulæ foecundæ », with its use.
+%   v. 47 R   The end of that text, dated in the first person: « Hæc in Arce
+%             Apollinari dum cum Iohanne Vigintimillio Hieracensium
+%             Marchione degeremus olim mense Augusto 1530 speculabamur ».
+%             Then a dedicatory letter « D. Octavio Spinulæ Quæstori ærario
+%             Siciliæ, Regioque Consiliario, Maurolycus. Salutem. », a
+%             « Hexastichon » to the same, and the date « Messanæ. Kal. Junij
+%             M.D.LVII. ».
+%   v. 48 L   A new text: « Autolyci de sphæra quæ movetur ex traditione
+%             Maurolyci. Liber. », the definition and Props. 1–4, breaking
+%             off at the foot of the page.
+%   v. 48 R – 49 L  Numbered problems (« 7 », « 8 ») worked with the tabula
+%             benefica and full numerical examples (Sun in 11° Taurus,
+%             latitude 38°), ending with a rule for rounding. Then the line
+%             « Compendium Mathematicæ. omittitur quia a P. M. Mersenno
+%             editum in Apologia scientiarum cap. ultimo. », and nothing
+%             after it. That line is the copyist's, and it is the one
+%             internal sign in the batch of when the copy was made: after
+%             a publication by Mersenne. This is recorded as read; the
+%             catalogue's dating, 1601-1700, is copied as it stands.
+%
+% The order of the leaves. Read view by view, the text runs from each right
+% page onto the next view's left page without a break (the two sides of one
+% leaf). Inside an opening it runs on at views 41, 43, 44 and 46, and breaks
+% at views 42, 45, 47 and 48:
+%   – 42 L stops inside Prop. XXVIII (« quadrangulum quod »), and 45 R
+%     repeats that page's last two lines and finishes the proposition;
+%   – 45 L stops on « vel quot zyphræ sunt in numero », and 47 R opens on
+%     « sinus totius, Et habeo in quotiente sinum arcus cd quæsiti »;
+%   – 47 L stops on « Si autem sumatur arcus fbc pro horizonte recto », and
+%     42 R opens on « erit arcus ac ascensio recta, respondens arcui
+%     Zodiaci ab ».
+% So the three leaves inked 41, 42, 43 (42 R – 45 L) read as if they belonged
+% between the leaves inked 45 and 46, i.e. after 47 L and before 47 R. That
+% is this pass's reconstruction from the sense; the ink numbers run 40–47
+% without a gap in the present order, and the file keeps the present order.
+% 48 L (Autolycus) does not continue 47 R (which ends on a date) and is not
+% continued by 48 R: it may be the beginning of a text whose leaves are
+% elsewhere, or a text abandoned after one page. Not settled.
+%
+% The numbers on the leaves. Each right page from view 41 to view 48 carries
+% at the top right a number in ink, larger than the text: 40, 41, 42, 43,
+% 44, 45, 46, 47. One number per leaf, on the right page only, consecutive.
+% They are ink, not the thin pencil of a library foliation, and the stroke
+% could be the copyist's; this pass cannot tell whether they are the
+% foliation the literature cites for Latin 17859. No \folio{} is written;
+% each number is recorded in the \note{} opening its page. Left pages carry
+% no number; 49 R carries none. Other numbers: « 7 » over a line and « 8. »
+% in the margin of 48 R (problem numbers); proposition numbers in the margin
+% of 48 L. A round stamp « Bibliothèque impériale MSS » in the margin of
+% 49 L.
+%
+% Letters, glyphs, notation. Figure letters are set in math ($abc$), as the
+% hand writes them run together (« arcus ab », « triangulum abc »). One
+% figure letter is a reversed c, which the PDF fonts have no glyph for; it is
+% set $\supset$, the nearest standard symbol (view 46 L, in the text and in
+% the figure note). It is a letter, not inclusion.
+% The hand uses the long s, set s, and one looped initial form for u and v,
+% set u or v by sound; its initial i, which looks like a capital J
+% (« In », « Iam », « Igitur »), is set lower case inside a sentence. « æ »
+% is written as a hooked e and set æ. The capital « Et » the hand writes
+% inside sentences is kept where it is clear. Contractions are kept as
+% written — « dria », « driam », « driæ », « diff\textsuperscript{ia} »,
+% « quæstionib\textsuperscript{9} », « nram », « comp\textsuperscript{tum} »,
+% « propositionẽ » — and expanded in a \note{} at first occurrence. The
+% digit 0 is often an « a »-like loop; « 11 » inside a number is often a
+% « u » (« 2u89 » = 21189, checked against 61389 + 21189 = 82578 on
+% view 49). Numbers are copied as written, errors included (views 48 R,
+% 49 L). The crescent sign « ( » that opens several paragraphs (43, 44, 45,
+% 47) is the hand's paragraph mark; it is not transcribed, and a \note{}
+% records where it stands. Figures are not drawn; each page's figures are
+% described, with their lettering, in a \note{}. Headings (« Propositio
+% XXV », « Corollaria », « Scholium », the letter's address) are set as
+% \subsection*; the Autolycus title as \section*.
+%
+% Illegible: 3. Uncertain readings: 13.
+%
+% Nothing here was checked against any printed edition of Maurolico or any
+% other transcription.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{latin-17859}
+\shelfmark{Latin 17859}
+\batch{3}
+\pages{41}{49}
+\dating{1601-1700}
+\watermark{Lecture automatique\\non vérifiée}
+\foldertitle{Opuscules de François Maurolyco sur les mathématiques et l'astronomie.}
+
+\begin{document}
+
+\page{41}
+\note{la vue 41 montre une double page ouverte ; ce qui suit est la page de gauche. Le texte continue la proposition dont le début est à la vue 40 (hors de ce lot) : la dernière ligne de la vue 40 s'arrête sur « quod ».}
+impossibile. Omnino igitur existente angulo $c$ recto rectus erit et
+$f$ angulus. Et ob id in eo casu æquales erunt $c$ $f$ anguli. Hinc
+sequitur ut si rectus non sit $c$ angulus neque iam rectus esse
+possit $efd$ angulus. Tunc ergo ducatur circulorum majorum
+arcus $eg$ $bh$ perpendiculares ad ipsos arcus $df$ $ac$. Qui quidem
+perpendiculares aut ambo cadunt intra $abc$ $def$ triangula
+aut unus intra, alter extra. Cadant primum ambo intus.
+Et tunc quoniam per hypothesim et conversam proportionem
+sicut sinus arcus $bc$ ad sinum arcus $ba$ sicut sinus arcus $fe$
+ad sinum arcus $ed$. Propterea ex æquali sinus arcus $cb$ ad sinum
+arcus $bh$, erit sicut sinus arcus $fe$ ad sinum arcus $eg$. Quare per
+8 præmissi quoniam recti sunt qui ad $g$ $h$ æquales erunt
+$c$ $f$ anguli sicut prius. Cadant deinde perpendiculares $eg$ $bh$
+alter intus alter extra, hoc est $bh$ intra triangulum $abc$. Et
+arcus $eg$ extra. Dico tunc quod angulus $c$ cum angulo $efd$
+iunctus duos rectos faciet, Quod sic ostendam. Rursus enim per
+hypothesim, et conversim sinus arcus $bc$ ad sinum arcus $ba$
+sicut sinus arcus $fe$ ad sinum arcus $ed$. Et per 7 præmissi sinus
+arcus $ab$ ad sinum arcus $bh$ sicut sinus arcus $de$ ad sinum
+arcus $eg$. Quare erit et sinus arcus $cb$ ad sinum arcus $bh$ sicut
+sinus arcus $fe$ ad sinum arcus $eg$. Quare ut prius per 8 præmissi
+æqualis erit angulus $c$ angulo $efg$. Sed angulus $efg$ cum
+angulo $efd$ conflat duos rectos. Ergo et angulus $c$ cum
+angulo $efd$ conficiet duos rectos. Quod erat demonstrandum.
+Atque ita constat quicquid proponitur demonstrandum.
+\note{dans la marge gauche, deux figures : un triangle sphérique lettré $a$, $b$, $c$, avec l'arc $bh$ tombant sur $ac$ en $h$ ; un second lettré $e$ au sommet, $d$ à gauche et, sur la base, « $f$ », « $g$ » puis « $f$ » à l'extrémité droite — la lettre $f$ est écrite deux fois sur la figure.}
+
+\subsection*{Propositio XXIIII}
+
+Si ab angulo trianguli ex arcubus circulorum majorum
+in superficie sphæræ constituti descendat ad basim
+arcus circuli majoris angulum ipsum per æqualia dividens,
+tunc sinus arcuum angulum ipsum continentes erunt
+sinibus factarum basis portionum proportionales.
+
+Sit in superficie sphæræ triangulum $abc$ ex arcubus circulorum
+majorum. A cuius angulo quolibet puta $b$ descendat ad oppositum
+arcum circuli majoris arcus $bd$ secans per æqualia angulum
+$abc$. Dico tunc quod, sicut est sinus arcus $ab$ ad sinum arcus
+$bc$, sic erit sinus arcus $ad$ ad sinum arcus $dc$. Nam cum triangulorum
+sphæralium $bad$ $bcd$ anguli $abd$ $dbc$ sint per hypothesim æquales
+Et anguli $adb$ $bdc$ conjuncti perficiant duos rectos. Iam per 22.
+huius erit sinus arcus $ab$ ad sinum arcus $bc$ sicut sinus arcus
+$ad$ ad sinum arcus $dc$. Quod est propositum.
+\note{figures dans la marge : un triangle $abc$ coupé par l'arc $bd$, $d$ sur $ac$ ; plus bas, une figure lettrée $a$, $b$, $c$, $d$, $e$, $f$, qui se rapporte à la proposition suivante.}
+
+\subsection*{Propositio XXV}
+
+\note{page de droite de la vue 41. En haut à droite, à l'encre, le nombre « 40 ».}
+Quod si sinus arcuum dictum angulum continentium
+proportionales fuerint sinibus factarum basis portionum
+tunc arcus descendens angulum ipsum per æqualia secare
+probabitur.
+
+Hoc est in eadem descriptione ponatur arcus $ab$ ad sinum
+$bc$ sicut sinus arcus $ad$ ad sinum arcus $dc$.\note{sic : « ponatur arcus $ab$ ad sinum $bc$ », sans « sinus » devant « arcus ».} Dico tunc quod arcus
+$bd$ per æqualia secat angulum $abc$. Nam si anguli ad $d$
+sint recti, constat propositum per 8. præmissi libelli, Secus
+autem erit angulorum ad $d$ obtusus alter, et alter acutus,
+Acutus esto $bdc$. \uncertain{Producatque} arcu $bd$, et ad eum perpendiculari
+arcu circuli majoris $ae$ fiat $ef$ arcus æqualis ipsi $de$. Et ducatur
+arcus circuli magni $af$. Eritque per 28. 2. Sphæricorum
+Elementorum arcus $af$ æqualis arcui $ad$. Et per 8. præced.
+angulus $f$ æqualis angulo $ade$: eiusque contraposito $bdc$.
+Et quoniam supponitur sinus arcus $ab$ ad sinum arcus $bc$
+sicut sinus arcus $ad$ ad sinum arcus $dc$. Ideo erit et sinus
+arcus $ab$ ad \struck{ad} sinum arcus $bc$ sicut sinus arcus $af$ ad
+sinum arcus $dc$. Suntque anguli $f$, $bdc$ æquales acuti. Igitur
+per 23 præcedentem. anguli oppositi arcubus $af$ $cd$ hoc est
+anguli $abd$ $dbc$ aut æquales erunt aut simul juncti duobus
+rectis æquales. Sed duobus rectis æquales esse non possunt,
+quandoquidem angulum faciunt $ab$ $bc$ arcus. æquales ergo
+erunt sicut proponitur demonstrandum. Hoc idem ab
+impossibili per præcedentem demonstrari potest.
+
+\subsection*{Propositio XXVI.}
+
+Si bina triangula fuerint in superficie sphæræ ex arcubus
+circulorum majorum, quorum unius duo anguli fuerint
+duobus alterius angulis singuli singulis æquales, et ab
+angulis reliquis perpendiculares arcus circulorum majorum
+ad bases ducantur, Tunc sinus factarum basis portionum
+in uno triangulo proportionales erunt sinibus factarum
+basis portionum in reliquo triangulo.
+
+Sint in superficie sphæræ duo triangula $abc$ $def$ ex arcubus circulorum
+majorum. Quorum anguli $a$ $d$ sint æquales. Itemque anguli $c$ $f$
+æquales. Arcus autem $bg$ $eh$ circulorum majorum perpendiculares
+ad bases $ac$ $df$. Demonstrandum est quod sinus arcus $ag$ ad
+sinum arcus $gc$ est sicut sinus arcus $dh$ ad sinum arcus $hf$ hoc modo.
+Per 13. præcedentis libelli, ratio sinus arcus $ag$ ad sinum arcus
+$gc$ componitur ex rationibus sinus arcus $ab$ ad sinum arcus $bc$.
+Et sinus anguli $abg$ ad sinum anguli $gbc$. Et per eandem 13.
+ratio sinus arcus $dh$ ad sinum arcus $hf$ componitur ex rationibus
+\note{dans la marge droite, deux figures : un triangle $abc$ avec l'arc $bg$, $g$ sur $ac$ ; un triangle $def$ avec l'arc $eh$, $h$ sur $df$. Le texte de la page s'arrête ici au bas du feuillet ; il reprend en tête de la vue 42.}
+
+\page{42}
+\note{double page ; page de gauche. Le texte continue sans interruption la fin de la vue 41.}
+sinus arcus $de$ ad sinum arcus $ef$. Et sinus anguli $deh$ ad sinum
+anguli $hef$. Sed per 16 præmissi quoniam anguli $a$ $d$ æquales
+Et anguli $c$ $f$ æquales sinus arcus $ab$ ad sinum arcus $bc$ sicut
+sinus arcus $de$ ad sinum arcus $ef$. Et per 22. eiusdem, propter
+dictorum angulorum æqualitatem sinus anguli $abg$ ad sinum
+anguli $gbc$, sicut sinus anguli $deh$ ad sinum anguli $hef$.
+Igitur ex æqua proportione sinus arcus $ag$ ad sinum arcus $gc$
+erit sicut sinus arcus $dh$ ad sinum arcus $hf$. quod proponitur
+demonstrandum.
+\note{le chiffre lu « 16 » a la forme du 6 en « b » de cette main.}
+
+\subsection*{Propositio XXVII.}
+
+In triangulo rectangulo ex arcubus circulorum majorum
+in superficie sphæræ, sinus unius acutorum angulorum
+ad sinum totum est sicut sinus secundus reliqui acuti
+ad sinum secundum lateris eum subtendentis.
+
+Repetita descriptione 10 huius Demonstrandum est quod sinus
+anguli $abc$ ad sinum totum est sicut sinus arcus $fe$ ad sinum
+arcus $fb$. hoc modo per 6. præcedentis libri, et conversam
+proportionem, sinus anguli $abc$ ad sinum totum, est sicut sinus
+arcus $ac$ ad sinum arcus $ab$. Et per 7 eiusdem, et conversam
+proportionem sinus arcus $ac$ ad sinum arcus $ab$ sicut sinus
+arcus $cf$ ad sinum arcus $fb$. Quare per 11. 5. Euclidis sinus
+arcus $cf$ ad sinum arcus $fb$ sic sinus anguli $abc$, ad sinum
+totum quod erat demonstrandum.
+\note{« $fe$ » à la troisième ligne et « $cf$ » plus bas : la main forme $c$ et $e$ presque de même ; les lettres sont données telles qu'elles se lisent, sans les accorder. Le second « $ac$ » est empâté d'encre.}
+\note{figures dans la marge : un triangle lettré $a$, $b$, $c$, $d$, $e$, $f$ (les arcs $fbc$ et $abe$ se coupant en $b$) ; au-dessous une petite figure lettrée $l$, $a$, $b$, $e$, et à côté deux lettres encadrées, « $g$ » et « $h$ ».}
+
+\subsection*{Propositio XXVIII.}
+
+Item sinus secundus unius acutorum angulorum, ad
+sinum totum est sicut quod sub sinu secundo arcus acutum
+subtendentis, et sub sinu reliqui anguli continetur,
+rectangulum ad quod ex sinu toto quadratum.
+
+In descriptione præmissa, dico quod sinus secundus anguli $bac$
+hoc est sinus arcus $fe$ ad sinum totum est sicut rectangulum
+quod ex sinibus anguli $abc$ et arcus $fb$. qui est sinus secundus
+arcus $bc$ ad quadratum sinus totius. Erit enim sinus anguli
+$abc$ ad sinum totum per præcedentem sicut sinus arcus $ef$
+ad sinum arcus $fb$, per 15. 6 Igitur rectangulum quod ex sinibus
+anguli $abc$ et arcus $fb$ æquale est rectangulo quod ex sinu
+toto sinuque arcus $ef$. Sed per primum 6. sicut sinus
+arcus $fe$, ad sinum totum, sic quadrangulum ex sinu
+toto sinuque arcus $fe$ ad quadratum sinus totius. Igitur
+erit sinus arcus $fe$ ad sinum totum sic quadrangulum quod
+\note{dans la marge, un cercle lettré $a$, $b$, $k$, $o$, $d$, $p$, $c$, $l$, $h$, $g$, $m$, $e$, $n$, $f$, avec la légende « Refertur ad propositionẽ Sequentem ».}
+
+\note{page de droite de la vue 42, numérotée à l'encre « 41 » en haut à droite. Elle ne continue pas la page de gauche : celle-ci s'arrête sur « quadrangulum quod », au milieu de la démonstration de la proposition XXVIII, et celle-ci s'ouvre au milieu d'une application à l'astronomie. Les numéros à l'encre, 40 puis 41, se suivent pourtant. Le texte des pages numérotées 41 à 43 (vue 42, droite, à vue 45, gauche) se lit à la suite de la vue 47, gauche (« Si autem sumatur arcus $fbc$ pro horizonte recto » / « erit arcus $ac$ ascensio recta »), et la vue 47, droite, en reprend la fin (voir les notes des vues 45 et 47) : c'est une reconstitution de cette transcription, qui garde l'ordre des feuillets.}
+erit arcus $ac$ ascensio recta, respondens arcui Zodiaci $ab$.
+Atque quoniam per 17 præcedentis libri sinus secundus
+arcus $bc$ ad sinum secundum arcus $ab$ est sicut sinus
+totus ad sinum arcus $ac$. Hoc est sinus arcus $fb$ ad sinum
+arcus $be$, sicut sinus totus ad sinum arcus $cd$, atque ex his
+tria nota sint, scilicet sinus arcus $fb$, sinus arcus $be$ sinusque
+totus, Iam et reliquum scilicet sinus arcus $cd$ noscetur.
+Unde et arcus $cd$ dabitur. qui ablatus a quadrante relinquit
+arcum $ac$ ascensionem scilicet rectam cognitam. Similiter et cæteræ
+quæstiones absolventur, quæ faciles erunt horum libellorum
+Theoremata intelligentibus. Lubet tamen hic demonstrare praxim
+qua Iohannes Regiomontanus utitur in calculanda declinatione
+et ascensione rectâ, per tabulas generales, nec non in habenda
+differentia ascensionali. Non enim apertum est omnibus ingeniis
+unde pendeant illius calculi regulæ. Atque pro tabula
+declinationum sit Zodiacus $ab$ Æquator $ac$, Locus longitudinis
+astri in Zodiaco punctum $b$. latitudo astri $bg$. Ita ut punctum $g$
+sit verus astri locus. Declinatio arcus $gh$. Producatur arcus $gb$
+usque ad æquatorem ad punctum $c$. Iam intranti in tabulam
+declinationum generalem, cum longitudine astri occurrit primum
+arcus $bc$. qui arcus est circuli latitudinis astri inter Zodiacum
+et æquatorem comprehensus. Ex quo quidem arcu et latitudine
+astri $bg$. sive adgregando sive subtrahendo, notus veniet arcus
+$gc$ arcus \ill{} circuli latitudinis inter centrum astri et æquatorem\note{un mot surchargé et empâté après « arcus » ; on distingue « vi » au début, peut-être une abréviation, non résolue.}
+Deinde occurrit in tabula numerus multiplicandus qui numerus
+est sinus rectus anguli $gch$ posito sinu toto partium 100.000.
+Unde \struck{primum} apud punctum tropicum quoniam talis angulus rectus
+est, ponitur numerus ipse sinus totius, quandoquidem
+anguli recti sinus est sinus totus, Per 6 autem præcedentis
+libri, sinus totus ad sinum anguli $gch$ est sicut sinus arcus $cg$
+ad sinum arcus $gh$. Quorum cum tria nota sint, scilicet sinus
+totus 100.000, sinus anguli $gch$ qui est numerus multiplicandus
+tabulæ, ac sinus arcus $cg$ Iam per regulam quatuor magnitudinum
+noscetur et reliquum scilicet sinus arcus $gh$. Recte igitur
+præcipit Iohannes in problemate dum iubet multiplicari sinum
+arcus $gc$, in numerum multiplicandum in tabula repertum
+hoc est multiplicari secundum in tertium et productum dividi
+per primum, hoc est per sinum totum 100.000. Talis enim
+divisio fit, dum in numero ex multiplicatione producto abiiciuntur
+quinque figuræ ad dextram, quot sunt cyphræ in divisore,
+hoc est in sinu toto: quæ operatio notissima est Arithmeticis,
+Additur autem reliquarum figurarum numero unitas si
+\note{dans la marge droite, un triangle lettré $g$, $b$, $a$, $h$, $c$, avec un second « $h$ » sous la base.}
+
+\page{43}
+\note{double page ; page de gauche. Elle continue la phrase de la fin de la vue 42 (« unitas si »).}
+figuræ abiectæ denotant plus quam 50000. Quoniam fractio
+quæ ultra integras partes ex divisione exit minor est dimidio.
+cum abiectæ figuræ minus quam 50000. hoc est minus quam
+dimidium divisoris denotant, et tunc negligitur. Maior
+autem est dimidio cum relictæ figuræ plus dimidio dicto denotant, Et
+tunc \struck{negligitur} pro fractione integra unitas adducitur hoc est integra
+pars. Talis ergo numerus ex divisione sic facta progrediens, erit
+quartum quod quærebatur, hoc est sinus ipsius arcus $gh$ hoc est
+declinationis quæsitæ. Unde ex tabula sinus recti declinatio ipsa
+cognita venit. Nec interest utrum sinus arcuum $cg$ $gh$ capiantur
+alterius sinus totius quam sinus anguli $gch$ qui capitur respectu sinus
+totius partium 100.000 quandoquidem in quatuor magnitudinibus
+proportionalibus, non necesse est omnes quatuor esse eiusdem
+colligantiæ, sed primam cum secundâ et tertiam cum quartâ.
+
+Pro tabula autem ascensionum rectarum, repeto descriptionem
+ultimæ propositionis huius libri, In qua quidem æquator sit $acd$
+Circulus latitudinis astri $abe$. Circulus declinationis eiusdem
+$fbc$, Circulus autem $fed$ incedens per polos ipsorum $abe$ $acd$
+determinet ad $ae$ quadrantes. Punctum $b$ centrum astri,
+Arcus $bc$ declinatio astri, Arcus $ac$ differentia transitus astri per
+coeli medium. Itaque intranti tabulam ascensionum generalem
+cum longitudine astri, occurrit primum arcus qui inscribitur
+radix ascensionum. qui est quidem arcus æquatoris ab initio
+arietis secundum ordinem signorum, usque ad circulum
+latitudinis astri $abe$ computatus. Deinde occurrit numerus
+multiplicandus qui nihil aliud est quam umbra versa
+arcus $fe$ multiplicata in senarium posito gnomone partium
+100.000, Et quidem per 31. huius præcedentem, sinus totus ad
+sinum arcus $ac$ est sicut quadratum gnomonis ad quadrangulum
+quod fit ex umbris versis arcuum $fe$ $bc$. Iam si dictum quadrangulum,
+ducatur in sinum totum et productum dividatur
+in quadratum gnomonis, exibit ex divisione sinus arcus $ac$.
+Sed cum sinus totus hic supponatur partium 60000 et numerus
+multiplicandus in tabula inventus sit umbra versa arcus $fe$ ducta
+in 6, Atque quadratum gnomonis sit \uncertain{10000000.000} in idem
+redit operatio, si ducatur numerus multiplicandus in umbram
+versam arcus $bc$ declinationis, et a producto abiiciantur sex
+figuræ quanquam canon iubet abiici quinque figuras ob id
+videlicet quod numero multiplicando ablata sit una figura
+ad alleviandum laborem. Et si abiectæ denotent plusquam
+est 50000 adiicienda relicto numero unitas, ob causam sæpius
+memoratam. Hoc pacto relictus est numerus is qui ex divisione
+proditurus erat, hoc est sinus arcus $ac$. Unde et ipse arcus
+$ac$ notus fiet. Cumque radix ascensionum per tabulam cognita
+sit arcus æquatoris a puncto æquinoctiali verno usque ad punctum
+\note{le nombre du carré du gnomon est écrit en chiffres serrés ; on y compte un 1 suivi de sept zéros, d'un point et de trois zéros, soit dix zéros, ce que demande le carré de 100.000 ; le compte des zéros reste douteux. « sæpius » est surchargé. Dans la marge gauche, en regard de « Pro tabula autem », un grand signe en croissant, « ( », qui n'est pas un mot.}
+\note{figures dans la marge : en haut, un triangle lettré $f$, $b$, $e$, $c$, $a$ ; plus bas, la même figure lettrée $f$, $e$, $b$, $d$, $a$, $c$.}
+
+\note{page de droite de la vue 43, numérotée à l'encre « 42 » en haut à droite ; elle continue la page de gauche (« usque ad punctum » / « a computatus »).}
+a computatus: Iam addito vel ablato arcu $ac$ nunc noto,
+cognitus veniet arcus æquatoris ab eodem æquinoctii puncto
+usque ad punctum $c$ computatus: hoc est ascensio astri recta quæsita
+quæ a circulo declinationis $fbc$ determinatur, Verum ipse arcus
+$ac$ dria\note{abréviation de « differentia », écrite « dria » avec un trait.} scilicet transitus astri per medium coeli potest absque
+auxilio numeri multiplicandi, et absque umbrarum tabula haben\note{écrit « haben » ; le sens attend « haberi ».}
+sic. In descriptione præmissa per tabulam declinationum notus
+erat arcus $cg$ latitudinis astri inter æquatorem $ac$ et centrum astri
+$g$ comprehensus. Notus item fuit arcus $gh$ declinatio scilicet astri.
+Atque ideo sinus secundi horum arcuum cogniti fient. Verum per
+17. præmissi libri sinus secundus arcus $gh$ ad sinum secundum
+arcus $gc$ est sicut sinus totus ad sinum secundum arcus $ch$
+quandoquidem rectus est angulus $ghc$. Igitur cum ex his tria
+nota sint, noscetur et reliquum scilicet sinus secundus arcus
+$ch$. Et proinde ipse arcus $ch$ qui quærebatur notus erit, differentia
+scilicet transitus astri per coeli medium, Unde ut prius per
+radicem adscensionum, data fiet ascensio recta quæsita. Unde
+pro ascensione recta satis erat radix ascensionum sola absque
+numero multiplicando, et absque usu tabulæ foecundæ, quæ
+tabula est umbrarum. Iohannes autem vir perspicacissimus
+ideo adiecit numerum multiplicandum usumque tabulæ foecundæ,
+\struck{quæ tabula est umbrarum}. Ut caveret divisionem quæ
+necessaria est ei, qui per solam radicem ascensionum operatur,
+quæ divisio cum scilicet divisor numerus diversas habet figuras
+fastidiosior est numeranti, sic invenit modum, qui sola multiplicatione
+perficeret, qui calculatoribus notior esse consuevit.
+
+\note{avant « Pro regula », dans la ligne, le même signe en croissant qu'à la page de gauche.}
+Pro regula tandem inveniendi ascensionalem differentiam, Sit
+rursum in descriptione 31. præcedentis, æquator $acd$. Horizon
+rectus $fbc$, obliquus $abe$, Meridianus $fed$. Eritque latitudo
+regionis arcus $fe$. Centrum astri punctum $b$. Declinatio astri
+arcus $bc$. Differentia ascensionalis eius arcus $ca$. Et quoniam
+per 31. præced. quadratum gnomonis ad quadrangulum
+factum ex umbris versis arcuum $fe$ $bc$: hoc est latitudinis loci,
+et declinationis astri, Est sicut sinus totus ad sinum arcus
+$ac$. Atque ex his quatuor tria nota sint scilicet quadratum
+gnomonis, quadrangulum ex umbris factum, et sinus totus.
+Ideo reliquum scilicet sinus arcus $ac$ notus veniet. Rectè
+Igitur præcipit Iohannes, multiplicari umbras versas latitudinis
+loci, ac declinationis astri alteram in alteram, \uncertain{ideoque}
+quadrangulum produci prædictum. Tale enim quadrangulum
+in sinum totum quem ipse supponit partium 60000 multiplicatum
+ac in quadratum gnomonis. 10000.000.000 divisum exhibet sinum
+arcus $ac$. Id autem fit dum prædictum quadrangulum in
+\note{le nombre du carré du gnomon est écrit en groupes séparés par des points ; « 10000.000.000 », dix zéros ; le deuxième chiffre a la forme d'un « a », qui est le zéro de cette main (même forme dans « 100000 » à la vue 44). « quadratum » est surchargé.}
+\note{dans la marge droite, deux figures : un triangle lettré $g$, $b$, $c$, $a$, $h$ ; plus bas, une figure lettrée $f$, $e$, $b$, $d$, $a$, $c$.}
+
+\page{44}
+\note{double page ; page de gauche. Elle continue la page de droite de la vue 43 (« quadrangulum in » / « senarium ducitur »).}
+senarium ducitur: Et a producto 6 ad dextram figuræ abiiciantur,
+reliquæ unitate adiectâ si abiectæ plusquam 50000 denotaverint.
+Nam talis relictus numerus erit sinus arcus $ac$. Quare notescet
+arcus $ac$, quæ differentia ascensionum quæsita est, Sic iam
+demonstrata est praxis dictarum tabularum. ac simul declaratum est
+qua ratione constructæ sint.
+
+\subsection*{Demonstratio tabulæ beneficæ.}
+
+Ad imitationem tabulæ foecundæ Iohannis de Monteregio
+fecimus aliam tabulam quam beneficam appellavimus, quia eius
+beneficio calculis quibusdam facilitas procuretur. Ut autem utriusque
+tabulæ subiectum et speculatio patefiat. Esto triangulum rectilineum
+$abc$ cuius angulus $abc$ rectus recta autem $bd$ perpendicularis ad
+basim $ac$. Ponaturque linea $ab$ sinus totus et gnomo proiiciens
+umbram $bc$ qui sinus et gnomon supponitur partium 100.000.
+Eritque angulus $a$ cum quo intramus tam in tabulam foecundam
+quam in tabulam beneficam, et etiam in tabulam sinus recti, Per
+quem ingressum ex tabula foecunda habetur linea $bc$ quæ est
+umbra versa ex tabula benefica habetur linea $ca$ radius scilicet
+contingens apicem gnomonis scilicet punctum $a$ cum $c$ puncto
+extremo umbræ, ex tabula sinus habetur linea $bd$ sinus scilicet
+anguli $a$ cuius sinus secundus est linea $da$ sinus scilicet anguli
+$abd$ quod est complementum anguli $a$ quandoquidem conjuncti
+faciunt angulum rectum. Quoniam igitur triangula $abd$ $bcd$
+partialia sunt per 8. 6 Eucl. similia inter se et totali triangulo
+$acb$ propterea erunt lineæ $da$ $ab$ $ca$ continue proportionales.
+Quare si quadratum ipsius $ab$ dividatur per lineam $ad$ numerus
+quotiens erit linea $ca$. Item erit sicut $ab$ linea ad ipsam
+$bd$ sic $ac$ ad ipsam $cb$. Quare si ducatur $ac$ in $bd$ et productum
+secetur in $ab$, quod fiet abiectis de producto quinque ad
+dextram figuris quot scilicet sunt zyphræ in numero 100000
+numerus quotiens erit $bc$ umbra versa. Contra erit sicut $bd$
+ad ipsam $ab$, sic et $bc$ ad ipsam $ca$. Quare si ducatur $ab$
+in $bc$ quod fiet applicando ad dextram numeri $bc$ quinque
+zyphras. Et productum secetur in $bd$, numerus quotiens erit
+linea $ca$. Item si ponatur angulus $a$ graduum 30 tunc $bd$
+sinus erit dimidium ipsius $ab$ sinus totius. Sed sicut $ab$ ad
+ipsam $bd$ sic $ac$ ad ipsam $cb$. Ergo tunc $bc$ umbra erit dimidia
+numeri $ca$ tabulæ beneficæ: Et quadratum ipsius $ac$ quadruplum
+ad quadratum ipsius $bc$, Et ideo quadratum ipsius $ac$ sesquitertium
+ad quadratum ipsius $ab$. Unde tunc si ponatur $ab$
+semidiameter sphæræ, lineam iam $ac$ erit latus cubi circumscripti
+\note{dans la marge, un triangle rectangle lettré $a$, $b$, $c$, avec la perpendiculaire $bd$ sur $ac$. Plusieurs mots de la page sont soulignés (« similia », « angulus », « tunc », « erit », « ab ») sans raison apparente ; le soulignement n'est pas reproduit.}
+
+\note{page de droite de la vue 44, numérotée à l'encre « 43 » en haut à droite ; elle continue la page de gauche (« cubi circumscripti » / « a sphæra »).}
+a sphæra: sed hoc nihil ad rem. Adhuc si ponatur angulus
+$a$ graduum 45. hoc est dimidium recti $ad$ $db$ $dc$ erunt inter
+se æquales. Unde $bc$ umbra erit æqualis gnomoni suo $ab$ et
+$ac$ numerus tabulæ beneficus duplus ipsius $ad$ sive $db$ qui
+sunt sinus primus et secundus anguli $a$. Et tunc si ponatur $ab$
+semidiameter circuli erit $ac$ latus quadrati in circulo descripti
+sed nihil ad rem. Demum si ponatur angulus $a$ graduum 60
+tunc angulus $c$ fiet graduum 30, et tantundem angulus $abd$.
+Quare $ad$ erit dimidium ipsius $ab$. sed sicut $ba$ ad ipsum $ad$ sic
+est $ca$ ad ipsum $ab$. Ergo $ab$ tunc dimidium ipsius $ac$. Unde
+cum $ab$ ponatur partium 100000 erit eo casu $ac$ numerus
+tabulæ beneficæ partium 200.000 Postremo si ponatur angulus
+$a$ graduum 90 hoc est rectus, tunc in tabula sinuum ipse sinus
+$bd$ est iam ipse sinus totus $ab$. Nam in eo casu linea $bd$ coünitur ipsi
+$ab$. Tunc vero tam in tabula Foecunda quam in tabula benefica
+ibi umbra versa et hic radius in infinitum abeunt, quoniam scilicet
+$bc$ umbra et $ac$ radius sunt æquidistantes, et necubi quamvis in
+infinitum producti concurrunt. Ex quibus satis constat deffinitio et
+fabrica ipsarum tabularum Foecundæ et Beneficæ. Nam ex tabula sinuum
+per regulas proprias compositæ eliciuntur ambæ.
+
+\note{ici, dans la ligne, le signe en croissant déjà vu aux vues 43 ; « quoad » est écrit « qual » corrigé par « oa » en interligne.}
+Porro quoad usum tabulæ
+beneficæ, nam foecundæ calculus fuit dudum demonstratus: hoc accipe.
+Sint in superficie sphæræ duo quadrantes circulorum, majorum $abe$
+$acd$ inter se inclinatorum, Et a puncto $f$ polo scilicet ipsius $ae$ descendant
+duo quadrantes $fed$, $fbc$ Eruntque anguli apud $c$ $d$ $e$ puncta
+recti, Sintque ex triangulo sphærali $abc$ cogniti arcus $ab$ $bc$, quæro
+ex his arcum $ac$. Sic cum arcu $bc$ intro in tabulam Beneficam, Et
+excipio numerum multiplicandum qui sit $g$. Et quoniam sinus
+secundus arcus $bc$ est ipse sinus arcus $fb$ Erunt iam sicut dudum
+ostensum est sinus $fb$ arcus sinus totus, atque $g$ continue proportionales,
+Sed per demonstrata Menelai sicut sinus ipsius $fb$ ad sinum
+totum arcus $fc$ sic sinus ipsius $be$ ad sinum ipsius $cd$. Igitur
+sicut sinus ipsius $be$ ad sinum ipsius $cd$, sic erit sinus totus ad
+ipsum $g$. Quamobrem multiplico ipsum $g$ in sinum ipsius $be$
+Et productum divido in sinum totum quod fit abiiciendo quinque
+\struck{zyphras} figuras\note{« figuras » est écrit au-dessus de « zyphras » biffé.} de producto ad dextram quot sunt zyphræ in sinu toto.
+Et habebo in quotiente sinum arcus $cd$, quo ablato a quadrante
+superest mihi arcus $ac$ quæsitus. Atque hoc quidem pacto ex $ab$ arcu
+Eclipticæ a sectione æquinoctii incepto Et ex $bc$ declinatione cognoscam
+$ac$ rectam ascensionem
+
+\note{même signe en croissant avant « Item ».}
+Item mutatis terminis ex $ab$ arcu
+circuli latitudinis inter stellam $b$ et æquatorem $acd$ clauso Et ex
+$bc$ declinatione stellæ datis: discam arcum $ac$ æquatoris qui dicitur
+\note{« apud $c$ $d$ $e$ puncta » : écrit « apud cde puncta ». Dans la marge droite, deux triangles rectangles lettrés $a$, $b$, $c$, $d$ (la perpendiculaire $bd$) ; plus bas, un gros point et un rectangle portant $a$ en haut et $b$ en bas.}
+
+\page{45}
+\note{double page ; page de gauche. Elle continue la page de droite de la vue 44 (« qui dicitur » / « differentia »).}
+differentia stellæ transitus per coeli medium, et qui ad sciendam
+eius ascensionem rectam usu venit
+
+\note{signe en croissant avant « Adhuc », et de même avant « Si autem », « Quod si » et « Denique » plus bas.}
+Adhuc variando iuxta necessitatem
+propositi terminos ex latitudine ortus $ab$ et ex declinatione
+$bc$ stellæ propositæ in puncto $b$ positæ datis eliciam arcum $ac$ diff\textsuperscript{ia}
+ascensionalis eiusdem stellæ, Et sic deinceps in cæteris quæstionib\textsuperscript{9}
+quæ ad hanc arcuum descriptionem redigi possunt.
+
+Si autem
+in eodem triangulo sphærali $abc$ datus sit angulus $a$ hoc est
+arcus $de$ et arcus $bc$. tunc ex his scitur arcus $ab$ sic. Cum
+arcu $fe$ intro tabulam beneficam, et numerus multiplicandus
+ibi inventus sit $g$. Et quoniam sinus secundus arcus $fe$ est sinus
+arcus $ed$, Erunt sicut prius sinus $ed$ arcus, sinus totus et $g$
+continuæ proportionales. Sed sicut ostendit idem Menelaus
+sicut est sinus ipsius $ed$ ad sinum totum sic iam sinus ipsius $bc$
+ad sinum ipsius $ab$. Ergo et sicut sinus ipsius $bc$ ad sinum
+$ab$, sic sinus totus ad ipsum $g$. Quamobrem multiplico $g$ in
+sinum ipsius $bc$ et productum partior in sinum totum, quod
+fit abiectis quinque dexterioribus figuris et exibit ex divisione
+sinus ipsius $ab$ arcus quæsiti. Tali calculo ex arcu $bc$ declinationis
+et ex maxima declinatione $ed$ datis comperitur arcus $ab$
+Eclipticæ, qui arcui ascensionis $ac$ respondet. Et similiter
+faciam in aliqua simili quæstione ut si ex angulo $a$ complemento
+latitudinis regionis et ex arcu $bc$ declinationis stellæ,
+Si ex angulo $a$ complemento latitudinis regionis et ex arcu
+$bc$ declinationis stellæ, in puncto $b$ positæ velim noscere
+arcum $ab$ horizontis inter æquatorem et stellam exorientem
+qui latitudo ortus vocatur. Sicut dictum est.\note{la même proposition, « si ex angulo $a$ complemento latitudinis regionis et ex arcu $bc$ declinationis stellæ », est écrite deux fois de suite, sans biffure.}
+
+Quod si dati
+sint duo arcus $ac$ $cb$ tunc per eos inveniam arcum $ab$. Dabuntur
+enim arcus $cd$ $fb$ quæ sunt datorum complementa \struck{Et tunc per
+eos inveniam arcum $ab$}. Et ex his per regulam declinationis
+dabitur arcus $be$, Et eius complementum $ab$ quæsitum.
+
+Denique
+si ex arcubus $ab$ $bc$ datis quæratur arcus $cd$. Tunc intrabis tabulam
+beneficam cum arcu $be$, et numerus inventus sit $g$. Et quia
+sinus secundus ipsius $be$ est sinus ipsius $ab$. Idcirco erunt ut
+prius, sinus ipsius $ab$, sinus totus, et ipsum $g$ continuæ
+proportionales. Verum ut ostendit Menelaus sicut sinus
+ipsius $ab$ ad sinum totum, sic iam sinus ipsius $bc$ ad sinum
+ipsius $cd$. Igitur erit sicut sinus ipsius $bc$ ad sinum
+ipsius $cd$. sic sinus totus ad ipsum $g$. Quare multiplico
+$g$ in sinum ipsius $bc$ et productum partior in sinum totum,
+quod fit abiectis quinque figuris, vel quot zyphræ sunt in numero
+\note{la page s'arrête sur « in numero » ; la suite ne se lit pas à la vue 45, droite, mais en tête de la vue 47, droite (« sinus totius, Et habeo in quotiente sinum arcus $cd$ quæsiti »).}
+\note{« prius » : les lettres du milieu sont surchargées, peut-être sur « primus ». Dans la marge, deux fois la même figure : un triangle lettré $f$, $e$, $b$, $a$, $c$, $d$, et au-dessous un trait horizontal marqué $g$.}
+
+\note{page de droite de la vue 45, numérotée à l'encre « 44 » en haut à droite. Elle ne continue pas la page de gauche : elle reprend, en les répétant, les deux dernières lignes de la page de gauche de la vue 42 (« toto sinuque arcus $fe$ ad quadratum sinus totius. Igitur erit sinus arcus $fe$ ad sinum totum sic quadrangulum quod ») et achève la proposition XXVIII. Les pages numérotées 41 à 43 (vues 42, droite, à 45, gauche) forment un texte suivi sur les tables de Regiomontanus et la « tabula benefica », placé au milieu de la proposition XXVIII.}
+ex sinu toto sinuque arcus $fe$ ad quadratum sinus totius. Igitur
+erit sinus arcus $fe$ ad sinum totum sic quadrangulum quod
+ex sinibus anguli $abc$ et arcus $fb$ ad quadratum sinus totius.
+Quod est propositum.
+
+\subsection*{Propositio XXVIIII.}
+
+In omni triangulo ex arcubus circulorum majorum
+in superficie sphæræ constituto, sinus versus anguli cuiuslibet
+ad differentiam duorum sinuum versorum quorum unus
+est lateris eum angulum subtendentis, alter vero differentiæ
+duorum arcuum ipsum angulum continentium, Est sicut
+quadratum sinus totius ad id quod sub sinibus arcuum
+eorundem continetur rectangulum.
+
+Sit in superficie sphæræ ex arcubus circulorum majorum
+constructum utcunque triangulum $abc$. Completoque circulo
+$adb$ sub polis $ab$ circuli describantur, majores quidem \uncertain{2}
+$def$ $geh$, minores vero $kcn$, $ocp$, Item quadrantes circulorum
+majorum a polis ad circulos majores $acl$, $bcm$. Rursus in alia
+descriptione (confusionis tollendæ gratia) describantur horum circulorum
+diametri axes, sinusque. Ac primum descripto utcunque circulo
+$abd$ describantur aliorum diametri, quæ sunt communes eorum
+cum $abd$ circuli plano sectiones hoc pacto. Punctum $x$. Sit centrum
+sphæræ et circulorum majorum, Recta $dxf$ diameter circuli $def$,
+Recta $gxh$ diameter circuli $geh$. Recta $kyn$ diameter circuli $kcn$
+Recta $orp$ diameter circuli $ocp$ sese invicem secantes in puncto \uncertain{$r$}. Item
+rectæ $xb$ $xa$ axes ipsorum $geh$ $def$ circulorum sive semidiametri
+circulorum $bcm$ $acl$, Adhuc lineæ $au$ $kq$ perpendiculares ad $xb$,
+Linea $kt$ perpendicularis ad \uncertain{$os$}. Quibus peractis patet quod linea
+$au$ est sinus rectus arcus $ab$. Linea $ky$ est sinus rectus arcus $ak$.
+et etiam arcus $ac$. quandoquidem æquales quoniam a polo ad
+periphæriam circuli $ocp$. Linea $kq$ sinus arcus $bk$ qui est differentia
+arcuum $ak$ $ab$. Unde et linea $br$ erit sinus versus arcus $bo$ sive
+$bc$. linea $bq$ sinus versus arcus $bk$ differentiæ prædictæ. Linea $qr$
+differentia talium sinuum versorum. linea $ks$ sinus versus arcus $kc$. Quæ
+omnia patent per primam præcedentis libelli, Ponatur itaque recta $dz$
+sinus versus arcus $db$. sive anguli $bac$. Constabitque demonstrandum
+esse quod $dz$ sinus versus anguli $bac$ ad $ry$ driam\note{abréviation de « differentiam », écrite « driam » avec un trait.} sinuum
+versorum, arcubus $bc$ $bk$ debitorum est sicut quadratum sinus totius.
+quod fit ex $dx$ in $xa$, ad rectangulum quod fit $au$ $ky$. qui
+\note{« majores quidem 2 » : un signe en forme de 2 après « quidem ». Dans la marge droite, quatre figures : deux sphères traversées d'arcs, sans lettres ; une troisième lettrée $a$, $b$, $k$, $o$, $d$, $g$, $l$, $m$, $e$, $c$, $f$, $n$, $h$, $p$ ; une quatrième, en coupe, lettrée $a$, $b$, $u$, $k$, $o$, $d$, $q$, $r$, $s$, $t$, $p$, $y$, $z$, $h$, $x$, $g$, $n$, $f$. Le texte s'arrête sur « qui » au bas de la page.}
+
+\page{46}
+\note{double page ; page de gauche. Elle continue la page de droite de la vue 45 (« au ky. qui » / « scilicet sunt »).}
+scilicet sunt sinus arcuum, $ab$ $ac$ recti. hoc modo. Quoniam
+per 14. secundi sphæricorum elementorum arcus $dl$ $ks$ sunt
+similes, Et in similibus arcubus sinus sunt semidiametris
+proportionales, Et ideo sicut linea $dz$ ad lineam $ks$ sic linea
+$dx$ ad lineam $ky$. Item quoniam æquiangulum est triangulum
+$kts$. triangulo $\supset rs$. Et triangulum $\supset ts$, triangulo $\supset yx$. Et
+triangulum $\supset yx$ triangulo $aux$ ideo triangula $kts$, $aux$
+æquiangula sunt. Quare per 4. 6. Euclidis, linea $xa$ ad lineam
+$au$ sicut linea $sk$ ad $kt$. Verum proposita linea $ks$ media ratio
+$dz$ ad $kt$ vel $qz$ componitur ex rationibus $dz$ ad $ks$
+et $ks$ ad $kt$ Et ideo ex rationibus $dx$ ad $ky$. Et $xa$ ad $au$
+quæ sunt illis eædem, Et per 24. 6. Elem. Euclidis ratio quadrati
+sinus totius quod fit ex $dx$ $xa$ ad quadrangulum quod fit
+ex $au$ $ky$ componitur ex rationibus $dx$ ad $ky$, et $xa$ ad $au$
+iisdem, Igitur ex æqua proportione Erit linea $dz$ ad \uncertain{$aqz$}
+sicut quadratum sinus totius ad rectangulum $au$ $ky$. quod quidem
+proponebatur demonstrandum.
+\note{« $\supset$ » : une lettre de figure en forme de c retourné, notée ici par le signe le plus proche, distincte de $c$ et de $z$ ; elle figure aussi, près de $r$, sur la figure de la vue 45. Le premier « $\supset rs$ » est surchargé. Les lettres « $aqz$ » sont repassées à l'encre et ne nomment aucune ligne de la figure ; l'énoncé de la vue 45 demande ici $ry$. « $qz$ » (après « vel ») est lu tel quel.}
+\note{dans la marge, trois figures qui reprennent celles de la vue 45 : une sphère traversée d'arcs, sans lettres ; une sphère lettrée $b$, $a$, $k$, $p$, $o$, $d$, $c$, $h$, $g$, $n$, $e$, $m$, $f$ ; une coupe lettrée $a$, $b$, $u$, $k$, $o$, $d$, $p$, $q$, $s$, $t$, $y$, $\supset$, $h$, $x$, $g$, $n$, $f$.}
+
+\subsection*{Propositio XXX.}
+
+Sinus arcus alicuius ad sinum eius secundum est sicut
+gnomo ad umbram rectam eiusdem arcus, sicut autem
+secundus ad sinum dicti arcus, sic est gnomo ad
+umbram versam eiusdem arcus.
+
+In quadrante circuli $ab$ capiatur quantusvis arcus $bc$, Eiusque
+complementum $ca$. Ductisque semidiametris $ad$ $db$, et $ce$ perpendiculari
+ad $db$. Erit per primam præcedentis libri recta \uncertain{$ca$}
+sinus rectus arcus $bc$. Recta vero $ed$ sinus secundus eiusdem arcus
+$bc$ coniungatur $cd$ et producatur ad $g$ punctum quodvis. Producatur
+item $ad$ $bd$ semidiametri. Compleaturque rectangulum
+$dfgh$. Itaque posito gnomone $df$ umbra recta respondens arcui
+$bc$ erit recta $fg$. Posito autem gnomone $dh$ umbra versa
+eiusdem arcus erit $gh$. Quibus declaratis demonstrandum est quod
+$ce$ ad $ed$ est sicut $df$ ad $fg$. Item quod $de$ ad $ec$ est sicut
+$dh$ ad $hg$. Constat autem utrumque ex similitudine
+triangulorum $ced$ $dfg$, $ghd$. et proportione laterum.
+\note{figure dans la marge : un quadrant lettré $a$, $c$, $b$, $e$, $d$, $h$, $f$, $g$, avec le rectangle $dfgh$.}
+
+\subsection*{Corollaria.}
+
+Unde umbra recta cuiusvis arcus est et umbra versa complementi
+eiusdem arcus. Item Dimidio quadrantis debita umbra tam recta
+quam versa æqualis est suo gnomoni. Item gnomon semper est
+medius proportionalis inter umbras duorum arcuum quadrantem
+integrantium, seu rectas seu versas.
+
+\subsection*{Propositio XXXI.}
+
+In triangulo rectangulo ex arcubus circulorum majorum in
+superficie sphæræ, constituto, sinus totus ad sinum arcus unum
+
+\note{page de droite de la vue 46, numérotée à l'encre « 45 » en haut à droite ; elle continue la page de gauche (« ad sinum arcus unum » / « ex acutis »).}
+ex acutis subtendentis est sicut quadratum gnomonis
+ad rectangulum comprehensum sub umbris versis quorum
+una complemento reliqui acuti, altera vero eundem
+acutum subtendenti debetur.
+
+Repetita descriptione 27. huius in triangulo $abc$ demonstrandum
+est quod sinus totus ad sinum arcus $ca$ subtendentis angulum
+acutum $abc$ est sicut quadratum gnomonis ad rectangulum
+quod fit ex duabus umbris versis, quarum una debetur arcui
+$fe$ quod complementum est anguli $bac$ Altera \uncertain{respondet} arcui
+$bc$ subtendenti reliquum acutum angulum $bac$. Quod sic
+ostenditur. Per præcedentem sicut gnomo ad umbram versam
+arcus $fe$ sic sinus arcus $de$ ad sinum arcus $ef$. Et rursum
+per eandem sicut gnomo ad umbram versam arcus $bc$ sic
+sinus arcus $fb$ ad sinum arcus $bc$. Sed per 24. 6 Elem. Eucl.
+Ratio quadrati gnomonis ad quadrangulum ex umbris versis arcuum
+$fe$ $bc$ componitur ex rationibus duabus videlicet gnomonis ad umbram
+versam arcus $fe$. Et gnomonis ad umbram versam arcus $bc$. Quare
+Et eadem ratio componetur ex rationibus duabus quæ sunt prædictis
+æquales, scilicet sinus arcus $de$ ad sinum arcus $ef$ Et sinus arcus
+$fb$ ad sinum arcus $bc$. Per 4. vel 5. huius. Ex iisdem rationibus
+duabus scilicet sinus arcus $de$ ad sinum arcus $ef$, et sinus arcus
+$fb$ ad sinum arcus $bc$ componitur ratio sinus arcus $da$ ad sinum
+arcus $ac$. Igitur ex æqua proportione erit sinus arcus $da$ hoc
+est sinus totus ad sinum arcus $ac$. Igitur ex æqua proportione
+erit sinus arcus $da$ ad sinum arcus $ac$. Iam sicut quadratum
+gnomonis ad rectangulum contentum sub umbris versis arcuum
+$fe$ $bc$, et id proponebatur demonstrandum.
+\note{« Altera » est suivi d'un mot abrégé, lu « rndet » avec un trait, offert comme « respondet ». La phrase « Igitur ex æqua proportione erit sinus arcus $da$ … ad sinum arcus $ac$ » est écrite deux fois de suite ; à la seconde, « hoc est sinus totus » est ajouté en interligne au-dessus de « $da$ ». Dans la marge, un triangle lettré $f$, $e$, $b$, $a$, $d$, $c$.}
+
+\subsection*{Corollaria.}
+
+Hinc manifestum est, quod si in duobus triangulis sphæralibus
+orthogoniis, duo latera quæ circum rectos angulos æqualia fuerint
+tunc rectangula quæ ex umbris versis reliquorum laterum, quæ
+circum rectos in umbras versas debitas complementis subtensorum
+angulorum producuntur, erunt et invicem æqualia. Et contrario.
+
+\subsection*{Propositio XXXII.}
+
+In triangulo rectangulo ex arcubus magnis in superficie sphæræ,
+constituto, sinus totus ad sinum arcus unum ex acutis angulis
+subtendentis est sicut umbra versa reliquo acuto angulo debita
+ad umbram versam lateris dictum acutum respicientis.
+
+Hoc est in eadem descriptione \ill{} quod sinus totus scilicet
+arcus $da$ ad sinum arcus $ac$ est sicut umbra versa arcus $de$
+ad umbram versam arcus $bc$. Sic per ultimum corollarium 30
+præcedentis ex umbra versa arcus $fe$ sui complementi producit
+\note{après « descriptione », un mot abrégé d'environ cinq lettres (« ontaz » ou approchant), non lu. Dans la marge, la même figure lettrée $f$, $e$, $b$, $a$, $d$, $c$.}
+
+\page{47}
+\note{double page ; page de gauche. Elle continue la page de droite de la vue 46 (« sui complementi producit » / « quadratum gnomonis »).}
+quadratum gnomonis. Sed per præcedentem quadratum gnomonis
+ad rectangulum umbrarum versarum arcuum $fe$ $bc$ fuit sicut
+sinus arcus $da$ ad sinum arcus $ac$. Igitur et sicut quod fit
+ex umbra versa arcus $de$ in umbram versam arcus $fe$, ad
+rectangulum quod fit ex umbris versis arcuum $fe$ $bc$ sic sinus arcus
+$da$ scilicet sinus totus ad sinum arcus $ac$. Cumque per primam
+6. Euclidis, rectangulum umbrarum versarum arcuum $de$ $fe$,
+ad rectangulum umbrarum versarum arcuum $fe$ $bc$. sit sicut
+umbra versa arcus $de$ ad umbram versam arcus $bc$. Erit iam
+sicut sinus totus ad sinum arcus $ac$ sic umbra versa arcus
+$de$ ad umbram versam arcus $bc$. Quod fuit demonstrandum.
+Ex eadem omnia concludere potes de rectis umbris quæ
+talium arcuum complementis debentur.
+\note{dans la marge, un triangle lettré $f$, $e$, $b$, $d$, $c$, $a$ ; plus bas, le long de la reliure, deux « $f$ » isolés, peut-être des lettres d'une figure prise dans le pli.}
+
+\subsection*{Scholium.}
+
+Ex his igitur demonstrationibus absolvi possunt omnes quæstiones
+quæ fieri consueverunt circa sphæralia triangula quæque in
+astronomia pertinent ad arcus circulorum in primo coelo intellectorum,
+hoc in concava superficie primi mobilis descriptorum
+Sed nemo harum speculationum scientiam perfectam habens nesciet
+theoriam ad praxim atque demonstrationem ad calculum reducere.
+Quæ res ut magis pervia fiat lectori exempla nonnulla sunt adducenda
+ut circa declinationes et adscensiones.
+
+Et primum si in descriptione præcedentis circulus $acd$ sit æquator
+circulus $abe$ sit Zodiacus. Circulus $fed$ sit colurus incedens per
+utrosque eorum polos punctum $a$ punctum æquinoctii, Arcus $de$
+maxima Zodiaci declinatio, Punctum $b$ locus astri in Zodiaco
+Circulus $fbc$ circulus declinationis, arcus $bc$ declinatio astri,
+ex loco autem astri cognito et maxima declinatione datâ hoc
+ex arcubus $ab$ $de$ quæratur declinatio astri hoc est arcus $bc$.
+absolvetur quæstio sic, cum per 6. \struck{huius} præmissi libri sicut est
+sinus totus ad sinum arcus $de$ sic \uncertain{sit} sinus arcus $ab$ ad sinum
+arcus $bc$. Atque ex his quatuor tria cognita sint noscetur et
+reliquum per regulam quatuor magnitudinum, hoc est
+cum sinus totus datus sit sinusque arcus $de$ dati datus, nec
+non sinus arcus arcus $ab$ dati propter cognitum astri locum
+datus Iam et reliquus sinus arcus $bc$ quæsiti dabitur, Et perinde
+arcus $bc$ quæsitus dabitur. Unde si ducatur secundum in
+tertium et productum dividatur per primum exibit ex divisione
+quartum ex doctrina 14. 6. Elem. Eucl. Hoc est si ducatur sinus
+arcus $de$ in sinum arcus $ab$ et productum dividatur in sinum
+totum exibit in divisione sinus arcus $bc$ Unde et arcus $bc$ quantus
+notus erit.
+
+\note{signe en croissant avant « Si autem ».}
+Si autem sumatur arcus $fbc$ pro horizonte recto
+\note{la page s'arrête ici, au bas du feuillet, la phrase en suspens ; elle se poursuit, selon toute apparence, en tête de la vue 42, droite (« erit arcus $ac$ ascensio recta, respondens arcui Zodiaci $ab$ »). Dans la marge, en face du milieu de la page, le même triangle lettré $f$, $e$, $b$, $d$, $c$, $a$.}
+
+\note{page de droite de la vue 47, numérotée à l'encre « 46 » en haut à droite. Elle ne continue pas la page de gauche, qui s'arrête sur « Si autem sumatur arcus $fbc$ pro horizonte recto » : celle-ci s'ouvre sur la fin d'un autre calcul (« sinus totius, Et habeo in quotiente sinum arcus $cd$ quæsiti »), celui de la plus grande déclinaison $de$ tirée de l'arc $ab$ et de la déclinaison $bc$.}
+sinus totius, Et habeo in quotiente sinum arcus $cd$ quæsiti. Hoc
+ergo pacto ex $ab$ arcu Eclipticæ et ex eius declinatione $bc$
+nanciscemur maximam declinationem $de$. Ex quibus
+quidem manifestum est quod omnia \ill{} quæ Iohannes
+de Monte Regio per tabellam foecundam vitato divisionis
+fastidio per multiplicationem elaborabat, hic per nram\note{abréviation de « nostram », écrite « nram » avec un trait.}
+beneficam haud difficilius supputari possunt sed practica
+huiusmodi regularum exempla inferius una cum tabellis
+exponemus. Hæc in Arce Apollinari dum cum Iohanne
+Vigintimillio Hieracensium Marchione degeremus olim
+mense Augusto 1530 speculabamur. Nunc adnectemus
+his quædam veterum opuscula ad eandem sphæricam
+theoriam spectantia.
+
+\subsection*{D. Octavio Spinulæ Quæstori ærario Siciliæ, Regioque Consiliario, Maurolycus. Salutem.}
+
+Ex quo Sphæricorum nostrorum volumen Octavi generose
+vir Messanæ excudi coeperat fluxit iam annus tertius
+Et inter varia tum impedimenta bellorumque suspiciones
+quæ nos turbabant, non dabatur ullus speculationibus
+locus quæ secessum mentis et otium imprimis requirunt:
+fecit amor erga me tuus, immo eximia tua in litteras
+affectio, ut repetito labore opus hoc egregium absolveretur
+Tantum igitur tibi sphæra nostra debet, ac debere se
+fatetur, quantum Atlas Herculi coelum humeris sustinenti
+debuit. Absolutis itaque Theodosij Menelai ac Maurolyci
+tui Sphæricis, subiungemus ea quæ ad sphæram mobilem
+motumque primum pertinent, quippe quæ sphæricorum
+demonstratis innituntur, et prima sunt disciplinæ
+syderalis rudimenta. Quod si te nunc Reip. cura et onus
+quod sustines occupatum tenet, dabitur ut spero \uncertain{quandoque}
+ocium, ut artibus ingenuis intendas animum et opera
+nostra utaris. Vale.
+\note{« omnia » est suivi d'un court mot biffé, non lu (marqué illisible). « quandoque » est écrit en abrégé (« qdoq » avec un signe final).}
+
+\subsection*{Ad eundem Hexastichon.}
+
+\begin{quote}
+Disturbata diu varijs monumenta procellis
+\end{quote}
+
+\begin{quote}
+Ad metam properant, te duce nostra suam.
+\end{quote}
+
+\begin{quote}
+Haud aliter quondam ne machina tanta periret,
+\end{quote}
+
+\begin{quote}
+Herculis auxilio sydera fulsit Atlas.
+\end{quote}
+
+\begin{quote}
+Si quidquam Octavi poterit mea pagina, laudem
+\end{quote}
+
+\begin{quote}
+Delebunt meriti, tempora nulla tui.
+\end{quote}
+
+Messanæ. Kal. Junij M.D.LVII.
+\note{les vers vont à la ligne un par un, les pairs en retrait. « Disturbata » et « procellis » sont surchargés ; le « D » de la date est repassé.}
+
+\page{48}
+\note{double page ; page de gauche. Elle ne continue pas la page de droite de la vue 47, qui s'achève sur la date de la dédicace : un nouveau texte commence ici, en tête de page. Les numéros des propositions sont écrits dans la marge gauche, en regard de l'énoncé.}
+
+\section*{Autolyci de sphæra quæ movetur ex traditione Maurolyci. Liber.}
+
+Sphæræ puncta æqualiter ferri dicuntur quæcumque æquali
+tempore æquales ac similes prætereunt periphærias. At
+si in linea aliqua delatum aliquod punctum æqualiter
+binas transierit lineas eandem habebit rationem tempus
+tempus, quibus singulas transit lineas, quam linea
+ad lineam.\note{« rationem tempus tempus » : « tempus » en fin de ligne puis « tempus » en début de ligne suivante, sans « ad ».}
+
+Hoc est peracta spatia temporibus proportionalia sunt.
+
+\textbf{Propositio 1.} Si æqualiter sphæra volvatur circa suum axem cuncta
+quæ in superficie sunt sphæræ puncta, præter polos
+circulos describent parallelos et ad axem rectos et
+eosdem cum sphæra polos habentes.
+
+Nam tales circuli describuntur per rectos a punctis ad
+axem super quo sphæra versatur perpendiculares, et
+ideo per 9 primi Theodosij habent dictum axem communem
+et polos communes.
+
+\textbf{Propositio 2.} Si sphæra volvatur æqualiter circa suum axem
+cuncta quæ in superficie puncta sunt sphæræ similes
+periphærias circulorum parallelorum in quibus
+feruntur in tempore eodem præteribunt.
+
+Nam si duo puncta sint in eodem parallelo. Constat
+propositum per assumptam in principio petitionem.
+Si in diversis parallelis autem, constabit propositum
+adducta 15. 2. sphæricorum Theodosij.
+
+\textbf{Proposito 3.} Si æqualiter sphæra evolvatur circa suum axem
+quas in tempore eodem periferias transmittent
+puncta quædam in circuli parallelis per quos
+feruntur eæ ipsæ similes erunt.
+
+Hæc est conversa præcedentis et converso modo demonstratur.
+
+\textbf{Propositio 4.} Si in sphærâ major circulus manens separet
+id quod apparet de sphæra ab eo quod non
+apparet, sitque ad rectos angulos axi sphæræ
+super quo movetur. Nullum punctum superficiei
+sphæræ oritur, nullum occidit, sed quæ sunt
+in hæmisphærio apparenti semper apparent
+Quæ vero in latenti semper occultantur.
+
+Nam talis circulus manens est communis limes talium
+hæmisphæriorum, et per primam huius puncta singula
+\note{« Proposito 3. » est écrit ainsi dans la marge. La fin de « hæmisphæriorum » est surchargée. La page s'arrête sur « singula » ; la page de droite de la même vue ne la continue pas.}
+
+\note{page de droite de la vue 48, numérotée à l'encre « 47 » en haut à droite. Elle ne continue pas la page de gauche (le livre d'Autolycus, qui s'arrête sur « puncta singula ») : elle s'ouvre au milieu d'une suite de problèmes numérotés sur les tables, avec des exemples chiffrés.}
+qui quidem arcus est horizontis inter æquinoctialem, et solem
+in tali horizonte orientem.
+
+\note{un « 7 » est écrit au-dessus de la fin de la première ligne de ce paragraphe ; au paragraphe suivant, un « 8. » dans la marge gauche : apparemment les numéros des problèmes.}
+Data item loci latitudine atque stellæ cuiuspiam declinatione
+differentiam ascensionalem tali stellæ debitam perscrutari.
+
+Cum tali declinatione data sume numerum ex tabula benefica
+quem multiplica in sinum secundum latitudinis ortivæ talis
+stellæ ad talem locum: Et a producto abiice quinque dextrorsum
+figuras: Et relicto sinui attribue arcum, namque is de quadrante
+summotus residuabit ascensionem quæsitam. Exempli gratia
+Ad dicti loci latitudinem gr. 38 ex tabula benefica excipio
+numerum 109038 quem multiplico in 86251. sinum scilicet
+secundum latitudinis ortivæ, talium declinationis et loci,
+scilicet graduum 30. m. 24. Et produco 940.463.6538.
+Hinc abiectis quinque ad dextram figuris, restat numerus
+94046. cui sinui debetur arcus gr. 70. m. 8. cuius comp\textsuperscript{tum}
+gr. 19. m. 52. est differentia ascensionalis quæsita, quæ
+quidem pro declinatione Septemtrionis adiecta pro declinatione
+ad austrum subtracta quadranti residuat arcum semidiurnum.
+\note{dans « 940.463.6538 », les chiffres « 53 » sont surchargés.}
+
+\textbf{8.} In horizonte proposito astri cuius datur altitudo ac
+declinatio, distantia a meridiano vestigatur.
+
+Ponatur sol in gradu 11 Tauri, declinatio hinc septemtrionalis
+grad. 15. m. 20. cuius numerus ex tabula benefica 103609
+Latitudo loci graduum 38. eius numerus ex tabula eadem
+126902 Dria ascensionalis Solis graduum gr. 12. m. 24.
+eius sinus 21189 Altitudo Solis esto gr. 5. m. 30. eius sinus
+9585. Quibus peractis sic procedo. Multiplico sinum altitudinis
+scilicet 9585. in numerum latitudinis loci scilicet 126902
+Et produco 1216355670 hinc abiicio quinque ad dextram figuras
+Et relinquitur numerus \uncertain{12164} quem rursus multiplico in
+numerum declinationis superius habitum scilicet 103609 Et
+produco 1260299876 Unde abiectis quinque dextrorsum
+figuris restat numerus 12604 quem voco argumentum distantiæ,
+Unde quoniam sol caret declinatione, non opus est secunda
+multiplicatione: Nam primum productum abiectis quinque
+figuris residuat tunc sinum secundum distantiæ Solis a meridiano.
+Sed in hoc casu tale argumentum collatum ad sinum differentiæ
+ascensionalis indicabit quæsitam distantiam. Nam si æquale
+sit ipsi sinui certum est distantiam Solis a meridiano esse
+quadrantem. Si argumentum minus sit sinu distantia talis
+major est quadrante. Si majus minor. Unde in hoc casu quoniam
+argumentum minus est sinu subtraho argumentum a sinu
+hoc est subtraho 12603 a sinu prædicto 21189 et supersunt 8586.
+qui sinus postulat gr. 4. m. 55. qui iuncti cum quadrante faciunt
+\note{« Dria » : abréviation de « Differentia ». Le nombre qui reste après la première division est surchargé : on lit « 12 », un chiffre repassé, puis « 64 » ; « 12164 » est offert parce que $12164 \times 103609 = 1260299876$, le produit écrit à la ligne suivante, et que 1216355670, cinq chiffres ôtés, donne 12163 porté à 12164 par la règle de l'unité ajoutée : c'est une vérification, non une lecture. Le même argument est écrit « 12604 » puis « 12603 » ; les deux sont laissés tels quels. « 1216355670 » est écrit en trois groupes, « 121 6355 670 ». La page s'arrête sur « faciunt ».}
+
+\page{49}
+\note{double page ; page de gauche. Elle continue la page de droite de la vue 48 (« qui iuncti cum quadrante faciunt »). La page de droite de la vue 49 est blanche et sans numéro.}
+gr. \uncertain{95}. m. 55 distantiam Solis a meridiano quæsitam. Supponatur
+altitudo Solis gr. 9. m. 16. cæteris stantibus: huius altitudinis
+sinus 16103 qui ductus in 126902 facit 2043502906. Hinc
+abiectis quinque figuris restat numerus 20435. qui multiplicatus
+in 103609. facit 2117149915. Unde abiectis quinque
+figuris restat 21171. qui numerus quoniam æqualis est fere
+sinui differentiæ ascensionalis 21189 illinc concludo distantiam
+quæsitam a meridiano esse quadrantem.
+\note{« gr. 95 » : le premier chiffre est un 9, le second a la forme du 5 de « m. 55 » ; la somme annoncée à la vue 48 (le quadrant et gr. 4 m. 55) ferait gr. 94. m. 55. « 2117149915 » et « 21171 » sont écrits ainsi ; le produit de 20435 par 103609 est 2117249915. Laissés tels quels.}
+
+Item supponatur altitudo Solis gr. 27. m. 50. Cætera ut
+prius. Sinus talis altitudinis erit 46690 qui ductus in
+126902 facit 5925054380 de quo abiectis ad dextram
+quinque figuris, relinquitur numerus 59251 qui ductus
+in 103609 producit 6138936859. Unde ablatis quinque
+figuris superest 61389 qui quoniam major est sinu differentiæ
+ascensionalis 21189 ideo hic ab illo subtrahendo
+superstabat g. 66. m. 18. distantia Solis a meridiano quæsita.
+Hæc pro declinatione septemtrionali Tandem supponatur
+declinatio Solis gr. 15. m. 20. meridionalis cæteris ut in
+postremo casu stantibus, ac similiter peractis: Sed tunc
+argumentum distantiæ scilicet 61389 iungendum est
+cum sinu driæ 21189 et fiet numerus 82578. cuius sinui
+debetur arcus gr. 55. m. 40. qui de quadrante sublatus
+relinquit tunc gr. 34. m. 20. distantiam Solis a meridiano
+quæsitam. Notandum tamen si hæc operatio refertur
+ad stellam cuius parallelus tangat solummodo horizontem
+cum scilicet complementum eius declinationis æquiparat
+latitudinem regionis tunc pro sinu driæ ascensionalis
+capiendus est sinus totus: quandoquidem talis stellæ dria
+est quadrans. Si autem stellæ parallelus feratur ultra
+horizontem tunc similiter faciendum est, sed et sinus
+minimæ altitudinis stellæ in meridiano auferendus est
+a sinu propositæ altitudinis: Et cum residuo agendum tanquam
+sinu altitudinis proposito. Denique pro recto horizonte ubi loci
+latitudo nulla est multiplicandus est sinus altitudinis
+in numerum tabulæ beneficæ per declinationem Solis acceptum
+Et a producto abiicienda more consueto quinque figuræ.
+Sic enim relicto sinui debitus arcus de quadrante abiectus
+relinquet Solis a meridiano distantiam. Quando autem sol
+ibi est in æquatore, quoniam æquator est tunc circulus altitudinis
+Iam altitudo a quadrante subtracta residuabit eius
+a meridiano distantiam. Memento tamen si abiectæ figuræ
+plusquam 50000 denotaverint adiiciendam esse reliquo numero
+semper unitatem, quandoquidem tunc quod abiicitur excedit
+integri dimidium.
+\note{« driæ », « dria » : abréviations de « differentiæ », « differentia », avec un trait. « superstabat » est surchargé. Dans le second exemple, « 61389 » s'obtient de 6138936859 en ôtant cinq chiffres, et « g. 66. m. 18. » est donné sans le calcul intermédiaire. Dans la marge droite, vers le milieu de la page, le cachet rond de la Bibliothèque impériale, « Bibliothèque impériale MSS ».}
+
+Compendium Mathematicæ. omittitur quia
+a P. M. Mersenno editum in Apologia scientiarum cap. ultimo.
+\note{la ligne « Compendium Mathematicæ » est centrée comme un titre ; « omittitur quia … » est ajouté à sa suite, de la même main et de la même encre. La page s'arrête là ; le reste est blanc.}
+
+\end{document}
