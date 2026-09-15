@@ -85,6 +85,11 @@ in tables; Latin contractions (*q̃*, *p̄*, the *-us* hook) in the Latin volume
   on the curvature of surfaces (Français 9115, v. 43–89): « ligne de distance »,
   « surface des distances », « surface des distances moyennes », « sphère de
   moyenne courbure ».
+- **Her history of the question, in the first person** (Français 9115, v. 103):
+  « le mémoire publié en 1814 par un des membres de l'accademie », « le mémoire
+  couronné qui fut présenté en 1815 », « mes recherches sur la théorie des
+  surfaces publiées en 1821 »; Chladni and « Mr Savart » by name. She writes
+  « accademie », « complette », « concluerons » — her spelling, not a misreading.
 - **Letters** open « Monsieur » and close with a formula; a date at the head
   or foot, sometimes only the day.
 
@@ -95,6 +100,10 @@ in tables; Latin contractions (*q̃*, *p̄*, the *-us* hook) in the Latin volume
 | a final « s » on almost every word | a terminal flourish; follow the sense | Français 9115, batch 4 |
 | « de la » struck and « sa » kept | her one-word « dela », struck whole | Français 9115, v. 85 |
 | a word crossed by a long horizontal | often her joining stroke, not a deletion; zoom before writing `\struck{}` | Français 9115, v. 88 |
+| a verso dense with reversed writing | show-through of the recto; blank, not a pasted slip — check at full resolution | Français 9115, v. 102–110 |
+| a leaf numbered on its blank side | the ink number (55, « 55 bis ») is on the side with no text; the text is on the other view | Français 9115, v. 111–114 |
+| a capital letter alone beside a draft's first line (« A », « B », « D ») | apparently her own sequence marks for the drafts, not a word | Français 9115, v. 101, 103, 107 |
+| additions in a paler ink or in pencil in the left margin, with no sign of insertion | hers; place them against the line they face and say so in a note | Français 9115, v. 101, 112 |
 
 ### Her fair copy and her drafts
 
@@ -102,6 +111,11 @@ The fair copies are a regular, legible hand; the drafts (Français 9115, v. 93�
 are fast, overwritten rather than struck, with additions squeezed between the
 lines in a much finer pen. Read the fine additions at full resolution from the
 mirror; at band scale they are not legible.
+
+Printed matter is bound among the drafts: Legendre's memoir on
+4(xⁿ−1)=(x−1)(Y²±nZ²), « Lu à l'Académie, le 11 octobre 1830 », pasted leaf by
+leaf on mounts and carrying the same ink numbering as her drafts (Français 9115,
+v. 115–134).
 
 ---
 
