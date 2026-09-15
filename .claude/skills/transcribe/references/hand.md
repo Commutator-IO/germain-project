@@ -110,6 +110,11 @@ in tables; Latin contractions (*q̃*, *p̄*, the *-us* hook) in the Latin volume
 | a « d » with a curled, looped stem before p, q, z | the variation sign, set $\delta$ | Français 9115, v. 140 |
 | « ébration » | offered as \uncertain{élévation} by the sense | Français 9115, v. 137 |
 | an exponent written as a bar over p in √1+p̄+q² | the square, as the same leaf writes it elsewhere | Français 9115, v. 140 |
+| « u » in a formula | Greek α in her Latin copy | Français 9115, v. 153–160 |
+| « v » or ϑ | Greek γ, same copy | Français 9115, v. 154–160 |
+| a looped ∞ closing a series | « &c. » | Français 9115, v. 155 |
+| a small crossed « r » as exponent | λ in e^{λs} | Français 9115, v. 153–154 |
+| « 2 » opening a word | the initial of « sex » | Français 9115, v. 158 |
 
 ### Numbers on her leaves
 
@@ -124,6 +129,8 @@ in tables; Latin contractions (*q̃*, *p̄*, the *-us* hook) in the Latin volume
 - In the printed Legendre memoir the pagination restarts (88 → 9, v. 123–124)
   with the text continuous; the signatures (« 11 » at p. 81, « 2 » at p. 9,
   « 3 » at p. 17) are the clue to two printings. Record, do not reconcile.
+- Mounting sheets (v. 140–160) carry three short oblique pencil strokes at the
+  same place on every sheet: not a figure, not foliation.
 
 ### Her fair copy and her drafts
 
@@ -131,6 +138,15 @@ The fair copies are a regular, legible hand; the drafts (Français 9115, v. 93�
 are fast, overwritten rather than struck, with additions squeezed between the
 lines in a much finer pen. Read the fine additions at full resolution from the
 mirror; at band scale they are not legible.
+
+Copies in Latin sit among them too: a fair copy in her hand of Euler's
+« Investigatio motuum quibus laminæ et virgæ elasticæ contremiscunt », naming
+its source (Acta Petrop. 1779, Pars prior) on the first leaf and heading each
+view with a parenthesised number, (103)–(119), apparently the printed page
+(Français 9115, v. 144–160). Her Latin is as regular as her French fair hand
+and reads at band scale; « æ » is written in some words and not others. A
+leaf headed « Gauss courbure des surfaces » (v. 142) is quoted line by line,
+not a text of her own.
 
 Printed matter is bound among the drafts: Legendre's memoir on
 4(xⁿ−1)=(x−1)(Y²±nZ²), « Lu à l'Académie, le 11 octobre 1830 », pasted leaf by
