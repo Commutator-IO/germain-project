@@ -1,0 +1,566 @@
+% Latin 17859, batch 2 — Gallica views 21–40.
+% Pass: Opus 5 (claude-opus-5), 2026-09-15 — first pass, unchecked against
+% the views by a human. Drafted view by view in an earlier pass on the same
+% model that was interrupted; every view was then compared again, band by
+% band, against the mirror before assembly.
+%
+% What the views are. Every view is a microfilm image (greyscale, landscape,
+% about 7300 × 5850) of the volume lying open: a left page and a right page
+% side by side, the gutter near the middle. Each view was split into its two
+% halves and read as two pages; in the file each \page{N} holds the left page
+% then the right, and a \note{} says where the right page begins. All forty
+% pages carry text; no view was skipped.
+%
+% What the twenty views hold. A copy, in one regular italic hand, the same
+% hand as batch 3, of Maurolico's spherical trigonometry. The text runs
+% without a break from page to page across the whole batch: each left page
+% continues the right page of the view before, and each right page continues
+% its left page. View 21 continues the enunciation of Prop. XXV written at
+% the foot of view 20; view 40 stops on « quod », and view 41 goes on
+% « impossibile ».
+%
+%   v. 21 – 31 L  The end of a book of propositions on the right-angled
+%             spherical triangle and the quadrants completed on its sides
+%             (« sicut in 17. huius »): the demonstration of Prop. XXV, then
+%             XXVI–XLVIIII. XXV–XXXII: when the second sine of the arc
+%             opposite the acute angle is the mean proportional between the
+%             sinus totus and the second sine of that angle, the two arcs
+%             containing the angle make a quadrant and differ by the greatest
+%             possible difference, with the converses. XXXIII–XLVIII: two
+%             points marked on one side, perpendicular arcs let fall from
+%             them, the ratio of the sines of the intercepted arcs as a ratio
+%             of rectangles of second sines, and the cases of equality,
+%             greater and less. XLVIIII proves XXIX « aliter ».
+%   v. 31 – 40  « Maurolyci Siculi Sphæricorum liber secundus », with a
+%             « Præfatio » (the ratio of the sine of the sum to the sine of
+%             the difference of the arcs containing the acute angle, which
+%             Menelaus gives as the fifth theorem of his third book, shown
+%             here « aliter atque aliter ») and, under « Propositiones »,
+%             Props. I–XXIII: composition of ratios of sines (I–V); the
+%             rectangle of the diagonals of an inscribed quadrilateral (VI);
+%             chords and sines of sum and difference (VII–VIII); sums and
+%             differences of proportional magnitudes (IX); the theorem itself
+%             three ways (X, XII, XIV, the third « a Menelao traditum » by the
+%             Scholium after XII), with XI and XIII as lemmas; half-angle and
+%             versed sines (XV–XIX); the greatest difference when the arcs
+%             make a quadrant (XX, and XXI « aliter » by a circle tangent to a
+%             line); two triangles with equal acute angles (XXII–XXIII,
+%             breaking off inside XXIII).
+%   The first book's title is not in this batch; the second book cites it as
+%   « præcedentis libri » / « præmissi libelli ».
+%
+% The numbers on the leaves. Each right page from view 21 to view 40 carries
+% at the top right a number in ink, larger than the text: 20, 21, 22, … 39,
+% one per view, consecutive, on the right page only. It is the same series
+% as the 40–47 of batch 3 (views 41–48), and a « 19 » stands at the same
+% place on the right page of view 20. They are ink, not the thin pencil of a
+% library foliation, and the stroke could be the copyist's; this pass cannot
+% tell whether they are the foliation the literature cites for Latin 17859.
+% No \folio{} is written; each number is recorded in the \note{} that opens
+% its page. Left pages carry no number. Other numbers: proposition numbers in
+% the headings (the copyist writes XXXX–XXXXVI, then XLVII–XLVIIII; the
+% Roman numerals of XXVI and XXVII at view 21 R each end in a blotted
+% stroke), and the numbers of propositions cited in the demonstrations.
+%
+% Letters, glyphs, notation. Figure letters are set in math ($abc$), as the
+% hand writes them run together. The hand uses the long s, set s; a looped h
+% that reads like S (« Soc » for hoc, « Suius » for huius), set h; an
+% initial i like a capital J, set lower case inside a sentence; « æ » as a
+% hooked e, set æ; final j in « sinuj », « arcuj », kept. The capital « Et »
+% inside sentences is kept. Contractions are kept as written — « p̄portionalis »,
+% « p̄inde », « Q̄ », « quã », « demonstratõem », « arcuū », « sinumq; »,
+% « præced\textsuperscript{te} », « 29.\textsuperscript{a} » — and the stroke
+% of « dria », « driam », « driæ » (differentia) is dropped as in batch 3,
+% with a \note{} at first occurrence (view 22). One ampersand (view 23) is
+% set \&. Repetitions, slips of figure letters and wrong references are
+% copied as written and noted. Figures are not drawn; each is described,
+% with its lettering, in a \note{}. Headings (« Propositio XXVI »,
+% « Scholium », « Præfatio », « Propositiones ») are set as \subsection*;
+% the title of the second book as \section*.
+%
+% Illegible: 2, both struck words (view 23 L, view 28 L). Uncertain
+% readings: 15.
+%
+% Nothing here was checked against any printed edition of Maurolico or any
+% other transcription.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{latin-17859}
+\shelfmark{Latin 17859}
+\batch{2}
+\pages{21}{40}
+\dating{1601-1700}
+\watermark{Lecture automatique\\non vérifiée}
+\foldertitle{Opuscules de François Maurolyco sur les mathématiques et l'astronomie.}
+
+\begin{document}
+
+\page{21}
+\note{la vue montre une double page ouverte. La page de gauche continue la démonstration de la \emph{Propositio XXV}, dont l'énoncé est au bas de la vue 20.}
+
+Sit triangulum Sphærale $abc$ cujus latera quadrantibus minora angulus autem $c$ rectus, et completis quadrantibus $abe$ $acd$, $def$, $cbf$ sicut in 17. huius. Supponatur sinus arcus $fb$ (qui est sinus secundus arcus $cd$ hoc est anguli $bac$. Aio tunc quod arcus $ab$ æqualis erit arcui $cd$, et arcus $ac$ æqualis arcui $be$. Item quod sinus arcus $fb$ æqualis erit \struck{arcuj} sinuj anguli $abc$. \note{figure dans la marge de gauche, en face de ces lignes : arcs et cordes lettrés $f$, $H$, $K$, $L$, $D$, $G$, $g$, $e$, $B$ ; le long d'un des arcs est écrit « Inutilis ».}Nam per 6 huius et \uncertain{permutatam} proportionem erit sicut sinus arcus $cd$ ad sinum arcus $be$ sicut sinus totus $cf$ arcus ad sinum arcus $fb$ Sinus autem arcus $cf$ totus ad sinum arcus $fb$\note{« arcus » ajouté dans l'interligne, au-dessus de « sinum »} per hypothesim sicut sinus arcus $bf$ \struck{sicut} ad sinum arcus $fe$. Sinus etiam arcus $bf$ ad sinum arcus $fe$ per 7. huius sicut sinus arcus $ba$ ad sinum arcus $ac$. Igitur sinus arcus $ba$ ad sinum arcus $ac$ sicut sinus arcus $cd$ ad sinum arcus $be$. Ponatur ergo ipsi $ba$ æqualis arcus $ag$ ipsi $be$ æqualis arcus $eh$ ipsi $ac$ æqualis arcus $ak$ ipsique $cd$ æqualis arcus $dl$. Eritque chorda arcus $bg$ ad chordam arcus $ck$ sicut chorda arcus $cl$ ad chordam arcus $bh$. Quandoquidem chordæ duplatorum arcuum sunt dupla sinuum simplis arcubus debitorum per diff. Et dupla sunt dimidiis proportionalia \note{seconde figure dans la marge de gauche : arcs et cordes lettrés $f$, $K$, $E$, $H$, $g$, $e$, $B$ (deux fois), $L$, $C$, $D$.}Ductis igitur talibus chordis necnon diametris siue chordis semicirculorum $gbh$ $kcl$ erunt duo triangula rectilinea $gbh$ $kcl$ super æquas bases diametros scilicet $gh$ $kl$ circulorum æqualium. Et habebunt angulos $gbh$ $kcl$ æquales quoniam facti sunt anguli super semicirculos Et ipsa triangula æqualia erunt per 14. 6. quoniam reciproca sunt latera quæ circum æquales sunt angulos. Itaque per præcedentem talium triangulorum reliqua latera reliquis lateribus singula singulis æqualia erunt hoc est chorda chorda $gb$ \uncertain{chordæ} $cl$ et chorda $kc$ chordæ $bh$ æqualis erit major scilicet majori, et minor minori. Igitur et arcus $gb$ arcui $cl$ et arcus $kc$ arcui $bh$ æqualis erit. Quoniam et eorum dimidii æquales, hoc est arcus $ab$ arcui $cd$ et arcus $ac$ arcui $be$ æqualis erit. Quod est primum ex demonstrandis. Quoniam autem per hypothesim sicut sinus totus ad sinum arcus $fb$. sic sinus arcus $fb$ ad sinum arcus $fe$. Per 6. autem huius sicut sinus arcus $fb$ \struck{sic sinus} ad sinum arcus $fe$ sic sinus totus ad sinum anguli $abc$ vel $fbe$ \struck{pp} propterea erit sicut sinus totus ad sinum anguli $abc$ sic sinus totus ad sinum arcus $fb$. Eadem igitur ratione habet sinus totus ad sinum \struck{arcus} anguli $abc$ sic sinus totus ad sinum arcus $fb$ eadem igitur ratione habet sinus sinus totus ad sinum arcus
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 20 ».}
+$fb$ et ad sinum anguli $abc$. Quare æqualis erit sinus anguli $abc$ sinuj arcui $fb$, et hoc restabat.
+
+\subsection*{Propositio XXVI}
+\note{le chiffre romain est « XXVI » suivi d'un dernier « I » noyé sous une tache d'encre : « XXVII » corrigé en « XXVI », semble-t-il.}
+
+Eisdem suppositis arcus ipsi reliqui conjuncti quadrantem conficient.
+
+\note{figure dans la marge de droite : deux arcs lettrés $f$, $e$, $b$, $a$, $c$, $d$.}
+In eadem descriptione sit ut prius sinus arcus $fb$ medius proportionalis inter sinum totum sinumque arcus $fe$. Aio quod arcus $ba$ $ac$ conjuncti conflabunt quadrantem. Nam per præcedentem arcus $ab$ æqualis erit arcuj $cd$ Sed $cd$ cum $ac$\note{la seconde lettre de « $ac$ » est surchargée d'une tache} quadrantem perficit. Igitur et $ab$ arcus cum arcu $ac$ quadrantem perficiet. Quod est propositum.
+
+\subsection*{Propositio XXVII}
+\note{même correction : « XXVII » suivi d'un « I » noyé sous une tache.}
+
+Eisdem suppositis si alterna quadrantum portiones sint æquales, vel si arcus ipsius trianguli prædicti conjuncti quadrantem conficiant, tum sinus secundus arcus reliqui erit medius proportionalis inter sinum totum sinumque secundum anguli oppositi : Et etiam æqualis sinuj reliqui anguli acuti.
+
+\note{figure dans la marge de droite : deux arcs lettrés $f$, $e$, $b$, $a$, $c$, $d$.}
+In eadem descriptione ponatur arcus $ab$ æqualis arcuj $cd$, et ideo arcus $ac$ æqualis arcui $be$. Vel quod idem est ponatur congeries arcuum $ba$ $ac$ quadrans. Aio tunc quod sinus arcus $fb$ erit medius proportionalis inter sinum totum sinumque arcus $fe$. Et etiam æqualis sinui $abc$ anguli. Nam cum æquales ponantur coalterni arcus Erit sinus arcus $ba$ ad sinum arcus $ac$ sic sinus arcus $cd$ ad sinum arcus $be$. Per 6. autem huius sicut sinus arcus $cd$ ad sinum arcus $be$ sic sinus totus ad sinum arcus $fb$. Et per 7. sicut sinus arcus $ba$ ad sinum arcus $ac$ sic sinus arcus $bf$ ad sinum arcus $fe$. Igitur sicut sinus totus ad sinum arcus $fb$ sic sinus arcus $bf$ ad sinum arcus $fe$. Itaque medius p̄portionalis est sinus arcus $bf$ Iter\note{ainsi, pour « inter », sans signe d'abréviation lisible} sinum totum sinumq; arcus $fe$. Quare per 25. huius idem sinus arcus $bf$ æqualis erit sinuj anguli $abc$. Quod quidem demonstrandum proponebatur.
+
+\subsection*{Propositio XXVIII}
+
+Eisdem suppositis si sinus secundus arcus angulo acuto oppositi ponatur æqualis sinuj reliqui acuti, tunc idem sinus erit medius p̄portionalis inter sinum totum sinumque secundum anguli ipsi arcuj oppositi et reliqui arcus æquales singuli coalternis quadrantum complementis.
+
+\page{22}
+\note{page de gauche ; figure dans la marge de gauche : arcs lettrés $f$, $e$, $b$, $d$, $a$, $c$.}
+In eadem descriptione ponatur sinus arcus $fb$ æqualis sinui anguli $abc$. Aio quod idem sinus arcus $fb$ erit medius proportionalis inter sinum totum sinumque arcus $fe$. Et arcus $ab$ æqualis arcui $cd$. Et arcus $ac$ æqualis arcui $be$ Nam cum æqualis sit sinus arcus $fb$ sinui anguli $abc$ sive anguli $fbe$ Erit sinus totus ad sinum arcus $fb$ sic sinus totus ad sinum anguli $abc$ sive anguli $fbe$. Per 6 autem huius sicut sinus totus ad sinum anguli $abc$ \struck{sive} $fbe$ sic sinus arcus $fb$ ad sinum arcus $fe$. Igitur sicut sinus arcus $fb$ ad sinum arcus $fe$ sic sinus totus ad sinum arcus $fb$ Quare medius medius proportionalis est sinus arcus $fb$ inter sinum totum sinumque arcus $fe$. Et ideo per 25 huius arcus $ab$ æqualis erit arcui $cd$, et arcus $ac$ æqualis est arcuj arcui $be$. Quod est propositum.
+
+\subsection*{Propositio XXIX}
+
+Eisdem suppositis si sinus secundus arcus acuto oppositi, sit medius proportionalis inter sinum totum sinumque secundum eiusdem acuti tunc arcuum comprehendentium ipsum acutum differentia erit maxima differentiarum quibus differunt quilibet duo arcus eundem angulum complectentes ab angulo ad quemlibet alium quadrantem recepti.
+
+In eadem descriptione ponatur sinus arcus $fb$ medius proportionalis inter sinum totum sinumque arcus $fe$. Aio quod \struck{qe} arcus $ab$ $ac$ maxime differunt quam differre possint quilibet alij duo bini \uncertain{ut. inde} $fnm$ $fqp$ secantes quidem quadrantem $ac$ in punctis $mglq$ incidentes vero quadranti $ad$ in punctis $nhkp$. Demonstr. est quod dria\note{abréviation de « differentia », écrite « dria » avec un trait ; de même « driam », « driæ » plus loin.} arcuum $ab$ $ac$ major est quam differentia arcuum $ag$ $ah$ Et maior quam dria arcuū $al$ $ak$ Itemque dria arcuum $ag$ $ah$ maior quam differentia $am$ $an$, Et dria arcuum $al$ $ak$ maior quam differentia arcuum $aq$ $ap$. Hoc modo. Ducantur circulorum magnorum arcus $gs$ $lr$ perpendiculares ad arcum $fe$ Item arcus $mt$ $qy$ perpendiculares ad arcum $fh$ $fk$. Eritque major sinus arcus $cf$ ad sinum arcus $fb$ quam sinus arcus $hf$ ad sinum arcus $fg$. Sed per hypothesim sicut sinus $cf$ sinus scilicet totus ad sinum arcus $fb$ sic sinus arcus $fb$ ad sinum arcus $fe$. Igitur major sinus arcus $bf$ ad sinum arcus $fe$ quam sinus arcus $hf$ ad sinum arcus $fg$
+
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 21 ».}
+Per 7 autem huius sicut sinus arcus $bf$ ad sinum arcus $fe$ sic sinus arcus $bg$ ad sinum arcus $gs$. Et per 6. sicut sinus arcus $hf$ ad sinum arcus $fg$ sic sinus arcus $hc$ ad sinum arcus $gs$ : Ergo et major sinus arcus $bg$ ad sinum arcus $gs$ quam sinus arcus $hc$ ad sinum arcus $gs$. Quare major erit sinus arcus $bg$ sinu arcus $hc$. Et p̄inde arcus $bg$ \struck{major} major arcu $hc$ Igitur et major dria arcuum $ab$ $ac$ quam differentia arcuum $ag$ $ah$. Quod est primum. Rursum maior erit sinus arcus $kf$ ad sinum arcus $fl$ quam sinus arcus $cf$ ad sinum arcus $fb$, Et ideo quam sinus arcus $bf$ ad sinum arcus $fe$. Sed per 6 huius sicut sinus arcus $kf$ ad sinum arcus $fl$ sic sinus arcus $ck$ ad sinum arcus $lr$ Et per 7. sicut sinus\note{« sinus » ajouté dans l'interligne, avec un signe d'insertion} arcus $bf$ ad sinum arcus $fe$ sic\struck{ut} sinus arcus $bl$ ad sinum arcus $lr$ Igitur major erit sinus arcus $ck$ ad\note{« ad » ajouté dans l'interligne} sinum arcus $lr$ quam sinus arcus $bl$ ad sinum arcus $lr$. Igitur major erit sinus arcus $ck$ sinu arcus $bl$. Et ideo arcus $ck$ major arcu $bl$. Quo fit ut maior sit differentia arcuum $ba$ $ac$ quam arcuum $al$ $ak$. Quod est secundum. Adhuc major erit sinus arcus $gf$ ad sinum arcus $fe$ quam sinus arcus $ck$ ad sinum arcus $bl$ : Et ideo arcus $ck$ major arcu $bl$. Quo fit ut differentia arcuum $ba$ $ac$ maior sit quam differentia arcuum $al$ $ak$. Quod est secundum.\note{de « Adhuc major erit » à « Quod est secundum », le copiste répète, en le brouillant, le passage qui précède : la phrase commencée (« sinus arcus $gf$ ad sinum arcus $fe$ ») est reprise aussitôt après.} Adhuc major erit sinus arcus $gf$ ad sinum arcus $fe$ quam sinus arcus $bf$ ad sinum arcus $fe$ : Et ideo quam sinus arcus $cf$ ad sinum arcus $fb$ Et a fortiori quam sinus arcus $nf$ ad sinum arcus $fm$. Sed per 7. huius sicut sinus arcus $gf$ ad sinum arcus $fe$ sic sinus arcus $gm$ ad sinum arcus $mt$ per 6 autem sicut sinus arcus $nf$ ad sinum arcus $fm$ sic sinus arcus $nh$ ad sinum arcus $mt$. Igitur major sinus arcus $gm$ ad sinum arcus $mt$ quam sinus arcus $nh$ ad sinum arcus $mt$. Et ob id maior erit sinus arcus $gm$ sinu arcus $nh$ : Et propterea maior arcus $gm$ arcu $nh$. Fit ergo ut maior sit differentia arcuum $ag$ $ah$ quam differentia arcuum $am$ $an$ quod erat tertium. Demum major erit sinus arcus $pf$ ad sinum arcus $fq$ quam sinus arcus $cf$ ad sinum arcus $fb$. Et ideo quam sinus arcus $bf$ ad sinum arcus $fe$. Et a fortiori quam sinus arcus \struck{$kp$ ad sinum arcus $qy$. Igitur major sinus arcus $kp$} $lf$ ad sinum arcus $fe$. Sed per 6 huius sicut sinus arcus $pf$ ad sinum arcus $fq$ sic sinus arcus $kp$ ad sinum arcus $qy$. Et per 7. sicut sinus arcus $lf$ ad sinum arcus $fe$ sic sinus arcus $lq$ ad sinum
+\note{figure dans la marge de droite : arcs issus de $f$, lettrés $f$, $e$, $r$, $y$, $l$, $q$, $g$, $s$, $m$, $t$, $a$, $n$, $h$, $c$, $k$, $p$, $d$.}
+
+\page{23}
+\note{double page ; page de gauche. Elle continue sans interruption la page de droite de la vue 22.}
+arcus $qy$. Igitur major sinus arcus $kp$ ad sinum arcus $qy$ quam sinus arcus $lq$ ad sinum arcus $qy$. Itaque maior sinus arcus $kp$ ad sinum arcus $qy$ quam sinus arcus $lq$ ad sinum arcus $qy$.\note{la phrase qui précède est écrite deux fois de suite, la seconde commençant par « Itaque ».} Itaque maior sinus arcus $kp$ sinu arcus $lq$. Et ideo maior arcus $kp$ arcu $lq$. Unde sequitur ut maior sit differentia arcuum $al$ $ak$ quam differentia arcuum $aq$ $ap$. Quod fuit quartum demonstrandum.
+
+\subsection*{Propositio XXX}
+
+\note{figure dans la marge de gauche : arcs lettrés $f$, $e$, $b$, $g$, $d$, $a$, $h$, $c$.}
+Eisdem suppositis si arcuum acutum angulum complectentium differentia sit maxima earum quibus differunt arcus eundem angulum continentes ab ipso angulo ad quoslibet quadrantes conterminos recepti, tum secundus sinus arcus eidem acuto oppositi erit medius proportionalis inter sinum totum sinumque ipsius acuti, Et arcus maxime differentes quadrantem conflabunt
+
+In eadem descriptione ponatur arcuum $ab$ $ac$ differentia ut dictum est Aio quod sinus arcus $fb$ medius erit proportionalis inter sinum totum sinumque arcus $fe$. Quodque ipsorum $ab$ $ac$ congeries est circuli quadrans. Nam si sinus arcus $bf$ non sit \uncertain{medius}\note{la fin du mot est surchargée} proportionalis inter tales sinus scilicet sinum totum sinumque arcus $fe$. Sit si possibile \struck{\ill{}}\note{au-dessus du mot biffé, dans l'interligne, un mot court, peut-être « arcus », barré lui aussi} sinus arcus $fg$. Eritque per præced\textsuperscript{te} major differentia arcuum $ag$ $ah$ quam dria arcuum $ab$ $ac$ quod est contra hypothesim. Supponitur enim differentia arcuum $ab$ $ac$ maxima. Non erit igitur inter sinum totum sinumque arcus $fe$ medius proportionalis sinus alius quam sinus arcus $bf$. Et ideo per 26 huius arcus $ab$ $ac$ conjuncti quadrantem conflabunt. Quemadmodum proponitur demonstrandum.
+
+\subsection*{Propositio XXXI}
+
+Eisdem suppositis si arcuum acutum angulum continentium congeries sit quadrans, iidem arcus maxime \uncertain{differrent}
+
+\note{figure dans la marge de gauche : arcs lettrés $f$, $e$, $b$, $a$, $c$, $d$.}
+In eadem descriptione ponatur arcuum $ab$ $ac$ aggregatum circuli quadrans, Aio quod arcuum $ab$ $ac$ dria maxima prædicto modo erit. Cum enim quadrantem conficiat arcus $ab$ $ac$ Nam per 27 huius sinus arcus $fb$ erit medius proportionalis inter sinum totum sinumque arcus $fe$. Quare
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 22 ».}
+per 29 præmissam arcuum $ab$ $ac$ differentia erit maxima Quod erat demonstrandum.
+
+\subsection*{Propositio XXXII}
+
+Eisdem suppositis si arcus acutum angulum continentes maxime differant sinus secundus reliquj arcus æqualis erit sinuj reliqui acuti anguli.
+
+\note{figure dans la marge de droite : arcs lettrés $f$, $e$, $b$, $a$, $c$, $d$.}
+In eadem descriptione ponantur $ab$ $ac$ arcus maxime ut dictum est differentes. Aio quod sinus arcus $fb$ æqualis erit sinuj anguli $abc$. Nam cum arcus $ab$ $ac$ maxime differunt Iam per 30. præmissam sinus arcus $fb$ erit medius proportionalis inter sinum totum sinumq; arcus $fe$. Quare per 25 huius sinus arcus $fb$ erit \struck{medius proportionalis inter sinum totum sinumque arcus $fe$}. \& æqualis erit sinui anguli $abc$. Quod proponitur demonstrandum.
+
+\subsection*{Propositio XXXIII}
+
+Si duo circulj majores in superficie Sphæræ angulum acutum contineant Et in uno eorum signentur duo puncta a quibus arcus circulorum majorum perpendiculares ad reliquum ducantur : Ratio sinus arcus inter casus perpendicularium ad sinum arcus inter puncta signata cadentis componetur ex duabus, quarum una est ratio sinus totius ad sinum secundum unius arcuum perpendicularium : altera est ratio sinus secundi acuto angulo prædicto debiti ad sinum secundum reliqui arcus perpendicularis.
+
+\note{figure dans la marge de droite : arcs lettrés $f$, $e$, $b$, $g$, $s$, $a$, $d$, $h$, $c$.}
+In superficie Sphæræ duo circuli majores $ab$ $ac$ angulum $bac$ acutum contineant, positisque quadrantibus $acd$ $abe$. Ductisque sicut in 17 huius circulorum majorum quadrantibus $def$ $cbf$ $hgf$ per puncta \uncertain{signata} $bg$ Erunt iam $bc$ $gh$ arcus perpendiculares ad circulum $ad$ Casus autem perpendicularium puncta $ch$. Sinus arcuum $fb$ $fg$ sinus secundi arcuum perpendicularium $bc$ $gh$. Sinus arcus $fe$. sinus secundus arcus $de$ hoc est anguli acuti
+
+\page{24}
+\note{page de gauche ; les fins de ligne s'engagent dans la reliure, et la dernière lettre de plusieurs lignes (« sinu\ldots », « $h$\ldots ») y est à demi cachée. Figure dans la marge de gauche : arcs lettrés $f$, $e$, $b$, $d$, $g$, $s$, $c$, $a$, $h$.}
+$bac$. Itaque demonstrandum est quod ratio sinus arcus $hc$ ad sinum arcus $bg$ componitur ex duabus : quarum una est ratio sinus arcus $hf$ hoc est sinus totius ad sinum arcus $fg$. Altera est ratio sinus arcus $fe$, ad sinum arcus $fb$ hoc modo. Ducatur a puncto $g$. circuli majoris arcus $gs$ perpendicularis ad arcum $fe$. \uncertain{Hic}\note{ou « Sic » : l'initiale est la même que celle de « hoc », que la main trace comme un S} enim posito medio sinu arcus $gs$ ratio sinus arcus $hc$ ad sinum arcus $bg$ componitur ex ratione sinus arcus $hc$ ad sinum arcus $gs$, et ex ratione sinus arcus $gs$ ad sinum arcus $bg$. Sed per 6. huius sicut sinus arcus $hc$ ad sinum arcus $gs$ sic sinus arcus $hf$ ad sinum arcus $fg$. Per 7 autem sicut sinus arcus $gs$ ad sinum arcus $bg$ : sic sinus arcus $fe$ ad sinum arcus $fg$.\note{ainsi ; la conclusion qui suit porte « ad sinum arcus $fb$ ».} Igitur et ratio eadem sinus arcus $hc$ ad sinum arcus $bg$ componitur ex ratione sinus arcus $hf$ hoc est sinus totius ad sinum arcus $fg$, et ex ratione sinus arcus $fe$ ad sinum arcus $fb$. Quod fuit demonstrandum.
+
+\subsection*{Propositio XXXIIII}
+
+Eisdem suppositis sinus arcus inter casus perpendicularium ad sinum arcus inter puncta signata cadentis erit sicut quod ex sinu toto sinuque secundo anguli acuti prædicti rectangulum ad id quod ex sinibus secundis arcuum perpendicularium producitur rectangulum.
+
+\note{figure dans la marge de gauche : arcs lettrés $f$, $e$, $b$, $g$, $d$, $a$, $h$, $c$.}
+In eadem descriptione. Demonstrandum est quod sinus arcus $hc$ ad sinum arcus $bg$ est sicut quadrangulum quod sub sinu arcus $fh$\note{la seconde lettre est surchargée} sinuque arcus $fe$ comprehenditur ad quadrangulum quod sub sinibus arcuum $fg$ $fb$ continetur. Nam per præcedentem ratio sinus arcus $hc$ ad sinum arcus $bg$ componitur ex ratione sinus $hf$ totius ad sinum arcus $fg$. Et ex ratione sinus arcus $fe$ ad sinum arcus $fb$. Per 24 autem 6. Element. ratio quadranguli quod sub sinu arcus $hf$ sinuque arcus $fe$ ad quadrangulum quod sub sinibus arcuum $fg$ $fb$ componitur ex rationibus laterum hoc est ratione sinus arcus $hf$ sinus scilicet totius ad sinum arcus $fg$, et ex ratione sinus arcus $fe$ ad sinum arcus $fb$. Igitur ex æquali erit sicut quadrangulum ex sinus arcus $hf$ sinuque arcus $fe$ ad quadrangulum ex sinibus arcuum $fg$ $fb$ sic iam sinus arcus $hc$ ad sinum arcus $bg$. quod est propositum.
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 23 ».}
+
+\subsection*{Propositio XXXV}
+
+Eisdem suppositis si sinus totus ad sinum secundum alterius perpendicularium arcuum fuerit sicut sinus secundus reliqui perpendicularis ad sinum secundum anguli acuti prædicti : tunc arcus inter casus perpendicularium æqualis erit arcui inter puncta designata cadenti, reliqua autem coalterna quadrantum portiones æquales erunt : Et angulorum a perpendicularibus arcubus apud signata puncta factorum sinus erunt æquales, alter alterius perpendicularis sinuj secundo.
+
+\note{deux figures dans la marge de droite : arcs lettrés $f$, $e$, $b$, $g$, $d$, $c$, $a$, $h$ ; et un demi-cercle avec les cordes $kl$, $nm$, lettré $n$, $l$, $k$, $m$.}
+In eadem descriptione. Ponatur sicut sinus totus ad sinus arcus $fg$ sic iam sinus arcus $fb$ ad sinum arcus $fe$. Aio quod tunc arcus $ch$ æqualis erit arcui $bg$. Nam propter proportionem sinuum per 15. 6. Euclidis quadrangulum ex sinu toto sinuque arcus $fg$\note{ainsi, où la proportion posée demande $fe$} æquale erit quadrangulo ex sinibus arcuum $fg$ $fb$. Sed per præcedentem sicut illud quadrangulum ad hoc quadrangulum, sic sinus arcus $hc$ ad sinum arcus $bg$. Igitur sinus ille huic æqualis erit. Quare arcus ipsi $ch$ $bg$ æquales erunt. Quod est propositum. Item aio quod arcus $ag$ arcuj $cd$ æqualis erit Et arcus $ah$ æqualis arcui $be$. Nam per 7. huius sinus arcus $ga$ ad sinum arcus $ah$ est sicut sinus arcus $gf$ ad sinum arcus $fe$. Et per 6. sinus arcus $cd$ ad sinum arcus $be$ sicut sinus arcus $cf$, hoc est sinus totus ad sinum arcus $fb$. Sed per hypothesim sinus totus ad sinum arcus $fb$ sicut sinus arcus $gf$ ad sinum arcus $fe$. Igitur sinus arcus $ga$ ad sinum arcus $ah$ sicut sinus arcus $gf$ ad sinum arcus $be$.\note{ainsi ; la suite (« chorda dupli arcus $cd$ ») demande « $cd$ » où la main écrit « $gf$ ».} Et ideo chorda dupli arcus $ga$ ad chordam dupli arcus $ah$ sicut chorda dupli arcus $cd$ ad chordam dupli arcus $be$. Et quoniam æquales fuerunt arcus $ch$ $bg$. Ideo aggregatum ex arcubus $ag$ $be$ æquale erit aggregato arcuum $ah$ $cd$. Quare aggregatum ex duplis illorum æquale
+
+\page{25}
+\note{double page ; page de gauche. Elle continue sans interruption la page de droite de la vue 24.}
+aggregato ex duplis horum. Sit tale aggregatum arcus $klm$ inque chorda dupli arcus $ag$ sit recta $kl$ Et chorda dupli arcus $ah$ sit recta $nk$. Et coniungatur recta $km$ Itaque quoniam fuit chorda $kl$ ad chordam $kn$ sicut chorda $mn$ ad chordam $lm$. Et anguli $klm$ $mnk$ æquales quandoquidem in eandem circuli portionem cadunt, propterea per 14. 6. Euclidis triangula $klm$ $mnk$ sunt æqualia scilicet super eandem basim $km$\note{« $km$ » est écrit dans l'interligne, sous « $klm$ $mnk$ »} constituta sunt. Igitur per 24 huius habent et reliqua latera singula singulis æqualia Quarum chordæ $kl$ $mn$ invicem æquales erunt Et chordæ $lm$ $kn$ æquales. Et proinde arcus $kl$ $mn$ æquales : Et reliqui arcus $lm$ $kn$ invicem æquales erunt. Verum arcus $kl$ fuit duplum arcus $ag$, Et arcus $mn$ duplum arcus $cd$. Item arcus $lm$ duplum arcus $be$, Atque arcus $nk$ duplum arcus $ah$. Ergo duplum arcus $ag$ æquale duplo arcus $cd$. Et duplum arcus $be$ æquale duplo arcus $ah$ Itaque et arcus quorum dupla æqualia æquales erunt hoc est arcus $ag$ æqualis arcui $cd$ et arcus $ah$ æqualis arcui $be$. Item aio quod sinus anguli $abc$ æqualis erit sinui arcus $fg$. Et vicissim sinus anguli $agh$ æqualis erit sinui arcus $fb$. Namque per hypothesim sinus totus ad sinum arcus $fg$ sicut sinus arcus $bf$ ad sinum arcus $fe$. per 6. autem huius sicut sinus arcus $bf$ ad sinum arcus $fe$ sic sinus totus ad sinum anguli $abc$. Igitur sinus totus eandem rationem habent ad sinum anguli $abc$ et ad sinum $fg$. Et propterea æqualis erit sinus anguli $abc$ sinui arcus $fg$. Similiter cum per hypothesim sinus totus ad sinum arcus $fb$ sit sicut sinus \struck{totus} arcus $gf$ ad sinum arcus $fe$. Et per 6. huius sinus arcus $gf$ ad sinum arcus $fe$ sit sicut sinus totus ad sinum anguli $agh$ Iam et eandem rationem habebit sinus totus ad sinum anguli $agh$ et ad sinum arcus $fb$. Igitur æqualis erit sinus anguli $agh$ sinui arcus $fb$. Et
+\note{deux figures dans la marge de gauche : arcs lettrés $f$, $b$, $e$, $a$, $d$, $h$, $c$ ; demi-cercle lettré $n$, $l$, $k$, $m$, avec les cordes $kl$, $nm$, $km$.}
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 24 », dont le 4 est tracé en boucle descendante.}
+hæc quidem proponebantur demonstranda
+
+\subsection*{Propositio XXXVI}
+
+Eisdem suppositis si arcus inter casum perpendicularium æqualis fuerit arcui inter puncta signata cadenti cætera omnia sequentur.
+
+\note{figure dans la marge de droite : arcs lettrés $f$, $e$, $b$, $g$, $d$, $a$, $c$, $h$.}
+In eadem descriptione. Ponatur arcus $ch$ æqualis arcui $bg$. Aio quod erit sicut sinus totus ad sinum arcus $fg$ sic sinus arcus $fb$ ad sinum arcus $fe$. Nam cum per 34. huius sinus arcus $ch$ ad sinum arcus $gb$ sit sicut rectangulum ex sinu toto sinuque arcus $fe$ ad quadrangulum quod ex sinibus arcuum $gf$ $fb$. Et æqualis sit per hypothesim sinus arcus $ch$ sinui arcus $bg$. Æqualia erunt et dicta quadrangula. Quare per 15. sex. Eucl. erit sinus totus ad sinum arcus $fg$ sic sinus arcus $fb$ ad sinum arcus $fe$. Igitur per præcedentem et arcus $ag$ $cd$ coalterni æquales erunt Et reliquus arcus $ah$ $be$ æquales. Item sinus anguli $abc$ æqualis sinui arcus $fg$. Et vicissim sinus anguli $agh$ æqualis sinui arcus $fb$. Quod est propositum.
+
+\subsection*{Propositio XXXVII}
+
+Eisdem suppositis si duo coalterni arcus æquales ponantur adhuc cætera omnia sequentur.
+
+\note{figure dans la marge de droite : arcs lettrés $f$, $e$, $b$, $l$, $k$, $d$, $g$, $c$, $a$, $b$, $m$.}
+In eadem descriptione. Ponatur $bg$\note{ainsi} arcus æqualis arcui $cd$. Aio quod erit sicut sinus totus ad sinum arcus $fg$ sic sinus arcus $fb$ ad sinum arcus $fe$. Et cætera ut prius sequentur. Sit enim si possibile est sinus totus ad alium quam $fg$ arcus sinum utpote arcus $fk$. sicut sinus arcus $fb$ ad sinum arcus $fe$. Et super $f$ polo ducatur peripheria circuli circulo $ad$ paralleli quæ sit $kl$. coincidens arcui $ae$ apud $l$.
+
+\page{26}
+\note{double page ; page de gauche. Elle continue sans interruption la page de droite de la vue 25.}
+et ducatur $flm$ quadrans circuli majoris. Eritque arcus $fl$ æqualis arcui $fk$ per deff. poli. Itaque erit sicut sinus totus ad sinum arcus $fl$ sic sinus arcus $fb$ ad sinum arcus $fe$. \struck{Quamobrem per 30 erit et arcus $ch$ arcui $bg$ æqualis Et arcus $ah$ arcui $be$ æqualis. Et sinus anguli $abc$ æqualis sinui arcus $fg$} Quare per 35 huius æqualis arcus $al$ arcuj $cd$. Sed per hypothesim æqualis est arcus $cd$ arcui $ag$. Igitur arcus $ag$ æqualis arcui $al$ Quod est impossibile. Non igitur sinus totus ad alium quam arcus $fg$ sinum erit sicut sinus arcus $fb$ ad sinum arcus $fe$. Quamobrem per 35. erit et arcus $ch$ arcui $bg$ æqualis. Et arcus $ah$ arcui $be$ æqualis : Et sinus anguli $abc$ æqualis sinui arcus $fg$. Et vicissim sinus anguli $agh$ æqualis sinui arcus $fb$. Quemadmodum proponitur demonstrandum. Similiter si ponatur arcus $ah$ æqualis arcui $be$. Cætera omnia simili confutatione assumpta sequentur sicut proponitur.
+\note{figure dans la marge de gauche : arcs lettrés $f$, $e$, $k$, $l$, $d$, $c$, $m$, $h$, $a$.}
+
+\subsection*{Propositio XXXVIII}
+
+Eisdem suppositis si sinus anguli ab uno perpendicularium arcuum apud signatum punctum facti ponatur æqualis sinuj secundo alterius perpendicularis Similiter cætera omnia sequentur.
+
+\note{figure dans la marge de gauche : arcs lettrés $f$, $e$, $b$, $d$, $a$, $g$, $h$, $c$.}
+In eadem descriptione ponatur angulus $abc$ sinus æqualis sinui arcus $fg$. Aio quod sinus totus ad sinum arcus $fg$ erit sicut sinus arcus $fb$ ad sinum arcus $fe$ Et cætera prædicta sequentur. Nam cum æqualis sit sinus anguli $abc$ sinuj arcus $fg$. Erit sicut sinus totus ad sinum arcus $fg$ sic sinus totus ad sinum anguli $abc$. Sed per 6 huius sicut sinus totus ad sinum anguli $abc$ sic sinus arcus $bf$ ad sinum arcus $fe$. Igitur sinus arcus $bf$ ad sinum arcus $fe$ sicut sinus totus ad sinum arcus $fg$. Quare per 35. huius arcus $ch$ æqualis erit arcui $bg$ Et arcus $ag$ æqualis arcui $cd$. Et arcus $ah$ æqualis arcui $be$ Et sinus anguli $agh$
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 25 ».}
+æqualis sinuj arcus $fb$ sicut ponitur. Non aliter si ponatur angulus $agh$ æqualis arcuj $fb$ hoc est sinus sinuj. Simili processu demonstrationis servato cætera omnia sequentur
+
+\subsection*{Propositio XXXIX}
+
+Quod si in eodem lineamento, sinus totus ad sinum secundum alterius perpendicularium arcuum major sit quam sinus secundus alterius perpendicularis ad sinum secundum anguli acuti perpendicularibus oppositi, tunc arcus inter casus perpendicularium major erit arcu inter signata puncta cadente, Et arcus ad angulum majores erunt singuli singulis coalternis : Et angulorum a perpendicularibus ad puncta signata factorum majores sinus erunt alter alterius perpendicularis sinu secundo.
+
+\note{figure dans la marge de droite : arcs lettrés $f$, $e$, $b$, $d$, $k$, $c$, $g$, $m$, $l$, $h$, $a$.}
+In eadem descriptione ponatur ratio sinus totius ad sinum $fk$ major quam ratio sinus $bf$ ad sinum $fe$. Aio tunc quod producto quadrante circuli majoris $fkl$ arcus $cl$ major erit arcu $bk$. Item arcus $ak$ maior arcu $cd$, Et arcus $al$ maior arcu $be$. Atque sinus anguli $akl$ major sinu arcus $fb$, Et sinus anguli $abc$ maior sinu arcus $fk$ quod sic patet. Quoniam major est sinus totus ad sinum arcus $fk$ quam sinus arcus $bf$ ad sinum arcus $fe$. Ponatur iam sicut sinus arcus $bf$ ad sinum arcus $fe$ sic sinus totus ad sinum arcus $fm$. Sic major erit arcus $fm$ arcu $fk$. Describatur super $f$ polo parallelus ipsi $ad$ circulus $mg$ incidens circulo $ae$ apud $g$ punctum. Eritque per deff. poli æqualis $fg$ arcus ipsi $fm$ arcui. Quare producto $fgh$ quadrante, Erit sicut sinus totus ad sinum arcus $fg$ sic sinus arcus $bf$ ad sinum arcus $fe$. Et ideo per 15 sexti Eucl. quadrangulum ex sinu sinuque arcus $fe$ æquale erit quadrangulo quod ex sinibus arcuum $fg$ $fb$. Igitur quadrangulum quod ex sinu toto sinuque arcus $fe$
+
+\page{27}
+\note{double page ; page de gauche. Elle continue sans interruption la page de droite de la vue 26.}
+majus erit quadrangulo quod ex sinibus arcuum $fk$ $fb$ (quandoquidem minor est $fk$ arcu $fg$.) Verum per 34 huius sicut quadrangulum quod ex sinu toto sinuq; arcus $fe$ ad quadrangulum quod ex sinibus arcuum $fk$ $fb$, \struck{quandoque} sic est iam sinus arcus $cl$ ad sinum arcus $bk$. Ergo maior sinus arcus $cl$ sinu arcus $bk$. Et proinde major arcus $cl$ arcu $bk$. Et quoniam per 35 huius arcus $ag$ æqualis arcui $cd$, Et arcus $ah$ æqualis arcui $be$. Propterea iam arcus $ak$ major erit arcu $cd$. Et arcus $al$ major arcu $be$. Et quoniam per 6 huius sicut sinus arcus $gf$ ad sinum arcus $fe$ sic sinus totus ad sinum anguli $agh$, Et sicut sinus arcus $kf$ ad sinum arcus $fe$ sic sinus totus ad sinum anguli $akl$. Estque major sinus arcus $gf$ ad sinum arcus $fe$ quam sinus arcus $kf$ ad sinum arcus $fe$. Ideo major erit sinus totus ad sinum anguli $agh$ quam ad sinum anguli $akl$, Et ob id major erit sinus angulj $akl$ sinu anguli $agh$. Et angulus angulo. Sed per 35 huius sinus anguli $agh$ æqualis est sinui arcus $fb$ Igitur sinus anguli $akl$ major sinu arcus $fb$. Et quoniam per 35. eandem sinus anguli $abc$ æqualis est sinui arcus $fg$. arcus autem $fg$ major arcu $fk$ Et sinus sinu. Ideo sinus idem anguli $abc$ major erit sinu arcus $fk$. Constat ergo quicquid proponebatur demonstrandum.
+\note{figure dans la marge de gauche : arcs lettrés $f$, $a$, $g$, $k$, $e$, $h$, $m$, $l$, $c$, $d$.}
+
+\subsection*{Propositio XXXX}
+
+Si vero sinus totus ad sinum secundum alterius arcus perpendicularis minor fuerit quam sinus secundus reliqui perpendicularis ad sinum secundum anguli acuti p̄pendicularibus oppositi : tunc arcus inter casus perpendicularium minor erit arcu inter
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 26 ».}
+signata puncta cadente. Et arcus ad angulum majores\note{ainsi ; la démonstration qui suit conclut « arcus $ak$ minor arcu $cd$ »} erunt singuli singulis coalternis Et angulorum a perpendicularibus ad puncta signata factorum sinus minores erunt alter alterius perpendicularis sinu secundo.
+
+\note{figure dans la marge de droite : arcs lettrés $f$, $e$, $k$, $d$, $g$, $m$, $c$, $l$, $a$, $h$.}
+In eadem descriptione ponatur ratio sinus totius ad sinum arcus $fk$ minor quam ratio sinus arcus $bf$ ad sinum arcus $fe$. Aio tunc quod arcus $cl$ minor erit arcu $bk$. Item arcus $ak$ minor arcu $cd$, Et arcus $al$ minor arcu $be$ necnon sinus anguli $akl$ minor sinu arcus $fb$. Et sinus anguli $abc$ minor sinu arcus $fk$. Ponatur enim sicut sinus arcus $bf$ ad sinum arcus $fe$, sic sinus totus ad sinum arcus $fm$. Sic enim minor erit arcus $fm$ arcu $fk$ describatur ut prius ipsi $ad$ circulo parallelus $mg$ incidens ipsi $ae$ in $g$ : Et producatur quadrans $fgh$. Eritque $fg$ arcus æqualis arcui $fm$. Quare erit sicut sinus totus ad sinum arcus $fg$ sic sinus arcus $bf$ ad sinum arcus $fe$. Et ideo per \uncertain{16}. 6. Eucl. quadrangulum quod ex sinu toto sinuque arcus $fe$ erit æquale quadrangulo quod ex sinibus arcuum $fk$ $fb$. Igitur quod ex sinu toto sinuque arcus $fe$ minus erit quadrangulo quod ex sinibus arcuum $fg$ $fb$. Igitur quod ex sinu toto sinu arcus $fe$ minus erit quadrangulo quod ex sinibus arcuum $fg$ $fb$. Igitur quod ex sinu toto sinuque arcus $fe$ minus erit quadrangulo quod ex sinibus arcuum $fk$, $fb$ ; quandoquidem maior arcus $fk$ arcu $fg$,\note{la phrase « Igitur quod ex sinu toto\ldots » est écrite trois fois de suite, avec « $fg$ $fb$ » les deux premières fois et « $fk$, $fb$ » la troisième.} Verum per 34 huius sicut quadrangulum quod ex sinu toto sinuque arcus $fe$ ad quadrangulum quod ex sinibus arcuum $fk$ $fb$ sic est iam sinus arcus $cl$ ad sinum arcus $bk$. Ergo minor sinus arcus $cl$ sinu arcus $bk$ Et proinde minor arcus $cl$ arcu $bk$. Et quoniam per 35. huius arcus $ag$ æqualis est arcui $cd$
+
+\page{28}
+\note{double page ; page de gauche. Elle continue sans interruption la page de droite de la vue 27.}
+Et arcus $ah$ \struck{minor arcu $bd$} æqualis arcui $be$. Idcirco iam arcus $ak$ minor erit arcu $cd$, Et arcus $al$ minor arcu $be$. Et quoniam per 6. huius sicut sinus arcus $gf$ ad sinum arcus $fe$ sic sinus totus ad sinum anguli $akl$ \struck{Et ob id} Estque minor sinus arcus $gf$ ad sinum arcus $fe$ quam sinus arcus $kf$ ad sinum arcus $fe$. Ideo minor erit sinus totus ad sinum anguli $agh$ quam ad sinum anguli $akl$. Et ob id minor erit sinus anguli $akl$ sinu anguli $agh$, Et angulus angulo, Sed per 35 huius sinus anguli $agh$ æqualis est sinui arcus $fb$. Igitur sinus anguli $akl$ minor erit sinu arcus $fb$. Et quoniam per dictam 35. sinus anguli $abc$ æqualis est sinui arcus $fg$ arcus autem $fg$ minor est arcu $fk$ Et sinus sinu Ideo sinus idem anguli $abc$ minor erit sinu arcus $fk$. Et hæc fuerant demonstranda.
+\note{figure dans la marge de gauche : arcs lettrés $f$, $k$, $g$, $m$, $d$, $a$, $h$, $l$, $c$.}
+
+\subsection*{Propositio XXXXI}
+
+Item si arcus inter casus perpendicularium ponatur major arcu inter puncta signata cadente, tunc major erit sinus totus ad sinum secundum unius arcuum perpendicularium quam sinus secundus alterius perpendicularis ad sinum secundum anguli perpendicularibus oppositi Et cætera sequentur quæ in 39. præcedenti.
+
+\note{figure dans la marge de gauche : arcs lettrés $f$, $e$, $b$, $d$, $k$, $c$, $a$, $h$.}
+In eadem descriptione ponatur arcus $cl$ major arcu $bk$. Aio quod maior erit sinus totus ad sinum $fk$ quam sinus arcus $fb$ ad sinum arcus $fe$. Nam si minor tunc per præcedentem minor erit arcus $cl$ arcu arcu $bk$. Quod \struck{\ill{}} est\note{« est » ajouté dans l'interligne au-dessus du mot biffé} contra hypothesim, Si æquales sint rationes tunc per 35 huius arcus $cl$ æqualis erit arcui $bk$. Quod rursum est contra hypothesim. Superest ergo ut omnino major sit sinus totus ad sinum arcus $fk$ quam sinus arcus $fb$ ad sinum arcus $fe$. Quare per 39. huius arcus $ak$ major arcu $cd$, Et arcus $al$ major arcu $be$ Et sinus
+
+\note{page de droite, sans figure ; en tête à droite, à l'encre, le nombre « 27 ».}
+anguli $akl$ major sinu arcus $fb$, Et sinus anguli $abc$ major sinu $fk$. Et hæc sequi propositum dixerat propositio.
+
+\subsection*{Propositio XXXXII}
+
+Item si duorum coalternorum arcuum qui ad angulum ponatur major Et cætera quæ dicta sunt sequentur.
+
+In eadem descriptione si arcus $ak$ ponatur major arcu $cd$, vel si arcus $al$ ponatur maior arcu $be$. Aio tunc quod maior erit sinus totus ad sinum arcus $fk$ quam sinus arcus $fb$ ad sinum arcus $fe$. Nam si minor tunc per 40 arcus $ak$ minor arcu $cd$ quod est contra propositum. Si æqualis tunc per 30 huius arcus $ak$ æqualis arcui $cd$. Quod rursum est contra hypothesim. superest ergo ut maior sit sinus totus ad sinum arcus $fk$ quam sinus arcus $fb$ ad sinum arcus $fe$. Quare per 39 huius arcus $cl$ major erit arcu $bk$. Et sinus anguli $akl$ major sinu arcus $fb$. Necnon sinus anguli $abc$ major sinus arcus $fk$. Quæ secutura suppositum dixerat propositum.
+
+\subsection*{Propositio XXXXIII}
+
+Item si sinus unius angulorum a perpendicularibus apud signata puncta factorum ponatur major sinu secundo reliqui perpendicularis, Et eadem reliqua sequentur.
+
+In eadem descriptione si sinus anguli $akl$ ponatur major sinu arcus $fb$ vel si sinus anguli $abc$ ponatur major sinu arcus $fk$. Aio tunc quod major erit sinus totus ad sinum arcus $fk$, quam sinus arcus $fb$, ad sinum arcus $fe$. Nam si minor tunc per 40 sinus anguli $akl$ minor erit sinu arcus $fb$. Quod est contra hypothesim si æquales vero tunc per 35. sinus ipsi æquales. Quod rursum est contra hypothesim. Superest ergo ut major sit sinus totus ad sinum arcus $fk$ quam sinus arcus $fb$ ad sinum arcus $fe$. Quare per 39. huius arcus $cl$ major erit arcu $bk$. Et arcus $ak$ major arcu $cd$. Et arcus $al$ major arcu $be$. Et reliqua quæ suppositum secutura diximus.
+
+\page{29}
+\note{double page ; page de gauche. Elle continue sans interruption la page de droite de la vue 28.}
+\subsection*{Propositio XXXXIV}
+
+Si vero arcus inter casus perpendicularium ponatur minor arcu inter puncta signata cadente, sequentur cætera deinceps, quæ in quadragesima.
+
+Ponatur nunc arcus $cl$ minor arcu $bk$. Aio tunc quod sinus totus ad sinum arcus $fk$ minor erit quam sinus arcus $fb$ ad sinum arcus $fe$. Nam si major tunc per 39 huius arcus $cl$ major erit $bk$ Q̄ est hypothesim.\note{« Q̄ » : un Q barré dans la hampe, abréviation de « quod » ; « contra » manque} Si æqualis \struck{ratio} vero, tunc per 35 arcus $cl$ erit æqualis arcui $bk$ quod rursum est contra hypothesim. Superest ergo ut sinus totus minor sit ad sinum arcus $fk$ quam sinus arcus $fb$ ad sinum arcus $fe$. Quare per 40 huius arcus $ak$ minor erit arcu $cd$ : Et arcus $al$ minor arcu $be$. Et sinus anguli $akl$ minor sinu arcus $fb$. Necnon sinus anguli $abc$. minor sinu arcus $fk$ Quæ suppositum secutura in propositione dictum est.
+
+\subsection*{Propositio XXXXV}
+
+Item si duorum coalternorum arcuum qui ad angulum ponatur minor, et cætera similiter sequentur.
+
+\note{figure dans la marge de gauche : arcs lettrés $f$, $e$, $b$, $k$, $d$, $a$, $c$, $l$.}
+In eadem descriptione Ponatur arcus $ak$ minor arcu $cd$. vel arcus $al$ minor arcu $be$. Aio quod sinus totus ad sinum arcus $fk$ minor erit quam arcus $fb$ ad sinum arcus $fe$. Nam si maior, tunc per 39 huius arcus $ak$ major erit arcu $cd$. Quod rursum est contra hypothesim Superest ergo ut sinus totus minor\note{« minor » ajouté dans l'interligne, avec un signe d'insertion} sit ad sinum arcus $fk$ quam sinus arcus $fb$ ad sinum arcus $fe$. Quare per 40 huius arcus $cl$ minor erit arcu $bk$. Et angulus $akl$ sinus minor sinu arcus $fb$. Et anguli $abc$ sinus minor sinu arcus $fk$. Et cætera. quæ suppositum secutura prædictum est.
+
+\subsection*{Propositio XXXXVI}
+
+Item si anguli ab uno perpendicularium arcuum apud signatum punctum facti sinus ponatur minor sinu secundo reliqui perpendicularis : non aliter quam prius cætera sequentur.
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 28 ».}
+In eadem descriptione ponatur sinus anguli $akl$ minor sinu $fb$. Sive sinus anguli $abc$ minor sinu arcus $fk$ Aio tunc quod sinus totus ad sinum arcus $fk$ minor erit quam sinus arcus $fb$ ad sinum arcus $fe$. Nam si major tunc per 39. huius sinus anguli $akl$ major erit sinu arcus $fb$. Quod est contra hypothesim. Si æqualis vero tunc per 35. sinus anguli $akl$ æqualis erit sinui arcus $fb$. Quod rursum adversatur proposito. Superest ergo ut sinus totus minor sit ad sinum arcus $fk$ quam sinus arcus $bf$ ad sinum arcus $fe$. Quare per 40 huius arcus $cl$ minor erit arcu $bk$, Et arcus $ak$ minor arcu $cd$, Et arcus $al$ minor arcu $be$ Et cæter. quæ suppositum secutura necessario prædiximus.
+
+\subsection*{Propositio XLVII}
+\note{le copiste passe ici de « XXXXVI » à « XLVII ».}
+
+Si sinus secundi arcuum perpendicularium proportionem servantes in 35. prædictum fuerint proportionales permutato ordine sinibus secundis aliorum duorum arcuum, perpendicularium, arcus coalterni inter perpendiculares æquales erunt.
+
+\note{figure dans la marge de droite : arcs issus de $f$, lettrés $f$, $e$, $l$, $q$, $g$, $m$, $a$, $d$, $h$, $c$, $k$, $p$.}
+In prædicto lineamento ducantur circulorum quadrantes $fgh$ $flk$. Ita ut sinus totus ad sinum $fg$ sit sicut sinus arcus $fl$ ad sinum arcus $fe$. Itemque duo alii quadrantes $fmn$ $fqp$. Ita ut sinus arcus $fm$ ad sinum arcus $fg$ sit sicut sinus \struck{totus} arcus $fl$ ad sinum arcus $fq$. Aio iam quod his suppositis arcus $mg$ $kp$ coalterni æquales erunt : Itemque arcus $nh$ $lq$ coalterni æquales. Nam cum sinus totus ad sinum arcus $fg$ sit sicut sinus arcus $fl$ ad sinum arcus $fe$. Atque conversim sinus arcus $fq$ ad sinum arcus $fm$ sicut sinus arcus $fg$ ad sinum arcus $fl$. Nam per 23. 5. rationibus perturbatim collocatis ex æquo sinus totus ad sinum arcus $fm$ sicut sinus arcus $fq$ ad sinum arcus $fe$ Ex qua proportione
+
+\page{30}
+\note{double page ; page de gauche. Elle continue sans interruption la page de droite de la vue 29.}
+per 34 huius arcus $am$ $pd$ æquales erunt. Itemque arcus $ag$ $kd$ æquales. Quare arcus $mg$ $kp$ relicti æquales erunt. Rursum per 35. arcus $an$ $qc$ æquales necnon arcus $ah$ $le$ æquales sunt. Igitur et arcus $nh$ $lq$ relicti æquales erunt Quæ fuere demonstranda.
+
+\subsection*{Propositio XLVIII}
+
+Quod si sinibus secundis arcuum perpendicularium proportionem in 35 prædictam servantibus intersit medius proportionalis sinus secundus arcus medij proportionalis, Et coalterni arcus item perpendiculari medio ad collaterales hinc inde recepti æquales erunt.
+
+\note{figure dans la marge de gauche : arcs lettrés $f$, $e$, $a$, $g$, $b$, $l$, $d$, $h$, $c$, $k$.}
+Sit ut in præcedenti sicut sinus totus ad sinum arcus $fg$ sic sinus arcus $fl$ ad sinum arcus $fe$, Et ducatur $fbc$ quadrans medius Ita ut sinus arcus $fg$ ad sinum arcus $fb$ sit sicut sinus arcus $fb$ ad sinum arcus $fl$. Hoc est ut sinus arcus $fb$ sit medius proportionalis inter sinus arcuum $fg$ $fl$. Aio tunc quod arcus $bg$ æqualis erit arcui $ck$ necnon arcus $hc$ æqualis erit arcui $bl$. Nam cum sinus totus ad sinum $fg$ sit sicut sinus arcus $fl$ ad sinum arcus $fe$. Atque cum sit sinus arcus $fg$ ad sinum arcus $fb$ sicut sinus arcus $fb$ ad sinum arcus $fl$. Nam per 23. 5. rationibus perturbatim collocatis erit ex æquo sinus totus ad sinum arcus $fb$ sicut sinus arcus $fb$ ad ad sinum arcus $fe$. hoc est medius proportionalis erit sinus arcus $fb$ inter sinus arcuum $fg$ $fe$. Quare per 25 huius arcus $ab$ æqualis erit arcui $cd$. Sed per 35. arcus $ag$ æqualis arcui $kd$. Igitur et arcus $bg$ relictus arcui $ck$ relicto æqualis. Item per 25. arcus $ac$ æqualis arcui $be$. Et per 35. arcus $ah$ æqualis arcui $le$. Ergo et arcus $hc$ reliquus arcui reliquo $bl$ æqualis sicut propositum fuit.
+
+\subsection*{Propositio XLVIIII}
+\note{le titre est au bas de la page de gauche ; l'énoncé ouvre la page de droite.}
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 29 ».}
+Quod 29.\textsuperscript{a} huius proposuit aliter ostendere.
+
+\note{figure dans la marge de droite : arcs issus de $f$, lettrés $f$, $e$, $q$, $l$, $g$, $b$, $m$, $a$, $d$, $n$, $h$, $c$, $k$, $p$.}
+In ipsa 29.\textsuperscript{a} descriptione Sit ut ibi supponitur sinus arcus $fb$ medius proportionalis inter sinum totum sinumque arcus $fe$. Demonstrandum est rursus quod arcuum $ab$ $ac$ differentia maxima est differentiarum quibus differunt arcus $a$ angulum continentes ab ipso angulo ad perpendiculares arcus terminati. Nam cum sinus arcus $fb$ sit medius proportionalis inter sinum totum sinumque arcus $fe$. Erit per 16. 6. Eucl. quadratum quod ex sinu arcus $fb$ æquale quadrangulo quod ex sinu toto sinuque arcus $fe$. Minus autem \struck{autem} quadratum sinus arcus $fb$ quadrangulo ex sinibus arcuum $fb$ $bg$ producto. Igitur Et quadrangulum quod ex sinu toto sinuque arcus $fe$ minus erit quadrangulo ex sinibus arcuum $fb$ $fg$ producto. Verum per 34 huius sicut quadrangulum quod ex sinu toto sinuque arcus $fe$ ad quadrangulum ad quadrangulum ex sinibus arcuum $fb$ $fg$ sic sinus arcus $hc$ ad sinum arcus $bg$. Ergo sinus arcus $hc$ minor erit sinu arcus $bg$. Quare et arcus $hc$ minor arcu $bg$. Et idcirco major erit differentia arcuum $ab$ $ac$ quam differentia arcuum $ag$ $ah$. Similiter omnino ostendetur quod arcus $nh$ minor erit arcu $gm$, Et proinde differentia arcuum $ag$ $ah$ maior quam dria arcuum \struck{qu} $am$ $an$. Rursum quoniam quadrangulum ex sinibus arcuum $fb$ $fl$ factum minus est quadrato quod ex sinu arcus $fb$. Et ideo quadrangulo quod ex sinu toto sinuq; arcus $fe$ Sed per 34. huius sicut quadrangulum quod ex sinu toto sinuque arcus $fe$ ad quadrangulum quod ex sinibus arcuum $fb$ $fl$ sic sinus arcus $ck$ ad sinum arcus $bl$. Quo fit ut major sit differentia arcuum $ab$ $ac$ quam dria arcuum $al$ $ak$. Et per eandem ostendemus quod arcus $kp$ major est arcu $lq$. Et proinde dria arcuum $al$ $ak$ major quam differentia arcuum $aq$ $ap$. Unde sequitur ut inter differentias arcuum ab angulo $a$ ad perpendiculares receptorum ipsa arcuum $ab$ $ac$ differentia sit maxima. Quod propon:
+
+\page{31}
+\note{double page ; page de gauche. Elle continue sans interruption la page de droite de la vue 30.}
+ebatur demonstrandum.
+
+\section*{Maurolyci Siculi Sphæricorum liber secundus}
+
+\subsection*{Præfatio}
+
+De proportione quam servat sinus aggregati ex arcubus acutum angulum comprehendentibus in rectangulo trigono Sphærali ad sinum differentiæ eorumdem arcuum servato acuto deinceps nobis disserendum est. Qui locus quamvis a Menelao minime sit prætermissus, Nos tamen Theorema illud nobilissimum quod ipsi quintum est in ordine propositionum tertij libelli, aliter atque aliter demonstrantes multis rem speculationibus Et quasi corollarijs illustravimus, Non enim parsimus opportunis præambulis ad demonstratõem spectantibus, quo distinctis commodius propositionibus omnia fiant apertiora scituque iucundiora.
+
+\subsection*{Propositiones}
+
+Cum fuerint in superficie Sphæræ quatuor arcus circulorum magnorum semicirculis minores, duo quidem ab angulo uno descendentes, duoque a descendentium terminis se vicissim secantes, Et alternatim ad descendentes reflexi : tunc ratio sinus unius descendentium ad sinum partis ejus superioris componetur ex duabus, quarum una est ratio sinus arcus reflexi a termino dicti descendentis ad sinum partis superioris eiusdem reflexi : altera est ratio sinus partis inferioris alterius reflexi ad sinum totius eiusdem reflexi.
+
+\note{figure dans la marge de gauche : arcs lettrés $b$, $h$, $d$, $e$, $g$, $f$, $a$, $k$, $c$.}
+Sint in superficie Sphæræ quatuor arcus circulorum majorum semicirculis minores : quorum duo $ab$ $bc$ ab angulo $b$ descendant, Duo vero $cd$ $ae$ se invicem apud $f$ secantes ipsis $ab$ $be$ apud $de$ puncta coincidant. Aio igitur
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 30 ».}
+quod ratio sinus arcus $ab$ ad sinum arcus $bd$ componitur ex duabus scilicet ex ratione sinus arcus $ae$ ad sinum arcus $ef$ Et ex ratione sinus arcus $fe$ ad sinum arcus $dc$\note{ainsi, « $fe$ », où la fin de la démonstration a « $fc$ » ; la lettre qui précède « $dc$ » est surchargée d'une tache} Quod sic demonstratur. Ducantur a punctis $d$ $f$ arcus circulorum majorum $fg$ $dh$ $ak$ perpendiculares ad arcum $bc$ Eritque per 7 præcedentis libri sicut sinus arcus $ab$ ad sinum arcus $bd$ sic iam sinus arcus $ak$ ad sinum arcus $dh$. Item sicut sinus arcus $ae$ ad sinum arcus $ef$ sic sinus arcus $ak$ ad sinum arcus $gf$, necnon sicut sinus arcus $fc$ ad sinum arcus $cd$ sic sinus arcus $fg$ ad sinum arcus $dh$. Verum posito medio sinu arcus $fg$ ratio sinus arcus $ak$ ad sinum arcus $dh$ componetur ex ratione sinus arcus $ak$ ad sinum arcus $fg$, Et ex ratione sinus arcus $fg$ ad sinum arcus $dh$. Igitur et ratio sinus arcus $ab$ ad sinum arcus $bd$ componetur ex ratione sinus arcus $ae$ ad sinum arcus $ef$, Et ex ratione sinus arcus $fc$ ad sinum arcus $cd$, quod erat demonstrandum.
+\note{figure dans la marge de droite : arcs lettrés $d$, $b$, $h$, $e$, $f$, $g$, $a$, $k$, $c$.}
+
+\subsection*{Propositio II}
+
+Item ratio sinus unius arcus ex reflexis ad sinum partis ipsius inferioris componetur ex duabus, quarum una est ratio partis superioris arcus contermini descendentis ad sinum ipsius descendentis totius altera est ratio sinus alterius totius reflexi ad sinum partis eius superioris.
+
+\note{figure dans la marge de droite : arcs lettrés $b$, $d$, $e$, $f$, $a$, $c$, et un petit segment de droite, sans lettre lisible, qui paraît figurer la ligne $l$.}
+Hoc est in eadem descriptione. Aio quod ratio sinus arcus $dc$ ad sinum arcus $cf$ componetur ex duabus, Quarum una \struck{est} ratio sinus arcus $db$ ad sinum arcus $ba$ altera est ratio sinus arcus $ae$ ad sinum arcus $ef$. quod sic demonstratur. Per præcedentem quidem ratio sinus arcus $ab$ ad sinum arcus $bd$ componitur ex ratione sinus $ae$ ad sinum arcus $ef$, Et ex ratione sinus arcus $fc$ ad sinum arcus $cd$. Itaque sicut est sinus arcus $ae$ ad sinum arcus $ef$ sic sit sinus $cd$ ad lineam $l$. Eritque ex æquali sicut sinus arcus arcus $ab$ ad sinum arcus $bd$ sic sinus arcus $fc$ ad \struck{sinum arcus $cd$} lineam $l$. Et conversim erit
+
+\page{32}
+\note{double page ; page de gauche. Elle continue sans interruption la page de droite de la vue 31.}
+sicut sinus arcus $fc$ ad sinum arcus $ea$ sic iam linea $l$ ad sinum arcus $cd$. Verum posita media $l$ ratio sinus $fc$ ad sinum arcus $cd$ componitur ex ratione sinus arcus $fc$ ad lineam $l$ : Et ex ratione lineæ $l$ ad sinum arcus $cd$ Igitur et eadem ratio sinus arcus $fc$ ad sinum arcus $cd$ componetur ex ratione sinus arcus $ab$ ad sinum arcus $bd$. Et ex ratione sinus arcus $fe$ ad sinum arcus $ea$. Quare conversim ratio sinus arcus $dc$ ad sinum arcus $cf$ componetur ex ratione sinus arcus $db$ ad sinum arcus $ba$, Et ex ratione sinus arcus $ae$ ad sinum arcus $ef$ Quod erat demonstrandum.
+\note{figure dans la marge de gauche : arcs lettrés $b$, $d$, $e$, $f$, $c$, $a$, et sous elle un segment de droite lettré $l$.}
+
+\subsection*{Propositio III}
+
+Aliter idipsum demonstrare.
+
+Ductis quidem arcubus perpendicularibus sicut in prima. Erit per 7 præcedentis libri sicut sinus arcus $dc$ ad sinum arcus $cf$ sic iam sinus arcus $dh$ ad sinum arcus $fg$. Item sicut sinus arcus $db$ ad sinum arcus $ba$ sic sinus arcus $dh$ ad sinum arcus $ak$. Necnon sicut sinus arcus $ae$ ad sinum arcus $ef$ sic sinus arcus $ak$ ad sinum arcus $fg$. Verum posito medio sinu arcus $ak$ ratio sinus arcus $dh$ ad sinum arcus $fg$ componetur ex ratione sinus arcus $dh$ ad sinum arcus $ak$ : Et ex ratione sinus arcus $ak$ ad sinum arcus $fg$ Igitur Et ratio sinus arcus $dc$ ad sinum arcus $cf$ componetur ex ratione sinus arcus $db$ ad sinum arcus $ba$, Et ex ratione sinus arcus $ae$ ad sinum arcus $ef$. Quod fuerat in præcedenti demonstrandum.
+
+\subsection*{Propositio IIII}
+
+Suppositis iisdem ratio sinus unius arcuum descendentium ad sinum partis eius inferioris componetur ex duabus : quarum una est ratio sinus partis superioris alterius descendentis ad sinum partis eiusdem inferioris, altera est ratio sinus partis inferæ arcus reflexi a termino huius descendentis ad sinum partis supernæ eiusdem reflexi.
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 31 ».}
+In eadem descriptione. Aio quod ratio sinus arcus $ba$ ad sinum arcus $ad$ componitur ex duabus : scilicet ex ratione sinus arcus $be$ ad sinum arcus $ec$. Et ex ratione sinus arcus $cf$ ad sinum arcus $fd$ Quod sic demonstratur. Producantur arcus $bc$ $cd$ donec concurrant apud $m$ punctum Eruntque per 15. primi Sphæricorum Theodosij arcus $mbc$ $cdm$ semicirculi, Et ideo sinus arcus $me$ erit et sinus arcus $ec$. Itemque sinus arcus $mf$ erit et sinus arcus $fc$. Intelligo igitur duos arcus circulorum majorum $ab$ $bm$ descendentes ab angulo $b$. Duosque ab eorum terminis ad eosdem reflexos $mf$ $ab$\note{ainsi ; les arcs réfléchis de la figure sont $ae$ et $md$} se invicem apud $d$ secantes. Eritque per præcedentem ratio sinus arcus $ba$ ad sinum arcus $ad$ composita ex ratione sinus arcus $be$ ad sinum arcus $em$, Et ex ratione sinus arcus $mf$ ad sinum arcus $fd$. Substituo ergo sinibus arcuum $em$ $mf$ sinus arcuum $ec$ $cf$ quandoquidem utrorumque iidem sunt sinus. Eritque ratio sinus arcus $ba$ ad sinum ad sinum arcus $ad$ composita ex ratione sinus arcus $be$ ad sinum arcus $ec$ : Et ex ratione sinus arcus $cf$ ad sinum arcus $fd$ : Quod quidem erat demonstrandum.
+\note{figure dans la marge de droite : arcs lettrés $m$, $b$, $d$, $f$, $e$, $a$, $c$.}
+
+\subsection*{Propositio V}
+
+Idem et aliter demonstrare.
+
+\note{figure dans la marge de droite : arcs lettrés $b$, $d$, $e$, $h$, $f$, $g$, $k$, $a$, $c$.}
+Ducatur a punctis $b$ $c$ $d$ in ipsa descriptione circulorum majorum arcus $bc$\note{ainsi ; la suite a « $bg$ »} $ck$ $dh$ perpendiculares ad arcum $ae$ Quo facto iam per 7 præcedentis libri Erit sicut sinus arcus $ba$ ad sinum arcus $ad$ sic sinus arcus $bg$ ad sinum arcus $dh$. Item sicut sinus arcus $be$ ad sinum arcus $ec$ sic sinus arcus $bg$ ad sinum arcus $ck$. Necnon sicut arcus $cf$ ad sinum arcus $fd$ sic sinus arcus $ck$ ad sinum arcus $dh$. Verum posito medio sinu arcus $ck$ ratio sinus arcus $bg$ ad sinum arcus $dh$ componetur ex ratione sinus arcus $bg$ ad sinum arcus $ck$, Et ex ratione sinus arcus $ck$ ad sinum arcus $dh$. Igitur Et ratio sinus arcus $ba$ ad sinum arcus $da$ componetur ex ratione sinus arcus $be$ ad sinum arcus $ec$, Et ex ratione sinus arcus $cf$ ad sinum arcus $fd$, quod proponebatur hic et in præcedenti ostendendum.
+
+\page{33}
+\note{double page ; page de gauche. Elle continue sans interruption la page de droite de la vue 32.}
+\subsection*{Propositio VI}
+
+Si quadrilaterum rectilineum circulo inscriptum fuerit : quod sub duabus eius diametris continetur rectangulum æquale est duobus iis quæ sub oppositis lateribus comprehenduntur coniunctim sumptis rectangulis.
+
+\note{figure dans la marge de gauche : cercle et quadrilatère inscrit lettrés $a$, $b$, $c$, $d$, avec les diagonales et le point $e$ ; un trait pointillé part de $a$.}
+Esto ipsi $abc$ circulo inscriptum rectilineum quadrilaterum $abcd$. cuius diametri $ac$ $bd$. Aio quod rectangulum quod ex $ac$ $bd$ æquale est duobus rectangulis, quorum unum sub $ab$ $cd$, alterum sub $ad$ $bc$ comprehenditur. Ponatur enim ipsi $bac$ angulo æqualis angulus $dae$ Eruntque anguli $bae$ $cad$ æquales quum super eundem arcum incumbant. Igitur et tertius angulus $aeb$ tertio $adc$ æqualis. Quare æquiangula erunt triangula $abe$ $acd$. Itaque per 4. 6. Eucl. sicut linea $ab$ ad lineam $be$ sic linea $ac$ ad lineam $cd$. Itemque triangula $ade$ $acb$ æquiangula erunt. Unde per 4. prædictam erit sicut $ad$ ad $de$ lineam, sic $ac$ ad $cb$ lineam. Quam ob rem per 15. 6. Euclidis quadrangulum quod ex $ab$ $cd$ æquale erit quadrangulo quod ex $be$ $ac$. Atque per eandem quadrangulum quod ex $ad$ $cb$ æquale quadrangulo quod ex $de$ $ac$ verum per primam. 6. prædicti quadrangulum $be$ $ac$ unacum quadrangulo $de$ $ac$ æquale est quadrangulo quod ex $ac$ $bd$. Ergo et quadrangulum quod ex $ac$ $bd$ æquale erit quadrangulo $ab$ $cd$ una cum quadrangulo $ad$ $bc$. quod fuit demonstrandum.
+
+\subsection*{Propositio VII}
+
+Aggregatum eorum quæ fiunt ex utraque chordarum duorum arcuum inæqualium in chordam residuj de semicirculo alterius rectangulorum ad differentiam eorumdem est sicut chorda aggregati ex iisdem arcubus ad chordam arcus differentiæ eorumdem.
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 32 ».}
+\note{figures dans la marge de droite : un cercle lettré $b$, $c$, $e$, $a$, $d$, avec les cordes ; puis trois rectangles, le premier marqué $f$, le deuxième $g$, le troisième divisé en deux et lettré $h$, $m$, $k$, $l$, $n$.}
+In circulo $abc$ sunt duæ chordæ $ab$ $bc$ quarum major $ab$. Et posita ipsi $bc$ æquali $be$ ducatur chorda $ea$. Ductaque diametro circuli $bd$ ducantur chordæ $ad$ $dc$ $ca$. Erit $ac$ chorda aggregati ex arcubus $ab$ $bc$ atque $ae$ chorda differentiæ eorumdem. Itaque ex $ab$ in $cd$ vel $ed$ fiat quadrangulum $f$. Et ex $bc$ sive $be$ in ipsam $ad$ fiat quadrangulum $g$. Iam demonstrandum est quod aggregatum ex quadrangulis $f$ $g$ habet ad eorumdem differentiam talem rationem qualem habet chorda $ac$ ad chordam $ae$. Exponatur enim ipsi $bd$ æqualis linea $hk$. super quam constituatur rectangulis $f$ $g$ æquale quadrangulum $hklm$ Et ipsi $lm$ applicetur quadrangulum $mn$ æquale differentiæ ipsorum quadrangulorum $f$ $g$ cum autem per præcedentem totum quadrangulum $f$ $g$ sit æquale quadrangulo quod ex $bd$ in $ac$ Erit etiam quadrangulum $km$ æquale quadrangulo quod ex $bd$ $ac$. Sed $hk$ æqualis ipsi $bd$. Ergo $kl$ æqualis ipsi $ac$. Item cum ex præcedenti quadrangulum $f$ quod etiam fit ex $ab$ $ed$ sit æquale quadrangulo $g$ quod etiam fit ex $be$ $ad$ una cum quadrangulo quod ex $ae$ $bd$. Atque ob id quadrangulum $ae$ $bd$ sit ipsorum quadrangulorum $f$ $g$ differentia. Ideo ipsum quadrangulum $mn$ æquum ipsi differentiæ, æquale erit quadrangulo $ae$ $bd$ Sed $lm$ æqualis ipsi $bd$. Ergo similiter et $ln$ æqualis ipsi $ae$ per. per primam autem 6. Euclidis quadrangulum $km$ ad quadrangulum $mn$ sicut $kl$ ad $ln$. Igitur et aggregatum quadrangulorum $f$ $g$ ad differentiam eorum sicut $kl$ ad $ln$. hoc est sicut chorda $ac$ ad chordam $ae$. Quod erat demonstrandum.
+
+\page{34}
+\note{double page ; page de gauche. Elle continue sans interruption la page de droite de la vue 33.}
+\subsection*{Propositio VIII}
+
+Aggregatum eorum quæ fiunt ex utroque sinu duorum arcuum inæqualium in sinum secundum alterius rectangulorum ad differentiam eorumdem est sicut sinus aggregati ex eisdem arcubus ad sinum arcus differentiæ eorumdem.
+
+\note{figure dans la marge de gauche : grand cercle lettré $b$, $p$, $t$, $r$, $q$, $s$, $c$, avec le diamètre $bc$ et le centre $d$ ; petit cercle intérieur sur le diamètre $bd$, lettré $e$, $a$, $e$ ; cordes et droites entre ces points.}
+In circulo $rbs$ cuius diameter $bc$ centrum $d$. Sint duo arcus inæquales $pb$ $bq$. Quorum major $pb$. Ductisque semidiametris $dp$ $dq$. Ducantur ad ipsas $dp$, $dq$ lineæ perpendiculares $ba$ $bc$\note{ainsi ; la figure porte $e$ au pied de la seconde perpendiculaire, et la suite dit « linea $bc$ vel linea $be$ »} Quæ productæ occurrant peripheriæ apud $r$ $s$ Eruntque dupli arcus $bpr$ $bqs$ ipsorum arcuum $bp$ $bq$. Ponatur item arcus $bt$ æqualis arcui $bs$ Et ducatur chorda $bt$. Ad quam perpendicularis sit $de$ Et coniungantur lineæ $ac$ $rs$. $ae$ $rt$. quibus peractis constabit ex definitionibus et ex prima præcedentis libri quod sinus arcus $bp$ est linea $ba$ sinus arcus $bq$ est linea $bc$ vel linea $be$ quandoquidem earum dupla $tb$ $bs$ sunt æquales. Item quoniam arcus arcus $rbs$ duplus est arcus $pbq$. Et ipsius $rbs$ arcus chorda est $rs$. Ipsius autem $rs$ dimidium est ipsa $ac$ Etiam ideo per diffinitionem sinus ipsius arcus $pbq$ est linea $ac$. Demum quoniam arcuum $pb$ $bq$ dupli sunt arcus $rb$ $bt$ Et ipsorum arcuum $rb$ $bt$ differentia est $tr$. Iam ipse arcus $tr$ duplus erit differentiæ arcuum $pb$ $bq$. Sed $ae$ linea dimidium est chordæ $tr$ Igitur per diffinitionem linea \uncertain{$ae$}\note{la seconde lettre ressemble à un « c »} sinus erit arcus qui differentia est arcuum $pb$ $bq$. Rursum ex prima præcedentis libri \struck{\uncertain{erit}} sinus secundus arcus $pb$ erit linea $da$. sinus autem secundus arcus $bq$ erit linea $cd$ vel linea $de$ quæquidem æquales sunt. Itaque demonstrandum est quod aggregatum ex duobus quadrangulis quorum alterum fit ex $ab$ $cd$ alterum vero ex $bc$ $da$ ad driam eorumdem est sicut linea $ac$ ad lineam $ae$. Describatur super diametrum $bd$ circulus quij iam
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 33 ».}
+ibit per ipsa puncta $aec$ quandoquidem recti sunt anguli $bad$ $bed$ $bcd$. Sic enim rectæ $ab$ $bc$ erunt chordæ arcuum inæqualium in tali circulo Atque rectæ $be$ $bc$ chordæ æquales arcuum æqualium. Recta $ac$ chorda totius arcus $abc$ aggregatum scilicet ex arcubus $ab$ $bc$. Recta $ae$ differentiæ eorundem chorda. Rectæ $ad$ $dc$ chordæ residuorum de semicirculo eorumdem arcuum. Quamobrem per præcedentem aggregatum quadrangulorum $ab$ $cd$ Et quadrangulorum $bc$ $da$, ad driam eorumdem est sicut chorda $ac$ ad chordam $ae$. Quod erat demonstrandum.
+
+\subsection*{Propositio IX}
+
+Si duæ magnitudines duabus magnitudinibus sint proportionales erunt et earum aggregata differentiis proportionalia. Contra si aggregata fuerint differentiis proportionalia ; et duæ magnitudines duabus magnitudinibus proportionales erunt.
+
+\note{figure dans la marge de droite : deux segments de droite, le premier lettré $a$, $g$, $b$, $c$, le second $d$, $h$, $e$, $f$.}
+Sit magnitudo $ab$ ad magnitudinem $bc$ sicut magnitudo $de$ ad magnitudinem $ef$. quarum majores $ab$ $de$. Positisque $bg$ ipsi $bc$ atque $eh$ ipsi $ef$ æqualibus. Aio quod $ca$ ad $ag$ erit sicut $fd$ ad $dh$. Nam coniunctim erit $ac$ ad $cb$ sicut $df$ ad $fe$. Et conversim $ac$ ad $ab$ sicut $fd$ ad $de$ Et rursum conversim erit $ba$ ad $ag$ sicut $ed$ ad $dh$. Quare ex æquali proportione erit $ca$ ad $ag$ sicut $fd$ ad $dh$. Quod est primum ex propositis. Rursum esto $ca$ ad $ag$ sicut $fd$ ad $dh$. Aio quod erit $ab$ \uncertain{ad}\note{au début de la ligne, le mot est écrit comme « $ab$ »} $bc$ sicut $de$ ad $ef$. Nam tunc disiunctim Et conversim erit $ag$ ad $gc$ sicut $dh$ ad $hf$. scilicet $cg$ ad $gb$ sicut $fh$ ad $he$. Igitur ex æquali $ag$ ad $gb$ sicut $dh$ ad $he$. Quare coniunctim $ab$ ad $bg$ sicut $de$ ad $eh$. hoc est $ab$ ad $bc$. Quod fuit reliquum ex propositis.
+
+\page{35}
+\note{double page ; page de gauche. Elle continue sans interruption la page de droite de la vue 34.}
+\subsection*{Propositio X}
+
+In triangulo rectangulo ex arcubus circulorum majorum in superficie Sphæræ sinus aggregati duorum arcuum angulum acutum comprehendentium ad sinum differentiæ eorumdem est sicut aggregatum ex sinu toto sinuq; secundo dicti anguli acuti ad differentiam eorundem sinuum.
+
+\note{figure dans la marge de gauche : arcs lettrés $f$, $e$, $a$, $b$, $c$, $d$.}
+Sit in superficie Sphæræ triangulum $abc$ ex arcubus circulorum majorum rectum habens eum qui ad $c$ angulum, acutos reliquos. Productisque arcubus $ba$ $ac$ positisque $ad$ $ae$ quadrantibus. Ducatur arcus circuli majoris $de$. Qui productus coincidat ipsi $cb$ producto apud $f$. Eruntque per 3. præmissi arcus $df$ $fc$ quadrantes. Atque sinus arcus $de$ erit sinus anguli acuti $a$. Sinus autem $fe$ erit sinus eiusdem anguli secundus. Itaque demonstrandum est quod sinus arcus aggregati ex arcubus $ba$ $ac$ ad sinum arcus differentiæ eorumdem est sicut aggregatum ex sinu $df$ sinuque $fe$. ad differentiam eorumdem. Hoc pacto. Ex sinu arcus $ab$ in sinum arcus $cd$ hoc est in sinum secundum arcus $ac$ fiat quadrangulum $g$. Ex sinu autem arcus $ac$ in sinum secundum ipsius $ab$. hoc est sinum arcus $be$ fiat quadrangulum $h$ eritque per 24. 6. Eucl. ratio quadranguli $g$ ad quadrangulum $h$ composita ex rationibus laterum. hoc est ratione sinus arcus $dc$ ad sinum arcus $ca$. Et ex ratione sinus arcus $ab$ ad sinum arcus $be$. Verum per 4 vel 5. huius ratio sinus $df$ ad sinum arcus $fe$ componitur ex ratione sinus arcus $dc$ ad sinum arcus $ca$, Et ex ratione sinus arcus $ab$ ad sinum arcus $be$ Igitur sicut sinus arcus $df$ ad sinum arcus $fe$ sic quadrangulum $g$ ad quadrangulum $h$. Quare per præcedentem aggregatum ex sinu arcus $df$ sinuque arcus $fe$ ad driam eorumdem sinuum sicut aggregatum ex quadrangulis $g$ $h$ ad differentiam eorumdem. Sed per 8 huius sicut aggregatum ex quadrangulis $g$ $h$ ad
+\note{plus bas dans la marge de gauche : deux rectangles marqués $g$ et $h$, et une seconde figure d'arcs lettrés $l$, $a$, $b$, $e$, $d$.}
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 34 », dont le 4 est tracé en boucle descendante.}
+driam eorumdem sic etiam sinus arcus aggregati ex arcubus $ba$ $ac$ ad sinum arcus differentiæ eorumdem. Ergo erit sicut sinus arcus aggregati ex arcubus $ba$ $ac$ ad sinum arcus driæ eorundem sic etiam aggregatum ex sinu arcus $df$ sinuque arcus $fe$ ad driam eorumdem sinuum. Quod fuit demonstrandum.
+
+\subsection*{Propositio XI}
+
+Si fuerit triangulum rectangulum circulorum majorum in superficie sphæræ, atque anguli ad centrum sphæræ constituti quos subtendunt duo arcus trianguli acutum angulum continentes fuerint æquales angulis quos continent latera duo trianguli rectilinej cum perpendiculari ad tertium latus singuli singulis, Tunc sinus totus ad sinum anguli acuti prædicti erit sicut portio major tertij lateris trianguli rectilinej ad minorem.
+
+\note{deux figures dans la marge de droite : un triangle rectiligne lettré $h$, $l$, $g$, $k$, la perpendiculaire tombant de $h$ en $g$ sur $lk$ ; des arcs lettrés $f$, $e$, $b$, $d$, $a$, $c$.}
+Sit in superficie sphæræ ex circulis majoribus triangulum rectangulum $abc$ et cæt. quæ in præcedenti. Item angulus rectilineus $ghk$ ponatur æqualis angulo quem subtendit arcus $ab$ ad centrum sphæræ constituto, Atque angulus rectilineus $ghl$ æqualis angulo quem subtendit arcus $ac$ ad idem centrum posito. Ipsa autem $gh$ rectos angulos faciat cum $lk$. Quibus suppositis demonstrandum est quod sinus arcus $df$ hoc est sinus totus ad sinum arcus $fe$ sinum scilicet anguli $bac$ est sicut linea $kg$ ad lineam $gl$. Hoc modo per. 4 vel 5 huius Ratio sinus arcus $df$ ad sinum arcus $fe$ componitur ex rationibus sinus arcus $dc$ ad sinum arcus $ca$, Et sinus arcus $ab$ ad sinum arcus $be$. Positaque media linea $gh$ ratio lineæ $kg$ ad lineam $gl$ componitur ex rationibus lineæ $kg$ ad lineam $gh$, Et lineæ $gh$ ad lineam $gl$. Verum cum per hypothesim anguli $ghl$ et $l$ sint æquales angulis, ad centrum sphæræ positis, arcusque $ac$, $cd$ assumentibus, iam propter similitudinem triangulorum, Erit sicut sinus arcus $dc$ ad sinum arcus $ca$ sic linea $gh$ ad lineam $gl$. Et similiter
+
+\page{36}
+\note{double page ; page de gauche. Elle continue sans interruption la page de droite de la vue 35.}
+cum per hypothesim anguli $ghk$ et $k$ sint æquales angulis ad centrum sphæræ constitutis, arcusque $ab$ $be$ assumentibus rursum propter similitudinem triangulorum Erit sicut sinus arcus $ab$ ad sinum arcus $be$ sic \struck{sinus} linea $kg$ ad lineam $gh$. Igitur ex æqualiter collatis rationibus, Erit sicut linea $kg$ ad lineam $gl$, sic sinus arcus $df$ ad sinum arcus $fe$. Quod fuit demonstrandum.
+\note{figures dans la marge de gauche : le triangle rectiligne $h$, $l$, $g$, $k$ et les arcs $f$, $e$, $b$, $a$, $d$, $c$ de la proposition précédente.}
+
+\subsection*{Propositio XII}
+
+Quod decima huius proposuit aliter demonstrare.
+
+\note{figures dans la marge de gauche : arcs lettrés $f$, $e$, $b$, $a$, $d$, $c$ ; puis trois figures rectilignes, la première lettrée $l$, $n$, $g$, $h$, $m$, $o$, $k$, les deux autres $h$, $g$, $n$, $m$, $k$, $o$ et $l$, $h$, $g$, $k$, $o$.}
+Sit in superficie sphæræ triangulum rectangulum $abc$ ex arcubus circulorum Et cæte. quæ in præmissa et antepræmissa. Iam rursus et aliter quod in 10 huius demonstrandum est, quod sinus aggregati ex arcubus $ba$ $ac$ ad \struck{ad} sinum differentiæ eorumdem arcuum est sicut sinus aggregati ex sinu $df$ sinuque arcus $fe$ ad differentiam eorumdem. Ponatur sicut in præmissa rectilineus angulus $ghk$ æqualis ej qui ad centrum sphæræ, super arcum $ab$ consistit, Atque angulus $ghl$ æqualis ej qui ad idem centrum super arcum $ac$ locatur. Item ponatur linea $hk$ æqualis semidiametro sphæræ, hoc est sinui toti, Et linea $kgl$ ad rectos ipsi $hg$. Et quoniam arcus $ab$ major arcu $ac$ per 28. 2. sphæric. elementorum. Atque ideo angulus $ghk$ major angulo $ghl$, Idcirco et linea $kg$ major erit quam linea $gl$. Itaque ponatur ipsi $gl$ æqualis linea $gm$, Et coniungatur $hm$ Et producatur. Item lineæ perpendiculares ad ipsam $hl$ ipsa $kn$. Ad ipsam vero $hm$ productam ipsa $ko$ linea. Et quoniam per hypothesim angulus $lhk$ est ille qui super arcum aggregatum ex arcubus $ba$ $ac$ consistit ad centrum : Et angulus $kho$ ipsorum quidem $ghk$ $ghl$ angulorum differentia Et perinde angulus ille qui super arcum qui differentia est arcuum $ba$ $ac$ ad centrum locatur existit : Et linea $hk$ sphæræ semidiameter hoc est circuli majoris semidiameter sive sinus totus ponitur. Propterea circulus iam super centrum $h$ ad spatium $hk$ descriptus erit æqualis cuivis circulo majori sphæræ, in cuius superficie describitur triangulum, $abc$ cum cæteris peripheriis, atque per primam
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 35 », dont le 5 descend en longue queue.}
+præmissi libelli linea $kn$ erit sinus anguli $lhk$ hoc est sinus arcus aggregati ex arcubus $ba$ $ac$ Itemque linea $ko$ erit sinus anguli $kho$ hoc est. sinus arcus differentiæ arcuum dictorum $ba$ $ac$. Itaque demonstrandum est quod linea $kn$ ad lineam $ko$ est sicut aggregatum ex sinu $df$ sinuque $fe$ ad differentiam eorumdem sinuum. Hoc pacto angulus $kmo$ æqualis est angulo $gmh$ contraposito. angulus autem $gmh$ æqualis angulo $glh$ per 4. 1. Eucl. Igitur angulus $glh$ hoc est $kln$ æqualis erit angulo $kmo$. Sed anguli $lnk$ $mok$ recti. Ergo et reliquus angulus $nkl$ reliquo $okm$ æqualis. Igitur rectilinea triangula $kln$ $kmo$ sunt ad invicem æquiangula, Et ideo per 4. 6. Euclidis sunt proportionalium laterum. quare erit \struck{per} linea $kn$ ad $ko$ lineam sicut linea $lk$ ad lineam $km$. Sed per præcedentem linea $kg$ ad lineam $gl$ sicut sinus arcus $df$ ad sinum arcus $fe$. Et ideo per 9. huius linea $lk$ ad lineam $km$ aggregatum scilicet ex $kg$ $gl$, ad $km$ differentiam earundem, sicut aggregatum ex sinu arcus $df$ sinuque arcus $fe$ ad differentiam eorumdem. Igitur erit sicut aggregatum ex sinu arcus $df$ sinuque arcus $fe$ ad differentiam eorumdem sinuum sic linea $kn$ ad lineam $ko$ hoc est sinus aggregati ex arcubus $ba$ $ac$ ad sinum differentiæ eorumdem arcuum. quod fuit demonstrandum.
+
+\subsection*{Scholium}
+
+Attendendum quod in prima descriptione angulus $lhk$ est acutus, tunc enim arcus $ba$ $ac$ sunt minus quadrante. In secunda autem descriptione angulus $lhk$ obtusus est, Tunc enim arcus $ba$ $ac$ conflant arcum quadrante majorem : Et perinde linea $kn$ est sinus anguli extrinseci $khn$ hoc sinus arcus aggregati ex arcubus $be$ $cd$. In tertia vero descriptione angulus $lhk$ rectus est Et ideo tunc arcus $ba$ $ac$ conficiunt quadrantem : Unde tunc ipse $hk$ sinus totus est vice perpendicularis $kn$ hoc est sinus talis anguli recti talisque quadrantis. Sed unicuique descriptioni una inservit demonstratio, idemque processus, Sic igitur decima huius Et hæc præsens duodecima idem per diversa demonstrant, superest nunc tertius idipsum demonstrandi modus quem a Menelao traditum existimo.
+
+\subsection*{Propositio XIII}
+
+Cum circuli semidiameter secat chordam arcumq;
+
+\page{37}
+\note{double page ; page de gauche. Elle continue sans interruption la page de droite de la vue 36.}
+chordæ portiones sunt sinibus portionum arcus proportionales.
+
+\note{figure dans la marge de gauche : arc de cercle lettré $b$, $a$, $c$, avec la corde $ac$, la demi-droite $bde$ et les perpendiculaires $af$, $cg$.}
+Arcum $abc$ eiusque chordam $adc$ secet \struck{secet} semidiameter $eb$ in punctis $db$. ad $eb$ autem perpendiculares lineæ cadant $af$ $cg$. Quæ per primum præcedentis libri erunt sinus arcuum $ab$ $bc$. Demonstrandum est ergo quod linea $ad$ ad lineam $dc$ est sicut $af$ ad $gc$. Sic triangulorum $adf$ $cdg$ anguli ad $d$ contrapositi sunt æquales. Anguli autem qui ad $fg$ recti Et hi anguli $a$ $c$ reliqui æquales. Ideoque æquiangula sunt triangula $adf$ $cdg$. Quare per 4. 6 Elementorum Euclidis proportionalia sunt correlativa huius modi triangulorum latera, Et ideo erit $ad$ ad $dc$. sicut $af$ ad $gc$. quod est propositum.
+
+\subsection*{Propositio XIIII}
+
+Quod decima quodque duodecima huius demonstrant adhuc aliter demonstrare.
+
+\note{figure dans la marge de gauche : arcs et droites lettrés $a$, $b$, $c$, $d$, $e$, $f$, $g$, $h$, le point $h$ au sommet inférieur.}
+Sit demum in superficie sphæræ triangulum $abc$ ex circulis majoribus rectum habens angulum $bca$, angulum vero $bac$ acutum, positoque polo $a$ describatur ad spatium $ab$ circulus $bde$ Et arcus $ac$ producatur utrimque donec coincidat peripheriæ, circuli descripti ad puncta $de$. Eritque per diffinitionem poli tam arcus $ad$ quam arcus $ae$ æqualis arcui $ab$. quare arcus $cae$ erit aggregatum ex arcubus $ba$ $ac$. arcus vero $cd$ erit differentia eorumdem arcuum $ba$ $ac$. Demonstrandum est igitur ut prius quod sinus arcus $cae$ ad sinum arcus $cd$ est sicut aggregatum ex sinu toto sinuque anguli $bac$ secundo ad differentiam eorumdem sinuum 3.\textsuperscript{o} modo. Sic. Sit sphæræ centrum $h$ Item communis sectio circulorum $ab$ $ac$ sit recta $afh$. Communes autem sectiones eorumdem circulorum cum circulo $bde$ sint rectæ $bf$ $dfe$. coniungatur autem $ch$ secans chordam $de$ in puncto $g$. Coniungatur Et $bg$. Quæ cum sit communis sectio circulorum $bc$ $bde$. stantium ad angulos rectos super circulum $acd$ erit per 19. 11. Euclidis perpendicularis ad planum circuli $acd$. Et ideo perpendicularis tam ad rectam $de$ quam ad rectam $ch$. Et per eadem quoniam $af$ perpendicularis est ad circulum $bde$ erit et perpendi-
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 36 ».}
+cularis tam ad rectam $bf$ quam ad rectam $fd$, sicut per 10. 1. Elem. Theodosij. Eritque per eandem et per corollarium primæ primi eorumdem elementorum punctum $f$. centrum circuli $bde$. Atque angulus rectilineus $bfd$ erit angulus inclinationis circulorum $ab$ $ac$. Itaque posito sinu toto $bf$ quæ est semidiameter circuli, $bde$ erit per primam præcedentis libri linea $bg$ sinus anguli $bfd$ hoc est anguli $bac$. Atque linea $gf$ sinus secundus eiusdem anguli ; Quare linea $eg$ erit aggregatum ex sinu toto scilicet $ef$ sinuque secundo anguli $bac$ scilicet $gf$. linea vero $gd$ differentia eorumdem. Itaque demonstrandum est quod arcus $cae$ ad sinum arcus $cd$ est sicut linea $eg$ ad lineam $gd$. Quod quidem constat per præcedentem. Quandoquidem linea $hgc$ \struck{secundum} semidiameter circuli $dae$ secat chordam $de$ in puncto $g$ arcumque $dae$ in puncto $c$. Et hoc \struck{ut} antea testis proponitur demonstrandum.
+\note{figure dans la marge de droite : arcs et droites lettrés $a$, $b$, $c$, $d$, $e$, $f$, $g$, et une longue droite descendant jusqu'au centre $h$.}
+
+\subsection*{Propositio XV}
+
+In triangulo ex arcubus circulorum majorum rectangulo in superficie sphæræ aggregatum ex sinu toto sinuque secundo anguli acuti ad differentiam eorumdem est sicut quadratum quod ex sinu secundo dimidij anguli acuti ad quadratum quod ex sinu eiusdem dimidij.
+
+\note{deux figures dans la marge de droite : arcs lettrés $f$, $a$, $b$, $e$, $c$, $g$, $d$ ; demi-cercle sur le diamètre $hk$, de centre $l$, lettré $o$, $m$, $h$, $l$, $n$, $k$, avec les cordes $hm$, $mk$ et la perpendiculaire $mn$.}
+In descriptione 10 huius arcus circuli magni $ag$ secet per æqualia angulum $bac$. Demonstrandum est iam quod aggregatum ex sinu toto arcus scilicet $df$ et sinu $fe$ ad differentiam eorumdem est sicut quadratum sinus arcus $fg$ ad quadratum arcus $gd$ hoc modo Exponatur sphæræ diameter $hk$. Quæ per medium secta apud $l$ super eam centroque $l$ semicirculus describatur $hmk$. Ponaturque arcus $km$ æqualis arcui $de$ ductisque chordis $hm$ $mk$ atque perpendiculari $mn$ Erit iam linea $hn$ congeries sinuum arcus $df$ arcusque $fe$, Et linea $nk$. differentia eorumdem sinuum. Sed per 17. 6 Euclidis linea $hn$ ad lineam $nk$ est iam sicut quadratum lineæ $hn$ ad quadratum lineæ $mn$. Et ideo propter similitudinem triangulorum sicut quadratum lineæ $hm$ ad quadratum lineæ $mk$. Sed quadratum $hm$ ad quadratum $mk$ sicut quadratum sinus arcus $fg$ ad quadratum sinus arcus $gd$. Quandoquidem linea
+
+\page{38}
+\note{double page ; page de gauche. Elle continue sans interruption la page de droite de la vue 37.}
+$hm$ ad lineam $mk$ sicut sinus arcus $fg$ ad quadratum sinus arcus $gd$ : cum duplæ sint lineæ sinuum singulæ singulorum Igitur et sicut quadratum sinus arcus $fg$ ad sinum arcus $gd$ sic linea $hn$ ad lineam $nk$. hoc est aggregatum ex sinibus arcuum $df$ $fe$ ad differentiam eorumdem Et hoc erat demonstrandum.
+
+\subsection*{Propositio XVI}
+
+Item sinus aggregati arcuum anguli comprehendentium ad sinum differentiæ eorumdem arcuum est sicut quadratum quod ex sinu secundo dimidij anguli acuti ad quadratum quod ex sinu eiusdem dimidij.
+
+\note{figures dans la marge de gauche : arcs lettrés $f$, $e$, $b$, $g$, $a$, $d$, $c$ ; demi-cercle lettré $o$, $m$, $h$, $l$, $n$, $k$, avec la perpendiculaire $mn$.}
+In eadem descriptione demonstrandum est quod sinus aggregati ex arcubus $ba$ $ac$ ad sinum differentiæ eorumdem arcuum est sicut quadratum quod ex sinu $fg$ ad quadratum quod ex sinu arcus $gd$. Sic per 14. huius sinus aggregati arcuum $bac$\note{ainsi, la lettre du milieu surchargée} $ac$ ad sinum differentiæ eorumdem arcuum est sicut aggregatum ex sinibus arcuum $df$ $fe$ ad differentiam eorumdem sinuum. Per præcedentem autem sicut aggregatum tale ad driam talem sic quadratum sinus arcus $fg$ ad quadratum sinus arcus $gd$. Igitur Et sicut est quadratum sinus arcus $fg$ ad quadratum sinus arcus $gd$ sic sinus aggregati arcuum $ba$ $ac$ ad driam eorumdem. Quod iam proponebatur demonstrandum.
+
+\subsection*{Propositio XVII}
+
+Item sinus aggregati arcuum angulum acutum comprehendentium ad sinum differentiæ eorumdem arcuum est sicut sinus versus major anguli acuti hoc est ut sinus versus complementi ipsius anguli ad duos rectos ad sinum versum talis acuti.
+
+Nam in descriptione antepræmissæ sinus versus complementi anguli acuti $bac$ ad duos rectos hoc est sinus versus arcus $hom$ Et fuit linea $hn$ quippe quæ constat ex $hl$ semidiametro Et ex $ln$ sinu secundo, arcus $km$ hoc est anguli $bac$, sinus autem versus anguli $bac$ hoc est sinus versus arcus $km$ hoc est anguli $bac$ fuit linea $nk$ excessus vero semidiametri $lk$ supra \struck{\uncertain{$hk$}} $ln$ sinum secundum arcus $km$ prædictum. Proponitur ergo hic demonstrandum quod sinus aggregati arcuum $ba$ $ac$ ad sinum arcus differentiæ eorumdem arcuum est sicut linea \uncertain{$nk$}\note{ainsi en apparence ; le « k » est repassé d'une encre plus noire, et le sens demande « $hn$ »} ad lineam $nk$. hoc est sicut aggregatum ex sinu toto sinuque
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 37 ».}
+secundo anguli $bac$ ad differentiam eorumdem sinuum, Verum id ostensum est in 10. 12. Et 14. huius Constat ergo propositum.
+
+\subsection*{Propositio XVIII}
+
+Si fuerint duo triangula ex arcubus circulorum majorum rectangula in superficie sphæræ, quorum unius angulus acutus æqualis alterius angulo acuto : tunc sinus aggregati arcuum acutum angulum comprehendentium in uno triangulo ad sinum arcus differentiæ eorum est, sicut sinus aggregati arcuum acutum angulum continentium in altero triangulo ad sinum arcus differentiæ eorumdem.
+
+\note{figures dans la marge de droite : deux triangles d'arcs lettrés $b$, $a$, $c$ et $e$, $d$, $f$ ; demi-cercle lettré $m$, $h$, $l$, $n$, $k$, avec la perpendiculaire $mn$.}
+Sunto duo triangula $abc$ $def$ ex arcubus circulorum majorum in superficie sphæræ, quorum anguli $c$ $f$ recti Et anguli $a$ $d$ acuti Et æquales. Aio quod sinus arcus aggregati ex arcubus \struck{$ed$ $df$} $ba$ $ac$ ad sinum arcus differentiæ eorumdem, est sicut sinus arcus aggregati ex arcubus $ed$ $df$ ad sinum arcus driæ eorumdem. Nam cum anguli acuti $a$ $d$ sint æquales \struck{sinibus versis anguli} erunt iam ex diffinitione sinus versus anguli $a$ diametrum integrantes æquales sinibus versis anguli $d$ diametrum integrantibus, major scilicet majori, minor minori, Rursum ergo supra expositam sphæræ diametrum, $hk$ centrumque $l$ descripto semicirculo $hmk$ positoque arcu $km$ circuli majoris subtendente tam angulum $a$ quam angulum $d$ in superficie sphæræ, ductaque perpendiculari $mn$ Erit per primam præmissi libri linea $mn$ sinus arcus $km$. Et perinde sinus tam anguli $a$ quam anguli $d$. Et per diffinitionem ipsa linea $hn$ $nk$ erunt duo sinus versi tam anguli $a$ quam anguli $d$. Itaque per præcedentem sinus aggregati arcuum $ba$ $ac$ ad sinum arcus differentiæ eorumdem est sicut $hn$ ad $nk$ Itemque sicut $hn$ ad $nk$ sic sinus aggregati arcuum $ed$ $df$ ad sinum arcus differentiæ eorumdem. Igitur sicut sinus aggregati arcuum $ed$ $df$ ad sinum arcus differentiæ eorumdem sic sinus aggregati arcuum $ba$ $ac$ ad sinum differentiæ eorumdem.
+
+\subsection*{Propositio XIX}
+
+Quod si in duobus triangulis rectangulis ex arcubus circulorum majorum in superficie sphæræ sinus aggregati arcuum angulum acutum comprehendentium in uno triangulo ad sinum arcus differentiæ eorumdem
+
+\page{39}
+\note{double page ; page de gauche.}
+\note{la page de gauche reprend sans lacune visible au bas de la vue 38, mais l'énoncé de la \emph{Propositio XIX} y est incomplet : il passe de « ad sinum arcus differentiæ eorumdem » à « tum ipsi acuti anguli æquales erunt » sans le second membre de la proportion.}
+tum ipsi acuti anguli æquales erunt.
+
+\note{figures dans la marge de gauche : deux triangles d'arcs lettrés $b$, $a$, $c$ et $e$, $d$, $f$ ; demi-cercle lettré $m$, $h$, $l$, $n$, $k$.}
+In eadem descriptione sit sinus aggregati arcuum $ba$ $ac$ ad sinum differentiæ eorumdem arcuum sicut sinus aggregati arcuum $ed$ $df$ \struck{ad} ad sinum differentiæ eorumdem arcuum. Dico tunc quod anguli acuti $a$ $d$ æquales erunt. Nam cum per 17 præmissam in utrolibet triangulorum $abc$ $def$. sinus talium \struck{angulorum} arcuum quorum unus aggregatum alter differentia est arcuum continentium angulum acutum proportionales sint sinibus versis ipsius acuti anguli prædicto modo receptis. Iam sinus versi angulo $a$ debiti proportionales erunt sinibus anguli $d$. Quare coniunctim aggregata sinuum versorum erunt sinibus correlativis proportionalia. Hoc est sicut aggregatum sinuum versorum anguli acuti $d$ ad sinum versum anguli $d$.\note{la comparaison est ainsi réduite à un seul membre : le membre relatif à l'angle $a$ manque.} Sed \struck{etiam idem}\note{au-dessus des mots biffés, dans l'interligne : « tam illud »} tam illud aggregatum quam hoc est per diffinitionem sphæræ \add{diameter}. Igitur diameter sphæræ eandem habet rationem ad sinum versum anguli $a$ et ad sinum versum anguli $d$. Æquales ergo sunt tales sinus versi. Et idcirco sinus secundi primique eorumdem angulorum æquales, Et anguli ipsi $a$ $d$ æquales erunt. Quod fuit demonstrandum
+
+\subsection*{Propositio XX}
+
+In triangulo ex arcubus circulorum majorum rectangulo in superficie sphæræ, arcus acutum angulum continentes dum quadrantem perficiunt maxime differunt, quam sub eodem angulo sive breviati sive producti differant, Et coniuncti quadrantem circuli conflabunt.
+
+\note{figure dans la marge de gauche : arcs issus de $a$, lettrés $a$, $h$, $f$, $b$, $d$, $l$ sur l'un, $k$, $g$, $c$, $e$, $m$ sur l'autre, avec les perpendiculaires qui les joignent ; l'initiale « $k$ » ressemble à un « x ».}
+Sit in superficie sphæræ triangulum $abc$ ex arcubus circulorum maiorum rectum ad $c$ angulum Et acutos reliquos habens. Ponaturque aggregatum arcuum $ba$ $ac$ quadrans. Aio quod differentia arcuum $ba$ $ac$ maxima est earum quibus differunt iidem arcus sive breviores facti sive producti sub eodem angulo acuto $a$ anguloque recto $c$ servatis. Producantur enim $ab$ $ac$ Et brevientur. Ponanturque circulorum majorum arcus $de$ $fg$ perpendiculares $ag$ $ce$. Eritque per 18. huius sinus aggregati arcuum $da$ $ae$
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 38 ».}
+ad sinum arcus differentiæ eorumdem sicut sinus aggregati arcuum $ba$ $ac$ ad sinum arcus differentiæ eorumdem. Sed major est sinus aggregati arcuum $ba$ $ac$ quam sinus aggregati arcuum $da$ $ae$. Quandoquidem sinus aggregati arcuum $ba$ $ac$ est sinus quadrantis hoc est sinus totus qui circuli semidiameter Et sinus maximus est. Igitur Et major est sinus arcus differentiæ arcuum $ba$ $ac$ quam sinus differentiæ arcuum $da$ $ae$. Quare Et ipsa arcuum $ba$ $ac$ differentia major erit quam arcuum $da$ $ae$ differentia. Similiter Et major demonstrabitur quam arcuum $fa$ $ag$ differentia. Non aliter si brevientur $fa$ $ag$ ducto perpendiculari arcu $hk$ ad arcum $ac$ demonstrabitur major sinus differentiæ arcuum $fa$ $ag$ quam sinus differentiæ arcuum $ha$ $ak$. Quandoquidem major sinus aggregati arcuum $fa$ $ag$ quam sinus aggregati arcuum $ha$ $ak$. \struck{Quandoquidem major sinus aggregati arcuum $fa$} Et proinde major differentia arcuum $fa$ $ag$ quam differentia arcuum $ha$ $ak$. Non secus si producantur adhuc $ad$ $ae$ Et ducatur perpendicularis arcus $lm$. eodem argumento ostendetur major differentia arcuum $da$ $ae$ quam differentia arcuum $la$ $am$. Quandoquidem major sinus aggregati arcuum $da$ $ae$, quã sinus aggregati arcuum $la$ $am$. Verum est ergo quod proponitur arcuum scilicet $ba$ $ac$ quadrantem perficientium maximam esse differentiam. Contra ponatur arcuum $ba$ $ac$ differentia maxima. Aio quod eorumdem arcuum aggregatum erit quadrans. Demonstrabimus enim per 18. prædictam, Et conversam proportionem sinum aggregati arcuum $ba$ $ac$ esse maximum, Et perinde sinum quadrantis Et ob id tale proportione, sinum aggregati arcuum $ba$ $ac$ esse maximum Et proinde sinum quadrantis. Et ob id tale arcuum aggregatum esse quadrantem.\note{la phrase « sinum aggregati arcuum $ba$ $ac$ esse maximum\ldots\ sinum quadrantis » est écrite deux fois de suite.} Vel aliter indirecte. Nam si quadrans non sit aggregatum arcuum $ba$ $ac$. Esto si possibile est quadrans aggregatum arcuum $da$ $ae$ Igitur ut dudum ostensum est. differentia arcuum $da$ $ae$ maxima erit. Et ideo major quam differentia arcuum $ba$ $ac$. Quod adversatur supposito. Supponitur enim arcuum $ba$ $ac$ differentia maxima. Igitur nulli alii duo arcus quam $ba$ $ac$ quadrantem conficiunt. Et hoc supererat de \uncertain{propositis}\note{écrit en abrégé, « propo » suivi d'un signe final.} demonstrandum.
+
+\page{40}
+\note{double page ; page de gauche. Elle continue sans interruption la page de droite de la vue 39.}
+\subsection*{Propositio XXI}
+
+Aliter idem demonstrare.
+
+\note{figures dans la marge de gauche : arcs lettrés $f$, $e$, $b$, $d$, $a$, $c$ ; puis une figure lettrée $l$, $h$, $g$, $m$, $o$, $k$ : un cercle passant par $h$, $m$, $k$, tangent en $h$ à la droite $hg$, avec la droite $lgmk$ et la droite $ko$.}
+Repeto iam tertiam descriptionem rectilineam 12 huius in qua quidem angulus $ghk$ est ille quem in centro sphæræ constitutum subtendit arcus $ab$ autem $ghl$ est is quem ibidem positum subtendit arcus $ac$ minor ipso $ab$ Unde totus angulus $lhk$ erit is quem subtendet arcus aggregatus ex arcubus $ba$ $ac$, Et quoniam tale arcuum aggregatum supponitur quadrans propterea iam angulus $lhk$ erit rectus, angulus autem $kho$ erit differentia angulorum $ghk$ $ghl$ Et perinde ipse est quem subtendet differentia arcuum $ba$ $ac$. Itaque demonstrantes quod existente recto angulo $lhk$ maximus erit angulus $kho$ iam simul demonstratum erit quod existente aggregato arcuum $ba$ $ac$ quadrante maxima erit talium arcuum differentia. Demonstrabimus autem quod angulus $kho$ maximus est dum angulus $lhk$ rectus hoc modo. Angulus $lhk$ per hyp. rectus est. Igitur per 8. 6. linea $gh$ perpendicularis ipsi $lk$ est media proportionalis inter $lg$ $gk$. Et ideo quoniam $lg$ $gm$ sunt æquales media proportionalis inter $mg$ $gk$. Quare per 15 prædicti quadrangulum quod ex $mg$ $gk$ æquale erit quadrato quod ex $gh$. Descripta ergo peripheria per puncta $hmk$ circulari ipsa $gh$ continget circulum apud $h$ punctum per ultimam tertii Eucl. Itaque quocumque coincidant lineæ a punctis $km$ excitatæ ad lineam $gh$ alio quam in punctum $h$ semper extra peripheriam circuli $hmk$ coincident : Et ideo minorem angulum continebunt angulo $kho$ per 26. 3. Et \uncertain{26}. 1. Eucli.\note{les deux nombres sont tracés de même, « 26 » ; le second est lu ainsi sans certitude.} Itaque angulus $kho$ maximus erit. Similiter descripto circulo per puncta $km$ Et puncta coincidentiarum extra punctum $h$ secante quidem lineam $gh$ ostenderet et cæteri anguli extra punctum $h$ facti inter se differre. Nam angulus super arcum quempiam ad peripheriam constitutus semper major est angulo super eumdem arcum posito Et ad easdem partes peripheriam excedente. Contra posito angulo $kho$ maximo indirecte demonstrabitur angulus $lhk$ rectus. Non enim potest esse maximus talis angulus nisi circulus $hmk$ contingatur a linea $gh$. Si autem tangens est linea $gh$. Tunc per penultimam tertij Euclidis quadrangulum $kmg$ æquum erit quadrato $gh$ Quare per 15. 6. linea $gh$ erit media proportionalis inter ipsas $kg$ $gm$ hoc est inter ipsas $kg$ $gl$ lineas. Atque ideo per conversam 8. 6. Euclidis angulus $lhk$ rectus erit. Quod supererat demonstrandum.
+
+\subsection*{Propositio XXII}
+
+Si fuerit in superficie sphæræ duo triangula ex arcubus circulorum majorum : quorum unius angulus acutus æqualis alterius angulo acuto : Et alius unius angulus cum alio alterius angulo iunctus conficiat duos rectos, tunc sinus arcuum his angulis oppositorum erunt sinibus
+
+\note{page de droite ; en tête à droite, à l'encre, le nombre « 39 ».}
+arcuum oppositorum acutis proportionales.
+
+\note{figures dans la marge de droite : triangle d'arcs $b$, $a$, $c$ ; arcs lettrés $e$, $d$, $f$, $h$, $g$.}
+Sint in superficie sphæræ duo triangula $abc$ $def$ ex arcubus circulorum majorum. In quibus anguli $a$ $d$ acuti sint invicem æquales. Angulus autem $c$ cum angulo $efd$ iunctus conficiat duos rectos. Aio quod sinus arcus $ab$ ad sinum arcus $de$ est sicut sinus arcus $bc$ ad sinum arcus $ef$. Nam si anguli $c$ $f$ sint recti constat propositum per 7. præmissi libelli. secus autem talium angulorum alter erit acutus, alter erit obtusus. quandoquidem coniuncti duos rectos conficiant. Acutus esto angulus $c$. obtusus vero $efd$. Et producto arcu $df$ ad usque $g$ perpendiculari ad ipsum arcus circuli majoris $eh$ ipsique $fh$ æqualis ponatur arcus $hg$ Et arcus circuli majoris ducatur $eg$. Eruntque per 28. secundi sphæricorum elem. arcus $fe$ $eg$ æquales, scilicet arcus $eh$ communi triangulis $feh$ $geh$ rectangulis. Ergo per 8. præmissi anguli $efh$ $egh$ æquales. Angulus autem $efh$ cum angulo $efd$ conficit duos rectos. Quare dempto communi angulo $efd$ superest angulus $efh$ æqualis angulo $c$. Et ideo angulus $egh$ æqualis angulo $c$. Supponuntur autem Et anguli $a$ $d$ æquales. Igitur per 11 præmissi sinus arcus $ab$ ad sinum arcus $de$ sicut sinus arcus $bc$ ad sinum arcus $eg$. Æqualis autem fuit arcus $eg$ arcui $ef$. Itaque Et sinus arcus $ab$ ad sinum arcus $de$, sicut sinus arcus $bc$ ad sinum arcus $ef$. Quod fuit demonstrandum.
+
+\subsection*{Propositio XXIII}
+
+Si fuerint duo triangula in superficie sphæræ ex arcubus circulorum majorum quorum unius acutus angulus æqualis alterius angulo acuto : Et sinus arcuum acutis oppositorum proportionales sinibus arcuum duos ex reliquis angulos respicientium, tunc hi anguli aut æquales erunt, aut coniuncti duos rectos conficient.
+
+\note{figures dans la marge de droite : triangle d'arcs lettré $b$, $a$, $c$, $h$ ; arcs issus de $e$, lettrés $e$, $d$, $f$, $g$ et une troisième lettre au pied, semblable à $f$.}
+Sint in superficie sphæræ duo triangula $abc$ $def$ ex arcubus circulorum majorum in quibus anguli $a$ $d$ acuti sint invicem æquales. Et sicut est sinus arcus $ab$ ad sinum arcus $de$ sic sit sinus arcus $bc$ ad sinum arcus $ef$. Aio quod tunc angulus $c$ aut æqualis erit angulo $efd$, aut cum eo coniunctus conflabit duos rectos. Nam si rectus sit angulus $c$ rectus erit Et angulus $f$. Si enim existente $c$ angulo recto rectus non sit $f$. angulus : non erit arcus $ef$ perpendicularis ad arcum $df$. Ducatur ergo perpendicularis arcus circuli majoris $eg$ ad arcum $df$. Et tunc quoniam æquales sunt anguli $a$ $d$ atque recti qui ad $c$ $g$ anguli Iam per 7. \struck{huius} præcedentis libri erit sinus arcus $ab$ ad sinum arcus $bc$ sicut sinus arcus $de$ ad sinum arcus $eg$. Sed per hypothesim Et conversam proportionem sinus arcus $ab$ ad sinum arcus $bc$ sicut sinus arcus $de$ ad sinum arcus $ef$. Igitur quam habent rationem sinus arcus $de$ ad sinum arcus $ef$, eam habent Et ad sinum arcus $eg$. Æquales ergo sunt sinus arcuum $fe$ $eg$. Et proinde ipsi arcus $fe$ $eg$ æquales erunt, quod
+
+\end{document}
