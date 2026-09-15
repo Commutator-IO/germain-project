@@ -1,0 +1,2253 @@
+% Opuscules de François Maurolyco — Latin 17859, lecture modernisée du volume entier.
+%
+% Pass: Opus 5 (claude-opus-5), 15 September 2026 — first pass, unchecked
+% against the views by a human, and an interpretation rather than a record.
+% Where this file and the transcriptions differ in substance, the
+% transcriptions (batch-01.fr.tex … batch-03.fr.tex) are the record.
+%
+% Sources read: the three batch transcriptions of this volume and nothing
+% else. No image was consulted, and no printed edition of Maurolico — neither
+% the Messina edition of 1558 from which the copy was made, nor the Opuscula
+% mathematica of 1575, nor any modern edition — nor any other transcription.
+% Where the transcription has a gap, this reading says so and does not fill
+% it. All three batches were transcribed on Opus 5; together they cover
+% views 1–49, the whole volume (view 1, the board and the certificate, is
+% not transcribed; view 49 right is blank).
+%
+% What the volume turned out to be. A seventeenth-century copy, in one hand,
+% of most of the Messina volume of 1558 on the sphere: dedications and the
+% index of Maurolico's works; the « De Sphæra Sermo »; Autolycus, Theodosius
+% « De Habitationibus » and Euclid's « Phænomena » in Maurolico's versions;
+% the tables of sines, tangents (« tabula foecunda ») and secants (« tabula
+% benefica ») with eight worked problems; the end of a first book and the
+% whole of a second book of Maurolico's own spherical trigonometry; a text on
+% Regiomontanus's rules dated August 1530; a dedication dated 1 June 1557;
+% and the copyist's note that the « Compendium Mathematicæ » is left out
+% because Mersenne had printed it. Theodosius's and Menelaus's Sphaerica are
+% announced and not copied.
+%
+% The order followed. Sections go in the order of the binding, except where
+% the transcriptions' own notes show leaves bound out of the text's order:
+% the Autolycus page of view 48 L is read before view 10 R; the leaves inked
+% 16 and 17 are read in the order of the problems (views 18 R, 19 L, 17 R,
+% 18 L); the leaves inked 41–43 (views 42 R – 45 L) are read after view
+% 47 L and before view 47 R. One grouping is this reading's own and is said
+% to be so: problems « 7 » and « 8 » of views 48 R – 49 L are read after
+% problem 6 of view 18 L.
+%
+% Notation translated here, each with a footnote at its first use: « sinus
+% rectus » / « sinus secundus » / « sinus versus » into sin, cos, vers with
+% the radius 100 000 taken as 1; « umbra versa » and « umbra recta » with a
+% gnomon equal to the radius into tan and cot; the « Radius » of the tabula
+% benefica into sec; « arcus circulorum majorum » into arcs of great circles;
+% « latitudo ortiva » into the rising amplitude; « differentia ascensionalis »
+% into the ascensional difference; « differentia transitus per coeli medium »
+% into the difference in right ascension; the composition of ratios into
+% products of quotients; the leaf's lower-case figure letters into capitals.
+% Modern names — Menelaus's theorem, the sine rule, the spherical law of
+% cosines, Napier's rules, the addition formula, Ptolemy's theorem — are
+% attached only where the statement coincides, and never as a claim about
+% who found what first.
+%
+% Every worked number and every table entry the transcriptions flag was
+% recomputed; the recomputations are this reading's, and each correction
+% says in its footnote what the leaf has.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{latin-17859}
+\shelfmark{Latin 17859}
+\pages{1}{49}
+\dating{1601-1700}
+\watermark{Lecture automatique\\interprétation non vérifiée}
+\foldertitle{Opuscules de François Maurolyco sur les mathématiques et l'astronomie — lecture modernisée du volume entier}
+
+\begin{document}
+
+\section*{Résumé}
+
+\begin{resume}
+Ces feuillets sont la copie, faite au XVII\textsuperscript{e} siècle d'après un
+livre imprimé à Messine en 1558, de ce que Francesco Maurolico avait réuni sur la
+sphère : la géométrie des cercles tracés sur une sphère, et son usage pour
+calculer la position des astres. Maurolico dit lui-même, dans la lettre au
+vice-roi de Sicile qui ouvre le volume, pourquoi il l'a fait : la science des
+triangles sphériques, aussi nécessaire à la géométrie et à l'astronomie qu'elle
+est négligée dans les écoles, ne pouvait rester dans cet abandon ; il a donc
+restauré les \emph{Sphériques} des Grecs et y a joint ses propres travaux. La
+copie n'est pas complète — les \emph{Sphériques} de Théodose et de Ménélas n'y
+ont que leurs titres — et la reliure a déplacé quelques feuillets, que cette
+lecture remet dans l'ordre du texte en le disant.
+
+Le problème est celui de toute l'astronomie de position. Les astres sont vus sur
+une sphère ; ce qu'on mesure (une hauteur, un lieu sur l'écliptique) et ce qu'on
+veut connaître (une déclinaison, une ascension droite, l'heure, la durée du jour,
+le point de l'horizon où le Soleil se lève) sont des côtés et des angles de
+triangles dont les côtés sont des arcs de grands cercles. Il faut donc des
+relations entre ces côtés et ces angles, et des tables pour calculer avec elles.
+
+Le volume en donne les deux étages. D'abord la cosmographie et les textes grecs :
+le \emph{Discours sur la sphère}, qui expose le monde géocentrique de 1558 ; la
+\emph{Sphère en mouvement} d'Autolycus, les \emph{Habitations} de Théodose et les
+\emph{Phénomènes} d'Euclide, où l'on apprend ce qui se lève en même temps, combien
+de temps un signe du zodiaque met à se lever, pourquoi il y a sous le cercle
+polaire un jour de vingt-quatre heures. Ensuite les outils : une table de sinus,
+une table de tangentes (la « table féconde », attribuée à Regiomontanus) et une
+table de sécantes (la « table bienfaisante », que Maurolico dit avoir faite à
+son imitation), toutes pour un rayon de $100\,000$ ; huit problèmes entièrement
+chiffrés — la déclinaison et l'ascension droite d'Aldebaran, l'amplitude du
+Soleil levant à Messine, l'angle horaire du Soleil d'après sa hauteur ; et
+surtout la fin du premier livre et le second livre entier des \emph{Sphériques}
+de Maurolico, une soixantaine de propositions qui démontrent les relations dont le calcul a
+besoin.
+
+L'idée qui porte ces livres est de ramener chaque question à un triangle
+rectangle, et chaque relation à une proportion entre sinus. On y trouve, sous des
+formes et des noms qui ne sont pas les nôtres, le théorème de Ménélas, la règle des
+sinus, la loi des cosinus sphérique écrite en sinus verses, les relations du
+triangle rectangle que résument aujourd'hui les règles de Napier
+($\cos c = \cos a\cos b$, $\cos A = \cos a\sin B$, $\sin b = \tan a\cot A$), le
+théorème de Ptolémée, et un « très noble théorème », attribué à Ménélas, que
+Maurolico démontre de trois manières : dans un triangle rectangle, le sinus de la
+somme de l'hypoténuse et d'un côté est au sinus de leur différence comme
+$1 + \cos A$ est à $1 - \cos A$, soit $\cot^2(A/2)$. Plusieurs propositions en tirent
+une question d'extremum : l'angle $A$ étant fixé, la différence entre
+l'hypoténuse et le côté est la plus grande quand leur somme vaut un quadrant, et
+elle vaut alors $\arcsin\tan^2(A/2)$, valeur que le feuillet ne calcule pas. Un texte daté de 1530 explique enfin
+pourquoi les règles des tables de Regiomontanus sont justes et comment la table
+des sécantes permet de remplacer ses divisions par des multiplications.
+
+Les énoncés sont presque tous justes, et cette lecture les a vérifiés, tables et
+exemples chiffrés compris. Ce qui ne l'est pas tient à la copie plus qu'aux mathématiques :
+des lettres de figure échangées, une colonne de soixantièmes qui a glissé de cinq
+lignes, une tangente de $66^\circ 30'$ mal prise dans la table, une déclinaison de
+$15^\circ 20'$ écrite pour $15^\circ 10'$, un cas oublié dans une réciproque ; on dit
+chaque fois ce qui est vrai et, en note, ce que porte le feuillet. Le
+\emph{Discours} et la note sur la visibilité de la Lune, eux, contiennent des
+arguments que la physique a réfutés (l'immobilité de la Terre) ou qui ne tiennent
+pas (un croissant visible à trois degrés du Soleil), et la lecture le dit.
+
+Où cela mène : à la trigonométrie sphérique telle qu'on l'enseigne encore en
+astronomie et en navigation — triangle sphérique, règle des sinus, loi des
+cosinus, règles de Napier —, aux fonctions tangente et sécante et à l'histoire des tables
+trigonométriques, et, du côté de l'astronomie, aux coordonnées équatoriales et
+écliptiques, à la différence ascensionnelle, à l'amplitude et à l'angle horaire,
+aux temps d'ascension des signes et aux levers héliaques.
+
+\keywords{spherical trigonometry, right spherical triangle, Menelaus's theorem,
+spherical law of sines, spherical law of cosines, versine, Napier's rules,
+half-angle formula, sine addition formula, Ptolemy's theorem, trigonometric
+tables, tangent table, secant table, declination, right ascension, ascensional
+difference, rising amplitude, hour angle, oblique ascension, rising times of the
+zodiacal signs, heliacal rising, spherical astronomy, geocentric cosmology,
+trepidation}
+\end{resume}
+
+\section*{Ce que le volume contient}
+
+\pagerange{1}{49}
+Quarante-neuf vues d'un microfilm en niveaux de gris, chacune montrant le
+volume ouvert : une page de gauche et une page de droite, que la
+transcription a coupées et lues comme deux pages. La vue 1 (le plat, l'étiquette
+de cote, et la garde où la Bibliothèque a certifié « Volume de 47 Feuillets.
+7 Juin 1870 ») n'est pas transcrite ; la page de droite de la vue 49 est
+blanche. Tout le reste est d'une seule main, une italique régulière, avec les
+figures dans les marges.\footnote{Chaque page de droite des vues 2 à 48 porte en
+haut, à l'encre et d'un module plus gros que le texte, un numéro : 1 à 47, un
+par feuillet, sans lacune dans l'ordre présent de la reliure. La série et le
+certificat de 1870 s'accordent sur quarante-sept feuillets. Les trois
+transcriptions ne tiennent pourtant pas pour établi que ce soit la foliotation
+de la Bibliothèque,
+parce que c'est de l'encre et non le crayon fin d'un bibliothécaire, et que le
+trait pourrait être celui du copiste ; aucune n'écrit de \emph{folio}, et cette
+lecture ne cite donc les feuillets que par les vues de Gallica et, au besoin,
+par ces « numéros à l'encre ». Le cachet rond « Bibliothèque impériale
+MSS » est apposé dans les marges des vues 2, 20 et 49.}
+
+C'est une copie, et elle le dit. La page de titre énumère le contenu d'un
+recueil imprimé — les \emph{Sphériques} de Théodose « selon la tradition de
+Maurolico de Messine, mathématicien », les \emph{Sphériques} de Ménélas, la
+\emph{Sphère en mouvement} d'Autolycus, les \emph{Habitations} de Théodose, les
+\emph{Phénomènes} d'Euclide « démontrés très brièvement », la « démonstration
+et la pratique de trois tables, du sinus droit, féconde et bienfaisante,
+appartenant aux triangles sphériques », un \emph{Compendium Mathematicæ} et le
+\emph{Discours sur la sphère} de Maurolico — puis sa source : « Exscripta ex
+typis excusso codice Messanæ. In freto Siculo a Petro Spira mense Augusto Anno
+M.D.LVIII. »\footnote{« Copié sur l'exemplaire imprimé à Messine, sur le
+détroit de Sicile, par Petrus Spira, au mois d'août de l'an 1558. » Sous cette
+ligne, d'un module plus petit : « Bibliotheca I.U. Thuanorum. mense Iunio. Anno
+M.DC.XXVIII. favore C.V.D.I.B. Haultini mense decembri mutuo concesso Anno
+M.DC.XXVII. », une note de provenance des Thou (juin 1628), l'exemplaire ayant
+été prêté en décembre 1627 par la faveur d'un « Haultinus » ; les lectures
+« I.U. » et « Haultini » sont incertaines, le milieu du second mot étant
+surchargé. En marge, d'une autre main, l'ancienne cote « Nouv. acq. lat.
+1099 » ; au crayon, d'une main moderne, « Ce MS paraît incomplet », le
+dernier mot mal lu (vue 2, page de droite ; la page de gauche est blanche).}
+La datation du catalogue, 1601--1700, est reproduite en tête telle quelle. Le
+volume donne lui-même un repère : sa toute dernière ligne (vue 49) omet le
+\emph{Compendium} « parce que le P. Mersenne l'a publié », ce qui place la
+copie après cette publication ; la date de celle-ci n'est pas sur les feuillets,
+et cette lecture n'en infère aucune.
+
+Le recueil copié n'est pas complet. Les \emph{Sphériques} de Théodose et de
+Ménélas n'y ont que leurs titres, sur une page par ailleurs blanche, avec pour
+Ménélas la mention « Alibi descripta » — copié ailleurs.\footnote{Vue 10, page de
+gauche : le titre des trois livres de Théodose, « DIFFINITIONES. », la ligne
+« Sed hi collati sunt cum veteri editione Veneta anni 1518. » (« ils ont été
+collationnés avec l'ancienne édition vénitienne de 1518 »), puis « MENELAI
+SPHÆRICA EX EIUSDEM TRADITIONE » et « Alibi descripta. » Ni définitions ni
+texte ne suivent.} Ce qui est copié se range en neuf pièces :
+
+\begin{itemize}
+  \item deux lettres dédicatoires, l'une au vice-roi de Sicile (1558), l'autre
+    à Charles Quint (1556), et l'\emph{Index} des travaux de Maurolico
+    (vues 2--4) ;
+  \item le \emph{Discours sur la sphère}, une cosmographie en prose
+    (vues 4--10) ;
+  \item trois textes grecs dans la « tradition » de Maurolico : Autolycus,
+    \emph{De la sphère en mouvement} (vues 48 et 10--11), Théodose,
+    \emph{Des habitations} (vues 11--12), Euclide, \emph{Phénomènes}
+    (vues 13--15) ;
+  \item deux notes sur les habitants de la Terre et sur la visibilité des
+    astres près du Soleil (vues 15--16) ;
+  \item trois tables — des sinus, des tangentes, des sécantes — et une table
+    à trois arcs pour les déclinaisons et les ascensions (vues 16--20) ;
+  \item huit problèmes résolus avec ces tables (vues 17--19 et 48--49) ;
+  \item la fin d'un premier livre de trigonométrie sphérique, depuis la
+    proposition XXIII, et un second livre entier, trente-deux propositions
+    (vues 20--47) ;
+  \item un commentaire des règles de Regiomontanus et la démonstration de la
+    table des sécantes, daté d'août 1530 (vues 42--45 et 47) ;
+  \item une dédicace à Octavio Spinola datée du 1\textsuperscript{er} juin 1557,
+    et la ligne finale sur le \emph{Compendium} (vues 47 et 49).
+\end{itemize}
+
+\subsection*{L'ordre des feuillets, et celui de cette lecture}
+
+La reliure a mis trois groupes de feuillets hors de l'ordre du texte, et les
+transcriptions l'ont chaque fois montré par la continuité des phrases, en
+gardant elles-mêmes l'ordre des vues.
+
+\begin{itemize}
+  \item La page de gauche de la vue 48 ouvre le livre d'Autolycus
+    (définition, propositions 1 à 4) et s'arrête sur « et per primam huius
+    puncta singula » ; la page de droite de la vue 10 commence par « suos
+    seorsum parallelos, semper in alterutro hæmisphæriorum describent » et
+    continue avec les propositions 5 à 12. La phrase se lit d'une traite.
+  \item Les problèmes 1 à 6 se lisent sur les pages numérotées 17 (vue 18,
+    droite), puis vue 19, gauche, puis 16 (vue 17, droite), puis vue 18,
+    gauche : les deux feuillets numérotés 16 et 17 sont reliés à l'envers.
+  \item La fin du second livre des \emph{Sphériques} court de la vue 41,
+    gauche, à la vue 42, gauche, s'interrompt au milieu de la proposition XXVIII, et reprend
+    à la vue 45, droite, qui répète les deux dernières lignes interrompues ; elle
+    s'achève à la vue 47, gauche, sur une phrase en suspens, que continue la
+    vue 42, droite. Le commentaire sur Regiomontanus qui occupe les vues 42,
+    droite, à 45, gauche, s'achève à son tour en tête de la vue 47, droite.
+    Les trois feuillets numérotés 41 à 43 appartiennent donc entre ceux
+    numérotés 45 et 46.
+\end{itemize}
+
+Cette lecture suit l'ordre du texte là où ces notes l'établissent, et le dit
+en note à chaque endroit. Elle fait en outre un rapprochement qui est le sien :
+les problèmes « 7 » et « 8 » de la fin du volume (vues 48--49) continuent la
+numérotation et reprennent les données (latitude de 38°, amplitude de
+$30^\circ 24'$) du problème 6 de la vue 18, et sont lus à sa suite.\footnote{Aucune
+note des transcriptions ne fait ce rapprochement. La transcription de la vue 18
+dit la page blanche sous le problème 6 ; la vue 48, droite, s'ouvre sur « qui
+quidem arcus est horizontis inter æquinoctialem, et solem in tali horizonte
+orientem » (« lequel arc est celui de l'horizon entre l'équateur et le Soleil
+se levant sur cet horizon »), ce qui définit l'amplitude du problème 6 et
+pourrait achever sa dernière phrase ; ce n'est pas établi.} Pour le reste,
+l'ordre de la reliure est gardé. Le texte laisse pourtant voir un autre ordre,
+celui du livre imprimé : le commentaire de 1530 se termine par « Nunc
+adnectemus his quædam veterum opuscula ad eandem sphæricam theoriam
+spectantia », et la lettre à Spinola annonce qu'« une fois achevés les
+\emph{Sphériques} de Théodose, de Ménélas et de ton Maurolico », viendront
+« ce qui touche la sphère mobile et le premier mouvement ».\footnote{« Nous
+joindrons maintenant à ceci quelques opuscules des anciens qui regardent la
+même théorie sphérique » (vue 47, droite) ; « Absolutis itaque Theodosij
+Menelai ac Maurolyci tui Sphæricis, subiungemus ea quæ ad sphæram mobilem
+motumque primum pertinent » (même page). Dans le livre dont la copie est
+tirée, les \emph{Sphériques} précédaient donc Autolycus, Théodose et Euclide ;
+la copie, telle qu'elle est reliée, met le \emph{Discours} en tête.}
+
+\section*{Les dédicaces et l'index des travaux}
+
+\pagerange{2}{4}
+La première lettre est adressée à Juan de la Cerda, duc de Medinaceli et
+vice-roi de Sicile, et datée de Messine, août 1558.\footnote{« D. Iohanni Cerda
+Methymnensium Duci ac Siciliæ Proregi Illustrissimo Maurolycus S.D. » ;
+« Methymnensium Duci » est rendu par le titre castillan, ce qui est une
+traduction et non une lecture. Une tache d'encre entre « M.D. » et « LVIII »
+(vue 3, page de gauche).} Maurolico y raconte que ces petits livres des
+\emph{Sphériques}, « corrigés au prix de beaucoup de veilles », étaient destinés
+à Charles Quint trois ans plus tôt, et que le malheur des temps a empêché
+l'envoi ; il prie le vice-roi — qu'il a vu récemment en armes sur le rivage
+de Messine repousser la flotte turque qui ravageait la Calabre — de le
+présenter à l'empereur. Il dit en une phrase ce qu'il a voulu faire, et c'est
+la meilleure introduction au volume : la science des triangles sphériques,
+aussi nécessaire à la géométrie et à l'astronomie qu'elle est négligée dans les
+écoles, ne pouvait rester dans cet abandon ; il a donc restauré, « à partir
+d'exemplaires très corrompus », les \emph{Sphériques} de Théodose et de
+Ménélas, et y a joint « quelques veilles » de lui et d'autres pièces sur le
+même sujet.\footnote{« Sphæralium quidem triangulorum scientia, quantum erat
+Geometricis et Astronomicis Studiis necessaria tantum in Gymnasijs hactenus
+neglecta iacuit. Nec erat ulterius tantus Academiæ speculationum tolerandus
+defectus. Itaque quoad potui conatus sum ut Theodosii et Menelai sphærica ex
+corruptissimis exemplaribus instaurata in lucem prodirent. His nonnullas
+lucubrationes meas et alia quædam ad idem negotium spectantia subiunxi. » —
+« La science des triangles sphériques, autant elle était nécessaire aux études
+de géométrie et d'astronomie, autant elle est restée jusqu'ici négligée dans
+les écoles ; et il ne fallait pas tolérer plus longtemps un tel manque dans les
+spéculations de l'Académie. J'ai donc tâché, autant que je l'ai pu, que les
+\emph{Sphériques} de Théodose et de Ménélas, restaurés d'après des exemplaires
+très corrompus, paraissent au jour. J'y ai joint quelques-uns de mes travaux et
+d'autres choses touchant la même matière. »}
+
+Suit l'« Index lucubrationum Maurolyci », en deux parties. Les œuvres
+d'autrui qu'il a éditées ou corrigées (« Aliena ») : les \emph{Éléments}
+d'Euclide, « les erreurs des interprètes discutées », avec des propositions
+ajoutées sur les solides réguliers ; les \emph{Sphériques} de Théodose et de
+Ménélas ; quatre livres des \emph{Coniques} d'Apollonius ; Serenus ; les
+traités d'Archimède sur la mesure du cercle, la sphère et le cylindre, les
+isopérimètres, l'équilibre des plans, la quadrature de la parabole, les
+sphéroïdes et conoïdes, les spirales ; l'arithmétique de Jordanus ; les
+perspectives de Roger Bacon et de « Iohannes » ; les miroirs ardents de
+Ptolémée ; Autolycus, Théodose et les \emph{Phénomènes} ; les \emph{Problèmes
+mécaniques} d'Aristote.\footnote{Vue 3, pages de gauche et de droite (numéro à
+l'encre 2). « errori[bu]s » : une tache couvre la fin du mot ; « adnotatibus »
+porte un signe d'abréviation, pour « adnotationibus » ; « facilitas », à la
+fin de l'article sur les spirales, est une lecture incertaine ;
+« fabricatioq; » abrège « fabricationeque ».} Ses propres travaux (« Nostra
+vero sunt ») : des prologues sur la division des arts ; une \emph{Arithmétique
+spéculative} en deux livres, sur les formes des nombres et sur les grandeurs
+rationnelles et irrationnelles ; des démonstrations des règles de fausse
+position et de la « chose » réduites à quatre préceptes ; « deux petits livres
+de \emph{Sphériques}, où beaucoup de choses négligées par Ménélas sont
+suppléées » — ce sont, selon toute apparence, les deux livres dont ce volume
+garde la fin du premier et le second entier ; une sphère mobile ; une
+cosmographie dédiée jadis à Pietro Bembo ; les livres V et VI des
+\emph{Coniques} ; un traité des solides réguliers qui remplissent l'espace, « où
+l'ignorance d'Averroès apparaît manifestement » ; quatre livres sur l'égalité
+des moments, dont le dernier sur les centres de gravité des solides omis par
+Archimède ; les instruments ; trois livres sur les lignes horaires ; les
+\emph{Photismi} sur la lumière et l'ombre, et les \emph{Diaphana} en trois livres
+(corps transparents, arc-en-ciel, structure de l'œil et lunettes) ; des
+questions arithmétiques, géométriques et astronomiques ; des annotations et des
+canons de tables ; enfin le \emph{Compendium Mathematicæ}.\footnote{L'article
+sur les lignes horaires contient un énoncé : les lignes des heures comptées
+depuis midi coupent une certaine courbe aux points où celle-ci est touchée par
+les lignes des heures comptées depuis le coucher et le lever, et cette courbe
+est un cercle ou une section conique. Il est donné sans démonstration, et
+cette lecture ne l'examine pas. Dans l'article des annotations, un mot d'environ
+cinq lettres, à peu près « sioda », n'est pas lu. L'identification des deux
+livres de \emph{Sphériques} de l'index avec ceux du volume est de cette
+lecture.}
+
+La seconde lettre, à Charles Quint, est datée de Messine, juillet 1556 — ou
+d'une année voisine, le dernier chiffre étant surchargé.\footnote{« AD
+C[arol]um V. Imperatorem maximum Francisci Maurolyci Siculi Abbatis Epistola » ;
+le milieu du nom est effacé le long d'un pli ; la date se lit « M.D.LVI »
+suivi d'un ou deux jambages surchargés, non lus. Un mot biffé, « tantopere »
+(vue 4, page de gauche).} Elle justifie l'offrande d'un livre de sphères à un
+souverain par la sphère elle-même : la figure la plus simple, la plus égale, la
+plus forte et la plus capable, image de l'archétype, convient à qui gouverne la
+sphère terrestre ; elle nomme ceux qui ont encouragé l'entreprise, Juan de Vega,
+ancien vice-roi, et Simeone Ventimiglia, marquis de Geraci, alors stratège de
+Messine. Un poème de douze vers, « Eidem Augusto Dicatum carmen », la
+suit.\footnote{Deux colonnes de distiques. Au premier vers, « nuclatum » et
+« viverat » sont des lectures incertaines ; les fins des six vers de la colonne
+de droite passent dans le pli de la reliure et ne se voient pas. Le poème n'est
+donc pas traduit ici ; son dernier vers lisible partage l'empire entre Jupiter,
+qui a le ciel, et César, qui a « notre sphère ».}
+
+\section*{Le Discours sur la sphère}
+
+\pagerange{4}{10}
+« Maurolyci Messanensis de Sphæra Sermo » est une cosmographie complète en
+quelques pages, sans figures ni démonstrations : ce que doit savoir, en 1558,
+celui qui va lire des traités de la sphère. On le suit ici dans son ordre, en
+disant ce qui reste vrai et ce qui ne l'est plus.\footnote{Le \emph{Discours}
+commence à la page de droite de la vue 4 (numéro à l'encre 3) et s'achève sur
+« FINIS. » à la page de gauche de la vue 10. Les pages s'enchaînent sans lacune ;
+chaque transcription de page note les mots qui font la jonction.}
+
+\subsection*{La sphère, figure parfaite}
+
+Le cercle parmi les figures planes, la sphère parmi les solides, l'emportent
+par six propriétés : la simplicité (une seule ligne, une seule surface les
+bornent), la similitude des parties (tous leurs arcs, toutes leurs calottes
+sont également courbés), l'égalité (le centre est à égale distance du bord, et
+tous les diamètres sont égaux), l'identité du lieu (tournant autour du centre,
+la figure occupe toujours le même lieu), la solidité, et la capacité (à
+périmètre égal le cercle, à surface égale la sphère enferment le plus). Il
+ajoute que chacune suffirait à définir la figure.\footnote{« Quarum sex
+proprietatum quælibet satis esset ad figuræ diffinitionem : cum singula solis
+conveniant. » Au mot « æqualite », ainsi écrit pour « æqualitate », il n'y a
+pas de signe d'abréviation visible (vue 4, droite).}
+
+C'est vrai de quatre d'entre elles et faux de deux. Une courbe fermée du plan
+dont la courbure est constante est un cercle ; une courbe invariante par toutes
+les rotations autour d'un point est un cercle ; l'équidistance au centre est la
+définition même ; et parmi les courbes fermées de longueur donnée, le cercle
+seul enferme l'aire maximale — c'est l'inégalité isopérimétrique, dont les
+démonstrations complètes sont bien postérieures au feuillet.\footnote{Le
+feuillet ne démontre rien de cela et ne prétend pas le faire ; il renvoie à
+Euclide, Ptolémée, Théodose, Ménélas et Archimède pour les propriétés de la
+sphère. L'égalité de tous les diamètres, qu'il range sous l'« égalité », ne
+caractérise pas le cercle : les courbes de largeur constante, dont le triangle
+de Reuleaux, ont tous leurs « diamètres » égaux sans être des cercles ; ce
+n'est vrai que si l'on entend par diamètre une corde passant par un centre
+fixe.} En revanche, être bornée par une seule ligne ne caractérise rien — toute
+courbe fermée simple l'est —, et la « solidité » n'est pas une propriété
+géométrique. Une septième propriété, qu'on ne puisse assigner ni commencement
+ni fin, fait passer à la cosmologie : Dieu a donné cette forme au monde pour
+qu'il imite un archétype sans commencement ni fin.\footnote{« Quo fit ut non
+temere neque Sed consulto […] credamus factum ut mundus huiusmodi formam
+contraxerit » : « Sed » est écrit dans l'interligne au-dessus de « neque », qui
+n'est pas biffé. La phrase finale, « la sphère est engendrée par un demi-cercle
+tournant autour de son diamètre fixe », porte « semicirculo » écrit au-dessus
+de « diametro » biffé (vues 4 droite et 5 gauche).}
+
+\subsection*{La Terre ronde, au centre, immobile}
+
+Le ciel est sphérique et tourne circulairement : une étoile garde toujours la
+même grandeur apparente, et les phases de la Lune ne s'expliqueraient pas sans
+un astre sphérique. La Terre et la mer forment un globe : les astres se lèvent
+plus tôt pour qui est plus à l'est ; en marchant sur un méridien, la hauteur
+méridienne d'un astre et la longueur de son arc diurne varient ; et comme ces
+écarts sont proportionnels aux distances parcourues, la surface est ronde. On
+voit du haut des collines plus de mer que du rivage ; l'ombre de la Terre sur la
+Lune éclipsée est ronde ; l'équilibre des graves, qui tendent tous vers le
+centre, exige une surface dont tous les points soient à égale distance du
+centre ; les montagnes ne font pas plus à la rondeur du globe que les aspérités
+d'une grosse boule de pierre.\footnote{Dans la phrase sur la proportionnalité,
+un mot de six lettres environ, à peu près « tetium », n'est pas lu (vue 5,
+gauche) : « Cumque [\ldots] ortivum intervalla et crementa sint interiectis terræ
+spatijs proportionalia, circularem rotunditatem esse necesse est. » Vue 5,
+droite : « iam » est offert pour un mot qui se lit « ium » ; « quieta » est
+surchargé ; « stultitia » se lit plutôt « Shelhitia » au trait et n'est offert
+que par le parallèle avec « Cedat antiquorum ignorantia ».} Il écarte ceux qui
+donnaient à la terre et à la mer deux sphères ou deux centres distincts : le
+globe entier, terre et eaux ensemble, a pour centre de gravité le centre du
+monde.
+
+La Terre est au centre, puisqu'une étoile paraît de même grandeur de partout,
+qu'on voit toujours la moitié du zodiaque, que les extrémités des ombres
+équinoxiales sont en ligne droite, qu'il n'y a d'éclipse de Lune qu'à
+l'opposition, et qu'un astre se couche quand son opposé se lève ; et elle n'est
+qu'un point au regard du firmament, de sorte que la distance de l'œil au centre
+de la Terre ne change pas sensiblement les observations.
+
+Elle est immobile. Un mouvement droit lui ferait quitter le centre ; une
+rotation autour d'un axe autre que celui du monde ferait varier la hauteur du
+pôle en un même lieu, ce qu'on n'observe pas ; une rotation autour de l'axe du
+monde laisserait en arrière, vers l'occident, les nuages et les oiseaux, et une
+pierre lancée en l'air ne retomberait pas au même endroit. La deuxième raison
+est juste : une rotation diurne autour d'un autre axe se verrait. La troisième
+ne l'est pas. Les nuages, les oiseaux et la pierre partagent le mouvement de la
+Terre et le conservent ; une rotation uniforme du globe autour de l'axe du monde
+ne produit, à l'échelle de ces expériences, aucun des effets invoqués, et c'est
+bien la Terre qui tourne.\footnote{Le principe d'inertie et la relativité du
+mouvement uniforme, qui réfutent cet argument, sont formulés au siècle suivant,
+après le feuillet ; les effets réels de la rotation à cette échelle (ceux de la
+force de Coriolis) se mesurent en centimètres au plus, sans commune mesure avec
+ceux que l'argument annonce. Le feuillet dit en outre que le mouvement « est
+contraire à un corps grave et en repos », ce qui est une thèse de physique
+aristotélicienne, non un fait.}
+
+\subsection*{Les deux mouvements et l'ordre des sphères}
+
+Le ciel a deux mouvements : le premier, d'orient en occident, qui fait lever et
+coucher tous les astres ; le second, en sens contraire, visible dans le
+déplacement du Soleil et l'inégale vitesse de la Lune et des planètes. Chaque
+mouvement demandant son orbe, il faut au moins huit cieux ; un neuvième pour le
+lent mouvement des fixes vers l'orient que Ptolémée a perçu, et que Thābit a
+changé en « trépidation » ; un dixième depuis qu'Alphonse a ajouté à la
+trépidation un mouvement en longitude. L'ordre des sphères se tire de la lenteur
+du mouvement propre (la huitième sphère la plus haute, la Lune la plus basse),
+des éclipses (la Lune cache le Soleil), de la parallaxe, et de la convenance :
+le Soleil au milieu des planètes, Mars et Vénus à ses côtés.\footnote{« Dispositio
+autem et ordo sphærarum sumitur a quantite secundarij motus » : « quantite »
+porte un signe d'abréviation, pour « quantitate » (vue 6, gauche).} Tout cela
+est la cosmologie géocentrique reçue en 1558, que le feuillet expose sans
+discussion et que l'astronomie héliocentrique a remplacée.
+
+\subsection*{Les cercles de la sphère, les horizons, les ascensions}
+
+Suit le vocabulaire qu'utilisent tous les textes du volume, et qui est encore
+le nôtre : l'équateur, grand cercle perpendiculaire à l'axe du mouvement diurne ;
+l'écliptique (le « zodiaque »), qui le coupe obliquement et touche les deux
+tropiques ; les colures, par les pôles du monde et, l'un, par les pôles de
+l'écliptique et les solstices, l'autre par les équinoxes ; l'horizon, dont le
+pôle est le zénith, droit s'il passe par les pôles du monde, oblique sinon ; le
+méridien, le premier vertical ; les cercles de latitude (par les pôles de
+l'écliptique), de déclinaison (par les pôles de l'équateur) et de hauteur (par
+le zénith). La latitude d'un lieu est l'arc du méridien entre le zénith et
+l'équateur, égal à la hauteur du pôle ; sa longitude se compte sur l'équateur
+depuis le méridien de l'extrême occident.\footnote{« Circulus altitudinis per
+polos \emph{altitudinis} horizontis » : le premier « altitudinis » est biffé
+(vue 6, gauche).}
+
+L'horizon droit coupe tous les parallèles en deux moitiés : tout astre s'y lève
+et s'y couche, et l'équinoxe y est perpétuel. L'horizon oblique touche deux
+parallèles égaux, entre lesquels et les pôles les astres ne se couchent jamais
+ou ne se lèvent jamais ; il coupe les autres inégalement, les arcs diurnes étant
+plus grands du côté du pôle visible, et deux parallèles symétriques par rapport
+à l'équateur ont l'arc diurne de l'un égal à l'arc nocturne de l'autre. Entre les
+tropiques, le Soleil passe deux fois l'an au zénith et l'écliptique est deux
+fois par jour perpendiculaire à l'horizon. Là où le pôle de l'horizon est sur le
+cercle arctique, le plus long jour vaut vingt-quatre heures, avec « un instant »
+pour nuit ; plus près du pôle, le Soleil reste levé tant qu'il parcourt un arc
+d'écliptique retranché, « autant de jours que de degrés, autant de mois que de
+signes » ; au pôle, six mois de jour et six de nuit.\footnote{« instans » est
+offert pour un mot qui se lit à peu près « insterps », par le parallèle « et
+instans pro nocte » de la vue 12 ; « circulus » est écrit pour « circulum ».
+« Autant de jours que de degrés » suppose le Soleil avançant d'un degré par
+jour, ce qui est vrai à un peu plus d'un pour cent près (vue 6, droite).}
+
+Les parties de l'écliptique ne montent pas uniformément, puisque l'écliptique
+tourne autour d'un axe qui n'est pas le sien. L'\emph{ascension} d'un arc
+d'écliptique est l'arc d'équateur qui se lève avec lui ; elle est droite sur
+l'horizon droit, oblique sur l'horizon oblique ; la \emph{descension} est
+l'arc d'équateur qui se couche avec lui. Les énoncés du feuillet sont exacts :
+sur l'horizon droit, quatre arcs également distants des équinoxes ont même
+ascension, et un arc plus proche des solstices en a une plus grande ; deux arcs
+diamétralement opposés se lèvent quand l'autre se couche ; pour tout arc,
+ascension et descension obliques ont une somme indépendante du lieu (le double
+de l'ascension droite, puisque la différence ascensionnelle s'ajoute à l'une et
+se retranche de l'autre) ; un arc symétrique par rapport à un solstice a même
+ascension et même descension ; dans nos latitudes nord, un arc de la moitié
+ascendante de l'écliptique (du Capricorne aux Gémeaux) a l'ascension plus petite
+et la descension plus grande. Sur l'horizon droit deux demi-cercles
+quelconques de l'écliptique se lèvent en temps égaux ; sous le cercle arctique,
+le demi-cercle ascendant se lève en un instant et se couche en vingt-quatre
+heures.\footnote{La somme « conficiunt eumdem arcum » est lue ici « le même arc
+en tout lieu » ; c'est l'interprétation qui rend l'énoncé vrai. Avec
+$\alpha$ l'ascension droite et $\Delta$ la différence ascensionnelle d'un
+point, l'ascension oblique est $\alpha-\Delta$ et la descension oblique
+$\alpha+\Delta$ (latitude nord) : pour un arc, la somme vaut $2\,\delta\alpha$.}
+
+\subsection*{Levers et couchers relatifs au Soleil}
+
+Un astre qui se lève au lever du Soleil fait un lever matinal, s'il se couche à
+ce moment un coucher matinal ; au coucher du Soleil, les deux sont vespéraux ;
+pour une étoile de l'écliptique, le lever matinal et le coucher vespéral tombent
+le même jour, de même le lever vespéral et le coucher matinal.\footnote{« stella
+oriens fuit ortum » : le sens demande « facit » (vue 7, gauche).} Les astres plus
+lents que le Soleil cessent d'être vus le soir quand il les rejoint (dernière
+apparition vespérale), puis reparaissent le matin (première apparition
+matinale) ; la Lune, plus rapide, fait l'inverse : dernière apparition le
+matin, première le soir.\footnote{Le feuillet écrit « postrema fulsio
+vespertina » là où le parallèle avec ce qui précède demande « prima » ;
+« vespertina » est repassé à l'encre.} Il ajoute que la Lune a « parfois » été vue
+les deux fois le même jour. Cela exigerait qu'elle soit assez loin du Soleil
+pour être visible — au moins sept degrés environ — le matin puis le soir d'un
+même jour, soit un déplacement relatif d'au moins quatorze degrés en moins
+d'un jour, à la limite extrême de ce que permet son mouvement (douze à quinze
+degrés par jour) : l'observation serait tout au plus exceptionnelle, et rien sur
+le feuillet ne l'établit.\footnote{La limite d'environ 7° d'élongation au-dessous
+de laquelle le croissant n'est pas visible (limite de Danjon) est une mesure du
+XX\textsuperscript{e} siècle. Voir aussi, plus bas, la section sur la visibilité des astres, où le feuillet
+tire trois degrés d'un calcul qui ne tient pas.}
+Vénus et Mercure, tantôt plus rapides tantôt plus lents que le Soleil, ont les
+deux sortes d'apparitions ; les étoiles proches du pôle visible, à cause de la
+longueur de leur arc diurne, peuvent être vues le matin avant d'avoir cessé de
+l'être le soir. Les signes « physiques » sont sous-tendus par les côtés de
+l'hexagone inscrit ; divisés en deux, ils donnent les douze signes de trente
+degrés, comme l'année a douze mois de trente jours.
+
+\subsection*{Le jour, les heures, les habitants, les climats}
+
+Le jour naturel est le temps d'une révolution de l'équateur augmentée de l'arc
+correspondant au mouvement du Soleil pendant ce temps ; ces jours sont inégaux
+(les jours « vulgaires » ou apparents) ; en répartissant également sur l'année
+le cercle entier que font leurs suppléments, on obtient les jours égaux,
+« astronomiques », qui servent au calcul des mouvements. Leur différence est
+l'« équation des jours » — notre équation du temps.\footnote{« Cumque in toto anno
+additamenta additamenta diurna collecta perficiant circulum » : « additamenta »
+est écrit deux fois de suite ; « vulg. » en fin de ligne, puis « Inæquales »
+(vue 7, droite).} Le feuillet la dit « à soustraire » du temps vulgaire ; c'est
+vrai si on la compte à partir de sa valeur extrême, faute de quoi elle change de
+signe au cours de l'année, entre environ $-14$ et $+16$ minutes.
+
+L'heure équinoxiale est la vingt-quatrième partie du jour ; l'heure temporelle,
+la douzième partie du jour ou de la nuit. Les périèques habitent le même
+parallèle ; les antèques des parallèles égaux et opposés ; les antipodes, qui
+sont en outre diamétralement opposés, ont le même horizon et voient chacun ce
+que l'autre ne voit pas.\footnote{« dispõo » abrège « dispositio » ;
+« stantes » est une lecture incertaine (vue 7, droite).} Le jour se compte à
+partir du méridien et non de l'horizon, parce que deux méridiens se succèdent
+toujours au même intervalle de temps, ce que ne font deux horizons que pour des
+périèques. Ptolémée distingue les climats par des accroissements d'une
+demi-heure du plus long jour, les parallèles par des quarts d'heure.
+
+\subsection*{Les modèles des planètes}
+
+L'inégalité des mouvements planétaires est « sauvée » par des excentriques et
+des épicycles, qui rendent compte aussi des stations, des rétrogradations et des
+latitudes. Le feuillet résume les modèles de Ptolémée : pour le Soleil, un
+excentrique sans épicycle ou, ce qui revient au même, un concentrique portant
+un épicycle ; pour les planètes supérieures et Vénus, un équant situé au-delà du
+centre du déférent d'autant que celui-ci est au-delà du centre du monde ; pour
+Mercure, un centre du déférent tournant sur un petit cercle ; pour la Lune, un
+centre du déférent tournant en sens contraire de l'épicycle, et l'apogée moyen
+de l'épicycle repéré depuis le point le plus bas de ce petit cercle. Les
+planètes supérieures sont écartées de l'apogée de leur épicycle autant que le
+Soleil l'est de l'épicycle, et les inférieures ont le même mouvement moyen que
+le Soleil ; les équations se prennent dans les tables par le centre et
+l'argument, corrigées par les minutes proportionnelles.\footnote{« per quos
+salvantur salvantur » : le verbe est écrit deux fois (vue 8, gauche) ; « autem
+autem » en fin et début de ligne (vue 8, droite) ; les deux dernières lignes de
+la vue 7, droite, sont d'une encre plus pâle ; un passage biffé à la vue 8,
+« remisso motu directo, redit ad directionem », est ensuite réécrit à sa place.}
+
+Les éclipses ont lieu aux nœuds ou près d'eux, entre des limites où elles sont
+possibles et d'autres, plus étroites, où elles sont nécessaires ; pour le Soleil,
+tout le calcul se fait sur les lieux vus, corrigés de la parallaxe. Les latitudes
+des planètes se composent de l'inclinaison du déférent et de celles de
+l'épicycle ; pour Vénus et Mercure, de la « déviation » du déférent, de
+l'« inclinaison » et de la « réflexion » de l'épicycle, avec les règles de
+signe que le feuillet détaille.\footnote{Dans la description de l'épicycle des
+planètes supérieures, un mot avant « dictum diametrum », à peu près « sontim »,
+n'est pas lu (vue 8, droite). À la vue 9, gauche, une phrase entière sur
+Vénus et Mercure est biffée puis réécrite. La dernière phrase de la section,
+qui tire la supériorité de Vénus sur Mercure de ce que « le septentrional
+précède en dignité l'austral », n'est pas un argument astronomique.} Tout cela
+est l'astronomie des \emph{Tables alphonsines}, remplacée depuis par les
+orbites elliptiques et la gravitation ; on ne le transpose pas en notations
+modernes, parce qu'il n'y a pas d'énoncé moderne qui lui corresponde.
+
+\subsection*{La huitième sphère}
+
+La huitième sphère, outre le mouvement diurne, en a deux : la
+« trépidation », par laquelle les extrémités du diamètre qui joint le début du
+Bélier et celui de la Balance de la huitième sphère parcourent deux petits
+cercles centrés sur les mêmes points de la neuvième, en 7000 ans ; et le
+mouvement en longitude, dû à la neuvième sphère, en 49\,000 ans. L'équation de
+trépidation monte au plus à 9°, le rayon du petit cercle ; c'est, dit-il, le
+système d'Alphonse que suit l'académie commune des astronomes. Le mouvement réel
+auquel correspondent ces constructions est la précession des équinoxes, qui est
+uniforme à l'échelle historique, d'environ $50''$ par an, soit un tour en
+quelque 26\,000 ans ; il n'y a pas de trépidation.
+
+Suivent un éloge du Soleil, qui règle les planètes et donne au temps ses degrés,
+ses mois et ses années ; les raisons des noms des constellations (la forme, la
+Flèche ; l'influence, l'Autel qui fait les prêtres ; la nature, le Scorpion ;
+l'histoire, Hercule et Persée ; la faveur des princes, la Chevelure de
+Bérénice), et leurs variantes selon Hygin, Ptolémée et Alphonse ; et la division
+des douze maisons, que Regiomontanus fait sur l'équateur, Campanus sur le
+premier vertical, et qu'il vaudrait mieux, selon lui, rapporter à
+l'écliptique.\footnote{« Quod ab illis Aquila ab \emph{illis} his vultur
+volans » : « his » est écrit au-dessus de « illis » biffé (vue 9, droite).}
+
+\subsection*{Les rencontres de deux mobiles}
+
+Un seul passage du \emph{Discours} est un théorème, et il est juste. Deux mobiles
+à vitesses constantes $v_1 > v_2$, séparés par une distance $d$, se rejoignent
+après le temps $d/(v_1-v_2)$ s'ils vont dans le même sens, $d/(v_1+v_2)$ s'ils vont
+en sens contraires. Sur un cercle, si les vitesses angulaires sont dans le
+rapport $p:q$ en plus petits termes (le feuillet dit « les plus petits nombres
+représentant la proportion des mouvements »), les rencontres ont lieu en
+$p-q$ points également espacés dans le premier cas, $p+q$ dans le second, et
+toujours aux mêmes points.\footnote{En effet, entre deux rencontres le premier
+mobile parcourt $p/(p-q)$ de tour (resp. $p/(p+q)$), et comme $p$ est premier
+avec $p\mp q$, les rencontres successives visitent exactement $p\mp q$ points
+équidistants. L'hypothèse que $p$ et $q$ sont premiers entre eux est celle des
+« plus petits termes ».} Si les vitesses sont incommensurables, les points de
+rencontre ne se répètent jamais — ils sont même denses sur le cercle, ce que le
+feuillet ne dit pas. D'où sa conclusion : si les mouvements célestes sont
+incommensurables, les platoniciens se trompent en croyant que le ciel revient
+un jour à la même disposition.
+
+\subsection*{Comment chaque grandeur se trouve}
+
+Le \emph{Discours} se termine par l'inventaire des observations qui fixent les
+paramètres : l'obliquité par les hauteurs méridiennes du Soleil ; l'entrée du
+Soleil à l'équinoxe par sa hauteur méridienne ; la longueur de l'année par deux
+observations ; l'excentricité et l'apogée du Soleil par trois lieux ; le
+mouvement de la Lune et de ses nœuds par des couples d'éclipses ; le diamètre de
+l'épicycle lunaire par trois éclipses ; la distance de la Lune par la
+parallaxe, et de là, par une éclipse de Soleil et les diamètres apparents, les
+autres distances et les vraies grandeurs ; les révolutions des planètes par des
+retours au même lieu et à la même distance du Soleil ; l'inclinaison du
+déférent lunaire par la hauteur méridienne de la Lune quand ses nœuds sont aux
+équinoxes. « Motus instauratis observationibus rectificantur, et radix
+statuitur. FINIS. »\footnote{« Les mouvements sont rectifiés par des observations
+renouvelées, et l'on fixe la racine » (la position à une époque donnée).
+« radix » se lit à peu près « ruedix », sans certitude (vue 10, gauche).}
+
+\section*{Autolycus, De la sphère en mouvement}
+
+\pagerange{48}{48}
+Le livre d'Autolycus commence à la vue 48 et se poursuit à la vue 10 ; on le
+lit ici dans cet ordre.\footnote{La page de gauche de la vue 48 porte le titre
+« Autolyci de sphæra quæ movetur ex traditione Maurolyci. Liber. », la
+définition et les propositions 1 à 4, et s'arrête sur « et per primam huius
+puncta singula » ; la page de droite de la vue 10 (numéro à l'encre 9) s'ouvre
+sur « suos seorsum parallelos, semper in alterutro hæmisphæriorum describent »
+et continue avec les propositions 5 à 12. Le raccord est établi par les
+transcriptions des deux lots, qui gardent l'ordre des vues ; le titre de la
+vue 2 place de même Autolycus après Ménélas, et Théodose note plus loin que sa
+première proposition « est à peu près la quatrième de la sphère
+d'Autolycus ».} C'est la cinématique de la rotation uniforme d'une sphère
+autour d'un axe, rapportée à un grand cercle fixe, l'horizon. Maurolico donne
+chaque énoncé suivi d'une preuve de deux ou trois lignes renvoyant aux
+\emph{Sphériques} de Théodose.
+
+\emph{Définition.} Des points d'une sphère se meuvent uniformément s'ils
+parcourent en temps égaux des arcs égaux et semblables ; un point mû
+uniformément sur une ligne parcourt des longueurs proportionnelles aux
+temps.\footnote{« eandem habebit rationem tempus tempus » : « tempus » en fin de
+ligne puis en début de ligne, sans « ad ». « Proposito 3. » est écrit ainsi
+dans la marge ; la fin d'« hæmisphæriorum » est surchargée (vue 48, gauche).}
+
+\begin{enumerate}
+  \item[1.] Si la sphère tourne uniformément autour de son axe, tout point
+    autre que les pôles décrit un cercle perpendiculaire à l'axe, ayant les
+    mêmes pôles que la sphère.
+  \item[2.] Tous les points parcourent en un même temps des arcs semblables de
+    leurs parallèles (c'est-à-dire des arcs de même angle au centre).
+  \item[3.] Réciproquement, les arcs de parallèles parcourus en un même temps
+    sont semblables.
+  \item[4.] Si l'horizon fixe est perpendiculaire à l'axe, aucun point ne se
+    lève ni ne se couche : chacun décrit son parallèle dans l'un des deux
+    hémisphères.
+\end{enumerate}
+
+\subsection*{Suite du livre}
+
+\pagerange{10}{11}
+\begin{enumerate}
+  \item[5.] Si l'horizon passe par les pôles, tout point se lève et se couche,
+    et reste autant de temps au-dessus qu'au-dessous : l'horizon coupe chaque
+    parallèle en deux moitiés.\footnote{Dans les renvois, « per 20. primi
+    Sphæricorum Theodosij », le 2 de cette main est un petit trait en forme de
+    z, distinct du 1 (vue 10, droite).}
+  \item[6.] Un horizon oblique touche deux parallèles égaux ; celui qui est du
+    côté du pôle visible est toujours visible, l'autre toujours caché.
+  \item[7.] Les parallèles se lèvent et se couchent toujours aux mêmes points
+    de l'horizon, sous la même inclinaison.
+  \item[8.] Tout grand cercle tangent aux deux parallèles que touche l'horizon
+    coïncide avec l'horizon à un instant de la révolution.\footnote{« in sphæra
+    in sphæra » est écrit deux fois.}
+  \item[9.] De deux points qui se lèvent ensemble, le plus proche du pôle
+    visible se couche le plus tard ; de deux points qui se couchent ensemble,
+    le plus proche du pôle visible s'est levé le premier.
+  \item[10.] Un grand cercle passant par les pôles est deux fois perpendiculaire
+    à l'horizon oblique à chaque révolution.
+  \item[11.] Un grand cercle tangent à des parallèles au moins égaux à ceux que
+    touche l'horizon se lève et se couche sur tout l'arc d'horizon compris
+    entre les parallèles qu'il touche.\footnote{« ortus et occasus
+    \emph{fiet} facit » : « fiet » biffé (vue 11, gauche).}
+  \item[12.] Si un cercle fixe coupe toujours en deux un cercle entraîné, et que
+    ni l'un ni l'autre n'est perpendiculaire à l'axe ni ne passe par les pôles,
+    ce sont deux grands cercles.
+\end{enumerate}
+
+Les énoncés sont exacts. La preuve du dernier procède par cas sans justifier le
+premier : que deux petits cercles ne puissent se couper toujours en deux se
+tire, en termes modernes, de ce qu'un plan ne coupe un cercle en deux moitiés
+que s'il passe par son centre, ce que le mouvement du cercle entraîné rend
+impossible à tout instant.\footnote{Le premier cas est écrit « Nam si uterque sit
+circulus \emph{m} maior », après un début de mot biffé ; le raisonnement demande
+« minor ». « ad ad rectos » est répété à la ligne (vue 11, gauche).}
+
+\section*{Théodose, Des habitations}
+
+\pagerange{11}{12}
+« Theodosii De Habitationibus ex traditione Maurolyci » tire les conséquences
+de la cinématique précédente pour des observateurs placés en divers lieux. Les
+douze propositions, dans nos termes :
+
+\begin{enumerate}
+  \item[1.] Au pôle nord, le même hémisphère est toujours visible ; aucun astre
+    ne se lève ni ne se couche (Autolycus 4).
+  \item[2.] À l'équateur, tout astre se lève et se couche, et reste douze heures
+    au-dessus de l'horizon (Autolycus 5).\footnote{Sur les vues 11, droite, et
+    12, « Propositio » et son numéro sont écrits dans la marge de droite.}
+  \item[3.] Entre les tropiques, l'écliptique devient perpendiculaire à
+    l'horizon deux fois par jour ; sous un tropique, une seule fois, quand le
+    point solsticial passe au zénith.
+  \item[4.] Là où le zénith est éloigné du pôle autant que le tropique l'est de
+    l'équateur — sur le cercle polaire —, six signes se lèvent à la fois, en un
+    instant, une fois par révolution : l'écliptique se confond alors avec
+    l'horizon.
+  \item[5.] À l'équateur, quand les points solsticiaux sont sur l'horizon,
+    l'écliptique passe par le zénith, et le méridien coupe en deux sa moitié
+    visible.
+  \item[6.] À l'équateur, tous les demi-cercles de l'écliptique se lèvent en des
+    temps égaux.\footnote{L'énoncé s'arrête au bas de la vue 11, droite, sur
+    « similiter etiam », et la page suivante, verso du même feuillet, commence
+    avec la proposition 7 : la fin de l'énoncé et la démonstration ne sont pas
+    écrites. On donne ce que l'énoncé écrit dit ; la suite, qui porterait
+    vraisemblablement sur les couchers, n'est pas suppléée.}
+  \item[7.] Sous un même parallèle, un astre se lève et se couche plus tôt au
+    lieu le plus oriental, du même intervalle de temps.
+  \item[8.] Sous un même méridien, un astre de déclinaison nord reste plus
+    longtemps sur l'horizon pour l'observateur le plus au nord, et se lève plus
+    tôt pour lui d'autant qu'il se couche plus tard ; pour un astre de
+    déclinaison sud, c'est l'inverse.
+  \item[9.] Pour deux lieux qui ne sont ni sur un même parallèle ni sur un même
+    méridien, les arcs diurnes restent inégaux comme en 8, et les levers et
+    couchers ne sont plus décalés d'un même intervalle comme en 7 : le lever
+    est avancé de la différence des longitudes augmentée de celle des
+    différences ascensionnelles, le coucher de la différence des longitudes
+    diminuée de celle-ci.\footnote{Le feuillet dit seulement qu'il s'ensuit
+    « l'inégalité des arcs, mais non l'anticipation des levers et des couchers »
+    (« Non autem ortuum et occasuum anticipatio ») ; pris à la lettre ce serait
+    faux, puisque les levers sont en général décalés. On donne l'énoncé exact.
+    « inclinatũ » est écrit avec un trait sur le u (vue 12, gauche).}
+  \item[10.] Au pôle, le Soleil reste six mois sur l'horizon et six mois
+    au-dessous, si l'on néglige, comme le feuillet le dit expressément,
+    l'inégalité de son mouvement.
+  \item[11.] Du pôle au cercle polaire, ce jour continu décroît de six mois à
+    vingt-quatre heures : autant de mois que de signes, autant de jours que de
+    degrés dans l'arc d'écliptique qui ne se couche pas.
+  \item[12.] Sur le cercle polaire, le plus long jour est de vingt-quatre heures
+    avec un instant de nuit, et la plus longue nuit de même. En tout lieu, le
+    temps total de jour sur l'année est d'une demi-année — continu au pôle,
+    fractionné ailleurs.
+\end{enumerate}
+
+La dernière affirmation est vraie dans le modèle que pose la proposition 10 :
+Soleil ponctuel, sans réfraction, parcourant l'écliptique d'un mouvement
+uniforme. Deux points diamétralement opposés de l'écliptique ont des
+déclinations opposées, donc l'arc diurne de l'un égal à l'arc nocturne de
+l'autre, et le Soleil passe autant de temps sur l'un que sur l'autre. Avec le
+mouvement réel du Soleil, plus lent en été boréal, l'hémisphère nord reçoit un
+peu plus d'heures de jour que l'hémisphère sud.\footnote{Le feuillet s'appuie sur
+« 23 secundi Sphæricorum Theodosii » pour l'égalité des arcs « coalternes » ;
+l'hypothèse du mouvement uniforme est posée à la proposition 10 (« Supponitur
+enim solis motus æqualis, ubi de arcubus primi motus agitur »).}
+
+\section*{Les Phénomènes d'Euclide}
+
+\pagerange{13}{15}
+Les \emph{Phénomènes} tirent de l'observation la forme du monde et étudient les
+levers et couchers des signes. Le préambule conclut de ce que les étoiles restent
+à distance constante et décrivent des parallèles que le monde est une sphère
+tournant uniformément autour d'un axe, et définit horizon, méridien, équateur,
+zodiaque et tropiques ; l'horizon est un grand cercle, puisqu'il coupe toujours
+un grand cercle en deux.\footnote{Une tache d'encre sur « et » (vue 13, gauche).}
+
+\begin{enumerate}
+  \item[1.] La Terre est au centre du monde : visant avec la même dioptre deux
+    signes opposés, l'un au lever, l'autre au coucher, puis deux autres, on
+    obtient deux diamètres du zodiaque qui se coupent au lieu de
+    l'observateur.\footnote{« mũdo » est abrégé pour « mundo ».}
+  \item[2.] Un cercle passant par les pôles est deux fois par révolution
+    perpendiculaire à l'horizon, et l'écliptique deux fois perpendiculaire au
+    méridien. L'écliptique n'est jamais perpendiculaire à l'horizon si le zénith
+    est hors de la zone comprise entre les tropiques ; elle l'est deux fois par
+    jour si le zénith est entre les tropiques, une fois s'il est sur un
+    tropique.\footnote{Le feuillet écrit « quoniam polus mundi fuerit extra
+    tropicos », là où la démonstration qui suit (« Ibi enim Zodiacus nunquam
+    transit per polos horizontis hoc est per verticem loci ») demande le pôle de
+    l'horizon, c'est-à-dire le zénith ; et « Si vero polus horizontis in tropico
+    fuerit, Zodiacus circulus ad horizontem bis rectus erit », alors que la
+    preuve, où le parallèle du zénith coupe l'écliptique en deux points, ne vaut
+    que pour un zénith strictement entre les tropiques. Sur le tropique, ce
+    parallèle est tangent et l'écliptique n'est perpendiculaire à l'horizon
+    qu'une fois par jour, comme le dit la proposition 3 des
+    \emph{Habitations}.}
+  \item[3.] Une étoile fixe se lève et se couche toujours aux mêmes points de
+    l'horizon.
+\end{enumerate}
+
+Sous le titre « Additio duarum propositionum », Maurolico en ajoute six, qui
+sont celles de l'horizon oblique :\footnote{Le titre annonce deux propositions ;
+la page en compte six, numérotées 4 à 9 (vue 13, droite).}
+
+\begin{enumerate}
+  \item[4.] Des astres situés sur un même cercle passant par les pôles se lèvent
+    et se couchent ensemble sur l'horizon droit.
+  \item[5.] Sur un horizon oblique, les astres situés sur la moitié orientale
+    d'un grand cercle tangent au plus grand des parallèles toujours visibles se
+    lèvent ensemble ; ceux de la moitié occidentale se couchent ensemble.
+  \item[6.] Pour des astres situés sur un grand cercle qui ne touche ni ne coupe
+    ce parallèle, celui qui se lève le premier se couche le premier.\footnote{Le
+    feuillet répète la même moitié d'énoncé (« quæ prius oriuntur, prius
+    occidunt : et quæ prius oriuntur prius occidunt ») ; la démonstration
+    établit l'énoncé donné ici. « occidentalibus » est écrit là où la
+    construction attend un singulier.}
+  \item[7.] Pour des astres situés sur un grand cercle qui coupe ce parallèle,
+    celui qui est le plus au nord se lève le premier et se couche le dernier —
+    « Euclide parle pour notre situation » ; chez les antèques, c'est l'astre le
+    plus proche de leur pôle.
+  \item[8.] Deux astres diamétralement opposés sur un grand cercle se lèvent
+    quand l'autre se couche.
+  \item[9.] Le zodiaque se lève sur toute la partie de l'horizon comprise entre
+    les tropiques ; et si le plus grand parallèle toujours visible n'est pas plus
+    petit que le tropique — latitude au moins égale à celle du cercle polaire —,
+    il se lève sur toute la moitié orientale de l'horizon, qui est alors tout
+    entière entre les tropiques.\footnote{« minor » est surchargé d'encre et
+    « orientalem » couvert d'une tache au milieu (vue 14, gauche). La lecture
+    « non minor » est celle qui rend la démonstration juste : l'horizon a pour
+    déclinaisons extrêmes $\pm(90^\circ-\varphi)$, comprises entre les
+    tropiques dès que $\varphi \ge 90^\circ-\varepsilon$.}
+\end{enumerate}
+
+Les propositions d'Euclide reprennent ensuite :
+
+\begin{enumerate}
+  \item[10.] Des signes égaux se lèvent et se couchent sur des segments
+    d'horizon inégaux : les plus grands près de l'équateur, les plus petits
+    près des tropiques ; égaux pour des signes également distants de
+    l'équateur.\footnote{Le renvoi est écrit « Hoc autem ostendit Theodosius in
+    propositionibus 3. 5. 7 et 9. tertii Sphæricorum Menelai aut in 46 2. » :
+    Théodose et Ménélas sont confondus, et « 46 2 » semble renvoyer à la
+    proposition 46 d'un livre II.}
+  \item[11.] Les demi-cercles de l'écliptique qui commencent en des parallèles
+    différents se lèvent en des temps inégaux, le plus long étant celui qui
+    commence avec le Cancer, le plus court celui qui commence avec le
+    Capricorne (pour l'hémisphère nord) ; deux demi-cercles commençant sur un
+    même parallèle se lèvent en temps égaux. Le temps de lever d'un demi-cercle
+    est en effet l'arc diurne de son point de départ.
+  \item[12.] Si deux demi-cercles ayant un arc commun se lèvent en des temps
+    différents, les arcs restants se lèvent en des temps qui diffèrent d'autant ;
+    s'ils se lèvent en temps égaux, les restes aussi.\footnote{« subtrahitur etiam
+    eius tempus » : « eius » rend un mot abrégé surmonté d'un trait, qui se lit
+    à peu près « eoc » (vue 14, droite).}
+  \item[13.] Deux arcs égaux et opposés de l'écliptique : pendant que l'un se
+    lève, l'autre se couche.\footnote{« reliqua \emph{occidit} oritur » : le
+    premier verbe biffé.}
+\end{enumerate}
+
+Puis « Additio trium propositionum » :
+
+\begin{enumerate}
+  \item[14.] Pour deux horizons « semblables » (tous deux droits, ou de même
+    latitude), un astre se lève, culmine et se couche plus tôt sur l'horizon le
+    plus oriental, du même intervalle : trente degrés d'équateur font deux
+    heures.
+  \item[15.] Les arcs d'équateur compris entre les moitiés orientales de tels
+    horizons se lèvent avec les arcs d'écliptique compris entre les mêmes
+    moitiés.
+  \item[16.] Sur l'horizon droit, des arcs égaux de l'écliptique se lèvent (et
+    se couchent) en un temps d'autant plus long qu'ils sont plus près des
+    solstices, et en temps égaux s'ils sont également distants d'un équinoxe.
+    \emph{Corollaire} : dans la sphère droite, les Gémeaux, le Cancer, le
+    Sagittaire et le Capricorne se lèvent dans les temps les plus longs, le
+    Taureau, le Lion, le Scorpion et le Verseau dans des temps moindres, les
+    Poissons, le Bélier, la Vierge et la Balance dans les plus courts.
+  \item[17.] Sur un horizon oblique boréal, parmi les arcs égaux de la moitié de
+    l'écliptique qui commence au Cancer, celui qui touche le tropique se couche
+    dans le temps le plus long, puis les suivants dans des temps décroissants
+    jusqu'à l'équinoxe ; des arcs également distants de l'équinoxe se couchent
+    en temps égaux. \emph{Corollaire} : sur notre horizon, le Cancer et le
+    Sagittaire se couchent dans les temps les plus longs, le Lion et le Scorpion
+    dans des temps moindres, la Vierge et la Balance dans les plus courts.
+  \item[18.] Parmi les arcs égaux de la moitié qui commence au Capricorne, celui
+    qui touche le tropique se lève dans le temps le plus long, jusqu'à
+    l'équinoxe dans des temps décroissants. \emph{Corollaire} : le Capricorne et
+    les Gémeaux se lèvent dans les temps les plus longs, le Verseau et le
+    Taureau dans des temps moindres, les Poissons et le Bélier dans les plus
+    courts.
+\end{enumerate}
+
+Les trois corollaires sont exacts. On l'a vérifié en calculant les ascensions
+obliques par signe à la latitude de Messine ($38^\circ$, obliquité
+$23^\circ 30'$) : les signes se lèvent en temps égaux deux à deux, symétriquement
+par rapport à l'équinoxe (Bélier et Poissons $18{,}7^\circ$, Taureau et Verseau
+$22{,}4^\circ$, Gémeaux et Capricorne $29{,}0^\circ$, Cancer et Sagittaire
+$35{,}4^\circ$), et un signe se couche dans le temps où se lève le signe
+opposé.\footnote{Le temps de lever est compté ici en degrés d'équateur. Au
+corollaire de la proposition 18, la transcription remarque que « Gemini » et
+« Taurus » sont écrits là où le parallèle avec le corollaire précédent
+attendrait « Sagittarius » et « Scorpius ». Le feuillet a raison : pour les
+\emph{levers}, les Gémeaux vont avec le Capricorne et le Taureau avec le Verseau ;
+c'est pour les \emph{couchers} que le Sagittaire va avec le Cancer.} Ils ne
+comparent que les signes d'une même moitié : à $38^\circ$, le Lion et le Scorpion
+($37{,}5^\circ$) se lèvent un peu plus lentement que la Vierge et la Balance
+($37{,}1^\circ$), de sorte qu'un ordre énoncé sur le zodiaque entier serait
+faux ; le feuillet ne l'énonce pas.\footnote{Pour les signes « au-delà de
+l'équateur », le feuillet dit de substituer le Capricorne, le Verseau et les
+Poissons au Cancer, au Lion et à la Vierge. Dans la démonstration de la
+proposition 17, « et occidunt » à la fin de l'énoncé est écrit ainsi ; les
+renvois sont « per 6. et 10 tertij Sphæricorum Theod. et 46. Sphæricorum
+Menelai ». « horizontib\textsuperscript{9} » abrège « horizontibus » (vue 15,
+droite).}
+
+Maurolico conclut en une phrase qui dit sa méthode : il a démontré ainsi les
+\emph{Phénomènes} d'Euclide, avec l'aide des \emph{Sphériques} de Ménélas et de
+Théodose, « beaucoup plus facilement que l'auteur ne l'avait fait », d'où il
+paraît combien les \emph{Sphériques} sont non seulement commodes, mais
+nécessaires pour démontrer les rudiments de l'astronomie.\footnote{« Sic
+Euclidis Phoenomena et Menelai et Sphæricorum Theodosii adiumentis ubi multo
+facilius quam autor fecerat demonstravimus, unde patet quanta sit non solum
+commoditas sed etiam necessitas Sphæricorum in astronomicis rudimentis
+demonstrandis » (vue 15, droite).}
+
+\section*{Les habitants de la Terre, et la visibilité des astres}
+
+\pagerange{15}{16}
+« Habitationum collatio » classe les habitants d'après ce qu'ils voient du ciel.
+Les périèques, sous le même parallèle, ont même hauteur du pôle, mêmes jours et
+mêmes saisons ; les antèques, sous des parallèles égaux et opposés, ont les
+saisons inversées et des ombres méridiennes égales mais dirigées en sens
+contraires ; les antipodes, en outre diamétralement opposés, ont le même horizon
+et voient se lever ce qui se couche pour les autres. Les amphisciens, entre les
+tropiques, ont l'ombre de midi tantôt au nord tantôt au sud, et « deux étés et
+deux hivers » ; les périsciens, au pôle, voient l'ombre tourner tout autour
+d'eux.\footnote{Le feuillet donne ensuite « Antiscij sunt perioeci quibus quidem
+æqualis et eodem versus meridiana umbra flectitur » et « Heteroscij sunt qui et
+Antoeci quibus in diversum proijcitur umbra meridiana », puis un second sens de
+« hétérosciens » : ceux dont l'ombre de midi tombe toujours du même côté, hors des
+tropiques. C'est ce second sens qui est l'usage courant ; « antisciens » désigne
+d'ordinaire les habitants de part et d'autre de l'équateur dont les ombres de
+midi sont opposées, ce que le feuillet appelle ici hétérosciens (vue 16,
+gauche).}
+
+« De Astrorum fulsionibus » corrige la notion d'intervalle de visibilité : la
+distance qui sépare du Soleil un astre au moment de sa première ou de sa
+dernière apparition ne se mesure pas sur le zodiaque, mais sur le cercle vertical,
+comme abaissement du Soleil sous l'horizon, et elle n'est pas la même pour tous
+les astres, contrairement à ce qu'Autolycus a supposé : plus l'astre est
+lumineux, plus elle est petite. Ceux qui disent la Lune invisible à moins de
+14° du Soleil se trompent ; Pline a tort d'en conclure que la Lune est plus
+petite que les autres astres, car un grand intervalle dénote un éclat apparent
+faible, non une petite taille. Tout cela est juste.
+
+Il en tire un calcul qui ne l'est pas. Vénus, selon Ptolémée, demande
+$5^\circ$. Si la Lune demande $x$ degrés, elle aurait alors $x/180$ de la
+lumière de la pleine Lune ; la pleine Lune valant cent fois Vénus (le rapport
+des diamètres étant dix, selon Albategnius), le croissant vaudrait
+$100x/180$ fois Vénus, et les intervalles étant inverses des lumières,
+$x = 5 \cdot 180/(100x)$, d'où $x^2 = 9$ et $x = 3^\circ$. Le feuillet présente
+ce raisonnement en partant de $3^\circ$ et en retrouvant $3^\circ$, ce qui en fait
+une vérification de cohérence, dont $3^\circ$ est bien la seule solution
+positive.\footnote{« Nam cum tantum interstitium sit sexagesima pars semicirculi,
+ut tunc luna adepta sit de plenilunio toti lumini sexagesimam. Sed plena Luna
+centupla ferme est venereæ faciei […] Et ideo illud lunæ corniculatum lumen tenue
+ad lumen veneris erit sicut quinque ad 3 » (vues 16, gauche et droite). « toti »
+est traversé d'un trait oblique, peut-être une biffure ; « cuius » biffé avant
+« illius ». L'arithmétique est juste : $100/60 = 5/3$ et
+$5 \times 3/5 = 3$.} Mais aucune prémisse ne tient. La fraction éclairée du
+disque lunaire à l'élongation $\psi$ est $(1-\cos\psi)/2$, non $\psi/180^\circ$ :
+à $3^\circ$ elle vaut moins d'un millième, et non un soixantième ; l'abaissement du
+Soleil sous l'horizon n'est pas l'élongation ; le seuil de visibilité n'est pas
+inversement proportionnel à l'éclat. Le croissant n'est en fait jamais vu à
+moins de sept degrés environ du Soleil. La conséquence que le feuillet en tire —
+une Lune visible le matin et le soir d'un même jour si la conjonction tombe vers
+midi en été — n'est donc pas établie.
+
+La table des sinus, qui occupe le reste de la page, ouvre la section suivante.
+
+\section*{Les tables : sinus, tangentes, sécantes, et la table des trois arcs}
+
+\pagerange{16}{20}
+Quatre tables occupent les vues 16 à 20. Les trois premières sont, sous leurs
+noms du XVI\textsuperscript{e} siècle, nos tables de sinus, de tangentes et de
+sécantes, de degré en degré de $1^\circ$ à $90^\circ$, pour un rayon (« sinus
+totus ») de $100\,000$. On écrit dans toute la suite $\sin$, $\cos$, $\tan$,
+$\sec$ pour les lignes rapportées au rayon 1 ; une entrée de table est donc
+$100\,000$ fois la valeur moderne, arrondie.\footnote{Le « sinus rectus » d'un arc
+est la demi-corde de l'arc double, notre $R\sin$ ; le « sinus secundus » est le
+sinus du complément, notre $R\cos$ ; le « sinus versus » est la flèche,
+$R(1-\cos)$, qu'on note $\operatorname{vers}$. Le rayon $R = 100\,000$ est ce que
+les textes appellent « sinus totus » ; diviser par lui revient, disent-ils, à
+« rejeter cinq figures à droite ». Ces équivalences sont posées une fois pour
+toutes et ne sont plus rappelées.} Chaque table a quatre colonnes : le degré,
+la valeur, la différence avec la ligne précédente, et le soixantième de cette
+différence, qui est l'accroissement par minute d'arc et sert à interpoler. Ainsi
+$\sin 23^\circ 30'$ se tire de $\sin 23^\circ = 39\,073$ et du soixantième
+$26{:}41$ de la ligne suivante : $39\,073 + 30 \times 26\tfrac{41}{60} \approx
+39\,874$, et les problèmes emploient $39\,875$.
+
+\subsection*{La table des sinus}
+
+\pagerange{16}{16}
+« Tabella sinus recti » donne $100\,000\sin n^\circ$. Recalculée, elle est exacte
+à une unité près sur chaque ligne ; l'écart d'une unité, aux lignes 48, 67, 73 et
+85, est affaire d'arrondi. Trois erreurs touchent les colonnes auxiliaires :
+
+\begin{itemize}
+  \item ligne 59, le soixantième de la différence 912 est écrit $15{:}21$ ; il
+    vaut $15{:}12$ ;
+  \item ligne 86, la différence est écrite 139 ; $99\,756 - 99\,620 = 136$, et le
+    soixantième écrit, $2{:}16$, est bien celui de 136 ;
+  \item ligne 88, le soixantième de 76 est écrit $1{:}6$ ; il vaut
+    $1{:}16$.\footnote{La table est en deux blocs de quatre colonnes, intitulées
+    au pied « gradus », « sinus », « Dria » (abrégé pour « Differentia »),
+    « 6\textsuperscript{ma} » et, à droite, « 60\textsuperscript{ma} ». Aux lignes
+    46 et 47, un point au lieu des deux-points. Chiffres repassés ou surchargés,
+    dont la transcription donne la lecture finale : lignes 10, 24, 35, 39 (le 6
+    ajouté au-dessus), 48, 59, 63. Ligne 4, le troisième chiffre de 6976 est formé
+    presque comme un 1 ; la lecture 4 est appuyée par la colonne suivante et par
+    la valeur exacte. La ligne 90 est écrite « 100.000 » (vue 16, droite).}
+\end{itemize}
+
+\subsection*{La « table féconde » : les tangentes}
+
+\pagerange{17}{17}
+« Tabula foecunda » donne, sous le nom d'« umbra », l'ombre d'un gnomon égal au
+rayon : $100\,000\tan n^\circ$.\footnote{Le mot est défini plus loin dans le
+volume (vue 44, et proposition XXX du second livre, vue 46) : pour un gnomon
+égal au rayon, l'« umbra versa » d'un arc est notre tangente, l'« umbra recta »
+notre cotangente. La « table féconde » est dite, à la vue 44, celle « de
+Iohannes de Monteregio », Regiomontanus ; le feuillet de la vue 17 ne le dit
+pas.} Les valeurs sont exactes à trois unités près, sauf :
+
+\begin{itemize}
+  \item ligne 40, le numéro du degré est écrit « 46 » ;
+  \item ligne 43, la valeur est écrite $63\,252$ ; c'est $93\,252$, comme le
+    veulent la différence 3212 et la valeur exacte ;
+  \item ligne 50, $119\,197$ au lieu de $119\,175$ : l'erreur, de 22 unités, est
+    dans la valeur elle-même, puisque les deux différences voisines ($4160$ et
+    $4294$ au lieu de $4138$ et $4316$) en tiennent compte ;
+  \item ligne 78, $470\,453$ au lieu de $470\,463$, de même avec sa
+    différence ;
+  \item ligne 84, la différence est écrite $137\,061$ ; elle vaut $137\,001$,
+    dont $2283{:}21$ est bien le soixantième ;
+  \item soixantièmes : ligne 34, $41{:}51$ pour $41{:}52$ ; ligne 68,
+    $196{:}44$ pour $198{:}44$ ; ligne 69, « $216{:}4$ » pour $216{:}40$ ;
+    ligne 83, $1714{:}18$ pour $1714{:}58$.\footnote{Colonnes intitulées en tête
+    « gr. », « umbra », « Dria », « 6\textsuperscript{ma} ». Ligne 69, la
+    transcription lit « 216: 4 » sans chiffre après le 4. Ligne 4, dernière
+    colonne, « 11 » est une lecture douteuse. Chiffres surchargés ou repassés
+    aux lignes 16, 38, 68 (numéro du degré), 74, 75. Le point ou les deux-points
+    de la dernière colonne sont gardés tels qu'écrits dans la transcription ;
+    ils ne changent pas la valeur (vue 17, gauche).}
+\end{itemize}
+
+Sous la table, cinq valeurs pour les arcs voisins de $90^\circ$, où
+l'interpolation n'est plus possible : $\tan 89^\circ 15' = 7\,638\,998$,
+$\tan 89^\circ 30' = 11\,458\,872$, $\tan 89^\circ 45' = 22\,918\,163$,
+$\tan 89^\circ 55' = 68\,754\,439$, $\tan 89^\circ 59' = 343\,772\,546$. Les
+trois premières sont justes aux dernières unités près ; les deux dernières sont
+un peu faibles (les valeurs exactes sont $68\,754\,887$ et $343\,774\,667$), avec
+une erreur relative de l'ordre de six millionièmes.
+
+\subsection*{La « table bienfaisante » : les sécantes}
+
+\pagerange{19}{19}
+« Tabella benefica » donne, sous le nom de « Radius », le rayon mené du pied du
+gnomon à l'extrémité de l'ombre, c'est-à-dire $100\,000\sec n^\circ$ ; Maurolico
+dit l'avoir faite « à l'imitation de la table féconde ».\footnote{Vue 44, gauche,
+« Demonstratio tabulæ beneficæ » : voir la section sur Regiomontanus. Colonnes
+intitulées en tête « g. », « Radius », « Dria », « 60\textsuperscript{ma} » ; au
+second bloc, la ligne 90 porte « Infinitum » dans les trois colonnes. La
+transcription ne reproduit pas les points qui précèdent la plupart des
+différences ni ceux qui séparent parfois les milliers (vue 19, droite, numéro à
+l'encre 18).} Les valeurs sont exactes à une unité près, sauf :
+
+\begin{itemize}
+  \item ligne 16, $104\,630$ ; la valeur est $104\,030$, que donne aussi la
+    différence 502 ajoutée à la ligne précédente ;
+  \item ligne 24, $108\,464$, chiffre surchargé ; la valeur est $109\,464$ ;
+  \item ligne 30, la différence est écrite 1130 ; $115\,470 - 114\,335 = 1135$,
+    et le soixantième écrit, $18.55$, est celui de 1135, non de 1130 ;
+  \item ligne 9, différence 264 pour 263 ;
+  \item ligne 4, soixantième « 2.47 » pour $1{:}47$ ;
+  \item dans la dernière colonne du second bloc, les lignes 51 à 55 répètent les
+    valeurs des lignes 46 à 50, et de la ligne 56 à la ligne 85 chaque valeur est
+    le soixantième de la différence écrite cinq lignes plus haut : la colonne a
+    glissé de cinq lignes à la copie, et se remet d'accord aux lignes 86 à
+    89.\footnote{Constats de la transcription, qui a contrôlé chaque rayon par
+    l'addition des différences ; les valeurs exactes sont de cette lecture.
+    Ligne 25, le 3 de $110\,338$ est surchargé ; ligne 44, un trait de trop après
+    $139\,016$ ; ligne 43 de la dernière colonne, « 36.10 » se lit aussi
+    « 39.20 » ; ligne 86, « 4769.47 », le quatrième chiffre se lit aussi 4 ;
+    ligne 89, « 47741.37 », le cinquième chiffre, surchargé, se lit aussi 5.}
+\end{itemize}
+
+Sous la table, six valeurs : $\sec 0^\circ = 100\,000$, $\sec 89^\circ 15' =
+7\,639\,653$, $\sec 89^\circ 30' = 11\,459\,309$, $\sec 89^\circ 45' =
+22\,918\,381$, $\sec 89^\circ 55' = 68\,754\,512$, $\sec 89^\circ 59' =
+343\,772\,560$ ; comme pour les tangentes, les deux dernières sont faibles de
+quelques millionièmes (valeurs exactes $68\,754\,960$ et $343\,774\,682$).
+
+\subsection*{La table des trois arcs}
+
+\pagerange{20}{20}
+La page de gauche de la vue 20 porte une table sans titre donnant, pour chaque
+degré $\lambda$ de longitude écliptique, trois arcs en degrés et minutes,
+« Primus », « Secundus », « Tertius ». Les problèmes 4 et 5 disent employer une
+« table générale des déclinaisons et des ascensions » à trois arcs et les
+définissent ; c'est celle-ci.\footnote{Le rapprochement est fait par la
+transcription (vue 20, gauche), à partir de l'usage des trois arcs dans les
+problèmes 4 et 5.} Menons par le point $\lambda$ de l'écliptique le cercle de
+latitude, perpendiculaire à l'écliptique, jusqu'à l'équateur. Le triangle
+sphérique formé avec l'équinoxe est rectangle au point de l'écliptique, son
+angle à l'équinoxe est l'obliquité $\varepsilon$, et ses trois arcs sont :
+
+\begin{itemize}
+  \item \emph{Primus}, l'arc $p$ du cercle de latitude entre l'écliptique et
+    l'équateur : $\tan p = \tan\varepsilon \sin\lambda$ ;
+  \item \emph{Secundus}, l'angle $\theta$ de ce cercle avec l'équateur :
+    $\cos\theta = \sin\varepsilon\cos\lambda$ ;
+  \item \emph{Tertius}, l'arc $t$ d'équateur entre l'équinoxe et ce cercle :
+    $\tan t = \tan\lambda / \cos\varepsilon$.
+\end{itemize}
+
+Avec $\varepsilon = 23^\circ 30'$, que les problèmes emploient, les quatre-vingt-dix
+lignes s'accordent avec ces formules à moins de deux minutes près, à cinq
+exceptions : ligne 5, \emph{Primus} $2^\circ 20'$ pour $2^\circ 10'$ ; ligne 37,
+\emph{Primus} $14^\circ 30'$ pour $14^\circ 40'$ ; ligne 68, \emph{Secundus}
+$81^\circ 22'$ pour $81^\circ 25'$ ; ligne 70, \emph{Secundus} $82^\circ 20'$ pour
+$82^\circ 10'$ ; ligne 89, \emph{Secundus} $89^\circ 33'$ pour
+$89^\circ 36'$.\footnote{Ligne 5, la transcription note que le 2 des minutes est
+précédé d'un point et se lit peut-être 1 : la valeur exacte appuie « 10 ». Lignes
+17 à 20, colonne \emph{Secundus}, les minutes sont surchargées de deux tracés à
+la fois (35 et 38, 43 et 48, 51 et 54, 50 et 59) ; la transcription offre 35, 43,
+51, 59 en suivant la progression de la colonne, et les valeurs exactes
+($67^\circ 35{,}1'$, $42{,}8'$, $51{,}0'$, $59{,}6'$) confirment ce choix. Ligne 79,
+\emph{Tertius}, « 79. 54 », dont le dernier chiffre se lit aussi 9 : la valeur
+exacte est $79^\circ 53{,}6'$. Ligne 18, « 7. 39 », le dernier chiffre se lit aussi
+4 : la valeur exacte est $7^\circ 39{,}2'$. Chiffres surchargés mais lisibles aux
+lignes 16, 27, 43, 53, 63, 83.} À $\lambda = 90^\circ$ la table donne
+$23^\circ 30'$, $90^\circ$, $90^\circ$ ; au début du Bélier, le \emph{Secundus}
+vaut $90^\circ - \varepsilon = 66^\circ 30'$, comme le rappelle le problème 5, et la
+ligne 1 porte déjà cette valeur à la minute près.
+
+\section*{Huit problèmes résolus avec les tables}
+
+\pagerange{17}{19}
+Les problèmes sont numérotés en marge. Chacun donne une règle de calcul, puis un
+exemple entièrement chiffré. On donne ici chaque règle sous sa forme moderne, en
+disant quel triangle sphérique la justifie — le feuillet ne le dit pas, le second
+livre des \emph{Sphériques} le fait plus loin —, puis on refait
+l'exemple.\footnote{Les problèmes 1 à 6 se lisent dans l'ordre du texte sur la
+vue 18, droite (numéro à l'encre 17 ; problèmes 1 à 4), la vue 19, gauche (fin
+du 4, et 5), la vue 17, droite (numéro 16 ; fin du 5), et la vue 18, gauche
+(problème 6) : le problème 5 s'arrête au bas de la vue 19 sur « Nam in primis »
+et reprend en tête de la vue 17, droite, sur « considerandum est ». Les deux
+feuillets numérotés 16 et 17 sont reliés dans l'ordre inverse de celui du texte ;
+la reconstitution est celle de la transcription, qui garde l'ordre des vues.}
+Dans toute la suite, $\lambda$ est la longitude écliptique, $\beta$ la latitude
+écliptique, $\delta$ la déclinaison, $\alpha$ l'ascension droite, $\varphi$ la
+latitude du lieu, $\varepsilon = 23^\circ 30'$ l'obliquité, et « rejeter cinq
+figures » veut dire diviser par $100\,000$.
+
+\subsection*{Problème 1 : la déclinaison d'un point de l'écliptique}
+
+\emph{Règle.} $\sin\delta = \sin\lambda\,\sin\varepsilon$ — le triangle rectangle
+formé par l'équateur, l'écliptique et le cercle de déclinaison du point.
+\emph{Exemple}, la fin du onzième degré du Taureau, $\lambda = 41^\circ$ :
+$65\,606 \times 39\,875 = 2\,616\,039\,250$, soit $26\,160$, et $\delta =
+15^\circ 10'$. C'est exact.\footnote{« Taurus » est écrit pour « Tauri » ; le 15 de
+« 15 graduum » est en partie recouvert par le g de « graduum » ; le problème
+suivant le reprend en « g. 15. m. 10. » (vue 18, droite).}
+
+\subsection*{Problème 2 : l'ascension droite, par la table féconde}
+
+\emph{Règle.} $\sin\alpha = \tan\delta\,\tan(90^\circ-\varepsilon) =
+\tan\delta\cot\varepsilon$, l'arc étant compté depuis l'équinoxe le plus proche.
+Le feuillet ajoute que, de même, la déclinaison d'un astre et la latitude du lieu
+donnent par la table féconde sa différence ascensionnelle :
+$\sin\Delta = \tan\delta\,\tan\varphi$. \emph{Exemple} : $\tan 15^\circ 10' =
+27\,108$ et $\tan 66^\circ 30'$, écrit $230\,094$ ; le produit $6\,237\,388\,152$
+donne $62\,374$, et le feuillet conclut à $\alpha = 38^\circ$.
+
+La tangente de $66^\circ 30'$ vaut $229\,984$, non $230\,094$. Avec la bonne
+valeur, le produit est $6\,234\,406\,272$, le sinus $62\,344$, et
+$\alpha = 38^\circ 34'$, que le problème 3 retrouve par une autre voie ; la valeur
+exacte est $38^\circ 33{,}7'$.\footnote{La transcription lit « 230094 » en
+signalant que l'avant-dernier chiffre est mal formé, et remarque que le produit
+écrit est bien celui de $27\,108$ par $230\,094$ : l'erreur porte donc sur la
+valeur prise dans la table, non sur la lecture. Avec $230\,094$, l'arc serait
+$38^\circ 35'$ ; le feuillet ne donne que les degrés.}
+
+\subsection*{Problème 3 : l'ascension droite, par la table bienfaisante}
+
+\emph{Règle.} $\cos\alpha = \sec\delta\,\cos\lambda$ : on multiplie la sécante de
+la déclinaison par le sinus du complément de l'arc d'écliptique, et l'arc dont le
+résultat est le sinus, ôté du quadrant, est l'ascension droite. C'est
+$\cos\lambda = \cos\delta\cos\alpha$ dans le même triangle rectangle.
+\emph{Exemple} : $\sec 15^\circ 10' = 103\,612$ (valeur interpolée ; exacte,
+$103\,609$) et $\cos 41^\circ = 75\,471$ ; le produit $7\,819\,701\,252$ donne
+$78\,197$, arc $51^\circ 26'$, complément $38^\circ 34'$. C'est
+juste.\footnote{Le feuillet écrit « 75471 sinum scilicet graduum 41 », là où il
+s'agit du sinus du complément de $41^\circ$, c'est-à-dire du sinus de $49^\circ$
+que donne la table ; la règle, elle, dit bien « sinum secundum ».}
+
+\subsection*{Problème 4 : la déclinaison d'une étoile}
+
+\emph{Règle.} On entre dans la table des trois arcs avec la longitude de l'étoile,
+comptée depuis l'équinoxe le plus proche. L'arc $p$ (\emph{Primus}), de même nom
+que l'hémisphère où est le point de l'écliptique, se combine avec la latitude
+$\beta$ de l'étoile : somme si elles sont de même nom, différence sinon, avec le
+nom de la plus grande. Le résultat $s = p \pm \beta$, que le feuillet appelle
+« argument de la déclinaison », est l'arc du cercle de latitude entre l'équateur
+et l'étoile ; ce cercle coupant l'équateur sous l'angle $\theta$
+(\emph{Secundus}), la déclinaison est donnée par
+\[
+\sin\delta = \sin s\,\sin\theta ,
+\]
+dans le triangle rectangle formé par ce cercle, l'équateur et le cercle de
+déclinaison de l'étoile ; elle a le nom de l'argument. Le sinus de $\theta$ est,
+dit le feuillet, « le nombre multiplicande dont se sert Regiomontanus ».
+
+\emph{Exemple}, Aldebaran, « l'œil du Taureau », dont la longitude est « en ce
+temps » de $2^\circ 50'$ des Gémeaux ($\lambda = 62^\circ 50'$) et la latitude
+$5^\circ 10'$ sud. La table, interpolée, donne $p = 21^\circ 9'$,
+$\theta = 79^\circ 31'$, $t = 64^\circ 47'$ ; les formules donnent
+$21^\circ 8{,}9'$, $79^\circ 30{,}6'$, $64^\circ 47{,}8'$. L'argument est
+$21^\circ 9' - 5^\circ 10' = 15^\circ 59'$ nord, $\sin s = 27\,536$,
+$\sin\theta = 98\,331$ ; le produit, $2\,707\,642\,416$, donne $27\,076$, et
+$\delta = 15^\circ 43'$ nord, à une demi-minute de la valeur exacte pour ces
+données.\footnote{Le feuillet écrit le produit « 2707642916 » ; la division par
+$100\,000$ n'en est pas affectée. Il écrit d'abord « grad. 21. m. 5. » et
+« g. 79. m. 10. », puis emploie $21^\circ 9'$ et $79^\circ 31'$, qui sont les
+bonnes interpolations. Le mot rendu « vel », abrégé « ul », se lit mal ;
+« gratia » manque après « Exempli » ; « cum ambobus » est écrit deux fois, la
+première biffée ; « septen\textsuperscript{lis} » abrège « septentrionalis »
+(vue 19, gauche).}
+
+\subsection*{Problème 5 : l'ascension droite d'une étoile}
+
+\emph{Règle.} Soit $\Delta$ l'arc d'équateur compris entre le cercle de latitude
+et le cercle de déclinaison de l'étoile, que le feuillet nomme « différence du
+passage de l'étoile au méridien ». Dans le même triangle rectangle,
+\[
+\sin\Delta = \tan\delta\,\cot\theta \qquad\text{ou}\qquad
+\cos\Delta = \frac{\cos s}{\cos\delta} = \sec\delta\,\cos s ,
+\]
+la première par la table féconde (avec $\delta$ et $90^\circ-\theta$), la seconde
+par la table bienfaisante. L'ascension droite s'obtient alors en combinant $\Delta$
+avec l'arc $t$ (\emph{Tertius}) selon le quadrant de l'écliptique où tombe
+l'étoile et le nom de sa déclinaison.\footnote{Dans la table des trois arcs,
+« ingredere tabulam declinationum et ascensionum generalem » ; la règle de
+combinaison occupe toute la vue 17, droite, et le début de la vue 18, gauche. Deux
+lignes y sont biffées (« Si arcus tertius minor quam differentia, tunc arcus
+relictus de toto arcus relictus iunctus ») ; « relinquet » est écrit au-dessus de
+« conficiet » biffé ; « At » et le second « relinquet » sont des lectures
+incertaines ; « dria » et « declinaẽ » abrègent « differentia » et
+« declinatione ».}
+
+Les huit cas se ramènent à une seule observation : le cercle de latitude monte
+de l'équateur vers le pôle nord de l'écliptique, qui est à l'ascension droite
+$270^\circ$, et vers le pôle sud, à $90^\circ$. Pour une étoile boréale des deux
+premiers quadrants, ou australe des deux derniers, $\Delta$ se retranche de $t$ ;
+dans les autres cas, il s'y ajoute ; puis l'arc $t \mp \Delta$, compté depuis
+l'équinoxe le plus proche, donne $\alpha$ selon le quadrant ($t\mp\Delta$,
+$180^\circ - (t\mp\Delta)$, $180^\circ + (t\mp\Delta)$, $360^\circ - (t\mp\Delta)$),
+avec passage de l'autre côté de l'équinoxe quand $\Delta > t$. On a vérifié les
+huit prescriptions du feuillet sur ce principe : toutes sont
+justes.
+
+Au début du Bélier ou de la Balance, $p$ et $t$ sont nuls, $\theta =
+90^\circ - \varepsilon = 66^\circ 30'$, et l'argument est la latitude $\beta$. Au
+Bélier, $\alpha = \Delta$ pour une étoile australe, $360^\circ - \Delta$ pour une
+boréale, comme le dit le feuillet. À la Balance, $\alpha = 180^\circ + \Delta$ pour
+une étoile boréale et $180^\circ - \Delta$ pour une australe.\footnote{Le
+feuillet écrit d'abord « in principio Libræ cum Arietis », où le sens et la suite
+demandent le seul Bélier ; pour la Balance boréale, il écrit « arcus sæpe
+memoratus cum semicirculo eamdem residuabit », où « residuabit », qu'il emploie
+ailleurs pour un reste, ne dit pas l'addition qu'il faut ; le cas de la Balance
+australe n'est pas écrit (vue 18, gauche).} Aux solstices, cercle de latitude et
+cercle de déclinaison sont le colure solsticial : $\delta = \varepsilon \pm \beta$
+et $\alpha = 90^\circ$ ou $270^\circ$, pourvu que $\varepsilon + \beta$ reste
+inférieur à $90^\circ$.\footnote{Le feuillet dit « dodrans », trois quarts de
+cercle, pour $270^\circ$. Deux lignes biffées au début de la vue 18, gauche, de
+« Zodiaci » à « ambobus » ; « In reliquo » est écrit deux fois.}
+
+\emph{Exemple}, Aldebaran. Par la table féconde : $\tan 15^\circ 43' = 28\,140$
+et $\tan(90^\circ - 79^\circ 31') = \tan 10^\circ 29' = 18\,506$ ; le produit
+$520\,758\,840$ donne $5208$, sinus d'un arc « un peu moindre que $3^\circ$ »
+($2^\circ 59'$). Par la table bienfaisante : $\sec 15^\circ 43' = 103\,879$ et
+$\cos 15^\circ 59' = 96\,134$, produit $9\,986\,303\,786$, soit $99\,863$, sinus de
+$87^\circ$, dont le complément est $3^\circ$. L'étoile est dans le premier quadrant
+et boréale : $\alpha = 64^\circ 47' - 3^\circ = 61^\circ 47'$. La valeur exacte pour
+ces données est $61^\circ 48{,}7'$, l'écart venant de l'arrondi de $\Delta$ à
+$3^\circ$.\footnote{Le feuillet écrit le complément de l'arc second « g. 10. m.
+27. » ; $90^\circ - 79^\circ 31' = 10^\circ 29'$, et le nombre qu'il prend,
+$18\,506$, est bien la tangente de $10^\circ 29'$ ($18\,504$), non celle de
+$10^\circ 27'$ ($18\,444$). Il écrit ensuite « præfatam differentiam 3. grad. 3. »
+et n'emploie que 3 degrés. « Demo abicio » : le premier mot se lit mal et n'est
+pas biffé ; « dicta » est traversé d'un trait ; le 6 de « 9986303786 » est ajouté
+au-dessus de la ligne. La valeur $\sec 15^\circ 43'$ exacte est $103\,884$.}
+
+\subsection*{Problème 6 : l'amplitude ortive}
+
+\emph{Règle.} $\sin A = \sin\delta\,\sec\varphi$, où l'amplitude $A$ est l'arc
+d'horizon entre le point est et le lever de l'astre : dans le triangle rectangle
+formé par l'horizon, l'équateur et le cercle de déclinaison, l'angle à l'équateur
+est $90^\circ - \varphi$.\footnote{« latitudo ortiva » : « l'amplitude ortive ».
+Dans la règle, « ortiva » est biffé après « latitudine » ; « abrectis » est écrit
+pour « abiectis » (vue 18, gauche).} \emph{Exemple}, à Messine
+($\varphi = 38^\circ$), pour le Soleil au solstice ($\delta = 23^\circ 30'$) :
+$126\,902 \times 39\,875 = 5\,060\,217\,250$, soit $50\,602$, et
+$A = 30^\circ 24'$. C'est exact.
+
+\subsection*{Problèmes 7 et 8}
+
+\pagerange{48}{49}
+Deux problèmes numérotés « 7 » et « 8 », à la fin du volume, emploient la même
+latitude et l'amplitude du problème 6 ; on les lit à sa suite.\footnote{Le
+rapprochement est de cette lecture (voir « Ce que le volume contient »). Sur la
+vue 48, droite (numéro à l'encre 47), le « 7 » est écrit au-dessus de la
+première ligne du paragraphe, le « 8. » dans la marge ; la page s'ouvre sur la
+fin d'une phrase, « qui quidem arcus est horizontis inter æquinoctialem, et
+solem in tali horizonte orientem », qui définit l'amplitude.}
+
+\emph{Problème 7 : la différence ascensionnelle.} \emph{Règle} : on multiplie la
+sécante de la déclinaison par le cosinus de l'amplitude ; l'arc dont le produit
+est le sinus, ôté du quadrant, est la différence ascensionnelle $\Delta$. En effet,
+dans le triangle rectangle du problème 6, $\cos A = \cos\delta\cos\Delta$. Ajoutée
+au quadrant pour une déclinaison boréale, retranchée pour une australe, elle donne
+l'arc semi-diurne. \emph{Exemple} : $\sec 23^\circ 30' = 109\,038$ et
+$\cos 30^\circ 24' = 86\,251$, produit $9\,404\,636\,538$, soit $94\,046$, arc
+$70^\circ 8'$, et $\Delta = 19^\circ 52'$. La valeur exacte, par
+$\sin\Delta = \tan\varphi\tan\delta$, est $19^\circ 51{,}6'$.\footnote{Le feuillet
+écrit « Ad dicti loci latitudinem gr. 38 ex tabula benefica excipio numerum
+109038 » : la phrase annonce la sécante de la latitude, qui vaut $126\,902$, mais
+le nombre pris est celui de la déclinaison, comme le veut la règle ; sa valeur
+exacte est $109\,044$. La règle dit que l'arc ôté du quadrant « residuabit
+ascensionem quæsitam » : c'est la différence ascensionnelle qu'on cherche. Dans
+« 940.463.6538 », les chiffres 53 sont surchargés.}
+
+\emph{Problème 8 : la distance au méridien d'un astre dont on connaît la hauteur.}
+Le feuillet ne donne pas de règle générale ; il la montre sur un exemple. On
+multiplie le sinus de la hauteur $h$ par la sécante de la latitude, puis le
+résultat par la sécante de la déclinaison : c'est l'« argument de la distance »,
+$\sin h\,\sec\varphi\,\sec\delta$. On le compare au sinus de la différence
+ascensionnelle : égal, la distance au méridien est d'un quadrant ; plus petit,
+elle dépasse le quadrant de l'arc dont la différence est le sinus ; plus grand,
+elle est moindre. Pour une déclinaison australe, on ajoute au lieu de comparer.
+C'est exactement la formule moderne de l'angle horaire $H$ :
+\[
+\cos H = \frac{\sin h - \sin\varphi\sin\delta}{\cos\varphi\cos\delta}
+       = \sin h\,\sec\varphi\,\sec\delta \;-\; \tan\varphi\tan\delta ,
+\]
+où $\tan\varphi\tan\delta = \sin\Delta$ ; le signe du second terme change avec
+celui de $\delta$. Si $\delta = 0$, la seconde multiplication est inutile.
+
+\emph{Exemples.} Le Soleil au onzième degré du Taureau, à Messine. Le feuillet
+prend $\sec\delta = 103\,609$, $\sec\varphi = 126\,902$, $\sin\Delta = 21\,189$.
+Ces trois nombres sont justes pour la déclinaison du problème 1,
+$\delta = 15^\circ 10'$ (pour laquelle $\Delta = 12^\circ 14'$). Le feuillet
+écrit pourtant « déclinaison $15^\circ 20'$ » et « différence ascensionnelle
+$12^\circ 24'$ », deux valeurs qui ne s'accordent ni entre elles ni avec les
+nombres employés ; on corrige en $15^\circ 10'$ et $12^\circ 14'$, et les calculs
+du feuillet sont alors cohérents.\footnote{Pour $\delta = 15^\circ 20'$, la
+sécante serait $103\,691$ et la différence ascensionnelle $12^\circ 22'$ ; le
+sinus de $12^\circ 24'$ serait $21\,474$. « Dria » abrège « Differentia » (vue 48,
+droite).}
+
+\begin{itemize}
+  \item $h = 5^\circ 30'$ : $9585 \times 126\,902 = 1\,216\,355\,670$, soit
+    $12\,164$ après arrondi ; $12\,164 \times 103\,609 = 1\,260\,299\,876$, soit
+    $12\,603$. Comme $12\,603 < 21\,189$, la différence $8586$ est le sinus de
+    $4^\circ 55'$, et $H = 90^\circ + 4^\circ 55' = 94^\circ 55'$. Valeur exacte :
+    $94^\circ 55{,}2'$.\footnote{Le nombre intermédiaire est surchargé ; la
+    transcription offre $12\,164$ parce que c'est le seul que confirment le
+    produit suivant et la règle d'arrondi, ce qui est une vérification et non
+    une lecture. L'argument est écrit « 12604 » puis « 12603 » ; $12\,603$ est
+    juste. Le résultat est écrit « gr. 95. m. 55 » (vue 49, gauche), et la somme
+    annoncée à la fin de la vue 48 donne $94^\circ 55'$.}
+  \item $h = 9^\circ 16'$ : $16\,103 \times 126\,902 = 2\,043\,502\,906$, soit
+    $20\,435$ ; $20\,435 \times 103\,609 = 2\,117\,249\,915$, soit $21\,172$,
+    « presque égal » à $21\,189$ : $H$ est d'un quadrant, à une minute
+    près.\footnote{Le feuillet écrit « 2117149915 » et « 21171 ».}
+  \item $h = 27^\circ 50'$ : $46\,690 \times 126\,902 = 5\,925\,054\,380$, soit
+    $59\,251$ ; $59\,251 \times 103\,609 = 6\,138\,936\,859$, soit $61\,389$ ;
+    $61\,389 - 21\,189 = 40\,200 = \cos H$, et $H = 66^\circ 18'$ (exact :
+    $66^\circ 17{,}4'$).\footnote{Le feuillet donne le résultat sans l'étape
+    intermédiaire : l'arc dont $40\,200$ est le sinus est $23^\circ 42'$, et son
+    complément $66^\circ 18'$.}
+  \item Même hauteur, déclinaison australe : $61\,389 + 21\,189 = 82\,578$, sinus
+    de $55^\circ 40'$, et $H = 34^\circ 20'$ (exact : $34^\circ 20{,}6'$).
+\end{itemize}
+
+Le feuillet ajoute trois cas limites, tous justes. Si le parallèle de l'astre
+touche seulement l'horizon ($\delta = 90^\circ - \varphi$), on prend le rayon pour
+sinus de la différence ascensionnelle, puisque $\tan\varphi\tan\delta = 1$. Si
+l'astre est circumpolaire, on retranche du sinus de la hauteur le sinus de sa plus
+petite hauteur méridienne $h_0$, et l'on opère sur le reste avec le rayon :
+c'est l'identité
+\[
+\cos H = (\sin h - \sin h_0)\sec\varphi\sec\delta - 1,
+\qquad \sin h_0 = \sin\varphi\sin\delta - \cos\varphi\cos\delta ,
+\]
+que la règle applique sans la dire. Sur l'horizon droit ($\varphi = 0$),
+$\cos H = \sin h\sec\delta$, et si de plus le Soleil est à l'équateur,
+$H = 90^\circ - h$. Il rappelle enfin la règle d'arrondi : ajouter une unité si
+les figures rejetées valent plus de $50\,000$.
+
+Le volume se termine, juste après, sur la ligne du copiste : « Compendium
+Mathematicæ. omittitur quia a P. M. Mersenno editum in Apologia scientiarum
+cap. ultimo. »\footnote{« Le \emph{Compendium Mathematicæ} est omis, parce que
+le P. M. Mersenne l'a publié dans l'\emph{Apologia scientiarum}, au dernier
+chapitre. » La ligne « Compendium Mathematicæ » est centrée comme un titre ;
+« omittitur quia … » est ajouté à sa suite, de la même main et de la même encre ;
+le reste de la page est blanc, et la page de droite de la vue 49 aussi. Le cachet
+de la Bibliothèque impériale est dans la marge (vue 49, gauche).}
+
+\section*{Le premier livre des Sphériques de Maurolico : la fin}
+
+\pagerange{20}{31}
+À partir de la page de droite de la vue 20, et sans interruption jusqu'à la
+vue 47, le volume donne la trigonométrie sphérique de Maurolico lui-même. Le
+début du premier livre manque : le texte s'ouvre sur la fin d'une démonstration,
+et la première proposition entière est la XXIII.\footnote{Le titre du premier
+livre n'est pas dans le volume ; le second livre le cite comme « præcedentis
+libri » ou « præmissi libelli ». La transcription du lot 1 note que cette
+numérotation n'est pas celle de Théodose. Au premier livre appartiennent
+encore les propositions 6, 7, 13, 16, 17 et 22 que citent les démonstrations,
+et qui ne sont pas dans le volume. Cachet de la Bibliothèque impériale en marge
+de la proposition XXIIII (vue 20, droite, numéro à l'encre 19).}
+
+\emph{Notations.} Un triangle sphérique $ABC$ est formé d'arcs de grands cercles
+plus petits qu'un quadrant ; on note $a = BC$, $b = CA$, $c = AB$ les côtés, et
+$A$, $B$, $C$ les angles. Quand le triangle est rectangle, l'angle droit est en
+$C$ et $c$ est l'hypoténuse.\footnote{Le feuillet dit « triangulum ex arcubus
+circulorum majorum in superficie sphæræ » : « triangle d'arcs de grands cercles
+sur la surface de la sphère », notre triangle sphérique ; il nomme les points par
+des minuscules, qu'on met ici en capitales, et surmonte souvent les lettres d'un
+trait, qu'on ne reproduit pas.} Maurolico raisonne sur une figure fixe, qu'il
+appelle « la description de la proposition 17 » : on prolonge $AC$ et $AB$
+jusqu'aux points $D$ et $E$ tels que $AD = AE = 90^\circ$, on mène le grand cercle
+$DE$, et l'on prolonge $CB$ jusqu'à sa rencontre $F$ avec lui. Alors $F$ est le pôle
+du cercle $AC$, de sorte que $FC = FD = 90^\circ$ ; l'arc $DE$ mesure l'angle
+$A$ ; et
+\[
+FE = 90^\circ - A,\qquad FB = 90^\circ - a,\qquad BE = 90^\circ - c,\qquad
+CD = 90^\circ - b .
+\]
+Chaque énoncé en « sinus secondaires » se lit donc en cosinus : le sinus de $FB$
+est $\cos a$, celui de $FE$ est $\cos A$, et ainsi de suite. Les relations que
+les démonstrations tirent des propositions 6 et 7 du livre sont, en termes
+modernes, $\cos c = \cos a\cos b$, $\cos A = \cos a\sin B$ et
+$\cos a/\cos A = \sin c/\sin b$, trois des relations du triangle rectangle
+qu'on résume depuis le XVII\textsuperscript{e} siècle par les règles de
+Napier.\footnote{Les règles de Napier sont postérieures au feuillet ; on les nomme
+pour situer les énoncés, non pour dire que Maurolico les connaissait sous cette
+forme. Les numéros 6 et 7 sont ceux des renvois ; le contenu qu'on leur prête est
+celui que les démonstrations en tirent.}
+
+\subsection*{La fin d'une proposition, et deux lemmes plans}
+
+\pagerange{20}{20}
+La page s'ouvre sur la conclusion d'une proposition dont l'énoncé manque : si
+$BD$ est l'arc perpendiculaire mené de $B$ sur $AC$, alors
+\[
+\frac{\sin \widehat{ABD}}{\sin \widehat{CBD}} = \frac{\cos A}{\cos C},
+\]
+ce qui se tire des deux triangles rectangles $ABD$ et $CBD$, où
+$\cos A = \cos BD \sin\widehat{ABD}$ et $\cos C = \cos BD \sin\widehat{CBD}$ ;
+c'est bien l'étape qui reste écrite.\footnote{« sicut sinus totus ad sinum
+anguli $cbd$ sic sinus secundus arcus $bd$ ad sinum secundum anguli $c$. Igitur ex
+æquali sicut sinus anguli $abd$ ad sinum anguli $cbd$ sic sinus secundus anguli
+$a$ ad sinum secundum anguli $c$. » La proposition XXVI du second livre (vue 42)
+invoque « la 22 du livre précédent » pour exactement cet énoncé ; que la page
+s'ouvre sur la fin de la proposition XXII est un rapprochement de cette lecture.}
+
+Suivent deux propositions de géométrie plane, qui servent de lemmes.
+\emph{XXIII} : deux triangles rectilignes de même aire et de mêmes angles sont
+égaux (isométriques). \emph{XXIIII} : deux triangles de même aire construits sur une
+même base, du même côté, et ayant même angle au sommet, ont leurs autres côtés
+égaux deux à deux. C'est vrai : les sommets sont sur une même parallèle à la base
+et sur un même arc capable, donc symétriques par rapport à la médiatrice de la
+base ; la preuve du feuillet, qui renvoie à XXIII, suppose cette symétrie sans la
+dire.\footnote{Le feuillet nomme les deux triangles « $abc$ $eda$ » et conclut
+« latera $ab$ $ed$ erunt æqualia » ; la figure est un quadrilatère $d$, $b$ en
+haut, $a$, $c$ en bas, dont les diagonales se coupent en $e$, et le second
+triangle est $cda$, avec $AB = CD$ et $BC = DA$. « æqualia » est écrit deux fois.}
+
+\subsection*{Propositions XXV à XXXII : le cas où les deux côtés de l'angle font un quadrant}
+
+\pagerange{20}{23}
+Fixons l'angle aigu $A$ et considérons le triangle rectangle $ABC$. Les huit
+propositions portent sur quatre conditions et en établissent l'équivalence :
+
+\begin{enumerate}
+  \item[(i)] $\cos^2 a = \cos A$ ;
+  \item[(ii)] $b + c = 90^\circ$ — ou, ce qui revient au même, $AB = CD$ et
+    $AC = BE$ ;
+  \item[(iii)] $\cos a = \sin B$ ;
+  \item[(iv)] parmi tous les triangles rectangles de même angle $A$, la
+    différence $c - b$ entre l'hypoténuse et le côté adjacent est la plus
+    grande.
+\end{enumerate}
+
+XXV : (i) entraîne (ii) et (iii). XXVI : (i) entraîne (ii). XXVII : (ii)
+entraîne (i) et (iii). XXVIII : (iii) entraîne (i) et (ii). XXIX : (i) entraîne
+(iv). XXX : (iv) entraîne (i) et (ii). XXXI : (ii) entraîne (iv). XXXII : (iv)
+entraîne (iii).\footnote{L'énoncé XXV est écrit « sinus unus secundus arcuum
+acutis oppositorum fuerit medius proportionalis inter sinum totum sinumque acuti
+anguli oppositi », « secundus » au-dessus de « unus » non biffé ; la démonstration
+emploie le « sinus secondaire » de l'angle, et c'est la lecture retenue. Dans la
+démonstration, l'hypothèse est écrite de façon incomplète, « Supponatur sinus
+arcus $fb$ (qui est sinus secundus arcus $cd$ hoc est anguli $bac$ », sans
+fermeture de la parenthèse ni second membre : $\sin FB$ est $\cos a$, et c'est
+$\sin FE$ qui est le cosinus de l'angle $A$ (vue 21, gauche).}
+
+Toutes ces implications sont vraies. En termes modernes, (i) équivaut à (iii)
+par $\cos A = \cos a\sin B$ ; et avec $k = \cos A$ et $\tan b = k\tan c$,
+\[
+\tan(c-b) = \frac{(1-k)\tan c}{1 + k\tan^2 c},
+\]
+qui est maximal pour $\tan c = 1/\sqrt k$, c'est-à-dire $\tan b\tan c = 1$,
+c'est-à-dire $b + c = 90^\circ$ ; alors $\cos a = \cos c/\cos b = \tan b$, d'où
+$\cos^2 a = \tan^2 b = k$. La plus grande différence vaut
+$\sin(c-b) = (1-k)/(1+k) = \tan^2(A/2)$ ; le premier livre ne la calcule pas, mais
+elle suit des propositions XVI et XX du second.\footnote{Ce calcul est de cette
+lecture. Pour la proposition XXX, qui raisonne par l'absurde (« si le sinus de
+$FB$ n'est pas moyen proportionnel, soit $FG$ celui qui l'est »), il faut que le
+triangle réalisant (i) existe : il existe toujours, $\tan b = \sqrt{\cos A}$
+définissant un $b$ entre $0^\circ$ et $45^\circ$.}
+
+La démonstration de XXV mérite d'être suivie, parce qu'elle est d'une autre
+facture que la nôtre. De (i) et des propositions 6 et 7, Maurolico tire
+$\sin c : \sin b = \cos b : \cos c$, soit $\sin 2c = \sin 2b$. Il double les arcs,
+remplace les sinus par les demi-cordes, construit deux triangles rectilignes
+inscrits dans des demi-cercles égaux, de même aire et de même angle droit au
+sommet, et conclut par le lemme XXIIII que les cordes sont égales deux à deux,
+« la plus grande à la plus grande ». Cela donne $2c = 180^\circ - 2b$ ; l'autre
+possibilité, $c = b$, est exclue parce que l'hypoténuse est plus grande que le
+côté ($\cos c = \cos a\cos b < \cos b$), ce que la clause « la plus grande à la
+plus grande » contient.\footnote{« Quandoquidem chordæ duplatorum arcuum sunt
+dupla sinuum simplis arcubus debitorum per diff. » ; « permutatam » et
+« chordæ » (dans « chorda $gb$ chordæ $cl$ ») sont des lectures incertaines ;
+« arcus » est ajouté dans l'interligne ; « chorda chorda » et « sinus sinus » sont
+écrits deux fois ; le long d'un arc de la première figure est écrit « Inutilis »
+(vues 21, gauche et droite). Aux numéros XXVI et XXVII, le dernier I est noyé
+sous une tache : « XXVII » corrigé en « XXVI », et de même au suivant.}
+
+La démonstration de XXIX compare de proche en proche les différences pour quatre
+autres triangles de même angle, deux de chaque côté du triangle $ABC$, en menant
+chaque fois un arc perpendiculaire au cercle $DE$. Elle est juste, mais un passage
+y est copié deux fois en se brouillant.\footnote{De « Adhuc major erit » à « Quod
+est secundum » (vue 22, droite), le copiste répète en le brouillant le passage
+précédent ; à la vue 23, gauche, une phrase est écrite deux fois de suite ; dans
+la dernière partie, un passage biffé (« $kp$ ad sinum arcus $qy$. Igitur major
+sinus arcus $kp$ ») précède la bonne leçon. « dria » abrège « differentia »
+(vue 22, gauche) ; « ut. inde » est une lecture incertaine. À XXX, un mot biffé
+non lu, avec au-dessus un mot court lui aussi barré ; « medius » a la fin
+surchargée ; à XXXI, « differrent » est incertain ; à XXVII, « Iter » est écrit
+pour « inter ».}
+
+\subsection*{Propositions XXXIII à XLVIII : deux points et leurs perpendiculaires}
+
+\pagerange{23}{30}
+Seconde série. Sur le côté $AE$ de l'angle aigu $A$, on marque deux points $B$ et
+$G$, et l'on mène de chacun l'arc perpendiculaire au côté $AD$, de pieds $C$ et
+$H$ ; ces arcs passent par $F$, et $FB = 90^\circ - BC$, $FG = 90^\circ - GH$.
+
+\emph{XXXIII et XXXIV.}
+\[
+\frac{\sin CH}{\sin BG} = \frac{\cos A}{\cos BC\,\cos GH} .
+\]
+XXXIII l'écrit comme composition de deux rapports, $R : \sin FG$ et
+$\sin FE : \sin FB$ ; XXXIV comme rapport de deux rectangles, celui du rayon et
+du sinus de $FE$ à celui des sinus de $FG$ et $FB$. On l'a vérifié
+numériquement.\footnote{À XXXIII, le feuillet écrit « sicut sinus arcus $gs$ ad
+sinum arcus $bg$ : sic sinus arcus $fe$ ad sinum arcus $fg$ », là où la
+conclusion porte, à juste titre, « ad sinum arcus $fb$ » (vue 24, gauche) ;
+« signata » et « Hic » (ou « Sic ») sont des lectures incertaines ; les fins de
+ligne de la vue 24 s'engagent dans la reliure. La démonstration invoque « 24. 6.
+Element. », la composition des rapports des côtés dans les parallélogrammes
+équiangles.}
+
+\emph{XXXV.} Si $\cos A = \cos BC\,\cos GH$, alors $CH = BG$ ; $AG + AC = 90^\circ$
+et $AH + AB = 90^\circ$ (« les portions alternes des quadrants sont égales »,
+$AG = CD$ et $AH = BE$) ; enfin $\sin\widehat{ABC} = \cos GH$ et
+$\sin\widehat{AGH} = \cos BC$. Tout cela est exact, et vérifié
+numériquement. La démonstration de l'égalité $AG = CD$ passe, comme à XXV, par
+des cordes d'arcs doubles et le lemme XXIIII.\footnote{Deux lettres fautives : « quadrangulum ex sinu toto
+sinuque arcus $fg$ » où la proportion posée demande $fe$, et « sicut sinus arcus
+$gf$ ad sinum arcus $be$ » où la suite demande $cd$ (vue 24, droite). « $km$ » est
+écrit dans l'interligne (vue 25, gauche).}
+
+\emph{XXXVI à XXXVIII} sont les réciproques : chacune des conditions $CH = BG$,
+$AG = CD$ (ou $AH = BE$), $\sin\widehat{ABC} = \cos GH$ (ou
+$\sin\widehat{AGH} = \cos BC$) entraîne $\cos A = \cos BC\cos GH$ et tout le
+reste. XXXVII procède par l'absurde, en menant un petit cercle de pôle $F$.\footnote{À
+XXXVII, « Ponatur $bg$ arcus æqualis arcui $cd$ » est écrit ainsi, pour
+$ag$ ; un passage de trois lignes (« Quamobrem per 30 erit et arcus $ch$ … sinui
+arcus $fg$ ») est biffé, puis réécrit plus bas avec le bon renvoi à 35 (vue 26,
+gauche).}
+
+\emph{XXXIX et XL.} Si $\cos A > \cos BC\,\cos KL$ (le point $K$ remplaçant $G$),
+alors $CL > BK$, $AK > CD$, $AL > BE$, $\sin\widehat{AKL} > \cos BC$ et
+$\sin\widehat{ABC} > \cos KL$ ; si $\cos A < \cos BC\,\cos KL$, toutes ces
+inégalités sont renversées. La démonstration ramène chaque cas au cas d'égalité
+en construisant le point $G$ de XXXV par un petit cercle de pôle $F$. Les deux
+énoncés sont vrais ; on les a vérifiés sur un grand nombre de configurations
+tirées au hasard.\footnote{L'énoncé de XL écrit « Et arcus ad angulum majores
+erunt singuli singulis coalternis », alors que la démonstration conclut, à juste
+titre, « arcus $ak$ minor arcu $cd$ » (vue 27, droite). Dans la démonstration de
+XL, une phrase est écrite trois fois de suite ; « 16. 6. Eucl. » est une lecture
+incertaine, où il faut « 15. 6. » comme à XXXIX ; « minor arcu $bd$ » est biffé
+(vue 28, gauche). Le copiste passe de « XXXXVI » à « XLVII ».}
+
+\emph{XLI à XLVI} sont les réciproques de XXXIX et XL, démontrées par trichotomie :
+si $CL > BK$, ou $AK > CD$, ou $\sin\widehat{AKL} > \cos BC$, alors
+$\cos A > \cos BC\cos KL$, puisque l'égalité contredirait XXXV et l'inégalité
+contraire XL ; et de même dans l'autre sens.\footnote{À XLII, le cas d'égalité est
+renvoyé « per 30 huius », où c'est la proposition 35 qui sert. À XLI, un mot biffé
+non lu, avec « est » dans l'interligne ; à XLIV, « Q̄ est hypothesim » abrège
+« quod est [contra] hypothesim », « contra » manquant ; à XLV, « minor » est ajouté
+dans l'interligne (vues 28 et 29).}
+
+\emph{XLVII.} Si deux couples de points $(G, L)$ et $(M, Q)$ sur $AE$ vérifient
+$\cos GH\,\cos LK = \cos A$ et $\cos MN\,\cos QP = \cos GH\,\cos LK$ (où $H, K, N, P$
+sont les pieds des perpendiculaires), alors $MG = KP$ et $NH = LQ$. En effet, par
+XXXV appliquée aux deux couples, $AG = KD$, $AM = PD$, $AH = LE$, $AN = QE$, et
+les différences donnent le résultat.\footnote{Le feuillet écrit « per 34 huius
+arcus $am$ $pd$ æquales erunt », où c'est la proposition 35 qui donne l'égalité ;
+la phrase suivante renvoie bien à 35 (vue 30, gauche). La permutation des rapports
+est justifiée par « 23. 5. », les rapports « perturbés ».}
+
+\emph{XLVIII.} Si de plus $\cos^2 BC = \cos GH\,\cos LK$, le point $B$ étant entre
+les deux, alors $BG = CK$ et $HC = BL$ : $B$ vérifie la condition (i), donc
+$AB = CD$ par XXV, et $AG = KD$ par XXXV.
+
+\subsection*{Proposition XLIX : une autre démonstration de XXIX}
+
+\pagerange{30}{31}
+« Ce que la 29\textsuperscript{e} a proposé, le montrer autrement. » Si
+$\cos^2 BC = \cos A$ et si $G$ est entre $A$ et $B$, alors $\cos GH > \cos BC$,
+donc $\cos A = \cos^2 BC < \cos BC\cos GH$, et XXXIV donne $\sin HC < \sin BG$,
+d'où $HC < BG$, c'est-à-dire $AB - AC > AG - AH$. De même pour un point au-delà
+de $B$. La démonstration est plus courte que celle de XXIX et
+juste.\footnote{« Minus autem quadratum sinus arcus $fb$ quadrangulo ex sinibus
+arcuum $fb$ $bg$ producto » : il faut $fb$ $fg$, comme à la phrase suivante. « ad
+quadrangulum » est écrit deux fois ; « qu » biffé ; la page s'arrête sur
+« propon: », et la vue 31 reprend « ebatur demonstrandum » (vues 30, droite, et
+31, gauche).}
+
+\section*{Le second livre des Sphériques de Maurolico}
+
+\pagerange{31}{40}
+« Maurolyci Siculi Sphæricorum liber secundus » s'ouvre sur une préface qui dit
+son sujet : le rapport du sinus de la somme au sinus de la différence des deux
+arcs qui comprennent l'angle aigu d'un triangle sphérique rectangle. Ménélas,
+dit Maurolico, ne l'a pas omis — c'est la cinquième proposition de son troisième
+livre —, « mais nous, démontrant ce très noble théorème autrement et encore
+autrement, l'avons éclairé de beaucoup de spéculations et comme de corollaires,
+sans épargner les préambules utiles ».\footnote{« Qui locus quamvis a Menelao
+minime sit prætermissus, Nos tamen Theorema illud nobilissimum quod ipsi quintum
+est in ordine propositionum tertij libelli, aliter atque aliter demonstrantes
+multis rem speculationibus Et quasi corollarijs illustravimus » (vue 31,
+gauche). L'attribution à Ménélas est celle du feuillet ; cette lecture ne la
+vérifie pas. « demonstratõem » abrège « demonstrationem ».} Le livre compte
+trente-deux propositions ; les vingt-trois premières sont aux vues 31 à 40, la
+suite aux vues 41--42 et 45--47.
+
+\subsection*{I à V : le théorème de Ménélas}
+
+Deux arcs $BA$ et $BC$ partent d'un même point $B$ ; deux autres, $CD$ et $AE$,
+menés de leurs extrémités aux points $D$ de $BA$ et $E$ de $BC$, se coupent en $F$.
+Les propositions I à V établissent, de deux manières chacune,
+\[
+\text{(I, II, III)}\quad
+\frac{\sin AB}{\sin BD} = \frac{\sin AE}{\sin EF}\cdot\frac{\sin FC}{\sin CD},
+\qquad
+\text{(IV, V)}\quad
+\frac{\sin BA}{\sin AD} = \frac{\sin BE}{\sin EC}\cdot\frac{\sin CF}{\sin FD},
+\]
+II n'étant qu'un réarrangement de I. La première égalité est le théorème de
+Ménélas pour le triangle $ADF$ coupé par la transversale $BEC$, la seconde pour
+le triangle $BDC$ coupé par la transversale $AFE$ : ce sont les deux formes du
+théorème du quadrilatère complet sphérique, et elles sont justes (vérifiées
+numériquement).\footnote{Le feuillet dit « rapport composé » là où l'on écrit un
+produit de quotients. À I, l'énoncé de la démonstration porte « ex ratione sinus
+arcus $fe$ ad sinum arcus $dc$ », la fin de la démonstration « $fc$ », qui est
+juste (vue 31, droite). À IV, « duos ab eorum terminis ad eosdem reflexos $mf$
+$ab$ » où les arcs de la figure sont $md$ et $ae$ ; à V, « arcus $bc$ » pour $bg$,
+et « sicut arcus $cf$ » sans « sinus » (vue 32).} Les démonstrations de I, III et
+V abaissent des arcs perpendiculaires sur un côté et emploient la proposition 7 du
+premier livre — dans deux triangles rectangles de même angle, les sinus des
+hypoténuses sont comme les sinus des côtés opposés à cet angle — ; celle de II
+est un calcul de rapports avec une ligne auxiliaire $l$ ; celle de IV prolonge
+$BC$ et $DC$ jusqu'à leur point de rencontre $M$, qui est à un demi-cercle, et
+remplace chaque arc par son supplément, qui a même sinus.
+
+\subsection*{VI à IX : les lemmes plans}
+
+\pagerange{33}{34}
+\emph{VI}, le théorème de Ptolémée : dans un quadrilatère inscrit $ABCD$,
+$AC\cdot BD = AB\cdot CD + AD\cdot BC$, démontré par la construction classique d'un
+point $E$ de la diagonale tel que $\widehat{DAE} = \widehat{BAC}$.
+
+\emph{VII} : pour deux arcs inégaux $\alpha > \beta$ d'un même cercle, et en notant
+$\operatorname{crd}$ la corde,
+\[
+\frac{\operatorname{crd}\alpha\,\operatorname{crd}(180^\circ-\beta) + \operatorname{crd}\beta\,\operatorname{crd}(180^\circ-\alpha)}
+     {\operatorname{crd}\alpha\,\operatorname{crd}(180^\circ-\beta) - \operatorname{crd}\beta\,\operatorname{crd}(180^\circ-\alpha)}
+= \frac{\operatorname{crd}(\alpha+\beta)}{\operatorname{crd}(\alpha-\beta)} ,
+\]
+par Ptolémée appliqué à deux quadrilatères.
+
+\emph{VIII}, la même chose en sinus :
+\[
+\frac{\sin p\cos q + \cos p\sin q}{\sin p\cos q - \cos p\sin q} = \frac{\sin(p+q)}{\sin(p-q)} .
+\]
+La construction est belle : sur le rayon $BD$ comme diamètre on décrit un cercle,
+qui passe par les pieds $A$, $C$ des perpendiculaires menées de $B$ sur les rayons
+$DP$, $DQ$ et par le point $E$ symétrique ; dans ce petit cercle, $BA = \sin p$,
+$BC = BE = \sin q$, $DA = \cos p$, $DC = DE = \cos q$, $AC = \sin(p+q)$ et
+$AE = \sin(p-q)$, et VII s'applique. La figure donne en fait davantage que ce
+que le feuillet énonce : le théorème de Ptolémée appliqué au quadrilatère inscrit
+$BADC$ (resp. $BAED$) donne séparément
+$\sin(p\pm q) = \sin p\cos q \pm \cos p\sin q$, les formules d'addition ; le
+feuillet n'en tire que le rapport.\footnote{Remarque de cette lecture. Le feuillet
+écrit « lineæ perpendiculares $ba$ $bc$ » là où la figure porte $e$ au pied de la
+seconde, et où la suite dit « linea $bc$ vel linea $be$ » ; la seconde lettre de
+« $ae$ » ressemble à un c ; un « erit » biffé (vue 34, gauche).}
+
+\emph{IX} : si $a : b = c : d$ (avec $a > b$, $c > d$), alors
+$(a+b) : (a-b) = (c+d) : (c-d)$, et réciproquement.\footnote{« Aio quod erit $ab$
+ad $bc$ » : le mot « ad » est écrit en début de ligne comme « $ab$ » (vue 34,
+droite).}
+
+\subsection*{X à XIV : le théorème de la somme et de la différence, trois fois}
+
+\pagerange{35}{37}
+\emph{X.} Dans un triangle sphérique rectangle en $C$, dont $A$ est aigu,
+\[
+\frac{\sin(c+b)}{\sin(c-b)} = \frac{1+\cos A}{1-\cos A} .
+\]
+C'est exact : $\tan b = \tan c\cos A$ s'écrit $\sin b\cos c = \cos A\sin c\cos b$,
+et il suffit de former somme et différence de $\sin c\cos b$ et
+$\cos c\sin b$. C'est exactement le chemin de Maurolico : les deux rectangles
+$g = \sin c\cos b$ et $h = \sin b\cos c$ sont dans le rapport $1 : \cos A$ par la
+proposition IV, IX donne $(g+h):(g-h) = (1+\cos A):(1-\cos A)$, et VIII identifie
+$(g+h):(g-h)$ à $\sin(c+b):\sin(c-b)$.\footnote{Dans la « description de la
+dixième », les quadrants $AD$ et $AE$ sont pris sur $AB$ et $AC$ prolongés, et $F$
+est la rencontre de $DE$ et de $CB$ ; le sinus de $DE$ est celui de l'angle $A$, le
+sinus de $FE$ son cosinus. La figure est celle du premier livre, les lettres $D$ et
+$E$ échangées.}
+
+\emph{XI} ramène le rapport à une figure plane : si l'on construit en $H$ deux
+angles $\widehat{GHK} = c$ et $\widehat{GHL} = b$ de part et d'autre d'une droite
+$HG$ perpendiculaire à $LK$, alors $1 : \cos A = KG : GL$ — ce qui est
+$\tan c : \tan b$. \emph{XII} en tire une seconde démonstration de X : avec
+$HK$ égal au rayon et $GM = GL$, les perpendiculaires $KN$ et $KO$ sont
+$\sin(b+c)$ et $\sin(c-b)$, et des triangles semblables donnent
+$KN : KO = LK : KM = (KG+GL) : (KG-GL)$. Une scolie distingue trois figures,
+selon que $b + c$ est plus petit, plus grand qu'un quadrant, ou égal, et note que
+la même démonstration sert aux trois ; elle annonce une troisième méthode, « que
+j'estime transmise par Ménélas ».\footnote{« superest nunc tertius idipsum
+demonstrandi modus quem a Menelao traditum existimo » (vue 36, droite). Dans
+XII, la démonstration que $c > b$ renvoie à « 28. 2. sphæric. elementorum ».}
+
+\emph{XIII}, un lemme : si un rayon coupe en $D$ une corde $AC$ et en $B$ son arc,
+$AD : DC = \sin AB : \sin BC$. \emph{XIV}, la troisième démonstration, est dans
+l'espace : le petit cercle de pôle $A$ passant par $B$ coupe le grand cercle $AC$
+en $D$ et $E$, de sorte que $CE = b + c$ et $CD = c - b$ ; la perpendiculaire
+$BG$ au plan du grand cercle $AC$ tombe sur la corde $DE$ et sur le rayon $HC$
+de la sphère ; dans le petit cercle de centre $F$, l'angle $\widehat{BFD}$ est
+l'angle $A$ du triangle, de sorte que, le rayon $BF$ étant pris pour unité,
+$EG = 1 + \cos A$ et $GD = 1 - \cos A$ ; et XIII appliquée au rayon $HC$ donne
+$\sin CE : \sin CD = EG : GD$. C'est une démonstration complète.\footnote{« Itaque
+demonstrandum est quod arcus $cae$ ad sinum arcus $cd$ » : « sinus » manque
+devant « arcus $cae$ » ; « \emph{secundum} » est biffé dans « linea $hgc$
+semidiameter », et « ut » dans « Et hoc ut antea » (vue 37). La perpendicularité
+de $BG$ est tirée de « 19. 11. Euclidis », celle de $AF$ au plan du petit cercle
+de « 10. 1. Elem. Theodosij ».}
+
+\subsection*{XV à XIX : demi-angle et sinus verses}
+
+\pagerange{37}{39}
+\emph{XV} : $(1+\cos A) : (1-\cos A) = \cos^2(A/2) : \sin^2(A/2)$, par un
+demi-cercle de diamètre $HK$ où l'arc $KM$ vaut $A$ et $MN$ est la perpendiculaire.
+\emph{XVI} : donc
+\[
+\frac{\sin(c+b)}{\sin(c-b)} = \cot^2\frac{A}{2} .
+\]
+\emph{XVII} : c'est aussi le rapport $\operatorname{vers}(180^\circ - A) :
+\operatorname{vers} A$, le « sinus verse majeur » de l'angle à son sinus verse.
+Les trois énoncés sont exacts.\footnote{À XV, la démonstration écrit « sicut
+sinus arcus $fg$ ad quadratum sinus arcus $gd$ », puis « sicut quadratum sinus
+arcus $fg$ ad sinum arcus $gd$ », chaque fois avec un « quadratum » mal placé
+(vue 38, gauche). À XVI, « arcuum $bac$ $ac$ », la lettre du milieu surchargée. À
+XVII, « sicut linea $nk$ ad lineam $nk$ », le k repassé d'une encre plus noire, où
+le sens demande $hn$ ; un « $hk$ » biffé et douteux.}
+
+\emph{XVIII} : deux triangles rectangles qui ont un angle aigu égal ont même
+rapport $\sin(c+b) : \sin(c-b)$. \emph{XIX} : réciproquement, si ces rapports sont
+égaux, les angles aigus sont égaux — puisque, la somme des deux sinus verses
+étant le diamètre, l'égalité des rapports $\operatorname{vers}(180^\circ-A) :
+\operatorname{vers}A$ et $\operatorname{vers}(180^\circ-D) : \operatorname{vers}D$
+donne, par composition, $\operatorname{vers}A = \operatorname{vers}D$. Vrai ; la
+copie de XIX est pourtant incomplète dans l'énoncé et brouillée dans la
+démonstration.\footnote{L'énoncé passe, au changement de page, de « ad sinum
+arcus differentiæ eorumdem » à « tum ipsi acuti anguli æquales erunt », sans le
+second membre de la proportion. Dans la démonstration, la comparaison est réduite
+à un seul membre (« sicut aggregatum sinuum versorum anguli acuti $d$ ad sinum
+versum anguli $d$ »), celui qui concerne l'angle $A$ manquant ; « etiam idem » est
+biffé, avec « tam illud » dans l'interligne, et « diameter » est suppléé par la
+transcription (vues 38 et 39). À XVIII, deux passages biffés, « $ed$ $df$ » et
+« sinibus versis anguli ».}
+
+\subsection*{XX et XXI : la plus grande différence, deux fois encore}
+
+\pagerange{39}{40}
+\emph{XX.} Dans un triangle rectangle, l'angle aigu $A$ étant fixé, la différence
+$c - b$ est la plus grande quand $b + c = 90^\circ$, et seulement alors. La
+démonstration est la plus directe de toutes : par XVIII,
+$\sin(c-b) = \sin(c+b)\,\tan^2(A/2) \le \tan^2(A/2)$, avec égalité si et
+seulement si $\sin(c+b) = 1$ ; et $c - b$ étant compris entre $0^\circ$ et
+$90^\circ$, maximiser son sinus revient à maximiser l'arc. On retrouve les
+propositions XXIX à XXXII du premier livre, avec la valeur du maximum,
+$\sin(c-b) = \tan^2(A/2)$, que le feuillet ne tire pas.\footnote{La réciproque est
+donnée deux fois, directement et par l'absurde ; une phrase y est écrite deux fois
+de suite ; « propositis », en fin de démonstration, est abrégé et incertain. Sur
+la figure, l'initiale « $k$ » ressemble à un x (vues 39, gauche et droite).}
+
+\emph{XXI.} Autre démonstration, dans la figure plane de XII, où
+$\widehat{KHO} = c - b$ et $\widehat{LHK} = b + c$ : l'angle $\widehat{KHO}$ est
+maximal quand le cercle passant par $H$, $M$ et $K$ est tangent en $H$ à la droite
+$GH$, c'est-à-dire quand $GH^2 = GM\cdot GK = GL\cdot GK$, c'est-à-dire quand
+$\widehat{LHK}$ est droit. C'est le critère classique de l'angle maximal sous
+lequel on voit un segment depuis une droite, et la démonstration est
+juste.\footnote{« per 26. 3. Et 26. 1. Eucli. » : les deux nombres sont tracés de
+même, et le second est lu 26 sans certitude (vue 40, gauche).}
+
+\subsection*{XXII à XXV : la règle des sinus pour deux triangles}
+
+\pagerange{40}{41}
+\emph{XXII.} Si deux triangles sphériques $ABC$ et $DEF$ ont $A = D$ aigus, et
+$C + F = 180^\circ$ (ou $C = F = 90^\circ$), alors
+$\sin AB : \sin DE = \sin BC : \sin EF$. En termes modernes, c'est la règle des
+sinus, $\sin a/\sin A = \sin c/\sin C$, appliquée aux deux triangles, avec
+$\sin C = \sin F$ ; la démonstration de Maurolico rabat l'angle obtus par
+symétrie pour se ramener à deux angles égaux.\footnote{« per 7. \emph{huius}
+præcedentis libri » : « huius » biffé (vue 40, droite).}
+
+\emph{XXIII}, la réciproque : si $A = D$ aigus et $\sin AB : \sin DE = \sin BC :
+\sin EF$, alors $C = F$ ou $C + F = 180^\circ$. C'est vrai, puisque la règle des
+sinus donne $\sin C = \sin F$. La démonstration traite le cas où $C$ est droit,
+puis mène les perpendiculaires $BH$ et $EG$ et distingue deux cas : toutes deux
+tombent à l'intérieur des triangles, ou l'une dedans et l'autre dehors. Il manque
+le cas où toutes deux tombent au dehors, c'est-à-dire où $C$ et $F$ sont tous deux
+obtus ; il se traite exactement comme le premier et donne $C = F$.\footnote{L'angle
+$A$ étant aigu, le pied de la perpendiculaire issue de $B$ tombe sur le côté $AC$
+si et seulement si $C$ est aigu. Remarque de cette lecture. La démonstration
+commence à la vue 40, droite, et s'arrête sur « quod » ; la vue 41, gauche,
+reprend sur « impossibile ». Sur la seconde figure, la lettre $f$ est écrite
+deux fois.}
+
+\pagerange{41}{42}
+\emph{XXIIII}, la bissectrice : si l'arc $BD$ coupe en deux l'angle $B$ du
+triangle $ABC$, alors $\sin AB : \sin BC = \sin AD : \sin DC$ — par XXII, les
+angles en $D$ étant supplémentaires. \emph{XXV}, la réciproque, par XXIII : les
+deux angles $\widehat{ABD}$ et $\widehat{DBC}$ sont égaux ou supplémentaires, et
+ils ne peuvent être supplémentaires puisque leur somme est l'angle $B$ du
+triangle.\footnote{À XXV, « ponatur arcus $ab$ ad sinum $bc$ » : « sinus »
+manque devant « arcus » ; « Producatque » est une lecture incertaine ; « ad ad »
+(vue 41).}
+
+\emph{XXVI.} Si deux triangles $ABC$, $DEF$ ont $A = D$ et $C = F$, les
+perpendiculaires $BG$ et $EH$ partagent les bases dans le même rapport des sinus :
+$\sin AG : \sin GC = \sin DH : \sin HF$. Car
+$\sin AG : \sin GC = (\sin AB : \sin BC)(\sin\widehat{ABG} : \sin\widehat{GBC})$,
+le premier rapport vaut $\sin C : \sin A$ et le second $\cos A : \cos C$ (la
+proposition de la vue 20). Vrai, les portions $AG$ et $GC$ étant comptées sur le
+grand cercle $AC$ même si le pied tombe au dehors.\footnote{« per 16 præmissi » :
+le 6 a la forme en « b » de cette main (vue 42, gauche). Les renvois sont à 13,
+16 et 22 du premier livre.}
+
+\emph{XXVII.} Dans un triangle rectangle en $C$,
+$\sin B : 1 = \cos A : \cos a$. \emph{XXVIII.}
+$\cos A : 1 = \cos a\,\sin B : 1^2$. Ce sont deux écritures de
+$\cos A = \cos a\sin B$, l'une des règles de Napier.\footnote{À XXVII, la
+démonstration conclut « sinus arcus $cf$ ad sinum arcus $fb$ sic sinus anguli
+$abc$ ad sinum totum », où il faut $ef$ ($\sin FC$ est le rayon) ; la transcription
+note que la main forme $c$ et $e$ presque de même et donne les lettres telles
+qu'elles se lisent. Dans la marge de XXVIII, un cercle lettré avec la légende
+« Refertur ad propositionẽ Sequentem ».}
+
+\subsection*{XXIX à XXXII : la loi des cosinus, et les ombres}
+
+\pagerange{45}{47}
+La démonstration de XXVIII, interrompue au bas de la vue 42, s'achève à la vue
+45.\footnote{La page de gauche de la vue 42 s'arrête sur « quadrangulum quod » ;
+la page de droite de la vue 45 (numéro à l'encre 44) reprend en les répétant les
+deux dernières lignes de la vue 42 et achève la proposition. Les trois feuillets
+intermédiaires portent le texte sur Regiomontanus, lu dans la section suivante.
+La reconstitution est celle de la transcription.}
+
+\emph{XXIX.} Dans \emph{tout} triangle sphérique,
+\[
+\frac{\operatorname{vers} A}{\operatorname{vers} a - \operatorname{vers}(b-c)}
+= \frac{1}{\sin b\,\sin c},
+\qquad\text{soit}\qquad
+\operatorname{vers} a = \operatorname{vers}(b-c) + \sin b\,\sin c\,\operatorname{vers} A .
+\]
+C'est la loi des cosinus sphérique, $\cos a = \cos b\cos c + \sin b\sin c\cos A$,
+écrite en sinus verses ; on l'a vérifiée numériquement. La démonstration est dans
+l'espace, et en voici l'idée dans nos termes. Le petit cercle de pôle $A$ passant
+par $C$ a pour rayon $\sin b$ ; l'arc qu'il intercepte entre le grand cercle $AB$
+et $C$ est semblable à l'arc du grand cercle polaire de $A$ qui mesure l'angle
+$A$, de sorte que sa flèche vaut $\sin b\,\operatorname{vers} A$. Projetée sur
+l'axe du point $B$, cette flèche est multipliée par $\sin c$ ; et ce qu'elle
+mesure sur cet axe est la distance entre les projections de $C$ et du point de
+$AB$ situé à la distance $b$ de $A$, c'est-à-dire
+$\operatorname{vers} a - \operatorname{vers}(b-c)$.\footnote{Les lettres de la
+démonstration sont souvent douteuses : un signe en forme de 2 après « majores
+quidem » ; le point « $r$ » ; la perpendiculaire « ad $os$ » ; une lettre en forme
+de c retourné, que la transcription note $\supset$ ; « $aqz$ », repassé, qui ne
+nomme aucune ligne de la figure et où l'énoncé demande $ry$ ; « vel $qz$ » (vues
+45, droite, et 46, gauche). On n'a donc pas suivi la démonstration lettre à
+lettre ; l'idée qu'on en donne est celle que ses étapes lisibles portent
+(« arcus $dl$ $ks$ sunt similes », « in similibus arcubus sinus sunt semidiametris
+proportionales », triangles équiangles $kts$ et $aux$).}
+
+\emph{XXX.} Pour un arc $x$ et un gnomon égal au rayon :
+$\sin x : \cos x = 1 : \text{umbra recta}$, et
+$\cos x : \sin x = 1 : \text{umbra versa}$ ; autrement dit, l'« ombre droite » est
+$\cot x$ et l'« ombre verse » $\tan x$. \emph{Corollaires} : l'ombre droite d'un
+arc est l'ombre verse de son complément ; à $45^\circ$ les deux ombres égalent le
+gnomon ; le gnomon est moyen proportionnel entre les ombres de deux arcs
+complémentaires, $\tan x\,\tan(90^\circ - x) = 1$.\footnote{« recta $ca$ sinus
+rectus arcus $bc$ » : lecture incertaine, et c'est la perpendiculaire $ce$ qui
+est le sinus (vue 46, gauche).}
+
+\emph{XXXI.} Dans un triangle rectangle en $C$,
+$1 : \sin b = 1 : \tan(90^\circ - A)\,\tan a$, soit
+\[
+\sin b = \tan a\,\cot A .
+\]
+\emph{Corollaire} : deux triangles rectangles qui ont un côté $b$ égal ont même
+produit $\tan a\cot A$, et réciproquement. \emph{XXXII} :
+$1 : \sin b = \tan A : \tan a$, la même relation, par le dernier corollaire de
+XXX ; le feuillet ajoute qu'on en conclut tout pareillement pour les ombres
+droites des compléments. Ce sont encore des règles de Napier, et elles sont
+exactes.\footnote{À XXXI, « respondet » est offert pour un mot abrégé lu « rndet »
+avec un trait ; la phrase « Igitur ex æqua proportione erit sinus arcus $da$ …
+ad sinum arcus $ac$ » est écrite deux fois, la seconde avec « hoc est sinus
+totus » en interligne. À XXXII, un mot abrégé d'environ cinq lettres après
+« descriptione » n'est pas lu (vues 46 et 47). Dans la marge de la vue 47,
+gauche, deux « $f$ » isolés le long de la reliure.}
+
+\subsection*{La scolie : des démonstrations au calcul}
+
+\pagerange{47}{47}
+« Par ces démonstrations on peut résoudre toutes les questions qu'on a coutume
+de poser sur les triangles sphériques, et qui regardent en astronomie les arcs
+des cercles conçus dans le premier ciel » ; mais qui les possède doit savoir
+ramener la théorie à la pratique et la démonstration au calcul, et Maurolico
+donne des exemples.\footnote{« Sed nemo harum speculationum scientiam perfectam
+habens nesciet theoriam ad praxim atque demonstrationem ad calculum reducere »
+(vue 47, gauche).} Dans la figure de XXXI, que $ACD$ soit l'équateur, $ABE$
+l'écliptique, $FED$ le colure, $A$ l'équinoxe, $DE = \varepsilon$, $B$ le lieu de
+l'astre et $FBC$ son cercle de déclinaison. Alors $1 : \sin\varepsilon = \sin
+\lambda : \sin\delta$, et le quatrième terme se calcule en multipliant le
+deuxième par le troisième et en divisant par le premier : c'est la règle du
+problème 1.\footnote{« sic \emph{sit} sinus arcus $ab$ » : « sit » incertain ;
+« per 6. \emph{huius} præmissi libri » : « huius » biffé.} Puis, « si l'on prend
+l'arc $FBC$ pour horizon droit », $AC$ est l'ascension droite de l'arc $AB$, et la
+proposition 17 du premier livre, $\cos\lambda = \cos\delta\cos\alpha$, la
+donne.\footnote{La phrase s'arrête au bas de la vue 47, gauche, sur « Si autem
+sumatur arcus $fbc$ pro horizonte recto » et se poursuit en tête de la vue 42,
+droite (numéro à l'encre 41) : « erit arcus $ac$ ascensio recta, respondens arcui
+Zodiaci $ab$ ». Le feuillet écrit « sicut sinus totus ad sinum arcus $ac$ », où il
+faut le sinus secondaire de $AC$, comme le montre la reformulation qui suit
+(« sicut sinus totus ad sinum arcus $cd$ »).}
+
+\section*{Les règles de Regiomontanus, et la table des sécantes}
+
+\pagerange{42}{45}
+Sans titre, à la suite de la scolie, un texte suivi explique « d'où dépendent »
+les règles de calcul des tables générales de « Iohannes de Monteregio »,
+Regiomontanus, « car cela n'est pas clair pour tous les esprits », puis démontre
+la table bienfaisante et en donne l'usage.\footnote{Ce texte occupe les pages
+numérotées à l'encre 41 à 43 (vue 42, droite, à vue 45, gauche) et s'achève en
+tête de la vue 47, droite : la vue 45, gauche, s'arrête sur « vel quot zyphræ
+sunt in numero », et la vue 47, droite, s'ouvre sur « sinus totius, Et habeo in
+quotiente sinum arcus $cd$ quæsiti ». Reconstitution de la transcription. Un signe
+en croissant, « ( », marque de paragraphe de cette main, ouvre plusieurs
+alinéas (vues 43, 44, 45 et 47) ; il n'est pas un mot.}
+
+\subsection*{La table des déclinaisons}
+
+Soient l'écliptique $AB$, l'équateur $AC$, $B$ le point de l'écliptique qui a la
+longitude de l'astre, $G$ l'astre sur le cercle de latitude $BG$ prolongé jusqu'à
+l'équateur en $C$, et $GH$ sa déclinaison. La table donne d'abord l'arc $BC$
+(notre \emph{Primus}), d'où, avec la latitude, l'arc $GC$ ; puis un « nombre
+multiplicande » qui est le sinus de l'angle $\widehat{GCH}$ pour un rayon de
+$100\,000$ (notre \emph{Secundus}) — égal au rayon au point solsticial, où cet
+angle est droit. Dans le triangle rectangle $GHC$, $1 : \sin\widehat{GCH} = \sin
+CG : \sin GH$ : on connaît trois termes, et le quatrième s'obtient en multipliant
+le deuxième par le troisième et en divisant par le premier. C'est la règle de
+Regiomontanus, et c'est notre problème 4.\footnote{« Recte igitur præcipit
+Iohannes in problemate dum iubet multiplicari sinum arcus $gc$, in numerum
+multiplicandum in tabula repertum » (vue 42, droite). Après « arcus », un mot
+surchargé et empâté, commençant peut-être par « vi », n'est pas lu ;
+« \emph{primum} » est biffé.}
+
+Diviser par $100\,000$, c'est rejeter cinq figures ; et l'on ajoute une unité au
+reste si les figures rejetées valent plus de $50\,000$, parce que la fraction
+négligée dépasse alors la moitié. C'est l'arrondi au plus proche ; le cas exact
+de $50\,000$ n'est pas discuté. Il importe peu, ajoute-t-il, que les sinus de
+$CG$ et $GH$ soient pris pour un autre rayon que celui de l'angle : dans une
+proportion, seuls le premier et le deuxième termes, et le troisième et le
+quatrième, doivent être de même espèce.\footnote{« quandoquidem in quatuor
+magnitudinibus proportionalibus, non necesse est omnes quatuor esse eiusdem
+colligantiæ, sed primam cum secundâ et tertiam cum quartâ » (vue 43,
+gauche). « \emph{negligitur} » est biffé et remplacé.}
+
+\subsection*{La table des ascensions droites}
+
+Dans la figure de la proposition XXXI, soient l'équateur $ACD$, le cercle de
+latitude de l'astre $ABE$, son cercle de déclinaison $FBC$, et $FED$ le cercle
+passant par les pôles de ces deux-là ; $B$ est l'astre, $BC$ sa déclinaison, $AC$
+l'arc $\Delta$ du problème 5. La table donne la « racine des ascensions », arc
+d'équateur du début du Bélier au cercle de latitude (notre \emph{Tertius}), et un
+nombre multiplicande qui est « l'ombre verse de l'arc $FE$ multipliée par six »,
+pour un gnomon de $100\,000$. Or la proposition XXXI donne
+\[
+\sin AC = \tan FE\,\tan BC ,
+\]
+avec $FE = 90^\circ - \theta$. Regiomontanus prend un rayon de $60\,000$ et un
+gnomon de $100\,000$, dont le carré vaut $10^{10}$ : le sinus de $AC$ pour ce rayon
+est $60\,000\cdot\tan FE\cdot\tan BC/10^{10} = (6\tan FE)\cdot\tan BC/10^{6}$, les
+tangentes étant en parties du gnomon. On multiplie donc le nombre multiplicande
+par la tangente de la déclinaison et l'on rejette six figures ; le canon dit
+cinq, parce qu'une figure a déjà été ôtée au nombre multiplicande « pour alléger
+le travail ». L'ascension droite est la racine augmentée ou diminuée de $AC$.
+Le calcul est juste.\footnote{Le carré du gnomon est écrit en chiffres serrés,
+lu « 10000000.000 » en comptant dix zéros, compte que la transcription tient
+pour douteux ; plus bas, « 10000.000.000 », dix zéros encore, le deuxième chiffre
+ayant la forme en « a » du zéro de cette main. « sæpius » est surchargé ;
+« haben » est écrit pour « haberi » (vues 43, gauche et droite).}
+
+Maurolico remarque que $AC$ s'obtient aussi sans nombre multiplicande ni table
+des ombres : dans le triangle rectangle $GHC$ de la figure précédente, la
+proposition 17 du premier livre donne $\cos GH : \cos GC = 1 : \cos CH$, soit
+$\cos\Delta = \cos s/\cos\delta$ (notre seconde règle du problème 5). Si
+Regiomontanus, « homme très perspicace », a ajouté le nombre multiplicande et la
+table féconde, c'est pour éviter cette division, pénible quand le diviseur a des
+chiffres quelconques, et tout faire par multiplication.
+
+\subsection*{La différence ascensionnelle}
+
+Dans la même figure, que $ACD$ soit l'équateur, $FBC$ l'horizon droit, $ABE$
+l'horizon oblique et $FED$ le méridien : $FE$ est la latitude du lieu, $BC$ la
+déclinaison de l'astre, $CA$ sa différence ascensionnelle, et XXXI donne
+$\sin\Delta = \tan\varphi\,\tan\delta$. La règle de Regiomontanus — multiplier les
+ombres verses de la latitude et de la déclinaison, puis par six, et rejeter six
+figures — est la même opération pour un rayon de $60\,000$. « Ainsi est démontrée
+la pratique de ces tables, et en même temps déclaré comment elles ont été
+construites. »\footnote{« ideoque » est une lecture incertaine (vue 43, droite).}
+
+\subsection*{La démonstration de la table bienfaisante}
+
+\pagerange{44}{44}
+« À l'imitation de la table féconde de Iohannes de Monteregio, nous avons fait
+une autre table, que nous avons appelée bienfaisante, parce que par son bienfait
+on procure de la facilité à certains calculs. » Soit un triangle rectiligne
+$ABC$ rectangle en $B$, avec la hauteur $BD$ sur $AC$, et $AB$ égal au rayon et au
+gnomon, $100\,000$ parties. Pour l'angle $A$, la table féconde donne $BC$
+(l'ombre verse, $\tan A$), la table bienfaisante $CA$ (le « rayon » qui joint le
+sommet du gnomon à l'extrémité de l'ombre, $\sec A$), la table des sinus $BD$
+($\sin A$), et $DA$ est $\cos A$. Les triangles $ABD$, $BCD$ et $ACB$ étant
+semblables,
+\[
+DA \cdot CA = AB^2,\qquad BC = \frac{AC\cdot BD}{AB},\qquad CA = \frac{AB\cdot BC}{BD},
+\]
+soit $\sec A = 1/\cos A$, $\tan A = \sec A\sin A$, $\sec A = \tan A/\sin A$ ;
+diviser par $AB$ ou multiplier par $AB$, c'est rejeter ou ajouter cinq
+zéros.\footnote{Plusieurs mots de la page sont soulignés sans raison apparente ;
+la transcription ne reproduit pas le soulignement (vue 44, gauche).}
+
+Quatre valeurs particulières. À $30^\circ$, $\tan A$ est la moitié de $\sec A$, et
+$AC^2 = \tfrac43 AB^2$ : si $AB$ est le rayon d'une sphère, $AC$ est le côté du cube
+inscrit dans cette sphère, « mais cela ne fait rien à l'affaire ». À $45^\circ$,
+$AD = DB = DC$, l'ombre égale le gnomon, et $AC$ est le côté du carré inscrit dans
+le cercle de rayon $AB$. À $60^\circ$, $AC = 2AB = 200\,000$. À $90^\circ$, l'ombre et
+le rayon « s'en vont à l'infini », les deux droites étant parallèles. Tout cela
+est exact, et les deux tables se tirent de la table des sinus.\footnote{Le
+feuillet dit « latus cubi circumscripti a sphæra », « le côté du cube circonscrit
+par la sphère », c'est-à-dire inscrit en elle : son côté est
+$2R/\sqrt3 = R\sqrt{4/3}$, ce qui est bien $AC$. « lineam iam $ac$ » est écrit
+ainsi (vue 44, gauche et droite).}
+
+\subsection*{L'usage de la table bienfaisante}
+
+\pagerange{44}{47}
+Soient deux quadrants de grands cercles $ABE$ et $ACD$ inclinés l'un sur l'autre,
+$F$ le pôle de $ACD$, et les quadrants $FED$ et $FBC$, de sorte que les angles en
+$C$, $D$ et $E$ sont droits. Dans le triangle $ABC$, rectangle en $C$, la sécante
+permet, dit Maurolico, de résoudre par une multiplication et une suppression de
+cinq figures les quatre problèmes suivants.\footnote{« et a puncto $f$ polo scilicet
+ipsius $ae$ » : $F$ est dit pôle de « $ae$ » ; les angles droits en $C$ et $D$ et
+l'usage qui suit en font le pôle du cercle $ACD$. « apud $c$ $d$ $e$ puncta » est
+écrit « apud cde puncta » ; « quoad » est écrit « qual », corrigé par « oa » en
+interligne (vue 44, droite).}
+
+\begin{enumerate}
+  \item[1.] \emph{Connaissant $AB$ et $BC$, trouver $AC$} :
+    $\cos AC = \cos AB\,\sec BC$. Le feuillet l'écrit comme proportion continue
+    ($\sin FB$, rayon et sécante de $BC$) combinée à la relation « démontrée par
+    Ménélas » $\sin FB : 1 = \sin BE : \sin CD$, c'est-à-dire
+    $\cos BC = \cos AB/\cos AC$. Applications : l'ascension droite par la
+    longitude et la déclinaison (problème 3) ; l'arc $\Delta$ du problème 5 par
+    l'arc du cercle de latitude et la déclinaison ; la différence ascensionnelle
+    par l'amplitude et la déclinaison (problème 7).\footnote{« figuras » est
+    écrit au-dessus de « zyphras » biffé (vue 44, droite).}
+  \item[2.] \emph{Connaissant l'angle $A$ (l'arc $DE$) et $BC$, trouver $AB$} :
+    $\sin AB = \sin BC\,\sec FE = \sin BC/\sin A$. Applications : la longitude
+    par la déclinaison et l'obliquité ; l'amplitude ortive par la déclinaison et
+    l'angle de l'horizon avec l'équateur, complément de la latitude
+    (problème 6).\footnote{« diff\textsuperscript{ia} » et
+    « quæstionib\textsuperscript{9} » abrègent « differentia » et
+    « quæstionibus ». La phrase « si ex angulo $a$ complemento latitudinis
+    regionis et ex arcu $bc$ declinationis stellæ » est écrite deux fois de
+    suite, sans biffure (vue 45, gauche).}
+  \item[3.] \emph{Connaissant $AC$ et $CB$, trouver $AB$} : par la règle des
+    déclinaisons appliquée aux compléments, $\cos AB = \cos AC\,\cos BC$.
+  \item[4.] \emph{Connaissant $AB$ et $BC$, trouver l'angle $A$} :
+    $\sin A = \sin BC\,\sec BE = \sin BC/\sin AB$ — ainsi « de l'arc $AB$ de
+    l'écliptique et de sa déclinaison $BC$ nous obtiendrons la plus grande
+    déclinaison $DE$ ».\footnote{Le feuillet appelle l'arc cherché « $cd$ » à deux
+    reprises (« quæratur arcus $cd$ », « habeo in quotiente sinum arcus $cd$
+    quæsiti »), puis conclut sur « maximam declinationem $de$ ». C'est $DE$ :
+    la proportion qu'il écrit, $\sin AB : 1 = \sin BC : \sin(\cdot)$, est
+    $\sin\delta = \sin\lambda\sin\varepsilon$. « prius » est surchargé, peut-être
+    sur « primus » (vue 45, gauche, et vue 47, droite).}
+\end{enumerate}
+
+\subsection*{La date de 1530}
+
+\pagerange{47}{47}
+Le texte conclut que tout ce que Regiomontanus calculait par la table féconde,
+évitant l'ennui de la division, se calcule aussi aisément par « notre » table
+bienfaisante, et promet des exemples pratiques « plus bas, avec les tables » —
+dans ce volume, où l'ordre du livre n'est pas celui de la reliure, les problèmes
+résolus avec la table bienfaisante y répondent sans doute, sans que rien
+l'établisse. Il est daté à la
+première personne : « Hæc in Arce Apollinari dum cum Iohanne Vigintimillio
+Hieracensium Marchione degeremus olim mense Augusto 1530
+speculabamur. »\footnote{« Nous méditions ces choses jadis, au mois d'août 1530,
+alors que nous séjournions dans la citadelle d'Apollon (\emph{in Arce
+Apollinari}) avec Giovanni Ventimiglia, marquis de Geraci. » Le lieu n'est pas
+identifié ici. Après « omnia », un mot court biffé n'est pas lu ; « nram » abrège
+« nostram » (vue 47, droite, numéro à l'encre 46).} Suit l'annonce déjà citée :
+« Nous joindrons maintenant à ceci quelques opuscules des anciens qui regardent la
+même théorie sphérique. » Cette date est celle que le texte se donne ; elle ne
+dit rien, et cette lecture ne dit rien, de l'antériorité de ces règles sur celles
+d'autres auteurs.
+
+\section*{La dédicace à Octavio Spinola}
+
+\pagerange{47}{47}
+Sur la même page, une lettre « D. Octavio Spinulæ Quæstori ærario Siciliæ,
+Regioque Consiliario, Maurolycus. Salutem. », au trésorier de Sicile et
+conseiller du roi. Il y a trois ans, écrit Maurolico, qu'on a commencé d'imprimer
+à Messine le volume de ses \emph{Sphériques} ; les guerres et leurs soupçons ne
+laissaient aucune place aux spéculations, qui demandent la retraite et le loisir ;
+l'affection de Spinola pour les lettres a fait reprendre et achever l'ouvrage, et
+« notre sphère » lui doit autant qu'Atlas dut à Hercule quand celui-ci porta le ciel
+sur ses épaules. Les \emph{Sphériques} de Théodose, de Ménélas et de Maurolico
+achevés, il y joindra ce qui touche la sphère mobile et le premier mouvement,
+« premiers rudiments de la science des astres ».\footnote{« dabitur ut spero
+quandoque ocium » : « quandoque » est écrit en abrégé, « qdoq » avec un signe
+final (vue 47, droite).} Un « Hexastichon » au même, et la date : « Messanæ. Kal.
+Junij M.D.LVII. », Messine, 1\textsuperscript{er} juin 1557.\footnote{« Ces
+monuments longtemps troublés par diverses tempêtes courent, sous ta conduite, vers
+leur but. Ainsi jadis, pour qu'une si grande machine ne pérît pas, Atlas soutint
+les astres avec l'aide d'Hercule. Si ma page peut quelque chose, Octave, aucun
+temps n'effacera la louange de ton mérite. » Les vers vont à la ligne un par un,
+les pairs en retrait ; « Disturbata » et « procellis » sont surchargés, le « D »
+de la date repassé. Les trois dates du volume — la lettre à Charles Quint de
+juillet 1556, celle-ci du 1\textsuperscript{er} juin 1557, celle au vice-roi
+d'août 1558, avec l'impression d'août 1558 — sont données comme le feuillet les
+porte ; cette lecture ne les raccorde pas.}
+
+\end{document}
