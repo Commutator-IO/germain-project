@@ -650,9 +650,12 @@ function readMeta(tex) {
   const one = (name) => new RegExp(`\\\\${name}\\{([^{}]*)\\}`).exec(tex)?.[1] ?? '';
   const pages = /\\pages\{(\d+)\}\{(\d+)\}/.exec(tex);
   return {
-    volume: one('volume'),
+    // `\folder{}` and `\foldertitle{}` are what the preamble defines and what
+    // every transcription writes; `scripts/tei.mjs` reads the same two. Reading
+    // `\volume{}` here left the head line without the holder's title (#6).
+    volume: one('folder'),
     batch: one('batch'),
-    title: one('volumetitle'),
+    title: one('foldertitle'),
     // The holder's own dating, verbatim. Optional: a volume may have none,
     // and an empty string simply drops the line.
     dating: one('dating'),

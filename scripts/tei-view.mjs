@@ -180,13 +180,10 @@ function find(el, name) {
 /**
  * The head line's fields, read back out of the header tei.mjs wrote.
  *
- * `title` is left empty on purpose. render.mjs's `readMeta` reads
- * `\volumetitle{}` and `\volume{}`, macros no transcription writes any more —
- * they are `\foldertitle{}` and `\folder{}` — so the `.tex` view prints no
- * volume title, and the TEI view, which derives from the same `.tex` and must
- * add nothing to it, prints none either. The `<head>` of the `<msDesc>` is read
- * here so that it is consumed rather than ignored; printing it is a change to
- * make in render.mjs first, where it would reach both views at once.
+ * `title` is the holder's title of the volume, which the `.tex` view prints
+ * after the edition's name. It is `\foldertitle{}`, and tei.mjs carries it as
+ * the `<head>` of the `<msDesc>`; reading it back from there is what keeps the
+ * two head lines word for word the same (#6).
  */
 function readHeader(header, batchDiv) {
   (function walk(el) {
@@ -204,12 +201,12 @@ function readHeader(header, batchDiv) {
   const edition = find(header, 'edition');
   return {
     // `<idno type="shelfmark">` holds `\shelfmark{}`, which is what the head
-    // line prints; `volume` stays empty, as render.mjs's `\volume{}` does.
+    // line prints; `volume` is its fallback, the folder slug, which tei.mjs
+    // writes into the same `<idno>` when a file gives no shelfmark.
     shelfmark: idno ? textOf(idno) : '',
     volume: '',
     batch: batchDiv.attrs.n ?? '',
-    title: '',
-    msTitle: msHead ? textOf(msHead) : '',
+    title: msHead ? textOf(msHead) : '',
     dating: dating ? textOf(dating) : '',
     watermark: edition ? textOf(edition) : '',
     first: t[1],
