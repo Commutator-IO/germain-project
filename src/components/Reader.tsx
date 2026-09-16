@@ -33,6 +33,9 @@ export const STATE_COLOURS: Record<State, string> = {
  * in the header of the file it produces. A third segment may name the edition,
  * `#fr-9115/3/modern`, and a fourth a view, `#fr-9115/3/fr/47`, so that a
  * link can land a reader on the very leaf.
+ *
+ * `#fr-9115/3/tei` is the transcription rendered from its TEI export instead of
+ * from the `.tex` (#5) — the same edition, the same tab, another file beside it.
  */
 export function useReader(cotes: Volume[]) {
   const manifest = useManifest();
@@ -44,7 +47,7 @@ export function useReader(cotes: Volume[]) {
 
   useEffect(() => {
     const readHash = () => {
-      const h = /^#([\w-]+)\/(\d+)(?:\/(fr|modern))?(?:\/(\d+))?$/.exec(location.hash);
+      const h = /^#([\w-]+)\/(\d+)(?:\/(fr|modern|tei))?(?:\/(\d+))?$/.exec(location.hash);
       setOpen(h ? { cote: h[1], batch: Number(h[2]) } : null);
       if (h?.[3]) setEdition(h[3] as PaneView);
       if (h?.[4]) setPage(Number(h[4]));
@@ -72,7 +75,7 @@ export function useReader(cotes: Volume[]) {
 
   useEffect(() => {
     if (!open) return;
-    if (/^#[\w-]+\/\d+\/(fr|modern)/.test(location.hash)) return;
+    if (/^#[\w-]+\/\d+\/(fr|modern|tei)/.test(location.hash)) return;
     setEdition('fr');
   }, [open, manifest]);
 
@@ -83,7 +86,13 @@ export function useReader(cotes: Volume[]) {
           volume: openCote,
           batch: Math.min(open.batch, batchCount(openCote.pages)),
           page,
-          wholeFolder: servedByFolder(manifest, openCote.id, edition, 'html'),
+          // The TEI view is the transcription, served per batch like it.
+          wholeFolder: servedByFolder(
+            manifest,
+            openCote.id,
+            edition === 'tei' ? 'fr' : edition,
+            'html',
+          ),
         }
       : null;
 

@@ -98,17 +98,23 @@ export function Downloads({
                 <a
                   key={ext}
                   // The source opens through its wrapper page; the PDF opens
-                  // in the browser's viewer; the TEI opens as XML, which every
-                  // browser displays as a tree. None downloads.
+                  // in the browser's viewer; the TEI opens as a reading view
+                  // rendered from the XML (`npm run tei-view`), which links the
+                  // XML itself to open or download. None downloads.
                   href={
-                    editionUrl(manifest, cote, batch, r.key as Edition, ext) +
-                    (ext === 'tex' ? '.html' : '')
+                    ext === 'xml'
+                      ? editionUrl(manifest, cote, batch, r.key as Edition, ext).replace(
+                          /\.xml$/,
+                          '.tei.html',
+                        )
+                      : editionUrl(manifest, cote, batch, r.key as Edition, ext) +
+                        (ext === 'tex' ? '.html' : '')
                   }
                   target="_blank"
                   rel="noopener noreferrer"
                   title={
                     ext === 'xml'
-                      ? `Open the ${r.label.toLowerCase()} as TEI P5 (XML) in a new tab — the same apparatus, in the archives' interchange format`
+                      ? `Open the ${r.label.toLowerCase()} rendered from its TEI P5 export in a new tab — the XML is linked there to open or download`
                       : `Open the ${r.label.toLowerCase()} ${ext.toUpperCase()} in a new tab`
                   }
                   className="rounded-md bg-ink-100 px-1.5 py-0.5 font-mono text-[11px] font-semibold uppercase text-ink-600 transition hover:bg-brand-100 hover:text-brand-700"

@@ -143,7 +143,16 @@ export type BookKey = 'xvii' | 'xviii' | 'xix';
  */
 export type Edition = 'fr' | 'modern';
 
-export type PaneView = Edition;
+/**
+ * What the pane may be showing. `tei` is the transcription rendered from its
+ * TEI export (`npm run tei-view`) rather than from the `.tex` (#5). It has no
+ * tab of its own: it is reachable only through the fragment
+ * `#<cote>/<batch>/tei`, and the two renderings are checked against each other,
+ * page by page, by `npm run check-tei` — the Transcription tab does not switch
+ * over until that is green. Kept out of `Edition`, which is what indexes the
+ * manifest: nothing that looks a file up should ever be handed `tei`.
+ */
+export type PaneView = Edition | 'tei';
 
 /** Everything present locally, written by `npm run archive` and `npm run manifest`. */
 export interface Manifest {

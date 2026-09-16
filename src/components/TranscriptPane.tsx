@@ -50,9 +50,15 @@ export function TranscriptPane({
   const frame = useRef<HTMLIFrameElement>(null);
   const [height, setHeight] = useState(600);
   const { first, last } = batchRange(batch, cote.pages);
-  const present = available.html.includes(edition);
+  // The hidden `tei` view is the transcription rendered from its TEI export:
+  // same edition, same tab, another file beside it. Everything that looks a
+  // file up in the manifest is handed `view`, never `tei`.
+  const isTei = edition === 'tei';
+  const view: Edition = isTei ? 'fr' : edition;
+  const present = available.html.includes(view);
   const manifest = useManifest();
-  const url = editionUrl(manifest, cote.id, batch, edition, 'html');
+  const texUrl = editionUrl(manifest, cote.id, batch, view, 'html');
+  const url = isTei ? texUrl.replace(/\.fr\.html$/, '.fr.tei.html') : texUrl;
   const folder = folderTranscription(manifest, cote.id, cote.pages);
 
   useEffect(() => {
@@ -146,11 +152,11 @@ export function TranscriptPane({
               key={e.key}
               type="button"
               role="tab"
-              aria-selected={edition === e.key}
+              aria-selected={view === e.key}
               title={e.help}
               onClick={() => onEdition(e.key)}
               className={`rounded-md px-2.5 py-1 text-[12px] font-medium transition ${
-                edition === e.key
+                view === e.key
                   ? 'bg-white text-ink-900 shadow-[0_1px_3px_rgb(19_18_16/.12)]'
                   : 'text-ink-500 hover:text-ink-800'
               }`}
@@ -178,7 +184,7 @@ export function TranscriptPane({
         <MissingTranscript
           cote={cote}
           batch={batch}
-          edition={edition}
+          edition={view}
           first={first}
           last={last}
           folder={folder}
