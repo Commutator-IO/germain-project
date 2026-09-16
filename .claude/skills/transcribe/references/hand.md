@@ -231,3 +231,70 @@ catalogue.
   examples carry the copyist's errors — a sixtieths column shifted by five
   rows (v. 19), 2117149915 for 2117249915 (v. 49 L). Check by adding or
   multiplying, and transcribe as written.
+
+## Blaise Pascal (NAF 15383)
+
+### The views
+
+- One letter of 1643 on a bifolium (NAF 15383, v. 13–16: text, blank verso,
+  text, address panel), plus an unrelated oblong leaf bound before it
+  (v. 9–10). Colour scans, about 3400 × 5100 for the leaves, 3440 × 2450 for
+  the oblong one. Bands of 2400 px read the letter end to end; the second hand
+  on v. 15 needs line crops at 3–5×.
+- The IIIF manifest's « NP » covers both pieces indifferently. Views 9–10 are a
+  quittance of 1674 signed by Gilberte Pascal, not part of the letter: check
+  what a « NP » view actually holds before assuming the catalogued piece.
+
+### The letter's hand
+
+A wide, well-spaced cursive with generous flourishes, legible at band scale.
+
+| The stroke looks like | A pass settled on | Where |
+|---|---|---|
+| a final « o » closing « Seur », « Pere », « Perier » | the hand's final r, written as a small closed loop | NAF 15383, v. 13, 15, 16 |
+| « Sdeur » or « Sœur » with a tall middle letter | « Seur », the period spelling; S, e, u, then the looped r | NAF 15383, v. 13, 15 |
+| a big « P » followed by « res » under a bar | « lres », the ordinary abbreviation of « lettres »: a looped l, not a P | NAF 15383, v. 13 |
+| a q with a long looped flourish and nothing after it | « que » | NAF 15383, v. 13, 15 |
+| « Cellement » | « Tellement »: the T is a large looped capital easily taken for C | NAF 15383, v. 13 |
+| a year ending in « 40 » | 1643: the 4 and 3 are written large and descend below the line, the 4 crossed by its bar, the 3 in two bows. Take the year to 5× before writing it | NAF 15383, v. 13 |
+| « Moy » where a month is meant | « mois » as this hand spells it (« du fascheux du Moy », « quatre Moy que… ») | NAF 15383, v. 15 |
+| a page ending in mid-sentence with a blank foot | the letter continues on the next *written* page, not the next view: v. 13 → v. 15, v. 14 being the blank verso. Read the two ends together before reading either | NAF 15383, v. 13, 15 |
+
+Capitals inside the sentence are free and constant (Ce, Cela, Croy, Comme,
+Nous, Une, Sepmaines, Jcy): keep them. The writer moves from « vous » to
+« tu » in the middle of a line and does not go back (v. 13, at « J'ay a te
+dire »). Abbreviations kept as written: Mr, Mrs, Mde, Vre, lres, ordre (=
+l'ordinaire, the post), Nores (= notaires), apnt (= a present).
+
+### A second hand in the same letter
+
+The blank space left between the end of the letter and its closing formula can
+carry a whole note in another hand (NAF 15383, v. 15: thirteen lines opening
+« Ma bonne fille Mignonne » and closing « Vre bon Pere et tres affectionné
+amy », with its own signature « Pascal » in the middle of the page, and three
+more lines squeezed into the lower left margin). It is much smaller and faster
+than the letter, with long connecting strokes and pale ink, and does not read
+at band scale: crop line by line at 3–5×. Read the closing formula first — it
+is what says who is writing — and expect several words to stay \ill{}.
+
+### The 1674 quittance (v. 9–10)
+
+- A printed form of the Hôtel de Ville de Paris (engraved title, oval cartouche
+  « GENERALITE DE PARIS », « Deux sols. ») filled in by a notary of Clermont.
+  A blank left unfilled is content: « a Confessé avoir receu de » stops there,
+  the payeur's name never entered (v. 9).
+- Three signatures on one line: the notary, then « G. Pascal. », then the
+  second notary, each with a paraph. The notarial approbation that follows
+  (« J'approuve Le mot de six … ») is in a much smaller hand and may not read.
+- Sums appear twice: written out in words in the body, and on the verso in the
+  old score notation with superscript xx (`…ˣˣ xiij` for 133). Record the
+  figure, do not reconcile it with the words.
+
+### Numbers on these leaves
+
+Nothing in the batch carries the library's foliation — no pencil figure at the
+top right of any recto. What is there is the modern pencil shelfmark
+« N. a. fr. 15383 », underlined, the oval stamp « ACHAT No 24199 », an
+acquisition note at the foot of v. 9, and clerks' marks in the left margin of
+the quittance (a scribe's f, the figure 84, an 8-shaped sign). None is a folio;
+no \folio{} was written.

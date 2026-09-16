@@ -1,5 +1,7 @@
 {
   "$schema": "Keys are \"<volume>#<batch>\". Values: running | checked | skipped.",
   "$why": "Only what no file can prove belongs here. Whether a transcription or a modernised reading exists is read from the files themselves, so `drafted` and `reviewed` are never written down. What is left is the three states that are somebody's word: a pass in flight, a human comparison against the views, and a decision that a batch holds nothing to transcribe — blank leaves, bindings, the microfilm's targets.",
-  "status": {}
+  "status": {
+    "naf-15383#2": "skipped"
+  }
 }
