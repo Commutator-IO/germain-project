@@ -1,0 +1,511 @@
+% Lettre de Blaise Pascal à sa sœur Gilberte, 31 janvier 1643 — NAF 15383,
+% lecture modernisée du volume entier.
+%
+% Pass: Opus 5 (claude-opus-5), 17 September 2026 — first pass, unchecked
+% against the views by a human, and an interpretation rather than a record.
+% Where this file and the transcription differ in substance, the
+% transcription (batch-01.fr.tex) is the record.
+%
+% Sources read: the single batch transcription of this volume and nothing
+% else. No image was consulted, and no printed edition of Pascal's
+% correspondence — neither the Œuvres of Brunschvicg and Boutroux nor Mesnard
+% nor any other — and no other transcription. Where the transcription has a
+% gap, this reading says so and does not fill it. Batch 1 covers views 1–20;
+% views 21–24 are recorded as skipped in transcripts/status.json (nothing to
+% transcribe), so the whole volume is read here.
+%
+% What the volume turned out to be. Twenty-four views, of which five carry
+% writing. Two documents, thirty-one years apart, bound together because one
+% person stands in both: Gilberte Pascal. First, a letter of Blaise Pascal
+% written from Rouen and dated « Ce Samedy dernier Januier 1643 » (views 13,
+% 15, 16), in which a second hand — the father's, Étienne Pascal — has written
+% a note of thirteen lines into the blank left in the middle of the second
+% page. Second, and not mentioned in the catalogue entry, an oblong leaf
+% (views 9–10): a printed-and-filled quittance for the rentes of the Hôtel de
+% Ville de Paris, passed at Clermont on 27 June 1674 and signed « G. Pascal »
+% by Gilberte as widow and testamentary heir of Florin Périer, with a
+% certificate of 4 July 1674 on its verso.
+%
+% There is no mathematics on these leaves, and this reading does not invent
+% any. What it modernises is of four kinds, each footnoted at its first use:
+%
+%   — the orthography and the abbreviations of 1643 and 1674 (escripre,
+%     asseuré, sepmaines, Januier, Moy for « mois », Jl for « il », Vne for
+%     « une »; lres for « lettres », ordre for « l'ordinaire », Nores for
+%     « notaires », apnt for « à présent », Vre for « votre »);
+%   — the fiscal and notarial vocabulary (le voyage des élus, l'ordinaire, la
+%     rente constituée, l'état du roi, la ferme générale des aides et entrées,
+%     la Cour des aides), given its modern sense in a footnote;
+%   — the money of account (livre = 20 sols = 240 deniers) put into decimal
+%     livres so that the one computation the two figures of the quittance
+%     allow can be done; the division itself is this reading's and the leaf
+%     never performs it;
+%   — the score notation by twenties of view 10, whose first character the
+%     transcription could not read, restored here from the arithmetic alone
+%     and said to be so.
+%
+% Three quantitative statements the leaves themselves make are stated as such,
+% with the conditions on which they rest: Blaise's count of the lost letters,
+% the father's count of his nights, and the fraction of the rente the crown
+% actually funded. The weekday of the date was recomputed.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{naf-15383}
+\shelfmark{NAF 15383}
+\pages{1}{20}
+\dating{}
+\watermark{Lecture automatique\\interprétation non vérifiée}
+\foldertitle{Lettre de Blaise Pascal à sa sœur Gilberte, 31 janvier 1643 — lecture modernisée du volume entier}
+
+\begin{document}
+
+\section*{Résumé}
+
+\begin{resume}
+Ce volume ne contient pas de mathématiques. C'est une lettre de famille de
+vingt-cinq lignes, écrite de Rouen en janvier 1643 par un garçon de vingt ans
+à sa sœur aînée, et à laquelle leur père a ajouté un billet dans le blanc
+resté au milieu de la page ; on y a joint, bien plus tard et sans que le
+catalogue le dise, une pièce comptable de 1674 que la même sœur a signée. Le
+garçon est Blaise Pascal, le père Étienne Pascal, la sœur Gilberte, mariée à
+Florin Périer et appelée dans l'adresse « Mademoiselle Périer la
+conseillère ». Rien dans ces feuillets n'annonce l'œuvre : ni la machine
+arithmétique, que Pascal construisait alors précisément pour les comptes que
+la lettre évoque, ni la géométrie, ni rien de ce qui viendra. Ce qu'ils
+donnent est l'envers du travail — la tournée des commissaires, le courrier qui
+se perd, une sœur malade dont on n'a pas de nouvelles, un père qui ne se
+couche pas.
+
+Le problème de la lettre, s'il faut en nommer un, est un problème de courrier.
+Gilberte s'est plainte d'un reproche ; elle affirme écrire à Rouen une fois par
+semaine. Blaise répond par un compte : il n'en reçoit pas une toutes les trois
+semaines. Il en tire, sous condition, la seule conclusion possible — les
+lettres se perdent — et cette conclusion, si les deux affirmations sont
+exactes, chiffre la perte : plus de deux lettres sur trois n'arrivent pas.
+Le père, de son côté, mesure sa charge de la même manière, par un dénombrement
+de nuits : en quatre mois il ne s'est pas couché six fois avant deux heures du
+matin, soit moins d'une nuit sur vingt. C'est la façon dont cette famille dit
+l'excès : en comptant.
+
+La pièce de 1674 est un autre genre de compte, et elle en cache un. C'est une
+quittance de rente sur l'Hôtel de Ville de Paris : Gilberte, devenue veuve,
+reconnaît avoir reçu cent trente-trois livres quatre sols pour le second
+semestre de l'année, à cause d'une rente de huit cent quatre-vingt-huit livres
+constituée en 1635. La pièce donne les deux nombres et ne les rapproche
+jamais. Si on les rapproche, le semestre dû est de quatre cent quarante-quatre
+livres et le semestre payé de cent trente-trois livres quatre sols, exactement
+trois dixièmes du dû. Le roi ne servait plus que trente pour cent de la rente ;
+et le compte tombe juste au sol près parce que le cinquième d'une livre fait
+quatre sols dans une monnaie de compte à vingt sols. La même vingtaine
+organise, sur le verso, le chiffre écrit à l'ancienne — celui dont on ne lit
+plus que la fin.
+
+Où cela mène : non pas aux mathématiques de Pascal, mais à leur occasion et à
+leur entour. Du côté de l'homme, aux années de Rouen, à la charge de
+commissaire pour la levée des tailles en Haute-Normandie, et à Gilberte Périer,
+qui écrira la vie de son frère. Du côté des choses, à l'histoire
+de la poste d'Ancien Régime et de son \emph{ordinaire}, à celle des rentes
+constituées sur l'Hôtel de Ville et des retranchements que la monarchie leur
+faisait subir, à la monnaie de compte en base vingt et douze, et à la notation
+par vingtaines, qui a laissé « quatre-vingts » dans la langue.
+
+\keywords{Blaise Pascal, Gilberte Périer, Étienne Pascal, Rouen 1643, family
+correspondence, seventeenth-century French orthography, notarial act, rente
+constituée, Hôtel de Ville de Paris annuities, livre tournois, vigesimal
+numerals, money of account}
+\end{resume}
+
+\section*{Ce que le volume contient}
+
+\pagerange{1}{20}
+Vingt-quatre vues, dont les vingt premières ont été transcrites et les quatre
+dernières écartées comme ne portant rien.\footnote{Le fichier
+\emph{transcripts/status.json} porte « naf-15383\#2 » à \emph{skipped}. Les
+vingt vues transcrites se répartissent ainsi : vues 1 à 8, la reliure, la
+chemise marbrée et trois gardes blanches ; vues 9 et 10, un feuillet à
+l'italienne ; vues 11 et 12, des feuillets blancs ; vue 13, la première page
+de la lettre ; vue 14, son verso, blanc, où le recto transparaît ; vue 15, la
+seconde page écrite, avec la signature et le billet de la seconde main ; vue
+16, le panneau d'adresse ; vues 17 et 18, des feuillets blancs ; vues 19 et
+20, la chemise dépliée et le plat de derrière.} Cinq vues portent de
+l'écriture. Aucune foliotation de la bibliothèque n'est lisible nulle part,
+de sorte que ni la transcription ni cette lecture ne citent de feuillet :
+les renvois se font aux vues de Gallica.\footnote{Ce que les feuillets portent
+en fait de chiffres modernes est la cote au crayon « N. a. fr. 15383 »,
+soulignée, en haut de la vue 13 et au bas de la vue 9 ; le cachet ovale
+« ACHAT N\textsuperscript{o} 24199 » sur les deux ; et, dans la marge gauche de
+la vue 9, trois marques de greffe à l'encre dont le chiffre 84. La notice ne
+donne pas de datation pour le volume, et le champ correspondant est laissé
+vide ici comme dans la transcription, bien que les deux pièces se datent
+elles-mêmes.}
+
+Le volume réunit deux documents que rien ne relie qu'une personne. Le premier
+est une lettre de janvier 1643 ; le second une quittance de juin 1674, que le
+catalogue ne mentionne pas. L'adresse de 1643 porte « Mademoiselle Périer la
+conseillère » ; l'acte de 1674 est passé par « dame Gilberte Pascal, veuve et
+héritière testamentaire de défunt M\textsuperscript{e} Florin Périer, vivant
+conseiller du roi en sa Cour des aides de Clermont-Ferrand », et signé de sa
+main. C'est la même femme, trente et un ans plus tard, désignée les deux fois
+par la charge de son mari — d'abord comme sa femme, puis comme sa
+veuve.\footnote{L'identification tient aux seuls feuillets : le nom, la ville
+de Clermont, la charge de conseiller. La lettre ne nomme jamais sa
+destinataire autrement que « ma chère sœur » ; c'est l'adresse de la vue 16
+qui donne le nom.}
+
+\section*{La lettre de Rouen (vues 13, 15 et 16)}
+
+\pagerange{13}{16}
+La lettre s'ouvre en haut de la vue 13 par la date et l'appel, court jusqu'au
+bas de la page où elle s'interrompt en pleine phrase, et reprend en haut de la
+vue 15 pour s'achever sur la signature. Le verso de la vue 13 est resté blanc.
+Le feuillet a été plié et l'adresse écrite au dos du second (vue 16) : c'est
+la lettre elle-même qui fait son enveloppe, comme il est d'usage avant les
+enveloppes.
+
+\subsection*{Le texte en français d'aujourd'hui}
+
+De Rouen, ce samedi dernier janvier 1643.\footnote{Le feuillet porte « De
+Rouen Ce Samedy dernier Januier 1643 », sur deux lignes en tête à droite ;
+les deux derniers chiffres du millésime sont tracés en grand et descendent
+sous la ligne. « Dernier janvier » se lit ici comme le dernier jour du mois.}
+
+Ma chère sœur,
+
+Je ne doute pas que vous n'ayez été bien en peine du long temps qu'il y a que
+vous n'avez reçu de nouvelles de ces quartiers-ci. Mais je crois que vous vous
+serez bien doutée que le voyage des élus en a été la cause ; comme en effet,
+sans cela, je n'aurais pas manqué de vous écrire plus souvent.\footnote{Le
+feuillet a « le voyage des Esleuës ». Le mot désigne, dans le vocabulaire
+fiscal du temps, les officiers d'une \emph{élection}, circonscription de la
+levée des tailles ; « le voyage des élus » est la tournée que les commissaires
+du roi faisaient dans ces circonscriptions. La graphie du feuillet ne permet
+pas de trancher entre les officiers et les circonscriptions, et la traduction
+proposée ici retient les officiers parce que la phrase suivante nomme les
+commissaires.} J'ai à te dire que, messieurs les commissaires étant à Gisors,
+mon père me fit aller faire un tour à Paris, où je trouvai une lettre que tu
+m'écrivais, où tu me mandais que tu t'étonnais de ce que je te reproche que tu
+n'écrivais pas assez souvent ; où tu me dis que tu écris à Rouen toutes les
+semaines une fois.\footnote{« Gizors » sur le feuillet : Gisors, dans le Vexin
+normand. Le père de l'écrivain est ici l'un de ces commissaires, ou du moins
+se déplace avec eux ; le feuillet ne dit que « mon Pere ». Étienne Pascal
+était alors commissaire député par le roi pour l'impôt et la levée des tailles
+en Haute-Normandie — ce fait n'est pas sur le feuillet et vient de l'histoire
+générale, non d'une édition de cette lettre.}
+
+Il est bien assuré, si cela est, que les lettres se
+perdent,\footnote{L'abréviation du feuillet est « l\textsuperscript{res} », le
+groupe \emph{res} surmonté d'un trait : la forme ordinaire de « lettres ».}
+car je n'en reçois pas toutes les trois semaines une.\footnote{Le verbe est
+écrit vite et la transcription donne « reçois » avec doute, la cédille n'étant
+pas sûre.}
+
+Étant retournés à Rouen, j'y ai trouvé une lettre de M. Périer, qui mande que
+tu es très malade. Il ne mande point si ton mal est dangereux, ni si tu te
+portes mieux, et il s'est passé un ordinaire depuis sans avoir rien de
+lettres ;\footnote{Deux choses ici. Le mot rendu par « très » est, sur le
+feuillet, bref, écrit en partie au-dessus de la ligne, surmonté d'un trait
+d'abréviation et posé sur une pliure : la transcription l'offre avec doute, et
+la lecture reste incertaine. « Ord\textsuperscript{re} » est l'abréviation
+usuelle de « l'ordinaire », c'est-à-dire le courrier régulier ; un ordinaire
+passé est une levée manquée.} tellement que nous sommes en une peine dont je
+te prie de nous tirer au plus tôt.\footnote{La phrase s'interrompt au bas de
+la vue 13 sur « Tellement que Nous Sommes » et reprend en haut de la vue 15
+sur « En Vne peine ». Le bas du feuillet de la vue 13 est blanc et taché.}
+Mais je crois que la prière que je te fais ici sera inutile, car avant que tu
+aies reçu cette lettre-ci, j'espère que nous aurons reçu lettres ou de toi ou
+de monsieur Périer.\footnote{Le feuillet a « la prie », suivi d'un long trait
+horizontal, que la transcription interprète comme une abréviation possible de
+« priere ». Avant « Nous aurons », deux mots biffés, « ou tu ».} Le départ,
+et le fâcheux du mois.\footnote{Le feuillet porte « Le depart », puis un mot
+de cinq ou six jambages qui traverse une pliure et n'a pas été lu, puis « du
+fascheux du Moy », net. « Moy » est ici le mois. La phrase reste incomplète :
+ce que cette lecture en donne n'est pas une restitution mais l'ordre des mots
+lus, et le sens n'en est pas établi.}
+
+Si je savais quelque chose de nouveau, je te le ferais savoir. Je suis,
+
+Ma chère sœur, votre très humble et très affectionné serviteur et frère,
+
+Pascal.\footnote{« Ma Chere Seur » est écrit en grand à gauche au bas de la
+page, la formule et la signature en bas à droite. La signature est grande et
+suivie d'un paraphe. Le feuillet ne porte que ce nom ; que le signataire soit
+Blaise tient à ce qu'il se dit le frère de la destinataire et parle de « mon
+Père » à la troisième personne.}
+
+\subsection*{La date, et ce qu'elle vérifie}
+
+« Ce samedi dernier janvier 1643 » se laisse vérifier : le 31 janvier 1643
+était un samedi, et c'était aussi le dernier samedi du mois.\footnote{Calcul
+fait pour le calendrier grégorien, en usage en France depuis 1582. Les samedis
+de janvier 1643 tombent les 3, 10, 17, 24 et 31. Les deux lectures possibles
+de la formule — « le dernier jour de janvier, qui est un samedi » et « ce
+samedi, dernier samedi de janvier » — désignent donc le même jour, ce qui
+n'arrive que lorsque le mois finit un samedi. La date de la notice est ainsi
+confirmée par le feuillet seul.}
+
+\subsection*{Le compte des lettres perdues}
+
+La lettre contient un raisonnement, et c'est le seul du volume. Gilberte
+affirme écrire à Rouen une fois par semaine ; Blaise constate qu'il n'en reçoit
+pas une toutes les trois semaines. Il pose la condition — « si cela est » — et
+conclut que les lettres se perdent. La conclusion est juste, et elle se
+chiffre : si l'on écrit une lettre par semaine et qu'il en arrive moins d'une
+par trois semaines, c'est que plus de deux envois sur trois n'arrivent
+pas.\footnote{Le feuillet ne fait pas cette division et ne donne aucun taux :
+le rapport de deux tiers est celui de cette lecture, et il ne vaut que sous
+les deux affirmations telles qu'elles sont rapportées — celle de Gilberte, que
+Blaise ne fait que répéter d'après sa lettre, et la sienne. Rien n'oblige
+d'ailleurs à croire l'une ou l'autre exacte : c'est une querelle de frère et
+sœur, et le compte est un argument dans la querelle.} La lettre est donc, en
+son fond, l'établissement d'une perte par comparaison de deux fréquences. Le
+reste — la maladie, l'ordinaire manqué, la peine — vient de ce que le même
+défaut de courrier empêche d'avoir des nouvelles quand elles pressent.
+
+\subsection*{Le passage du « vous » au « tu »}
+
+La lettre commence au \emph{vous} et passe au \emph{tu} au milieu d'une ligne,
+à « J'ai à te dire », pour n'y plus revenir — sauf dans la formule finale, qui
+est de forme et reprend le \emph{votre}.\footnote{Le fait est noté dans la
+transcription à l'endroit même où il se produit. On le relève ici parce qu'il
+marque le moment où la lettre cesse d'être une lettre de nouvelles pour
+devenir une réponse personnelle : le \emph{vous} couvre l'excuse du silence,
+le \emph{tu} commence avec le reproche.}
+
+\section*{Le billet du père (vue 15)}
+
+\pagerange{15}{15}
+Entre la fin de la lettre et sa formule finale, dans le blanc laissé au milieu
+de la page, une seconde main a écrit treize lignes. Elle est plus petite,
+beaucoup plus rapide, à longs traits horizontaux, et par endroits pâlie ;
+plusieurs de ses mots n'ont pas été lus. Elle appelle la destinataire « ma
+bonne fille » et signe « votre bon père » — c'est donc le père, Étienne
+Pascal, écrivant à sa fille sur la lettre de son fils.\footnote{Le feuillet ne
+donne, là encore, que le nom « Pascal », en grand, au milieu de la page, avec
+le cachet rond de la bibliothèque qui le chevauche. L'identification tient à
+la formule « V\textsuperscript{re} bon Pere » et à ce que la lettre principale
+parle de « mon Pere » comme présent auprès de son auteur.}
+
+Ma bonne fille mignonne, si vous savez que je ne prends pas le temps
+d'écrire,\footnote{La fin de la première ligne du billet, quatre ou cinq mots
+entre « Si Vous » et « d'escrire », n'a pas été lue ; la phrase donnée ici
+n'est pas une restitution mais un raccord, et le début du billet reste
+inconnu.} c'est que je n'ai aucun loisir : car je n'ai jamais été dans
+l'embarras à la dîme de ce que j'y suis à présent, et je ne saurais l'être
+davantage à moins d'y avoir trop.\footnote{Le feuillet a « a la
+des\textsuperscript{me} », suivi d'un mot d'une dizaine de jambages non lu.
+Cette lecture propose « à la dîme », c'est-à-dire au dixième, parce que la
+phrase demande une fraction et que la construction « n'avoir jamais été dans
+l'embarras à la dîme de ce que j'y suis » se comprend alors immédiatement : je
+n'ai jamais été dix fois moins occupé qu'aujourd'hui, ce qui est la forme
+ordinaire de l'hyperbole. La proposition est de cette lecture ; le mot suivant
+reste illisible et pourrait changer le sens.} Il y a quatre mois que je ne me
+suis pas couché six fois avant deux heures après
+minuit.\footnote{« Quatre » est écrit au-dessus de « trois » biffé : le père a
+corrigé son compte vers le haut. Sur quatre mois, soit environ cent vingt
+nuits, moins de six nuits font moins d'une nuit sur vingt. Le calcul est de
+cette lecture ; le feuillet ne donne que les deux nombres.}
+
+Je vous envoie une lettre sur ce sujet de la lettre dernière, touchant les
+bruits du mariage de monsieur Despeaux ; mais je n'ai jamais su que ce fût de
+l'archevêque.\footnote{Trois lacunes dans cette phrase. Entre « envoy » et
+« Une l\textsuperscript{re} », deux ou trois mots non lus. Le nom de
+l'expéditeur de cette lettre incluse, après « de », compte huit ou neuf
+lettres, commence par une majuscule qui se lit B ou R et paraît finir en
+\emph{-bre} : la transcription ne le donne pas, et cette lecture non plus.
+« Despeaux » et « que ce fût » sont donnés avec doute.}
+
+Pour nouvelles : la fille de monsieur de Paris, madame du Comptes, mariée à
+monsieur de Montiffer ; aussi monsieur du Comptes est décédé ; comme aussi la
+fille de Belair, mariée au petit Lambert.\footnote{Les noms propres de ce
+paragraphe sont écrits très vite et sans reprise, et la transcription les
+marque tous douteux ; ils sont repris ici tels quels et ne doivent pas être
+tenus pour lus. Le feuillet a « est decedée » au féminin après
+« M\textsuperscript{r} du Comptes » ; l'accord est rétabli au masculin
+ci-dessus, mais rien n'assure que le père n'ait pas voulu écrire que c'est la
+dame qui est morte, auquel cas la phrase se contredirait avec le mariage qui
+précède.} Je suis toujours votre bon père et très affectionné ami,
+
+Pascal.
+
+Votre petit a couché cette nuit ; il se porte, Dieu grâce, très
+bien.\footnote{Trois lignes serrées dans la marge inférieure gauche, de la
+même main, en regard de la formule finale ; un mot bref à la fin de la
+première ligne n'a pas été lu, et « ceste » est donné avec doute. L'enfant
+n'est pas nommé : c'est un petit-fils ou une petite-fille du signataire, et
+donc un enfant de la destinataire, qui se trouve auprès de son grand-père et
+non auprès de sa mère. Le feuillet n'en dit pas plus.}
+
+Le billet est de la même veine que la lettre : il mesure. Le père ne dit pas
+qu'il est débordé, il dit de combien — d'un facteur dix pour la charge, de six
+nuits sur cent vingt pour le sommeil. Et il finit, comme la lettre de son
+fils, sur ce qui manque : des nouvelles d'une malade, la santé d'un enfant.
+
+\section*{L'adresse (vue 16)}
+
+\pagerange{16}{16}
+Au dos du second feuillet, écrit de la main de la lettre au milieu de la page,
+le feuillet ayant été plié :
+
+À Mademoiselle, mademoiselle Périer, la conseillère, à
+Clermont.\footnote{Sur quatre lignes, les deuxième et troisième en retrait.
+« La conseillère » désigne la femme du conseiller, selon l'usage qui donne à
+l'épouse le féminin de la charge du mari ; « Mademoiselle » est le titre des
+femmes mariées de la bourgeoisie et de la petite noblesse, et ne dit rien du
+célibat. Aucune marque postale n'est lisible.}
+
+\section*{La quittance de 1674 (vues 9 et 10)}
+
+\pagerange{9}{10}
+Le feuillet à l'italienne des vues 9 et 10 n'a rien à voir avec la lettre et
+n'est pas mentionné dans la notice. C'est un formulaire gravé, rempli d'une
+main de notaire : une quittance pour les rentes de l'Hôtel de Ville de
+Paris.\footnote{Le titre gravé est « Quittance pour les Rentes de l'Hostel de
+Ville de Paris », coupé en son milieu par un cartouche ovale portant en cercle
+« GENERALITE DE PARIS » et une fleur de lys. La mention « Deux sols », en
+tête, est le droit du formulaire. En marge, en haut et souligné : « 1674.
+derniers six moys ».}
+
+\subsection*{Le texte}
+
+Par-devant les notaires royaux établis en la ville de Clermont fut présente
+dame Gilberte Pascal, veuve et héritière testamentaire de défunt
+M\textsuperscript{e} Florin Périer, vivant conseiller du roi en sa Cour des
+aides de Clermont-Ferrand, laquelle de son bon gré a confessé avoir reçu
+la somme de cent trente-trois livres quatre sols, ordonnée être laissée en
+fonds dans l'état du roi de la ferme générale des aides et entrées pour les
+six derniers mois de l'année présente mille six cent soixante-quatorze, à
+cause de huit cent quatre-vingt-huit livres de rente constituée sur les
+tailles par contrat du second janvier mille six cent trente-cinq, et à présent
+assignée sur lesdites aides et entrées suivant la déclaration de Sa Majesté du
+treizième janvier mille six cent soixante-cinq.\footnote{Le nom du payeur,
+après « avoir receu de », est resté en blanc sur le formulaire, et la ligne
+s'arrête là ; cette lecture enchaîne donc directement sur la somme, ce que la
+phrase du formulaire ne fait pas. Une \emph{rente constituée} est une rente
+perpétuelle créée par contrat contre un capital versé ; elle est ici
+\emph{assignée} sur un revenu fiscal, c'est-à-dire que le paiement en est
+gagé sur le produit des aides et entrées, la déclaration de 1665 ayant déplacé
+ce gage. L'\emph{état du roi} est le budget arrêté d'où le paiement doit
+sortir. La \emph{Cour des aides} était la juridiction souveraine du contentieux
+fiscal.} De laquelle somme ladite dame quitte ledit sieur payeur et tous
+autres. Fait et passé audit Clermont, étude de l'un desdits notaires, le
+vingt-septième jour de juin mille six cent soixante-quatorze, après
+midi.\footnote{Les formules d'usage abrégées du feuillet — « Ainsy \&c. A
+peine \&c. Oblige \&c. Renonce \&c. Soumet \&c. » — sont omises ici ; elles
+renvoient aux clauses ordinaires de l'acte notarié. Un long trait de
+remplissage suit « vingt septiesme » pour interdire l'ajout d'un mot.} Ladite
+dame confessante a signé avec lesdits notaires. J'approuve le mot de
+six.\footnote{« Six », dans « six derniers moys », est ajouté au-dessus de la
+ligne ; la mention finale l'approuve, selon la règle qui veut qu'un mot
+interligné soit couvert par une approbation signée, faute de quoi il est
+réputé non écrit. La fin de cette approbation, en petite cursive rapide, n'a
+pas été lue.}
+
+Signé : Camus, notaire royal à Clermont ; G. Pascal ; Guillotteau, notaire
+royal.\footnote{Les deux notaires signent avec un grand paraphe. La signature
+« G. Pascal. » est autographe de Gilberte Pascal et se trouve au milieu de la
+ligne des signatures ; le cachet rond « BIBLIOTHÈQUE NATIONALE MSS » est
+apposé juste au-dessous. Au bas du texte, une ligne de dos — « Quittance de
+cent trente-trois livres quatre sols » — en partie recouverte par les
+paraphes.}
+
+Au verso, écrit en haut à droite, un certificat d'une semaine postérieur :
+« Je soussigné Antoine Ferret, bourgeois de Paris, certifie à tous qu'il
+appartiendra que la quittance de l'autre part est véritable. À Paris, ce
+quatrième juillet mille six cent soixante-quatorze. »\footnote{Le nom est
+donné d'après la signature qui suit, et la transcription le marque douteux :
+l'initiale pourrait aussi bien se lire L. Le millésime est écrit en abrégé,
+deux ou trois lettres surmontées d'un c ; la lecture « mil vj\textsuperscript{c} »
+est offerte par le sens, « soixante-quatorze » étant net. La pièce est passée
+à Clermont et certifiée à Paris : la quittance doit remonter au payeur
+parisien, et le certificat d'un bourgeois de Paris supplée à ce que les
+notaires d'Auvergne n'y sont pas connus.}
+
+\subsection*{Le compte de la rente}
+
+La pièce donne deux nombres et ne les rapproche jamais : une rente de huit
+cent quatre-vingt-huit livres par an, et cent trente-trois livres quatre sols
+reçues pour un semestre. Le semestre dû serait de quatre cent quarante-quatre
+livres. Or, la livre valant vingt sols, cent trente-trois livres quatre sols
+font $133 + \tfrac{4}{20} = 133{,}2$ livres, et
+\[
+\frac{133{,}2}{444} = \frac{3}{10}.
+\]
+Le paiement est donc exactement trois dixièmes de ce que la rente porte, ou,
+sur l'année, deux cent soixante-six livres huit sols au lieu de huit cent
+quatre-vingt-huit.\footnote{La division est de cette lecture ; le feuillet ne
+la fait pas et n'énonce aucun taux. Le résultat tombe rond, ce qui indique un
+abattement fixé en fraction et non un calcul de prorata : la monarchie a
+plusieurs fois \emph{retranché} les rentes sur l'Hôtel de Ville, c'est-à-dire
+réduit d'autorité ce qu'elle en servait, et la pièce est le reçu de ce qui
+reste. Rien dans le feuillet ne nomme cet abattement ni n'en donne la date ;
+la lecture s'en tient au rapport des deux nombres.} On remarquera que le
+compte tombe juste au sol près : le cinquième d'une livre fait exactement
+quatre sols dans une monnaie de compte où la livre en vaut vingt. Le même
+diviseur cinq aurait donné un reste dans une monnaie décimale.\footnote{La
+monnaie de compte est la livre tournois, valant vingt sols de douze deniers,
+soit deux cent quarante deniers. Un système de ce genre divise exactement par
+2, 3, 4, 5, 6, 10, 12, 15 et 20, ce que le système décimal ne fait ni pour 3
+ni pour 12 : c'est la raison pour laquelle les monnaies d'Ancien Régime
+étaient bâties ainsi, et c'est aussi pourquoi un abattement de trois dixièmes
+s'écrit ici sans fraction résiduelle.}
+
+Ce que la pièce ne permet pas de calculer, il faut le dire : le capital de la
+rente n'y est pas, donc le taux — le \emph{denier} auquel elle fut constituée
+en 1635 — ne se retrouve pas. On sait seulement qu'elle a été créée par
+contrat du 2 janvier 1635, d'abord gagée sur les tailles, puis reportée sur
+les aides et entrées en 1665, et qu'en 1674 elle appartenait à la succession
+de Florin Périer.
+
+\subsection*{Le chiffre en vingtaines}
+
+Au milieu du verso, à gauche de la signature, le feuillet porte un nombre
+écrit à l'ancienne notation par vingtaines, dont la transcription ne lit que
+la fin : un caractère illisible, puis \textsuperscript{xx}, puis xiij. Cette
+notation écrit un nombre comme un multiple de vingt plus un reste, le
+multiplicateur étant placé en exposant sur le xx. Comme $133 = 6 \times 20 +
+13$, le nombre s'écrit vj\textsuperscript{xx} xiij, et le caractère perdu est
+un vj.\footnote{La restitution est de cette lecture et repose sur
+l'arithmétique seule : la transcription note que le nombre s'accorderait avec
+les cent trente-trois livres de la quittance, mais se refuse à faire le
+rapprochement, la pièce ne le disant pas. Le rapprochement est fait ici parce
+qu'aucun autre nombre du feuillet ne finit par treize et que les deux chiffres
+lisibles, \textsuperscript{xx} et xiij, ne laissent qu'un multiplicateur
+possible une fois la somme connue. C'est un argument, non une lecture : si
+l'on tenait le nombre pour indépendant de la somme, le multiplicateur
+resterait inconnu.} C'est le montant de la quittance, répété en chiffres à
+côté des signatures, comme les actes le font pour interdire la surcharge.
+
+Cette notation est la même vingtaine qui structure la monnaie du feuillet, et
+la même que le français a gardée dans « quatre-vingts » : le nombre huit cent
+quatre-vingt-huit de la rente en est l'exemple, écrit en toutes lettres deux
+lignes plus haut.\footnote{Au bas du verso, tête-bêche, quatre lignes très
+pâles — un millésime 1674, le mot « escheue », un mois et des chiffres — n'ont
+pas été lues ; elles sont probablement la mention d'échéance et pourraient
+porter d'autres nombres.}
+
+\section*{Ce que ce volume n'est pas}
+
+\pagerange{9}{16}
+Il faut finir par ce qui manque, parce que la cote invite à l'erreur. Ces
+feuillets ne contiennent aucune mathématique de Blaise Pascal : ni calcul, ni
+figure, ni raisonnement autre que le petit compte des lettres perdues. La
+lettre de 1643 est de l'année même où il travaillait à la machine
+arithmétique, et le motif de cette machine était précisément le travail dont
+la lettre parle — les comptes de la levée des tailles en Normandie, la tournée
+des commissaires, les rôles à établir. La lettre n'en dit pas un mot, et cette
+lecture ne prêtera pas au feuillet ce qu'il ne porte pas.\footnote{La
+chronologie de la machine n'est pas sur le feuillet et n'est pas discutée ici.
+On note seulement que les deux choses se rencontrent dans les mêmes semaines
+et dans le même bureau, et qu'il serait faux d'en tirer que la lettre y
+fasse allusion : elle ne parle que du courrier et d'une malade.}
+
+La quittance de 1674, elle, contient bien un calcul — mais ce n'est pas celui
+d'un mathématicien. C'est l'arithmétique d'un bureau : une fraction imposée
+d'en haut, appliquée à un principal, et le résultat porté deux fois, en
+lettres dans le corps de l'acte et en chiffres à côté des signatures. Ce qui
+la rend intéressante dans ce volume est qu'elle est signée de la main de la
+femme à qui la lettre était adressée, et qu'entre les deux pièces il s'est
+passé une vie entière.
+
+\end{document}
