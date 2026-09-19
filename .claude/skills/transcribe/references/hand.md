@@ -232,6 +232,136 @@ catalogue.
   rows (v. 19), 2117149915 for 2117249915 (v. 49 L). Check by adding or
   multiplying, and transcribe as written.
 
+## Gilles Personne de Roberval and his circle (Latin 11195)
+
+### The views
+
+- Greyscale scans, landscape, 5727 × 3897 (5881 × 4051 for view 1): each view is
+  the volume lying open, a left page and a right page. Cut each view in two at
+  the gutter before cutting bands; the gutter shifts from view to view (about
+  x = 2668 at view 4, 2920 at 11, 2450 at 28, 2663 at 31, 2806 at 32 and 37,
+  2921 at 33, 3006 at 34, 3035 at 35, 2835 at 36, 2749 at 38), so verify it on a
+  thumbnail each time. Bands of the half page at 2400 px, `-normalize`, read
+  every hand of the volume end to end; only the pinned slips, the marginal
+  arithmetic and the fast Latin notes of views 28–29 need line crops at 3–5×.
+- **The volume is not one text.** Views 2–23 are a Latin treatise on equations;
+  views 26–37 are a dossier on human flight in four more hands. Six hands in
+  thirty-eight views, changing without warning at a blank leaf:
+
+  | Views | Piece |
+  |---|---|
+  | 2 R – 23 R | « De Recognitione Æquationum », one regular seventeenth-century cursive, Latin, Viète-school species notation: quadratics (4 R–5), cubics (6–11), quadrato-quadratics (12–20), *Caput 9ᵘᵐ* (21), *Caput 10ᵐᵘˢ Et ultimum* (23), stopping mid-page on « de iis plura non dicemus » |
+  | 26 R | « Ars Volandi », a title leaf, second hand and second ink |
+  | 27 R | Flayder's printed title page copied by hand (Tübingen, Werlin, 1627), a third, fine regular cursive |
+  | 28 – 29 R | Latin notes and extracts on flight, a fourth, fast thin hand, beginning on the back of the Flayder leaf |
+  | 32 L | French legend of a figure's letters, a fifth, round and large hand |
+  | 33 R – 37 L | « Il volare non è impossibile come fin hora vniuersalmente è stato creduto », a whole treatise in Italian, a sixth hand |
+  | 32 R, 37 R | Two pen drawings of the machine as a winged dragon, the only figures |
+
+- **The sign of equality is a double vertical stroke, « ∥ », not « = ».** Set it
+  `\parallel` in mathematics and do not modernise it. The same stroke serves for
+  a proportion in the marginal check at view 9 R.
+- The homogeneous constants are named by their dimension and must be kept as
+  written: `z pl.`, `T Sol.`, `S pl.pl.` (plano-plane), `P Sol.`, `G pl.`,
+  `B pl.`; `A` is the unknown, `B C D F` the given sides, `x` the coefficient of
+  the next-to-highest degree. At view 18 R the same plane is written `G²` once
+  where every other page writes `G pl.` — keep both as they stand.
+- **Roberval is named twice, as « D. Rob. »** (views 9 R and 10 R), each time as
+  the author of a lemma the treatise borrows; a marginal note in French at
+  view 9 R sends the reader to « son traité de mechanique des plans inclinez ».
+  It is the only French in the first twenty views. The treatise itself is
+  anonymous on the leaf, and so is the Italian one, which names Sagredo and
+  « il Sig.ʳ Galilej » but never its author.
+- **A second, finer and paler hand annotates the treatise throughout.** It copies
+  the canonical form of each constitution into the left margin beside it, numbers
+  its own remarks down that margin, wrote the numerical check of the lemma at
+  view 9 R (b = 4, c = 10, the three solids all 560), the word « minorem »
+  against an underlined « maiorem » at view 11 R, and small star-like marks under
+  some signs. Where its copied form and the line disagree in a sign — view 12 R
+  prop. 2 (`+A⁴` in the line, `−A⁴` in the margin), view 20 L prop. 5
+  (`+z pl. A²` against `−z pl. A²`) — give both as they stand and say so.
+- **Slips of paper pinned to a leaf are content, and they hide things.** The leaf
+  paginated 20–21 carries two béquets pinned through its top outer corner by a
+  real straight pin; the first covers the page number. Views 14 and 15 are not
+  blank openings but two exposures of the same blank verso with the slips lifted
+  one after the other, and the number « 20 » reads on the leaf's edge there.
+  Before writing that a page bears no number, look at the next two views.
+- Blank leaves are filmed sparingly and sometimes twice: views 24 and 25 are the
+  same blank opening, the second bearing a modern slip « folios blancs 38 à 49 »,
+  and the run it names was not filmed at all. Views 30, 31 and 38 are blank too.
+  A blank recto can carry the leaf's number while the writing sits on its verso
+  (view 31 R is numbered 55 and blank; its text is view 32 L).
+
+### Strokes that mislead
+
+| The stroke looks like | A pass settled on | Where |
+|---|---|---|
+| « = » made of two vertical bars | the period's sign of equality; set `\parallel`, never `=` | Latin 11195, v. 2–23 |
+| a superscript « 9 » closing a word | the `-bus` abbreviation (`laterib⁹`, `ōib⁹`, `duob⁹`); keep the superscript | Latin 11195, v. 2–23 |
+| a superscript « z » closing a verb | the `-ur` abbreviation: `igitz` = igitur, `videbitz` = videbitur, `continetz` = continetur. Expanded silently | Latin 11195, v. 9 R |
+| a superscript « ꝰ » closing a verb | the `-us` abbreviation: `eximemꝰ` = eximemus | Latin 11195, v. 9 R |
+| « q; » or a hook after q | `-que` (`Atq;`, `eademq;`, `utraq;`, `earumq̃`, `nationumq̃`) — kept as written | Latin 11195, throughout |
+| p with a crossed descender | `ꝑ` (per) or `ꝓ` (pro); the two are hard to tell apart and the sense does not always decide — flag rather than choose | Latin 11195, v. 9 R, 10 L |
+| a bar over a vowel | the suspended n/m: `æquatiōe`, `ōes`, `cū`, `tū`, `earū`, `collũ`, `ventorũ`. Kept | Latin 11195, throughout |
+| « ē » alone | est | Latin 11195, v. 3 R |
+| a long s followed by a point, standing alone between two words | « est » (« mirandus ſ. ille », « hoc ſ. », « concussus ſ. ») | Latin 11195, v. 28 |
+| a single looped descender before a word | the « ex » abbreviation: extat, excellentissimo, ex iuncj, ex malmabiriâ — not « et » | Latin 11195, v. 28 R |
+| a long horizontal line through a whole word | the crossbar of its t thrown back over the word, in both the Latin notes and the Italian hand — not a deletion; write `\struck{}` only for a separate, heavier stroke | Latin 11195, v. 28 (« pendet », « refricant »), v. 29 (« fuerit ») |
+| a small figure alone in the left margin | the annotator's remark number, not part of the text and not the pagination. On a right page it is the *inner* margin | Latin 11195, v. 4 R, 7 R, 9 R |
+| a formula alone in the left margin | the annotator's copy of the canonical form of the constitution beside it — occasionally with a sign that the line does not have | Latin 11195, v. 12 R, 20 L |
+| an interlinear word with a caret | a genuine insertion by the writer: `potentia` (9 R), `minus` (18 R), `sit` (16 L). Set `\add{}` | Latin 11195, v. 9 R, 16 L, 18 R |
+| a word written above the line and repassed | an overwritten correction, not an insertion; it can stay illegible even at 5× | Latin 11195, v. 13 L |
+| a brace joining two middle terms of a product | the writer's way of saving a line (`BC − {CA, BA} + A²`); develop it and say so in a note | Latin 11195, v. 4 R, 5 L |
+| a product written in three or four stacked lines | one polynomial; put the lines end to end and say so | Latin 11195, v. 6 L, 12 L, 13 L, 17 L |
+| a blank top outer corner | the page number under a pinned slip, not a trimmed leaf — look at the next views | Latin 11195, v. 13 L |
+| a bold figure on a strip above the page | the pagination of a *later* leaf whose edge projects, not a number on this one (the « 33 » there is view 21 R's, confirmed in batch 2) | Latin 11195, v. 19 R, 20 R |
+| « supra » where the chapter demands « infra » | the writer's own slip; transcribe as written and note it | Latin 11195, v. 17 R prop. 2, prop. 5 |
+| a word with three initial minims before « -ulis » | unresolved: the letters give « meruulis », no Latin word fits, left `\uncertain` | Latin 11195, v. 28 R |
+| a reversed page of writing filling a blank leaf | show-through of the other side, or of the drawing on the facing leaf; mirror the crop before deciding the page is written | Latin 11195, v. 30 L, 31 R, 33 L, 38 L |
+| a large curly sign, like a D or a big comma, repeating at the head of several lines | the Italian hand's quotation mark, one to a line, round the Archimedes proposition | Latin 11195, v. 34 L |
+| an isolated word in the outer margin beside a paragraph | this hand's running heads: « ferma », « Incontrata », « Sfugita », naming the kind of percussion the paragraph defines | Latin 11195, v. 35 L, 36 L |
+| a word or two alone in the lower outer corner | the catchword, repeated at the head of the next page (« l'oro tiene », « qualche », « quadruplic… ») — check it before assuming a page is complete | Latin 11195, v. 34 L, 35 L, 36 L |
+| « pialto », « rastello », « fica » | the Italian hand's l- and t-loops are near-identical; the sense gives piatto, and fatica; « rastello » stays as read | Latin 11195, v. 35 L, 36 L |
+| a capital detached from the word after it (« A ristotile », « Jtẽ ») | one word, or a marginal head; decide by the line, not by the space | Latin 11195, v. 29 R, 34 L |
+
+### Numbers on the leaves
+
+- **The writer's ink pagination** stands at the *outer* top corner of each written
+  page, one number per page and no gaps: 1 at view 3 R through 31 at view 20 R,
+  continuing 32 | 33, 34 | 35, 36 | 37 on views 21–23. It is pagination, not
+  foliation: record it in a `\note{}` and never in `\folio{}`. Page 20 is hidden
+  under a pinned slip at view 13 and reads on the leaf's edge at views 14–15.
+- **From view 24 a different series takes over**: only the RIGHT page is numbered,
+  one figure per *leaf* at the top right, larger and more flourished — 38 (views
+  24 and 25 being the same leaf re-exposed), then 50 to 62 on views 26 to 38, one
+  per view without a gap, ringed with an oval pen stroke from view 33 on. It
+  meets the pagination at 37/38 with no break in value, which is why neither
+  batch would call either series the library's foliation. The modern slip on
+  view 25 reads « folios blancs 38 à 49 » and explains the jump from 38 to 50:
+  that run of blanks was not filmed. 62 at view 38 sits close to the catalogue's
+  64 ff. **A human comparison against the leaves would settle this quickly**; if
+  the 38–62 series is the library's count, view N carries folio N + 24 for
+  N ≥ 26 — but that is an inference, not a reading, and no file states it.
+- **The annotator's remark numbers** run down the *left* margin of both pages of
+  the treatise — outer on a left page, inner on a right one: 1, 3, 4, 5 (v. 4 L),
+  6 (4 R), 7, 8 (5 L), 9 (7 R), 10 (9 L), 11–13 (9 R), 14–17 (10 L), 18 (10 R),
+  19 (11 L), 20 (11 R), 21 (12 L), 22–24 (16 L), 25 (16 R), 26 (18 L), 27 (19 L),
+  29 (19 R), then « 29b », 30 (v. 21), 31–33 (23 L), 34–37 (23 R). Number 13 at
+  view 9 R carries the French note on Roberval's mechanics of inclined planes;
+  the others stand alone. It tracks paragraphs, not leaves.
+- **Nothing in the volume is a pale pencil foliation** — no thin grey series, one
+  number per leaf, at the top right of rectos. Every figure is ink. `\folio{}` is
+  therefore written nowhere in either batch. What else is there: « Suppl.t lat.
+  218. A. » on the flyleaf (v. 1 R); « Suppl.t Lat. no 218. » at the head and
+  « Suppl.t l. 218. + I. » at the foot of v. 3 R, with the round stamp
+  « Bibliothèque impériale MSS »; an ink « .26. » alone at the middle of the
+  blank verso v. 3 L; a different, cropped ink « 171 » at the head of the title
+  leaf v. 2 R, probably from an earlier composite volume.
+- Numbers inside the figures are content, not foliation: a circled 4 and a
+  circled 1 at the ends of the lever in the figure of view 36. A figure « 3 » is
+  inked on the fore-edge of the text block, visible at the far left of view 24;
+  it is on the edges of the leaves, not on a page.
+
 ## Blaise Pascal (NAF 15383)
 
 ### The views

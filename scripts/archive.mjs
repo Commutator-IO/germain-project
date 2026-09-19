@@ -48,6 +48,14 @@ const PAUSE_MS = 3000;
 const RETRY_AFTER_MS = 45_000;
 const ATTEMPTS = 5;
 
+/**
+ * A stalled connection, not a refusal. Gallica has answered a view in seconds
+ * while the same run sat on an earlier one for ever (17 September 2026):
+ * `fetch` has no timeout of its own, so without this a single hung socket
+ * stops the mirror silently. Well clear of a slow large canvas.
+ */
+const FETCH_TIMEOUT_MS = 120_000;
+
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /** The catalogue is a .ts file with JSON arrays in it; read the one we need. */
@@ -88,7 +96,7 @@ async function fetchView(ark, view, target) {
   const url = `${GALLICA}/iiif/ark:/12148/${ark}/f${view}/full/full/0/native.jpg`;
   for (let attempt = 0; attempt < ATTEMPTS; attempt++) {
     try {
-      const r = await fetch(url, { headers: { 'User-Agent': UA } });
+      const r = await fetch(url, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });
       if (r.status === 429) {
         // Honour the server's own figure when it gives one.
         const hinted = Number(r.headers.get('retry-after')) * 1000;
