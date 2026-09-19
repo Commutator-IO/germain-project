@@ -85,6 +85,12 @@ in tables; Latin contractions (*q̃*, *p̄*, the *-us* hook) in the Latin volume
   on the curvature of surfaces (Français 9115, v. 43–89): « ligne de distance »,
   « surface des distances », « surface des distances moyennes », « sphère de
   moyenne courbure ».
+- **The vibrating lamina, against Euler** (Français 9115, v. 208–300 and on):
+  « lame », « stilet » for the pin, « nœud », « extremités appuiées / libres /
+  fixées », « points de repos »; $\lambda$ or $x$ the fraction of the length at
+  which the stylet stands, $\omega$ the angle of Euler's six cases,
+  $\alpha\beta\gamma\delta$ and $\alpha'\beta'\gamma'\delta'$ his eight
+  coefficients. See « Her critique of Euler » below.
 - **Her history of the question, in the first person** (Français 9115, v. 103):
   « le mémoire publié en 1814 par un des membres de l'accademie », « le mémoire
   couronné qui fut présenté en 1815 », « mes recherches sur la théorie des
@@ -115,6 +121,17 @@ in tables; Latin contractions (*q̃*, *p̄*, the *-us* hook) in the Latin volume
 | a looped ∞ closing a series | « &c. » | Français 9115, v. 155 |
 | a small crossed « r » as exponent | λ in e^{λs} | Français 9115, v. 153–154 |
 | « 2 » opening a word | the initial of « sex » | Français 9115, v. 158 |
+| a large white sheet covering most of a leaf, with a patch of reversed writing on it | a béquet folded *up*: the same leaf is photographed twice, once with the slip down (its text readable) and once with it up, uncovering the lines it hid. Rectify the slip with `magick … -flip`, not `-flop` | Français 9115, v. 280–281 |
+| a heavy black dash between two terms of a formula | a minus sign, inked twice over | Français 9115, v. 238 |
+| a solid teardrop blot where a figure is wanted | a figure written over another; `\uncertain` at most, never read from the calculation alone | Français 9115, v. 232, 240 |
+| three bold crosses where a number is expected | a placeholder she left to be filled: « V. §§ XXX p. 503 » | Français 9115, v. 272 |
+| a capital « L » opening « d'Euler » | her E: the name is written « Euler » throughout | Français 9115, v. 210–218 |
+| a word between two small raised commas | her quotation marks round a single word, not an abbreviation | Français 9115, v. 210 |
+| a capital E after L in « la partie L E » | E′, the far end of the lamina (she writes E L, L L′, L′ L″, L″ L‴, then « L E′ ») | Français 9115, v. 234, 240 |
+| a « 4 » whose crossbar runs through the figure, read as a struck 2 | 4; the reduction on the next line settles it | Français 9115, v. 250, 252 |
+| a « 5 » that reads like a capital S | 5, her remark number | Français 9115, v. 238 |
+| a tall loop + dotted i opening a word after « car » | her long s: « si on », not « l'on » | Français 9115, v. 260 |
+| « ébré » | élevé, as « ébration » was élévation at v. 137 | Français 9115, v. 226 |
 
 ### Numbers on her leaves
 
@@ -131,8 +148,39 @@ in tables; Latin contractions (*q̃*, *p̄*, the *-us* hook) in the Latin volume
   « 3 » at p. 17) are the clue to two printings. Record, do not reconcile.
 - Mounting sheets (v. 140–160) carry three short oblique pencil strokes at the
   same place on every sheet: not a figure, not foliation.
+- **Two ink series run together from v. 208 to v. 299, and neither is a
+  foliation.** On each *written* leaf: her own pagination of the piece, at the
+  head, centre, underlined; and, at the top right, in a broader pen and a
+  rounder hand, the running series of the earlier batches — 101 (v. 208) to
+  146 (v. 299), one per leaf without a gap, continuing 89–97 of v. 180–199.
+  The blank versos carry neither; what shows at their top left is the recto's
+  figure read through the paper.
+- **Her pagination is continuous across five batches** and was read batch by
+  batch as though it were several series: 1–2 (v. 218, 220), 3–11 (v. 222–240),
+  12–20 (v. 242–260), 21–29 (v. 262–280), 30–38 (v. 283–299). Batch 13 took
+  12–20 for article numbers; the run settles that they are pages. Two leaves
+  are unnumbered (v. 232, a draft of the leaf that follows; v. 242, which
+  carries a heading instead), and two consecutive leaves both read 25
+  (v. 270, 272), which the continuity to 30 at v. 283 shows to be hers and not
+  a misreading. An underlined figure can stand on the *mount* above a leaf's
+  torn edge and belong to the next leaf (21 above the leaf paginated 20,
+  v. 260).
+- **Her paragraph numbers are a third series**, alone in the left margin or
+  written inside the first line, and also continuous across the batches: 7, 8,
+  10, 11, 12 (v. 244–260), 13–18 (v. 264–280), 19–23 (v. 283–299). The 9 is
+  missing; a struck, blotted mark opens v. 256 where it would fall. Her
+  numbered *remarks* at v. 228–240 are yet another run, read I, 2, 2, 2, 4, 5,
+  6 — the three glyphs read 2 are one and the same stroke. Record these runs as
+  they stand; do not make them consecutive.
+- **The open question of this volume.** The top-right series occupies exactly
+  the place of the Bibliothèque's foliation, one number per recto, unbroken
+  over 150 views, but every pass has found it penned with thick/thin
+  modulation rather than pencilled, and so has written no `\folio{}` anywhere
+  in Français 9115. A greyscale scan cannot tell a hard pencil from ink with
+  certainty. **A human eye on the leaves would close this in a minute, and
+  would give the volume a citable foliation from v. 144 onwards.**
 
-### The hand of the Euler copy (Français 9115, v. 144–200 and on)
+### The hand of the Euler copy (Français 9115, v. 144–206)
 
 | The stroke looks like | A pass settled on | Where |
 |---|---|---|
@@ -153,6 +201,70 @@ Gallica re-photographs some pages of the copy, in a row or two views later:
 v. 191 = v. 190, v. 196–197 = v. 194–195 (same text, same blots, same ink
 number; only the framing differs). Compare the copy's page number and the ink
 number before transcribing a view as new.
+
+**The copy ends at view 206**, on page (161), closed by the French word
+« fin. » and a large paraph in the middle of the page. Views 144–206 therefore
+hold the whole memoir — the six cases, the naturally curved rod (§ 52) and the
+elastic ring (§§ 53–55). Nothing after v. 206 belongs to it: no Latin, no
+parenthesised page number. The ink series at the top right runs straight on
+onto her own French leaves without a gap.
+
+### Her critique of Euler (Français 9115, v. 208–300 and on)
+
+Where the Latin copy stops, at v. 206, a long piece of her own begins and runs
+past v. 300: a critical examination, in French and in the first person, of the
+paragraphs of Euler she had just finished copying — the elastic lamina touched
+by a stylet (« stilet ») at an interior point, his § 47 and following, and the
+case she says he neglected, the lamina free at both ends. A title leaf,
+« Remarques sur la lame elastique » and nothing else, opens it (v. 208).
+
+Its shape, which no single batch can see:
+
+- **Two drafts, then the memoir.** A first, shorter draft at v. 210–216; a
+  second, fuller one beginning again with the same title at v. 218 and running
+  on. Each draft numbers its own leaves, and differently — the first at the top
+  *left*, each figure followed by an oblique stroke; the second at the top
+  *centre*, underlined. Which was written first is not settled by anything on
+  the leaves: the top-right ink series runs 102→106 through the first, but her
+  own numbering restarts at 1 on v. 218, and the second is the more finished.
+- **One continuous text from v. 218 to v. 299**, paginated 1 to 38 in her hand
+  (see « Numbers on her leaves »). It quotes the end of Euler's memoir in
+  French, a guillemet repeated at the head of every line, closing three lines
+  into v. 228; then argues, in numbered remarks and paragraphs, that he was
+  wrong to admit the second solution — « Il me semble étonnant qu'Euler ait pû
+  croire que cette seconde solution satisfait a laquestion » (v. 210),
+  « J'ai voulu entrer dans tous ces details afin d'être autorisée a conclure
+  qu'Euler a été induit en erreur » (v. 240), « Je n'ose admettre ce resultat
+  contraire a l'opinion d'Euler […] sans le soumettre a un examen plus
+  approfondi » (v. 289), « l'appareille des quatre équations trouvées par Euler
+  est au moins inutile » (v. 299).
+- **Recto only, and the parity flips.** Every leaf is written on one side, and
+  Gallica photographs both, so the written views are the even ones from v. 222
+  to v. 280 and the *odd* ones from v. 283 to v. 299 — v. 281 is the leaf of
+  v. 280 re-shot with its béquet turned up, and shifts the count. Mirror a
+  verso before calling it written.
+- **Who she reads.** Euler cited by section number (« N.o 47 », « § 47 et suiv.
+  du memoire d'Euler », v. 278, 287) and by title (*Methodus inveniendi… curvas
+  maximi minimive proprietate gaudentes*, 1744); Chladni, « traité d'acoustique
+  pag 4 §§ 71 » (v. 272); and Giordano Riccati, « Delle Vibrazioni Sonore de
+  cilindri », first volume of the Memorie della Società Italiana, p. 457 § XXI
+  and p. 898 § 83, whom she notes seems not to have known the 1779 memoir
+  although the volume holding his own is of 1782 (v. 242).
+- **A leaf can be a draft of the next one**: v. 232, larger, on a guard, inked
+  113, with no page number and written only on its top fifth, is a first
+  version of the two opening paragraphs of v. 234. Its first line does not
+  follow v. 230. Read the pagination before assuming a sentence runs on.
+
+Her spelling on these leaves, none of it a misreading: « coëfficiens »,
+« mouvemens », « differens », « appuiée », « stilet », « extrimités »,
+« exclutif », « fesant », « interromp », « aprofondi », « naitre »,
+« deffinitive », « inconcilliables », « sympatiques » for the points of rest
+(v. 230), « l'appareille » for l'appareil, « etres » for être, « parconséquent »
+and « parséquent » on facing leaves, « egals » and « egales » on one leaf, and
+the run-together small words that are constant throughout — dela, delalame,
+laquestion, cequ'il, aumilieu, audessus, cidessus, apresent, nonseulement,
+adire, demême, and the doubled « de dela » (v. 224). Square brackets in the
+text are hers.
 
 ### Her fair copy and her drafts
 
