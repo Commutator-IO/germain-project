@@ -116,4 +116,86 @@ export const FINDINGS: Finding[] = [
     settle:
       'Check the inventory in Del Centina and Fiocca 2018 and the Europeana Transcribe record for NAF 4073. Identifying the 1814 writer is a separate question this entry does not open.',
   },
+  {
+    id: 'latin-11195-burattini-flight-treatise',
+    cote: 'latin-11195',
+    pages: 'views 26–37 (title leaf 26 R; drawings 32 R and 37 R; treatise 33 R–37 L)',
+    kind: 'codicological',
+    claim:
+      "The Italian treatise on views 33 R–37 L of BnF Latin 11195 is Tito Livio Burattini's treatise on flight — known by its incipit « Il volare non è impossibile come fin hora universalmente è stato creduto » and also as Ars Volandi, written in Poland about 1647–48 — and the two pen drawings on views 32 R and 37 R are the two known sketches of his Dragone Volante. No source searched here records that a copy of the treatise is in this volume, or in the BnF at all: the BnF's own manuscripts catalogue returns nothing for Burattini, and its notice for Latin 11195 gives no contents.",
+    basis:
+      "The leaves carry the treatise's incipit as its running title, and its closing passage matches the one the literature quotes point for point: a machine in the form of a dragon holding two men, « one of whom works while the other is resting, as is done on board a ship », able to travel by night with the help of a compass, and built so that if a wing breaks it sinks gently instead of falling — the transcription's last line of view 37 L is « patirebbero pochissima lesione ». The argument runs from the weight of air (Aristotle's 1:10 against « il computo del Sig.r Galilej » 1:400), through the Archimedes proposition on floating bodies and the specific gravities of five metals, to percussion divided ferma / incontrata / sfuggita and the law of the lever. The lettered drawing on view 32 R and its French legend on view 32 L give A, B B B B, C C, D, E — four lifting wings at B, control surfaces at A, C and D, and a parachute dome at E, which is the lettering the literature describes on the more detailed of the two sketches; view 37 R is the plainer front view. A title leaf reading « Ars Volandi » stands at view 26 R in another hand.",
+    ours:
+      "The identification, and only that. The text is not claimed as unpublished or unknown — the treatise is well attested by title and its closing passage is quoted in the standard account. What is claimed is that this copy, in this volume, is unrecorded in the sources searched. The volume's other flight pieces are not swept into the attribution: the hand-copied title page of Flayder's printed De arte volandi (view 27 R) and the Latin reading-notes on views 28–29 R are in further hands that this edition does not identify, and nothing here says they are Burattini's.",
+    literature: [
+      "Treccani, Dizionario Biografico degli Italiani, « Tito Livio Burattini » — read. It reports the model of a flying machine presented to the Polish king in 1647–48 and says the project is known through a summary description in a letter of Des Noyers to Mersenne of 29 February 1648 and a fragment communicated by Thévenot to Huygens in 1661. It names no manuscript of a treatise and no shelfmark.",
+      "BnF Archives et manuscrits — searched for « Burattini »: « Aucun résultat ». The notice for Latin 11195 itself gives only the collective title of Latin 11195–11197, the old shelfmarks and 64 ff.; it describes no contents and names no Italian text.",
+      "German Wikipedia, « Tito Livio Burattini » — read: names Ars Volandi and its sketches, gives no location for the manuscript.",
+      "Christopher James Botham, « Tito Livio Burattini's Flying Dragon » (On Verticality, 1 May 2021) — read; it quotes the closing passage and describes the lettering of both sketches, citing Clive Hart, The Prehistory of Flight (University of California Press, 1985), 135–145, as its source. Hart is the standard account and is where a shelfmark would be given.",
+      "Not read, and decisive: Clive Hart, The Prehistory of Flight, 1985, 135–145; and Ilario Tancon, Lo scienziato Tito Livio Burattini, Università di Trento, 2005. Neither was available here.",
+      "Wikimedia Commons, File:Burattini Dragon.jpg — checked for provenance: the circulating reproduction cites a website, no library and no shelfmark.",
+    ],
+    status: 'candidate',
+    settle:
+      'Open Hart 1985, 135–145, and Tancon 2005, and see which manuscript they worked from. If either cites Latin 11195 — or Supplément latin 218 — the entry becomes `matched`. If they cite another copy, or none, the question becomes whether this is a second copy or the one they used under a shelfmark they did not print. One word should be re-read on the leaf while this is done: the transcription gives \\uncertain{rastello} at view 36, in « l\'altro pu\u00f2 riposar in modo come fosse in vn … », where the published translation of the passage reads « as is done on board a ship ». That points to vascello, and the leaf — not the translation — is what should settle it; the transcription has not been altered.',
+  },
+  {
+    id: 'latin-11195-recognitione-aequationum',
+    cote: 'latin-11195',
+    pages: 'views 2–23 (title leaf 2 R; text 3 R–23 R)',
+    kind: 'codicological',
+    claim:
+      'Views 2 R–23 R of BnF Latin 11195 carry a complete anonymous Latin treatise headed « De Recognitione Æquationum », in Viète-school species notation, running to eighty-seven propositions in ten chapters on quadratics, cubics and quarto-quadratics, and citing Roberval by name for three lemmas. No description of this text was found in the BnF catalogue, which gives no contents for the volume, nor in any study searched here.',
+    basis:
+      "The title stands alone on view 2 R and the text runs continuously from view 3 R, paginated 1 to 37 by the writer, to a self-declared end in the middle of view 23 R on « de iis plura non dicemus ». Three lemmas of maximum are credited to « D. Rob. » on views 9 R and 10 R, and a marginal note in French — the only French in the treatise — sends the reader to « son traité de mechanique des plans inclinez », which answers to Roberval's Traité de mécanique des poids soutenus par des puissances sur des plans inclinés à l'horizontale, printed 1636. A second, finer hand annotates the margins throughout, copying each canonical form beside its proposition and numbering its own remarks 1 to 37.",
+    ours:
+      "The reading of the treatise and the identification of the work the marginal note points to. The treatise is attributed to nobody: it is anonymous on the leaf, and the two mentions of « D. Rob. » are citations of borrowed lemmas, which is evidence its author had read Roberval and not that Roberval wrote it. No date is claimed. The catalogue groups the volume under Roberval; the leaves do not.",
+    literature: [
+      'BnF Archives et manuscrits, notice for Latin 11195 and for the group Latin 11195–11197 — read. The title « Mélanges de physique et de mathématiques, comprenant des opuscules et des lettres de P. de Roberval, Huggens, Torricelli, Firmat et Fr. Herman Flayder » belongs to the three-volume group, not to this volume; the record for Latin 11195 adds only the old shelfmarks, 64 ff. and 230 × 170 mm. No contents are described, and no treatise on equations is named.',
+      'Searched for a manuscript « De recognitione aequationum » connected with Roberval or the BnF; what surfaced was Viète\'s printed De aequationum recognitione et emendatione tractatus duo (1615, ed. Anderson), a different object, and a single library record listing a « De Recognitione aequationum » under Roberval\'s name which could not be opened from here.',
+      'Not searched, and the first place this can fail: the Roberval literature proper — the Académie\'s Divers ouvrages de mathématiques et de physique (1693), which printed his remains, and any modern inventory of the Roberval manuscripts.',
+    ],
+    status: 'candidate',
+    settle:
+      "Check the contents of the 1693 Divers ouvrages and any inventory of Roberval's papers for a treatise on the recognition of equations, and open the library record that lists one under his name. Identifying the treatise is the prior question; until it is identified, nothing here says whose it is.",
+  },
+  {
+    id: 'latin-11195-limitationes-are-discriminants',
+    cote: 'latin-11195',
+    pages: 'views 5, 9–11, 21–23',
+    kind: 'mathematical',
+    claim:
+      'Every « limitatio » the treatise of views 2–23 derives — the inequality outside which it says the sides become fictitious — is, in modern terms, the condition that the corresponding discriminant be non-negative, and it is reached not by an algebraic invariant but by solving a maximum problem with three lemmas credited to Roberval. Its rule for the double root of a cubic is identically the root of the linear remainder in the Euclidean algorithm on P and P′.',
+    basis:
+      "For the quadratic the leaf gives « z pl. non debet esse maius quadrante quadrati x » (view 5 L), that is x² − 4z ≥ 0. For the reduced cubic A³ − zA + T the first lemma of view 10 L maximises zA − A³, giving T ≤ (2z/3)√(z/3), which squared is 27T² ≤ 4z³ — the discriminant condition. The double-root rule of view 9 R, written by the leaf as a compound fraction, is identically (xz − 9T)/2(x² − 3z), which is where 2(x² − 3z)A − (xz − 9T), the last remainder of the algorithm on A³ − xA² + zA − T and its derivative, vanishes. The treatise states the generality itself: the equal side « se découvrira par le même artifice » at every degree, with more equations to set up.",
+    ours:
+      "The translation into discriminants and into gcd(P, P′), the verification of the double-root formula on the roots 2, 2, 5 and 3, 3, 1, and the remark that the bound is attained exactly at the double root — which the leaf does not say, though its two statements imply it. The leaf has neither the derivative nor the algorithm: it obtains its two starting equations by writing the condition B = C into the symmetric functions. Where the leaf is wrong the modernised reading says so rather than crediting it: its bound on T for A³ − xA² + T is a third of the cube of x where the true bound its own argument gives is x³/27, and the « possible if » of the same chapter states a necessary condition as a sufficient one.",
+    literature: [
+      'None that can be searched yet. The claim is about what the literature on this treatise records, and no study of the treatise was found — see latin-11195-recognitione-aequationum, on which this entry depends entirely. The mathematics itself is classical and is claimed as nobody\'s discovery: what would be new is that this text reaches it this way, and that cannot be asserted while the text is unidentified.',
+      'Not searched: the literature on Viète\'s school and on seventeenth-century theories of equations — Anderson, Vaulezard, Ghetaldi, Beaugrand — where this manner of deriving limitations from maximum problems may well be described already.',
+    ],
+    status: 'unsearched',
+    settle:
+      'Identify the treatise first. Until it has a name or a known circle, there is no body of literature against which to ask whether this reading of its limitations is new.',
+  },
+  {
+    id: 'latin-11195-collective-title-no-letters',
+    cote: 'latin-11195',
+    pages: 'views 1–38, whole',
+    kind: 'codicological',
+    claim:
+      "BnF Latin 11195 contains no letters, by Roberval, Huygens, Torricelli, Fermat or anyone else, and no opusculum of Flayder — only a hand-copied page of his printed title. The title that promises them is the collective title of the three-volume group Latin 11195–11197, and the BnF describes the contents of none of the three.",
+    basis:
+      'All thirty-eight views were transcribed. They hold two dossiers and nothing else: the Latin treatise on equations (views 2 R–23 R) and the flight dossier (views 26 R–37 R), separated by blank leaves and sharing no hand, no ink and no cross-reference. Nine views are wholly blank. Of Flayder there is the title page of his De arte volandi (Tübingen, Werlin, 1627) copied by hand on view 27 R, and no text of his. The BnF record gives the title at the level of Latin 11195–11197 — « 3 volumes. Reliure basane. Manuscrit en latin » — and for each volume only old shelfmarks and a leaf count: Supplément latin 218/1 (64 ff.), 218/2 (55 ff.), 218/3 (40 ff.). The group was acquired by 10 March 1756, entered in the register as « Trois volumes en veau consernant les mathématiques Torricelli, Robertval, Carcavi, de Fermat etc. »',
+    ours:
+      "Nothing but the reading of the leaves. This entry makes no claim about Latin 11196 and 11197, which have not been seen and may well hold the letters; the point is only that the collective title has been read as describing this volume, and does not. The group's language field, « Manuscrit en latin », is also incomplete for this volume, which carries a whole treatise in Italian and a legend in French.",
+    literature: [
+      'BnF Archives et manuscrits, records for Latin 11195, Latin 11196, Latin 11197 and the group Latin 11195–11197 — all four read, 19 September 2026. None describes contents.',
+      "This site's own catalogue, holdings.json, which attached the group title to the single shelfmark and left the date empty, where the BnF dates the group « XVIIe siècle ».",
+      'Not searched: the Mersenne, Huygens, Torricelli and Fermat correspondence editions, which would say where the letters of the group title actually are, and whether they are in the two sibling volumes.',
+    ],
+    status: 'candidate',
+    settle:
+      'Look at Latin 11196 and 11197. If the letters are there, the group title is simply distributed across three volumes and this entry becomes a note about how the title should be read rather than a gap in the catalogue.',
+  },
 ];
