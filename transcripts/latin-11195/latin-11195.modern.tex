@@ -1,0 +1,2156 @@
+% Latin 11195 — lecture modernisée du volume entier.
+%
+% Pass: Opus 5 (claude-opus-5), 2026-09-19 — first pass, unchecked against the
+% views by a human, and an interpretation rather than a record. Where this file
+% and the transcriptions differ in substance, the transcriptions
+% (batch-01.fr.tex, batch-02.fr.tex) are the record.
+%
+% Sources read: the two batch transcriptions of this volume, in full, twice —
+% once for the mathematics, once for the apparatus — and nothing else. No image
+% was consulted. No printed edition was consulted, and that matters more here
+% than usual, because three printed books stand behind these leaves and all
+% three were deliberately left shut: Viète's « De recognitione et emendatione
+% æquationum », whose school's notation the Latin treatise writes; Galileo's
+% « Discorso intorno alle cose che stanno in su l'acqua », whose estimate of the
+% weight of air the Italian treatise quotes at second hand; and Flayder's « De
+% arte volandi » (Tübingen 1627), whose title page one leaf of the volume copies
+% out. Nothing was taken from any of them, nor from any modern edition or study,
+% to fill a gap or settle a word. Where the transcription has a gap, this
+% reading says so. Both batches were transcribed on Opus 5; together they cover
+% views 1–38, the whole volume.
+%
+% What the volume turned out to be. NOT one text, and not what the catalogue's
+% title says. Two unrelated dossiers bound together, in six hands:
+%
+%   v. 2 R – 23 R   « De Recognitione Æquationum », Latin, one regular
+%                   seventeenth-century cursive, in Viète-school species
+%                   notation: the doctrine of how an equation is composed out of
+%                   its roots and how it is read back. General doctrine and the
+%                   three kinds of side (3 R); quadratics (4 R–5); cubics
+%                   (6–11), with « De Determinationibus Æquationum Cubicarum »
+%                   (8 R–11); quarto-quadratics (12–20), Caput 9um (21–22),
+%                   Caput 10mus Et ultimum (23), stopping in mid-page on « de
+%                   iis plura non dicemus ».
+%   v. 26 R         « Ars Volandi », a title leaf, a second hand.
+%   v. 27 R         Flayder's printed title page copied out by hand, a third
+%                   hand. The volume's only date: 1627.
+%   v. 28 – 29 R    Latin notes and extracts on human flight, a fourth hand.
+%   v. 32 L         A French legend of the letters of the facing figure, a fifth
+%                   hand.
+%   v. 32 R, 37 R   Two pen drawings of the machine as a winged dragon.
+%   v. 33 R – 37 L  « Il volare non è impossibile come fin hora vniuersalmente è
+%                   stato creduto », a whole treatise in Italian, a sixth hand.
+%
+% The volume is therefore UNSORTED, and this reading says so instead of
+% inventing a thread between the algebra and the flight dossier. Each dossier
+% gets its own run of sections.
+%
+% NO LETTERS. The correspondence of Roberval, Huygens, Torricelli and Fermat
+% that the catalogue's title promises is in neither batch. The résumé says this
+% plainly, and so does the closing section, because a reader arriving from the
+% catalogue has to be told what is not here.
+%
+% Notation translated, each with a footnote at its first use. « ∥ », the double
+% vertical stroke the transcriptions set \parallel, is the period's sign of
+% equality and is modernised to « = » throughout. The homogeneous constants
+% named by their dimension — z pl., T Sol., S pl.pl., P Sol., R sol., G pl.,
+% B pl., D pl., H pl. — are explained once by Viète's law of homogeneity and
+% then dropped, the equations being written monic in the modern way. « Latus »
+% is a root; positiva supra a positive root, positiva infra a negative one,
+% fictitia a complex one. « Potestas » is the highest power, « affectio » a
+% lower-degree term, « antithesis » transposition, « applicare » to divide,
+% « ducere » to multiply, « constitutio » the way an equation is put together
+% from its roots, « interpretatio » its canonical form, « determinatio » the
+% case of repeated roots, « limitatio » the inequality on the coefficients
+% outside which the roots cease to be real.
+%
+% Modern names attached, each where the statement genuinely coincides and each
+% footnoted as later than the leaf: the relations between coefficients and roots
+% and the elementary symmetric functions; the factor theorem; the discriminant
+% of the quadratic and of the cubic; the repeated root as the root of
+% gcd(P, P') and the Euclidean algorithm as what the treatise's « successive
+% comparisons » perform; for the flight dossier, Archimedes' principle,
+% neutral buoyancy and the equilibrium altitude, impulse, the invariance of the
+% relative velocity, the principle of virtual work, wing loading and the
+% square–cube law.
+%
+% Every computation the leaves offer was redone, and the recomputations are this
+% reading's own: the twelve products of Caput 9; the numerical example of Caput
+% 10 and its check on the root 5; the elimination that yields the double root;
+% the three maximum lemmas; the two geometrical cases of view 11; the bound the
+% treatise claims for the ratio of two solids on view 16. Where the leaf is
+% loose, elliptical or wrong, this reading states what is true and footnotes
+% what the leaf has — at the T-bound of the cubic, at the sufficiency of the two
+% limitations, at the « exceptio regulæ generalis » of Caput 5, at the
+% self-subsisting quadratic, at the sign of one product of Caput 9, at the
+% missing formula of its seventh proposition, at the sevenfold ratio of view 16,
+% at the annotator's « minorem », and, in the Italian treatise, at the weight of
+% air, the sphere of fire, the order of falling metals, the whirled cane, and
+% the lever's « time ».
+%
+% Folios. Neither transcription wrote a single \folio{}, deliberately: two ink
+% series run on these leaves — a pagination 1–37 in the treatise's own ink, then
+% a leaf series 38–62 numbered on rectos only — and they meet at 37/38 with no
+% break in the count, while neither is the Library's pale pencil foliation.
+% Nothing here is cited by folio. Views only, by \pagerange{}{} at the head of
+% each section, grounded in the transcriptions' own \page{} marks.
+%
+% No date is inferred that the leaves do not give. \dating{} is empty because
+% the catalogue's field is empty; no leaf of the volume carries a date; the only
+% date anywhere in it is the 1627 inside the hand-copied Flayder title page. The
+% two datings this reading does venture — the flight dossier is later than 1627,
+% the Italian treatise later than the estimate of the weight of air it quotes —
+% are marked in their footnotes as this reading's inferences and nothing more.
+% The treatise on equations is anonymous on the leaf, and so is the Italian one;
+% « D. Rob. » names Roberval twice, as the author of lemmas the treatise
+% BORROWS. This reading attributes neither text to anybody.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{latin-11195}
+\shelfmark{Latin 11195}
+\pages{1}{38}
+\dating{}
+\watermark{Lecture automatique\\interprétation non vérifiée}
+\foldertitle{Mélanges de physique et de mathématiques, comprenant des opuscules et des lettres de P. de Roberval, Huggens, Torricelli, Firmat et Fr. Herman Flayder. Latin 11195 — lecture modernisée du volume entier}
+
+\begin{document}
+
+\section*{Résumé}
+
+\begin{resume}
+Ce volume n'est pas un livre : c'est une reliure. Deux dossiers qui n'ont rien à
+voir l'un avec l'autre y ont été cousus ensemble, et six mains au moins s'y
+partagent trente-huit vues. Le premier dossier est un traité d'algèbre en latin,
+anonyme, sur la manière dont une équation est fabriquée à partir de ses racines
+et dont on peut, en la regardant, remonter à celles-ci. Le second est un dossier
+sur le vol humain : un feuillet de titre, la page de titre d'un livre imprimé
+recopiée à la main, des notes latines rassemblant tout ce que leur auteur avait
+lu sur des hommes qui avaient volé ou cru voler, deux dessins à la plume d'une
+machine en forme de dragon, la légende française des lettres de l'un d'eux, et
+un traité entier en italien qui soutient que voler n'est pas impossible et
+décrit la machine que son auteur dit avoir inventée. Entre les deux dossiers,
+aucun lien : ni la main, ni l'encre, ni le sujet, ni la moindre phrase de
+renvoi. Cette lecture ne leur en invente pas.
+
+Il faut dire tout de suite ce que le volume ne contient pas, parce que le titre
+du catalogue induit en erreur. Il annonce des opuscules et des lettres de
+Roberval, de Huygens, de Torricelli et de Fermat : il n'y a ici aucune lettre,
+d'aucun d'eux. Roberval n'y paraît que sous la forme « D. Rob. », deux fois,
+comme l'auteur de lemmes que le traité d'algèbre emprunte, avec une note
+marginale en français qui renvoie le lecteur à « son traité de mechanique des
+plans inclinez ». C'est la preuve que le traité cite Roberval, non qu'il soit de
+lui. Aucun feuillet ne porte de date ; la seule date du volume, 1627, est à
+l'intérieur de la page de titre recopiée.
+
+Le traité d'algèbre pose un problème simple à énoncer et difficile à tenir. On
+sait fabriquer une équation : on prend des racines, on écrit pour chacune un
+facteur, on multiplie, et l'on obtient une équation dont les coefficients sont
+des expressions de ces racines. Peut-on faire le chemin inverse — lire, dans les
+coefficients d'une équation donnée, combien de racines elle a, de quel signe, et
+comment les atteindre ? Le traité appelle cela la \emph{reconnaissance} de
+l'équation, et il le dit dans sa première phrase : « on y cherche les moyens par
+lesquels les diverses constitutions des équations se reconnaissent » ; car « une
+équation contient en elle toutes les racines dont elle a été composée, et c'est
+donc de toutes celles-là qu'elle est explicable ». L'idée qui porte tout
+l'ouvrage est un inventaire : on énumère toutes les manières d'assembler une
+équation d'un degré donné à partir de racines de signes donnés, on développe
+chaque produit, on nomme les coefficients qui en sortent, et l'on obtient un
+catalogue de formes canoniques dans lequel il ne reste plus, devant une équation
+inconnue, qu'à retrouver la sienne. Quatre-vingt-sept propositions plus tard, le
+catalogue est complet pour les degrés deux, trois et quatre, et le traité
+s'arrête au milieu d'une page sur « nous n'en dirons pas plus ».
+
+Ce que ce catalogue a trouvé, et que l'on peut aujourd'hui nommer, ce sont les
+relations entre les coefficients d'une équation et les fonctions symétriques
+élémentaires de ses racines : le traité les énonce en toutes lettres et pour
+tous les degrés. Ce qui l'empêche de les tenir, c'est qu'il ne compte pas les
+racines complexes comme des racines. Il les appelle \emph{fictitia}, il les
+reconnaît fort bien — il sait dire à quelle condition une quadratique en a, et
+il construit exprès une quarto-quadratique qui en a deux — mais il leur refuse
+le statut de racine, et sa belle règle générale se trouve alors avoir des
+exceptions. Cette lecture montre, sur les exemples du feuillet lui-même, que ces
+exceptions disparaissent toutes dès qu'on compte les côtés fictifs comme des
+racines. Le reste du traité est un travail de première qualité sur les
+inégalités : les « limitations » qu'il établit, degré par degré, en résolvant à
+chaque fois un problème de maximum, sont exactement les conditions que nous
+écrivons aujourd'hui sur le discriminant. Et un béquet épinglé sur un feuillet
+blanc pose, en trois lignes, la seule question à laquelle la doctrine ne sait
+pas répondre — comment distinguer deux formes qui ont les mêmes signes ? — dont
+la réponse moderne est précisément le signe du discriminant.
+
+Le traité italien, lui, veut prouver que voler est possible et le prouver en
+mécanicien. Son auteur raconte pourquoi : « depuis mes premières années j'ai
+appliqué mon esprit à cette invention, trouvant étrange que l'esprit humain ne
+fût pas capable d'atteindre par son savoir aux choses qui ont été accordées par
+nature à d'autres animaux inférieurs à nous » ; il a essayé, tout fut inutile,
+puis « voici dix ans écoulés » qu'il a trouvé, « à partir de principes assez
+communs », ce qu'il va exposer. Son raisonnement va du poids de l'air à la
+flottaison, de la flottaison à la percussion, et de la percussion au battement
+des ailes : rien de plus léger que l'air n'étant à notre portée, il faut se
+soutenir en frappant l'air, comme les oiseaux, et il divise la percussion en
+trois espèces selon que le corps frappé est immobile, vient à la rencontre du
+coup, ou le fuit. Puis, sur un levier, il démontre qu'on ne peut gagner à la
+fois la force et le temps, et il en tire, honnêtement, la limite de sa propre
+machine : elle ne pourra pas porter plus de deux hommes. Beaucoup de ce qu'il
+écrit est juste — la proposition d'Archimède qu'il cite, les pesanteurs
+spécifiques de cinq métaux à cinq pour cent près, la loi du levier, le rôle de
+la vitesse relative dans un choc, le repliement des ailes à la montée ; et la
+machine ne pouvait pas voler, pour une raison que ses propres nombres
+permettent d'établir et qu'il n'a pas vue, qui est la puissance.
+
+Où cela mène. Du côté de l'algèbre : à la théorie des équations, aux relations
+entre coefficients et racines, aux fonctions symétriques élémentaires, au
+discriminant, au plus grand commun diviseur de $P$ et $P'$ pour les racines
+multiples, et à l'histoire longue de l'admission des nombres négatifs puis
+complexes comme racines de plein droit. Du côté du vol : à la poussée
+d'Archimède et à la flottaison, à l'altitude d'équilibre d'un ballon, à la
+notion d'impulsion, au principe des travaux virtuels, à la charge alaire et à la
+loi carré-cube, et à l'aérodynamique du vol battu.
+
+\keywords{theory of equations, Viète's species notation, law of homogeneity,
+elementary symmetric functions, relations between roots and coefficients,
+negative roots, complex roots, discriminant, repeated roots, greatest common
+divisor of a polynomial and its derivative, cubic equations, quartic equations,
+cubic extremum problems, Roberval, history of flight, ornithopter, buoyancy,
+density of air, Archimedes' principle, specific gravity, percussion, impulse,
+law of the lever, virtual velocities, wing loading, square-cube law, Flayder,
+Galileo, Sagredo, manuscript miscellany}
+\end{resume}
+
+\section*{Ce que ce volume contient}
+
+\pagerange{2}{38}
+Trente-huit vues, chacune montrant le volume ouvert, que les deux
+transcriptions ont coupées au pli et lues comme deux pages. Neuf vues sont
+entièrement blanches et ne sont pas transcrites — la vue 1, les vues 24 et 25,
+30, 31 et 38, ainsi que les pages de droite des vues 14 et 15 ; le trou dans la
+numérotation est le témoignage. Tout le reste se partage en deux dossiers sans
+rapport l'un avec l'autre.
+
+\begin{itemize}
+  \item \textbf{Vues 2 R à 23 R — un traité d'algèbre en latin}, anonyme, sans
+    titre d'auteur, intitulé sur son feuillet de titre « De Recognitione
+    Æquationum », d'une seule cursive régulière que les transcriptions
+    décrivent comme une écriture du XVII\textsuperscript{e} siècle. Il est
+    complet de son début et s'arrête de lui-même au milieu de la vue
+    23 R.\footnote{C'est une description de l'écriture faite par la
+    transcription, non une datation du texte : aucun feuillet ne porte de date,
+    et cette lecture n'en infère aucune. Voir la dernière section.}
+  \item \textbf{Vues 26 R à 37 R — un dossier sur l'art de voler}, en cinq
+    pièces et quatre écritures au moins : un feuillet de titre portant les deux
+    mots « Ars Volandi » (26 R) ; la page de titre d'un livre imprimé, celui de
+    Flayder, recopiée à la main et centrée sur le feuillet (27 R) ; des notes et
+    extraits latins sur le vol, sans titre, d'une cursive fine et très rapide,
+    qui s'interrompent au milieu de la vue 29 R ; la légende française des
+    lettres d'une figure (32 L) ; et un traité entier en italien, « Il volare
+    non è impossibile come fin hora vniuersalmente è stato creduto » (33 R à
+    37 L). Deux dessins à la plume de la même machine occupent les vues 32 R et
+    37 R.
+\end{itemize}
+
+Les deux dossiers ne se touchent nulle part. Aucune main n'est commune, aucune
+phrase de l'un ne renvoie à l'autre, et les sujets n'ont rien à voir. Le second
+dossier est du reste séparé du premier par la lacune que signale un feuillet
+moderne posé sur la vue 25 : « folios blancs 38 à 49 ». Cette lecture donne donc
+à chaque dossier sa propre suite de sections et ne cherche pas de fil entre
+eux.\footnote{Sur le compte des mains : les transcriptions distinguent la main
+du traité d'algèbre, puis, dans le dossier du vol, celle qui a recopié la page
+de titre de Flayder (« une cursive fine et régulière, différente de celle du
+traité des équations »), celle des notes latines (« différente de celle du
+traité des équations comme de la belle ronde qui a copié la page de titre »),
+celle de la légende française (« une troisième main, française, plus ronde, plus
+grande ») et celle du traité italien (« une quatrième main »). La main des deux
+mots « Ars Volandi » de la vue 26 R est dite seulement différente de celle du
+traité ; savoir si elle est ou non celle de la page de titre recopiée n'est pas
+tranché par les transcriptions, et ne l'est pas ici. Le compte de six mains
+retenu dans cette lecture suppose qu'elle en est une ; cinq est un minimum
+certain.}
+
+Pourquoi les feuillets ne sont cités ici que par les vues de Gallica. Deux
+séries de chiffres courent sur ces pages, toutes deux à l'encre. La première est
+la pagination du traité, de 1 (vue 3 R) à 37 (vue 23 R), un chiffre par page, au
+coin extérieur supérieur, de l'encre du texte. La seconde ne numérote que les
+pages de droite, un chiffre par feuillet, en chiffres plus grands et plus
+ornés : 38 à la vue 24, puis 50 à 62 sur les vues 26 à 38, sans lacune. Les deux
+séries se rejoignent à 37 et 38 sans rupture dans le compte, ce qu'aucune des
+deux transcriptions n'a su expliquer ; et ni l'une ni l'autre n'est le crayon
+pâle d'une foliotation de bibliothèque. Aucune n'a donc écrit de foliotation, et
+cette lecture n'en écrit pas : elle ne cite que des vues.\footnote{Les autres
+chiffres des feuillets, tous relevés dans les notes des transcriptions, sont : le
+« 171 » du feuillet de titre, rogné par le couteau du relieur et d'une autre
+main ; les anciennes cotes « Suppl.\textsuperscript{t} lat. 218. A. » sur la
+garde et « Suppl.\textsuperscript{t} Lat. n\textsuperscript{o} 218. » à la vue 3 ;
+un « 26 » au dos du feuillet de titre ; une série de petits chiffres courants de
+1 à 29 dans la marge du traité, d'une seconde plume plus fine, et une seconde
+série de la même sorte, « 29\textsuperscript{b} » à 37, dans les marges des vues
+21 à 23 ; les numéros de proposition ; et, aux vues 19 et 20, un « 33 » qui est
+la pagination d'un feuillet postérieur, vue par avance sur le bord saillant.}
+
+Une seconde plume, plus fine et plus pâle, a travaillé dans les marges du
+traité : elle y a recopié la forme canonique de chaque constitution en regard de
+celle-ci, numéroté ses propres remarques de 1 à 29, posé la vérification chiffrée
+d'un lemme à la vue 9 R, et proposé une correction à la vue 11 R. Ses
+interventions sont signalées ici chaque fois qu'elles portent sur la substance ;
+l'une d'elles est fausse et on le dira.
+
+\section*{Le traité « De Recognitione Æquationum » : ce qu'il se propose}
+
+\pagerange{2}{3}
+Le titre est trois mots au milieu du tiers supérieur d'un feuillet, et le traité
+commence à la vue suivante en disant exactement ce qu'il fait :
+
+\begin{quote}
+« Ideo is tractatus dicitur de æquationum recognitione quia in ipso
+investigantur modi quibus æquationum variæ constitutiones dignoscantur, seu per
+quos explicentur. »\footnote{« Ce traité est dit de la reconnaissance des
+équations parce qu'on y cherche les moyens par lesquels les diverses
+constitutions des équations se distinguent, ou par lesquels elles se
+développent. » Les citations latines sont données ici dans l'orthographe et avec
+les abréviations développées ; le feuillet écrit « d\textsuperscript{r} » pour
+« dicitur », « recognitiōe » pour « recognitione », « modj » pour « modi ». La
+transcription conserve toutes ces formes telles quelles.}
+\end{quote}
+
+La raison pour laquelle il faut un tel art est donnée aussitôt : les opérations
+de l'analyse — multiplications, divisions — cachent les équations « sous des
+formules diverses, en sorte que leurs racines, ou côtés, enveloppées dans ces
+détours, se livrent difficilement ». Reconnaître une équation, c'est donc
+défaire ce qu'une multiplication a fait. Et le principe qui rend l'entreprise
+possible est énoncé dans la phrase suivante, qui est la thèse de tout
+l'ouvrage :
+
+\begin{quote}
+« Æquatio enim in se habet eas omnes radices ex quibus fuit composita, ac
+proinde de iisdem omnibus est explicabilis. »\footnote{« Car une équation
+contient en elle toutes les racines dont elle a été composée, et c'est donc de
+toutes celles-là qu'elle est explicable. » En termes modernes : si
+$P(A) = (A - B_1)\cdots(A - B_n)$, alors $B_1, \dots, B_n$ sont racines de $P$,
+et ce sont les seules. C'est ce qu'on appelle aujourd'hui le théorème du facteur
+et sa réciproque ; le nom est postérieur au feuillet, et la proposition y est
+prise comme évidente, non démontrée.}
+\end{quote}
+
+De là le traité tire un corollaire dont il fait son plan : plus le degré est
+élevé, plus une équation est « impliquée », et de plus de côtés elle est
+explicable, parce qu'elle peut naître de plus de façons. Une quadratique ne peut
+venir que du produit de deux latérales ou subsister par elle-même ; une cubique
+peut venir de trois latérales, ou d'une quadratique et d'une latérale, ou
+subsister par elle-même ; et ainsi de suite. Le traité ajoute une phrase sur ses
+prédécesseurs qu'il faut citer parce qu'elle dit ce qu'il croit apporter : « les
+anciens analystes, enveloppés d'épaisses ténèbres, étaient là-dessus tout à fait
+aveugles, car ils pouvaient à peine exhiber un seul côté ». L'élégance de la
+méthode, dit-il, tient à ceci qu'elle exhibe \emph{tous} les côtés dont une
+équation quelconque a été composée.\footnote{« Qua in re veteres analystæ densis
+offusi tenebris plane cæcutiebant, vix enim unicum poterant latus exhibere,
+atque inde etiam patet huius methodi elegantia, quæ in eo, ut diximus, est
+præcipua ut omnia omnino latera ex quibus quævis æquatio composita fuerit
+exhibeat. » Le feuillet ne nomme aucun de ces anciens et cette lecture n'en
+nomme pas davantage. L'ambition annoncée — toutes les racines, non la seule
+racine positive — est celle-là même que le traité ne tiendra pas jusqu'au bout,
+puisqu'il laisse hors du compte les racines complexes.}
+
+Le plan est donc un inventaire. On prend un degré, on énumère les manières
+d'assembler une équation de ce degré, on écrit le produit, on nomme ses
+coefficients, et l'on obtient une forme canonique. Chaque façon d'assembler est
+un \emph{caput}, chaque configuration de grandeurs à l'intérieur d'un caput est
+une \emph{propositio}. L'ouvrage compte ainsi, sur les vingt-deux feuillets
+écrits, quatre chapitres et cinq propositions pour les quadratiques, six
+chapitres et vingt propositions pour les cubiques, dix chapitres et une
+soixantaine de propositions pour les quarto-quadratiques, plus une partie
+entière sur les « déterminations » des cubiques. Deux traités compagnons sont
+cités et ne sont pas dans le volume : un « tractatus de locis » où les
+changements de signes seront mieux expliqués, et un « tractatus peculiaris de
+generibus » auquel le dernier chapitre renvoie les déterminations des
+quarto-quadratiques, ce qui est la raison pour laquelle le traité
+s'arrête.\footnote{« quæ facilius percipientur in tractatu de locis » (vue 4 L)
+et « quia facile haberi possunt vel ex iis quæ diximus, vel ex tractatu
+peculiari de generibus, ideo, de iis plura non dicemus » (vue 23 R, dernière
+phrase). Ces deux renvois montrent que le traité faisait partie d'un ensemble
+plus large ; rien dans le volume ne dit lequel, et cette lecture n'en conclut
+rien.}
+
+\section*{La notation du feuillet, et sa traduction}
+
+\pagerange{3}{5}
+Rien dans ce traité ne peut être lu sans traduire d'abord trois choses : le
+signe d'égalité, la loi d'homogénéité qui gouverne les noms des constantes, et
+le vocabulaire des racines. Ce sont les trois traductions dont dépend tout le
+reste de cette lecture.
+
+\subsection*{Le signe d'égalité}
+
+Le feuillet n'écrit jamais « $=$ ». Il écrit deux barres verticales parallèles,
+« $\parallel$ », et cette double barre est son signe d'égalité. Toutes les
+équations de cette lecture sont écrites avec « $=$ » ; c'est la première et la
+plus fréquente des traductions faites ici.\footnote{Les deux transcriptions ont
+choisi indépendamment de rendre ce signe par \texttt{\textbackslash parallel}
+et de ne pas le moderniser, au motif que le tracé du feuillet est celui de deux
+simples hampes verticales et que rien sur la page n'autorise un « $=$ ». Ainsi
+la première équation du traité, à la vue 4 L, s'y lit
+« $4 - 1\,\mathrm{R} \parallel 0$ » et se lit ici $4 - R = 0$. Le même signe sert
+une fois de signe de proportion, dans la vérification chiffrée du lemme de la
+vue 9 R.}
+
+Une convention d'écriture va avec : le traité met toujours tous les termes du
+même côté et égale le tout à zéro. Il le dit et il dit pourquoi : ainsi « les
+affirmés seront égaux aux niés », c'est-à-dire que la somme des termes précédés
+de $+$ égale celle des termes précédés de $-$, et l'on a de quoi vérifier une
+racine par un simple calcul de deux colonnes. C'est une commodité de calcul, et
+le traité s'en sert effectivement à la dernière page.\footnote{« æquatio […] in
+hac methodo sic est constituenda, ut quantitas ignota sit ex eadem parte cum
+cognita, et utraque pars æquationis sic in unum redacta æquetur nihilo […] Et
+tunc affirmata æqualia erunt negatis » (vue 4 L). L'usage qui en est fait est à
+la vue 23 R, sur l'équation numérique du dernier chapitre.}
+
+\subsection*{L'homogénéité, et pourquoi les constantes portent un nom de dimension}
+
+Les constantes du traité ne s'appellent pas $a$, $b$, $c$. Elles s'appellent
+« $z\,\mathrm{pl.}$ », « $T\,\mathrm{Sol.}$ », « $S\,\mathrm{pl.pl.}$ »,
+« $P\,\mathrm{Sol.} $», « $R\,\mathrm{sol.}$ », « $G\,\mathrm{pl.}$ ». Le mot qui
+suit la lettre n'abrège pas la lettre : il donne sa \emph{dimension}.
+« $z\,\mathrm{pl.}$ » est $z$ \emph{planum}, un plan ; « $T\,\mathrm{Sol.}$ » est
+$T$ \emph{solidum}, un solide ; « $S\,\mathrm{pl.pl.}$ » est $S$
+\emph{planoplanum}, un plano-plan, c'est-à-dire un produit de quatre longueurs.
+
+La raison en est la loi d'homogénéité de l'école de Viète : on ne peut ajouter
+ni égaler que des grandeurs de même dimension. Une longueur est une longueur, le
+produit de deux longueurs est un plan, celui de trois un solide, celui de quatre
+un plano-plan ; et une somme dont les termes ne sont pas tous de même espèce
+n'est pas fausse, elle n'a pas de sens. Il s'ensuit que dans une équation dont
+la plus haute puissance est $A^2$, tout terme doit être un plan : le terme
+constant n'est donc pas un nombre mais un plan, et il faut l'appeler
+$z\,\mathrm{pl.}$ ; le coefficient de $A$, lui, doit être une longueur, et on
+l'appelle $x$, sans mot de dimension, parce qu'une longueur n'en demande pas.
+Dans une cubique, tout terme doit être un solide : d'où $T\,\mathrm{Sol.}$ seul,
+$z\,\mathrm{pl.}\,A$ (plan fois longueur), $xA^2$ (longueur fois plan), $A^3$.
+Dans une quarto-quadratique, tout terme est un plano-plan : d'où
+$S\,\mathrm{pl.pl.}$, $T\,\mathrm{Sol.}\,A$, $z\,\mathrm{pl.}\,A^2$, $xA^3$,
+$A^4$. La règle tient en une ligne : \emph{la dimension du coefficient et le
+degré de la puissance qu'il affecte s'ajoutent toujours pour faire le degré de
+l'équation.} C'est cela, et rien d'autre, que disent les mots « pl. », « Sol. »
+et « pl.pl. ».
+
+L'algèbre moderne a abandonné cette exigence : nous traitons les coefficients
+comme des nombres purs, et nous écrivons la quarto-quadratique du premier
+chapitre
+\[ A^4 - x A^3 + z A^2 - T A + S = 0. \]
+C'est ainsi que cette lecture écrira désormais toutes les équations du traité,
+les mots de dimension une fois expliqués étant laissés de côté. Le prix de ce
+gain est réel et il faut le nommer : chez Viète, chaque équation est un énoncé
+sur des figures, et la loi d'homogénéité est la garantie qu'elle en est un. En
+la quittant, on perd la raison d'être des noms, et l'on perd du même coup le
+contrôle dimensionnel qui, sur ces feuillets, sert plus d'une fois de garde-fou —
+c'est lui qui permet de voir tout de suite qu'une phrase comme « un solide dont
+la base est $\tfrac23 z\,\mathrm{pl.}$ et la hauteur le tiers du même plan » est
+elliptique, une hauteur ne pouvant pas être le tiers d'un plan.\footnote{Cette
+phrase est réellement sur le feuillet, à la vue 9 R ; on verra plus bas ce
+qu'elle veut dire et pourquoi elle est correcte une fois l'ellipse levée.}
+
+Le reste des lettres suit l'usage de l'école : $A$ est l'inconnue, $B$, $C$,
+$D$, $F$ les côtés donnés, $x$ le coefficient du terme immédiatement inférieur
+à la plus haute puissance. Le traité ne se sert de la notation cossique des
+degrés qu'une seule fois, à la dernière page, quand il passe aux nombres : $a$
+pour le côté, $q$ pour le carré, $c$ pour le cube, $qq$ pour le
+quarré-quarré.\footnote{« $100 - 105\,a + 7\,q - 3\,c + 1\,qq \parallel 0$ »
+(vue 23 R), soit $A^4 - 3A^3 + 7A^2 - 105A + 100 = 0$. C'est la seule équation
+entièrement numérique du traité.}
+
+\subsection*{Les côtés : au-dessus, au-dessous, feints}
+
+« Latus », un côté, est ce que nous appelons une racine — le mot est
+géométrique, le côté d'un carré ou d'un cube étant ce dont on part pour faire la
+puissance. Le traité en distingue trois espèces, et c'est ici que se joue toute
+la portée de l'ouvrage.
+
+\begin{itemize}
+  \item \textbf{Positiva supra} : les côtés « qui expriment quelque chose outre
+    ou au-dessus de rien ». Ce sont nos racines positives. « Si $+A$ est positif
+    au-dessus et que sa valeur soit 4, on entendra que la valeur de $A$ est
+    quatre outre ou au-dessus de rien. »
+  \item \textbf{Positiva infra} : les côtés « conçus comme moindres que rien ».
+    Ce sont nos racines négatives. Le traité sait que la notion est heurtante et
+    la défend : « bien qu'on les conçoive comme moindres que rien, et que cette
+    conception paraisse tout à fait feinte — car la nature ne produit rien
+    au-dessous de rien —, ils ne sont pourtant pas feints au plus haut point,
+    puisque les signes changés ils deviennent positifs au-dessus ». Et il donne
+    la raison de calcul pour laquelle on en a besoin : quand on compare la ligne
+    inconnue à une ligne connue, il arrive qu'on n'en prenne qu'une partie, et
+    que cette partie soit à retrancher ; on parvient tout de même à la
+    connaissance de la ligne, et l'on restitue à la fin ce qu'on avait
+    ôté.\footnote{Vue 4 L. Le raisonnement est exactement celui qui justifie,
+    aujourd'hui, de travailler sur une droite orientée : la partie
+    « au-dessous » est un déplacement de signe contraire. Ce que le feuillet
+    n'a pas, c'est le nombre négatif lui-même comme objet ; il a la racine
+    négative comme \emph{situation}, décrite par un jeu de signes.}
+  \item \textbf{Fictitia} : les côtés qui « ne contiennent rien de vrai en
+    eux ». Ce sont nos racines complexes, et le traité dit d'eux la chose
+    juste : « si ces feints servent seuls à l'explication d'une équation, ils
+    dénoteront l'impossibilité de la question proposée ».\footnote{Vue 3 R. En
+    termes modernes : si toutes les racines d'une équation sont complexes non
+    réelles, le problème géométrique dont elle est issue n'a pas de solution. La
+    proposition est vraie. Le mot « fictitia » est traduit ici par
+    « complexe » plutôt que par « imaginaire », parce que le traité ne leur
+    donne jamais de forme et ne calcule jamais avec eux ; il ne les connaît que
+    par l'échec de la réduction.}
+\end{itemize}
+
+Le point décisif est que le traité n'écrit \emph{jamais} une racine négative
+comme un nombre négatif. Il écrit le facteur $B + A = 0$, et il dit que l'unique
+côté de cette latérale est « $+A$ au-dessous », lequel « par équivalence est le
+même que $-A$ au-dessus ». Traduit, cela veut dire $A = -B$, et le facteur est
+$A + B$. Ainsi, dans tout ce qui suit :
+\begin{itemize}
+  \item un facteur écrit $B - A = 0$ apporte une racine positive $A = B$, et
+    contribue au produit le facteur $(A - B)$ ;
+  \item un facteur écrit $B + A = 0$ apporte une racine négative $A = -B$, et
+    contribue le facteur $(A + B)$.
+\end{itemize}
+Les signes de la forme canonique se déduisent alors immédiatement : le signe du
+terme de plus haut degré est $(-1)^k$, où $k$ est le nombre de côtés
+« au-dessus », parce que chaque facteur $B - A$ apporte un $-A$ et chaque
+facteur $B + A$ un $+A$. C'est ce qui explique pourquoi les chapitres à nombre
+pair de racines positives ont un $+A^4$ et les autres un $-A^4$.
+
+Deux règles de signes sont énoncées, et il faut dire qu'elles ne s'accordent pas
+tout à fait. La première : un côté au-dessous fait que « tout ce qui est affecté
+sous lui » est aussi au-dessous. La seconde : lorsqu'on multiplie deux côtés de
+nature différente, le produit est noté du signe $-$ et devient au-dessous, mais
+« par équivalence » il doit être pris comme s'il était au-dessus. La première
+règle, appliquée à la lettre, donne au carré d'un côté au-dessous le caractère
+« au-dessous », ce que la seconde interdit ; et c'est de cette tension que naît
+la difficulté du chapitre sur la quadratique qui subsiste par
+elle-même.\footnote{« latus quod eiusmodi naturam sortitus est, efficere ut omnia
+quæ sub ipso affecta sunt, sint etiam infra » (vue 4 L, premier point noté), et
+« productum quod oritur notari quidem signo $-$, et fieri positivum infra, sed
+per æquivalentiam (ut sic loquar) ita esse accipiendum ac si esset supra »
+(même page). En notation moderne les deux règles se réduisent à une seule,
+$(-1)\times(-1) = +1$, et il n'y a plus de tension ; le feuillet, qui tient deux
+comptabilités distinctes — celle des signes écrits et celle du « dessus » et du
+« dessous » —, en a deux à accorder.}
+
+\section*{Ce que le traité énonce : les coefficients et les fonctions symétriques}
+
+\pagerange{3}{9}
+Au milieu du chapitre cinquième des cubiques, à la vue 9 L, le traité s'arrête
+sur une remarque incidente et énonce, pour tous les degrés, la règle qui est
+l'objet de tout son travail :
+
+\begin{quote}
+« in omnibus æquationibus alternatim affirmatis et negatis à principio usque ad
+finem, coefficientem altioris gradus sub potestate fieri summam laterum,
+coefficientem verò gradus immediate subsequentis summam rectangulorum vel
+planorum sub iisdem lateribus […] similiter coefficientem gradus proximè
+inferioris fieri summam omnium solidorum sub iisdem lateribus, et sic in
+infinitum. »\footnote{« Dans toutes les équations alternativement affirmées et
+niées du début jusqu'à la fin, le coefficient du degré le plus élevé sous la
+puissance est la somme des côtés, le coefficient du degré immédiatement suivant
+la somme des rectangles ou plans sous ces mêmes côtés, quels que soient les
+côtés vrais qui ont été multipliés ; semblablement le coefficient du degré
+immédiatement inférieur est la somme de tous les solides sous ces mêmes côtés,
+et ainsi à l'infini. » Vue 9 L.}
+\end{quote}
+
+C'est, dans le langage des figures, ce que nous écrivons aujourd'hui ainsi. Si
+$B_1, \dots, B_n$ sont les racines et
+\[ P(A) = (A - B_1)(A - B_2)\cdots(A - B_n), \]
+alors
+\[ P(A) = A^n - e_1 A^{n-1} + e_2 A^{n-2} - \cdots + (-1)^n e_n, \]
+où $e_k$ est la somme de tous les produits de $k$ racines distinctes : $e_1$ la
+somme des racines, $e_2$ la somme de leurs produits deux à deux, $e_3$ la somme
+de leurs produits trois à trois. Les $e_k$ s'appellent les \emph{fonctions
+symétriques élémentaires} des racines, et la suite d'égalités s'appelle les
+\emph{relations entre les coefficients et les racines}.\footnote{Les deux noms
+sont postérieurs au feuillet et ne sont attachés ici qu'à cause de la
+coïncidence exacte des énoncés : « somme des côtés » est $e_1$, « somme des
+rectangles sous les mêmes côtés, pris deux à deux » est $e_2$, « somme de tous
+les solides » est $e_3$. Le feuillet dit « rectangles ou plans » et « solides »
+là où nous disons produits, parce que l'homogénéité lui impose de nommer la
+dimension. Il faut ajouter deux réserves. La première est que le traité
+\emph{vérifie} la règle degré par degré, en développant les produits, jusqu'au
+degré quatre, et qu'il l'\emph{affirme} au-delà (« et sic in infinitum ») sans
+la démontrer : il n'a ni récurrence, ni notation pour un degré indéterminé. La
+seconde est plus lourde et fait l'objet du reste de cette section.}
+
+Le traité a donc l'énoncé. Ce qu'il n'a pas, c'est le droit de s'en servir sans
+exception, et il le sait. À la même page, il vient de construire une cubique en
+multipliant la quadratique $G + A^2 = 0$ — celle qui « subsiste par elle-même »,
+et dont on verra plus bas qu'elle n'a pas de racine réelle — par la latérale
+$C - A = 0$. Le produit est
+\[ GC - GA + CA^2 - A^3 = 0, \qquad \text{c'est-à-dire} \qquad A^3 - CA^2 + GA - GC = 0, \]
+et il se range, par ses signes, dans la forme
+$T\,\mathrm{Sol.} - z\,\mathrm{pl.}\,A + xA^2 - A^3 = 0$ qui est exactement celle
+du premier chapitre, où les trois côtés sont au-dessus. Le traité voit aussitôt
+que la forme est la même et l'interprétation différente, et il écrit la phrase
+qui limite sa propre règle :
+
+\begin{quote}
+« $x$ enim ut videre est ex eius origine non est summa laterum, nec
+$z\,\mathrm{pl.}$ aggregatum rectangulorum et cætera, ac proinde hæc constitutio
+est exceptio regulæ generalis. »\footnote{« Car $x$, comme on le voit par son
+origine, n'est pas la somme des côtés, ni $z\,\mathrm{pl.}$ l'agrégat des
+rectangles, etc. ; et par conséquent cette constitution est une exception à la
+règle générale. » Vue 9 L.}
+\end{quote}
+
+L'observation est exacte à l'intérieur de la doctrine : il n'y a ici qu'un seul
+côté vrai, $C$, et $x$ vaut $C$ ; il n'y a aucun rectangle sous des côtés vrais,
+et $z$ vaut $G$. Mais l'exception n'existe pas. Les trois racines de
+$A^3 - CA^2 + GA - GC = 0$ sont $C$, $i\sqrt{G}$ et $-i\sqrt{G}$, et l'on vérifie
+sur-le-champ :
+\[ e_1 = C + i\sqrt{G} - i\sqrt{G} = C = x, \]
+\[ e_2 = C\,i\sqrt{G} - C\,i\sqrt{G} + \bigl(i\sqrt{G}\bigr)\bigl(-i\sqrt{G}\bigr) = G = z, \]
+\[ e_3 = C \cdot i\sqrt{G} \cdot \bigl(-i\sqrt{G}\bigr) = CG = T. \]
+La règle générale vaut donc sans exception, et l'exception que le feuillet croit
+trouver est le prix de son refus de compter les côtés fictifs comme des
+racines.\footnote{Ce calcul est celui de cette lecture ; le feuillet le nie en
+propres termes. C'est le seul endroit de tout le volume où l'on puisse montrer,
+sur l'exemple même du feuillet, ce que coûte la doctrine et ce qu'elle gagnerait
+à admettre les racines complexes. On verra à la dernière section du traité que
+l'auteur en fournit lui-même une seconde démonstration, chiffrée, et tout aussi
+concluante contre lui.}
+
+Ce n'est pas une petite affaire, parce que toute la méthode repose sur la
+possibilité de reconnaître une équation à ses signes. Or deux équations de
+formes canoniques identiques peuvent avoir des interprétations tout à fait
+différentes, et le traité le répète chapitre après chapitre — « quamvis omnino
+similis sit formulæ quæ in primo capite, non tamen similiter enuntiabitur »,
+« maximè tamen inter se differunt, ut patet ex earum diversa origine ». Il n'a,
+pour les distinguer, aucun critère tiré de l'équation elle-même : il faut
+connaître l'origine. La question est posée en trois lignes, sur un béquet
+épinglé à un feuillet blanc, et l'on y reviendra : c'est la seule chose que la
+doctrine ne sait pas faire, et la réponse moderne est le discriminant.
+
+\section*{Les équations quadratiques}
+
+\pagerange{4}{5}
+Le traité commence par le degré deux, « parce que de toutes c'est la moins
+composée », la latérale ne présentant aucune difficulté. Deux racines, donc
+trois cas : toutes deux au-dessus, toutes deux au-dessous, ou l'une au-dessus et
+l'autre au-dessous ; plus un quatrième chapitre pour la quadratique qui ne vient
+d'aucun produit. Le traité remarque, en passant, que cette énumération est
+légitime « puisque le nombre des cas est fini », ce qui est la justification
+correcte d'une preuve par disjonction exhaustive.
+
+Les produits sont écrits, et les formes canoniques qui en sortent sont, en
+écriture moderne et monique :
+
+\begin{itemize}
+  \item \textbf{Caput 1}, deux racines positives $B$ et $C$ :
+    $(A-B)(A-C) = A^2 - xA + z = 0$ avec $x = B + C$ et $z = BC$.
+  \item \textbf{Caput 2}, deux racines négatives : $A^2 + xA + z = 0$, mêmes
+    $x$ et $z$.
+  \item \textbf{Caput 3}, une racine positive $B$ et une négative $-C$ :
+    $(A-B)(A+C) = A^2 + (C - B)A - BC = 0$. Le traité en fait trois
+    propositions selon que $B > C$, $B = C$ ou $B < C$, parce que dans son
+    écriture le coefficient du terme en $A$ est \emph{la différence} des côtés,
+    affectée du signe du plus grand ; le cas $B = C$ donne
+    $A^2 - BC = 0$, où « l'affection sous le côté s'évanouit ».
+  \item \textbf{Caput 4}, la quadratique qui subsiste par elle-même :
+    $A^2 + z = 0$.
+\end{itemize}
+
+Le traité note en outre, et c'est juste, que la forme canonique ne dépend pas de
+la complication apparente des coefficients : dans
+\[ A^2 - \frac{KN}{M}A + \frac{HL}{G}A + \frac{F^{\mathrm{sol}}}{G} = 0, \]
+les deux termes en $A$ « s'entendent comme une seule ligne, qu'on appelle $x$ »,
+et l'on est ramené au premier chapitre. C'est la remarque qu'une forme canonique
+est une forme, non une apparence.
+
+\subsection*{La condition du discriminant}
+
+Vient alors la doctrine des « déterminations », qui est la meilleure partie du
+traité. Deux choses distinctes y sont appelées du même nom et il faut les
+séparer, car le traité les sépare.
+
+La première est le cas des racines égales. « Une équation est dite sujette à
+détermination lorsqu'elle est explicable de deux ou plusieurs côtés égaux » ; la
+détermination est \emph{majeure} si tous les côtés sont égaux, \emph{mineure} si
+quelques-uns seulement le sont. Pour la quadratique du premier chapitre, cela
+arrive « lorsque $x$ est coupé en deux parties égales et que chaque moitié est
+$A$ » : les deux racines valent $x/2$, « à raison de quoi le côté est double et
+la solution double aussi ». En termes modernes, la racine double est
+$A = x/2$, valeur en laquelle $P$ et $P'$ s'annulent ensemble.
+
+La seconde est la \emph{limitation}, et c'est la découverte : il y a une
+inégalité en dehors de laquelle « les côtés seront feints, et par conséquent la
+question impossible ». Le traité l'énonce et la démontre :
+
+\begin{quote}
+« $z\,\mathrm{pl.}$ non debet esse maius quadrante quadrati $x$, cum enim $x$ sit
+summa laterum, rectangulum maius eo non potest quam si utraque latera sint
+æqualia inter se. »\footnote{« $z\,\mathrm{pl.}$ ne doit pas être plus grand que
+le quart du carré de $x$, car $x$ étant la somme des côtés, le rectangle ne peut
+être plus grand que si les deux côtés sont égaux entre eux. » Vue 5 L. Le mot
+rendu par « quadrante », le quart, est donné comme lecture incertaine par la
+transcription ; les mathématiques le confirment sans réserve, la borne étant
+$x^2/4$ et non une autre, et la phrase qui suit calculant explicitement « la
+quatrième partie du carré de $x$ ».}
+\end{quote}
+
+C'est-à-dire : $z \le x^2/4$, ou encore
+\[ x^2 - 4z \ge 0. \]
+La quantité $x^2 - 4z$ est ce que nous appelons le \emph{discriminant} de
+$A^2 - xA + z$, et sa positivité est exactement la condition pour que les deux
+racines soient réelles.\footnote{Le nom est postérieur au feuillet ; l'énoncé
+coïncide sans réserve, et la démonstration du feuillet est correcte : elle
+consiste à voir que le produit de deux nombres de somme donnée est maximal
+quand ils sont égaux, ce que nous démontrons aujourd'hui par
+$BC = \tfrac14\bigl((B+C)^2 - (B-C)^2\bigr)$. On retiendra que la borne est
+atteinte, et atteinte précisément au cas de la racine double : la limitation et
+la détermination majeure se rencontrent en un même point, ce que le feuillet ne
+dit pas mais que ses deux énoncés impliquent.}
+
+Le traité ajoute, et c'est exact, que rien de tel n'est à craindre au troisième
+chapitre, « lorsque $x$ est la différence » : une somme et une différence étant
+données, le cas est toujours possible. En effet $A^2 + (C-B)A - BC$ a pour
+discriminant $(C-B)^2 + 4BC = (B+C)^2 \ge 0$, toujours positif.
+
+\subsection*{La quadratique qui subsiste par elle-même, et le nombre de ses racines}
+
+Le quatrième chapitre est le point faible de tout l'ouvrage et il vaut la peine
+de dire exactement pourquoi. Le traité écrit $z\,\mathrm{pl.} + A^2 = 0$ et
+conclut :
+
+\begin{quote}
+« In quâ æquatione evidens est unicum esse latus positivum infrà potentia æquale
+$z\,\mathrm{pl.}$, nam per antithesim erit $z\,\mathrm{pl.} = -A^2$. »\footnote{« Dans
+laquelle équation il est évident qu'il y a un unique côté positif au-dessous,
+égal en puissance à $z\,\mathrm{pl.}$ ; car par transposition on aura
+$z\,\mathrm{pl.} = -A^2$. » Vue 5 L. « Égal en puissance à » veut dire : dont le
+carré est.}
+\end{quote}
+
+Ce qui est vrai est ceci. L'équation $A^2 + z = 0$, avec $z$ positif, n'a
+\emph{aucune} racine réelle : son discriminant vaut $-4z < 0$. Ses deux racines
+sont $+i\sqrt{z}$ et $-i\sqrt{z}$, deux complexes conjuguées, dont le module
+commun est $\sqrt{z}$. Le « côté unique au-dessous, égal en puissance à
+$z\,\mathrm{pl.}$ », c'est-à-dire $\sqrt{z}$ affecté du caractère
+« au-dessous », n'est pas une racine de l'équation : c'est le module de ses deux
+racines. Le traité tient donc, sous le nom d'un côté, la seule quantité réelle
+que la paire conjuguée fournisse, et il la fait fonctionner correctement partout
+où il s'en sert — dans les chapitres 6, 7, 8 et 9 des quarto-quadratiques, où le
+facteur $A^2 + G$ est toujours désigné par « le côté égal en puissance à
+$G\,\mathrm{pl.}$ ». Cette lecture propose donc de traduire uniformément cette
+expression par : \emph{le facteur quadratique $A^2 + G$, dont les deux racines
+sont $\pm i\sqrt{G}$}.\footnote{La traduction est de cette lecture et va au-delà
+de ce que le feuillet dit ; elle est proposée parce qu'elle rend cohérent tout
+l'usage que le traité fait de cette quantité, et parce qu'elle est
+mathématiquement exacte là où la lettre du feuillet ne l'est pas. Il faut
+ajouter que le feuillet se contredit sur ce point : son dernier chapitre pose
+comme critère qu'une quadratique $D\,\mathrm{pl.} + FA + A^2 = 0$ a ses côtés
+feints dès que $D\,\mathrm{pl.} > \tfrac14 F^2$ ; appliqué à
+$z\,\mathrm{pl.} + A^2 = 0$, où $F = 0$, ce critère donne aussitôt $z > 0$, donc
+des côtés feints — et non l'unique côté au-dessous que le chapitre 4 lui
+attribue. Les deux passages ne peuvent pas être vrais ensemble, et c'est le
+dernier chapitre qui a raison.}
+
+Une conséquence générale mérite d'être tirée, parce qu'elle empêche de prêter au
+traité plus qu'il ne donne. Le traité ne dit \emph{pas}, et ne pouvait pas dire,
+qu'une équation de degré $n$ a $n$ racines. Sa classification laisse au
+contraire, à chaque degré, une classe résiduelle — les équations « qui
+subsistent par elles-mêmes » — qui est précisément celle des équations ayant
+moins de racines réelles que leur degré, et pour lesquelles il n'exhibe rien.
+Une cubique à une seule racine réelle ne peut, dans son système, ni venir de
+trois latérales, ni d'une quadratique à deux racines et d'une latérale : elle
+subsiste par elle-même, et le chapitre 6 des cubiques n'en donne que les six
+formes, sans racines. Le théorème selon lequel tout polynôme de degré $n$ à
+coefficients complexes a exactement $n$ racines comptées avec leur multiplicité
+— ce que nous appelons le théorème fondamental de l'algèbre — ne se trouve donc
+pas sur ces feuillets, et cette lecture ne le leur attribue
+pas.\footnote{L'énoncé et sa démonstration sont très postérieurs au feuillet. Ce
+que le feuillet a, et qui est réel, c'est l'affirmation qu'une équation contient
+toutes les racines dont elle a été composée, et l'inventaire complet, aux degrés
+deux, trois et quatre, des manières de la composer avec des racines réelles.}
+
+\section*{Les équations cubiques : les six chapitres}
+
+\pagerange{6}{8}
+Une cubique est explicable de trois côtés, d'où quatre chapitres selon les
+signes ; et comme elle peut aussi naître d'une quadratique et d'une latérale, ou
+subsister par elle-même, il y a deux chapitres de plus. Six en tout. Voici,
+en écriture moderne monique, le catalogue entier, avec $x$, $z$, $T$ pour les
+trois fonctions symétriques des côtés vrais quand elles ont ce sens.
+
+\begin{itemize}
+  \item \textbf{Caput 1}, trois racines positives :
+    $A^3 - xA^2 + zA - T = 0$, avec $x = B+C+D$, $z = BC+BD+CD$, $T = BCD$.
+  \item \textbf{Caput 2}, deux positives $B$, $C$ et une négative $-D$ :
+    $(A-B)(A-C)(A+D) = 0$. Cinq propositions, selon la comparaison de $D$ à
+    $B+C$ puis celle de $(B+C)D$ à $BC$ ; les formes sont
+    $A^3 \pm xA^2 \pm zA - T = 0$ dans toutes les combinaisons de signes que
+    ces comparaisons autorisent, le coefficient de $A^2$ étant $D - (B+C)$ et
+    celui de $A$ étant $BC - (B+C)D$.
+  \item \textbf{Caput 3}, deux négatives et une positive : le chapitre est
+    l'inverse du précédent, et le traité le dit en une phrase — « toutes et
+    chacune sont inverses, et le chapitre entier est l'inverse du chapitre
+    entier ; les côtés qui là étaient au-dessus sont ici au-dessous ». C'est le
+    changement de variable $A \mapsto -A$, correctement identifié et
+    correctement exploité pour n'avoir rien à redémontrer.
+  \item \textbf{Caput 4}, trois négatives : $A^3 + xA^2 + zA + T = 0$. Le
+    traité remarque que toutes les affections y portent le signe $+$, « ce qui
+    n'arrive jamais directement et par soi » — c'est-à-dire qu'une équation à
+    tous ses coefficients positifs n'a aucune racine positive, ce qui est vrai
+    et immédiat.
+  \item \textbf{Caput 5}, née d'une quadratique et d'une latérale. Le traité
+    écarte d'abord le cas où la quadratique a deux racines, qui retombe dans
+    les chapitres précédents, et ne garde que la quadratique sans racine
+    réelle : $(A^2+G)(A \mp C) = 0$, deux propositions.
+  \item \textbf{Caput 6}, les cubiques qui subsistent par elles-mêmes : six
+    formes, sans racines exhibées,
+    \[ A^3 + xA^2 + T = 0, \quad A^3 + zA + T = 0, \quad A^3 + T = 0, \]
+    \[ A^3 + zA - T = 0, \quad A^3 + xA^2 - T = 0, \quad A^3 - T = 0, \]
+    les trois premières ayant « un unique côté au-dessous », les trois dernières
+    « un unique côté au-dessus ».\footnote{Le feuillet les écrit sous la forme
+    $T\,\mathrm{Sol.} + xA^2 + A^3 = 0$ et le reste, tous les termes au même
+    membre. Les six formes sont exactement les cubiques réelles ayant une seule
+    racine réelle et une paire complexe conjuguée, écrites selon le signe de
+    cette racine et selon celui des coefficients qui ne s'annulent pas. Le
+    feuillet ne dit pas que les deux autres racines sont feintes : il se borne à
+    ne compter qu'un côté. La lecture le dit, parce que c'est ce qui est vrai.}
+\end{itemize}
+
+Lu ainsi, le classement du traité est une classification complète des cubiques
+réeles moniques par le nombre et le signe de leurs racines réelles, jointe à la
+lecture de chaque coefficient comme fonction symétrique de ces racines lorsque
+toutes sont réelles. C'est, à un vocabulaire près, ce qu'un cours moderne fait
+encore en préalable à l'étude du discriminant.
+
+Trois petites choses sont à relever dans l'exécution, parce qu'elles sont dans
+le feuillet et qu'un lecteur les rencontrera. À la vue 6 R, la forme canonique
+du premier chapitre est écrite « $+\dot{x}A$ » sans l'exposant 2, que porte la
+copie faite en marge par la seconde plume ; le terme est $xA^2$.\footnote{Vue
+6 R. La transcription laisse la ligne telle quelle et le signale ; la marge
+donne la forme juste.} Dans plusieurs produits, les termes de même degré sont
+réunis par une accolade au lieu d'être écrits à la file, ce qui est une
+commodité d'écriture et non une notation. Et le traité écrit une fois le côté
+$a$ en minuscule là où il écrit $A$ partout ailleurs, sans conséquence.
+
+\section*{Les déterminations des cubiques, et les limites du possible}
+
+\pagerange{8}{11}
+Cette partie est la plus originale du traité. Elle répond à deux questions
+distinctes : comment trouver les racines quand deux d'entre elles sont égales,
+et à quelle condition sur les coefficients les racines sont réelles.
+
+\subsection*{La racine double, obtenue par éliminations successives}
+
+Le traité prend la cubique du premier chapitre, $A^3 - xA^2 + zA - T = 0$, à
+trois racines positives, et suppose que deux d'entre elles, $B$ et $C$, sont
+égales. Il pose $B = C = A$, d'où le troisième côté $D = x - 2A$, et il traduit
+les deux autres fonctions symétriques :
+\[ z = A^2 + 2A(x - 2A) = 2xA - 3A^2, \qquad T = A^2(x - 2A) = xA^2 - 2A^3. \]
+Ces deux égalités sont sur le feuillet et elles sont justes. Il en tire deux
+équations en $A$ toutes deux nulles,
+\[ \tfrac13 z - \tfrac23 xA + A^2 = 0, \qquad \tfrac12 T - \tfrac12 xA^2 + A^3 = 0, \]
+multiplie la première par $A$ pour les rendre « homogènes », les compare,
+retranche $A^3$ des deux membres, et obtient
+\[ \tfrac12 T - \tfrac13 zA + \tfrac16 xA^2 = 0, \qquad \text{puis} \qquad \frac{3T}{x} - \frac{2zA}{x} + A^2 = 0 \]
+en multipliant par $6$ et en divisant par $x$.\footnote{Le feuillet dit « quorum
+omnium si sumatur sexta pars et productum applicetur ad $x$ » — « si de tout
+cela on prend la sixième partie et qu'on applique le produit à $x$ ». L'opération
+réellement faite est une multiplication par six suivie d'une division par $x$ ;
+« prendre la sixième partie » est une ellipse pour « faire que le coefficient
+$\tfrac16$ devienne l'unité ». Le résultat écrit est juste.} Une seconde
+comparaison, avec la première équation, fait disparaître $A^2$ et donne enfin
+\[ \frac{\dfrac{3T}{x} - \dfrac{z}{3}}{\dfrac{2z}{x} - \dfrac{2x}{3}} = A. \]
+
+C'est la formule du feuillet, telle qu'il l'écrit. Mise sur dénominateur commun,
+elle devient
+\[ A = \frac{xz - 9T}{2\,(x^2 - 3z)}, \]
+et cette expression est exacte : la racine double d'une cubique monique
+$A^3 - xA^2 + zA - T$ qui en possède une est bien donnée par cette fraction
+rationnelle des coefficients.\footnote{Vérification de cette lecture, sur les
+racines $2, 2, 5$ : $x = 9$, $z = 24$, $T = 20$, d'où
+$(xz - 9T)/2(x^2-3z) = (216-180)/2(81-72) = 36/18 = 2$. Et sur $3, 3, 1$ :
+$x = 7$, $z = 15$, $T = 9$, d'où $(105-81)/2(49-45) = 24/8 = 3$. Les deux
+formes, celle du feuillet et celle-ci, sont identiques et non seulement
+équivalentes.}
+
+Ce que le traité a fait là porte aujourd'hui un nom. Ses « comparaisons
+successives » d'équations toutes égales à zéro, où l'on retranche à chaque pas
+la plus haute puissance commune, sont exactement l'algorithme d'Euclide appliqué
+au polynôme $P$ et à sa dérivée $P'$ ; et la fraction obtenue est la racine du
+reste linéaire de cet algorithme. On peut le vérifier en deux lignes : avec
+$P = A^3 - xA^2 + zA - T$ et $P' = 3A^2 - 2xA + z$, la division de $P$ par $P'$
+laisse le reste $-\tfrac13 xA^2 + \tfrac23 zA - T$, et la combinaison suivante
+laisse $2(x^2-3z)A - (xz - 9T)$, qui s'annule pour la valeur ci-dessus. Une
+racine double de $P$ étant une racine commune à $P$ et $P'$, elle est racine de
+leur plus grand commun diviseur, et c'est celui-ci que l'algorithme
+calcule.\footnote{Le nom d'algorithme d'Euclide appliqué à $P$ et $P'$, et la
+notion de dérivée, sont postérieurs au feuillet, qui n'a ni l'un ni l'autre :
+il obtient ses deux équations de départ non par dérivation mais en traduisant la
+condition $B = C$ dans les fonctions symétriques. La coïncidence est néanmoins
+complète, et elle porte aussi sur la généralité : le traité affirme que « dans
+toutes les constitutions, cubiques, quarto-quadratiques ou de degré plus élevé,
+le côté égal se découvrira par le même artifice, sinon qu'il faudra établir
+plusieurs équations pour parvenir enfin à la dernière où l'on aura $A$ unique ».
+Cette affirmation est vraie, et c'est la description exacte de ce que fait
+l'algorithme sur un polynôme de degré quelconque.}
+
+\subsection*{Les limitations : ce que le traité établit, et ce qu'il croit établir}
+
+Pour les deux chapitres où $x$ est la somme des trois côtés — le premier et le
+quatrième —, le traité donne deux bornes et une raison :
+
+\begin{quote}
+« eo casu quæstio erit possibilis si $Z\,\mathrm{pl.}$ non sit maius tertia parte
+$x$ quadrati, et similiter $T\,\mathrm{pl.}$ non sit maius tertiâ parte cubi
+eiusdem $x$, si enim linea in tres partes dividatur maius solidum sub his
+tribus portionibus contentum, erit cum dictæ tres partes erunt inter se
+æquales. »\footnote{« Dans ce cas la question sera possible si
+$z\,\mathrm{pl.}$ n'est pas plus grand que la troisième partie du carré de $x$,
+et semblablement si $T$ n'est pas plus grand que la troisième partie du cube du
+même $x$ ; car si une ligne est divisée en trois parties, le plus grand solide
+contenu sous ces trois portions sera lorsque lesdites trois parties seront
+égales entre elles. » Vue 8 L. Le feuillet écrit ici « $T\,\mathrm{pl.}$ », un
+plan, là où il s'agit du solide $T\,\mathrm{Sol.}$ : le mot de dimension est
+fautif, et la loi d'homogénéité suffit à le voir.}
+\end{quote}
+
+La première borne est juste. Si $B + C + D = x$ avec $B$, $C$, $D$ positifs,
+alors $z = BC + BD + CD$ est maximal quand les trois sont égaux à $x/3$, et vaut
+alors $3(x/3)^2$ :
+\[ z \le \frac{x^2}{3}. \]
+
+La seconde, telle qu'elle est écrite, est fausse. Le raisonnement que le
+feuillet donne — le solide sous trois parties d'une ligne est maximal quand les
+parties sont égales — est correct, et il conduit non pas au tiers du cube mais
+au cube du tiers :
+\[ T \le \left(\frac{x}{3}\right)^3 = \frac{x^3}{27}. \]
+La borne vraie est donc vingt-sept fois plus petite que celle que le feuillet
+énonce. Il est probable que « la troisième partie du cube » soit une ellipse
+pour « le cube de la troisième partie », d'autant que la phrase parallèle sur
+$z$ — « la troisième partie du carré » — est, elle, littéralement juste ; mais
+telle qu'elle est écrite la borne ne l'est pas, et cette lecture écrit
+$x^3/27$.\footnote{Départ de cette lecture par rapport au feuillet : la borne
+énoncée est $x^3/3$, la borne vraie est $x^3/27$, et la démonstration du
+feuillet donne la seconde. L'erreur est sans conséquence sur la suite, parce que
+le traité ne se sert jamais de cette borne pour calculer : il s'en sert pour
+dire qu'il y a une borne.}
+
+Reste le plus important, que le feuillet n'a pas vu. Ces deux inégalités sont
+\emph{nécessaires} pour que les trois racines soient réelles et positives ;
+elles ne sont pas \emph{suffisantes}, et le feuillet les prend pour telles en
+écrivant « eo casu quæstio erit possibilis si… ». Un contre-exemple entier suffit
+à le montrer :
+\[ A^3 - 6A^2 + 10A - 8 = 0, \]
+c'est-à-dire $x = 6$, $z = 10$, $T = 8$. Les deux limitations sont satisfaites,
+$10 \le 36/3 = 12$ et $8 \le 216/27 = 8$ — et a fortiori la borne trop large du
+feuillet, $8 \le 72$. Pourtant cette équation se factorise en
+\[ (A - 4)\,(A^2 - 2A + 2) = 0 \]
+et n'a qu'une seule racine réelle, $4$, les deux autres étant $1 + i$ et
+$1 - i$. La question est donc « impossible » au sens du traité alors que ses
+deux conditions sont remplies.\footnote{Calcul et contre-exemple de cette
+lecture. Le critère exact est le signe du discriminant : pour
+$A^3 - xA^2 + zA - T$,
+\[ \Delta = 18xzT - 4x^3T + x^2z^2 - 4z^3 - 27T^2, \]
+et les trois racines sont réelles et distinctes si et seulement si
+$\Delta > 0$, deux d'entre elles complexes conjuguées si $\Delta < 0$, et il y a
+une racine multiple si $\Delta = 0$. Sur l'exemple : $\Delta = -400$. Sur les
+racines $1, 2, 3$ ($x=6$, $z=11$, $T=6$) : $\Delta = 4$, qui est bien
+$\prod_{i<j}(B_i - B_j)^2$. Le mot et la quantité sont postérieurs au feuillet ;
+on verra à la section suivante que les limitations que le traité obtient pour
+les \emph{autres} chapitres sont, elles, exactement des conditions de
+discriminant, et qu'il les obtient justes.}
+
+\subsection*{Les déterminations chapitre par chapitre}
+
+Le traité passe ensuite en revue les cinq propositions du second chapitre, et
+son travail est propre. On ne relèvera ici que ce qui a une portée.
+
+Pour la deuxième proposition, où le côté au-dessous égale la somme des deux
+côtés au-dessus, la détermination se calcule ainsi : si $D = 2A$ et $B = C = A$,
+alors $z = 3A^2$, donc $A = \sqrt{z/3}$, et $T = 2A^3$. Le traité le vérifie de
+deux manières, par l'analyse directe puis au moyen d'un lemme emprunté, et les
+deux donnent $A^2 = z/3$. Le calcul est juste : de $T = 2A^3$ et
+$T = zA - A^3$ suit $3A^3 = zA$, donc $3A^2 = z$.
+
+Pour la troisième proposition, trois cas selon que le côté au-dessous égale
+chacun des deux autres, un seul, ou aucun. Dans le premier, la détermination est
+majeure et $T = x^3$, $z = x^2$ ; dans le second, $z = T/x$ ; dans le troisième,
+on revient à l'élimination générale.\footnote{Le premier cas est à lire avec
+attention : les trois côtés sont alors égaux en valeur absolue, mais l'un est
+au-dessous, en sorte que $x$ n'est plus la somme des trois mais leur différence,
+et $T = x^3$, $z = x^2$ s'entendent de cette différence. Le feuillet dit
+« $T\,\mathrm{Sol.}$ æquabitur $x^3$ sicut et $z\,\mathrm{pl.}$ quadrato ipsius
+$x$ », sans plus, et cette lecture ne lui prête pas davantage.}
+
+Pour la cinquième proposition, le traité démontre un lemme utile : si les deux
+côtés au-dessus $B$, $C$ ont un rectangle $BC$ plus grand que $(B+C)D$, alors
+chacun d'eux est plus grand que $D$. La démonstration est correcte —
+$(B+C)C > BC > (B+C)D$ donne $C > D$, et de même pour $B$. La seconde plume a
+écrit en marge, en regard du mot « maiorem » qu'elle a souligné dans le texte,
+le mot « minorem » : c'est une correction, et elle est fausse. La démonstration
+demande bien « plus grand », la ligne du feuillet est juste, et l'annotateur a
+tort.\footnote{Vue 11 R. Le texte porte « similique ratione demonstrabitur etiam
+rectam $AB$ maiorem esse ipsâ $D$ », la marge « minorem ». Par symétrie de $B$
+et $C$ dans l'hypothèse $BC > (B+C)D$, la conclusion est la même pour l'un que
+pour l'autre : les deux sont plus grands que $D$. C'est l'un des deux seuls
+endroits du volume où l'annotateur se prononce sur la substance, et il se trompe.}
+
+\section*{Les trois lemmes de maximum, et ce que « D. Rob. » veut dire}
+
+\pagerange{9}{11}
+Deux fois, pour établir ses limitations, le traité s'appuie sur des lemmes qu'il
+ne démontre pas et dont il dit d'où ils viennent : « præmisso Lemmate quod a
+D. Rob. demonstratum est » (vue 9 R), puis « quod demonstrabitur præmissis
+duobus Lemmatibus etiam à D. Rob. demonstratis » (vue 10 R). En marge de la
+première mention, une note en français, la seule note non latine de tout le
+traité, renvoie le lecteur à la source : « 13 en son traité de mechanique des
+plans inclinez ».
+
+Il faut dire exactement ce que cela établit. Cela établit que le traité
+\emph{cite} Roberval, comme l'auteur de trois lemmes qu'il emprunte et qu'il
+signale comme empruntés, et qu'un lecteur — peut-être l'auteur lui-même — a noté
+en marge où les trouver. Cela n'établit pas que le traité soit de Roberval :
+c'est même le contraire qu'une telle mention indique, un auteur n'ayant pas
+coutume de renvoyer à lui-même comme à un tiers nommé par l'initiale de sa
+qualité. Cette lecture n'attribue donc le traité à personne — ni à Roberval, ni
+à Viète, ni à un autre — et note seulement que son auteur avait lu Roberval sur
+les plans inclinés.\footnote{Le traité est anonyme sur le feuillet ; aucune
+souscription, aucun nom d'auteur, aucune date. Le catalogue range le volume sous
+le nom de Roberval ; les feuillets ne le disent pas. Sur la note marginale : le
+chiffre « 13 » qui la précède appartient à la série des petits chiffres courants
+de la seconde plume et n'est pas un renvoi de page.}
+
+Voici les trois lemmes, traduits, et ce qu'ils valent.
+
+\subsection*{Premier lemme (vue 10 L) : le plus grand solide appliqué à un plan}
+
+\begin{quote}
+« De tous les parallélépipèdes appliqués selon des plans égaux, ou selon le même
+plan parallélogramme, et déficients de figures parallélépipédiques semblables
+entre elles et semblablement posées, le plus grand est celui qui est appliqué
+aux deux tiers, étant double du défaut. »
+\end{quote}
+
+En termes modernes, il s'agit de maximiser
+\[ f(A) = zA - A^3 \]
+— un solide « appliqué au plan $z$ » et « déficient d'une figure cubique ». Le
+maximum est atteint pour $f'(A) = z - 3A^2 = 0$, soit
+\[ A = \sqrt{\frac{z}{3}}, \qquad f(A) = \frac{2z}{3}\sqrt{\frac{z}{3}}. \]
+Tout ce que dit le lemme s'y retrouve exactement. Posons
+$\ell = \sqrt{z/3}$, de sorte que $z = 3\ell^2$ : le maximum vaut $2\ell^3$, la
+figure déficiente vaut $\ell^3$, et le solide est donc bien « double du
+défaut » ; et comme $2\ell^3 = \tfrac23 z \cdot \ell$, il est « appliqué aux
+deux tiers » du plan. Le corollaire que le traité en tire dit la même chose
+autrement, et dissipe l'ellipse relevée plus haut : « tout plan est contenu sous
+deux droites inégales, dont la moindre peut la troisième partie du même plan, et
+la plus grande est triple de la moindre » — c'est-à-dire $z = \ell \cdot 3\ell$
+avec $\ell^2 = z/3$. La « hauteur égale au tiers du plan » des pages précédentes
+est donc, sans ambiguïté, la droite dont le carré est le tiers du plan, soit
+$\sqrt{z/3}$ ; et le traité l'écrit lui-même en clair une page plus loin :
+« manifestum est $A$ fieri $\sqrt{\tfrac13 z\,\mathrm{pl.}}$ ».\footnote{Vue 9 R.
+La lecture de l'ellipse est donc donnée par le feuillet lui-même, et n'est pas
+une conjecture. Le mot « potens » — « peut » — est le terme technique de l'école
+pour « dont le carré égale » ; il vient du grec $\delta\acute{\upsilon}\nu\alpha\tau\alpha\iota$
+des \emph{Éléments}.}
+
+L'usage de ce lemme est la limitation de la deuxième proposition du deuxième
+chapitre : $T$ ne doit pas être plus grand que le maximum, soit
+\[ T \le \frac{2z}{3}\sqrt{\frac{z}{3}}, \qquad \text{c'est-à-dire} \qquad 27\,T^2 \le 4\,z^3. \]
+Cette dernière inégalité est exactement la condition pour que la cubique réduite
+$A^3 - zA + T = 0$ ait ses trois racines réelles : c'est la positivité de son
+discriminant, $\Delta = 4z^3 - 27T^2$. Le traité l'atteint, et l'atteint juste,
+par un problème de maximum au lieu d'un invariant
+algébrique.\footnote{Coïncidence exacte, et le nom de discriminant est
+postérieur au feuillet. C'est la meilleure observation mathématique de tout le
+dossier : chaque « limitation » que le traité tire de ces lemmes est, en langage
+moderne, la condition $\Delta \ge 0$ pour la cubique correspondante, obtenue en
+cherchant le maximum de la fonction dont la limitation exprime que $T$ ne le
+dépasse pas. Le procédé est général et il est correct.}
+
+\subsection*{Deuxième et troisième lemmes (vue 10 R) : la ligne divisée, et le solide appliqué à une ligne}
+
+\begin{quote}
+« Si une ligne droite est divisée en deux parties inégales, le plus grand solide
+qui puisse être fait du carré de l'une par la hauteur de l'autre est lorsque la
+portion dont le carré est la base dudit solide est double de l'autre portion. »
+
+« De tous les parallélépipèdes appliqués selon la même ligne droite, ou selon
+des droites égales, et déficients de figures parallélépipédiques semblables
+entre elles et semblablement posées, le plus grand est celui qui est appliqué à
+la troisième partie, étant la moitié du défaut. »
+\end{quote}
+
+Ces deux lemmes sont le même énoncé sous deux habits, et il vaut de le dire,
+puisque le traité s'en sert comme de deux et remarque ensuite que le second
+n'est pas nécessaire. Maximiser $u^2 v$ sous la contrainte $u + v = x$, c'est
+maximiser $xu^2 - u^3$ ; le maximum est en $u = \tfrac23 x$, $v = \tfrac13 x$, et
+vaut
+\[ \frac49 x^2 \cdot \frac{x}{3} = \frac{4}{27}\,x^3. \]
+Le premier lemme est l'énoncé sous la forme « $u$ double de $v$ » ; le second
+sous la forme « appliqué à la troisième partie », la hauteur du solide maximal
+étant $x/3$, et « moitié du défaut », le défaut valant
+$u^3 = \tfrac{8}{27}x^3$, exactement le double. Les deux énoncés sont justes et
+équivalents.
+
+L'usage est la limitation de la quatrième proposition du deuxième chapitre : on
+y a $(B+C)D = BC$, et le traité démontre que
+\[ T \le \frac{4}{27}\,x^3, \]
+ce qu'il écrit en clair, « scilicet $\tfrac{4}{27}x^3$ ». Là encore, l'inégalité
+est exactement la condition de réalité des racines de $A^3 - xA^2 + T = 0$, dont
+le discriminant vaut $4x^3T - 27T^2 = T(4x^3 - 27T)$, positif précisément pour
+$0 \le T \le \tfrac{4}{27}x^3$. Deuxième coïncidence exacte, par la même voie.
+
+Le traité donne en outre une seconde démonstration de cette même limitation,
+purement géométrique, qui n'a besoin que du premier lemme, et il la conduit en
+deux cas sur la figure d'un segment $AC$ partagé en $AB$ et $BC$ avec un
+segment $CD$ dans le prolongement. Cette lecture l'a refaite et elle est juste
+dans les deux cas. Le premier cas, où $CD$ vaut le quart de $AC$ et où
+$B$ est le milieu, donne l'égalité : $T = \tfrac14 AC^2 \cdot \tfrac14 AC =
+\tfrac1{16}AC^3$, tandis que $x = \tfrac34 AC$ et $\tfrac4{27}x^3 =
+\tfrac4{27}\cdot\tfrac{27}{64}AC^3 = \tfrac1{16}AC^3$ : les deux quantités sont
+bien égales. Le second cas, où $CD$ est moindre que le quart, donne l'inégalité
+stricte par comparaison de deux solides dont la base et la hauteur sont l'une et
+l'autre plus grandes.\footnote{Une lettre de la démonstration est à corriger, et
+les mathématiques du feuillet suffisent à le faire : la phrase « sit primo recta
+$CD$ æqualis quartæ parti rectæ $AE$ » demande $AC$ et non $AE$, comme le montre
+la suite immédiate de la phrase, « igitur et $AF$ est quarta pars quadrati rectæ
+$AC$ », et comme le demande la construction, $AE$ n'étant défini que deux lignes
+plus loin. La transcription donne d'ailleurs « $AE$ » comme lecture incertaine.
+Cette lecture écrit $AC$.}
+
+Un mot enfin sur la figure de la vue 10 L, parce que la note marginale qui
+l'accompagne est le seul endroit où le copiste parle en son nom : « N\textsuperscript{a}.
+quod linea $DB$ debet esse æqualis $CD$. sed defectu cartæ non potuit ulterius
+produci » — « noter que la ligne $DB$ doit être égale à $CD$, mais faute de
+papier elle n'a pu être poussée plus loin ». Le dessin est donc faux, et
+sciemment ; la condition manquante est rétablie par la note.
+
+\section*{Les équations quarto-quadratiques : dix chapitres}
+
+\pagerange{12}{22}
+Le degré quatre occupe plus de la moitié du traité, et il est construit sur le
+même plan, avec dix chapitres annoncés d'avance selon la manière dont l'équation
+naît :
+
+\begin{itemize}
+  \item de quatre latérales — cinq chapitres, selon le nombre de côtés au-dessus
+    (quatre, trois, deux, un, aucun) ;
+  \item d'une quadratique et de deux latérales ;
+  \item de deux quadratiques ;
+  \item d'une cubique à deux côtés et d'une latérale ;
+  \item d'une cubique subsistant par elle-même et d'une latérale ;
+  \item ou bien elle subsiste par elle-même, ou bien des côtés feints entrent
+    dans sa composition.
+\end{itemize}
+
+Le premier chapitre donne la forme de référence. Quatre racines positives,
+$(A-B)(A-C)(A-D)(A-F) = 0$, soit
+\[ A^4 - xA^3 + zA^2 - TA + S = 0 \]
+avec, et le traité l'énonce terme à terme, $x$ la somme des quatre côtés, $z$
+l'agrégat des six rectangles deux à deux, $T$ la somme des quatre solides trois
+à trois, $S$ le plano-plan sous les quatre. Ce sont $e_1$, $e_2$, $e_3$, $e_4$,
+et le compte des termes — quatre, six, quatre, un — est juste.
+
+Les chapitres 2 à 5 suivent, par changement de signes et par la remarque, faite
+et refaite, qu'un chapitre est l'inverse d'un autre : le cinquième est l'inverse
+du premier, le quatrième du deuxième. Dans chaque chapitre, les propositions
+sont les configurations de signes que les comparaisons de grandeurs autorisent,
+et le traité les obtient par un travail d'inégalités qui est le vrai contenu de
+la partie. Pour n'en donner qu'un exemple entièrement vérifié : au deuxième
+chapitre, trois côtés au-dessus $B$, $C$, $D$ et un au-dessous $-F$, si $F$ est
+plus grand que $B + C + D$, alors le coefficient de $A^2$ est positif, parce que
+\[ F(B+C+D) > (B+C+D)^2 > BC + BD + CD, \]
+et le coefficient de $A$ est négatif, parce que $BCD$ est plus petit que chacun
+de $BCF$, $BDF$, $CDF$. Les deux raisonnements sont sur le feuillet et ils sont
+corrects.\footnote{Vue 12 R. Le feuillet dit « rectangulum sub $F$ et summâ
+dictorum trium laterum maius erit quadrato eorundem, quod quidem quadratum patet
+esse maius tribus rectangulis negatis » ; c'est bien l'inégalité
+$(B+C+D)^2 > BC+BD+CD$, qui tient parce que le carré contient en plus
+$B^2 + C^2 + D^2$ et un second exemplaire de chaque rectangle.}
+
+Le troisième chapitre — deux côtés au-dessus, deux au-dessous — porte le seul
+raisonnement long et difficile de cette partie, sur les vues 13 et 16, et cette
+lecture l'a refait en entier. Il s'agit de montrer que si la somme des côtés
+au-dessous surpasse celle des côtés au-dessus et si les rectangles affirmés
+égalent les niés, alors les solides niés surpassent les affirmés. Notons $s$ la
+somme des côtés au-dessus, $t$ celle des côtés au-dessous, $p$ le rectangle sous
+les premiers, $q$ celui sous les seconds ; l'hypothèse est $p + q = st$ avec
+$t > s$, et il faut montrer $qs > pt$. Le traité y parvient ainsi, et chaque pas
+tient : de $p \le s^2/4$ et $p + q = st > s^2$ suit $q > \tfrac14 s^2 \ge p$,
+donc $2q > p + q = st$, donc $4q > st$ ; d'où
+$s/t = s^2/st > s^2/4q \ge p/q$, et enfin $qs > pt$. C'est une belle
+démonstration, correcte, conduite entièrement en proportions.
+
+Elle se termine pourtant sur une phrase qu'il faut redresser. Le traité ajoute :
+« sed et facile demonstrabitur prius illud solidum maius esse septuplo
+posterioris » — « mais on démontrera aussi facilement que ce premier solide est
+plus grand que le septuple du second ». Ce n'est pas vrai, et ne peut pas
+l'être. Sous les hypothèses posées, le rapport $qs/pt$ des deux solides est
+toujours \emph{inférieur à 4}, et il est toujours supérieur à $2+\sqrt3 \approx
+3{,}73$ ; il ne peut donc jamais atteindre 7. Un exemple entier le montre : les
+deux côtés au-dessus étant $\tfrac12$ et $\tfrac12$, les deux au-dessous
+$\tfrac32$ et $\tfrac52$, on a $s = 1$, $t = 4$, $p = \tfrac14$, $q = \tfrac{15}4$,
+les rectangles affirmés $p + q = 4$ égalent les niés $st = 4$ comme il est
+supposé, et le rapport des solides vaut $qs/pt = \tfrac{15}{4}$, soit
+$3{,}75$.\footnote{Calcul et exemple de cette lecture. La borne supérieure se
+voit en écrivant $qs/pt = s^2/p - s/t$, qui croît quand $p$ décroît et reste
+inférieur à $4$ puisque $p \le s^2/4$ ; la borne inférieure est atteinte à la
+limite $t = (2+\sqrt3)s$, $p = s^2/4$, $q = t^2/4$, seule configuration où les
+deux contraintes $p \le s^2/4$ et $q \le t^2/4$ soient compatibles avec
+$p + q = st$. Il faut ajouter que le mot « septuplo » est donné par la
+transcription comme lecture incertaine : l'écart peut donc être de la
+transcription et non de l'auteur. Ce qui est sûr, c'est qu'aucun multiple de 7
+n'est possible, et qu'un multiple compris entre $2+\sqrt3$ et $4$ l'est. La
+phrase est du reste une remarque incidente, annoncée comme facile et jamais
+démontrée ; le raisonnement principal ne s'appuie pas sur elle.}
+
+Deux béquets épinglés à l'angle d'un feuillet blanc, et photographiés l'un après
+l'autre aux vues 14 et 15 tandis qu'on les soulevait, portent les deux seules
+additions au texte. Le premier, intitulé « p. 21. », fournit une phrase qui
+manquait, sur l'origine des deux rectangles affirmés du troisième chapitre : l'un
+vient du produit des côtés au-dessus, l'autre du produit des côtés au-dessous.
+Le second, intitulé « 19\textsuperscript{a} », est une question :
+
+\begin{quote}
+« quomodo cognoscetur utrum hæc æquatio $T\,\mathrm{Sol.} - z\,\mathrm{pl.}\,A +
+xA^2 - A^3 = 0$ sit capitis quinti vel tertii. »\footnote{« Comment
+connaîtra-t-on si cette équation est du cinquième chapitre ou du troisième. »
+Vue 15. L'équation écrite est celle qui est commune au premier chapitre des
+cubiques — trois racines positives — et à la première proposition du cinquième —
+une quadratique sans racine réelle multipliée par une latérale ; le béquet nomme
+le troisième chapitre là où les signes désignent le premier, et cette lecture ne
+corrige pas la référence, faute de savoir si le chiffre est du feuillet ou de la
+main qui l'a écrit.}
+\end{quote}
+
+C'est la question juste, et c'est celle à laquelle la doctrine ne peut pas
+répondre : les deux constitutions ont les mêmes signes, et le traité n'a aucun
+moyen de les distinguer sans connaître l'origine. La réponse moderne est le
+signe du discriminant donné plus haut : positif, trois racines réelles, donc
+trois côtés vrais ; négatif, une seule racine réelle et une paire complexe, donc
+le cinquième chapitre. L'exemple $A^3 - 6A^2 + 10A - 8 = 0$ construit plus haut
+est justement du cinquième chapitre — il est
+$(A^2 - 2A + 2)(A - 4)$ — et son discriminant vaut $-400$.
+
+\subsection*{Les chapitres 6 à 9 : les facteurs quadratiques sans racine réelle}
+
+Les quatre derniers chapitres constructifs font entrer le facteur $A^2 + G$ dont
+il a été question. Ils sont l'endroit où la doctrine travaille le mieux et où
+elle est le plus près de basculer.
+
+\begin{itemize}
+  \item \textbf{Caput 6}, deux quadratiques sans racine réelle :
+    $(A^2+G)(A^2+H) = A^4 + (G+H)A^2 + GH = 0$. Le traité écrit que $z$ est la
+    somme des deux « carrés » et $S$ le plan sous eux, ce qui est juste, et que
+    l'équation est explicable de deux côtés au-dessous, ce qui ne l'est pas :
+    elle n'a aucune racine réelle, ses quatre racines étant
+    $\pm i\sqrt{G}$ et $\pm i\sqrt{H}$.\footnote{Départ de cette lecture. Le
+    feuillet dit « sunt duo latera infrà quorum quadrata simul sumpta exhibent
+    $z\,\mathrm{pl.}$ » ; les deux quantités $\sqrt G$ et $\sqrt H$ dont les
+    carrés donnent $z$ existent bien et sont les modules des deux paires
+    conjuguées, mais ce ne sont pas des racines de l'équation.}
+  \item \textbf{Caput 7}, une quadratique sans racine réelle et deux latérales :
+    $(A^2+G)(A \mp B)(A \mp C) = 0$, onze propositions. Le traité énonce les
+    coefficients avec exactitude : $x$ la somme (ou la différence) des deux
+    côtés vrais, $z$ la somme du rectangle sous eux et du « carré » $G$, $T$ le
+    produit de $G$ par la somme des deux côtés, $S$ le produit de $G$ par leur
+    rectangle. Ces quatre égalités sont justes — et elles sont, exactement, les
+    fonctions symétriques élémentaires des quatre racines $B$, $C$,
+    $\pm i\sqrt G$, la paire conjuguée contribuant $0$ à $e_1$ et $G$ à
+    $e_2$.\footnote{Vérification de cette lecture. C'est la troisième fois que
+    le feuillet produit lui-même la preuve que sa règle générale vaut pour les
+    côtés fictifs comme pour les autres, et la deuxième fois qu'il s'arrête au
+    seuil de la conclusion.}
+  \item \textbf{Caput 8}, une cubique à deux côtés et une latérale : vingt
+    propositions, tirées des deux formes de cubique possibles,
+    $(A^2+G)(A \mp F)$, multipliées chacune par une latérale de chaque signe.
+  \item \textbf{Caput 9}, une cubique subsistant par elle-même et une latérale :
+    vingt propositions, tirées des six formes du sixième chapitre des cubiques
+    multipliées chacune par $A - B$ et par $A + C$.
+\end{itemize}
+
+Les douze produits du chapitre 9 ont été refaits un à un dans cette lecture, et
+onze sont exacts. Le seul qui ne le soit pas est celui de $A^3 - R$ par $A - B$ :
+le feuillet écrit $RB + RA - BA^3 + A^4 = 0$ là où le produit donne
+\[ (R - A^3)(B - A) = RB - RA - BA^3 + A^4, \]
+avec un signe $-$ devant $RA$. Le second cas, $(R - A^3)(C + A) = RC + RA - CA^3
+- A^4$, est écrit juste avec un $+$.\footnote{Vue 22 L. La transcription relève
+le signe et le laisse comme il est écrit. Il en va de même d'une omission plus
+bénigne : à la vue 21 L, l'équation $R\,\mathrm{sol.} \; G\,\mathrm{pl.}\,A +
+A^3 = 0$ est écrite sans aucun signe entre les deux premiers termes, le trait
+d'abréviation de « sol. » se prolongeant à droite ; le produit calculé deux
+lignes plus bas suppose un $+$, et cette lecture écrit $A^3 + GA + R = 0$.}
+
+Le chapitre 9 laisse aussi un trou. Sa septième proposition est énoncée — « cum
+latus supra minus est latere infra » — et aucune formule n'est écrite au-dessous,
+alors que la phrase suivante parle « de ces trois formules ». La formule
+manquante se déduit du feuillet lui-même, sans rien emprunter : les propositions
+5, 6 et 7 sortent du même produit et ne diffèrent que par la comparaison des
+deux côtés, laquelle gouverne le coefficient $x$, leur différence ; la
+proposition 5 a $+xA^3$, la proposition 6, où les côtés sont égaux, n'a plus de
+terme en $A^3$, et la proposition 7 doit donc avoir
+\[ S - TA + zA^2 - xA^3 - A^4 = 0. \]
+C'est l'inférence de cette lecture, et elle ne repose que sur la structure des
+deux propositions voisines.\footnote{Aucune édition imprimée n'a été consultée
+pour la combler, et cette lecture ne prétend pas restituer ce que le feuillet
+portait : elle dit ce que le produit et la série exigent. La même série fournit
+la vérification : la proposition 6, où le terme en $A^3$ disparaît parce que la
+différence des côtés est nulle, confirme que c'est bien $x$ qui porte cette
+comparaison.}
+
+Deux remarques du chapitre 9 méritent d'être relevées parce qu'elles sont justes
+et fines. Le traité observe que dans ces formules $x$ n'est plus la somme de
+plusieurs côtés mais un seul côté, celui de la latérale, et qu'en conséquence il
+ne s'évanouit pas même quand les deux côtés sont égaux :
+
+\begin{quote}
+« Ideo autem in hac formula etiam si latera sint æqualia, et $x$ non sit eorum
+summa, non tamen idem $x$ evanescit, quia ut patet ex origine istius est æquale
+lateri infra æquationis lateralis. »\footnote{« Or dans cette formule, même si
+les côtés sont égaux et que $x$ ne soit pas leur somme, ce même $x$ ne
+s'évanouit pourtant pas, parce que, comme il ressort de son origine, il est égal
+au côté au-dessous de l'équation latérale. » Vue 22 L.}
+\end{quote}
+
+L'observation est exacte, et la raison moderne en est transparente : les trois
+racines de la cubique $A^3 + GA \pm R = 0$, qui n'a pas de terme en $A^2$, ont
+une somme nulle ; la somme des quatre racines du produit est donc celle de la
+seule racine de la latérale. Le feuillet voit l'effet et en donne la bonne
+raison — « son origine » — sans avoir la phrase sur la somme nulle des trois
+racines, qui demanderait de compter les fictives.
+
+Un dernier point de tenue, qui vaut d'être dit pour qu'un lecteur ne s'y égare
+pas. Cette lecture a vérifié tous les produits, c'est-à-dire toutes les
+multiplications que le traité effectue. Elle n'a pas revérifié un à un les
+quatre-vingt-sept motifs de signes des formules interprétées, et il faut dire
+que tous ne suivent pas de leur produit tels qu'ils sont écrits : au huitième
+chapitre, les propositions 2 à 10 portent un $+A^4$ alors que le produit d'où
+elles sortent se termine par $-A^4$. En écrivant les équations moniques, comme
+le fait cette lecture, la question disparaît, le signe du terme dominant
+n'étant plus qu'une convention d'écriture.\footnote{La transcription relève de
+son côté deux désaccords entre la ligne et la forme recopiée en marge par la
+seconde plume : à la vue 12 R, proposition 2, la ligne porte $+A^4$ et la marge
+$-A^4$, et c'est la marge qui s'accorde avec la constitution ; à la vue 20 L,
+proposition 5, la ligne porte $+z\,\mathrm{pl.}\,A^2$ et la marge
+$-z\,\mathrm{pl.}\,A^2$. Les deux sont donnés tels quels de part et d'autre dans
+la transcription.}
+
+\section*{Le dernier chapitre : les côtés feints, et l'exemple chiffré}
+
+\pagerange{23}{23}
+Le dixième chapitre, « et dernier », traite des quarto-quadratiques qui
+subsistent par elles-mêmes « ou dans la composition desquelles des côtés feints
+se mêlent ». C'est le meilleur chapitre du traité, et il porte sa propre
+réfutation.
+
+Le traité y pose d'abord le critère, et le pose juste. Soit
+$A^2 - CA + B = 0$ : elle est explicable de deux côtés au-dessus, dont la somme
+est $C$, « et elle est possible dans le cas où $B$ ne sera pas plus grand que la
+quatrième partie de $C^2$ ». Si, sous la même forme, on construit une équation
+où $B$ est plus grand que ce quart, « il est certain que les deux côtés dont
+cette dernière équation naît sont feints ». C'est-à-dire : les racines de
+$A^2 - CA + B$ sont réelles si et seulement si $C^2 - 4B \ge 0$. Le traité tient
+donc parfaitement le discriminant de la quadratique et sait s'en servir pour
+reconnaître une paire complexe.
+
+Il construit alors, exprès, le produit d'une quadratique à racines réelles par
+une quadratique à racines feintes, et il le fait en nombres. Ses deux
+quadratiques sont
+\[ A^2 - 6A + 5 = 0 \qquad \text{et} \qquad A^2 + 3A + 20 = 0, \]
+la première de racines $1$ et $5$, la seconde sans racine réelle puisque
+$20 > 9/4$, ce que le traité relève : « patet in ultima æquatione latera esse
+ficta, ideoque eam impossibilem ». Le produit, qu'il écrit dans la notation
+cossique, est
+\[ A^4 - 3A^3 + 7A^2 - 105A + 100 = 0, \]
+et cette lecture l'a vérifié : le développement est exact, terme à terme. Le
+traité vérifie ensuite que $5$ est bien racine, en égalant les affirmés aux
+niés : $100 + 7\cdot 25 + 625 = 900$ d'un côté, $105 \cdot 5 + 3 \cdot 125 = 900$
+de l'autre. Les deux colonnes du feuillet donnent $900$ et $900$, et le calcul
+est juste. Il ajoute, sans le refaire, que l'égalité vaut de même pour $1$ ; elle
+vaut en effet.
+
+Mais le traité conclut, une page plus haut, que dans une telle formule « $x$ est
+la somme des deux côtés dont l'équation est explicable ». Sur son propre exemple,
+cela est faux, et de façon vérifiable en une ligne. Les deux côtés vrais sont
+$1$ et $5$ ; leur somme est $6$. Le coefficient du terme en $A^3$ est $3$, non
+$6$. Ce qui vaut $3$, c'est la somme des \emph{quatre} racines : $1$, $5$, et les
+deux racines de $A^2 + 3A + 20$, qui sont
+\[ \frac{-3 + i\sqrt{71}}{2} \qquad \text{et} \qquad \frac{-3 - i\sqrt{71}}{2}, \]
+dont la somme est $-3$. Et $1 + 5 - 3 = 3$. De même le terme constant, $100$, est
+bien le produit des quatre racines, $5 \times 20$. La règle générale du traité
+tient donc, exactement, sur l'exemple que le traité a construit pour montrer
+qu'elle ne tient pas — à la seule condition de compter les côtés feints comme
+des racines.\footnote{Calcul de cette lecture ; le feuillet écrit en propres
+termes « $x$ vero fit summa duorum laterum de quibus est applicabilis », et cette
+phrase est fausse sur ses propres nombres. C'est la démonstration la plus nette
+que le volume fournisse de ce qui manque à sa doctrine, et elle ne demande
+aucune connaissance que le feuillet n'ait pas : il suffit de comparer deux
+nombres qu'il écrit tous les deux.}
+
+Le chapitre se clôt sur trois remarques justes, qu'il faut rapporter parce
+qu'elles montrent que la doctrine est cohérente dans ses limites. D'abord :
+lorsque la question proposée ne peut se résoudre par les formules précédentes,
+ou n'y tombe pas, « il deviendra manifeste que quelque côté feint a été assumé
+dans sa composition, et ce côté sera enfin découvert ». C'est une méthode de
+découverte par l'échec, et elle est correcte : c'est bien ainsi, faute de
+critère direct, que la doctrine détecte les racines complexes. Ensuite : dans
+les constitutions où $x$ est la différence des côtés, aucune équation anormale ne
+peut naître, « car la somme et la différence étant données, le cas de la
+question est toujours possible ». C'est l'observation, déjà faite au degré deux,
+que le discriminant $(B+C)^2$ est toujours positif. Enfin : ce qui a été dit des
+côtés feints pour le degré quatre vaut de même pour le degré trois.
+
+La dernière phrase du traité renvoie les déterminations des quarto-quadratiques
+à un traité compagnon qui n'est pas dans le volume, et s'arrête : « de iis plura
+non dicemus ». Le reste de la page est blanc.
+
+\section*{Le dossier de l'art de voler : ce qui est relié là}
+
+\pagerange{26}{38}
+Après une lacune de feuillets blancs, un tout autre dossier commence, sans
+transition, sans titre général et sans rapport d'aucune sorte avec ce qui
+précède. Il compte cinq pièces écrites et deux dessins.
+
+Il ouvre sur un feuillet qui ne porte que deux mots au milieu de la page, en
+capitales et minuscules droites : « Ars Volandi ». La page suivante est la page
+de titre d'un livre imprimé, recopiée à la main, centrée, et dont voici le texte :
+
+\begin{quote}
+« De Arte volandi. Cuius ope, quivis homo, sine periculo, facilius, quam ullum
+volucrem, quocumque lubet, brevissimo tempore ferri potest. Authore Friderico
+Hermanno Flaydero, Poëtâ, professore et Bibliothecario Tubingæ. Cum eiusdem
+operum affectorum et maximam partem perfectorum Indice. Typis Theodorici
+Werlini, anno 1627. in 12\textsuperscript{o}. »\footnote{« De l'art de voler, par
+le secours duquel tout homme peut, sans danger, plus aisément qu'aucun oiseau,
+se porter où il lui plaît en très peu de temps. Par Friedrich Hermann Flayder,
+poète, professeur et bibliothécaire à Tübingue. Avec l'index de ses ouvrages
+entrepris et pour la plus grande part achevés. Des presses de Dietrich Werlin,
+l'an 1627, in-12. » C'est la seule date de tout le volume, et elle est celle du
+livre copié, non celle de la copie. Il s'ensuit seulement — et c'est l'unique
+inférence chronologique que ces feuillets autorisent — que ce feuillet-là est
+postérieur à 1627. L'inférence est de cette lecture. Aucune édition de Flayder
+n'a été consultée, et cette lecture ne dit donc rien de la fidélité de la copie
+au titre imprimé, ni du contenu du livre.}
+\end{quote}
+
+Suivent, au dos de ce feuillet et sur le suivant, des notes et extraits latins
+sur le vol, sans titre, d'une cursive fine et très rapide, qui s'interrompent au
+milieu d'une page. Puis, après deux vues blanches, la légende française des
+lettres d'une figure, la figure elle-même — la machine dessinée en forme de
+dragon —, le traité italien, et une seconde figure de la même machine vue de
+face. Aucune des cinq pièces ne porte de date, aucune n'est signée.
+
+\section*{Les notes latines : un dossier de témoignages}
+
+\pagerange{28}{29}
+Ces deux pages ne contiennent aucune mathématique et aucune expérience : ce sont
+les notes de lecture d'un érudit qui rassemble, pour un livre à faire, tout ce
+qu'il a trouvé sur des hommes qui se sont élevés en l'air. Elles valent d'être
+inventoriées, parce que l'inventaire dit la nature de la pièce.
+
+\begin{itemize}
+  \item Les anciens ont appris à naviguer des oiseaux aquatiques et surtout du
+    cygne, « dont le cou représente la proue, le ventre la carène, la queue la
+    poupe, les ailes les voiles, les pattes les rames ». C'est un argument
+    d'analogie et il ouvre le dossier : l'art imite l'animal.
+  \item Le char à voiles du prince Maurice, attribué à « Stephinus », qui, sans
+    le secours d'aucun cheval, « par la seule force des vents, voiles déployées,
+    est emporté sur un rivage égal avec une telle rapidité qu'il laisse loin
+    derrière lui les navires mêmes courant en pleine mer par le vent le plus
+    favorable, et parcourt en l'espace de peu d'heures vingt ou trente milles
+    d'Allemagne ». Et la remarque qui est le vrai argument de toute la page :
+    « si ce char n'était pas encore inventé, qui croirait celui qui le
+    raconterait ? »\footnote{« Stephinus » est Simon Stevin ; la transcription le
+    note. L'argument — l'incrédulité n'est pas une preuve d'impossibilité — est
+    exactement celui que le traité italien reprendra, et c'est le seul lien
+    d'idée entre les deux pièces du dossier, sans qu'aucune ne renvoie à
+    l'autre. Vingt à trente milles allemands font, selon la valeur retenue pour
+    le mille, de cent cinquante à deux cent cinquante kilomètres ; l'ordre de
+    grandeur est celui d'une exagération, et cette lecture ne l'évalue pas plus
+    avant, le feuillet ne donnant ni le temps exact ni la distance.}
+  \item Hadingus, roi des Danois, assiégeant Handuanus dans la ville de Duna,
+    fit prendre des oiseaux du lieu et attacher à leurs plumes des amorces
+    enflammées ; regagnant leurs nids, ils incendièrent la ville. « Saxo » et
+    « Crantzius » sont donnés comme sources.
+  \item Les pigeons du siège de Leyde, par lesquels la ville fut délivrée, et
+    dont on rafraîchit encore la mémoire dans la ville même.
+  \item Scaliger sur la colombe d'Archytas, avec le détail mécanique : la
+    matière tirée de la moelle de jonc, revêtue des vessies ou pellicules dont
+    se servent les batteurs d'or, enveloppée de nerfs, « où un demi-cercle, ayant
+    poussé une roue, communiquera le mouvement aux autres, par lesquelles les
+    ailes seront agitées ». C'est la seule description de mécanisme des deux
+    pages, et elle est cohérente : un ressort de rappel entraînant un train de
+    roues qui bat les ailes.\footnote{Le renvoi est donné « exercitationum
+    Incardanum 326.\textsuperscript{a} », c'est-à-dire l'\emph{Exercitatio} 326
+    des \emph{Exercitationes} de Scaliger contre Cardan. Aucune de ces deux
+    œuvres n'a été consultée, et cette lecture ne vérifie pas la citation. Deux
+    mots du passage, « facillimè » et « præstiterim », et un troisième,
+    « neruulis » — lequel porte trois jambages initiaux et se lirait
+    littéralement « meruulis » — sont donnés comme lectures incertaines par la
+    transcription.}
+  \item Le « Compendium miraculorum » d'Alvaro Gutiérrez de Torres, de Tolède,
+    dédié à don Alonso de Fonseca, et le moine volant qu'il rapporte : « Elnero
+    ex malmabiriâ », qui fut le plus docte de tous et prédit une comète bien
+    avant son lever, et qui, dans sa jeunesse, s'attacha des plumes aux mains,
+    croyant avoir trouvé l'art de voler « à l'instar de Dédale, dont il tenait
+    la fable pour vraie » ; il s'élança d'une tour, parcourut plus d'un stade en
+    volant, « c'est-à-dire plus de cent vingt-cinq pas », et fut jeté à terre,
+    les jambes brisées, menant depuis une vie misérable ; il disait que l'unique
+    cause de sa chute avait été d'avoir oublié une queue à la partie postérieure
+    du corps.\footnote{Il s'agit du moine de Malmesbury, comme le note la
+    transcription, laquelle donne « Elnero » comme lecture incertaine. Sur le
+    fond, la cause que le récit lui fait alléguer est la bonne : sans surface
+    stabilisatrice à l'arrière, un planeur n'a pas d'équilibre en tangage.
+    C'est, par un détour de huit siècles, la fonction de l'empennage — et c'est
+    la lettre D de la figure du dossier, « la queue laquelle fait tourner la
+    machine du costé qu'on veut en haut et bas ». Le rapprochement est de cette
+    lecture ; aucune des deux pièces ne renvoie à l'autre.}
+  \item Ernst Burggrav, « médecin de ce siècle tout à fait admirable », et, dans
+    son Planosphærium, un chantre de Nuremberg « qui, élevé dans l'air par la
+    rame de deux ailes, s'envolait et redescendait à l'instar d'un oiseau », mais
+    qui, par une imprudence — des roulettes fixées aux ailes s'embarrassaient ou
+    ne s'appliquaient pas comme il fallait —, tomba et se brisa bras et jambes.
+    Un cas semblable est rapporté de Paris, « de la mémoire de nos parents ».
+  \item Johann Sturm, sur un homme qui se laissa descendre, ailé, de la tour
+    Saint-Marc à Venise.
+  \item Une liste des sens par lesquels les bêtes surpassent l'homme : « le
+    vautour par l'odorat, le renard par l'ouïe, les chiens par l'un et l'autre,
+    la poule par le goût, l'aigle par la vue, les limaces et les huîtres par le
+    toucher, le lièvre à la course, le poisson à la nage, l'oiseau au vol ».
+  \item Une note sur Flayder, et deux projets de livre de l'auteur des notes
+    lui-même : un ouvrage sur les Bacchanales et leurs calamités, et un
+    « Tractatus de villis Romanorum » où tout ce qui concerne les villas
+    romaines serait recensé d'après les auteurs anciens, « mais aussi leurs
+    ruines et leurs monuments subsistant encore aujourd'hui en Italie, décrits
+    d'après de nouveaux itinéraires ».
+\end{itemize}
+
+Ces deux derniers points établissent la nature de la pièce mieux que tout le
+reste : celui qui écrit ces notes tient un carnet de travail, il y mêle ses
+lectures sur le vol et ses propres projets d'édition, et le dossier sur le vol
+n'est qu'un de ses chantiers.\footnote{Une phrase de ces pages n'a pas été
+rendue ici parce qu'elle ne se construit pas : « aquila plus homine pendet
+uncijs quinque, quam in homine ponderis referri a philosophis memoratur » —
+« l'aigle pèse cinq onces de plus que l'homme, qu'il n'est rapporté par les
+philosophes de poids dans l'homme ». Le texte est altéré et cette lecture ne le
+restitue pas ; il y est question d'un rapport de poids entre l'aigle et l'homme,
+et rien de plus n'en est sûr. Trois autres endroits restent en suspens :
+« præcurriōnem », que la transcription lit lettre à lettre
+« p\textsuperscript{r}cuuriōnem » sans qu'aucun mot latin s'y ajuste ;
+« philanthero », dans la note sur Flayder, également non résolu ; et la phrase
+sur les Bacchanales, qui s'arrête sans verbe principal au bas d'une page.}
+
+\section*{La machine, et la légende de ses lettres}
+
+\pagerange{32}{37}
+Deux dessins à la plume, au trait, sans lavis, montrent la même machine. Le
+premier, de profil, est lettré ; le second, vu de face et de plus près, ne l'est
+pas. Les figures ne sont pas reproduites ici, et les transcriptions les
+décrivent. La machine a la forme d'un dragon : tête cornue, gueule ouverte,
+corps écaillé en forme de tambour cerclé de bandes cousues, deux pattes
+griffues, une queue s'achevant en large éventail palmé ; sur le dos, une calotte
+bombée et quatre longues ailes étroites dressées deux par deux, entre lesquelles
+deux cylindres annelés comme des vis ou des ressorts ; sous le corps, une grande
+aile ; près de la tête, deux petites ailes palmées.
+
+La page qui fait face au premier dessin en donne la légende, en français, d'une
+autre main. Elle est brève et elle est la seule description du fonctionnement que
+le volume contienne :
+
+\begin{itemize}
+  \item \textbf{A} — « aisle maistresse à laquelle de l'autre costé du dragon
+    une autre est opposée, elles seruent toutes deux pour le pousser en auant et
+    aussy pour le soustenir ». Deux grandes ailes, donc, chargées à la fois de
+    la propulsion et de la portance.
+  \item \textbf{B, B, B, B} — « quatre aisles qui se meuuent du haut en bas, et
+    ne font autre chose que soustenir ». Quatre ailes portantes seulement.
+  \item \textbf{C, C} — « deux petites aisles qui ne font que pousser en auant
+    auec les deux maistresses ». Deux ailes propulsives seulement.
+  \item \textbf{D} — « la queue laquelle fait tourner la machine du costé qu'on
+    veut en haut et bas ». Une surface de gouverne, agissant en tangage et en
+    lacet.
+  \item \textbf{E} — « Couuerture mobile laquelle quand on veut s'eslargit
+    circulairement sur la machine et la soustient assez pour l'empescher de
+    precipiter ». Une voilure déployable au-dessus de l'appareil, destinée à
+    freiner la chute.
+\end{itemize}
+
+Puis deux phrases sur la commande : « Un seul mouuement regle toutes les choses
+encores qu'elles se meuuent en diuers temps », et « Toutes les aisles en se
+leuant se ployent en elles mesmes et quand elles s'abbaissent elles
+s'eslargissent, et le tout comme Je viens de dire est reglé par un seul
+mouuement ».
+
+Trois choses sont à dire sur cette légende, et la première est qu'elle contient
+l'idée la plus juste de tout le dossier. Les ailes se replient à la montée et
+s'élargissent à la descente : c'est exactement le principe du vol battu. Une
+aile qui se referme en remontant présente moins de surface et engendre donc
+moins de force vers le bas, tandis qu'ouverte en descendant elle engendre la
+force maximale vers le haut ; le bilan sur un cycle est une force nette
+ascendante, alors qu'une surface rigide battant symétriquement ne donnerait rien.
+C'est ce que font les oiseaux, et la légende le décrit en une phrase.
+
+La deuxième est que la pièce E est, en effet, un parachute, et que le principe en
+est bon : une voilure déployée au-dessus d'une masse qui tombe augmente la
+surface offerte au fluide et diminue d'autant la vitesse de chute, laquelle
+varie comme l'inverse de la racine carrée de la surface. C'est la seule pièce de
+la machine dont la fonction annoncée soit atteinte par le moyen indiqué, à ceci
+près que la légende ne dit rien de la dimension nécessaire, qui est
+grande.\footnote{Pour une masse de l'ordre de cent cinquante kilogrammes et une
+vitesse de descente tolérable de cinq mètres par seconde, il faut une surface de
+l'ordre de cent mètres carrés, soit un disque d'une dizaine de mètres de
+diamètre : la « couuerture mobile » dessinée sur le dos du dragon n'en approche
+pas. L'estimation est de cette lecture, et repose sur la traînée d'une voilure
+en écoulement établi ; le feuillet ne donne aucune dimension.}
+
+La troisième est que « un seul mouvement règle toutes les choses » décrit une
+liaison à un seul degré de liberté, un train unique commandant les six ailes, la
+queue et la couverture avec des phases différentes. C'est mécaniquement
+concevable, et c'est peut-être la fonction des deux cylindres annelés que le
+dessin place entre les ailes. Ni la légende ni le traité italien ne décrivent ce
+mécanisme, et l'auteur du traité dit expressément qu'il ne le montrera
+pas.\footnote{« Il dissegno della machina jnteriore, non mj par bene dj douerlo
+mostrare » — « le dessin de la machine intérieure, il ne me paraît pas bon de
+devoir le montrer » (vue 36 R). Le dessin intérieur n'est donc pas dans le
+volume, et il n'y a rien à en dire.}
+
+\section*{Le traité italien : le poids de l'air, et la flottaison}
+
+\pagerange{33}{34}
+Le traité italien commence par nommer son adversaire, qui est une opinion :
+voler passe pour impossible au point que « le vulgaire, quand il veut affirmer
+qu'une chose ne peut se faire, dit : il est aussi impossible de faire cela qu'il
+est impossible de voler ». Puis l'auteur dit ce qu'il a fait, et c'est le seul
+endroit du volume où quelqu'un parle de lui-même :
+
+\begin{quote}
+« Io però sino dallj miej primj annj applicaj l'animo a questa inuentione
+parendomj strano che l'ingegno humano non fusse habile col suo sapere d'arriuare
+a quelle cose che naturalj sono state concesse ad altrj animalj a noj jnferiorj
+[…] sono gia decorsj x annj che da principij assaj communj mediante pero l'aiuto
+diuino, ho ritrouato quello che qui sotto dimostrerò. »\footnote{« Cependant,
+depuis mes premières années, j'ai appliqué mon esprit à cette invention,
+trouvant étrange que l'esprit humain ne fût pas capable, par son savoir,
+d'atteindre aux choses qui ont été naturellement accordées à d'autres animaux
+inférieurs à nous […] voici déjà dix ans écoulés que, à partir de principes
+assez communs, moyennant toutefois l'aide divine, j'ai trouvé ce que je
+démontrerai ci-dessous. » Vue 33 R. L'auteur ajoute un argument
+d'analogie qui est le même que celui du cygne des notes latines : la nature ne
+nous a pas accordé d'habiter dans les eaux, et pourtant par l'étude nous
+apprenons à nager. Il ne se nomme pas, et aucun feuillet ne le nomme ; cette
+lecture ne le nomme donc pas.}
+\end{quote}
+
+Il raconte ensuite ce qu'il tient d'un tiers sur l'essai de Sagredo, et c'est un
+récit précieux parce qu'il est quantitatif : Sagredo aurait pris un faucon,
+l'aurait plumé, puis « observé diligemment la proportion que celles-ci — les
+plumes — tenaient au corps, tant en poids qu'en mesure », et d'après cette
+proportion se serait fait des ailes qu'il attachait à ses bras, « avec tant
+d'artifice qu'en se jetant de quelque hauteur il arrivait à terre sans se faire
+aucun mal, et s'écartait même de plusieurs brasses du pied de la hauteur ». Le
+narrateur ajoute qu'il a lui-même fait beaucoup de tentatives et que « toute la
+peine fut prise en vain ».\footnote{L'auteur nomme « Gio. Fran. Sagredo, noble
+vénitien, très noble mathématicien », et « il Sig.\textsuperscript{r} Galileo
+Galilej, noble florentin et autre Archimède de nos temps ». La transcription donne
+l'initiale du second prénom comme incertaine, le nom étant écrit « Gio. Ra~n »
+avec un trait de suspension. La dernière phrase du récit, « ma giu non poteua
+tramontare per niuna via », n'est pas rendue ici parce que son sens n'est pas
+sûr : elle dit que Sagredo « ne pouvait tramontare vers le bas par aucune
+voie », ce qui s'entendrait aussi bien d'une impossibilité de descendre que
+d'une impossibilité de se poser autrement ; cette lecture ne tranche pas.}
+
+Le raisonnement quantitatif de mise en train de la flottaison occupe ensuite
+trois pages, et il se suit pas à pas.
+
+\subsection*{Le poids de l'air}
+
+L'auteur pose qu'Aristote a écrit que tous les éléments ont de la pesanteur, et
+demande dans quelle proportion l'air pèse à l'eau. « Selon Aristote ce serait
+comme un à dix, mais selon le calcul de M. Galilée ce serait, et il est plus
+vrai, comme un à quatre cents. »
+
+Il faut dire ce qui est vrai. À la température et à la pression ordinaires,
+l'eau pèse environ mille kilogrammes par mètre cube et l'air environ un et deux
+dixièmes : le rapport est donc d'environ un à huit cents, et il varie de un à
+sept cent soixante-dix à zéro degré à un à huit cent trente à vingt degrés. Le
+chiffre d'Aristote est faux d'un facteur quatre-vingts. Le chiffre que le
+feuillet attribue à Galilée est faux d'un facteur deux, dans le même sens :
+l'air y est deux fois plus lourd qu'il n'est. Le jugement du feuillet — le second
+est « plus vrai » — est donc entièrement fondé, et l'écart qui reste est de ceux
+qu'une mesure ancienne du poids de l'air pouvait laisser.\footnote{Aucune
+édition de Galilée n'a été consultée, et cette lecture ne dit donc rien de ce
+que Galilée a écrit : elle rapporte ce que le feuillet lui attribue, et elle
+compare ce chiffre à la valeur admise aujourd'hui. Le chiffre importe pour la
+suite, parce que toute la conclusion sur la flottaison en dépend, et qu'elle
+tombe avec lui.}
+
+\subsection*{Archimède, et les pesanteurs spécifiques}
+
+Le traité cite ensuite, comme « fondement de tout mon discours », une proposition
+d'Archimède sur les corps qui flottent :
+
+\begin{quote}
+« Le cose piu grauj poste nell'humido discendono tanto che vanno al fundo e sj
+fanno tanto piu leggieri nell'humido, quanto é il peso dell'humido che habbia
+tanta grandizza quanta é la grandezza dj dette cose. »\footnote{« Les choses plus
+pesantes placées dans l'humide descendent jusqu'à ce qu'elles aillent au fond,
+et se font dans l'humide d'autant plus légères qu'est le poids de l'humide qui
+aurait autant de grandeur qu'est la grandeur desdites choses. » Vue 34 L. Les
+quatre lignes de la citation sont précédées, ligne à ligne, d'un même signe
+bouclé dans la marge, qui est la marque de citation de cette main.}
+\end{quote}
+
+L'énoncé est exact : un corps plus dense que le fluide coule, et son poids y est
+diminué du poids du fluide qu'il déplace. C'est ce que nous appelons la poussée
+d'Archimède, et le traité la tient dans la forme juste, celle du poids du fluide
+de volume égal.\footnote{Le nom de poussée d'Archimède est postérieur au
+feuillet, l'énoncé lui est attribué par le feuillet même, et la coïncidence est
+complète. C'est le seul énoncé de tout le dossier du vol qui soit à la fois cité
+d'un auteur et parfaitement correct.}
+
+Viennent alors cinq nombres, les pesanteurs spécifiques rapportées à l'eau :
+« l'or tient proportion à l'eau comme 20 à l'unité, le mercure comme
+$13\tfrac12$, le plomb comme 11, l'argent comme 10 et le cuivre comme 9 ». Voici
+ce que valent ces cinq nombres aujourd'hui, à la température ordinaire : or
+$19{,}3$ ; mercure $13{,}5$ ; plomb $11{,}3$ ; argent $10{,}5$ ; cuivre $9{,}0$.
+L'ordre est juste, et les cinq valeurs sont exactes à cinq pour cent près, le
+mercure et le cuivre à moins d'un pour cent. C'est un bon tableau, et il faut le
+dire.\footnote{Comparaison de cette lecture. Écarts : or $+3{,}6\%$, mercure
+$-0{,}2\%$, plomb $-3\%$, argent $-4{,}7\%$, cuivre $+0{,}4\%$. Le feuillet ne
+dit pas d'où il les tient.}
+
+Sur quoi le traité tire une conséquence qui demande une correction. Il écrit que
+ces métaux arriveront au fond dans cet ordre, l'or le premier et le cuivre le
+dernier, « et cela selon leur pesanteur », et qu'ils feront de même dans l'air,
+mais plus vite, l'air ayant moins de pesanteur que l'eau. Ce qui est vrai est
+ceci : dans un fluide résistant, la vitesse limite d'un corps croît avec l'écart
+entre sa densité et celle du fluide, mais elle dépend aussi de sa taille et de
+sa forme ; l'ordre annoncé ne vaut donc que pour des corps de même grandeur et
+de même figure, condition que le feuillet ne pose pas. Et dans le vide, tous les
+corps tombent de la même manière, ce que le cadre du traité ne peut pas
+atteindre, puisqu'il rattache la vitesse de chute à la seule pesanteur
+spécifique.\footnote{Départ de cette lecture par rapport au feuillet. Le feuillet
+a raison sur le second point qu'il avance — les corps descendent plus aisément
+dans l'air que dans l'eau parce que « le milieu est plus léger » — et cette
+raison est la bonne : c'est la résistance du milieu, non la poussée seule, qui
+gouverne. Sa doctrine générale est celle d'un mouvement dont la vitesse est
+réglée par la pesanteur spécifique, laquelle n'est vraie que là où la résistance
+domine.}
+
+\subsection*{La flottaison dans l'air, et le corps plus léger que l'air}
+
+Le traité arrive alors à son argument central, et il est bien conduit. Si l'on
+trouvait une matière qui fût à l'eau comme 1 à 400, elle serait « en pesanteur
+égale à l'air, c'est-à-dire qu'elle ne monterait pas dans l'air et n'y
+descendrait pas non plus, à moins d'y être poussée violemment en haut ou en
+bas ». Et si l'on en trouvait une qui fût comme 1 à 500, « celle-là, d'elle-même
+et sans aucune violence, monterait dans l'air jusqu'à la sphère du feu, où elle
+s'arrêterait ». Alors, conclut-il, « nous pourrions très facilement former un
+instrument et voler avec lui comme font les oiseaux ».
+
+Le raisonnement est juste et la conclusion est fausse, pour deux raisons
+distinctes qu'il faut séparer.
+
+La première est le nombre. La flottaison neutre a lieu quand la densité moyenne
+du corps égale celle du fluide : cela, le traité l'a exactement. Mais la densité
+de l'air ne vaut pas le quatre-centième de celle de l'eau, elle vaut environ le
+huit-centième. Une matière au quatre-centième est donc deux fois plus lourde que
+l'air et tombe. C'est le chiffre emprunté qui fait tomber la conclusion, non le
+raisonnement : avec la bonne valeur, il faudrait une matière deux fois plus
+légère encore que celle que le traité réclame.\footnote{Conséquence tirée par
+cette lecture des nombres du feuillet. Elle mérite d'être notée parce qu'elle
+montre que l'auteur est plus près de la vérité qu'il ne le croit sur le principe
+et plus loin qu'il ne le croit sur la faisabilité.}
+
+La seconde est la « sphère du feu ». Il n'y en a pas. Un corps moins dense que
+l'air monte, mais il ne monte pas indéfiniment ni jusqu'à une région assignée du
+monde : la densité de l'air décroît avec l'altitude, et le corps s'arrête là où
+la densité de l'air environnant est descendue jusqu'à la sienne. Il y a bien une
+altitude d'arrêt, ce que le traité pressent en écrivant « où elle s'arrêterait »,
+et elle est déterminée par la décroissance de la densité, non par la limite d'un
+élément.\footnote{Départ de cette lecture. La cosmologie des quatre éléments et
+de leurs sphères est celle du feuillet, qui du reste en doute pour le feu : « et
+du quatrième, s'il y en a un, c'est-à-dire du feu, il ne nous importe pas d'en
+dire davantage ». Le nom moderne de ce qui remplace la sphère du feu est
+l'équilibre hydrostatique de l'atmosphère, et le fait qu'un ballon possède une
+altitude d'équilibre en est la conséquence ; les deux sont postérieurs au
+feuillet.}
+
+L'auteur ne s'arrête d'ailleurs pas à cette voie : il constate aussitôt qu'aucune
+telle matière n'est à notre portée, et que les oiseaux n'en ont pas non plus. Il
+observe que les plumes, « très légères » soient-elles, tombent quand on les
+laisse aller d'en haut, même les plus menues ; et que si l'on jetait un oiseau
+d'une hauteur les ailes ouvertes mais liées, il ne se maintiendrait pas en l'air
+et tomberait avec une percussion notable, « parce que son soutènement ne provient
+d'autre chose que de la percussion des ailes dans l'air ». C'est là le pivot du
+traité, et l'observation est juste : la portance d'une aile battante n'est pas
+une flottaison, c'est une force de réaction exercée par l'air.
+
+\section*{La percussion}
+
+\pagerange{35}{36}
+L'auteur ouvre une digression sur la percussion, « qui est à mon avis l'une des
+plus grandes choses qui soient dans toute la mécanique », et il donne la raison
+de l'admirer :
+
+\begin{quote}
+« vediamo superare la forza dj 1000 e 2000 libre dj resistenza con vn martello
+che pesj solo x o xii libre. »\footnote{« Nous voyons vaincre la force de 1000 et
+2000 livres de résistance avec un marteau qui ne pèse que 10 ou 12 livres. »
+Vue 35 L. Il ajoute que la chose paraît d'autant plus merveilleuse que
+« personne jusqu'ici, que je sache, n'a écrit là-dessus ». Cette remarque est un
+énoncé sur l'état de son information, et cette lecture ne la vérifie pas : elle
+demanderait de consulter ce qui avait été imprimé, ce que la règle de cette
+édition interdit.}
+\end{quote}
+
+L'observation est juste et même modeste. Ce qu'un marteau transmet n'est pas son
+poids mais sa quantité de mouvement, et la force moyenne du choc est cette
+quantité divisée par la durée du contact, laquelle est très brève : c'est ce que
+nous appelons l'impulsion,
+\[ F\,\Delta t = m\,\Delta v. \]
+Un marteau de cinq kilogrammes arrivant à dix mètres par seconde et arrêté en un
+millième de seconde exerce une force moyenne de cinquante mille newtons, soit
+plus de cinq tonnes-force, c'est-à-dire beaucoup plus que les deux mille livres
+du feuillet.\footnote{Calcul de cette lecture, avec ses hypothèses : dix ou douze
+livres font environ cinq kilogrammes, la durée du contact d'un choc de métal sur
+métal est de l'ordre du millième de seconde. Le nom d'impulsion et la relation
+écrite sont postérieurs au feuillet, qui n'a ni l'un ni l'autre ; ce qu'il a,
+c'est le fait et l'étonnement juste devant le fait.}
+
+Il divise ensuite la percussion en trois espèces, et la division est bonne :
+
+\begin{itemize}
+  \item \textbf{ferma}, arrêtée : quand on frappe du marteau sur un solide
+    immobile posé sur un plan, comme sur une enclume ou sur une pierre ;
+  \item \textbf{incontrata}, rencontrée : quand on frappe sur un solide mobile
+    qui vient à la rencontre du coup, « comme serait un marteau contre un autre,
+    ou une épée contre une autre ; et celle-ci est la plus violente de toutes » ;
+  \item \textbf{sfuggita}, fuie : quand on frappe sur un solide mobile qui fuit
+    le coup, « et celle-ci est la plus faible de toutes ».
+\end{itemize}
+
+Et il en donne la loi, sur un exemple qui est exactement le bon :
+
+\begin{quote}
+« se il moto del vento sara eguale al moto della percossa, questa sera di niun
+valore e sara à guisa dj doj caualljerj che vno carichj l'altro con la lancia,
+che se la velocita dell'vno sara eguale a quella dell'altro, il percuttore non
+potra maj ferire quello il fuggitiuo benche hauesse la punta della lancia adosso
+il corpo dell'jnimico. »\footnote{« Si le mouvement du vent est égal au mouvement
+de la percussion, celle-ci sera de nulle valeur, et ce sera à la manière de deux
+cavaliers dont l'un charge l'autre avec la lance : si la vitesse de l'un est
+égale à celle de l'autre, celui qui frappe ne pourra jamais blesser le fuyard,
+quand même il aurait la pointe de la lance contre le corps de l'ennemi. »
+Vue 36 L.}
+\end{quote}
+
+C'est juste, et c'est plus juste que l'auteur ne peut le dire. L'impulsion
+échangée dans un choc ne dépend que de la vitesse \emph{relative} des deux
+corps ; si cette vitesse relative est nulle, il n'y a pas de choc, quelle que
+soit la vitesse commune. Et la vitesse relative est la même dans tous les
+repères en translation uniforme, ce qui est la raison de fond pour laquelle la
+division en trois espèces est une division de la vitesse relative et non de trois
+phénomènes différents : une même percussion est ferme, rencontrée ou fuie selon
+ce que fait le corps frappé.\footnote{L'invariance de la vitesse relative par
+changement de repère galiléen est postérieure au feuillet, qui n'a pas le
+concept de repère. Ce qu'il a, et qui est remarquable, c'est l'exemple des deux
+cavaliers, qui isole exactement la bonne quantité.}
+
+Suivent les percussions sur les corps rares, l'eau et l'air, avec quatre
+observations qu'il vaut de reprendre une à une.
+
+\begin{itemize}
+  \item Une épée très forte frappant l'eau à plat se brise « le plus souvent en
+    morceaux », alors qu'elle avait tenu à d'autres épreuves ; et du bois tombant
+    de quelque hauteur se brise dans l'eau, qui aurait suffi, là où il fut rompu,
+    à soulever un grand poids. C'est juste : l'eau, à l'échelle de temps d'un
+    choc, ne s'écarte pas assez vite pour se dérober, et la lame doit mettre en
+    mouvement une masse d'eau considérable en très peu de temps ; la réaction qui
+    en résulte excède la résistance de la lame.
+  \item Un boulet d'arquebuse tiré obliquement sur l'eau d'un large fleuve ne
+    s'y enfonce pas mais, la frappant par incidence, « se porte à l'autre rive en
+    sautelant, et ira parfois deux ou trois fois plus loin qu'il n'est naturel
+    dans l'air ». Le ricochet est réel et l'explication est bonne. La comparaison
+    est défendable si on l'entend, comme le texte y invite, d'un tir à faible
+    élévation : sur terre le boulet s'enfonce au premier contact, sur l'eau il
+    est renvoyé et continue. Il faut seulement ajouter que chaque rebond lui
+    enlève de l'énergie, en sorte que la distance totale ne peut pas dépasser la
+    portée qu'aurait, sans obstacle, la même charge.\footnote{Précision de cette
+    lecture ; le feuillet ne dit rien de la perte à chaque rebond, et sa phrase,
+    prise absolument, suggérerait un gain de portée, qui est impossible.}
+  \item L'air. « La percussion ferme dans l'air est celle qui se fait par temps
+    tranquille sur quelque solide violemment mû », et l'auteur rapporte avoir vu
+    souvent une planchette ou autre chose mince, tournée avec furie dans l'air,
+    se briser au milieu de sa course, elle qui sans cela aurait suffi à soulever
+    un poids sept ou huit fois plus grand que le sien.
+  \item Le roseau. Placé horizontalement dans un mur, sa cime s'incline vers le
+    centre par sa propre pesanteur ; mais tenu à la main verticalement, pointe en
+    haut ou en bas, et mû violemment de la droite ou de la gauche, sa cime
+    « s'inclinera vers le commencement du mouvement, c'est-à-dire vers le point
+    de son zénith ou de son nadir », et se brisera si le mouvement est assez
+    violent. L'auteur conclut que « cela ne provient d'autre chose que du
+    mouvement auquel l'air résiste », et que la percussion surpasse de beaucoup
+    la pesanteur du roseau.
+\end{itemize}
+
+Sur ce dernier point il faut une correction, et elle porte sur la cause, non sur
+le fait. Le fait est exact : le roseau fléchit en arrière et peut rompre, et la
+charge transversale du mouvement excède largement celle de son propre poids,
+comme le montre la comparaison des deux situations — cette conclusion du feuillet
+est bonne. Mais la cause principale n'est pas la résistance de l'air : c'est
+l'inertie du roseau lui-même. Sa masse est répartie sur toute sa longueur, et
+chaque élément doit être accéléré ; la pointe, la plus éloignée de la main,
+demande la plus grande accélération et reste en arrière parce qu'il faut une
+force pour l'y porter. La résistance de l'air s'y ajoute et n'y suffit pas ; pour
+un mouvement rapide, l'inertie domine.\footnote{Départ de cette lecture. Le
+feuillet nomme tout de même le mouvement — « dal moto alquale l'aria resiste »,
+du mouvement auquel l'air résiste — et non l'air seul, en sorte que la faute est
+de partage plutôt que d'aveuglement. La notion d'inertie d'un corps étendu et le
+calcul du moment fléchissant d'une poutre en rotation sont postérieurs au
+feuillet.}
+
+\section*{Le levier : on ne gagne pas ensemble la force et le temps}
+
+\pagerange{36}{36}
+Le traité passe alors à ce qu'il appelle « l'antipathie » du mouvement et de la
+force, et il la démontre sur un levier. C'est la page la plus soignée du traité,
+et son argument est juste.
+
+\begin{quote}
+« È impossibile come mecanicamente sj proua in vn jstesso tempo auanzar tempo e
+forza, perche quanta maggior forza sj acquista all'incontra altretanto tempo sj
+perde. »\footnote{« Il est impossible, comme on le prouve mécaniquement, de
+gagner en un même temps le temps et la force, parce que d'autant plus de force
+on acquiert, d'autant de temps en revanche on perd. » Vue 36 L.}
+\end{quote}
+
+La figure est un levier horizontal $AB$ appuyé en $C$, le point d'appui étant au
+quart de la longueur du côté de $A$ ; sous $A$ pend un petit cercle contenant le
+chiffre 4, sous $B$ un cercle contenant le chiffre 1 ; une droite oblique
+descend de $D$, au-dessus de $A$, traverse le levier en $C$ et va jusqu'à $E$,
+au-dessous de $B$ ; deux arcs pointillés joignent $A$ à $D$ et $B$ à $E$. Le
+raisonnement du texte est : une livre de poids ou de force placée en $B$
+soulèvera ou équilibrera quatre livres placées en $A$, parce que la distance
+$CB$ est quadruple de $CA$ ; mais « à la force placée en $B$ il faudra quatre
+fois plus de temps pour soulever le poids placé en $A$ », puisque, pour pousser
+$A$ jusqu'en $D$, il faut que $B$ s'abaisse jusqu'en $E$, et que l'arc $BE$ est
+quadruple de l'arc $AD$.
+
+Tout cela est exact. Écrivons-le. L'équilibre du levier donne
+\[ F_A \cdot CA = F_B \cdot CB, \qquad \text{d'où} \quad F_B = \tfrac14 F_A \ \text{si} \ CB = 4\,CA, \]
+et la rigidité du levier donne, pour les déplacements des deux extrémités,
+\[ \frac{\delta_A}{CA} = \frac{\delta_B}{CB}, \qquad \text{d'où} \quad \delta_B = 4\,\delta_A. \]
+En multipliant, $F_B\,\delta_B = F_A\,\delta_A$ : la quantité conservée est le
+produit de la force par le déplacement, c'est-à-dire le \emph{travail}. Ce qu'on
+ne peut pas gagner ensemble, c'est la force et le déplacement ; et c'est le
+principe que nous appelons aujourd'hui principe des travaux
+virtuels.\footnote{Le nom et la notion de travail sont très postérieurs au
+feuillet. L'énoncé du feuillet et celui-ci coïncident, mais non littéralement, et
+c'est le point suivant.}
+
+Car il y a, dans la lettre du feuillet, une confusion qu'il faut lever : il dit
+« temps » là où sa figure montre des \emph{chemins}. Sur un levier rigide, les
+deux extrémités se meuvent en même temps : ce qui est quadruple n'est pas la
+durée, c'est l'arc parcouru, et donc la vitesse. L'énoncé du feuillet redevient
+vrai dès qu'on lui fournit l'hypothèse qu'il n'écrit pas — que la main qui agit
+en $B$ se meut à une vitesse donnée : alors, pour élever $A$ d'une hauteur
+donnée, il faut bien quatre fois plus de temps, puisqu'il faut parcourir quatre
+fois plus de chemin à vitesse égale. Mais l'hypothèse n'est pas posée, et la
+figure ne montre qu'un rapport d'arcs.\footnote{Départ de cette lecture par
+rapport au feuillet. C'est une correction de langage et non de fond : la
+conclusion que le traité tire — on ne gagne pas ensemble la force et le temps —
+est vraie sous l'hypothèse tacite, et la conclusion qu'il en fait servir pour sa
+machine reste valable. Le traité écrit du reste aussi bien le cas réciproque, « si
+le moment est en $A$, où il faudra quatre fois plus de force pour mouvoir
+l'extrémité $B$, mais nous gagnerons quadruplement en temps », et là encore le
+rapport est celui des chemins.}
+
+De là le traité tire une conséquence sur Archimède, et le raisonnement est bon.
+Il lit dans la vie de Marcellus par Plutarque qu'Archimède faisait des machines
+qui, descendues des murs, saisissaient les galères romaines dans le port de
+Syracuse et « avec grande promptitude les élevaient en haut », puis les
+laissaient retomber dans l'eau pour les submerger, en sorte que les Romains
+l'appelaient « Briareo geometra ». « Ce qui, si c'est vrai, veut dire qu'Archimède
+avait trouvé le moyen de multiplier la force et le temps ensemble, chose qui non
+seulement ne se sait pas aujourd'hui, mais est même tenue pour impossible. » Il
+ajoute que l'autre épreuve rapportée du même Archimède, avoir tiré seul à terre
+une très grosse caraque que beaucoup d'hommes n'avaient pu remuer, ne lui paraît
+nullement impossible, « sachant très bien que la force peut se multiplier à
+l'infini ».
+
+Les deux jugements sont justes. Aucune machine ne multiplie à la fois la force
+et la vitesse : si les grues d'Archimède multipliaient énormément la force, elles
+ne pouvaient pas soulever vite, et l'un des deux termes du récit est exagéré. Et
+la force, en revanche, se multiplie sans limite de principe par un rapport de
+bras suffisant — la limite étant pratique, la vitesse décroissant dans la même
+proportion, et les frottements et la résistance des pièces intervenant. Le
+traité a exactement ce qu'il faut pour trancher, et il
+tranche.\footnote{L'auteur ne consulte pas Plutarque autrement qu'en le citant,
+et cette lecture ne l'a pas consulté du tout : ce qui est rapporté ici est ce
+que le feuillet dit de Plutarque, et rien de plus. Le raisonnement, lui, ne
+dépend pas de la source.}
+
+\section*{Ce que la machine pouvait faire}
+
+\pagerange{36}{37}
+Le traité tire de son propre principe la limite de sa machine, et il le fait
+honnêtement :
+
+\begin{quote}
+« l'istromento da me jnuentato (a mio parere) non sj potra far maggiore che
+possj portare o tenir dentro piu dj doj huominj per che non solo per mouere le
+alj vuole gran forza ma ancora vi vuole gran prestezza, le qualj doj cose come
+ho mostrato fra dj loro hanno grandissima antipatia. »\footnote{« L'instrument
+inventé par moi, à mon avis, ne pourra se faire plus grand qu'il ne puisse
+porter ou tenir dedans plus de deux hommes, parce que non seulement pour mouvoir
+les ailes il faut une grande force, mais il y faut encore une grande promptitude,
+lesquelles deux choses, comme je l'ai montré, ont entre elles la plus grande
+antipathie. » Vue 36 R.}
+\end{quote}
+
+Il ajoute avoir « pour ainsi dire trompé la nature » en se servant d'une
+multiplicité de mouvements contraires l'un à l'autre, « lesquels ne sont pas de
+peu de secours à soulever, ce qu'ils ne feraient pas s'ils étaient simples ». Et
+il décrit sa machine : faite en forme de dragon, elle peut tenir jusqu'à deux
+hommes, dont il suffit qu'un seul travaille tandis que l'autre se repose ; elle
+peut cheminer de nuit avec l'aide de la boussole, portant de quoi manger et
+boire pour quelques jours ; et — c'est sur cette phrase que le traité s'achève —
+elle est faite de telle manière que si l'une des ailes venait à se rompre, elle
+ne pourrait pour autant précipiter, mais tomberait doucement, en sorte que ceux
+qui sont dedans « souffriraient très peu de lésion ».
+
+Il faut dire ce qu'il en est, et le dire sans mépris, parce que le raisonnement
+qui mène là est de bonne qualité.
+
+\subsection*{L'échelle : pourquoi les ailes de Sagredo ne pouvaient pas marcher}
+
+Le procédé prêté à Sagredo — mesurer sur un faucon la proportion des plumes au
+corps, en poids et en mesure, et se faire des ailes dans la même proportion — ne
+peut pas réussir, et la raison en est géométrique. Quand on agrandit un animal en
+gardant ses proportions, sa surface croît comme le carré de sa dimension
+linéaire et sa masse comme le cube : la charge par unité de surface d'aile croît
+donc comme la dimension. Un faucon pèse un peu plus d'un demi-kilogramme, un
+homme soixante-dix : le rapport des masses est de l'ordre de cent vingt, celui
+des dimensions de l'ordre de cinq, et la charge alaire est multipliée par cinq.
+Comme la vitesse nécessaire pour soutenir cette charge croît comme sa racine
+carrée et la puissance comme le produit du poids par cette vitesse, la puissance
+demandée est multipliée par plusieurs centaines, alors que la force des muscles
+ne croît, au mieux, que comme leur masse, c'est-à-dire par cent vingt. La
+proportion, qui était le principe même de la méthode, est précisément ce qui ne
+se conserve pas.\footnote{Calcul d'ordres de grandeur de cette lecture, avec ses
+hypothèses écrites. Les noms modernes en sont la charge alaire et la loi
+carré-cube, tous deux postérieurs au feuillet ; l'argument, lui, ne demande que
+de comparer un carré à un cube, et rien dans les connaissances que le feuillet
+met en œuvre n'empêchait de le faire. Le feuillet ne le fait pas et se borne à
+constater l'échec des essais.}
+
+\subsection*{La puissance : ce que les nombres du feuillet permettent d'établir}
+
+La machine ne pouvait pas voler, et on peut le montrer avec les nombres que le
+feuillet lui-même fournit. Soutenir un poids en battant l'air, c'est communiquer
+continuellement à l'air une quantité de mouvement vers le bas ; si $W$ est le
+poids, $\rho$ la masse par unité de volume de l'air et $S$ la surface balayée par
+les ailes, la vitesse qu'il faut donner à l'air est
+\[ v = \sqrt{\frac{W}{2\rho S}}, \]
+et la puissance à fournir est $P = W v$. Pour deux hommes et leur machine, soit
+un poids de l'ordre de mille cinq cents newtons, et une surface balayée
+généreusement estimée à vingt mètres carrés, on trouve $v \approx 5{,}6$ mètres
+par seconde et $P \approx 8\,400$ watts. Un homme entraîné fournit de façon
+soutenue deux à trois cents watts. Le déficit est d'un facteur de l'ordre de
+trente.
+
+Et le feuillet ne peut pas s'en tirer par son propre chiffre sur l'air. Avec la
+densité qu'il lui donne — le quatre-centième de l'eau, soit deux et demi
+kilogrammes par mètre cube au lieu d'un et deux dixièmes —, l'air est plus dense,
+donc plus facile à frapper, et la puissance requise tombe à environ six mille
+watts : encore vingt fois trop. Le calcul est le même quel que soit celui des
+deux chiffres qu'on retienne.\footnote{Calcul et estimations de cette lecture,
+avec toutes ses hypothèses : la relation employée est celle du bilan de quantité
+de mouvement pour un disque sustentateur en vol stationnaire, la puissance
+musculaire soutenue d'un homme est celle qu'on mesure aujourd'hui, et la surface
+balayée est une majoration généreuse de ce que le dessin montre. Rien de tout
+cela n'est sur le feuillet, et la conclusion est donc celle de cette lecture et
+non une réfutation que l'auteur aurait pu écrire. Il faut ajouter, pour être
+juste, que ce déficit de puissance est la raison pour laquelle le vol humain par
+la seule force des muscles n'a été obtenu qu'au XX\textsuperscript{e} siècle, et
+qu'il l'a été avec une aile fixe et une hélice, non avec des ailes battantes, au
+moyen de structures d'une légèreté hors de portée de tout atelier ancien.}
+
+Le fait remarquable est que l'auteur avait entre les mains le principe qui
+condamne sa machine, et qu'il s'en est servi pour en limiter la taille sans aller
+jusqu'à la conclusion. Son propre théorème — on ne gagne pas ensemble la force et
+la vitesse — dit que le mouvement des ailes demande à la fois de la force et de
+la promptitude, et que ces deux exigences se combattent. Il en tire : donc pas
+plus de deux hommes. Ce qu'il fallait en tirer : donc pas même un. Ce qui lui
+manquait pour faire le pas n'était pas la mécanique, c'était la mesure du poids
+de l'air et l'idée de compter une puissance.
+
+\subsection*{Les deux dernières promesses}
+
+Deux affirmations de la fin ne sont pas soutenues par le feuillet et il faut le
+dire. La première est que si une aile se rompt, la machine ne précipite pas mais
+descend doucement : rien dans le texte ni dans les figures ne montre comment, et
+une machine dissymétrique par la perte d'une aile n'a aucune raison de descendre
+droit. La seule pièce qui pourrait le faire est la « couuerture mobile » E de la
+légende française, dont la légende dit précisément qu'elle « soustient assez pour
+l'empescher de precipiter » ; mais la légende et le traité sont de deux mains, et
+ni l'un ni l'autre ne les rapproche. La seconde est que ceux qui sont dedans
+souffriraient très peu de lésion : c'est une promesse, non une conséquence.
+
+Il faut être juste avec ce texte. Son auteur ne promet pas un prodige : il
+raisonne, il chiffre ce qu'il peut chiffrer, il emprunte le meilleur chiffre
+qu'il connaisse sur le poids de l'air, il cite Archimède dans la forme juste,
+il isole la bonne quantité dans un choc, il démontre correctement la loi du
+levier et il s'en sert contre lui-même pour brider son propre projet. C'est le
+travail d'un mécanicien, et il est faux par les endroits où, sur ce sujet, on
+pouvait alors se tromper : le poids de l'air, et l'absence de toute notion de
+puissance.
+
+\section*{Ce que ces feuillets ne disent pas}
+
+\pagerange{2}{38}
+Il faut finir par les négations, parce que le titre du catalogue mène droit à
+quatre erreurs et qu'un lecteur qui arrive par lui doit être averti.
+
+\textbf{Il n'y a aucune lettre dans ce volume.} Le titre annonce « des opuscules
+et des lettres de P. de Roberval, Huggens, Torricelli, Firmat et Fr. Herman
+Flayder » : la correspondance de Roberval, de Huygens, de Torricelli et de Fermat
+n'est dans aucun des deux lots, ni en original, ni en copie, ni par extrait. De
+Flayder, il n'y a pas d'opuscule non plus : il y a une page de titre recopiée à
+la main.
+
+\textbf{Le traité d'algèbre n'est attribué à personne ici.} Il est anonyme sur le
+feuillet : ni nom d'auteur, ni souscription, ni dédicace. Roberval y paraît
+deux fois sous la forme « D. Rob. », aux vues 9 R et 10 R, comme l'auteur de
+trois lemmes que le traité déclare emprunter, avec une note marginale en
+français qui renvoie à « son traité de mechanique des plans inclinez ». C'est
+une citation. Attribuer à un auteur un texte parce qu'il y est cité serait
+retourner la preuve, et cette lecture ne le fait pas — pas plus qu'elle
+n'attribue le traité à Viète, dont il écrit la notation, ou à quiconque d'autre.
+Le catalogue range le volume sous le nom de Roberval ; les feuillets ne le
+disent pas.
+
+\textbf{Le traité italien n'est attribué à personne non plus.} Son auteur nomme
+Sagredo et Galilée, il parle abondamment de lui-même — ses premières années, ses
+essais vains, les dix ans écoulés depuis sa trouvaille, sa machine — et il ne se
+nomme jamais. Aucun feuillet du dossier ne le nomme. Cette lecture ne le nomme
+pas.
+
+\textbf{Aucun feuillet ne porte de date.} La seule date du volume, 1627, est à
+l'intérieur de la page de titre recopiée, et c'est celle du livre imprimé, non
+celle de la copie. Le champ de datation du catalogue est vide et cette lecture
+le laisse vide. Deux inférences sont possibles à partir du contenu, et elles sont
+signalées comme inférences là où elles sont faites : le feuillet qui copie le
+titre de Flayder est postérieur à 1627, et le traité italien est postérieur à
+l'estimation du poids de l'air qu'il cite. Rien d'autre. Le traité d'algèbre ne
+donne, pour tout repère, que son emprunt à Roberval et la notation de l'école de
+Viète, et cette lecture n'en tire aucune année.
+
+\textbf{Enfin, il n'y a pas un texte, mais deux dossiers.} La tentation, devant
+un volume relié, est de chercher ce qui tient ses pièces ensemble : une même
+main, un même projet, un fil. Il n'y en a pas ici. Un traité d'algèbre sur la
+composition des équations et un dossier sur l'art de voler ont été cousus dans la
+même reliure, avec une lacune de feuillets blancs entre eux, et rien dans l'un ne
+fait signe vers l'autre. On peut relever, et cette lecture l'a fait, que les deux
+dossiers partagent une façon de raisonner — l'énumération exhaustive des cas dans
+le premier, la division de la percussion en trois espèces dans le second — et
+qu'ils citent l'un et l'autre un mathématicien contemporain pour un lemme de
+mécanique. C'est une ressemblance d'époque, non un lien. Prétendre autre chose
+serait ajouter au volume ce que le relieur seul y a mis.
+
+\end{document}
