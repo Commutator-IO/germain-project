@@ -1,0 +1,611 @@
+% Latin 11195, batch 2 — Gallica views 21–38, the volume's last batch
+% (eighteen views).
+% Pass: Opus 5 (claude-opus-5), 2026-09-19 — first pass, unchecked against
+% the views by a human. The pass was resumed after an interruption: views
+% 21, 22, 23, 26 and 27 had been drafted before the break and are taken over
+% as they stood, unchanged; views 24, 25 and 28–38 were read from the mirror
+% in this pass and drafted view by view before the file was assembled.
+%
+% What the views are. Colour-free greyscale scans, landscape, about
+% 5727 × 3897, each showing the volume lying open: a left page and a right
+% page with the gutter near the middle, its position shifting from view to
+% view (about x = 2450 at view 28, x = 3035 at view 35). Each view was split
+% at the gutter and read as two pages; in the file each \page{N} holds the
+% left page then the right, and a \note{} says where the right page begins.
+% \page{N} is always the Gallica view number.
+%
+% Blank views, absent from the file. 24 and 25 (the same blank opening
+% photographed twice, the second time with a modern slip laid on the right
+% page reading « folios blancs 38 à 49 »); 30 and 31; 38. The gap in the
+% numbering is the record. Single blank pages, not noted here but noted in
+% the file: 26 L, 27 L, 33 L, and the lower halves of 23 R, 29 R, 32 R,
+% 37 L and 37 R.
+%
+% What the eighteen views hold — five pieces in four hands.
+%
+%   v. 21–23   The end of the Latin treatise on equations that fills the
+%              earlier batch. View 21 opens « Caput 9.um — De Constitutione
+%              æquationum quad-quadraticarum, quæ oriuntur ex æquationibus
+%              cubicis quæ per se subsistit, & ex æquatione laterali », with
+%              twenty numbered propositions; view 23 opens « Caput 10.mus Et
+%              ultimum — De constitutione Æquationum Quad-quadraticarum quæ
+%              ex se subsistunt vel in quarum compositione latera fictitia
+%              immiscentur », and the treatise stops in the middle of view
+%              23 R on « de iis plura non dicemus ». Viète-school species
+%              notation throughout.
+%   v. 26 R    A title leaf, two words at the middle of the page in upright
+%              capitals and minuscules: « Ars Volandi ». Another hand and
+%              another ink than the treatise.
+%   v. 27 R    The title page of Flayder's printed book, copied out by hand
+%              and centred on the leaf: « De Arte volandi … Authore
+%              Friderico Hermanno Flaydero, Poëtâ, professore et
+%              Bibliothecario Tubingæ … Typis Theodorici Werlini, anno 1627.
+%              in 12o ». A fine regular cursive, different again.
+%   v. 28–29   Latin notes and extracts on flight, in a fast fine cursive,
+%              beginning on the back of the Flayder title leaf and breaking
+%              off in the middle of view 29 R. No title. They run: the
+%              ancients learning to sail from water birds and the swan;
+%              Prince Maurice's sailing chariot, ascribed to « Stephinus »
+%              (Simon Stevin); Hadingus king of the Danes firing Duna with
+%              burning tinder tied to birds, out of Saxo and Krantz; the
+%              pigeons of the siege of Leiden; Scaliger on Archytas's dove,
+%              cited as « exercitationũ Incardanum 326.a »; the
+%              « Compendiũ miraculorũ » of Alvaro Gutiérrez de Torres of
+%              Toledo, dedicated to Don Alonso de Fonseca, and from it the
+%              flying monk « Elnero ex malmabiriâ » — Eilmer of Malmesbury —
+%              who leapt from a tower, flew a stadium and broke his legs;
+%              Ernst Burggrav's Planosphærium and a precentor of Nuremberg
+%              who flew and fell; Johann Sturm on a man who let himself down
+%              winged from the campanile of St Mark's; a list of the senses
+%              in which beasts surpass man; a note on Flayder; the author's
+%              own plan for a book on the Bacchanalia; and, on 29 R, seven
+%              lines beginning « Item Tractatus de villis Romanorũ ».
+%   v. 32 L    In a third hand, French, round and large: the legend of the
+%              letters A, B, C, D, E of the figure facing it.
+%   v. 32 R    A pen drawing of the machine as a flying dragon, lettered
+%              A, B B B B, C C, D, E.
+%   v. 33–37 L A treatise in Italian, in a fourth hand, headed « Il volare
+%              non è impossibile come fin hora vniuersalmente è stato
+%              creduto ». The writer says he has worked at the problem since
+%              his early years and, ten years ago, found what he sets out
+%              here. He argues from the weight of air to water (Aristotle's
+%              1 to 10 against « il computo del Sig.r Galilej », 1 to 400),
+%              quotes Archimedes on floating bodies, gives the specific
+%              gravities of gold, quicksilver, lead, silver and copper,
+%              divides percussion into ferma, incontrata and sfuggita and
+%              carries the division into water and into air, proves on a
+%              lever AB with fulcrum C that force and time cannot both be
+%              gained, reads Plutarch's life of Marcellus on Archimedes
+%              « Briareo geometra », and describes his own machine: built in
+%              the form of a dragon, holding up to two men, one working
+%              while the other rests, able to travel by night by the
+%              compass, and so made that if a wing breaks it does not fall
+%              but descends gently. It closes on 37 L with « patirebbero
+%              pochissima lesione :/ ». He names Giovanni Francesco Sagredo
+%              and Galileo; he does not name himself, and no leaf of the
+%              batch carries a date.
+%   v. 37 R    A second pen drawing of the same machine, seen from the
+%              front and closer, without lettering.
+%
+% The numbers on the leaves, and why no \folio{} is written. Two different
+% things are inked on these leaves and this pass could not reconcile them
+% without forcing.
+%   – Views 21, 22 and 23 carry a number in the top OUTER corner of each of
+%     the two pages: 32 | 33, 34 | 35, 36 | 37. Two per opening, consecutive:
+%     that is a pagination, and it is the writer's own, in the ink of the
+%     treatise.
+%   – From view 24 on, only the RIGHT page is numbered, one number per leaf
+%     at the top right, in larger and more flourished figures: 38 (views 24
+%     and 25, the same leaf twice), then 50, 51, 52, 53, 54, 55, 56, 57, 58,
+%     59, 60, 61, 62 on views 26 to 38, one per view without a gap. The
+%     modern slip on view 25 calls the unfilmed run « folios blancs 38 à
+%     49 », and 62 at view 38 sits close to the catalogue's count of 64 ff.
+%     On views 33 to 38 the figure is ringed with an oval stroke.
+%   The first series is a pagination and the second runs leaf by leaf; they
+%   meet at 37/38 without a break in the count, which no reading this pass
+%   could find explains. Both are ink, neither is the thin pale pencil of a
+%   library foliation, and the batch gives no second, fainter series. No
+%   \folio{} is therefore written anywhere in this file, and every number is
+%   recorded in the \note{} of the view that carries it. The question is left
+%   to a human reader of the volume. Other numbers: proposition numbers in
+%   the treatise; a second, smaller ink series in the outer margin of views
+%   21–23 (« 29b », « 30 », then 31–37), one figure against the head of each
+%   paragraph, which reads like the writer's own running count of the
+%   propositions or paragraphs and is recorded as read; the figure 4 and the
+%   figure 1, each in a small circle, in the lever figure of view 36; a
+%   figure « 3 » on the fore-edge of the leaves at view 24.
+%
+% Letters, glyphs, notation. The long s is set s throughout, in all four
+% hands, and is not noted again. In the Latin treatise the sign of equality
+% is the period's double vertical stroke, written « ∥ » before the 0; it is
+% set \parallel in maths and is NOT modernised to =. Both agents who have
+% worked on this volume chose \parallel independently; the reason is that the
+% stroke is two plain uprights and nothing on the leaf supports an = .
+% Abbreviations are kept as written with their marks and expanded only in a
+% \note{}: in the Latin notes of views 28–29 the suspension stroke over a
+% vowel stands for m or n (« collũ », « ventorũ »), the hook after q for
+% « -que » (« earumq̃ »), a single looped descender for « ex » (« extat »,
+% « excellentissimo », « ex malmabiriâ »), and a long s with a point for
+% « est »; in the Italian treatise « Ill.mo », « Sig.r » and « v.g. » keep
+% their raised letters. Period spelling stays everywhere and is not flagged:
+% the French of view 32 (« aisle », « pousser en auant », « eslargit »,
+% « soustenir », « Je viens de dire »), the Italian of views 33–37
+% (« jnuentione », « leggiero », « grauita », j for final i, « hauer »,
+% « doj », « lj »), the Latin as written. In the Italian hand a long
+% horizontal stroke through a word is the crossbar of its t thrown back over
+% the word, not a deletion; the same is true of the Latin hand of views
+% 28–29 (« pendet », « refricant »), and \struck{} is written only where the
+% stroke is a separate, heavier line. The two figures are described in a
+% \note{}, with their lettering, and are not drawn.
+%
+% Illegible: 8, and seven of them are struck words — 21 L (before « unica »);
+% 28 L (before « viginti », and the two words struck under the added « hæc »
+% and « vrbs »); 29 L (after « euolabat », and after « Nos »); 35 R (before
+% « acrea »). The eighth is the circular legend of the library stamp on
+% 37 L. Uncertain readings: 17. Every \note{} is in French; only this comment
+% is in English.
+%
+% Nothing here was checked against any printed edition of Flayder, of
+% Scaliger or of any other author named on the leaves, nor against any other
+% transcription.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{latin-11195}
+\shelfmark{Latin 11195}
+\batch{2}
+\pages{21}{38}
+\dating{}
+\watermark{Lecture automatique\\non vérifiée}
+\foldertitle{Mélanges de physique et de mathématiques, comprenant des opuscules et des lettres de P. de Roberval, Huggens, Torricelli, Firmat et Fr. Herman Flayder. Latin 11195}
+
+\begin{document}
+
+\page{21}
+\note{double page. Page de gauche paginée « 32 » à l'encre dans le coin supérieur extérieur ; page de droite « 33 ». Chaque formule de proposition est répétée dans la marge extérieure, de la même main et de la même encre que le texte ; ces répétitions ne sont pas reproduites ici. Un second jeu de chiffres, plus petits, court dans la même marge : « 29\textsuperscript{b} » en regard de la première formule de la page de gauche, « 30 » sur la page de droite.}
+
+\section*{Caput 9\textsuperscript{um}}
+
+De Constitutione æquationum quad-quadraticarum, quæ oriuntur ex æquationibus cubicis quæ per se subsistit, \& ex æquatione laterali.
+
+Cum in recognitione huiusmodi æquationum cubicarum deprehenderimus varias esse sex formulas, tres quidem in quibus est unicum latus supra, \& totidem in quibus est unicum latus infra, si quælibet ipsarum in lateralem ducatur sive in eam quæ est latere supra, sive in eam quæ est latere infra applicabilis, tot inde orientur variæ æquationum quad-quadraticarum formulæ.
+
+Si ergo \struck{\ill{}} \add{unica} ex his æquationibus cubicis in quibus est unicum latus infra, quæ est cuiusmodi
+\[ R\,\mathrm{sol.} \; G\,\mathrm{pl.}\,A + A^3 \parallel 0 \]
+\note{aucun signe n'est écrit entre $R\,\mathrm{sol.}$ et $G\,\mathrm{pl.}\,A$ : le trait d'abréviation de « sol. » se prolonge à droite. Le produit calculé deux lignes plus bas suppose un $+$. Le mot « unica » est ajouté au-dessus d'un mot rayé et illisible.}
+ducatur in lateralem cuius latus sit supra videlicet $B - A \parallel 0$ productum quod inde orietur erit
+\[ B\,R\,\mathrm{sol.} + B\,G\,\mathrm{pl.}\,A - G\,\mathrm{pl.}\,A^2 + B A^3 - A^4 \parallel 0 \]
+\[ - R\,\mathrm{sol.}\,A \]
+\note{le terme $-R\,\mathrm{sol.}\,A$ est écrit sous la ligne, au-dessous de $B\,G\,\mathrm{pl.}\,A$, et appartient à la même équation.}
+Ex quo producto patet posse fieri ut solidum cuius basis $G\,\mathrm{pl.}$ altitudo vero $B$, sit vel maius, vel æquale vel minus solido cuius eadem est basis, altitudo vero latus infra dictæ æquationis cubicæ. Hinc.
+
+\subsection*{Propositio 1\textsuperscript{a}}
+
+Cum latus æquationis lateralis est supra idemque maius eo quod est infra, et solidum cuius basis quadratum lateris infra æquationis cubicæ, altitudo vero hoc latus supra, maius est solido cuius eadem est basis, altitudo vero latus infra dictæ æquationis cubicæ.
+\[ S\,\mathrm{ppl.} + T\,\mathrm{sol.}\,A - Z\,\mathrm{pl.}\,A^2 + x A^3 - A^4 \parallel 0 \]
+
+\subsection*{Propositio 2\textsuperscript{a}}
+
+Cum idem latus \add{est} supra \struck{est maius}, et dicta solida æqualia.
+\[ S\,\mathrm{ppl.} - Z\,\mathrm{pl.}\,A^2 + x A^3 - A^4 \parallel 0 \]
+
+\subsection*{Propositio 3\textsuperscript{a}}
+
+Cum idem latus est supra, et solidum cuius altitudo idem latus minus est reliquo.
+\[ S\,\mathrm{ppl.} - T\,\mathrm{sol.}\,A - Z\,\mathrm{pl.}\,A^2 + x A^3 - A^4 \parallel 0 \]
+
+Et in his tribus formulis sunt duo latera alterum infra dictæ æquationis cubicæ, alterum supra, idemque maius, cui æquale est $x$; fit autem $Z\,\mathrm{pl.}$ rectangulum æquale quadrato eius quod est infra, $T\,\mathrm{sol.}$ alterutrum horum solidorum, secundum varios casus, $S\,\mathrm{ppl.}$ quod fit ex quadrato dicti lateris infra, et rectangulo quod continetur sub dictis lateribus.
+
+Si vero hæc eadem formula æquationis cubicæ ducatur in lateralem, cuius latus sit positivum infra ut sit $C + A \parallel 0$ productum erit
+\[ R\,\mathrm{sol.}\,C + G\,\mathrm{pl.}\,C A + G\,\mathrm{pl.}\,A^2 + C A^3 + A^4 \parallel 0 \]
+\[ + R\,\mathrm{sol.}\,A \]
+\note{page de droite. En haut à droite, le chiffre « 33 » ; dans la marge intérieure, en regard de la première formule, le chiffre « 30 ».}
+
+Et adhibita convenienti interpretatione, erit
+
+\subsection*{Propositio 4\textsuperscript{a}}
+
+Cum duo latera sunt ambo infra.
+\[ S\,\mathrm{ppl.} + T\,\mathrm{sol.}\,A + Z\,\mathrm{pl.}\,A^2 + x A^3 + A^4 \parallel 0 \]
+Suntque duo latera infra, $x$ æquale ei \uncertain{ex} æquatione laterali. Et cætera quæ patent ex origine huius constitutionis.
+
+Si eadem fiant circa secundam formulam dictarum cubicarum quæ est huiusmodi
+\[ R\,\mathrm{sol.} + F A^2 + A^3 \parallel 0 \]
+et ducatur vel in lateralem cuius latus est supra vel in lateralem cuius latus est infra, primo casu hoc erit productum.
+\[ R\,\mathrm{sol.}\,B - R\,\mathrm{sol.}\,A + B F A^2 + B A^3 - F A^3 - A^4 \parallel 0 \]
+\note{les deux termes en $A^3$ sont écrits l'un au-dessus de l'autre, $+BA^3$ sur $-FA^3$.}
+secundo vero casu istud
+\[ R\,\mathrm{sol.}\,C + R\,\mathrm{sol.}\,A + C F A^2 + C A^3 + F A^3 + A^4 \parallel 0 \]
+\note{de même, $+CA^3$ est écrit au-dessus de $+FA^3$.}
+Ac proinde tot casus et totidem propositiones.
+
+\subsection*{Propositio 5\textsuperscript{a}}
+
+Cum latus supra maius est latere infra.
+\[ S\,\mathrm{ppl.} - T\,\mathrm{sol.}\,A + Z\,\mathrm{pl.}\,A^2 + x A^3 - A^4 \parallel 0 \]
+
+\subsection*{Propositio 6\textsuperscript{a}}
+
+Cum dicta latera sunt inter se æqualia.
+\[ S\,\mathrm{ppl.} - T\,\mathrm{sol.}\,A + Z\,\mathrm{pl.}\,A^2 - A^4 \parallel 0 \]
+
+\subsection*{Propositio 7\textsuperscript{a}}
+
+Cum latus supra minus est latere infra.
+\note{aucune formule n'est écrite sous cet énoncé, alors que la phrase suivante parle de « his tribus formulis ».}
+
+Et sunt in his tribus formulis duo latera, unum infra dictæ æquationis cubicæ, alterum supra, quorum $x$ est differentia, $Z\,\mathrm{pl.}$ rectangulum sub his duobus lateribus, $T\,\mathrm{sol.}$ solidum quod fit ex quadrato eius quod est infra in altitudinem lateris eiusdem, et $S\,\mathrm{ppl.}$ quod fit sub dictis quadrato et rectangulo.
+
+\subsection*{Propositio 8\textsuperscript{a}}
+
+Cum ambo latera sunt infra.
+\[ S\,\mathrm{ppl.} + T\,\mathrm{sol.}\,A + Z\,\mathrm{pl.}\,A^2 + x A^3 + A^4 \parallel 0 \]
+Et sunt duo latera infra, quorum unum est dictæ æquationis cubicæ, alterum æquale $x$ et cætera ex origine.
+
+Cum autem 3\textsuperscript{a} constitutio dictarum cubicarum sit huiusmodi $R\,\mathrm{sol.} + A^3 \parallel 0$ si sicut et præcedentes ducatur vel in $B - A \parallel 0$ vel in $C + A \parallel 0$ 1\textsuperscript{o} casu productum erit
+\[ R\,\mathrm{sol.}\,B - R\,\mathrm{sol.}\,A + B A^3 - A^4 \parallel 0 \]
+2\textsuperscript{o} vero casu erit.
+\[ R\,\mathrm{sol.}\,C + R\,\mathrm{sol.}\,A + C A^3 + A^4 \parallel 0 \]
+
+\page{22}
+\note{double page. Page de gauche paginée « 34 », page de droite « 35 ». Comme sur la vue précédente, chaque formule est répétée dans la marge extérieure ; ces répétitions ne sont pas reproduites. Dans la marge extérieure de la page de gauche, un chiffre « 3 » dont le second chiffre éventuel se perd dans le bord du feuillet.}
+
+Igitur erit
+
+\subsection*{Propos. 9\textsuperscript{a}}
+
+Cum unum latus est infra, alterum supra.
+\[ S\,\mathrm{ppl.} - T\,\mathrm{sol.}\,A + x A^3 - A^4 \parallel 0 \]
+Et sunt duo latera alterum infra dictæ æquationis cubicæ, alterum vero supra, quod æquatur $x$, et cætera ex origine.
+
+\subsection*{Propositio 10\textsuperscript{a}}
+
+Cum duo latera sunt ambo infra.
+\[ S\,\mathrm{ppl.} + T\,\mathrm{sol.}\,A + x A^3 + A^4 \parallel 0 \]
+
+Peractis iis constitutionibus quæ oriuntur ex dictis tribus æquationibus cubicis, in quibus unum est latus infra, restat inquirendum de iis quæ oriuntur ex tribus reliquis cubicis, in quibus est unicum latus positivum supra, harum autem 1\textsuperscript{a} est huiusmodi
+\[ R\,\mathrm{sol.} - G\,\mathrm{pl.}\,A - A^3 \parallel 0 \]
+quæ quidem si ducatur ut superius in $B - A \parallel 0$ vel in $C + A \parallel 0$ 1\textsuperscript{o} casu productum erit
+\[ R\,\mathrm{sol.}\,B. - G\,\mathrm{pl.}\,B A + G\,\mathrm{pl.}\,A^2 - B A^3 + A^4 \parallel 0 \]
+\[ - R\,\mathrm{sol.}\,A \]
+2\textsuperscript{o} vero casu productum est huiusmodi
+\[ R\,\mathrm{sol.}\,C - G\,\mathrm{pl.}\,C A - G\,\mathrm{pl.}\,A^2 - C A^3 - A^4 \parallel 0 \]
+\[ + R\,\mathrm{sol.}\,A \]
+\note{le signe entre $R\,\mathrm{sol.}\,C$ et $G\,\mathrm{pl.}\,CA$ est corrigé : un « $+$ » barré d'un trait oblique, et un « $-$ » tracé au-dessus. Dans les deux produits, le terme en $R\,\mathrm{sol.}\,A$ est écrit sous la ligne.}
+
+Igitur et
+
+\subsection*{Propositio 11\textsuperscript{a}}
+
+Cum duo latera sunt ambo supra.
+\[ S\,\mathrm{ppl.} - T\,\mathrm{sol.}\,A + Z\,\mathrm{pl.}\,A^2 - x A^3 + A^4 \parallel 0 \]
+Quæ quidem formula facile sicut et reliquæ, enunciabitur, habita ratione suæ originis.
+
+\subsection*{Propositio 12\textsuperscript{a}}
+
+Cum unum latus supra, alterum vero infra, maius, et solidum, cuius altitudo idem latus infra, est etiam maius, eo cuius altitudo dictum latus supra æquationis cubicæ.
+\[ S\,\mathrm{ppl.} - T\,\mathrm{sol.}\,A - Z\,\mathrm{pl.}\,A^2 - x A^3 - A^4 \parallel 0 \]
+
+\subsection*{Propositio 13\textsuperscript{a}}
+
+Cum eadem latera sunt inter se æqualia.
+\[ S\,\mathrm{ppl.} - Z\,\mathrm{pl.}\,A^2 - x A^3 - A^4 \parallel 0 \]
+
+Ideo autem in hac formula etiam si latera sint æqualia, et $x$ non sit eorum summa, non tamen idem $x$ evanescit, quia ut patet ex origine istius est æquale lateri infra, æquationis lateralis.
+\note{page de droite, paginée « 35 ».}
+
+\subsection*{Propositio 14\textsuperscript{a}}
+
+Cum latus infra minus est eo quod est supra.
+\[ S\,\mathrm{ppl.} + T\,\mathrm{sol.}\,A - Z\,\mathrm{pl.}\,A^2 - x A^3 - A^4 \parallel 0 \]
+
+Secunda vero earundem æquationum quæ talis est.
+\[ R\,\mathrm{sol.} + F A^2 - A^3 \parallel 0 \]
+ducatur vel in $B - A \parallel 0$ vel in $C + A \parallel 0$. Et primo quidem casu productum erit.
+\[ R\,\mathrm{sol.}\,B - R\,\mathrm{sol.}\,A + B F A^2 - B A^3 - F A^3 + A^4 \parallel 0 \]
+\note{les deux termes en $A^3$ sont écrits l'un au-dessus de l'autre.}
+Atque hinc
+
+\subsection*{Propositio 15\textsuperscript{a}}
+
+Cum ambo latera sunt supra.
+\[ S\,\mathrm{ppl.} - T\,\mathrm{sol.}\,A. + Z\,\mathrm{pl.}\,A^2 - x A^3 + A^4 \parallel 0 \]
+2\textsuperscript{o} vero casu productum erit huiusmodi
+\[ R\,\mathrm{sol.}\,C + R\,\mathrm{sol.}\,A. + C F A^2 + F A^3 - C A^3 - A^4 \parallel 0 \]
+\note{de même, $+FA^3$ est écrit au-dessus de $-CA^3$.}
+Atque hinc ut supra ob varietatem signorum et diversam magnitudinem, varia quoque formula. Igitur
+
+\subsection*{Propositio 16\textsuperscript{a}}
+
+Cum alterum laterum supra, alterum vero infra idemque maius.
+\[ S\,\mathrm{ppl.} + T\,\mathrm{sol.}\,A + Z\,\mathrm{pl.}\,A^2 - x A^3 - A^4 \parallel 0 \]
+
+\subsection*{Propositio 17\textsuperscript{a}}
+
+Cum latera sunt inter se æqualia.
+\[ S\,\mathrm{ppl.} + T\,\mathrm{sol.}\,A + Z\,\mathrm{pl.}\,A^2 - A^4 \parallel 0 \]
+
+\subsection*{Propositio 18\textsuperscript{a}}
+
+Cum latus infra minus est latere supra.
+\[ S\,\mathrm{ppl.} + T\,\mathrm{sol.}\,A. + Z\,\mathrm{pl.}\,A^2 + x A^3 - A^4 \parallel 0 \]
+
+Si denique 3\textsuperscript{a} dictarum æquationum cubicarum quæ est huiusmodi $R\,\mathrm{sol.} - A^3$, ducatur ut superius vel in $B - A \parallel$ vel in $C + A \parallel 0$ 1\textsuperscript{o} casu hoc oritur productum.
+\[ R\,\mathrm{sol.}\,B + R\,\mathrm{sol.}\,A - B A^3 + A^4 \parallel 0 \]
+\note{le signe de $R\,\mathrm{sol.}\,A$ est écrit « $+$ » ; le produit de $R\,\mathrm{sol.} - A^3$ par $B - A$ donnerait « $-$ », et c'est « $-$ » qu'écrit le second cas ci-dessous. Le signe est laissé comme il est écrit.}
+Et hinc
+
+\subsection*{Propositio 19\textsuperscript{a}}
+
+Cum ambo latera sunt supra.
+\[ S\,\mathrm{ppl.} + T\,\mathrm{sol.}\,A - x A^3 + A^4 \parallel 0 \]
+2\textsuperscript{o} vero casu hoc erit productum
+\[ R\,\mathrm{sol.}\,C + R\,\mathrm{sol.}\,A - C A^3 - A^4 \parallel 0 \]
+Atque hinc
+
+\subsection*{Propositio 20\textsuperscript{a}}
+
+Cum unum latus supra, et alterum infra.
+\[ S\,\mathrm{ppl.} + T\,\mathrm{sol.}\,A - x A^3 - A^4 \parallel 0 \]
+
+Et sunt duo latera alterum supra, alterum vero infra, quod est supra pertinet ad dictam æquationem cubicam, et quod est infra ad lateralem, estque æquale $x$, fit autem $T\,\mathrm{sol.}$ ex quadrato eius quod est supra in altitudinem lateris eiusdem, et $S\,\mathrm{ppl.}$ ex eodem \struck{quo} solido in latus quod est infra.
+
+\page{23}
+\note{double page. Page de gauche paginée « 36 », page de droite « 37 ». Dans la marge extérieure, la seconde série de petits chiffres se lit ici sans peine : « 31 », « 32 », « 33 » sur la page de gauche, « 34 », « 35 », « 36 », « 37 » sur la page de droite, chacun en regard du début d'un alinéa.}
+
+\section*{Caput 10\textsuperscript{mus} Et ultimum}
+
+De constitutione Æquationum Quad-quadraticarum quæ ex se subsistunt vel in quarum compositione latera fictitia immiscentur.
+
+Reliquum est ut agamus de his æquationibus quad-quadratis quæ per se subsistunt, quarum quidem constitutio non erit diversa quoad signa $+$ et $-$ iis quæ in præcedentibus cum omnibus modis eorum signorum varietas combinata est, sed tamen cum, ut patebit, ex earum origine, maxime sint diversæ, ex eadem etiam facile dignoscentur. Cum scilicet latera quædam fictitia immixta fuerint. Sit enim v.g. sequens æquatio quadratica $B\,\mathrm{pl.} - C A + A^2 \parallel 0$ manifestum est eam esse duobus lateribus supra et applicabilem, quorum summa est $C$, et eo casu esse possibilem quo $B\,\mathrm{pl.}$ non erit maius quarta parte $C^2$. quod si sub eadem formula alia constituatur æquatio in qua idem $B\,\mathrm{pl.}$ sit maius dicta quarta parte $C^2$. Certum est duo latera ex quibus hæc ultima æquatio oritur, esse fictitia, et sic cum omnes æquationes altera in alteram ductæ fuerint, quæ inde orietur æquatio qq\textsuperscript{ta}, etiam si eius constitutio similis videatur, cuidam ex superioribus, maxime tamen ab iis differet, et simili ratiocinio, si æquatio cubica in qua latera sint fictitia ducatur in lateralem, eadem evenient. Sit igitur hæc æquatio quadrata in qua latera fictitia $D\,\mathrm{pl.} + F A + A^2 \parallel 0$ Igitur $D\,\mathrm{pl.}$ ex nostra hypothesi maius erit quarta parte $F^2$. Hæ autem duæ æquationes si ducantur altera in alteram productum erit.
+\[
+\begin{array}{llll}
+B\,\mathrm{pl.}\,D\,\mathrm{pl.} & +\,B\,\mathrm{pl.}\,F A & +\,B\,\mathrm{pl.}\,A^2 & +\,F A^3 + A^4 \parallel 0\\[2pt]
+ & -\,D\,\mathrm{pl.}\,C A & +\,D\,\mathrm{pl.}\,A^2 & -\,C A^3\\[2pt]
+ & & -\,C F A^2 &
+\end{array}
+\]
+\note{les trois lignes sont écrites l'une sous l'autre sur la page, les termes alignés par puissance de $A$ ; elles forment une seule équation.}
+
+Quæ æquatio ob signorum diversitatem variis etiam erit obnoxia interpretationibus. Sed ut hæc dicta sint tantum in re duplici. Sit $B\,\mathrm{pl.}$ minus $D\,\mathrm{pl.}$, et $C$ sit maior $F$. Igitur huius constitutionis hæc erit formula
+\[ S\,\mathrm{ppl.} - T\,\mathrm{sol.}\,A + Z\,\mathrm{pl.}\,A^2 - x A^3 + A^4 \parallel 0 \]
+Quæ quidem æquatio de duobus tantum lateribus est applicabilis cum alia sint fictitia, $x$ vero fit summa duorum laterum de quibus est applicabilis.
+
+Sit in numeris eadem æquatio
+\[ B\,\mathrm{pl.}\ \text{sit } 5. \; - C A \ \text{sit } 6 A + A^2 \parallel 0 \]
+\[ D\,\mathrm{pl.}\ \text{sit } 20 \; + F A \ \text{sit } 3 A + A^2 \parallel 0 \]
+patet in ultima æquatione latera esse ficta, ideoque eam impossibilem.
+\note{page de droite, paginée « 37 ».}
+
+Igitur et æquatio quad-quadrata ex his duabus composita, duas tantum habebit radices, scilicet 5 et 1, sit enim.
+\[ 100 - 105\,a + 7\,q. - 3\,c + 1\,qq \parallel 0 \]
+\note{ici seulement l'auteur passe aux abréviations cossiques des degrés : $a$ le côté, $q$ le carré, $c$ le cube, $qq$ le quarré-quarré. La formule est le produit des deux équations numériques ci-dessus.}
+affirmata erunt æqualia negatis, et si statuamus 5 radicem huius æquationis, erit ex una parte
+\[
+\begin{array}{rcr}
++\,100 & & 525\\
++\,175 & \text{æqualis} & 375\\
++\,625 & & \overline{\phantom{0}900}\\[-2pt]
+\overline{\phantom{+\,}900} & &
+\end{array}
+\]
+Et erit eadem æqualitas si statuamus 1 eandem radicem. Ex quo patet pro varietate laterum, quæ erunt fictitia, varias etiam oriri æquationes, quæ quamvis, ut dictum est similes sint quoad signa quibusdam ex præcedentibus, maxime inter se different. Cum igitur proposita quæstio ex dictis superioribus formulis solvi non poterit, aut in eas non cadet, inde manifestum fiet quoddam latus fictitium ad eius compositionem assumptum fuisse, quod quidem latus tandem detegetur.
+
+Notandum tamen est in iis constitutionibus in quibus $x$, est differentia laterum, nullas ex iisdem posse oriri anomalas æquationes, data enim summa et differentia, ut diximus in quadratis, semper casus quæstionis est possibilis.
+
+Notandum præterea quæ dicta sunt de lateribus his fictitiis circa æquationes quad-quad\textsuperscript{as} eadem esse intelligenda circa cubicas, si v.g. quadrata in qua sint quædam latera ficta ducatur in lateralem. Et cætera.
+
+Post constitutiones harum æquationum quad-quadraticarum convenientius esset, earum varias determinationes exhibere, sed quia facile haberi possunt vel ex iis quæ diximus, vel ex tractatu peculiari de generibus, ideo, de iis plura non dicemus.
+\note{le traité s'arrête ici ; le reste de la page est blanc.}
+
+\page{26}
+\note{double page ; la page de gauche est blanche. Page de droite : un feuillet de titre qui ne porte que ces deux mots, tracés au milieu de la page en capitales et minuscules droites, d'une main et d'une encre différentes de celles du traité qui précède. Dans le coin supérieur droit, le chiffre « 50 », d'une main plus tardive.}
+
+\section*{Ars Volandi.}
+
+\page{27}
+\note{double page. La page de gauche, dos du feuillet de titre, est blanche : on y lit seulement, à l'envers, le « Ars Volandi » du recto qui traverse le papier. Page de droite, chiffrée « 51 » en haut à droite : la page de titre du livre imprimé de Flayder, copiée à la main, centrée sur la page ; le reste du feuillet est blanc. L'écriture est une cursive fine et régulière, différente de celle du traité des équations.}
+
+De Arte volandi
+
+Cuius ope, quivis homo, sine periculo, facilius, quam ullum volucrem, quocumque lubet, brevissimo tempore ferri potest.
+
+Authore
+
+Friderico Hermanno Flaydero, Poëtâ, professore et Bibliothecario Tubingæ.
+
+Cum eiusdem operum affectorum et maximam partem perfectorum Indice.
+
+Typis Theodorici Werlini, anno 1627. in 12\textsuperscript{o}
+
+\page{28}
+\note{double page. Page de gauche : dos du feuillet portant la page de titre de Flayder ; elle ne porte aucun chiffre. Page de droite chiffrée « 52 » en haut à droite. Écriture latine cursive, fine et très rapide, à plume mince, différente de celle du traité des équations comme de la belle ronde qui a copié la page de titre : c'est la main des notes et extraits sur l'art de voler, qui court sur les vues 28 et 29. Aucun titre ; le texte commence au haut de la page de gauche. Les contractions sont conservées telles qu'écrites : le trait suspensif sur la voyelle vaut $m$ ou $n$ (« collũ », « ventorũ »), le crochet après $q$ vaut « -que » (« earumq̃ »), un $s$ long suivi d'un point vaut « est ».}
+
+veteres \add{ab} aquaticis auibus, ac potissimùm a Cygno (cuius collũ proram, venter carinam, cauda puppim, alæ vela, pedes remos repræsentant) nauigare didicerunt;
+\note{« ab » est ajouté au-dessus de la ligne, entre « veteres » et « aquaticis ».}
+
+mirandus est ille diui Mauritij currus veliuolus: à quodam ingeniosissimo Stephino inuentus: qui omni equorũ, aliarumq̃ rerũ impellentiũ ministerio carens, sola vi ventorũ carbasis expansis, tantâ cũ rapidissimâ celeritate in littore æquabili defertur; vt etiam ipsas in oceano naues, vento secundissimo currentes, longissimo post se relinquat spatio, et paucarũ horarũ interstitio \struck{\ill{}} viginti aut triginta miliaria germanica emetiatur. At si nondũ currus hic inuentus esset, quis crederet narrantj, tantũ pondus, totq̃ hominibus onustũ currũ, tanto momento à solo ventorũ flamine deferrj?
+\note{« Stephino » : le char à voiles du prince Maurice de Nassau, attribué ici à Simon Stevin. Devant « viginti », un mot de deux ou trois lettres biffé, illisible.}
+
+Hadingus rex Danorũ (sicut in Saxone et in Crantzio est legere) Handuanũ, hellespontj regem, in Dunâ vrbe obsidens, diuersi generis aues, loci illius domiciliis assuetas, capi iussit, earumq̃ pennis accensos igne fungos suffigj curauit: quæ proprios repetentes nidos, vrbem incendio compleuerunt: cuius extinguendj gratia oppidanis concurrentibus, vacuas portas defensoribus reliquerunt.
+
+Columbæ in obsidione Leydensj missæ fuerunt quarũ opera \struck{\ill{}} \add{hæc} \struck{\ill{}} \add{vrbs} ab obsidione liberata fuit, et adhuc in eadem \uncertain{vrbi} ob memoriam refricant, adhuc
+\note{deux mots sont biffés d'un trait épais et ne se lisent plus ; au-dessus d'eux la main a écrit « hæc » et « vrbs ». La ligne se termine sur « adhuc », répété à quelques mots d'intervalle ; rien n'indique une correction.}
+
+aquila plus homine pendet vncijs quinque, quam in homine ponderis referrj a philosophis memoratur.
+\note{« pendet » est traversé d'un long trait horizontal : c'est la barre du $t$, prolongée en arrière sur le mot, comme à « refricant » de la ligne précédente, et non une biffure. Le bas de la page de gauche est blanc.}
+
+\note{page de droite, chiffrée « 52 ».}
+
+Scaliger. de columba architæ. exercitationũ Incardanum 326.\textsuperscript{a} inquit vel \uncertain{facillimè} \uncertain{præstiterim}. audeo. materia nempe ex iuncj medulla parabilis, vesiculis aut pelliculis amicta, quibus auri bracteatores vtuntur, \uncertain{neruulis} obuoluta, vbi semicirculus rotam vnam impulerit, motũ præstabit alijs, quibus alæ agitabuntur.
+\note{renvoi à l'\emph{Exercitatio} 326 des \emph{Exercitationes} de Scaliger contre Cardan, sur la colombe d'Archytas. « neruulis » : le mot porte trois jambages initiaux, ce qui donnerait « meruulis » ; la lecture proposée suit le sens.}
+
+extat libellus, cuius titulus Compendiũ miraculorũ hispanico idiomate conscriptus a nobilissimo quondam, Aluaro guttierres de Torres de Tolodo: dedicatus Illustrissimo et Reuerendissimo domino. Don alonso de fonseca, Archiepiscopo hispaniarũ omnium excellentissimo. qui meminit de quodam monacho volanti: dicto \uncertain{Elnero} ex malmabiriâ, qui ætate quidem, in monasterio deinceps abbate, fuerat omnium doctissimus ita, vt etiam cometam, pestem postea terrarũ omen, longè ante eius exortũ prædixerit: in iuuentute verò plane audacissimum hoc facinus aggressus est. Adaptauit manibus pennas, ratusq̃ certissimã volandj artj inuenisse: instar dædalj, cuius fabulam, vitio humanæ gentis, et veram arbitrabatur. Quid fit? E turrj ventũ captat, et volando vltra vnius stadij, hoc est, vltra centũ viginti quinque passuũ interuallũ euagatus, tantũ tamen, partim impetu atq̃ turbine ventorũ, partim audacissimi huius præcipitis motũ, ad terram concussus est, vt tibijs effractis, miseram deinceps vitam vixerit, vnicamq̃ huius turpissimj lapsus causam hanc
+\note{« extat », « ex iuncj », « ex malmabiriâ », « excellentissimo » : la main écrit « ex » par une boucle descendante unique. Le moine volant nommé ici « Elnero ex malmabiriâ » est celui de Malmesbury. La phrase reste en suspens au bas de la page et se poursuit sur la vue suivante.}
+
+\page{29}
+\note{double page, même main que la vue précédente. Page de gauche sans chiffre, écrite jusqu'aux trois quarts ; page de droite chiffrée « 53 » en haut à droite, sept lignes en haut, le reste blanc. La page de gauche commence au milieu de la phrase laissée en suspens au bas de la vue 28.}
+
+\marginal{na author.}
+\note{en marge de gauche, en face des deux premières lignes, deux mots sur deux lignes, de la même encre : « na » puis « author. ». Ni l'un ni l'autre ne se rattache à la phrase ; le sens de « na » n'est pas établi.}
+
+fuisse dixerit: quod scilicet posteriorj corporis partj, caudam fuerit oblitus. similiter Ernestus Burggrauius, medicus huius sæculj plane admirabilis in planosphæriâ suâ philosophico vulcanicâ, libro omnium rarissimo, Norimbergæ quendã fuisse \uncertain{præcurriōnem} scribit præcentorem, qui geminarũ remigio alarũ in aëra elatus, instar alitis euolabat, \struck{\ill{}} deuolabatq̃: quamquam casu denique ex imprudentiâ commisso (affixa enim alis, nescio quæ rotulæ, volatũ concitantes, aut implicabantur, aut non rite applicabant) præceps lapsus, brachia et pedes diffringebat. Cui similis et lutetiæ parisiorũ, memoriâ parentũ, contigisse memoratur.
+\note{le mot donné ici pour « præcurriōnem » se lit lettre à lettre « p\textsuperscript{r}cuuriōnem » ; aucun mot latin ne s'y ajuste avec certitude, et la lecture proposée reste douteuse. « fuerit » et « præstant » plus bas portent la même longue barre de $t$ rejetée en arrière sur le mot, qui n'est pas une biffure. Le mot biffé après « euolabat » est repris au début de la ligne suivante.}
+
+Taceo quod et Joannes Sturmius in lat. linguæ resoluendæ ratione scribit: quondam venetiis è Turrj D. Marcj vnum altissimâ, se alatũ demisisse.
+\note{« altissimâ » se rapporte à « Turrj » mais est écrit après « vnum », dans cet ordre.}
+
+vultur odoratu, vulpes auditu, canes \add{vtroq̃}, gallina gustu, aquila visu, limaces \add{atq̃} ostreæ tactu, lepos cursu, piscis natatu, auis volatu homine præstant
+\note{« vtroq̃ » et « atq̃ » sont ajoutés au-dessus de la ligne.}
+
+Flayderus de animalcuũ quorundã \uncertain{philanthero}. \add{\uncertain{propriâ}} vtilitate scripsit
+\note{à la fin de la ligne, au-dessus, un mot ajouté précédé d'un signe « = » ; il se lit « propr » avec une terminaison incertaine.}
+
+Nos \struck{\ill{}} de omni sceleratissimo bacchanaliorũ sacro, deq̃ calamitatibus, quæ ex illorũ celebratione hinc inde, in Italiâ, galliâ, germaniâ, alijsq̃ locis, cũ \uncertain{antiquis}, tũ \uncertain{nostris} acciderunt temporibus, et probabilissimis variarũ linguarũ, nationumq̃ historijs collectis
+\note{un mot biffé est écrit au-dessus de la ligne juste après « Nos » ; il ne se lit pas. La phrase s'arrête là, sans verbe principal, au bas de la page. « antiquis » et « nostris » sont écrits plutôt « antequis » et « nostras » ; le sens demande les formes données ici.}
+
+\note{page de droite, chiffrée « 53 ». Le mot « Item » est écrit dans la marge, à gauche du bloc.}
+
+\marginal{Jtẽ}
+
+Tractatus de villis Romanorũ: in quo omnia, quæ ad illarũ ortus, culturã, ædificia, prætia, vsus et abusus, delitias, variasq̃ historias pertinent, ex antiquis non solũ ordine recensentur authoribus: sed. et earundẽ rudera et monumenta etiamnũ hodie in Italiâ extantia, ex itinerarijs \uncertain{nouis} describentur
+\note{« nouis » peut se lire « rouis » : la première lettre tient de l'$n$ et de l'$r$. Trois longs tirets ferment les lignes au bord du bloc. Le reste de la page est blanc.}
+
+\page{32}
+\note{double page. Page de gauche : la légende, en français, des lettres de la figure qui lui fait face ; elle n'a pas de chiffre, et son recto (vue 31, page de droite) est blanc et chiffré « 55 ». Page de droite chiffrée « 56 » : la figure seule, sans une ligne de texte. L'écriture est une troisième main, française, plus ronde, plus grande et plus posée que celle des notes latines, avec de grandes capitales détachées pour les lettres de renvoi.}
+
+A\quad aisle maistresse à laquelle de l'autre costé du dragon une autre est opposée, elles seruent toutes deux pour le pousser en auant et aussy pour le soustenir
+
+B, B, B, B\quad quatre aisles qui se meuuent du haut en bas, et ne font autre chose que soustenir
+
+C, C,\quad deux petites aisles qui ne font que pousser en auant auec les deux maistresses
+
+D,\quad la queue laquelle fait tourner la machine du costé qu'on veut en haut et bas
+
+E,\quad Couuerture mobile laquelle quand on veut s'eslargit circulairement sur la machine et la soustient assez pour l'empescher de precipiter.
+
+Un seul mouuement regle toutes les choses encores qu'elles se meuuent en diuers temps
+
+Toutes les aisles en se leuant se ployent en elles mesmes et quand elles s'abbaissent elles s'eslargissent, et le tout comme Je viens de dire est reglé par un seul mouuement
+\note{page de droite, chiffrée « 56 ». La figure n'est pas reproduite ici. Elle est à la plume, au trait, sans lavis, et occupe le haut et le milieu de la page : la machine est dessinée sous la forme d'un dragon vu de côté, gueule ouverte à droite, corps écaillé, une patte griffue sous le cou et une autre près de la queue. La queue s'achève à gauche par un large éventail palmé, marqué D. Sur le dos, une calotte bombée et, de part et d'autre, quatre longues ailes étroites dressées deux par deux, marquées chacune B ; entre elles, deux cylindres verticaux annelés comme des vis ou des ressorts, et la lettre E entre les deux. Sous le corps, une grande aile marquée A. Près de la tête, deux petites ailes palmées marquées C et C. Le reste de la page est blanc ; la figure traverse le papier et se lit à l'envers sur la vue 33, page de gauche.}
+
+\page{33}
+\note{double page. Page de gauche blanche : c'est le dos du feuillet de la figure, qui traverse le papier et s'y lit à l'envers. Page de droite chiffrée « 57 » en haut à droite, le chiffre entouré d'un trait ovale. Ici commence un quatrième texte et une quatrième main : un traité en italien, d'une cursive italienne rapide et régulière, écrite pleine page. Le titre est écrit sur deux lignes au haut de la page, sans séparation du corps.}
+
+\section*{Il volare non è impossibile come fin hora vniuersalmente è stato creduto.}
+
+L'ingegno humano veramente è arriuato con il lungo studio e frequentj osseruationj tant'oltre, che ha conosciuto mirabilissimi arcanj, e alcunj hanno ardito affermare che a tutte le cose alle qualj l'huomo s'é aplicato le habbi conseguite, eccettuatone però alcune poche come farebbe il volare, il moto perpetuo, la quadratura del circulo, e le longitudinj, con alcune altre, che per breuita tralascio.
+
+Ma le difficoltà ritrouate in queste sono state tante, che dallj speculatiuj sono state abandonate, e il volgo quando vuole affermare essere impossibile farsj qualche cosa dice, è tanto impossibile farsj questa cosa quanto è impossibile il volare, perche tiene questa cosa piu difficile dj tutte le altre.
+
+Io però sino dallj miej primj annj applicaj l'animo a questa inuentione parendomj strano che l'ingegno humano non fusse habile col suo sapere d'arriuare a quelle cose che naturalj sono state concesse ad altrj animalj a noj jnferiorj considerando ancora che non ci é stato concesso dalla natura l'habitare nelle acque, e pure con il studio impariamo a nuotare, e ciò non solo superficialmente ma ancora buono spatio stiamo sotto l'acqua il quale elemento per il respiro é a noj contrario.
+
+Alla fine doppo hauer sopra questa mirabil cosa molto pensato mj risolsj dj prouarmj nel modo che gia fece l'Ill.\textsuperscript{mo} Sig.\textsuperscript{r} Gio. \uncertain{Fran} sagredo nobile venetto mathematico nobilissimo consagrato all immortalyta prima dalle sue opere e poj da quelle del Sig.\textsuperscript{r} Galileo Galilej nobile fiorentino e altro Archimede dj nostrj tempj.
+\note{le nom est écrit « Gio. Ra\~n » avec un trait de suspension ; l'initiale peut se lire R ou F. Il s'agit du patricien vénitien Giovanni Francesco Sagredo, l'ami de Galilée. « Ill.\textsuperscript{mo} » et « Sig.\textsuperscript{r} » sont écrits en abrégé, lettres en exposant.}
+
+Mj fu adunque detto che questo Gentilhuomo haueua affaticato molto per ritrouar questa jnuentione sopra laquale haueua trauagliato molto tempo, e in fine hauendo preso un falcone e leuatolj le piume, haueua poj osseruato diligentemente la proportione che queste teneuano al corpo cosi in peso come in misura e dal corpo suo da questa proportione lj haueua fatto le alj lequalj li attacaua alle braccia con tanto artificio che gettandosj giu dj qualche altezza arriuaua in terra senza farsj niun male e ancora
+\note{la phrase se poursuit sur la vue suivante.}
+
+\page{34}
+\note{double page, les deux pages pleines, même main italienne. La page de gauche n'a pas de chiffre ; la page de droite porte « 58 » en haut à droite, entouré d'un trait ovale. Au bas de la page de gauche, dans l'angle extérieur, la réclame « l'oro tiene », qui est le début de la page de droite.}
+
+per molte braccia sj discostaua dal piede dell'altizza, ma giu non poteua tramontare per niuna via.
+
+Jo ancora sopra questa inuentione feci molti tentatiuj qualj sarebbono dj lungo tedio se li volessj ad vno ad vno raccontare e sarebbero ancora dj niun vtile al lettore, bastj solo per conclusione che tutta la fatica fu indarno fatta, e dipoj non tentaj altra cosa sino ad hora che sono gia decorsj x annj che da principij assaj communj mediante pero l'aiuto diuino, ho ritrouato quello che qui sotto dimostrerò.
+
+Aristotile cj lascio scritto che tuttj li elementj hanno grauità dellj qualj dj doj non occorre dirne altro cioé della terra, é dell'acqua, la grauità dellj qualj sentibilmente é nota e del quarto, se pure ci è, cio é del fuoco non cj occorre dirne altro per non hauerne hora bisogno, ci resta adunque il terzo cio é l'Aire, del quale sj deue jnuestigare che proportione tiene il peso suo all'acqua, che secondo ad Aristot. sarebbe come vno a 10, ma secondo al computo del Sig.\textsuperscript{r} Galilej sarebbe ed é piu vero, come vno a 400.
+
+hora fermato questo principio dobbiamo ritornar vn passo in dietro e ricorrere all'aiuto del diuino Archimede, il quale cj lasciò quella mirabile propositione nel suo libro delle cose che stano sopra l'acqua:
+
+\begin{quote}
+Le cose piu grauj poste nell'humido discendono tanto che vanno al fundo e sj fanno tanto piu leggieri nell'humido, quanto é il peso dell'humido che habbia tanta grandizza quanta é la grandezza dj dette cose ouero corpi piu grauj poste nell'acqua
+\end{quote}
+\note{les quatre lignes de la citation d'Archimède sont précédées chacune, dans la marge, d'un même signe bouclé, comme un grand D ou une grande virgule : c'est la marque de citation de cette main, répétée ligne à ligne.}
+
+Questa propositione adunque sara il fundamento dj tutto il mio discorso, il quale cosi comincio.
+
+L'oro, l'argiento viuo, il piombo, l'argento, il rame e altrj metallj o pietre postj nell'acqua vanno al fundo et dj questj \struck{alcunj} alcunj con maggiore, e alcunj con minore velocità e ciò secondo la grauita loro e per ciò arriuarà prima nel fundo in distanze equalj l'oro, dj poj l'argiento viuo, poj il piombo, dj poj l'argento, e l'ultimo dj questj cinque il rame, essendo che
+
+\note{page de droite, chiffrée « 58 ».}
+
+l'oro tiene proportione all'acqua come 20 all'vnita, l'argento viuo come $13\frac{1}{2}$ all'vnita, il piombo come 11 all'vnita, l'argento come 10 all'vnita e il Rame come 9 all'vnita.
+
+Il simile faranno questj stessj metallj nell'aria, benche con velocita maggiore perche l'aria ha minor grauita dell'aqua e perciò li mobilj discendono piu facilmente in quella che in questa perche il mezo é piu leggiero e con maggior facilità lo respingono alle partj.
+
+hora intese tutte queste cose dobbiamo considerare che se sj ritrouasse qualche materia che hauesse proportione all'acqua come 1 a 400 laquale sarebbe jmmergibile questa sarebbe in grauità eguale all'aria, ciò é non ascenderebbe nell'aria ne discenderebbe se non fosse spinta violentemente o insu ó ingiu.
+
+Ma poj sj sj ritrouasse vn'altra materia che hauesse proportione all'acqua come v.g. 1 a 500 questa tale da se jstessa senza violenza alcuna ascenderebbe nell'aria fino alla sfera del foco, doue sj fermarebbe, sj questo fosse piu leggiero à proportione dell'acqua che 1 a 500.
+
+hora adunque se qui appresso dj noj, sj ritrouasse qualche materia che fosse piu leggiera dell'aria, potremmo facilissimamente formare vn istrumento e con questo volare come fanno lj vccellj allj qualj à moltj dalla natura non lj é stato dato midolle nell'ossa per essere piu leggierj cosa che noj habiamo e per ciò cj rende piu grauj.
+
+Con tutto ciò non dobbiamo sgomentarcj, considerando questj auantaggj che hanno lj vccellj sopra dj noj perche ancora che questj per tante cose siino statj fauoritj dalla natura, con tutto ciò, da quella non lj é però stato concesso materia tale, che non solo sia piu leggiera dell'aria ne sia eguale ma ne anco dj gran lunga propinqua à quella, e benche le penne siino leggierissime con tutto ciò l'isperienza ci mostra che lasciandole cadere d'alto vanno all'ingiu ancora quelle piume piu minute che sono piu leggierj dell'altre e se non fosse il dibbatimento tanto violento con l'alj non solo non potrebbero sormontare
+\note{la phrase se poursuit sur la vue suivante. « v.g. » (verbi gratia) est écrit ainsi sur le feuillet.}
+
+\page{35}
+\note{double page, les deux pages pleines. Page de gauche sans chiffre, avec trois mots de repère dans la marge extérieure, de la même encre : « ferma », « Incontrata », « Sfugita » ; page de droite chiffrée « 59 » en haut à droite, le chiffre entouré d'un trait ovale. Au bas de la page de gauche, la réclame « qualche ».}
+
+ma ne meno gettatj da vn'altizza con le alj aperte ma ligate in modo che non le potessero dibattere non solo non sj manterrebbero in aria ma cadderebbero in terra con notabile percossa \struck{perche} perche il loro sostentamento non peruiene d'altro che dalla percossa con le alj nell'aria.
+
+Ma auantj che piu ci inoltriamo, bisogna che breuemente consideriamo la forza della percossa laquale (al mio parere) é vna delle maggior cose che siano in tutta la mecanica, perche vediamo superare la forza dj 1000 e 2000 libre dj resistenza con vn martello che pesj solo x o xii libre, e tanto piu questa cosa pare marauigliosa quanto che per anco niuno fin hora che io sappj, vi habbj scritto sopra. ma perche non é tempo hora dj farui sopra lunga digressione dirò solo che per il piu la percossa cj fa in tre modj, il primo dellj qualj sj chiama fermo, il secondo jncontrato, il 3\textsuperscript{o} sfuggito.
+
+\marginal{ferma}
+La percossa ferma sj chiama quando sj batte col martello sopra vn solido che stià jmmobile sopra vn piano come sopra vn jncudine o sopra vna pietra o altra cosa simile.
+
+\marginal{Incontrata}
+Jncontrata sj chiama quando sj batte col martello sopra vn solido mobile, che jncontra la percossa come sarebbe vn martello contro vn altro, o vna spada contro vn'altra, e questa é la piu violenta dj tutte
+
+\marginal{Sfugita}
+Sfuggita sj chiama quando sj batte col martello, o altra cosa sopra vn solido mobile che fugge la percossa, e questa é la piu debole dj tutte, il che tutto a dio piacendo mostrerò, e mostrerò ancora dj quantj benefitij saria questa cognitione, ma come ho detto la passero breuemente, perche non ci occorre sj non vna cognitione superficiale per mostrar solamente da che cosa ho cauato questa mia jnuentione.
+
+Oltre le percosse fatte sopra lj corpi solidj dobbiamo ancora considerare quelle fatte sopra lj corpi rarj come é l'acqua e l'aria lequalj medisimamente sj fanno nelle tre maniere sudette.
+
+La forza della percossa sopra l'acqua da molte cose sj puo considerare ma doj, a mio parere, sono le principalj, la prima delle qualj é il vedere che battendo dj \uncertain{piatto} sopra l'acqua con vna fortissima spada sj vede quella saltare il piu delle volte in pezzj che sara per auantj stata firma ad altre proue e cosj sj vide ancora caddere da
+\note{« piatto » est écrit avec une boucle qui se lit plutôt l : « pialto ». Les trois mots de la marge répètent les trois espèces de percussion nommées dans le texte, en les accordant au féminin.}
+
+\note{page de droite, chiffrée « 59 ».}
+
+qualche sommita' alcun legno e spezzarsj nell'acqua, che sarebbe stato bastante oue fu rotto a soleuar gran peso.
+
+La seconda e piu marauigliosa é il vedere che stando alla ripa di qualche gran fiume o qualche seno di mare e sparando inchinatamente nell'acqua vn Archibugio verso l'altra parte sj vede la palla non tuffarsj nell'acqua, ma percotendo in quella jncidentemente sj porta all'altra ripa cosj saltellando, e altre volte andera doj o tre volte piu lontana che non é il suo naturale nell'aria.
+
+La percossa nell'aria non é meno marauigliosa che quella dell'acqua vedendosj, o dalla violenza dell'aria o da quella della percossa spezzarsj molte cose fortissime e perche questa cosa \struck{\ill{}} acrea é quella che piu ci occorre, e di doue\struck{ra} ancora che piu chiaramente la spieghj e per ciò mj sforzerò dj mostrarla piu piana che per me sj potra per consistere in questa tutta la forza della mia inuentione e ancora in questa acrea prendero quellj tre terminj tenutj nella percossa sopra lj corpi solidj laquale fu da me diuisa in ferma, jncontrata, e sfugita.
+
+Dico adunque che la percossa ferma nell'aria é quella che sj fa in tempo tranquillo in qualche solido violentemente mosso, come sarebbe vn legno o vna canna e ho veduto molte volte prendere in mano vna tauoletta o altra cosa sottile e quella girata con furia nell'aria spezzarsj nel mezo dell'corso che doueua federe ne da altro questo é proceduto sj non dal moto troppo violente, laquale senza questo era bastante soleuare vn peso sette o otto volte maggiore che il proprio.
+
+Sj vede ancora il medesimo in vna canna laquale posta per esempio in vn muro orisontalmente, sj vede la sua cima jnclinare al centro, e ciò per la grauita del proprio peso, ma se poj prenderemo quella medesima canna e la terremo in mano perpendicolarmente cio é con la punta all'insù ouero ingiu e dipoj principieremo vn moto violento o dalla destra ouero dalla sinistra parte non piu la sua cima jnclinerà al centro come faceua quando era posta nel muro, ma bene jnclinerà al principio del moto cio é al punto del suo Zenit ouero nadir, e cosj sj sara mossa con gran violenza, ancora sj spezzara e questo non prouiene d'altro che dal moto alquale l'aria resiste da che sj vede che il moto o sia la percossa supera la grauita della canna dj lunga mano perche essendo posta nel muro resisteua al proprio peso; cosa che non ha potuto fare quando fu mossa violentemente.
+\note{« dell'corso » et « federe » sont écrits ainsi. Un mot biffé précède « acrea », illisible.}
+
+\page{36}
+\note{double page, les deux pages pleines. Page de gauche sans chiffre, deux mots de repère dans la marge extérieure, « Incontrata » et « Sfuggita », et, au bas, une figure à la plume autour de laquelle le texte se resserre à droite ; réclame « quadruplic\ldots » dans l'angle inférieur extérieur. Page de droite chiffrée « 60 », le chiffre entouré d'un trait.}
+
+\marginal{Incontrata}
+La percossa incontrata nell'aria é quella che sj percotte contra la violenza del vento, e questa é tanto piu valida quanto che la sua violenza e quella del momento sono maggiorj.
+
+\marginal{Sfuggita}
+La percossa sfugita é quella che sj fa seguendo il vento, laquale ancora é maggiore o minore secondo la proportione che tiene il moto del vento alla proportione del moto della percossa e se il moto del vento sara eguale al moto della percossa, questa sera di niun valore e sara à guisa dj doj caualljerj che vno carichj l'altro con la lancia, che se la velocita dell'vno sara eguale a quella dell'altro, il percuttore non potra maj ferire quello il fuggitiuo benche hauesse la punta della lancia adosso il corpo dell'jnimico
+
+Potrej dire molte cose sopra queste percosse come hò detto hora me lo passero breuemente non occorrendo cj la \uncertain{fatica} geometrica dj \uncertain{demonstrarle} in questo loco, per ciò passero alla consideratione del moto e all'antipatia che questo tiene con la forza il che se non fosse sj potrebbe far molte cose che non sj possono fare, il che piu chiaramente dalla qui sotto posta figura sj puo vedere e comprendere.
+
+È impossibile come mecanicamente sj proua in vn jstesso tempo auanzar tempo e forza, perche quanta maggior forza sj acquista all'incontra altretanto tempo sj perde e per il contrario quanto maggior tempo sj acquista tanta forza sj perde. il che chiaramente qui sotto sj vedè perche se consideriamo la lieua AB sostenuta in C diremo che vna libra dj peso o dj forza posta in B solleuerà ouero equilibrera quatro libre poste in A. per esser la distanza CB. quatro volte maggiore che la distanza CA ma alla forza posta in B cj andera quatro volte piu tempo per soleuare il peso ouero forza posta in A il che chiaramente sj mostra in questo modo. voglio stando al punto B spingere il peso A in D, chiara cosa é che mj abbassi sino in E, e perche la distanza CB é quadrupla alla CA diremo ancora che l'arco BE sarà quadruplo all'arco AD, da che sj vede, che quando quadruplicatamente o in altra proportione moltiplichiamo la forza, cosj ancora all'incontro
+\note{la figure, à la plume et au trait, occupe le bas de la page de gauche ; elle n'est pas reproduite ici. Un levier horizontal, tracé en double trait, porte à son extrémité gauche la lettre A et à son extrémité droite la lettre B ; le point d'appui, au quart de la longueur à partir de la gauche, est marqué C et porte au-dessous un poids piriforme suspendu. Sous A pend un petit cercle contenant le chiffre 4, sous B un petit cercle contenant le chiffre 1. Une droite oblique descend de D, placé en haut à gauche au-dessus de A, traverse le levier en C et va jusqu'à E, placé en bas à droite au-dessous de B. Deux arcs pointillés joignent A à D et B à E.}
+
+\note{page de droite, chiffrée « 60 ».}
+
+quadruplicatamente o in altra proportione perdiamo il tempo, cosj il contrario sarà, se il momento sara in A doue cj andera quattro volte piu forza per mouere l'estremità B ma quadruplicatamente ancora auanzaremo in tempo, perche in mentre che l'A, ascendera in D. il B descendera in E. che é distanza quattro volte maggiore che la AD.
+
+Questa é la base dj tutta la mecanica allaquale considerando, mj pare impossibile come sj legge in Plutarco nella vita dj Marcello doue dice che Archimede faceua machine talj, con lequalj callandole dalle mura, con quelle afferraua le galere Romane che erano nel porto di Siracusa e con gran prestezza le alzaua in alto, e dipoj le lasciaua piombar in acqua e cosj li sommergeuano, per il che li Romanj lo chiamauano Briareo geometra, questo tanto dice Plutarcho nel luogo sopra accennato; il che se vero, Archimede haueua ritrouato modo di moltiplicare la forza e il tempo vnitamente cosa che non solo hora non sj sa ma ancora viene tenuta jmpossibile; ma non gia mj pare jmpossibile la proua fatta dal medesimo Archimede dj tirar da se solo in terra quella grossissima caracca, cosa che non haueuano potuto far quantita d'huominj, sapendo benissimo che la forza sj può moltiplicare in jnfinito.
+
+E questa sara la causa che l'istromento da me jnuentato (a mio parere) non sj potra far maggiore che possj portare o tenir dentro piu dj doj huominj per che non solo per mouere le alj vuole gran forza ma ancora vi vuole gran prestezza, le qualj doj cose come ho mostrato fra dj loro hanno grandissima antipatia, e ben vero che nella fabrica del mio jstrumento, come sj puo veder, hò per modo di dire ingannato la natura, essendomj seruito della moltiplicita de' motj vno contrario all'altro, liqualj non poco aiutano nel solleuarj, cosa che non farebbero se fossero semplicj.
+
+Il dissegno della machina jnteriore, non mj par bene dj douerlo mostrare, il che ancora sarebbe dj molta fatica a darlo ad jntendere, bastando per hora, che mostrj la parte esteriore, laquale come sj vede é fatta in forma d'vn Draco nel quale vi puo stare sino a doj huominj, vno de' qualj basta che lauorj e l'altro può riposar in modo come fosse in vn \uncertain{rastello} e può caminare
+\note{la phrase se poursuit sur la vue suivante. « la parte esteriore, laquale come sj vede é fatta in forma d'vn Draco » renvoie à la figure du dragon de la vue 32 et à celle de la vue 37.}
+
+\page{37}
+\note{double page. Page de gauche : les cinq dernières lignes du traité italien, en haut ; le reste est blanc, traversé par l'écriture du verso et marqué, au tiers de la hauteur, d'un petit cachet rond de bibliothèque dont la légende circulaire ne se lit pas. Page de droite chiffrée « 61 » en haut à droite : la seconde figure, seule, sans texte.}
+
+ancora dj notte con l'aiuto della bussola hauendo seco ancora da mangiare e da bere per qualche giorno e quello che piu jmporta é fatto in modo tale che caso che sj rompesse alcuna delle alj, non per questo però può precipitare, ma cadere giu pianamente in modo che quellj che sono dentro patirebbero pochissima lesione :/
+\note{le trait « :/ » ferme le traité ; la main n'écrit ni souscription ni date. Le cachet rond de la page ne porte aucune légende lisible : \ill{}}
+
+\note{page de droite, chiffrée « 61 ». La figure n'est pas reproduite ici. Elle est à la plume, au trait pur, sans lettres de renvoi, et occupe presque toute la page ; le dessin déborde sur la gauche et se perd dans le fond du cahier. C'est la même machine que celle de la vue 32, vue de face et de plus près : en haut, la tête du dragon, cornue, la gueule ouverte, sur un long cou ; au milieu, le corps en forme de tambour ou de lanterne, cerclé de bandes cousues, fermé d'un montant vertical ; à droite, une patte griffue levée et une grande aile membraneuse déployée, une autre aile à gauche ; au-dessous, un support à bords festonnés. Le dessin traverse le papier et se lit à l'envers sur la vue 38, page de gauche.}
+
+\end{document}
