@@ -287,6 +287,64 @@ Printed matter is bound among the drafts: Legendre's memoir on
 leaf on mounts and carrying the same ink numbering as her drafts (Français 9115,
 v. 115–134).
 
+### Français 9115, v. 301–440 (batches 16–22)
+
+The critique of Euler ends in draft at v. 308 (§ 24); a fair redaction of it follows, v. 320–389, pages (1)–(35) struck, §§ I–25; then figures and calculation leaves (v. 391–396); then, from v. 398, the draft of her prize memoir on vibrating elastic surfaces, pages (1)–(34) at v. 398–440 and running on. The top-right ink series runs 147 (v. 301) to 215 (v. 439) without a gap, one per physical leaf, slips included: still penned, still no \folio{}. No leaf here is number theory; Manuscript C is further on.
+
+- **The memoir on Euler's § 47 ends at v. 308** (Français 9115). Her pagination runs 39–42 on v. 301–308 and paragraph 24 is the last (v. 301); the text stops on « extremités » with the foot of the leaf blank. The pagination then carries on, 43–45 (v. 310–314), over a *different* subject — square plates after Chladni (« traité d'Acoustique … §§ 110 », figs 63–82) and Biot (« tome 4 des memoires de l'institut ») — in a much rougher draft. A continuous page number does not prove a continuous text.
+- **A leaf photographed twice without a béquet:** v. 302 = v. 301 (same text, same ink 147). Compare the ink number before treating a view as a new leaf.
+- **Two drafts of one opening on consecutive leaves:** v. 314 (paginated 45) and v. 316 (unpaginated); nothing on the leaves orders them.
+- **Her 5 has a descending tail and can pass for 9** (« § 15 », « § 35 », v. 301); **her 4 is written like « b »** (« § 49 » v. 320, « § 26 » v. 312). Compare with a figure whose value is known in the same line.
+- **She repeats the last words of a page at the head of the next** (« dans l'hypothese », v. 304/306): the sentence runs through them once.
+- **Plurals cancelled by a small « x » on the final letter** (v. 314): give the singular and say so.
+- **Hatching** — rows of short oblique strokes through lines and a margin note together — cancels a whole passage (v. 314), as the large cross did at v. 281 and v. 289.
+- **Left-margin text in the plate drafts usually completes the line it faces** (v. 312), and a « + » after a word calls a margin note (v. 314, 316).
+- Ink series 147–156 on v. 301–320, one per written leaf, continuing 146 at v. 299; penned, no \folio{}.
+- **A second, fair redaction of the critique of Euler follows the draft** (Français 9115, v. 320 and on). View 320 opens it under « Remarques sur le mémoire d'Euler: Investigatio motuum quibus laminæ et virgæ elasticæ contremiscunt. in act acad Petrop ann 1779 P 1 p. 103 et seq », in a regular, calligraphic hand almost without correction. Sentences of the draft recur nearly word for word (« J'ai voulu entrer dans tous ces détails, àfin d'être autorisée a conclure qu'Euler a été induit en erreur », v. 332; cf. v. 240). Pages numbered afresh, in parentheses, top centre, each struck through: (1) at v. 320 … (21) at v. 361. Whether the fair hand is hers is not settled.
+- **Euler's cases by Roman numeral, and a misleading « IV »** (v. 322, 324, 328): her « cas IV » has the I as a short stroke joined to the V and reads « V » at band scale — « cas IV § 35 » settles it (Euler's § 35 is case IV); at v. 328 a V with a blotted first stroke looks like a 4.
+- A boxed marginal « N.ta », called by a cross in the text (v. 334), on square plates: « (V. traité d'acoustique de Chladni) ».
+- **A fair copy of the draft of v. 218–299 follows it in the volume.** From at least v. 340 the lamina-and-stylet argument is written out again in the regular upright hand of the Latin Euler copy (α as « u », γ as « v »), almost without corrections, keeping the draft's paragraph numbers: §§ 9–16 at v. 342–358 match the draft's at v. 262–276. A reading uncertain in one version can be compared with the other — but each is transcribed as it stands (the fair copy reads « §. 5 » where the draft was read « N.o 9 »; « P. 94 § 71 » where the draft was read « pag 4 §§ 71 »).
+- **Its numbers.** Page numbers centred, in parentheses, struck through — (11) at v. 340, (12)–(20) at v. 342–358, (21) at v. 361 — with the ink series 166–176 without a gap. Paragraphs 9, 10, 11, 12, 14, 15, 16: no 13 is written.
+- **Leaves mounted overlapping on guards**, recto only, each lower on its sheet than the one before, so a blank back shows its leaf reversed with a strip of the previous leaf's back above it; pairs of blank views then look like repeats (341/343…). They are not: compare the lower part. A true repeat: v. 359 = v. 358 (page (20), ink 175).
+- **The fair copy's pagination is its own**: at the head of each leaf, in parentheses and struck through — (1) at v. 320 … (21)–(30) at v. 361–379, (31) at v. 381 — a different series from the draft's underlined 1–38. Do not merge them. Paragraph numbers 17–24 at v. 361–379 match the draft's from § 18 on.
+- **The fair copy is not a verbatim copy of the draft.** At § 23 (v. 377) the surviving coefficient for supported ends is γ (her looped « v », underlined), with γ = −γ′ (v. 379), where the draft (v. 299) was read δ and δ = −δ′; Euler's x = ½ values are cited to his § 48, not § 50. Compare the two before correcting either.
+- **The top-right ink series stays on the recto even when the back is written**: v. 399, the written back of the leaf inked 195 (page « (2) » of the prize memoir), carries no number; 196 is on the next recto, v. 400. The series also numbers small slips and figure leaves (191–194, v. 391–396) with no gap.
+- **The prize-memoir draft opens at v. 398**: « Mémoire sur la question proposée par la premiere classe de l'institut », the question quoted, a Latin epigraph from Bacon, Novum Organum I XCII, then pages (1), (2), (3)… with « § 1. Recherche de l'équation différentielle dela surface élastique vibrante ». Its page (1) has struck lines alternating with kept lines written between them: read the kept line and the interline together, not line by line.
+- Whether the struck page numbers (31)–(35) at v. 381–389 belong with the fair copy's (1)–(30) or with the draft's underlined 30–38 is not settled until the whole series is read.
+- **Both sides written from v. 401.** The leaves of the prize memoir (v. 398–440) are written recto and verso: the ink series stands on the recto, her pagination runs across both sides — the opposite of the recto-only run at v. 218–380.
+- **The prize memoir, pages (1)–(34) and on** (v. 398–440): § 1, the equation of motion (A), bτ²{d⁴z/dx⁴ + 2d⁴z/dx²dy² + d⁴z/dy⁴} + d²z/dt² = 0; § 2, integrals (C)–(I); § 3, « propriétés analytiques des differens points des corps sonores »; N.o 9, the plates' boundary equations; § 4, « Comparaison dela théorie à l'experience; dans le cas des plaques quarrées ». She cites the Mécanique analytique, Lagrange in the Turin memoirs, Biot (Institut t. 4), Euler (Acta Petrop. 1779) and « le programme publié par la classe ».
+- **A draft sheet and a slip bound inside the fair copy** (v. 410–411, written across the sheet; v. 416, a slip on a plate loaded with wax). **Her page numbers repeat**: (9) and (10) at v. 406–407 and again at v. 408–409; (11)–(12) at v. 412–413 copy 408–409 a second time. Read the head of each page, not the sequence.
+- **Recto and verso both written, v. 421–440.** In the memoir on the limits of laminae and plates, paginated (18)–(34), each leaf is written on both sides: the top-right ink series stands on the side her pagination makes odd, never on the even-paginated back. A missing ink number on a written page is not a gap.
+- **The ink series counts leaves, slips included** (v. 428): a small slip of calculations mounted on a grey sheet between (24) and (25) carries its own number, 210, between 209 and 211 — one number per physical leaf, as a foliation would. Still penned: no \folio{}.
+- **Her pagination struck on alternate pages** (v. 429–439): (25), (27), (29), (31), (33) struck obliquely, the even pages not. The run is continuous; the strike does not cancel the page.
+- **Text-mode \underline fails the TEI check**: use \emph{} for her underlined words in running text and say so in the header; keep \underline only inside maths (batches 20, 22).
+
+| The stroke looks like | A pass settled on | Where |
+|---|---|---|
+| « cas V » or « cas v » before « § 35 » | « cas IV », the I a short stroke joined to the V | Français 9115, v. 322, 324 |
+| a 4 with a thick first stroke after « au cas » | V, Euler's case V, as written clearly two leaves on | Français 9115, v. 328, 330 |
+| a small hooked « A » or « r » in exponents | λ, the fraction of the length at the stylet | Français 9115, v. 342–358 |
+| « naud », « nauds » | « nœud(s) », the œ ligature opened | Français 9115, v. 350–356 |
+| « § 29 », « § 99 », « § 49 » in the list of Euler's cases | § 23, § 39, § 43: the 3 with a short tail, the 9 with a long one | Français 9115, v. 358 |
+| « doivent » before « egales » | « soient », with the long s | Français 9115, v. 350 |
+| a « 3 » with a long tail in the exponent 3⁄2, read as 9 | 3: 3⁄2 ω, as the Euler copy's 3 | Français 9115, v. 377 |
+| a heavy teardrop at the start of a fraction bar | an ink blot on the bar, not a minus | Français 9115, v. 377 |
+| the § sign like a looped capital I or a dotted D before a number | § (« §. 8 », « § 19 ») | Français 9115, v. 361, 371, 373 |
+| a statement in a larger, rounder, upright hand mid-leaf | hers, set out as the proposition to be proved (§ 21) | Français 9115, v. 371 |
+| a « 4 » like a small h | 4 — « § 14 », « § 24 », « tome 4 » on facing leaves | Français 9115, v. 385, 389 |
+| « transvertales » | her « transversales », the s formed like a t | Français 9115, v. 385, 389 |
+| an underlined « 2 » in « la supposition de 2 très petit » | z, underlined | Français 9115, v. 398 |
+| a looped letter with an ascender, on the line, for the « petite ligne d'intersection » | β, as her Euler β; ρ would descend | Français 9115, v. 399 |
+| « d z » with a 2 set above the z | d²z | Français 9115, v. 400 |
+| a grey smudge of two oblique strokes at a corner of a mounting sheet | pencil strokes on the mount, not a number | Français 9115, v. 394, 395, 397 |
+| « Lobr » | « Euler »: her L-shaped E and a very cursive ending; the Acta Petrop. 1779 reference that follows confirms it | Français 9115, v. 419, 420 |
+| a tall stroke with a rightward cap, like Γ or τ, for the thickness | τ in E = bτ³{1/(r)+1/(r′)}; doubtful where it first appears | Français 9115, v. 402–413 |
+| one tall-legged π in the series (E)–(I) | serves both for the half-circumference and for a parameter; set π and Π (Π′, Π″) — the transcriber's distinction, not the page's | Français 9115, v. 407–413 |
+| an isolated s or a plural ending barred with a small cross | a plural deleted letter by letter | Français 9115, v. 404, 405, 314 |
+| a looped cursive capital before a brace, beside the A of the plate's side | a coefficient distinct from A, set $\mathcal{A}$ (paired with B) | Français 9115, v. 439–440 |
+| « S » heading a boundary term | her summation sign along the contour, kept as S | Français 9115, v. 433–437 |
+| « = … » inside a formula | a factor she leaves blank, as in the Euler copy's « y = . . . . » | Français 9115, v. 422, 436–440 |
+
 ---
 
 ## Other mathematicians
