@@ -1,0 +1,1259 @@
+% NAF 5176 — lecture modernisée du volume entier.
+%
+% Pass: Opus 5.5 (claude-opus-5-5), 2026-09-22 — first pass, unchecked against
+% the views by a human, and an interpretation rather than a record. Where this
+% file and the transcriptions differ in substance, the transcriptions
+% (batch-01.fr.tex, batch-02.fr.tex, batch-03.fr.tex) are the record.
+%
+% Sources read: the three batch transcriptions of this volume, in full, twice —
+% once for the mathematics, once for the apparatus — and nothing else to fill a
+% gap. No image was consulted. Where a transcription has a gap, this reading
+% says so and does not reconstruct. Together the three batches cover views
+% 1–58, the whole volume. Batch 1 is a weak pass (several hundred \ill{}): on
+% views 12 R–15 in particular whole phrases are missing, and the reading states
+% only what the transcribed words and numbers carry.
+%
+% What the volume turned out to be. An unsorted bound dossier, in four hands at
+% least, plus library leaves:
+%
+%   v. 1–8     boards, flyleaves, a pasted note of 21 May 1962 (v. 6), the
+%              library's certificate of 1888 (v. 7), the « Feuillet A » (v. 8).
+%   v. 9–12 L  hand A (very fast, heavily corrected): a treatise on composite
+%              motions — preface, props. I–II, a lemma on uniformly decreasing
+%              speed, prop. III on the length of the Archimedean spiral.
+%   v. 12 R–13 hand B (small, dense): a table of chapters « Des triangles
+%              Rectilignes et Spheriques », then problems 1–8 on ellipses whose
+%              axes, focal distance and other lines are rational.
+%   v. 14–18   hand A: earthshine; why reflection is at equal angles; the
+%              conic sections explained on two pasted printed figures; how to
+%              draw the three conics by foci and compass.
+%   v. 20–29   hand A: five propositions on refraction (the sine law, the
+%              hyperbola and the ellipse as refracting curves, lenses); v. 20
+%              is only described by batch 1, its leaf being read whole at v. 21;
+%              v. 27 is a devotional strip in the same hand.
+%   v. 31–32   hand A, smaller: the tangent to an ellipse by « adæqualité »,
+%              then a note dated by its content (« derniere let. de Juillet
+%              1638 ») with a curve of degree ten and four Latin questions.
+%   v. 33–35   hand A: a letter on the speed of light, the glorified body, and
+%              the size of the earth from the dip of the horizon.
+%   v. 36, 38  hand A: two propositions of dioptrics, the second numbered XXII.
+%   v. 39      a modern separator: « Pascal / autographe / et copies ».
+%   v. 40–42   hand C (round, regular): the division of stakes (« partis »)
+%              for two and three players, a general rule of expectation, dice.
+%   v. 47–51   hand D (round, compact): compound interest, « Des Combinaisons
+%              Multiples », the Genoese draw (« Hasard »), ancestors and pawns.
+%
+% Hand A is attributed to Mersenne ONLY by inference: on v. 16 it refers in the
+% first person to treatments of the conics in books whose titles are those of
+% Mersenne's (Commentaire sur la Genèse, Vérité des sciences, Harmonie
+% universelle, Hydrauliques), and a nineteenth-century note on v. 8 says
+% « Manuscrits autographes du père Mersenne ». The leaves name no author. The
+% reading keeps that inference an inference and attributes nothing else. The
+% separator of v. 39 is a nineteenth-century classification, not a reading of
+% the leaves; nothing in hands C or D names Pascal, Fermat, de Méré, Huygens or
+% anyone as writer. Modern names (the problem of points, de Méré's problem,
+% Huygens's propositions, Pascal's values of the games) are attached only where
+% the statement coincides, in footnotes, as coincidences.
+%
+% Folios. The transcriptions read an ink series 1–42, one number per leaf and
+% per pasted slip, and write no \folio{} because it is penned rather than
+% pencilled. This reading cites views only, by \pagerange{}{} at the head of
+% each section, and mentions the series only as the transcriptions do.
+%
+% Notation translated, each with a footnote at its first use: the species
+% notation of v. 31–32 (« B in G », « Aq », « bis »), « R » for the square root,
+% « puissance » for the square of a line, « costé droit » for the latus rectum,
+% « appliquée » for an ordinate, « axe transversant » for the transverse axis,
+% « hazard », « esperance », « party » for chance, expectation and share,
+% « combinaison d'ordre », « de varieté » for permutations and arrangements,
+% « triangle », « tetraedre », « triangle triangle » for figurate numbers.
+%
+% Every computation the leaves carry was redone. Where the leaf is wrong the
+% reading states the truth and footnotes the leaf: the length of the spiral
+% (v. 11–12), several letters of the figures, the bird's speed and the stars'
+% (v. 33), the « 3/4 » of the fourth-game remark (v. 41), the commanders of
+% view 49 (1120 for 6720), and two odds of the Genoese draw (3764 3/4 for
+% 3764 3/8, 13 1/2 for 13 1/3, v. 49–50). The dating field is copied from the
+% transcriptions; the one date the leaves carry (July 1638, v. 32) is a date
+% named in the text, not a date of writing.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{naf-5176}
+\shelfmark{NAF 5176}
+\pages{1}{58}
+\dating{1601-1700}
+\watermark{Lecture automatique\\interprétation non vérifiée}
+\foldertitle{Papiers du Père MERSENNE et de Blaise PASCAL. — lecture modernisée du volume entier}
+
+\begin{document}
+
+\section*{Résumé}
+
+\begin{resume}
+Ce volume est une reliure de papiers épars, non un livre. On y trouve deux
+ensembles que la bibliothèque a réunis sous un seul titre. Le premier, le plus
+long, est de la main d'un savant qui écrit très vite et rature beaucoup. Il
+traite du mouvement, puis surtout de la lumière : comment elle se réfléchit,
+comment elle se réfracte, quelles courbes il faut donner aux verres de lunettes.
+Au milieu de ces feuillets passent aussi une méthode pour trouver les tangentes,
+une lettre sur la vitesse de la lumière et un calcul de la grandeur de la Terre.
+Le second ensemble, séparé du premier par un feuillet moderne qui porte
+« Pascal, autographe et copies », est de deux autres mains et parle d'autre
+chose : de hasard, de jeux, de dés, de loteries et de dénombrements.
+
+Le problème du premier ensemble est celui de la dioptrique de son temps.
+Quand un rayon passe de l'air dans le verre, il se brise, et la règle de cette
+brisure est ce que nous appelons la loi des sinus. Les feuillets la mettent
+sous forme de construction à la règle et au compas. Ils montrent ensuite que
+l'hyperbole et l'ellipse ont exactement la propriété qu'il faut : une hyperbole
+dont l'excentricité égale l'indice du verre ramène en un seul point des rayons
+parallèles. Le problème du second ensemble est le « problème des partis » :
+deux joueurs interrompent une partie en cours, comment partager
+équitablement la mise ? L'idée qui porte tout le calcul tient en une phrase :
+avoir des chances égales d'obtenir 10 ou 12 vaut 11. C'est la notion
+d'espérance mathématique, et les feuillets la justifient à la manière de
+l'époque, en montrant qu'avec 11 en main on peut racheter exactement la même
+chance par un jeu équitable. De là viennent, en remontant depuis la fin de la
+partie, les parts de chaque joueur à deux et à trois. Viennent aussi les chances
+d'amener un six en quatre coups d'un dé, avantageuses de 671 contre 625, et le
+fait que deux six en vingt-quatre coups de deux dés sont un peu désavantageux,
+en vingt-cinq un peu avantageux.
+
+Les feuillets ne disent presque jamais qui les a écrits. La main rapide renvoie
+à la première personne à des livres dont les titres sont ceux du P. Mersenne ;
+c'est la seule raison de la lui prêter. Elle parle aussi, une fois, de ce que
+dit « M\textsuperscript{r} Fermat » dans une lettre de juillet 1638, et
+elle nomme sa méthode des tangentes de son nom d'« adæqualité ». Sur les
+feuillets de jeux, aucun nom : une note de 1962 collée en tête du volume y
+reconnaît une version française, peut-être antérieure à l'imprimé, du traité
+de Huygens sur le calcul dans les jeux de hasard (1657). Les énoncés
+coïncident en effet de très près avec ses propositions. La lecture signale ces
+coïncidences et n'en tire aucune attribution.
+
+Pour aller plus loin : loi de Snell-Descartes et lentilles anaclastiques ;
+constructions des coniques par les foyers ; méthode d'adégalisation et
+tangentes ; problème des partis, espérance, problème du chevalier de Méré ;
+triplets pythagoriciens ; dénombrements, factorielles, nombres figurés ; loterie
+de Gênes.
+
+\keywords{composition of motions, mean speed theorem, arc length of the Archimedean spiral, rational ellipses, Pythagorean triples, law of reflection, earthshine, conic sections, focal construction of conics, Snell's law, anaclastic lens, hyperbolic lens, Fermat's method of adequality, tangent to an ellipse, Fermat's right triangle theorem, speed of light, dip of the horizon, radius of the Earth, problem of points, expected value, De ratiociniis in ludo aleae, de Méré's problem, dice probabilities, compound interest, permutations, combinations with repetition, Genoese lottery, figurate numbers, double factorial}
+\end{resume}
+
+\section*{Ce que le volume contient}
+
+\pagerange{1}{58}
+Cinquante-huit vues, que Gallica photographie le volume ouvert : presque chaque
+vue montre une page de gauche et une page de droite. Plusieurs feuillets portent
+des papillons collés, photographiés deux fois, rabattus puis relevés, et le
+texte n'est donné qu'à la vue où il se lit en entier.\footnote{La vue 10
+reproduit la vue 9 ; la vue 17 la vue 18 ; la vue 20 la vue 21 ; les vues 22 et
+23, 25 et 26, 43 et 44 sont des paires de prises de la même ouverture. La vue 20
+n'est que décrite par la transcription du lot 1 : son feuillet, béquets
+relevés, est lu en entier à la vue 21, au lot 2, et c'est là que cette lecture
+le prend.} Les vues 1 à 8 sont la reliure, des gardes et trois pièces de
+bibliothèque. On y trouve un billet sur papier quadrillé daté du 21 mai 1962
+(vue 6), le certificat de 1888 (vue 7) et un « Feuillet A » qui porte, d'une
+main du XIX\textsuperscript{e} siècle, « Manuscrits autographes du père
+Mersenne » (vue 8).\footnote{Le certificat de 1888 dit : « Volume de 42
+Feuillets plus le Feuillet A préliminaire. Les Feuillet 22, 24, 29, 35, 36 sont
+blancs. 29 Septembre 1888 », avec « Libri 1848 ». Le billet de 1962, signé d'un
+paraphe non lu, rapporte un texte du volume au \emph{De ratiociniis in ludo
+aleae} de Huygens, « probablement » dans une traduction française antérieure à
+la version remise à Van Schooten. Il porte « Date possible : 1656 » et
+« Copiste et traducteur possible : Des Billettes ». La transcription ne le
+transcrit pas, mais le décrit ; il en est question plus bas, à propos des
+partis.} Les vues 52 à 58 sont des gardes blanches et le plat de derrière.
+
+Entre les deux, le texte ancien est de quatre mains au moins.
+\begin{itemize}
+  \item \textbf{La main A}, une cursive française très rapide, à longues
+    liaisons, chargée de ratures et d'ajouts entre les lignes. Elle couvre les
+    vues 9 à 12 (gauche), 14 à 18, 20 à 29, 31 à 36 et 38. C'est le « premier
+    ensemble » : mouvement, réflexion, coniques, réfraction, tangentes, lettre
+    sur la lumière.\footnote{Le lot 1 décrit la main des vues 9 à 20, le lot 2
+    celle des vues 21 à 38 ; comme le feuillet de la vue 20 est celui de la vue
+    21, les deux lots décrivent la même main sur ce feuillet. Aux vues 31 et 32,
+    la transcription la dit « la même », « plus petite et plus serrée » : c'est
+    une apparence, qu'elle donne comme telle.}
+  \item \textbf{La main B}, plus petite, plus serrée et plus abrégée, sur les
+    seules vues 12 (droite) et 13 : une table de chapitres d'un traité des
+    triangles et des problèmes sur les ellipses rationnelles.
+  \item \textbf{La main C}, une cursive ronde, penchée et régulière, aux vues
+    40 à 42 : les partis et les dés. Deux lignes plus appuyées de la vue 40
+    sont peut-être d'une autre main encore.
+  \item \textbf{La main D}, ronde et compacte, aux vues 47 à 51 : intérêts,
+    combinaisons, loterie, ancêtres et pions.
+\end{itemize}
+Un feuillet moderne sépare les deux ensembles à la vue 39 ; il porte « Pascal /
+autographe / et copies ». C'est une marque de classement du XIX\textsuperscript{e}
+siècle, et non un témoignage sur les feuillets qui suivent.\footnote{Sur la
+bande de la vue 47, écrit en long, un titre de dossier, « Geometrie
+\emph{Meslée} », d'une main qui n'est pas celle du texte ; le second mot n'est
+lu qu'avec doute.}
+
+Pourquoi le volume n'est cité ici que par vues. Les transcriptions lisent à
+l'encre, en haut à droite de chaque recto et de chaque papillon collé, une série
+continue de 1 à 42, un nombre par morceau de papier, feuillets blancs compris.
+Elle s'accorde avec le certificat de 1888 et sa liste de feuillets blancs. À
+côté court une série plus ancienne et plus fine, qui n'est pas dans
+l'ordre.\footnote{Par exemple 41 et 42 sur les deux premiers feuillets du
+traité des mouvements, 10 et 11 sur ceux de la main B, puis 24, 25, 27, 30, 28,
+29 et 26 sur les feuillets de la main D. Les transcriptions la tiennent pour la
+numérotation d'un classement antérieur, peut-être celui de Libri, et le disent
+comme une inférence.} Parce que la série continue est à l'encre et non au
+crayon, aucune des trois transcriptions ne l'écrit comme foliotation tant
+qu'un œil humain n'a pas vu les feuillets. Cette lecture fait de même et ne cite
+que les vues.
+
+\section*{I. Le traité des mouvements composés}
+
+\pagerange{9}{12}
+Le premier feuillet porte « Preface. » en tête et la pagination propre de
+l'auteur, de 5 à 8. Il ouvre un traité dont le programme est dit d'emblée :
+parmi les choses qui servent à « relever la puissance de la lumière et de ses
+rayons », il faut donner le premier rang « aux mouvemens tant simples que
+composez ». L'auteur y prépare le lecteur par quelques propositions sur la
+composition des mouvements, avant d'en venir à la lumière.\footnote{Plusieurs
+mots de la préface restent illisibles dans la transcription, notamment à la
+troisième ligne, au bord noirci du feuillet ; la lecture n'en restitue aucun.
+Le traité renvoie aussi à « la 32 prop. de la Ballistique » comme à un ouvrage
+de l'auteur, sans le nommer autrement.}
+
+\subsection*{Vitesse d'un mouvement composé}
+
+Le mouvement \(AC\) est composé des mouvements \(AD\) et \(AB\), faits dans le
+même temps. Le feuillet énonce que la vitesse sur \(AC\) est à la vitesse sur
+\(AD\) comme la longueur \(AC\) est à \(AD\). C'est la règle du parallélogramme
+des vitesses : si \(\vec v_1\) et \(\vec v_2\) sont les vitesses composantes,
+parcourues pendant le même temps \(t\), la vitesse résultante est
+\(\vec v_1+\vec v_2\), et les normes sont entre elles comme les longueurs
+parcourues. L'« impétuosité » et l'« effort » que le feuillet compare ensuite
+dans le même rapport sont, dans ce langage, la vitesse acquise et ce qui la
+produit.\footnote{La suite du paragraphe, où l'auteur mène une droite de
+\(B\) qui « divise l'angle \(ABC\) en deux parties égales », est corrigée
+plusieurs fois sur la ligne et en interligne ; elle ne se laisse pas
+reconstituer en un énoncé sûr, et la lecture ne l'interprète pas.}
+
+\subsection*{Proposition I : deux mouvements se nuisent d'autant plus que leur angle est grand}
+
+Deux mouvements rectilignes uniformes « s'empêchent et se retardent d'autant
+plus que l'angle qu'ils font est plus grand ». En langage actuel : deux vitesses
+de même norme \(u\), dont les directions font un angle \(\theta\), ont une
+résultante de norme
+\[
+\lVert \vec v_1+\vec v_2\rVert = 2u\cos\frac{\theta}{2},
+\]
+fonction décroissante de \(\theta\) sur \([0,\pi]\). L'énoncé est donc juste si
+l'on entend par « angle » l'angle entre les deux directions de mouvement, et si
+les vitesses sont égales, comme le feuillet le suppose (« que le mouvement qui
+se fait sur \(DB\), \(EB\), \(FB\) soit égal »).\footnote{Pour des vitesses de
+normes différentes \(u_1\), \(u_2\), la résultante vaut
+\(\sqrt{u_1^2+u_2^2+2u_1u_2\cos\theta}\), toujours décroissante en
+\(\theta\) ; l'énoncé reste vrai sous cette forme. Les noms d'angles « \(ADB\) »
+et « \(AED\) » sont lus tels qu'ils paraissent ; la figure demande \(ABD\) et
+\(ABE\).}
+
+\subsection*{Proposition II : le cercle et sa tangente}
+
+Un mobile décrit un cercle d'un mouvement uniforme ; un second mouvement
+rectiligne uniforme lui « survient ». Un autre mobile parcourt la tangente avec
+la même vitesse, et le même mouvement lui survient. La proposition affirme que
+les deux mouvements composés ont la même vitesse. En termes actuels, c'est
+vrai au point de contact \(C\) : la vitesse instantanée d'un mouvement circulaire
+uniforme est portée par la tangente et a même norme, de sorte que les deux
+compositions ont en \(C\) la même vitesse résultante. La démonstration du
+feuillet procède par l'absurde, en comparant des angles rectilignes à l'angle
+que fait l'arc avec une droite, l'« angle de contingence ». Elle n'est pas une
+démonstration au sens actuel, puisque tout repose sur la notion de vecteur
+vitesse, qui lui manque.\footnote{Le passage est « chargé de ratures
+superposées » et l'ordre des mots retenu par la transcription est « une
+lecture, non une certitude ». Une lettre y est fautive : « le composé de
+\(FC\), \(DC\), est moindre que le composé d'\(AC\), \(FC\) » ; l'argument
+demande \(AC\), \(EC\).}
+
+\subsection*{Le lemme : la vitesse moyenne d'un mouvement uniformément ralenti}
+
+« La vitesse qui se diminue toujours jusqu'à ce qu'elle cesse » est, prise en
+moyenne sur tout le temps du mouvement, « la moitié de la plus grande vitesse
+qui a été au commencement ». Si la vitesse décroît linéairement de \(v_0\) à
+\(0\) pendant le temps \(T\), la distance parcourue vaut
+\[
+\int_0^T v_0\Bigl(1-\frac{t}{T}\Bigr)\,dt = \frac{v_0T}{2},
+\]
+soit celle d'un mouvement uniforme de vitesse \(v_0/2\). C'est ce qu'on appelle
+aujourd'hui le théorème de la vitesse moyenne, ou règle de Merton.\footnote{Le
+nom est celui des calculateurs d'Oxford du XIV\textsuperscript{e} siècle ; le
+feuillet ne le donne pas et ne cite personne. Son argument, qui fait « doubler
+le temps » à mesure que la vitesse diminue, est obscur et en partie illisible
+(deux mots de l'énoncé ne sont pas lus). La conclusion est juste, l'argument ne
+l'établit pas.}
+
+\subsection*{Proposition III : la longueur de la spirale — un énoncé faux}
+
+Le feuillet énonce que la première révolution de la spirale d'Archimède est
+égale à la droite « qui est égale en puissance » à la circonférence et au
+rayon, c'est-à-dire à l'hypoténuse d'un triangle rectangle dont ces deux
+longueurs sont les côtés.\footnote{« Égale en puissance à \(a\) et à \(b\) » :
+dont le carré égale \(a^2+b^2\). L'énoncé parle de la circonférence ; la
+démonstration prend \(ba\) « égale à la circonférence », puis écrit « \(ba\) est
+la moitié de ladite circonférence », et conclut sur « la moitié de la
+circonférence \(BCDE\) et le semidiamètre \(BA\) ». C'est ce dernier énoncé,
+avec la demi-circonférence, que la démonstration vise. La lecture le discute
+sous cette forme, mais la conclusion vaut aussi pour la première.}
+
+L'argument compose deux mouvements. Le point de la spirale descend le rayon
+d'un mouvement uniforme, et il tourne d'un mouvement circulaire dont la vitesse
+diminue uniformément jusqu'à zéro au centre. Par le lemme, cette vitesse
+circulaire vaut en moyenne la moitié de la vitesse initiale. Le feuillet
+remplace alors les deux mouvements par deux mouvements uniformes, de vitesses
+moyennes, sur deux droites perpendiculaires. La droite composée a pour longueur
+\(\sqrt{(\pi R)^2+R^2}\). C'est là que l'argument échoue : la longueur d'une
+trajectoire est l'intégrale de la norme de la vitesse, non la norme de
+l'intégrale des composantes. Pour la spirale \(r=R-\frac{R}{2\pi}\varphi\),
+\(0\le\varphi\le2\pi\), on a
+\[
+L=\int_0^{T}\sqrt{v_r^2+v_\varphi(t)^2}\,dt\;\ge\;\sqrt{\Bigl(\int_0^T v_r\,dt\Bigr)^2+\Bigl(\int_0^T v_\varphi\,dt\Bigr)^2}=\sqrt{R^2+(\pi R)^2},
+\]
+avec égalité seulement si le rapport \(v_\varphi/v_r\) est constant, ce qui
+n'est pas le cas.\footnote{L'inégalité est celle de Minkowski pour les
+intégrales (inégalité triangulaire dans \(\mathbb R^2\)). Le feuillet ne la
+connaît pas ; il suppose tacitement que composer des vitesses moyennes donne la
+longueur moyenne.} La longueur exacte d'un tour, calculée à partir de
+\(r=a\varphi\) avec \(a=R/(2\pi)\), est
+\[
+L=\frac{a}{2}\Bigl[\,2\pi\sqrt{1+4\pi^2}+\ln\bigl(2\pi+\sqrt{1+4\pi^2}\bigr)\Bigr]\approx 3{,}383\,R,
+\]
+alors que \(\sqrt{\pi^2+1}\,R\approx3{,}297\,R\). La valeur du feuillet est donc
+trop courte d'environ \(2{,}5\,\%\). C'est une minoration stricte, non une
+égalité.\footnote{Avec la circonférence entière de l'énoncé, on aurait
+\(\sqrt{4\pi^2+1}\,R\approx6{,}36\,R\), bien trop long. Les lettres minuscules
+de la figure (\(ba\), \(ar\), \(br\), \(rd\), \(bd\), \(fe\), \(ge\), \(ik\),
+\(ks\), \(mf\), \(nf\)) sont soulignées par l'auteur ; plusieurs se confondent
+(\(e\) et \(l\), \(s\) et \(f\), \(r\) et \(e\)), et la transcription les donne
+« sous réserve ».}
+
+\section*{II. Les ellipses rationnelles}
+
+\pagerange{12}{13}
+Une autre main, petite et serrée, occupe le recto de la vue 12 et les deux pages
+de la vue 13. Elle commence par la table des chapitres d'un traité « Des
+triangles Rectilignes et Spheriques », en vingt-cinq chapitres avec renvois de
+pages, dont beaucoup de mots restent illisibles.\footnote{Les numéros de pages
+ne croissent pas toujours (le chapitre 9 et le chapitre 14 renvoient à
+« page 1 »), ce qui suggère plusieurs cahiers paginés à part ; la transcription
+le donne comme une inférence. Le chapitre 18 n'est pas nommé à sa place, le
+chapitre 21 l'est deux fois.} Viennent ensuite des problèmes numérotés en
+marge de 1 à 8. Leurs mots se lisent mal, leurs nombres se lisent bien, et ce
+sont eux que la lecture suit.
+
+\subsection*{La question}
+
+Dans une ellipse de grand axe \(2a\), de petit axe \(2b\) et de distance focale
+\(2c\), on a \(a^2=b^2+c^2\). Les trois axes entiers \((2b,2c,2a)\) forment
+donc un triangle rectangle en nombres, c'est-à-dire un triplet pythagoricien.
+Le feuillet le dit par l'exemple : « le grand diamètre \(AB\) étant 5, le petit
+pourra être 4 et la distance des foyers 3 ; ou bien le petit diamètre pourra
+être 3, et \(IL\) 4 ». Chaque triangle donne deux ellipses, en échangeant les
+deux côtés de l'angle droit. Le problème est de trouver un grand axe commun à
+autant d'ellipses rationnelles qu'on voudra : il faut un nombre qui soit
+hypoténuse de plusieurs triangles. Le problème 1 prend \(125\), hypoténuse de
+trois triangles,
+\[
+44^2+117^2=35^2+120^2=75^2+100^2=125^2,
+\]
+et le problème 2 prend \(65\), hypoténuse de quatre,
+\[
+16^2+63^2=25^2+60^2=33^2+56^2=39^2+52^2=65^2,
+\]
+d'où huit ellipses.\footnote{Tous ces triplets sont exacts. Le « 16 » est à
+demi formé et lu avec doute. Au problème 4 (vue 13), la transcription lit « à
+6 ellipses » pour \(65\), là où la vue 12 en compte huit ; c'est huit qui est
+juste. Qu'un entier soit hypoténuse d'autant de triangles qu'on veut dépend de
+ses facteurs premiers de la forme \(4k+1\) : c'est le théorème des deux carrés,
+que le feuillet ne formule pas.}
+
+\subsection*{Quand la « perpendiculaire sur le foyer » doit aussi être rationnelle}
+
+La page parle ensuite d'une ligne \(MI\). Elle la dit, doublée, « troisième
+proportionnelle au grand et petit diamètre », et elle écrit que « \(AK\)
+multiplié par \(MI\) donne le quarré de \(CK\) ». C'est le demi-paramètre
+(demi-côté droit) de l'ellipse, \(p=b^2/a\), c'est-à-dire la demi-corde menée
+par un foyer perpendiculairement au grand axe.\footnote{« Troisième
+proportionnelle » à \(2a\) et \(2b\) : la longueur \(\ell\) telle que
+\(2a/2b=2b/\ell\), soit \(\ell=2b^2/a=2p\). « \(R\) », R barré, est le signe de
+la racine.} Pour que \(p\) soit entier en même temps que les axes, le feuillet
+prend un grand axe qui soit un carré. Au verso (vue 13, gauche), avec le
+triangle \(3,4,5\) multiplié par 5, il obtient
+\[
+AB=25,\quad CD=20,\quad IL=15,\quad MI=\frac{CD^2}{2\,AB}=8 .
+\]
+Il constate que \(M\), \(I\), \(L\) forment le triangle \(8,15,17\), dont les
+côtés \(MI\) et \(ML\) ont pour somme \(AB=25\). C'est la propriété focale de
+l'ellipse : la somme des distances de \(M\) aux deux foyers vaut le grand
+axe.\footnote{Un passage intermédiaire donne « les parties donnent 15 et 28 »,
+nombre qui ne s'accorde pas avec le reste du calcul ; la transcription le donne
+tel qu'il se lit, et la lecture ne l'explique pas. Le mot « Carles » du
+problème 5 (« de Carles ») est lu tel quel ; ce peut être un nom propre, que
+la lecture ne restitue pas.} Les problèmes 3 à 6 étendent la règle : \(125^2
+=15625\) sert de grand axe à trois paires d'ellipses, et \(8450=2\cdot65^2\)
+aux ellipses du nombre 65. Les problèmes 5 et 6 imposent en outre que la
+distance des foyers soit plus grande que le petit axe.
+
+\subsection*{Le « triangle fondamental » 8, 15, 17}
+
+Le recto suivant (vue 13, droite) fait le calcul complet sur le triangle
+\(8,15,17\), avec un grand axe \(2\cdot17^2=578\). On a donc \(a=289\), et
+\(c=17\cdot15=255\), \(b=17\cdot8=136\) ; on vérifie bien
+\(289^2=255^2+136^2\). Le tableau du feuillet donne alors, dans les deux cas où
+le côté 15 va à la distance focale ou au petit axe :
+\[
+\begin{array}{lcc}
+ & 2c=510,\ 2b=272 & 2c=272,\ 2b=510\\
+\hline
+a-c & 34 & 153\\
+p=b^2/a & 64 & 225\\
+2a-p & 514 & 353\\
+a & 289 & 289
+\end{array}
+\]
+Ici \(a-c\) est la distance d'un foyer au sommet voisin, \(p\) le demi-paramètre,
+et \(2a-p\) la distance de l'autre foyer à l'extrémité de la corde focale.
+Tous ces nombres sont justes.\footnote{Sur la page, « \(FF\) » est écrit pour
+\(FP\). Le point \(O\) est pris sur l'axe à la distance \(FO=FH\) du second
+foyer ; on en tire \(OA=30\) et \(PO=4=(17-15)^2\) dans le premier cas,
+\(OA=72\) et \(PO=81=(17-8)^2\) dans le second. Ce sont aussi les valeurs du
+feuillet.} Le choix d'un grand axe égal au double du carré de l'hypoténuse
+est ce qui rend le demi-paramètre entier : si \(a=h^2\) pour un triangle
+\((s,l,h)\) et \(b=hs\), alors \(p=b^2/a=s^2\).
+
+\subsection*{Problèmes 7 et 8 : comparer l'ellipse à un cercle}
+
+Le problème 7 cherche des triangles « auxquels le produit de l'hypoténuse par
+le petit côté soit plus grand que le carré de l'autre côté ». Avec \(29,21,20\)
+il prend \(AC=29\) pour grand axe, \(KI=21\) pour distance focale et
+\(BD=20\) pour petit axe. Le cercle de diamètre \(KI\) a alors une aire moindre
+que l'ellipse, dans le rapport \(441:580\). C'est exact : l'aire de l'ellipse
+vaut \(\pi\cdot\frac{29}{2}\cdot\frac{20}{2}\) et celle du cercle
+\(\pi\bigl(\frac{21}{2}\bigr)^2\), qui sont entre elles comme \(580:441\). La
+condition \(hs>l^2\) du feuillet est précisément \(29\cdot20>21^2\).
+
+Le problème 8 prend l'hypoténuse \(KI=50\), double d'un carré, et le triangle
+\(KEI\) rectangle en \(E\), de côtés \(30\), \(40\), \(50\) : \(E\) est sur
+l'ellipse de foyers \(K\), \(I\) et de grand axe \(30+40=70\). La hauteur
+\(EN=24\) partage \(KI\) en \(18\) et \(32\). Le centre \(L\) donne \(LN=7\),
+\(LE=25\), d'où le triangle \(7,24,25\). \(FK=17\frac17\) et
+\(FI=52\frac67\) sont le demi-paramètre \(b^2/a=600/35\) et son complément à
+\(70\). En multipliant par 7 pour ôter les fractions, on obtient les onze
+nombres de la colonne du feuillet : \(490, 350, 370, 120, 280, 210, 168, 224,
+126, 49, 175\). Tous sont justes, et \(120\), \(350\), \(370\) forment un
+triangle rectangle.\footnote{La transcription vérifie ces valeurs une à une ;
+le « 24 » de « 7. 24. 25. » est surchargé. Ce que le feuillet ne dit pas, c'est
+que le petit axe de cette ellipse, \(2\sqrt{35^2-25^2}=2\sqrt{600}\), n'est pas
+rationnel : le problème 8 ne le demande pas.}
+
+\section*{III. La lumière cendrée, et pourquoi la réflexion se fait à angles égaux}
+
+\pagerange{14}{15}
+La main A reprend au recto de la vue 14, au milieu d'un développement dont le
+début manque. Il porte sur la lumière que la Terre renvoie vers la Lune et qui
+éclaire faiblement sa partie privée du Soleil. C'est ce que nous appelons la
+lumière cendrée. Le texte se demande si les rayons réfléchis par la Terre et par
+les mers vont jusqu'à la Lune, et l'explication moderne est bien
+celle-là.\footnote{Les quatre premières lignes sont prises entre des surcharges
+et des ratures lourdes ; plusieurs dizaines de mots ne sont pas lus, et la
+lecture ne donne que l'ossature que la transcription laisse voir.}
+
+Vient une « Proposition III », « encor autrement » : expliquer pourquoi la
+réflexion se fait à angles égaux. L'auteur imagine une ligne physique rigide
+\(AB\) qui tombe obliquement sur un plan et s'y réfléchit. Il décompose le
+mouvement de chacun de ses points en une part parallèle au plan, que rien
+n'arrête, et une part perpendiculaire, que « la résistance du plan
+réfléchissant » renverse. Il en conclut l'égalité de l'angle d'incidence et de
+l'angle de réflexion. Ramené à l'essentiel, c'est le modèle de la réflexion
+spéculaire : la composante tangentielle de la vitesse est conservée, la
+composante normale change de signe, et l'angle avec la normale est donc le même
+avant et après. Le feuillet étend ensuite le raisonnement du segment au « point
+physique », puis aux petits globes « dont le mouvement fait la lumière ». Il
+termine par un « Avertissement » : toute réflexion n'est pas un rejaillissement,
+mais une « répression » ou « réaction » du corps frappé.\footnote{Une grosse
+tache d'encre couvre le milieu de la vue 15 (gauche), et trois à cinq mots par
+ligne y sont perdus. Deux renvois marginaux encadrés, « 2. M. fol. 86 » (vue 14)
+et « 3. M. fol. 87 » (vue 15), ont l'allure de renvois à un volume « M » ; leur
+sens n'est pas établi, et la lecture ne leur en prête pas. Il s'agit d'un
+modèle mécanique, non d'une démonstration : la loi de la réflexion y est
+supposée dans le comportement du ressort du plan.}
+
+\section*{IV. Les sections coniques, et comment les tracer par les foyers}
+
+\pagerange{15}{18}
+Deux petites figures imprimées, découpées et collées sur un onglet, portent à
+l'encre les numéros 6 et 7. Ce sont les « deux figures » qu'annonce le recto de
+la vue 16 : un cône coupé de trois façons, et les trois sections disposées
+autour d'un sommet commun \(A\) et d'un axe commun \(TD\).\footnote{D'autres
+figures imprimées de la même facture sont collées aux vues 17 (numéros 9, 10,
+11) et 20 (13, 14). Elles ont l'air d'épreuves ou de tirés à part des planches
+d'un livre d'optique ; la transcription n'établit pas lequel, et la lecture non
+plus.}
+
+\subsection*{La proposition 8 : expliquer les sections coniques}
+
+Le recto de la vue 16 commence ainsi : « J'ay expliqué ces sections en plusieurs
+livres ». Suivent des renvois : les pages 498 à 535 du « Commentaire sur la
+Genèse », le chapitre 16 du livre 4 de « la vérité des sciences », la
+proposition 28 du premier livre de « l'Harmonie universelle », la cinquième de
+« l'Utilité de l'Harmonie », les propositions 18 et 19 « des Hydrauliques ». Ce
+sont les titres des ouvrages du P. Mersenne. C'est sur ce seul passage, écrit
+par l'auteur de ces livres à la première personne, que repose l'attribution de
+la main A à Mersenne. Elle reste une inférence : la page ne signe
+pas.\footnote{Si ces renvois visent bien les ouvrages imprimés que leurs titres
+désignent, la page est postérieure au dernier d'entre eux. Mais c'est une
+inférence sur une inférence, et la lecture n'en tire aucune date. Au-dessus de
+« 18 et 19 », un « 17 » est ajouté avec doute.} La proposition identifie
+ensuite les sections sur les deux figures. La section dont l'axe rencontre le
+côté prolongé du cône est l'hyperbole. Celle dont l'axe est parallèle au côté
+est la parabole. Celle qui coupe les deux côtés est l'ellipse, et le cercle
+vient de la coupe parallèle à la base. Le point \(B\) est à la fois foyer de la
+parabole, de l'ellipse et de l'hyperbole ; l'hyperbole a deux asymptotes qui ne
+la touchent jamais. Rien de cela n'appelle correction.
+
+\subsection*{La proposition suivante : tracer les trois coniques au compas}
+
+La vue 18 donne trois constructions point par point, que la lecture vérifie.
+\begin{itemize}
+  \item \textbf{Parabole.} Soient le foyer \(A\) et le sommet \(B\). On porte
+    \(BC=BA\) au-delà du sommet. Par chaque point \(D\) de l'axe on mène la
+    perpendiculaire. Du centre \(A\), au rayon \(DC\), on coupe cette
+    perpendiculaire en \(E\). Alors \(AE=DC\), qui est la distance de \(E\) à la
+    perpendiculaire à l'axe menée par \(C\) : \(E\) est équidistant du foyer et
+    de la directrice, donc sur la parabole. Le côté droit vaut « le double
+    d'\(AC\), ou le quadruple d'\(AB\) », soit \(4f\) si \(f=AB\) est la
+    distance focale : c'est juste.
+  \item \textbf{Ellipse.} Soient les foyers \(A\), \(F\) et le sommet \(B\) du
+    côté de \(A\), avec \(BC=BA\) sur la droite \(FAB\) prolongée. Un point \(E\)
+    tel que \(FE=FD\) et \(AE=DC\) vérifie \(FE+AE=FC=FB+BA\), qui est le grand
+    axe. La condition du feuillet, un rayon « plus grand que \(CB\) et moindre
+    que \(FB\) », est exactement \(a-c<FD<a+c\).
+  \item \textbf{Hyperbole.} Les foyers \(A\), \(F\), le sommet \(B\) avec
+    \(AB<\frac12AF\), et \(BC=BA\) sur \(FCBA\). Alors \(FE-AE=FD-DC=FC=2a\).
+    Le feuillet remarque avec raison que si \(AB\) égale la moitié d'\(AF\), la
+    construction donne la médiatrice : c'est le cas dégénéré \(a=0\).
+\end{itemize}
+La page affirme enfin que l'hyperbole « servira particulièrement pour les
+réfractions », parce qu'elle rassemble par réfraction les rayons parallèles en
+un point. C'est vrai, et c'est ce que démontrent les propositions de la vue 21
+et suivantes.\footnote{« Les sections Coniques du S\textsuperscript{r}
+Mydorge » sont citées pour qui voudrait s'instruire plus avant. La fin de la
+phrase de l'hyperbole est sur la bande collée qui porte, dans la série de
+l'encre, le numéro 12.}
+
+\section*{V. La réfraction : cinq propositions}
+
+\pagerange{20}{29}
+C'est le morceau le plus suivi de la main A. Les énoncés sont tenus dans des
+accolades, les démonstrations faites sur des figures d'apparence imprimée,
+collées sur des béquets.\footnote{Le feuillet des propositions I et II est
+photographié deux fois, à la vue 20 béquets rabattus et à la vue 21 béquets
+relevés ; la transcription du lot 1 ne fait que décrire la vue 20, et la
+lecture suit le texte donné à la vue 21. « En » est écrit par un signe
+semblable à un 3, et l'esperluette par un grand C bouclé.}
+
+\subsection*{Proposition I : la loi de réfraction, donnée par une construction}
+
+On connaît l'incidence et la réfraction d'un rayon ; il s'agit de trouver
+celles de tous les autres sur la même surface. La construction se lit ainsi.
+Autour du point d'incidence \(E\), on trace un cercle de rayon \(r=EF\) qui coupe
+le rayon incident en \(F\). La parallèle à la surface menée par \(F\), puis la
+perpendiculaire à la surface, rencontrent le rayon réfracté en \(G\). Le cercle
+de rayon \(EG\) sert ensuite pour tous les autres rayons : pour un rayon \(HE\),
+on reporte de la même façon la distance de \(H\) à la normale, et le point
+\(N\) du second cercle donne le rayon réfracté \(EN\). La construction conserve
+la distance à la normale, soit \(r\sin i=EG\cdot\sin\rho\), donc
+\[
+\frac{\sin i}{\sin\rho}=\frac{EG}{EF}=n,
+\]
+constant pour tous les rayons. C'est la loi des sinus, dite de
+Snell-Descartes, et le corollaire le dit à sa façon : les angles
+d'inclinaison et de réfraction « doivent être comparés ensemble suivant la
+raison de la droite \(GE\) à la droite \(EF\) ».\footnote{La construction de
+la première phrase (« le plan, où est le rayon \(ADB\) soit la commune
+section… ») est incertaine dans la transcription ; le sens retenu est celui
+que la suite de la construction impose. Les noms de Snell et de Descartes
+sont ceux de la tradition, et le feuillet ne les donne pas.}
+
+\subsection*{Proposition II : mesurer la réfraction d'un cristal}
+
+On taille dans le cristal un prisme rectangle \(ABC\), droit en \(B\). Un
+rayon solaire, dirigé par deux pinnules, entre perpendiculairement par la
+face \(AB\) sans se briser, puis se brise en \(I\) sur la face oblique \(AC\)
+en sortant dans l'air. La même construction qu'à la proposition I donne alors
+le rapport \(LI/ID\), qui est celui de tous les rayons. Ici le rapport mesuré
+est celui du verre vers l'air, \(1/n\).
+
+\subsection*{Le corollaire : les foyers de l'hyperbole}
+
+Le corollaire invoque deux propriétés des foyers de l'hyperbole. La tangente en
+un point bissecte l'angle des deux rayons focaux, et la différence des rayons
+focaux égale l'axe transverse. Le feuillet les cite comme « la 49 prop. du 1
+livre de mes Coniques » et « la 51 ». Ce sont, dans la numérotation usuelle,
+les propositions III, 48 et III, 51 des \emph{Coniques}
+d'Apollonius.\footnote{« De mes » est lu avec doute (« mes » ou « ses ») ; la
+même référence revient sous la forme « la 51. de mes 1 livre des Coniques » et
+« la 20, 26 \& les autres de mon 2 l. des Con. ». La lecture ne décide pas si
+l'auteur renvoie à ses propres Coniques ou à un Apollonius ; elle signale
+seulement que les deux propriétés sont vraies et classiques. « \(IN\) égale à
+\(IN\) » est écrit ainsi, la seconde fois peut-être pour \(IM\).}
+
+\subsection*{Propositions III et IV : l'hyperbole et l'ellipse}
+
+\emph{Proposition III.} Soit un point \(C\) d'une hyperbole. On mène par \(C\) la
+parallèle à l'axe, la droite vers le foyer « extérieur » (le plus éloigné) et
+la normale. Alors
+\[
+\frac{\sin(\text{angle normale–parallèle à l'axe})}{\sin(\text{angle normale–droite focale})}=\frac{\text{axe transverse}}{\text{distance des foyers}}=\frac{a}{c}=\frac1e .
+\]
+\emph{Proposition IV.} Pour l'ellipse, avec le foyer le plus éloigné, le même
+rapport vaut \(a/c=1/e\), qui est cette fois plus grand que 1. Les deux
+propositions sont exactes : la lecture les a vérifiées en tout point de la
+courbe, par le calcul en coordonnées. La démonstration du feuillet est
+synthétique : elle abaisse des perpendiculaires, utilise la bissection de
+l'angle focal par la tangente, et en tire que \(DP\) égale l'axe.\footnote{Dans
+l'énoncé de la proposition IV, la troisième droite est dite « parallèle à la
+tangente », puis la fin de l'énoncé parle de « la perpendiculaire » ; la
+démonstration la mène perpendiculaire, et c'est la normale qu'il faut lire.
+Dans la démonstration, « aux points \(M\) \& \(M\) » est écrit pour \(N\) et
+\(M\). L'énoncé exclut le point « au milieu de la section », c'est-à-dire les
+extrémités des axes, où les deux angles sont nuls ou droits et le rapport de
+sinus perd son sens.}
+
+Le corollaire tire la conséquence optique. L'ellipse a \(a/c>1\), l'hyperbole
+\(a/c<1\) : leurs « lois de réfraction sont différentes », et chacune convient à
+un sens de passage.
+
+\subsection*{Proposition V : les surfaces qui rendent les rayons parallèles, convergents ou divergents}
+
+La proposition V rassemble tout. Soit \(n\) l'indice du verre par rapport à
+l'air. Une hyperbole dont l'axe transverse est à la distance des foyers comme
+le rayon rompu au rayon d'incidence a pour excentricité \(e=n\). Une ellipse
+dont le rapport est « contraire » a \(e=1/n\). L'une et l'autre sont « propres
+pour les diaphanes ». Tournées autour de leur axe, elles donnent les conoïdes
+hyperboliques et les sphéroïdes elliptiques. Un verre plan d'un côté et
+hyperbolique de l'autre, « comme l'on fait ordinairement les verres pour les
+lunettes de longue vue », rassemble en un point les rayons reçus parallèles par
+le côté plat. En langage actuel, c'est la lentille anaclastique : le dioptre
+hyperbolique d'excentricité \(n\) est stigmatique pour un point à l'infini sur
+l'axe, et le dioptre ellipsoïdal d'excentricité \(1/n\) aussi, de l'autre côté.
+La proposition est juste.\footnote{La proposition s'interrompt au bas de la vue
+26 sur la réclame « Je dis » et reprend en tête de la vue 29 (« Je dis en 2
+lieu »). Entre les deux, la vue 27 est une bande de la même main, d'un tout
+autre sujet (voir ci-dessous), et la vue 28 en est le dos blanc. Au premier
+point, les deux dernières lettres de « \(HZ\) ou \(FZ\) » sont incertaines. La
+phrase sur les sphéroïdes, qui « feront tout le contraire », ne précise pas le
+sens de passage ; la lecture ne le précise pas à sa place.}
+
+\subsection*{La bande de la vue 27}
+
+Au milieu de la proposition V, une bande déchirée, de la même main, porte un
+fragment de méditation. Un « Luminaire » dont les rayons rejaillissent vers
+leur source y est pris pour figure de l'âme qui renvoie à Dieu « toutes les
+inspirations » qu'elle en reçoit, « jusqu'à ce que cette réflexion et cette vue
+par le miroir soit changée dans la claire [vue] du soleil divin ». Il n'y a pas
+de mathématique ; l'image du miroir parfait revient dans la lettre des vues 33
+à 35.\footnote{La lecture de la bande est plus difficile que celle du traité :
+beaucoup de mots ne sont donnés qu'avec doute, et le mot entre crochets
+ci-dessus est l'un de ceux que la transcription n'a pas lus. La phrase
+commence ailleurs.}
+
+\section*{VI. La méthode des tangentes par « adæqualité »}
+
+\pagerange{31}{32}
+Deux pages de la main A, plus serrées, sans titre, dans la notation des
+espèces : les grandeurs sont désignées par des capitales, « B in G » est le
+produit \(BG\), « Aq » le carré \(A^2\), « bis » le double.\footnote{C'est la
+notation de l'école de Viète. Les noms des points sont surlignés sur le
+feuillet ; la lettre qui ouvre la plupart d'entre eux est lue \(\zeta\), une
+autre \(\delta\), une troisième \(\varepsilon\), d'après la figure.}
+
+\subsection*{La tangente à l'ellipse (vue 31)}
+
+Soit une ellipse d'axe \(\zeta n\), et un point \(\delta\) de la courbe dont
+l'ordonnée tombe en \(o\). On pose \(o\zeta=B\), \(on=G\), et l'on cherche
+\(om=A\), où \(m\) est le point où la tangente coupe l'axe prolongé. On prend un
+point \(u\) entre \(o\) et \(n\) avec \(ou=E\). L'ordonnée de l'ellipse en \(u\) est
+plus courte que la portion de la parallèle comprise sous la tangente. Par la
+propriété de l'ellipse (\(\delta o^2/\varepsilon u^2=\zeta o\cdot on/\zeta
+u\cdot un\)) et par les triangles semblables, on obtient l'inégalité
+\[
+\frac{BG}{BG-BE+GE-E^2}>\frac{A^2}{A^2+E^2-2AE}.
+\]
+En chassant les dénominateurs, en ôtant ce qui est commun et en divisant par
+\(E\), le feuillet « compare par adæqualité » les deux membres. Il efface
+ensuite les termes où \(E\) reste et obtient
+\[
+BA-GA=2BG,\qquad\text{soit}\qquad A=\frac{2BG}{B-G}.
+\]
+C'est la bonne sous-tangente.\footnote{Vérifié : la tangente à l'ellipse en un
+point d'abscisse \(x_0\) (mesurée depuis le centre) coupe l'axe à la distance
+\(a^2/x_0\) du centre. Avec \(x_0=\frac{B-G}{2}\) et \(a=\frac{B+G}{2}\), la
+sous-tangente vaut \(a^2/x_0-x_0=\frac{2BG}{B-G}\). La formule suppose \(B>G\),
+c'est-à-dire \(o\) du côté de \(n\) par rapport au centre ; si \(B<G\), la
+tangente coupe l'axe au-delà de \(\zeta\), et si \(B=G\) elle est parallèle à
+l'axe. Le feuillet ne discute pas ces cas.} Le procédé est ce que la
+littérature appelle la méthode d'adégalisation (\emph{adaequalitas}). On pose
+une quasi-égalité entre deux expressions en \(E\), on divise par \(E\), puis on
+supprime les termes qui contiennent encore \(E\). En termes actuels, on prend la
+limite \(E\to0\) d'un taux d'accroissement, c'est-à-dire qu'on dérive. Le
+passage n'est une démonstration qu'une fois justifié ce droit de supprimer les
+termes en \(E\), ce que le feuillet ne fait pas.\footnote{Le mot
+« adæqualité » est lu d'un seul trait, avec la ligature. La littérature
+attache la méthode au nom de Fermat, qui le premier l'a nommée ainsi ; la vue 31
+ne nomme personne, et la lecture n'attribue la page à personne.}
+
+Le feuillet compare enfin sa construction à celle d'Apollonius. La sienne
+revient à \(\frac{B-G}{G}=\frac{2B}{A}\), celle d'Apollonius à
+\(\frac{\zeta o}{on}=\frac{\zeta m}{mn}\), soit \(\frac{B}{G}=\frac{B+A}{A-G}\).
+Les deux donnent \(A(B-G)=2BG\) et « reviennent à la même », comme le feuillet
+l'affirme. La condition d'Apollonius dit que \(o\) et \(m\) divisent
+harmoniquement le segment \(\zeta n\). La page se termine sur l'annonce d'autres
+exemples « tant du 1\textsuperscript{er} que du 2 cas de ma methode », de ses
+usages pour « l'invention des centres de gravité, dont j'ay envoyé les exemples
+à M\textsuperscript{r} Roberval », et d'une « question à soudre » qui n'est pas
+écrite sur ce feuillet.
+
+\subsection*{La note de la vue 32}
+
+Le bifeuillet suivant commence par « M\textsuperscript{r} \emph{Fermat} dans sa
+dernière let. de Juillet 1638 dit que M\textsuperscript{r} de [\ldots] s'est
+trompé en sa méthode ». C'est la seule date que portent les feuillets, et c'est
+une date citée, non la date où l'on écrit.\footnote{Le nom « Fermat » est lu
+avec doute ; celui qui suit « M\textsuperscript{r} de » commence par un C et
+n'est pas lu. Plus bas, la même page nomme « M\textsuperscript{r} de Cartes ».
+Le texte parle aussi de « la ligne que j'appelle B » et de « ma méthode ».
+Qui parle ici n'est pas établi, et la lecture ne tranche pas.} L'auteur
+propose alors la courbe
+\[
+x^{10}+g\,x^{9}+g^{2}x^{8}+\cdots+g^{9}x \;=\; y^{10}-f\,y^{9}-f^{2}y^{8}-\cdots-f^{9}y .
+\]
+Il dit que sa méthode en donne la tangente « sans nulle difficulté », en
+substituant \(\frac{BA-BE}{A}\) à \(x\) et \(D-E\) à \(y\), sans qu'« une seule
+asymmétrie » s'y rencontre. La méthode de « M\textsuperscript{r} de Cartes »,
+au contraire, « s'embarrasse dans les asymmétries » (page 344, ligne 3, d'un
+imprimé qui n'est pas nommé).\footnote{Le signe d'égalité est rendu par la
+transcription \(\propto\) : c'est vraisemblablement le signe de la
+\emph{Géométrie}, et la lecture l'écrit \(=\). Devant \(f^{7}y^{3}\), aucun
+signe n'est écrit ; la régularité de la suite demande \(-\). La lettre rendue
+\(g\) peut aussi se lire \(b\). « Asymmétrie » : une expression irrationnelle,
+un radical.} Sur le fond, la remarque est juste. Pour une courbe polynomiale
+\(F(x,y)=0\), la méthode d'adégalisation donne directement la pente
+\(-F_x/F_y\) par un calcul rationnel. La méthode des normales par le cercle
+oblige au contraire à éliminer une variable entre la courbe et un cercle,
+\(x=v\pm\sqrt{s^2-y^2}\), ce qui fait entrer un radical. On peut l'ôter en
+élevant au carré, mais le degré double. Cela rend le calcul très lourd sans le
+rendre impossible.
+
+Suivent une figure de six demi-cercles de même origine \(A\) sur une même
+droite et quatre questions en latin.
+\begin{enumerate}
+  \item Couper \(AB\) en \(y\) de sorte que la somme des six ordonnées
+    \(yo+yu+ye+ys+yn+ym\) des demi-cercles soit égale à une droite donnée.
+    Si les demi-cercles ont pour diamètres \(d_1<\dots<d_6\) depuis \(A\), et
+    \(x=Ay\), on demande \(\sum_k\sqrt{x(d_k-x)}=\ell\).
+  \item Couper de sorte que cette somme soit maximale ou minimale. La somme est
+    concave sur \([0,d_1]\) comme somme de racines de fonctions concaves
+    positives. Elle est nulle en \(x=0\), qui est son minimum, et elle a un
+    unique maximum intérieur, puisque sa dérivée tend vers \(-\infty\) en
+    \(x=d_1\).
+  \item Trouver un plan égal à la surface d'un cône scalène (oblique). En
+    langage actuel, l'aire latérale d'un cône circulaire oblique s'exprime par
+    une intégrale elliptique et n'a pas de forme élémentaire.
+  \item Trouver des triangles rectangles en nombres dont l'aire soit un carré,
+    « ou démontrer l'impossibilité de la question ». C'est l'impossibilité qui
+    est vraie : aucun triangle pythagoricien n'a une aire carrée. C'est ce qu'on
+    appelle aujourd'hui le théorème du triangle rectangle de Fermat, démontré
+    par descente infinie.\footnote{Le nom est moderne. Le feuillet ne dit pas
+    qui propose ces questions, ni si ce sont celles qu'annonce la fin de la vue
+    31 ; la transcription donne le rapprochement comme « une possibilité ».
+    Dans la deuxième question, « aequalis rectae datae » est biffé, et ce qui
+    suit est écrit vite.}
+\end{enumerate}
+
+\section*{VII. Une lettre sur la vitesse de la lumière et la grandeur de la Terre}
+
+\pagerange{33}{35}
+Trois pages de la main A, très raturées, forment une lettre sans en-tête ni
+signature. Elle s'achève ainsi : « je laisse mille considérations […] de peur de
+vous ennuyer par une si longue lettre ». L'auteur y dit avoir « employé quelque
+temps à la rendre françoise pour ceux qui n'entendent point d'autre langue » ;
+elle présente donc une optique mise en français. Ni l'auteur, ni le
+destinataire, ni l'ouvrage ne sont nommés.\footnote{Une longue addition écrite
+en long dans la marge de la vue 33 est presque entièrement illisible ; son
+premier mot est lu « Mais » ou « M\textsuperscript{r} Rob. », sans certitude.
+La lecture n'en dit rien de plus.}
+
+\subsection*{L'échelle des vitesses}
+
+La lettre veut faire sentir combien la lumière est rapide, et monte pour cela
+une échelle de vitesses. La lieue y vaut 2500 toises, la toise six pieds. Les
+chiffres sont ceux du feuillet ; les conversions sont de la lecture.
+\begin{itemize}
+  \item Un cheval à la course fait 21 toises en 3 secondes, soit 7 toises par
+    seconde. En 6 minutes, il ferait \(7\times360=2520\) toises, à peu près une
+    lieue, donc dix lieues à l'heure. C'est cohérent.
+  \item L'oiseau le plus rapide ferait 28 toises par seconde, ou 40 lieues à
+    l'heure. Les deux nombres s'accordent entre eux (\(28\times3600=100\,800\)
+    toises). Mais 28, c'est quatre fois 7, et non « deux fois aussi vite que le
+    cheval » comme le dit la phrase ; cela reviendrait au double du lévrier, qui
+    va lui-même au double du cheval.\footnote{La transcription relève que « le
+    raisonnement qui les relie est donné tel qu'il se lit » ; le passage sur
+    les chiens et l'oiseau est surchargé d'additions en interligne.}
+  \item La flèche fait 30 toises (le temps est biffé), le trait d'arbalète 30
+    toises par seconde, la balle d'arquebuse quatre fois plus : 120 toises par
+    seconde.
+  \item Si c'est la Terre qui tourne en 24 heures, et si son tour fait 7200
+    lieues, un point de l'équateur fait 300 lieues à l'heure, 5 lieues à la
+    minute, \(208\frac13\) toises à la seconde. Le calcul est juste, mais 7200
+    lieues contredisent le tour de \(7857\frac17\) lieues que la même lettre
+    calcule plus loin.
+  \item Les étoiles, sur un firmament 14 000 fois plus grand que la Terre,
+    feraient \(14\,000\times208\frac13\approx2\,916\,667\) toises par seconde,
+    soit environ 1167 lieues. Le feuillet écrit en toutes lettres « plus de
+    mille cinquante lieues », lu avec doute : la minoration est juste.
+\end{itemize}
+La lettre passe de là aux « douaires » du corps glorieux, c'est-à-dire aux dons
+que la théologie prête au corps des bienheureux : agilité, clarté, subtilité,
+impassibilité. Un corps glorieux qui irait aussi vite que la lumière
+emplirait tout l'univers dans « le temps d'une tierce », le soixantième d'une
+seconde. Puis vient l'idée que la lumière reproduit partout l'image de son
+principe, et que les couleurs sont « la lumière diversement réfléchie par une
+infinité de petits miroirs […] qui ne sont pas assez polis ».\footnote{Toute la
+fin de la vue 34 est surchargée ; la transcription n'en donne que l'ossature.
+Le nombre « 100000000 » (le diamètre d'un univers cent millions de fois plus
+grand que la Terre) est net.}
+
+\subsection*{La grandeur de la Terre par la dépression de l'horizon}
+
+La lettre s'achève sur « la considération d'un seul rayon ». L'œil \(D\) est à
+la hauteur \(h=AD\) au-dessus du point \(A\) de la surface, et le rayon visuel
+\(DF\) est tangent au globe en \(F\). Le feuillet écrit que « le quarré du rayon
+\(DF\) […] est égal au rectangle de \(BDA\) ». C'est la puissance du point
+\(D\) par rapport au cercle :
+\[
+DF^2=DA\cdot DB=h\,(h+2R).
+\]
+Avec \(h=1\) toise et \(DF\) pris égal à \(AF\), une lieue, soit 2500 toises, il
+vient \(DB=6\,250\,000\) toises. Le diamètre vaut donc \(6\,249\,999\) toises,
+« moins une » comme dit le feuillet, et le rayon \(3\,125\,000\) toises, soit
+1250 lieues. Le tour, pris dans le rapport \(22/7\), vaut \(2500\times22/7
+=7857\frac17\) lieues. Les calculs sont justes.\footnote{La transcription
+vérifie aussi \(2500^2=6\,250\,000\) et \(2500\times22/7=7857\frac17\). Le lieu
+où la lieue est mesurée, « depuis la Bastille jusques au Chasteau du Bois de
+Vincennes », n'est lu qu'avec doute.} Tout dépend d'une donnée que la lettre
+pose sans la mesurer : qu'un œil élevé d'une toise voie à une lieue. Comme
+\(R\approx DF^2/2h\), une erreur relative \(\epsilon\) sur cette distance
+devient une erreur \(2\epsilon\) sur le rayon. La réfraction atmosphérique,
+qui porte l'horizon plus loin, est ignorée. La lettre le sent d'ailleurs,
+puisqu'elle recommande les tours et les montagnes, où « l'angle de la vision
+sera d'autant plus aigu ».
+
+\section*{VIII. Deux propositions de dioptrique}
+
+\pagerange{36}{38}
+Sous le titre « Propositions » (vue 36), la main A, plus posée, énonce que les
+rayons tombant sur un plan diaphane « se rompent tous de même façon » s'ils
+font des angles égaux. Autrement dit, la réfraction ne dépend que de l'angle
+d'incidence. Un cristal plan-convexe \(CFDGC\) laisse passer sans les briser les
+rayons qui tombent à plomb sur sa face plane, et ceux-ci se brisent ensuite sur
+la face courbe. Pour qu'ils se réunissent tous en un point \(I\), la face
+courbe « doit être hyperbolique », et la sphérique « s'en approche d'autant plus
+qu'elle est prise sur un plus grand cercle ». Les deux affirmations sont
+justes. La première est la proposition V ; la seconde est l'aberration de
+sphéricité, qui diminue quand l'ouverture est petite devant le rayon de
+courbure.\footnote{« Le rayon \(B\) se rompoit de \(CDH\) » est donné tel qu'il se
+lit, une lettre manquant après \(B\). La proposition qui suit, « Expliquer
+pourquoy se rompent les rayons », renvoie à « l'onziesme prop. de
+l'optique », lecture offerte avec doute, et s'arrête.}
+
+La « Proposition XXII » (vue 38) demande si l'air réfracte la lumière et si
+elle peut passer par le vide. Elle répond seulement à la première question :
+oui, la lumière se brise en entrant obliquement dans l'atmosphère, plus dense
+que l'éther. C'est la réfraction atmosphérique. Le texte s'arrête sur « Quant
+à l'autre partie, » au milieu de la page, sans rien dire du vide.
+
+\section*{IX. Le partage des enjeux}
+
+\pagerange{39}{41}
+Après le feuillet de séparation (vue 39), une autre main, ronde et régulière,
+écrit sur un papier bruni. Le titre est « Règles auxquelles se peuvent
+rapporter les partis ». Le « parti » est la part qui revient à chaque joueur
+quand une partie en plusieurs jeux est interrompue.\footnote{Le coin supérieur
+droit du feuillet, sombre et plissé, cache la fin de plusieurs lignes, et une
+petite bande collée dans la marge, de neuf ou dix lignes, n'a pas été lue. La
+ligne ajoutée en tête, d'une encre plus noire (« j'ay les \(\frac34\) de tout
+l'argent. partant Il y a […] 3 contre 1 »), anticipe la règle 2.}
+
+\subsection*{La première règle : l'espérance comme moyenne}
+
+« Si mon hasard est égal d'y gagner 10 ou 12, cela me vaut 11 » : avoir des
+chances égales d'obtenir \(a\) ou \(b\) vaut \(\frac{a+b}{2}\). La justification
+est celle d'un jeu équitable. Avec 11 en main, je joue 11 contre 11 à condition
+que le gagnant donne 9 au perdant. Si je gagne, j'ai \(22-9=13\) ; si je perds,
+j'ai 9. Me voici revenu à la même chance d'avoir 9 ou 13, que je puis donc
+échanger contre 11. Une seconde formulation, « plus courte », dit la même chose
+autrement : j'ai déjà sûrement le moindre, et je partage par moitié
+l'excédent. Une ligne ajoutée l'étend aux chances inégales. Deux chances pour
+13 contre une pour 9 valent \(9+\frac23(13-9)=\frac{2\cdot13+9}{3}\).
+
+En langage actuel, c'est la définition de l'espérance d'une variable aléatoire
+à deux valeurs équiprobables. La preuve par le jeu équitable en fait la seule
+valeur d'échange cohérente, à supposer que tout jeu symétrique vaut sa
+mise.\footnote{C'est aussi, presque mot pour mot, la démonstration de la
+première proposition du traité de Huygens imprimé en 1657, qui joue \(x\) contre
+\(x\) « à condition que celui qui gagne donne \(a\) à celui qui perd ». La
+lecture le signale parce que la note de 1962 (vue 6) rapporte ces feuillets à
+ce traité. Le feuillet ne nomme pas Huygens.}
+
+\subsection*{Deux joueurs : remonter depuis la fin}
+
+La seconde règle ramène tout à un cas simple : quand il faut encore deux jeux à
+l'un et un seul à l'autre, celui-ci a les \(\frac34\) de la somme. Avec des
+chances égales à chaque jeu, il gagne tout avec probabilité \(\frac12\) au
+jeu suivant, sinon on est à égalité et il a \(\frac12\), d'où
+\(\frac12(1+\frac12)=\frac34\). À partir de là, chaque position vaut la moyenne
+des deux positions où peut mener le jeu suivant. Si \(P(i,j)\) désigne la part
+du joueur à qui il manque \(i\) jeux quand il en manque \(j\) à l'autre,
+\[
+P(i,j)=\tfrac12\bigl(P(i-1,j)+P(i,j-1)\bigr),\qquad P(0,j)=1,\ P(i,0)=0 .
+\]
+Le feuillet traite ainsi trois parties.
+\begin{itemize}
+  \item \textbf{En 2 jeux}, chacun misant 6 écus. Qui a gagné le premier jeu a
+    9 écus sur 12 et l'autre 3.
+  \item \textbf{En 3 jeux}, 8 écus contre 8. Après un jeu à rien, \(A\) a
+    \(\frac{11}{16}\) ; après deux à rien, \(\frac{14}{16}\) ; à deux contre un,
+    \(\frac{12}{16}\). Le premier jeu « vaut » donc \(\frac3{16}\) (de
+    \(\frac8{16}\) à \(\frac{11}{16}\)), le second encore \(\frac3{16}\), le
+    troisième \(\frac2{16}\).
+  \item \textbf{En 4 jeux} (vue 41). À trois à rien, \(A\) a \(\frac{15}{16}\) ;
+    à trois contre un, \(\frac{14}{16}\) ; à deux à rien, \(\frac{13}{16}\) ;
+    à deux contre un, \(\frac{11}{16}\) ; à un à rien, \(\frac{21}{32}\). Les
+    quatre jeux valent successivement \(\frac5{32}\), \(\frac5{32}\),
+    \(\frac4{32}\), \(\frac2{32}\).
+\end{itemize}
+Toutes ces valeurs sont exactes.\footnote{Vérifiées par la récurrence
+ci-dessus : \(P(2,3)=\frac{11}{16}\), \(P(1,3)=\frac78\), \(P(3,4)=\frac{21}{32}\),
+\(P(2,4)=\frac{13}{16}\), \(P(1,4)=\frac{15}{16}\). Au début de la vue 41, le 8
+de « il en aura encor 8 » est écrit sur un 12 biffé. La dernière ligne de la
+vue 41 (gauche), sous une tache sombre, n'est pas lue.} Les valeurs des trois
+jeux d'une partie en trois, \(\frac3{16},\frac3{16},\frac2{16}\) de la mise
+totale, sont celles que donne la lettre de Pascal à Fermat du 29 juillet 1654 :
+12, 12 et 8 pistoles sur 64.\footnote{La coïncidence porte sur des nombres que la
+récurrence impose : quiconque résout juste trouve ces valeurs. Elle ne dit rien
+de la main qui écrit ; le feuillet ne nomme ni Pascal ni Fermat.} La note
+marginale de la vue 41 dit qu'« il vaut mieux avoir 2 jeux à 0 de 4 qu'un à 0 de
+deux », de \(\frac1{16}\). C'est exact : \(\frac{13}{16}-\frac{12}{16}\). La même
+remarque suit la proposition VII du traité de Huygens.\footnote{Rapprochement
+seulement, fait pour la même raison que plus haut.}
+
+La remarque intitulée « Autre » est juste en substance. Dès que les joueurs sont
+à égalité, « ces jeux-là sont comptés pour rien » et la partie recommence au
+nombre de jeux restants : à un contre un dans une partie en quatre, c'est une
+partie en trois. Elle contient pourtant un glissement : « le tout se joue en 2,
+auquel cas le premier vaudra \(\frac34\) ». Dans une partie en deux, le premier
+jeu donne à son gagnant \(\frac34\) de la somme, mais il ne « vaut », au sens
+où le feuillet l'a employé jusque-là, que \(\frac34-\frac12=\frac14\).
+
+\subsection*{Trois joueurs, et la règle générale}
+
+Avec trois joueurs \(A\), \(B\), \(C\) en deux jeux, et des chances égales pour
+chacun à chaque jeu, le recto suivant fait le même calcul. Supposons que \(A\)
+et \(B\) aient chacun un jeu et \(C\) aucun. Si \(A\) gagne le jeu suivant, il a
+tout ; si \(B\) le gagne, \(A\) n'a rien ; si \(C\) le gagne, chacun est à un
+jeu et a \(\frac13\). Donc \(A\) a \(\frac13(1+0+\frac13)=\frac{12}{27}\), de
+même \(B\), et \(C\) a \(\frac3{27}\). Supposons ensuite que \(A\) ait un jeu,
+\(B\) et \(C\) aucun. Alors \(A\) a
+\(\frac13\bigl(1+\frac{12}{27}+\frac{12}{27}\bigr)=\frac{17}{27}\), et \(B\) et
+\(C\) chacun \(\frac5{27}\). Ces valeurs sont exactes.\footnote{La seconde
+position est celle de la proposition IX du traité de Huygens, avec la même
+réponse ; la première est sa proposition VIII. Dans l'échange de 1654, la
+position « il manque une partie au premier et deux à chacun des deux autres »
+est aussi celle sur laquelle Pascal et Fermat discutent le partage à trois ;
+\(\frac{17}{27}\) en est la valeur juste. Ce ne sont que des rapprochements.}
+
+La « Règle générale pour tout » l'énonce à \(n\) cas. Avec une égale facilité à
+obtenir \(A\), \(B\), \(C\) ou \(D\), « mon espérance vaut le quart de
+\(A+B+C+D\) » : l'espérance d'une variable à \(n\) valeurs équiprobables est
+leur moyenne. Trois cas pour avoir 12 et trois pour avoir 8 valent donc
+10.\footnote{Le chiffre devant « coups pour avoir 8 » est surchargé et peut se
+lire 4 ; la suite du feuillet (« 3 attentes pour 12, Et 3 pour 8 ») donne 3, et
+avec 3 la valeur est bien 10. Avec 4 elle serait \(\frac{3\cdot12+4\cdot8}{7}
+=9\frac57\).} La preuve est celle d'un jeu équitable à six joueurs, où chacun
+met 10. Elle est ensuite appliquée aux trois joueurs : \(A\) joue 17 contre 17
+et 17 avec des conventions de reversement qui lui rendent exactement ses trois
+espérances de 27, 12 et 12. Tout le calcul suppose que chaque joueur a la même
+chance de gagner chaque jeu et que les jeux sont indépendants. Le feuillet le
+dit pour chaque jeu (« a chaque jeu chacun joue jeu egal, dans un hasard
+egal ») ; l'indépendance y est tacite.
+
+\section*{X. Les dés}
+
+\pagerange{42}{42}
+« Pour les partis des dés » : un dé a six faces, deux dés 36 coups, trois dés
+216, quatre dés 1296. Le feuillet dresse la table des manières de faire chaque
+point. Avec deux dés, 1, 2, 3, 4, 5, 6 façons pour les points 2 et 12, 3 et 11,
+\ldots, 7 ; avec trois dés, 1, 3, 6, 10, 15, 21, 25, 27 façons pour 3 et 18,
+\ldots, 10 et 11. Les deux tables sont exactes (sommes 36 et 216).
+
+\subsection*{Amener un six avec un dé}
+
+Qui entreprend d'amener un six en \(n\) coups a pour part
+\[
+p_n=1-\Bigl(\frac56\Bigr)^n=\frac{6^n-5^n}{6^n},
+\]
+et le feuillet l'obtient coup par coup : « la sixième partie de ce qui reste ».
+Il trouve \(\frac{11}{36}\), \(\frac{91}{216}\), \(\frac{671}{1296}\),
+\(\frac{4651}{7776}\), \(\frac{31031}{46656}\), \(\frac{201811}{279936}\), tous
+justes. En quatre coups on peut donc jouer 671 contre 625, « un peu
+d'avantage ». Les comparaisons de la table sont justes aussi : 91 contre 125
+est « un peu moins que 3 contre 4 », 4651 contre 3125 « un peu moins que 3
+contre 2 », 31031 contre 15625 « un peu moins que 2 contre 1 », 201811 contre
+78125 « un peu plus que 5 contre 2 ».\footnote{Les mêmes nombres et les mêmes
+approximations (« weynigh min als 3 tegen 4 », « weynig min als 3 tegen 2 »)
+sont dans la proposition X du traité de Huygens, qui s'arrête à six coups ; le
+feuillet va jusqu'à sept. Au bout des rangs 1 et 2 de la table, les
+comparaisons sont effacées par l'encre.} Le feuillet conclut qu'« on ne peut
+jamais trouver un nombre de coups dans ce party la pour jouer jeu égal ».
+C'est vrai : il faudrait \(6^n=2\cdot5^n\), et 5 ne divise aucune puissance de
+6.
+
+\subsection*{Deux six avec deux dés}
+
+De même, qui entreprend d'amener deux six d'un coup de deux dés en \(n\) coups a
+pour part \(q_n=1-\bigl(\frac{35}{36}\bigr)^n\). Le feuillet trouve
+\(\frac{71}{1296}\), \(\frac{3781}{46656}\), \(\frac{178991}{1679616}\), tous
+justes. Il s'arrête là, les nombres devenant « trop grands », et affirme
+qu'« à le prendre en 24 coups on a un peu de désavantage, et qu'en 25 coups on
+a un peu d'avantage ». C'est exact :
+\[
+q_{24}\approx0{,}4914<\tfrac12<q_{25}\approx0{,}5055 .
+\]
+Là non plus, aucun nombre de coups ne donne un jeu exactement égal, puisque
+\(36^n\neq2\cdot35^n\).\footnote{C'est ce que la tradition appelle le problème
+du chevalier de Méré, rapporté par Pascal dans sa lettre à Fermat du 29 juillet
+1654 : de Méré tenait pour équivalents « un six en quatre coups » et « deux six
+en vingt-quatre ». Le nom est celui de la tradition ; le feuillet ne nomme
+personne. L'énoncé 24/25 est aussi celui de la proposition XI de Huygens.}
+
+La page s'achève sur une question sans réponse : « avec combien de dés
+entreprendre de faire du premier coup deux six ». Si l'on entend au moins deux
+six, la probabilité avec \(k\) dés est
+\[
+1-\Bigl(\frac56\Bigr)^k-k\cdot\frac16\Bigl(\frac56\Bigr)^{k-1},
+\]
+qui vaut \(0{,}457\) pour \(k=9\) et \(0{,}515\) pour \(k=10\). Il faut donc dix
+dés. Cette réponse est de la lecture ; la page est blanche après la
+question.\footnote{C'est la question de la proposition XII de Huygens, dont la
+réponse est la même. Rapprochement seulement.}
+
+\section*{XI. Les feuillets de la seconde main ronde}
+
+\pagerange{47}{51}
+Après quatre vues de feuillets blancs, une main ronde et compacte, différente de
+celle des partis, écrit sur de petits feuillets montés sur onglets. Ce sont des
+problèmes indépendants, chacun complet.
+
+\subsection*{Un ducat « à multiplico » pendant trente-deux ans}
+
+Un ducat placé à 5 pour 100 avec intérêts composés vaut, au bout de \(n\) ans,
+\(\bigl(\frac{21}{20}\bigr)^n\) ducat.\footnote{« À multiplico » : l'expression
+italienne désigne un dépôt dont les intérêts sont capitalisés.} Le feuillet
+choisit 32 ans « pour la commodité de la multiplication » : il suffit d'élever
+cinq fois au carré. Il écrit en entier
+\[
+\Bigl(\frac{21}{20}\Bigr)^{32}=\frac{2046526777500669368329342638102622164679041}{429496729600000000000000000000000000000000}\approx4{,}765,
+\]
+soit « 4 ducats \(\frac34\) peu plus », et un profit « presque quadruple du
+principal ». Les puissances intermédiaires sont justes (\(441/400\),
+\(194481/160000\), \(37822859361/25600000000\), et celle de 16 ans). Pour 33 et
+34 ans, le feuillet tronque les deux termes à leurs premiers chiffres, ce qui
+laisse la valeur intacte au degré de précision voulu. Il trouve « un peu plus
+de 5 » (\(5{,}003\)) et « 5 ducats \(\frac14\) peu plus » (\(5{,}253\)). Tout est
+juste.\footnote{Les rangées de zéros des dénominateurs de 16 et de 32 ans n'ont
+pu être comptées une à une par la transcription ; elle les donne au nombre
+qu'appelle le numérateur. C'est le bon nombre : \(20^{32}=2^{32}\cdot10^{32}\).}
+
+\subsection*{Des combinaisons multiples}
+
+Le feuillet distingue la « combinaison d'ordre », c'est-à-dire les permutations
+(\(n!\)), et la « combinaison de variété », c'est-à-dire les arrangements de
+\(k\) objets pris parmi \(n\) (\(n!/(n-k)!\)). Il les multiplie entre elles.
+\begin{itemize}
+  \item Six soldats se rangent de \(6!=720\) façons. Avec six armes différentes
+    en plus, \(720^2=518\,400\) ; avec six livrées encore,
+    \(720^3=373\,248\,000\).
+  \item Si l'on a trois épées et trois armes différentes, les armes se
+    distribuent de \(\frac{6!}{3!}=120\) façons. Si l'on a deux livrées de
+    chacune de trois sortes, de \(\frac{6!}{2!\,2!\,2!}=90\) façons. D'où
+    \(720\cdot120\cdot90=7\,776\,000\) : ce sont les permutations d'un
+    multi-ensemble.
+  \item Avec sept sortes d'armes et huit de livrées, on a \(7\cdot6\cdots2=5040\)
+    arrangements pour les armes et \(8\cdot7\cdots3=20\,160\) pour les livrées.
+    D'où \(720\cdot5040\cdot20\,160=73\,156\,608\,000\).
+\end{itemize}
+Tous ces nombres sont justes.
+
+\subsection*{Les commandants et les places}
+
+Un brouillon très corrigé, d'abord posé en bouquets et en pots, devient un
+problème de commandants : on choisit trois commandants parmi six arrivés et on
+les place dans trois postes parmi six. En comptant quel commandant va à quel
+poste, on obtient \(\binom63\cdot6\cdot5\cdot4=20\cdot120=2400\), comme le
+feuillet. Avec cinq postes, \(20\cdot60=1200\), comme le feuillet. Avec huit
+postes, la même règle donne \(20\cdot336=6720\), et non les 1120 du
+feuillet.\footnote{Les ajouts en interligne (« qui divisé par 6 on a 10 »,
+« qui divisé par 6 […] donne 56 ») amorcent un autre dénombrement, où l'on ne
+distingue pas quel commandant occupe quel poste. Ce dénombrement donnerait
+\(\binom63\binom83=20\cdot56=1120\), mais alors aussi \(20\cdot20=400\) et
+\(20\cdot10=200\) pour les deux premiers cas. Le brouillon mêle les deux
+conventions ; 1120 est écrit sur un nombre biffé. La transcription avertit que
+la rédaction finale de ces lignes n'est pas certaine.}
+
+\subsection*{Les anagrammes}
+
+Combien de « dictions ou anagrammes » peut-on faire avec les huit lettres
+\(a,b,c,d,e,i,o,s\) sans que \(b,c,d\) se trouvent jamais ensemble ? On compte
+les mots où les trois consonnes sont consécutives en les traitant comme un
+bloc : \(6!\cdot3!=4320\). Il reste \(8!-4320=36\,000\). Si l'on interdit en
+outre que deux d'entre elles occupent les deux premières ou les deux dernières
+places, on retranche \(12\cdot(6!-5!)=7200\). Il reste \(28\,800\). Les deux
+nombres sont justes, la lecture les ayant vérifiés par énumération.\footnote{Le
+facteur 12 compte les trois paires, les deux ordres et les deux extrémités, et
+\(6!-5!\) les mots où la troisième consonne n'est pas contiguë à la paire. Les
+deux cas (paire en tête, paire en fin) ne peuvent se produire ensemble avec
+trois consonnes seulement.}
+
+\subsection*{« Hasard » : le tirage de Gênes et les banquiers}
+
+« C'est la coutume à Gennes d'élire ou plutôt de tirer au sort tous les ans »
+cinq personnes pour les principales charges de la République. Des banquiers
+prennent des paris sur les noms. Le feuillet suppose qu'ils paient 20 000
+pistoles pour une si les cinq nommés sortent, 5000 pour quatre, 300 pour trois
+et 4 pour deux.\footnote{Le nombre de ceux entre qui le sort se tire est dans
+deux ou trois mots que la transcription n'a pas lus, et la ville n'est donnée
+que sous réserve. Le calcul du feuillet, lui, porte sur 100 noms (\(100\cdot99
+\cdot98\cdot97\cdot96\)), et c'est de lui que la lecture tire ce nombre.} Il
+calcule d'abord \(\binom{100}{5}=75\,287\,520\), en divisant
+\(100\cdots96\) par \(5!=120\) (« ou bien multiplier seulement 80 par 97, 98 et
+99 »). Il donne ensuite le nombre de tirages qui contiennent exactement \(k\)
+des cinq noms, \(\binom5k\binom{95}{5-k}\) :
+\[
+\begin{array}{c|c|c}
+k & \text{feuillet} & \binom5k\binom{95}{5-k}\\
+\hline
+5 & 1 & 1\\
+4 & 5\cdot95=475 & 475\\
+3 & 10\times\text{« triangle de 94 »}=10\cdot4465=44\,650 & 44\,650\\
+2 & 10\times\text{« tétraèdre de 93 »}=10\cdot138\,415=1\,384\,150 & 1\,384\,150\\
+1 & 5\times\text{« triangle-triangle de 92 »}=5\cdot3\,183\,545=15\,917\,725 & 15\,917\,725\\
+0 & \text{(reste)}\ 57\,940\,519 & \binom{95}{5}=57\,940\,519
+\end{array}
+\]
+Le « triangle », le « tétraèdre » et le « triangle-triangle » sont les nombres
+figurés, triangulaires, pyramidaux et de dimension 4. En langage actuel,
+\(\binom{95}{2}\), \(\binom{95}{3}\) et \(\binom{95}{4}\). La partie finale, « le
+fondement de ces raisons », les justifie : \(\binom{95}{2}=94+93+\cdots+1\),
+parce que chacun des 95 non-nommés s'associe à chacun des suivants. C'est
+l'identité \(\binom{n}{2}=\sum_{j<n}j\), prélude à
+\(\binom{n+1}{k+1}=\sum_{m\le n}\binom{m}{k}\).\footnote{La dernière phrase du
+« fondement » (« Pour avoir les hazars de 2. on multiplie par 10 le tetraedre
+de 93. ») s'arrête là, sans suite.}
+
+Les rapports que le feuillet donne ensuite, cas par cas, sont moins sûrs.
+\begin{itemize}
+  \item Pour les cinq noms : 75 287 519 chances contre une, divisées par
+    20 000, donnent \(3764{,}376\), soit \(3764\frac38\) « et plus », et non
+    \(3764\frac34\).\footnote{Le \(\frac34\) est répété dans la note marginale.
+    Le 4 de cette main se confond avec 9 ou 1, mais pas le 8 : la lecture tient
+    que la page se trompe, et signale que la leçon est à revoir sur l'image.}
+  \item Pour quatre : \(15\,057\frac25\) « peu plus », puis \(31\frac7{10}\)
+    « peu moins ». C'est juste (\(15\,057{,}41\) et \(31{,}6998\)).
+  \item Pour trois : \(250\,808\) « peu moins », puis \(5\frac35\) « peu plus ».
+    C'est juste (\(5{,}617\)).
+  \item Pour deux : \(18\,464\,561\), puis « \(13\frac12\) peu moins ». Il faut
+    \(13{,}34\), soit \(13\frac13\) peu plus, comme la transcription le note.
+  \item Pour un : \(3\frac{16}{25}\). C'est juste (\(3{,}64\)).
+\end{itemize}
+La soustraction en cascade que fait le feuillet (des « hazards du banquier »
+sur cinq, il ôte ceux du parieur sur quatre, et ainsi de suite) n'a pas de sens
+probabiliste net. La synthèse qui suit est en revanche juste. Pour un parieur
+qui mise une pistole, la somme des gains possibles pondérés par leurs cas
+est
+\[
+1\cdot20\,000+475\cdot5000+44\,650\cdot300+1\,384\,150\cdot4=21\,326\,600 ,
+\]
+sur 75 287 520 tirages. Son espérance de gain est donc
+\(21\,326\,600/75\,287\,520\approx0{,}283\) pistole par pistole misée : le
+rapport « comme 1 à un peu plus de \(3\frac12\) » du feuillet
+(\(3{,}530\)). Sans rien payer pour deux noms, il reste \(15\,790\,000\), et le
+rapport « un peu plus de \(4\frac34\) » (\(4{,}768\)) est juste aussi. En
+termes actuels, le banquier garde en moyenne environ 72\,\% des mises, et 79\,\%
+s'il ne paie rien pour deux noms.\footnote{Deux rapports intermédiaires,
+« 183850 à 636709 » et « 533165 à 1349023 » (ce dernier dans un paragraphe
+biffé), sont justes arithmétiquement. Le premier compare pourtant des gains
+pondérés à un nombre de cas, et le second est biffé. La réduction
+« 533165 à 1882188 » est la bonne : \(21\,326\,600\) et \(75\,287\,520\)
+divisés par 40.}
+
+\subsection*{Les ancêtres et les pions}
+
+Le dernier petit feuillet (vue 51, droite) porte deux problèmes. Le nombre des
+ancêtres « en 30 générations », sans mariage entre descendants communs, est
+donné pour \(2^{30}=1\,073\,741\,824\). C'est le nombre des ancêtres de la
+trentième génération ; le total des trente générations serait
+\(2^{31}-2=2\,147\,483\,646\).\footnote{L'énoncé dit « en 30 générations », ce
+qui admet les deux sens ; la lecture signale seulement que le nombre du
+feuillet est celui de la seule trentième.}
+
+Au jeu d'échecs, les huit pions peuvent avancer d'une ou de deux cases au
+premier coup. En les jouant chacun une fois, dans tous les ordres, on a
+\(8!\cdot2^8=10\,321\,920\) façons. La table du feuillet donne les produits
+des nombres pairs, \(2\cdot4\cdots2n=2^n\,n!\) : 2, 8, 48, 384, 3840, 46 080,
+645 120, 10 321 920. C'est ce qu'on appelle aujourd'hui la double factorielle
+\((2n)!!\). Si les pions pouvaient avancer d'une, deux ou trois cases, il
+faudrait \(3^n\,n!\), produit des multiples de 3 : 3, 18, 162, \ldots,
+\(264\,539\,520\). Toutes les valeurs sont justes.\footnote{Dans la première
+table, le premier nombre de la dernière ligne se lit « 6. » : le 1 de 16
+manque. On ne tient pas compte ici du blocage d'un pion par un autre, que
+l'énoncé ne considère pas.}
+
+\section*{Ce que les feuillets ne disent pas}
+
+\pagerange{1}{58}
+Les feuillets ne disent pas qui les a écrits. Aucune des pièces n'est signée,
+et une seule est datée par son contenu : la note de la vue 32, qui cite une
+lettre de juillet 1638. Cette lecture n'infère aucune autre date.
+\begin{itemize}
+  \item La main A est prêtée à Mersenne par une note du XIX\textsuperscript{e}
+    siècle et par les renvois de la vue 16 à des livres qui portent les titres
+    des siens. C'est une inférence forte, mais une inférence. Rien ne permet
+    de dire si les pages de la vue 31, qui parlent de « ma méthode »
+    d'adæqualité et d'exemples « envoyés à M\textsuperscript{r} Roberval »,
+    sont de lui ou copiées par lui.
+  \item Les mains C et D ne nomment personne. Le feuillet de la vue 39, qui les
+    range sous « Pascal / autographe / et copies », est un classement du
+    XIX\textsuperscript{e} siècle. La note de 1962 rapporte les partis au
+    traité de Huygens et avance, sous forme de possibilités, une date (1656) et
+    un copiste traducteur (Des Billettes). Les énoncés des vues 40 à 42
+    coïncident en effet, dans leur suite et souvent dans leurs nombres, avec les
+    propositions I à XII de ce traité, jusqu'à la question sur laquelle la page
+    s'arrête. Le texte n'est pourtant pas une traduction littérale : il
+    compte en écus, dit « je » et « quidam », et donne la valeur de chaque jeu
+    en seizièmes et en trente-deuxièmes. La lecture s'en tient à la
+    coïncidence.
+  \item Les valeurs des jeux d'une partie en trois et la position des trois
+    joueurs coïncident aussi avec celles de l'échange entre Pascal et Fermat de
+    1654, et l'énoncé des 24 et 25 coups avec le problème que la tradition
+    attache au chevalier de Méré. Ces noms sont donnés pour ce qu'ils sont :
+    des repères pour chercher, non des auteurs.
+\end{itemize}
+
+\end{document}
