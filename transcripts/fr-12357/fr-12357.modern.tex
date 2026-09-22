@@ -1,0 +1,1815 @@
+% Français 12357 — lecture modernisée du volume entier.
+%
+% Pass: Opus 5.5 (claude-opus-5-5), 2026-09-22 — first pass, unchecked against
+% the views by a human, and an interpretation rather than a record. Where this
+% file and the transcriptions differ in substance, the transcriptions
+% (batch-01.fr.tex, batch-02.fr.tex, batch-03.fr.tex) are the record.
+%
+% Sources read: the three batch transcriptions of this volume, in full, twice —
+% once for the mathematics, once for the apparatus — and nothing else. No image
+% was consulted. The Harmonie universelle, the book every remark is keyed to,
+% was deliberately left shut, and so were Galileo's dialogues, Mersenne's
+% other books, Fabre, Faber, Le Fèvre, Guldin and every modern edition: every
+% page reference to the Harmonie is given as the copy gives it and none has
+% been checked against the book. Where the transcription has a gap, this
+% reading says so. All three batches were transcribed on Opus 5.5; together
+% they cover views 1–56, the whole volume.
+%
+% What the volume is. A COPY, in one anonymous seventeenth-century hand, of
+% the remarks Mersenne had written in the margins and on the blank leaves of
+% his own Harmonie universelle — so says the copy's title (v. 8), and nothing
+% on the leaves contradicts it except that a few remarks name « le P.
+% Mersenne » in the third person (v. 10, 11, 45), which this reading records
+% without drawing a conclusion. Bound in front of the copy: three leaves on
+% music in another, older-looking hand, with no reference to the book (v. 3–7).
+% Bound at the end: a separate Latin piece, the Paris academy's objections to
+% Galileo's dialogues addressed to his friends, dated 1 July 1643 (v. 53–55).
+%
+% The plan, which follows the treatises the copy's running titles name:
+%   v. 1–56   What the volume contains
+%   v. 3–7    The musical leaves (plate of 27 strings; monochord; 53 commas)
+%   v. 8–9    Blank leaves before the book: circle, square, Fabre, a square root
+%   v. 9–11   « Seconde observation »; Book I « de la nature des sons »
+%   v. 11–16  Book II « du mouvement des corps »: the spiral of fall and its
+%             8/15; not a circle; helices of any degree; odd numbers; media;
+%             compound pendulums
+%   v. 16–19  Book III « du mouvement »: strings, weights, breaking, missiles
+%   v. 19     Book I « de la voix »
+%   v. 19–24  Book II « des chants »: permutations and combinations
+%   v. 24–28  Books « des consonances »: superparticular divisions, tables
+%   v. 28–37  Books « des instruments »: strings, quarter-tones, flutes, bells
+%   v. 37–40  « De l'utilité de l'harmonie »: air, mirrors, rational ellipses
+%   v. 40–44  « Nouvelles observations »: jets, Beaugrand, temperament,
+%             cycloid, amicable and multiply perfect numbers
+%   v. 45–52  « Au papier blanc après tous les livres »: magic squares,
+%             divisors, primality, sums, dice
+%   v. 53–55  The Paris academy to Galileo's friends, 1643
+%   v. 1–56   What the leaves do not say
+%
+% Notation translated, each with a footnote at its first use: « raison
+% doublée / sous-doublée » (square / square root of a ratio); « sesquialtère »,
+% « sesquioctave », « surparticulière » ((n+1)/n); « partie aliquote » (proper
+% divisor); « puissance triangulaire » (figurate number, a binomial
+% coefficient); « l'ordre de n », « la combinaison de l'ordre » (n!);
+% « quarré quarré », « Q. C. » (fourth, fifth power); « hexagone central »
+% (centred hexagonal number); « enceinte » (border of a bordered magic
+% square); « filet isochrone » (length of the equivalent simple pendulum);
+% « roulette, trochoïde » (cycloid); « hélice » (spiral); « graue » (heavy
+% body); « seconde minute » (second of time); the double stroke « ∥ » of v. 13
+% (equality, or « est à … comme »); the units toise = 6 pieds, pied = 12
+% pouces, pouce = 12 lignes; livre = 16 onces, once = 8 gros, gros = 72 grains.
+%
+% Every computation the leaves give was redone, and the recomputations are this
+% reading's own. Where the leaf is loose, elliptical or wrong this reading
+% states what is true and footnotes what the leaf has. Modern names are
+% attached where the statement coincides, and footnoted as later than the leaf.
+%
+% Folios. No \folio{} in any transcription: an ink series 3–26 runs on the
+% rectos and matches the librarian's « 26 feuillets », but it is not the pale
+% pencil this project takes for the library's foliation, and no human has
+% looked. Nothing here is cited by folio; views only, by \pagerange{}{}.
+%
+% Dates. Only those written on the leaves: « le dernier jour de may 1636 »
+% (v. 39, the year doubtful), « l'année 1638 » (v. 19), « le 4e Juin 1638 »
+% (v. 41), a letter of Fermat of April 1640 (v. 46, the day doubtful), and
+% 1 July 1643 (v. 55). \dating{} is the catalogue's. No date is inferred for the
+% copy; the one inference ventured on the remarks (that some cite books
+% printed after 1636) is marked as such where it is made.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{fr-12357}
+\shelfmark{Français 12357}
+\pages{1}{56}
+\dating{1601-1700}
+\watermark{Lecture automatique\\interprétation non vérifiée}
+\foldertitle{« Remarques tirées du livre de l'Harmonie universelle du P. MERSENNE, ainsy qu'il les avoit escrites, de sa main, à la marge et aux feuillets blancs devant et derrière dudit livre ». Français 12357 — lecture modernisée du volume entier}
+
+\begin{document}
+
+\section*{Résumé}
+
+\begin{resume}
+Ce volume est la copie, par une main anonyme du XVII\textsuperscript{e}
+siècle, des notes que le P. Marin Mersenne avait écrites dans les marges et sur
+les feuillets blancs de son propre exemplaire de l'\emph{Harmonie universelle},
+le grand traité de musique, d'acoustique et de mécanique qu'il avait publié. La
+copie le dit dans son titre : ce sont les remarques « ainsi qu'il les avait
+écrites de sa main ». Chaque remarque commence par le renvoi à la page du livre
+qu'elle commente — « p. 94 au commencement », « p. 189, prop. XV » — et la copie
+suit le livre traité par traité : la nature des sons, le mouvement des corps,
+la voix, les chants, les consonances, les instruments, l'utilité de
+l'harmonie, puis les « nouvelles observations », enfin ce qu'il avait écrit
+« au papier blanc après tous les livres ». Trois feuillets de musique d'une
+autre main sont reliés devant, et une pièce latine datée du 1\textsuperscript{er}
+juillet 1643 est reliée derrière : les objections que l'« Académie parisienne »
+avait écrites contre les dialogues de Galilée et qu'elle adresse, Galilée étant
+mort, à ses amis d'Italie.
+
+Le problème que se pose l'auteur des remarques est celui d'un savant qui relit
+son livre et le corrige. Il le dit sans détour : « il faut corriger tout ceci »,
+« ce nombre me semble faux », « il la faut ôter d'ici comme inutile », « voyez
+la 9\textsuperscript{e} proposition de l'Utilité, et corrigez tout ceci ». Ses
+corrections portent sur la vitesse du son, le poids de l'air, la chute des
+graves, la portée des projectiles, et elles renvoient sans cesse à des
+expériences refaites, à des lettres de Descartes, de Fermat, de Galilée. Mais
+le volume a aussi ses pages de pure mathématique, et elles sont de premier
+ordre. Un corps qui tomberait vers le centre d'une Terre en rotation ne décrit
+pas le demi-cercle qu'avait proposé Galilée, mais une spirale ; l'aire de cette
+spirale est exactement les $8/15$ du secteur qu'elle parcourt, démontrés à la
+manière d'Archimède par des secteurs inscrits et circonscrits et un lemme sur
+les sommes de carrés que la marge vérifie en chiffres ; une autre démonstration,
+en algèbre, établit que la courbe ne peut pas être un cercle ; et une petite
+table sans titre donne, pour les spirales de tout degré, les rapports
+$1/3, 8/15, 9/14, 32/45, \dots$ — qui sont exactement $2n^2/((n+1)(2n+1))$.
+Ailleurs, on dénombre les mains de douze cartes au piquet, les chants de huit
+notes, les mots qu'on peut faire de 23 lettres ; on construit des carrés
+magiques de 4 à 22 cases de côté, emboîtés les uns dans les autres ; on
+compte les diviseurs d'un nombre, on cherche le moindre nombre qui en a un
+nombre donné, on énumère les nombres amiables et les nombres multiparfaits ; on
+demande si 1073602561 et 2027651281 sont premiers ; on compte les coups de
+deux et de trois dés.
+
+L'idée qui fait tenir ensemble ces pages disparates est celle de l'auteur de
+l'\emph{Harmonie} lui-même : tout se mesure et tout se compte, la consonance par
+la coïncidence des vibrations, la hauteur d'une corde par le poids qui la
+tend, le nombre des chants possibles par la combinatoire. Cette lecture a
+refait tous les calculs. La plupart sont justes, et certains le sont à un
+degré remarquable : la table des parties aliquotes, les trois paires de
+nombres amiables, les six nombres dont la somme des diviseurs est triple du
+nombre, la vérification chiffrée du lemme des $8/15$, les angles d'une cloche.
+D'autres sont faux, et on le dit à chaque fois : 6679 n'est pas le produit de 23
+et 29, le moindre nombre qui a onze parties aliquotes est 60 et non 72, 15000 en
+a 39 et non 79, la quarte ne se divise pas en 27 mais en 26 manières en trois
+raisons superparticulières, deux dés ne donnent pas 62 coups mais 36. Plusieurs
+fautes sont manifestement de copie, comme le 4320 qui tient la place de 40320.
+
+Où cela mène, et quels noms modernes chercher : la chute des corps dans une
+Terre en rotation et la mécanique en référentiel tournant ; la quadrature par
+exhaustion et les sommes de puissances ; le pendule composé et la longueur
+du pendule simple équivalent ; les lois de Mersenne pour les cordes
+vibrantes ; les permutations, les combinaisons avec et sans répétition et les
+coefficients binomiaux ; les divisions superparticulières, l'intonation juste,
+le tempérament égal et la division de l'octave en 53 ; les carrés magiques à
+enceintes ; la fonction nombre de diviseurs $\tau$ et la fonction somme des
+diviseurs $\sigma$ ; les nombres amiables et la règle de Thābit ibn Qurra ; les
+nombres multiparfaits ; la méthode de factorisation de Fermat et les nombres de
+Mersenne ; la loi de Torricelli ; la cycloïde ; le calcul des chances aux dés.
+
+\keywords{Mersenne's Harmonie universelle, marginalia, fall towards the centre of a rotating Earth, area of a spiral, quadrature by exhaustion, sums of powers, compound pendulum, equivalent simple pendulum, Mersenne's laws of vibrating strings, tensile strength, permutations, combinations with repetition, binomial coefficients, figurate numbers, inclusion-exclusion principle, superparticular ratios, just intonation, Pythagorean tuning, equal temperament, 53-tone equal temperament, quarter-tone scale, bordered magic squares, divisor function, sum-of-divisors function, amicable numbers, Thabit ibn Qurra's rule, multiply perfect numbers, Fermat's factorization method, Mersenne primes, Torricelli's law, cycloid, dice probabilities, Galileo's Two New Sciences}
+\end{resume}
+
+\section*{Ce que ce volume contient}
+
+\pagerange{1}{56}
+Cinquante-six vues, une page par vue. La vue 1 est le plat marbré de la
+reliure, la vue 2 la garde, qui ne porte que l'ancienne cote « Suppl.\textsuperscript{t}
+fr. 902 » et la mention d'un bibliothécaire, « Volume de 26 Feuillets 3 Août
+1894 » ; la vue 56 est le verso blanc du dernier feuillet, et la vue 52 ne
+montre que la page précédente par transparence. Tout le reste se partage en
+trois ensembles.
+
+\begin{itemize}
+  \item \textbf{Vues 3 à 7 — trois feuillets de musique} d'une main plus ancienne
+    d'aspect que celle de la copie, aux s et aux e bouclés : une grande planche
+    dépliante (vue 3), un monocorde divisé (vue 4), un clavier gradué en commas
+    (vue 5), deux pages de musique notée à trois et quatre parties (vues 6
+    et 7). Aucun renvoi à une page de l'\emph{Harmonie} n'y figure.
+  \item \textbf{Vues 8 à 52 — la copie des remarques}, d'une seule main du
+    XVII\textsuperscript{e} siècle, sous le titre « Remarques tirées du livre de
+    l'harmonie universelle du P. Mersenne ainsi qu'il les avait écrites de sa
+    main à la marge et aux feuillets blancs devant et derrière dudit livre ».
+  \item \textbf{Vues 53 à 55 — une pièce latine}, de la même main mais d'une
+    écriture plus posée : « Academia Parisiensis viros Clarissimos Galilaei
+    familiares et amicos lyncaeos precatur\dots », quinze objections numérotées
+    aux dialogues de Galilée, datées de Paris le 1\textsuperscript{er} juillet
+    1643, suivies d'un tableau des sept modes grecs d'après Doni.
+\end{itemize}
+
+La copie suit le livre. Chaque remarque s'ouvre sur son renvoi — la page, puis
+le lieu de la page : « au droit des lignes 23 jusqu'à 32 », « lig. 22 après ces
+mots (\dots) », « au droit de la figure », « sur le corollaire premier » — et la
+pagination repart à chaque traité du livre, que la copie nomme dans sa marge
+gauche sous un trait. Les sections de cette lecture suivent ces titres
+courants, dans l'ordre de la copie.\footnote{Les titres courants relevés par les
+transcriptions sont : « au livre 1\textsuperscript{er} de la nature des sons »
+(v. 9), « au livre second du mouvement des corps » (v. 11), « au
+3\textsuperscript{me} livre du mouvement » (v. 16), « Du 1\textsuperscript{er}
+livre de la voix » (v. 19), « Du livre second des chants » (v. 19),
+« \dots 1\textsuperscript{er} des \dots sonances » (v. 24, en partie dans le pli),
+« Du livre 3\textsuperscript{me} des consonnances » (v. 25), « Des Instruments
+\dots chorde » (v. 28), « \dots ivre second des Instruments » (v. 29),
+« \dots ivre 3\textsuperscript{me} des \dots truments a chorde » (v. 30),
+« \dots vij\textsuperscript{me} livre instruments de \dots ussion » (v. 33, le
+numéro douteux), « De l'utilité de l'harmonie » (v. 37), « \dots nouvelles
+\dots servations \dots siques et mathématiques » (v. 40), et, en tête de page,
+« Au papier blanc après tous les livres de l'harmonie » (v. 45). Entre deux
+titres, l'appartenance d'une page à un traité est celle que donne la copie ;
+aucun renvoi n'a été confronté au livre.} Les renvois aux pages de
+l'\emph{Harmonie} sont donnés ici tels que la copie les écrit ; cette lecture
+n'a pas ouvert le livre et ne les a pas vérifiés.
+
+La copie garde la première personne de l'auteur des remarques : « j'ai donné ma
+méthode », « notre version », « j'ai vu graver à Mons », « j'ai trouvé par la
+pompe éolipile ». Trois passages pourtant nomment Mersenne à la troisième
+personne : un écho « répond une octave plus haut que la voix du P. Mersenne »
+(v. 10) ; deux colonnes d'une table donnent les chutes « suivant les
+expériences du père Mersenne » (v. 11) ; et, en marge du grand carré magique
+(v. 45), la copie corrige trois sommes « selon le père Mersenne, mais il est
+faux ». Cette lecture relève ces passages sans en tirer de conclusion sur la
+personne qui les a écrits ; elle attribue les remarques à Mersenne parce que
+le titre de la copie le fait, et elle n'attribue la copie à personne.
+
+Pourquoi les feuillets ne sont cités que par les vues de Gallica. Une série de
+petits chiffres fins, à l'encre, court au coin supérieur droit des rectos, de
+« 3 » (vue 6) à « 26 » (vue 55), un par feuillet, et finit sur le compte de
+vingt-six feuillets du bibliothécaire ; elle se comporte donc comme une
+foliotation. Mais elle est à l'encre et non au crayon, et aucune transcription
+ne l'a écrite comme folio en attendant qu'une personne ait regardé les
+feuillets. Cette lecture fait de même.\footnote{Autres chiffres relevés par les
+transcriptions : un « 331 » au-dessus du titre (v. 8) ; un « (4 » à la fin de la
+troisième ligne du titre, là où l'on attendrait le chiffre de la série, mais
+d'un trait plus gras (v. 8) ; un « 2 » et un « 3 » isolés au pied des vues 24 et
+42, peut-être des signatures de cahier ; un « 1 » ou « i » en tête de la vue 54.
+Tous les « p. », « pag. », « pa. » du texte sont des pages du livre imprimé
+(ou, aux vues 8 et 9, du livre de Fabre), jamais des pages du manuscrit.}
+
+\section*{Les feuillets de musique reliés devant la copie}
+
+\pagerange{3}{7}
+\subsection*{La planche des vingt-sept cordes}
+
+La planche de la vue 3 donne vingt-sept longueurs de cordes en escalier, de
+57600 à 28800, c'est-à-dire sur une octave. Rapportées à la plus longue, toutes
+sauf deux sont des rapports de l'intonation juste, produits de puissances de
+2, 3 et 5 : $55296 = 57600 \cdot \frac{24}{25}$ (le dièse chromatique),
+$54000 = 57600\cdot\frac{15}{16}$, $51840 = 57600\cdot\frac{9}{10}$,
+$51200 = 57600\cdot\frac{8}{9}$, $48000 = 57600\cdot\frac56$,
+$46080 = 57600\cdot\frac45$, $38400 = 57600\cdot\frac23$,
+$34560 = 57600\cdot\frac35$, $30720 = 57600\cdot\frac{8}{15}$, et ainsi des
+autres. Les deux exceptions sont les douzième et treizième cordes, lues 43500
+et 43472 : aucune n'est un rapport simple, et la quarte juste,
+$57600 \cdot \frac34 = 43200$, manque à l'escalier. Il est probable que l'une
+des deux devait être 43200 ; cette lecture ne devine pas l'autre.\footnote{La
+transcription précise que les deux nombres ont été lus « tels qu'ils sont
+tracés et vérifiés à fort grossissement ». Mesurées en commas de l'octave
+divisée en 53, les vingt-cinq autres cordes tombent toutes à moins de
+$0{,}2$ comma d'un entier ; celles-ci tombent à $21{,}47$ et $21{,}52$, entre
+la quarte (22) et rien.}
+
+Les deux tables de la planche nomment les intervalles et leurs rapports. Celle
+des consonances est juste : tierces mineure $\frac56$ et majeure $\frac45$,
+quarte $\frac34$, quinte $\frac23$, sixtes $\frac58$ et $\frac35$, octave
+$\frac12$ — le rapport étant celui de la corde aiguë à la grave. Celle des
+dissonances l'est aussi pour l'essentiel — comma $\frac{80}{81}$, dièse
+$\frac{125}{128}$, demi-tons $\frac{24}{25}$, $\frac{128}{135}$,
+$\frac{15}{16}$, tons $\frac{9}{10}$ et $\frac89$, triton $\frac{32}{45}$,
+fausse quinte $\frac{45}{64}$ ; la « fausse quarte » $\frac{75}{96}$ est
+$\frac{25}{32}$, la « quinte superflue » $\frac{48}{75}$ est $\frac{16}{25}$ —
+à deux articles près. La « septième mineure » $\frac{148}{225}$ n'est le rapport
+d'aucune septième : son inverse, $1{,}52$, est à peine plus grand qu'une quinte.
+Et la « septième majeure » $\frac{10}{18} = \frac59$ est en réalité la septième
+mineure $\frac95$. L'escalier lui-même contient les bonnes valeurs : $32400$ et
+$32000$ (les septièmes mineures $\frac{9}{16}$ et $\frac59$) et $30720$ (la
+septième majeure $\frac{8}{15}$).\footnote{La transcription lit « 148 » en
+précisant que « le premier chiffre après 1 est un 4 net ». Le « comma mineur »
+$\frac{2025}{2048}$ est ce qu'on appelle aujourd'hui le diaschisma. Trois
+claviers sont dessinés sous la planche, « Octave de vingt-sept, de
+vingt-cinq, de dix-neuf marches » ; la grille des consonances, qui n'est pas
+transcrite case par case, n'est pas lue ici.}
+
+\subsection*{Le monocorde et ses feintes}
+
+La vue 4 divise un monocorde et explique comment placer les « feintes », les
+touches noires, à partir des consonances. « Soustraire » et « ajouter » des
+raisons, sur ce feuillet, c'est les diviser et les multiplier : ainsi
+$A = \frac{2}{3} : \frac{3}{4} = \frac89$, $F = \frac34\cdot\frac34 =
+\frac{9}{16}$, do dièse $= \frac45\cdot\frac89 = \frac{32}{45}$, sol dièse
+$= \frac{32}{45} : \frac34 = \frac{128}{135}$, fa dièse $= \frac{32}{45}\cdot
+\frac34 = \frac{8}{15}$. Les cinq calculs sont justes.\footnote{« Pour
+trouver A faut soubtraire la raison harmonique $\frac34$ de D, qui fait
+$\frac23$, reste $\frac89$ pour A. » Le signe de la feinte est, sur le
+feuillet, la lettre suivie d'un z à queue ; la transcription le rend par un
+dièse. Les valeurs $\frac{96}{135}$, $\frac{64}{135}$ et $\frac{16}{45}$ de la
+figure sont $\frac{32}{45}$ et les octaves aiguës de $\frac{128}{135}$ et de
+$\frac{32}{45}$.}
+
+\subsection*{Le clavier en 53 commas}
+
+La vue 5 attribue à chaque intervalle un nombre entier de « commas », l'octave
+en comptant 53 : dièse 3, « lima » 4, demi-ton 5, ton mineur 8, ton majeur 9,
+ton « excédant » 10, tierce mineure 14, tierce majeure 17, quarte 22, quinte
+31, sixte mineure 36, sixte majeure 39, octave 53. C'est, en langage moderne,
+l'approximation des intervalles justes dans la division de l'octave en 53
+parties égales : un intervalle de rapport $r$ y vaut $53\log_2 r$ commas, et
+l'on trouve $3{,}12$ ; $4{,}07$ ; $4{,}93$ ; $8{,}06$ ; $9{,}01$ ; $9{,}87$ ;
+$13{,}94$ ; $17{,}06$ ; $22{,}00$ ; $31{,}00$ ; $35{,}94$ ; $39{,}06$ — tous à
+moins d'un septième de comma de l'entier du feuillet. Les compositions que le
+feuillet donne sont exactes, en commas comme en rapports : le ton mineur est le
+dièse plus le demi-ton ($\frac{25}{24}\cdot\frac{16}{15} = \frac{10}{9}$,
+$3 + 5 = 8$), le ton majeur la lima plus le demi-ton ($\frac{135}{128}\cdot
+\frac{16}{15} = \frac98$, $4 + 5 = 9$), la sixte mineure deux tons majeurs, un
+ton excédant et un ton mineur ($\frac{81}{64}\cdot\frac{256}{225}\cdot
+\frac{10}{9} = \frac85$, $36$), l'octave trois tons majeurs, deux mineurs et un
+excédant ($\frac{729}{512}\cdot\frac{100}{81}\cdot\frac{256}{225} = 2$,
+$53$).\footnote{Le feuillet appelle « ton parfait » le ton $\frac98$, « ton
+majeur ou excédant » le rapport $\frac{256}{225}$ et dit du comma qu'il est
+« la $\frac{1}{53}$ partie de l'octave » ; le comma syntonique $\frac{81}{80}$
+en est en fait $\frac{1}{55{,}8}$. La gamme est dite « inventée par Boetius
+pour la réformation de la musique sous Grégoire premier » ; cette lecture
+n'en juge pas. Le nom moderne de la division, tempérament à 53 degrés égaux,
+est postérieur au feuillet. La table des « concordances et discordances »
+marquées $+$ et $-$ n'est pas vérifiée case par case.} Les vues 6 et 7 sont de
+la musique notée, non transcrite.
+
+\section*{Les feuillets blancs de devant : le cercle, le carré, et Fabre}
+
+\pagerange{8}{9}
+Les premières remarques ne commentent pas l'\emph{Harmonie} : elles étaient,
+dit la marge, sur les feuillets blancs placés devant le livre, et elles
+discutent la quadrature du cercle d'après un livre de Fabre dont elles citent
+les pages 73 à 97.\footnote{Ces pages sont celles de Fabre, non de
+l'\emph{Harmonie}, d'après le texte même (« Fabre p. 73 prétend\dots »). Le livre
+n'est pas autrement nommé.}
+
+\subsection*{Aires et périmètres, avec $\pi \approx \frac{22}{7}$}
+
+Tous les calculs de cette page prennent $\pi = \frac{22}{7}$. Une sphère de
+diamètre 7 a un grand cercle de circonférence 22 et une surface totale 154
+(diamètre fois circonférence, soit $\pi d^2$) ; le carré de même périmètre que
+le cercle de diamètre 7 a pour côté $5\frac12$. Un cercle de diamètre 14 a pour
+aire 154, et le carré de même périmètre, de côté 11, n'a que 121 : les deux aires
+sont comme 14 à 11 pour un même tour de 44 pieds. Tout cela est juste.
+
+« Pour faire un rond égal à un carré », on donne 8 au diamètre du cercle et 10
+à la diagonale du carré. L'aire du carré est 50 ; celle du cercle, avec
+$\frac{22}{7}$, est $16 \cdot \frac{22}{7} = 50\frac27$, et non $50\frac47$
+comme l'écrit la copie ; l'excès du cercle est donc $\frac{1}{176}$ de sa
+propre aire, et non $\frac{1}{88}$.\footnote{Avec la vraie valeur de $\pi$,
+l'aire est $50{,}27$ et l'excès $\frac{1}{189}$ environ. Les deux nombres de la
+copie, $50\frac47$ et $\frac{1}{88}$, sont le double de l'excès vrai ; ils
+s'accordent entre eux et non avec le calcul.}
+
+« Par le moyen de 70 et 99 multipliés en soi-mêmes l'on a deux nombres en
+raison double, à $\frac{1}{4900}$ près. » En effet $99^2 = 9801$ et
+$2 \cdot 70^2 = 9800$ : $\left(\frac{99}{70}\right)^2 = 2 + \frac{1}{4900}$.
+C'est une solution de l'équation $x^2 - 2y^2 = 1$, qu'on appelle aujourd'hui
+équation de Pell-Fermat, et $\frac{99}{70}$ est une réduite du développement de
+$\sqrt2$ en fraction continue.\footnote{Les deux noms sont postérieurs au
+feuillet. La marge dessine le carré de côté 70 et de diagonale 99.}
+
+\subsection*{Trois valeurs de $\pi$}
+
+La page oppose trois approximations. Celle de Fabre fait égale au quart de la
+circonférence circonscrite la droite AG menée d'un sommet A du carré au milieu
+G du côté opposé. Si le carré a pour côté $a$, $AG = \frac{\sqrt5}{2}a$, et le
+quart de la circonférence circonscrite est $\frac{\pi}{2\sqrt2}a$ : la règle
+revient à $\pi = \sqrt{10} \approx 3{,}1623$. La propriété annexe, que GH
+(joignant les milieux de deux côtés) égale le rayon AE, est exacte.
+
+Celle du sieur Cornu fait que, le côté du carré inscrit étant 9, le quart de la
+circonférence est 10. Le côté inscrit vaut $r\sqrt2$ et le quart de la
+circonférence $\frac{\pi r}{2}$ : la règle revient à
+$\pi = \frac{20\sqrt2}{9} \approx 3{,}142697$, trop grand de $1{,}1\cdot10^{-4}$.
+La remarque ajoute que Cornu fait le quart de la circonférence « trop grand
+d'un peu, car le polygone circonscrit de 97 côtés est plus petit que son
+cercle supposé ». C'est exact, et de justesse : le périmètre du polygone
+régulier de 97 côtés circonscrit au cercle de diamètre 1 vaut
+$97\tan\frac{\pi}{97} \approx 3{,}142692$, inférieur de cinq millionièmes à la
+valeur de Cornu. Un cercle ne pouvant être plus long que les polygones qui
+lui sont circonscrits, la valeur de Cornu est bien trop grande.
+
+La troisième est citée d'un « Denis \dots, conseiller du Roi au bailliage de
+Paris » : la circonférence contient le diamètre « trois fois et
+$\frac{112}{113}$ d'une septième partie ». Or
+$3 + \frac{112}{113}\cdot\frac17 = 3 + \frac{16}{113} = \frac{355}{113}
+\approx 3{,}1415929$, la valeur qu'on attribue aujourd'hui à Adriaan Metius,
+exacte à $3\cdot10^{-7}$ près.\footnote{Le nom du conseiller est souligné et lu
+« auis » ou « anis » par la transcription. L'attribution de $\frac{355}{113}$ à
+Metius est un usage moderne ; le feuillet ne la fait pas.}
+
+Enfin, pour l'aire du cercle : « multiplier le diamètre par soi-même, puis par
+11, et diviser par 14 » est juste ($\frac{\pi}{4} \approx \frac{11}{14}$) ; mais
+« la moitié du diamètre par la circonférence » donne le double de l'aire. Il
+faut la moitié du diamètre par la moitié de la circonférence,
+$\frac{d}{2}\cdot\frac{C}{2} = \pi r^2$.
+
+\subsection*{Cercles additionnés, anneaux, triangle}
+
+La construction de Guillaume Cambray pour faire un cercle égal à deux cercles
+donnés, et la soustraction d'un cercle d'un autre qui laisse un anneau
+(« armille ») égal à un cercle, ne sont que le théorème de Pythagore appliqué
+aux rayons : $\pi R^2 = \pi r_1^2 + \pi r_2^2$ si et seulement si
+$R^2 = r_1^2 + r_2^2$. La remarque le dit elle-même, avec humeur : « ce qu'étant
+connu aux enfants par les éléments d'Euclide, je vois que Fabre n'était ni
+géomètre ni philosophe. » Les rapports de la page 95 de Fabre sont justes avec
+$\frac{22}{7}$ : le cercle inscrit dans un carré est au carré comme
+$\frac{\pi}{4} = \frac{11}{14}$, le carré inscrit dans un cercle est au cercle
+comme $\frac{2}{\pi} = \frac{7}{11}$.
+
+La réduction d'un carré en triangle équilatéral (p. 93 de Fabre) n'est pas
+exacte. Pour un carré de côté $a$, le triangle équilatéral de même aire a pour
+demi-côté $a/\sqrt[4]{3} \approx 0{,}7598\,a$. La construction prend pour
+demi-côté la distance CE, E étant sur le quart de cercle BEC. Si E est le
+milieu de l'arc, $CE = 2a\sin 22{,}5^\circ \approx 0{,}7654\,a$, et le triangle
+dépasse le carré d'environ $1{,}5\,\%$ ; si E est, comme le dit à la lettre la
+note marginale, à la distance « moitié de BC », c'est-à-dire la
+demi-diagonale $a/\sqrt2$, le triangle ne vaut que $\frac{\sqrt3}{2} \approx
+0{,}87$ du carré.\footnote{La figure de la transcription ne permet pas de
+situer E plus précisément ; les deux lectures sont données.} La règle de la page
+97 — l'aire du triangle équilatéral est le carré du côté multiplié par 13 et
+divisé par 30, sa hauteur le côté multiplié par 13 et divisé par 15 — revient à
+$\sqrt3 \approx \frac{26}{15} = 1{,}7333$ au lieu de $1{,}7321$. Pour le côté 8
+elle donne $27\frac{11}{15}$ et $6\frac{14}{15}$, justes dans cette
+approximation ; les valeurs vraies sont $27{,}71$ et $6{,}93$.
+
+\subsection*{Le carré de 3,74586}
+
+La deuxième page blanche porte le carré de $3{,}74586$ posé chiffre à chiffre :
+une ligne pour les carrés des chiffres ($9$, $49$, $16$, $25$, $64$, $36$), une pour les
+doubles produits de chaque chiffre avec le précédent ($42$, $56$, $40$, $80$, $96$), une
+avec l'avant-précédent ($24$, $70$, $64$, $60$), et ainsi de suite jusqu'au double
+produit du premier et du dernier ($36$). C'est le développement
+\[
+\Bigl(\sum_i d_i\,10^{-i}\Bigr)^2 = \sum_i d_i^2\,10^{-2i}
+  + 2\sum_{i<j} d_i d_j\,10^{-i-j},
+\]
+rangé par écart $j - i$. Toutes les lignes sont justes et le total,
+$14{,}0314671396$, est bien le carré de $3{,}74586$.
+
+\section*{La « seconde observation » et le livre de la nature des sons}
+
+\pagerange{9}{11}
+Les remarques sur la « seconde observation, qui est après la table des
+matières » reprennent la théorie de la consonance par la coïncidence des
+vibrations. Deux cordes à la quarte ($4 : 3$) ne s'unissent qu'une fois sur
+quatre battements de l'aiguë, dont trois restent « désunis » ; à la quinte
+($3 : 2$), deux sur trois. Si l'on superpose trois cordes formant une octave
+divisée par une quarte en bas, leurs fréquences sont comme $3 : 4 : 6$ et
+toutes trois ne s'unissent qu'au sixième battement de l'aiguë ; si la quinte
+est en bas, elles sont comme $2 : 3 : 4$ et s'unissent au quatrième. La
+remarque est exacte.
+
+Au livre de la nature des sons, trois nombres reviennent. Le son parcourt 1380
+pieds, soit 230 toises, par seconde, et le coup de canon tiré de l'Arsenal
+s'entend aux Minimes de Vincennes en 20 secondes, « qu'on voie s'il y a 4600
+toises » : l'arithmétique est juste ($230 \cdot 20 = 4600$), la valeur ne l'est
+pas. La vitesse du son dans l'air est d'environ $340$ mètres par seconde, soit
+à peu près $1050$ pieds de roi.\footnote{Le pied de roi vaut $32{,}48$ cm, la
+toise six pieds. La copie dit que la vitesse est la même « fort ou faible »,
+en tout temps et en tout lieu : c'est vrai de l'intensité, à peu près vrai du
+lieu, et faux de la température, dont la vitesse dépend.} L'air est « 1700 fois
+plus léger que l'eau », contre les 400 de Galilée ; ailleurs le volume dira
+1300, 1356, 1380, et Descartes 145. La valeur vraie, au niveau de la mer et à
+température ordinaire, est d'un peu plus de 800. Enfin, « les cercles de l'air
+sont 1380 fois plus vites que ceux de l'eau » (p. 67) confond le rapport des
+densités avec celui des vitesses : le son va plus de quatre fois plus
+vite dans l'eau que dans l'air.
+
+Le reste de ces pages — les échos des Tuileries et du jardin de Descartes, la
+lumière comme mouvement de la matière subtile, les renvois à la
+\emph{Dioptrique} et aux \emph{Météores}, à Hérigone, à la « lettre de
+M. Deschamps sur cette réfraction » — n'appelle pas de calcul.
+
+\section*{Le livre du mouvement des corps}
+
+\pagerange{11}{16}
+\subsection*{Un corps qui tombe vers le centre d'une Terre qui tourne}
+
+La plus longue remarque du volume commente la page 94 du livre. Qu'un corps
+pesant tombe d'un point A de l'équateur vers le centre E de la Terre pendant
+que la Terre tourne de son mouvement journalier. Galilée, dans son
+\emph{Dialogue}, avait avancé que le corps décrirait un demi-cercle ; la
+remarque soutient qu'il décrit une spirale, et en donne deux propriétés.
+
+Les hypothèses sont celles du feuillet : le rayon EK qui porte le corps tourne
+uniformément avec la Terre, et la distance tombée le long de ce rayon suit la
+loi de Galilée, proportionnelle au carré du temps, jusqu'au centre. Si $R$ est
+le rayon, $\Theta$ l'angle dont la Terre tourne pendant toute la chute et
+$\theta$ l'angle déjà parcouru, la distance tombée est $R(\theta/\Theta)^2$ et
+la courbe a pour équation polaire
+\[
+r(\theta) = R\left(1 - \frac{\theta^2}{\Theta^2}\right), \qquad
+0 \le \theta \le \Theta .
+\]
+La première propriété du feuillet — « EK est à K21 en raison doublée de la
+circonférence AKC à la circonférence AK » — est exactement cette loi :
+$R : (R - r) = (\Theta : \theta)^2$.\footnote{« Raison doublée » : le carré du
+rapport. Le point K21 est le point de la spirale sur le rayon EK ; la
+transcription note que plusieurs fins de ligne de ce passage sont cachées dans
+la reliure, sans que le sens en souffre.}
+
+La seconde est que l'aire comprise entre la spirale et le rayon EA est au
+secteur AKCE « comme 8 à 15 ». Elle est juste :
+\[
+\frac12\int_0^\Theta r(\theta)^2\,d\theta
+ = \frac{R^2\Theta}{2}\int_0^1 (1-u^2)^2\,du
+ = \frac{R^2\Theta}{2}\left(1 - \frac23 + \frac15\right)
+ = \frac{8}{15}\cdot\frac{R^2\Theta}{2}.
+\]
+Le feuillet, qui n'a pas le calcul intégral, la démontre comme Archimède
+démontrait l'aire de sa spirale. On divise l'arc en $n$ parties égales ($n = 16$
+dans la figure) ; sur chaque partie, la spirale est prise entre un secteur
+circulaire inscrit et un secteur circonscrit, de rayons
+$R(1 - k^2/n^2)$ et $R(1 - (k-1)^2/n^2)$. Les secteurs étant semblables, leurs
+aires sont comme les carrés de leurs rayons, et tout revient à comparer, en
+prenant $R = n^2$,
+\[
+\sum_{k=1}^{n}(n^2 - k^2)^2 \quad\text{et}\quad \sum_{k=0}^{n-1}(n^2 - k^2)^2
+\qquad\text{à}\qquad \frac{8}{15}\,n \cdot (n^2)^2 .
+\]
+C'est le « lemme » dont la remarque dit que « toute la difficulté consiste à le
+prouver », et qu'elle se contente de vérifier pour $n = 16$ dans une table de
+marge. La table est entièrement juste : les nombres $255, 252, 247, \dots, 31$
+sont $256 - k^2$, leurs carrés $65025, 63504, \dots, 961$ ; la somme des quinze
+carrés est $526472$, et $592008$ avec le carré $65536$ de $256$ ; le carré
+$65536$ pris seize fois est $1048576$ ; et les produits croisés
+$592008 \cdot 15 = 8880120 > 8388608 = 1048576 \cdot 8$ et
+$526472 \cdot 15 = 7897080 < 8388608$ établissent que la somme circonscrite est
+au-dessus et la somme inscrite au-dessous de $\frac{8}{15}$.\footnote{Le texte
+écrit que « le premier secteur est au second comme le carré de 961 à celui de
+3600 » : 961 et 3600 sont déjà les carrés de 31 et de 60, et il faut lire
+« comme 961 à 3600 ». La transcription le signale.}
+
+Le lemme est vrai pour tout $n$, et voici ce qui manque au feuillet pour le
+démontrer. On a, en développant et en sommant les puissances,
+\[
+\sum_{k=1}^{n}(n^2-k^2)^2 = n^5 - 2n^2\sum_{k=1}^{n} k^2 + \sum_{k=1}^{n}k^4
+ = \frac{8n^5}{15} - \frac{n^4}{2} - \frac{n}{30},
+\]
+qui est strictement inférieur à $\frac{8}{15}n^5$ ; et la somme circonscrite
+vaut la même expression augmentée de $n^4$ (le terme $k = 0$), soit
+$\frac{8n^5}{15} + \frac{n^4}{2} - \frac{n}{30}$, strictement supérieure. Les
+deux sommes, divisées par $n^5$, diffèrent de $\frac1n$ et encadrent
+$\frac{8}{15}$ : c'est la double inégalité qui fait marcher l'exhaustion, et
+la remarque avait raison de dire qu'on trouverait le lemme « véritable en en
+cherchant la démonstration ». Elle avait raison aussi d'ajouter que la
+démonstration reste la même si l'angle $\Theta$ dépasse un demi-cercle, ou
+fait plusieurs tours : rien dans le calcul ne dépend de $\Theta$. Et si le
+corps part d'un parallèle et non de l'équateur, la courbe est tracée sur un
+cône de sommet le centre de la Terre ; le cône se développe sur un plan sans
+changer les aires, la courbe développée est une spirale de la même loi, et le
+rapport $\frac{8}{15}$ demeure.\footnote{La page suivante renvoie à « l'hélice
+décrite par M. Fermat touchant ladite descente, laquelle est ci-devant démontrée
+sur la page 94 et 95 » : la copie rattache donc elle-même cette spirale à
+Fermat. Elle rapporte aussi que Galilée « a depuis confessé par lettre qu'il
+n'avait parlé de ce demi-cercle que par caprice et galanterie, et non à bon
+escient ». Cette lecture n'a vérifié ni l'une ni l'autre de ces deux
+affirmations sur des sources ; elle les rapporte comme la copie les donne.}
+
+Il faut dire enfin que le modèle est celui du feuillet et non celui de la
+mécanique. Dans la mécanique de Newton, à l'intérieur d'une Terre homogène la
+pesanteur est proportionnelle à la distance au centre et non constante ; un
+corps lâché à l'équateur avec la vitesse de rotation du sol décrit, dans un
+repère fixe, une ellipse centrée au centre de la Terre, passe à quelque 375 km
+du centre sans l'atteindre, et y arrive au bout d'environ 21 minutes, non de
+plusieurs heures.\footnote{Ces nombres supposent une Terre homogène, sans
+frottement, et un tunnel qui laisse le corps libre. La pulsation du mouvement
+est $\Omega = \sqrt{g/R}$, d'où un quart de période de $\frac{\pi}{2}\sqrt{R/g}
+\approx 21$ min et un demi-petit axe $\omega R/\Omega \approx 375$ km, $\omega$
+étant la vitesse angulaire de la Terre. Une remarque de la page 96 précise que
+le « il devrait tomber en 6 heures » du livre s'entend de la surface jusqu'au
+centre.} La spirale des $\frac{8}{15}$ est donc un théorème exact sur une
+hypothèse fausse.
+
+\subsection*{La courbe n'est pas un cercle}
+
+Une seconde démonstration, en algèbre (vue 13), établit que la courbe ne peut
+être le demi-cercle de Galilée. Soit A le centre de la Terre, $AC = b$ le rayon,
+et le cercle de diamètre AC que Galilée proposait. Si le corps est en K sur ce
+cercle quand la Terre a tourné de l'angle CAH, et en I quand elle a tourné
+du double, CAD, la loi de chute veut que la chute ID soit quadruple de la chute
+HK. Le feuillet pose $AK = e$, calcule $ID = \dfrac{b^2 - e^2}{\frac12 b}$ et
+$HK = b - e$, et montre que $ID = 4HK$ équivaudrait à $2be = b^2 + e^2$,
+c'est-à-dire à $(b - e)^2 = 0$, ce qui n'est pas. En notation moderne : si
+l'angle KAC est $\varphi$, $e = b\cos\varphi$ et $AI = b\cos2\varphi$, d'où
+\[
+\frac{ID}{HK} = \frac{b(1-\cos2\varphi)}{b(1-\cos\varphi)}
+ = 2(1+\cos\varphi) = \frac{2(b+e)}{b},
+\]
+qui est toujours compris strictement entre 2 et 4 et n'atteint 4 qu'à la
+limite $e = b$. Le calcul du feuillet est juste, et sa conclusion aussi : le
+cercle ne satisfait la loi de chute en aucun point.\footnote{Dans
+l'expression de $AI = CL$, le feuillet écrit un $+$ et un $-$ superposés,
+« $\dfrac{+ee \mp \frac12 bb}{\frac12 b}$ » ; le calcul du rectangle LAE,
+$\frac12 ab + \frac12 b^2 = e^2$, donne sans ambiguïté le signe $-$ :
+$AI = \dfrac{e^2 - \frac12 b^2}{\frac12 b} = b\cos2\varphi$. Le feuillet emploie
+la double barre « $\parallel$ » pour l'égalité et pour « est à \dots comme ».}
+
+La suite montre davantage : pour tout rapport $\lambda$ compris entre 2 et 4,
+il existe un point K et un seul tel que $ID : HK = \lambda$, à savoir celui où
+$AK = e = (\frac{\lambda}{2} - 1)b$. Le feuillet l'écrit avec
+$\lambda = s : \frac12 b$, et trouve $e = s - b$ : c'est la même chose. Il
+conclut que la courbe de chute est une droite sous le pôle, une spirale plane
+sous l'équateur et, ailleurs, une spirale tracée sur un cône isocèle de sommet
+le centre de la Terre — ce qui est juste dans le modèle.
+
+\subsection*{Les spirales de tout degré, et une table sans titre}
+
+La remarque sur la page 98 pose le problème général : si la chute est
+proportionnelle à une puissance quelconque du temps, trouver le rapport de
+l'aire de la spirale au cercle. « La première hélice est d'Archimède, et la
+seconde celle de Galilée pour les graves ; les autres ne tombent point en la
+pratique de la physique. » La réponse est simple. Si la distance tombée est
+$R(\theta/\Theta)^n$, l'aire est au secteur comme
+\[
+\int_0^1 (1-u^n)^2\,du = 1 - \frac{2}{n+1} + \frac{1}{2n+1}
+ = \frac{2n^2}{(n+1)(2n+1)} .
+\]
+Pour $n = 1, 2, \dots, 8$ ce rapport vaut $\frac13$, $\frac{8}{15}$,
+$\frac{9}{14}$, $\frac{32}{45}$, $\frac{25}{33}$, $\frac{72}{91}$,
+$\frac{49}{60}$, $\frac{128}{153}$. Or la marge gauche de la même page porte, sans
+titre et sans renvoi, une petite table de deux colonnes : $3 \mid 1$ ;
+$15 \mid 8$ ; $14 \mid 9$ ; $45 \mid 32$ ; $33 \mid 25$ ; $91 \mid 72$ ;
+$60 \mid 49$ ; $153 \mid 128$. Ce sont, dénominateur puis numérateur et réduits
+au plus bas terme, exactement ces huit rapports. La table est la solution du
+problème de la page 98 pour les huit premiers degrés ; le premier est le
+tiers qu'Archimède avait trouvé pour sa spirale, le second les $\frac{8}{15}$
+de la page 94.\footnote{L'identification de la table est de cette lecture ;
+la transcription la décrit sans l'interpréter, et la copie ne l'appelle
+nulle part. L'énoncé de la page 98, lu à la lettre, fait la chute
+proportionnelle à une racine du temps et non à une puissance : « même
+proportion de la circonférence à l'arc que de AB à FC, ou que du carré de AB au
+carré de FC ». Avec cette lecture on trouverait $\frac{2}{(n+1)(n+2)}$, soit
+$\frac16$ pour la spirale de Galilée, en contradiction avec les $\frac{8}{15}$
+démontrés deux pages plus haut. C'est la table qui est cohérente avec la page 94,
+et c'est l'énoncé qui a les puissances du mauvais côté.}
+
+\subsection*{La loi des nombres impairs}
+
+La remarque sur la page 100 explique d'où viennent les tables de chute. Si le
+mobile parcourt AB dans la première minute, la vitesse acquise en B lui ferait
+parcourir $2AB$ dans une minute égale ; la pesanteur ajoutant encore AB, il
+parcourt $3AB$ dans la deuxième minute. En C, parvenu en deux minutes à
+$AC = 4AB$, sa vitesse lui ferait faire $2AC = 8AB$ en deux minutes, soit $4AB$
+par minute, et la pesanteur en ajoute un : $5AB$. En D, $9AB$ en trois minutes,
+$6AB$ par minute, plus un : $7AB$. Les espaces parcourus en temps égaux croissent
+comme les nombres impairs $1$, $3$, $5$, $7$, et la marge dessine l'échelle. Le
+raisonnement est juste : il repose sur la propriété, établie par Galilée, que
+la vitesse acquise en un temps $t$ ferait parcourir d'un mouvement uniforme le
+double de l'espace tombé pendant ce temps ; c'est la relation
+$d(t) = \frac12 g t^2$, dont les accroissements sont
+$d(k) - d(k-1) = (2k-1)\,d(1)$.
+
+Les remarques voisines disent que la cycloïde « enferme un espace triple du
+cercle qui la décrit » (vrai : l'aire sous une arche est $3\pi r^2$), que la
+courbe de la page 120 n'est pas une demi-ellipse mais cette cycloïde, et, à la
+page 101, que si les graves descendent par le mouvement de la matière subtile
+« le fondement précédent ne sert pas ».\footnote{« Trochoïde » et « roulette »
+sont les noms du temps pour la cycloïde.}
+
+\subsection*{La résistance des milieux}
+
+Les remarques des pages 129 à 131 examinent la règle de Galilée selon laquelle un
+milieu retranche à la vitesse d'un corps la fraction de son poids qu'il lui
+ôte : l'eau ôterait le quart de la vitesse d'une pierre quatre fois plus
+pesante qu'elle, et le douzième de celle du plomb. Mille brasses faites en 24
+secondes dans le vide le seraient, dit la remarque, en 30 secondes par la pierre
+et en 26 par le plomb. Ces deux nombres allongent le temps du quart et du
+douzième ($24 + 6$, $24 + 2$) ; si c'est la vitesse qui est réduite dans ces
+proportions, les temps sont $32$ et $26\frac{2}{11}$ secondes.\footnote{De même
+les « points d'égalité » à 100 et 90 brasses, qui supposent des vitesses
+limites dans le rapport $10 : 9$, ne suivent pas de la règle, qui donnerait
+$\frac{11}{12} : \frac34 = 11 : 9$. La copie note elle-même que « tout ce
+discours de Galilée a grand besoin d'examen ».} La remarque de la page 131 —
+les graves n'augmentent pas indéfiniment leur vitesse, mais approchent d'une
+limite « suivant les approchements des asymptotes » — énonce ce qu'on appelle
+aujourd'hui la vitesse limite ; elle est juste, et c'est la résistance
+de l'air, qui croît avec la vitesse, qui en est la cause. Les rapports donnés
+pour la moelle de sureau et le plomb varient d'une remarque à l'autre (360 dans
+le livre, 193 page 129, $128\frac23$ page 142).
+
+La remarque sur la page 135 corrige la longueur du pendule qui bat la seconde :
+le sieur Decousu dit deux pieds dix pouces, la copie répond que « trois pieds
+suffiront ». La longueur vraie, pour un pendule dont chaque oscillation simple
+dure une seconde, est de $0{,}994$ m, soit trois pieds et huit lignes et
+demie : la copie est plus près du vrai que Decousu.
+
+\subsection*{Les pendules composés}
+
+Les remarques des pages 136 et suivantes comparent au « filet isochrone » — la
+longueur du pendule simple qui bat en même temps — toutes sortes de corps
+suspendus : bâton, triangles, cercle, sphère, parabole, cycloïde. La théorie
+moderne de ces pendules est celle du pendule pesant : un corps de masse $m$,
+de moment d'inertie $I$ par rapport à l'axe de suspension, dont le centre de
+gravité est à la distance $d$ de l'axe, oscille comme un pendule simple de
+longueur $\ell = I/(md)$. Elle permet de vérifier plusieurs articles.
+
+Le bâton suspendu par un bout a une longueur égale aux $\frac32$ du filet
+isochrone : la copie dit « en raison sesquialtère proxime », et c'est
+exactement $\frac32$ ($\ell = \frac23 L$). La variante qu'elle rapporte du
+P. Fabri, « comme l'aire du demi-cercle au carré de son rayon », soit
+$\frac{\pi}{2} \approx 1{,}57$, est fausse.\footnote{« Sesquialtère » : le
+rapport $\frac32$. « Proxime » : à peu près.}
+
+Pour une plaque triangulaire isocèle de hauteur $h$ et d'angle au sommet
+$\alpha$, oscillant dans son plan, on trouve $\ell = \frac34 h +
+\frac{h}{4}\tan^2\frac{\alpha}{2}$ si elle est suspendue par la pointe, et
+$\ell = \dfrac{h}{2\cos^2(\alpha/2)}$ si elle est suspendue par le milieu de
+la base. Rapportées à la hauteur, ces valeurs se comparent à celles de la copie
+ainsi :
+\[
+\begin{array}{r|cc|cc}
+\alpha & \text{pointe, théorie} & \text{pointe, copie}
+  & \text{base, théorie} & \text{base, copie} \\ \hline
+20^\circ & 1 : 0{,}76 & \text{presque } 4:3 & 1 : 0{,}52 & 3 : 2 \\
+60^\circ & 6 : 5 & 6 : 5 & 3 : 2 & 3 : 2 \\
+90^\circ & 1 : 1 & 1 : 1 & 1 : 1 & 1 : 1 \\
+110^\circ & 1 : 1{,}26 & 2 : 3 & 1 : 1{,}52 & 8 : 15 \\
+120^\circ & 2 : 3 & \text{« quasi de même »} & 1 : 2 & \text{« quasi de même »} \\
+135^\circ & 1 : 2{,}21 & 2 : 5 & 1 : 3{,}41 & 1 : 4 \\
+150^\circ & 1 : 4{,}23 & 1 : 4 & 1 : 7{,}46 & 1 : 12 \\
+170^\circ & 1 : 33{,}4 & 1 : 31 & 1 : 65{,}8 & 1 : 36
+\end{array}
+\]
+L'accord est exact pour le triangle de $60^\circ$ par la pointe ($6 : 5$) et par
+la base ($3 : 2$), et pour le triangle rectangle, « égal au filet » des deux
+façons ; il est bon, pour la pointe, jusqu'à $90^\circ$ et à $150^\circ$. Pour
+les triangles obtus suspendus par la base, les valeurs de la copie s'écartent
+de la théorie, et le « $2 : 3$ » donné pour $110^\circ$ par la pointe est la
+valeur exacte de $120^\circ$.\footnote{Cette lecture suppose que la copie
+compare au filet la hauteur du triangle, et que « par la base » veut dire
+« par le milieu de la base » ; c'est l'hypothèse sous laquelle les trois
+valeurs exactes coïncident. La copie ne le précise pas, et ses nombres, qui
+sont des mesures, sont donnés comme approchés.}
+
+Parmi les autres corps : la circonférence (un anneau) suspendue par un point
+est « égale » au filet, et c'est juste, $\ell$ étant le diamètre ; le cercle
+plein suspendu par un point de son bord a un diamètre qui est au filet comme
+$4 : 3$ et non « comme 7 à 5 » ; la sphère suspendue par un point de sa surface
+est au filet comme $10 : 7 \approx 1{,}43$, et la copie dit « comme $1\frac49$ à
+un » ($1{,}44$), ce qui est bon. Le demi-cercle, par le convexe ou par la base,
+donne en théorie $1 : 1{,}13$ et $1 : 1{,}18$ du rayon au filet ; la copie dit
+« comme 5 à 6 » pour les deux. Les autres articles (quart de cercle, cône,
+demi-sphère, parabole, roulette, « parabole seconde de Torricelli ») ne
+disent pas assez comment le corps est suspendu pour être vérifiés.
+
+\section*{Le troisième livre du mouvement : cordes, poids, rupture, projectiles}
+
+\pagerange{16}{19}
+\subsection*{L'ellipse et le triangle}
+
+La remarque sur la page 157 compare deux familles de triangles de même base AB.
+Si le sommet décrit l'ellipse de foyers A et B, tous les triangles ont le même
+périmètre, et le triangle isocèle a la plus grande aire. Si le sommet décrit
+une parallèle à AB, tous ont la même aire, et le triangle isocèle a le plus
+petit périmètre. Les deux énoncés sont justes et duaux ; mais la copie conclut
+que « tant entre parallèles que dans l'ellipse, le triangle isopleure est le
+plus petit \emph{in ambitu} », ce qui est faux pour l'ellipse, où les périmètres
+sont égaux.\footnote{« Isopleure », ici, veut dire isocèle, puisque le
+triangle a pour base la corde donnée. « In ambitu » : par le pourtour.}
+
+\subsection*{La corde qui revient, et la loi de la tension}
+
+La remarque sur la page 160 découpe le retour d'une corde tendue en 88 parties
+de temps : $8$, $20$, $28$, $32$ espaces dans les quatre temps successifs, dont la
+somme fait bien 88. C'est un modèle, non une démonstration.
+
+La table de marge de la vue 18 donne les poids qui, tendant huit cordes égales,
+leur font sonner les huit degrés de l'octave, de 6 livres pour l'ut grave à 24
+pour l'ut aigu. La loi est que la fréquence est proportionnelle à la racine
+carrée de la tension : le poids est donc $6 \cdot f^2$ si $f$ est le rapport de
+fréquence à l'ut grave. Avec les rapports de l'intonation juste, on trouve
+$16\frac23$ pour la ($f = \frac53$), $13\frac12$ pour sol, $10\frac23$ pour fa,
+$7\frac{33}{81}$ pour ré si l'on prend le ton mineur $\frac{10}{9}$ — ce que
+fait la table — et 24 pour l'ut aigu : ces valeurs de la table sont justes.
+Deux ne le sont pas : pour mi ($f = \frac54$), $6 \cdot \frac{25}{16} =
+9\frac38$ et non $9\frac18$ ; pour si ($f = \frac{15}{8}$), $6\cdot
+\frac{225}{64} = 21\frac{3}{32}$ et non $21\frac{3}{16}$.
+
+La remarque sur la page 189 justifie par un raisonnement sur des triangles
+que la corde à l'octave doit être tendue quatre fois plus. La conclusion est
+juste, et c'est ce qu'on appelle aujourd'hui l'une des lois de Mersenne : la
+fréquence fondamentale d'une corde de longueur $L$, de masse linéique $\mu$,
+tendue par la force $T$, est $f = \frac{1}{2L}\sqrt{T/\mu}$, de sorte que
+doubler $f$ demande de quadrupler $T$. Le raisonnement de la copie, qui égale
+entre les deux cordes le produit de la force par le temps, n'est pas une
+démonstration.\footnote{Le nom de « lois de Mersenne » est un usage moderne ;
+la copie ne nomme aucune loi. La remarque sur la page 169 rapporte qu'une corde
+à l'unisson d'un tuyau d'orgue bouché de 2 pieds bat l'air 108 fois par
+seconde ; la transcription note que « 108 » peut aussi se lire « 128 ». Un tuyau
+bouché de 2 pieds de roi ($0{,}65$ m) donne, par la formule élémentaire
+$f = c/4L$, environ 130 vibrations par seconde : la lecture 128 est la plus
+proche.}
+
+\subsection*{Un nombre « qui semble faux » et qui est juste}
+
+La remarque sur la page 193 rapporte la règle de Galilée : la résistance des
+cylindres à la rupture est en raison triplée des diamètres, de sorte qu'un
+bâton deux fois plus mince est huit fois plus aisé à rompre. Puis elle calcule :
+une corde de laiton de $\frac16$ de ligne de diamètre rompant sous 18 livres,
+une colonne d'un pied de diamètre romprait « seulement avec 13436928 » — et la
+marge ajoute : « ce nombre me semble faux ».
+
+Le rapport des diamètres est $144 : \frac16 = 864$, un pied valant 144
+lignes. Or $18 \cdot 864^2 = 13\,436\,928$ exactement : le nombre suit la loi
+des carrés des diamètres, c'est-à-dire des aires des sections, et non celle des
+cubes, qui donnerait $18 \cdot 864^3 = 11\,609\,505\,792$. C'est la loi des
+carrés qui est la bonne ici. La règle des cubes de Galilée vaut pour une
+poutre rompue par flexion ; une corde qui casse sous un poids suspendu est
+rompue par traction, et sa résistance est proportionnelle à l'aire de sa
+section. Le nombre est juste pour le problème posé ; c'est la phrase qui le
+précède qui ne s'y applique pas.
+
+\subsection*{Chute et projectiles}
+
+La remarque sur la page 197 corrige le livre : à la fin du quatrième pied de
+chute, le mobile n'a que deux degrés de vitesse, puisque la vitesse croît comme
+la racine de l'espace ($\sqrt4 = 2$), et cette vitesse, gardée uniforme, lui
+ferait parcourir huit pieds dans le temps qu'il en a mis à tomber de quatre.
+C'est juste. La remarque sur la page 222 dit qu'une flèche qui met 12 secondes à
+monter et autant à descendre ne monte que de 288 toises : c'est la hauteur
+$12 \cdot 12^2 = 1728$ pieds, avec la valeur de 12 pieds pour la chute de la
+première seconde que le volume emploie partout. La valeur vraie de cette
+chute, sans air, est de $4{,}9$ m, un peu plus de 15 pieds. Une remarque
+ajoute que d'autres expériences montrent la flèche plus prompte à monter qu'à
+descendre — trois secondes contre cinq — ce qui est l'effet de la résistance de
+l'air et contredit la symétrie supposée par le livre. La remarque sur la page
+173 (quatre fois plus de force pour envoyer les missiles deux fois plus loin)
+est juste dans le vide, où la portée est proportionnelle au carré de la
+vitesse initiale.
+
+\section*{Le livre de la voix}
+
+\pagerange{19}{19}
+Trois remarques. Les huit poids « en progression triple » sont
+$1$, $3$, $9$, $27$, $81$, $243$, $729$, $2187$, les puissances $3^0$ à $3^7$. Une remarque de
+métaphysique, sur la page 80, conteste que ce qui est indépendant doive avoir
+toute perfection infinie. Enfin, à la ligne 38 de la même page : « M. de
+Villiers a observé l'année 1638 qu'au crâne d'un sourd et muet, des trois
+osselets qui se trouvent en l'oreille, l'incus, le malleolus et le stapes, le
+premier manquait en chaque oreille. » C'est l'une des dates écrites dans le
+volume.\footnote{La transcription note que « 1638 » a été lu à fort
+grossissement et que « stapes » est lu au bord de la reliure.}
+
+\section*{Le livre des chants : permutations et combinaisons}
+
+\pagerange{19}{24}
+\subsection*{Les mots de vingt-trois lettres}
+
+La remarque sur la page 107 renvoie au « problème arithmétique » de Guldin :
+combien de mots peut-on faire avec les 23 lettres de l'alphabet, aucune lettre
+n'étant répétée dans un mot, et combien de lettres tous ces mots contiennent-ils.
+Le nombre de mots de $k$ lettres est $23!/(23-k)!$ ; le nombre total de mots est
+\[
+W = \sum_{k=1}^{23}\frac{23!}{(23-k)!} = \lfloor e \cdot 23! \rfloor - 1
+ = 70\,273\,067\,330\,330\,098\,091\,155,
+\]
+et le nombre total de lettres
+$L = \sum_k k\cdot\frac{23!}{(23-k)!} = 1\,546\,007\,481\,267\,262\,158\,005\,433$.
+La copie donne pour les lettres $1546007491267202147905433$ et pour les mots
+$702730673303300980911155$. Le premier nombre a le bon ordre de grandeur et les
+huit premiers chiffres justes, mais diffère au milieu ; le second a un chiffre de
+trop — un « 1 » de plus avant la fin — alors que la copie dit elle-même que son
+premier chiffre « vaut septante sextillions », c'est-à-dire que le nombre a 23
+chiffres, comme $W$.\footnote{Dans la numération de la copie, le sextillion est
+$10^{21}$ et le septillion $10^{24}$. Les deux nombres sont lus chiffre à chiffre
+par la transcription ; cette lecture ne peut dire si l'écart vient de Guldin,
+de Mersenne, de la copie ou de la lecture. La formule $\sum_{k=0}^{n} n!/k! =
+\lfloor e\,n! \rfloor$ est moderne.}
+
+La remarque sur la page 110 dit que le 64\textsuperscript{e} nombre de la table du
+livre a 90 chiffres. Si ce nombre est $64!$, c'est juste : $64!$ a 90 chiffres.
+Mais il commence par 126, et non par les « 221 » que la remarque donne pour son
+« premier ternaire » ; sans la table du livre, cette lecture ne peut trancher.
+
+\subsection*{Ranger toutes les permutations}
+
+La remarque sur la page 111 donne la règle pour écrire toutes les permutations
+de DIEU sans en oublier ni en répéter : on garde la première lettre et l'on
+permute les trois autres, en gardant à son tour la première de celles-ci, et
+ainsi de suite ; puis on met la deuxième lettre en tête, et l'on recommence.
+C'est l'énumération dans l'ordre lexicographique, et elle démontre en même
+temps la récurrence $n! = n \cdot (n-1)!$ : $2 \cdot 3 = 6$, $6 \cdot 4 = 24$,
+$24 \cdot 5 = 120$, $120 \cdot 6 = 720$, $720 \cdot 7 = 5040$. Tout est
+juste.\footnote{« La combinaison de l'ordre » de $n$ choses est, dans la langue
+de la copie, le nombre de leurs arrangements, $n!$.}
+
+\subsection*{Les chants de huit notes}
+
+La remarque sur la page 113 retire des chants de l'octave ceux qui contiennent
+une septième majeure ou une sixte. Il y a $8! = 40320$ chants de huit notes
+différentes.\footnote{La copie écrit « des 4320 chants de l'octave » ; toute la
+suite du calcul suppose 40320, et le chiffre manquant est une faute de copie ou
+de plume.} Ceux où ut et si sont voisins se comptent en collant ut et si en une
+seule note : $7! = 5040$, doublé pour les deux ordres, $10080$ ; de même pour ut
+et la ; en tout $20160$. Mais ceux où ut est voisin à la fois de si et de la
+ont été comptés deux fois : on colle « si ut la » ou « la ut si » en une note,
+$2 \cdot 6! = 1440$, et l'on retire. Il reste $18720$ chants qui contiennent l'un
+ou l'autre intervalle, et donc $40320 - 18720 = 21600$ qui n'en contiennent
+aucun. C'est exactement le principe d'inclusion et d'exclusion, correctement
+appliqué.
+
+\subsection*{Le piquet}
+
+La remarque sur la page 131 distingue deux sortes de « combinaisons ». Quand
+toutes les choses sont différentes, comme les douze cartes d'une main prises
+dans les 36 du jeu de piquet, le nombre de mains ordonnées est
+$36 \cdot 35 \cdots 25 = 599\,555\,620\,984\,320\,000$, et le nombre de mains,
+l'ordre ne changeant pas le jeu, est ce produit divisé par $12! = 479\,001\,600$,
+soit $\binom{36}{12} = 1\,251\,677\,700$. Les deux nombres sont justes.\footnote{À
+la vue 23, la copie écrit le même nombre « 125677700 », avec un chiffre de
+moins ; à la vue 22 il est juste.} Quand les choses peuvent être semblables,
+comme douze cartes prises dans douze jeux, il faut multiplier $36 \cdot 37
+\cdots 47$ et diviser par $12!$ : c'est le nombre des combinaisons avec
+répétition, $\binom{47}{12} = 52\,251\,400\,851$. De même, cent fruits choisis
+dans six paniers donnent $6 \cdot 7 \cdots 105 / 100! = \binom{105}{100} =
+\binom{105}{5} = 96\,560\,646$ choix.\footnote{La copie écrit « multiplier 37 par
+37 » ; il faut 36 par 37, comme le montre le dernier facteur, 47. La règle est
+dite plus loin (vue 23) « de M. Fren. », abréviation que la copie ne développe
+pas.}
+
+\subsection*{Les « puissances triangulaires »}
+
+Ce que la copie appelle la $k$-ième « puissance triangulaire » de la « racine »
+$r$ est le nombre figuré $\binom{r+k-1}{k}$ : la deuxième est le nombre
+triangulaire, la troisième le tétraédrique, et chacune est la somme des $r$
+premières de la précédente. La règle de calcul qu'elle donne — multiplier
+$r, r+1, \dots, r+k-1$ et diviser par $k!$ — est exacte, et l'exemple aussi : la
+sixième puissance triangulaire de 5 est $5 \cdot 6 \cdot 7 \cdot 8 \cdot 9
+\cdot 10 / 720 = 210 = \binom{10}{6}$, et l'astuce qui évite la division
+(retirer $1, 2, \dots, 6$ des facteurs, il reste $7 \cdot 3 \cdot 10$) est juste.
+
+Mais la copie écrit que les douze cartes sans ordre sont « la
+12\textsuperscript{e} puissance triangulaire de 36, qui est à la fin de ladite
+table, à savoir 1251677700 ». Le nombre est juste, le nom ne l'est pas. Dans sa
+propre définition, la 12\textsuperscript{e} puissance triangulaire de 36 est
+$\binom{47}{12}$, le nombre des mains avec répétition ; et $1251677700 =
+\binom{36}{12}$ est la 12\textsuperscript{e} puissance triangulaire de 25 —
+précisément le dernier nombre d'une table qui, dit la copie, va « jusqu'à la
+12\textsuperscript{e} puissance de 25 ».
+
+La « combinaison générale » de cent choses de six sortes, l'ordre compris, est
+$6^{100}$, et la copie a raison de dire qu'on ne peut en tirer le nombre sans
+ordre par une seule division : sur l'exemple de quatre choses, les types abcd,
+aabc, aaab, aabb, aaaa se permutent en $24$, $12$, $4$, $6$, $1$ façons, de somme 47,
+nombre premier, et chaque type demande son propre diviseur.
+
+\subsection*{Une correction qui corrige mal}
+
+La remarque sur la page 139 reprend un calcul du livre : il faut multiplier
+« 484, qui est le troisième nombre de la table », par 15, ce qui donne 7260 ;
+« 10648 », le quatrième nombre de la cinquième colonne, par 16 ; et « le
+nombre cinquième, 234276 », par 15, « dont il viendra 3514140, et non 3513840,
+comme il y a dans le texte qui est fautif ». Les produits sont justes. Mais
+$484 = 22^2$ et $10648 = 22^3$, et le nombre suivant de la colonne doit être
+$22^4 = 234256$ ; or $234256 \cdot 15 = 3513840$, le nombre même du texte
+imprimé. Si la colonne est bien celle des puissances de 22, c'est le livre qui
+avait raison, et la correction porte sur un 234276 fautif.\footnote{Cette lecture
+n'a pas ouvert le livre et ne peut dire si le 234276 est une coquille de la table
+imprimée, une faute de la copie ou une lecture ; elle constate seulement que
+3513840 est $15 \cdot 22^4$.}
+
+\subsection*{Petits corollaires}
+
+La somme des nombres de 1 à $n$ est donnée par la règle de Gauss avant la
+lettre : $\frac{n}{2}(n+1)$ si $n$ est pair ($7 \cdot 15 = 105$ pour 14),
+$n \cdot \frac{n+1}{2}$ s'il est impair ($5 \cdot 3 = 15$, $15 \cdot 8 = 120$).
+Deux choses prises dans dix, avec répétition et ordre, font $10^2 = 100$
+variétés ; trois dans neuf, $9^3 = 729$. Le produit de 36 par 35, divisé par 2,
+donne $\binom{36}{2} = 630$. Tout est juste.
+
+\subsection*{Les chants à quatre parties}
+
+La remarque sur la proposition 20 compte $2\,520\,473\,760\,000$ chants à quatre
+parties. Ce nombre est $1260^4$, et il faut, à un chant par seconde, un peu moins
+de 80\,000 ans pour les chanter tous, soit 800 siècles : l'affirmation qu'« il
+faudrait plus de cent mille siècles » ne suit pas, non plus que le nombre de
+45\,048\,300 chants en cent ans, qui ne correspond pas à un chant par seconde
+(un siècle compte environ $3{,}16 \cdot 10^9$ secondes). Pour quatre notes
+permutées dans chaque partie, les duos sont $24^2 = 576$, ce que dit la copie ;
+les trios $24^3 = 13824$ et les quatuors $24^4 = 331776$, et non 13729 et
+319376.\footnote{La transcription relève elle-même que 13729 et 319376 « ne sont
+pas les puissances de 24 auxquelles 576 ferait attendre ».}
+
+\subsection*{Les carrés magiques}
+
+La même page 110 annonce que le nombre des manières de varier un carré magique
+en le gardant magique est plus grand encore, et donne pour le carré de 22 un
+produit de trois nombres de 34, 32 et 33 chiffres, pour le carré de 14 le
+nombre 33710564646400. La copie redonne les mêmes nombres sur les feuillets de la
+fin (vue 46), et les deux lectures ne s'accordent pas : les deuxième et
+troisième facteurs y ont un zéro final de moins, et le nombre du carré de 14 y
+est lu 3371056466400, suivi d'un chiffre taché. Cette lecture ne sait pas
+reconstituer ces dénombrements et ne les vérifie pas.\footnote{Les deuxième et
+troisième facteurs n'ont que des diviseurs premiers au plus égaux à 37, comme un
+produit de factorielles ; le premier a un grand facteur premier et ne peut en
+être un.}
+
+\section*{Les livres des consonances}
+
+\pagerange{24}{28}
+\subsection*{Diviser l'octave et la quarte en trois raisons superparticulières}
+
+Une raison superparticulière est un rapport de la forme $\frac{n+1}{n}$.
+L'octave, dit la remarque sur la page 55, ne se divise en trois raisons
+superparticulières « qu'en cinq sortes », et la marge les donne :
+$\frac32\cdot\frac54\cdot\frac{16}{15}$, $\frac32\cdot\frac65\cdot\frac{10}{9}$,
+$\frac32\cdot\frac76\cdot\frac87$, $\frac43\cdot\frac43\cdot\frac98$,
+$\frac43\cdot\frac54\cdot\frac65$. C'est exact et complet : l'équation
+$\bigl(1+\frac1a\bigr)\bigl(1+\frac1b\bigr)\bigl(1+\frac1c\bigr) = 2$ avec
+$a \le b \le c$ entiers force $a \le 3$ (sinon le produit est au plus
+$(\frac54)^3 < 2$), puis borne $b$, puis détermine $c$, et une énumération
+complète donne ces cinq solutions et elles seules.
+
+La quarte, dit la remarque sur la page 142, « se peut diviser 27 fois en trois
+raisons superparticulières, bien que Bryennios n'en tienne que 15 possibles »,
+et la copie dresse la table des 27 divisions. Chacune des 27 est juste : le
+produit de ses trois raisons vaut $\frac43$. Mais la même énumération complète,
+faite sur $\bigl(1+\frac1a\bigr)\bigl(1+\frac1b\bigr)\bigl(1+\frac1c\bigr) =
+\frac43$, ne donne que 26 divisions distinctes, et la table les contient toutes :
+les divisions 14 et 24 de la table,
+$\frac{16}{15}\cdot\frac76\cdot\frac{15}{14}$ et
+$\frac76\cdot\frac{15}{14}\cdot\frac{16}{15}$, sont la même, écrite dans un autre
+ordre. La quarte se divise en 26 manières et non en 27.\footnote{Si l'on comptait
+comme différentes les divisions qui ne diffèrent que par l'ordre des raisons —
+ce qui aurait un sens pour des tétracordes, où l'ordre des intervalles compte —
+on en trouverait bien davantage que 27 ; la table ne le fait pour aucune autre
+division. Les trois derniers termes des divisions 5, 10 et 15, cachés dans le pli
+d'après la transcription, se complètent sans ambiguïté par le calcul :
+$\frac{96}{95}$, $\frac{40}{39}$ et $\frac{100}{99}$.}
+
+\subsection*{Tempérament et intonation juste}
+
+La remarque sur la page 58 avertit qu'une proposition du livre n'est vraie
+que « des vrais intervalles » et non du tempérament des instruments : sur un
+instrument à tons égaux, trois quintes font exactement une treizième majeure
+et trois tierces majeures font l'octave, « ce qui ne peut arriver en la vraie
+théorie ». C'est exact : trois quintes justes font $\frac{27}{8}$, qui dépasse la
+treizième majeure juste $\frac{10}{3}$ d'un comma syntonique $\frac{81}{80}$, et
+trois tierces majeures justes font $\frac{125}{64}$, qui manque l'octave d'un
+dièse $\frac{128}{125}$ ; dans le tempérament égal, $7 \cdot 3 = 21 = 12 + 9$ et
+$4 \cdot 3 = 12$ demi-tons.
+
+La remarque suivante somme des séries géométriques : les moitiés successives de
+la moitié d'une corde font la moitié entière,
+$\frac14 + \frac18 + \dots = \frac12$ ; les tiers successifs d'un tiers font la
+moitié, $\frac13 + \frac19 + \dots = \frac12$ ; tous les quarts font
+$\frac13$ et tous les dixièmes $\frac19$. C'est
+$\sum_{k \ge 1} q^k = \frac{q}{1-q}$, correctement appliquée.
+
+Les remarques des pages 71 à 76 reprennent la théorie des coïncidences : à
+la quarte, trois battements de l'aiguë sur quatre sont désunis, à la quinte
+deux sur trois, à l'octave un sur deux ; à la tierce majeure un seul sur
+cinq s'unit. La remarque sur la page 91 donne les moindres termes des trois
+médiétés, arithmétique $3, 2, 1$, géométrique $4, 2, 1$, harmonique $6, 4, 3$ :
+tous justes ($4 = \frac{2\cdot 6\cdot 3}{6 + 3}$). La règle de trois de la
+table 57 (page 109) est juste : $25 \cdot \frac89 = 22\frac29$, et
+$4\cdot\frac{64}{81} = 3\frac{13}{81} = \bigl(1\frac79\bigr)^2$.
+
+\subsection*{Les tables de Jean Le Fèvre}
+
+La remarque sur la page 146 recopie les nombres dont Jean Le Fèvre se servait,
+d'après Gafurius, pour les six voix. La table A donne les longueurs de la
+gamme pythagoricienne, $27, 24, 21\frac13, 20\frac14, 18, 16$ (ut, ré, mi, fa,
+sol, la), leurs carrés $729, 576, 455\frac19, 410\frac{1}{16}, 324, 256$ et
+leurs cubes $19683, 13824, 9709\frac{1}{27}, 8303\frac{49}{64}, 5832, 4096$ :
+tout est exact. La table C donne une autre gamme pythagoricienne, de
+$10\frac18$ à 4, et les carrés de ses termes ; tout y est exact aussi, le
+carré de $5\frac{1}{16}$ étant $25\frac58 + \frac{1}{256}$.\footnote{La
+transcription lit la fraction isolée « $\frac{1}{1256}$ », le « 1256 » douteux :
+il faut $\frac{1}{256}$.}
+
+La table B est d'une autre nature que ne le dit le texte : ses poids, de 4608 à
+10368 grains, ne sont pas les cubes des longueurs mais leur sont
+proportionnels, l'octave doublant le poids ($4608 \to 9216$). Les degrés
+diatoniques y sont justes, et leurs conversions en onces, gros et grains aussi
+(une once valant 576 grains) ; trois des degrés chromatiques sont faux :
+$5184 \cdot \frac{256}{243} = 5461\frac13$ et non $5461\frac18$,
+$6912 \cdot \frac{256}{243} = 7281\frac79$ et non $7281\frac19$,
+$6144 \cdot \frac{256}{243} = 6472\frac{56}{81}$, écrit 6472. Le total
+annoncé, « $86681\frac{17}{27}$ grains, ou 9 livres 6 onces 3 gros 65 grains et
+$\frac{17}{27}$ », est cohérent dans ses unités ; il n'est pas la somme des
+quinze poids de la table ($106757\frac{19}{24}$), mais, à un grain près, celle
+des treize premiers, d'un la à l'autre.
+
+La remarque sur la page 151 ajoute que, selon l'ancien système d'Arezzo et de
+Pythagore, la tierce majeure est $\frac{81}{64}$ et la mineure $\frac{32}{27}$,
+ce qui est juste, et la « septième majeure » $\frac{27}{16}$, ce qui ne l'est
+pas : $\frac{27}{16}$ est la sixte majeure pythagoricienne ; la septième majeure
+est $\frac{243}{128}$.
+
+Les remarques des pages 154 à 315 portent sur les modes, les espèces
+d'octave et les « cadences » d'après Doni et le sieur Vincent ; elles ne
+comportent pas de calcul, sinon que douze modes se réduisent à sept espèces,
+selon la place des deux demi-tons dans l'octave, ce qui est juste.
+
+\section*{Les livres des instruments}
+
+\pagerange{28}{37}
+\subsection*{Cordes}
+
+La remarque sur la page 3 du livre des instruments reprend les recettes des
+cordes de boyau déjà lues sur les feuillets de devant, et répond à la croyance
+qu'une corde de loup ne s'accorde jamais avec une corde de mouton : il suffit
+de les tendre pour qu'elles fassent le même nombre de vibrations en même temps,
+« et partant elles feront l'unisson ». C'est la bonne réponse. La remarque sur
+la page 5 énonce que des cylindres de même volume ont des surfaces latérales
+« en raison sous-doublée de leurs hauteurs » : c'est exact, car pour un volume
+$V$ fixé, $2\pi r h = 2\sqrt{\pi V h}$.\footnote{« Raison sous-doublée » : la
+racine carrée du rapport.}
+
+\subsection*{Le système de vingt-quatre quarts de ton}
+
+La marge de la vue 29 donne un « système de 24 quarts de tons ou de 25 cordes, où
+tout est égal » : les longueurs de 25 cordes, de 100000 à 50000, et une seconde
+colonne de 200 à 100. C'est la division de l'octave en 24 parties égales, la
+corde de rang $k$ valant $100000 \cdot 2^{-(k-1)/24}$. Les valeurs de la copie
+sont justes à quelques unités près, avec des écarts plus grands aux rangs 14
+($68709$ pour $68698$) et 22 ($54513$ pour $54525$). La seconde colonne est la
+première divisée par 500, arrondie à des fractions simples ; une seule de ses
+valeurs est grossièrement fausse, celle du rang 13, $143\frac34$ au lieu de
+$141{,}42$, c'est-à-dire $100\sqrt2$.\footnote{La transcription note que
+plusieurs de ces fractions sont petites et douteuses. La construction que la
+remarque suivante attribue à l'almérie de Le Maire — onze moyennes
+proportionnelles entre deux longueurs en raison double, puis une moyenne entre
+chacune des onze — donne exactement cette division.}
+
+La remarque sur la page 54 rapporte une construction de M. de Fortemaison pour
+placer les touches du luth, et conclut qu'elle ne peut être juste parce que ses
+douze longueurs ne sont pas « continuellement proportionnelles ». C'est le bon
+critère : des touches justes pour douze demi-tons égaux placent les longueurs
+vibrantes en progression géométrique de raison $2^{-1/12}$. La remarque sur la
+page 68 renvoie à Descartes pour la construction des deux moyennes
+proportionnelles par une parabole et un cercle ; celle sur la page 225, sur la
+section en moyenne et extrême raison, rappelle justement qu'en retranchant le
+petit segment du grand on retrouve la même section, et que douze sections
+successives ne donnent pas douze demi-tons : le rapport de la section,
+$\frac{1+\sqrt5}{2}$, n'a rien de commun avec $2^{1/12}$.
+
+\subsection*{L'or et le laiton}
+
+La remarque sur la page 151 soutient contre Galilée que si une corde d'or sonne
+plus bas qu'une corde de laiton de même longueur, grosseur et tension, c'est
+« parce qu'elle est plus molle, et non parce qu'elle est plus pesante », et celle
+sur la page 152 que les deux cordes font le triton et non la quinte. Sur les deux
+points, c'est Galilée qui a raison. Par la loi de la corde,
+$f = \frac{1}{2L}\sqrt{T/\mu}$, des cordes de même longueur, de même section et
+de même tension ont des fréquences en raison inverse de la racine de leurs
+densités ; l'or ($19{,}3$) et le laiton ($8{,}4$ à $8{,}7$) donnent un rapport de
+$1{,}49$ à $1{,}52$, c'est-à-dire la quinte, $1{,}5$. Le triton, $\sqrt2$,
+demanderait un rapport de densités de 2.
+
+\subsection*{Les bois de Faber, et les flûtes}
+
+La table de Faber (page 176) est juste dans sa construction : sa deuxième
+colonne, $162, 182\frac14, 192, 216, 243, 256, 288, 324$, est une gamme
+pythagoricienne ; la première en donne des racines approchées ; la troisième est
+une autre gamme pythagoricienne, de 9 à 18 ; la quatrième n'est pas faite des
+carrés de la troisième, comme le dit le texte, mais de ces carrés divisés par 18.
+La « racine imaginable » de $\frac98$ que Faber prend pour $\frac{18}{17}$ est
+approchée : $17^2$ vaut 289 et non 288, et $\bigl(\frac{18}{17}\bigr)^2 =
+\frac{324}{289}$ est plus petit que $\frac98$ de $\frac{1}{289}$ de sa
+valeur.\footnote{Le texte écrit « 17 multiplié par soi, c'est-à-dire 288 ». La
+page suivante dit que $\frac{17}{18}$ est la racine de la sesquioctave « moins
+$\frac{1}{288}$ ».}
+
+La remarque qui suit compare des flûtes de même longueur et de même tour, l'une
+ronde, l'autre carrée, l'autre triangulaire. Avec un tour de 22 et
+$\pi = \frac{22}{7}$, le cercle a pour aire $38\frac12$, le carré $30\frac14$,
+et leurs aires sont comme 154 à 121, soit 14 à 11 : juste. Le triangle a pour
+côté $7\frac13$ et pour aire, par la règle des $\frac{13}{30}$ déjà vue,
+$23\frac{41}{135}$ ; l'aire vraie est $23{,}29$. Le cercle est au triangle comme
+$1{,}65$ ; la copie dit « comme 77 à 46 » ($1{,}67$), ce qui revient à arrondir
+l'aire du triangle à 23, et elle écrit le rapport dans le mauvais sens (« sa
+capacité sera à celle du cercle »).
+
+\subsection*{La trompette}
+
+La remarque sur la page 250 constate que les sons de la trompette « suivent
+l'ordre naturel des nombres 1, 2, 3, 4 », puis « sautent de 6 à 8 ». C'est la
+série harmonique ; le septième harmonique existe, mais il est faux par rapport
+à la gamme, et les trompettistes l'évitent, ce qui explique le saut.
+
+\subsection*{La cloche}
+
+La copie donne la construction complète du profil d'une cloche (vues 33 à 35),
+avec un dessin sur un feuillet volant (vue 34), une table des longueurs et une
+table des volumes. Les volumes sont cohérents : les solides des tranches moins
+leurs vides donnent bien $49677$, $113443$ et $45594$ lignes cubes, les deux vides
+du bas font $193176$, et le total des métaux et des filets est $233550$, comme
+l'écrit la copie.
+
+La remarque sur la page 19 calcule ensuite les angles de la construction, et la
+marge note : « ces angles sont faux ». Trois le sont, par des fautes de chiffres,
+les autres sont justes. Dans le triangle rectangle EOB, de côtés $OB = 35$ et
+$OE = 115$ (ou d'hypoténuse $EB = 120$), l'angle en B vaut $73^\circ 4'$ et non
+$75^\circ 3'$ ; l'angle en E, $16^\circ 56'$ (la copie : $16^\circ 57'$), en est
+le complément, et la somme $75^\circ 3' + 16^\circ 57' = 92^\circ$ trahit la
+faute. Les angles à la base du triangle isocèle RBI, $53^\circ 28'$, et l'angle
+IXP, $36^\circ 32'$, sont justes, et ils sont calculés à partir de $73^\circ$ et
+non de $75^\circ$. Dans le triangle isocèle PBR, de côtés 75 et de base 50,
+l'angle au sommet vaut $2\arcsin\frac13 = 38^\circ 57'$ et non $38^\circ 36'$, les
+angles à la base $70^\circ 32'$ et non $72^\circ 32'$ ; l'angle PBI,
+$73^\circ 4' - 38^\circ 57' = 34^\circ 7'$, est juste.\footnote{La marge corrige
+aussi « RBD » en « RBP », à juste titre. La table des longueurs donne $Bu =
+4\frac{3}{10}$, le texte $uB = 4\frac{7}{20}$.}
+
+Le poids du métal : quatre pouces cubes font $4 \cdot 1728 = 6912$ lignes
+cubes ; ils pèsent 13053 grains, que la copie dit « 22 onces et 21 grains » — il
+manque 5 gros, car $13053 = 22 \cdot 576 + 5 \cdot 72 + 21$. Une livre de ce
+métal occupe donc $6912 \cdot 9216 / 13053 \approx 4880$ lignes cubes, et
+$52\frac45$ livres en occupent $4880 \cdot 52\frac45 = 257664$ : juste. Le
+volume d'eau déplacé dans le vase cylindrique de 13 pouces 9 lignes $\frac13$ de
+diamètre ($165\frac13$ lignes), l'eau montant de 12 lignes, est
+$\pi \cdot (82\frac23)^2 \cdot 12 \approx 257\,630$ lignes cubes ($257\,730$
+avec $\frac{22}{7}$). Le nombre que la transcription lit, 197941, ne peut être
+juste, et la marge dit en effet qu'« il y a quelque autre erreur en ce
+calcul » ; l'écart avec 257664 est de quelques dizaines de lignes, non des 123
+que dit la copie.
+
+\subsection*{Les verres}
+
+La remarque sur la page 33 conteste Kircher, selon qui un verre à moitié plein
+sonnerait l'octave au-dessous du verre vide. La copie a raison de douter : la
+hauteur d'un verre frotté baisse quand on le remplit, mais bien moins que d'une
+octave à mi-hauteur, l'eau ne chargeant que la partie basse de la paroi.
+
+\section*{L'utilité de l'harmonie}
+
+\pagerange{37}{40}
+\subsection*{Le poids de l'air}
+
+Descartes a trouvé que l'air est à l'eau comme 1 à 145, avec une fiole soufflée
+à la lampe qui pesait $78\frac12$ grains froide et 78 chauffée, et qui, refroidie,
+aspira $72\frac12$ grains d'eau : $\frac12 : 72\frac12 = 1 : 145$. L'arithmétique
+est juste, et la méthode aussi : le demi-grain perdu est le poids de l'air chassé
+par la chaleur, et l'eau aspirée en mesure le volume. C'est la pesée qui ne peut
+l'être : l'eau étant en réalité un peu plus de 800 fois plus dense que l'air, la
+fiole n'aurait dû perdre qu'un douzième de grain environ, et une fiole chaude
+se pèse mal. Les
+autres valeurs du volume, 400 (Galilée), 1300, $1356\frac14$, 1380, 1700, se
+répartissent autour de ce nombre ; celle de Galilée est trop faible du double.
+
+\subsection*{Miroirs ardents et lunettes}
+
+La remarque sur la page 28 démontre qu'on ne peut faire « de miroirs qui
+brûlent jusqu'à l'infini » : les rayons venus de chaque point du soleil ne sont
+pas parallèles entre eux, et le faisceau s'élargit comme le diamètre apparent
+du soleil. C'est juste : l'image du soleil au foyer d'un miroir de distance
+focale $f$ a un diamètre d'environ $f/107$, et la chaleur qu'on concentre
+diminue quand $f$ grandit. La lunette à deux paraboles de même foyer, la petite
+renvoyant les rayons de la grande « quasi parallèles », est un télescope à
+réflexion afocal ; avec des ouvertures de 8 pouces et d'un demi-pouce, la
+lumière reçue est multipliée par $(8 : \frac12)^2 = 256$, comme le dit la
+copie.\footnote{Le nom de télescope afocal à deux paraboloïdes confocaux est
+moderne.}
+
+\subsection*{Les ellipses rationnelles}
+
+La remarque sur la page 31 annonce un problème de nombres : le grand diamètre
+d'une ellipse étant donné, trouver des ellipses dont toutes les lignes — la
+perpendiculaire EF élevée au foyer, la distance AF du sommet au foyer, le petit
+diamètre — soient rationnelles, avec la distance des foyers plus grande que le
+petit diamètre et l'aire de l'ellipse plus grande que celle du cercle décrit
+sur la distance des foyers ; et elle donne, « pour 12 ellipses et non plus », le
+nombre 434788275897787529.
+
+Si $a$, $b$, $c$ sont le demi-grand axe, le demi-petit axe et la demi-distance
+des foyers, on a $a^2 = b^2 + c^2$, $AF = a - c$ et $EF = b^2/a$ : rendre ces
+lignes rationnelles, c'est demander un triangle rectangle en nombres
+d'hypoténuse $a$. Les deux conditions s'écrivent $c > b$ et $ab > c^2$ ; en
+posant $b = a\sin\beta$, elles reviennent à $\sin\beta < \frac{\sqrt2}{2}$ et
+$\sin\beta > \frac{\sqrt5 - 1}{2}$, soit $38{,}2^\circ < \beta < 45^\circ$. Le
+problème est donc bien posé, et c'est un problème de représentations d'un carré
+en somme de deux carrés. Mais le nombre tel que la transcription le lit se
+factorise en $1051 \cdot 5987 \cdot 69098059417$, dont les deux premiers
+facteurs sont de la forme $4k+3$ : il n'est hypoténuse que d'un seul triangle
+rectangle en nombres entiers, qui ne satisfait d'ailleurs pas aux deux
+conditions, et ne peut servir à douze ellipses. Cette lecture
+ne peut dire si l'écart vient de la lecture du nombre, de la copie, ou d'un
+énoncé plus fin que celui qu'elle en tire.\footnote{La transcription lit le
+nombre chiffre à chiffre sur une coupe agrandie et note que le dernier chiffre,
+contre le pli, est le moins sûr ; aucune des dix valeurs possibles de ce chiffre
+ne donne plus de deux triangles qui satisfassent aux deux conditions. Si l'on n'exige que
+des lignes rationnelles, et non entières, tout nombre convient, et une
+infinité d'ellipses. La copie ajoute que « l'analyse n'a pu servir à cette
+question jusqu'à présent ».}
+
+\subsection*{Portées}
+
+Galilée démontre que la portée à $45^\circ$ est 10000 quand celle d'un degré est
+349 : c'est $1/\sin 2^\circ = 28{,}65$, juste dans le vide. La copie répond que
+dans l'air la portée à $45^\circ$ n'est guère que triple de celle d'un degré, et
+que la balle, qui fait plus d'effet de près que de loin, ne garde pas une vitesse
+horizontale égale. Les deux sont vrais, chacun dans son milieu. La remarque sur
+la page 42 porte une date : « le dernier jour de mai 1636, sur la foire à
+Saint-Cloud », en tête de trois mesures de portées d'arquebuse.\footnote{La
+transcription note que le premier chiffre de l'année est petit et peu formé et
+marque l'année comme douteuse.} La remarque sur la page 61 réfute l'argument
+d'une balance dont un poids pend au bout d'un bras, par la même raison que la
+réfutation de Beaugrand lue plus loin : un poids suspendu tire suivant son fil,
+et l'on ne peut composer son effet comme s'il était attaché au bras.
+
+\section*{Les nouvelles observations physiques et mathématiques}
+
+\pagerange{40}{44}
+\subsection*{L'écoulement de l'eau}
+
+« J'ai premièrement trouvé que les vitesses de la sortie de l'eau par un même
+trou sont en raison sous-doublée des hauteurs des tuyaux » : un tuyau de 4 pieds
+débite deux fois plus vite qu'un tuyau d'un pied, un tuyau de 16 pieds quatre
+fois, pourvu qu'on les tienne pleins. C'est la loi qu'on appelle aujourd'hui
+de Torricelli, $v = \sqrt{2gh}$.\footnote{Le nom est moderne, et cette lecture ne
+dit rien de la priorité, que la copie semble revendiquer par son
+« premièrement » : c'est l'affaire d'une autre enquête, sur des sources datées.}
+Les mesures qui suivent se vérifient en partie. Un jet horizontal sortant à 6
+pouces du sol d'un tuyau de 4 pieds doit porter, sans pertes, à
+$2\sqrt{48 \cdot 6} \approx 34$ pouces : la copie mesure trois pieds, ce qui est
+remarquablement juste. Le jet à $45^\circ$ devrait porter à environ 8 pieds, la
+copie en mesure 6 ; le jet vertical devrait remonter à 4 pieds, la copie en
+mesure un peu plus de 3, « quasi un quart » de moins : ce sont les pertes.
+
+Le calcul de la vue 41 est juste dans son principe : pour que l'eau jaillisse
+60 fois plus vite, il faut un tuyau $60^2 = 3600$ fois plus haut, soit
+$12 \cdot 3600 = 43200$ pieds. La copie écrit « en raison doublée de 1 à 60, ou
+de 12 à 720 », où 720 est $12 \cdot 60$ et non le terme de la raison doublée,
+qui est 43200.
+
+\subsection*{La chute dans l'eau, et une date}
+
+« Enfin le 4\textsuperscript{e} juin 1638 j'ai trouvé que le plomb est à la vessie
+comme 1890 à 1 » (vue 41) : c'est la deuxième date d'expérience du volume. La
+remarque voisine rapporte « l'expérience contre Galilée » : l'eau pesant douze
+fois moins que le plomb, la règle de Galilée voudrait que le plomb tombe dans
+l'eau en deux secondes presque autant que dans l'air, et il ne tombe que de 12
+pieds. Avec la chute de 12 pieds dans la première seconde, qui en fait 48 en
+deux, la règle donne $48 \cdot \frac{11}{12} = 44$ pieds ; la copie écrit 42, et
+la pièce latine de la fin, qui reprend le même argument, dit bien 12 contre
+11.\footnote{La copie écrit aussi que l'air ôte au plomb la
+« $\frac{1}{480}$ partie » de son mouvement ; avec l'air 400 fois plus léger que
+l'eau et le plomb 12 fois plus lourd, c'est $\frac{1}{4800}$, comme le dit la
+pièce latine.} La règle de Galilée est en effet fausse dans l'eau : elle ne
+tient compte que de la poussée, et c'est la résistance du fluide, croissante
+avec la vitesse, qui limite très vite la chute.
+
+La remarque sur la page 10 décrit la parabole comme composée d'un mouvement
+horizontal uniforme et d'une montée qui repasse, en sens inverse, par tous les
+degrés de vitesse de la descente : c'est juste dans le vide. Puis la copie
+ajoute : « Il faut corriger tout ceci, puisque les flèches convainquent que la
+descente est plus longue à se faire que la montée. » C'est juste dans l'air.
+
+\subsection*{Contre la géostatique de Beaugrand}
+
+La remarque sur la page 17 réfute en cinq points une balance dont les bras
+seraient dirigés vers le centre de la Terre, et d'où son auteur tirait que les
+poids changent de pesanteur avec leur distance au centre. Le deuxième point est
+le plus fort, et il est juste : le principe d'Archimède et de Pappus sur le
+centre de gravité de deux poids, qui partage la droite de leurs centres en
+raison inverse des poids, n'est vrai que si les poids tirent suivant des
+lignes parallèles ; pour des forces qui concourent au centre de la Terre, il
+n'y a pas en général de centre de gravité fixe, et l'auteur qui suppose le
+contraire « ne prouve rien ». Le quatrième point relève une pétition de
+principe exactement : pour prouver que la distance change la pesanteur,
+l'auteur suppose le centre de gravité placé comme si elle ne la changeait
+pas.\footnote{La copie nomme « M. de Beaugrand » et « l'auteur de la
+géostatique ». Dans la gravitation newtonienne, le poids varie bien avec la
+distance au centre, mais de façon insensible à l'échelle d'une balance.}
+
+\subsection*{La neuvième observation : le tempérament égal}
+
+La grande table de la vue 43 compare, pour la tierce mineure, la tierce majeure,
+la quarte, la quinte et les deux sixtes, quatre valeurs justes ou approchées sur
+une corde de 100000 parties — la « parfaite », une « approchante », une
+« imparfaite », une « du tout éloignée » — à celle de « l'accord de Gallé »,
+obtenue « par moyennes proportionnelles », c'est-à-dire le tempérament égal à
+douze demi-tons. Voici les valeurs, recalculées :
+\[
+\begin{array}{l|c|c|c|c|c}
+ & \text{parfaite} & \text{approchante} & \text{imparfaite}
+   & \text{éloignée} & \text{tempérament égal} \\ \hline
+\text{tierce mineure} & \frac56 = 83333 & \frac{1024}{1215} = 84280
+   & \frac{27}{32} = 84375 & \frac{64}{75} = 85333 & 2^{-3/12} = 84090 \\
+\text{tierce majeure} & \frac45 = 80000 & \frac{405}{512} = 79102
+   & \frac{64}{81} = 79012 & \frac{25}{32} = 78125 & 2^{-4/12} = 79370 \\
+\text{quarte} & \frac34 = 75000 & \frac{512}{675} = 75852
+   & \frac{20}{27} = 74074 & & 2^{-5/12} = 74915 \\
+\text{quinte} & \frac23 = 66667 & \frac{675}{1024} = 65918
+   & \frac{27}{40} = 67500 & & 2^{-7/12} = 66742 \\
+\text{sixte mineure} & \frac58 = 62500 & \frac{256}{405} = 63210
+   & \frac{81}{128} = 63281 & \frac{16}{25} = 64000 & 2^{-8/12} = 62996 \\
+\text{sixte majeure} & \frac35 = 60000 & \frac{1215}{2048} = 59326
+   & \frac{16}{27} = 59259 & \frac{75}{128} = 58594 & 2^{-9/12} = 59460
+\end{array}
+\]
+Toutes les valeurs de la copie sont justes, à trois exceptions près :
+$\frac{75}{128}$ vaut 58594 et non 58994 ; $\frac{81}{128}$ vaut $63281\frac14$,
+écrit 63282 ; et la dernière ligne, intitulée « Sexta minor » comme la
+précédente, est celle de la sixte majeure. Les « différences avec la parfaite »
+ne sont pas des différences de longueurs mais des écarts relatifs, en cent
+millièmes : 1123 est l'écart de $\frac{2048}{2025}$, 1235 celui du comma
+syntonique $\frac{81}{80}$, 2344 celui du dièse $\frac{128}{125}$ ; et pour le
+tempérament égal, 113 pour les quintes et les quartes, 789 pour les tierces
+majeures et les sixtes mineures, 900 pour les tierces mineures et les sixtes
+majeures. Tous sont justes.
+
+Le paragraphe qui suit tire de là que, dans le tempérament égal, la tierce
+majeure est plus près de la juste que la mineure, et il le vérifie en commas :
+l'octave valant 53 commas, le ton égal vaut $8\frac56$, le demi-ton
+$4\frac{5}{12}$, la tierce mineure égale $13\frac14$ au lieu de 14, trop basse
+de $\frac34$ de comma, la tierce majeure $17\frac23$ au lieu de 17, trop haute de
+$\frac23$ : la mineure s'écarte davantage, de $\frac{1}{12}$ de comma. C'est
+exact, et conforme à la table ($900 > 789$) : en cents, $-15{,}6$ contre
+$+13{,}7$. La copie en conclut que les facteurs d'orgues, qui jugent le
+contraire, ont l'oreille « pervertie par accoutumance ».\footnote{« Gallé »,
+avec un trait sur le e, est le nom tel que la transcription le lit ; il abrège
+aussi l'en-tête de la dernière colonne, « Accord de Ga\dots ». Cette lecture ne
+l'identifie pas. La fraction qui suit « chaque demi-ton 4 » et celle qui suit
+« abaissée de » sont cachées dans le pli ; le calcul les donne, $\frac{5}{12}$ et
+$\frac34$.}
+
+\subsection*{La roulette}
+
+La remarque sur la page 25 annonce qu'on a trouvé l'aire de la roulette pour
+tout rapport entre la circonférence du cercle roulant et le chemin qu'il fait,
+ses tangentes, ses centres de gravité, et que le solide qu'elle engendre en
+tournant sur sa base est au cylindre de même hauteur « comme 8 à 5 ». Le
+rapport est juste, lu dans l'autre sens : le solide engendré par une arche de
+cycloïde tournant autour de sa base vaut $5\pi^2 r^3$, le cylindre circonscrit
+$8\pi^2 r^3$ ; le cylindre est au solide comme 8 à 5.\footnote{« Roulette » :
+la cycloïde. La copie renvoie aux lettres de Descartes pour les démonstrations,
+et ne donne pas les exemples qu'elle annonce (« dont je mets ici quelques
+exemples »).}
+
+\subsection*{Les nombres amiables}
+
+La remarque sur la page 26, en latin, donne une règle « ex Cartesio » : si
+$x$ est une puissance de 2 telle que $3x - 1$, $6x - 1$ et $18x^2 - 1$ soient
+premiers, les nombres $2x(18x^2 - 1)$ et $2x(3x-1)(6x-1)$ sont amiables — chacun
+est la somme des parties aliquotes de l'autre. La règle est exacte ; c'est
+celle qu'on nomme aujourd'hui règle de Thābit ibn Qurra. Pour $x = 2$, 8 et 64
+elle donne, avec les premiers $5, 11, 71$ ; $23, 47, 1151$ ; $191, 383, 73727$,
+les trois paires de la copie, $220$ et $284$, $17296$ et $18416$, $9363584$ et
+$9437056$, et cette lecture a vérifié que chacune est amiable.\footnote{Si
+$s(n)$ désigne la somme des diviseurs propres de $n$, on a par exemple
+$s(9437056) = 9363584$ et $s(9363584) = 9437056$. La règle est ici attribuée à
+Descartes par la copie ; le nom de Thābit est un usage moderne, et la question de
+savoir qui l'a trouvée ou retrouvée n'est pas l'affaire de cette lecture.} Mais la
+phrase finale, « et l'on en peut trouver une infinité d'autres de la même
+manière », n'est pas démontrée, et elle est fausse autant qu'on le sache : on ne
+connaît aucune autre valeur de $x$ pour laquelle les trois nombres soient
+premiers.
+
+\subsection*{Les nombres multiparfaits}
+
+La treizième observation dresse des listes. Dans la langue de la copie, un nombre
+dont les parties aliquotes font « le double » est un nombre dont la somme des
+diviseurs propres est double de lui, c'est-à-dire, en notant $\sigma(n)$ la
+somme de tous ses diviseurs, $\sigma(n) = 3n$. Les six nombres donnés —
+$120$, $672$, $523776$, $459818240$, $1476304896$, $51001180160$ — sont bien tels, et ce
+sont exactement les six nombres de cette sorte connus aujourd'hui. Que ce soient
+les seuls, comme l'affirme la copie (« il n'y en a dans tous les nombres que les
+6 qui suivent »), est une question ouverte.\footnote{En langage moderne, ce sont
+les six nombres 3-parfaits connus. Aucun autre n'a été trouvé, et l'on ne sait
+pas démontrer qu'il n'en existe pas.}
+
+Les neuf nombres dont les parties aliquotes font « le triple » ($\sigma(n) =
+4n$) — $30240$, $32760$, $23569920$, $45532800$, $142990848$, $1379454720$, $43861478400$, $66433720320$, $403031236608$ — le sont tous ; mais la liste n'est pas complète
+dans son intervalle, car $2178540$ et $153003540480$ le sont aussi. La règle
+qui passe de $459818240$ à $1379454720$ en multipliant par 3 est juste, et c'est
+le cas particulier d'un lemme que le cadre de la même page énonce en général :
+si $\sigma(n) = kn$ avec $k$ premier ne divisant pas $n$, alors
+$\sigma(kn) = (k+1)\,kn$, puisque $\sigma$ est multiplicative et
+$\sigma(k) = k + 1$. Ainsi un « sextuple » non divisible par 7, multiplié par 7,
+donne un « septuple ».\footnote{Le chiffre douteux du dernier des neuf nombres,
+lu « 0 ou 8 », est 0 : $403031236608$ est 4-parfait, $483031236608$ ne l'est
+pas.}
+
+Des nombres dont les parties font « le quadruple » ($\sigma(n) = 5n$), la copie
+donne $14182439040$ et $30823866178560$, qui le sont, et $508666803200$, qui ne
+l'est pas tel que la transcription le lit ; $518666803200$, qui n'en diffère que
+par un chiffre, l'est.\footnote{Ce qui fait penser à une faute de lecture ou de
+copie d'un seul chiffre ; la page doit trancher.} Le cadre donne enfin un produit de
+vingt et un facteurs, $2^{31}$, $13$, $17$, $31$, $41$, $43$, $61$, $83$, $163$,
+$257$, $307$, $331$, $467$, $613$, $1093$, $11^3$, $7^4$, $2801$, $65537$, $547^2$
+et « 594323 », qui ferait un « quadruple » ; tel qu'il est lu, il n'en est pas un
+($\sigma/n \approx 3{,}33$). Mais si l'on remplace 594323 par
+$1594323 = 3^{13}$, le produit $P$ vérifie exactement $\sigma(P) = 5P$, et,
+n'étant pas divisible par 5, il donne $\sigma(5P) = 6 \cdot 5P$, le
+« quintuple » que le cadre annonce. Le premier chiffre du dernier facteur
+manque, sur la page ou dans la lecture.\footnote{Le nombre qu'il faudrait est
+déterminé : le rapport $\sigma(x)/x$ que doit avoir le dernier facteur pour que le
+produit soit 5-parfait vaut $\frac{2391484}{1594323}$, et $2391484 =
+\sigma(3^{13})$. Le calcul est de cette lecture.}
+
+\section*{Les feuillets blancs de la fin}
+
+\pagerange{45}{52}
+Sous la rubrique « Au papier blanc après tous les livres de l'harmonie »,
+huit pages de nombres, sans renvoi au livre sauf une fois.
+
+\subsection*{Les carrés magiques emboîtés}
+
+Un carré magique d'ordre $n$ est une disposition des nombres $1$ à $n^2$ en carré
+telle que chaque rangée, chaque colonne et chaque diagonale ait la même somme,
+qui est alors $\frac{n(n^2+1)}{2}$. Le carré de 22 de la vue 45 a pour somme
+$22 \cdot 485 / 2 = 5335$. Il contient, emboîtés au centre, des carrés de 16, 12 et
+10 qui sont eux-mêmes magiques : ce sont des carrés « à enceintes », qu'on peut
+dépouiller de leurs bordures en gardant la propriété. Tel que la transcription
+le lit, toutes ses colonnes et ses deux diagonales font 5335 ; les carrés de 12
+(rangées et colonnes 6 à 17, de coins 241, 242, 243, 244) et de 10 (rangées 7 à
+16, de coins 33, 46, 452, 439) sont exactement magiques, de sommes 2910 et 2425 ;
+seules les rangées 18 et 19 font 5338 et 5332. La copie a tracé deux traits entre
+les cases 433 et 430 de ces rangées ; les échanger corrige les rangées, mais
+dérange alors les colonnes 18 et 19 de trois unités. Un autre chiffre du bloc est
+donc probablement mal lu ou mal copié.\footnote{La transcription écrit que
+l'échange « rétablit les deux sommes », ce qui n'est vrai que des rangées. Trois
+cases tachées y sont restituées par la somme : 254, 256 et 154, ce dernier écrit
+en clair dans la marge, en face de la rangée 21.}
+
+Les notes de marge sont les plus intéressantes. « Chaque rang de 16 contient
+2056 selon le Père Mersenne, mais il est faux, car il contient 3880 » ; de même
+870 et 2910 pour le carré de 12, 505 et 2425 pour celui de 10. Les deux nombres
+de chaque paire sont justes, de deux objets différents. $2056 =
+\frac{16 \cdot 257}{2}$, $870 = \frac{12 \cdot 145}{2}$ et $505 =
+\frac{10 \cdot 101}{2}$ sont les sommes magiques de carrés d'ordre 16, 12 et 10
+faits des nombres $1$ à $n^2$ ; $3880$, $2910$ et $2425$ sont celles des carrés
+intérieurs du carré de 22, qui sont faits de nombres pris entre 1 et 484, et dont
+la somme est $k \cdot \frac{485}{2}$. La correction de la copie est juste pour le
+carré qu'elle a sous les yeux.
+
+Les carrés de 9 et de 8 « pour les planètes » sont magiques (sommes 369 et 260), et
+à enceintes eux aussi : le carré de 9 contient des carrés magiques de 7, 5 et 3
+(sommes 287, 205, 123), attribués à Vénus, Mars et Saturne, le carré de 8 des
+carrés de 6 et 4 (sommes 195 et 130), pour le Soleil et Jupiter. Les deux carrés
+de 4 des vues 45 et 46 sont magiques. Que le carré de 4 se varie « en 880
+façons » sans compter les huit retournements, et que le carré de 3 ne se fasse
+que d'une, est exact : il y a 880 carrés magiques d'ordre 4 à rotation et
+symétrie près, et un seul d'ordre 3. Que « toutes ses dispositions différentes »
+soient $16! = 20922789888000$ est juste aussi. La vue 46 ajoute que, parmi les 880,
+« il y en a 16 seulement » qui ont aux quatre coins quatre nombres consécutifs, et
+que chacune se voit en 8 manières, soit 128 : cette lecture a compté les carrés
+magiques d'ordre 4 et trouve bien 128 carrés, 16 à la symétrie près. Mais
+l'exemple que donne la copie, « comme est 4, 5, 6, 7 », est impossible : les
+quatre coins d'un carré magique d'ordre 4 font toujours 34, et quatre nombres
+consécutifs de somme 34 ne peuvent être que 7, 8, 9, 10.\footnote{Le carré de 14
+« d'une lettre de M. Fermat au Père Mersenne du premier [?] avril 1640 », dont
+la copie donne les sommes 1379, 985 et 591 pour les carrés de 14, 10 et 6, n'est
+pas recopié ; les trois sommes sont justes, $k \cdot \frac{197}{2}$. La
+transcription lit la date par inférence, le jour étant un signe souligné non
+lu. Le nombre $6742112993280000$ des variations du carré de 9 vaut
+$2^{25} \cdot 3^8 \cdot 5^4 \cdot 7^2 = 8 \cdot (8! \cdot 6!)^2$ ; cette lecture
+ne sait pas le rattacher à la description qu'en donne la copie.}
+
+\subsection*{Deux nombres dont on demande s'ils sont premiers}
+
+« On propose aux arithméticiens le nombre 2027651281 : qu'ils disent en quatre
+jours s'il est premier ou composé ; s'ils ne le peuvent, nous le donnerons en une
+heure par des règles certaines et générales. » Il est composé :
+$2027651281 = 44021 \cdot 46061$. La factorisation se trouve en une heure, en
+effet, par la méthode qui porte aujourd'hui le nom de Fermat : on cherche un
+carré $x^2$ tel que $x^2 - N$ soit un carré, en partant de $\lceil\sqrt N\,\rceil
+= 45030$ ; au douzième essai, $45041^2 - 2027651281 = 1020^2$, et
+$N = (45041 - 1020)(45041 + 1020)$.\footnote{Le nom de méthode de Fermat est
+moderne. La copie ne dit pas de qui est le défi.}
+
+Le second est en latin, sur la vue 50 : « on ne trouvera pas par la voie
+commune si 1073602561 est premier ou non, à moins de le diviser par tous les
+premiers jusqu'à 8191 ». Il ne l'est pas, et 8191 en est justement le plus petit
+diviseur : $1073602561 = 8191 \cdot 131071 = (2^{13} - 1)(2^{17} - 1)$, produit de
+deux nombres premiers de Mersenne. Diviser jusqu'à 8191 trouve donc le facteur ;
+mais pour prouver qu'un nombre de cette taille est premier, il faudrait
+diviser jusqu'à sa racine, 32766.\footnote{« Viam communem non reperies » est la
+lecture développée par la transcription de « viã coĩ nõ reperiz ». Le nom de
+nombres de Mersenne, pour les $2^p - 1$, est moderne.}
+
+La même page juge d'autres nombres : « 1373 est premier, et non 1369, carré de
+37, ni 1371 » — juste, $1371 = 3 \cdot 457$. Mais « 6679 n'est pas premier, il se
+divise par 23 et 29 » est faux : $23 \cdot 29 = 667$, et 6679 est premier.
+
+\subsection*{Compter les parties aliquotes}
+
+Les « parties aliquotes » d'un nombre sont ses diviseurs autres que lui-même ;
+leur nombre est $\tau(n) - 1$, où $\tau(n)$ compte tous les diviseurs, et si
+$n = p_1^{e_1}\cdots p_r^{e_r}$, alors $\tau(n) = (e_1+1)\cdots(e_r+1)$. C'est
+exactement la première règle de la vue 46 : pour 108, produit du carré 4 et du
+cube 27, on prend les exposants 2 et 3, on ajoute un à chacun, $3 \cdot 4 = 12$,
+et l'on ôte un : 11 parties aliquotes. La « seconde méthode » —
+$2 \cdot 3 + 2 + 3 = 11$ — est l'identité $(a+1)(b+1) - 1 = ab + a + b$ et ne vaut
+que pour deux facteurs. Les exemples de la copie sont justes : 20 et 12 et 45
+en ont 5, 360 en a 23, 400 en a 14, 5000 en a 19, 12000 en a 47, 888 en a 15,
+666 en a 11, 6000 en a 39, et 5040 en a 59.
+
+Deux sont faux. 15000 n'a pas « 80 parties moins une » mais 39 :
+$15000 = 2^3 \cdot 3 \cdot 5^4$, et $\tau = 4 \cdot 2 \cdot 5 = 40$ ; la copie
+donne au facteur 3 un exposant 3. Et la règle inverse — trouver le moindre
+nombre qui a un nombre donné de parties aliquotes — est fausse sur l'exemple
+même de la copie. Pour 11 parties, il faut $\tau(n) = 12$ ; la copie décompose
+$12 = 3 \cdot 4$, prend un carré et un cube, et trouve $9 \cdot 8 = 72$. Mais
+12 se décompose aussi en $2 \cdot 2 \cdot 3$, ce qui donne
+$2^2 \cdot 3 \cdot 5 = 60$, plus petit, et 60 a bien 11 parties
+aliquotes.\footnote{Les formes possibles pour $\tau(n) = 12$ sont $p^{11}$,
+$p^5 q$, $p^3 q^2$ et $p^2 q r$, dont les plus petites valeurs sont 2048, 96, 72
+et 60. Pour 14 parties, le moindre est bien $16 \cdot 9 = 144$, comme le dit la
+copie ; pour 59, c'est bien 5040, le « nombre civil de Platon », comme le dit la
+page latine (« nec ullus minor eas habet »).}
+
+\subsection*{Sommer les parties aliquotes}
+
+La quatrième règle (vues 47 et 48) calcule la somme des parties aliquotes par la
+multiplicativité de $\sigma$ : on décompose le nombre en puissances de premiers,
+on prend pour chacune la somme de ses diviseurs, on multiplie, et l'on ôte le
+nombre. La règle est juste et la plupart des exemples aussi : 12 donne 16, 20
+donne 22, 5040 donne 14304 ($31 \cdot 13 \cdot 8 \cdot 6 = 19344$), 12000 donne
+27312, 5000 donne 6715, 888 donne 1392, 6000 donne 13344. Deux sont faux. Pour
+666, le produit $3 \cdot 38 \cdot 13$ vaut 1482 et non 1282, et la somme des
+parties est 816 et non 697. Pour 560400, la somme est 1238592, et non 1374480 —
+ni pour 500400, l'autre lecture du chiffre douteux.\footnote{On a $560400 =
+2^4 \cdot 3 \cdot 5^2 \cdot 467$. La table des trente-neuf parties aliquotes de
+6000 (vue 50) est juste si l'on lit 50 et 250 aux deux places où la transcription
+lit « 5 » et « 120 », nombres qui sont déjà ailleurs dans la table.}
+
+La troisième règle est l'inverse : trouver un nombre dont la somme des parties
+est donnée. Si $s - 1$ est un nombre premier $p$, le carré $p^2$ a pour parties
+$1$ et $p$ et convient ; si $s - 1 = p + q$ avec $p$ et $q$ premiers distincts,
+$pq$ convient. Les exemples sont justes : 121 pour 12, qui est bien le seul ;
+529 pour 24, le seul aussi ; 95 pour 25. Mais 95 n'est pas le seul pour 25 : 119
+et 143 conviennent aussi, puisque $24 = 5 + 19 = 7 + 17 = 11 + 13$.
+
+\subsection*{Les triplets en proportion continue}
+
+« Le moindre nombre de ceux qui contiennent vingt-quatre fois, et non plus, trois
+nombres proportionnels, est 24843, et non 753571, qui les contient aussi. » Le
+sens est donné par l'exemple : 91 « contient » les quatre triplets $1, 9, 81$ ;
+$25, 30, 36$ ; $13, 26, 52$ ; $7, 21, 63$, qui sont en progression géométrique et
+ont chacun pour somme 91. Écrire $N = a + b + c$ avec $b^2 = ac$, c'est écrire
+$N = d(x^2 + xy + y^2)$ avec $a = dy^2$, $b = dxy$, $c = dx^2$ et $x, y$ premiers
+entre eux, et les nombres premiers qui entrent dans $x^2 + xy + y^2$ sont 3 et
+ceux de la forme $6k+1$ — d'où la condition de la copie que les premiers
+« doivent être 6 plus un ». Cette lecture a compté ces triplets pour tous les
+nombres jusqu'à 800000, en écartant le triplet trivial $a = b = c$. Les
+affirmations de la copie sont exactes : 91 en a 4 et c'est le moindre ;
+$24843 = 3 \cdot 7^2 \cdot 13^2$ en a 24 et c'est le moindre ; $753571 =
+7^3 \cdot 13^3$ en a 24 aussi. Seule la note de marge se trompe, qui donne 49
+pour le moindre nombre à deux triplets : 21 en a deux, $1 + 4 + 16$ et
+$3 + 6 + 12$.\footnote{Pour $N$ premier à 3, le nombre de triplets est
+$\frac12\bigl(\prod(2e_i + 1) - 1\bigr)$, le produit portant sur les exposants
+des premiers de la forme $6k+1$ ; un facteur 3 le double. D'où 4 pour
+$7 \cdot 13$, 24 pour $7^3 \cdot 13^3$, et $2 \cdot 12$ pour
+$3 \cdot 7^2 \cdot 13^2$.}
+
+\subsection*{Critères de divisibilité}
+
+Un nombre qui finit par 0 ou 5 est divisible par 5 ; un nombre dont la somme des
+chiffres, les 9 ôtés, laisse 3, 6 ou 9 est divisible par 3 ; s'il ne reste rien,
+par 9. Exemple juste : les chiffres de $75512713527351$ font 54, et le nombre est
+divisible par 9.
+
+\subsection*{Sommes de puissances, en latin}
+
+La page latine de la vue 50 et la suivante donnent des règles justes. Le
+triangulaire d'un nombre impair est ce nombre multiplié par son milieu
+($T_7 = 7 \cdot 4 = 28$), d'un nombre pair sa moitié multipliée par le suivant
+($T_6 = 3 \cdot 7 = 21$). La somme des $n$ premiers triangulaires est $n$
+multiplié par le tiers du triangulaire suivant : $\sum_{k \le n} T_k =
+\frac{n\,T_{n+1}}{3} = \frac{n(n+1)(n+2)}{6}$, soit 35 pour $n = 5$. La somme
+des $n$ premiers cubes est le carré du $n$-ième triangulaire : $465^2 = 216225$
+pour $n = 30$, et $10^2 = 100$ pour $n = 4$. La somme des $n$ premiers carrés est
+le double de $n$ fois le tiers du triangulaire suivant, moins le triangulaire de
+$n$ : $2 \cdot \frac{n\,T_{n+1}}{3} - T_n = \frac{n(n+1)(2n+1)}{6}$, soit 30 pour
+$n = 4$ et 9455 pour $n = 30$. Tout est exact.
+
+Les quatre premiers « problèmes des pierres » — des pierres posées le long d'un
+chemin, qu'on rapporte une à une au point de départ — sont justes aussi. Vingt
+pierres à un pas l'une de l'autre demandent $20 \cdot 21 = 420$ pas ; cent
+pierres aux intervalles $1, 2, 3, \dots$ demandent $2 \cdot \frac{100 \cdot 101
+\cdot 102}{6} = 343400$ pas ; douze pierres aux intervalles $1, 2, 4, \dots$
+sont aux distances $2^k - 1$, dont la somme est $2^{13} - 2 - 12 = 8178$, soit
+16356 pas ; cinq pierres aux intervalles $1$, $3$, $9$, $27$, $81$ sont aux distances
+$1$, $4$, $13$, $40$, $121$, de somme 179, soit 358 pas. Le cinquième problème est trop
+incertain dans sa lettre pour être vérifié.\footnote{La transcription le dit :
+« non jubet se sedere » et « sint in 4\textsuperscript{o} praecedenti puncto »
+sont lus tels qu'ils sont écrits, sans que le sens soit établi.}
+
+\subsection*{Différences de puissances}
+
+La différence de deux cubes consécutifs est un nombre hexagonal centré :
+$(n+1)^3 - n^3 = 3n^2 + 3n + 1 = 6T_n + 1$ ; ainsi $64 - 27 = 6 \cdot 6 + 1 = 37$.
+Pour les quatrièmes puissances, la copie ajoute au cube du moindre nombre la
+« colonne » de l'hexagone central du plus grand : $4^4 - 3^4 = 4 \cdot 37 + 27
+= 175$, ce qui est l'identité $n^4 - (n-1)^4 = n\bigl(n^3 - (n-1)^3\bigr) +
+(n-1)^3$. Pour les cinquièmes, la règle est plus curieuse et exacte : on double le
+triangulaire du moindre nombre $m$, on prend le triangulaire de ce double, et
+l'on écrit un 1 à la suite. Pour $m = 3$, $T_3 = 6$, $T_{12} = 78$, et l'on a
+781, qui est $4^5 - 3^5$. En général $10\,T_{m(m+1)} + 1 = 5m^4 + 10m^3 + 10m^2 +
+5m + 1 = (m+1)^5 - m^5$.\footnote{« Quarré quarré » : la quatrième puissance ;
+« Q. C. » : la cinquième, quarré-cube. La liste des premières quatrièmes
+puissances saute $6^4 = 1296$, et sa dernière différence, 1776, est
+$7^4 - 5^4$.}
+
+\subsection*{Les dés}
+
+Trois dés donnent $6^3 = 216$ coups, et les points de 3 à 10 s'obtiennent de
+$1$, $3$, $6$, $10$, $15$, $21$, $25$, $27$ façons — symétriquement de 18 à 11 — dont la somme
+108 est la moitié de 216 : tout est exact. Les six premiers nombres sont bien
+les triangulaires ; les deux suivants, 25 et 27, ne le sont plus, et la copie
+les donne sans règle.
+
+Pour deux dés, la copie se trompe. Le texte dit « 62 façons » et « 31 jeux
+différents » ; il y en a 36 et 21. Le petit feuillet volant de la vue 49 montre
+d'où vient la faute : le copiste a d'abord écrit, pour chaque point de 2 à 12,
+toutes les décompositions en deux nombres, y compris celles où entre un nombre
+plus grand que six, puis il a biffé celles-ci ; et il compte deux fois chaque
+coup double (« 1 1, 1 1 »). La table de la marge (vue 51), faite après la
+correction, trouve ainsi 42 coups, soit $36 + 6$, et 21 jeux sans ordre, ce
+dernier nombre juste.
+
+\section*{L'Académie parisienne aux amis de Galilée}
+
+\pagerange{53}{55}
+La dernière pièce du volume est d'un autre genre : un texte latin suivi,
+intitulé « L'Académie parisienne prie les très illustres hommes, familiers et
+amis de Galilée, Lyncéens, de répondre aux notes suivantes sur les livres des
+dialogues ». Quinze objections numérotées renvoient aux pages des dialogues, de
+la page 2 à la page 288 ; la fin explique que « ce sont les choses que les
+Parisiens avaient écrites à Galilée lui-même quand il vivait encore », que sa mort
+a prévenu l'envoi, et prie ses amis — Toscans, Romains, Bolonais, Génois — d'envoyer
+leurs réponses à « l'éminent géomètre génois D. Santini », qui les fera
+parvenir. La pièce est datée : « Lutetiae Calendis Julii anni 1643 », à Paris,
+le 1\textsuperscript{er} juillet 1643. Elle ne porte pas de nom.\footnote{Le
+contenu des objections — la résistance des machines selon leur grandeur, le
+vide, la roue d'Aristote, les miroirs d'Archimède, le fil d'or étiré, les cordes
+d'or, le prisme comme levier, l'isochronisme des oscillations, les plans
+inclinés, les projectiles — est celui des \emph{Discorsi} de Galilée (1638) ;
+l'identification est de cette lecture, la pièce disant seulement « dialogorum
+libri ». Galilée était mort en janvier 1642.}
+
+Les objections sont de physique, et le temps a donné raison tantôt à l'Académie,
+tantôt à Galilée. Elle a raison contre lui quand elle attribue à la pression de
+l'air, et non à la force du vide, l'adhérence de deux plaques polies et la limite
+des pompes aspirantes (objection 2) ; quand elle nie que les petits cercles de la
+roue d'Aristote laissent des « petits espaces vides » et dit qu'ils vont
+seulement plus lentement (objection 5) — le petit cercle roule et glisse à la
+fois ; quand elle doute que toutes les oscillations d'un même pendule soient de
+durée égale (objection 11) — elles ne le sont que pour les petites amplitudes ;
+et quand elle oppose l'expérience à la règle qui fait retrancher à la vitesse
+d'un corps la fraction de son poids que lui ôte le milieu (objection 15), la
+règle ignorant la résistance du fluide. Elle a tort quand elle nie que les corps
+pèsent dans le vide (objection 8) ; quand elle attribue la voix plus grave des
+cordes d'or à leur mollesse et non à leur poids (objection 9), comme on l'a vu
+plus haut ; et quand elle tire de l'expérience de l'arquebuse une objection
+contre la composition des mouvements (objection 14) : une balle tirée
+horizontalement tombe bel et bien de quelque 15 pieds en une seconde, et si
+elle touche le but, c'est que la ligne de mire et l'axe du canon ne sont pas
+parallèles. Le rapport de 28 à 1 entre les portées à $45^\circ$ et à $1^\circ$,
+qu'elle récuse au nom de l'expérience, est juste dans le vide et faux dans
+l'air, comme l'avait déjà dit la copie.\footnote{L'objection 4 tient pour
+impossibles les miroirs ardents d'Archimède. Buffon, en 1747, enflamma du bois à
+plusieurs dizaines de mètres avec un assemblage de miroirs plans ; la question
+de savoir ce qu'Archimède fit à Syracuse reste une autre affaire. Dans
+l'objection 15, les nombres sont justes : l'air 400 fois plus léger que l'eau,
+le plomb 12 fois plus lourd, donc 4800 fois plus lourd que l'air, et 12 pieds
+contre 11 selon la règle.}
+
+La pièce finit par deux demandes précises : le poids et la grandeur des
+fioles avec lesquelles Galilée avait pesé l'air, « afin que nous imitions au plus
+près ses observations », et le traité de la force de percussion auquel il avait
+tant travaillé.
+
+Sous la date, un tableau occupe la moitié de la page : les sept modes des Grecs,
+de l'hypodorien au mixolydien, dessinés comme sept échelles en escalier, avec une
+légende en français : si l'on commence les six autres modes à la mèse de
+l'hypodorien, on entend « les sept tons et les sept modes des anciens, tous
+diversifiés et chacun en son lieu propre, selon M. Doni ».
+
+\section*{Ce que ces feuillets ne disent pas}
+
+\pagerange{1}{56}
+Il faut finir par les limites, parce que le titre du volume et la nature de
+la copie invitent à en dire plus que les feuillets.
+
+\textbf{Ce n'est pas l'exemplaire annoté de Mersenne.} C'est une copie de ses
+notes, dans une main qui n'est pas la sienne et qui ne se nomme pas. Cette
+lecture ne sait rien de l'exemplaire copié, ni s'il existe encore.
+
+\textbf{L'attribution est celle du titre.} Les remarques sont de Mersenne parce
+que la copie le dit ; trois passages le nomment à la troisième personne, dont un
+qui le corrige, et cette lecture ne sait pas qui les a écrits. Les trois
+feuillets de musique de devant sont d'une autre main, ne renvoient pas au
+livre, et rien ne les rattache aux remarques. La pièce latine de 1643 est de la
+main de la copie ; elle parle au nom de l'« Académie parisienne » et n'a pas
+d'auteur nommé.
+
+\textbf{Les renvois au livre n'ont pas été vérifiés.} Toutes les pages de
+l'\emph{Harmonie} sont citées comme la copie les donne ; c'est pourquoi deux des
+corrections discutées ici — celle de la page 139, et le nombre de la page 110 —
+restent suspendues à une lecture du livre.
+
+\textbf{Aucune date n'est donnée à la copie.} Les seules dates sont celles que les
+feuillets écrivent : 1563 pour la « triple musique » de Le Fèvre, 1484 pour
+Gafurius d'après Faber, le dernier jour de mai 1636 (l'année douteuse), 1638
+pour l'observation de M. de Villiers, le 4 juin 1638, avril 1640 pour la lettre
+de Fermat, le 1\textsuperscript{er} juillet 1643. Plusieurs remarques citent des
+livres que la copie nomme — « l'hydraulique pneumatique », « les réflexions
+physicomathématiques », « les nouvelles pensées de Galilée » que « j'ai mis en
+français » — et qui répondent, par leurs titres, à des ouvrages de Mersenne
+postérieurs à l'\emph{Harmonie} ; si c'est bien d'eux qu'il s'agit, les notes ont
+été écrites pendant plusieurs années après la parution du livre. C'est une
+inférence de cette lecture, non une date.
+
+\textbf{Un manuscrit est cité et n'est pas ici.} « Le gros volume manuscrit
+entier de cette matière », où se trouve la combinaison des huit notes de
+l'octave (vues 20 et 24), n'est pas nommé autrement et n'est pas dans ce
+volume.
+
+\end{document}
