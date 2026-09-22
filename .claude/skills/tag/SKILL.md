@@ -5,8 +5,8 @@ description: Writes or refreshes a volume's modern English keywords — the \key
 
 # Tagging a volume with its modern vocabulary
 
-**Runs on the model that wrote the volume's modernised reading** — Fable 5.1
-or Opus 5, whichever the reading's own `% Pass:` header names, and on nothing
+**Runs on the model that wrote the volume's modernised reading** — Fable 5.1,
+Opus 5 or Opus 5.5, whichever the reading's own `% Pass:` header names, and on nothing
 else. A tag is the same judgement the résumé's fourth question made (*quels
 noms modernes chercher ensuite*), in its sharpest form; a different model
 tagging is a second reader silently overruling the first, in the one place a

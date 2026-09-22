@@ -35,6 +35,12 @@ if [ -z "$last" ]; then
 fi
 
 model="${MODEL:-claude-fable-5-1}"
+case "$model" in
+  claude-fable-5-1) model_name="Fable 5.1" ;;
+  claude-opus-5)    model_name="Opus 5" ;;
+  claude-opus-5-5)  model_name="Opus 5.5" ;;
+  *) echo "the skills run on Fable 5.1, Opus 5 or Opus 5.5, not $model" >&2; exit 1 ;;
+esac
 # The CLI to use: Homebrew's regular cask lags the models by weeks, so the
 # one on PATH may be too old for Fable 5.1. Point CLAUDE_BIN at a newer one.
 claude="${CLAUDE_BIN:-claude}"
@@ -96,7 +102,7 @@ for k in $(seq "$first" "$last"); do
 First pass on $model, unchecked against the views by a human.
 Session log: archives/transcribe-$vol-$nn.log (not versioned).
 
-Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>" \
+Co-Authored-By: Claude $model_name <noreply@anthropic.com>" \
     || { echo "== batch $k: nothing to commit"; continue; }
   git push
 done

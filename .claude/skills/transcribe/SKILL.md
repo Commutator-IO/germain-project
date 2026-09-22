@@ -5,13 +5,14 @@ description: Transcribes a batch of twenty Gallica views from a volume in this s
 
 # Transcribing a batch of a mathematician's manuscripts
 
-**Runs on Fable 5.1 or Opus 5, and on nothing else.** Before reading a single
+**Runs on Fable 5.1, Opus 5 or Opus 5.5, and on nothing else.** Before reading a single
 view, check which model the session is on:
 
 - **Fable 5.1 (`claude-fable-5-1`)** — the default. Choose it unless there is a
   reason not to.
 - **Opus 5 (`claude-opus-5`)** — permitted, for the standing question of
   whether it reads an old hand better and at what cost.
+- **Opus 5.5 (`claude-opus-5-5`)** — permitted, on the same footing as Opus 5.
 - **Anything else** — stop, say which model the session is on, and do not
   transcribe. A pass on a model nobody chose produces a file whose provenance
   is an accident.
