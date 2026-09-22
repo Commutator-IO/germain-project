@@ -123,7 +123,7 @@ async function main() {
   const bi = args.indexOf('--batches');
   const only = bi >= 0 ? args[bi + 1] : null;
   // The value after --batches is not a volume.
-  const ids = args.filter((a, i) => !a.startsWith('--') && i !== bi + 1);
+  const ids = args.filter((a, i) => !a.startsWith('--') && !(bi >= 0 && i === bi + 1));
   if (!ids.length) {
     process.stderr.write('Usage: npm run archive -- <volume> [--batches 1-3]\n');
     process.exit(1);
