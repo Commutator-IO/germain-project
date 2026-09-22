@@ -23,8 +23,8 @@
  * notion of what the formula says.
  */
 
-import { copyFile, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
-import { resolve, basename } from 'node:path';
+import { access, copyFile, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
+import { resolve, basename, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(import.meta.dirname, '..');
@@ -671,28 +671,23 @@ function readMeta(tex) {
   };
 }
 
-function render(tex, edition) {
-  const body = /\\begin\{document\}([\s\S]*)\\end\{document\}/.exec(tex);
-  if (!body) throw new Error('no \\begin{document} … \\end{document}');
-
-  const meta = readMeta(tex);
-  const { text, held } = liftMath(body[1]);
-
-  /**
-   * Block environments are taken out whole before paragraphs are split.
-   *
-   * They contain blank lines of their own — a summary runs to four paragraphs,
-   * a list has one per item — and splitting on blank lines first tore them into
-   * fragments, none of which then matched its own opening. Nothing failed
-   * quietly: the renderer refused the file. But the fix belongs here, in the
-   * order of operations, not in a looser pattern.
-   */
-  const ENVS = 'resume|itemize|enumerate|quote';
+/**
+ * A run of LaTeX prose — math and footnotes already lifted — cut into blocks
+ * and rendered. Shared by the transcripts (`render`) and the exercise book
+ * (`renderExercises`), whose statements and solutions are the same prose.
+ *
+ * Block environments are taken out whole before paragraphs are split.
+ *
+ * They contain blank lines of their own — a summary runs to four paragraphs,
+ * a list has one per item — and splitting on blank lines first tore them into
+ * fragments, none of which then matched its own opening. Nothing failed
+ * quietly: the renderer refused the file. But the fix belongs here, in the
+ * order of operations, not in a looser pattern.
+ */
+function renderBlocks(text, envs) {
   const kept = [];
-  const stripped = text.replace(/(?<!\\)%.*$/gm, ''); // LaTeX comments
-  const { text: cleaned, notes } = liftFootnotes(stripped);
-  const lifted = cleaned.replace(
-    new RegExp(`\\\\begin\\{(${ENVS})\\}[\\s\\S]*?\\\\end\\{\\1\\}`, 'g'),
+  const lifted = text.replace(
+    new RegExp(`\\\\begin\\{(${envs})\\}[\\s\\S]*?\\\\end\\{\\1\\}`, 'g'),
     (m) => {
       kept.push(m);
       return `\n\nENVBLOCK${kept.length - 1}\n\n`;
@@ -712,7 +707,22 @@ function render(tex, edition) {
       return env ? kept[Number(env[1])] : b;
     });
 
-  let html = blocks.map(renderBlock).join('\n');
+  return blocks.map(renderBlock).join('\n');
+}
+
+function render(tex, edition) {
+  const body = /\\begin\{document\}([\s\S]*)\\end\{document\}/.exec(tex);
+  if (!body) throw new Error('no \\begin{document} … \\end{document}');
+
+  const meta = readMeta(tex);
+  const { text, held } = liftMath(body[1]);
+
+  // Block environments are lifted whole before paragraphs are split: see
+  // renderBlocks.
+  const ENVS = 'resume|itemize|enumerate|quote';
+  const stripped = text.replace(/(?<!\\)%.*$/gm, ''); // LaTeX comments
+  const { text: cleaned, notes } = liftFootnotes(stripped);
+  let html = renderBlocks(cleaned, ENVS);
   // The leading space is swallowed and the trailing one kept: a footnote marker
   // hugs the word it follows, as it does in print.
   html = html.replace(
@@ -739,30 +749,12 @@ function render(tex, edition) {
 }
 
 /**
- * The reading view's document around a rendered body: head line, watermark,
- * stylesheet and the KaTeX and diagram scripts. Shared with scripts/tei-view.mjs,
- * so that a view rendered from the TEI export is the same page as one rendered
- * from the `.tex` — a change of source, never a change of drawing. `extraStyle`
- * is empty here and this function's output is unchanged by the extraction.
+ * The reading view's stylesheet, shared by the transcripts' pages and the
+ * exercise book's (`renderExercises`), so that the book reads as the same
+ * site. Moved out of `readingPage` verbatim: that function's output is
+ * byte-identical to what it was.
  */
-export function readingPage({ meta, lang, name, html, extraStyle = '' }) {
-  return `<!doctype html>
-<!-- Light forced. ar5iv ships \`color-scheme: light dark\` and follows the OS,
-     which left a dark transcript sitting inside a light site — the two panes
-     read as two different applications. The site chrome is light-only, so the
-     frame inside it has to be too; \`data-theme\` is ar5iv's own override. -->
-<html lang="${lang}" data-theme="light">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${escapeHtml(meta.shelfmark || meta.volume)}, vues ${meta.first}–${meta.last} — ${name}</title>
-<!-- The ar5iv stylesheet, verbatim: the same one LaTeXML produces for arXiv
-     articles. Serving this view as its own document is what lets the sheet be
-     used unmodified rather than scoped by hand. -->
-<link rel="stylesheet" href="/vendor/ar5iv.css">
-<link rel="stylesheet" href="/vendor/katex/katex.min.css">
-<style>
-  /* ar5iv exposes its body font through a token, and its default is Noto
+const READING_CSS = `  /* ar5iv exposes its body font through a token, and its default is Noto
      Serif — a font this document does not load, so the value was resolving to
      a generic serif and the text was set in whatever the browser had. Hooking
      the site's own stack into the token fixes every selector at once, which is
@@ -898,7 +890,33 @@ export function readingPage({ meta, lang, name, html, extraStyle = '' }) {
              font: 12px/1.5 ui-monospace, monospace; color: #575348;
              background: #f8f7f3; border: 1px solid #e4e0d5; border-radius: .4rem;
              padding: .6rem .8rem; }
-${extraStyle}</style>
+`;
+
+/**
+ * The reading view's document around a rendered body: head line, watermark,
+ * stylesheet and the KaTeX and diagram scripts. Shared with scripts/tei-view.mjs,
+ * so that a view rendered from the TEI export is the same page as one rendered
+ * from the `.tex` — a change of source, never a change of drawing. `extraStyle`
+ * is empty here and this function's output is unchanged by the extraction.
+ */
+export function readingPage({ meta, lang, name, html, extraStyle = '' }) {
+  return `<!doctype html>
+<!-- Light forced. ar5iv ships \`color-scheme: light dark\` and follows the OS,
+     which left a dark transcript sitting inside a light site — the two panes
+     read as two different applications. The site chrome is light-only, so the
+     frame inside it has to be too; \`data-theme\` is ar5iv's own override. -->
+<html lang="${lang}" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${escapeHtml(meta.shelfmark || meta.volume)}, vues ${meta.first}–${meta.last} — ${name}</title>
+<!-- The ar5iv stylesheet, verbatim: the same one LaTeXML produces for arXiv
+     articles. Serving this view as its own document is what lets the sheet be
+     used unmodified rather than scoped by hand. -->
+<link rel="stylesheet" href="/vendor/ar5iv.css">
+<link rel="stylesheet" href="/vendor/katex/katex.min.css">
+<style>
+${READING_CSS}${extraStyle}</style>
 </head>
 <body>
 <article class="ltx_document">
@@ -1171,8 +1189,7 @@ function drawDiagram(cd) {
 }
 
 /** The LaTeX source, wrapped so a browser will show it instead of saving it. */
-function sourcePage(tex, file, edition) {
-  const { name } = EDITION_LABELS[edition];
+function sourcePage(tex, file, edition, name = EDITION_LABELS[edition].name) {
   return `<!doctype html>
 <html lang="en" data-theme="light">
 <head>
@@ -1205,10 +1222,523 @@ function sourcePage(tex, file, edition) {
 }
 
 // ---------------------------------------------------------------------------
+// The exercise book.
+//
+// `exercises/exercices.fr.tex` is rendered to `public/exercises/exercices.html`
+// by the same machinery as a transcript — math lifted and handed to KaTeX in
+// the browser, the same subset of prose, the same refusal of anything outside
+// it — plus the book's four constructs (`\livretitre`, `\chapitre`, the
+// `exercice` and `solution` environments, `\manuscrit`), which
+// `transcripts/preamble/exercices.sty` defines for the PDF. The transcription's
+// apparatus is refused outright: the book restates, it does not record, and an
+// `\ill` in it would claim a reading nobody made.
+//
+// The subset is enforced more strictly here than for the transcripts: any
+// control sequence or brace left in the prose once everything known has been
+// expanded is an error. A transcript is read against its facsimile; the book
+// is read on its own, and a stray `\textsc` shown as text is a bug nobody
+// would be placed to notice.
 
-async function main() {
-  const only = process.argv.slice(2).filter((a) => !a.startsWith('--'));
+const BOOK_SOURCE = resolve(ROOT, 'exercises', 'exercices.fr.tex');
+const BOOK_OUT = resolve(ROOT, 'public', 'exercises');
 
+/** The four levels. The page's filter knows these and no others. */
+export const LEVELS = ['Lycée', 'L1', 'L2', 'L3'];
+const levelClass = (l) => (l === 'Lycée' ? 'lycee' : l.toLowerCase());
+
+/** `BATCH_SIZE` in src/lib/batches.ts: the reader's hash names a batch. */
+const READER_BATCH = 20;
+
+const BOOK_FORBIDDEN =
+  /\\(?:page|folio|ill|uncertain|struck|add|note|marginal|pagerange|keywords)(?![a-zA-Z])|\\begin\{(?:resume|tikzcd)\}/;
+
+/**
+ * What the book's links need to know about the catalogue: each volume's
+ * shelfmark and extent, the cahier whose reader shows it, and whether it has a
+ * modernised reading — the edition an exercise is closest to, and the one a
+ * link opens when there is one.
+ */
+async function bookContext() {
+  const src = await readFile(resolve(ROOT, 'src', 'content', 'catalogue.ts'), 'utf8');
+  const i = src.indexOf('export const COTES');
+  const j = src.indexOf('= [', i) + 2;
+  let cotes = null;
+  for (let k = j, depth = 0; k < src.length; k++) {
+    if (src[k] === '[') depth++;
+    else if (src[k] === ']' && --depth === 0) {
+      cotes = JSON.parse(src.slice(j, k + 1));
+      break;
+    }
+  }
+  if (!cotes) throw new Error('COTES not found in src/content/catalogue.ts');
+
+  const books = JSON.parse(await readFile(resolve(ROOT, 'src', 'content', 'books.json'), 'utf8'));
+  const cahierOf = new Map();
+  for (const b of books) {
+    for (const s of b.sections) for (const c of s.cotes) if (!cahierOf.has(c)) cahierOf.set(c, b.path);
+  }
+
+  const modern = new Set();
+  for (const c of cotes) {
+    try {
+      await access(resolve(SOURCE, c.id, `${c.id}.modern.tex`));
+      modern.add(c.id);
+    } catch {
+      // No modernised reading: the link opens the transcription.
+    }
+  }
+  return { volumes: new Map(cotes.map((c) => [c.id, c])), cahierOf, modern };
+}
+
+/**
+ * The reader on a volume and view: `/<cahier>/#<volume>/<batch>/<edition>/<view>`,
+ * the hash `useReader` in src/components/Reader.tsx parses. The cahier is the
+ * first in books.json that lists the volume; a volume in none is read on the
+ * archive page, which mounts the same reader over the whole catalogue.
+ */
+function readerUrl(ctx, volume, view) {
+  const path = ctx.cahierOf.get(volume) ?? '/archive/';
+  const edition = ctx.modern.has(volume) ? 'modern' : 'fr';
+  return `${path}#${volume}/${Math.ceil(view / READER_BATCH)}/${edition}/${view}`;
+}
+
+/** A `{…}` argument at `i`, after optional whitespace, brace-matched. */
+function readBraced(text, i) {
+  while (i < text.length && /\s/.test(text[i])) i++;
+  if (text[i] !== '{') return null;
+  let depth = 0;
+  for (let j = i; j < text.length; j++) {
+    if (text[j] === '\\') {
+      j++;
+      continue;
+    }
+    if (text[j] === '{') depth++;
+    else if (text[j] === '}' && --depth === 0) return { arg: text.slice(i + 1, j), end: j + 1 };
+  }
+  return null;
+}
+
+const viewsLabel = (a, b) => (a === b ? `vue ${a}` : `vues ${a}–${b}`);
+
+function renderExercises(tex, ctx) {
+  const body = /\\begin\{document\}([\s\S]*)\\end\{document\}/.exec(tex);
+  if (!body) throw new Error('no \\begin{document} … \\end{document}');
+
+  const bad = BOOK_FORBIDDEN.exec(body[1].replace(/(?<!\\)%.*$/gm, ''));
+  if (bad) {
+    throw new Error(
+      `${bad[0]} belongs to the transcriptions' apparatus, not to the exercise book's subset`,
+    );
+  }
+
+  const { text, held } = liftMath(body[1]);
+  const stripped = text.replace(/(?<!\\)%.*$/gm, '');
+  const { text: cleaned, notes } = liftFootnotes(stripped);
+
+  if ((cleaned.match(/\\livretitre(?![a-zA-Z])/g) ?? []).length > 1) {
+    throw new Error('\\livretitre appears more than once');
+  }
+  // The title block is the page's own header on the site.
+  const rest = cleaned.replace(/\\livretitre(?![a-zA-Z])/, '');
+
+  // Footnotes are numbered through the book, as in the PDF, but listed at the
+  // foot of the unit that calls them — the statement, the solution, the
+  // chapter's prose — so that a filtered page never shows a note whose call
+  // is hidden, and a solution's notes stay folded with it.
+  const notesFor = (html) => {
+    const called = [...html.matchAll(/FOOTNOTE(\d+)/g)].map((m) => Number(m[1]));
+    if (!called.length) return '';
+    return (
+      '\n<div class="tr-footnotes ex-notes"><ol>' +
+      called
+        .map(
+          (k) =>
+            `<li value="${k + 1}" id="fn-${k + 1}">${inline(notes[k].trim())} ` +
+            `<a class="tr-fnback" href="#fnref-${k + 1}">↩</a></li>`,
+        )
+        .join('\n') +
+      '</ol></div>'
+    );
+  };
+  const withNotes = (html) => html + notesFor(html);
+  const prose = (t) => renderBlocks(t, 'itemize|enumerate|quote');
+
+  // Cut into sections at every \section, brace-matching the title.
+  const sections = [];
+  const heads = [...rest.matchAll(/\\section\*?\{/g)];
+  const lead = rest.slice(0, heads.length ? heads[0].index : rest.length);
+  for (let h = 0; h < heads.length; h++) {
+    const title = readBraced(rest, heads[h].index + heads[h][0].length - 1);
+    if (!title) throw new Error('unclosed \\section title');
+    const end = h + 1 < heads.length ? heads[h + 1].index : rest.length;
+    sections.push({ title: title.arg, content: rest.slice(title.end, end) });
+  }
+
+  const out = [];
+  if (lead.trim()) out.push(`<section class="ex-part">${withNotes(prose(lead))}</section>`);
+
+  let count = 0;
+  const chapters = [];
+  const levels = Object.fromEntries(LEVELS.map((l) => [l, 0]));
+  const usedIds = new Set();
+  const uniqueId = (base) => {
+    let id = base;
+    for (let k = 2; usedIds.has(id); k++) id = `${base}-${k}`;
+    usedIds.add(id);
+    return id;
+  };
+
+  for (const sec of sections) {
+    let content = sec.content;
+    let volume = null;
+    const chap = /^\s*\\chapitre\s*\{([^{}]*)\}/.exec(content);
+    if (chap) {
+      volume = chap[1].trim();
+      if (!ctx.volumes.has(volume)) {
+        throw new Error(`\\chapitre{${volume}}: no such volume in src/content/catalogue.ts`);
+      }
+      content = content.slice(chap[0].length);
+    }
+    if (/\\chapitre(?![a-zA-Z])/.test(content)) {
+      throw new Error(
+        `\\chapitre under « ${sec.title.trim()} » must come right after its \\section*, once`,
+      );
+    }
+
+    // The section's content as a sequence of prose, exercices and solutions.
+    const items = [];
+    const OPEN = /\\begin\{(exercice|solution)\}/g;
+    for (let i = 0; ; ) {
+      OPEN.lastIndex = i;
+      const m = OPEN.exec(content);
+      if (!m) {
+        items.push({ kind: 'prose', text: content.slice(i) });
+        break;
+      }
+      items.push({ kind: 'prose', text: content.slice(i, m.index) });
+      const endTag = `\\end{${m[1]}}`;
+      const endAt = content.indexOf(endTag, m.index);
+      if (endAt === -1) throw new Error(`\\begin{${m[1]}} without \\end{${m[1]}}`);
+      const inner = content.slice(m.index + m[0].length, endAt);
+      if (/\\begin\{(?:exercice|solution)\}/.test(inner)) {
+        throw new Error(`\\begin{${m[1]}} is not closed before the next exercice or solution`);
+      }
+      items.push({ kind: m[1], text: inner });
+      i = endAt + endTag.length;
+    }
+
+    const blocks = [];
+    const sectionProse = [];
+    let open = null; // the last card, while it may still take its solution
+    for (const it of items) {
+      if (it.kind === 'prose') {
+        if (!it.text.trim()) continue;
+        open = null;
+        const html = prose(it.text);
+        sectionProse.push(html);
+        blocks.push(html);
+        continue;
+      }
+
+      if (it.kind === 'solution') {
+        if (!open) {
+          throw new Error(
+            `a solution under « ${sec.title.trim()} » does not follow an exercice immediately`,
+          );
+        }
+        open.solution = withNotes(prose(it.text));
+        open = null;
+        continue;
+      }
+
+      // An exercice: {titre}{niveau}, then \manuscrit lines, then the statement.
+      const t = readBraced(it.text, 0);
+      const l = t && readBraced(it.text, t.end);
+      if (!t || !l) throw new Error('\\begin{exercice} needs {titre}{niveau}');
+      count += 1;
+      const level = l.arg.trim();
+      if (!LEVELS.includes(level)) {
+        throw new Error(
+          `exercice ${count}: level « ${level} » — use one of ${LEVELS.join(', ')}`,
+        );
+      }
+      if (!volume) {
+        throw new Error(`exercice ${count} sits outside a chapter (no \\chapitre above it)`);
+      }
+      levels[level] += 1;
+
+      let statement = it.text.slice(l.end);
+      const sources = [];
+      statement = statement.replace(
+        /\\manuscrit\s*\{([^{}]*)\}\s*\{\s*(\d+)\s*\}\s*\{\s*(\d+)\s*\}/g,
+        (_, vol, a, b) => {
+          const id = vol.trim();
+          const v = ctx.volumes.get(id);
+          const first = Number(a);
+          const last = Number(b);
+          if (!v) throw new Error(`exercice ${count}: \\manuscrit{${id}} — no such volume`);
+          if (first < 1 || last < first || last > v.pages) {
+            throw new Error(
+              `exercice ${count}: \\manuscrit{${id}}{${a}}{${b}} — ${v.shelfmark} has views 1–${v.pages}`,
+            );
+          }
+          sources.push({ id, first, last, shelfmark: v.shelfmark });
+          return '';
+        },
+      );
+      if (/\\manuscrit(?![a-zA-Z])/.test(statement)) {
+        throw new Error(`exercice ${count}: \\manuscrit takes {volume}{first view}{last view}`);
+      }
+      if (!sources.length) {
+        throw new Error(`exercice ${count}: no \\manuscrit — every exercise names its leaves`);
+      }
+
+      const card = {
+        n: count,
+        id: uniqueId(`exercice-${count}`),
+        title: inline(t.arg.trim()),
+        level,
+        volume,
+        sources,
+        statement: prose(statement),
+        solution: null,
+      };
+      blocks.push(card);
+      open = card;
+    }
+
+    const bodyHtml = blocks
+      .map((b) => {
+        if (typeof b === 'string') return b;
+        const links = b.sources
+          .map(
+            (s) =>
+              `<a class="ex-ms" href="${escapeAttr(readerUrl(ctx, s.id, s.first))}" target="_top" ` +
+              `title="Ouvrir le lecteur sur ${escapeAttr(s.shelfmark)}, ${viewsLabel(s.first, s.last)}">` +
+              `Manuscrit : ${escapeHtml(s.shelfmark)}, ${viewsLabel(s.first, s.last)}</a>`,
+          )
+          .join('\n');
+        const head = withNotes(
+          `<header class="ex-head"><span class="ex-num">Exercice ${b.n}</span>` +
+            `<span class="ex-sep"> — </span><span class="ex-title">${b.title}</span>` +
+            `<span class="ex-level ex-level-${levelClass(b.level)}" title="Niveau">${b.level}</span></header>\n` +
+            `<p class="ex-sources">${links}</p>\n` +
+            `<div class="ex-body">${b.statement}</div>`,
+        );
+        const solution = b.solution
+          ? `\n<details class="ex-solution"><summary>` +
+            '<span class="ex-sol-show">Voir la solution</span>' +
+            '<span class="ex-sol-hide">Masquer la solution</span></summary>\n' +
+            `<div class="ex-sol-body">${b.solution}</div></details>`
+          : '';
+        return (
+          `<article class="ex-card" id="${b.id}" data-level="${escapeAttr(b.level)}" ` +
+          `data-volume="${escapeAttr(b.volume)}">\n${head}${solution}\n</article>`
+        );
+      })
+      .join('\n');
+
+    // The chapter's own notes — those its prose calls — close the chapter.
+    const proseNotes = notesFor(sectionProse.join('\n'));
+    const heading = `<h2 class="ltx_title ltx_title_section">${inline(sec.title.trim())}</h2>`;
+    if (volume) {
+      const v = ctx.volumes.get(volume);
+      const id = uniqueId(`chapitre-${volume}`);
+      const exercises = blocks.filter((b) => typeof b !== 'string').length;
+      chapters.push({ id, volume, shelfmark: v.shelfmark, title: sec.title.trim(), exercises });
+      out.push(
+        `<section class="ex-chapter" id="${id}" data-volume="${escapeAttr(volume)}">\n${heading}\n` +
+          `<p class="ex-volume"><a href="${escapeAttr(readerUrl(ctx, volume, 1))}" target="_top">` +
+          `${escapeHtml(v.shelfmark)} · ${escapeHtml(v.title)}</a></p>\n` +
+          `${bodyHtml}${proseNotes}\n</section>`,
+      );
+    } else {
+      out.push(`<section class="ex-part">\n${heading}\n${bodyHtml}${proseNotes}\n</section>`);
+    }
+  }
+
+  let html = out.join('\n');
+
+  // Everything the subset knows has been expanded; what is left is outside it.
+  const leftover = /\\[a-zA-Z@]+|\\[^a-zA-Z\s]|[{}]/.exec(html);
+  if (leftover) {
+    const at = Math.max(0, leftover.index - 50);
+    throw new Error(
+      `${leftover[0]} is outside the exercise book's subset — extend scripts/render.mjs, ` +
+        `or keep to the contract: …${html.slice(at, leftover.index + 30).replace(/\s+/g, ' ')}…`,
+    );
+  }
+
+  // Both spaces liftFootnotes put around the marker go, and whatever the
+  // source had after the call stays: « vient\footnote{…}, et » keeps its
+  // comma against the call, « pistoles\footnote{…} ? » its space before « ? ».
+  html = html.replace(
+    / ?FOOTNOTE(\d+) ?/g,
+    (_, n) =>
+      `<sup class="tr-fnref" id="fnref-${Number(n) + 1}">` +
+      `<a href="#fn-${Number(n) + 1}">${Number(n) + 1}</a></sup>`,
+  );
+  html = dropMathBack(html, held);
+
+  return {
+    page: exercisesPage(html),
+    index: { exercises: count, levels, chapters },
+  };
+}
+
+const EXERCISES_CSS = `
+  /* The exercise book, on top of the reading view's sheet. */
+  [hidden] { display: none !important; }
+  .ex-part, .ex-chapter { margin: 0 0 2.4rem; }
+  .ex-part > .ltx_title_section, .ex-chapter > .ltx_title_section {
+             font-size: 1.4rem; line-height: 1.3; margin: 0 0 .4rem; }
+  .ex-volume { margin: 0 0 1rem; font-size: 12.5px; line-height: 1.5; color: var(--ink3); }
+  .ex-volume a, .ex-ms { color: #38539d; text-decoration: none;
+             border-bottom: 1px solid #c1cfee; }
+  .ex-volume a:hover, .ex-ms:hover { color: #2e447f; border-bottom-color: currentColor; }
+  .ex-card { border: 1px solid var(--rule); border-radius: 12px; background: #fff;
+             padding: 1rem 1.25rem .95rem; margin: 1.1rem 0;
+             box-shadow: 0 1px 2px rgb(19 18 16 / .04); scroll-margin-top: 4rem; }
+  .ex-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .45rem;
+             margin: 0 0 .3rem; font-family: var(--serif); font-size: 17px;
+             font-weight: 600; line-height: 1.35; color: var(--ink); }
+  .ex-num { white-space: nowrap; }
+  .ex-sep { color: var(--ink4); }
+  .ex-title { min-width: 0; }
+  .ex-level { margin-left: auto; align-self: center; border-radius: 999px;
+             padding: 2px 9px; font-family: var(--sans); font-size: 10px; font-weight: 700;
+             letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+  .ex-level-lycee { background: #d4f0e1; color: #0e6744; }
+  .ex-level-l1 { background: #dfe6f6; color: #2e447f; }
+  .ex-level-l2 { background: #f9eecc; color: #77530a; }
+  .ex-level-l3 { background: #fbe3db; color: #8e2f16; }
+  .ex-sources { display: flex; flex-wrap: wrap; gap: .2rem 1rem; margin: 0 0 .7rem;
+             font-size: 12.5px; line-height: 1.5; }
+  .ex-body > :last-child, .ex-sol-body > :last-child { margin-bottom: 0; }
+  .ex-solution { margin-top: .85rem; border-top: 1px solid var(--rule2); padding-top: .6rem; }
+  .ex-solution > summary { cursor: pointer; list-style: none; width: max-content;
+             font-size: 12.5px; font-weight: 600; color: #38539d; user-select: none; }
+  .ex-solution > summary::-webkit-details-marker { display: none; }
+  .ex-solution > summary::before { content: '▸'; display: inline-block; width: 1em;
+             color: #9a988f; transition: transform .15s; }
+  .ex-solution[open] > summary::before { transform: rotate(90deg); }
+  .ex-solution:not([open]) .ex-sol-hide, .ex-solution[open] .ex-sol-show { display: none; }
+  .ex-sol-body { margin-top: .55rem; padding-left: .9rem; border-left: 2px solid var(--rule); }
+  .ex-notes { margin-top: .9rem; padding-top: .55rem; }
+`;
+
+function exercisesPage(html) {
+  return `<!doctype html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exercices — Manuscrits de mathématiciens (Gallica)</title>
+<link rel="stylesheet" href="/vendor/katex/katex.min.css">
+<style>
+${READING_CSS}${EXERCISES_CSS}</style>
+</head>
+<body>
+<article class="ltx_document">
+${html}
+</article>
+<script defer src="/vendor/katex/katex.min.js"></script>
+<script defer src="/vendor/katex/auto-render.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  renderMathInElement(document.body, {
+    delimiters: [
+      { left: '\\\\[', right: '\\\\]', display: true },
+      { left: '\\\\(', right: '\\\\)', display: false },
+    ],
+    throwOnError: false,
+  });
+  document.documentElement.dataset.typeset = '1';
+  openTarget();
+});
+
+// A footnote link, or a URL, may point inside a folded solution: unfold it
+// first, or the jump lands on nothing visible.
+function openTarget() {
+  var id = decodeURIComponent(location.hash.slice(1));
+  var el = id && document.getElementById(id);
+  for (var p = el; p; p = p.parentElement) if (p.tagName === 'DETAILS') p.open = true;
+  if (el) el.scrollIntoView();
+}
+addEventListener('hashchange', openTarget);
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href^="#"]');
+  if (!a) return;
+  var el = document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
+  for (var p = el; p; p = p.parentElement) if (p.tagName === 'DETAILS') p.open = true;
+});
+
+/**
+ * The page's filters, called by /exercises/ from outside the frame: a level
+ * (Lycée, L1, L2, L3) and a volume, either null for all. Chapters left with no
+ * exercise shown are hidden, and so are the book's other parts — foreword,
+ * bibliography — whenever a filter is on. Returns the number of exercises
+ * shown.
+ */
+window.exercicesFilter = function (level, volume) {
+  var shown = 0;
+  document.querySelectorAll('.ex-card').forEach(function (c) {
+    var ok = (!level || c.dataset.level === level) && (!volume || c.dataset.volume === volume);
+    c.hidden = !ok;
+    if (ok) shown++;
+  });
+  document.querySelectorAll('.ex-chapter').forEach(function (s) {
+    var other = volume && s.dataset.volume !== volume;
+    var empty = level && !s.querySelector('.ex-card:not([hidden])');
+    s.hidden = Boolean(other || empty);
+  });
+  document.querySelectorAll('.ex-part').forEach(function (p) {
+    p.hidden = Boolean(level || volume);
+  });
+  return shown;
+};
+
+/** Every solution unfolded or folded at once. */
+window.exercicesSolutions = function (open) {
+  document.querySelectorAll('.ex-solution').forEach(function (d) { d.open = open; });
+};
+</script>
+</body>
+</html>
+`;
+}
+
+/**
+ * Renders the book, if its source exists, to public/exercises/: the reading
+ * view, a small index the page builds its filters from, the `.tex` itself and
+ * the page that shows it. Returns false when there is no book to render.
+ */
+async function renderBook(source) {
+  let tex;
+  try {
+    tex = await readFile(source, 'utf8');
+  } catch {
+    return false;
+  }
+  const { page, index } = renderExercises(tex, await bookContext());
+  await mkdir(BOOK_OUT, { recursive: true });
+  await writeFile(resolve(BOOK_OUT, 'exercices.html'), page, 'utf8');
+  await writeFile(resolve(BOOK_OUT, 'exercices.json'), JSON.stringify(index, null, 2) + '\n', 'utf8');
+  await writeFile(resolve(BOOK_OUT, 'exercices.fr.tex'), tex, 'utf8');
+  await writeFile(
+    resolve(BOOK_OUT, 'exercices.fr.tex.html'),
+    sourcePage(tex, 'exercices.fr.tex', 'fr', 'Exercices'),
+    'utf8',
+  );
+  process.stdout.write(
+    `exercise book: ${index.exercises} exercises in ${index.chapters.length} chapters → public/exercises/\n`,
+  );
+  return true;
+}
+
+// ---------------------------------------------------------------------------
+
+async function renderTranscripts(only) {
   let volumes = [];
   try {
     volumes = (await readdir(SOURCE, { withFileTypes: true }))
@@ -1267,6 +1797,38 @@ async function main() {
   }
 
   process.stdout.write(`${n} reading views → public/transcripts/\n`);
+}
+
+/**
+ *   npm run render                          transcripts and the exercise book
+ *   npm run render -- naf-5176              one volume, and not the book
+ *   npm run render -- exercises             the book alone
+ *   npm run render -- exercises --exercises-source=archives/scratch/x.fr.tex
+ *                                           the book, from another file (a fixture)
+ *
+ * A transcript outside the subset is reported and skipped, as it always was.
+ * The book is one file, not sixty: when it fails to render the command fails,
+ * so that CI stops rather than ship a tab whose book is silently stale.
+ */
+async function main() {
+  const args = process.argv.slice(2);
+  const only = args.filter((a) => !a.startsWith('--'));
+  const volumes = only.filter((a) => a !== 'exercises');
+  if (!only.length || volumes.length) await renderTranscripts(volumes);
+
+  if (only.length && !only.includes('exercises')) return;
+  const override = args.find((a) => a.startsWith('--exercises-source='));
+  const source = override ? resolve(ROOT, override.split('=').slice(1).join('=')) : BOOK_SOURCE;
+  const shown = source.startsWith(`${ROOT}/`) ? relative(ROOT, source) : source;
+  try {
+    const done = await renderBook(source);
+    if (!done && (override || only.includes('exercises'))) {
+      throw new Error('not found');
+    }
+  } catch (e) {
+    process.stderr.write(`  ⚠ ${shown}: ${e.message}\n`);
+    process.exitCode = 1;
+  }
 }
 
 // Run only when invoked, not when scripts/tei-view.mjs imports the helpers.

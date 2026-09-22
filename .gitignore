@@ -20,6 +20,10 @@ public/manifest.json
 # the .tex files themselves are the source of record and are versioned.
 public/transcripts/
 
+# Likewise the exercise book's reading view, index and PDF: derived from
+# exercises/exercices.fr.tex by `npm run render` and `npm run pdf`.
+public/exercises/
+
 # Belt and braces: no image of a manuscript and no PDF is versioned, anywhere.
 # Facsimiles are Gallica's and are read there; compiled transcripts are rebuilt
 # from their .tex. The favicon is the one SVG the site owns.

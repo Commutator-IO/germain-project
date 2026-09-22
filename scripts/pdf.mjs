@@ -2,8 +2,11 @@
 /**
  * Compiles the transcripts' LaTeX into the PDFs offered for download.
  *
- *   npm run pdf              every transcript that has changed
+ *   npm run pdf              every transcript that has changed, and the exercise book
  *   npm run pdf -- 19        one folder
+ *   npm run pdf -- exercises the exercise book alone (exercises/exercices.fr.tex)
+ *   npm run pdf -- exercises --exercises-source=archives/scratch/x.fr.tex
+ *                            the book, from another file with the same preamble (a fixture)
  *
  * The PDF is the artifact for people who will not compile anything — a
  * supervisor, a reader on a train, an archive that wants a fixed page image.
@@ -25,9 +28,9 @@
  */
 
 import { execFile } from 'node:child_process';
-import { mkdir, readdir, copyFile, rm, stat } from 'node:fs/promises';
+import { mkdir, readdir, readFile, copyFile, rm, stat } from 'node:fs/promises';
 import { promisify } from 'node:util';
-import { resolve, basename } from 'node:path';
+import { resolve, basename, relative } from 'node:path';
 import { writeManifest } from './manifest.mjs';
 
 const exec = promisify(execFile);
@@ -36,6 +39,10 @@ const ROOT = resolve(import.meta.dirname, '..');
 const SOURCE = resolve(ROOT, 'transcripts');
 const OUT = resolve(ROOT, 'public', 'transcripts');
 const WORK = resolve(ROOT, 'archives', 'latex');
+const BOOK_DIR = resolve(ROOT, 'exercises');
+const BOOK_SOURCE = resolve(BOOK_DIR, 'exercices.fr.tex');
+const BOOK_PREAMBLE = resolve(SOURCE, 'preamble', 'exercices.sty');
+const BOOK_PDF = resolve(ROOT, 'public', 'exercises', 'exercices.pdf');
 
 async function has(cmd) {
   try {
@@ -65,7 +72,23 @@ async function main() {
     return;
   }
 
-  const only = process.argv.slice(2).filter((a) => !a.startsWith('--'));
+  const args = process.argv.slice(2);
+  const only = args.filter((a) => !a.startsWith('--'));
+  const folders = only.filter((a) => a !== 'exercises');
+  await mkdir(WORK, { recursive: true });
+  if (!only.length || folders.length) await compileTranscripts(engine, folders);
+  if (!only.length || only.includes('exercises')) {
+    const override = args.find((a) => a.startsWith('--exercises-source='));
+    const source = override
+      ? resolve(ROOT, override.split('=').slice(1).join('='))
+      : BOOK_SOURCE;
+    await compileBook(engine, source, Boolean(override) || only.includes('exercises'));
+  }
+  await rm(WORK, { recursive: true, force: true });
+  await writeManifest();
+}
+
+async function compileTranscripts(engine, only) {
   let folders = [];
   try {
     folders = (await readdir(SOURCE, { withFileTypes: true }))
@@ -77,7 +100,6 @@ async function main() {
   }
   if (only.length) folders = folders.filter((f) => only.includes(f));
 
-  await mkdir(WORK, { recursive: true });
   let built = 0;
 
   for (const folder of folders) {
@@ -150,9 +172,72 @@ async function main() {
     }
   }
 
-  await rm(WORK, { recursive: true, force: true });
   process.stdout.write(`${built} PDFs compiled with ${engine}.\n`);
-  await writeManifest();
+}
+
+/**
+ * The exercise book, to public/exercises/exercices.pdf.
+ *
+ * Compiled like a transcript, with two differences. Its preamble is reached
+ * as `../transcripts/preamble/exercices` from `exercises/`, so the engine is
+ * told to look there whatever file it is handed — which is what lets a
+ * fixture kept elsewhere compile with the book's own preamble. And it is
+ * stricter: the book is set in Latin Modern, which has no glyph for many a
+ * symbol typed as raw Unicode (☉, ♮), and XeTeX drops a missing glyph with a
+ * line in the log and nothing on the page. The contract says to write those
+ * in maths; a « Missing character » in the log is therefore an error here.
+ */
+async function compileBook(engine, source, required) {
+  if (!(await mtime(source))) {
+    if (required) {
+      process.stderr.write(`  ⚠ ${relative(ROOT, source)} not found\n`);
+      process.exitCode = 1;
+    }
+    return;
+  }
+  await mkdir(resolve(BOOK_PDF, '..'), { recursive: true });
+  const newest = Math.max(await mtime(source), await mtime(BOOK_PREAMBLE));
+  if ((await mtime(BOOK_PDF)) > newest) return;
+
+  const name = basename(source, '.tex');
+  const compile = async () => {
+    if (engine === 'tectonic') {
+      await exec(engine, [
+        '-X', 'compile', source, '--outdir', WORK, '--keep-logs',
+        '-Z', `search-path=${BOOK_DIR}`,
+      ]);
+    } else {
+      for (let pass = 0; pass < 2; pass++) {
+        await exec(
+          engine,
+          ['-interaction=nonstopmode', '-halt-on-error', `-output-directory=${WORK}`, source],
+          { cwd: BOOK_DIR },
+        );
+      }
+    }
+  };
+
+  try {
+    try {
+      await compile();
+    } catch {
+      await compile();
+    }
+    const log = await readFile(resolve(WORK, `${name}.log`), 'utf8').catch(() => '');
+    const missing = [...new Set(log.match(/Missing character: There is no .*/g) ?? [])];
+    if (missing.length) {
+      throw Object.assign(new Error('glyphs missing from the font'), {
+        stdout: `! ${missing.slice(0, 4).join('\n')}`,
+      });
+    }
+    await copyFile(resolve(WORK, `${name}.pdf`), BOOK_PDF);
+    process.stdout.write(`  exercises/${basename(BOOK_PDF)}\n`);
+  } catch (e) {
+    const out = `${e.stdout ?? ''}\n${e.stderr ?? ''}`;
+    const log = /(?:^|\n)(!.*(?:\n.*){0,3})/.exec(out)?.[1] ?? e.stderr ?? e.message;
+    process.stderr.write(`  ⚠ exercise book (${relative(ROOT, source)}): ${log.trim().slice(0, 500)}\n`);
+    process.exitCode = 1;
+  }
 }
 
 main().catch((e) => {

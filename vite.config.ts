@@ -35,6 +35,7 @@ export default defineConfig({
         method: resolve(import.meta.dirname, 'method/index.html'),
         contribute: resolve(import.meta.dirname, 'contribute/index.html'),
         findings: resolve(import.meta.dirname, 'findings/index.html'),
+        exercises: resolve(import.meta.dirname, 'exercises/index.html'),
       },
     },
   },

@@ -1,0 +1,116 @@
+% The preamble of the exercise book (« Exercices »), exercises/exercices.fr.tex.
+%
+% Loaded as `\input{../transcripts/preamble/exercices}` from `exercises/`. It
+% takes from germain.sty what a printed book needs — the fonts, the maths
+% packages, French babel, the page geometry — and none of the transcription's
+% apparatus: the book restates, it does not record, so \page, \ill, \uncertain
+% and the rest have no business in it and are left undefined, so that a stray
+% one is an error here as it is in `scripts/render.mjs`.
+%
+% The four constructs below are the book's own, fixed by the contract between
+% the file and the site. Each is recognised by `scripts/render.mjs`, which
+% renders the same file to `public/exercises/exercices.html`; a construct
+% added here must be added there too, or rendering fails loudly.
+%
+%   \livretitre                         the title block
+%   \chapitre{<volume id>}              which volume the chapter reads (prints nothing)
+%   \begin{exercice}{<titre>}{<niveau>}  a numbered exercise; Lycée, L1, L2 or L3
+%   \manuscrit{<volume id>}{<v1>}{<v2>}  the Gallica views it comes from
+%   \begin{solution}                    its solution, printed after it
+
+% \ProvidesFile rather than \ProvidesPackage: the file is \input, not
+% \usepackage'd, and the latter then warns that no package was requested.
+\ProvidesFile{exercices.sty}[2026/09/22 Exercise book on mathematicians' manuscripts in Gallica]
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage[french]{babel}
+\usepackage{fontspec}
+\usepackage{geometry}
+\geometry{a4paper,margin=25mm}
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=black,pdfborder={0 0 0}}
+
+\definecolor{exgris}{gray}{0.40}
+\definecolor{exstatut}{rgb}{0.63,0.29,0.18}
+
+% --- Title ------------------------------------------------------------------
+% The status line says what the book is: a first draft by a machine, like
+% every reading on the site, and it is printed on the first page rather than
+% left to a colophon nobody reads.
+
+\newcommand{\livretitre}{%
+  \begin{center}
+    {\LARGE\bfseries Exercices}\\[6pt]
+    {\large\itshape d'après les manuscrits de mathématiciens numérisés dans Gallica}\\[10pt]
+    {\small\bfseries\color{exstatut}Version de travail --- énoncés et solutions
+      rédigés par une machine, non relus}\\[4pt]
+    {\footnotesize\color{exgris}Les manuscrits cités sont lisibles sur
+      \url{https://germain.commutator.io} et sur gallica.bnf.fr.
+      Source gallica.bnf.fr / Bibliothèque nationale de France.}
+  \end{center}
+  \bigskip}
+
+% --- Chapters ---------------------------------------------------------------
+% The volume a chapter reads. The site filters and links on it; the page
+% needs nothing from it.
+
+\newcommand{\chapitre}[1]{\ignorespaces}
+
+% --- Shelfmarks -------------------------------------------------------------
+% `naf-5176` → « NAF 5176 »: the catalogue's slug back to the holder's
+% shelfmark, as the site prints it. An unknown prefix is an error, not a guess.
+
+\ExplSyntaxOn
+\cs_new:Npn \__exercices_shelfmark:w #1-#2 \q_stop
+  {
+    \str_case:nnF {#1}
+      {
+        {fr} {Français}
+        {naf} {NAF}
+        {nal} {NAL}
+        {latin} {Latin}
+        {arsenal} {Arsenal}
+        {rothschild} {Rothschild}
+        {enpc} {ENPC}
+      }
+      { \PackageError {exercices} {Unknown~volume~prefix~`#1'~in~`#1-#2'} {} }
+    \nobreakspace #2
+  }
+\NewDocumentCommand \exshelfmark { m } { \__exercices_shelfmark:w #1 \q_stop }
+
+% The four levels, and nothing else: the site's filter knows these four.
+\NewDocumentCommand \exniveau { m }
+  {
+    \str_case:nnF {#1}
+      { {Lycée} {} {L1} {} {L2} {} {L3} {} }
+      { \PackageError {exercices} {Unknown~level~`#1'~---~use~Lycée,~L1,~L2~or~L3} {} }
+    #1
+  }
+\ExplSyntaxOff
+
+% --- Exercises and solutions ------------------------------------------------
+% Numbered through the whole book, not per chapter: the site numbers them the
+% same way, and « exercice 7 » must name one exercise in both.
+
+\newcounter{exercice}
+
+\newenvironment{exercice}[2]{%
+  \par\bigskip\goodbreak
+  \refstepcounter{exercice}%
+  \noindent{\bfseries Exercice~\theexercice\ (\exniveau{#2}) --- #1}\par
+  \nopagebreak\smallskip
+}{\par\medskip}
+
+\newcommand{\manuscrit}[3]{%
+  \par\noindent{\small\color{exgris}Source~: \exshelfmark{#1},
+    \ifnum#2=#3\relax vue~#2\else vues~#2--#3\fi}\par
+  \nopagebreak\smallskip\ignorespaces}
+
+\newenvironment{solution}{%
+  \par\smallskip\noindent{\bfseries\itshape Solution}\par\nopagebreak\smallskip
+}{\par\smallskip\noindent\hfill\rule{0.3\linewidth}{0.3pt}\hfill\null\par\medskip}
+
+\endinput
