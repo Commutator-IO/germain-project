@@ -459,4 +459,117 @@ export const FINDINGS: Finding[] = [
     settle:
       "Find the catalogue of the Dubrunfaut autograph sale of June 1884 (Charavay, by the slip) and the Boncompagni sale catalogue of 1898, part VI, lots 673 and 677: the first would give the lot and the price (and perhaps the « 29 »), the second would confirm the passage through Boncompagni's collection to the BnF.",
   },
+  // NAF 5161 — find-novelty pass, 22 September 2026, on claude-opus-5-5 (Opus 5.5),
+  // the model that wrote transcripts/naf-5161/naf-5161.modern.tex. Five entries, to be
+  // merged into FINDINGS by the coordinator. Web search was unavailable in this session
+  // (HTTP 403 on every query); the literature was read as full-text OCR from archive.org
+  // (Delisle 1888: cataloguelibri00bibl; Tannery 1893: lacorrespondanc00tanngoog;
+  // Adam–Tannery I, II, III, IV, V, X and Supplément: uvresdedescartesNNdesc,
+  // suoeuvresdedesca00desc). The BnF Archives et manuscrits notice for NAF 5161 refused
+  // the request (HTTP 403) and was not read.
+  {
+    id: 'naf-5161-foliation-concordance',
+    cote: 'naf-5161',
+    pages: 'views 3–42 (ink series 1–20); ff. 1, 5, 11, 14, 15–18 as cited',
+    kind: 'codicological',
+    claim:
+      "The folios by which the literature cites NAF 5161 are the ink series 1–20 that the transcriptions read on the rectos and decline to write as foliation. On that series the three anonymous pamphlets against Descartes's Géométrie — « Deffauts de quelques reigles » (f. 1), « Erreurs du Sr des Cartes touchant le nombre des Racines » (f. 5) and « Qu'il est faux que les Equations qui ne montent que jusques au quarré… » (f. 11) — are at views 3–9, 11–20 and 23–26. The copy of Roberval's réplique (f. 14) is at views 29–30, and Roberval's Observation on the centre of agitation (ff. 15–18) at views 31–39, with the figure leaf f. 17 at view 36 and view 34 a second exposure of f. 16r. The sources searched give folios and never views.",
+    basis:
+      "The transcriptions' headers read the larger ink figure on each recto: 1 (v. 3), 2 (v. 5), 3 (v. 7), 4 (v. 9), 5 (v. 11) … 9 (v. 19), 10 (v. 21, blank), 11 (v. 23), 12 (v. 25), 13 (v. 27), 14 (v. 29), 15 (v. 31), 16 (v. 33 = v. 34), 17 (v. 36), 18 (v. 38), 20 (v. 42). The figure on v. 40, f. 19r, is under a blot. The 1888 certificate on view 2, « Volume de 20 Feuillets / Le Feuillet 10 est blanc », agrees with it. Each literature citation lands on the incipit it names. Tannery's f. 11 is the « Qu'il est faux » title at v. 23; f. 5 is « Erreurs » at v. 11; f. 1 is « Deffauts » at v. 3; f. 14 is « Copie de la lettre de Mr Roberval », « J'ay 4 choses a repliquer », at v. 29; ff. 15–18 run from « Nous conuenions de Definition » (v. 31) to « mes conclusions du Centre d'agitation » (v. 39). A second, smaller and older series (63–71, 73–74, a struck 48, 58–62, 54) breaks twice and is not what is cited.",
+    ours:
+      "The folio-to-view concordance, and the identification of the cited folios with the ink series. No \\folio{} has been written on the strength of it. The texts and their folios are the literature's. The transcriptions separate the hands, which the sources searched do not: one hand for ff. 1 and 5, another for f. 11. Tannery 1893, p. 37, thinks f. 11 probably « de la même main » as the other two, in a sentence where « main » may mean author. That point is recorded here, not claimed.",
+    literature: [
+      "P. Tannery, La correspondance de Descartes dans les inédits du fonds Libri (1893), pp. 36–37 — read (archive.org OCR). « Le MS. … fr. n. a. 5161, formé avec les papiers de Roberval du fonds Libri, contient trois pièces… l'une (f° 11)… (f° 5) Erreurs… (f° 1) Défauts… ». P. 66 — read: the réplique « conservée par une copie de la main de Mersenne… fr. n. a. 5161, folio 14 », and Roberval's draft in « fr. n. a. 1086 [OCR], f° 86 à 89 ».",
+      "Adam and Tannery, Œuvres de Descartes I, p. 481 (note to p. 480, l. 15), « MS. fr. n. a. 5161, f° 1 »; II, p. 269 note a and pp. 460 and 508–509, the three pamphlets, f° 1; IV, p. 420, CDXXXVI « Roberval à Cavendish pour Descartes [mai 1646]. Copie MS., Bibl. Nat., fr. n. a. 5161, f° 15-18 »; IV, p. 502, CDXLVII, copy « de la main de Mersenne… 5161, f° 14 » — all read (archive.org OCR).",
+      "Delisle, Catalogue des manuscrits des fonds Libri et Barrois (1888), p. 172, no. CXXV « Nouv. acq. franc. 5161 (Libri, 1861) » — read. It lists the pieces by title and incipit, with no folios.",
+      "BnF Archives et manuscrits, notice NAF 5161 (ark:/12148/cc40798j/cd0e86) — NOT read: the request was refused (HTTP 403). It may divide the volume by folio and should be checked.",
+      "Not searched: de Waard et al., Correspondance du P. Marin Mersenne (vols. VIII and XIV would cite these leaves for 1638–1639 and 1646), which is not digitised.",
+    ],
+    status: 'candidate',
+    settle:
+      "A person looks at the rectos for a pencilled foliation distinct from the ink series. If there is none, the ink series is the foliation the literature cites. The three transcriptions can then write \\folio{}, and pieces.json can record the five pieces at ff. 1–4, 5–9, 11–12, 14 and 15–18.",
+  },
+  {
+    id: 'naf-5161-rational-triangle-note',
+    cote: 'naf-5161',
+    pages: 'views 27–28 (f. 13r–v)',
+    kind: 'codicological',
+    claim:
+      "NAF 5161 f. 13 (views 27–28) carries an unsigned working note, in a hand found nowhere else in the volume. It asks for a primitive right triangle whose area is six times a square and which is not similar to 3, 4, 5, and derives the rational triangle 7/10, 120/7, 1201/70 of area 6; its verso runs the same chain from 5, 12, 13 (area 30). None of the sources searched records this leaf. Delisle's 1888 description of the volume passes from the copy of Roberval's letter to the memoir on the centre of agitation without it, and Tannery 1893 and Adam–Tannery do not mention it.",
+    basis:
+      "View 27: « Il faut trouver un Δ primitif dont l'aire soit un sex[tu]ple quarré et qui ne soit pas semblable au triangle de 3. 4. 5. ». The rule is to form a second triangle from the two smaller sides and a third from the two greater sides of the second, then divide. The table reads 3 4 5 / 7 24 25 / 49 1200 1201 and the quotients 7/10, 120/7, 1201/70. View 28, sideways: 5 12 13 / 119 120 169 / 14161 40560 42961, with « 2704 », « 52 » and « 13 12 5 | 30 ». All the numbers check: 49·1200/2 = 6·70², and 40560 = 15·52².",
+    ours:
+      "The recomputation, and the general form of the rule. From a triangle (a, b, c) of area n, the triangle generated by c² and 2ab has sides (a²−b²)², 4abc², c⁴+4a²b² and area n·(2c(a²−b²))²; the leaf's divisor is 2c|a²−b²|. The observation that this is the duplication of the point (c²/4, c(b²−a²)/8) on y² = x³ − n²x is also ours. The method is classical and is claimed as nobody's discovery. The finding is that this leaf exists here, unrecorded, not that its mathematics is new. The hand is not attributed. Two words are doubtful on the transcription (« rectangle » interlined, « nombre » in the sentence on the even side), and « 119 » is a doubtful reading confirmed by 12² − 5² = 119.",
+    literature: [
+      "Delisle 1888, p. 172, no. CXXV — read: lists the three pamphlets « par Roberval », the « Copie de la lettre de M. Roberval… De la main du P. Mersenne », the « Mémoire de 6 pages » on the centre of agitation and the Fabri letter; nothing on f. 13.",
+      "Tannery 1893 — searched by keyword in the full OCR for « 1201 » and « sextuple »: nothing. Its description of NAF 5161, pp. 36–37, names only the three pamphlets.",
+      "Adam and Tannery I–V, X and Supplément — OCR searched for « 1201 » and « sextuple »: nothing.",
+      "Not searched: the Correspondance du P. Marin Mersenne (not digitised); Dickson, History of the Theory of Numbers II, ch. XVI (congruent numbers), for seventeenth-century manuscript witnesses of this construction; Œuvres de Fermat II and the Frenicle literature.",
+    ],
+    status: 'candidate',
+    settle:
+      "Check the index of manuscripts of the Correspondance du P. Marin Mersenne for NAF 5161 f. 13. If it is printed or described there, the entry becomes matched. The BnF notice, unread here, may also describe it.",
+  },
+  {
+    id: 'naf-5161-centre-of-percussion-ratio-inverted',
+    cote: 'naf-5161',
+    pages: 'views 36 and 38 (ff. 17r, 18r)',
+    kind: 'mathematical',
+    claim:
+      "In the copy of Roberval's Observation on Descartes's centre of agitation, the proportion that constructs the centre 5 of the cylindrical surface CGHF reads « comme l'arc LM est à sa corde LM, ainsy le demy-diametre IN soit à I5 ». That is inverted. It gives I5 = r·sinα/α, the centre of gravity of the arc, between I and N, whereas the same paragraph puts this centre between N and S and the figure leaf draws 5 beyond N. The correct construction is chord to arc, I5 = r·α/sinα, which is the centre of oscillation of the shell. Adam–Tannery IV, 426, ll. 9–11, prints the inverted proportion without note, and its éclaircissement, p. 428, calls Roberval's solution exact.",
+    basis:
+      "View 38: « … il n'y a que ceux qui sont dans la ligne G H qui agissent… par le poinct N… tous les autres le faisant en dehors entre N et S: & partant le centre d'agitation… est aussy entre N et S », then « comme l'arc L M est à sa corde L M, ainsy le demy-diametre I N soit à I 5, et le poinct 5 sera le centre demandé ». View 36, the figure: on the vertical I N, from the top, 3, O, P, Q, N, R, 5, S. View 32 orients the two other ratios correctly: IO = (2/3)r·chord/arc for the centre of gravity, IQ = (3/4)r·arc/chord for the centre of percussion. Composing the shells with the corrected ratio gives exactly IQ.",
+    ours:
+      "The recomputation: for a thin shell of radius r and half-angle α, I/(Md) = r²/(r sinα/α) = rα/sinα, between r and r/cosα. The inference that the text, not the figure, is at fault is ours. The error may be the copyist's or the author's; the leaf does not say, and the entry does not decide.",
+    literature: [
+      "Adam and Tannery, Œuvres de Descartes IV, CDXXXVI, pp. 420–428 — read (archive.org OCR). The text at p. 426, ll. 9–11, has the inverted ratio. The variant apparatus from Clerselier III, letter 87, records only « I 5] I S » at l. 11, so Clerselier, as collated there, has the same orientation. The éclaircissement, p. 428, says Roberval's « solution est exacte » and does not comment on this line.",
+      "Tannery 1893 — read on the réplique (pp. 66 ff.); it does not print the Observation.",
+      "Not searched: P. Costabel, « La controverse Descartes–Roberval au sujet du centre d'oscillation » (Revue des sciences humaines, 1951); the Correspondance du P. Marin Mersenne XIV (1646); Clerselier III itself, which was not opened.",
+    ],
+    status: 'candidate',
+    settle:
+      "Read Costabel 1951 and the Mersenne correspondence for 1646 on this passage. If either notes the inversion, the entry becomes matched. Opening Clerselier III, p. 502, would show whether the printed tradition has the inversion independently of this copy.",
+  },
+  {
+    id: 'naf-5161-fabri-letter-scalene-foci',
+    cote: 'naf-5161',
+    pages: 'view 42 (f. 20r); address panel view 41 (f. 19v)',
+    kind: 'mathematical',
+    claim:
+      "The unsigned letter to « Mon R. Pere » on the Geometrical Theses of « le P. Fabri » proposes, as a theorem that « le P. Grinbergerus » demonstrated, a construction of the foci of a hyperbola cut from a scalene cone. The circle centred at the hyperbola's centre g with radius gE, where E is the foot on the cone's axis of the perpendicular from the vertex f, would pass through the foci. The construction is exact for a right cone and false in general for a scalene one. None of the sources searched discusses the mathematics of this letter.",
+    basis:
+      "View 42: « si dans une cone scalene bae, (car il n'y a pas de difficulté en un cone droit) l'on mesne un plan qui fasse un hyperbole de laquelle l'axe soit la ligne hghfi, et le centre g, ayant mesné du sommet f, une perpendiculaire fE, sur l'axe du cone AED, et que du centre g, et de l'intervalle gE, l'on descrive un cercle, ce cercle donnera les foyers ». The same letter generalises Fabri's fifth proposition correctly (segment gmh = sector gli + segment hk when arc hk = arc hi) and objects correctly to the seventh (infinitely many planes through an inner point cut parabolas).",
+    ours:
+      "Everything mathematical. For a right cone gE² = a² + b² was verified in coordinates. The counterexample: vertex at the origin, base circle centre (1/2, 0, −1), radius 1, in z = −1; the section by x = 1 is (z − 2/3)²/(16/9) − y²/(4/3) = 1, with c² = 140/45, while gE² = 128/45. Taking the altitude instead of the axis gives 25/9 = 125/45, also wrong. The transcription reads the third letter of « hghfi » with doubt, and « Pour ce » and one short word are unread. These do not touch the construction. Neither Fabri's theses nor Grienberger's demonstration was consulted, so whether they state the construction differently is not known.",
+    literature: [
+      "Delisle 1888, p. 172 — read: records the letter by incipit as « Lettre anonyme, adressée peut-être au P. Mersenne », and its closing « ce beau problesme de M. Roberval ». Nothing on its content.",
+      "Tannery 1893 — OCR searched for « Fabri », « Grinberg », « cylindre oblique »: Fabri appears only as the author behind Mousnier's Tractatus de motu locali (Lyon 1646), p. 65 note, not for this letter.",
+      "Adam and Tannery I–V, X — OCR searched for « Grinberg », « Grienberg »: nothing; « Fabri » only in unrelated letters.",
+      "Not searched, and the first place this can fail: the Correspondance du P. Marin Mersenne, where an undated letter to Mersenne about Fabri's theses would be printed and annotated; the theses of Honoré Fabri themselves; Grienberger's printed works.",
+    ],
+    status: 'unsearched',
+    settle:
+      "Find the letter in the Correspondance du P. Marin Mersenne (by its incipit « vous pouuez mander au P. Fabri ») and read the editors' note. Then read Fabri's theses and the Grienberger text the letter alludes to, to see whether the construction is stated there for the scalene cone.",
+  },
+  {
+    id: 'naf-5161-f14-libri-portfolio-1848',
+    cote: 'naf-5161',
+    pages: 'view 29 (f. 14r); view 2',
+    kind: 'codicological',
+    claim:
+      "F. 14 of NAF 5161, the copy of Roberval's réplique of 1646, carries a modern ink note « (Du portefeuille 1848 de Libri.) ». Delisle 1888 assigns the volume as a whole to Libri's portfolio 1861, and the volume's own title leaf says « Libri 1860 ». Portfolio 1848 is, in Delisle's catalogue, the source of NAF 5175, NAF 5176 and NAL 2339–2341, the Fermat and Mersenne papers. None of the sources searched records that this leaf of NAF 5161 came from it.",
+    basis:
+      "View 29, left margin, in a modern hand: « (Du portefeuille 1848 de Libri.) ». View 2, the nineteenth-century title leaf: « Libri 1860 ». The older ink series breaks at this leaf: 73, 74 on ff. 12–13, a struck « 48 » on f. 14, then 58–62 on ff. 15–19. So f. 14 came from elsewhere than its neighbours.",
+    ours:
+      "The juxtaposition of the note, the title leaf and Delisle's portfolio numbers. The note is not dated or attributed here. Whether « 1860 » on the title leaf is a slip for 1861, or reflects a different count, is not settled.",
+    literature: [
+      "Delisle 1888, pp. 167–173 — read: « CXXIV. Nouv. acq. franc. 5160. (Libri, 1860.) », « CXXV. … 5161. (Libri, 1861.) », and portfolio 1848 for NAF 5176, NAL 2339, 2340, 2341 and NAF 5175.",
+      "Tannery 1893, p. 36 — read: « formé avec les papiers de Roberval du fonds Libri »; no portfolio number for NAF 5161.",
+      "Adam and Tannery IV, p. 502 — read: gives f° 14 as a copy in Mersenne's hand, no provenance note.",
+      "Not searched: the BnF notice (refused, HTTP 403); Tannery and Henry, Œuvres de Fermat I, Avertissement, on the contents of portfolio 1848, already read for the naf-5176 entries, not re-read for this leaf.",
+    ],
+    status: 'candidate',
+    settle:
+      "Read the BnF notice and Tannery–Henry's account of portfolio 1848 for any mention of a Roberval or Mersenne leaf later bound into NAF 5161.",
+  },
 ];
