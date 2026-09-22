@@ -1,0 +1,1147 @@
+\documentclass[11pt,a4paper]{article}
+\input{../transcripts/preamble/exercices}
+\begin{document}
+
+\livretitre
+
+\section*{Avant-propos}
+
+Ce livre rassemble des exercices originaux, avec leurs solutions complètes,
+tirés des manuscrits que ce site transcrit et lit. Chaque chapitre correspond à
+un volume de Gallica ; il s'ouvre sur une courte présentation des feuillets,
+puis propose des exercices qui partent de ce que les feuillets font réellement :
+une construction, un calcul, une affirmation, parfois une erreur. On y refait
+le calcul du scripteur pour voir où il se trompe, on démontre ce que la page
+se contente d'affirmer, on traduit la notation du temps avant de résoudre, on
+compare la méthode du feuillet à celle qu'on emploierait aujourd'hui. La ligne
+« Manuscrit » de chaque exercice renvoie aux vues de Gallica sur lesquelles il
+repose, et l'on peut lire ces vues, leur transcription et leur lecture
+modernisée sur le site.
+
+Les exercices ne recopient pas les lectures modernisées : ils s'en servent comme
+d'un guide vers les feuillets, et leurs solutions refont chaque calcul. Tous les
+nombres des solutions ont été recalculés pour ce livre. Quand un exercice porte
+sur une erreur du feuillet, la solution donne la valeur juste et dit exactement
+où le feuillet s'en écarte ; quand elle s'écarte de la lecture modernisée, elle
+le dit aussi.
+
+Chaque exercice porte un niveau : \emph{Lycée} (terminale, spécialité
+mathématiques), \emph{L1}, \emph{L2} ou \emph{L3} (les trois années de licence
+de mathématiques). Une série, une intégrale, une équation différentielle ou une
+action de groupe ne sont jamais rangées au niveau Lycée ; à l'inverse, bien des
+feuillets du XVII\textsuperscript{e} siècle se lisent avec les seuls outils
+d'une classe de terminale.
+
+Un avertissement, qui vaut pour tout le livre. Les transcriptions et les
+lectures modernisées sur lesquelles ces exercices s'appuient sont des lectures
+automatiques, faites par un modèle de langage et non encore vérifiées par une
+personne sur les images. Elles peuvent se tromper sur un chiffre, sur une
+lettre de figure, sur l'ordre des feuillets. Le lecteur qui trouve un désaccord
+entre un exercice et le feuillet doit croire le feuillet.
+
+Première version : les chapitres ci-dessous sont les premiers écrits, d'autres
+suivent. Les attributions sont celles des feuillets et des lectures, et rien de
+plus : aucun exercice ne tranche une question de priorité.
+
+\section*{Maurolico : la sphère et ses tables (Latin 17859)}
+\chapitre{latin-17859}
+
+Latin 17859 est la copie, faite au XVII\textsuperscript{e} siècle d'une seule
+main, du volume que Francesco Maurolico fit imprimer à Messine en 1558 sur la
+sphère : un \emph{Discours sur la sphère}, ses versions d'Autolycus, de Théodose
+et des \emph{Phénomènes} d'Euclide, trois tables (sinus, tangentes dites « table
+féconde », sécantes dites « table bienfaisante ») pour un rayon de $100\,000$,
+huit problèmes chiffrés, la fin du premier livre et le second livre entier de
+ses \emph{Sphériques}, et un commentaire des règles de Regiomontanus daté d'août
+1530. Les quarante-neuf vues montrent chacune deux pages ; la reliure a déplacé
+quelques feuillets, que la lecture modernisée remet dans l'ordre du texte. Dans
+tout le chapitre, le « sinus » d'un arc est $100\,000$ fois notre sinus, et
+« rejeter cinq figures » veut dire diviser par $100\,000$.
+
+\begin{exercice}{Les soixantièmes de la table des sinus}{Lycée}
+\manuscrit{latin-17859}{16}{16}
+La « tabella sinus recti » donne, pour chaque degré $n$, l'entier
+$E(n)$ le plus proche de $100\,000\sin n^\circ$, la différence
+$D(n) = E(n) - E(n-1)$, et le « soixantième » $D(n)/60$, écrit sous la forme
+$a{:}b$, qui signifie $a + b/60$.
+
+\begin{enumerate}
+\item Calculer $E(23)$, $E(24)$, $D(24)$, et écrire $D(24)/60$ sous la forme
+  $a{:}b$.
+\item Expliquer pourquoi $E(23) + 30 \cdot \frac{D(24)}{60}$ est une valeur
+  approchée de $100\,000 \sin 23^\circ 30'$. La calculer, la comparer à la valeur
+  exacte, et à la valeur $39\,875$ qu'emploient les problèmes du volume. Dans
+  quel sens l'interpolation se trompe-t-elle, et pourquoi ?
+\item Le feuillet porte, à la ligne 59, $E(58) = 84\,805$, $E(59) = 85\,717$ et
+  le soixantième « $15{:}21$ » ; à la ligne 86, $E(85) = 99\,620$,
+  $E(86) = 99\,756$, la différence « $139$ » et le soixantième « $2{:}16$ ».
+  Trouver les deux fautes, et dire chaque fois laquelle des colonnes est juste.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $\sin 23^\circ = 0{,}390731\ldots$ et $\sin 24^\circ = 0{,}406737\ldots$,
+  donc $E(23) = 39\,073$, $E(24) = 40\,674$ et $D(24) = 1601$. Comme
+  $1601 = 26 \times 60 + 41$, le soixantième vaut $26 + \frac{41}{60}$, soit
+  $26{:}41$ : c'est l'accroissement du sinus par minute d'arc entre $23^\circ$ et
+  $24^\circ$.
+\item Entre $23^\circ$ et $24^\circ$ on remplace l'arc de sinusoïde par sa corde :
+  chaque minute ajoute $D(24)/60$, et $30'$ ajoutent trente fois cette quantité.
+  On trouve $39\,073 + 30 \times 26{,}683 = 39\,073 + 800{,}5 = 39\,873{,}5$,
+  soit $39\,874$ en arrondissant. La valeur exacte est
+  $100\,000 \sin 23^\circ 30' = 39\,874{,}91$, soit $39\,875$ : c'est la valeur
+  des problèmes, qui est donc la bonne. L'interpolation linéaire donne une
+  valeur trop faible d'environ une unité et demie, parce que le sinus est
+  concave sur $[0^\circ, 90^\circ]$ : sur un intervalle, sa courbe est au-dessus
+  de sa corde.
+\item $85\,717 - 84\,805 = 912 = 15 \times 60 + 12$ : le soixantième est
+  $15{:}12$ ; le feuillet a interverti les chiffres en écrivant $15{:}21$. Les
+  deux sinus et la différence sont justes. À la ligne 86,
+  $99\,756 - 99\,620 = 136$, et non $139$ ; or $136 = 2 \times 60 + 16$, de sorte
+  que le soixantième $2{:}16$ est bien celui de $136$. C'est donc la colonne des
+  différences qui est fautive, et le soixantième qui est juste.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{L'ascension droite du onzième degré du Taureau}{Lycée}
+\manuscrit{latin-17859}{17}{19}
+Les problèmes 1 à 3 du volume cherchent la déclinaison $\delta$ et l'ascension
+droite $\alpha$ du point de l'écliptique de longitude $\lambda = 41^\circ$ (la fin
+du onzième degré du Taureau), l'obliquité étant $\varepsilon = 23^\circ 30'$. On
+admet les trois relations du triangle sphérique rectangle formé par l'équateur,
+l'écliptique et le cercle de déclinaison du point :
+\[
+\sin\delta = \sin\lambda\,\sin\varepsilon, \qquad
+\sin\alpha = \tan\delta\,\tan(90^\circ - \varepsilon), \qquad
+\cos\alpha = \frac{\cos\lambda}{\cos\delta}.
+\]
+\begin{enumerate}
+\item Le feuillet calcule $65\,606 \times 39\,875 = 2\,616\,039\,250$, rejette cinq
+  figures, obtient $26\,160$ et conclut $\delta = 15^\circ 10'$. Vérifier chaque
+  étape.
+\item Il prend $\tan 15^\circ 10' = 27\,108$ et, dans sa table,
+  $\tan 66^\circ 30' = 230\,094$ ; le produit $6\,237\,388\,152$ lui donne
+  $62\,374$, et il conclut « $\alpha = 38^\circ$ ». Calculer $\tan 66^\circ 30'$,
+  refaire le calcul et donner $\alpha$ à la minute près.
+\item Par la troisième relation, il prend $\sec 15^\circ 10' = 103\,612$ et
+  $\cos 41^\circ = 75\,471$, trouve le produit $7\,819\,701\,252$, soit $78\,197$,
+  l'arc $51^\circ 26'$ et son complément $38^\circ 34'$. Vérifier.
+\item Calculer la valeur exacte de $\alpha$ par $\tan\alpha = \tan\lambda\cos\varepsilon$
+  et conclure.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $\sin 41^\circ = 0{,}656059$ et $\sin 23^\circ 30' = 0{,}398749$ : les deux
+  facteurs sont justes, et le produit aussi. $2\,616\,039\,250 / 100\,000 =
+  26\,160{,}39$, soit $26\,160$ ; l'arc dont le sinus est $0{,}26160$ vaut
+  $15{,}165^\circ$, c'est-à-dire $15^\circ 9{,}9'$. La valeur exacte est
+  $\delta = 15^\circ 9' 55''$ : « $15^\circ 10'$ » est juste à la minute.
+\item $\tan 66^\circ 30' = 2{,}299843$, soit $229\,984$ et non $230\,094$ : la
+  valeur prise dans la table est trop forte de $110$ unités, alors que
+  $\tan 15^\circ 10' = 0{,}271069$ est juste. Avec la bonne valeur,
+  $27\,108 \times 229\,984 = 6\,234\,406\,272$, d'où $\sin\alpha = 0{,}62344$ et
+  $\alpha = 38^\circ 34'$. Avec la valeur fautive, $\sin\alpha = 0{,}62374$ aurait
+  donné $38^\circ 35'$ ; le feuillet, qui ne donne que les degrés, ne laisse pas
+  voir l'écart.
+\item $\sec 15^\circ 10' = 1{,}036088$ : la valeur interpolée $103\,612$ est trop
+  forte de trois unités, ce qui est sans conséquence ici. $\cos 41^\circ =
+  0{,}754710$, le produit est juste, et l'arc dont le sinus est $0{,}78197$ vaut
+  $51^\circ 26' 29''$ ; son complément est $38^\circ 33' 31''$, soit
+  $38^\circ 34'$.
+\item $\tan\alpha = \tan 41^\circ \cos 23^\circ 30' = 0{,}869287 \times 0{,}917060
+  = 0{,}797189$, d'où $\alpha = 38^\circ 33' 41''$. Les deux routes du feuillet,
+  une fois la tangente corrigée, donnent $38^\circ 34'$, à une demi-minute près
+  de la valeur exacte ; la seule faute est la tangente de $66^\circ 30'$ mal prise
+  dans la table.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le théorème de Ptolémée et la formule d'addition}{Lycée}
+\manuscrit{latin-17859}{33}{34}
+Les propositions VI à VIII du second livre démontrent le théorème de Ptolémée,
+puis, dans un cercle bien choisi, une identité entre sinus. On refait le
+chemin.
+\begin{enumerate}
+\item Soit $ABCD$ un quadrilatère convexe inscrit dans un cercle. On place sur
+  la diagonale $AC$ le point $E$ tel que $\widehat{ABE} = \widehat{DBC}$.
+  Montrer que les triangles $ABE$ et $DBC$ sont semblables, puis que $CBE$ et
+  $DBA$ le sont, et en déduire le théorème de Ptolémée :
+  $AC \cdot BD = AB \cdot CD + AD \cdot BC$.
+\item Montrer que, dans un cercle de diamètre $1$, une corde vue d'un point du
+  cercle sous l'angle $\theta$ a pour longueur $\sin\theta$.
+\item Soit $BD$ un diamètre d'un cercle de diamètre $1$, et $p$, $q$ deux angles
+  aigus. On place $A$ sur le cercle d'un côté de $BD$ avec
+  $\widehat{ADB} = p$, et $C$ de l'autre côté avec $\widehat{CDB} = q$. Calculer
+  $AB$, $AD$, $CB$, $CD$ et $AC$, et déduire du théorème de Ptolémée la formule
+  $\sin(p+q) = \sin p\cos q + \cos p \sin q$.
+\item Obtenir de même $\sin(p-q)$ pour $p > q$, puis l'énoncé du feuillet :
+  \[
+  \frac{\sin p\cos q + \cos p\sin q}{\sin p\cos q - \cos p\sin q}
+  = \frac{\sin(p+q)}{\sin(p-q)} .
+  \]
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Les angles inscrits $\widehat{BAC}$ et $\widehat{BDC}$ interceptent le même
+  arc $BC$, donc $\widehat{BAE} = \widehat{BDC}$. Avec
+  $\widehat{ABE} = \widehat{DBC}$, les triangles $ABE$ et $DBC$ sont semblables,
+  d'où $\frac{AE}{DC} = \frac{AB}{DB}$, soit $AE \cdot BD = AB \cdot CD$. Ensuite
+  $\widehat{EBC} = \widehat{ABC} - \widehat{ABE} = \widehat{ABC} - \widehat{DBC}
+  = \widehat{ABD}$, et $\widehat{BCE} = \widehat{BCA} = \widehat{BDA}$ (même arc
+  $AB$) : les triangles $CBE$ et $DBA$ sont semblables, d'où
+  $\frac{CE}{DA} = \frac{BC}{BD}$, soit $CE \cdot BD = AD \cdot BC$. En
+  additionnant, $(AE + EC)\,BD = AB \cdot CD + AD \cdot BC$, et $AE + EC = AC$
+  puisque $E$ est sur le segment $AC$ (l'angle $\widehat{ABE}$ est plus petit que
+  $\widehat{ABC}$).
+\item Soit une corde $MN$ vue du point $P$ du cercle sous l'angle $\theta$. Le
+  diamètre issu de $M$ recoupe le cercle en $M'$ ; l'angle inscrit
+  $\widehat{MM'N}$ intercepte le même arc que $\widehat{MPN}$, il vaut donc
+  $\theta$ ou $180^\circ - \theta$, et le triangle $MNM'$ est rectangle en $N$.
+  D'où $MN = MM' \sin\widehat{MM'N} = 1 \cdot \sin\theta$.
+\item Le triangle $BAD$ est rectangle en $A$ (angle inscrit dans un demi-cercle)
+  et d'hypoténuse $BD = 1$ : $AB = \sin p$, $AD = \cos p$. De même
+  $CB = \sin q$, $CD = \cos q$. La corde $AC$ est vue de $D$ sous l'angle
+  $\widehat{ADC} = \widehat{ADB} + \widehat{BDC} = p + q$ (les points $A$ et $C$
+  sont de part et d'autre de $DB$), donc $AC = \sin(p+q)$. Le quadrilatère
+  $BADC$ est inscrit, de diagonales $BD$ et $AC$ ; Ptolémée donne
+  $BD \cdot AC = BA \cdot DC + AD \cdot CB$, soit
+  $\sin(p+q) = \sin p \cos q + \cos p \sin q$.
+\item Plaçons cette fois $C'$ du même côté que $A$, avec $\widehat{C'DB} = q < p$.
+  Sur l'arc de $B$ à $D$, l'ordre est $B$, $C'$, $A$, $D$, et le quadrilatère
+  $BC'AD$ a pour diagonales $BA$ et $C'D$. La corde $C'A$ est vue de $D$ sous
+  l'angle $p - q$. Ptolémée donne $BA \cdot C'D = BC' \cdot AD + C'A \cdot DB$,
+  soit $\sin p \cos q = \sin q \cos p + \sin(p-q)$, c'est-à-dire
+  $\sin(p-q) = \sin p\cos q - \cos p \sin q$, quantité positive puisque $p > q$.
+  En divisant les deux formules, on obtient l'énoncé du feuillet. La figure donne
+  donc séparément les deux formules d'addition ; le feuillet, qui n'en voulait
+  que le rapport, n'en tire que la proportion.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Un croissant de Lune à trois degrés du Soleil ?}{Lycée}
+\manuscrit{latin-17859}{15}{16}
+La note « De Astrorum fulsionibus » raisonne ainsi. Si la Lune devient visible à
+$x$ degrés du Soleil, sa partie éclairée vaut, dit-elle, $x/180$ de la pleine
+Lune ; la pleine Lune vaut cent fois Vénus ; et les distances au Soleil
+nécessaires pour qu'un astre soit vu sont en raison inverse de leurs éclats.
+Vénus demandant $5^\circ$, on a
+\[
+x = \frac{5 \cdot 180}{100\,x}.
+\]
+\begin{enumerate}
+\item Résoudre cette équation et vérifier que $3^\circ$ en est la seule solution
+  positive.
+\item La fraction éclairée du disque lunaire, vue de la Terre, vaut
+  $\frac{1 + \cos i}{2}$, où $i$ est l'angle Soleil--Lune--Terre. Le Soleil
+  étant très éloigné, on a $i = 180^\circ - \psi$, $\psi$ étant l'écart angulaire
+  Soleil--Lune vu de la Terre. En déduire la fraction éclairée $k(\psi)$, et la
+  calculer pour $\psi = 3^\circ$ et $\psi = 7^\circ$.
+\item Comparer $k(3^\circ)$ à la valeur $3/180$ du feuillet. Montrer que, pour
+  $\psi$ petit exprimé en radians, $k(\psi)$ est proche de $\psi^2/4$, et dire
+  pourquoi la loi proportionnelle du feuillet ne peut pas être la bonne.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item L'équation s'écrit $100\,x^2 = 900$, soit $x^2 = 9$ ; ses solutions sont
+  $3$ et $-3$, et la seule positive est $x = 3$. Le feuillet présente le calcul
+  en partant de $3^\circ$ et en retrouvant $3^\circ$ : c'est une vérification de
+  cohérence, dont l'arithmétique est juste.
+\item Avec $i = 180^\circ - \psi$, $\cos i = -\cos\psi$ et
+  $k(\psi) = \frac{1 - \cos\psi}{2}$. On trouve $k(3^\circ) = 0{,}000685$ et
+  $k(7^\circ) = 0{,}00373$.
+\item Le feuillet prend $3/180 = 1/60 = 0{,}0167$, soit environ vingt-quatre fois
+  trop. Pour $\psi$ petit, $1 - \cos\psi = 2\sin^2\frac{\psi}{2}$ et
+  $\sin\frac{\psi}{2} \approx \frac{\psi}{2}$, donc $k(\psi) \approx \psi^2/4$ :
+  à $3^\circ = 0{,}0524$ radian, $\psi^2/4 = 0{,}000685$. La partie éclairée
+  croît comme le carré de l'écart et non comme l'écart : un croissant très mince
+  est, en proportion, beaucoup plus pâle que ne le suppose la règle de trois.
+  Les deux autres prémisses ne tiennent pas davantage (le seuil de visibilité
+  dépend de l'abaissement du Soleil sous l'horizon, non d'une proportion inverse
+  à l'éclat), et le croissant n'est en fait jamais vu à moins d'environ sept
+  degrés du Soleil.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le « très noble théorème »}{L1}
+\manuscrit{latin-17859}{35}{37}
+Le second livre démontre trois fois qu'un triangle sphérique $ABC$ rectangle en
+$C$, dont l'angle $A$ est aigu, vérifie
+\[
+\frac{\sin(c+b)}{\sin(c-b)} = \frac{1 + \cos A}{1 - \cos A},
+\]
+où $a = BC$, $b = CA$, $c = AB$ sont les côtés (arcs de grands cercles de la
+sphère unité, tous inférieurs à $90^\circ$). On le démontre ici avec des vecteurs.
+On place $C = (0,0,1)$, $A = (\sin b, 0, \cos b)$, $B = (0, \sin a, \cos a)$.
+\begin{enumerate}
+\item Vérifier que l'angle en $C$ est droit et que $\cos c = \cos a \cos b$.
+\item L'angle $A$ est l'angle entre les vecteurs tangents en $A$ aux arcs $AC$ et
+  $AB$, c'est-à-dire entre $C - (A\cdot C)A$ et $B - (A\cdot B)A$. Montrer que
+  $\cos A = \frac{\cos a \sin b}{\sin c}$, puis que $\tan b = \tan c \cos A$.
+\item En posant $g = \sin c \cos b$ et $h = \cos c \sin b$, montrer que
+  $h = g \cos A$, puis démontrer l'énoncé du feuillet. Pourquoi a-t-on $c > b$ ?
+\item En déduire la forme que lui donne la proposition XVI :
+  $\frac{\sin(c+b)}{\sin(c-b)} = \cot^2\frac{A}{2}$.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Les arcs $CA$ et $CB$ sont dans les plans $y = 0$ et $x = 0$, qui sont
+  perpendiculaires : l'angle en $C$ est droit. Les arcs mesurent bien $b$ et $a$
+  puisque $C \cdot A = \cos b$ et $C \cdot B = \cos a$. Enfin
+  $\cos c = A \cdot B = \cos a \cos b$.
+\item $C - (\cos b)A = (-\sin b\cos b, 0, 1 - \cos^2 b) = \sin b\,(-\cos b, 0,
+  \sin b)$, de norme $\sin b$. $B - (\cos c)A = (-\cos c \sin b, \sin a,
+  \cos a - \cos c \cos b)$ ; ce vecteur est orthogonal à $A$ et sa norme vaut
+  $\sqrt{1 - \cos^2 c} = \sin c$ (projection de $B$ sur le plan tangent en $A$).
+  Donc
+  \[
+  \cos A = \frac{(-\cos b, 0, \sin b)\cdot(-\cos c\sin b, \sin a, \cos a - \cos c\cos b)}{\sin c}
+  = \frac{\cos b\cos c\sin b + \sin b\cos a - \sin b \cos c\cos b}{\sin c}
+  = \frac{\cos a \sin b}{\sin c}.
+  \]
+  Avec $\cos a = \cos c / \cos b$, il vient
+  $\cos A = \frac{\cos c \sin b}{\cos b \sin c} = \frac{\tan b}{\tan c}$.
+\item $\tan b = \tan c \cos A$ s'écrit $\sin b \cos c = \cos A \sin c \cos b$,
+  c'est-à-dire $h = g \cos A$. Alors
+  $\sin(c+b) = \sin c\cos b + \cos c \sin b = g(1 + \cos A)$ et
+  $\sin(c-b) = g - h = g(1 - \cos A)$. Comme $0 < c < 90^\circ$ et
+  $0 < b < 90^\circ$, $g > 0$ ; comme $A$ est aigu, $1 - \cos A > 0$ ; le quotient
+  donne l'énoncé. Enfin $\cos c = \cos a \cos b < \cos b$ puisque $0 < a < 90^\circ$,
+  donc $c > b$ : l'hypoténuse est plus grande que le côté, ce qui rend
+  $\sin(c-b)$ positif.
+\item $1 + \cos A = 2\cos^2\frac{A}{2}$ et $1 - \cos A = 2\sin^2\frac{A}{2}$, d'où
+  $\frac{1+\cos A}{1-\cos A} = \cot^2\frac{A}{2}$. C'est exactement la voie de
+  Maurolico à la proposition X : deux « rectangles » $g$ et $h$ dans le rapport
+  $1 : \cos A$, une proportion par composition et division (sa proposition IX),
+  et l'identification de $g \pm h$ aux sinus de la somme et de la différence (sa
+  proposition VIII). Maurolico attribue l'énoncé à Ménélas, dont ce serait la
+  cinquième proposition du troisième livre des \emph{Sphériques} ; il le démontre
+  « autrement et encore autrement », trois fois (propositions X, XII et XIV).
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{La plus grande différence entre l'hypoténuse et le côté}{L1}
+\manuscrit{latin-17859}{20}{23}
+\manuscrit{latin-17859}{39}{40}
+On fixe l'angle aigu $A$ et l'on considère tous les triangles sphériques
+rectangles en $C$ d'angle $A$ (notations de l'exercice précédent). Les
+propositions XXV à XXXII du premier livre, puis XX du second, affirment que la
+différence $c - b$ est la plus grande lorsque $b + c = 90^\circ$, et que cela
+arrive exactement quand $\cos^2 a = \cos A$. Le feuillet ne calcule pas ce
+maximum.
+\begin{enumerate}
+\item Montrer que $\sin(c-b) = \sin(c+b)\tan^2\frac{A}{2}$, et en déduire que
+  $c - b$ est au plus $\arcsin\bigl(\tan^2\frac{A}{2}\bigr)$, avec égalité si et
+  seulement si $b + c = 90^\circ$. Vérifier qu'un tel triangle existe.
+\item Montrer qu'au maximum $\cos^2 a = \cos A$.
+\item Autre méthode : en posant $k = \cos A$ et $u = \tan c$, montrer que
+  $\tan(c-b) = \frac{(1-k)\,u}{1 + k u^2}$, et retrouver le maximum par l'étude
+  de cette fonction de $u > 0$.
+\item Application : $A = 60^\circ$. Donner $b$, $c$, $a$ et $c - b$ au maximum.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item D'après l'exercice précédent, $\sin(c-b) = \sin(c+b)\,\frac{1-\cos A}{1+\cos A}
+  = \sin(c+b)\tan^2\frac{A}{2} \le \tan^2\frac{A}{2}$, avec égalité si et
+  seulement si $\sin(c+b) = 1$, c'est-à-dire $b + c = 90^\circ$ puisque
+  $0 < b + c < 180^\circ$. Comme $0 < c - b < 90^\circ$ et que $\arcsin$ est
+  croissante, $c - b \le \arcsin\bigl(\tan^2\frac{A}{2}\bigr)$ ; noter que
+  $\tan^2\frac{A}{2} < 1$ puisque $A < 90^\circ$. Existence : $b + c = 90^\circ$
+  équivaut à $\tan b \tan c = 1$ ; avec $\tan b = k \tan c$ ($k = \cos A$), il
+  faut $\tan^2 c = 1/k$, ce qui définit $c \in\, ]0^\circ, 90^\circ[$, puis $b$ par
+  $\tan b = \sqrt{k}$, puis $a$ par $\cos a = \cos c / \cos b \in\, ]0,1[$.
+\item Si $b + c = 90^\circ$, $\cos c = \sin b$, donc
+  $\cos a = \frac{\cos c}{\cos b} = \tan b$ et
+  $\cos^2 a = \tan^2 b = k \tan c \tan b = k = \cos A$.
+\item $\tan b = k u$, donc
+  $\tan(c-b) = \frac{u - ku}{1 + k u^2} = \frac{(1-k)u}{1+ku^2}$. La fonction
+  $f(u) = \frac{u}{1+ku^2}$ a pour dérivée $\frac{1 - k u^2}{(1+ku^2)^2}$ : elle
+  croît puis décroît, avec un maximum en $u = 1/\sqrt{k}$, où
+  $f = \frac{1}{2\sqrt{k}}$. Comme $\tan$ est croissante sur
+  $]0^\circ, 90^\circ[$, $c - b$ est maximal pour $\tan c = 1/\sqrt{k}$, ce qui est
+  $b + c = 90^\circ$, et $\tan(c-b)_{\max} = \frac{1-k}{2\sqrt{k}}$. On retrouve
+  bien $\sin(c-b)_{\max} = \frac{1-k}{1+k}$, puisque
+  $\sin\theta = \frac{\tan\theta}{\sqrt{1+\tan^2\theta}}$ et
+  $1 + \frac{(1-k)^2}{4k} = \frac{(1+k)^2}{4k}$.
+\item $k = \frac12$ : $\tan c = \sqrt2$, $c = 54^\circ 44' 8''$ ;
+  $\tan b = \frac{\sqrt2}{2}$, $b = 35^\circ 15' 52''$ ; $\cos^2 a = \frac12$,
+  $a = 45^\circ$ ; et $c - b = \arcsin\frac13 = 19^\circ 28' 16''$, puisque
+  $\tan^2 30^\circ = \frac13$.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{L'angle horaire du Soleil d'après sa hauteur}{L1}
+\manuscrit{latin-17859}{48}{49}
+Le problème 8 du volume trouve la distance au méridien d'un astre dont on connaît
+la hauteur $h$, à la latitude $\varphi$, sa déclinaison étant $\delta$ : on
+multiplie le sinus de la hauteur par la sécante de la latitude, puis par la
+sécante de la déclinaison, et l'on compare le résultat au sinus de la
+« différence ascensionnelle », $\tan\varphi\tan\delta$.
+\begin{enumerate}
+\item Démontrer la loi des cosinus sphérique : dans un triangle sphérique $ABC$
+  de la sphère unité, $\cos a = \cos b\cos c + \sin b\sin c\cos A$. (On pourra
+  placer $A = (0,0,1)$, $B = (\sin c, 0, \cos c)$, et $C$ à la colatitude $b$ et
+  à l'azimut $A$.)
+\item L'appliquer au triangle formé par le pôle $P$, le zénith $Z$ et l'astre
+  $S$, où $PZ = 90^\circ - \varphi$, $PS = 90^\circ - \delta$,
+  $ZS = 90^\circ - h$, l'angle en $P$ étant l'angle horaire $H$. En déduire
+  \[
+  \cos H = \frac{\sin h}{\cos\varphi\cos\delta} - \tan\varphi\tan\delta ,
+  \]
+  qui est la règle du feuillet.
+\item À Messine ($\varphi = 38^\circ$), pour le Soleil au onzième degré du Taureau
+  ($\delta = 15^\circ 10'$), le feuillet prend $\sec\varphi = 126\,902$,
+  $\sec\delta = 103\,609$, $\tan\varphi\tan\delta = 0{,}21189$. Pour
+  $h = 27^\circ 50'$ (dont le sinus est $46\,690$), il calcule
+  $46\,690 \times 126\,902$, rejette cinq figures, multiplie par $103\,609$,
+  rejette cinq figures, retranche $21\,189$ et trouve $H = 66^\circ 18'$. Refaire le
+  calcul, puis calculer $H$ directement.
+\item Le feuillet écrit pourtant « déclinaison $15^\circ 20'$ » et « différence
+  ascensionnelle $12^\circ 24'$ ». Montrer que ces deux nombres ne s'accordent ni
+  entre eux ni avec les nombres employés.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item L'arc $AB$ est dans le plan $y = 0$ et mesure $c$. Le point $C$ est à la
+  distance $b$ de $A$ sur le grand cercle qui fait l'angle $A$ avec le plan
+  $y = 0$ : $C = (\sin b\cos A, \sin b\sin A, \cos b)$. Alors
+  $\cos a = B\cdot C = \sin c\sin b\cos A + \cos c\cos b$.
+\item $\cos(90^\circ - h) = \cos(90^\circ - \varphi)\cos(90^\circ - \delta)
+  + \sin(90^\circ-\varphi)\sin(90^\circ-\delta)\cos H$, soit
+  $\sin h = \sin\varphi\sin\delta + \cos\varphi\cos\delta\cos H$, et la formule
+  s'obtient en divisant par $\cos\varphi\cos\delta$.
+\item $46\,690 \times 126\,902 = 5\,925\,054\,380$, soit $59\,251$ ;
+  $59\,251 \times 103\,609 = 6\,138\,936\,859$, soit $61\,389$ ;
+  $61\,389 - 21\,189 = 40\,200$, et $\arccos 0{,}40200 = 66^\circ 17{,}8'$, que le
+  feuillet arrondit à $66^\circ 18'$. Tous les nombres sont justes :
+  $\sin 27^\circ 50' = 0{,}466901$, $\sec 38^\circ = 1{,}269018$,
+  $\sec 15^\circ 10' = 1{,}036088$. Directement,
+  $\cos H = \frac{0{,}466901 - 0{,}615661 \times 0{,}261628}{0{,}788011\times 0{,}965169}
+  = 0{,}40211$, d'où $H = 66^\circ 17' 24''$.
+\item Pour $\delta = 15^\circ 20'$, on aurait $\sec\delta = 103\,691$ et
+  $\tan\varphi\tan\delta = 0{,}2140$, soit une différence ascensionnelle de
+  $12^\circ 22'$, non $12^\circ 24'$ ; et $\sin 12^\circ 24' = 0{,}21474$, non
+  $0{,}21189$. Les nombres employés, eux, sont ceux de $\delta = 15^\circ 10'$ :
+  $\sec 15^\circ 10' = 103\,609$ et $\tan 38^\circ \tan 15^\circ 10' = 0{,}21178$,
+  sinus de $12^\circ 14'$ (le feuillet prend $\sin 12^\circ 14' = 0{,}21189$). Il
+  faut donc lire $15^\circ 10'$ et $12^\circ 14'$ ; les calculs du feuillet sont
+  alors cohérents, et c'est la déclinaison du problème 1.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Les tangentes au voisinage de $90^\circ$}{L1}
+\manuscrit{latin-17859}{17}{17}
+Sous la « table féconde », où l'interpolation n'est plus possible, le feuillet
+donne quelques tangentes (rayon $100\,000$), dont $\tan 89^\circ 55' =
+68\,754\,439$ et $\tan 89^\circ 59' = 343\,772\,546$ ; et sous la « table
+bienfaisante », $\sec 89^\circ 59' = 343\,772\,560$.
+\begin{enumerate}
+\item Montrer que, pour $x$ petit en radians,
+  $\tan\bigl(\frac{\pi}{2} - x\bigr) = \frac{1}{x} - \frac{x}{3} + O(x^3)$.
+\item En déduire $100\,000 \tan 89^\circ 59'$ et $100\,000\tan 89^\circ 55'$ à
+  l'unité près, et l'erreur relative des valeurs du feuillet.
+\item Montrer que $\frac{1}{\sin x} - \frac{\cos x}{\sin x} = \tan\frac{x}{2}$, et
+  en déduire la différence $100\,000(\sec 89^\circ 59' - \tan 89^\circ 59')$.
+  Comparer à la différence des deux nombres du feuillet. Que peut-on en
+  conclure sur la façon dont ces deux valeurs ont été calculées ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $\tan(\frac{\pi}{2} - x) = \frac{\cos x}{\sin x}$. Or
+  $\sin x = x\bigl(1 - \frac{x^2}{6} + O(x^4)\bigr)$ et
+  $\cos x = 1 - \frac{x^2}{2} + O(x^4)$, donc
+  $\frac{\cos x}{\sin x} = \frac1x \bigl(1 - \frac{x^2}{2}\bigr)\bigl(1 + \frac{x^2}{6}\bigr)
+  + O(x^3) = \frac1x - \frac{x}{3} + O(x^3)$. (Le terme suivant est
+  $-\frac{x^3}{45}$.)
+\item Pour $x = 1' = \frac{\pi}{10\,800}$ : $\frac{100\,000}{x} = 343\,774\,677{,}08$
+  et $100\,000\,\frac{x}{3} = 9{,}70$ ; le terme en $x^3$ vaut moins de
+  $10^{-7}$. D'où $100\,000\tan 89^\circ 59' = 343\,774\,667$. Pour $x = 5'$ :
+  $\frac{100\,000}{x} = 68\,754\,935{,}42$ et $100\,000\,\frac{x}{3} = 48{,}48$,
+  d'où $68\,754\,887$. Les valeurs du feuillet sont trop faibles de $2121$ et de
+  $448$ unités, soit une erreur relative de $6{,}2 \times 10^{-6}$ et de
+  $6{,}5\times 10^{-6}$ : quelques millionièmes, et du même ordre dans les deux
+  cas.
+\item $\frac{1 - \cos x}{\sin x} = \frac{2\sin^2(x/2)}{2\sin(x/2)\cos(x/2)} =
+  \tan\frac{x}{2}$. Pour $x = 1'$, $100\,000\tan 0{,}5' = 14{,}54$ : la sécante
+  exacte vaut $343\,774\,682$. Les nombres du feuillet diffèrent de
+  $343\,772\,560 - 343\,772\,546 = 14$ : leur \emph{différence} est juste alors
+  que chacun est faible d'environ $2121$ unités. Les deux valeurs ont donc été
+  tirées d'une même valeur de base un peu trop faible (une même approximation de
+  $1/x$), et non commises indépendamment : l'erreur est systématique, non de
+  copie.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Les rencontres de deux mobiles sur un cercle}{L2}
+\manuscrit{latin-17859}{9}{10}
+Le \emph{Discours sur la sphère} affirme que deux mobiles tournant uniformément
+sur un cercle, dont les vitesses sont « comme les plus petits nombres » $p$ et
+$q$ ($p > q$, premiers entre eux), se rencontrent en $p - q$ points également
+espacés s'ils vont dans le même sens, en $p + q$ s'ils vont en sens contraires,
+et toujours aux mêmes points ; et que, si les vitesses sont incommensurables,
+les points de rencontre ne se répètent jamais. On repère les positions par des
+angles modulo $2\pi$, les mobiles partant ensemble de l'angle $0$ avec les
+vitesses angulaires $\omega_1 > \omega_2 > 0$, $\omega_1/\omega_2 = p/q$.
+\begin{enumerate}
+\item Même sens : montrer que les rencontres ont lieu aux instants
+  $t_k = \frac{2\pi k}{\omega_1 - \omega_2}$ ($k \in \mathbf{N}$), aux angles
+  $\theta_k = \frac{2\pi k p}{p - q}$, et que l'ensemble des points de rencontre
+  est formé de $p - q$ points également espacés.
+\item Sens contraires : montrer qu'il y a $p + q$ points.
+\item Même sens, $\omega_1/\omega_2$ irrationnel : montrer que les $\theta_k$
+  sont deux à deux distincts modulo $2\pi$, puis qu'ils sont denses sur le cercle
+  (ce que le feuillet ne dit pas).
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Les positions sont $\omega_1 t$ et $\omega_2 t$ ; il y a rencontre quand
+  $(\omega_1 - \omega_2)t \in 2\pi\mathbf{Z}$, d'où les $t_k$, et
+  $\theta_k = \omega_1 t_k = \frac{2\pi k\,\omega_1}{\omega_1 - \omega_2}
+  = \frac{2\pi k p}{p-q}$. Posons $m = p - q \ge 1$. Comme
+  $\operatorname{pgcd}(p, m) = \operatorname{pgcd}(p, q) = 1$, la classe de $p$ est
+  inversible modulo $m$, et $k \mapsto kp \bmod m$ parcourt tous les restes
+  $0, \dots, m-1$ lorsque $k$ parcourt $0, \dots, m-1$, puis recommence. Les
+  points de rencontre sont donc exactement les angles $2\pi j/m$,
+  $0 \le j < m$, visités périodiquement : $p - q$ points équidistants, toujours
+  les mêmes.
+\item La vitesse relative est $\omega_1 + \omega_2$, les rencontres ont lieu en
+  $\theta_k = \frac{2\pi k p}{p+q}$, et $\operatorname{pgcd}(p, p+q) = 1$ ; le même
+  argument donne $p + q$ points.
+\item Posons $\beta = \frac{\omega_1}{\omega_1-\omega_2} = \frac{r}{r-1}$ avec
+  $r = \omega_1/\omega_2$ ; $\beta$ est irrationnel si et seulement si $r$ l'est.
+  Si $\theta_k \equiv \theta_l$, alors $(k - l)\beta \in \mathbf{Z}$, d'où $k = l$.
+  Densité : soit $N \ge 1$. Parmi les $N+1$ nombres $\{k\beta\}$ (partie
+  fractionnaire), $0 \le k \le N$, deux tombent dans un même intervalle
+  $[\frac{j}{N}, \frac{j+1}{N}[$ : il existe $0 \le l < k \le N$ avec
+  $0 < |\{k\beta\} - \{l\beta\}| < \frac1N$ (non nul par ce qui précède). Avec
+  $m = k - l \ge 1$, on a donc $\{m\beta\} = \eta$ avec $0 < \eta < \frac1N$ ou
+  $1 - \frac1N < \eta < 1$. Les nombres $\{jm\beta\}$, $j = 1, 2, \dots$, avancent
+  alors sur le cercle $\mathbf{R}/\mathbf{Z}$ par pas constants de longueur
+  $\min(\eta, 1 - \eta) < \frac1N$, dans un sens fixé : ils rencontrent tout arc
+  de longueur $\frac1N$. Comme ce sont des rencontres $\theta_{jm}$, tout arc de
+  longueur $2\pi/N$ contient un point de rencontre, pour tout $N$ : l'ensemble est
+  dense. La conclusion du feuillet --- si les mouvements célestes sont
+  incommensurables, le ciel ne revient jamais à la même disposition --- est
+  juste pour deux mobiles ; il reste que la disposition revient aussi près qu'on
+  veut.
+\end{enumerate}
+\end{solution}
+
+\section*{Mersenne et les papiers de jeux (NAF 5176)}
+\chapitre{naf-5176}
+
+NAF 5176 est une reliure de papiers épars, en quatre mains au moins. La
+première, très rapide, est prêtée à Mersenne par une note du
+XIX\textsuperscript{e} siècle et par des renvois, à la première personne, à des
+livres qui portent les titres des siens ; ce n'est qu'une inférence, et les
+feuillets ne signent pas. Elle traite des mouvements composés, de la
+réfraction, des verres hyperboliques, d'une méthode de tangentes « par
+adæqualité », de la vitesse de la lumière et de la grandeur de la Terre. Une
+autre main pose des problèmes d'ellipses « rationnelles ». Après un feuillet
+moderne de classement, deux mains rondes traitent des « partis » (le partage
+d'une mise interrompue), des dés, des intérêts composés, des combinaisons et
+d'une loterie. Ces feuillets de jeux ne nomment personne : les rapprochements
+avec le traité de Huygens (\emph{De ratiociniis in ludo aleae}, 1657) et avec la
+lettre de Pascal à Fermat du 29 juillet 1654 sont des coïncidences d'énoncés, non
+des attributions.
+
+\begin{exercice}{La longueur de la spirale : un encadrement pris pour une égalité}{L1}
+\manuscrit{naf-5176}{9}{12}
+La proposition III du « traité des mouvements composés » affirme que la
+première révolution de la spirale d'Archimède est égale à l'hypoténuse d'un
+triangle rectangle dont les côtés sont le rayon $R$ et la demi-circonférence
+$\pi R$. L'argument : le point descend le rayon d'un mouvement uniforme et
+tourne d'un mouvement circulaire dont la vitesse décroît uniformément jusqu'à
+zéro ; ce second mouvement vaut « en moyenne » la moitié de sa vitesse
+initiale ; on compose alors les deux mouvements moyens.
+
+On décrit la spirale par $r(t) = R(1 - t/T)$, $\varphi(t) = 2\pi t/T$,
+$t \in [0, T]$.
+\begin{enumerate}
+\item Calculer les composantes radiale $v_r$ et orthoradiale $v_\varphi$ de la
+  vitesse, et vérifier que $\int_0^T |v_r|\,dt = R$ et
+  $\int_0^T |v_\varphi|\,dt = \pi R$ (c'est le « lemme » du feuillet).
+\item Soit $F : [0,T] \to \mathbf{R}^2$ continue. Montrer que
+  $\bigl\| \int_0^T F \bigr\| \le \int_0^T \|F\|$, avec égalité si et seulement si
+  $F$ garde une direction fixe là où elle ne s'annule pas. En déduire que la
+  longueur $L$ de la spirale vérifie $L > R\sqrt{1 + \pi^2}$.
+\item Calculer $L$ exactement (on pourra se ramener à $r = a\varphi$ et utiliser
+  une primitive de $\sqrt{1 + \varphi^2}$), puis numériquement. De combien la
+  valeur du feuillet est-elle trop courte ?
+\item L'énoncé du feuillet parle d'abord de la circonférence entière, soit
+  $R\sqrt{1 + 4\pi^2}$. Montrer sans calcul d'intégrale que cette valeur est
+  impossible.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $v_r = \dot r = -R/T$ et $v_\varphi = r\dot\varphi = \frac{2\pi R}{T}(1 - t/T)$.
+  Donc $\int_0^T |v_r| = R$ et $\int_0^T v_\varphi = \frac{2\pi R}{T}\cdot\frac{T}{2}
+  = \pi R$ : la vitesse circulaire vaut en moyenne la moitié de sa valeur
+  initiale, ce qui est la règle de la vitesse moyenne du feuillet.
+\item Soit $W = \int_0^T F$. Si $W = 0$, rien à montrer. Sinon, soit
+  $e = W/\|W\|$ : $\|W\| = e \cdot W = \int_0^T e\cdot F \le \int_0^T \|F\|$ par
+  l'inégalité de Cauchy-Schwarz $e \cdot F \le \|F\|$. L'égalité impose
+  $e \cdot F(t) = \|F(t)\|$ pour tout $t$ (la fonction continue
+  $\|F\| - e\cdot F \ge 0$ est d'intégrale nulle), c'est-à-dire $F(t)$ positivement
+  colinéaire à $e$. On applique ceci à $F = (|v_r|, |v_\varphi|)$ :
+  $L = \int_0^T \sqrt{v_r^2 + v_\varphi^2}\,dt = \int_0^T \|F\| \ge
+  \bigl\| \bigl(R, \pi R\bigr) \bigr\| = R\sqrt{1 + \pi^2}$. Le rapport
+  $|v_\varphi| / |v_r| = 2\pi(1 - t/T)$ n'est pas constant, donc l'inégalité est
+  stricte. L'erreur du feuillet est de composer des moyennes comme si c'étaient
+  des vitesses : la longueur est l'intégrale de la norme de la vitesse, non la
+  norme de l'intégrale.
+\item Parcourue à l'envers, la courbe est $r = a\varphi$, $0 \le \varphi \le 2\pi$,
+  $a = R/(2\pi)$, et $L = \int_0^{2\pi} \sqrt{r^2 + r'^2}\,d\varphi =
+  a\int_0^{2\pi}\sqrt{1+\varphi^2}\,d\varphi$. Une primitive de
+  $\sqrt{1+\varphi^2}$ est $\frac12\bigl(\varphi\sqrt{1+\varphi^2} +
+  \ln(\varphi + \sqrt{1+\varphi^2})\bigr)$ (dériver pour le vérifier). D'où
+  \[
+  L = \frac{R}{4\pi}\Bigl(2\pi\sqrt{1+4\pi^2} + \ln\bigl(2\pi + \sqrt{1+4\pi^2}\bigr)\Bigr)
+  \approx 3{,}3830\,R,
+  \]
+  alors que $R\sqrt{1+\pi^2} \approx 3{,}2969\,R$ : la valeur du feuillet est trop
+  courte d'environ $2{,}5\,\%$.
+\item Par l'inégalité triangulaire en chaque instant, $\|F\| \le |v_r| +
+  |v_\varphi|$, donc $L \le R + \pi R \approx 4{,}14\,R$, alors que
+  $R\sqrt{1+4\pi^2} \approx 6{,}36\,R$. La démonstration du feuillet vise
+  d'ailleurs la demi-circonférence, et c'est sous cette forme qu'elle est
+  discutée ici.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Des ellipses dont toutes les lignes sont rationnelles}{Lycée}
+\manuscrit{naf-5176}{12}{13}
+Une main petite et serrée cherche des ellipses dont le grand axe $2a$, le petit
+axe $2b$ et la distance focale $2c$ sont entiers ; comme $a^2 = b^2 + c^2$, il
+faut un triangle rectangle en nombres entiers d'hypoténuse $a$ (ou $2a$).
+\begin{enumerate}
+\item Vérifier l'identité $(x^2+y^2)(z^2+w^2) = (xz + yw)^2 + (xw - yz)^2$. En
+  écrivant $5 = 1^2 + 2^2$ et $13 = 2^2 + 3^2$, écrire $65$ de deux façons comme
+  somme de deux carrés, puis trouver quatre triangles rectangles en entiers
+  d'hypoténuse $65$ (on pensera aussi aux multiples de $3,4,5$ et de $5,12,13$).
+  Combien d'ellipses le feuillet en tire-t-il ?
+\item La demi-corde focale (le « demi-côté droit ») est $p = b^2/a$. Montrer que
+  si $(s, l, h)$ est un triangle rectangle en entiers ($s^2 + l^2 = h^2$), le
+  choix $a = h^2$, $b = hs$, $c = hl$ donne une ellipse dont $p$ est entier.
+\item Avec le triangle $8, 15, 17$, le feuillet dresse pour les deux ellipses
+  ($c = 17 \cdot 15$ ou $c = 17\cdot 8$) les nombres $a - c$, $p$, $2a - p$ :
+  $34$, $64$, $514$ et $153$, $225$, $353$. Les vérifier, et dire ce que
+  représente $2a - p$.
+\item Au problème 7, avec le triangle $20, 21, 29$ ($2a = 29$, $2c = 21$,
+  $2b = 20$), le feuillet dit que le cercle de diamètre la distance des foyers
+  est à l'ellipse comme $441$ à $580$. Le vérifier (l'aire d'une ellipse de
+  demi-axes $a$, $b$ est $\pi a b$), et montrer que le cercle est plus petit que
+  l'ellipse si et seulement si $h s > l^2$ pour le triangle $(s, l, h)$ employé
+  ($2b = s$, $2c = l$, $2a = h$).
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item En développant, $(xz+yw)^2 + (xw-yz)^2 = x^2z^2 + y^2w^2 + x^2w^2 + y^2z^2$,
+  qui est le produit. Avec $(x,y) = (1,2)$ et $(z,w) = (2,3)$ :
+  $65 = 8^2 + 1^2$ ; avec $(z,w) = (3,2)$ : $65 = 7^2 + 4^2$. Un entier
+  $m^2 + n^2$ est l'hypoténuse du triangle $(m^2 - n^2, 2mn, m^2+n^2)$ : on obtient
+  $(63, 16, 65)$ et $(33, 56, 65)$. S'y ajoutent $13 \times (3,4,5) = (39, 52, 65)$
+  et $5 \times (5,12,13) = (25, 60, 65)$. Quatre triangles, et chacun donne deux
+  ellipses en échangeant petit axe et distance focale : huit ellipses, comme le
+  dit le problème 2.
+\item $a^2 = h^4 = h^2(s^2 + l^2) = b^2 + c^2$, et $p = b^2/a = h^2s^2/h^2 = s^2$,
+  entier.
+\item $a = 17^2 = 289$. Première ellipse : $c = 255$, $b = 136$, $a - c = 34$,
+  $p = 136^2/289 = 64 = 8^2$, $2a - p = 578 - 64 = 514$. Seconde : $c = 136$,
+  $b = 255$, $a - c = 153$, $p = 255^2/289 = 225 = 15^2$, $2a - p = 353$. Tout
+  est juste. L'extrémité $M$ de la corde focale menée par un foyer est à la
+  distance $p$ de ce foyer ; la somme de ses distances aux deux foyers vaut $2a$,
+  donc $2a - p$ est sa distance à l'autre foyer.
+\item L'aire du cercle est $\pi(21/2)^2$ et celle de l'ellipse
+  $\pi\cdot\frac{29}{2}\cdot\frac{20}{2}$ ; elles sont comme $441$ à $580$. En
+  général le cercle vaut $\pi l^2/4$ et l'ellipse $\pi h s/4$ : le cercle est plus
+  petit si et seulement si $l^2 < hs$ ; ici $21^2 = 441 < 580 = 29 \times 20$.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le verre hyperbolique}{L1}
+\manuscrit{naf-5176}{21}{29}
+Les propositions III à V de la dioptrique affirment qu'une hyperbole dont
+l'excentricité égale l'indice $n$ du verre rassemble en un point des rayons
+parallèles à son axe : c'est le verre plan d'un côté et hyperbolique de l'autre
+« comme l'on fait ordinairement les verres pour les lunettes de longue vue ».
+
+Soit l'hyperbole $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$, $c = \sqrt{a^2+b^2}$,
+$e = c/a$, de foyers $F_1 = (-c, 0)$ et $F_2 = (c,0)$. Le verre occupe la région
+$x > a\sqrt{1 + y^2/b^2}$ (à droite de la branche droite) ; des rayons s'y
+propagent parallèlement à l'axe, dans le sens des $x$ décroissants, et sortent
+dans l'air par la branche droite.
+\begin{enumerate}
+\item Montrer que, pour tout point $P = (x,y)$ de la branche droite,
+  $PF_1 = e\,x + a$.
+\item On admet la loi de la réfraction sous forme vectorielle : si $u$ est la
+  direction unitaire du rayon dans le verre, $w$ celle du rayon réfracté dans
+  l'air et $N$ la normale à la surface en $P$, alors $n\,u - w$ est colinéaire à
+  $N$ (ce qui exprime $n\sin i = \sin r$), $w$ étant dirigé vers l'air. Soit
+  $g(P) = PF_1 - e\,x$. Calculer $\nabla g$ et en déduire que, si $e = n$, le
+  rayon réfracté en tout point de la branche passe par $F_1$.
+\item Montrer que l'angle d'incidence $i$ vérifie toujours $\sin i < 1/n$ : aucun
+  rayon ne subit de réflexion totale.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $PF_1^2 = (x+c)^2 + y^2 = x^2 + 2cx + c^2 + b^2\bigl(\frac{x^2}{a^2} - 1\bigr)
+  = \frac{c^2}{a^2}x^2 + 2cx + a^2 = (ex + a)^2$, en utilisant $c^2 - b^2 = a^2$
+  et $a^2 + b^2 = c^2$. Comme $x \ge a > 0$, $ex + a > 0$ et $PF_1 = ex + a$.
+\item La branche droite est une partie de la ligne de niveau $g = a$. On a
+  $\nabla g = \frac{P - F_1}{PF_1} - (e, 0)$. Posons $u = (-1, 0)$ et
+  $w = \frac{F_1 - P}{PF_1}$ (direction de $P$ vers $F_1$). Alors
+  $\nabla g = -w + e\,u$ : le vecteur $e\,u - w$ est normal à la branche en $P$.
+  Si $e = n$, la loi de la réfraction est donc satisfaite par la direction $w$,
+  qui va de $P$ vers $F_1$ et est dirigée vers l'air (son abscisse décroît). La
+  direction réfractée étant unique, tous les rayons réfractés passent par $F_1$ :
+  le foyer le plus éloigné du verre, celui que le feuillet appelle
+  « extérieur ».
+\item $\sin i$ est la composante tangentielle de $u$. La normale est
+  $N = (x/a^2, -y/b^2)$, et $\sin i = \frac{|u \wedge N|}{\|N\|} =
+  \frac{|y|/b^2}{\sqrt{x^2/a^4 + y^2/b^4}}$. Avec $x^2 = a^2(1 + y^2/b^2)$ :
+  $\sin^2 i = \frac{y^2/b^4}{1/a^2 + y^2/(a^2b^2) + y^2/b^4}$, qui croît avec
+  $y^2$ et tend vers $\frac{1/b^4}{1/(a^2b^2) + 1/b^4} = \frac{a^2}{a^2+b^2} =
+  \frac{1}{e^2}$. Donc $\sin i < 1/e = 1/n$ en tout point : la condition
+  $n\sin i < 1$ d'existence d'un rayon réfracté est toujours remplie.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{La tangente à l'ellipse « par adæqualité »}{L1}
+\manuscrit{naf-5176}{31}{31}
+Sur l'axe $\zeta n$ d'une ellipse, soit $o$ le pied de l'ordonnée d'un point
+$\delta$ de la courbe, $B = o\zeta$, $G = on$ (avec $B > G$), et $m$ le point où la
+tangente en $\delta$ coupe l'axe prolongé au-delà de $n$ ; on cherche $A = om$.
+\begin{enumerate}
+\item On prend $u$ entre $o$ et $n$ avec $ou = E$. Justifier que l'ordonnée
+  $\varepsilon u$ de l'ellipse en $u$ est plus courte que celle de la tangente, et
+  que $\frac{\delta o^2}{\varepsilon u^2} = \frac{\zeta o \cdot on}{\zeta u \cdot un}$.
+  En déduire l'inégalité du feuillet :
+  \[
+  \frac{BG}{BG - BE + GE - E^2} > \frac{A^2}{A^2 + E^2 - 2AE}.
+  \]
+\item Le feuillet « compare par adæqualité » les deux membres : il chasse les
+  dénominateurs, divise par $E$, puis efface les termes où $E$ reste. Faire ce
+  calcul et montrer qu'il donne $A = \frac{2BG}{B-G}$.
+\item Vérifier ce résultat par le calcul moderne de la tangente à
+  $\frac{x^2}{\alpha^2} + \frac{y^2}{\beta^2} = 1$, et par la construction
+  d'Apollonius $\frac{\zeta o}{on} = \frac{\zeta m}{mn}$.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item L'ellipse est convexe : entre $\delta$ et le sommet $n$, elle est sous sa
+  tangente en $\delta$. La tangente coupe la verticale en $u$ à la hauteur
+  $t_u = \delta o \cdot \frac{mu}{mo} = \delta o\cdot\frac{A - E}{A}$ (triangles
+  semblables de sommet $m$). La propriété de l'ellipse (ordonnée au carré
+  proportionnelle au produit des segments de l'axe) donne
+  $\frac{\delta o^2}{\varepsilon u^2} = \frac{\zeta o\cdot on}{\zeta u \cdot un}
+  = \frac{BG}{(B+E)(G-E)} = \frac{BG}{BG - BE + GE - E^2}$. Comme
+  $\varepsilon u < t_u$, ce quotient dépasse $\frac{\delta o^2}{t_u^2} =
+  \frac{A^2}{(A-E)^2}$, qui est le second membre.
+\item En chassant les dénominateurs (quasi-égalité) :
+  $BG(A^2 + E^2 - 2AE) = A^2(BG - BE + GE - E^2)$, soit, après suppression de
+  $A^2BG$ de part et d'autre, $BGE^2 - 2ABGE = -A^2BE + A^2GE - A^2E^2$. En
+  divisant par $E$ : $BGE - 2ABG = -A^2B + A^2G - A^2E$. En effaçant les termes en
+  $E$ : $-2ABG = -A^2B + A^2G$, soit $A(B - G) = 2BG$ et $A = \frac{2BG}{B-G}$.
+  C'est, en langage actuel, le passage à la limite $E \to 0$ d'un taux
+  d'accroissement ; le feuillet ne justifie pas le droit d'effacer les termes en
+  $E$.
+\item Avec le centre au milieu de $\zeta n$ : $\alpha = \frac{B+G}{2}$ et $o$ a
+  pour abscisse $x_0 = \frac{B - G}{2}$ (du côté de $n$). La tangente en
+  $(x_0, y_0)$ est $\frac{x x_0}{\alpha^2} + \frac{y y_0}{\beta^2} = 1$ ; elle
+  coupe l'axe en $x = \alpha^2 / x_0$, d'où
+  $A = \frac{\alpha^2}{x_0} - x_0 = \frac{\alpha^2 - x_0^2}{x_0} =
+  \frac{BG}{(B-G)/2} = \frac{2BG}{B-G}$, puisque $\alpha^2 - x_0^2 = BG$. Avec
+  Apollonius : $\zeta m = B + A$ et $mn = A - G$, et
+  $\frac{B}{G} = \frac{B + A}{A - G}$ équivaut à $AB - BG = BG + AG$, soit encore
+  $A(B-G) = 2BG$. Les deux constructions « reviennent à la même », comme le dit
+  le feuillet : $o$ et $m$ divisent harmoniquement $\zeta n$.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Aucun triangle rectangle en nombres n'a pour aire un carré}{L3}
+\manuscrit{naf-5176}{32}{32}
+La note de la vue 32 pose, parmi quatre questions latines : « trouver des
+triangles rectangles en nombres dont l'aire soit un carré, ou démontrer
+l'impossibilité de la question ». On démontre l'impossibilité (c'est ce qu'on
+appelle aujourd'hui le théorème du triangle rectangle de Fermat).
+\begin{enumerate}
+\item Montrer qu'on peut se ramener à un triangle primitif, de côtés
+  $m^2 - n^2$, $2mn$, $m^2 + n^2$ avec $m > n \ge 1$ premiers entre eux et de
+  parités différentes (on admet cette paramétrisation des triplets primitifs).
+\item Montrer que $m$, $n$, $m+n$, $m-n$ sont deux à deux premiers entre eux, et
+  que si l'aire est un carré, chacun d'eux est un carré :
+  $m = x^2$, $n = y^2$, $m + n = u^2$, $m - n = v^2$.
+\item Poser $r = \frac{u+v}{2}$, $s = \frac{u-v}{2}$. Montrer que $r$, $s$ sont des
+  entiers positifs, que $r^2 + s^2 = x^2$ et $2rs = y^2$, et en déduire un
+  triangle rectangle en nombres, d'aire carrée, d'hypoténuse strictement plus
+  petite. Conclure par descente infinie.
+\item En considérant le triangle $(X^4 - Y^4, 2X^2Y^2, X^4 + Y^4)$, en déduire
+  que $X^4 - Y^4 = Z^2$ n'a pas de solution en entiers avec $XYZ \neq 0$, puis que
+  $X^4 + Y^4 = W^4$ n'en a pas non plus.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Si un triangle en entiers a pour côtés $d\,(a', b', c')$ avec $(a',b',c')$
+  primitif, son aire est $d^2$ fois celle du triangle primitif ; l'une est un
+  carré si et seulement si l'autre l'est (un rationnel positif $q$ tel que $d^2q$
+  soit le carré d'un entier est le carré d'un rationnel, et l'aire primitive est
+  entière, donc carré d'un entier). On suppose donc le triangle primitif.
+\item $m$ et $n$ sont premiers entre eux et de parités différentes, donc
+  $m \pm n$ sont impairs. Un diviseur commun à $m+n$ et $m-n$ divise $2m$ et $2n$ ;
+  étant impair, il divise $m$ et $n$, donc vaut $1$. Un diviseur commun de $m$ et
+  $m \pm n$ divise $n$, donc vaut $1$ ; de même pour $n$. L'aire vaut
+  $mn(m-n)(m+n)$, produit de quatre entiers positifs deux à deux premiers entre
+  eux ; si c'est un carré, l'exposant de chaque nombre premier dans le produit est
+  pair, et chaque nombre premier ne divise qu'un facteur : chaque facteur est un
+  carré.
+\item $u$ et $v$ sont impairs ($u^2 = m + n$ et $v^2 = m - n$ sont impairs) et
+  $u > v > 0$ : $r$ et $s$ sont des entiers positifs. Puis
+  $r^2 + s^2 = \frac{u^2 + v^2}{2} = m = x^2$ et $2rs = \frac{u^2 - v^2}{2} = n
+  = y^2$. Le triangle de côtés $r$, $s$, $x$ est rectangle, d'aire
+  $\frac{rs}{2} = \frac{y^2}{4}$ ; $y^2 = 2rs$ est pair, donc $y$ est pair et
+  l'aire est le carré de l'entier $y/2$. Son hypoténuse vérifie
+  $x \le x^2 = m < m^2 + n^2$. On aurait ainsi une suite infinie strictement
+  décroissante d'entiers positifs (les hypoténuses), ce qui est impossible.
+\item Ce triangle est rectangle :
+  $(X^4 - Y^4)^2 + 4X^4Y^4 = (X^4 + Y^4)^2$, et son aire vaut
+  $X^2Y^2(X^4 - Y^4)$. Si $X^4 - Y^4 = Z^2$ avec $XYZ \neq 0$ (on peut supposer
+  $X > Y > 0$), l'aire vaut $(XYZ)^2$, carré non nul : contradiction. Enfin, si
+  $X^4 + Y^4 = W^4$ avec $XYW \ne 0$, alors $W^4 - Y^4 = (X^2)^2$, ce qui vient
+  d'être exclu. La note ne dit pas qui propose la question, ni si elle en avait
+  la réponse.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{La grandeur de la Terre mesurée depuis une toise}{Lycée}
+\manuscrit{naf-5176}{33}{35}
+La lettre sur la vitesse de la lumière s'achève sur « la considération d'un seul
+rayon ». L'œil $D$ est à la hauteur $h = DA$ au-dessus du point $A$ de la surface
+d'une Terre sphérique de centre $O$ et de rayon $R$ ; $B$ est le point diamétralement
+opposé à $A$, et le rayon visuel $DF$ est tangent à la Terre en $F$.
+\begin{enumerate}
+\item Démontrer que $DF^2 = DA \cdot DB = h(h + 2R)$.
+\item La lettre suppose qu'un œil élevé d'une toise voit à une lieue, soit
+  $2500$ toises. En déduire $DB$, le diamètre, et le rayon en toises et en lieues,
+  puis le tour de la Terre avec $\pi \approx 22/7$.
+\item Montrer que $R \approx \frac{DF^2}{2h}$ et qu'une erreur relative
+  $\epsilon$ sur la distance $DF$ produit une erreur relative d'environ
+  $2\epsilon$ sur $R$.
+\item La toise vaut $1{,}949$ m et le rayon terrestre $6371$ km. À quelle
+  distance voit-on réellement l'horizon depuis une toise ? Quel rayon la lettre
+  obtient-elle, en kilomètres ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Le triangle $OFD$ est rectangle en $F$ (tangente perpendiculaire au rayon),
+  donc $DF^2 = OD^2 - OF^2 = (R+h)^2 - R^2 = h(h + 2R) = DA\cdot DB$, puisque
+  $DB = h + 2R$. C'est la puissance du point $D$ par rapport au cercle.
+\item $DB = DF^2/h = 2500^2 = 6\,250\,000$ toises ; le diamètre vaut
+  $DB - h = 6\,249\,999$ toises, « moins une » comme dit la lettre ; le rayon
+  $3\,124\,999{,}5$ toises, soit $1250$ lieues. Le tour, avec un diamètre de
+  $2500$ lieues, vaut $2500 \times \frac{22}{7} = 7857\frac17$ lieues. Les
+  calculs de la lettre sont justes.
+\item $2R = \frac{DF^2}{h} - h$, et $h$ est négligeable devant $DF^2/h$, d'où
+  $R \approx DF^2/(2h)$. Si $DF$ devient $DF(1+\epsilon)$, $R$ devient
+  $R(1+\epsilon)^2 \approx R(1 + 2\epsilon)$.
+\item $\sqrt{2Rh} = \sqrt{2 \times 6\,371\,000 \times 1{,}949} \approx 4983$ m,
+  soit environ $2557$ toises : un peu plus qu'une lieue ($2500$ toises, soit
+  $4872$ m). La lettre trouve $R = 3\,125\,000 \times 1{,}949$ m $\approx 6091$ km,
+  trop petit d'environ $4\,\%$, ce qui correspond à une distance d'horizon sous-estimée
+  d'environ $2\,\%$. La réfraction atmosphérique, qui allonge la portée de la vue,
+  est ignorée ; et tout repose sur une distance posée, non mesurée.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le partage des enjeux}{Lycée}
+\manuscrit{naf-5176}{40}{41}
+Deux joueurs de même force jouent une partie en plusieurs jeux ; on l'interrompt,
+et l'on veut partager la mise selon les chances de chacun. On note $P(i,j)$ la
+part (en fraction de la mise totale) du joueur à qui il manque $i$ jeux, quand il
+en manque $j$ à l'autre.
+\begin{enumerate}
+\item Justifier que $P(0,j) = 1$, $P(i,0) = 0$ et
+  $P(i,j) = \frac12\bigl(P(i-1,j) + P(i,j-1)\bigr)$.
+\item Calculer $P(1,2)$ : c'est la « seconde règle » du feuillet, qui donne
+  $\frac34$ à qui il ne manque qu'un jeu contre deux. Dans une partie en deux jeux
+  où chacun a misé $6$ écus, que reçoit celui qui a gagné le premier jeu ?
+\item Partie en trois jeux, $8$ écus contre $8$ : calculer la part de $A$ après
+  un jeu à rien, deux à rien, deux contre un. En déduire ce que « vaut » chacun
+  des trois jeux gagnés par $A$ (l'accroissement de sa part), et retrouver les
+  $\frac{3}{16}$, $\frac{3}{16}$, $\frac{2}{16}$ du feuillet.
+\item Partie en quatre jeux : vérifier les valeurs $\frac{15}{16}$, $\frac{14}{16}$,
+  $\frac{13}{16}$, $\frac{11}{16}$, $\frac{21}{32}$ du feuillet pour les positions
+  trois à rien, trois contre un, deux à rien, deux contre un, un à rien, et la
+  note selon laquelle « il vaut mieux avoir 2 jeux à 0 de 4 qu'un à 0 de deux ».
+\item La remarque « Autre » dit que, dans une partie en deux, « le premier vaudra
+  $\frac34$ ». Qu'est-ce qui est juste, qu'est-ce qui glisse ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item S'il ne manque rien au premier, il a gagné : $P(0,j) = 1$ ; s'il ne manque
+  rien à l'autre, il a perdu : $P(i,0) = 0$. Sinon, le jeu suivant est gagné par
+  l'un ou l'autre avec probabilité $\frac12$, et mène en $(i-1, j)$ ou $(i, j-1)$ ;
+  la part équitable est la moyenne des deux parts, ce qui est la « première
+  règle » du feuillet (avoir des chances égales d'obtenir $10$ ou $12$ vaut $11$).
+\item $P(1,1) = \frac12(1 + 0) = \frac12$ et $P(1,2) = \frac12\bigl(P(0,2) + P(1,1)\bigr)
+  = \frac12\bigl(1 + \frac12\bigr) = \frac34$. Sur $12$ écus, le gagnant du premier
+  jeu en reçoit $9$ et l'autre $3$.
+\item $P(1,1) = \frac12$, $P(1,2) = \frac34$, $P(2,1) = \frac14$, $P(2,2) = \frac12$,
+  $P(1,3) = \frac12(1 + \frac34) = \frac78$, $P(2,3) = \frac12(\frac78 + \frac12)
+  = \frac{11}{16}$. Un jeu à rien : $A$ doit en gagner deux, $B$ trois,
+  $P(2,3) = \frac{11}{16}$ ; deux à rien : $P(1,3) = \frac{14}{16}$ ; deux contre
+  un : $P(1,2) = \frac{12}{16}$. Partant de $\frac{8}{16}$, le premier jeu vaut
+  $\frac{11}{16} - \frac{8}{16} = \frac{3}{16}$, le second
+  $\frac{14}{16} - \frac{11}{16} = \frac{3}{16}$, et, si $B$ a gagné entre-temps
+  (deux contre un), le troisième vaut $1 - \frac{14}{16} = \frac{2}{16}$ à partir
+  de la position deux à rien ; les trois jeux de $A$ font bien
+  $\frac{3+3+2}{16} = \frac12$ de la mise totale, soit $8$ écus sur $16$. Ce sont
+  les nombres que donne la lettre de Pascal à Fermat du 29 juillet 1654 ($12$, $12$
+  et $8$ pistoles sur $64$) : la récurrence impose ces valeurs à quiconque la
+  résout juste, et le feuillet ne nomme personne.
+\item $P(1,4) = \frac12(1 + P(1,3)) = \frac{15}{16}$ (trois à rien) ;
+  $P(1,3) = \frac{14}{16}$ (trois contre un) ; $P(2,4) = \frac12\bigl(P(1,4) +
+  P(2,3)\bigr) = \frac12\bigl(\frac{15}{16} + \frac{11}{16}\bigr) = \frac{13}{16}$
+  (deux à rien) ; $P(2,3) = \frac{11}{16}$ (deux contre un) ;
+  $P(3,4) = \frac12\bigl(P(2,4) + P(3,3)\bigr) = \frac12\bigl(\frac{13}{16} +
+  \frac12\bigr) = \frac{21}{32}$ (un à rien). Deux jeux à zéro dans une partie en
+  quatre valent $\frac{13}{16}$, un jeu à zéro dans une partie en deux vaut
+  $\frac34 = \frac{12}{16}$ : la note a raison, l'écart est $\frac{1}{16}$.
+\item Il est juste qu'à égalité la partie recommence avec le nombre de jeux
+  restants. Mais « le premier vaudra $\frac34$ » confond la part du gagnant
+  ($\frac34$ de la mise) avec ce que vaut le jeu au sens employé partout ailleurs
+  sur le feuillet, l'accroissement de la part : $\frac34 - \frac12 = \frac14$.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{La formule générale des partis, et trois joueurs}{L1}
+\manuscrit{naf-5176}{40}{41}
+On garde les notations de l'exercice précédent.
+\begin{enumerate}
+\item Montrer que la partie est décidée au plus tard après $N = i + j - 1$ jeux,
+  et que l'on peut supposer, sans changer les chances, que l'on joue toujours ces
+  $N$ jeux. En déduire
+  \[
+  P(i,j) = \frac{1}{2^{N}}\sum_{k=i}^{N}\binom{N}{k}.
+  \]
+  Vérifier que cette formule satisfait la récurrence et les conditions au bord.
+\item Trois joueurs $A$, $B$, $C$ de même force jouent une partie en deux jeux.
+  Le feuillet considère deux positions : $A$ et $B$ ont chacun un jeu, $C$ aucun ;
+  puis $A$ a un jeu, $B$ et $C$ aucun. Calculer les parts, et retrouver
+  $\frac{12}{27}$, $\frac{12}{27}$, $\frac{3}{27}$ puis $\frac{17}{27}$,
+  $\frac{5}{27}$, $\frac{5}{27}$.
+\item La « règle générale » du feuillet : une égale facilité à obtenir $a$, $b$,
+  $c$ ou $d$ vaut $\frac{a+b+c+d}{4}$. Le feuillet la justifie par un jeu
+  équitable. Pour deux valeurs : montrer qu'avec $11$ en main, en jouant $11$
+  contre $11$ à condition que le gagnant donne $9$ au perdant, on se procure
+  exactement la même chance d'avoir $9$ ou $13$ ; généraliser à deux valeurs
+  $a < b$.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item En $N$ jeux, l'un des deux atteint son but : si le premier gagne moins de
+  $i$ jeux, l'autre en gagne au moins $N - (i-1) = j$. Deux joueurs ne peuvent pas
+  atteindre tous deux leur but dans ces $N$ jeux ($i + j > N$). Continuer à jouer
+  après la décision ne change pas le vainqueur ; le premier gagne donc si et
+  seulement si, parmi $N$ jeux indépendants équiprobables, il en gagne au moins
+  $i$, d'où la formule. Conditions au bord : pour $i = 0$ (et $j \ge 1$),
+  $N = j - 1$ et la somme porte sur tous les $k$ de $0$ à $N$ ; elle vaut $2^N$,
+  et $P = 1$. Pour $j = 0$ (et $i \ge 1$), $N = i - 1 < i$, la somme est vide et
+  $P = 0$. Récurrence : les positions $(i-1, j)$ et $(i, j-1)$ ont chacune
+  $N - 1$ jeux au plus à jouer, donc
+  $P(i-1,j) = 2^{-(N-1)}\sum_{k \ge i-1}\binom{N-1}{k}$ et
+  $P(i,j-1) = 2^{-(N-1)}\sum_{k \ge i}\binom{N-1}{k}$. Avec la formule de Pascal
+  $\binom{N}{k} = \binom{N-1}{k-1} + \binom{N-1}{k}$,
+  \[
+  \sum_{k \ge i}\binom{N}{k} = \sum_{k\ge i-1}\binom{N-1}{k} + \sum_{k \ge i}\binom{N-1}{k},
+  \]
+  et en divisant par $2^N$ on obtient $\frac12\bigl(P(i-1,j) + P(i,j-1)\bigr)$. Par
+  exemple $P(2,3) = \frac{1}{16}\bigl(\binom42 + \binom43 + \binom44\bigr) =
+  \frac{11}{16}$.
+\item Première position : au jeu suivant, $A$ gagne tout avec probabilité
+  $\frac13$, perd tout si $B$ gagne, et si $C$ gagne, chacun a un jeu et la part
+  de chacun est $\frac13$ par symétrie. Donc $A$ a
+  $\frac13\bigl(1 + 0 + \frac13\bigr) = \frac49 = \frac{12}{27}$, de même $B$, et
+  $C$ a $1 - \frac{24}{27} = \frac{3}{27}$. Seconde position : si $A$ gagne, il a
+  tout ; si $B$ (ou $C$) gagne, on est dans la première position avec $A$ parmi
+  les deux qui ont un jeu. Donc $A$ a
+  $\frac13\bigl(1 + \frac{12}{27} + \frac{12}{27}\bigr) = \frac{17}{27}$, et $B$
+  et $C$ ont chacun $\frac12\bigl(1 - \frac{17}{27}\bigr) = \frac{5}{27}$. Ce
+  sont les positions des propositions VIII et IX du traité de Huygens, et la
+  seconde est celle dont discutent Pascal et Fermat en 1654 ; rapprochements
+  seulement.
+\item En jouant $11$ contre $11$, le gagnant ramasse $22$ et en donne $9$ : il lui
+  reste $13$ ; le perdant reçoit $9$. Le jeu étant équitable, avoir $11$ en main
+  vaut avoir une chance égale d'obtenir $9$ ou $13$. En général, avec
+  $x = \frac{a+b}{2}$ en main, on joue $x$ contre $x$, le gagnant donnant $a$ au
+  perdant : le gagnant a $2x - a = b$, le perdant $a$. C'est la définition de
+  l'espérance d'une variable à deux valeurs équiprobables, justifiée par
+  l'équivalence avec un jeu équitable ; c'est aussi, presque mot pour mot, la
+  démonstration de la première proposition du traité de Huygens de 1657.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Un six en quatre coups, deux six en vingt-quatre}{Lycée}
+\manuscrit{naf-5176}{42}{42}
+« Pour les partis des dés », le feuillet calcule la part de qui entreprend
+d'amener un six avec un dé en $n$ coups : $\frac{11}{36}$, $\frac{91}{216}$,
+$\frac{671}{1296}$, \ldots\ ; puis celle de qui entreprend d'amener deux six
+d'un coup de deux dés en $n$ coups, et affirme qu'« à le prendre en 24 coups on a
+un peu de désavantage, et qu'en 25 coups on a un peu d'avantage ».
+\begin{enumerate}
+\item Montrer que la probabilité d'amener au moins un six en $n$ coups est
+  $p_n = 1 - (5/6)^n$, et retrouver les fractions du feuillet pour $n = 2, 3, 4$.
+  Pourquoi peut-on jouer « 671 contre 625 » en quatre coups ?
+\item Trouver le plus petit $n$ tel que $p_n \ge \frac12$, par un calcul de
+  logarithmes. Montrer qu'aucun $n$ ne donne exactement $\frac12$.
+\item Même question pour deux six avec deux dés : $q_n = 1 - (35/36)^n$. Vérifier
+  l'affirmation du feuillet pour $24$ et $25$.
+\item La règle de proportion ($4$ coups pour une chance sur $6$, donc $24$ coups
+  pour une chance sur $36$) donne-t-elle le bon nombre ? Pourquoi ?
+\item La page s'arrête sur la question : « avec combien de dés entreprendre de
+  faire du premier coup deux six ». Y répondre, en entendant « au moins deux
+  six ».
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Les coups sont indépendants ; ne jamais amener six en $n$ coups a la
+  probabilité $(5/6)^n$. $p_2 = \frac{36-25}{36} = \frac{11}{36}$,
+  $p_3 = \frac{216-125}{216} = \frac{91}{216}$, $p_4 = \frac{1296 - 625}{1296}
+  = \frac{671}{1296}$. Sur $1296$ cas équiprobables, $671$ sont favorables et
+  $625$ contraires : le pari est légèrement avantageux.
+\item $p_n \ge \frac12 \iff (5/6)^n \le \frac12 \iff n \ge \frac{\ln 2}{\ln(6/5)}
+  \approx 3{,}80$ : $n = 4$. Égalité : il faudrait $6^n = 2\cdot 5^n$, impossible
+  puisque $5$ ne divise aucune puissance de $6$ (ou : $6^n$ est divisible par $3$,
+  pas $2\cdot 5^n$).
+\item $q_n \ge \frac12 \iff n \ge \frac{\ln 2}{\ln(36/35)} \approx 24{,}6$ : $n = 25$.
+  On calcule $q_{24} \approx 0{,}4914 < \frac12 < q_{25} \approx 0{,}5055$ : le
+  feuillet a raison. Là encore, $36^n = 2 \cdot 35^n$ est impossible ($3$ divise
+  le premier membre et non le second).
+\item Non. Pour $n$ petit, $1 - (1 - x)^n \approx nx$, ce qui justifie la
+  proportion quand la probabilité reste faible ; mais ici les nombres de coups
+  cherchés ne rendent pas $nx$ petit ($4/6$ et $24/36$ valent $\frac23$), et
+  l'approximation surestime la probabilité. Les deux seuils ne sont pas dans le
+  rapport $6$ : $3{,}80 \times 6 = 22{,}8$, alors que le vrai seuil est $24{,}6$.
+  C'est le problème que la tradition attache au chevalier de Méré (lettre de
+  Pascal à Fermat du 29 juillet 1654) ; le feuillet ne nomme personne.
+\item Avec $k$ dés, la probabilité d'au moins deux six est
+  $1 - (5/6)^k - k\cdot\frac16(5/6)^{k-1}$ (on retire les cas zéro et un six).
+  On trouve $0{,}4573$ pour $k = 9$ et $0{,}5155$ pour $k = 10$ : il faut dix
+  dés. C'est la question de la proposition XII de Huygens, avec la même réponse ;
+  la page, elle, reste blanche après la question.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le tirage de Gênes et les banquiers}{L1}
+\manuscrit{naf-5176}{49}{50}
+« C'est la coutume à Gennes » de tirer au sort cinq noms, ici parmi cent. Des
+banquiers prennent des paris sur des listes de cinq noms : ils paient $20\,000$
+pistoles pour une si les cinq noms du parieur sortent, $5000$ pour quatre, $300$
+pour trois et $4$ pour deux.
+\begin{enumerate}
+\item Calculer le nombre de tirages possibles, puis le nombre de tirages
+  contenant exactement $k$ des cinq noms du parieur, $0 \le k \le 5$. Le feuillet
+  exprime ces nombres par des nombres figurés : « $10 \times$ triangle de $94$ »,
+  « $10 \times$ tétraèdre de $93$ », « $5\times$ triangle-triangle de $92$ ».
+  Identifier ces nombres figurés à des coefficients binomiaux.
+\item Démontrer l'identité que le feuillet donne pour « fondement » :
+  $\binom{95}{2} = 94 + 93 + \cdots + 1$, puis la formule générale
+  $\binom{n+1}{k+1} = \sum_{m = k}^{n}\binom{m}{k}$.
+\item Pour chaque $k \ge 2$, le feuillet donne le rapport des chances contre aux
+  chances pour, divisé par le gain. Le calculer. Le feuillet écrit
+  $3764\frac34$ pour $k = 5$ et « $13\frac12$ peu moins » pour $k = 2$ :
+  corriger.
+\item Calculer l'espérance du gain d'un parieur qui mise une pistole, et la part
+  des mises que le banquier garde en moyenne ; puis la même chose si le banquier
+  ne paie rien pour deux noms. Retrouver les rapports « un peu plus de
+  $3\frac12$ » et « un peu plus de $4\frac34$ » du feuillet.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $\binom{100}{5} = \frac{100\cdot 99\cdot 98\cdot 97\cdot 96}{120} = 75\,287\,520$.
+  Exactement $k$ noms du parieur et $5-k$ des $95$ autres :
+  $\binom5k\binom{95}{5-k}$, soit $57\,940\,519$ ($k=0$), $15\,917\,725$ ($k=1$),
+  $1\,384\,150$ ($k=2$), $44\,650$ ($k=3$), $475$ ($k=4$), $1$ ($k=5$), de somme
+  $75\,287\,520$. Le « triangle de $94$ » est $1 + \cdots + 94 = \binom{95}{2} =
+  4465$ ; le « tétraèdre de $93$ », somme des $93$ premiers triangles, est
+  $\binom{95}{3} = 138\,415$ ; le « triangle-triangle de $92$ » est
+  $\binom{95}{4} = 3\,183\,545$. D'où $10 \times 4465 = 44\,650$,
+  $10 \times 138\,415 = 1\,384\,150$, $5 \times 3\,183\,545 = 15\,917\,725$ : les
+  nombres du feuillet sont justes.
+\item Les paires de non-nommés : le premier s'associe aux $94$ suivants, le second
+  aux $93$ suivants, etc., d'où $\binom{95}{2} = 94 + \cdots + 1$. En général,
+  classer les parties à $k+1$ éléments de $\{0, \dots, n\}$ selon leur plus grand
+  élément $m$ ($k \le m \le n$) : il y en a $\binom{m}{k}$ de plus grand élément
+  $m$, d'où $\binom{n+1}{k+1} = \sum_{m=k}^n \binom{m}{k}$.
+\item Avec $T = 75\,287\,520$ et $c_k$ le nombre de cas favorables :
+  $\frac{T - c_k}{c_k\,g_k}$ vaut $\frac{75\,287\,519}{20\,000} = 3764{,}376$
+  pour $k = 5$, soit $3764\frac38$ et un peu plus, non $3764\frac34$ ;
+  $31{,}700$ pour $k = 4$ ($31\frac{7}{10}$ peu moins, juste) ; $5{,}617$ pour
+  $k = 3$ ($5\frac35$ peu plus, juste) ; $\frac{73\,903\,370}{1\,384\,150 \times 4}
+  = 13{,}348$ pour $k = 2$, soit $13\frac13$ peu plus, non $13\frac12$ peu moins.
+\item Somme des gains pondérés : $1\cdot 20\,000 + 475\cdot 5000 + 44\,650 \cdot 300
+  + 1\,384\,150\cdot 4 = 21\,326\,600$. L'espérance du gain pour une pistole
+  misée est $\frac{21\,326\,600}{75\,287\,520} \approx 0{,}283$ pistole : le
+  banquier garde en moyenne $72\,\%$ des mises. Le rapport
+  $\frac{75\,287\,520}{21\,326\,600} \approx 3{,}530$ est bien « un peu plus de
+  $3\frac12$ ». Sans paiement pour deux noms, il reste $15\,790\,000$, soit
+  $0{,}210$ par pistole, un rapport de $4{,}768$ (« un peu plus de $4\frac34$ »),
+  et le banquier garde $79\,\%$.
+\end{enumerate}
+\end{solution}
+
+\section*{Bibliographie}
+\begin{itemize}
+\item Apollonius de Perge, \emph{Coniques} (tangentes et foyers de l'ellipse et
+  de l'hyperbole).
+\item Autolycus, \emph{De la sphère en mouvement} ; Théodose,
+  \emph{Des habitations} ; Euclide, \emph{Phénomènes} --- dans les versions de
+  Maurolico copiées en Latin 17859.
+\item Christiaan Huygens, \emph{De ratiociniis in ludo aleae}, 1657.
+\item Francesco Maurolico, volume sur la sphère (\emph{Sphériques} de Théodose, de
+  Ménélas et de Maurolico, textes grecs, tables et problèmes), Messine, Petrus
+  Spira, 1558, dont Latin 17859 est une copie ; \emph{Opuscula mathematica},
+  1575.
+\item Ménélas d'Alexandrie, \emph{Sphériques}, livre III.
+\item Blaise Pascal, lettre à Pierre de Fermat du 29 juillet 1654.
+\item Regiomontanus (Johannes de Monteregio), table des tangentes (« table
+  féconde ») et règles de calcul commentées par Maurolico.
+\end{itemize}
+
+\end{document}
