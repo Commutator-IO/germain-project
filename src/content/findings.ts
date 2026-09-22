@@ -332,4 +332,131 @@ export const FINDINGS: Finding[] = [
     settle:
       "Read Bellhouse 1991 and the sources it cites for the earliest known computations of lotto odds. Only then can it be said whether an undated seventeenth-century French computation of this kind is recorded. A date for hand D would have to come from elsewhere; the leaf gives none.",
   },
+  // --- NAF 9544 — /find-novelty, 22 September 2026, on claude-opus-5-5, the
+  // model that wrote transcripts/naf-9544/naf-9544.modern.tex. Six entries, to
+  // be appended to FINDINGS in src/content/findings.ts by the coordinator.
+  // Search conditions for this pass: the web_search tool returned HTTP 403,
+  // the BnF Archives et manuscrits site and Gallica's SRU returned 403 to
+  // WebFetch, and the Google Books API returned 429; what was searched was
+  // therefore EMLO's Solr index, the Internet Archive (full text of the
+  // volumes named below) and DBNL. Every entry says which.
+  {
+    id: 'naf-9544-mersenne-petau-de-waard',
+    cote: 'naf-9544',
+    pages: 'views 33, 37–40 (the letter on the leaf the running ink series numbers 25)',
+    kind: 'codicological',
+    claim:
+      "Mersenne's letter to Denis Petau and the sheet of observations it sent — the pole height at Paris from β Ursae Minoris on 3 January 1621, from the polar star on 2–5 January 1621 and from the Sun on 23 and 25 December 1620 — are NOT new: de Waard printed them as letter 28 of the Correspondance du P. Marin Mersenne, tome I, pp. 208–214, and EMLO catalogues the letter at « nouv. acq. fr. 9544, f. 25r ». The entry is kept, matched, for the folio, which it lets this edition use, and for the arithmetic, which this edition checked.",
+    basis:
+      "The letter (view 39 R, dorse view 40) is signed « Mar. Mers. M. », asks Petau to return « quelques observations … de Jan. 1621 » on « la hauteur du pole pour latitude de Paris », and names « le R. pere Grandamy » (read with doubt). The observation sheet (view 38, verso view 39 L) is folded as a letter and addressed « Au Reverend pere Denis Petau de la Société de Jesus Au College de Clermont ». The sale cutting on view 33 (« Vente Charavay, 6 février 1889 ») describes both. EMLO's record of the letter adds, in a note, that « in an appendix to this letter, Mersenne passes on some astronomical observations ».",
+    ours:
+      "The recomputation of the sheet, and only that. The ecliptic-to-equatorial conversion, done on the leaf by ruler and compass on a projection onto the solstitial colure and by sine tables, is exactly sin δ = sin β cos ε + cos β sin ε sin λ; every sine, product and difference on the leaf is right, and the declination 75°47′20″ is one second from the exact value. The one error is 90° − 75°47′20″ written 14°12′35″ for 14°12′40″, so that the pole height 48°47′35″ should be 48°47′40″ on the sheet's own data; the transcription had flagged it. The polar-star mean 48°45′37½″ and half-difference 2°43′7½″ are right, and the two solar declinations agree with Tycho's obliquity to 3″. Whether de Waard's edition notes the 5″ slip was not checked. EMLO dates the letter 1625, marked inferred and uncertain (« Mersenne writes in this letter about topics which interested him in April 1625 »); the leaf carries no date and this edition adopts none.",
+    literature: [
+      "Early Modern Letters Online, Solr index (emlo.bodleian.ox.ac.uk/solr/works and /solr/manifestations), queried 22 September 2026 — read: work 3ee3e977-f10e-4ebf-8208-8e2d1344fb3c, « 1625: Mersenne, Marin … to Pétau, Denis », language « French (main language), Latin (some) »; manuscript manifestation « nouv. acq. fr. 9544, f. 25r »; printed manifestation « Correspondance du P. Marin Mersenne, ed. Cornelis de Waard et al., vol. 1, letter 28, pp. 208–14 ». A search of the manifestations for « 9544 » returns this letter and no other item of NAF 9544.",
+      'De Waard, Correspondance du P. Marin Mersenne, tome I (1933) — NOT read: on the Internet Archive it is access-restricted (see latin-11195-collective-title-no-letters). Known here only through EMLO.',
+    ],
+    status: 'matched',
+    settle:
+      "Settled against EMLO on 22 September 2026. What remains is to open de Waard t. I, letter 28, and check (a) that its appendix is this sheet, (b) its folio citation for the observation sheet (the running series gives 24), and (c) whether it notes the 14°12′35″ slip. The transcription must not be corrected from de Waard's text: its unread words stay unread until a human reads the leaf.",
+  },
+  {
+    id: 'naf-9544-running-ink-series-is-foliation',
+    cote: 'naf-9544',
+    pages: 'views 4–54 (ff. 1–36)',
+    kind: 'codicological',
+    claim:
+      "In NAF 9544 the thin ink figure at the top right of each leaf, running 1 (view 4) to 36 (view 54) without a gap, is the foliation the literature cites: EMLO gives Mersenne's letter as « nouv. acq. fr. 9544, f. 25r », and the letter's leaf (view 39 R) carries that series' figure, read 25 or 26 by the transcription and forced to 25 by its neighbours. This yields a view-to-folio table for the whole album, which no source searched gives, the album having been cited by folio only.",
+    basis:
+      "The three transcriptions read the series independently, batch by batch, and each declined to write \\folio{} from a greyscale scan: 1 (v. 4), 2 (v. 5), 3 (v. 6 R), 4 (v. 7), 5 (v. 8), 6 (v. 9 R), 7 (v. 11), 8 (v. 12), 9 (v. 14), 10 (v. 15 R), 11 (v. 17, receipt), 12 (v. 17, wrapper), 13 (v. 18), 14 (v. 20, wrapper), 15 (v. 20, slip), 16 (v. 21), 17 (v. 22 R), 18 (v. 24), 19 (v. 27), 20 (v. 30), 21 (v. 31), 22 (v. 32 R), 23 (v. 33), 24 (v. 38), 25 or 26 (v. 39 R), 26 (v. 41), 27 (v. 42), 28 (v. 44 R), 29 (v. 45 R), 30 (v. 46 R), 31 (v. 47 R), 32 (v. 48 R), 33 (v. 51), 34 (v. 52 R), 35 (v. 53 R), 36 (v. 54 R). It ends on 36, the count of the binder's certificate on view 3 (« Volume de 36 Feuillets — 27 Novembre 1899 »). EMLO's « f. 25r » for the letter coincides with the figure on its leaf, and with 24 on the leaf before and 26 on the leaf after, which fixes the doubtful figure on view 39 R as 25.",
+    ours:
+      "The concordance itself. It rests on one external citation, EMLO's, and on the unbroken run; the series was not seen on the images by this pass, which read only the transcriptions. No \\folio{} has been written into any transcription on the strength of this entry, and changing the files is a separate decision. Versos are not numbered, so f. Nv is the left page of the view after f. Nr where the leaf is shown opened.",
+    literature: [
+      "EMLO, manuscript manifestation c26f0df2-6416-4d33-93f1-17575f4c67f3 — read: « nouv. acq. fr. 9544, f. 25r ».",
+      'BnF Archives et manuscrits, notice for NAF 9544 — NOT read: the site returned HTTP 403 to this pass. Whether the notice gives a leaf count or a contents list by folio is therefore unknown here.',
+    ],
+    status: 'candidate',
+    settle:
+      "One look at view 39 R and at any two other leaves on the full-resolution images, to confirm that the figure is the library's (not a dealer's) and reads 25 there; or the BnF notice, if it lists the contents by folio. Either would let the three transcriptions write \\folio{} and pieces.json record the album piece by piece.",
+  },
+  {
+    id: 'naf-9544-libri-description-supplement-latin-218',
+    cote: 'naf-9544',
+    pages: 'views 41–55 (the description); views 54–55 (supplément latin 218)',
+    kind: 'codicological',
+    claim:
+      "Views 41–55 of NAF 9544 carry a French description of five Roberval manuscripts headed « Manuscrit de Roberval. par G. Libri », and its account of « MS. suppl. lat. 218 », three volumes, describes today's Latin 11195 as its tome I, mark for mark, and gives a contents list, folio by folio, for tomes II and III — the two volumes of the group Latin 11195–11197 that the BnF does not describe and has not digitised. No source searched cites this description.",
+    basis:
+      "Libri: tome I « porte au r. du 2e feuillet le n° 171 et le titre : [De] recognitione æquationum, au v. le n° 26. L'ouvrage commence au feuillet suivant et contient 37 pages », with quadratics in four chapters, cubics in six, quarto-quadratics in ten, and ends with « une petite dissertation latine sur l'art de voler ; et … un article italien avec figures » naming Galileo and Archimedes. The project's transcription of Latin 11195 reads, independently: the old shelfmark « Suppl.t lat. 218. A. » on the flyleaf (v. 1) and « Suppl.t Lat. no 218. » / « Suppl.t l. 218. + I. » on v. 3; the title leaf v. 2 R with an ink « 171 » over « De Recognitione Æquationum »; « 26 » on its verso (v. 3 L); the treatise paginated 1 to 37 (v. 3 R – 23 R), Caput 1–4 quadratic, six cubic capita, ten quarto-quadratic; then « Ars Volandi », Latin notes on flight and an Italian treatise with two drawings naming Galileo, Sagredo and Archimedes (v. 26–37). For tome II (41 ff., « n° 27 » on f. 2v, « n° 119 » on f. 3r) Libri lists an Appendix ad tractatum de legitimo Dioptrarum usu (f. 3r), a problem to Mersenne of 10 November 1642 (f. 17r), a letter extract to Mersenne of 3 June 1639 (f. 19r) and the De Vacuo to Des Noyers of May 1648 (f. 25r); for tome III (« 68 » ff., second figure blotted; « n° 28 » on f. 1v, « n° 172 » on f. 2r) ten items from f. 2r to f. 55r: Roberval to Torricelli, Kalends of January 1646; Huygens, Leiden, [2?] October 1646; Torricelli to Roberval and to Mersenne, 7 July 1646; Torricelli to Carcavi, 8 July 1646; Fermat's new use of radicals in analysis; a copy of Fermat to Carcavi, 20 August 1650; and others.",
+    ours:
+      "The concordance of tome I with Latin 11195, from the two transcriptions. Two further identifications are offered as leads and not asserted. (1) Which of Latin 11196 and 11197 is Libri's tome III: Adam and Tannery cite Roberval's letter to Torricelli of 1 January 1646 at « lat. 11196, f. 1 », and it is the first item of Libri's tome III (his f. 2r, after a flyleaf numbered 28 on its verso), which points to Latin 11196 = tome III; but the BnF concordance recorded in latin-11195-collective-title-no-letters gives 11196 = Supplément latin 218/2, and the leaf counts do not settle it (tome II, 41 ff., against 40 ff. for 218/3; tome III, « 68 » read with a blotted figure, against 55 + 7bis for 218/2). (2) Libri's Huygens letter, dated Leiden, [2?] October 1646, on the motion of bodies and the parabola of projectiles, answers to Christiaan Huygens's letter to Mersenne of [28 October 1646], which the Œuvres complètes say Henry printed « d'après une copie de la Bibliothèque Nationale ». The description is not attributed beyond its heading: whether it is Libri's autograph is not settled by the leaves. It bears « Vente B. Boncompagni, VI. Autogr. (1898), n° 673 ». No date is inferred for it.",
+    literature: [
+      "The project's transcription of Latin 11195 (transcripts/latin-11195/batch-01.fr.tex, batch-02.fr.tex) and the entries latin-11195-collective-title-no-letters and latin-11195-recognitione-aequationum, whose BnF readings (the group title, the concordance Supplément latin 218/1–3 = Latin 11195–11197, no contents described, only 11195 digitised) are relied on and not re-read: the BnF site returned 403 to this pass.",
+      "Adam and Tannery, Œuvres de Descartes IV, 571, as quoted in latin-11195-collective-title-no-letters — not re-read.",
+      "Œuvres complètes de Christiaan Huygens, tome I, no. 14 (DBNL, huyg003oeuv01_01_0015) — read: « La minute se trouve à Leiden, coll. Huygens … Elle a été publiée par M. Henry, d'après une copie de la Bibliothèque Nationale à Paris, qui diffère de la minute. » The shelfmark of that copy is not given there.",
+      "EMLO, Solr index — searched for manuscript manifestations carrying « 11195 », « 11196 », « 11197 », « 7226 » or « 12279 »: none at the BnF (three hits, all Hartlib Papers). Its Roberval–Torricelli letters of 1643–1647 carry printed sources only.",
+      "Not searched, and the first place this can fail: Charles Henry, Huygens et Roberval. Documents nouveaux (Leiden, 1880), which printed from the BnF the copy the Huygens Œuvres mention and very probably describes the Supplément latin 218 volumes; an Internet Archive search on its title found nothing, and Google Books returned 429. Also not searched: Libri's own publications, for a printed version of this description; the Boncompagni sale catalogue of 1898.",
+    ],
+    status: 'candidate',
+    settle:
+      "Read Henry 1880 for any description of Supplément latin 218 or citation of Libri's inventory; if it has one, this entry becomes matched. Independently, the reading room or the BnF notices with folios would settle which of Latin 11196 and 11197 is Libri's tome III.",
+  },
+  {
+    id: 'naf-9544-libri-recognitione-other-redaction',
+    cote: 'naf-9544',
+    pages: 'view 54 (Libri on tome I); Latin 11195 views 2–23',
+    kind: 'codicological',
+    claim:
+      "The anonymous « De Recognitione Æquationum » of Latin 11195 is not the text printed under Roberval's name with the same title in the Académie's Mémoires … avant son renouvellement en 1699 (tome VI of the Paris edition, tome III of the Hague reprint of 1731, pp. 71 ff., « auctore Ægidio Personerio de Roberval »), but it teaches the same doctrine in the same vocabulary — positiva supra, positiva infra, constitutio, recognitio. Libri made this comparison on view 54 of NAF 9544 and judged that « la rédaction et la disposition des matières ne ressemblent pas à celles du manuscrit ». This partly answers the check that latin-11195-recognitione-aequationum leaves open.",
+    basis:
+      "Libri, view 54: « Un ouvrage [du] même titre est imprimé dans le 6e vol. des anciens mém[oires] de l'Académie des Sciences, mais la rédaction et la dispo[sition] des matières ne ressemblent pas à celles du manuscrit. » The printed text, read here in the Hague 1731 tome III, opens « Æquationem recognoscere, est statum illius examinare … » and treats the quadratics in a single « Caput unicum » before « Caput primum » of the cubics; the manuscript opens « Ideo is tractatus d[icitu]r de æquationum recognitiōe quia in ipso investigantur modj … » and gives the quadratics four capita (v. 4–5). Both divide true sides into « positiva supra » and « positiva infra ». The printed volume's contents list also carries « De resolutione geometrica planarum et cubicarum æquationum », the Torricelli–Roberval letters, and the « Observations sur la composition des mouvemens », whose last example is the thirteenth, « de la Parabole de M. des Cartes » — which bears out Libri's statement that the printed Observations stop there.",
+    ours:
+      "The collation, which is slight: the opening sentences, the chaptering of the quadratics, the shared vocabulary. No attribution follows from it. That the manuscript shares the printed text's terms is consistent with its being a pupil's or a copyist's redaction of Roberval's teaching and with other explanations; its two citations of « D. Rob. » for borrowed lemmas are still what the leaves themselves say about Roberval. Libri's classing of the manuscript among « Manuscrits de Roberval » is a fact about Libri. The relation of the two texts beyond their openings and first chapters was not studied.",
+    literature: [
+      "Mémoires de l'Académie royale des sciences, contenant les ouvrages adoptez par cette Académie avant son renouvellement en 1699, Tome troisième, La Haye, P. Gosse et J. Neaulme, 1731 — Internet Archive bub_gb_SsbZh3yaZiIC, OCR text read 22 September 2026: contents « Ouvrages de M. de Roberval », De recognitione æquationum at p. 71, its title page and first pages, the chapter heads. The Paris edition's tome VI, which Libri cites, was not opened.",
+      "Internet Archive mmoiresdelacadm16fragoog (1736) and bub_gb_Y2s4OHfXijIC, bub_gb_-0_ltNh5y_YC, bub_gb_rNhNPvZJ618C (1731) — searched for « recognitione »: no hit; they are other tomes.",
+      'Not searched: any study of Roberval\'s algebra that compares the printed De recognitione with manuscripts; Jean Itard and the Roberval literature named as unsearched in latin-11195-recognitione-aequationum.',
+    ],
+    status: 'candidate',
+    settle:
+      "Collate the manuscript and the printed text proposition by proposition — whether the printed text has the manuscript's limitations, its « D. Rob. » lemmas and its ten capita on the quarto-quadratics. Then update latin-11195-recognitione-aequationum, whose settle this entry answers in part; that entry has not been edited.",
+  },
+  {
+    id: 'naf-9544-germain-fragment-idee-fondamentale',
+    cote: 'naf-9544',
+    pages: 'views 21–23 (the leaves paginated 16 and 17)',
+    kind: 'codicological',
+    claim:
+      "NAF 9544 holds a two-leaf philosophical fragment headed « [Ce qui suit s'est trouvé dans les papiers laissés par Mlle Germain] », on the fundamental idea of a science, which is printed neither in the Considérations générales sur l'état des sciences et des lettres (1833) nor in Stupuy's Œuvres philosophiques de Sophie Germain (1896), including its Pensées diverses.",
+    basis:
+      "The fragment runs from « L'idée fondamentale d'une science n'est pour celui qui en commence l'étude que la déterminante du sujet de cette science » to « jamais compliquées de considerations qui lui soient étrangères ». It quotes, underlined, a doctrine it attacks — « l'inconnu est dans le connu ; lorsque l'on apprend on va du même au même ; une science ne renferme qu'une seule idée » — and it answers the claim that reasoning is « une operation mécanique exécutée sur des signes » with « La certitude mathématique tient a l'identité du sujet et la langue des calculs est bien faite parceque … ». The heading, in a heavier pen, and the wrapper on view 20, « Sofia Germain (autogr.) », carry the attribution.",
+    ours:
+      "The negative search, which is only as good as the OCR it ran on. The identification of the doctrine attacked with Condillac's is the modernised reading's and is not part of the claim. The attribution to Germain is the heading's and the wrapper's; the transcription found the hand compatible with her autograph at Français 9115 view 222 and did not conclude.",
+    literature: [
+      "Considérations générales sur l'état des sciences et des lettres aux différentes époques de leur culture, 1833 — Internet Archive considrationsgn00germgoog, full OCR text searched 22 September 2026 for « idée fondamentale », « signes de signes », « même au même », « opération mécanique », « inconnu est dans », « inégalement connu », « science toute entière », with loose patterns for OCR damage: no hit. « La langue des calculs » occurs, in other contexts.",
+      "Œuvres philosophiques de Sophie Germain, suivies de pensées et de lettres inédites, ed. H. Stupuy, 1896 — Internet Archive oeuvresphilosoph00germ, full OCR text searched for the same phrases and for « certitude mathématique », « la déterminante »: no hit; the Pensées diverses were scanned for « signe », « fondament », « connu », « identit », « définition »: nothing matching.",
+      "Not searched: Henry 1879, Revue philosophique 8, 619–641, which printed « documents nouveaux » from her papers; the first edition of Stupuy (1879); Bucciarelli and Dworsky 1980; Del Centina and Fiocca 2018 (paywalled, per the NAF 4073 entries). Web search was unavailable (HTTP 403).",
+    ],
+    status: 'candidate',
+    settle:
+      "Read Henry 1879 and Stupuy 1879 for the phrase « l'idée fondamentale d'une science ». If neither prints it, the fragment stands as unpublished on the searched evidence; if one does, the entry becomes matched and the printed text dates the heading's « papiers laissés ».",
+  },
+  {
+    id: 'naf-9544-germain-purchase-1884',
+    cote: 'naf-9544',
+    pages: 'views 20, 24–28',
+    kind: 'historical',
+    claim:
+      "The Germain fragment of NAF 9544 was bought in Paris for Baldassarre Boncompagni on Monday 30 June 1884, from the « cabinet Dubrunfaut », and sent to him in Rome the next day; it later passed with his collection into the album the BnF bound in 1899. No source searched records this provenance.",
+    basis:
+      "Dated sources on the leaves: a telegram received at Rome on 28 June 1884, « ROME PARIS NO 32042 10 28/6/84 6/30 SR — RECU TELEGRAMME ACHAT AUTOGRAPHE GERMAIN », addressed « BALTHASAR BONCOMPAGNI PALAIS PIOMBINO ROMA » (views 27–28); a telegram received at Rome on 30 June 1884 at 19 h, deposited in Paris on the 30th at 4.35, « GERMAIN ACHETE 29 PART DEMAIN », same addressee (« BONCOMPAGNIE » on the strip; views 24–26); and the slip under the wrapper « 677 / Sofia Germain (autogr.) », « Sous ce pli l'autographe de Sophie Germain, acheté le lundi, 30 juin, (cabinet Dubrunfaut). La couverture imprimée Charavay sera envoyée avec une brochure quelconque. A. M. » (view 20). 30 June 1884 was a Monday.",
+    ours:
+      "The weekday computation, which is what ties the slip, which has no year, to the telegrams of 1884; the order of the operations (order received on the 28th, purchase and dispatch announced on the 30th). The « 29 » of the second telegram has no unit and is not interpreted. The initials « A. M. » are not resolved: Boncompagni's Paris correspondents are the place to look, and none is named here. That the wrapper's « 677 » is the piece's lot number in the Boncompagni sale of 1898 (the Libri description in the same album bears « Vente B. Boncompagni, VI. Autogr. (1898), n° 673 ») is an inference from proximity and is not claimed. The telegrams' year rests on the printed strip « 28/6/84 » and on a hand-completed « 188[4] » whose last figure is ill-formed.",
+    literature: [
+      "Not searched in substance: web search was unavailable (HTTP 403), and nothing on Boncompagni's autograph purchases, the Dubrunfaut sale or the 1898 Boncompagni sale catalogue could be reached. The entry is written as the leaves give it so that the check can be made.",
+      "Del Centina and Fiocca 2018 — not read (paywalled); a thorough account of Germain's manuscripts may record the provenance of this piece.",
+    ],
+    status: 'candidate',
+    settle:
+      "Find the catalogue of the Dubrunfaut autograph sale of June 1884 (Charavay, by the slip) and the Boncompagni sale catalogue of 1898, part VI, lots 673 and 677: the first would give the lot and the price (and perhaps the « 29 »), the second would confirm the passage through Boncompagni's collection to the BnF.",
+  },
 ];
