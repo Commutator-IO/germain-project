@@ -1,0 +1,1282 @@
+% NAF 5161 — lecture modernisée du volume entier.
+%
+% Pass: Opus 5.5 (claude-opus-5-5), 2026-09-22 — first pass, unchecked against
+% the views by a human, and an interpretation rather than a record. Where this
+% file and the transcriptions differ in substance, the transcriptions
+% (batch-01.fr.tex, batch-02.fr.tex, batch-03.fr.tex) are the record.
+%
+% Sources read: the three batch transcriptions of this volume, in full, twice —
+% once for the mathematics, once for the apparatus. Together they cover views
+% 1–43, the whole volume. No image was consulted. The mathematics, the words
+% quoted and the gaps are the transcriptions' and nothing else: no printed
+% edition was used to fill a gap, settle a word or supply a line, and where a
+% transcription has \ill{} this reading keeps the gap. During the same session
+% the find-novelty search opened Delisle's Catalogue des fonds Libri et Barrois
+% (1888) and Adam–Tannery's Œuvres de Descartes (I, II, IV) to see where the
+% literature locates these pieces. Two things only come from there, and each is
+% marked where it is used: the folio numbers the literature cites, placed in
+% three section titles, and the attributions it proposes, reported in footnotes
+% as proposals and adopted nowhere.
+%
+% What the volume turned out to be. An unsorted dossier of seven pieces, in at
+% least five hands, on or against Descartes, plus library leaves:
+%
+%   v. 2       nineteenth-century title leaf and the 1888 certificate
+%   v. 3–9     piece 1 « Deffauts de quelques reigles du Sr Cart. » (hand 1)
+%   v. 11–20   piece 2 « Erreurs du Sr des Cartes touchant le nombre des
+%              Racines » (hand 1)
+%   v. 23–26   piece 3 against « le Methodiste »: equations of the second
+%              degree and the locus ad quatuor lineas (hand 2); unfinished
+%   v. 27–28   piece 4, a working note: rational right triangles of area 6
+%              (hand 3), with tables and two drawings of tubes
+%   v. 29–30   piece 5 « Copie de la lettre de Mr Roberval », four points
+%              against Descartes on the centre of agitation (hand 4); the
+%              hardest hand, about a third of its words \ill{} or doubtful
+%   v. 31–39   piece 6, fair copy (hand 5): the centre of agitation of a sector
+%              of a right cylinder, against « M. D. C. »; figure leaf v. 36
+%   v. 41–43   an address panel « Pour le Reuerend Pere Mersenne » (v. 41),
+%              then piece 7, an unsigned letter to « Mon R. Pere » on the
+%              theses of « le P. Fabri » (v. 42), and an archival note (v. 43)
+%
+% The reading reorders only once: piece 6 before piece 5, because piece 5 is a
+% rejoinder that takes up piece 6's last paragraph almost word for word; no
+% date is inferred from that.
+%
+% Notation translated, each with a footnote at first use: « egal a » and « egal
+% a rien » (no sign of equality on the leaves), Roman-numeral exponents
+% A^{ii}, A^{iii}, A^{iv}, the column layout of products with « 0 » holding a
+% vanished term, « racines vrayes / fausses » (positive / negative), « reelles /
+% imaginaires », « quantité connue / inconnue », « Equation quarrée / du premier
+% degré », « changements de signes » and « deux signes semblables qui
+% s'entresuivent » (variations and permanences), « costé droit », « costé
+% traversant », « asymptotes », « lieu solide », « Δ », « sex^{ple} », « R. du
+% q. », « centre d'agitation / de percussion », « aissieu », « triligne aigu
+% parabolique », « trait de compas ».
+%
+% Modern names attached, each where the statement coincides and each footnoted
+% as later than the leaves where it is: the factor and remainder theorems;
+% Viète's relations; the fundamental theorem of algebra; Descartes's rule of
+% signs in its exact form (with the parity refinement); complex roots; Euclid
+% II.5 as AM–GM; the hyperbola referred to its asymptotes (Apollonius II.4,
+% II.12); congruent numbers and the duplication of a point on
+% y^2 = x^3 - n^2 x; moment of inertia, centre of oscillation and centre of
+% percussion (Huygens 1673); complete elliptic integrals of the second kind.
+%
+% Every computation was redone, and the recomputations are this reading's own.
+% Where a leaf is loose or wrong, the reading states what is true and footnotes
+% the leaf: the missing +XA of v. 4, the +BC of v. 4, the partial substitutions
+% of v. 6, the doubtful « BSS » of v. 16, the « AA − SA + X » of v. 17, the root
+% « 39 » (26 is right) and « 2498 » (2496 gives 12) of v. 18, the « two false
+% roots » of v. 19, false as transcribed (the « deux autres » equations are
+% read as the first two again) and true only with the constant term negative,
+% which the reading shows mathematically and does not impose; « ae' + ee »
+% read ae + ce (v. 24, 26) and
+% FB read FD where the algebra requires it (v. 25); the ratio for the point 5
+% of v. 38, inverted on the leaf (arc to chord as IN to I5 gives the centre of
+% gravity of the arc, not its centre of percussion); the focal construction of
+% v. 42, exact for a right cone and false in general for a scalene one.
+%
+% Folios. The transcriptions read two ink series and write no \folio{}. The
+% larger series 1–20 agrees with the 1888 certificate, and the literature
+% cites this volume by it: f. 1 for piece 1, f. 14 for piece 5, ff. 15–18 for
+% piece 6 (Adam–Tannery I, 481; IV, 420 and 502). Those three citations go
+% into section titles as prose; everything else is cited by view, with
+% \pagerange{}{} at the head of each section.
+%
+% Nothing is attributed. Pieces 1–4, 6 and 7 are unsigned; piece 5 is a copy
+% headed and signed with Roberval's name. The « Rob » marks of v. 8 and v. 11
+% are recorded as content. The attributions the literature has proposed are
+% reported in footnotes and not adopted. No leaf carries a date.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{naf-5161}
+\shelfmark{NAF 5161}
+\pages{1}{43}
+\dating{1601-1700}
+\watermark{Lecture automatique\\interprétation non vérifiée}
+\foldertitle{Lettres originales de DESCARTES adressées au Père Mersenne (1638-1647), et mémoires divers relatifs aux doctrines de Descartes. II Mémoires divers relatifs aux doctrines de Descartes. NAF 5161 — lecture modernisée du volume entier}
+
+\begin{document}
+
+\section*{Résumé}
+
+\begin{resume}
+Ce volume réunit vingt feuillets d'écrits dirigés contre Descartes, ou
+échangés à son sujet ; le P. Mersenne y paraît comme destinataire ou comme
+intermédiaire. Tous parlent de Descartes à la troisième personne. Sept pièces
+s'y suivent, de cinq mains au moins, sans date et presque
+toutes sans signature : deux lettres-traités contre sa théorie des équations,
+le début d'un mémoire contre sa solution du lieu à quatre droites, une note de
+travail sur les triangles rectangles en nombres, la copie d'une lettre signée
+du nom de Roberval, un mémoire recopié au net sur le « centre d'agitation »
+d'un corps qui oscille, et une courte lettre à un « Révérend Père » sur les
+thèses de géométrie d'un P. Fabri. Le volume n'a pas de fil unique ; il a un
+adversaire commun.
+
+Les deux premières pièces veulent montrer que Descartes s'est trompé sur les
+racines. L'auteur le dit d'entrée : il veut « faire voir l'impertinence de la
+distinction des racines en réelles et imaginaires », et prouver qu'il y a
+« beaucoup d'équations où il est impossible que la quantité inconnue ait autant
+de valeurs qu'elle a de dimensions ». Ses exemples sont justes : l'équation
+\(x^3-6x^2+13x-10=0\) n'a qu'une racine réelle, \(2\) ; \(x^3-Hx^2=X\) et
+\(x^3+Xx=S\) n'en ont qu'une, et il le démontre bien, deux fois. Sa conclusion
+est fausse, parce que les deux racines qui manquent existent : ce sont les
+nombres complexes \(2\pm i\), et Descartes avait raison de les compter. Contre
+la règle des signes, l'auteur a raison sur un point précis. La règle ne compte
+pas les racines positives, elle les borne, et sous sa forme exacte elle
+n'autorise un écart que d'un nombre pair. Dans une équation où manquent des
+termes, les racines négatives ne se comptent plus par les
+« permanences » : il faut changer \(x\) en \(-x\).
+
+Le mémoire sur le lieu à quatre droites s'arrête après une page et demie. Il a
+le temps de construire, avec Apollonius, une hyperbole rapportée à ses
+asymptotes, et de soutenir que son équation n'est d'aucune des formes que
+Descartes a expliquées. La note sur les triangles rectangles cherche un
+triangle rectangle en nombres rationnels, d'aire 6, autre que \(3,4,5\), et le
+trouve : \(\tfrac{7}{10},\ \tfrac{120}{7},\ \tfrac{1201}{70}\). Le procédé
+double un triangle d'aire donnée ; c'est ce que la théorie actuelle des nombres
+congruents appelle la duplication d'un point sur la courbe
+\(y^2=x^3-n^2x\).
+
+La moitié mécanique du volume porte sur la question du pendule composé : à
+quelle longueur de pendule simple un corps qui oscille autour d'un
+axe est-il équivalent ? Descartes répondait par un « centre d'agitation ». Le
+mémoire des vues 31 à 39 prend un secteur de cylindre et montre que sa règle
+place ce centre trop près de l'axe, parce qu'elle oublie « la direction de
+l'agitation » de chaque point. Il a raison, et son propre centre est exactement
+le centre d'oscillation de la mécanique actuelle : \(L = I/(Md)\), moment
+d'inertie divisé par la masse et par la distance du centre de gravité à l'axe.
+La lettre copiée sous le nom de Roberval reprend la querelle point par point.
+La dernière lettre propose une généralisation juste d'une proposition du
+P. Fabri, une objection juste à une autre, une construction des foyers de
+l'hyperbole exacte dans le cône droit mais fausse en général dans le cône
+scalène, et « ce beau problème de M. Roberval » : découper d'un
+seul trait de compas, sur un cylindre droit, une surface égale à celle d'un
+cylindre oblique. Le problème se résout, parce que les deux aires sont la même
+intégrale elliptique.
+
+Où cela mène : à la règle des signes de Descartes et à sa démonstration, au
+théorème fondamental de l'algèbre et à l'admission des racines complexes, au
+problème de Pappus, aux nombres congruents et aux courbes elliptiques, au
+pendule composé, au moment d'inertie et au centre de percussion, et à l'aire
+latérale du cylindre oblique.
+
+\keywords{Descartes's rule of signs, fundamental theorem of algebra, imaginary roots, negative roots, factor theorem, remainder theorem, Vieta's formulas, cubic equations, Descartes's Géométrie, problem of Pappus, hyperbola and its asymptotes, Apollonius's Conics, congruent numbers, rational right triangles, compound pendulum, centre of oscillation, centre of percussion, moment of inertia, conic sections, foci of a hyperbola, scalene cone, oblique cylinder, circular segment}
+\end{resume}
+
+\section*{Ce que le volume contient}
+
+\pagerange{1}{43}
+Quarante-trois vues. La vue 1 est le contreplat ; la vue 2, un feuillet de
+titre du XIX\textsuperscript{e} siècle, « Divers Ecrits Relatifs aux Doctrines
+de Descartes », qui porte le certificat de la bibliothèque : « Volume de 20
+Feuillets / Le Feuillet 10 est blanc / 24 Septembre 1888 », et la mention
+« Libri 1860 ». Sont blancs, et absents des transcriptions : les vues 10
+(verso d'un feuillet), 21 et 22 (le feuillet 10 du certificat), 37 (le verso du
+feuillet de la figure) et 40.\footnote{La vue 40 porte seulement, en haut à
+droite, un chiffre lu en vignette « 52 » ou « 62 », et une tache d'encre.} La vue
+34 est une seconde prise de vue de la page de la vue 33.
+
+\begin{itemize}
+  \item \textbf{Vues 3 à 9 et 11 à 20 — deux lettres-traités}, d'une même main
+    française du XVII\textsuperscript{e} siècle, adressées à un « Cher amy »
+    que l'auteur tutoie : « Deffauts de quelques reigles du S\textsuperscript{r}
+    Cart. et que la distinction des Racines en Reelles et imaginaires est
+    impertinente et ridicule », puis « Erreurs du S\textsuperscript{r} des
+    Cartes touchant le nombre des Racines en chaque equation ».
+  \item \textbf{Vues 23 à 26 — un mémoire inachevé}, d'une autre main, adressé
+    à un « Monsieur » « ami de M. des C. » : « Qu'il est faux que les Equations
+    qui ne montent que jusques au quarré soient toutes composées de celles dont
+    le Methodiste s'est servy \& sa resolution pretendue du Lieu ad quatuor
+    lineas ».
+  \item \textbf{Vues 27 et 28 — une note de travail}, d'une troisième main, sur
+    un petit feuillet : des triangles rectangles d'aire six fois un carré,
+    des tables de nombres et deux dessins de tubes.
+  \item \textbf{Vues 29 et 30 — « Copie de la lettre de M\textsuperscript{r}
+    Roberval »}, d'une quatrième main, très rapide, signée « Roberval ».
+  \item \textbf{Vues 31 à 39 — un mémoire recopié au net}, d'une cinquième
+    main, ronde et posée, sur le centre d'agitation d'un secteur de cylindre,
+    avec sa figure sur un feuillet à part (vue 36).
+  \item \textbf{Vues 41 à 43 — une adresse et une lettre} : au verso du
+    feuillet blanc de la vue 40, « Pour le Reuerend Pere Mersenne » ; puis,
+    au feuillet suivant, une lettre sans signature commençant « Mon R. Pere »,
+    sur les thèses du « P. Fabri » ; au dos, une note d'archiviste, « Liasse de
+    12 cahy cotées depuis … jusques a … », et le mot « fin ».
+\end{itemize}
+
+Deux séries de chiffres à l'encre courent sur ces feuillets. La plus grande
+numérote les rectos de 1 (vue 3) à 20 (vue 42) : elle s'accorde avec le
+certificat de 1888 (vingt feuillets, le dixième blanc), et c'est elle que cite la
+littérature.\footnote{Adam et Tannery citent « fr. n. a. 5161, f\textsuperscript{o} 1 »
+pour la pièce des vues 3 à 9, « f\textsuperscript{o} 14 » pour la copie des vues
+29–30 et « f\textsuperscript{os} 15-18 » pour le mémoire des vues 31 à 39
+(\emph{Œuvres de Descartes}, I, p. 481 ; IV, p. 420 et 502). Ces trois renvois
+tombent exactement sur les chiffres de cette série. Les transcriptions,
+qui n'ont pas vu de foliotation au crayon, n'écrivent aucun folio ; cette
+lecture non plus, hors des trois titres où la littérature en cite un.} La plus
+petite est plus ancienne et discontinue : 63 à 71 sur les feuillets 1 à 9, 73 et
+74 sur les feuillets 12 et 13, un « 48 » barré sur le feuillet 14, 58 à 62 sur
+les feuillets 15 à 19, 54 sur le feuillet 20. Ses ruptures, entre 74 et 48 et
+entre 48 et 58, disent que ces feuillets viennent de liasses différentes. Une
+note moderne en marge de la vue 29 dit « Du portefeuille 1848 de Libri », quand
+le feuillet de titre dit « Libri 1860 ».
+
+Les auteurs ne sont nommés nulle part, sauf dans la copie des vues 29–30. La
+dernière section de cette lecture dit ce que les feuillets permettent
+d'affirmer à ce sujet, et ce qu'ils ne permettent pas.
+
+\section*{I. « Défauts de quelques règles du S\textsuperscript{r} Cart. » (f. 1, vues 3 à 9)}
+
+\pagerange{3}{9}
+\subsection*{Ce que l'auteur annonce}
+
+La lettre répond à un ami que la « précédente » n'a pas convaincu. Il n'y a vu
+aucune excuse aux « erreurs du S\textsuperscript{r} Cart. » et voudrait qu'on
+lui montre « l'impertinence de la distinction des Racines en Reelles et
+imaginaires ». Avant d'y venir, l'auteur veut établir trois choses : que la
+Géométrie de Descartes n'est pas si excellente « qu'on n'y puisse rien
+adjouster » ; que Viète n'a pas traité généralement, à la fin de son livre
+\emph{De emendatione aequationum}, de la composition des équations ; et
+qu'« universellement parlant toutes les equations ne se produisent pas par la
+multiplication d'autres equations ».\footnote{« adiouster » est lu avec doute
+(« arriuer » serait possible). La comparaison qui suit, « autant par dessus la
+Geometrie ordinaire que \emph{Clavon} par dessus l'A, B, C, des enfans », porte
+un nom que la transcription lit lettre à lettre et ne reconnaît pas. Un mot
+biffé et noirci au début de la phrase (« Je \ldots{} ne sera pas hors
+propos ») n'est pas lu.} Il rapporte aussi une lettre de Descartes « au R. P. M. »,
+écrite parce qu'on avait dit que son discours sur la nature des équations
+n'était « qu'un extraict » d'un livre. Descartes y affirmait que la postérité ne
+trouverait jamais rien en géométrie qu'il n'eût aisément trouvé s'il en avait
+pris la peine. L'auteur appelle cela des « Rodomontades ».\footnote{« R. P.
+M. » : sans doute le Révérend Père Mersenne ; seule l'abréviation est sur la
+page. Deux mots biffés après « extraict » ne sont pas lus (le second commence
+par un L), de sorte que le livre dont il s'agit n'est pas nommé à cet endroit.
+Le feuillet ne date pas la lettre de Descartes et cette lecture ne l'identifie
+pas.}
+
+\subsection*{Une équation comme produit d'équations plus simples}
+
+L'idée que l'auteur prête aux lecteurs de Viète est la nôtre : mettre tous les
+termes d'un même côté, « feindre que le total est égal à rien », et regarder le
+polynôme obtenu comme un produit.\footnote{Le feuillet n'a pas de signe
+d'égalité ; il écrit « egal a » en toutes lettres, ou « egal a rien » quand
+tout est d'un côté. Les puissances de l'inconnue sont écrites par répétition
+(\(AA\), \(AAA\)) ou avec un petit exposant en chiffres romains,
+\(A^{\mathrm{ii}}\), \(A^{\mathrm{iii}}\), \(A^{\mathrm{iv}}\) ; on écrit ici
+\(A^2\), \(A^3\), \(A^4\). Les produits sont posés en colonnes, le multiplicateur
+dessous, et un « 0 » tient la place d'un terme qui s'annule. Toutes les lettres
+désignent des quantités positives ; le signe est porté à part.} Ainsi
+\begin{gather*}
+A^2-(B+C)A+BC=(A-B)(A-C),\\
+(A^2-SA+X)(A+D)=A^3+(D-S)A^2+(X-DS)A+DX .
+\end{gather*}
+C'est, en langage actuel, la relation entre les coefficients d'un polynôme
+unitaire et les fonctions symétriques élémentaires de ses racines : si
+\(P(A)=(A-r_1)\cdots(A-r_n)\), le coefficient de \(A^{n-k}\) est
+\((-1)^k e_k(r_1,\dots,r_n)\).\footnote{Ce sont les « relations de Viète »,
+nom postérieur au feuillet. Pour le second produit, le feuillet écrit
+\(A^3-SA^2+DA^2-DSA+XD\) : il omet le terme \(+XA\). La transcription laisse
+la ligne telle quelle ; le produit exact est celui qui est donné ici.} L'auteur
+renvoie pour d'autres exemples à l'\emph{Artis analyticae praxis} de Thomas
+Harriot, « que l'on imprima a Londres apres son deceds en 1631 », et il ajoute
+que Descartes ne l'a « pas negligée », comme on le voit « par les termes dont
+il se sert, que cet autheur avoit employez auparavant luy ».\footnote{C'est une
+accusation d'emprunt. Elle sera reprise publiquement, bien plus tard, par
+Wallis dans son \emph{Treatise of Algebra} (1685) ; le feuillet est antérieur
+à ce livre et n'en dépend pas. Cette lecture ne juge pas l'accusation.}
+
+La thèse de l'auteur est que tous les polynômes ne sont pas de tels produits.
+Il faut préciser en quel sens. Sur les nombres complexes, tout polynôme de
+degré \(n\) est le produit de \(n\) facteurs du premier degré : c'est le
+théorème fondamental de l'algèbre.\footnote{Énoncé dès 1629 par Albert Girard,
+démontré de façon d'abord incomplète par d'Alembert (1746), puis par Gauss
+(1799 et après). Tout cela est postérieur au feuillet, sauf l'énoncé de Girard,
+que le feuillet ne mentionne pas.} Sur les réels, tout polynôme est le produit
+de facteurs du premier et du second degré. Ce qui est vrai dans la thèse, c'est
+qu'un polynôme à coefficients réels n'est pas toujours un produit de facteurs du
+premier degré à coefficients réels, c'est-à-dire de binômes « \(A\) plus ou
+moins une quantité ». C'est bien ce que l'auteur a en vue. La seconde lettre le
+dira sous une forme exacte : une cubique est le produit d'une « équation
+quarrée » par une équation du premier degré, et c'est la quarrée qui peut ne
+pas se décomposer.
+
+\subsection*{Racines positives et négatives}
+
+De la composition des équations suit, dit l'auteur, que les racines sont
+« positiues ou negatiues, c'est plus ou moins que rien », celles que Descartes
+nomme « assez mal vrayes ou fausses ».\footnote{Dans la \emph{Géométrie}, une
+racine « vraie » est une racine positive, une « fausse » une racine négative.
+L'objection de l'auteur porte sur le mot : on ne peut dire fausse une racine
+qui « satisfait veritablement a tout ce que l'on desire ». Quelques mots biffés
+après « que rien » sont lus en partie seulement.} Son exemple :
+\[
+A^2+(C-B)A-BC=(A-B)(A+C)
+\]
+a pour racines \(+B\) et \(-C\).\footnote{À la vue 4 le terme constant est écrit
+\(+BC\) ; il faut \(-BC\) pour les racines \(+B\) et \(-C\), et c'est bien
+\(-BC\) que la vue 5 écrit en reprenant le calcul.} Multiplié par \(A+D\), puis
+par \(A-F\), il donne
+\begin{align*}
+A^4&+(C+D-B-F)A^3+(CD+BF-BC-BD-CF-DF)A^2\\
+&+(BCF+BDF-BCD-CDF)A+BCDF ,
+\end{align*}
+équation du quatrième degré qui a deux racines positives, \(B\) et \(F\), et
+deux négatives, \(-C\) et \(-D\). Les deux multiplications du feuillet sont
+justes, terme à terme.
+
+\subsection*{Reconnaître une racine : diviser ou substituer}
+
+Pour savoir si une quantité donnée est racine, l'auteur juge inutile de
+diviser l'équation, comme le fait « innocemment le bon M. des C. », par
+l'inconnue plus ou moins cette quantité. Il suffit de la substituer à
+l'inconnue ; si elle est négative, on change en outre les signes du premier, du
+troisième, du cinquième terme, « ou bien du second, du 4\textsuperscript{e}, du
+6\textsuperscript{e} ».\footnote{Le verbe de « ainsi que \emph{prise}
+innocemment » est lu avec doute. La variante « ou bien du second, du
+4\textsuperscript{e} du 6\textsuperscript{e} » est un renvoi écrit au pied de la
+vue 5, sans signe correspondant dans le texte ; le sens le rattache à cette
+phrase. Il est repris dans le corps du texte à la vue 6.} Si la quantité est
+une racine, tout se détruit.
+
+Les deux procédés sont équivalents, et l'auteur a raison de dire que le
+second suffit : c'est le théorème du reste. Le reste de la division de \(P(A)\)
+par \(A-r\) est \(P(r)\), de sorte que \(A-r\) divise \(P\) si et seulement si
+\(P(r)=0\). La règle des signes pour une valeur négative est juste aussi. Si
+\(P(A)=\sum_{k=0}^{n}a_kA^{n-k}\) et \(D>0\), alors
+\[
+P(-D)=(-1)^n\sum_{k=0}^{n}(-1)^k a_k D^{\,n-k},
+\]
+de sorte que \(P(-D)=0\) équivaut à l'annulation de l'expression obtenue en
+substituant \(D\) et en changeant les signes des termes de rang pair (les
+termes \(a_1, a_3, \dots\), second, quatrième…), ou, ce qui revient au même au
+signe près, de rang impair.\footnote{À condition de compter comme un rang la
+place d'un terme manquant, de coefficient nul. Les deux tableaux de la vue 6
+qui devaient montrer la destruction ne substituent \(D\) à \(A\) que dans les
+termes en \(A^4\) et \(A^3\) : les termes en \(A^2\) et en \(A\) gardent la
+lettre \(A\), et un terme est écrit « \(BD\) » pour \(BD^3\). Le tableau de la
+substitution de \(F\) écrit « \(BFF\) » pour \(BF^3\). Ces tableaux ne
+montrent donc pas l'annulation. L'énoncé est vrai pour autant : sous forme
+factorisée, \(P(-D)=(-D-B)(-D+C)(-D+D)(-D-F)=0\).}
+
+\subsection*{La règle pour changer le signe des racines}
+
+Descartes donnait une règle pour faire que les racines positives deviennent
+négatives et inversement : changer les signes du second, du quatrième, du
+sixième terme. L'auteur la juge « fort mal conceue et exprimée », puisqu'on
+obtient le même effet en changeant ceux du premier, du troisième, du
+cinquième. Les deux prescriptions sont justes, et elles sont la même. Changer
+les signes des termes de rang pair donne \((-1)^nP(-A)\), dont les racines sont
+les opposées de celles de \(P\) ; changer ceux de rang impair donne
+\(-(-1)^nP(-A)\), qui a les mêmes racines. L'existence d'une seconde manière de
+dire la chose ne fait pas de la première une erreur. Le reproche tombe, pourvu
+qu'on compte, ici encore, les places des termes manquants.
+
+\subsection*{« Autant de racines que de dimensions » : l'équation \(x^3-6x^2+13x-10\)}
+
+L'auteur tire alors sa conclusion : il est des équations où il ne peut y avoir
+autant de racines que de dimensions. Il ajoute que si l'on tient à nommer
+certaines racines « réelles » et d'autres « imaginaires », ce doit être les
+positives et les négatives.\footnote{« qu'aux equations » est une lecture
+douteuse ; le sens attendrait une restriction, « en quelques équations ».
+L'appellation proposée confond deux distinctions : les racines négatives sont
+des nombres réels, et les « imaginaires » de Descartes ne sont ni positives ni
+négatives.} Il s'en prend à l'exemple de Descartes :
+\[
+x^3-6x^2+13x-10=0,
+\]
+où celui-ci voyait « une racine réelle et deux imaginaires ». Pour l'auteur, il
+n'y en a qu'une, \(+2\) ; aucun autre nombre « marqué par \(+\) ou par \(-\) »
+ne satisfait l'équation, et les deux autres ne sont « que des Resueries et des
+extrauagances de sa belle methode ».\footnote{En marge, en regard de ce
+passage, les renvois « p. 380. » (vue 7) et « pag. 373. » (vue 8), de la main
+de l'auteur, à des pages de l'ouvrage critiqué. La transcription note qu'ils
+s'accordent avec la pagination de la \emph{Géométrie} dans le volume du
+\emph{Discours de la méthode} de 1637 ; c'est son inférence, non une lecture.
+Dans l'équation, le 6 a la forme d'un b et le 3 de 13 celle d'un z, selon
+l'habitude de cette main.}
+
+Le calcul :
+\[
+x^3-6x^2+13x-10=(x-2)(x^2-4x+5)=(x-2)\bigl(x-(2+i)\bigr)\bigl(x-(2-i)\bigr).
+\]
+L'auteur a raison sur les nombres réels : \(2\) est la seule racine réelle,
+puisque le discriminant de \(x^2-4x+5\) vaut \(16-20=-4<0\). Il a raison aussi
+de retourner contre Descartes son propre critère : aucun binôme réel
+\(x\pm q\) autre que \(x-2\) ne divise le polynôme. Mais les deux racines qu'il
+appelle « rêveries » existent : ce sont les nombres complexes \(2+i\) et
+\(2-i\), et le polynôme se divise par \(x-(2\pm i)\), ce qui revient à se
+diviser par le facteur réel \(x^2-4x+5\). Le compte de Descartes, trois racines
+dont une réelle et deux imaginaires, est celui qu'on tient aujourd'hui.
+
+L'auteur conclut que ce qui « implique contradiction » ne peut être nommé ni
+réel ni imaginaire, « puis qu'elles ne peuuent estre l'obiect de nostre
+entendement ni de nostre imagination ». L'argument suppose que les racines
+imaginaires impliquent contradiction. Elles ne le font pas : les nombres
+complexes admettent un modèle dans les couples de réels.\footnote{Ce modèle,
+et la représentation géométrique qui l'a précédé (Wessel 1799, Argand 1806),
+sont bien postérieurs au feuillet. Au passage, l'auteur dit ne connaître
+personne d'assez « blessé » d'imagination pour concevoir trois racines là où il
+n'y en a qu'une, hormis « le fou de Rob. », qui prétendait connaître des nombres
+« en raison double » dont les proportions n'étaient pas celles de deux à un. Le
+nom est abrégé sur le feuillet ; ni la transcription ni cette lecture ne le
+développent.} La pièce s'arrête au haut de la vue 9, sans formule finale, sans
+date ni signature.
+
+\section*{II. « Erreurs du S\textsuperscript{r} des Cartes touchant le nombre des racines » (vues 11 à 20)}
+
+\pagerange{11}{20}
+\subsection*{Le propos}
+
+Même main, même « Cher amy ». L'auteur promet « vn eschantillon des faussetez
+et des erreurs » de « ce nouueau methodique », qui se vante d'avoir gagné cinq
+ou six batailles et de n'en avoir plus que deux ou trois à livrer pour
+atteindre une connaissance entière de toutes choses.\footnote{Dans l'angle
+supérieur gauche de la vue 11, hors du texte, un petit « Rob », que la
+transcription ne rapporte à rien et que cette lecture n'interprète pas. « Et
+ne point mentir » est une lecture douteuse.} La proposition attaquée est
+celle qui ouvre le discours de Descartes sur les équations : « qu'en chaque
+Equation autant que la quantité inconnue a de dimensions, autant peut il auoir
+de diuerses racines ».\footnote{Le passage qui introduit la citation est
+lacunaire : « ce philoso[\ldots]phiste Miles [\ldots] des le commencement de ce
+discours ». Un mot est noyé sous une tache et une abréviation n'est pas
+résolue. En marge de la vue 11, « pag. 372 ». « scachez donc » est lu avec
+doute.} L'auteur lui oppose la sienne, « diamétralement opposée » : il y a des
+équations où l'inconnue a moins de valeurs que de dimensions.
+
+\subsection*{Première équation : \(x^3-Hx^2=X\)}
+
+Toutes les lettres désignent des quantités positives. L'auteur démontre que
+l'équation
+\[
+x^3-Hx^2=X \qquad (H,X>0)
+\]
+a une racine positive et une seule, et aucune négative. Sa démonstration est
+juste. Soit \(B\) la racine positive. Si \(D\neq B\) en était une autre, on
+aurait \(B^3-HB^2=D^3-HD^2\), d'où, en divisant par \(B-D\),
+\[
+B^2+BD+D^2=H(B+D), \qquad\text{soit}\qquad D^2=(H-B)(B+D).
+\]
+Puisque \(D^2>0\), il faudrait \(H>B\). Mais \(B^2(B-H)=X>0\) impose \(B>H\).
+Aucune racine négative non plus : pour \(x=-D<0\), le premier membre vaut
+\(-D^3-HD^2<0\), et ne peut égaler \(X\).\footnote{L'existence de la racine
+positive est affirmée (« Il est certain ») et non démontrée. On la tire du
+théorème des valeurs intermédiaires : \(x^3-Hx^2-X\) vaut \(-X<0\) en \(0\) et
+tend vers \(+\infty\). La vue 13 écrit l'équation « \(A^3-AAH-X\) », avec
+tout d'un côté, là où la vue 12 portait « égal à \(X\) ». Deux ratures et une
+ligne biffée, qui répétait l'égalité, sont signalées par la
+transcription.}
+
+\subsection*{Seconde équation : \(x^3+Xx=S\)}
+
+De même pour
+\[
+x^3+Xx=S \qquad (X,S>0).
+\]
+Deux racines positives \(B\neq D\) donneraient
+\(B^3-D^3=X(D-B)\), d'où \(B^2+BD+D^2=-X\), ce qui est absurde. Une racine
+négative \(-D\) donnerait \(-D^3-XD=S\), absurde aussi. En termes actuels, le
+premier membre est strictement croissant, et l'équation a exactement une racine
+réelle.\footnote{Le signe de « \(A^3+AX\) » est surchargé sur la page ; le \(+\)
+l'emporte. La transcription lit « cent » ou « vingt » dans « Je pourrois
+alleguer \emph{cent} autres Equations semblables ».}
+
+Dans les deux cas, la conclusion de l'auteur est exacte, et c'est elle que
+donne la règle des signes de Descartes lue comme une borne. Pour
+\(x^3-Hx^2-X\), la suite des signes \(+,-,-\) présente une seule variation,
+donc au plus une racine positive ; pour \(-x^3-Hx^2-X\), obtenu en changeant
+\(x\) en \(-x\), aucune variation, donc aucune racine négative. Il en va de
+même pour la seconde équation. Les deux autres racines, que l'auteur déclare
+inexistantes, sont deux complexes conjugués.
+
+\subsection*{La seconde démonstration : les formes possibles d'une cubique}
+
+L'auteur veut ensuite faire voir qu'il « répugne à la nature » de ces
+équations d'avoir plus d'une valeur. Une cubique est « seulement le produit
+d'une équation quarrée par une équation du premier degré ».\footnote{« Equation
+quarrée » : du second degré ; « quantité connue » : coefficient ; le « second
+terme » et le « troisième terme » sont comptés dans l'ordre des puissances
+décroissantes.} Pour que le produit
+\[
+(x^2+px+q)(x+r)=x^3+(p+r)x^2+(q+pr)x+qr
+\]
+manque de son terme en \(x\), il faut \(q=-pr\). Avec des lettres positives
+\(s\), \(b\), cela ne se fait que de quatre manières, que le feuillet pose en
+colonnes :
+\begin{align*}
+(x^2-sx+sb)(x+b)&=x^3+(b-s)x^2+sb^2,\\
+(x^2-sx-sb)(x-b)&=x^3-(s+b)x^2+sb^2,\\
+(x^2+sx-sb)(x+b)&=x^3+(s+b)x^2-sb^2,\\
+(x^2+sx+sb)(x-b)&=x^3+(s-b)x^2-sb^2.
+\end{align*}
+Les quatre produits de la vue 15 sont justes. L'équation \(x^3-Hx^2-X\) a son
+terme constant négatif, ce qui écarte les deux premières formes, et son second
+terme négatif, ce qui écarte la troisième. Reste la quatrième, avec \(b>s\).
+Mais alors \(sb>s^2>\tfrac14 s^2\), et le facteur \(x^2+sx+sb\) n'a pas de
+racine réelle. L'auteur le dit par une propriété générale : quand deux
+équations du premier degré se multiplient, le terme constant du produit n'est
+jamais plus grand que le carré de la moitié du coefficient du second terme,
+car
+\[
+(x+u)(x+v)=x^2+(u+v)x+uv, \qquad uv\le\Bigl(\frac{u+v}{2}\Bigr)^2 .
+\]
+C'est l'inégalité entre moyennes arithmétique et géométrique. Le feuillet la
+rapporte à une proposition du livre II d'Euclide.\footnote{Le feuillet écrit
+« par la \ldots{} p. 2. d'Euclide », avec un blanc pour le numéro, et renvoie
+à « Clauius, \emph{Nonius} ou les premiers Elemens de l'Algebre » (le second
+nom est une lecture douteuse). La proposition qui convient est II.5 ; c'est
+l'identification de cette lecture. Dans « \(BS\) surpassera aussy
+\(BSS\) », la transcription lit avec doute la lettre qui précède \(SS\) :
+l'argument demande « \(BS\) surpassera \(SS\) ».}
+
+Rendu exact, l'argument est complet, et il est plus simple qu'il n'en a l'air.
+Si \(B\) est la racine positive, la division donne
+\[
+x^3-Hx^2-X=(x-B)\bigl(x^2+sx+sB\bigr), \qquad s=B-H>0,\quad X=sB^2,
+\]
+et le discriminant \(s^2-4sB=s(s-4B)\) est négatif puisque \(s<B\).
+
+Pour \(x^3+Xx-S\), il faut que le terme en \(x^2\) manque, soit \(p=-r\), et le
+feuillet dresse de même quatre formes (vue 17, justes toutes quatre). La seule
+qui convienne est
+\[
+(x^2+sx+t)(x-s)=x^3+(t-s^2)x-ts ,
+\]
+avec \(t-s^2=X>0\), donc \(t>s^2>\tfrac14 s^2\), et le facteur du second degré
+n'a pas de racine réelle.\footnote{Le feuillet appelle \(x\) (en minuscule)
+le terme constant du facteur du second degré, que ce paragraphe nomme \(t\),
+et \(X\) (en capitale) le coefficient de l'équation. Il écrit « sans supposer
+que \(X\) surpasse le quarré de \(S\) » là où il s'agit de \(t\). Il conclut
+enfin qu'on ne peut produire « \(AA-SA+X\) » par deux équations du premier
+degré, alors que son tableau donne \(A^2+sA+t\). Le signe ne change rien au
+discriminant, \(s^2-4t<0\) dans les deux cas.}
+
+\subsection*{Les exemples numériques}
+
+L'auteur donne trois équations « de même forme » avec leur racine :
+\[
+x^3-8x^2-12168=0,\qquad x^3+64x-2496=0,\qquad x^3+729x-18954=0 .
+\]
+La racine réelle de la première est \(26\) : \(26^3-8\cdot 26^2=17576-5408=12168\).
+Les deux autres racines sont \(-9\pm 3i\sqrt{43}\), racines de
+\(x^2+18x+468\). La deuxième a pour racine \(12\), et pour racines complexes
+\(-6\pm 2i\sqrt{43}\) ; la troisième a pour racine \(18\), et
+\(-9\pm 18i\sqrt3\).\footnote{Ce paragraphe corrige deux nombres. Pour la
+première équation, la transcription lit la racine « 39 », avec doute : le
+premier chiffre a la forme d'un z à longue queue et le second celle d'un 9 ;
+\(39\) ne satisfait pas l'équation, \(26\) la satisfait. Pour la deuxième, la
+transcription lit le terme constant « 2498 » et la racine « 12 » ; or
+\(12^3+64\cdot12=2496\). Avec 2498, la racine réelle serait
+\(x\approx 12{,}004\), et non un entier. La troisième se vérifie telle
+quelle : \(18^3+729\cdot18=18954\). Les trois équations sont serrées en bout
+de ligne et en partie l'une sur l'autre, sous une tache.} Chacune a donc une
+seule racine réelle, comme l'auteur le dit, et deux racines complexes. Il
+prévoit lui-même la réponse : Descartes, « pour éluder », se servira de sa
+distinction des racines en réelles et imaginaires. C'est en effet la bonne
+réponse.
+
+\subsection*{La règle des signes}
+
+Avant de quitter son ami, l'auteur attaque la règle de Descartes « pour
+connoistre combien en chaque Equaõn il y a de racines positiues et combien de
+Negatiues ».\footnote{« Changements de signes » : ce qu'on appelle aujourd'hui
+les variations de la suite des signes des coefficients ; « deux signes
+semblables qui s'entresuivent » : les permanences. En marge, « pag. 373. ».}
+L'énoncé exact, tel qu'on le démontre aujourd'hui, est celui-ci :
+
+\begin{quote}
+Soit \(P\) un polynôme réel et \(V\) le nombre de variations de signe dans la
+suite de ses coefficients non nuls. Le nombre de racines strictement positives
+de \(P\), comptées avec leur multiplicité, est égal à \(V\) ou inférieur à \(V\)
+d'un nombre pair. Le nombre de racines strictement négatives s'obtient de même
+en appliquant la règle à \(P(-x)\).\footnote{Les premières démonstrations sont
+du XVIII\textsuperscript{e} siècle (de Gua de Malves, 1741) ; la précision sur
+la parité est de Gauss (1828). Tout cela est postérieur au feuillet.}
+\end{quote}
+
+Quand toutes les racines sont réelles, l'égalité a lieu. Si aucun coefficient
+n'est nul, les variations de \(P(-x)\) sont exactement les permanences de
+\(P(x)\). C'est la forme que l'auteur prête à Descartes, et c'est là que
+portent ses objections.
+
+\emph{L'exemple de Descartes.} Pour \(x^4-4x^3-19x^2+106x-120\), les signes
+\(+,-,-,+,-\) donnent trois variations et une permanence ; Descartes en
+concluait trois racines positives et une négative. C'est exact :
+\[
+x^4-4x^3-19x^2+106x-120=(x-2)(x-3)(x-4)(x+5).
+\]
+
+\emph{Moins de racines positives que de variations.} L'auteur objecte que
+l'égalité n'est pas « universellement véritable », avec
+\[
+x^3-Bx^2+B^2x-B^3=(x-B)(x^2+B^2),
+\]
+qui a trois variations et une seule racine positive, \(B\). Il a raison
+contre une règle lue comme un compte. Il n'a pas raison contre la règle lue
+comme une borne, et l'écart, \(3-1=2\), est pair, comme l'exige l'énoncé exact.
+Les deux racines manquantes sont \(\pm iB\).\footnote{Dans l'équation, le
+premier signe n'est qu'un point à mi-hauteur ; la transcription le lit \(-\),
+ce que demande le compte des trois changements.}
+
+\emph{Plus de racines négatives que de permanences, quand un terme manque.}
+L'auteur prend \(x^3-sx+x_0\) et \(x^3-Bx^2+x_0\) (sa lettre \(x\) désigne ici
+le terme constant), et en nombres, avec \(B=1\), \(s=13\), \(x_0=12\) :
+\[
+x^3-13x+12=(x-1)(x-3)(x+4),\qquad x^3-x^2+12=(x+2)(x^2-3x+6).
+\]
+La première a la racine négative \(-4\), la seconde la racine négative
+\(-2\), comme le dit le feuillet. Si l'on saute le terme nul, la suite des
+signes, \(+,-,+\) dans les deux cas, n'a aucune permanence. L'objection est
+juste contre la règle des permanences appliquée à un polynôme incomplet. Elle
+ne vaut pas contre la règle bien posée, qui compte les variations de
+\(P(-x)\) : \(-x^3+13x+12\) et \(-x^3-x^2+12\) en ont chacune une. L'auteur
+remarque, avec raison, que rien ne dit de quel signe marquer un terme nul.
+Dans ses deux exemples, l'un ou l'autre signe donne d'ailleurs une
+permanence.\footnote{Sous les deux équations numériques, une troisième ligne
+reprenait la seconde ; elle est biffée. Les racines complexes de la seconde
+équation sont \(\tfrac{3\pm i\sqrt{15}}{2}\).}
+
+\emph{Deux racines négatives pour une seule permanence.} L'auteur ajoute
+qu'en « ces deux autres Equaõns » « il peut y auoir deux fausses racines »,
+quoiqu'il n'y ait deux signes de suite qu'une fois en chacune. La
+transcription lit ces deux équations comme les deux précédentes, dans l'ordre
+inverse : \(x^3-Bx^2+x_0\) et \(x^3-sx+x_0\). Ainsi lue, l'affirmation est
+fausse. Pour l'une comme pour l'autre, avec des lettres positives, \(P(-x)\) n'a
+qu'une variation, donc une racine négative au plus ; et il y en a une, puisque
+\(P(0)=x_0>0\) et que \(P\) tend vers \(-\infty\) en \(-\infty\). Mais le
+feuillet parle de deux \emph{autres} équations, et les mêmes lues deux fois ne
+le sont pas. Dans chacune des deux familles, un seul choix de signes permet
+deux racines négatives, puisqu'il faut deux variations à \(P(-x)\) :
+\(x^3+Bx^2-x_0\) et \(x^3-sx-x_0\). Le terme nul sauté, chacun n'a qu'une
+permanence, comme le dit la phrase. Avec ces signes,
+l'affirmation est juste, par exemple
+\[
+x^3+3x^2-2=(x+1)(x^2+2x-2),\qquad x^3-7x-6=(x+1)(x+2)(x-3),
+\]
+qui ont chacune deux racines négatives, \(-1\) et \(-1-\sqrt3\) pour la
+première, \(-1\) et \(-2\) pour la seconde. L'objection serait alors la même que
+la précédente, poussée d'un cran. Cette lecture ne corrige pas les signes, que
+seule l'image peut établir ; elle signale que la lecture transcrite rend la
+phrase fausse et la répétition inexplicable.\footnote{Pour
+\(x^3-sx+x_0\) tel qu'il est transcrit, on le voit aussi par le produit des
+racines, égal à \(-x_0<0\), et par leur somme, nulle : deux racines négatives
+et une positive donneraient un produit positif. La lettre promet de montrer
+encore comment la règle « contredict a la precedente », puis s'arrête :
+« Adieu je suis / Cher amy », sans signature ni date ni adresse. « J'abusois »
+et « cet » sont lus avec doute.}
+
+\section*{III. Le lieu à quatre droites, contre « le Méthodiste » (vues 23 à 26)}
+
+\pagerange{23}{26}
+\subsection*{L'objection}
+
+D'une autre main, adressée à un « Monsieur » qui est « ami de M. des C. » et
+qui a demandé à l'auteur une « résolution ». Le titre annonce deux thèses : il
+est faux que les équations qui ne montent qu'au carré soient toutes
+« composées » de celles dont s'est servi « le Methodiste », et sa résolution du
+lieu à quatre droites n'est que « prétendue ».\footnote{« quarré » porte une
+lettre suscrite, peut-être une abréviation ; « lineas » est une leçon
+interlinéaire douteuse (« lineal » serait possible). Le problème « des anciens »
+est celui de Pappus : trouver le lieu des points dont les distances à trois
+ou quatre droites données, prises sous des angles donnés, sont telles que le
+produit de deux d'entre elles soit au produit des deux autres, ou au carré de
+la troisième, dans un rapport donné.} L'auteur reproche à Descartes de ne pas
+avoir fait « les dénombrements ni les règles générales qui sont la quatrième
+partie de son illustre méthode ».\footnote{Le quatrième des préceptes du
+\emph{Discours de la méthode} est de faire « des dénombrements si entiers »
+qu'on soit assuré de ne rien omettre. Deux mots après « faict » ne sont pas
+lus.} Il cite la phrase qu'il attaque : « Au reste, dict il, a cause que les
+equations qui ne montent que jusque au quarré sont toutes composées de celles
+que je viens d'expliquer, non seulement le probleme des anciens de trois, \&
+quatre lignes est icy entierement achevé, Mais tout ce qui appartient a ce
+qu'ils nommoient la composition des lieux solides ».\footnote{En marge,
+« pag. 339 », le dernier chiffre douteux. Le « lieu solide » des anciens est
+une conique.}
+
+\subsection*{L'hyperbole construite}
+
+Contre-exemple proposé : une équation « de même forme » que
+\[
+ae+ce=ba+x ,
+\]
+qui ne serait composée « d'aucunes de celles qu'il s'est donné la peine
+d'expliquer ».\footnote{La transcription lit l'équation « \(ae'+ee\) egale
+\(ba+x\) » à la vue 24, puis « \(ae'+ee\) sera egal a \(+ba+x\) » à la vue 26,
+avec une petite marque suscrite après \(ae\). Or la phrase qui précède
+immédiatement, à la vue 26, calcule le rectangle \(FB\cdot BI\) comme
+« \(ae+ce\) », et l'égalité suit « par conséquent » de ce rectangle et du
+rectangle « \(ba\) ». Cette lecture lit donc \(ae+ce\) ; le \(c\) de cette main
+est écrit comme un \(e\) repassé.} L'auteur la tire d'une construction.
+Soient une droite \(FB\) prolongée indéfiniment, un point fixe \(D\) sur elle,
+une longueur donnée \(AC\) et un espace donné \(X\). Pour un point \(B\) pris à
+volonté sur la droite, on élève \(BI\) parallèle à une direction donnée, de
+sorte que
+\[
+FB\cdot BI - DB\cdot AC = X .
+\]
+Le lieu de \(I\) est une hyperbole. Pour la tracer, on prend \(BS=AC\) sur
+\(BI\) et l'on mène par \(F\) la parallèle \(FXN\) à \(BS\), par \(S\) la
+parallèle \(SX\) à \(FB\) : ce sont les asymptotes. On décrit l'hyperbole
+d'asymptotes \(XN\), \(XS\) qui passe par \(I\), par la proposition II.4
+d'Apollonius. Tout autre point \(G\) s'obtient en menant \(EG\) parallèle à
+\(AC\) de sorte que le rectangle \(XE\cdot EG\) égale le rectangle
+\(XS\cdot SI\), par II.12.\footnote{II.4 : décrire, par un point donné
+dans un angle, l'hyperbole qui a les côtés de l'angle pour asymptotes ; II.12 :
+les parallèles menées d'un point de l'hyperbole à deux directions fixes
+jusqu'aux asymptotes forment un rectangle constant. Le chiffre qui précède
+« p. 2 » est lu « 4 » avec doute. L'auteur tient sa construction pour aussi
+courte qu'aucune de celles recueillies « par le pere Cavalieri Monsieur Mydorge
+ou les autres qui ont escrit sur ce subject ». Le verbe « desirez » (« que vous
+\emph{desirez} en ceste sorte ») est lu ainsi ; le sens appellerait
+« descrirez ».}
+
+En coordonnées, l'auteur nomme \(AC=b\), la longueur donnée entre \(F\) et
+\(D\) \(c\), et les deux longueurs variables \(DB=a\), \(BI=e\).\footnote{Le
+feuillet dit : « les grandeurs \(DB\), \(BI\) estant vagues \& indeterminées
+appellons celle cy \(e\) \& celle la \(a\) ». \emph{Celle-ci} renvoie au plus
+proche, \(BI\) ; \emph{celle-là} au plus éloigné, \(DB\). Il dit aussi « les
+droites \(AC\), \(FB\) sont données » ; mais \(B\) est un point quelconque, et
+le calcul qui suit, \(FB\cdot BI=ae+ce\), n'est juste que si la droite donnée
+est \(FD=c\), de sorte que \(FB=c+a\). La transcription signale que la lettre
+lue \(D\) dans ce passage est une capitale bouclée qui peut aussi être un
+\(B\) ; cette lecture suit ce que le calcul exige.} Alors \(FB\cdot BI=(a+c)e\),
+\(DB\cdot AC=ab\), et le lieu est
+\[
+(a+c)\,e=ab+x
+\qquad\Longleftrightarrow\qquad
+(a+c)(e-b)=x-bc .
+\]
+Si \(x\neq bc\), c'est une hyperbole d'asymptotes \(a=-c\), la droite menée par
+\(F\) parallèlement à \(BI\), et \(e=b\), la droite menée par \(S\) parallèlement
+à \(FB\). Ce sont bien celles de la construction. Si \(x=bc\), le lieu dégénère
+en ces deux droites. Le rectangle constant de II.12 vaut \(x-bc\), et non
+\(x\) ; la construction par le point \(I\) n'a pas besoin de le connaître, et
+l'auteur dit ne pas s'arrêter « a distinguer les differents cas ».
+
+Ce qui est vrai dans l'objection, et ce qui ne l'est pas. Toute équation du
+second degré en deux inconnues représente une conique, éventuellement
+dégénérée ou vide. Celle de l'auteur est une hyperbole, ce qui confirme au lieu de le
+contredire que les lieux « qui ne montent qu'au carré » sont des coniques. Son
+objection ne peut donc porter que sur la forme : une équation sans carré de
+l'une ni de l'autre inconnue, où \(e\) s'exprime comme une fraction
+rationnelle de \(a\), n'est peut-être pas l'une des formes que Descartes avait
+écrites. Elle s'y ramène par un changement d'axes. Le feuillet ne cite de
+Descartes que la phrase ci-dessus, et cette lecture ne lui prête pas ce que le
+feuillet ne rapporte pas. Le mémoire s'arrête, deux lignes en haut de la vue
+26, avant d'en venir au lieu à quatre droites lui-même, sans formule finale ni
+signature.
+
+\section*{IV. Triangles rectangles d'aire six fois un carré (vues 27 et 28)}
+
+\pagerange{27}{28}
+La note pose le problème en une ligne : « Il faut trouver un \(\Delta\)
+primitif dont l'aire soit un sextuple quarré et qui ne soit pas semblable au
+triangle de 3. 4. 5. » ; car, les côtés de ce triangle étant divisés par la
+racine du carré, « l'on aura les costez du triangle requis ».\footnote{\(\Delta\)
+est le signe du feuillet pour « triangle » ; « sex\textsuperscript{ple} » :
+sextuple ; « R. du q. » : racine du carré. Le mot écrit entre les lignes après
+« l'aire du », qui commence par « rect- », est lu « rectangle » avec doute.}
+Autrement dit : trouver un triangle rectangle à côtés rationnels, d'aire \(6\),
+autre que \(3,4,5\). En langage actuel, c'est chercher une seconde solution du
+problème des nombres congruents pour \(n=6\).\footnote{Un entier \(n\) est dit
+congruent s'il est l'aire d'un triangle rectangle à côtés rationnels ; le mot
+vient de Fibonacci. Le lien avec la courbe \(y^2=x^3-n^2x\) est du
+XX\textsuperscript{e} siècle.}
+
+Le procédé est donné en trois lignes, et il est juste. Du triangle donné,
+\(3,4,5\), on forme un second triangle avec ses deux plus petits côtés ; avec
+les deux plus grands côtés de ce second triangle, on en forme un troisième.
+« Former un triangle » de deux nombres \(p>q\), c'est prendre les côtés
+\(p^2-q^2\), \(2pq\), \(p^2+q^2\). Ainsi
+\[
+(3,4)\ \mapsto\ (7,\,24,\,25),\qquad (24,25)\ \mapsto\ (49,\,1200,\,1201),
+\]
+et l'aire du troisième est \(\tfrac12\cdot 49\cdot 1200=29400=6\cdot 70^2\).
+Le triangle est primitif. Le feuillet l'explique : le plus petit côté,
+\(49\), est impair et est le carré du plus petit côté du second triangle ; le
+côté pair, \(1200=3\cdot 20^2\), est un carré pris « autant de fois qu'il y a
+d'unités en la moitié de l'aire » du premier triangle.\footnote{Le mot après
+« multiple d'un » est lu « nombre » avec doute, en partie sous le cachet, et le
+renvoi marginal « autant » s'insère dans la phrase. Le sens exigé par le calcul
+est « un carré », et c'est celui que donne cette lecture.} On divise enfin les
+trois côtés par le produit de la racine du côté impair, \(7\), par la racine
+du quotient du côté pair par le double de l'aire, \(\sqrt{1200/12}=10\),
+c'est-à-dire par \(70\) :
+\[
+\frac{49}{70}=\frac{7}{10},\qquad \frac{1200}{70}=\frac{120}{7},\qquad
+\frac{1201}{70},
+\]
+et l'on a un triangle rectangle d'aire \(\tfrac12\cdot\tfrac{7}{10}\cdot
+\tfrac{120}{7}=6\) : \(\bigl(\tfrac{7}{10}\bigr)^2+\bigl(\tfrac{120}{7}\bigr)^2
+=\tfrac{1442401}{4900}=\bigl(\tfrac{1201}{70}\bigr)^2\). Le tableau au bas de la
+vue 27 porte ces nombres, et, barrée, une première rangée de fractions
+renversées.
+
+Le procédé est général. Soit \((a,b,c)\) un triangle rectangle d'aire \(n\),
+avec \(a\neq b\) ; formons un triangle des deux nombres \(c^2\) et \(2ab\) (dans
+l'exemple, \(25\) et \(24\)). Ses côtés sont
+\[
+c^4-4a^2b^2=(a^2-b^2)^2,\qquad 4abc^2,\qquad c^4+4a^2b^2,
+\]
+son aire vaut \(2abc^2(a^2-b^2)^2=n\bigl(2c(a^2-b^2)\bigr)^2\), et le diviseur du
+feuillet est \(2c\,\lvert a^2-b^2\rvert\). On obtient ainsi un nouveau triangle
+rationnel d'aire \(n\). Sur la courbe \(y^2=x^3-n^2x\), au triangle
+\((a,b,c)\) correspond le point \(\bigl(\tfrac{c^2}{4},\,
+\tfrac{c(b^2-a^2)}{8}\bigr)\), et le nouveau triangle correspond au double de ce
+point pour la loi de groupe : pour \(3,4,5\), le point
+\(\bigl(\tfrac{25}{4},\tfrac{35}{8}\bigr)\) a pour double un point d'abscisse
+\(\bigl(\tfrac{1201}{140}\bigr)^2\).\footnote{Vérification de cette lecture. La
+note ne nomme aucun auteur et n'attribue le procédé à personne ; cette lecture
+non plus.}
+
+Le verso (vue 28) refait le même chemin à partir de \(5,12,13\), d'aire \(30\),
+en tableaux écrits de travers : \((5,12)\mapsto(119,120,169)\), puis
+\((120,169)\mapsto(14161,\,40560,\,42961)\), avec \(14161=119^2\) et
+\(40560=15\cdot 52^2\) ; les nombres « 2704 » et « 52 » écrits à côté sont ce
+carré et sa racine. La division n'est pas faite sur le feuillet ; elle donnerait
+le triangle \(\tfrac{119}{26},\ \tfrac{1560}{119},\ \tfrac{42961}{3094}\), d'aire
+\(30\).\footnote{La transcription lit « 119 » avec doute (le chiffre du milieu
+pourrait être un 6) ; \(12^2-5^2=119\) le confirme. Elle lit aussi « 10560 » à
+côté de « 2704 » ; \(40560/15=2704=52^2\) suggère qu'il faut lire 40560.
+« 13 12 5 | 30 », au bas de la page, donne le triangle et son aire. Les deux
+dessins à la plume de la même page, un tube étroit et un tube plus large
+contenant un cylindre hachuré, sont sans lettres ; leur rapport avec les
+calculs ne se lit pas sur la page.}
+
+\section*{V. Le centre d'agitation d'un secteur de cylindre (ff. 15 à 18, vues 31 à 39)}
+
+\pagerange{31}{39}
+\subsection*{La question et la définition commune}
+
+Ce mémoire est une copie au net, sans titre, sans signature et sans date. Il
+s'adresse à un « vous » qu'il ne nomme pas et parle de Descartes à la
+troisième personne.\footnote{Cette lecture place le mémoire avant la copie des
+vues 29–30, qui le suit dans le volume, parce que la copie reprend sa dernière
+page presque mot pour mot. C'est l'ordre de l'argument ; aucune date n'en est
+tirée.} Il commence : « Nous conuenions de Definition Monsieur Descartes \& moy,
+touchant le poinct qu'il appelle le Centre d'agitation, lequel nous nommons icy
+le centre de percussion. Mais sa conclusion est entierement differente de la
+mienne, de laquelle pourtant, i'ay la demonstration absoluë. »
+
+La question est celle du pendule composé. Un corps pesant oscille autour d'un
+axe horizontal fixe, l'« aissieu » : quelle est la longueur \(L\) du pendule
+simple qui bat au même rythme ? La réponse actuelle est
+\[
+L=\frac{I}{Md},\qquad I=\int \rho^2\,dm ,
+\]
+où \(I\) est le moment d'inertie du corps par rapport à l'axe, \(M\) sa masse,
+\(d\) la distance de l'axe au centre de gravité, et \(\rho\) la distance d'un
+élément à l'axe. Le point situé à la distance \(L\) de l'axe, sur la
+perpendiculaire menée de l'axe par le centre de gravité, est le centre
+d'oscillation. C'est aussi le centre de percussion relatif à l'axe : un choc
+reçu en ce point, perpendiculairement à cette droite, ne produit aucune
+percussion sur l'axe.\footnote{Cette théorie est celle de Huygens,
+\emph{Horologium oscillatorium} (1673), quatrième partie ; elle est postérieure
+aux feuillets. Le « centre d'agitation » ou « de percussion » des feuillets est
+défini par une compensation des « forces d'agitation » des parties du corps ;
+cette lecture le compare au centre d'oscillation par ses résultats, sans
+prétendre que les deux définitions coïncident mot pour mot.}
+
+\subsection*{Le secteur de cylindre et les deux centres de l'auteur}
+
+L'auteur choisit « vn Secteur d'vn Cylindre droict », tournant autour de son
+propre axe \(AB\), horizontal. Il le coupe à mi-longueur par le secteur de
+cercle \(ILNM\), de centre \(I\), de rayon \(IN=r\), le rayon \(IN\) vertical
+partageant l'arc \(LNM\) en deux. Notons \(2\alpha\) l'angle au centre, de sorte
+que
+\[
+\frac{\text{corde }LM}{\text{arc }LM}=\frac{\sin\alpha}{\alpha}.
+\]
+L'auteur énonce, en renvoyant pour les démonstrations à des écrits qu'il ne
+donne pas, deux points de \(IN\).
+
+\emph{Le centre de gravité \(O\).} « Comme l'arc \(LM\) est à sa corde \(LM\),
+ainsi les deux tiers du demi-diamètre \(IN\) à \(IO\) », soit
+\[
+IO=\frac23\,r\,\frac{\sin\alpha}{\alpha}.
+\]
+C'est exact : c'est la distance au centre du centre de gravité d'un secteur de
+cercle, et, par symétrie le long de l'axe, celle du secteur de cylindre.
+
+\emph{Le centre de percussion \(Q\).} « Comme la corde \(LM\) est à son arc,
+ainsi \(IP\), trois quarts de \(IN\), à \(IQ\) », soit
+\[
+IQ=\frac34\,r\,\frac{\alpha}{\sin\alpha}.
+\]
+C'est exactement le centre d'oscillation. Pour une tranche d'épaisseur unité et
+de densité \(1\), \(M=\alpha r^2\), \(I=\int_{-\alpha}^{\alpha}\int_0^r
+\rho^3\,d\rho\,d\theta=\tfrac12\alpha r^4\), \(d=IO\), et
+\[
+\frac{I}{Md}=\frac{\tfrac12\alpha r^4}{\alpha r^2\cdot\tfrac{2r\sin\alpha}{3\alpha}}
+=\frac34\,r\,\frac{\alpha}{\sin\alpha}.
+\]
+Les conséquences que l'auteur en tire sont justes. \(Q\) est toujours plus loin
+de \(I\) que le point \(P\) situé aux trois quarts de \(IN\), puisque
+\(\alpha>\sin\alpha\). L'écart croît avec le secteur. Si l'arc surpasse sa corde
+d'un quart, \(\alpha/\sin\alpha=\tfrac43\), et \(Q\) tombe en \(N\) : cela
+arrive pour un angle au centre d'environ \(146^\circ\). Au-delà, \(Q\) est hors
+du secteur ; pour le demi-cylindre, \(IQ=\tfrac{3\pi}{8}\,r\approx1{,}18\,r\).
+
+\subsection*{La règle de Descartes, telle que le mémoire la rapporte}
+
+Selon « M. D. C. », tous les points d'une même surface cylindrique d'axe \(AB\)
+sont « également agités ». Les « forces d'agitation » de deux telles surfaces
+sont entre elles comme des pyramides ayant pour bases ces surfaces et pour
+hauteurs leurs rayons. On porte sur \(IN\), en chaque point \(3\) de rayon
+\(\rho\), une ordonnée \(3\text{--}8\) proportionnelle à cette pyramide. Le
+centre de gravité de la figure plane ainsi décrite est, dit Descartes, le centre
+d'agitation cherché.\footnote{Les points de la figure sont nommés par des
+lettres et par les chiffres 3 à 9 (« le poinct 3 », « 3 -- 8 », « I 5 ») ; la
+figure est sur un feuillet à part, la vue 36. « triligne aigu parabolique » :
+la figure bornée par un arc de parabole, sa tangente au sommet et une
+ordonnée.} Dans le secteur, la surface de rayon \(\rho\) est proportionnelle à
+\(\rho\), la pyramide à \(\rho^2\) ; la figure est un « triligne aigu
+parabolique » d'ordonnées proportionnelles à \(\rho^2\), et son centre de
+gravité est à la distance
+\[
+\frac{\int_0^r\rho\cdot\rho^2\,d\rho}{\int_0^r\rho^2\,d\rho}=\frac34\,r
+\]
+de \(I\) : c'est le point \(P\), pour tout secteur, « mesmes au demy-Cylindre ».
+
+En langage actuel, cette règle donne \(\int\rho^2\,dm\big/\int\rho\,dm\), là où
+le centre d'oscillation est \(\int\rho^2\,dm\big/\int\rho\cos\theta\,dm\),
+\(\theta\) étant l'angle que fait avec la verticale le rayon mené de l'axe à
+l'élément \(dm\). La différence est au dénominateur : Descartes compte la
+distance de chaque élément à l'axe, la mécanique exacte n'en compte que la
+composante verticale, puisque \(Md=\int\rho\cos\theta\,dm\).
+
+\subsection*{Le défaut : la direction de l'agitation}
+
+« Le deffaut de ce raisonnement est, qu'il considere l'agitation seule des
+parties du corps agité, oubliant la direction de l'agitation de chacune de ces
+parties ». Un point \(L\) de l'arc se meut selon la tangente \(LS\), qui coupe
+la verticale \(IN\) prolongée en \(S\) ; un point \(T\) selon \(TR\), qui la
+coupe en \(R\). Tous ces points ont même agitation, mais ils agissent sur
+\(IN\) par des points différents et sous des angles différents. Seuls les
+points de la génératrice \(GH\) agissent par \(N\). Le centre d'agitation d'une
+surface cylindrique \(CGHF\) de rayon \(r\) est donc entre \(N\) et \(S\), et
+non en \(N\), comme il le faudrait pour que la règle de Descartes fût bonne.
+C'est exact : pour une telle surface, \(I=Mr^2\) et
+\(d=r\sin\alpha/\alpha\), d'où
+\[
+\frac{I}{Md}=r\,\frac{\alpha}{\sin\alpha},
+\]
+qui est bien compris entre \(IN=r\) et \(IS=r/\cos\alpha\), puisque
+\(\sin\alpha<\alpha<\tan\alpha\).\footnote{Le feuillet construit ce point \(5\)
+par « comme l'arc \(LM\) est à sa corde \(LM\), ainsy le demy-diametre \(IN\)
+soit à \(I5\) », ce qui donne \(I5=r\sin\alpha/\alpha<r\), point situé entre
+\(I\) et \(N\). Ce serait le centre de gravité de l'arc, non son centre de
+percussion. La proportion est renversée : il faut « comme la corde est à
+l'arc ». La phrase précédente du feuillet place ce centre « entre \(N\) et
+\(S\) », et la figure de la vue 36 met le point \(5\) au-dessous de \(N\) et de
+\(R\), du côté de \(S\). Le texte seul se contredit donc, et cette lecture suit
+la figure et la phrase.} En composant de même toutes les surfaces
+cylindriques de rayon \(\rho\le r\), dont les centres sont en
+\(\rho\,\alpha/\sin\alpha\) et dont les « forces » sont comme \(\rho^2\), on
+trouve \(\tfrac34 r\,\alpha/\sin\alpha\), c'est-à-dire \(Q\) : la
+« conclusion toute autre » annoncée.
+
+L'auteur généralise juste quand il dit que le défaut « a lieu en toutes les
+autres figures solides : mesmes en toutes les figures planes desquelles
+l'aissieu du mouuement n'est pas dans le plan d'icelles ». La règle de
+Descartes est exacte quand \(\cos\theta=1\) pour toute la masse, c'est-à-dire
+pour une figure plane qui pend dans le plan vertical de l'axe et oscille
+perpendiculairement à ce plan. Hors de ce cas, \(\int\rho\cos\theta\,dm<\int\rho\,dm\),
+et elle place le centre trop près de l'axe.
+
+\subsection*{Deux remarques que l'auteur « passe sous silence »}
+
+La première : sur toute autre droite menée de \(I\) dans le plan \(ILNM\), on
+peut assigner un centre de percussion, et « tous ces centres sont dans vn
+lieu ». En langage actuel, les quantités de mouvement des éléments d'un solide
+qui tourne autour d'un axe fixe ont une résultante unique. Elle est
+perpendiculaire au plan passant par l'axe et par le centre de gravité, et sa
+ligne d'action est à la distance \(I/(Md)\) de l'axe. Le « lieu » est donc,
+dans la section, la droite menée par \(Q\) perpendiculairement à \(IN\) :
+chaque droite issue de \(I\) la coupe en son centre de percussion. Le mémoire
+ne dit pas quel est ce lieu.
+
+La seconde : même bien assigné, le centre d'agitation ne serait peut-être pas la
+« regle ou distance requise pour les Vibrations », parce que le centre de gravité
+« contribuë quelque chose » au balancement : c'est lui qui cause « la
+reciprocation de ce balancement de droicte à gauche, et de gauche à droicte ».
+L'auteur ajoute que ses expériences se sont accordées « d'assez pres » avec ses
+conclusions, et qu'il en a conclu que le centre d'agitation y contribue plus que
+le centre de gravité. La mécanique actuelle tranche la question. L'équation du
+mouvement est
+\[
+I\,\ddot\varphi=-Mgd\sin\varphi ,
+\]
+qui est celle d'un pendule simple de longueur \(I/(Md)\), à toute amplitude.
+Le centre de gravité intervient bien, par \(d\) ; mais il est déjà dans la
+formule du centre d'oscillation, et il n'y a pas à le composer une seconde
+fois. Le centre de l'auteur est donc la bonne « règle », et c'est pourquoi ses
+expériences s'accordaient avec lui.
+
+\section*{VI. « Copie de la lettre de M\textsuperscript{r} Roberval » (f. 14, vues 29 et 30)}
+
+\pagerange{29}{30}
+\subsection*{Ce que la copie permet de lire}
+
+Une cursive très rapide, liée, abrégée, la plus difficile du volume. La
+transcription en a lu environ les deux tiers, et cette lecture ne restitue rien
+de ce qui manque.\footnote{Le titre, « Copie de la lettre de M\textsuperscript{r}
+\emph{Roberval} », est de la main du texte ; le nom y est lu d'après la
+signature. La signature, « Roberval », en grandes lettres au bas de la vue 30,
+est d'un tracé plus lent et plus appuyé que le texte, et la page ne dit pas si
+elle est de la même main que la copie. Une note moderne dans la marge de la vue
+29 : « (Du portefeuille 1848 de Libri.) ».} La lettre s'ouvre ainsi : « J'ay 4
+choses a repliquer a Mons\textsuperscript{r} des Cartes. » Ce qui s'en lit
+suffit à suivre l'argument. C'est une réplique : Descartes a répondu à un
+premier écrit, et l'auteur de la lettre maintient ses objections point par
+point, en appelant plusieurs fois à « l'experience ».
+
+\emph{Premier point : une contradiction.} Dans sa seconde lettre, Descartes
+nierait qu'il faille, pour les vibrations d'un corps balancé autour d'un axe,
+rapporter la direction de chaque point « à une mesme perpendiculaire », alors
+que dans sa première il assurait que le centre d'agitation est dans cette
+perpendiculaire. L'auteur y voit « une contradiction manifeste ». Le principe
+qu'il invoque est juste : selon les règles de la mécanique, un tel centre
+dépend non seulement de la force de l'agitation de chaque point mais aussi de
+sa direction.\footnote{Les six premières lignes de la vue 29 sont en grande
+partie illisibles dans la transcription ; « de Paris » et « aiguille » y sont
+lus, le second avec doute, sans que la phrase se reconstitue.}
+
+\emph{Deuxième point : le centre trop près de l'axe.} L'auteur dit avoir
+protesté deux fois que les raisonnements de Descartes étaient défectueux, faute
+d'avoir considéré « la direction des points mobiles ». Descartes aurait ainsi
+assigné le centre d'agitation « plus haut, c'est a dire plus pres de l'aissieu,
+qu'il n'est en effect ». C'est ce qu'établit la section précédente :
+\(\int\rho\,dm\ge\int\rho\cos\theta\,dm\), de sorte que la valeur de Descartes
+est toujours au plus égale à la vraie.
+
+\emph{Troisième point : le lieu des centres.} Le centre de percussion peut se
+chercher « dans plusieurs autres lignes que dans la perpendic. susdite », et les
+autres centres sont « dans \ldots{} lieu ». La copie oppose à Descartes une
+affirmation qui porte sur « un arc de cercle ».\footnote{Les phrases de la copie
+sur ce lieu (« à quoy M. D. C. [\ldots] a respondu que ce lieu de [\ldots] », et,
+au point suivant, « M. D. C. a manqué de [\ldots], disant que le lieu
+\emph{proposé} ne [\ldots] [\ldots] en un arc de cercle ») sont trop lacunaires
+pour dire qui soutenait quoi. La transcription fait se suivre « La 3\textsuperscript{e}
+chose » et « En 3\textsuperscript{e} lieu » sans les accorder.} Ce qui est vrai
+se dit indépendamment de la lacune. Pour un solide tournant autour d'un axe
+fixe, les centres de percussion relatifs aux diverses droites issues de l'axe,
+dans une section droite, sont alignés sur une droite, la ligne d'action de la
+quantité de mouvement résultante. Ce lieu n'est pas un arc de cercle.
+
+\emph{Quatrième point : le centre de gravité.} C'est l'objection qui termine
+le mémoire des vues 31 à 39, citée presque mot pour mot : quand même le centre
+d'agitation aurait été trouvé, il ne paraissait pas qu'il fût « la regle ou
+distance requise pour les vibrations », parce que le centre de gravité est « la
+cause de la reciprocation de ce balancement ». Descartes répondait que c'est la
+gravité des parties, non le centre de gravité, qui cause ce va-et-vient. La
+lettre invoque alors la composition des « puissances ». Quand un corps est
+pressé de deux puissances différentes, chacune a sa force, sa direction et son
+centre particulier, et l'on compose celles-ci comme on compose les pesanteurs
+des parties pour avoir le centre de gravité du tout. La pesanteur et
+l'agitation seraient deux telles puissances. Le centre du composé changerait à
+chaque position du corps balancé, et les distances inégales des points à l'axe
+apporteraient « de l'inegalité à la vitesse du mouvement reciproque ». Il
+faudrait examiner ces altérations pour déterminer la longueur du pendule
+isochrone, et c'est pourquoi l'expérience contredirait si ouvertement
+Descartes.\footnote{« De 2\textsuperscript{e} lieu » est lu ainsi sur la page ;
+« d'aire » (« corps qui prendent fort peu \emph{d'aire} ») pourrait se lire
+« d'air », ce que le sens appuie : l'expérience porte sur des cercles, « ou
+plustost des cylindres », de faible épaisseur, pour lesquels la résistance de
+l'air est faible.}
+
+Sur ce dernier point, la mécanique actuelle donne raison à Descartes contre la
+lettre, et tort à tous deux dans la manière. L'équation
+\(I\ddot\varphi=-Mgd\sin\varphi\) montre que la pesanteur n'agit que par le
+moment \(Mgd\sin\varphi\), comme si toute la masse était au centre de gravité.
+Le corps est exactement équivalent, à toute position et à toute amplitude, au
+pendule simple de longueur \(I/(Md)\). Aucun « centre du composé » ne se
+déplace, et les vitesses inégales des points ne troublent pas l'équivalence,
+puisque tous tournent de la même vitesse angulaire. Ce qui dépend de
+l'amplitude, c'est la période du pendule simple lui-même : le pendule
+circulaire n'est pas isochrone.\footnote{Huygens montrera que la cycloïde, et
+non le cercle, rend les oscillations isochrones (\emph{Horologium
+oscillatorium}, 1673) ; c'est postérieur aux feuillets.} La lettre avait
+raison sur le centre et sur l'expérience. L'objection du centre de gravité, qui
+venait d'elle et du mémoire, est sans objet.
+
+\subsection*{La fin de la lettre}
+
+La lettre renvoie à Descartes le reproche d'avoir écrit trop long, l'accuse de
+mépriser « ces 2 instrumens de la connoissance humaine », la raison et
+l'expérience, pour ne suivre que sa pensée, et termine sur deux points qu'elle
+réserve « au R. P. Mersenne ». L'un met en cause Descartes au sujet d'un
+« Aristarque ». L'autre porte sur ce qu'il a fait, dans un ouvrage « imprimée »,
+« (ad 3 et 4 lineas) », comparé à ce qu'avait fait Apollonius au sujet
+d'Euclide.\footnote{« Aristarque » et le titre de l'ouvrage imprimé
+(« \emph{Dioptrique} ») sont des lectures douteuses. Le lieu à trois et quatre
+droites est traité dans la \emph{Géométrie}, non dans la \emph{Dioptrique} ; la
+leçon de la copie ne peut être tranchée que sur l'image. C'est le lieu
+qu'examine aussi le mémoire des vues 23 à 26.} Pas de date, pas d'adresse.
+
+\section*{VII. Une lettre sur les thèses du P. Fabri (vues 41 à 43)}
+
+\pagerange{41}{43}
+La vue 41 est un panneau d'adresse, au verso d'un feuillet plié en quatre
+dont le recto est blanc : « Pour le Reuerend Pere Mersenne ». La lettre qui
+suit, au feuillet suivant, commence « Mon R. Pere ». Elle n'est ni datée ni
+signée, et rien sur la page ne la joint matériellement à l'adresse qui la
+précède.\footnote{Au dos de la lettre (vue 43), une note d'archiviste d'une
+autre main : « Liasse de 12 cahy cotées depuis \emph{Y} jusques a \emph{L} »,
+les deux cotes lues avec doute, et plus bas « fin ». Deux chiffres en tête de
+la vue 42, « 54 » et « 20 ».} L'auteur prie son correspondant de faire savoir
+trois choses au « P. Fabri » au sujet de ses « Theses de geometrie ».
+
+\subsection*{La cinquième proposition, généralisée}
+
+La cinquième proposition des thèses « peut estre enoncee bien plus
+generalement ». Sur un cercle de centre \(l\) et de diamètre \(gk\), prenons sur
+le demi-cercle, dans l'ordre à partir de \(g\), les points \(i\), \(h\), puis
+\(k\), avec
+\(\text{arc }hk=\text{arc }hi\). Alors le segment \(gmh\), compris entre la
+corde \(gh\) et son arc, égale le secteur \(gli\) augmenté du petit segment
+\(hk\).\footnote{Deux mots écrits entre les lignes, au-dessus de « la
+circonferance \(hk\) » et de « circonferance \(hi\) », ne sont pas lus. La
+figure de la marge porte le cercle, le diamètre \(gk\), les points \(m\),
+\(i\), \(h\), \(k\) sur l'arc supérieur, la corde \(gh\), le rayon \(li\) et les
+cordes \(ih\), \(hk\).}
+
+C'est vrai pour toute position de \(h\) telle que \(i\) reste sur l'arc, et la
+démonstration tient en une ligne. Les triangles \(glh\) et \(hlk\) ont même aire,
+puisqu'ils ont des bases égales, \(lg=lk\), sur le diamètre, et le même sommet
+\(h\). Donc
+\begin{align*}
+\text{seg}(gh)&=\text{sect}(glh)-\triangle glh
+=\text{sect}(gli)+\text{sect}(ilh)-\triangle hlk\\
+&=\text{sect}(gli)+\text{sect}(hlk)-\triangle hlk
+=\text{sect}(gli)+\text{seg}(hk),
+\end{align*}
+puisque les secteurs \(ilh\) et \(hlk\) sont égaux, sur des arcs égaux. En
+angles, avec un rayon \(1\) et \(\widehat{klh}=\varphi\), les deux membres
+valent \(\tfrac12(\pi-\varphi-\sin\varphi)\). L'énoncé de Fabri n'est pas sur
+la page, et cette lecture ne le devine pas.
+
+\subsection*{La septième proposition, déclarée fausse}
+
+La septième serait fausse, « car si d'un point donné dans le cone l'on peut
+mener un plan qui face une parabole, l'on en pourra mener qui en feront une
+infinité d'autres ». L'objection est juste si la proposition affirmait
+l'unicité. Un plan coupe un cône circulaire selon une parabole exactement
+quand il est parallèle à un plan tangent au cône, sans passer par le sommet. Or
+le cône a une infinité de plans tangents, un le long de chaque génératrice, et
+par un point intérieur passe un plan parallèle à chacun. Il y a donc une
+famille à un paramètre de plans menés par ce point qui coupent des paraboles.
+
+\subsection*{Les foyers de l'hyperbole dans un cône scalène}
+
+La troisième chose est une question à poser à Fabri, dont l'auteur dit qu'elle
+« n'est pas bien difficile » et que « le P. Grinbergerus l'a demonstré ». Dans
+un cône « scalène », mais « il n'y a pas de difficulté en un cone droit », on
+mène un plan qui coupe une hyperbole dont l'axe est dans le triangle par l'axe
+du cône, de centre \(g\). On abaisse du sommet \(f\) de l'hyperbole la
+perpendiculaire \(fE\) sur l'axe du cône. Le cercle de centre \(g\) et de rayon
+\(gE\) donnerait les foyers aux points où il coupe l'axe de
+l'hyperbole.\footnote{Les lettres de l'axe de l'hyperbole sont lues
+« \(hghfi\) », la troisième avec doute ; la figure marginale porte sur cette
+droite \(h\), \(g\), \(f\), \(i\). Le texte nomme le cône « \(bae\) » et son axe
+« \(AED\) » ; la figure porte \(A\), \(B\), \(D\), \(E\). « \emph{Pour ce} que
+je vous priois » est lu avec doute, et un mot bref après « demonstrast » n'est
+pas lu. Un mot biffé sous le cachet de la bibliothèque n'est pas lu.}
+
+Pour un cône droit, c'est exact, et le calcul en coordonnées le confirme :
+\(gE^2=a^2+b^2\), carré de la demi-distance focale. Pour un cône scalène, c'est
+faux en général. Contre-exemple : sommet à l'origine, base dans le plan
+\(z=-1\), cercle de centre \(\bigl(\tfrac12,0,-1\bigr)\) et de rayon \(1\) ;
+plan sécant \(x=1\), perpendiculaire au triangle par l'axe \(y=0\). La section
+est l'hyperbole
+\[
+\frac{(z-\tfrac23)^2}{16/9}-\frac{y^2}{4/3}=1,
+\qquad c^2=a^2+b^2=\frac{28}{9}=\frac{140}{45},
+\]
+de centre \(g=(1,0,\tfrac23)\) et de sommet \(f=(1,0,2)\). Le pied de la
+perpendiculaire menée de \(f\) sur l'axe du cône, la droite qui joint le sommet
+au centre de la base, est \(E=\bigl(-\tfrac35,0,\tfrac65\bigr)\), et
+\(gE^2=\tfrac{128}{45}\neq\tfrac{140}{45}\). L'autre sommet donne la même
+valeur, et prendre pour axe la hauteur du cône ne donne pas mieux
+(\(gE^2=\tfrac{25}{9}\)).\footnote{Calcul de cette lecture. La lettre ne donne
+pas la démonstration qu'elle attribue à « Grinbergerus », et dit ne pas avoir
+« ce livre » ; cette lecture n'identifie ni l'ouvrage ni la proposition.}
+
+\subsection*{« Ce beau problème de M\textsuperscript{r} Roberval »}
+
+Si l'on veut proposer à Fabri quelque chose de plus difficile : « Estant donné
+un cylindre oblique, retrancher d'un seul trait de compas, sur un cylindre
+droit, une superficie esgale a la superficie du cylindre oblique donné. »
+
+Le problème est possible si l'on a le choix du cylindre droit, et la raison en
+est moderne : les deux aires sont la même intégrale elliptique complète de
+seconde espèce, \(E(k)=\int_0^{\pi/2}\sqrt{1-k^2\sin^2u}\,du\). La surface
+latérale du cylindre oblique est le produit de la longueur \(\ell\) d'une
+génératrice par le périmètre de la section droite. Si la base est un cercle de
+rayon \(r\) et que les génératrices font l'angle \(\beta\) avec le plan de la
+base, la section droite est une ellipse de demi-axes \(r\) et \(r\sin\beta\),
+d'excentricité \(\cos\beta\), et l'aire vaut \(4r\ell\,E(\cos\beta)\). D'autre
+part, un « trait de compas » tracé sur un cylindre droit de rayon \(R\), la
+pointe fixe sur le cylindre et l'ouverture \(\rho>2R\), est l'intersection du
+cylindre avec une sphère. Il découpe sur le cylindre une zone comprise entre
+deux courbes fermées, d'aire
+\[
+\int_{-\pi}^{\pi}2\sqrt{\rho^2-4R^2\sin^2\tfrac{\phi}{2}}\;R\,d\phi
+=8R\rho\,E\Bigl(\frac{2R}{\rho}\Bigr).
+\]
+Les deux aires sont égales dès que \(2R/\rho=\cos\beta\) et \(2R\rho=r\ell\),
+c'est-à-dire pour
+\[
+\rho=\sqrt{\frac{r\ell}{\cos\beta}},\qquad R=\frac{\rho\cos\beta}{2},
+\]
+deux longueurs constructibles à la règle et au compas.\footnote{Calcul de
+cette lecture ; la lettre ne donne pas de solution et n'en suggère aucune. Si
+le cylindre droit était imposé, les deux conditions ne pourraient en général
+être remplies ensemble par la seule ouverture de compas. La lettre s'arrête sur
+l'énoncé, suivie de deux longs traits de plume, sans formule finale ni
+signature.}
+
+\section*{Ce que ces feuillets ne disent pas}
+
+\pagerange{2}{43}
+\textbf{Qui a écrit les deux lettres-traités et le mémoire sur le lieu à
+quatre droites.} Aucun de ces trois textes ne nomme son auteur. Les deux
+premiers sont d'une même main, le troisième d'une autre. Deux marques portent
+le nom abrégé de Roberval, et l'on ne peut rien en tirer : « le fou de Rob. »,
+dans le corps de la première lettre, où Roberval serait moqué, et un « Rob »
+isolé dans l'angle de la vue 11, hors du texte. Cette lecture n'attribue ces
+pièces à personne.\footnote{La littérature a proposé des attributions, que
+cette lecture rapporte sans les adopter ni les discuter. Le catalogue de
+Delisle (1888) donne les trois pièces « par Roberval ». Adam et Tannery,
+après Paul Tannery (1893), les tiennent pour des factums de Jean de Beaugrand.}
+
+\textbf{Qui a écrit le mémoire sur le secteur de cylindre.} Le mémoire parle en
+son nom propre (« mes conclusions »), n'est pas signé, et la copie signée
+« Roberval » en reprend la fin presque mot pour mot. C'est un fait des
+feuillets. Il rend l'attribution vraisemblable ; il ne la prouve pas, et cette
+lecture ne la fait pas.\footnote{La littérature imprime ce mémoire comme une
+pièce de Roberval (Adam et Tannery, IV, p. 420, d'après Clerselier). La copie
+des vues 29–30 est donnée par Delisle comme « de la main du P. Mersenne », ce que
+la transcription ne peut ni confirmer ni infirmer.}
+
+\textbf{Qui a écrit la note sur les triangles, et la lettre sur Fabri.}
+Personne ne le dit. La lettre nomme Roberval à la troisième personne, comme
+l'auteur d'un « beau problème ».
+
+\textbf{Quand.} Aucun feuillet ne porte de date. Le champ de datation est celui
+du catalogue, 1601–1700, et cette lecture n'en tire pas d'année. Les renvois
+de pages des deux lettres-traités s'accordent avec l'édition de 1637 de la
+\emph{Géométrie}, selon la transcription. Harriot y est cité comme imprimé en
+1631. Ce sont des bornes que le contenu impose ; ce ne sont pas des dates.
+
+\textbf{Si l'auteur des lettres-traités avait tort.} Sur les nombres réels, ses
+calculs sont presque tous justes et ses démonstrations d'unicité sont bonnes.
+Il avait tort sur ce qu'il en concluait. Les racines que Descartes appelait
+imaginaires ne sont ni des négatives mal nommées ni des « rêveries » : ce sont
+les nombres complexes, et le compte de Descartes, autant de racines que de
+dimensions, est devenu un théorème. Contre la règle des signes, il avait raison
+de demander qu'on la lise comme une borne, et de s'inquiéter des termes
+manquants. Sa dernière phrase n'est juste que si deux signes sont autres que
+ceux que la transcription lit ; l'image seule en décidera.
+
+\end{document}
