@@ -39,9 +39,16 @@ personne sur les images. Elles peuvent se tromper sur un chiffre, sur une
 lettre de figure, sur l'ordre des feuillets. Le lecteur qui trouve un désaccord
 entre un exercice et le feuillet doit croire le feuillet.
 
-Première version : les chapitres ci-dessous sont les premiers écrits, d'autres
-suivent. Les attributions sont celles des feuillets et des lectures, et rien de
-plus : aucun exercice ne tranche une question de priorité.
+Le livre suit l'ordre des cahiers du site : les volumes du XVII\textsuperscript{e}
+siècle (Maurolico, Mersenne, les critiques de Descartes, le traité des équations et
+le dossier du vol de Latin 11195, l'album de NAF 9544), puis ceux de Sophie Germain.
+Un volume lu en entier n'a pas de chapitre : NAF 15383, la lettre de Blaise Pascal à
+sa sœur Gilberte du 31 janvier 1643, avec une quittance de rente de 1674, ne porte
+aucune mathématique --- tout au plus une règle de trois --- et l'on n'y a pas
+fabriqué d'exercice. Les attributions sont celles des feuillets et des lectures, et
+rien de plus : aucun exercice ne tranche une question de priorité, et les
+rapprochements avec des ouvrages imprimés, cités dans la bibliographie, sont des
+repères et non des sources des feuillets.
 
 \section*{Maurolico : la sphère et ses tables (Latin 17859)}
 \chapitre{latin-17859}
@@ -620,8 +627,8 @@ de Fabre, et opposent trois règles.
 
 \begin{exercice}{La chute vers le centre ne suit pas un demi-cercle}{Lycée}
 \manuscrit{fr-12357}{13}{13}
-Galilée avait avancé qu'un corps tombant vers le centre d'une Terre qui tourne
-décrirait un demi-cercle. Une remarque le réfute par l'algèbre. Soit $A$ le
+Galilée avait avancé, dans son \emph{Dialogue}, qu'un corps tombant vers le centre
+d'une Terre qui tourne décrirait un demi-cercle. Une remarque le réfute par l'algèbre. Soit $A$ le
 centre de la Terre, $AC = b$ son rayon, et le cercle de diamètre $AC$. On suppose
 qu'au bout du temps où la Terre a tourné de l'angle $\varphi$, le corps est au
 point $K$ de ce cercle tel que $\widehat{KAC} = \varphi$, et au bout d'un temps
@@ -833,7 +840,7 @@ gravité.
 
 \begin{exercice}{Un nombre « qui semble faux » et qui est juste}{Lycée}
 \manuscrit{fr-12357}{18}{18}
-La remarque sur la page 193 rapporte la règle de Galilée : la résistance des
+La remarque sur la page 193 rapporte la règle de Galilée (\emph{Discorsi}, 1638) : la résistance des
 cylindres à la rupture est « en raison triplée des diamètres ». Puis elle calcule :
 une corde de laiton d'un sixième de ligne de diamètre rompant sous $18$ livres, une
 colonne d'un pied de diamètre romprait « seulement avec $13\,436\,928$ » livres ;
@@ -2754,22 +2761,974 @@ puissance $P = Wv$ ($\rho$ masse volumique de l'air).
 \end{enumerate}
 \end{solution}
 
+\section*{Un album d'autographes : Mersenne et la hauteur du pôle, Libri sur Roberval (NAF 9544)}
+\chapitre{naf-9544}
+
+NAF 9544 est un album de trente-six feuillets relié en 1899, où l'on a monté des
+autographes achetés en vente publique, chacun précédé de la coupure du catalogue
+qui l'annonçait : une minute de d'Alembert, des pièces de l'abbé Bossut, un
+fragment philosophique de Sophie Germain, des épigrammes latines, des
+observations astronomiques de 1620--1621 adressées au P. Petau avec la lettre signée
+« Mar. Mers. M. » qui les accompagnait (vues 33 à 40), et une description, par
+Guglielmo Libri, de cinq manuscrits de Roberval (vues 41 à 55). La feuille
+d'observations n'est pas signée ; elle est attribuée à Mersenne par la coupure et
+par la lettre qui l'annonce. Les mathématiques de l'album sont rares : ce chapitre
+prend la feuille de Mersenne, et deux des énoncés que Libri rapporte.
+
+\begin{exercice}{La déclinaison de l'étoile par l'analemme}{L1}
+\manuscrit{naf-9544}{38}{39}
+Le 3 janvier 1621, « la brillante du quadrilatère de la Petite Ourse » est vue au
+méridien, sous le pôle, à $h = 34^\circ 35'$ de hauteur. Sa longitude écliptique
+est $\lambda = 127^\circ 34' 20''$, sa latitude $\beta = 72^\circ 51' 30''$, et
+l'obliquité est prise « selon Tycho » : $\varepsilon = 23^\circ 31' 30''$. On cherche
+sa déclinaison $\delta$, puis la hauteur du pôle $\varphi$ (la latitude de Paris).
+\begin{enumerate}
+\item Dans un repère orthonormé dont l'axe des $x$ vise l'équinoxe de printemps et
+  l'axe des $z$ le pôle de l'écliptique, l'étoile a pour vecteur unitaire
+  $(\cos\beta\cos\lambda, \cos\beta\sin\lambda, \sin\beta)$. En passant au repère
+  équatorial par une rotation d'angle $\varepsilon$ autour de l'axe des $x$, montrer
+  que $\sin\delta = \sin\beta\cos\varepsilon + \cos\beta\sin\varepsilon\sin\lambda$.
+\item La feuille projette la sphère sur le plan du colure des solstices. Le petit
+  cercle des points de latitude $\beta$ s'y projette sur une corde $A\kappa$, où $A$
+  (longitude $90^\circ$) est à la hauteur $\sin(\beta + \varepsilon)$ au-dessus du plan
+  de l'équateur et $\kappa$ (longitude $270^\circ$) à la hauteur
+  $\sin(\beta - \varepsilon)$. L'étoile, à l'arc $\lambda - 90^\circ$ de $A$ sur le petit
+  cercle, se projette en $F$ avec $AF = 1 - \cos(\lambda - 90^\circ)$, en rayons du
+  petit cercle, et descend de $AE = AD\cdot AF$ au-dessous de $A$, où $AD$ est la
+  moitié de la descente de $A$ à $\kappa$. Montrer que la construction donne
+  exactement la formule de 1.
+\item Refaire le calcul de la feuille avec des sinus à cinq décimales :
+  $AB = \sin 96^\circ 23'$, $\sin 49^\circ 20'$, $AD$, $AF$, $AE$, $\sin\delta$, $\delta$.
+\item L'étoile passant sous le pôle, montrer que $\varphi = h + (90^\circ - \delta)$.
+  La feuille écrit la distance polaire $14^\circ 12' 35''$ et la hauteur du pôle
+  $48^\circ 47' 35''$. Corriger.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item La rotation autour de l'axe des $x$ qui amène le pôle de l'écliptique sur le
+  pôle céleste donne pour troisième coordonnée équatoriale
+  $z' = y\sin\varepsilon + z\cos\varepsilon = \cos\beta\sin\lambda\sin\varepsilon +
+  \sin\beta\cos\varepsilon$, et $z' = \sin\delta$.
+\item $AD = \frac12\bigl(\sin(\beta+\varepsilon) - \sin(\beta - \varepsilon)\bigr) =
+  \cos\beta\sin\varepsilon$ et $AF = 1 - \cos(\lambda - 90^\circ) = 1 - \sin\lambda$.
+  La hauteur de l'étoile est donc
+  $\sin(\beta+\varepsilon) - (1 - \sin\lambda)\cos\beta\sin\varepsilon =
+  \sin\beta\cos\varepsilon + \cos\beta\sin\varepsilon - \cos\beta\sin\varepsilon +
+  \cos\beta\sin\varepsilon\sin\lambda$, c'est-à-dire la formule de 1. La
+  construction à la règle et au compas est une projection orthographique
+  (analemme) qui remplace toute la trigonométrie sphérique par une figure plane.
+\item $\beta + \varepsilon = 96^\circ 23'$ et $\sin 96^\circ 23' = \sin 83^\circ 37' =
+  0{,}99380$ ; $\beta - \varepsilon = 49^\circ 20'$ et $\sin 49^\circ 20' = 0{,}75851$ ;
+  la descente de $A$ à $\kappa$ est $0{,}23529$, d'où $AD = 0{,}11764$ ;
+  $\lambda - 90^\circ = 37^\circ 34' 20''$ et $AF = 1 - \cos 37^\circ 34' 20'' =
+  0{,}20741$ ; $AE = 0{,}11764\times0{,}20741 = 0{,}02440$ ; $\sin\delta =
+  0{,}99380 - 0{,}02440 = 0{,}96940$, et $\delta = 75^\circ 47' 22''$ (la feuille :
+  $75^\circ 47' 20''$). Tous les nombres de la feuille sont justes. La formule
+  directe donne $\delta = 75^\circ 47' 21''$.
+\item Sous le pôle, l'étoile est au-dessous du pôle de sa distance polaire
+  $90^\circ - \delta$ : sa hauteur vaut $\varphi - (90^\circ - \delta)$, d'où la formule.
+  Or $90^\circ - 75^\circ 47' 20'' = 14^\circ 12' 40''$, non $14^\circ 12' 35''$ : c'est
+  une faute de soustraction, répétée dans les deux solutions de la feuille. La
+  hauteur du pôle est $34^\circ 35' + 14^\circ 12' 40'' = 48^\circ 47' 40''$
+  (avec $\delta = 75^\circ 47' 21''$, $48^\circ 47' 39''$).
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Deux autres méthodes pour la latitude de Paris}{Lycée}
+\manuscrit{naf-9544}{39}{39}
+Au verso, « Autres observations de la même année ». La hauteur minimale de
+l'étoile polaire au méridien est $46^\circ 2' 30''$ et sa hauteur maximale
+$51^\circ 28' 45''$. Le 23 décembre 1620, la hauteur méridienne du Soleil est
+$17^\circ 45'$ ; on y ajoute la parallaxe, $2' 58''$, puis la déclinaison australe du
+Soleil, $23^\circ 30' 22''$, et l'on obtient la hauteur de l'équateur
+$41^\circ 18' 20''$.
+\begin{enumerate}
+\item Une étoile circumpolaire à la distance polaire $p$ passe au méridien à la
+  hauteur $\varphi + p$ au-dessus du pôle et $\varphi - p$ au-dessous. En déduire
+  $\varphi$ et $p$ pour l'étoile polaire. Pourquoi cette méthode ne demande-t-elle
+  ni catalogue ni obliquité ?
+\item Au solstice d'hiver, montrer que la hauteur méridienne du Soleil vaut
+  $90^\circ - \varphi - |\delta|$. Vérifier l'addition de la feuille, en déduire
+  $\varphi$, et vérifier la déclinaison du Soleil par $\sin\delta =
+  \sin\varepsilon\sin\lambda$ avec $\varepsilon = 23^\circ 31' 30''$ et la longitude
+  du Soleil $\lambda = 272^\circ 13'$.
+\item La réfraction atmosphérique relève les astres (d'environ $3'$ à $18^\circ$ de
+  hauteur). Dans quel sens fausse-t-elle chacune des deux méthodes ? La latitude de
+  Paris est aujourd'hui voisine de $48^\circ 50'$ : commenter les trois valeurs
+  $48^\circ 47' 40''$, $48^\circ 45' 37\frac12''$ et $48^\circ 41' 40''$.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item La demi-somme des deux hauteurs donne $\varphi$, la demi-différence $p$ :
+  $\varphi = \frac12(51^\circ 28' 45'' + 46^\circ 2' 30'') = \frac12\cdot 97^\circ 31' 15''
+  = 48^\circ 45' 37\frac12''$ et $p = \frac12\cdot 5^\circ 26' 15'' = 2^\circ 43'
+  7\frac12''$, les nombres de la feuille. On n'a besoin que de deux hauteurs
+  mesurées, ni de la position de l'étoile ni de l'obliquité.
+\item La hauteur de l'équateur au méridien est $90^\circ - \varphi$ ; un astre de
+  déclinaison australe $|\delta|$ passe plus bas de $|\delta|$. D'où
+  $90^\circ - \varphi = h + |\delta|$. Addition : $17^\circ 45' + 2' 58'' =
+  17^\circ 47' 58''$ et $17^\circ 47' 58'' + 23^\circ 30' 22'' = 41^\circ 18' 20''$ ;
+  $\varphi = 48^\circ 41' 40''$, soustraction que la feuille ne fait pas. Et
+  $\sin 23^\circ 31' 30''\,\sin 272^\circ 13' = 0{,}39911\times(-0{,}99925) =
+  -0{,}39881$, soit $\delta = -23^\circ 30' 23''$, à une seconde de la feuille.
+\item La réfraction augmente les hauteurs observées. Pour l'étoile polaire, elle
+  relève les deux passages presque également ; la demi-somme est trop forte d'environ
+  une minute, et $\varphi$ surestimée. Pour le Soleil, $h$ trop fort donne une hauteur
+  de l'équateur trop forte et donc $\varphi$ trop faible, de quelque $3'$ ; la parallaxe
+  de $2' 58''$ ajoutée par la feuille (la vraie est d'environ $9''$) et l'obliquité de
+  Tycho, trop forte d'environ $2'$, vont dans le même sens. D'où une valeur solaire
+  plus basse que les valeurs stellaires, et toutes un peu au-dessous de $48^\circ 50'$ ;
+  la feuille ne dit pas où les observations furent faites.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Les paraboles de tous les degrés, selon la description de Libri}{L1}
+\manuscrit{naf-9544}{42}{49}
+Libri rapporte que le premier manuscrit de Roberval contient un petit écrit sur la
+quadrature de la parabole (mars 1651) où, par la méthode des indivisibles, le
+conoïde parabolique est la moitié du cylindre de même base et de même hauteur, le
+« fuseau parabolique » (solide engendré par un segment de parabole tournant autour
+de sa base) les $\frac{8}{15}$ du cylindre qui l'enveloppe, puis la quadrature de
+« toutes les paraboles à l'infini ».
+\begin{enumerate}
+\item Montrer que l'aire sous $y = x^n$ entre $0$ et $a$ est la fraction
+  $\frac{1}{n+1}$ du rectangle circonscrit.
+\item On fait tourner autour de l'axe des $x$ la région $0 \le y \le x^{1/n}$,
+  $0 \le x \le a$ (un « conoïde » de la courbe $x = y^n$ autour de son axe). Montrer
+  que son volume est au cylindre circonscrit comme $n$ à $n + 2$, et retrouver la
+  moitié pour la parabole.
+\item Montrer que le fuseau engendré par $y = h\bigl(1 - \frac{x^2}{b^2}\bigr)$,
+  $-b \le x \le b$, tournant autour de l'axe des $x$, vaut les $\frac{8}{15}$ du
+  cylindre de rayon $h$ et de longueur $2b$. Où a-t-on déjà rencontré le nombre
+  $\frac{8}{15}$ dans ce livre, et pourquoi est-ce le même calcul ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $\int_0^a x^n\,dx = \frac{a^{n+1}}{n+1} = \frac{1}{n+1}\,(a\cdot a^n)$.
+\item $V = \pi\int_0^a x^{2/n}\,dx = \pi\frac{a^{1+2/n}}{1 + 2/n} =
+  \frac{n}{n+2}\,\pi a^{2/n}\,a$, et le cylindre circonscrit, de rayon $a^{1/n}$ et
+  de longueur $a$, vaut $\pi a^{2/n}a$. Pour $n = 2$ : $\frac24 = \frac12$.
+\item $V = \pi h^2\int_{-b}^{b}\bigl(1 - \frac{x^2}{b^2}\bigr)^2dx =
+  2\pi h^2 b\int_0^1(1 - u^2)^2du = 2\pi h^2 b\cdot\frac{8}{15}$, et le cylindre vaut
+  $2\pi h^2 b$. C'est l'intégrale $\int_0^1(1-u^2)^2du$ de la spirale des huit
+  quinzièmes de Français 12357, où l'aire polaire $\frac12\int r^2d\theta$ fait
+  apparaître, comme le volume de révolution $\pi\int y^2dx$, le carré de
+  $1 - u^2$.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le cylindre de plus grand pourtour inscrit dans une sphère}{Lycée}
+\manuscrit{naf-9544}{54}{55}
+Libri signale, dans le tome II du « supplément latin 218 », un problème adressé au
+P. Mersenne le 10 novembre 1642 : « trouver le cylindre de plus grand
+\emph{ambitus} inscrit dans une sphère donnée ». Soit $R$ le rayon de la sphère ; un
+cylindre inscrit a pour rayon $R\cos t$ et pour hauteur $2R\sin t$,
+$0 < t < \frac{\pi}{2}$.
+\begin{enumerate}
+\item Si l'\emph{ambitus} est la surface latérale, trouver le cylindre optimal et la
+  surface maximale.
+\item Si c'est la surface totale (bases comprises), montrer que l'optimum vérifie
+  $\tan 2t = 2$ et que la surface maximale vaut $\pi R^2(1 + \sqrt5)$.
+\item Comparer ces deux optimums à la surface de la sphère.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $L(t) = 2\pi R\cos t\cdot 2R\sin t = 2\pi R^2\sin 2t$, maximale pour
+  $2t = \frac{\pi}{2}$, soit $t = 45^\circ$ : hauteur $R\sqrt2$ égale au diamètre de
+  la base, et $L_{\max} = 2\pi R^2$.
+\item $S(t) = 2\pi R^2\cos^2t + 2\pi R^2\sin2t = 2\pi R^2 f(t)$ avec
+  $f(t) = \frac{1 + \cos2t}{2} + \sin2t$. $f'(t) = -\sin 2t + 2\cos 2t$ s'annule
+  pour $\tan 2t = 2$, positive avant, négative après : c'est le maximum. Alors
+  $\cos2t = \frac{1}{\sqrt5}$, $\sin2t = \frac{2}{\sqrt5}$, $f = \frac12 +
+  \frac{1}{2\sqrt5} + \frac{2}{\sqrt5} = \frac12 + \frac{\sqrt5}{2}$, et
+  $S_{\max} = \pi R^2(1 + \sqrt5)$, pour $t \approx 31{,}7^\circ$.
+\item La sphère a pour surface $4\pi R^2$ : l'optimum latéral en est la moitié,
+  l'optimum total $\frac{1+\sqrt5}{4} \approx 0{,}81$ fois. Libri ne donne que
+  l'énoncé ; ces deux solutions ne sont pas sur les feuillets, qui ne disent pas
+  quelle surface Roberval entendait.
+\end{enumerate}
+\end{solution}
+
+\section*{Sophie Germain : la mécanique d'un essai de philosophie (Français 9117)}
+\chapitre{fr-9117}
+
+Français 9117 ne contient pas une ligne de calcul : c'est le manuscrit de travail,
+de la main de Sophie Germain, de ses « Considérations générales sur l'état des
+sciences et des lettres aux différentes époques de leur culture », publiées après
+sa mort (vues 9 à 110), précédé de la lettre par laquelle son neveu Lherbette le
+donna à la Bibliothèque royale. L'essai soutient qu'un même sentiment d'ordre et de
+proportion gouverne les sciences, les lettres et les arts, et, pour décrire les
+sociétés, il emprunte ses images à la mécanique : causes perturbatrices qui
+s'éteignent, équilibre stable et instable, impulsion donnée hors du centre de
+gravité, corps durs, élastiques et mous. Ces affirmations de mécanique sont
+précises, et plusieurs demandent à être redressées ; les trois exercices de ce
+chapitre les prennent au mot.
+
+\begin{exercice}{Une impulsion donnée à côté du centre de gravité}{L1}
+\manuscrit{fr-9117}{70}{71}
+L'essai affirme qu'une impulsion dirigée par le centre de gravité meut le système
+« comme si tous ses points étaient réunis en un seul », mais que, dirigée à côté,
+« la force serait décomposée en deux portions » : l'une fait avancer le système,
+l'autre, « entièrement perdue par rapport à ce but », le fait tourner. On l'éprouve
+sur une barre homogène de masse $m$ et de longueur $L$, libre sur un plan
+horizontal sans frottement, qui reçoit une percussion $J$ perpendiculaire à la
+barre, en un point situé à la distance $d$ de son milieu $G$
+($0 \le d \le \frac L2$). On rappelle le moment d'inertie
+$I_G = \frac{mL^2}{12}$.
+\begin{enumerate}
+\item Par les théorèmes de la quantité de mouvement et du moment cinétique en $G$,
+  calculer la vitesse $v_G$ du centre de gravité et la vitesse angulaire $\omega$
+  juste après le choc. Que dire de l'affirmation de l'essai ?
+\item Calculer l'énergie cinétique $K$ communiquée, et la part qui va à la
+  rotation. Dans quel sens une partie de l'effort est-elle « perdue » ?
+\item L'essai ajoute que si la première portion était nulle, il ne resterait
+  qu'une rotation. Une force unique peut-elle produire une rotation sans
+  translation ? Que faut-il ?
+\item On impose cette fois l'énergie $K$ fournie par le choc (même « travail »).
+  Comment varie $v_G$ avec $d$ ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Quantité de mouvement : $mv_G = J$, donc $v_G = \frac Jm$ quel que soit $d$.
+  Moment cinétique en $G$ : $I_G\omega = Jd$, donc $\omega = \frac{12Jd}{mL^2}$.
+  L'impulsion donnée à côté du centre de gravité imprime au centre exactement la
+  même vitesse que si elle passait par lui, et y ajoute une rotation : rien n'est
+  retranché au mouvement d'ensemble (théorème du centre d'inertie). L'essai a tort
+  de dire qu'une « portion » de la force est perdue pour l'avancée.
+\item $K = \frac12mv_G^2 + \frac12I_G\omega^2 = \frac{J^2}{2m}\Bigl(1 + \frac{12d^2}{L^2}\Bigr)$.
+  La rotation en prend la part $\frac{12d^2/L^2}{1 + 12d^2/L^2}$, qui vaut
+  $\frac34$ pour $d = \frac L2$. Ce qui est « perdu » pour la translation n'est pas de
+  l'impulsion mais de l'énergie : pour une même percussion, un choc excentré
+  demande plus d'énergie.
+\item Non : une force unique $J$ donne toujours $v_G = J/m \ne 0$. Une rotation pure
+  demande un couple, deux percussions égales et opposées sur des lignes d'action
+  distinctes.
+\item $K = \frac{mv_G^2}{2}\bigl(1 + \frac{12d^2}{L^2}\bigr)$ donne
+  $v_G = \sqrt{\frac{2K}{m}}\bigl(1 + \frac{12d^2}{L^2}\bigr)^{-1/2}$, décroissante en
+  $d$ : à énergie donnée, frapper à côté ralentit l'avancée (de moitié pour
+  $d = \frac L2$). C'est sous cette forme que l'image politique de l'essai --- une
+  action du gouvernement qui contrarie l'opinion dépense une part de l'effort en
+  agitation --- garde un sens.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Les causes perturbatrices s'éteignent-elles ?}{L2}
+\manuscrit{fr-9117}{65}{69}
+L'essai tient pour un « théorème » que « les termes qui expriment l'irrégularité
+contiennent le temps de manière à s'évanouir après un temps très court », et en
+conclut que « les actions qui troublent l'ordre naturel tendent à s'anéantir ». Il
+distingue aussi l'équilibre stable, autour duquel on oscille, de l'équilibre
+instable, dont on s'éloigne. On examine l'équation
+\[
+\ddot x + 2\lambda\dot x + \omega_0^2x = F\cos\Omega t,
+\qquad \lambda \ge 0,\ \omega_0 > 0 .
+\]
+\begin{enumerate}
+\item On suppose $\lambda > 0$. Montrer que toute solution s'écrit $x_p + x_h$, où
+  $x_p(t) = A\cos(\Omega t - \psi)$ est une solution particulière périodique et
+  $x_h$ une solution de l'équation homogène, et que $x_h(t) \to 0$ exponentiellement.
+  Calculer $A$.
+\item On suppose $\lambda = 0$ et $\Omega \ne \omega_0$. Montrer que l'écart à la
+  solution périodique ne s'éteint pas.
+\item Écarté de la position d'équilibre $x = 0$ de l'équation $\ddot x - k^2x = 0$
+  ($k > 0$), que fait le système ? Relier au vocabulaire de l'essai.
+\item Conclure sur le « théorème » : dans quels systèmes est-il vrai ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item L'équation caractéristique $r^2 + 2\lambda r + \omega_0^2 = 0$ a des racines de
+  partie réelle strictement négative : $-\lambda \pm\sqrt{\lambda^2 - \omega_0^2}$
+  (réelles et négatives si $\lambda \ge \omega_0$, puisque
+  $\sqrt{\lambda^2-\omega_0^2} < \lambda$), ou $-\lambda \pm i\sqrt{\omega_0^2 -
+  \lambda^2}$. Toute solution homogène est combinaison de termes
+  $e^{rt}$ ou $te^{rt}$, qui tendent vers $0$ comme $e^{-ct}$ pour un $c > 0$. En
+  cherchant $x_p = \operatorname{Re}(Ce^{i\Omega t})$ :
+  $C(\omega_0^2 - \Omega^2 + 2i\lambda\Omega) = F$, d'où
+  $A = |C| = \frac{F}{\sqrt{(\omega_0^2 - \Omega^2)^2 + 4\lambda^2\Omega^2}}$. Toute
+  solution est $x_p + x_h$ (la différence de deux solutions est homogène) : le
+  régime transitoire s'éteint, le régime permanent reste.
+\item Les solutions homogènes sont $a\cos\omega_0t + b\sin\omega_0t$, d'amplitude
+  constante $\sqrt{a^2+b^2}$ : l'écart à la solution périodique
+  $\frac{F}{\omega_0^2 - \Omega^2}\cos\Omega t$ oscille indéfiniment sans décroître.
+\item Les solutions sont $ae^{kt} + be^{-kt}$ ; dès que $a \ne 0$, $|x| \to \infty$ :
+  le système s'éloigne de plus en plus, c'est l'équilibre instable de l'essai. Pour
+  $\ddot x + \omega_0^2 x = 0$ au contraire, on oscille autour de l'équilibre stable
+  sans s'en écarter ni y revenir, et l'essai a tort de dire, sans condition de
+  frottement, que l'amplitude « diminuera à chaque instant ».
+\item Le « théorème » est vrai pour les systèmes linéaires dissipatifs (oscillations
+  amorties, conduction de la chaleur), où les termes transitoires décroissent comme
+  $e^{-ct}$ ; faux pour les systèmes conservatifs (les perturbations mutuelles des
+  planètes sont périodiques et ne s'éteignent pas) et pour les systèmes instables.
+  La notion moderne est celle de stabilité asymptotique. Appliqué aux sociétés, où
+  il n'y a pas d'équation, l'argument reste une analogie.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Corps durs, élastiques et mous}{Lycée}
+\manuscrit{fr-9117}{73}{74}
+L'essai compare les caractères aux trois corps idéaux de la mécanique : le corps
+parfaitement élastique, « qui ne retienne rien de la direction dans laquelle on le
+pousse », et le corps parfaitement mou, « que le choc ne puisse faire changer de
+place, et qui absorbe toute la force employée par le seul changement de forme qu'il
+subit ». Deux corps de masses $m_1$ et $m_2$ se heurtent de front ; $m_1$ arrive à la
+vitesse $u$ sur $m_2$ au repos. Le coefficient de restitution $e \in [0,1]$ est le
+rapport des vitesses relatives après et avant le choc.
+\begin{enumerate}
+\item Écrire la conservation de la quantité de mouvement et la définition de $e$,
+  et en déduire les vitesses $v_1$ et $v_2$ après le choc.
+\item Choc parfaitement mou ($e = 0$) : les deux corps repartent-ils ensemble ?
+  Quelle fraction de l'énergie cinétique est absorbée ? Le corps mou « change-t-il
+  de place » ?
+\item Choc parfaitement élastique ($e = 1$) : vérifier que l'énergie cinétique est
+  conservée. Que se passe-t-il si $m_1 = m_2$ ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $m_1v_1 + m_2v_2 = m_1u$ et $v_2 - v_1 = eu$. D'où
+  $v_2 = \frac{m_1(1+e)}{m_1+m_2}u$ et $v_1 = \frac{m_1 - em_2}{m_1+m_2}u$.
+\item $e = 0$ : $v_1 = v_2 = \frac{m_1u}{m_1+m_2}$, les corps repartent ensemble. Le
+  corps mou se déplace : l'essai se trompe en disant qu'il ne change pas de place.
+  L'énergie finale est $\frac12(m_1+m_2)v_1^2 = \frac{m_1}{m_1+m_2}\cdot\frac12m_1u^2$ :
+  la fraction absorbée est $\frac{m_2}{m_1+m_2}$. Ce que le corps mou absorbe par sa
+  déformation est une part de l'énergie cinétique, non de la quantité de
+  mouvement, qui se conserve toujours.
+\item $e = 1$ : $v_1 = \frac{m_1 - m_2}{m_1+m_2}u$, $v_2 = \frac{2m_1}{m_1+m_2}u$, et
+  $m_1v_1^2 + m_2v_2^2 = \frac{m_1u^2}{(m_1+m_2)^2}\bigl(m_1(m_1-m_2)^2 +
+  4m_1m_2\bigr) = \frac{m_1u^2(m_1+m_2)^2}{(m_1+m_2)^2} = m_1u^2$ : l'énergie
+  cinétique est conservée. Si $m_1 = m_2$, $v_1 = 0$ et $v_2 = u$ : les corps
+  échangent leurs vitesses.
+\end{enumerate}
+\end{solution}
+
+\section*{Sophie Germain : plaques vibrantes et arithmétique (Français 9118)}
+\chapitre{fr-9118}
+
+Français 9118 est le dossier d'une carrière tel qu'il arrivait du dehors : lettres
+reçues (Cauchy, Delambre, Fourier, Legendre, Navier, Poisson, Gauss, Villoison),
+trois brouillons de Sophie Germain dont deux lettres à Gauss signées « Le Blanc », la
+copie de la note de Lagrange aux commissaires du prix des surfaces élastiques
+(décembre 1811), un petit cours de mécanique écrit pour elle, une note signée
+G. Libri (1824) et des feuillets détachés de sa main. Deux questions l'occupent :
+l'équation des vibrations d'une plaque élastique, et l'arithmétique des
+\emph{Disquisitiones arithmeticae} de Gauss (1801).
+
+\begin{exercice}{L'équation de la plaque, de la courbure moyenne au bilaplacien}{L3}
+\manuscrit{fr-9118}{5}{6}
+\manuscrit{fr-9118}{39}{39}
+\manuscrit{fr-9118}{53}{54}
+Dans un brouillon, Sophie Germain dit avoir pris pour mesure de la courbure la
+quantité $\frac1r + \frac1{r'}$ (somme des courbures principales), qu'elle compare à
+une température moyenne. La note de Lagrange de décembre 1811 écarte l'équation de
+son mémoire, qui se réduit pour $z$ petit à
+$\frac{\partial^2z}{\partial t^2} + C\bigl(\frac{\partial^6z}{\partial x^4\partial y^2}
++ \frac{\partial^6z}{\partial y^4\partial x^2}\bigr) = 0$, et donne
+$\frac{\partial^2z}{\partial t^2} + k^2\Bigl(\frac{\partial^4z}{\partial x^4} +
+2\frac{\partial^4z}{\partial x^2\partial y^2} + \frac{\partial^4z}{\partial y^4}\Bigr) = 0$.
+\begin{enumerate}
+\item La courbure normale d'une surface dans la direction faisant l'angle $\theta$
+  avec la première direction principale vaut $k_1\cos^2\theta + k_2\sin^2\theta$
+  (formule d'Euler). Montrer que sa moyenne sur $\theta \in [0, 2\pi]$ est
+  $\frac{k_1 + k_2}{2}$.
+\item Pour un graphe $z = f(x,y)$ avec $f$, $\nabla f$ petits, on admet que $k_1 + k_2$
+  est la trace de la hessienne de $f$ au premier ordre. En déduire
+  $\frac1r + \frac1{r'} \approx \Delta z$.
+\item Soit l'énergie de flexion $E[z] = \frac D2\iint_\Omega(\Delta z)^2\,dx\,dy$ et
+  l'énergie cinétique $\frac\rho2\iint_\Omega\bigl(\frac{\partial z}{\partial t}\bigr)^2
+  dx\,dy$. Pour une variation $\varphi$ à support compact dans $\Omega$, calculer
+  $\frac{d}{d\varepsilon}E[z + \varepsilon\varphi]_{|\varepsilon = 0}$ et montrer qu'elle
+  vaut $D\iint(\Delta^2z)\varphi$. En déduire, par le principe de moindre action,
+  l'équation $\rho\,\partial_t^2z + D\,\Delta^2z = 0$, et vérifier que c'est celle de
+  Lagrange.
+\item Legendre écrit à Sophie Germain : en réduisant la surface à une lame de largeur
+  constante, on retombe sur l'équation d'Euler des lames,
+  $\partial_t^2z + k^2\partial_x^4z = 0$, et « votre équation ne donnerait pas ce
+  résultat ». Vérifier les deux affirmations en supposant que $z$ ne dépend pas de $y$.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $\frac{1}{2\pi}\int_0^{2\pi}(k_1\cos^2\theta + k_2\sin^2\theta)\,d\theta =
+  \frac{k_1 + k_2}{2}$, puisque $\cos^2$ et $\sin^2$ ont chacun pour moyenne
+  $\frac12$. La comparaison de Sophie Germain avec une moyenne est donc exacte :
+  $\frac1r + \frac1{r'}$ est le double de la courbure moyenne, et ne dépend pas du
+  repère.
+\item La trace de la hessienne est $f_{xx} + f_{yy} = \Delta f$. La quantité qu'elle
+  prenait pour mesure de la courbure est donc, au premier ordre, le laplacien ---
+  l'opérateur même de la théorie de la chaleur qu'elle invoquait par analogie.
+\item $E[z + \varepsilon\varphi] = \frac D2\iint(\Delta z + \varepsilon\Delta\varphi)^2$, de
+  dérivée en $0$ égale à $D\iint\Delta z\,\Delta\varphi$. La formule de Green,
+  $\iint u\,\Delta v = \iint v\,\Delta u$ pour $v$ à support compact, appliquée deux
+  fois, donne $D\iint(\Delta^2z)\,\varphi$ avec $\Delta^2z = \Delta(\Delta z)$. Le
+  lagrangien est $\iiint\bigl(\frac\rho2z_t^2 - \frac D2(\Delta z)^2\bigr)$ ; sa
+  variation pour $\varphi(x,y,t)$ à support compact vaut
+  $\iiint(-\rho z_{tt} - D\Delta^2z)\varphi$ (intégration par parties en $t$), nulle
+  pour tout $\varphi$ si et seulement si $\rho z_{tt} + D\Delta^2z = 0$. Or
+  $\Delta^2 = \partial_x^4 + 2\partial_x^2\partial_y^2 + \partial_y^4$ : c'est
+  l'équation de Lagrange avec $k^2 = D/\rho$. Son hypothèse physique conduisait donc
+  à la bonne équation ; c'est l'analyse du mémoire qui ne l'était pas.
+\item Si $z$ ne dépend pas de $y$, $\Delta^2z = \partial_x^4z$ et l'équation de
+  Lagrange devient $\partial_t^2z + k^2\partial_x^4z = 0$, celle de la poutre
+  d'Euler. Dans l'équation du mémoire, chaque terme contient une dérivée par
+  rapport à $y$, et elle se réduit à $\partial_t^2z = 0$ : Legendre a raison. (Sa
+  condition « $dz/dy = 0$ » doit s'entendre de toutes les dérivées en $y$.)
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Les racines de l'équation d'Euler pour les grandes fréquences}{L1}
+\manuscrit{fr-9118}{63}{64}
+Une note de Legendre discute l'équation d'Euler pour les vibrations d'une lame,
+\[
+0 = 2 - 2e^{2\omega} - \bigl(e^{\lambda\omega} - e^{(2-\lambda)\omega}\bigr)
+\bigl(e^{\lambda\omega} - e^{-\lambda\omega}\bigr)\bigl(\cot\lambda\omega +
+\cot(1-\lambda)\omega\bigr),
+\]
+où $0 < \lambda < 1$ fixe la position d'un nœud.
+\begin{enumerate}
+\item Pour $\lambda = \frac12$, Legendre soutient que $\sin\frac12\omega = 0$ n'est pas
+  une racine, mais « vient d'un facteur qui a été introduit par la multiplication ».
+  Justifier : que devient le second membre quand $\omega$ tend vers $2\pi$ ?
+\item Montrer que pour $\omega$ grand, l'équation équivaut au premier ordre à
+  $\cot\lambda\omega + \cot(1 - \lambda)\omega = 2$ : diviser par $e^{2\omega}$ et
+  négliger les exponentielles décroissantes.
+\item Cas $\lambda = \frac13$ : avec $x = \cot\frac\omega3$, montrer que
+  $\cot\frac{2\omega}{3} = \frac{x^2 - 1}{2x}$, et que l'équation devient
+  $3x^2 - 4x - 1 = 0$. En déduire les deux suites de racines approchées
+  $\omega = 3\alpha + 3k\pi$ et $\omega = 3\beta + 3k\pi$, et calculer $3\alpha$ et
+  $3\beta$.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Pour $\lambda = \frac12$, le dernier facteur vaut $2\cot\frac\omega2$. Quand
+  $\omega \to 2\pi$, $\cot\frac\omega2 \to \pm\infty$, alors que
+  $e^{\omega/2} - e^{3\omega/2}$ et $e^{\omega/2} - e^{-\omega/2}$ restent finis et non
+  nuls : le second membre n'a pas de limite finie et ne s'annule pas. L'équation
+  obtenue en multipliant par $\sin\frac\omega2$ a acquis les zéros de ce facteur :
+  ce sont des racines parasites (« on ne peut pas multiplier par zéro »).
+\item Le produit des deux premiers facteurs vaut
+  $e^{2\lambda\omega} - 1 - e^{2\omega} + e^{(2-2\lambda)\omega}$ ; divisé par
+  $e^{2\omega}$, il devient $e^{(2\lambda-2)\omega} - e^{-2\omega} - 1 + e^{-2\lambda\omega}$,
+  qui tend vers $-1$ puisque $0 < \lambda < 1$. En divisant l'équation par $e^{2\omega}$,
+  on obtient $2e^{-2\omega} - 2 + (1 + \eta)\bigl(\cot\lambda\omega + \cot(1-\lambda)\omega\bigr)
+  = 0$ avec $\eta \to 0$, soit au premier ordre
+  $\cot\lambda\omega + \cot(1-\lambda)\omega = 2$.
+\item $\cot 2\theta = \frac{\cos^2\theta - \sin^2\theta}{2\sin\theta\cos\theta} =
+  \frac{\cot^2\theta - 1}{2\cot\theta}$. Avec $\lambda\omega = \frac\omega3$ et
+  $(1-\lambda)\omega = \frac{2\omega}3$ : $x + \frac{x^2-1}{2x} = 2$, soit
+  $3x^2 - 4x - 1 = 0$ et $x = \frac{2 \pm\sqrt7}{3}$. Soient $\alpha \in\, ]0,\pi[$ avec
+  $\cot\alpha = \frac{2+\sqrt7}{3} \approx 1{,}549$, soit $\alpha \approx 0{,}5734$, et
+  $\beta \in\, ]0,\pi[$ avec $\cot\beta = \frac{2 - \sqrt7}{3} \approx -0{,}215$, soit
+  $\beta \approx 1{,}7828$. Comme $\cot$ est $\pi$-périodique,
+  $\frac\omega3 = \alpha + k\pi$ ou $\beta + k\pi$, d'où $\omega \approx 1{,}720 + 3k\pi$
+  et $\omega \approx 5{,}348 + 3k\pi$. Le calcul de Legendre est juste ;
+  l'approximation, qui suppose $e^\omega$ grand, est médiocre pour les premières
+  racines et s'améliore avec $k$, comme il le dit lui-même.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{L'article 357 des Disquisitiones et sa généralisation}{L3}
+\manuscrit{fr-9118}{43}{47}
+Dans un brouillon à Gauss signé « Le Blanc », Sophie Germain part du « beau
+théorème contenu dans l'équation $4\frac{x^n - 1}{x - 1} = y^2 \pm nz^2$ » et propose
+de le généraliser à $4\frac{x^{n^s} - 1}{x - 1} = y^2 \pm nz^2$ ($n$ premier impair,
+$s \ge 1$). Pour $p$ premier impair, on note $\Phi_p(x) = \frac{x^p-1}{x-1}$ et
+$p^* = (-1)^{(p-1)/2}p$ ; le théorème de Gauss affirme qu'il existe
+$Y, Z \in \mathbf{Z}[x]$ avec $4\Phi_p = Y^2 - p^*Z^2$.
+\begin{enumerate}
+\item Vérifier : $4\Phi_3 = (2x+1)^2 + 3$, $4\Phi_5 = (2x^2 + x + 2)^2 - 5x^2$,
+  $4\Phi_7 = (2x^3 + x^2 - x - 2)^2 + 7(x^2 + x)^2$. Le signe $\pm$ est-il libre ?
+\item Montrer l'identité $(Y^2 - p^*Z^2)(Y'^2 - p^*Z'^2) = (YY' + p^*ZZ')^2 -
+  p^*(YZ' + ZY')^2$.
+\item Montrer que $\frac{x^{p^s}-1}{x-1} = \prod_{j=0}^{s-1}\Phi_p\bigl(x^{p^j}\bigr)$.
+\item En déduire la généralisation. On montrera que si $4 \mid Y^2 - p^*Z^2$ alors
+  $Y \equiv Z \pmod 2$ (coefficient par coefficient), et que la composition de deux
+  telles formes permet de sortir un facteur $4$.
+\item Expliciter le cas $p = 3$, $s = 2$.
+\item Elle remarque encore que pour obtenir $4\frac{x^n+1}{x+1}$ il suffit de changer le
+  signe des termes de degré impair de $Y$ et $Z$. Justifier, et dire quelle
+  hypothèse manque à l'énoncé.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $(2x+1)^2 + 3 = 4x^2 + 4x + 4$ ; $(2x^2+x+2)^2 - 5x^2 = 4x^4 + 4x^3 + 9x^2 +
+  4x + 4 - 5x^2 = 4\Phi_5$ ; $(2x^3+x^2-x-2)^2 = 4x^6 + 4x^5 - 3x^4 - 10x^3 - 3x^2 +
+  4x + 4$ et $7(x^2+x)^2 = 7x^4 + 14x^3 + 7x^2$, de somme $4\Phi_7$. Le signe n'est pas
+  libre : c'est $+p$ pour $p \equiv 3 \pmod 4$ et $-p$ pour $p \equiv 1 \pmod 4$.
+\item Développer : $(YY' + p^*ZZ')^2 - p^*(YZ' + ZY')^2 = Y^2Y'^2 + p^{*2}Z^2Z'^2
+  - p^*Y^2Z'^2 - p^*Z^2Y'^2$ (les doubles produits $2p^*YY'ZZ'$ se détruisent), qui
+  est le produit.
+\item $\Phi_p(x^{p^j}) = \frac{x^{p^{j+1}} - 1}{x^{p^j} - 1}$, et le produit de $j = 0$ à
+  $s - 1$ se télescope en $\frac{x^{p^s}-1}{x-1}$.
+\item Lemme : si $4 \mid Y^2 - p^*Z^2$ dans $\mathbf{Z}[x]$, alors, modulo $2$ et
+  $p^*$ étant impair, $0 \equiv Y^2 + Z^2 \equiv (Y + Z)^2$ dans $\mathbf{F}_2[x]$, qui est
+  intègre : $Y \equiv Z \pmod 2$. Posons $F_s = \prod_{j<s}\Phi_p(x^{p^j})$ et montrons
+  par récurrence que $4F_s = Y_s^2 - p^*Z_s^2$ avec $Y_s, Z_s \in \mathbf{Z}[x]$. Pour
+  $s = 1$, c'est le théorème de Gauss. Si c'est vrai pour $s$, soit
+  $4\Phi_p(x^{p^s}) = Y'^2 - p^*Z'^2$ (substituer $x^{p^s}$ à $x$ dans l'identité de
+  Gauss). Par le lemme, $Y_s \equiv Z_s$ et $Y' \equiv Z' \pmod 2$ ; alors
+  $Y_sY' + p^*Z_sZ' \equiv 2Y_sY' \equiv 0$ et $Y_sZ' + Z_sY' \equiv 2Y_sY' \equiv 0
+  \pmod 2$. Avec $Y_{s+1} = \frac{Y_sY' + p^*Z_sZ'}{2}$ et
+  $Z_{s+1} = \frac{Y_sZ' + Z_sY'}{2}$, entiers, l'identité de 2 donne
+  $16F_s\Phi_p(x^{p^s}) = 4\bigl(Y_{s+1}^2 - p^*Z_{s+1}^2\bigr)$, soit $4F_{s+1} = Y_{s+1}^2 -
+  p^*Z_{s+1}^2$. Par 3, $F_s = \frac{x^{p^s}-1}{x-1}$ : la généralisation est vraie,
+  avec le même signe pour tout $s$. Ses deux démonstrations, jointes à la lettre, ne
+  sont pas dans le volume.
+\item $4\Phi_3 = (2x+1)^2 + 3$ et $4\Phi_3(x^3) = (2x^3+1)^2 + 3$, avec $p^* = -3$.
+  $Y'' = \frac{(2x+1)(2x^3+1) - 3}{2} = 2x^4 + x^3 + x - 1$ et
+  $Z'' = \frac{(2x+1) + (2x^3+1)}{2} = x^3 + x + 1$, d'où
+  $4\frac{x^9 - 1}{x - 1} = (2x^4 + x^3 + x - 1)^2 + 3(x^3 + x + 1)^2$, identité qu'on
+  vérifie en développant.
+\item Pour $n$ impair, $\frac{x^n + 1}{x + 1} = \frac{(-x)^n - 1}{(-x) - 1} = \Phi_n(-x)$,
+  donc $4\frac{x^n+1}{x+1} = Y(-x)^2 - n^*Z(-x)^2$, et $Y(-x)$ s'obtient en changeant
+  le signe des termes de degré impair. Il faut $n$ impair, hypothèse que le
+  feuillet ne porte pas (pour $n$ pair, $\frac{x^n+1}{x+1}$ n'est pas un polynôme).
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le déterminant de l'adjointe}{L1}
+\manuscrit{fr-9118}{45}{47}
+Sophie Germain écrit à Gauss : « Je crois qu'en général $D$ étant la déterminante
+d'une forme composée d'un nombre $n$ de variables, $D^{n-1}$ est la déterminante de
+l'adjointe de cette forme », ajoute que Gauss a trouvé $D^2$ pour $n = 3$, qu'elle
+trouve $D^3$ pour $n = 4$, et que « cette analogie n'est sans doute pas suffisante
+pour établir la généralité de la proposition ». En langage matriciel, $A$ est la
+matrice symétrique de la forme et l'adjointe correspond à la comatrice transposée
+$\operatorname{adj}A$, qui vérifie $A\cdot\operatorname{adj}A = (\det A)\,I_n$.
+\begin{enumerate}
+\item Démontrer $\det(\operatorname{adj}A) = (\det A)^{n-1}$ lorsque $A$ est inversible.
+\item Étendre au cas $\det A = 0$ (par densité, ou en remplaçant $A$ par $A + tI_n$).
+\item Elle appuie sa conjecture sur un compte de degrés : le déterminant est de
+  degré $n$ en les coefficients, ceux de l'adjointe de degré $n - 1$, donc le
+  déterminant de l'adjointe de degré $n(n-1)$, comme $D^{n-1}$. Qu'est-ce que ce
+  compte prouve, et que ne prouve-t-il pas ?
+\item Vérifier la formule pour $n = 2$.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item En prenant le déterminant de $A\operatorname{adj}A = (\det A)I_n$ :
+  $\det A\cdot\det(\operatorname{adj}A) = (\det A)^n$, et l'on divise par
+  $\det A \ne 0$.
+\item $\det(A + tI_n)$ est un polynôme en $t$ non nul (de terme dominant $t^n$), qui ne
+  s'annule qu'en un nombre fini de $t$ ; pour les autres, l'identité vaut. Les deux
+  membres, $\det(\operatorname{adj}(A + tI_n))$ et $\det(A + tI_n)^{n-1}$, sont des
+  polynômes en $t$ égaux en une infinité de points, donc égaux ; on fait $t = 0$.
+\item Le compte montre que les deux membres sont des polynômes homogènes de même
+  degré : c'est une condition nécessaire, qui aurait réfuté la conjecture si les
+  degrés avaient différé, mais qui ne la démontre pas (bien des polynômes ont le même
+  degré). Elle ne prétend pas davantage.
+\item Pour $A = \begin{pmatrix} a & b \\ b & c\end{pmatrix}$,
+  $\operatorname{adj}A = \begin{pmatrix} c & -b \\ -b & a\end{pmatrix}$, de
+  déterminant $ac - b^2 = \det A = (\det A)^{2-1}$. (Le brouillon écrit que les
+  coefficients de l'adjointe sont alors « de l'ordre 0 » ; ils sont de degré
+  $n - 1 = 1$.)
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{L'équation de Fermat pour l'exposant $p-1$}{L1}
+\manuscrit{fr-9118}{43}{47}
+Le même brouillon annonce : l'impossibilité de $x^n + y^n = z^n$ « n'a encore été
+démontrée que pour $n = 3$ et $n = 4$ ; je crois être parvenue à prouver cette
+impossibilité pour $n = p - 1$, $p$ étant un nombre premier de la forme $8k+7$ ». La
+démonstration était jointe à la lettre et n'est pas dans le volume.
+\begin{enumerate}
+\item Montrer que si $p$ est premier et ne divise aucun des entiers $x$, $y$, $z$,
+  alors $x^{p-1} + y^{p-1} = z^{p-1}$ est impossible (petit théorème de Fermat).
+\item Montrer que si $p \equiv 7 \pmod 8$, $n = p - 1$ est pair mais non divisible par
+  $4$, et que l'équation de degré $n$ se ramène à l'exposant impair $m = \frac{p-1}2$
+  pour des carrés.
+\item Pour $p = 7$, montrer que l'énoncé découle du cas $n = 3$. Pour quels $p$ de la
+  forme $8k+7$ l'annonce a-t-elle un contenu nouveau par rapport au cas $3$ ? Donner
+  les deux plus petits.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Si $p \nmid x$, $x^{p-1} \equiv 1 \pmod p$ ; de même pour $y$, $z$. L'équation
+  donnerait $1 + 1 \equiv 1 \pmod p$, soit $p \mid 1$ : impossible. Tout le contenu de
+  l'annonce est donc dans le cas où $p$ divise l'un des trois nombres.
+\item $p = 8k + 7$ donne $n = 8k + 6 = 2(4k+3)$ : pair, et $\equiv 2 \pmod 4$, de sorte
+  que le cas $n = 4$ ne s'applique pas. Avec $m = 4k + 3$ impair,
+  $x^n + y^n = z^n$ s'écrit $(x^2)^m + (y^2)^m = (z^2)^m$, et $p = 2m + 1$.
+\item Pour $p = 7$, $n = 6$ : une solution de $x^6 + y^6 = z^6$ donnerait
+  $(x^2)^3 + (y^2)^3 = (z^2)^3$, exclu par le cas $n = 3$. De même chaque fois que
+  $3 \mid p - 1$. Les $p \equiv 7 \pmod 8$ avec $3 \nmid p - 1$ sont les
+  $p \equiv 23 \pmod{24}$ : les plus petits sont $23$ ($n = 22$) et $47$ ($n = 46$).
+  L'impossibilité pour tous ces exposants est aujourd'hui acquise, par le théorème
+  démontré en 1995, par de tout autres moyens.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{$p^4 + 4$, $p^4 + q^4$ et les nombres de Fermat}{Lycée}
+\manuscrit{fr-9118}{91}{93}
+Un feuillet détaché de sa main dit : « Aucun nombre de la forme $p^4 + 4$ excepté 5
+n'est un nombre premier, car $p^4 + 4 = (p^2 - 2)^2 + 4p^2$ et par conséquent ces
+nombres sont, de plusieurs manières, la somme de deux quarrés. » Puis :
+$p^4 + q^4 = (p^2 - q^2)^2 + 2(pq)^2 = (p^2+q^2)^2 - 2(pq)^2$, et « les nombres
+$2^{2^i} + 1$ ne sont qu'un cas particulier de la forme $p^4 + q^4$ ».
+\begin{enumerate}
+\item Vérifier les identités du feuillet.
+\item Démontrer l'identité $a^4 + 4b^4 = (a^2 + 2b^2 - 2ab)(a^2 + 2b^2 + 2ab)$, et en
+  déduire directement que $p^4 + 4$ ($p \ge 1$ entier) n'est premier que pour $p = 1$.
+\item L'argument du feuillet par deux sommes de deux carrés demande que les deux
+  décompositions $p^4 + 4 = (p^2)^2 + 2^2 = (p^2 - 2)^2 + (2p)^2$ soient
+  différentes. Pour quelles valeurs de $p$ coïncident-elles ? Le feuillet en
+  exclut-il assez ?
+\item Pour quels $i$ le nombre $2^{2^i} + 1$ est-il de la forme $p^4 + q^4$ avec
+  $p, q$ entiers positifs ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $(p^2 - 2)^2 + 4p^2 = p^4 - 4p^2 + 4 + 4p^2 = p^4 + 4$ ;
+  $(p^2 - q^2)^2 + 2p^2q^2 = p^4 + q^4 = (p^2 + q^2)^2 - 2p^2q^2$.
+\item $(a^2 + 2b^2)^2 - (2ab)^2 = a^4 + 4a^2b^2 + 4b^4 - 4a^2b^2 = a^4 + 4b^4$. Avec
+  $b = 1$ : $p^4 + 4 = (p^2 - 2p + 2)(p^2 + 2p + 2)$. Le second facteur vaut au moins
+  $5$ ; le premier, $(p-1)^2 + 1$, vaut $1$ seulement pour $p = 1$. Pour $p \ge 2$
+  les deux facteurs sont $\ge 2$ et le nombre est composé ; pour $p = 1$ on a $5$,
+  premier. (L'identité porte aujourd'hui le nom de Sophie Germain ; le feuillet
+  donne l'autre argument.)
+\item Les paires $\{p^2, 2\}$ et $\{|p^2 - 2|, 2p\}$ coïncident si $p^2 = 2p$ et
+  $|p^2 - 2| = 2$, soit $p = 2$, ou si $p^2 = |p^2 - 2|$ et $2 = 2p$, soit $p = 1$.
+  Le feuillet exclut $p = 1$ (« excepté 5 ») mais pas $p = 2$ ; ce cas ne menace pas
+  la conclusion puisque $2^4 + 4 = 20$ est pair, mais la restriction manque.
+\item $2^{2^i} + 1 = \bigl(2^{2^{i-2}}\bigr)^4 + 1^4$ pour $i \ge 2$ : $17 = 2^4 + 1$,
+  $257 = 4^4 + 1$, $65\,537 = 16^4 + 1$. Pour $i = 0$ et $i = 1$ ($3$ et $5$), il
+  faudrait $p^4 + q^4 \le 5$ avec $p, q \ge 1$, soit $2$ : impossible. L'hypothèse
+  $i \ge 2$ est implicite sur le feuillet.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le coefficient binomial central et la décomposition en deux carrés}{L3}
+\manuscrit{fr-9118}{65}{65}
+Une note signée G. Libri (1824) porte trois congruences pour un nombre premier
+$p = 4k + 1 = a^2 + b^2$, $a$ impair, $b$ pair. La dernière est
+$\frac21\cdot\frac62\cdot\frac{10}{3}\cdots\frac{4k-2}{k} \equiv \pm2a \pmod p$, le signe
+étant $+$ si $a \equiv 1 \pmod 4$ ; les deux autres portent le même second membre
+$\pm 2b$ : $(k+1)(k+2)\cdots 2k \equiv \pm 2b$ et
+$\bigl[(k+1)(k+2)\cdots2k\bigr]^2 \equiv \pm 2b \pmod p$.
+\begin{enumerate}
+\item Montrer que le produit $\prod_{j=1}^k\frac{4j-2}{j}$ vaut $\binom{2k}{k}$.
+\item Vérifier la congruence $\binom{2k}{k} \equiv 2a \pmod p$ ($a \equiv 1 \pmod 4$) pour
+  $p = 13, 17, 29, 37, 41$ (on admet ce théorème de Gauss dans le cas général).
+\item Montrer que la connaissance de $\binom{2k}{k} \bmod p$ détermine $a$ dès que
+  $p > 16$, et en déduire un procédé pour écrire $p$ comme somme de deux carrés.
+\item On admet le théorème de Wilson, $(p-1)! \equiv -1 \pmod p$. Montrer que
+  $\bigl((2k)!\bigr)^2 \equiv -1 \pmod p$, que $\bigl(\frac ab\bigr)^2 \equiv -1$, et
+  en déduire, à partir de la congruence de Gauss, que
+  $\bigl[(k+1)\cdots 2k\bigr]^2 \equiv \pm 2b \pmod p$.
+\item Montrer que la première congruence, sans le carré, est fausse.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $\prod_{j=1}^k(4j - 2) = 2^k\prod(2j-1) = 2^k\cdot\frac{(2k)!}{2^kk!} =
+  \frac{(2k)!}{k!}$, et en divisant par $k!$ on obtient $\binom{2k}{k}$.
+\item $p = 13$ ($k = 3$) : $\binom63 = 20 \equiv 7$ ; $13 = 9 + 4$, $a = -3 \equiv 1
+  \pmod 4$, $2a = -6 \equiv 7$. $p = 17$ ($k = 4$) : $\binom84 = 70 \equiv 2$, $a = 1$.
+  $p = 29$ ($k = 7$) : $\binom{14}7 = 3432 \equiv 10$, $a = 5$. $p = 37$ ($k = 9$) :
+  $\binom{18}{9} = 48\,620 \equiv 2$, $a = 1$. $p = 41$ ($k = 10$) :
+  $\binom{20}{10} = 184\,756 \equiv 10$, $a = 5$.
+\item $a^2 < p$, donc $|2a| < 2\sqrt p$. Si $p > 16$, $4\sqrt p < p$ : deux valeurs
+  distinctes de $2a$ dans $]-2\sqrt p, 2\sqrt p[$ ne sont pas congrues modulo $p$, et
+  le résidu de $\binom{2k}k$ (ramené entre $-p/2$ et $p/2$) donne $2a$, puis
+  $b = \sqrt{p - a^2}$. C'est un algorithme direct de décomposition.
+\item $(p-1)! = \prod_{j=1}^{2k}j\,(p - j) \equiv (-1)^{2k}\bigl((2k)!\bigr)^2 =
+  \bigl((2k)!\bigr)^2$, donc $((2k)!)^2 \equiv -1$. Et $a^2 \equiv -b^2$, $b$ inversible
+  modulo $p$ : $(a/b)^2 \equiv -1$. Les racines carrées de $-1$ modulo $p$ étant
+  $\pm$ l'une d'elles, $(2k)! \equiv \varepsilon\frac ab$ avec $\varepsilon = \pm1$. Alors
+  $\bigl[(k+1)\cdots2k\bigr]^2 = \frac{((2k)!)^2}{(k!)^2} \equiv \frac{-1}{(k!)^2}$ ;
+  comme $\binom{2k}{k} = \frac{(2k)!}{(k!)^2} \equiv 2a$,
+  $\frac{1}{(k!)^2} \equiv \frac{2a}{(2k)!} \equiv \frac{2a b}{\varepsilon a} = 2\varepsilon b$,
+  et le carré vaut $-2\varepsilon b \equiv \pm2b$. Vérification : $p = 13$, $4\cdot5\cdot6 =
+  120 \equiv 3$, $3^2 = 9 \equiv -4 = -2b$.
+\item Pour $p = 5$ ($k = 1$, $b = 2$) : $(k+1)\cdots2k = 2$, alors que $\pm2b = \pm4$,
+  soit $4$ ou $1$ modulo $5$. Pour $p = 13$ : $120 \equiv 3 \not\equiv \pm 4$. La
+  première congruence est fausse ; la note porte le même second membre pour une
+  quantité et son carré, et la faute peut être du feuillet comme de sa lecture.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le centre de gravité du triangle par similitude}{Lycée}
+\manuscrit{fr-9118}{98}{99}
+Deux feuillets de sa main trouvent le centre de gravité d'un triangle $ABC$ par une
+méthode d'échelle. On coupe le triangle par les milieux $D$ de $BC$, $E$ de $CA$ et
+$F$ de $AB$ en un parallélogramme $AFDE$ et deux triangles $BFD$, $DEC$. On mesure les
+distances à la base $BC$ le long de la médiane $AD$ (ou parallèlement à elle), on pose
+$a = \frac12AD$ et l'on appelle $2x$ la distance cherchée du centre de gravité de $ABC$
+à $BC$.
+\begin{enumerate}
+\item Montrer que $BFD$ et $DEC$ sont semblables à $ABC$ dans le rapport $\frac12$, et que
+  leurs centres de gravité sont à la distance $x$ de $BC$.
+\item Montrer que le parallélogramme et les deux petits triangles ont la même aire
+  totale, et que le centre du parallélogramme est à la distance $a$ de $BC$.
+\item En déduire $2x = \frac{a+x}{2}$, puis la position du centre de gravité. Le
+  feuillet écrit « $C'X = \frac12(a - x)$ » là où la construction donne $C'X = a - x$ :
+  la conclusion en est-elle affectée ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $BFD$ a ses côtés parallèles à ceux de $BAC$ et moitiés (droite des milieux) : il
+  est l'image de $ABC$ par l'homothétie de centre $B$ et de rapport $\frac12$ ; de même
+  $DEC$ par l'homothétie de centre $C$. Le centre de gravité de $ABC$ étant à la
+  distance $2x$ de $BC$, celui de l'image est à la distance $x$ de $BC$ (les
+  homothéties de centre sur $BC$ multiplient par $\frac12$ les distances à $BC$).
+\item Chaque petit triangle a le quart de l'aire de $ABC$, les deux ensemble la moitié ;
+  le parallélogramme a l'autre moitié. Son centre est le milieu de sa diagonale
+  $AD$, à mi-hauteur entre $A$ (distance $2a$, mesurée le long de la médiane) et $D$
+  (distance $0$) : à la distance $a$.
+\item Le centre de gravité de l'ensemble est le barycentre de deux parties de même
+  aire, de centres aux distances $a$ et $x$ : $2x = \frac{a + x}{2}$, soit $4x = a + x$
+  et $x = \frac a3$. Le centre est à la distance $2x = \frac{2a}{3} = \frac{AD}{3}$ de
+  la base, aux deux tiers de la médiane depuis le sommet. Avec le point $C'$ milieu de
+  $AD$, le centre de gravité $X$ est au milieu des deux centres partiels : sa distance
+  vaut $x + \frac12(a - x) = \frac{a+x}{2}$, expression que le feuillet écrit juste ;
+  la faute porte sur l'expression intermédiaire, non sur la conclusion
+  « $4x = a + x$ ».
+\end{enumerate}
+\end{solution}
+
+\section*{Sophie Germain : un dossier entrant (NAF 4073)}
+\chapitre{naf-4073}
+
+NAF 4073 relie les lettres reçues par Sophie Germain, venues des papiers de Libri :
+billets de Fourier, de Delambre, de Lalande, de Lagrange, une lettre de Libri de
+1825, trois feuillets de Lagrange écrits de Berlin en 1776--1778 qui ne lui sont pas
+adressés, et sa lettre à Libri du 18 avril 1831. Un seul feuillet porte une formule,
+écrite après coup sur la couverture d'une lettre de 1814, d'une main non identifiée ;
+la lettre de Libri avance deux énoncés mathématiques ; et un billet de Lagrange se
+date par le calcul.
+
+\begin{exercice}{Le triangulaire d'un carré}{Lycée}
+\manuscrit{naf-4073}{42}{42}
+Sur la couverture d'une lettre du 13 mars 1814, tête-bêche : « le triangulaire d'un
+quarré est la somme des quarrés des deux Triangulaires consécutifs », avec
+$\bigl(\frac{n^2-n}{2}\bigr)^2 + \bigl(\frac{n^2+n}{2}\bigr)^2 = \frac{n^4+n^2}{2}$. On
+note $T_k = \frac{k(k+1)}{2}$.
+\begin{enumerate}
+\item Écrire l'énoncé avec les $T_k$, et le démontrer en remarquant que
+  $T_{n-1} + T_n$ et $T_n - T_{n-1}$ sont simples.
+\item Démontrer par récurrence l'identité de Nicomaque
+  $1^3 + 2^3 + \cdots + n^3 = T_n^2$, et en déduire $T_{n^2} = 2T_n^2 - n^3$.
+\item Vérifier pour $n = 2$ et $n = 3$. Sous la formule, la note porte la ligne
+  « $1 + 64 + 49$ » : peut-elle être un cas de l'identité ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $\frac{n^2 - n}{2} = T_{n-1}$, $\frac{n^2+n}{2} = T_n$ et $\frac{n^4 + n^2}{2} =
+  \frac{n^2(n^2+1)}{2} = T_{n^2}$ : l'énoncé est $T_{n-1}^2 + T_n^2 = T_{n^2}$. Avec
+  $u = T_{n-1}$, $v = T_n$ : $u + v = n^2$, $v - u = n$, et
+  $u^2 + v^2 = \frac12\bigl((u+v)^2 + (v-u)^2\bigr) = \frac{n^4 + n^2}{2}$.
+\item Pour $n = 1$, $1 = T_1^2$. Si $\sum_{k\le n}k^3 = T_n^2$, alors
+  $T_{n+1}^2 - T_n^2 = (T_{n+1} - T_n)(T_{n+1} + T_n) = (n+1)(n+1)^2 = (n+1)^3$. Donc
+  $T_{n-1}^2 = T_n^2 - n^3$ et $T_{n^2} = T_{n-1}^2 + T_n^2 = 2T_n^2 - n^3$ : le
+  triangulaire d'un carré vaut deux fois la somme des $n$ premiers cubes, moins le
+  dernier.
+\item $n = 2$ : $1 + 9 = 10 = T_4$ ; $n = 3$ : $9 + 36 = 45 = T_9$. La somme
+  $1 + 64 + 49 = 114$ n'est ni triangulaire ($T_{14} = 105$, $T_{15} = 120$) ni un
+  cas de l'identité, qui n'a que deux termes ; la note ne dit pas ce qu'elle additionne.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{« Un nombre quelconque de constantes arbitraires »}{L2}
+\manuscrit{naf-4073}{39}{39}
+Libri écrit de Florence en 1825 : « J'ai envoyé un mémoire à l'Institut sur la
+théorie de la chaleur, où je crois avoir démontré qu'on peut donner à l'intégrale
+d'une équation différentielle linéaire un nombre quelconque de constantes
+arbitraires. »
+\begin{enumerate}
+\item Soit l'équation $y^{(n)} + a_{n-1}(t)y^{(n-1)} + \cdots + a_0(t)y = 0$, à
+  coefficients continus sur un intervalle $I$, et $t_0 \in I$. On admet le théorème
+  de Cauchy--Lipschitz linéaire (existence et unicité de la solution de conditions
+  initiales données en $t_0$). Montrer que l'application
+  $y \mapsto (y(t_0), \dots, y^{(n-1)}(t_0))$ est un isomorphisme de l'espace des
+  solutions sur $\mathbf{R}^n$. Combien de constantes arbitraires « essentielles » la
+  solution générale contient-elle ?
+\item Pour $y'' + y = 0$, on écrit $y = A\cos t + B\sin t + C\cos(t - \gamma)$, avec
+  quatre paramètres $A$, $B$, $C$, $\gamma$. L'ensemble des fonctions obtenues est-il
+  plus grand que $\{A\cos t + B\sin t\}$ ? Expliquer en quel sens une écriture peut
+  contenir « un nombre quelconque de constantes ».
+\item Conclure sur l'annonce de Libri.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item L'application est linéaire (la dérivation l'est). Elle est injective par
+  l'unicité : une solution de conditions initiales nulles est nulle. Elle est
+  surjective par l'existence : tout vecteur de $\mathbf{R}^n$ est la donnée initiale
+  d'une solution. C'est donc un isomorphisme, et l'espace des solutions est de
+  dimension $n$ : la solution générale s'écrit $c_1y_1 + \cdots + c_ny_n$ pour une base
+  $(y_i)$, avec exactement $n$ constantes essentielles, où $n$ est l'ordre.
+\item $\cos(t - \gamma) = \cos\gamma\cos t + \sin\gamma\sin t$, donc
+  $y = (A + C\cos\gamma)\cos t + (B + C\sin\gamma)\sin t$ : on n'obtient rien de plus.
+  Les paramètres $C$ et $\gamma$ ne sont pas essentiels, puisque des valeurs
+  différentes donnent la même fonction. Une écriture peut contenir autant de
+  paramètres qu'on veut (par exemple dans une solution écrite comme intégrale
+  définie, où des bornes et un contour sont libres), sans que l'ensemble décrit
+  grandisse.
+\item Telle quelle, l'annonce est fausse : le nombre des constantes essentielles est un
+  invariant de l'équation, égal à son ordre. Elle ne peut être vraie que de constantes
+  non essentielles ; le mémoire n'est pas dans le volume et la lettre ne permet pas de
+  dire ce qu'il démontrait.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{La chaleur comme vibration : équation parabolique ou hyperbolique ?}{L3}
+\manuscrit{naf-4073}{39}{39}
+Libri ajoute : « J'ai aussi déduit les équations du mouvement de la chaleur de
+l'hypothèse des vibrations calorifiques. » L'équation de Fourier
+$u_t = k\,u_{xx}$ ($k > 0$) est parabolique ; une vibration conduit à une équation
+hyperbolique. On étudie un intermédiaire, l'équation « du télégraphiste »
+$\tau u_{tt} + u_t = k\,u_{xx}$, avec un temps de relaxation $\tau > 0$.
+\begin{enumerate}
+\item Chercher des solutions $u = e^{iqx + st}$ ($q$ réel). Pour l'équation de Fourier,
+  montrer que $s = -kq^2$. Pour l'équation avec $\tau$, trouver les deux valeurs de $s$
+  et montrer que l'une tend vers $-kq^2$ quand $\tau \to 0$, l'autre vers $-\infty$.
+\item Pour l'équation de Fourier, la solution de donnée initiale $u(x,0) = \delta_0$ est
+  $\frac{1}{\sqrt{4\pi kt}}e^{-x^2/(4kt)}$. Montrer qu'elle est non nulle en tout point
+  dès $t > 0$ : la vitesse de propagation est infinie. Est-ce compatible avec une
+  propagation par vibrations ?
+\item Pour $\tau > 0$, écrire l'équation sous la forme $u_{tt} - c^2u_{xx} = -\frac1\tau u_t$
+  et donner $c$. Que se passe-t-il pour les grandes fréquences ($|q| \to \infty$) ?
+  Pourquoi aucun calcul exact ne fait-il passer d'une équation des ondes à celle de
+  Fourier ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Fourier : $s = k(iq)^2 = -kq^2$. Avec $\tau$ : $\tau s^2 + s + kq^2 = 0$, d'où
+  $s_\pm = \frac{-1 \pm\sqrt{1 - 4\tau kq^2}}{2\tau}$. Pour $\tau \to 0$,
+  $\sqrt{1 - 4\tau kq^2} = 1 - 2\tau kq^2 + O(\tau^2)$, donc
+  $s_+ = -kq^2 + O(\tau)$ et $s_- \sim -\frac{1}{\tau} \to -\infty$ : le second mode
+  s'amortit instantanément à la limite, le premier redonne Fourier.
+\item $e^{-x^2/(4kt)} > 0$ pour tout $x$ et tout $t > 0$ : une source ponctuelle échauffe
+  aussitôt toute la droite. Une propagation par vibrations d'un milieu, elle, se fait à
+  vitesse finie ; l'équation de Fourier ne peut donc pas en être la conséquence exacte.
+\item En divisant par $\tau$ : $u_{tt} - \frac{k}{\tau}u_{xx} = -\frac1\tau u_t$, équation
+  des ondes amortie de célérité $c = \sqrt{k/\tau}$ : les perturbations se propagent à
+  vitesse finie $c$. Pour $4\tau kq^2 > 1$, $s_\pm = -\frac{1}{2\tau} \pm
+  i\frac{\sqrt{4\tau kq^2 - 1}}{2\tau}$ : les grandes fréquences oscillent (se propagent
+  à la vitesse $\approx c$) en s'amortissant comme $e^{-t/2\tau}$, au lieu de décroître
+  comme $e^{-kq^2t}$. Les deux équations sont de types différents (hyperbolique et
+  parabolique) ; on ne passe de l'une à l'autre que par une limite $\tau \to 0$, où la
+  vitesse $c$ devient infinie. Une dérivation « à partir de vibrations » ne peut donc
+  être exacte ; ce que valait le mémoire de Libri, la lettre ne permet pas de le dire.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Dater un billet de Lagrange par le calendrier républicain}{Lycée}
+\manuscrit{naf-4073}{29}{29}
+Un billet de Lagrange à « Mademoiselle Germaine » est daté « Paris ce 17 germinal
+(mercredi) » et la prévient qu'il sera à ses ordres « le 19 et le 20. (vendredi, et
+samedi) ». Il ne porte pas d'année. Dans le calendrier républicain, l'année compte
+douze mois de trente jours (vendémiaire, brumaire, frimaire, nivôse, pluviôse,
+ventôse, germinal, \ldots) suivis de jours complémentaires. Le 1\textsuperscript{er}
+vendémiaire tombe, pour les ans I à XIV, les 22 septembre 1792, 1793, 1794, 23 septembre
+1795, 22 septembre 1796, 1797, 1798, 23 septembre 1799, 1800, 1801, 1802, 24 septembre 1803,
+23 septembre 1804 et 1805 ; le 22 septembre 1792 était un samedi.
+\begin{enumerate}
+\item La transcription note que le « 17 » s'accorde avec le reste du billet, « où le
+  19 est un vendredi et le 20 un samedi ». Cet accord confirme-t-il la lecture 17 ?
+\item Montrer que le 17 germinal tombe le même jour de la semaine que le
+  1\textsuperscript{er} vendémiaire de la même année.
+\item Déterminer le jour de la semaine du 1\textsuperscript{er} vendémiaire de chaque
+  année de l'an I à l'an XIV (on comptera $365$ ou $366$ jours d'un
+  1\textsuperscript{er} vendémiaire au suivant, selon la date). En déduire les dates
+  possibles du billet.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Non : si le 17 est un mercredi, le 19 est un vendredi et le 20 un samedi,
+  quels que soient le mois et l'année. Les trois indications n'en font qu'une ; elles
+  confirment seulement que les trois quantièmes ont été lus de façon cohérente.
+\item Le 17 germinal est le jour $6\times30 + 17 = 197$ de l'année ; il suit le
+  1\textsuperscript{er} vendémiaire de $196 = 28\times 7$ jours, donc tombe le même
+  jour de la semaine.
+\item D'un 1\textsuperscript{er} vendémiaire au suivant, il y a $365$ jours, plus un
+  si l'intervalle contient un 29 février (1796 et 1804 sont bissextiles, 1800 ne l'est
+  pas), plus le décalage de la date de septembre ($+1$, $0$ ou $-1$) ; le jour de la
+  semaine avance d'autant de jours que ce nombre dépasse $364 = 52\times7$. On trouve : an I samedi, II dimanche, III lundi, IV mercredi (23 septembre 1795 :
+  $366$ jours après le 22 septembre 1794), V jeudi, VI vendredi, VII samedi,
+  VIII lundi, IX mardi, X mercredi, XI jeudi, XII samedi, XIII dimanche, XIV lundi. Les
+  seuls mercredis sont les ans IV et X. Le 17 germinal an IV est le 6 avril 1796
+  ($196$ jours après le 23 septembre 1795), le 17 germinal an X le 7 avril 1802 : le
+  billet est de l'un de ces deux jours, et d'aucun autre.
+\end{enumerate}
+\end{solution}
+
 \section*{Bibliographie}
+
+Ouvrages cités dans les énoncés, les solutions et les présentations des chapitres,
+tels que les lectures modernisées les nomment ; aucun n'est une source des
+exercices, qui ne reposent que sur les feuillets.
+
 \begin{itemize}
-\item Apollonius de Perge, \emph{Coniques} (tangentes et foyers de l'ellipse et
-  de l'hyperbole).
-\item Autolycus, \emph{De la sphère en mouvement} ; Théodose,
-  \emph{Des habitations} ; Euclide, \emph{Phénomènes} --- dans les versions de
-  Maurolico copiées en Latin 17859.
+\item Apollonius de Perge, \emph{Coniques} (en particulier les propositions II.4 et
+  II.12, et les propriétés des foyers et des tangentes de l'ellipse et de
+  l'hyperbole).
+\item Autolycus, \emph{De la sphère en mouvement} ; Théodose, \emph{Des habitations} ;
+  Euclide, \emph{Phénomènes} --- dans les versions de Maurolico copiées en
+  Latin 17859.
+\item René Descartes, \emph{Discours de la méthode} et \emph{La Géométrie},
+  1637.
+\item Le P. Fabri, \emph{Thèses de géométrie}, discutées dans une lettre de NAF 5161.
+\item Friedrich Hermann Flayder, \emph{De arte volandi}, Tübingen, 1627.
+\item Galileo Galilei, \emph{Dialogue} ;
+  \emph{Discorsi e dimostrazioni matematiche intorno a due nuove scienze}, 1638 ;
+  \emph{Discorso intorno alle cose che stanno in su l'acqua}.
+\item Carl Friedrich Gauss, \emph{Disquisitiones arithmeticae}, 1801
+  (article 357).
+\item Sophie Germain, \emph{Considérations générales sur l'état des sciences et des
+  lettres aux différentes époques de leur culture}, publication posthume, 1833.
+\item Paul Guldin, « problème arithmétique » à la fin du second tome de son traité
+  des centres de gravité.
 \item Christiaan Huygens, \emph{De ratiociniis in ludo aleae}, 1657.
+\item Joseph-Louis Lagrange, note aux commissaires du prix de la surface élastique,
+  décembre 1811 (copie en Français 9118).
+\item Guglielmo Libri, \emph{Description des manuscrits de Roberval conservés à la
+  Bibliothèque nationale} (NAF 9544).
 \item Francesco Maurolico, volume sur la sphère (\emph{Sphériques} de Théodose, de
   Ménélas et de Maurolico, textes grecs, tables et problèmes), Messine, Petrus
-  Spira, 1558, dont Latin 17859 est une copie ; \emph{Opuscula mathematica},
-  1575.
+  Spira, 1558, dont Latin 17859 est une copie ; \emph{Opuscula mathematica}, 1575.
 \item Ménélas d'Alexandrie, \emph{Sphériques}, livre III.
+\item Marin Mersenne, \emph{Harmonie universelle}.
 \item Blaise Pascal, lettre à Pierre de Fermat du 29 juillet 1654.
 \item Regiomontanus (Johannes de Monteregio), table des tangentes (« table
   féconde ») et règles de calcul commentées par Maurolico.
+\item Gilles Personne de Roberval, traité de mécanique « des plans inclinés », cité par
+  une note marginale de Latin 11195.
+\item François Viète et son école, \emph{De recognitione et emendatione
+  aequationum} (notation des espèces et loi des homogènes).
 \end{itemize}
 
 \end{document}
