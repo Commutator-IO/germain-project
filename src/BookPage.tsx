@@ -31,7 +31,7 @@ import type { BookKey, Piece, Volume } from './lib/types.ts';
 export function BookPage({ bookKey }: { bookKey: BookKey }) {
   const b = book(bookKey);
   const cotes = useMemo(() => cotesOf(b), [b]);
-  const { manifest, openCote, openBatch, edition, setEdition, page, onPage, setPage, goTo, close } =
+  const { manifest, openCote, openBatch, edition, setEdition, page, onPage, setPage, goTo, close, landing } =
     useReader(cotes);
 
   const online = cotes.filter((c) => c.pages > 0);
@@ -68,6 +68,7 @@ export function BookPage({ bookKey }: { bookKey: BookKey }) {
               onEdition={setEdition}
               onPage={onPage}
               page={page}
+              landing={landing}
               onClose={close}
               backLabel="Cahier"
               state={shownState(

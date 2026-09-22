@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Downloads } from './Downloads.tsx';
 import type { OpenBatch } from './FacsimilePane.tsx';
-import { TranscriptPane } from './TranscriptPane.tsx';
+import { TranscriptPane, type Landing } from './TranscriptPane.tsx';
 import { availableFor, batchCount, servedByFolder, useManifest } from '../lib/batches.ts';
 import { STATES, type State } from '../lib/progress.ts';
 import type { PaneView, Volume } from '../lib/types.ts';
@@ -45,17 +45,29 @@ export function useReader(cotes: Volume[]) {
   const [page, setPage] = useState<number | undefined>(undefined);
   const onPage = useCallback((n: number) => setPage(n), []);
 
+  /* A view named explicitly — in the hash, or by a link that opens a leaf —
+     is where the reader lands: the transcript scrolls to the section holding
+     it and the facsimile stays on it, rather than both starting from the
+     transcript's first marker. Each request is numbered so that it is honoured
+     once, and not again on a change of edition. */
+  const landings = useRef(0);
+  const [landing, setLanding] = useState<Landing | null>(null);
+  const landOn = useCallback((view: number | undefined) => {
+    setLanding(view ? { view, seq: ++landings.current } : null);
+  }, []);
+
   useEffect(() => {
     const readHash = () => {
       const h = /^#([\w-]+)\/(\d+)(?:\/(fr|modern|tei))?(?:\/(\d+))?$/.exec(location.hash);
       setOpen(h ? { cote: h[1], batch: Number(h[2]) } : null);
       if (h?.[3]) setEdition(h[3] as PaneView);
       if (h?.[4]) setPage(Number(h[4]));
+      landOn(h?.[4] ? Number(h[4]) : undefined);
     };
     readHash();
     addEventListener('hashchange', readHash);
     return () => removeEventListener('hashchange', readHash);
-  }, []);
+  }, [landOn]);
 
   const goTo = useCallback((cote: string, batch: number, ed?: PaneView, view?: number) => {
     history.replaceState(
@@ -66,7 +78,8 @@ export function useReader(cotes: Volume[]) {
     setOpen({ cote, batch });
     if (ed) setEdition(ed);
     setPage(view);
-  }, []);
+    landOn(view);
+  }, [landOn]);
 
   const close = useCallback(() => {
     history.replaceState(null, '', location.pathname);
@@ -96,7 +109,9 @@ export function useReader(cotes: Volume[]) {
         }
       : null;
 
-  return { manifest, openCote, openBatch, edition, setEdition, page, onPage, setPage, goTo, close };
+  return {
+    manifest, openCote, openBatch, edition, setEdition, page, onPage, setPage, goTo, close, landing,
+  };
 }
 
 /** The left-hand half: heading, downloads, transcript. */
@@ -110,6 +125,7 @@ export function Reader({
   onClose,
   backLabel,
   state,
+  landing,
 }: {
   cote: Volume;
   batch: number;
@@ -120,6 +136,8 @@ export function Reader({
   onClose: () => void;
   backLabel: string;
   state: State;
+  /** A view to land on when the transcript loads — see `useReader`. */
+  landing?: Landing | null;
 }) {
   const manifest = useManifest();
   const available = availableFor(manifest, cote.id, batch);
@@ -160,6 +178,7 @@ export function Reader({
         edition={edition}
         onEdition={onEdition}
         onPage={onPage}
+        landing={landing}
       />
 
       <p className="mt-4 max-w-[46em] text-[12.5px] leading-relaxed text-ink-500">

@@ -32,7 +32,7 @@ const KIND_LABEL: Record<PublishedEdition['kind'], string> = {
  */
 export function ArchivePage() {
   const [query, setQuery] = useState('');
-  const { manifest, openCote, openBatch, edition, setEdition, page, onPage, setPage, goTo, close } =
+  const { manifest, openCote, openBatch, edition, setEdition, page, onPage, setPage, goTo, close, landing } =
     useReader(COTES);
 
   const workOn = useMemo(() => {
@@ -99,6 +99,7 @@ export function ArchivePage() {
               onEdition={setEdition}
               onPage={onPage}
               page={page}
+              landing={landing}
               onClose={close}
               backLabel="All the manuscripts"
               state={shownState(

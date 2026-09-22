@@ -31,6 +31,12 @@ export const EDITIONS: { key: Edition; label: string; help: string }[] = [
   },
 ];
 
+/** A view the reader was asked to open on, numbered so it is honoured once. */
+export interface Landing {
+  view: number;
+  seq: number;
+}
+
 export function TranscriptPane({
   cote,
   batch,
@@ -38,6 +44,7 @@ export function TranscriptPane({
   edition,
   onEdition,
   onPage,
+  landing,
 }: {
   cote: Volume;
   batch: number;
@@ -46,6 +53,8 @@ export function TranscriptPane({
   onEdition: (e: PaneView) => void;
   /** Called with the Gallica view currently at the top of the reading area. */
   onPage: (page: number) => void;
+  /** A view named in the URL: scrolled to on load, and kept for the facsimile. */
+  landing?: Landing | null;
 }) {
   const frame = useRef<HTMLIFrameElement>(null);
   const [height, setHeight] = useState(600);
@@ -60,6 +69,8 @@ export function TranscriptPane({
   const texUrl = editionUrl(manifest, cote.id, batch, view, 'html');
   const url = isTei ? texUrl.replace(/\.fr\.html$/, '.fr.tei.html') : texUrl;
   const folder = folderTranscription(manifest, cote.id, cote.pages);
+  const landed = useRef(0);
+  const landingSeq = landing?.seq ?? null;
 
   useEffect(() => {
     if (!present) return;
@@ -98,6 +109,7 @@ export function TranscriptPane({
     if (!el) return;
 
     let detach = () => {};
+    let timer: ReturnType<typeof setTimeout> | undefined;
     const attach = () => {
       const doc = el.contentDocument;
       if (!doc) return;
@@ -105,22 +117,63 @@ export function TranscriptPane({
       if (!marks.length) return;
 
       let lastSeen = -1;
-      const report = () => {
+      let landingNow = false;
+
+      const current = () => {
         const line = window.innerHeight * 0.25;
         const offset = el.getBoundingClientRect().top;
-        let current = marks[0];
+        let at = marks[0];
         for (const m of marks) {
-          if (m.getBoundingClientRect().top + offset <= line) current = m;
+          if (m.getBoundingClientRect().top + offset <= line) at = m;
           else break;
         }
-        const page = Number(current.dataset.page);
+        return at;
+      };
+
+      /* A view named in the URL wins over the first marker, once. The
+         transcript is scrolled to the section that holds it — the last marker
+         at or before the view, since a modernised section covers a range —
+         and that marker counts as already reported, so the facsimile keeps
+         the view asked for until the reader scrolls on to another marker.
+         The frame is grown to its content by the effect above, a render or
+         two after load; the page cannot scroll that far before it is, and
+         the scrolling meanwhile reports nothing. */
+      const target = landing && landing.seq !== landed.current ? landing : null;
+      if (target) {
+        landed.current = target.seq;
+        let at = marks[0];
+        for (const m of marks) {
+          if (Number(m.dataset.page) <= target.view) at = m;
+          else break;
+        }
+        landingNow = true;
+        const land = (tries: number) => {
+          const tall = el.offsetHeight >= doc.documentElement.scrollHeight - 1;
+          if (!tall && tries < 40) {
+            timer = setTimeout(() => land(tries + 1), 50);
+            return;
+          }
+          const line = window.innerHeight * 0.25;
+          const top =
+            window.scrollY + el.getBoundingClientRect().top + at.getBoundingClientRect().top;
+          // Instant: the site scrolls smoothly, and a glide past twenty
+          // markers would report each of them to the facsimile on its way.
+          window.scrollTo({ top: Math.max(0, top - line + 8), behavior: 'instant' });
+          lastSeen = Number(current().dataset.page);
+          landingNow = false;
+        };
+        land(0);
+      }
+      const report = () => {
+        if (landingNow) return;
+        const page = Number(current().dataset.page);
         if (Number.isFinite(page) && page !== lastSeen) {
           lastSeen = page;
           onPage(page);
         }
       };
 
-      report();
+      if (!target) report();
       window.addEventListener('scroll', report, { passive: true });
       detach = () => window.removeEventListener('scroll', report);
     };
@@ -129,9 +182,12 @@ export function TranscriptPane({
     if (el.contentDocument?.readyState === 'complete') attach();
     return () => {
       el.removeEventListener('load', attach);
+      clearTimeout(timer);
       detach();
     };
-  }, [present, url, onPage]);
+    // `landing` is keyed by its sequence number: a new request re-attaches,
+    // the same one seen again does not.
+  }, [present, url, onPage, landingSeq]);
 
   return (
     <section className="card mt-6 overflow-hidden">
