@@ -626,3 +626,70 @@ no \folio{} was written.
   (« 20 » at v. 20, 21, 24 is the strip's).
 - The writer's pagination 5?–8 on the motions treatise (v. 9–12); « N.o 2. »
   heading f. 40r (« Hasard »), a piece number. Notes only.
+
+## An album of several hands (NAF 9544)
+
+### The views
+
+- An autograph album bound on 27 November 1899 (« Autographes de Savants —
+  Volume de 36 Feuillets », v. 3), greyscale open spreads of about 8290 ×
+  5779, some leaves shot alone in portrait. The catalogue's « 1601-1700 »
+  describes only the Huygens and Mersenne pieces: the album runs from
+  Mersenne's observations of 1620–1621 to Bossut's receipt of an X, with
+  d'Alembert (1765), Germain, and Libri's description of Roberval's
+  manuscripts. The pieces follow no order of date.
+- **Each piece is announced by a guard leaf**: a large pencil or ink lot
+  number, a cutting from a sale catalogue, a note of the sale (Germain lot 677,
+  v. 20; Huygens lot 335, « Vendita Grimm … mai 1886 », v. 30; Mersenne lot 459,
+  « Vente Charavay, 6 février 1889 », v. 33; Libri, v. 41, with « Vente B.
+  Boncompagni, VI. Autogr. (1898), n° 673 » at v. 42). Give the guard in a
+  \note{} only — it is the dealer's words — but it is the best evidence of
+  where a piece begins. Several pieces came through Boncompagni: the two
+  telegrams to him of 28 and 30 June 1884 (v. 24–28) document the Germain
+  purchase.
+- **Second exposures are common**: a label or a folded letter is shot down,
+  then lifted (v. 7/8, 12/13, 24/26, 27/28, 31/35, 32/36, 33/37, 43/44, 49/50),
+  and a small letter mounted alone is shot face up, then turned to show its
+  address (v. 39/40). Compare the top-right numbers before reading a view as
+  new.
+- On every verso of a large leaf, line-ends pass under the mount at the fold
+  and 1–3 letters are hidden (v. 43–55): restore with \add{} only where the
+  sense is certain.
+- An address written across the page (v. 16) reads after `-rotate -90`.
+
+### Strokes that mislead
+
+| The stroke looks like | A pass settled on | Where |
+|---|---|---|
+| a final o or w (« Monsiew », « Conte ») | Bossut's final r, a small open loop; « Comte » | NAF 9544, v. 8–15 |
+| « Lettrannee M. d'alembert » | « Lettre de », offered with doubt; the minute is in the third person | NAF 9544, v. 5 |
+| a small raised loop closing a Latin word | final e, or the second letter of æ | NAF 9544, v. 31–32 |
+| a round s closing a word / a long-tailed s closing a verb | final o (« Cardo ») / final t (« debuit ») | NAF 9544, v. 31–32 |
+| one big looped capital | serves for B, D, V and H alike in the epigrams; decide by the sense and flag it | NAF 9544, v. 31–32 |
+| Latin A in a figure drawn like a capital λ | A; the figure's own small λ is distinct | NAF 9544, v. 38 |
+| a looped ℓ, a y, a 69 lying down, a looped z after a degree | the zodiac signs Lion, Bélier, Cancer, Capricorne; set \add{Lion} etc., as LaTeX has no glyph | NAF 9544, v. 38–39 |
+| « Surenire », « éclutes », « atention » | Invenire, écluses, ascention (the I/S capital; the long s) | NAF 9544, v. 52, 54 |
+| « 18L », « 18S » in a margin | 184, 185: the Libri copyist's 4 and 5 | NAF 9544, v. 46 |
+| a small figure struck through at a top corner | the Libri copy's own pagination (3, 5, 7, 9, 11), not a folio | NAF 9544, v. 44–54 |
+| a word read « chagin », « Zartaras » | written without r; the Italian collector's T (Tartaras) | NAF 9544, v. 9, 17 |
+
+Words inside a line of Germain's fragment written in a much paler ink (v. 22)
+look filled into gaps left at first writing: note them; they are not
+insertions. Mersenne's degrees, minutes and seconds (v. 38–39) are written with
+points and primes; check them by adding — every sum checks but one.
+
+### Numbers on the leaves
+
+- **One thin ink series at the top right of every recto, 1 to 36 across the
+  three batches** (1 on the first mounting leaf, v. 4; 15 at v. 20; 16 at v. 21;
+  25 at v. 39 R; 26 on the Libri slip, v. 41; 36 at v. 54), counting guards,
+  labels and wrappers as leaves. It ends at 36, the certificate's « Volume de 36
+  Feuillets ». It behaves as the library's foliation but is inked, so, as for
+  Latin 17859 and NAF 5176, **no \folio{} is written** until a human has
+  looked. (Batch 2 could not tell 25 from 26 on v. 39 R; batch 3's 26 on v. 41
+  settles it as 25.)
+- Above it on some leaves, larger series from earlier collections: 547, 548
+  (Huygens), 319–321 (Mersenne), 328–337 (Libri). Lot numbers in pencil, one
+  per piece (207, 96, 95, 97, 677, 335, 459). A fraction-like « 65 » over 6 or 7
+  on the Germain leaves and telegrams. « R. D. 9555 » with a brace on every
+  piece. None is a folio.
