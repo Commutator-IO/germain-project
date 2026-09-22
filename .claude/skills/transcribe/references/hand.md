@@ -540,3 +540,89 @@ top right of any recto. What is there is the modern pencil shelfmark
 acquisition note at the foot of v. 9, and clerks' marks in the left margin of
 the quittance (a scribe's f, the figure 84, an 8-shaped sign). None is a folio;
 no \folio{} was written.
+
+## Marin Mersenne and the Pascal papers (NAF 5176)
+
+### The views
+
+- The volume lying open, left page | right page, about 8730 × 6400 (colour at
+  v. 1–20, greyscale microfilm after); gutter near x = 4350–4700. Views 1–8 are
+  binding, blanks, a pasted note of 21 May 1962 (v. 6: a French Huygens *De
+  ratiociniis in ludo aleae*, « Date possible : 1656 », « Copiste et traducteur
+  possible : Des Billettes »), the 1888 title leaf (v. 7: « Volume de 42
+  Feuillets plus le Feuillet A préliminaire. Les Feuillet 22, 24, 29, 35, 36
+  sont blancs. 29 Septembre 1888 », « Libri 1848 ») and the leaf « A » (v. 8).
+  v. 39 is a modern separator « Pascal / autographe / et copies »: the optics
+  stop at v. 38 and the division of stakes begins at v. 40.
+- **Duplicate exposures are everywhere.** v. 10 = v. 9; v. 20/21, 22/23/24,
+  25/26 and 17/18 are one opening shot with the pasted slips (béquets) down,
+  then lifted; v. 43 = v. 44. Give the text once, at the view where it reads
+  whole, and a note at the other. Batches 1 and 2 both transcribed the leaf of
+  v. 20/21 before the coordinator kept it at v. 21 only: an agent working on
+  one batch cannot see that the next view re-shoots its last.
+- **Pasted figures** — slips drawn in serif capitals, so that they look
+  printed — cover line beginnings (v. 17, 20, 22, 25). Look for the lifted
+  exposure before writing \ill{}.
+- **Follow the catchword, not the view order.** v. 26 ends on « Je dis »;
+  v. 27 is a torn devotional strip bound inside the proposition; v. 29 resumes
+  « Je dis en 2 lieu ». A slip unfolded outside the volume can carry the end
+  of a sentence from the facing page (f. 12 at v. 18, continuing f. 8v).
+- A blank verso shows its recto through strongly (v. 43, 52): mirror the crop,
+  which then reads as the recto, before calling a page written.
+- `-level 5%,95%` or `-auto-level -gamma 0.8`, not `-normalize`, which blows
+  out this paper and blacks out the stains (f. 5v, v. 40).
+
+### The hands
+
+- **A very fast French cursive** (v. 9–11, 14–38): long connecting strokes,
+  heavy deletions, interlinear additions with carets. On f. 8r (v. 16) it names
+  the Commentary on Genesis, *La Vérité des sciences*, *Harmonie universelle*,
+  *Utilité de l'Harmonie* and the *Hydrauliques* as the writer's own books —
+  Mersenne's titles; the leaf names no author, so the attribution is an
+  inference. Batch 1 read it at 664 \ill{}: expect the worst of the volume here.
+  v. 33–35 are faster still; read the numbers first (they are clean) to anchor
+  the sentences.
+- **A smaller, closer, much-abbreviated hand** (f. 3–4, v. 12 R–13): chapter
+  tables and problems on rational ellipses. Numbers read well, words poorly.
+- **The « partis » hands** (v. 40–42, first hand; v. 47–51, second, round and
+  compact on small half-height leaves): division of stakes, dice, combinations.
+  Far more legible (batch 3: 81 \ill{}, most inside \struck{}).
+
+### Strokes that mislead
+
+| The stroke looks like | A pass settled on | Where |
+|---|---|---|
+| a large looped C standing alone between words | the ampersand; set \& | NAF 5176, v. 21–36 |
+| a « 3 » standing as a word | « en » | NAF 5176, v. 26, 31 |
+| a long horizontal under a word | often an underline or a t-bar; a deletion is heavier and wavier — but on v. 21–38 it is often a genuine deletion | NAF 5176, v. 9, 14, 21–38 |
+| a barred R | the sign of the root, kept « R. » | NAF 5176, v. 12 R, 13 L |
+| a small square / « q. » | « quarré » | NAF 5176, v. 13 |
+| a G like an open 6 in species terms | G (B in G), not b | NAF 5176, v. 31–32 |
+| a reversed & under the first member of an equation | probably the equality sign; set \propto and flagged | NAF 5176, v. 32 |
+| a boxed « 2. M. fol. 86 » in the margin | a reference of unknown meaning, not the leaf's number; \marginal{} | NAF 5176, v. 14 R, 15 L |
+| denominators « 26 » | 16: the 1 has a lead-in stroke; the paired shares (11+5, 14+2, 12+4) settle it | NAF 5176, v. 40 |
+| a 9 or a 1 in a number | the second « partis » hand's closed 4 (441/400; 42) — check the arithmetic | NAF 5176, v. 47 R, 48 |
+| a 3 in a fraction | that hand's 5 (15057 2/5) | NAF 5176, v. 50 L |
+| a paragraph ringed and crossed by long diagonals | a draft abandoned, not a pasted slip; \struck{} | NAF 5176, v. 48 R, 50 R |
+| a word written lengthwise on a mounting strip | a filing title (« Geometrie Meslée »), not the text | NAF 5176, v. 47 L |
+| commas inside a long number | the writer's grouping in threes (75,287,520); kept | NAF 5176, v. 48 R–51 R |
+
+### Numbers on the leaves
+
+- **One bold ink series, top right, one number per leaf and per pasted slip or
+  strip, blanks included, 1 to 42** across the three batches (A on v. 8; 1 at
+  v. 9; 13–14 the slips of v. 20; 15 at v. 21; 32 at v. 40; 42 at v. 51 R). It
+  ends at the catalogue's 42, and the 1888 certificate's blank leaves 22, 24,
+  29, 35, 36 are blank leaves of this series at all five points. It is the
+  count the library made in 1888 in all but name — but it is ink, not pencil,
+  so, as for Latin 17859 and Français 9115, **no \folio{} is written** until a
+  human has looked. Two of the three passes wrote \folio{} on their own; the
+  coordinator removed them so the volume stays consistent. The view ↔ leaf
+  mapping is in batch 2's header.
+- **A second, finer, older ink series** beside it, out of order (41, 42, 10, 11,
+  19, 14, 15, 16 in batch 1; 16, 18, 17, 18, 21, 12, 13, 40, 39, 23 in batch 2;
+  24, 25, 27, 30, 28, 29, 26 in batch 3). An earlier arrangement's; not a folio.
+- A thin number above a leaf's torn top edge can belong to a paper behind it
+  (« 20 » at v. 20, 21, 24 is the strip's).
+- The writer's pagination 5?–8 on the motions treatise (v. 9–12); « N.o 2. »
+  heading f. 40r (« Hasard »), a piece number. Notes only.
