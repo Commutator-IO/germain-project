@@ -693,3 +693,128 @@ points and primes; check them by adding — every sum checks but one.
   per piece (207, 96, 95, 97, 677, 335, 459). A fraction-like « 65 » over 6 or 7
   on the Germain leaves and telegrams. « R. D. 9555 » with a brace on every
   piece. None is a folio.
+
+## Mersenne's remarks on the Harmonie universelle, a copy (Français 12357)
+
+### The views
+
+- Greyscale, portrait, about 3920 × 5745, one page per view, versos and rectos
+  alternating, with a strip of the facing page. Four full-width bands at 2400 px
+  read the hand; half-width bands for the versos, whose line-ends run into the
+  gutter; 1800-px crops for tables, magic squares and marginal titles.
+- v. 1 board; v. 2 flyleaf (« Suppl.t fr. 902. », « Volume de 26 Feuillets
+  3 Août 1894 »). **v. 3–7 are not the copy**: a drawn folding plate of string
+  lengths and a keyboard (v. 3), two leaves bound **sideways** (v. 4–5; turn a
+  quarter to the left; the left half of v. 5 is upside down and its first lines
+  hide under the next leaf), and music only (v. 6–7). Their hand is not the
+  copyist's and they cite no page of the book.
+- The copy opens at v. 8 with its title and runs to v. 55: remarks on the
+  flyleaves before the book, then book by book, then « Au papier blanc apres
+  tous les livres de l'harmonie » (v. 45), then a separate Latin piece of the
+  Paris academy to Galileo (v. 53–55, « Lutetiae Calendis Julii anni 1643 »).
+- Fold-outs and loose sheets are filmed as views of their own (v. 32, 34, 49);
+  notes and tables in an inner margin reappear, past the gutter, on the facing
+  view — transcribe them once, on their own page.
+
+### The copy's layout
+
+- Every remark opens with its key to the printed book, on its own line, after a
+  short rule in the margin: « p. 113. au commencemt. », « p. 138 ligne 21 apres
+  ces mots (…) », « lig. 6. devant la fin », « ibid. prop. XVIII ». Transcribe
+  them exactly; they are what a reader needs. The book's pages restart at each
+  treatise, and the copyist names the treatise in the left margin when it
+  changes (set as \marginal{}; the first letters are often in the gutter).
+- « p. 73 », « pag. 89 » on v. 8–9 are pages of Fabre's book, which the remark
+  discusses, not of the Harmonie.
+- A word or two alone at the foot of a page is a catchword.
+
+### Spelling: u and v, and the abbreviations
+
+- **The copy writes u inside words and v at their head**, in French and in
+  Latin alike: « auoit », « trouuer », « obseruation », « vn », « vne », « vt »,
+  « viuenti », « Aduersus » (checked on the images of v. 22 and v. 55). Batches 2
+  and 3 first normalised this to « avoit », « un »; the coordinator restored the
+  leaf's usage mechanically (medial v → u, initial u → v, outside notes, maths
+  and superscripts; proper names, roman numerals and « doibvent », « debvroit »,
+  « Apvril » left as the passes read them). **Keep the leaf's u and v from the
+  first pass** — a normalisation is a modernisation.
+- « pour » is a p with a small o or curl above: batches 2–3 set it pō, batch 1
+  p\textsuperscript{r}; both are in the volume, and a revision should unify
+  them against the images. p\textsuperscript{r}, p\textsuperscript{re} are also
+  premier, premiere. co\textsuperscript{e} comme, f\textsuperscript{e} faire,
+  a small raised loop alone for « est » (set ē), two linked t in superscript for
+  the pound (livre), « na » in a margin for nota. In Latin: -ur as a z-shaped
+  hook, -bus as a superscript 9, the nasal tilde (coĩ, nõ, oẽs).
+
+### Strokes that mislead
+
+| The stroke looks like | A pass settled on | Where |
+|---|---|---|
+| a letter followed by a z with a tail, or a small x (Gʒ, Cx, aX) | the sharp (« feinte »); set $\sharp$ or kept « x » and noted — that x is the sharp is an inference | Fr. 12357, v. 4, 31, 43 |
+| an h with a squared bowl, or a 4-shaped sign among note letters | the square b, the natural; batch 1 set \texttt{h}, batches 2–3 \natural | Fr. 12357, v. 3–5, 22–26, 43 |
+| « = » drawn as two vertical strokes | equality and « est à … comme »; set \parallel | Fr. 12357, v. 12–13 |
+| a number at the head of a verso, reversed | the recto's number seen through (« 81 » = 18) | Fr. 12357, v. 39 |
+| a first figure retraced, or a middle 5/9 looped, in a magic square | settled only by the row and column sums; say so | Fr. 12357, v. 45 |
+| the planetary and zodiac signs | set as bracketed names (\add{Lune}…) and the sun $\odot$: the PDF font has no glyph | Fr. 12357, v. 30, 45 |
+
+### Numbers on the leaves
+
+- **One thin ink series, rectos only, 3 (v. 6) to 26 (v. 55, underlined)** across
+  the three batches, ending at the certificate's 26 leaves; « (4 » inside the
+  title line of v. 8 fits it. It behaves as the library's foliation but is ink,
+  so no \folio{} is written (batch 1 wrote one; the coordinator removed it).
+- « 331 » above the title (v. 8); lone « 2 » and « 3 » at the foot of v. 24 and
+  v. 42 (gathering marks?); the stamp « BIBLIOTHEQUE IMPERIALE MSS. ». Every
+  other figure is content: pages of the book or of other books, and sums.
+
+## Descartes's critics and the Mersenne dossiers (NAF 5161)
+
+### The views
+
+- Greyscale microfilm, portrait, about 4239 × 6120, one page per view; leaves of
+  several sizes on a grey card ground, often askew, with the edge of the facing
+  leaf showing at one side. Crop to the text block before cutting bands.
+- v. 2: « Divers Ecrits Relatifs aux Doctrines de Descartes », the certificate
+  « Volume de 20 Feuillets / Le Feuillet 10 est blanc / 24 Septembre 1888 »,
+  « Libri 1860 ». Then six pieces, none signed by its writer but one:
+
+| Views | Piece and hand |
+|---|---|
+| 3–9 | « Deffauts de quelques reigles du Sr Cart. », « Cher Amye »: one hand, pages ending mid-sentence |
+| 11–20 | « Erreurs du Sr des Cartes touchant le nombre des Racines », « Cher amy », same hand; a small « Rob » alone at the top left of v. 11 and « le fou de Rob. » in the text (v. 8) are content, not attributions |
+| 23–26 | letter-memoir on the locus ad quatuor lineas against « le Methodiste »; regular sloping cursive, long fillers at line ends, final n as a descending loop |
+| 27–28 | working note on right triangles; quick detached hand, Δ for triangle |
+| 29–30 | « Copie de la lettre de Mr Roberval », signed « Roberval »; very fast ligatured cursive, the hardest in the volume (~185 \ill{}) |
+| 31–39 | anonymous fair copy on the centre of agitation, « Nous conuenions de Definition Monsieur Descartes & moy »; round posed script, points named by figures 3–9 |
+| 41–43 | address « Pour le Reuerend Pere Mersenne » (upside down, v. 41); an unsigned letter to Mersenne on « le P. Fabri »'s theses (v. 42); an archivist's « Liasse de 12 cahy… » (v. 43) |
+
+- v. 33 and v. 34 are the same page; a figure can sit on its own smaller leaf
+  between two pages of one sentence (fol. 17, v. 36). Show-through is strong
+  (v. 41, 43): check a verso at contrast, mirrored, before calling it written.
+
+### Strokes that mislead
+
+| The stroke looks like | A pass settled on | Where |
+|---|---|---|
+| a long horizontal through the last word of a line | the line-filler, not a deletion; a deletion is denser, the word rewritten after | NAF 5161, v. 3–26 |
+| « b » in a number (« 1b8 ») / a tailed « z » | 6 / 3 (check against the arithmetic; « iz » is 12 on v. 18) | NAF 5161, v. 7, 8, 18 |
+| three or four dotless minims as an exponent | roman-numeral exponents ii, iii, iv; set A^{\mathrm{iii}} | NAF 5161, v. 4–19 |
+| « o » inside a line of terms | 0 holding the place of a vanished term | NAF 5161, v. 15, 17, 19 |
+| a looped capital before « B » in « D B » | D or B, flagged each time | NAF 5161, v. 24–26 |
+| figures 3–9 among the words | names of points of the figure, not numbers | NAF 5161, v. 33–38 |
+| a point followed by an oblique stroke (« ./ ») | end of a paragraph | NAF 5161, v. 42 |
+
+No sign of equality in v. 3–20: « egal a » in words, or all terms equal to
+« rien ». Keep the page's column order in the products (v. 17 numbers them
+4, 3, 1, 2).
+
+### Numbers on the leaves
+
+- **The larger ink figure at the top right of each recto, 1 (v. 3) to 18 (v. 38)
+  and 20 (v. 42)**, fol. 10 blank as the certificate says. It behaves as the
+  library's foliation but is ink (checked at v. 3 and v. 31), so no \folio{} is
+  written (batches 1–2 wrote them; the coordinator removed them).
+- A smaller older series beside it: 63–71 (v. 3–19), 73–74, a struck 48, 58–62,
+  54 (v. 42) — it breaks, so the pieces came from different bundles.
+- « p. 380 », « pag. 373 », « pag. 339 » in the margins are the writers'
+  references to the work they attack.
