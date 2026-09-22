@@ -301,11 +301,10 @@ On place $C = (0,0,1)$, $A = (\sin b, 0, \cos b)$, $B = (0, \sin a, \cos a)$.
   \sin b)$, de norme $\sin b$. $B - (\cos c)A = (-\cos c \sin b, \sin a,
   \cos a - \cos c \cos b)$ ; ce vecteur est orthogonal à $A$ et sa norme vaut
   $\sqrt{1 - \cos^2 c} = \sin c$ (projection de $B$ sur le plan tangent en $A$).
-  Donc
+  Le produit scalaire de $(-\cos b, 0, \sin b)$ et de ce vecteur vaut
+  $\cos b\cos c\sin b + \sin b\cos a - \sin b\cos c\cos b = \sin b\cos a$, donc
   \[
-  \cos A = \frac{(-\cos b, 0, \sin b)\cdot(-\cos c\sin b, \sin a, \cos a - \cos c\cos b)}{\sin c}
-  = \frac{\cos b\cos c\sin b + \sin b\cos a - \sin b \cos c\cos b}{\sin c}
-  = \frac{\cos a \sin b}{\sin c}.
+  \cos A = \frac{\cos a \sin b}{\sin c}.
   \]
   Avec $\cos a = \cos c / \cos b$, il vient
   $\cos A = \frac{\cos c \sin b}{\cos b \sin c} = \frac{\tan b}{\tan c}$.
@@ -543,7 +542,826 @@ vitesses angulaires $\omega_1 > \omega_2 > 0$, $\omega_1/\omega_2 = p/q$.
 \end{enumerate}
 \end{solution}
 
-\section*{Mersenne et les papiers de jeux (NAF 5176)}
+\section*{Les remarques sur l'Harmonie universelle (Français 12357)}
+\chapitre{fr-12357}
+
+Français 12357 est la copie, par une main anonyme du XVII\textsuperscript{e}
+siècle, des notes que le P. Mersenne avait écrites dans les marges et sur les
+feuillets blancs de son exemplaire de l'\emph{Harmonie universelle} ; la copie
+le dit dans son titre, et c'est sur ce titre que repose l'attribution des
+remarques. Chaque remarque renvoie à une page du livre et le suit traité par
+traité : la nature des sons, le mouvement des corps, les chants, les
+consonances, les instruments, puis des « nouvelles observations » et huit pages
+de nombres écrites « au papier blanc après tous les livres ». Trois feuillets de
+musique d'une autre main sont reliés devant (vues 3 à 7), et une pièce latine de
+1643, les objections de l'« Académie parisienne » aux dialogues de Galilée,
+derrière (vues 53 à 55). Les cinquante-six vues montrent une page chacune.
+Beaucoup de calculs de la copie sont justes, certains remarquablement ;
+d'autres sont faux, et les exercices qui suivent les prennent des deux côtés.
+
+\begin{exercice}{Trois valeurs de $\pi$ et un polygone de 97 côtés}{Lycée}
+\manuscrit{fr-12357}{8}{9}
+Les feuillets blancs de devant discutent la quadrature du cercle d'après un livre
+de Fabre, et opposent trois règles.
+\begin{enumerate}
+\item Fabre fait égale au quart de la circonférence circonscrite à un carré la
+  droite qui joint un sommet du carré au milieu d'un côté opposé. Quelle valeur
+  de $\pi$ cette règle suppose-t-elle ?
+\item Le sieur Cornu fait que, le côté du carré inscrit étant $9$, le quart de la
+  circonférence est $10$. Quelle valeur de $\pi$ ? La remarque ajoute que Cornu
+  fait le quart de la circonférence « trop grand d'un peu, car le polygone
+  circonscrit de 97 côtés est plus petit que son cercle supposé ». Montrer que le
+  périmètre du polygone régulier à $n$ côtés circonscrit à un cercle de diamètre
+  $1$ vaut $n\tan\frac{\pi}{n}$ et qu'il dépasse $\pi$ ; puis, en calculant
+  $97\tan\frac{\pi}{97}$, justifier l'argument de la remarque.
+\item Un troisième auteur donne à la circonférence « trois fois le diamètre et
+  $\frac{112}{113}$ d'une septième partie ». Quelle fraction est-ce, et quelle
+  est son erreur ?
+\item « Par le moyen de 70 et 99 multipliés en soi-mêmes l'on a deux nombres en
+  raison double, à $\frac{1}{4900}$ près. » Expliquer.
+\item « Pour faire un rond égal à un carré », on donne $8$ au diamètre du cercle et
+  $10$ à la diagonale du carré. Avec $\pi = \frac{22}{7}$, la copie trouve pour le
+  cercle $50\frac47$ et un excès d'$\frac{1}{88}$ sur le carré. Refaire le calcul.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Pour un carré de côté $a$, la droite du sommet au milieu du côté opposé vaut
+  $\sqrt{a^2 + a^2/4} = \frac{\sqrt5}{2}a$ ; le cercle circonscrit a pour rayon
+  $\frac{a}{\sqrt2}$ et son quart de circonférence vaut $\frac{\pi a}{2\sqrt2}$.
+  L'égalité donne $\pi = \sqrt2\cdot\sqrt5 = \sqrt{10} \approx 3{,}1623$, trop
+  grand de $0{,}02$.
+\item Le côté du carré inscrit dans un cercle de rayon $r$ est $r\sqrt2$ et le
+  quart de circonférence $\frac{\pi r}{2}$. La règle $\frac{\pi r/2}{r\sqrt2} =
+  \frac{10}{9}$ donne $\pi = \frac{20\sqrt2}{9} \approx 3{,}142697$, trop grand de
+  $1{,}1\times 10^{-4}$. Chaque côté du polygone circonscrit est tangent au cercle
+  de rayon $\frac12$ en son milieu et vu du centre sous l'angle $\frac{2\pi}{n}$ :
+  sa longueur est $2\cdot\frac12\tan\frac{\pi}{n}$, et le périmètre
+  $n\tan\frac{\pi}{n}$. Comme $\tan x > x$ sur $]0, \frac{\pi}{2}[$, le périmètre
+  dépasse $\pi$. Or $97\tan\frac{\pi}{97} \approx 3{,}142692 < 3{,}142697$ : la
+  valeur de Cornu dépasse le périmètre d'un polygone circonscrit, donc elle
+  dépasse $\pi$. La remarque est exacte, et de justesse : l'écart est de cinq
+  millionièmes.
+\item $3 + \frac{112}{113}\cdot\frac17 = 3 + \frac{16}{113} = \frac{355}{113}
+  \approx 3{,}1415929$, trop grand d'environ $2{,}7\times 10^{-7}$ seulement.
+\item $99^2 = 9801$ et $2\times 70^2 = 9800$, donc $\bigl(\frac{99}{70}\bigr)^2 =
+  2 + \frac{1}{4900}$ : $\frac{99}{70}$ approche $\sqrt2$ par excès. C'est une
+  solution de $x^2 - 2y^2 = 1$.
+\item L'aire du carré de diagonale $10$ est $\frac{10^2}{2} = 50$. Celle du cercle
+  de diamètre $8$ est $\frac{22}{7}\times 16 = \frac{352}{7} = 50\frac27$, et non
+  $50\frac47$. L'excès est $\frac27$, soit $\frac{2/7}{352/7} = \frac{1}{176}$ de
+  l'aire du cercle, non $\frac{1}{88}$ : les deux nombres de la copie doublent
+  l'excès vrai, et s'accordent entre eux, non avec le calcul. Avec la vraie
+  valeur de $\pi$, le cercle vaut $50{,}27$, et l'excès est d'environ
+  $\frac{1}{189}$.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{La chute vers le centre ne suit pas un demi-cercle}{Lycée}
+\manuscrit{fr-12357}{13}{13}
+Galilée avait avancé qu'un corps tombant vers le centre d'une Terre qui tourne
+décrirait un demi-cercle. Une remarque le réfute par l'algèbre. Soit $A$ le
+centre de la Terre, $AC = b$ son rayon, et le cercle de diamètre $AC$. On suppose
+qu'au bout du temps où la Terre a tourné de l'angle $\varphi$, le corps est au
+point $K$ de ce cercle tel que $\widehat{KAC} = \varphi$, et au bout d'un temps
+double au point $I$ tel que $\widehat{IAC} = 2\varphi$ ($0 < \varphi < 45^\circ$).
+La chute est la distance du corps à la surface le long du rayon :
+$HK = b - AK$ et $ID = b - AI$.
+\begin{enumerate}
+\item Montrer que $AK = b\cos\varphi$ et $AI = b\cos 2\varphi$.
+\item La loi de Galilée (chute proportionnelle au carré du temps) exige
+  $ID = 4\,HK$. Montrer que $\frac{ID}{HK} = 2(1 + \cos\varphi)$ et conclure.
+\item La copie pose $AK = e$ et trouve $ID = \frac{b^2 - e^2}{\frac12 b}$ et
+  $HK = b - e$ ; elle montre que $ID = 4HK$ équivaudrait à $2be = b^2 + e^2$.
+  Vérifier ces calculs. Pour quel point $K$ le rapport $ID : HK$ vaut-il un nombre
+  donné $\lambda$ ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Le triangle $AKC$ est inscrit dans le demi-cercle de diamètre $AC$, donc
+  rectangle en $K$, et $AK = AC\cos\widehat{KAC} = b\cos\varphi$. De même
+  $AI = b\cos2\varphi$.
+\item $\frac{ID}{HK} = \frac{b(1 - \cos2\varphi)}{b(1-\cos\varphi)} =
+  \frac{2(1 - \cos^2\varphi)}{1 - \cos\varphi} = 2(1 + \cos\varphi)$. Pour
+  $0 < \varphi < 45^\circ$, $0 < \cos\varphi < 1$, donc le rapport est strictement
+  compris entre $2$ et $4$ et ne vaut jamais $4$ : le cercle ne satisfait la loi de
+  chute en aucun point.
+\item $ID = b - b\cos 2\varphi = 2b - 2b\cos^2\varphi = 2b - \frac{2e^2}{b} =
+  \frac{b^2 - e^2}{\frac12 b}$, et $HK = b - e$. L'égalité $ID = 4HK$ s'écrit
+  $2(b^2 - e^2) = 4b(b - e)$ ; en divisant par $2(b-e) \neq 0$, $b + e = 2b$ ; la
+  forme de la copie, $2be = b^2 + e^2$, soit $(b-e)^2 = 0$, est équivalente. Les
+  deux imposent $e = b$, c'est-à-dire $\varphi = 0$. Enfin
+  $\frac{ID}{HK} = \frac{2(b+e)}{b} = \lambda$ donne $e = \bigl(\frac{\lambda}{2}
+  - 1\bigr)b$, qui convient pour $2 < \lambda < 4$ ; la copie l'écrit $e = s - b$
+  avec $\lambda = s : \frac12 b$, ce qui est la même chose.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{La spirale des huit quinzièmes}{L1}
+\manuscrit{fr-12357}{11}{12}
+\manuscrit{fr-12357}{14}{14}
+La plus longue remarque du volume suppose que le rayon qui porte le corps tourne
+uniformément avec la Terre et que la distance tombée croît comme le carré du
+temps. Si $R$ est le rayon de la Terre et $\Theta$ l'angle dont elle tourne
+pendant toute la chute, la courbe a pour équation polaire
+$r(\theta) = R\bigl(1 - \theta^2/\Theta^2\bigr)$, $0 \le \theta \le \Theta$. La
+copie affirme que l'aire comprise entre cette spirale et le rayon de départ est
+au secteur de rayon $R$ et d'angle $\Theta$ « comme 8 à 15 », et le démontre à la
+manière d'Archimède, en vérifiant en marge un « lemme » pour $n = 16$.
+\begin{enumerate}
+\item Démontrer le rapport $\frac{8}{15}$ par une intégrale.
+\item On découpe l'angle en $n$ parties égales. Montrer que l'aire de la spirale
+  est comprise entre $\frac{S_{\mathrm{in}}}{n^5}$ et $\frac{S_{\mathrm{out}}}{n^5}$
+  fois l'aire du secteur, où
+  $S_{\mathrm{in}} = \sum_{k=1}^{n}(n^2 - k^2)^2$ et
+  $S_{\mathrm{out}} = \sum_{k=0}^{n-1}(n^2-k^2)^2$.
+\item Montrer que $S_{\mathrm{in}} = \frac{8n^5}{15} - \frac{n^4}{2} - \frac{n}{30}$
+  (on utilisera $\sum_{k=1}^n k^2 = \frac{n(n+1)(2n+1)}{6}$ et
+  $\sum_{k=1}^n k^4 = \frac{n(n+1)(2n+1)(3n^2+3n-1)}{30}$), et en déduire le
+  « lemme » : $S_{\mathrm{in}} < \frac{8}{15}n^5 < S_{\mathrm{out}}$ pour tout
+  $n \ge 1$. Vérifier les nombres de la marge pour $n = 16$ : $526\,472$,
+  $592\,008$, $1\,048\,576$.
+\item Une autre remarque pose le problème pour une chute proportionnelle à une
+  puissance $m$ quelconque du temps. Calculer le rapport de l'aire au secteur, et
+  reconnaître la petite table sans titre de la marge :
+  $3 \mid 1$ ; $15 \mid 8$ ; $14 \mid 9$ ; $45 \mid 32$ ; $33 \mid 25$ ;
+  $91 \mid 72$ ; $60 \mid 49$ ; $153 \mid 128$.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item L'aire vaut $\frac12\int_0^\Theta r^2\,d\theta = \frac{R^2\Theta}{2}
+  \int_0^1 (1 - u^2)^2\,du$ (avec $u = \theta/\Theta$), et
+  $\int_0^1 (1 - 2u^2 + u^4)\,du = 1 - \frac23 + \frac15 = \frac{8}{15}$, alors que
+  le secteur vaut $\frac{R^2\Theta}{2}$.
+\item Sur $[\theta_{k-1}, \theta_k]$, $\theta_k = k\Theta/n$, $r$ décroît de
+  $R(1 - (k-1)^2/n^2)$ à $R(1 - k^2/n^2)$ ; la portion de spirale est entre les
+  secteurs d'angle $\Theta/n$ de ces deux rayons, d'aires
+  $\frac{\Theta}{2n}R^2(1 - k^2/n^2)^2$ et
+  $\frac{\Theta}{2n}R^2(1 - (k-1)^2/n^2)^2$. En sommant et en rapportant au
+  secteur $\frac{R^2\Theta}{2}$, on obtient $\frac{1}{n^5}\sum_{k=1}^n
+  (n^2-k^2)^2$ et $\frac{1}{n^5}\sum_{k=1}^{n}(n^2 - (k-1)^2)^2$, c'est-à-dire
+  $S_{\mathrm{in}}/n^5$ et $S_{\mathrm{out}}/n^5$.
+\item $S_{\mathrm{in}} = n\cdot n^4 - 2n^2\sum k^2 + \sum k^4$. En développant,
+  $2n^2\cdot\frac{n(n+1)(2n+1)}{6} = \frac{2n^5 + 3n^4 + n^3}{3}$ et
+  $\sum k^4 = \frac{6n^5 + 15n^4 + 10n^3 - n}{30}$, d'où
+  \[
+  S_{\mathrm{in}} = \frac{30n^5 - 20n^5 - 30n^4 - 10n^3 + 6n^5 + 15n^4 + 10n^3 - n}{30}
+  = \frac{16n^5 - 15n^4 - n}{30},
+  \]
+  qui est la formule annoncée. $S_{\mathrm{out}} = S_{\mathrm{in}} + (n^2)^2 -
+  (n^2 - n^2)^2 = S_{\mathrm{in}} + n^4 = \frac{8n^5}{15} + \frac{n^4}{2} -
+  \frac{n}{30}$. Donc $S_{\mathrm{in}} < \frac{8}{15}n^5$ et
+  $S_{\mathrm{out}} - \frac{8}{15}n^5 = \frac{n}{30}(15n^3 - 1) > 0$. Pour $n = 16$ :
+  $S_{\mathrm{in}} = 526\,472$ (somme des carrés de $255, 252, \dots, 31$, les
+  nombres $256 - k^2$), $S_{\mathrm{out}} = 526\,472 + 65\,536 = 592\,008$, et
+  $n^5 = 1\,048\,576$ ; puis $15 \times 592\,008 = 8\,880\,120 > 8 \times 1\,048\,576
+  = 8\,388\,608 > 15 \times 526\,472 = 7\,897\,080$. Les deux encadrements
+  diffèrent de $\frac{1}{n}$ du secteur : c'est la double inégalité qui fait
+  marcher l'exhaustion, et la marge a entièrement raison.
+\item Avec $r = R(1 - (\theta/\Theta)^m)$, le rapport est
+  $\int_0^1(1-u^m)^2du = 1 - \frac{2}{m+1} + \frac{1}{2m+1} =
+  \frac{2m^2}{(m+1)(2m+1)}$. Pour $m = 1, \dots, 8$ :
+  $\frac13, \frac{8}{15}, \frac{9}{14}, \frac{32}{45}, \frac{25}{33},
+  \frac{72}{91}, \frac{49}{60}, \frac{128}{153}$. La table de la marge donne
+  exactement ces rapports, dénominateur puis numérateur : c'est la solution du
+  problème pour les huit premiers degrés, le premier étant le tiers de la spirale
+  d'Archimède.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Ce que ferait vraiment un corps lâché dans un puits traversant la Terre}{L2}
+\manuscrit{fr-12357}{11}{12}
+Le modèle de la copie (exercice précédent) garde une pesanteur constante jusqu'au
+centre. On le compare à la mécanique de Newton. On admet qu'à l'intérieur d'une
+Terre homogène de rayon $R$, l'accélération de la pesanteur au point de vecteur
+position $\vec r$ (origine au centre) vaut $-\frac{g}{R}\vec r$. Un corps est
+lâché sans frottement depuis l'équateur, dans un puits qui le laisse libre ; dans
+un repère non tournant, il part du point $(R, 0)$ avec la vitesse $(0, \omega R)$
+de la surface, $\omega$ étant la vitesse angulaire de la Terre.
+\begin{enumerate}
+\item Écrire et résoudre l'équation du mouvement. Montrer que la trajectoire est
+  une ellipse de centre le centre de la Terre, et que le corps n'y passe pas.
+\item Avec $g = 9{,}81$ m/s$^2$, $R = 6371$ km et
+  $\omega = 7{,}292\times 10^{-5}$ rad/s, calculer la distance minimale au
+  centre et le temps au bout duquel elle est atteinte.
+\item Que reste-t-il du résultat des $\frac{8}{15}$ ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $\ddot{\vec r} = -\Omega^2\vec r$ avec $\Omega = \sqrt{g/R}$ : chaque
+  coordonnée est un oscillateur harmonique. Avec les conditions initiales,
+  $x(t) = R\cos\Omega t$ et $y(t) = \frac{\omega R}{\Omega}\sin\Omega t$, donc
+  $\frac{x^2}{R^2} + \frac{y^2}{(\omega R/\Omega)^2} = 1$ : une ellipse centrée au
+  centre de la Terre, de demi-axes $R$ et $\omega R/\Omega$. La distance au centre
+  vaut au moins $\omega R/\Omega > 0$ : le corps ne passe pas par le centre.
+\item $\Omega = \sqrt{9{,}81/6\,371\,000} = 1{,}241\times10^{-3}$ s$^{-1}$. La
+  distance minimale $\omega R/\Omega \approx 374$ km est atteinte au quart de
+  période, $\frac{\pi}{2\Omega} \approx 1266$ s, soit environ $21$ minutes.
+\item C'est un théorème exact sur une hypothèse fausse : la pesanteur n'est pas
+  constante à l'intérieur de la Terre, et le corps ne tombe pas au centre. Le
+  calcul d'aire de la copie reste juste pour la courbe qu'elle définit ; c'est la
+  courbe qui n'est pas celle de la chute.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Les pendules composés et le « filet isochrone »}{L2}
+\manuscrit{fr-12357}{15}{16}
+Les remarques des pages 136 et suivantes comparent à la longueur du pendule simple
+qui bat en même temps, le « filet isochrone », des corps suspendus par un point.
+Un corps rigide de masse $M$ tourne autour d'un axe horizontal ; $I$ est son
+moment d'inertie par rapport à l'axe et $d$ la distance de l'axe au centre de
+gravité.
+\begin{enumerate}
+\item Écrire l'équation du mouvement $I\ddot\varphi = -Mgd\sin\varphi$ et montrer
+  que le corps oscille exactement comme un pendule simple de longueur
+  $\ell = \frac{I}{Md}$.
+\item Calculer $\ell$ pour un bâton de longueur $L$ pendu par un bout, pour un
+  anneau (la « circonférence ») et pour un disque de diamètre $D$ pendus par un
+  point du bord, et pour une sphère de diamètre $D$ pendue par un point de sa
+  surface. La copie dit : le bâton est au filet « en raison sesquialtère
+  proxime » ($\frac32$) ; la circonférence est « égale » au filet ; le cercle plein
+  est au filet « comme 7 à 5 » ; la sphère « comme $1\frac49$ à un ». Juger.
+\item Une plaque triangulaire isocèle de hauteur $h$ et d'angle au sommet $\alpha$
+  oscille dans son plan. Montrer que, pendue par la pointe,
+  $\ell = h\bigl(\frac34 + \frac14\tan^2\frac{\alpha}{2}\bigr)$, et, pendue par le
+  milieu de la base, $\ell = \frac{h}{2\cos^2(\alpha/2)}$. La copie donne, pour le
+  triangle équilatéral, $h : \ell = 6 : 5$ par la pointe et $3 : 2$ par la base, et
+  pour le triangle rectangle ($\alpha = 90^\circ$) $h = \ell$ des deux façons.
+  Vérifier.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Le moment du poids par rapport à l'axe est $-Mgd\sin\varphi$, et le théorème
+  du moment cinétique donne $I\ddot\varphi = -Mgd\sin\varphi$, soit
+  $\ddot\varphi = -\frac{g}{\ell}\sin\varphi$ avec $\ell = I/(Md)$ : c'est
+  l'équation du pendule simple de longueur $\ell$, à toute amplitude.
+\item Bâton : $I = \frac{ML^2}{3}$, $d = \frac{L}{2}$, $\ell = \frac{2L}{3}$, et
+  $L : \ell = 3 : 2$ exactement. Anneau de rayon $\rho$ : $I = M\rho^2 + M\rho^2
+  = 2M\rho^2$ (Huygens-Steiner), $d = \rho$, $\ell = 2\rho$ : le diamètre, « égal »
+  au filet. Disque : $I = \frac12 M\rho^2 + M\rho^2 = \frac32 M\rho^2$,
+  $\ell = \frac32\rho$, et $D : \ell = 4 : 3$, non $7 : 5$. Sphère :
+  $I = \frac25M\rho^2 + M\rho^2 = \frac75M\rho^2$, $\ell = \frac75\rho$ et
+  $D : \ell = 10 : 7 \approx 1{,}429$ ; la copie dit $1\frac49 \approx 1{,}444$,
+  à un pour cent près. Trois articles sur quatre sont justes ou presque ; le
+  disque est faux.
+\item Posons $t = \tan\frac{\alpha}{2}$, la pointe à l'origine et l'axe de symétrie
+  vertical ; à la profondeur $y$ la largeur est $2ty$, la densité surfacique
+  $1$. $M = \int_0^h 2ty\,dy = th^2$, $d = \frac{1}{M}\int_0^h 2ty^2\,dy = \frac{2h}{3}$,
+  et, l'axe étant perpendiculaire à la plaque,
+  $I = \int_0^h\bigl(y^2\cdot 2ty + \frac{(2ty)^3}{12}\bigr)dy =
+  th^4\bigl(\frac12 + \frac{t^2}{6}\bigr)$. D'où
+  $\ell = \frac{I}{Md} = h\bigl(\frac34 + \frac{t^2}{4}\bigr)$. Par le milieu de la
+  base, à la distance $h - d = \frac{h}{3}$ du centre de gravité :
+  $I' = I - Md^2 + M\frac{h^2}{9} = Mh^2\bigl(\frac12 + \frac{t^2}{6} - \frac49 +
+  \frac19\bigr) = \frac{Mh^2(1+t^2)}{6}$ et $\ell = \frac{I'}{Mh/3} =
+  \frac{h(1+t^2)}{2} = \frac{h}{2\cos^2(\alpha/2)}$. Triangle équilatéral :
+  $t^2 = \frac13$, $\ell = \frac56h$ par la pointe ($6 : 5$) et $\ell = \frac23h$ par
+  la base ($3 : 2$). Triangle rectangle : $t = 1$, $\ell = h$ des deux façons.
+  Les valeurs de la copie sont exactes dans ces trois cas (en entendant que la
+  copie compare au filet la hauteur du triangle).
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Un nombre « qui semble faux » et qui est juste}{Lycée}
+\manuscrit{fr-12357}{18}{18}
+La remarque sur la page 193 rapporte la règle de Galilée : la résistance des
+cylindres à la rupture est « en raison triplée des diamètres ». Puis elle calcule :
+une corde de laiton d'un sixième de ligne de diamètre rompant sous $18$ livres, une
+colonne d'un pied de diamètre romprait « seulement avec $13\,436\,928$ » livres ;
+et la marge ajoute : « ce nombre me semble faux ». Un pied vaut $12$ pouces, un
+pouce $12$ lignes.
+\begin{enumerate}
+\item Calculer le rapport des diamètres, puis la charge de rupture selon la loi
+  des cubes et selon la loi des carrés. Quelle loi le nombre de la copie suit-il ?
+\item Une corde qui casse sous un poids suspendu est rompue par traction. Dire
+  pourquoi sa résistance est proportionnelle à l'aire de sa section, et quelle
+  est donc la bonne loi ici. Où est l'erreur de la remarque ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Un pied vaut $144$ lignes, et $144 : \frac16 = 864$. Loi des carrés :
+  $18 \times 864^2 = 18 \times 746\,496 = 13\,436\,928$, exactement le nombre de la
+  copie. Loi des cubes : $18 \times 864^3 = 11\,609\,505\,792$.
+\item En traction, chaque élément de la section porte la même contrainte, et la
+  rupture a lieu quand elle atteint la résistance du matériau : la charge de
+  rupture est proportionnelle à l'aire, donc au carré du diamètre. Le nombre est
+  juste pour le problème posé ; c'est la phrase qui le précède qui ne s'y applique
+  pas, la règle des cubes de Galilée valant pour une poutre rompue par flexion.
+  Le doute de la marge portait sur le bon nombre.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Tous les mots de vingt-trois lettres}{L1}
+\manuscrit{fr-12357}{20}{20}
+Une remarque renvoie au « problème arithmétique » de Guldin : combien de mots
+peut-on faire avec les $23$ lettres de l'alphabet, aucune lettre n'étant répétée
+dans un mot ? La copie donne pour le nombre de mots
+$702730673303300980911155$ et dit que son premier chiffre « vaut septante
+sextillions » (le sextillion valant $10^{21}$).
+\begin{enumerate}
+\item Montrer que le nombre de mots de $k$ lettres est $\frac{23!}{(23-k)!}$, et que
+  le nombre total de mots est $W = \sum_{m=0}^{22}\frac{23!}{m!}$.
+\item Montrer que pour tout $n \ge 1$, $\sum_{m=0}^{n}\frac{n!}{m!} = \lfloor e\cdot
+  n!\rfloor$. En déduire $W = \lfloor e\cdot 23!\rfloor - 1$.
+\item Sachant que $W = 70\,273\,067\,330\,330\,098\,091\,155$, comparer au nombre de la
+  copie.
+\item Une autre remarque dit que le $64^{\text{e}}$ nombre de la table du livre,
+  $64!$, a $90$ chiffres. Le vérifier à l'aide de la formule de Stirling
+  $\ln n! = n\ln n - n + \frac12\ln(2\pi n) + \varepsilon_n$, $0 < \varepsilon_n <
+  \frac{1}{12n}$.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Un mot de $k$ lettres distinctes est une suite de $k$ lettres distinctes :
+  $23 \times 22 \times\cdots\times (23-k+1) = \frac{23!}{(23-k)!}$ choix. En posant
+  $m = 23 - k$, $W = \sum_{k=1}^{23}\frac{23!}{(23-k)!} = \sum_{m=0}^{22}\frac{23!}{m!}$.
+\item $e\cdot n! = \sum_{m\ge0}\frac{n!}{m!} = \sum_{m=0}^n \frac{n!}{m!} + \rho_n$,
+  où le premier terme est entier et $\rho_n = \sum_{j\ge1}\frac{n!}{(n+j)!} =
+  \frac{1}{n+1} + \frac{1}{(n+1)(n+2)} + \cdots$. On a $\rho_n > 0$ et
+  $\rho_n < \sum_{j\ge1}\frac{1}{(n+1)^j} = \frac1n \le 1$, avec inégalité stricte
+  $\rho_n < 1$ ; donc la somme est la partie entière de $e\cdot n!$. Pour $n = 23$,
+  $W$ est cette somme privée du terme $m = 23$, qui vaut $1$.
+\item $W$ a $23$ chiffres et commence par $70$ : « septante sextillions » est juste.
+  Le nombre de la copie a $24$ chiffres ; il s'accorde avec $W$ si l'on ôte le
+  « 1 » en trop avant la fin ($\ldots 0980911155$ au lieu de $\ldots 098091155$).
+  La copie se contredit donc elle-même, et la faute est de copie ou de lecture.
+\item $\log_{10}64! = \frac{1}{\ln 10}\bigl(64\ln64 - 64 + \frac12\ln(128\pi) +
+  \varepsilon\bigr) = \frac{266{,}169 - 64 + 2{,}998 + 0{,}001}{2{,}302585} \approx
+  89{,}10$, avec $\varepsilon < \frac{1}{768}$. Donc $10^{89} < 64! < 10^{90}$ : $64!$
+  a $90$ chiffres, et commence par $10^{0{,}10}\approx 1{,}26$. (La remarque donne
+  pour premiers chiffres « 221 » ; sans la table du livre on ne peut dire d'où vient
+  l'écart.)
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Les chants de huit notes sans septième ni sixte}{Lycée}
+\manuscrit{fr-12357}{21}{21}
+La remarque sur la page 113 veut retirer des chants de l'octave (les $8!$ façons
+d'ordonner huit notes différentes) ceux où la note \emph{ut} est voisine de
+\emph{si} ou de \emph{la}. Elle compte : ceux où \emph{ut} et \emph{si} sont
+voisins, $2\cdot 7! = 10\,080$ ; de même pour \emph{ut} et \emph{la} ; en tout
+$20\,160$ ; mais on a compté deux fois ceux où \emph{ut} est voisin des deux,
+$2\cdot 6! = 1440$. Elle conclut à $21\,600$ chants permis. La copie écrit « des
+4320 chants de l'octave ».
+\begin{enumerate}
+\item Justifier chaque étape par le principe d'inclusion--exclusion.
+\item Pourquoi le nombre des chants où \emph{ut} est voisin de \emph{si} et de
+  \emph{la} est-il $2 \cdot 6!$ ?
+\item Quel est le nombre total de chants, et que penser du « 4320 » ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Soit $X$ l'ensemble des chants où \emph{ut} et \emph{si} sont voisins, $Y$
+  celui où \emph{ut} et \emph{la} le sont. En collant \emph{ut} et \emph{si} en un
+  bloc, on a $7!$ ordres des sept objets et $2$ ordres dans le bloc :
+  $|X| = |Y| = 2\cdot7! = 10\,080$. Les chants interdits forment $X \cup Y$, et
+  $|X\cup Y| = |X| + |Y| - |X\cap Y| = 20\,160 - 1440 = 18\,720$. Les chants permis
+  sont $8! - 18\,720 = 40\,320 - 18\,720 = 21\,600$.
+\item \emph{ut} ne peut avoir que deux voisins ; s'il est voisin des deux, le bloc
+  est « \emph{si ut la} » ou « \emph{la ut si} » : $2$ blocs, et $6!$ ordres des six
+  objets restants.
+\item $8! = 40\,320$ ; toute la suite du calcul de la copie suppose ce nombre, et
+  « 4320 » est $40\,320$ privé de son zéro, une faute de plume ou de copie. Un
+  dénombrement exhaustif des $40\,320$ permutations confirme $21\,600$.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le piquet et les « puissances triangulaires »}{L1}
+\manuscrit{fr-12357}{22}{23}
+La remarque sur la page 131 distingue deux sortes de combinaisons. Quand toutes
+les choses sont différentes, comme les $12$ cartes d'une main prises dans les $36$
+du jeu de piquet, on multiplie $36 \cdot 35 \cdots 25$ et l'on divise par $12!$.
+Quand les choses peuvent être semblables, comme $12$ cartes prises dans douze
+jeux, on multiplie $36 \cdot 37 \cdots 47$ et l'on divise par $12!$. La copie
+appelle $k$-ième « puissance triangulaire » de la « racine » $r$ le nombre
+$\frac{r(r+1)\cdots(r+k-1)}{k!}$.
+\begin{enumerate}
+\item Calculer le nombre de mains de $12$ cartes distinctes prises dans $36$.
+\item Montrer que le nombre de façons de choisir $k$ objets parmi $r$ sortes, les
+  répétitions étant permises et l'ordre indifférent, est $\binom{r+k-1}{k}$
+  (représenter un choix par une suite de $k$ étoiles et $r-1$ barres). En déduire
+  la règle de la copie pour les douze jeux, et le nombre de choix de $100$ fruits
+  dans six paniers de sortes différentes.
+\item Montrer que la $k$-ième puissance triangulaire de $r$ est
+  $\binom{r+k-1}{k}$, que la deuxième est le nombre triangulaire et que chacune est
+  la somme des $r$ premières de la précédente.
+\item La copie écrit que les mains sans répétition sont « la
+  $12^{\text{e}}$ puissance triangulaire de $36$, à savoir $1\,251\,677\,700$ ».
+  Le nombre est-il juste ? Et le nom ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $\frac{36\cdot35\cdots25}{12!} = \frac{599\,555\,620\,984\,320\,000}{479\,001\,600}
+  = \binom{36}{12} = 1\,251\,677\,700$.
+\item Un choix est déterminé par les nombres $x_1, \dots, x_r \ge 0$ d'objets de
+  chaque sorte, de somme $k$ ; on l'écrit $x_1$ étoiles, une barre, $x_2$ étoiles,
+  \ldots : une suite de $k + r - 1$ symboles dont $r-1$ barres, et réciproquement.
+  D'où $\binom{r+k-1}{k}$. Pour $r = 36$, $k = 12$ :
+  $\binom{47}{12} = \frac{36\cdot 37\cdots 47}{12!} = 52\,251\,400\,851$, la règle
+  de la copie. Pour $100$ fruits de $6$ sortes : $\binom{105}{100} = \binom{105}{5}
+  = 96\,560\,646$.
+\item $\frac{r(r+1)\cdots(r+k-1)}{k!} = \frac{(r+k-1)!}{(r-1)!\,k!} =
+  \binom{r+k-1}{k}$. Pour $k = 2$, $\binom{r+1}{2} = \frac{r(r+1)}{2}$, le nombre
+  triangulaire. Et $\sum_{s=1}^{r}\binom{s+k-2}{k-1} = \binom{r+k-1}{k}$ (on classe
+  les parties à $k$ éléments de $\{1, \dots, r+k-1\}$ selon leur plus grand
+  élément). La règle de calcul et l'exemple de la copie sont justes :
+  $\frac{5\cdot6\cdot7\cdot8\cdot9\cdot10}{720} = 210 = \binom{10}{6}$.
+\item Le nombre est juste, c'est $\binom{36}{12}$. Mais, selon la définition même
+  de la copie, la $12^{\text{e}}$ puissance triangulaire de $36$ est
+  $\binom{47}{12}$, le nombre des mains \emph{avec} répétition ; $\binom{36}{12}$ est
+  la $12^{\text{e}}$ puissance triangulaire de $25$ ($\binom{25+11}{12}$), c'est-à-dire
+  le dernier nombre d'une table qui va « jusqu'à la $12^{\text{e}}$ puissance de
+  25 ». Le nom est faux, le nombre juste.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Diviser l'octave et la quarte en trois raisons superparticulières}{L1}
+\manuscrit{fr-12357}{24}{25}
+Une raison superparticulière est un rapport $1 + \frac1a$, $a$ entier $\ge 1$.
+Selon la copie, l'octave ($2$) ne se divise en trois raisons superparticulières
+« qu'en cinq sortes », et la quarte ($\frac43$) « se peut diviser 27 fois » ; la
+copie en dresse la table.
+\begin{enumerate}
+\item Résoudre $\bigl(1+\frac1a\bigr)\bigl(1+\frac1b\bigr)\bigl(1+\frac1c\bigr) = 2$
+  avec $a \le b \le c$ : montrer que $2 \le a \le 3$, borner $b$, et trouver les cinq
+  solutions.
+\item Pour la quarte, montrer que $4 \le a \le 9$.
+\item Soit $a$ fixé et $1 + \frac1b$, $1 + \frac1c$ de produit $\frac{u}{v}$ (fraction
+  irréductible, $u > v$). Montrer que
+  $\bigl((u-v)b - v\bigr)\bigl((u-v)c - v\bigr) = uv$.
+\item En déduire toutes les solutions de la quarte avec $a \le b \le c$ et montrer
+  qu'il y en a $26$. La table de la copie en porte $27$, dont les divisions
+  $\frac{16}{15}\cdot\frac76\cdot\frac{15}{14}$ et
+  $\frac76\cdot\frac{15}{14}\cdot\frac{16}{15}$ : conclure.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Si $a = 1$, $1 + \frac1a = 2$ et le reste devrait valoir $1$ : impossible.
+  Si $a \ge 4$, le produit est au plus $\bigl(\frac54\bigr)^3 = \frac{125}{64} < 2$.
+  Donc $a \in \{2,3\}$. Pour $a = 2$ : $(1+\frac1b)(1+\frac1c) = \frac43$ avec
+  $b \ge 2$ et $(1+\frac1b)^2 \ge \frac43$, d'où $b \le 6$ ($\frac{64}{49} <
+  \frac43 \le \frac{49}{36}$). Alors $1 + \frac1c = \frac43\cdot\frac{b}{b+1}$ :
+  $b = 2$ et $b = 3$ donnent un rapport $\le 1$ ; $b = 4$ donne $\frac{16}{15}$,
+  $c = 15$ ; $b = 5$, $\frac{10}{9}$, $c = 9$ ; $b = 6$, $\frac87$, $c = 7$. Pour
+  $a = 3$ : produit $\frac32$, $b \ge 3$, $(1+\frac1b)^2 \ge \frac32$ donne
+  $b \le 4$ ; $b = 3$ donne $\frac98$, $c = 8$ ; $b = 4$ donne $\frac65$, $c = 5$.
+  Les cinq divisions sont $\frac32\cdot\frac54\cdot\frac{16}{15}$,
+  $\frac32\cdot\frac65\cdot\frac{10}{9}$, $\frac32\cdot\frac76\cdot\frac87$,
+  $\frac43\cdot\frac43\cdot\frac98$, $\frac43\cdot\frac54\cdot\frac65$ : la copie
+  est exacte et complète.
+\item $1 + \frac1a < \frac43$ impose $a \ge 4$, et $\bigl(1+\frac1a\bigr)^3 \ge
+  \frac43$ impose $a \le 9$ ($1{,}1^3 = 1{,}331 < \frac43$).
+\item $\frac{(b+1)(c+1)}{bc} = \frac uv$ s'écrit $(u - v)bc - vb - vc - v = 0$ ;
+  en multipliant par $u - v$ et en ajoutant $v^2$ :
+  $\bigl((u-v)b - v\bigr)\bigl((u-v)c - v\bigr) = v^2 + v(u-v) = uv$.
+\item Avec $\frac uv = \frac43\cdot\frac{a}{a+1} = \frac{4a}{3(a+1)}$, on trouve les
+  cas suivants. Pour $a = 4$ : $\frac{16}{15}$, $(b-15)(c-15) = 240$ ; les diviseurs
+  $d \le \sqrt{240}$ sont $1, 2, 3, 4, 5, 6, 8, 10, 12, 15$ : dix solutions
+  ($b = 16, \dots, 30$). Pour $a = 5$ : $\frac{10}{9}$, $(b-9)(c-9) = 90$,
+  $d\in\{1,2,3,5,6,9\}$ : six. Pour $a = 6$ : $\frac87$, $(b-7)(c-7) = 56$,
+  $d\in\{1,2,4,7\}$ : quatre. Pour $a = 7$ : $\frac76$, $(b-6)(c-6) = 42$,
+  $d\in\{1,2,3,6\}$ : quatre, toutes avec $b \ge 7$. Pour $a = 8$ : $\frac{32}{27}$,
+  $(5b-27)(5c-27) = 864$, les deux facteurs positifs ($b \ge 8$) et
+  $\equiv 3 \pmod 5$ ; le plus petit est au moins $13$ et au plus
+  $\sqrt{864} < 30$, et seul $18$ convient ($864 = 18 \times 48$), d'où
+  $(b, c) = (9, 15)$ : une solution. Pour $a = 9$ : $\frac65$, $(b-5)(c-5) = 30$
+  avec $b \ge 9$ : seul $d = 5$ convient, $(b,c) = (10, 11)$ : une solution.
+  Total $10 + 6 + 4 + 4 + 1 + 1 = 26$. Les deux divisions citées sont
+  $(6, 14, 15)$ écrite dans deux ordres : la table en compte une deux fois, et la
+  quarte se divise en $26$ manières, non $27$. (Chacune des $27$ divisions de la
+  table est par ailleurs juste.)
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Cinquante-trois commas, douze demi-tons et les fractions continues}{L2}
+\manuscrit{fr-12357}{5}{5}
+\manuscrit{fr-12357}{43}{43}
+Un feuillet de musique (vue 5) attribue à chaque intervalle un nombre entier de
+« commas », l'octave en comptant $53$ : dièse $3$, demi-ton $5$, ton mineur $8$, ton
+majeur $9$, tierce mineure $14$, tierce majeure $17$, quarte $22$, quinte $31$,
+sixte mineure $36$, sixte majeure $39$. La neuvième « observation » (vue 43)
+compare l'intonation juste au tempérament égal à douze demi-tons.
+\begin{enumerate}
+\item Un intervalle de rapport $r$ vaut $53\log_2 r$ « commas » dans la division
+  de l'octave en $53$ parties égales. Calculer ce nombre pour $\frac{128}{125}$,
+  $\frac{16}{15}$, $\frac{10}{9}$, $\frac98$, $\frac65$, $\frac54$, $\frac43$, $\frac32$,
+  $\frac85$, $\frac53$ et comparer au feuillet.
+\item Le développement en fraction continue de $x = \log_2\frac32$ commence par
+  $[0; 1, 1, 2, 2, 3, 1, 5, \dots]$. Calculer les réduites jusqu'à $\frac{31}{53}$ et
+  expliquer pourquoi $12$ et $53$ sont de bonnes divisions de l'octave pour la
+  quinte (on rappelle que $\bigl|x - \frac{p_k}{q_k}\bigr| < \frac{1}{q_kq_{k+1}}$).
+\item Dans le tempérament égal, la tierce majeure vaut $4$ demi-tons et la tierce
+  mineure $3$. Exprimer leurs écarts à la juste en cents ($1200\log_2$) et, comme la
+  copie, en « commas » ($53$ à l'octave, la tierce juste comptée $17$ et $14$).
+  Laquelle est la plus proche ?
+\item La copie note que, sur un instrument tempéré, « trois quintes font
+  exactement une treizième majeure et trois tierces majeures l'octave, ce qui ne
+  peut arriver en la vraie théorie ». Calculer les écarts justes.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item On trouve respectivement $1{,}81$ ; $4{,}93$ ; $8{,}06$ ; $9{,}01$ ; $13{,}94$ ;
+  $17{,}06$ ; $22{,}00$ ; $31{,}00$ ; $35{,}94$ ; $39{,}06$. Tous les nombres du
+  feuillet sont les entiers les plus proches, sauf le dièse : $\frac{128}{125}$ vaut
+  $1{,}81$ comma, et le « dièse » de $3$ commas du feuillet est en fait
+  $\frac{25}{24}$ ($53\log_2\frac{25}{24} = 3{,}12$), le demi-ton chromatique ; le
+  feuillet l'emploie bien ainsi, puisqu'il fait le ton mineur de « dièse plus
+  demi-ton » ($\frac{25}{24}\cdot\frac{16}{15} = \frac{10}{9}$, $3 + 5 = 8$).
+\item Les réduites sont $\frac01, \frac11, \frac12, \frac35, \frac{7}{12},
+  \frac{24}{41}, \frac{31}{53}$ (par $p_k = a_kp_{k-1} + p_{k-2}$, de même pour
+  $q_k$). Une division de l'octave en $q$ parts approche la quinte par $p$ parts
+  avec l'erreur $|x - p/q|$ ; les réduites sont les meilleures approximations. Pour
+  $\frac{7}{12}$, l'erreur est $0{,}00163$ octave, soit $1{,}96$ cent ; pour
+  $\frac{31}{53}$, $5{,}7\times10^{-5}$ octave, soit $0{,}07$ cent, conformément à
+  $|x - \frac{31}{53}| < \frac{1}{53\times 306}$.
+\item Tierce majeure : $400 - 1200\log_2\frac54 = 400 - 386{,}31 = +13{,}69$ cents ;
+  tierce mineure : $300 - 315{,}64 = -15{,}64$ cents. En commas : $4\cdot\frac{53}{12}
+  = 17\frac23$ contre $17$, trop haute de $\frac23$ ; $3\cdot\frac{53}{12} =
+  13\frac14$ contre $14$, trop basse de $\frac34$. Dans les deux mesures, la tierce
+  majeure tempérée est plus proche de la juste que la mineure, comme le dit la
+  copie.
+\item $\bigl(\frac32\bigr)^3 = \frac{27}{8}$ et la treizième majeure juste vaut
+  $2\cdot\frac53 = \frac{10}{3}$ : $\frac{27/8}{10/3} = \frac{81}{80}$, le comma
+  syntonique. $\bigl(\frac54\bigr)^3 = \frac{125}{64}$ et $\frac{2}{125/64} =
+  \frac{128}{125}$, le dièse. En demi-tons égaux, $3\times7 = 21 = 12 + 9$ et
+  $3\times4 = 12$ : les deux égalités deviennent exactes.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Compter les parties aliquotes}{L1}
+\manuscrit{fr-12357}{46}{47}
+Les « parties aliquotes » d'un nombre sont ses diviseurs autres que lui-même. La
+copie en donne une règle : pour $108 = 4 \times 27$, on prend les exposants $2$ et $3$,
+on ajoute un à chacun, on multiplie ($12$), et l'on ôte un : $11$ parties.
+\begin{enumerate}
+\item Démontrer la règle : si $n = p_1^{e_1}\cdots p_r^{e_r}$, le nombre de diviseurs
+  de $n$ est $\tau(n) = (e_1+1)\cdots(e_r+1)$.
+\item La copie dit que $15\,000$ a « $80$ parties moins une ». Corriger.
+\item La copie cherche le moindre nombre qui ait $11$ parties aliquotes ;
+  elle décompose $12 = 3 \times 4$, prend un carré et un cube, et trouve
+  $9 \times 8 = 72$. Trouver le vrai minimum.
+\item Vérifier que $144$ est bien le moindre nombre à $14$ parties aliquotes.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Par l'unicité de la décomposition, les diviseurs de $n$ sont exactement les
+  $p_1^{f_1}\cdots p_r^{f_r}$ avec $0 \le f_i \le e_i$, deux choix différents
+  donnant deux diviseurs différents : il y en a $\prod(e_i+1)$. Pour $108 = 2^2 3^3$,
+  $\tau = 12$ et $11$ parties aliquotes.
+\item $15\,000 = 2^3\cdot 3\cdot 5^4$, $\tau = 4\times 2\times 5 = 40$ : $39$ parties
+  aliquotes. La copie a donné à $3$ l'exposant $3$ ($4\times4\times5 = 80$).
+\item Il faut $\tau(n) = 12$. Les décompositions $12 = 12 = 6\cdot2 = 4\cdot3 =
+  3\cdot2\cdot2$ donnent les formes $p^{11}$, $p^5q$, $p^3q^2$, $p^2qr$. Pour une
+  forme donnée, le minimum s'obtient en mettant les plus grands exposants sur les
+  plus petits nombres premiers : $2^{11} = 2048$, $2^5\cdot 3 = 96$,
+  $2^3\cdot 3^2 = 72$, $2^2\cdot3\cdot5 = 60$. Le minimum est $60$, qui a bien
+  $11$ parties aliquotes ($1,2,3,4,5,6,10,12,15,20,30$). La copie a oublié la
+  décomposition en trois facteurs.
+\item $\tau(n) = 15 = 15 = 5\cdot3$ : formes $p^{14}$ (au moins $16\,384$) et
+  $p^4q^2$ (au moins $2^4\cdot 3^2 = 144$) ; le minimum est $144$, comme le dit la
+  copie.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Nombres amiables et nombres multiparfaits}{L2}
+\manuscrit{fr-12357}{44}{44}
+On note $\sigma(n)$ la somme de tous les diviseurs de $n$. Deux nombres $n$, $m$
+sont amiables si $\sigma(n) - n = m$ et $\sigma(m) - m = n$. La remarque latine sur
+la page 26 donne une règle « ex Cartesio » : si $x$ est une puissance de $2$ telle
+que $p = 3x-1$, $q = 6x-1$ et $r = 18x^2-1$ soient premiers, alors $2xr$ et $2xpq$
+sont amiables (c'est la règle qu'on nomme aujourd'hui de Thābit ibn Qurra).
+\begin{enumerate}
+\item Montrer que $\sigma$ est multiplicative ($\sigma(ab) = \sigma(a)\sigma(b)$ si
+  $a$ et $b$ sont premiers entre eux) et que $\sigma(p^k) = \frac{p^{k+1}-1}{p-1}$.
+\item Démontrer la règle. L'appliquer à $x = 2$, $8$, $64$ pour retrouver les trois
+  paires de la copie : $220$ et $284$, $17\,296$ et $18\,416$, $9\,363\,584$ et
+  $9\,437\,056$.
+\item La treizième observation énumère des nombres dont les parties aliquotes font
+  « le double », c'est-à-dire $\sigma(n) = 3n$ : $120$, $672$, $523\,776$, \ldots\
+  Le vérifier pour $120$ et $672$. Montrer le lemme du cadre de la même page : si
+  $\sigma(n) = kn$ avec $k$ premier ne divisant pas $n$, alors $\sigma(kn) =
+  (k+1)\,kn$. L'appliquer à $459\,818\,240$ (qui vérifie $\sigma(n) = 3n$).
+\item Le cadre donne encore un produit de vingt et un facteurs dont le dernier est
+  lu « $594\,323$ » et qui devrait vérifier $\sigma(P) = 5P$. On admet que si l'on
+  remplace $594\,323$ par $1\,594\,323 = 3^{13}$, le produit $P$ vérifie
+  $\sigma(P) = 5P$, et que $5 \nmid P$. Qu'en déduit-on ? Sachant que
+  $594\,323 = 61\times 9743$ et que $61$ figure déjà parmi les facteurs, que
+  penser de la leçon « $594\,323$ » ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Si $a \wedge b = 1$, tout diviseur de $ab$ s'écrit de façon unique $d_1d_2$
+  avec $d_1 \mid a$, $d_2 \mid b$ ; donc $\sigma(ab) = \sum d_1d_2 =
+  \sigma(a)\sigma(b)$. Et $\sigma(p^k) = 1 + p + \cdots + p^k = \frac{p^{k+1}-1}{p-1}$.
+\item Soit $x = 2^e$, donc $2x = 2^{e+1}$ et $\sigma(2x) = 2^{e+2} - 1 = 4x - 1$. Les
+  nombres $p$, $q$, $r$ sont des premiers impairs distincts ($r > q > p$). Avec
+  $n = 2x\,r$ et $m = 2x\,pq$ : $\sigma(n) = (4x-1)(r+1) = (4x-1)\,18x^2$ et
+  $\sigma(m) = (4x-1)(p+1)(q+1) = (4x-1)\cdot 3x\cdot 6x = (4x-1)\,18x^2$. Par
+  ailleurs $n + m = 2x\bigl(18x^2 - 1 + 18x^2 - 9x + 1\bigr) = 2x(36x^2 - 9x) =
+  18x^2(4x-1)$. Donc $\sigma(n) = \sigma(m) = n + m$, ce qui est exactement
+  l'amabilité. Pour $x = 2$ : $p, q, r = 5, 11, 71$, d'où $4\cdot 71 = 284$ et
+  $4\cdot 5\cdot 11 = 220$. Pour $x = 8$ : $23, 47, 1151$, d'où $16\cdot1151 =
+  18\,416$ et $16\cdot23\cdot47 = 17\,296$. Pour $x = 64$ : $191, 383, 73\,727$, d'où
+  $128\cdot 73\,727 = 9\,437\,056$ et $128\cdot191\cdot383 = 9\,363\,584$. La copie
+  ajoute qu'on en peut trouver « une infinité d'autres de la même manière » : ce
+  n'est pas démontré, et l'on ne connaît aucune autre puissance de $2$ pour laquelle
+  les trois nombres soient premiers.
+\item $120 = 2^3\cdot3\cdot5$, $\sigma = 15\cdot4\cdot6 = 360 = 3\cdot120$ ;
+  $672 = 2^5\cdot3\cdot7$, $\sigma = 63\cdot4\cdot8 = 2016 = 3\cdot672$. Lemme :
+  $k \wedge n = 1$, donc $\sigma(kn) = \sigma(k)\sigma(n) = (k+1)kn$. La somme des
+  chiffres de $459\,818\,240$ est $41$ : il n'est pas divisible par $3$, et
+  $\sigma(3n) = 4\cdot3n$ : $1\,379\,454\,720 = 3 \times 459\,818\,240$ vérifie
+  $\sigma = 4n$, comme le dit la copie.
+\item Par le lemme avec $k = 5$, $\sigma(5P) = 6\cdot 5P$ : $5P$ est
+  « sextuple », comme le cadre l'annonce. Avec la leçon $594\,323 = 61\times9743$,
+  le facteur $61$ apparaîtrait deux fois, et le produit n'est plus $5$-parfait
+  (son rapport $\sigma(P)/P$ vaut environ $3{,}33$) ; la bonne leçon est
+  $1\,594\,323$, dont le premier chiffre manque, sur la page ou dans la lecture.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Deux nombres dont on demande s'ils sont premiers}{L3}
+\manuscrit{fr-12357}{46}{46}
+\manuscrit{fr-12357}{50}{50}
+« On propose aux arithméticiens le nombre $2\,027\,651\,281$ : qu'ils disent en
+quatre jours s'il est premier ou composé ; s'ils ne le peuvent, nous le donnerons en
+une heure. » Et, en latin : on ne saura pas par la voie commune si
+$1\,073\,602\,561$ est premier, « à moins de le diviser par tous les premiers
+jusqu'à $8191$ ».
+\begin{enumerate}
+\item Méthode de Fermat : si $N = ab$ avec $a < b$ impairs, $N = x^2 - y^2$ avec
+  $x = \frac{a+b}2$, $y = \frac{b-a}{2}$. On essaie $x = \lceil\sqrt N\,\rceil,
+  \lceil\sqrt N\,\rceil + 1, \dots$ jusqu'à ce que $x^2 - N$ soit un carré. Montrer
+  que le nombre d'essais est à peu près $x - \sqrt N \approx \frac{(b-a)^2}{8\sqrt N}$.
+  Sachant que $\lceil\sqrt{2\,027\,651\,281}\,\rceil = 45\,030$ et que
+  $45\,041^2 - 2\,027\,651\,281 = 1020^2$, factoriser, et dire pourquoi une heure
+  suffisait.
+\item Soit $p$ premier et $\ell$ un nombre premier divisant $2^p - 1$. Montrer que
+  l'ordre de $2$ dans $(\mathbf{Z}/\ell\mathbf{Z})^\times$ est $p$, puis que
+  $\ell \equiv 1 \pmod{2p}$.
+\item En déduire que pour prouver que $8191 = 2^{13}-1$ et $131\,071 = 2^{17} - 1$
+  sont premiers, il suffit d'essayer respectivement $53$, $79$ et $103$, $137$,
+  $239$, $307$. Sachant que $8191 \equiv 29 \pmod{53}$, $8191 \equiv 54 \pmod{79}$,
+  $131\,071 \equiv 55, 99, 99, 289$ modulo $103, 137, 239, 307$, conclure.
+\item Vérifier que $1\,073\,602\,561 = 8191 \times 131\,071$. Que vaut l'affirmation
+  latine ? Jusqu'où faudrait-il diviser pour prouver qu'un nombre de cette taille est
+  premier ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $x^2 - y^2 = \frac{(a+b)^2 - (b-a)^2}{4} = ab$. L'essai qui réussit est
+  $x = \frac{a+b}{2}$, et $x - \sqrt{ab} = \frac{(\sqrt b - \sqrt a)^2}{2} =
+  \frac{(b-a)^2}{2(\sqrt a + \sqrt b)^2} \approx \frac{(b-a)^2}{8\sqrt N}$ quand
+  $a$ et $b$ sont proches. Ici $x = 45\,041$, $y = 1020$ : $N = (45\,041 - 1020)
+  (45\,041 + 1020) = 44\,021 \times 46\,061$, au douzième essai
+  ($45\,030, \dots, 45\,041$) ; la formule donne $\frac{2040^2}{8 \times 45\,029{,}5}
+  \approx 11{,}6$. Les deux facteurs sont proches de $\sqrt N$ : la méthode les
+  trouve presque tout de suite, alors que la division par les nombres premiers
+  demanderait des milliers de divisions. Les deux facteurs sont premiers.
+\item $2^p \equiv 1 \pmod \ell$, donc l'ordre de $2$ divise $p$ ; il ne vaut pas
+  $1$ ($2 \not\equiv 1$), donc il vaut $p$. Par le théorème de Lagrange, l'ordre
+  divise $|(\mathbf{Z}/\ell\mathbf{Z})^\times| = \ell - 1$ : $p \mid \ell - 1$.
+  Comme $\ell$ est impair, $2 \mid \ell - 1$, et $p$ impair : $2p \mid \ell - 1$.
+\item Un nombre composé a un facteur premier au plus égal à sa racine carrée ;
+  $\sqrt{8191} < 91$ et $\sqrt{131\,071} < 363$. Les premiers $\equiv 1 \pmod{26}$
+  inférieurs à $91$ sont $53$ et $79$ ($27$ et $105$ ne sont pas premiers ou trop
+  grands) ; les premiers $\equiv 1 \pmod{34}$ inférieurs à $363$ sont $103$,
+  $137$, $239$, $307$ ($35, 69, 171, 205, 273, 341$ sont composés). Aucun reste
+  n'est nul : $8191$ et $131\,071$ sont premiers.
+\item $8191 \times 131\,071 = 8191\times 131\,072 - 8191 = 1\,073\,610\,752 - 8191 =
+  1\,073\,602\,561$. Le nombre n'est donc pas premier, et son plus petit facteur
+  premier est $8191$ : diviser par tous les premiers jusqu'à $8191$ trouve bien le
+  facteur, ce que dit la phrase latine. Mais pour prouver qu'un nombre de cette
+  taille est premier il faudrait aller jusqu'à sa racine, $32\,765$. Le nombre est le
+  produit de deux nombres premiers de la forme $2^p - 1$, qu'on appelle aujourd'hui
+  nombres de Mersenne.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Des ellipses rationnelles et les sommes de deux carrés}{L3}
+\manuscrit{fr-12357}{39}{39}
+La remarque sur la page 31 de l'\emph{Utilité de l'harmonie} demande des ellipses
+dont le grand axe est donné et dont toutes les lignes sont rationnelles, avec la
+distance des foyers plus grande que le petit axe et l'aire de l'ellipse plus grande
+que celle du cercle décrit sur la distance des foyers ; elle donne, « pour 12
+ellipses et non plus », le nombre $N = 434\,788\,275\,897\,787\,529$.
+\begin{enumerate}
+\item Avec $a$, $b$, $c$ les demi-axes et la demi-distance focale et $b = a\sin\beta$,
+  montrer que les deux conditions reviennent à
+  $\frac{\sqrt5 - 1}{2} < \sin\beta < \frac{\sqrt2}{2}$.
+\item On admet le théorème : si $n = 2^{\alpha}\prod p_i^{e_i}\prod q_j^{f_j}$ avec
+  $p_i \equiv 1$ et $q_j \equiv 3 \pmod 4$ premiers, le nombre de couples
+  $(u, v) \in \mathbf{Z}^2$ tels que $u^2 + v^2 = n^2$ est $4\prod_i(2e_i + 1)$. En
+  déduire que le nombre de triangles rectangles en entiers d'hypoténuse $n$ (côtés
+  de l'angle droit non ordonnés) est $\frac12\bigl(\prod_i(2e_i+1) - 1\bigr)$.
+  Vérifier sur $65$ et $125$.
+\item On admet la factorisation $N = 1051 \times 5987 \times 69\,098\,059\,417$, le
+  dernier facteur étant premier. Combien de triangles rectangles en entiers ont
+  pour hypoténuse $N$ ? Que penser des « 12 ellipses » ?
+\item Quel est le plus petit entier hypoténuse d'au moins six triangles rectangles
+  en entiers ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $c = a\cos\beta$. La condition $c > b$ s'écrit $\cos\beta > \sin\beta$,
+  soit $\sin\beta < \frac{\sqrt2}{2}$. L'aire de l'ellipse $\pi ab$ dépasse celle
+  du cercle de rayon $c$ si $ab > c^2$, soit $\sin\beta > \cos^2\beta = 1 -
+  \sin^2\beta$, c'est-à-dire $s^2 + s - 1 > 0$ pour $s = \sin\beta > 0$, soit
+  $s > \frac{\sqrt5-1}{2}$. Donc $38{,}17^\circ < \beta < 45^\circ$ : le problème
+  est bien posé.
+\item Les couples solutions sont les $4$ couples triviaux $(\pm n, 0)$, $(0, \pm n)$,
+  et, pour chaque triangle $\{u, v\}$ avec $0 < u < v$, les $8$ couples
+  $(\pm u, \pm v)$, $(\pm v, \pm u)$ ($u = v$ est impossible, $2u^2 = n^2$ n'ayant
+  pas de solution entière). D'où $4\prod(2e_i+1) = 4 + 8T$, et
+  $T = \frac12\bigl(\prod(2e_i+1) - 1\bigr)$. Pour $65 = 5\cdot 13$ :
+  $\frac{3\cdot3 - 1}{2} = 4$ ; pour $125 = 5^3$ : $\frac{7 - 1}{2} = 3$. Ce sont les
+  nombres de NAF 5176 (vues 12 et 13).
+\item $1051 \equiv 3$, $5987 \equiv 3$ et $69\,098\,059\,417 \equiv 1 \pmod 4$ ; donc
+  $\prod(2e_i+1) = 3$ et $T = 1$ : $N$ n'est l'hypoténuse que d'un seul triangle
+  rectangle en entiers, qui donne au plus deux ellipses, dont une seule vérifie
+  $c > b$. Le nombre, tel que la transcription le lit, ne peut servir à douze
+  ellipses ; l'écart peut venir de la lecture, de la copie ou de l'énoncé.
+\item Il faut $\prod(2e_i + 1) \ge 13$. Les possibilités les moins coûteuses sont
+  $5^6$ ($13$), $5^2\cdot13$ ($5\cdot3 = 15$), $5\cdot13\cdot17$ ($27$),
+  $5^3\cdot 13$ ($21$) ; le plus petit est $325 = 5^2\cdot13$, hypoténuse de
+  $7$ triangles. (Les facteurs $2$ et $q_j$ ne font qu'augmenter le nombre.)
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Trois nombres en proportion continue}{L2}
+\manuscrit{fr-12357}{48}{48}
+Un nombre $N$ « contient » un triplet en proportion continue s'il s'écrit
+$N = a + b + c$ avec $a < b < c$ entiers positifs et $b^2 = ac$. La copie donne
+l'exemple de $91$, qui contient $1, 9, 81$ ; $25, 30, 36$ ; $13, 26, 52$ ; $7, 21, 63$,
+dit que $91$ est le moindre à en contenir quatre, et une note de marge donne $49$
+pour le moindre à en contenir deux.
+\begin{enumerate}
+\item Montrer que $(a, b, c)$ vérifie $b^2 = ac$ si et seulement si
+  $a = dy^2$, $b = dxy$, $c = dx^2$ avec $d \ge 1$ et $x, y$ premiers entre eux ; en
+  déduire $N = d(x^2 + xy + y^2)$ avec $x > y \ge 1$.
+\item Montrer que $x^2 + xy + y^2$ ne prend pas la valeur $2$ ni $5$ ni aucune
+  valeur paire, et lister ses valeurs inférieures à $50$ pour $x > y \ge 1$
+  premiers entre eux.
+\item En déduire tous les triplets de $91$ et de $21$, et le plus petit nombre qui
+  en contient deux. La note de marge a-t-elle raison ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Le sens réciproque est immédiat. Soit $d = \operatorname{pgcd}(a, c)$,
+  $a = da'$, $c = dc'$ premiers entre eux. Alors $b^2 = d^2a'c'$, donc $d \mid b$
+  et $a'c' = (b/d)^2$ est un carré ; $a'$ et $c'$ étant premiers entre eux, chacun
+  est un carré : $a' = y^2$, $c' = x^2$, $x \wedge y = 1$, et $b = dxy$. La
+  condition $a < c$ donne $y < x$, et $N = d(x^2 + xy + y^2)$.
+\item $x^2 + xy + y^2$ est impair : si $x$ et $y$ sont tous deux impairs, les trois
+  termes sont impairs ; si l'un est pair (ils ne le sont pas tous deux), deux
+  termes sont pairs et un impair. Pour $x > y \ge 1$ la plus petite valeur est
+  $7$ ($x = 2$, $y = 1$). Les valeurs inférieures à $50$ : $7$ $(2,1)$, $13$ $(3,1)$,
+  $19$ $(3,2)$, $21$ $(4,1)$, $31$ $(5,1)$, $37$ $(4,3)$, $39$ $(5,2)$, $43$ $(6,1)$,
+  $49$ $(5,3)$ ; en particulier ni $2$ ni $5$.
+\item $91 = 7\cdot13$. Les diviseurs $v$ de $91$ de la forme $x^2+xy+y^2$ sont $7$,
+  $13$ et $91$ lui-même ($91 = 9^2 + 9 + 1 = 6^2 + 6\cdot5 + 5^2$). $d = 13$,
+  $(2,1)$ : $13, 26, 52$ ; $d = 7$, $(3,1)$ : $7, 21, 63$ ; $d = 1$, $(9,1)$ : $1,
+  9, 81$ ; $d = 1$, $(6,5)$ : $25, 30, 36$. Quatre, comme le dit la copie. Pour
+  $21 = 3\cdot7$ : $d = 3$, $(2,1)$ donne $3, 6, 12$ et $d = 1$, $(4,1)$ donne
+  $1, 4, 16$ : deux triplets. Les nombres inférieurs à $21$ qui en contiennent un
+  sont $7$, $13$, $14$ et $19$, chacun un seul (d'après la liste de 2) ; le moindre
+  nombre qui en contient deux est donc $21$, non $49$ ($49$ en contient deux aussi,
+  $7, 14, 28$ et $9, 15, 25$). La note de marge se trompe.
+\end{enumerate}
+\end{solution}
+
+\section*{Dioptrique, tangentes et jeux de hasard (NAF 5176)}
 \chapitre{naf-5176}
 
 NAF 5176 est une reliure de papiers épars, en quatre mains au moins. La
@@ -1123,6 +1941,816 @@ pour trois et $4$ pour deux.
   $3\frac12$ ». Sans paiement pour deux noms, il reste $15\,790\,000$, soit
   $0{,}210$ par pistole, un rapport de $4{,}768$ (« un peu plus de $4\frac34$ »),
   et le banquier garde $79\,\%$.
+\end{enumerate}
+\end{solution}
+
+\section*{Contre la Géométrie de Descartes (NAF 5161)}
+\chapitre{naf-5161}
+
+NAF 5161 réunit vingt feuillets d'écrits dirigés contre Descartes ou échangés à
+son sujet, en cinq mains au moins, sans date et presque tous sans signature : deux
+lettres-traités « à un cher ami » contre sa théorie des racines (vues 3 à 20), le
+début d'un mémoire contre sa solution du lieu à quatre droites (vues 23 à 26), une
+note de travail sur les triangles rectangles en nombres (vues 27 et 28), la copie
+d'une lettre signée du nom de Roberval (vues 29 et 30), un mémoire recopié au net
+sur le « centre d'agitation » d'un corps qui oscille (vues 31 à 39), et une lettre
+à un « Révérend Père » sur les thèses de géométrie du P. Fabri (vues 41 à 43).
+Aucune de ces pièces n'est attribuée ici au-delà de ce que portent les feuillets.
+Les pages citées par les deux lettres-traités s'accordent, selon la transcription,
+avec \emph{La Géométrie} imprimée en 1637 à la suite du \emph{Discours de la
+méthode}.
+
+\begin{exercice}{Une racine réelle et deux « rêveries »}{Lycée}
+\manuscrit{naf-5161}{7}{8}
+Dans la \emph{Géométrie}, Descartes dit que l'équation
+$x^3 - 6x^2 + 13x - 10 = 0$ a « une racine réelle et deux imaginaires ». L'auteur
+de la première lettre-traité répond qu'elle n'en a qu'une, $+2$, et que les deux
+autres ne sont « que des rêveries et des extravagances de sa belle méthode ».
+\begin{enumerate}
+\item Vérifier que $2$ est racine et factoriser le polynôme.
+\item Montrer que $2$ est la seule racine réelle.
+\item Résoudre l'équation dans $\mathbf{C}$. Qui a raison, et en quel sens ?
+\item L'auteur propose, si l'on tient à des racines « réelles » et « imaginaires »,
+  d'appeler ainsi les positives et les négatives. Que penser de cette proposition ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $8 - 24 + 26 - 10 = 0$. La division par $x - 2$ donne
+  $x^3 - 6x^2 + 13x - 10 = (x-2)(x^2 - 4x + 5)$.
+\item $x^2 - 4x + 5 = (x-2)^2 + 1 > 0$ pour tout réel $x$ (discriminant
+  $16 - 20 = -4$) : le seul zéro réel du produit est $2$.
+\item $x^2 - 4x + 5 = 0$ donne $x = 2 \pm i$. L'équation a trois racines complexes,
+  $2$, $2 + i$, $2 - i$, dont une réelle : c'est exactement le compte de Descartes,
+  et il est devenu un théorème (tout polynôme de degré $n$ a $n$ racines complexes
+  comptées avec multiplicité). L'auteur a raison sur les nombres réels --- aucun
+  binôme réel $x \pm q$ autre que $x - 2$ ne divise le polynôme --- et tort d'en
+  conclure que les deux autres racines n'existent pas.
+\item Elle confond deux distinctions : les racines négatives sont des nombres
+  réels, et les racines « imaginaires » de Descartes ne sont ni positives ni
+  négatives. On ne peut pas renommer l'une par l'autre.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Moins de racines que de dimensions : l'argument de l'auteur}{L1}
+\manuscrit{naf-5161}{12}{18}
+La seconde lettre-traité veut montrer qu'il y a des équations « où il est
+impossible que la quantité inconnue ait autant de valeurs qu'elle a de
+dimensions ». Toutes les lettres désignent des quantités positives.
+\begin{enumerate}
+\item Soit $x^3 - Hx^2 = X$. L'auteur appelle $B$ la racine positive et suppose une
+  autre racine positive $D \ne B$. Montrer, comme lui, que
+  $D^2 = (H - B)(B + D)$, et en déduire une contradiction. Montrer qu'il n'y a pas
+  non plus de racine négative, et qu'une racine positive existe.
+\item Même question pour $x^3 + Xx = S$.
+\item Les exemples numériques de l'auteur sont lus
+  $x^3 - 8x^2 - 12\,168 = 0$ de racine « 39 », $x^3 + 64x - 2498 = 0$ de racine
+  « 12 », et $x^3 + 729x - 18\,954 = 0$ de racine $18$. Vérifier chaque racine et
+  corriger les deux lectures douteuses. Pour chaque équation corrigée, factoriser
+  et donner les deux autres racines complexes.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item De $B^3 - HB^2 = D^3 - HD^2$ on tire $(B - D)(B^2 + BD + D^2) = H(B-D)(B+D)$,
+  et, $B \ne D$, $B^2 + BD + D^2 = H(B + D)$, soit
+  $D^2 = HB + HD - B^2 - BD = (H - B)(B + D)$. Comme $D^2 > 0$ et $B + D > 0$, il
+  faudrait $H > B$. Mais $B^2(B - H) = X > 0$ impose $B > H$ : contradiction. Pour
+  $x = -D < 0$, le premier membre vaut $-D^3 - HD^2 < 0 \ne X$. Existence : la
+  fonction $x \mapsto x^3 - Hx^2 - X$ est continue, vaut $-X < 0$ en $0$ et tend
+  vers $+\infty$ ; le théorème des valeurs intermédiaires donne une racine
+  positive, que l'auteur affirme sans la démontrer.
+\item Deux racines positives $B \ne D$ donneraient $B^3 - D^3 = X(D - B)$, soit
+  $B^2 + BD + D^2 = -X < 0$ : absurde. Une racine négative $-D$ donnerait
+  $-D^3 - XD = S > 0$ : absurde. Plus simplement, $x \mapsto x^3 + Xx$ est
+  strictement croissante : une seule racine réelle, positive.
+\item $39^3 - 8\cdot 39^2 = 59\,319 - 12\,168 = 47\,151 \ne 12\,168$ ; mais
+  $26^3 - 8\cdot26^2 = 17\,576 - 5408 = 12\,168$ : la racine est $26$. (Curieusement,
+  $8 \cdot 39^2 = 12\,168$ ; la lecture « 39 » reste une erreur.) Et
+  $12^3 + 64\cdot12 = 1728 + 768 = 2496$, non $2498$ : il faut lire $2496$ (avec
+  $2498$ la racine serait $12{,}004$, qui n'est pas entière). Enfin
+  $18^3 + 729\cdot18 = 5832 + 13\,122 = 18\,954$. Factorisations :
+  $x^3 - 8x^2 - 12\,168 = (x - 26)(x^2 + 18x + 468)$, de racines complexes
+  $-9 \pm 3i\sqrt{43}$ (discriminant $324 - 1872 = -36\cdot43$) ;
+  $x^3 + 64x - 2496 = (x - 12)(x^2 + 12x + 208)$, racines $-6 \pm 2i\sqrt{43}$ ;
+  $x^3 + 729x - 18\,954 = (x - 18)(x^2 + 18x + 1053)$, racines $-9 \pm 18i\sqrt3$.
+  Chaque équation a bien une seule racine réelle, comme le dit l'auteur, et deux
+  racines complexes, que Descartes comptait.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{La règle des signes de Descartes, bien énoncée}{L2}
+\manuscrit{naf-5161}{19}{20}
+L'auteur attaque la règle de Descartes « pour connaître combien en chaque équation
+il y a de racines positives et combien de négatives », qu'il lit comme un compte
+exact : autant de racines positives que de « changements de signes », autant de
+négatives que de « signes semblables qui s'entresuivent ». On note $V(P)$ le nombre
+de changements de signe dans la suite des coefficients non nuls d'un polynôme réel
+$P$, et $Z(P)$ le nombre de ses racines strictement positives, comptées avec
+multiplicité.
+\begin{enumerate}
+\item Montrer que $V(P) \equiv Z(P) \pmod 2$ (comparer les signes du coefficient
+  dominant et du coefficient non nul de plus bas degré, et le signe de $P$ près de
+  $0^+$ et en $+\infty$).
+\item On suppose $P(0) \neq 0$. Montrer que $V(P') \le V(P)$ et, par le théorème de
+  Rolle, que $Z(P') \ge Z(P) - 1$. En déduire par récurrence sur le degré que
+  $Z(P) \le V(P)$, puis que $V(P) - Z(P)$ est un entier pair et positif. Que faire
+  si $P(0) = 0$ ?
+\item Vérifier la règle sur l'exemple de Descartes,
+  $x^4 - 4x^3 - 19x^2 + 106x - 120 = (x-2)(x-3)(x-4)(x+5)$, puis sur l'objection
+  de l'auteur, $x^3 - Bx^2 + B^2x - B^3$. L'auteur a-t-il raison ?
+\item L'auteur prend ensuite $x^3 - 13x + 12$ et $x^3 - x^2 + 12$, où « manque » un
+  terme, et observe qu'elles ont une racine négative bien qu'il n'y ait aucun signe
+  semblable qui s'entresuive. Vérifier, et dire comment compter correctement les
+  racines négatives.
+\item Il affirme enfin qu'en ces deux formes, $x^3 - sx + t$ et $x^3 - Bx^2 + t$
+  (lettres positives), « il peut y avoir deux fausses racines ». Montrer que c'est
+  faux.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Écrivons $P = a_nx^n + \cdots + a_mx^m$, $a_n a_m \ne 0$. Le nombre de
+  changements de signe entre $a_n$ et $a_m$ est pair si et seulement si $a_n$ et
+  $a_m$ ont le même signe. Par ailleurs $P(x) \sim a_mx^m$ en $0^+$ et
+  $P(x) \sim a_nx^n$ en $+\infty$ ; $P$ ne change de signe sur $]0, +\infty[$
+  qu'en ses racines positives de multiplicité impaire, donc le nombre de racines
+  positives comptées avec multiplicité est pair si et seulement si $P$ a le même
+  signe près de $0$ et à l'infini, c'est-à-dire si $a_na_m > 0$. D'où
+  $V \equiv Z \pmod 2$.
+\item Si $P = \sum_{k=0}^n a_kx^k$ avec $a_0 \ne 0$, les coefficients de
+  $P' = \sum k a_k x^{k-1}$ sont $ka_k$, de même signe que $a_k$ pour $k \ge 1$ :
+  la suite des signes de $P'$ est celle de $P$ privée de son dernier terme, et
+  $V(P') \le V(P)$. Soient $r_1 < \cdots < r_s$ les racines positives de $P$, de
+  multiplicités $m_1, \dots, m_s$ ; $r_i$ est racine de $P'$ de multiplicité
+  $m_i - 1$, et Rolle donne une racine de $P'$ dans chaque $]r_i, r_{i+1}[$ : donc
+  $Z(P') \ge \sum(m_i - 1) + (s - 1) = Z(P) - 1$. Récurrence : pour le degré $0$,
+  $Z = V = 0$. Si la propriété vaut pour $P'$ (en divisant au besoin $P'$ par une
+  puissance de $x$, ce qui ne change ni $Z$ ni $V$), alors
+  $Z(P) \le Z(P') + 1 \le V(P') + 1 \le V(P) + 1$ ; avec $Z(P) \equiv V(P)
+  \pmod 2$, on obtient $Z(P) \le V(P)$. Si $P(0) = 0$, on écrit $P = x^mQ$ avec
+  $Q(0) \ne 0$ : $Z$ et $V$ sont les mêmes pour $P$ et $Q$.
+\item Signes $+,-,-,+,-$ : trois changements et trois racines positives $2, 3, 4$ ;
+  pour les négatives on applique la règle à $P(-x) = x^4 + 4x^3 - 19x^2 - 106x - 120$,
+  signes $+,+,-,-,-$, un changement et une racine négative $-5$. Pour
+  $x^3 - Bx^2 + B^2x - B^3 = (x - B)(x^2 + B^2)$ : trois changements et une seule
+  racine positive. L'auteur a raison contre une règle lue comme un compte exact ;
+  il n'a pas raison contre la règle bien énoncée, puisque l'écart $3 - 1 = 2$ est
+  pair. Les racines manquantes sont $\pm iB$.
+\item $x^3 - 13x + 12 = (x-1)(x-3)(x+4)$ et $x^3 - x^2 + 12 = (x+2)(x^2 - 3x + 6)$ :
+  racines négatives $-4$ et $-2$. Les suites des coefficients non nuls, $+,-,+$,
+  n'ont aucune permanence. La règle des permanences ne vaut que pour un polynôme
+  complet ; la règle correcte applique le compte des changements à $P(-x)$ :
+  $-x^3 + 13x + 12$ et $-x^3 - x^2 + 12$ ont chacun un changement, donc au plus une
+  racine négative, et exactement une par parité.
+\item Pour $P = x^3 - sx + t$ ou $x^3 - Bx^2 + t$ ($s, B, t > 0$), $P(-x)$ vaut
+  $-x^3 + sx + t$ ou $-x^3 - Bx^2 + t$ : un seul changement de signe, donc au plus
+  une racine négative. Et il y en a une : $P(0) = t > 0$ et
+  $P(x) \to -\infty$ en $-\infty$. Chacune a exactement une racine négative ;
+  l'affirmation de l'auteur est fausse.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{L'hyperbole du lieu à quatre droites}{L1}
+\manuscrit{naf-5161}{23}{26}
+Le mémoire contre « le Méthodiste » construit une hyperbole pour montrer qu'une
+équation « qui ne monte qu'au carré » n'est d'aucune des formes que Descartes a
+expliquées. Sur une droite on fixe $F$ et $D$ avec $FD = c$ ; pour un point $B$ de
+la droite on pose $DB = a$, et l'on élève $BI = e$ dans une direction fixe (non
+parallèle à la droite), de sorte que
+\[
+FB\cdot BI - DB\cdot b = x ,
+\]
+où $b$ est une longueur et $x$ une aire données. En coordonnées obliques $(a, e)$,
+le lieu de $I$ est $(a + c)\,e = ab + x$.
+\begin{enumerate}
+\item Montrer que l'équation s'écrit $(a + c)(e - b) = x - bc$. Quelle courbe
+  est-ce si $x \ne bc$ ? Quelles sont ses asymptotes ? Que se passe-t-il si
+  $x = bc$ ?
+\item L'auteur trace la courbe par la proposition II.12 d'Apollonius : les
+  parallèles menées d'un point de l'hyperbole à deux directions fixes jusqu'aux
+  asymptotes forment un rectangle constant. Que vaut ici ce produit constant ?
+\item En repère orthonormé (direction de $BI$ perpendiculaire à la droite), montrer
+  par un changement de repère que $XY = k$ ($k \ne 0$) est une hyperbole au sens
+  $\frac{u^2}{\alpha^2} - \frac{v^2}{\alpha^2} = \pm 1$. L'objection de l'auteur
+  contre Descartes porte-t-elle sur la nature de la courbe ou sur la forme de son
+  équation ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $(a + c)(e - b) = ae + ce - ab - bc$ et l'équation $ae + ce = ab + x$ donne
+  bien $(a+c)(e-b) = x - bc$. En posant $X = a + c$, $Y = e - b$ (translation de
+  l'origine au point $a = -c$, $e = b$), c'est $XY = k$ avec $k = x - bc$ : si
+  $k \ne 0$, une hyperbole dont les asymptotes sont $X = 0$ (la droite menée par
+  $F$ parallèlement à $BI$) et $Y = 0$ (la parallèle à $FB$ à la hauteur $b$, qui
+  passe par le point $S$ de la construction, $BS = b$). Si $x = bc$, le lieu est la
+  réunion de ces deux droites.
+\item Les parallèles aux asymptotes menées d'un point du lieu ont pour longueurs
+  $|X|$ et $|Y|$ (mesurées obliquement), et leur produit vaut $|x - bc|$ : c'est
+  le rectangle constant, et non $x$. L'auteur, qui construit l'hyperbole par un
+  point connu $I$ avec la proposition II.4, n'a pas besoin de le connaître.
+\item Avec $u = \frac{X + Y}{\sqrt2}$, $v = \frac{X - Y}{\sqrt2}$ (rotation de
+  $45^\circ$), $XY = \frac{u^2 - v^2}{2}$, et $XY = k$ devient
+  $u^2 - v^2 = 2k$ : une hyperbole équilatère. En axes obliques, l'application
+  $(a, e) \mapsto$ point du plan est affine, et l'image affine d'une hyperbole est
+  une hyperbole. Le lieu est donc une conique, ce qui confirme la phrase de
+  Descartes au lieu de la contredire ; l'objection ne peut porter que sur la
+  forme de l'équation, qui se ramène à une forme connue par un changement
+  d'axes.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Un second triangle rectangle d'aire 6}{L3}
+\manuscrit{naf-5161}{27}{28}
+Une note de travail pose : « Il faut trouver un triangle primitif dont l'aire soit
+un sextuple quarré et qui ne soit pas semblable au triangle de 3. 4. 5. » ; en
+divisant ses côtés par la racine du carré, on aura un triangle rectangle à côtés
+rationnels d'aire $6$. Le procédé : du triangle donné, former un triangle avec les
+deux plus petits côtés, puis un troisième avec les deux plus grands côtés du
+second. « Former un triangle » de deux nombres $p > q$, c'est prendre
+$p^2 - q^2$, $2pq$, $p^2 + q^2$.
+\begin{enumerate}
+\item Exécuter le procédé à partir de $(3,4,5)$. Vérifier que l'aire du troisième
+  triangle est $6\cdot 70^2$ et en déduire un triangle rationnel d'aire $6$.
+\item Généraliser : si $(a, b, c)$ est un triangle rectangle rationnel d'aire $n$
+  avec $a \ne b$, le triangle formé de $c^2$ et $2ab$ a pour côtés
+  $(a^2 - b^2)^2$, $4abc^2$, $c^4 + 4a^2b^2$ et pour aire
+  $n\bigl(2c(a^2-b^2)\bigr)^2$. En déduire un nouveau triangle rationnel d'aire $n$.
+\item Au triangle $(a, b, c)$ on associe le point $M = \bigl(\frac{c^2}{4},
+  \frac{c(b^2 - a^2)}{8}\bigr)$. Montrer que $M$ est sur la courbe
+  $y^2 = x^3 - n^2x$.
+\item Pour $(3,4,5)$, $M = \bigl(\frac{25}{4}, \frac{35}{8}\bigr)$. Calculer
+  l'abscisse du point d'intersection (autre que $M$) de la tangente en $M$ avec la
+  courbe, et la comparer au nouveau triangle.
+\item La même page refait le chemin à partir de $(5, 12, 13)$. Donner le triangle
+  rationnel d'aire $30$ que l'on obtient.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $(3,4) \mapsto (16 - 9, 24, 25) = (7, 24, 25)$ ; $(24, 25) \mapsto
+  (625 - 576, 1200, 1201) = (49, 1200, 1201)$. Aire $\frac12\cdot49\cdot1200 =
+  29\,400 = 6\cdot 4900 = 6\cdot 70^2$. En divisant par $70$ :
+  $\bigl(\frac{7}{10}, \frac{120}{7}, \frac{1201}{70}\bigr)$, d'aire
+  $\frac12\cdot\frac{7}{10}\cdot\frac{120}{7} = 6$, et
+  $\frac{49}{100} + \frac{14400}{49} = \frac{2401 + 1\,440\,000}{4900} =
+  \frac{1\,442\,401}{4900} = \bigl(\frac{1201}{70}\bigr)^2$.
+\item Former un triangle de $p = c^2$ et $q = 2ab$ ($p > q$ car
+  $c^2 - 2ab = (a-b)^2 > 0$) : $p^2 - q^2 = c^4 - 4a^2b^2 = (a^2+b^2)^2 - 4a^2b^2 =
+  (a^2 - b^2)^2$, $2pq = 4abc^2$, $p^2 + q^2 = c^4 + 4a^2b^2$. Aire :
+  $\frac12(a^2-b^2)^2\cdot 4abc^2 = 2abc^2(a^2-b^2)^2 = \frac{ab}{2}\,4c^2(a^2 -
+  b^2)^2 = n\bigl(2c(a^2-b^2)\bigr)^2$. En divisant les trois côtés par
+  $2c|a^2 - b^2|$, on obtient un triangle rectangle rationnel d'aire $n$. Pour
+  $(3,4,5)$, $2c|a^2-b^2| = 70$ : c'est le diviseur de la note.
+\item Avec $n = \frac{ab}{2}$ : $x^3 - n^2x = x(x^2 - n^2) = \frac{c^2}{4}\cdot
+  \frac{c^4 - 4a^2b^2}{16} = \frac{c^2(a^2-b^2)^2}{64} = y^2$.
+\item $n = 6$, $y^2 = x^3 - 36x$. Pente de la tangente :
+  $\lambda = \frac{3x_0^2 - 36}{2y_0} = \frac{3\cdot\frac{625}{16} - 36}{\frac{35}{4}}
+  = \frac{1299/16}{35/4} = \frac{1299}{140}$. La droite coupe la cubique en trois
+  points dont la somme des abscisses est $\lambda^2$ (coefficient de $x^2$ dans
+  $x^3 - (\lambda x + \mu)^2 - 36x$), $M$ comptant deux fois :
+  $x_2 = \lambda^2 - 2x_0 = \frac{1\,687\,401}{19\,600} - \frac{25}{2} =
+  \frac{1\,442\,401}{19\,600} = \bigl(\frac{1201}{140}\bigr)^2$. C'est
+  $\frac{c'^2}{4}$ pour $c' = \frac{1201}{70}$ : le point associé au nouveau
+  triangle. Le procédé de la note est la « duplication » d'un point sur cette
+  courbe ; la note ne nomme aucun auteur, et le lien avec les courbes elliptiques
+  est bien postérieur.
+\item $(5,12) \mapsto (119, 120, 169)$ ; $(120, 169) \mapsto (14\,161, 40\,560,
+  42\,961)$, d'aire $30\cdot(2\cdot13\cdot119)^2 = 30\cdot 3094^2$. En divisant
+  par $3094$ : $\bigl(\frac{119}{26}, \frac{1560}{119}, \frac{42\,961}{3094}\bigr)$,
+  d'aire $\frac12\cdot\frac{119}{26}\cdot\frac{1560}{119} = \frac{780}{26} = 30$.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le centre d'agitation d'un secteur de cylindre}{L2}
+\manuscrit{naf-5161}{31}{39}
+Le mémoire recopié au net oppose deux règles pour la longueur du pendule simple
+équivalent à un corps qui oscille autour d'un axe horizontal. Il prend un secteur
+de cylindre droit homogène tournant autour de son propre axe ; sa section est un
+secteur de cercle de centre $I$, de rayon $r$ et d'angle au centre $2\alpha$, dont
+la bissectrice $IN$ est verticale. On note $\rho$ la distance d'un élément de masse
+à l'axe et $\theta$ l'angle de $\vec{I\,\cdot}$ avec la verticale. On admet que la
+longueur du pendule équivalent (centre d'oscillation) est
+$\ell = \frac{\int\rho^2\,dm}{\int\rho\cos\theta\,dm}$ (exercice sur les pendules
+composés de Français 12357).
+\begin{enumerate}
+\item Montrer que le centre de gravité est à la distance
+  $IO = \frac23 r\frac{\sin\alpha}{\alpha}$ de l'axe, comme le dit le mémoire
+  (« comme l'arc est à sa corde, ainsi les deux tiers du demi-diamètre à $IO$ »).
+\item Montrer que $\ell = IQ = \frac34 r\frac{\alpha}{\sin\alpha}$ : c'est le
+  « centre de percussion » du mémoire.
+\item La règle attribuée à Descartes revient à
+  $\ell_D = \frac{\int\rho^2\,dm}{\int\rho\,dm}$. Calculer $\ell_D$ et montrer qu'elle
+  place le centre trop près de l'axe. Pour quels corps les deux règles
+  coïncident-elles ?
+\item Pour quel angle au centre $Q$ tombe-t-il sur l'arc ($IQ = r$) ? Que vaut $IQ$
+  pour le demi-cylindre ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+En coordonnées polaires, $dm = \rho\,d\rho\,d\theta$ (densité $1$, épaisseur $1$),
+$0 \le \rho \le r$, $-\alpha \le \theta \le \alpha$.
+\begin{enumerate}
+\item $M = \int dm = \alpha r^2$ et $\int\rho\cos\theta\,dm = \int_0^r\rho^2d\rho
+  \int_{-\alpha}^{\alpha}\cos\theta\,d\theta = \frac{2r^3\sin\alpha}{3}$, d'où
+  $IO = \frac{2r^3\sin\alpha}{3\alpha r^2} = \frac23r\frac{\sin\alpha}{\alpha}$.
+  C'est la proportion du mémoire, puisque $\frac{\text{corde}}{\text{arc}} =
+  \frac{2r\sin\alpha}{2r\alpha}$.
+\item $\int\rho^2\,dm = 2\alpha\int_0^r\rho^3d\rho = \frac{\alpha r^4}{2}$, donc
+  $\ell = \frac{\alpha r^4/2}{2r^3\sin\alpha/3} = \frac34 r\frac{\alpha}{\sin\alpha}$.
+\item $\int\rho\,dm = 2\alpha\frac{r^3}{3}$, donc $\ell_D = \frac{\alpha r^4/2}{2\alpha
+  r^3/3} = \frac34r$, quel que soit $\alpha$ --- le point $P$ du mémoire, « même au
+  demi-cylindre ». Comme $\sin\alpha < \alpha$, $\ell_D < \ell$ : la règle place le
+  centre trop près de l'axe. En général $\int\rho\cos\theta\,dm \le \int\rho\,dm$,
+  avec égalité si et seulement si $\cos\theta = 1$ pour presque toute la masse,
+  c'est-à-dire pour un corps situé tout entier dans le demi-plan vertical issu de
+  l'axe vers le bas (une figure plane pendant dans le plan de l'axe) : c'est le
+  défaut que le mémoire nomme en disant que la règle oublie « la direction de
+  l'agitation ».
+\item $IQ = r$ équivaut à $\frac{\alpha}{\sin\alpha} = \frac43$ ; la fonction
+  $\alpha \mapsto \alpha/\sin\alpha$ croît de $1$ à $\frac{\pi}{2}$ sur
+  $]0, \frac{\pi}{2}]$, et l'équation a une seule solution, $\alpha \approx
+  1{,}2756$ rad, soit un angle au centre $2\alpha \approx 146^\circ$ ; au-delà, $Q$
+  est hors du secteur. Pour le demi-cylindre, $\alpha = \frac{\pi}{2}$ et
+  $IQ = \frac{3\pi}{8}r \approx 1{,}178\,r$.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Un segment égal à un secteur et à un segment}{Lycée}
+\manuscrit{naf-5161}{42}{42}
+La lettre sur les thèses du P. Fabri dit que sa cinquième proposition « peut être
+énoncée bien plus généralement » : sur un cercle de centre $l$ et de diamètre $gk$,
+on prend sur le demi-cercle, à partir de $g$, les points $i$ puis $h$, avec
+$\text{arc}\,hk = \text{arc}\,hi$. Alors le segment compris entre la corde $gh$ et son
+arc est égal au secteur $gli$ augmenté du segment de la corde $hk$.
+\begin{enumerate}
+\item Montrer que les triangles $glh$ et $hlk$ ont la même aire.
+\item En déduire l'énoncé de la lettre par un découpage.
+\item Le vérifier par le calcul, en prenant le rayon égal à $1$ et
+  $\widehat{klh} = \varphi$ ($0 < \varphi \le \frac{\pi}{2}$).
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Les deux triangles ont le sommet commun $h$ et des bases $lg$ et $lk$ égales
+  (deux rayons) sur la même droite $gk$ : même hauteur, même base, même aire.
+\item Le segment $gh$ est le secteur $glh$ moins le triangle $glh$. Le secteur $glh$
+  est la réunion des secteurs $gli$ et $ilh$, et le secteur $ilh$ est égal au
+  secteur $hlk$ (arcs égaux). Donc
+  $\text{seg}(gh) = \text{sect}(gli) + \text{sect}(hlk) - \triangle hlk =
+  \text{sect}(gli) + \text{seg}(hk)$.
+\item $\widehat{glh} = \pi - \varphi$ et $\widehat{gli} = \pi - 2\varphi$. Le segment
+  $gh$ vaut $\frac{\pi - \varphi}{2} - \frac{\sin(\pi-\varphi)}{2} =
+  \frac{\pi - \varphi - \sin\varphi}{2}$. Le secteur $gli$ vaut
+  $\frac{\pi - 2\varphi}{2}$ et le segment $hk$, $\frac{\varphi - \sin\varphi}{2}$ ;
+  leur somme est $\frac{\pi - \varphi - \sin\varphi}{2}$. L'énoncé est vrai pour
+  toute position de $h$ telle que $i$ reste sur l'arc ; l'énoncé de Fabri lui-même
+  n'est pas sur la page.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le beau problème de M. Roberval : un cylindre oblique mesuré au compas}{L3}
+\manuscrit{naf-5161}{42}{42}
+La même lettre propose « ce beau problème de M. Roberval » : « Étant donné un
+cylindre oblique, retrancher d'un seul trait de compas, sur un cylindre droit, une
+superficie égale à la superficie du cylindre oblique donné. » On note
+$E(k) = \int_0^{\pi/2}\sqrt{1 - k^2\sin^2u}\,du$ ($0 \le k < 1$) l'intégrale
+elliptique complète de seconde espèce.
+\begin{enumerate}
+\item Le cylindre oblique a pour base un cercle de rayon $r$, ses génératrices ont
+  la longueur $\ell$ et font l'angle $\beta$ avec le plan de la base. Montrer que
+  sa surface latérale est $\ell$ fois le périmètre de sa section droite, que cette
+  section est une ellipse de demi-axes $r$ et $r\sin\beta$, et que la surface vaut
+  $4r\ell\,E(\cos\beta)$.
+\item Un « trait de compas » sur un cylindre droit de rayon $R$ : la pointe fixe est
+  en un point du cylindre, l'ouverture est $\rho > 2R$, et le trait est
+  l'intersection du cylindre et de la sphère de centre la pointe et de rayon
+  $\rho$. Montrer que la partie du cylindre intérieure à la sphère a pour aire
+  $8R\rho\,E\bigl(\frac{2R}{\rho}\bigr)$.
+\item En déduire qu'on résout le problème en choisissant $\rho = \sqrt{\frac{r\ell}{\cos\beta}}$
+  et $R = \frac{\rho\cos\beta}{2}$, deux longueurs constructibles à la règle et au
+  compas. Que se passe-t-il si le cylindre droit est imposé ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Découpons la surface latérale en bandes étroites le long des génératrices :
+  une bande de largeur $ds$ mesurée perpendiculairement aux génératrices a l'aire
+  $\ell\,ds$, et $ds$ est l'élément de longueur de la section droite ; d'où
+  $\ell\times$ périmètre. Prenons la base dans le plan $z = 0$ et les génératrices
+  dirigées par $w = (\cos\beta, 0, \sin\beta)$. La section droite est la projection
+  orthogonale de la base sur le plan orthogonal à $w$ : le vecteur $(0, 1, 0)$ se
+  projette sans changer de longueur, $(1, 0, 0)$ en un vecteur de longueur
+  $\sqrt{1 - \cos^2\beta} = \sin\beta$. C'est donc une ellipse de demi-axes $r$ et
+  $r\sin\beta$, d'excentricité $k = \cos\beta$. Son périmètre, avec la
+  paramétrisation $(r\sin u, r\sin\beta\cos u)$, vaut
+  $\int_0^{2\pi} r\sqrt{\cos^2u + \sin^2\beta\sin^2u}\,du = 4r\int_0^{\pi/2}
+  \sqrt{1 - \cos^2\beta\sin^2u}\,du = 4rE(\cos\beta)$. La surface est
+  $4r\ell E(\cos\beta)$.
+\item Paramétrons le cylindre par $(R\cos\phi, R\sin\phi, z)$ et la pointe en
+  $(R, 0, 0)$. La distance au carré vaut $2R^2(1 - \cos\phi) + z^2 =
+  4R^2\sin^2\frac{\phi}{2} + z^2$. Pour $\rho > 2R$, chaque génératrice est coupée
+  selon $|z| \le \sqrt{\rho^2 - 4R^2\sin^2(\phi/2)}$, et l'aire (élément
+  $R\,d\phi\,dz$) vaut
+  $\int_{-\pi}^{\pi} 2R\sqrt{\rho^2 - 4R^2\sin^2\frac\phi2}\,d\phi$. Avec
+  $\phi = 2u$ et la parité, c'est
+  $8R\rho\int_0^{\pi/2}\sqrt{1 - \frac{4R^2}{\rho^2}\sin^2u}\,du =
+  8R\rho\,E\bigl(\frac{2R}{\rho}\bigr)$. Le trait est formé de deux courbes fermées
+  qui bornent cette zone.
+\item Les deux aires sont égales dès que $\frac{2R}{\rho} = \cos\beta$ et
+  $8R\rho = 4r\ell$, soit $2R\rho = r\ell$ ; alors $\rho^2\cos\beta = r\ell$, d'où
+  les valeurs annoncées, et $\rho > 2R$ puisque $\cos\beta < 1$. Une moyenne
+  proportionnelle et une quatrième proportionnelle se construisent à la règle et
+  au compas. Si le cylindre droit (donc $R$) est imposé, les deux conditions
+  portent sur la seule inconnue $\rho$ et ne peuvent en général être remplies
+  ensemble ; il faut alors comparer les deux intégrales elliptiques autrement. La
+  lettre ne donne pas de solution ; celle-ci repose sur une notion bien
+  postérieure.
+\end{enumerate}
+\end{solution}
+
+\section*{La reconnaissance des équations, et l'art de voler (Latin 11195)}
+\chapitre{latin-11195}
+
+Latin 11195 relie deux dossiers sans rapport. Le premier (vues 2 à 23) est un
+traité latin anonyme, « De Recognitione Æquationum », écrit dans la notation de
+l'école de Viète : on y fabrique les équations de degré deux, trois et quatre à
+partir de leurs racines, on nomme les coefficients qui en sortent, et l'on étudie
+les racines égales (« déterminations ») et les inégalités hors desquelles les
+racines cessent d'être réelles (« limitations »). Le traité distingue les côtés
+« au-dessus » (racines positives), « au-dessous » (négatives) et « feints »
+(complexes), mais ne compte pas ces derniers comme des racines. Il emprunte trois
+lemmes de maximum à « D. Rob. », qu'une note marginale renvoie à « son traité de
+mécanique des plans inclinés » : c'est une citation de Roberval, non une
+attribution du traité. Le second dossier (vues 26 à 37) porte sur le vol humain :
+la page de titre recopiée de l'\emph{Ars volandi} de Flayder (1627), des notes
+latines, deux dessins d'une machine en forme de dragon, et un traité italien
+anonyme, « Il volare non è impossibile ». On écrit ci-dessous les équations sous
+forme unitaire, avec $=$ pour la double barre du feuillet.
+
+\begin{exercice}{Les côtés feints sont des racines}{Lycée}
+\manuscrit{latin-11195}{4}{5}
+\manuscrit{latin-11195}{9}{9}
+\manuscrit{latin-11195}{23}{23}
+Le traité énonce que dans une équation construite à partir de ses côtés, le
+coefficient du degré juste inférieur est la somme des côtés, le suivant la somme
+de leurs produits deux à deux, et ainsi de suite ; mais il déclare des exceptions.
+\begin{enumerate}
+\item Au quatrième chapitre des quadratiques, il dit que $A^2 + z = 0$ ($z > 0$) a
+  « un unique côté au-dessous, égal en puissance à $z$ ». Résoudre l'équation
+  dans $\mathbf{C}$ et dire ce que représente la quantité $\sqrt z$ du feuillet.
+\item Il construit la cubique $(A^2 + G)(A - C) = 0$ ($G, C > 0$), constate que sa
+  forme $A^3 - CA^2 + GA - GC = 0$ est celle d'une cubique à trois côtés positifs,
+  et déclare que « $x$ n'est pas la somme des côtés » : « exception à la règle
+  générale ». Calculer la somme des racines, la somme de leurs produits deux à deux
+  et leur produit, en comptant les racines complexes. L'exception existe-t-elle ?
+\item Au dernier chapitre, il multiplie $A^2 - 6A + 5$ par $A^2 + 3A + 20$. Développer.
+  Il vérifie que $5$ est racine en égalant « les affirmés aux niés » :
+  $100 + 7\cdot25 + 625 = 105\cdot5 + 3\cdot125$. Vérifier. Il conclut que le
+  coefficient de $A^3$ est « la somme des deux côtés » : est-ce vrai ? Que vaut la
+  somme des quatre racines ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $A^2 = -z$ donne $A = \pm i\sqrt z$ : aucune racine réelle, deux racines
+  complexes conjuguées. La quantité $\sqrt z$ est leur module commun, non une
+  racine ; le dernier chapitre du traité le dit lui-même en donnant le critère
+  juste : une quadratique $A^2 + FA + D$ a ses côtés feints dès que
+  $D > \frac14F^2$, ce qui s'applique ici avec $F = 0$.
+\item Les racines sont $C$, $i\sqrt G$, $-i\sqrt G$. Somme : $C$ ; produits deux à
+  deux : $C\,i\sqrt G - C\,i\sqrt G + (i\sqrt G)(-i\sqrt G) = G$ ; produit :
+  $C\cdot G$. Or l'équation est $A^3 - CA^2 + GA - GC$ : ses coefficients sont
+  exactement ces trois quantités. La règle générale vaut sans exception dès qu'on
+  compte les côtés feints comme des racines ; l'exception du feuillet est le prix
+  de son refus.
+\item $(A^2 - 6A + 5)(A^2 + 3A + 20) = A^4 - 3A^3 + 7A^2 - 105A + 100$. Pour $A = 5$ :
+  termes positifs $100 + 7\cdot 25 + 5^4 = 100 + 175 + 625 = 900$, termes négatifs
+  $105\cdot 5 + 3\cdot 125 = 525 + 375 = 900$ : $5$ est racine. Les deux côtés vrais
+  sont $1$ et $5$, de somme $6$, alors que le coefficient est $3$ : la phrase du
+  feuillet est fausse sur son propre exemple. Les racines de $A^2 + 3A + 20$ sont
+  $\frac{-3 \pm i\sqrt{71}}{2}$ ($9 - 80 = -71$), de somme $-3$ ; la somme des quatre
+  racines est $1 + 5 - 3 = 3$, et leur produit $5\times 20 = 100$ : la règle tient
+  exactement.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{La racine double par comparaisons successives}{L1}
+\manuscrit{latin-11195}{8}{9}
+Pour la cubique $A^3 - xA^2 + zA - T = 0$ à trois racines positives dont deux sont
+égales, le traité pose que la racine double vaut $A$ et la troisième $x - 2A$ ;
+il traduit $z$ et $T$, élimine par « comparaisons successives » et trouve
+\[
+A = \frac{\frac{3T}{x} - \frac{z}{3}}{\frac{2z}{x} - \frac{2x}{3}}.
+\]
+\begin{enumerate}
+\item Montrer que $z = 2xA - 3A^2$ et $T = xA^2 - 2A^3$.
+\item Montrer que la formule du feuillet équivaut à
+  $A = \frac{xz - 9T}{2(x^2 - 3z)}$, et la démontrer directement à l'aide de 1.
+  Quelle hypothèse faut-il sur les racines ?
+\item Soit $P = A^3 - xA^2 + zA - T$. Calculer le reste de la division de $P$ par
+  $P'$, et montrer que la racine double est la racine de ce reste. Pourquoi une
+  racine double de $P$ est-elle racine de $\operatorname{pgcd}(P, P')$ ?
+\item Vérifier la formule sur les racines $2, 2, 5$ et $3, 3, 1$.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Avec les racines $A$, $A$, $D = x - 2A$ : $z = A^2 + 2AD = A^2 + 2A(x - 2A) =
+  2xA - 3A^2$ et $T = A^2D = xA^2 - 2A^3$.
+\item En multipliant numérateur et dénominateur par $3x$ :
+  $\frac{9T - xz}{6z - 2x^2} = \frac{xz - 9T}{2(x^2 - 3z)}$. Avec 1 :
+  $xz - 9T = 2x^2A - 3xA^2 - 9xA^2 + 18A^3 = 2A(x^2 - 6xA + 9A^2) = 2A(x - 3A)^2$ et
+  $x^2 - 3z = x^2 - 6xA + 9A^2 = (x - 3A)^2$. Le quotient vaut $A$ pourvu que
+  $x \ne 3A$, c'est-à-dire $D \ne A$ : la racine n'est pas triple.
+\item $P' = 3A^2 - 2xA + z$. La division donne
+  $P = \bigl(\frac{A}{3} - \frac{x}{9}\bigr)P' + R$ avec
+  $R = -\frac{2}{9}(x^2 - 3z)A + \frac{xz}{9} - T$. Si $r$ est racine double,
+  $P(r) = P'(r) = 0$, donc $R(r) = 0$, et $r = \frac{xz - 9T}{2(x^2-3z)}$. Plus
+  généralement, $r$ racine double de $P$ signifie $(A - r)^2 \mid P$, donc
+  $(A - r) \mid P'$ (dériver $P = (A-r)^2Q$) : $A - r$ divise $P$ et $P'$, donc leur
+  pgcd, que l'algorithme d'Euclide calcule par des restes successifs. Les
+  « comparaisons successives » du traité, qui retranchent à chaque pas la plus
+  haute puissance commune, font exactement ce travail ; le traité affirme, avec
+  raison, que « le même artifice » vaut pour tout degré.
+\item $2, 2, 5$ : $x = 9$, $z = 24$, $T = 20$, et $\frac{216 - 180}{2(81 - 72)} =
+  \frac{36}{18} = 2$. $3, 3, 1$ : $x = 7$, $z = 15$, $T = 9$, et
+  $\frac{105 - 81}{2(49 - 45)} = 3$.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Les lemmes de maximum empruntés à « D. Rob. »}{L1}
+\manuscrit{latin-11195}{9}{10}
+Le traité emprunte à « D. Rob. » deux lemmes de maximum. Le premier : de tous les
+solides $zA - A^3$ (« appliqués » au plan $z$ et « déficients » d'un cube), le plus
+grand est celui qui est « appliqué aux deux tiers », « double du défaut ». Le
+second : si une droite $x$ est divisée en deux parties $u$ et $v$, le plus grand
+solide $u^2v$ est celui où $u$ est double de $v$.
+\begin{enumerate}
+\item Trouver le maximum de $f(A) = zA - A^3$ sur $A > 0$ ($z > 0$) et vérifier les
+  deux descriptions du feuillet.
+\item Trouver le maximum de $u^2v$ sous $u + v = x$, $u, v \ge 0$.
+\item La cubique $(A - B)(A - C)(A + B + C)$, avec $B, C > 0$ (deux côtés au-dessus
+  et un côté au-dessous égal à leur somme), s'écrit $A^3 - zA + T$. Exprimer $z$ et
+  $T$. Montrer qu'une équation $A^3 - zA + T = 0$ avec $z, T > 0$ a deux racines
+  positives (distinctes ou non) si et seulement si $27T^2 \le 4z^3$, et qu'elle a
+  toujours une racine négative.
+\item De même, montrer que $A^3 - xA^2 + T = 0$ ($x, T > 0$) a deux racines
+  positives si et seulement si $T \le \frac{4}{27}x^3$, la « limitation » que le
+  traité écrit en clair.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $f'(A) = z - 3A^2$ s'annule en $A_0 = \sqrt{z/3}$, $f$ croît puis décroît :
+  le maximum est $f(A_0) = A_0(z - A_0^2) = \frac{2z}{3}\sqrt{\frac z3}$. Avec
+  $\ell = A_0$, $z = 3\ell^2$ : le maximum vaut $2\ell^3$, double du « défaut »
+  $\ell^3$, et c'est $\frac23 z\cdot\ell$ : le solide de base les deux tiers du plan
+  et de hauteur $\ell$, la droite « dont le carré est le tiers du plan ».
+\item $g(u) = u^2(x - u)$ a pour dérivée $2ux - 3u^2$, nulle en $u = \frac23x$ ;
+  alors $v = \frac13 x$, $u = 2v$, et le maximum vaut $\frac49x^2\cdot\frac{x}{3} =
+  \frac{4}{27}x^3$.
+\item Le coefficient de $A^2$ est $(B + C) - B - C = 0$ ; celui de $A$ est
+  $BC - (B+C)^2 = -(B^2 + BC + C^2)$ ; le terme constant $BC(B+C)$. Donc
+  $z = B^2 + BC + C^2$, $T = BC(B+C)$. Soit $h(A) = A^3 - zA + T$ : $h(0) = T > 0$
+  et $h \to -\infty$ en $-\infty$, d'où une racine négative. Sur $]0, +\infty[$,
+  $h$ décroît puis croît, avec un minimum en $A_0 = \sqrt{z/3}$ égal à
+  $T - \frac{2z}{3}\sqrt{\frac z3}$ ; $h$ a des racines positives si et seulement
+  si ce minimum est $\le 0$, c'est-à-dire $T \le \frac{2z}{3}\sqrt{\frac{z}{3}}$,
+  soit $27T^2 \le 4z^3$ (deux racines, confondues en cas d'égalité). C'est la
+  condition de discriminant $4z^3 - 27T^2 \ge 0$, que le traité atteint par un
+  maximum.
+\item $k(A) = A^3 - xA^2 + T$ : $k'(A) = A(3A - 2x)$, minimum sur $]0, +\infty[$ en
+  $A = \frac23x$, égal à $T - \frac{4}{27}x^3$. D'où la condition
+  $T \le \frac{4}{27}x^3$, qui est encore la positivité du discriminant
+  $T(4x^3 - 27T)$.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Des limitations nécessaires mais non suffisantes}{L2}
+\manuscrit{latin-11195}{8}{8}
+\manuscrit{latin-11195}{15}{15}
+Pour la cubique $A^3 - xA^2 + zA - T = 0$ à trois côtés positifs, le traité écrit
+que « la question sera possible » si $z$ n'est pas plus grand que le tiers du carré
+de $x$, et $T$ pas plus grand que « la troisième partie du cube » de $x$, « car si
+une ligne est divisée en trois parties, le plus grand solide contenu sous ces trois
+portions sera lorsque les trois parties seront égales ». Un béquet épinglé à un
+feuillet blanc demande : comment savoir si $A^3 - xA^2 + zA - T = 0$ vient de trois
+côtés vrais, ou d'une quadratique à côtés feints et d'une latérale ?
+\begin{enumerate}
+\item Montrer que si les trois racines sont réelles et positives, $z \le x^2/3$ et
+  $T \le x^3/27$. Quelle est la faute du feuillet ?
+\item Montrer que ces conditions ne sont pas suffisantes, avec
+  $A^3 - 6A^2 + 10A - 8$.
+\item On pose $\Delta = \prod_{i<j}(r_i - r_j)^2$ pour les racines complexes
+  $r_1, r_2, r_3$. Montrer que $\Delta > 0$ si les trois racines sont réelles
+  distinctes, et $\Delta < 0$ s'il y a une racine réelle et deux complexes
+  conjuguées non réelles.
+\item On admet que $\Delta = 18xzT - 4x^3T + x^2z^2 - 4z^3 - 27T^2$. Calculer $\Delta$
+  pour l'exemple de 2 et pour les racines $1, 2, 3$. Répondre à la question du
+  béquet, et donner une condition nécessaire et suffisante pour que les trois
+  racines soient réelles et positives.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $x^2 = \sum B^2 + 2z$ et $\sum B^2 - z = \frac12\sum(B - C)^2 \ge 0$, donc
+  $x^2 \ge 3z$. Par l'inégalité arithmético-géométrique,
+  $T = BCD \le \bigl(\frac{B+C+D}{3}\bigr)^3 = \frac{x^3}{27}$. Le raisonnement
+  du feuillet donne ce cube du tiers ; « la troisième partie du cube »,
+  $\frac{x^3}{3}$, est une borne vingt-sept fois trop large, soit par ellipse, soit
+  par erreur. (Le mot de dimension y est d'ailleurs fautif : « $T$ pl. » pour un
+  solide.)
+\item $x = 6$, $z = 10 \le 12$, $T = 8 \le 8$ : les deux conditions sont remplies.
+  Pourtant $A^3 - 6A^2 + 10A - 8 = (A - 4)(A^2 - 2A + 2)$, de racines $4$ et
+  $1 \pm i$ : une seule racine réelle.
+\item Si les racines sont réelles distinctes, chaque facteur est le carré d'un réel
+  non nul. Si $r_1$ est réel et $r_{2,3} = a \pm ib$, $b \neq 0$ :
+  $(r_1 - r_2)(r_1 - r_3) = |r_1 - r_2|^2 > 0$ et $(r_2 - r_3)^2 = (2ib)^2 = -4b^2$,
+  d'où $\Delta = -4b^2|r_1 - r_2|^4 < 0$. (S'il y a une racine multiple,
+  $\Delta = 0$.)
+\item Pour $x = 6$, $z = 10$, $T = 8$ : $18\cdot480 - 4\cdot216\cdot8 + 3600 -
+  4000 - 1728 = 8640 - 6912 + 3600 - 4000 - 1728 = -400 < 0$. Pour $1, 2, 3$
+  ($x = 6$, $z = 11$, $T = 6$) : $7128 - 5184 + 4356 - 5324 - 972 = 4 =
+  (1\cdot 1\cdot 2)^2$. Réponse au béquet : la forme vient de trois côtés vrais si
+  $\Delta \ge 0$, d'une quadratique à côtés feints et d'une latérale si $\Delta < 0$.
+  Condition nécessaire et suffisante : $\Delta \ge 0$ et $x, z, T > 0$. En effet, si
+  $\Delta \ge 0$ les racines sont réelles ; les signes $+, -, +, -$ interdisent
+  toute racine négative (tous les termes de $P(-A)$ sont alors négatifs pour
+  $A > 0$) et $T \ne 0$ exclut la racine nulle. La réciproque vient des relations
+  entre coefficients et racines.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le « septuple » : une affirmation incidente à redresser}{L2}
+\manuscrit{latin-11195}{13}{16}
+Au troisième chapitre des quarto-quadratiques, deux côtés au-dessus $B$, $C$ et
+deux au-dessous $D$, $F$ : l'équation a pour racines $B$, $C$, $-D$, $-F$
+($B, C, D, F > 0$). On note $s = B + C$, $t = D + F$, $p = BC$, $q = DF$. Le traité
+suppose $t > s$ et que les « rectangles affirmés égalent les niés », puis démontre
+que « les solides niés surpassent les affirmés », et ajoute sans démonstration :
+« on démontrera aussi facilement que ce premier solide est plus grand que le
+septuple du second ».
+\begin{enumerate}
+\item Développer $(A^2 - sA + p)(A^2 + tA + q)$. Traduire les hypothèses et la
+  conclusion ; montrer que les deux solides comparés sont $qs$ et $pt$.
+\item Montrer que $R = \frac{qs}{pt} = \frac{s^2}{p} - \frac{s}{t}$ et en déduire
+  directement $qs > pt$.
+\item En utilisant $p \le \frac{s^2}{4}$ et $q \le \frac{t^2}{4}$ (racines réelles),
+  montrer que les hypothèses imposent $t \ge (2 + \sqrt3)s$, et que
+  $R \ge 2 + \sqrt3$, cette borne étant atteinte.
+\item Vérifier les exemples $(B, C, D, F) = (2, 2, 7, 8)$ et $(1, 5, 7, 37)$.
+  Conclure sur le « septuple ». La lecture modernisée du volume affirme que $R$
+  reste toujours inférieur à $4$ : est-ce exact ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $(A^2 - sA + p)(A^2 + tA + q) = A^4 + (t - s)A^3 + (p + q - st)A^2 +
+  (pt - qs)A + pq$. Le coefficient de $A^2$ est « rectangles affirmés » $p + q$
+  moins « rectangles niés » $st$ : l'hypothèse est $p + q = st$. Celui de $A$ est
+  $pt - qs$ : solides affirmés $pt$ (le rectangle des côtés au-dessus par la somme
+  des côtés au-dessous), solides niés $qs$. La conclusion du traité est $qs > pt$.
+\item $q = st - p$, donc $R = \frac{s(st - p)}{pt} = \frac{s^2}{p} - \frac{s}{t}$.
+  Comme $p \le \frac{s^2}{4}$, $\frac{s^2}{p} \ge 4$, et $\frac{s}{t} < 1$ : $R > 3$,
+  en particulier $qs > pt$. (La démonstration du traité, conduite en proportions,
+  est plus longue et juste.)
+\item Normalisons $s = 1$. Il faut $p \le \frac14$ et $q = t - p \le \frac{t^2}{4}$,
+  soit $p \ge t - \frac{t^2}{4}$. Ces deux conditions sont compatibles si et
+  seulement si $t - \frac{t^2}{4} \le \frac14$, soit $t^2 - 4t + 1 \ge 0$, soit (avec
+  $t > 1$) $t \ge 2 + \sqrt3$. Alors $R = \frac1p - \frac1t \ge 4 - \frac1t \ge
+  4 - \frac{1}{2+\sqrt3} = 4 - (2 - \sqrt3) = 2 + \sqrt3 \approx 3{,}732$, avec
+  égalité pour $t = 2 + \sqrt3$, $p = \frac14$, $q = \frac{t^2}{4}$ ($B = C$,
+  $D = F$).
+\item $(2,2,7,8)$ : $s = 4$, $t = 15$, $p = 4$, $q = 56$, $p + q = 60 = st$, et
+  $R = \frac{56\cdot 4}{4\cdot15} = \frac{56}{15} \approx 3{,}73 < 7$ : le
+  « septuple » est faux en général. $(1,5,7,37)$ : $s = 6$, $t = 44$, $p = 5$,
+  $q = 259$, $p + q = 264 = st$, et $R = \frac{259\cdot6}{5\cdot44} =
+  \frac{1554}{220} \approx 7{,}06$ : le rapport peut dépasser $7$. En fait il n'est
+  pas borné : pour $t \ge 4s$, la contrainte sur $p$ se réduit à $0 < p \le
+  \frac{s^2}{4}$, et $R = \frac{s^2}{p} - \frac st$ tend vers $+\infty$ quand $p$
+  tend vers $0$. Le rapport est donc toujours supérieur à $2 + \sqrt3$ et peut être
+  aussi grand qu'on veut : l'énoncé du feuillet (« toujours plus que sept fois »)
+  est faux, et l'affirmation de la lecture modernisée (« toujours inférieur à
+  4 ») l'est aussi, comme le montre le second exemple. Le mot « septuplo » est une
+  lecture incertaine de la transcription ; le raisonnement principal du traité ne
+  s'appuie pas sur cette phrase.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Flotter dans l'air, et le levier}{Lycée}
+\manuscrit{latin-11195}{33}{36}
+Le traité italien raisonne ainsi : l'air pèse, « selon le calcul de M. Galilée »,
+le quatre-centième de l'eau ; une matière qui serait à l'eau comme $1$ à $400$
+flotterait dans l'air, et une matière comme $1$ à $500$ « monterait jusqu'à la sphère
+du feu, où elle s'arrêterait ». Plus loin, sur un levier dont l'appui $C$ est au
+quart de la longueur, il montre qu'une livre en $B$ équilibre quatre livres en $A$,
+mais qu'« il faudra quatre fois plus de temps » pour soulever le poids.
+\begin{enumerate}
+\item L'eau pèse $1000$ kg/m$^3$ et l'air, au sol, $1{,}2$ kg/m$^3$. Quel est le vrai
+  rapport ? Une matière au quatre-centième de l'eau flotte-t-elle dans l'air ? Et au
+  cinq-centième ?
+\item La masse volumique de l'air décroît avec l'altitude $h$ à peu près comme
+  $\rho(h) = \rho_0e^{-h/H}$, avec $H \approx 8$ km. Un ballon de masse volumique
+  moyenne constante $\rho_b < \rho_0$ monte jusqu'où ? Application :
+  $\rho_b = 1$ kg/m$^3$. Que devient la « sphère du feu » ?
+\item Le traité donne les pesanteurs spécifiques : or $20$, mercure $13\frac12$,
+  plomb $11$, argent $10$, cuivre $9$. Les valeurs admises aujourd'hui sont $19{,}3$ ;
+  $13{,}5$ ; $11{,}3$ ; $10{,}5$ ; $9{,}0$. Calculer les écarts relatifs.
+\item Levier : $CB = 4\,CA$. Montrer que l'équilibre donne $F_B = \frac14F_A$, que la
+  rigidité donne $\delta_B = 4\,\delta_A$ pour les déplacements des extrémités, et
+  que $F_A\delta_A = F_B\delta_B$. Qu'est-ce qui est vraiment quadruplé : le temps
+  ou le chemin ? Sous quelle hypothèse le « temps » du feuillet est-il juste ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $\frac{1{,}2}{1000} \approx \frac{1}{830}$ : l'air est environ huit cents fois
+  plus léger que l'eau (de $770$ à $830$ selon la température), non quatre cents.
+  Par le principe d'Archimède, que le traité cite dans sa forme juste, un corps
+  flotte en équilibre si sa masse volumique moyenne égale celle du fluide. Une
+  matière au quatre-centième de l'eau, $2{,}5$ kg/m$^3$, est deux fois plus dense
+  que l'air et tombe ; au cinq-centième, $2$ kg/m$^3$, elle tombe encore. Le
+  raisonnement est juste, le nombre emprunté fait tomber la conclusion.
+\item Le ballon monte tant que $\rho(h) > \rho_b$ et s'arrête à l'altitude où
+  $\rho_0e^{-h/H} = \rho_b$, soit $h = H\ln\frac{\rho_0}{\rho_b}$. Pour $\rho_b = 1$,
+  $h = 8\ln 1{,}2 \approx 1{,}46$ km. Il y a bien une altitude d'arrêt, comme le
+  pressent le traité, mais elle vient de la décroissance de la densité de l'air,
+  non de la limite d'un élément.
+\item Or $+3{,}6\,\%$, mercure $0\,\%$ (à $0{,}2\,\%$ près), plomb $-2{,}7\,\%$, argent
+  $-4{,}8\,\%$, cuivre $0\,\%$. L'ordre est juste et les écarts inférieurs à cinq pour
+  cent : un bon tableau.
+\item Moments par rapport à l'appui : $F_A\cdot CA = F_B\cdot CB$, d'où
+  $F_B = \frac{F_A}{4}$. Le levier tournant d'un petit angle $\epsilon$,
+  $\delta_A = CA\cdot\epsilon$ et $\delta_B = CB\cdot\epsilon = 4\delta_A$. D'où
+  $F_B\delta_B = F_A\delta_A$ : le produit de la force par le déplacement --- le
+  travail --- se conserve, et l'on ne gagne pas à la fois la force et le chemin.
+  Les deux extrémités bougent pendant le même temps : c'est le chemin (et la
+  vitesse) qui est quadruplé. Le « temps » du feuillet devient juste si la main
+  qui agit en $B$ se meut à une vitesse imposée : alors elle met quatre fois plus
+  de temps pour élever $A$ d'une hauteur donnée.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Pourquoi la machine en forme de dragon ne pouvait pas voler}{L1}
+\manuscrit{latin-11195}{36}{37}
+L'auteur du traité italien tire honnêtement de son principe du levier une limite :
+sa machine ne pourra porter plus de deux hommes, parce que mouvoir les ailes
+demande « une grande force » et « une grande promptitude ». Il rapporte aussi que
+Sagredo s'était fait des ailes en gardant les proportions des plumes au corps
+d'un faucon. On admet le bilan de quantité de mouvement suivant : pour soutenir un
+poids $W$ en communiquant à l'air, à travers une surface balayée $S$, une vitesse
+vers le bas, il faut une vitesse induite $v = \sqrt{\frac{W}{2\rho S}}$ et une
+puissance $P = Wv$ ($\rho$ masse volumique de l'air).
+\begin{enumerate}
+\item Pour $W = 1500$ N (deux hommes et leur machine) et $S = 20$ m$^2$, calculer
+  $v$ et $P$ avec $\rho = 1{,}2$ kg/m$^3$, puis avec la valeur du traité ($\rho =
+  2{,}5$ kg/m$^3$). Un homme fournit durablement $250$ W environ : conclure.
+\item On agrandit un oiseau en gardant ses proportions, d'un facteur $\lambda$ sur
+  les longueurs. Comment varient la masse, la surface des ailes, la charge par unité
+  de surface, la vitesse $v$ et la puissance $P$ ($S$ proportionnelle à la surface
+  des ailes) ? Et la puissance musculaire, supposée proportionnelle à la masse des
+  muscles ?
+\item Application : d'un faucon de $0{,}6$ kg à un homme de $70$ kg. Que penser du
+  procédé de Sagredo ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $\rho = 1{,}2$ : $v = \sqrt{\frac{1500}{48}} \approx 5{,}59$ m/s et
+  $P \approx 8400$ W. $\rho = 2{,}5$ : $v = \sqrt{30} \approx 3{,}87$ m/s et
+  $P \approx 5800$ W. Même avec l'air trop lourd du traité, qui rend l'air plus
+  facile à frapper, il faudrait une vingtaine de fois la puissance de deux hommes
+  (et plus de trente fois celle d'un seul) : la machine ne pouvait pas voler. Le
+  traité avait le principe qui la condamne --- force et promptitude se
+  combattent --- mais pas la notion de puissance.
+\item Masse $\propto\lambda^3$, surfaces $\propto\lambda^2$, charge
+  $\frac{W}{S} \propto \lambda$, vitesse $v \propto \sqrt{W/S} \propto \lambda^{1/2}$,
+  puissance $P = Wv \propto \lambda^{7/2}$ ; puissance musculaire $\propto\lambda^3$.
+  Le rapport de la puissance nécessaire à la puissance disponible croît comme
+  $\lambda^{1/2}$.
+\item Rapport des masses $\frac{70}{0{,}6} \approx 117$, donc $\lambda \approx
+  117^{1/3} \approx 4{,}9$. La charge alaire est multipliée par $4{,}9$, la puissance
+  nécessaire par $117\times\sqrt{4{,}9} \approx 258$, la puissance des muscles par
+  $117$ seulement. Garder les proportions, principe même du procédé, est
+  précisément ce qui ne peut pas marcher : la surface croît comme un carré, le
+  poids comme un cube.
 \end{enumerate}
 \end{solution}
 
