@@ -121,8 +121,8 @@ read the manuscripts). Each carries a one-sentence rights position.
 ## Transcription
 
 Two editions, one skill each, run in order — plus a third for the tags and a
-fourth for findings. All under `.claude/skills/`, all accepting Fable 5.1,
-Opus 5 and Opus 5.5 and refusing anything else, and each file records in its header the
+fourth for findings. All under `.claude/skills/`, all accepting Opus 5.5
+and Opus 5 and refusing anything else, and each file records in its header the
 model that read it.
 
 | Skill | Produces |

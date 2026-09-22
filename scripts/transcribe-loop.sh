@@ -34,15 +34,14 @@ if [ -z "$last" ]; then
   last=$(( (pages + 19) / 20 ))
 fi
 
-model="${MODEL:-claude-fable-5-1}"
+model="${MODEL:-claude-opus-5-5}"
 case "$model" in
-  claude-fable-5-1) model_name="Fable 5.1" ;;
   claude-opus-5)    model_name="Opus 5" ;;
   claude-opus-5-5)  model_name="Opus 5.5" ;;
-  *) echo "the skills run on Fable 5.1, Opus 5 or Opus 5.5, not $model" >&2; exit 1 ;;
+  *) echo "the skills run on Opus 5.5 or Opus 5, not $model" >&2; exit 1 ;;
 esac
 # The CLI to use: Homebrew's regular cask lags the models by weeks, so the
-# one on PATH may be too old for Fable 5.1. Point CLAUDE_BIN at a newer one.
+# one on PATH may be too old for Opus 5.5. Point CLAUDE_BIN at a newer one.
 claude="${CLAUDE_BIN:-claude}"
 
 echo "== $vol, batches $first to $last, on $model via $("$claude" --version 2>/dev/null | head -1)"

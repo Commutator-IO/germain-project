@@ -5,7 +5,7 @@ description: Produces the modernised reading of an already-transcribed volume of
 
 # The modernised reading of a volume
 
-**Runs on Fable 5.1, Opus 5 or Opus 5.5, and on nothing else.** Check before reading a
+**Runs on Opus 5.5 or Opus 5, and on nothing else.** Check before reading a
 line of the transcription; stop if the session is on anything else. The header
 records which one ran.
 

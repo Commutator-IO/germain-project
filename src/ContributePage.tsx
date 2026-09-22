@@ -169,7 +169,7 @@ function Skills() {
         >
           Claude Code
         </a>
-        . None pins a model; each says which it accepts — Fable 5.1 and Opus 5 — and refuses to
+        . None pins a model; each says which it accepts — Opus 5.5 and Opus 5 — and refuses to
         run on any other. Every file records in its header the model that produced it. Provenance
         is a fact about the file, not about whichever model happened to be selected that day.
       </p>
