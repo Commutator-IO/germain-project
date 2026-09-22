@@ -1,0 +1,1260 @@
+% NAF 9544 — lecture modernisée du volume entier.
+%
+% Pass: Opus 5.5 (claude-opus-5-5), 2026-09-22 — first pass, unchecked against
+% the views by a human, and an interpretation rather than a record. Where this
+% file and the transcriptions differ in substance, the transcriptions
+% (batch-01.fr.tex, batch-02.fr.tex, batch-03.fr.tex) are the record.
+%
+% Sources read: the three batch transcriptions of this volume, in full, twice
+% — once for the content, once for the apparatus — and, for the one
+% concordance the description of view 54 invites, the project's own
+% transcription of Latin 11195 (transcripts/latin-11195/batch-01.fr.tex and
+% batch-02.fr.tex, header comments and views 1–3). No image was consulted. No
+% printed edition was consulted to fill a gap or settle a word: not de Waard's
+% Correspondance du P. Marin Mersenne, not the Œuvres philosophiques of Sophie
+% Germain, not the Mémoires de l'Académie that Libri cites. Where the
+% transcription has a gap, this reading says so. The three batches were
+% transcribed on Opus 5.5 and cover views 1–57, the whole volume.
+%
+% What the volume turned out to be. An album of autographs bound in 1899
+% (« Volume de 36 Feuillets — 27 Novembre 1899 »), UNSORTED: seven groups of
+% pieces from 1620 to 1884, each announced by a dealer's cutting or a
+% collector's wrapper, with nothing binding them but the sale room. In the
+% order of the album:
+%   v. 4–6     d'Alembert, minute to Malesherbes (annotated 1765).
+%   v. 7–19    Bossut: letter to an unnamed count (12 Jan. 177[4]); letter to
+%              Antide Janvier (2 Nov. an I); receipt to Agasse (3 fructidor
+%              an X); one-leaf summary of his memoir on vaults (21 messidor
+%              an IX), with two reading attestations.
+%   v. 20–23   Sophie Germain, an untitled philosophical fragment on « l'idée
+%              fondamentale d'une science ».
+%   v. 24–28   Two telegrams of 28 and 30 June 1884 recording its purchase for
+%              Baldassarre Boncompagni.
+%   v. 30–36   Latin epigrams on Richelieu's death, attributed by the cutting
+%              to Constantin Huygens; the leaves name no author.
+%   v. 33–40   Mersenne: observations of 1620–1621 for the height of the pole
+%              at Paris, addressed to Petau on the fold, and the letter to
+%              Petau that sent them.
+%   v. 41–55   G. Libri, « Description des manuscrits de Roberval », five
+%              volumes, the last being the old Supplément latin 218, whose
+%              tome I is today's Latin 11195.
+% The résumé says the volume is unsorted; each group gets its own section.
+%
+% Mathematics. Thin, and not padded. Mersenne's spherical astronomy is redone
+% in full: the conversion of ecliptic to equatorial coordinates, done on the
+% leaf both by ruler and compass on a projection onto the solstitial colure
+% and by sine tables, is shown to be exactly today's formula; every number was
+% recomputed (declination right to one second; one subtraction off by 5'',
+% which the transcription had noted; the polar-star mean and half-difference;
+% the two solar declinations, right to 3'' with Tycho's obliquity). Bossut's
+% vaults are a table of contents: modern names are attached with care and no
+% calculation is supplied. Germain's fragment is epistemology of mathematics.
+% Libri's statements that can be checked from the leaf alone were checked
+% (the quadratures and the ratios of solids; the ellipse; the lemma of p. 720,
+% which needs « arbitrarily little » to be true).
+%
+% Notation. The zodiac signs, set \add{Lion} etc. in the transcription, are
+% given as ecliptic longitudes in degrees from the vernal point, with one
+% footnote on the signs. The leaf's « 34.35' » style of angles becomes
+% 34°35'. Sines with radius 100000 become sines with radius 1.
+%
+% Attributions stay as the leaves and guards give them. The Huygens
+% attribution is the dealer's cutting; the Germain attribution rests on the
+% heading and the wrapper; the Mersenne letter is signed « Mar. Mers. M. »,
+% the observation sheet is not signed. The treatise on equations in Latin
+% 11195 is not attributed here: Libri files it among Roberval's manuscripts,
+% and this reading reports that as Libri's classing.
+%
+% Numbers on the leaves. The transcriptions write no \folio{}: a running ink
+% series, one figure per leaf from 1 (v. 4) to 36 (v. 54), behaves as a
+% foliation but was not taken as the library's. This reading cites views only.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{naf-9544}
+\shelfmark{NAF 9544}
+\pages{1}{57}
+\dating{1601-1700}
+\watermark{Lecture automatique\\interprétation non vérifiée}
+\foldertitle{Recueil de lettres autographes de D'ALEMBERT, l'abbé BOSSUT, Sophie GERMAIN, C. HUYGHENS et le P. MERSENNE. — lecture modernisée du volume entier}
+
+\begin{document}
+
+\section*{Résumé}
+
+\begin{resume}
+Ce volume n'est pas un livre mais un album : trente-six feuillets reliés en
+1899, sur lesquels on a monté, pièce à pièce, des autographes achetés en vente
+publique, chacun précédé de la coupure du catalogue qui l'avait annoncé. Il
+réunit, dans cet ordre, une minute de d'Alembert de 1765, quatre pièces de
+l'abbé Bossut dont le sommaire d'un mémoire sur l'équilibre des voûtes, un
+fragment philosophique de Sophie Germain suivi des deux télégrammes de 1884
+qui en annoncent l'achat, des épigrammes latines sur la mort de Richelieu,
+des observations astronomiques de 1620 et 1621 envoyées par Mersenne au
+P. Petau avec la lettre qui les accompagnait, et enfin une description, par
+Guglielmo Libri, de cinq manuscrits de Roberval. Il n'y a pas de fil entre
+ces pièces, et cette lecture n'en invente pas : ce qui les rapproche est la
+salle des ventes, non le sujet. La datation du catalogue, « 1601-1700 », ne
+couvre que deux d'entre elles.
+
+Les mathématiques y sont rares, et il faut les prendre où elles sont. Le
+morceau le plus substantiel est la feuille de Mersenne. Le problème est celui
+de la latitude de Paris, que l'on appelait la hauteur du pôle. On observe une
+étoile voisine du pôle au moment où elle passe au méridien sous le pôle ; sa
+hauteur au-dessus de l'horizon, augmentée de sa distance au pôle, donne la
+hauteur du pôle. Encore faut-il connaître cette distance, c'est-à-dire la
+déclinaison de l'étoile, alors que les catalogues donnent ses coordonnées par
+rapport à l'écliptique. Mersenne fait la conversion de deux manières : à la
+règle et au compas, sur une projection de la sphère sur le plan du méridien,
+et par les tables de sinus. Sa construction est exactement la formule que
+l'on écrit aujourd'hui ; son calcul est juste à la seconde près, sauf une
+soustraction fausse de cinq secondes. Il y joint deux autres méthodes — la
+moyenne des hauteurs de l'étoile polaire au-dessus et au-dessous du pôle, et
+la hauteur du Soleil au solstice d'hiver — qui donnent trois valeurs entre
+$48^\circ 41'$ et $48^\circ 48'$. Sa propre raison d'écrire tient en une
+phrase de la lettre : il se souvient de ce que Petau lui avait demandé
+« l'hiver passé sur la hauteur du pôle pour la latitude de Paris », il lui
+envoie ses observations, et il le prie de les lui rendre, car il n'en a pas
+gardé copie.
+
+Les autres pièces ont chacune leur idée. Le sommaire de Bossut, lu en
+séance le 10 juillet 1801, découpe la théorie des voûtes en berceau et en
+dôme : épaisseur des pieds-droits qui résistent à la poussée, rupture en des
+points donnés des reins, relation entre la forme de la voûte et les charges
+qui pressent les voussoirs ; les calculs n'y sont pas. Le fragment de Sophie
+Germain demande ce qu'est l'idée fondamentale d'une science : la définition
+détermine son objet également pour tous, répond-elle, mais le fait connaître
+inégalement ; elle refuse qu'un raisonnement ne soit qu'une opération
+mécanique sur des signes et place la certitude mathématique dans l'identité
+du sujet dont on parle. La description de Libri, enfin, est un inventaire de
+Roberval : éléments de géométrie, quadrature des paraboles de tous les degrés
+par les indivisibles, rapports des solides de révolution aux cylindres,
+tangentes par la composition des mouvements, mécanique, hydraulique, lieux
+géométriques, théorie des équations. Son dernier volume, le « supplément
+latin 218 », se reconnaît aux marques qu'il cite : son tome I est
+l'actuel Latin 11195.
+
+Où cela mène. Du côté de Mersenne, à l'astronomie sphérique — coordonnées
+écliptiques et équatoriales, déclinaison, détermination de la latitude par
+les étoiles circumpolaires, réfraction atmosphérique, projection orthographique
+de l'analemme. Du côté de Bossut, à la théorie des arcs et des voûtes en
+maçonnerie, des mécanismes de rupture de Coulomb au calcul à la rupture. Du
+côté de Germain, à la philosophie des mathématiques, à Condillac et à sa
+« langue des calculs », et à ce qu'on appellera le formalisme. Du côté de
+Libri, à Roberval : méthode des indivisibles, quadrature des paraboles
+supérieures, méthode des tangentes par les mouvements composés, cycloïde et
+sa compagne, centres de gravité, lieux géométriques, théorie des équations.
+
+\keywords{spherical astronomy, ecliptic coordinates, declination, latitude determination, circumpolar stars, lower culmination, analemma, orthographic projection, astronomical refraction, theory of masonry arches, masonry domes, thrust, philosophy of mathematics, Condillac, formalism, method of indivisibles, method of exhaustion, quadrature of higher parabolas, solids of revolution, method of tangents by composition of motions, cycloid, centre of gravity, Archimedes' principle, geometric loci, theory of equations}
+\end{resume}
+
+\section*{Ce que le volume contient}
+
+\pagerange{1}{57}
+Cinquante-sept vues, dont les deux premières et les trois dernières sont la
+reliure et ses gardes. La page de titre de l'album (vue 3) porte « Autographes
+de Savants — Volume de 36 Feuillets — 27 Novembre 1899 ». Chaque pièce est
+montée sur onglet ou sur un feuillet de montage et, le plus souvent, précédée
+d'une coupure imprimée du catalogue de vente qui l'avait annoncée ; toutes
+portent la marque « R. D. 9555 » et le cachet de la Bibliothèque
+nationale.\footnote{Plusieurs séries de nombres courent sur les feuillets :
+un chiffre à l'encre en haut à droite de chaque feuillet, de 1 (vue 4) à 36
+(vue 54), sans lacune, qui s'accorde avec le compte de 36 feuillets du
+certificat de 1899 et se comporte en tout comme une foliotation ; de grands
+numéros de lot au crayon ou à l'encre (207, 96, 95, 97, 677, 335, 459) ; des
+numéros de collections antérieures ; enfin la pagination propre de la
+description de Libri et ses renvois marginaux. Les transcriptions n'ont
+inscrit aucun folio, la première série n'ayant pu être tenue pour la
+foliotation de la bibliothèque sur une numérisation en niveaux de gris, et
+cette lecture renvoie donc aux vues. Les vues 13 et 50, secondes prises de vue d'une page déjà transcrite, et
+les vues 56 et 57, la reliure, n'ont pas été transcrites, non plus que les
+ouvertures blanches 29 et 34 ; les vues 26, 28 et 35 à 37 répètent des pages
+déjà données.}
+
+La datation du catalogue, « 1601-1700 », est reprise telle quelle en tête de
+ce fichier comme des transcriptions. Elle ne vaut que pour les épigrammes et
+pour les pièces de Mersenne ; le reste s'étend de 1765 à 1884. Le titre du
+catalogue nomme cinq auteurs et en omet un, Libri, dont la description occupe
+pourtant le tiers de l'album.
+
+\section*{La minute de d'Alembert à Malesherbes (vues 4 à 6)}
+
+\pagerange{4}{6}
+Deux petits feuillets, de la main rapide de d'Alembert, écrits à la troisième
+personne et sans signature : une minute, ou un mémoire destiné à être remis,
+plutôt qu'une lettre.\footnote{La coupure de catalogue collée sur le feuillet
+de montage (vue 4) décrit la pièce comme une « Let. aut. (minute) à
+Malesherbes ; (1765), 2 p. 1/4 in-8 ». En tête, une main plus petite et plus
+tardive a ajouté « a M. de Malesherbes » et « 1765 ». Le titre, souligné, est
+lu « Lettre de M. d'alembert » avec doute : les lettres qui suivent « Lett »
+se présentent autrement, et la lecture est celle du sens.} En voici le texte
+en français d'aujourd'hui.
+
+M. d'Alembert est pensionnaire surnuméraire dans la classe de géométrie depuis
+neuf ans et demi. Il demande, et l'Académie demande pour lui, qu'il passe à la
+place de pensionnaire ordinaire mécanicien. La seule objection qu'on puisse
+lui faire, et qu'on lui fasse en effet, est la différence des classes :
+objection sans fondement, puisqu'il y a mille exemples, à l'Académie, de
+passages d'une classe à l'autre, et surtout de la géométrie à la mécanique et
+réciproquement, ces deux classes ayant toujours roulé ensemble. M. de Montigny,
+en 1758, est passé de la place d'associé géomètre à celle de pensionnaire
+mécanicien ; M. d'Alembert demande beaucoup moins, puisqu'il est déjà
+pensionnaire surnuméraire et qu'il ne s'agit que de le faire changer de
+classe.
+
+Cela ne porte préjudice à personne : d'abord parce qu'il est plus ancien que
+tous les associés ; ensuite parce que M. de Courtivron, le plus ancien après
+lui, demande la vétérance et a déclaré par lettre qu'il ne voulait point
+concourir avec M. d'Alembert. Ainsi M. de Vaucanson, qui se trouve le second
+associé mécanicien, deviendra le premier, et c'est tout ce qu'il pouvait
+espérer, à supposer que les choses se passent à l'ordinaire et que M. de
+Courtivron n'eût point demandé la vétérance.\footnote{« le second » est écrit
+au-dessus de la ligne, au-dessus d'un mot raturé qui n'a pas été lu.}
+
+M. de Saint-Florentin n'a donc autre chose à répondre à la demande de
+l'Académie que oui ou non. M. d'Alembert espère que M. de Malesherbes voudra
+bien représenter à M. de Saint-Florentin combien le non serait injuste,
+malhonnête pour l'Académie, qui doit savoir ce qui lui convient le mieux, et,
+on ose le dire, odieux après les travaux et les sacrifices de M.
+d'Alembert.\footnote{« oui », « non » et le second « non » sont soulignés. Un
+trait ferme le texte ; il n'y a ni date ni signature. Le comte de
+Saint-Florentin était le ministre de la Maison du roi, dont relevait
+l'Académie ; ce fait ne figure pas sur le feuillet. Le feuillet ne dit pas ce
+qu'il advint de la demande.}
+
+L'argument est de pure procédure : un changement de classe à grade constant
+ne lèse aucun associé, puisque la place de mécanicien qui se libère par la
+vétérance de Courtivron va de toute façon à Vaucanson. Rien ici n'est
+mathématique, sinon la frontière — que d'Alembert tient pour poreuse — entre
+la géométrie et la mécanique.
+
+\section*{Les pièces de l'abbé Bossut (vues 7 à 19)}
+
+\pagerange{7}{19}
+Quatre pièces, chacune annoncée par un feuillet de montage, une fiche ou une
+chemise : deux lettres, un reçu et le sommaire d'un mémoire.
+
+\subsection*{La lettre à « Monsieur le Comte » (vues 7 à 10)}
+
+Paris, 12 janvier 177[4].\footnote{Le dernier chiffre du millésime est ouvert
+et se lit 4 plutôt que 6, sans certitude. Sous la date, d'une autre main et
+d'une autre plume, sans doute celle du destinataire : « Réponse donnée ».}
+Bossut s'excuse d'avoir tardé à répondre à la lettre du 29 novembre
+précédent. L'honneur que la « célèbre académie » du comte lui a fait de
+l'adopter le pénètre de reconnaissance ; il est glorieux de voir son nom
+associé à ceux de tant de grands hommes ; il prie le comte de le mettre aux
+pieds de l'académie et de lui témoigner sa vénération. Il s'est acquitté de la
+commission du comte auprès de d'Alembert, qui le charge d'un million de
+remerciements. Le comte a emporté l'estime et les regrets de tous ceux qui ont
+eu le bonheur de vivre « ici » avec lui ; Bossut regrette de n'avoir fait que
+l'entrevoir.\footnote{Le mot rendu par « tenir » (« je veux tenir mon pardon
+uniquement de votre bonté ») est donné avec doute ; « m'adopter » est écrit
+vite et lu par le sens ; « chagin » est écrit pour « chagrin ». La main de
+Bossut forme l'r final en petite boucle et écrit « Conte » pour « Comte ».}
+Ni le comte ni son académie ne sont nommés sur les feuillets, et cette lecture
+ne les identifie pas.
+
+\subsection*{La lettre à Antide Janvier (vues 11 à 16)}
+
+Paris, 2 novembre de l'an I de la République, soit le 2 novembre
+1792.\footnote{Le feuillet écrit « 2 9\textsuperscript{bre} l'an 1. de la
+Rep. » : le mois est celui du calendrier grégorien, l'an celui de la
+République, commencée le 22 septembre 1792. La coupure de catalogue de la
+vue 11 donne la même date. Au-dessus de la coupure, au crayon, « cat. Dufour
+30 janv. 1889 », le nom lu avec doute ; sur la fiche de la vue 12, au crayon,
+« Arrigoni, XIII\textsuperscript{e} catalogue 1878 », l'année lue avec doute.}
+Bossut remercie Janvier du portrait gravé de Lalande. Il refuse de le
+conseiller sur la pétition que Janvier veut présenter à l'Assemblée nationale
+— il l'avait même prié de ne pas lui en envoyer la minute. Mais il estime ses
+talents : Janvier mérite un logement dans les maisons nationales, et Bossut
+l'engage à demander au ministre celui que M. Paris occupait aux Menus, en le
+priant de se faire rendre compte de ses talents par la commission du Muséum ;
+Bossut, alors légalement en mesure de le servir, y mettra tout son
+zèle.\footnote{Le nom « Paris » se lit aussi « Pavis » et reste douteux. La
+phrase laisse entendre que Bossut siégeait à la commission du Muséum, sans le
+dire.} Si l'affaire prend un autre chemin, il aura peine à réussir pour un
+autre objet, les logements des Menus ne regardant pas en général la
+commission ; mais il pourrait se faire que M. Roland désire connaître l'avis
+de la commission sur Janvier.\footnote{Une tache couvre, dans la marge, la
+fin de « il » et le mot avant « façon », lu « la » par le sens. Roland est
+vraisemblablement Jean-Marie Roland, alors ministre de l'Intérieur ; le
+feuillet ne donne que le nom.} L'adresse (vue 16) est : « À Monsieur Janvier,
+horloger mécanicien, aux Menus, rue Poissonnière et Bergère, à Paris ».
+
+\subsection*{Le reçu à Agasse (vue 17)}
+
+« J'ai reçu du citoyen Agasse les 65\textsuperscript{e}, 66\textsuperscript{e}
+et 67\textsuperscript{e} livraisons de l'Encyclopédie méthodique. À Paris,
+ce 3 fructidor an X » — le 21 août 1802 — signé Bossut.\footnote{La
+conversion est de cette lecture. Le chiffre du jour, un 3 bouclé, pourrait
+être un 5, ce qui donnerait le 23 août 1802. Sous le billet est montée une
+chemise d'une main italienne, qui porte trois notices : Bossut, Laplace et
+Delambre, avec leurs dates de naissance et de mort ; les deux dernières
+annoncent les attestations de la pièce suivante.}
+
+\subsection*{Le sommaire du mémoire sur l'équilibre des voûtes (vues 18 et 19)}
+
+Un feuillet daté du 21 messidor an IX, soit le 10 juillet 1801, de la main
+de Bossut selon une note de collectionneur, avec dans la marge deux
+attestations de lecture : « Lu le 21 messidor an 9 à la réserve des
+calculs », d'une autre main, et « Le 21 messidor an 9 le cit. Bossut a lu le
+mémoire dont cette feuille est le sommaire », signé Delambre.\footnote{Une
+note moderne au crayon attribue la première attestation à Laplace
+(« aut. de Laplace ») ; rien d'autre sur le feuillet ne l'établit. La
+conversion de la date est de cette lecture.} Le texte :
+
+Le mémoire est divisé en trois sections : la première traite de l'équilibre
+des voûtes en berceau, la seconde de l'équilibre des voûtes en dôme, la
+troisième contient des expériences et des observations sur la résistance des
+pierres et sur la manière dont les voûtes trop chargées se
+rompent.\footnote{Le feuillet a d'abord écrit, puis raturé, un ou deux mots
+avant « rompent », dont l'un paraît être « voutes », avant de récrire « voutes »
+au-dessus de la ligne entre « les » et « trop ». La phrase de la dernière
+rédaction dit « la manière dont les voûtes rompent les voûtes trop
+chargées » ; la lecture ci-dessus garde le sens et non la lettre.}
+
+\begin{itemize}
+  \item[I.] \emph{Voûtes en berceau.} Chapitre 1 : épaisseur des pieds-droits
+  lorsque la voûte se rompt en des points donnés des reins. Chapitre 2 :
+  relations générales entre la forme de la voûte et les forces qui pressent
+  les voussoirs. Chapitre 3 : forme à donner aux faces latérales et
+  extérieures des pieds-droits lorsqu'ils peuvent se rompre par tranches
+  horizontales.
+  \item[II.] \emph{Voûtes en dôme.} Chapitre 1 : épaisseur des pieds-droits
+  pour résister à la poussée de la partie supérieure, formant une calotte que
+  l'on considère comme un corps continu. Chapitre 2 : conditions de
+  l'équilibre entre toutes les parties d'une voûte en dôme. Chapitre 3 : forme
+  à donner aux faces latérales et extérieures des pieds-droits lorsqu'ils
+  peuvent se diviser par tranches horizontales.
+  \item[III.] Deux chapitres, l'un sur les expériences, l'autre sur les
+  observations.
+\end{itemize}
+
+Le sommaire n'a pas de calcul, et l'attestation dit que les calculs n'ont
+pas été lus en séance ; cette lecture n'en supplée aucun.\footnote{« se rompt
+en » (section I, chapitre 1) est une lecture douteuse.} Ce qu'on peut dire,
+c'est sous quels noms ces questions sont connues aujourd'hui. La voûte en
+berceau est un arc prolongé ; les pieds-droits sont ses appuis ; les reins,
+la partie de l'arc entre la clé et les naissances. Le premier chapitre suppose
+la rupture en des points donnés, c'est-à-dire un mécanisme de ruine où la
+voûte se divise en blocs qui tournent autour de quelques joints : c'est
+l'approche de Coulomb (1773), qui cherche parmi ces mécanismes celui qui
+exige le plus grand appui, et que le calcul à la rupture du
+XX\textsuperscript{e} siècle a mise en forme de
+théorème.\footnote{Le feuillet ne nomme personne ; le rapprochement est de
+cette lecture et ne dit rien de ce que le mémoire contient. Coulomb est
+antérieur au mémoire et Bossut pouvait le connaître ; la formulation moderne
+par la ligne des pressions et par l'analyse limite est postérieure.} Le
+deuxième chapitre est le problème inverse : la forme d'un arc en équilibre
+sous des charges données, dont la chaînette renversée est le cas classique
+d'un arc sous son seul poids. Le troisième chapitre de chaque section cherche
+un profil des pieds-droits tel que chaque tranche horizontale soit en
+équilibre, un problème de solide d'égale stabilité. La seconde section passe
+à la symétrie de révolution, où la calotte traitée comme un corps continu
+annonce une coque plutôt qu'un assemblage de voussoirs.
+
+\section*{Sophie Germain : l'idée fondamentale d'une science (vues 20 à 23)}
+
+\pagerange{20}{23}
+Deux petits feuillets, paginés 16 et 17, sans titre, sans date ni signature.
+Une ligne d'une autre plume les ouvre : « Ce qui suit s'est trouvé dans les
+papiers laissés par Mlle Germain ». L'attribution repose sur cette ligne et
+sur la chemise de la vue 20, « Sofia Germain (autogr.) », non sur un examen
+de la main par cette lecture.\footnote{La transcription note que la main a
+été comparée à un autographe de Sophie Germain (Français 9115, vue 222) et
+qu'elle est compatible, sans aller plus loin. Plusieurs mots sont d'une encre
+plus pâle que le reste de la ligne, comme s'ils avaient été écrits dans des
+blancs laissés d'abord.} En voici le texte en français d'aujourd'hui.
+
+\subsection*{Le texte}
+
+Pour celui qui commence l'étude d'une science, l'idée fondamentale de cette
+science n'est que ce qui en détermine le sujet. À mesure qu'il avance, il
+apprend à connaître les divers points de vue sous lesquels l'objet de la
+science peut être considéré ; et lorsqu'il est parvenu à la connaissance
+parfaite du sujet, l'idée fondamentale est pour lui la science tout entière,
+parce que cette idée s'est alors agrandie de toutes celles qu'il a acquises
+depuis, et de leurs rapports.
+
+Mais, a-t-on dit, si la science tout entière n'était pas contenue dans l'idée
+fondamentale, comment pourrait-on l'y voir ?\footnote{Le mot « on » est
+chargé d'encre ; il n'est pas sûr qu'il soit biffé plutôt que repassé.}
+
+Je réponds : la proposition fondamentale d'une science, bien qu'exprimée en
+termes exacts et constants, ne contient pas, pour tous ceux qui l'entendent,
+une idée identiquement la même, mais seulement des idées qui s'accordent dans
+leurs traits caractéristiques ; de sorte que, pour tous les esprits, le sujet
+est également déterminé mais inégalement connu, et que cette proposition, qui
+n'a d'abord été, à l'entrée de la carrière, qu'une idée caractéristique,
+devient, lorsqu'on l'a parcourue, une véritable description du sujet, et
+remplit au plus haut degré la fonction de définition par rapport à la science
+dont elle détermine l'objet.\footnote{« à l'entrée de la carrière » est
+ajouté au-dessus de la ligne, d'une plume plus fine, et se lit mal ; la
+lecture en est douteuse.} En effet, le souvenir des propositions qui ont été
+déduites de la proposition fondamentale, et dont la réunion forme l'ensemble
+de la science, se lie, pour celui qui la possède, à l'énoncé de l'idée
+fondamentale, de sorte qu'il voit d'un seul coup d'œil le sujet tout entier.
+
+On a confondu l'idée fondamentale avec le sujet de la science ; c'est ainsi
+que l'on a pu dire : \emph{l'inconnu est dans le connu ; lorsqu'on apprend,
+on va du même au même ; une science ne renferme qu'une seule idée}. Rien
+n'est plus absurde que de dire que l'on puisse avoir une idée sans la
+connaître, et c'est pourtant ce que cette doctrine suppose.\footnote{Les
+trois propositions citées sont soulignées sur le feuillet. « dire » remplace
+« supposer », biffé.}
+
+On est allé jusqu'à prétendre que, dans une suite de déductions, vers la
+deuxième ou la troisième il ne restait plus d'idées mais seulement des signes
+d'idées, puis des signes de signes, et qu'un raisonnement bien fait n'était
+qu'une opération mécanique exécutée sur des signes, dont il fallait, pour
+revenir aux idées, retourner jusqu'à l'idée fondamentale. Et, a-t-on dit, si
+vous croyez avoir des idées dans une longue suite de déductions, comment ne
+vous satisfaites-vous de leur démonstration qu'en revenant à l'idée
+première ?\footnote{« prétendre » remplace « dire », biffé ; « puis » est
+biffé avant « et qu'un raisonnement » ; au bas de la page de gauche,
+« arriver » est barré avec deux ou trois lettres que le même trait paraît
+traverser, et la phrase reprend en haut de la page de droite par « retourner
+jusqu'à ». La lecture « comment ne vous satisfaites-vous » modernise « comment
+ne vous contentez vous sur leur demonstration ».}
+
+Je crois que l'on peut répondre : les propositions sont essentiellement des
+idées toutes les fois qu'elles ont un sens intelligible. Si, dans une suite de
+déductions, on sent le besoin de retourner en arrière, c'est uniquement pour
+s'assurer qu'elles conviennent au sujet auquel on les attribue ; c'est enfin
+pour s'assurer de l'identité du sujet énoncé avec le sujet qualifié. La
+certitude mathématique tient à l'identité du sujet, et la langue des calculs
+est bien faite parce qu'en raisonnant suivant les règles qu'elle prescrit, il
+est impossible d'attribuer au sujet de la science des propriétés qui ne
+soient pas contenues dans l'idée fondamentale ; de sorte que les questions
+que l'on examine ne se trouvent jamais compliquées de considérations qui lui
+soient étrangères.\footnote{Le fragment s'arrête ici, deux lignes en haut du
+verso du second feuillet (vue 23), sans signature ni date. Rien ne le suit.}
+
+\subsection*{Ce que le fragment soutient}
+
+La doctrine visée n'est pas nommée. Ses trois formules — l'inconnu dans le
+connu, le passage du même au même, la science réduite à une seule idée — et
+l'expression « la langue des calculs » sont celles de Condillac et de l'école
+des idéologues, pour qui toute évidence de raison est une identité et le
+calcul une langue bien faite.\footnote{L'identification est de cette lecture ;
+le feuillet ne nomme ni Condillac ni personne. \emph{La Langue des calculs}
+est le titre de l'ouvrage posthume de Condillac (1798).} Sophie Germain
+retourne la formule contre la doctrine. Elle accepte que la langue des calculs
+soit bien faite, mais pour une autre raison : non parce qu'un raisonnement ne
+serait qu'une suite d'identités vides, mais parce que ses règles empêchent
+d'attribuer au sujet ce qui ne lui appartient pas. Elle distingue deux choses
+que la doctrine confond : ce qui \emph{détermine} un objet, et ce qu'on en
+\emph{connaît}. Une définition détermine l'objet pour tous ; la connaissance
+des propriétés qui en découlent est l'œuvre du temps, et elle est
+inégale.
+
+En termes d'aujourd'hui, la distinction est celle d'un objet fixé par une
+définition et de la théorie que l'on déduit de cette définition — théorie qui
+n'est pas « connue » du seul fait qu'elle est déterminée. Et la position
+qu'elle combat, celle d'un raisonnement réduit à une manipulation mécanique de
+signes, est ce qu'on appellera plus tard le formalisme.\footnote{Le nom est
+postérieur au feuillet et n'y figure pas ; il est donné ici pour dire sous
+quel mot la question a été reprise, non pour prêter à Sophie Germain une
+position dans un débat qui n'existait pas encore.} Sa réponse à l'objection —
+on revient au principe pour vérifier que l'on parle toujours du même sujet —
+fait de l'identité de référence, et non de la forme des signes, la garantie de
+la déduction. Le fragment se lit comme une note préparatoire ; il n'est pas
+daté, et le seul terme qu'il porte est celui que lui donne sa première ligne :
+il était dans ses papiers à sa mort.
+
+\section*{L'achat de 1884 (vues 20 et 24 à 28)}
+
+\pagerange{20}{28}
+Le fragment de Germain est précédé d'une chemise, « Sofia Germain (autogr.) »,
+d'un grand numéro « 677 », et d'un billet : « Sous ce pli l'autographe de
+Sophie Germain, acheté le lundi 30 juin (cabinet Dubrunfaut). La couverture
+imprimée Charavay sera envoyée avec une brochure quelconque. A. M. »\footnote{Les
+initiales « A. M. » ne sont pas autrement expliquées, et cette lecture ne les
+résout pas. L'année n'est pas écrite. Sur la chemise, « CLXXI » et « 2810 » ;
+sur la chemise et le billet, 65 sur 1 et 65 sur 2, et la même fraction, 65
+sur 6 ou sur 7, reparaît au crayon sur les feuillets de Germain et sur les
+télégrammes.} Il est suivi de deux télégrammes reçus à Rome, sur les
+formules imprimées de l'administration italienne, adressés à « Balthasar
+Boncompagni, Palais Piombino, Rome ».\footnote{L'une des bandes porte
+« BONCOMPAGNIE » ; l'autre « BONCOMPAGNI ». Les vues 26 et 28 sont de
+secondes prises de vue des vues 24 et 27.}
+
+Le premier, dans l'ordre des dates (vues 27 et 28), est du 28 juin 1884 :
+« Reçu télégramme achat autographe Germain ». Le second (vues 24 à 26),
+déposé à Paris le 30 et reçu le 30 juin 1884 à 19 heures : « Germain acheté
+29 part demain ».\footnote{Le dernier chiffre de l'année, ajouté à la main
+sur la formule du premier télégramme, est mal formé ; la bande imprimée porte
+« 28/6/84 ». Selon l'avis imprimé de la formule, les nombres de la ligne
+d'en-tête donnent le numéro de la dépêche, le nombre de mots, la date et
+l'heure du dépôt. Le « 29 » du second télégramme n'a pas d'unité : ce peut
+être un prix, un numéro de lot ou autre chose, et cette lecture ne le décide
+pas.} L'ordre des opérations se lit ainsi : Boncompagni, à Rome, télégraphie
+un ordre d'achat ; son correspondant de Paris en accuse réception le 28 juin ;
+l'achat est fait, et le 30 le même correspondant annonce que la pièce part
+le lendemain. Le 30 juin 1884 était un lundi, ce qui accorde le billet de la
+vue 20, qui ne porte pas d'année, avec les télégrammes.\footnote{Le calcul du
+jour de la semaine est de cette lecture. Dubrunfaut est le nom du cabinet
+d'autographes dispersé ; le billet ne dit rien de plus. La description de
+Libri, plus loin dans l'album, porte au pied de sa première page « Vente
+B. Boncompagni, VI. Autogr. (1898), n\textsuperscript{o} 673 » : les deux
+pièces sont passées par la même collection, et le 677 de la chemise de
+Germain pourrait être son numéro dans la même vente, ce que rien sur le
+feuillet ne dit.}
+
+\section*{Épigrammes latines sur la mort de Richelieu (vues 30 à 36)}
+
+\pagerange{30}{36}
+Deux feuillets d'une belle main calligraphique du XVII\textsuperscript{e}
+siècle, paginés 21 et 22, portant huit pièces de vers latins. Aucun nom
+d'auteur n'y figure. La coupure de catalogue de la garde (vue 30) les
+attribue à Constantin Huygens, le poète et homme d'État hollandais, et les
+résume : épigrammes sur le retour de Richelieu, sur sa mort, sur sa
+bibliothèque, d'autres contre Louis XIII, la dernière adressée à Marie de
+Médicis.\footnote{Sous la coupure : « Vendita Grimm. Romanzoff. Paris, mai
+1886 », le second nom lu avec doute. Les vues 35 et 36 sont de secondes prises
+de vue des vues 31 et 32. La main écrit l'e final et le second élément de æ
+comme une petite boucle surélevée, l'o final comme un s arrondi, le t final
+comme un s à longue queue, et une même capitale bouclée pour B, D, V et H ;
+beaucoup de lectures se règlent sur le sens.} Ce ne sont pas des
+mathématiques ; on en donne ici une traduction française en prose, les
+lectures douteuses de la transcription étant signalées.
+
+\emph{Sur le retour du cardinal Richelieu.} L'Espagnol pâlit, déchu d'un noir
+espoir : le Gond sur lequel tourne la vaste machine du monde agit par un
+prodige. L'ancienne vigueur est revenue aux nerfs de Richelieu ; le fléau
+brûlant a quitté ses épaules d'Atlas. Acquitte ton vœu envers le chef qui
+revient, ô France, afin qu'il continue de vaincre pour toi et de
+t'embrasser.\footnote{\emph{Cardo}, le gond, joue sur \emph{Cardinalis}.
+« prodigio » et le dernier mot, « habet », sont des lectures douteuses ; la
+fin du distique est traduite par le sens général.}
+
+\emph{Sur les détracteurs de Richelieu mort.} La foule qui, suppliante,
+soumettait au cardinal vivant son esprit et sa main, et ne reconnaissait sur
+terre aucune divinité plus présente, se rue sur l'homme enseveli avec des
+sarcasmes, des plaisanteries, des injures, et vomit, impuissante, tout ce
+qu'une bouche mordante peut cracher sur les mânes de celui qui ne le méritait
+pas. Peuple léger, plèbe ingrate, inhumaine comme un serpent : l'Atlas,
+l'Atride, le Gond du roi et du royaume, une fois né pour la patrie, n'aurait
+pas dû cesser de naître ; mais pour toi, il n'aurait dû être ni mort ni
+vivant.\footnote{Le titre porte « detractorem », au singulier, lu avec
+doute ; le poème parle d'une foule. « Ruit », au quatrième vers, est offert
+par le sens. « simel » est écrit ainsi pour \emph{semel}.}
+
+\emph{Sur ce vers de Bourbon}, dont le titre cite le texte auquel il répond
+(« … pâture des vers qui naissent »). On arrache indignement la barbe du lion
+abattu ; la plèbe méchante frappe Richelieu de la dent ; elle l'emporte, mais
+sur un mort : la descendance qui naguère adorait le vivant, suppliante, mord
+à belles dents son père. Voilà — c'est la seule chose où tu ne te trompes
+pas, impie — il gît, pâture des vers ingrats nés de lui-même.\footnote{La
+seconde ligne du titre, abrégée (« Ext\textsuperscript{o} »), n'est pas
+résolue, et son dernier mot est douteux ; « Vincit » et « patrem » sont des
+lectures douteuses. Le feuillet ne dit pas quel Bourbon est cité.}
+
+\emph{Sur la bibliothèque de Richelieu.} Mille livres, et mille livres, et
+des milliers de livres, rassemblés par le soin public du magnifique Richelieu,
+pour le bien de la patrie, dans de superbes armoires, dressent les marbres
+vivants d'un nom éternel. Et pour que cette masse auguste de volumes achetés
+grandisse toujours vers ses titres, il ordonna que des milliers de livres
+fussent remplis de mille livres. Cesse, postérité, […], par où la masse, en
+roulant, se double comme une boule de neige. Il a laissé à vous qui écrivez
+une matière à la mesure de vos forces, où toute la France peut suer. Écrivez
+Richelieu, les triomphes remportés pour le roi, écrivez des actions à lire en
+caractères éternels : la bibliothèque qui recevra la gloire posthume d'un seul
+homme remplira mille livres.\footnote{« coemptis » (achetés) est lu pour
+« coimptis » ; après « posteritas » un mot n'a pas été lu et le suivant est
+biffé ; « habet » est de nouveau douteux. La phrase « il ordonna que des
+milliers de livres fussent remplis de mille livres » traduit la lettre du
+vers, dont le sens n'est pas clair.}
+
+\emph{Sur sa mort.}\footnote{En tête de la page, en petit : « Audi alteram
+partem », écoute l'autre partie.} Il convenait ainsi : Armand est parti en
+compagnon de la dame étrusque. Français, pourquoi gémis-tu, dégénéré, d'une
+bouche insensée ? Veuille être ce que tu es : te voilà enfin monarchie sous
+un roi. Le Fils a succédé à la mère et au serviteur.\footnote{« Hetruscæ » est
+une lecture douteuse. La dame étrusque, c'est-à-dire toscane, est Marie de
+Médicis, morte quelques mois avant Richelieu ; le Fils est Louis XIII, qui
+succède à sa mère et à son ministre, le « serviteur ». Ces identifications
+sont de cette lecture.}
+
+\emph{Sur le roi.} Que celui qui a perdu son bâton prenne garde que le Juste
+ne tombe désormais plus de sept fois par jour.\footnote{\emph{Scipio}, le
+bâton, joue sur le nom du général romain ; le Juste est le surnom de
+Louis XIII, et le vers parodie le proverbe « le juste tombe sept fois ».}
+Et : jusqu'ici l'Espagnol respectait non sans raison un roi bien armé — un
+Armand ; il espère maintenant, non sans raison, qu'il sera désarmé.\footnote{Le
+jeu porte sur \emph{Armandum} et \emph{exarmandum}. Une esperluette isolée
+sépare ce distique de la pièce précédente.}
+
+\emph{[Sans titre.]} Marie, mère d'une grâce impuissante, où que tu sièges
+parmi les mânes, ayant obtenu du même coup le repos refusé à la vivante,
+garde-toi du Cardinal, si tu es sage : il est suspect, celui qui a voulu
+suivre si vite la morte qu'il avait persécutée vivante.\footnote{« ut »
+(ou « et »), « Quiete » et le début de « consides », sous une tache, sont
+douteux.}
+
+Les pièces se situent d'elles-mêmes : après la mort de Richelieu, qui suit
+celle de Marie de Médicis, et du vivant de Louis XIII, à qui l'une d'elles
+s'adresse. C'est une datation par le contenu, de cette lecture, entre la fin
+de 1642 et le printemps de 1643 ; aucune date n'est écrite.
+
+\section*{Mersenne : les observations de 1620 et 1621 pour la hauteur du pôle à Paris (vues 33 à 39)}
+
+\pagerange{33}{39}
+La garde de la vue 33 porte la coupure d'une vente Charavay du 6 février
+1889 : « 1° L. a. s. au Père Petau, 1 p. in-4 oblong. Belle lettre où il lui
+annonce la résolution d'un problème relatif à la hauteur du pôle au-dessus de
+l'horizon de Paris. 2° Pièce autographe, 1 p. 1/2 in-fol. C'est la résolution
+du problème annoncée dans la lettre précédente. » La pièce est un feuillet
+in-folio en latin (vue 38, et son verso à gauche de la vue 39), sans
+signature ; plié en lettre, il porte au dos l'adresse « Au Révérend Père Denis
+Petau, de la Société de Jésus, au Collège de Clermont ».\footnote{La vue 37
+répète la vue 33. L'attribution à Mersenne est celle de la coupure et de la
+lettre de la vue 39, qui annonce ces observations ; le feuillet lui-même ne
+porte pas de nom.}
+
+\subsection*{Le problème}
+
+« L'an 1621, le 3 janvier, la brillante du quadrilatère de la Petite Ourse a
+été vue au-dessus de l'horizon, dans le méridien, sous le pôle, à
+$34^\circ 35'$ de hauteur. Au même moment, la longitude de l'étoile était de
+$127^\circ 34' 20''$ comptés depuis l'équinoxe de printemps, sa latitude de
+$72^\circ 51' 30''$. On cherche la déclinaison de l'étoile. »\footnote{Le
+feuillet écrit la longitude « 7.34$'$.20$''$ » suivie du signe du Lion,
+c'est-à-dire $7^\circ 34' 20''$ dans le signe du Lion, et donne aussitôt
+l'équivalent « ab æquinoctio verno 127.34$'$.20$''$ ». L'usage du temps
+comptait les longitudes écliptiques par signes de $30^\circ$ à partir du point
+vernal — Bélier de $0^\circ$ à $30^\circ$, Taureau, Gémeaux, Cancer de
+$90^\circ$ à $120^\circ$, Lion de $120^\circ$ à $150^\circ$, et ainsi de suite
+jusqu'aux Poissons ; le point vernal est le « début du Bélier », le solstice
+d'été le « début du Cancer ». Le feuillet dessine les signes ; la
+transcription les rend par leur nom, et cette lecture par la longitude en
+degrés de $0^\circ$ à $360^\circ$. Les angles sont écrits sur le feuillet avec
+des points, « partium 34.35$'$ » ; ils sont notés ici à la manière d'aujourd'hui.
+« stilo » est suivi d'un point, sans dire si le style est l'ancien ou le
+nouveau.} L'étoile est aujourd'hui $\beta$ de la Petite Ourse, Kochab, la plus
+brillante des quatre étoiles du quadrilatère.\footnote{L'identification est de
+cette lecture, d'après la description du feuillet et d'après les coordonnées
+qu'il donne, qui s'accordent avec la position de cette étoile au début du
+XVII\textsuperscript{e} siècle.} La déclinaison obtenue, on en déduit
+la hauteur du pôle.
+
+Notons $\lambda$ la longitude écliptique, $\beta$ la latitude écliptique,
+$\delta$ la déclinaison, $\varepsilon$ l'obliquité de l'écliptique et $\varphi$
+la hauteur du pôle, c'est-à-dire la latitude du lieu. Le feuillet prend
+$\varepsilon = 23^\circ 31' 30''$ « selon Tycho ».\footnote{Le nom se lit
+« Tichonem » ou « Tirhonem » ; « Tychonem » est offert avec doute. Un trait en
+boucle, peut-être un mot biffé, précède « maxima ».} Les données sont donc
+\[
+\lambda = 127^\circ 34' 20'', \qquad \beta = 72^\circ 51' 30'', \qquad
+\varepsilon = 23^\circ 31' 30'', \qquad h = 34^\circ 35',
+\]
+où $h$ est la hauteur observée au passage inférieur.
+
+\subsection*{La figure}
+
+Le grand cercle de la figure, que le feuillet appelle le méridien, est le plan
+qui contient à la fois l'axe du monde et l'axe de l'écliptique : le colure des
+solstices. Son diamètre $\alpha\beta$ est la trace de l'équateur, $\gamma\delta$
+l'axe du monde ($\gamma$ pôle nord, $\delta$ pôle sud), $\varepsilon\zeta$ la
+trace de l'écliptique, $\eta$ le pôle nord de l'écliptique ; les arcs
+$\alpha\varepsilon$, $\beta\zeta$, $\gamma\eta$ et $\delta\theta$ valent
+l'obliquité. Le parallèle de latitude de l'étoile — le petit cercle des points
+de latitude écliptique $\beta$ — se projette sur ce plan suivant la corde
+$A\kappa$, avec $\varepsilon A = \zeta\kappa = 72^\circ 51' 30''$. Le point $A$
+est le point de ce parallèle qui a la longitude $90^\circ$ (au-dessus du
+solstice d'été), $\kappa$ celui qui a la longitude $270^\circ$. Rabattu dans le
+plan de la figure, le petit cercle porte l'étoile en $\mu$, à l'arc
+$A\mu = \lambda - 90^\circ = 37^\circ 34' 20''$ de $A$.\footnote{Le feuillet
+écrit que $A\mu$ est la longitude « comptée depuis le point équinoxial ou
+solsticial $A$ », 127°34'20'' ; puis « depuis ledit point solsticial,
+$7^\circ 34' 20''$ du Lion, ou $37^\circ 34' 20''$ depuis le Cancer ». Les deux
+nombres diffèrent de $90^\circ$ : $127^\circ 34' 20''$ est compté depuis le
+point vernal, $37^\circ 34' 20''$ depuis le solstice, et c'est ce second arc
+que le calcul emploie. La transcription donne la phrase telle qu'elle se lit.
+La main écrit la lettre $A$ comme un $\lambda$ capital, distinct du $\lambda$
+minuscule de la figure.}
+
+\emph{La solution à la règle et au compas.} Tout étant tracé à l'échelle, on
+abaisse de $\mu$ la perpendiculaire $\mu F$ sur la corde $A\kappa$ : $F$ est la
+projection de l'étoile sur le plan du colure. Par $F$ on mène la parallèle à
+l'équateur, qui coupe le cercle en $o$ et $\xi$ ; l'arc $\alpha o$ (ou
+$\beta\xi$) est la déclinaison. C'est une projection orthographique de la
+sphère sur un plan méridien, le procédé que la tradition appelle l'analemme :
+toute la trigonométrie sphérique du problème est remplacée par une
+construction plane.\footnote{Le nom d'analemme n'est pas sur le feuillet ; il
+est donné ici parce que la construction coïncide avec celle que la tradition
+grecque désigne ainsi. Le titre de la section du feuillet est « Mechanicè per
+regulam et circinum », le « per » étant une lecture douteuse.}
+
+\subsection*{Le calcul par les sinus}
+
+Le feuillet refait la construction en nombres, avec des sinus de rayon
+$100\,000$ ; on les écrit ici avec le rayon $1$.\footnote{« Sinus rectus » est
+le sinus, « sinus versus » le sinus verse $1 - \cos$, « sinus complementi » le
+cosinus, « sinus totus » le rayon.} La hauteur d'un point du colure au-dessus
+du plan de l'équateur est le sinus de sa déclinaison. Les étapes, avec les
+nombres du feuillet :
+
+\begin{enumerate}
+  \item[1.] $A$ est à $\alpha A = \varepsilon + \beta = 96^\circ 23'$ de
+  l'équateur, donc à la hauteur $AB = \sin 96^\circ 23' = \sin 83^\circ 37'
+  = 0{,}99380$.
+  \item[2.] $\kappa$ est à $\kappa\beta = \beta - \varepsilon = 49^\circ 20'$ de
+  l'équateur, à la hauteur $\kappa\lambda = \sin 49^\circ 20' = 0{,}75851$. La
+  corde $A\kappa$ descend donc de $AC = 0{,}99380 - 0{,}75851 = 0{,}23529$, et
+  le demi-diamètre du petit cercle correspond à une descente
+  $AD = 0{,}11764$.
+  \item[3.] L'étoile est à l'arc $37^\circ 34' 20''$ de $A$ sur le petit
+  cercle ; sa projection $F$ est à la distance $AF = 1 - \cos 37^\circ 34' 20''
+  = 0{,}20741$ de $A$, mesurée en rayons du petit cercle.
+  \item[4.] Par les triangles semblables, $AG : AD = AF : AE$ avec $AG = 1$ :
+  la descente de $F$ au-dessous de $A$ est $AE = 0{,}11764 \times 0{,}20741
+  = 0{,}02440$.
+  \item[5.] La hauteur de l'étoile au-dessus de l'équateur est
+  $EB = 0{,}99380 - 0{,}02440 = 0{,}96940 = \sin\delta$, d'où
+  $\delta = 75^\circ 47' 20''$.
+\end{enumerate}
+
+Tous ces nombres sont justes : les sinus aux cinq décimales, les deux
+soustractions, la moitié, le produit.\footnote{Les valeurs exactes sont
+$\sin 83^\circ 37' = 0{,}993800$, $\sin 49^\circ 20' = 0{,}758514$,
+$1 - \cos 37^\circ 34' 20'' = 0{,}207415$, et
+$\arcsin 0{,}96940 = 75^\circ 47' 22''$. La vérification est de cette lecture ;
+la transcription avait déjà vérifié les soustractions et le produit. Dans
+« triangle rectangle $ADG$ », la seconde lettre est repassée et peut être un
+$B$.} Et la construction est exactement la formule d'aujourd'hui. En effet
+$AB = \sin(\beta + \varepsilon)$, $\kappa\lambda = \sin(\beta - \varepsilon)$,
+donc
+\[
+AD = \tfrac12\bigl(\sin(\beta+\varepsilon) - \sin(\beta-\varepsilon)\bigr)
+= \cos\beta \,\sin\varepsilon ,
+\]
+et $AF = 1 - \cos(\lambda - 90^\circ) = 1 - \sin\lambda$. Il vient
+\[
+\sin\delta = \sin(\beta+\varepsilon) - (1 - \sin\lambda)\cos\beta\,\sin\varepsilon
+= \sin\beta\,\cos\varepsilon + \cos\beta\,\sin\varepsilon\,\sin\lambda ,
+\]
+qui est la formule de passage des coordonnées écliptiques à la déclinaison.
+Calculée directement avec les données du feuillet, elle donne
+$\delta = 75^\circ 47' 21''$ : l'écart avec la valeur du feuillet est d'une
+seconde.
+
+\subsection*{La hauteur du pôle}
+
+Au passage inférieur, l'étoile est au-dessous du pôle d'un arc égal à sa
+distance polaire $90^\circ - \delta$ ; la hauteur du pôle est donc
+\[
+\varphi = h + (90^\circ - \delta).
+\]
+Avec $\delta = 75^\circ 47' 20''$, la distance polaire vaut
+$90^\circ - 75^\circ 47' 20'' = 14^\circ 12' 40''$, et
+\[
+\varphi = 34^\circ 35' + 14^\circ 12' 40'' = 48^\circ 47' 40''.
+\]
+Le feuillet écrit $14^\circ 12' 35''$ pour la distance polaire, et par suite
+$48^\circ 47' 35''$ pour la hauteur du pôle, « c'est-à-dire de Paris
+(Lutetiæ) ».\footnote{L'erreur est une soustraction : $90^\circ$ moins
+$75^\circ 47' 20''$ font $14^\circ 12' 40''$, non $14^\circ 12' 35''$. Elle est
+répétée à l'identique dans la solution à la règle et dans la solution par les
+nombres, et la somme $48^\circ 47' 35''$ est celle du nombre faux ; la
+transcription l'avait relevée. Avec la déclinaison exacte, on trouverait
+$48^\circ 47' 39''$. Avant « id est Lutetiæ », un « 48 » est biffé.} La valeur
+juste, avec les propres données du feuillet, est $48^\circ 47' 40''$. La corde
+$s\rho$ de la figure, menée à $\varphi$ du pôle, représente l'horizon.
+
+\subsection*{Les autres observations de l'hiver 1620--1621}
+
+Au verso, sous le titre « Autres observations de la même année », deux autres
+méthodes.
+
+\emph{L'étoile polaire.} Le 2 janvier, vers 5 h 30, sa hauteur minimale
+est de $46^\circ 2' 30''$ ; le 4 janvier, sa hauteur maximale au méridien au-dessus
+du pôle est de $51^\circ 28' 45''$ ; le 5 janvier, le matin, la hauteur minimale
+est notée $46^\circ 2' 40''$, et le soir la hauteur maximale
+$51^\circ 28' 45''$.\footnote{Plusieurs mots de ces trois lignes n'ont pas été
+lus : celui qui suit « h. » aux deux premières, celui qui suit « 5 h 30 »
+à la deuxième, et le dernier mot de la première.} Une étoile circumpolaire
+passe au méridien au-dessus du pôle à la hauteur $\varphi + p$ et au-dessous à
+la hauteur $\varphi - p$, où $p$ est sa distance polaire ; la demi-somme donne
+la hauteur du pôle, la demi-différence la distance polaire :
+\[
+\varphi = \tfrac12\bigl(51^\circ 28' 45'' + 46^\circ 2' 30''\bigr) = 48^\circ 45' 37\tfrac12'',
+\qquad
+p = \tfrac12\bigl(51^\circ 28' 45'' - 46^\circ 2' 30''\bigr) = 2^\circ 43' 7\tfrac12''.
+\]
+Ce sont les nombres du feuillet, et ils sont justes.\footnote{Le feuillet
+calcule avec la hauteur minimale du 2 janvier. Avec le $46^\circ 2' 40''$ du 5
+janvier, tel qu'il est écrit, on aurait $48^\circ 45' 42\tfrac12''$ et
+$2^\circ 43' 2\tfrac12''$. Le $7\tfrac12$ de la distance porte trois traits
+d'unité sur le feuillet. La fin de la phrase, après « la même que », n'a pas
+été lue, sauf un nom qui paraît être celui de Tycho ; « consequens » est une
+lecture douteuse.} La méthode a l'avantage de ne rien demander aux
+catalogues : elle ne suppose connue ni la position de l'étoile ni
+l'obliquité.
+
+\emph{Le Soleil au solstice d'hiver.} Le 23 décembre 1620, la hauteur méridienne
+du Soleil est de $17^\circ 45'$ ; on ajoute la parallaxe, $2' 58''$, ce qui
+donne $17^\circ 47' 58''$, puis la déclinaison du Soleil, $23^\circ 30' 22''$
+(australe, le Soleil étant à la longitude $272^\circ 13'$, soit $2^\circ 13'$
+du Capricorne) : la hauteur de l'équateur est $41^\circ 18' 20''$. Le 25
+décembre, la hauteur est de $17^\circ 48'$, soit $17^\circ 50' 58''$ avec la
+parallaxe, et avec la déclinaison $23^\circ 27' 24''$ (longitude
+$274^\circ 16'$) la hauteur de l'équateur est $41^\circ 18' 22''$, « plus
+grande à cause des réfractions dont on n'a pas tenu compte ».\footnote{Les
+additions sont justes. Les déclinaisons se vérifient par $\sin\delta =
+\sin\varepsilon \sin\lambda$ avec l'obliquité de Tycho : on trouve
+$23^\circ 30' 23''$ et $23^\circ 27' 21''$, soit un accord à trois secondes
+près. Le mot devant « observatas » est bref et peu sûr ; la phrase peut
+vouloir dire que la seconde valeur dépasse la première, ou que toutes deux
+dépassent la vraie. Le Soleil est dessiné comme un cercle.} La hauteur du
+pôle est le complément de celle de l'équateur,
+$\varphi = 90^\circ - 41^\circ 18' 20'' = 48^\circ 41' 40''$ ; le feuillet
+s'arrête à la hauteur de l'équateur et ne fait pas cette soustraction.
+
+La réfraction atmosphérique relève les astres ; en la négligeant, on
+surestime la hauteur de l'équateur et l'on sous-estime celle du pôle. Le
+feuillet a raison sur le sens de l'effet.\footnote{À $17^\circ 45'$ de hauteur,
+la réfraction moyenne est d'environ $3'$. La parallaxe de $2' 58''$ ajoutée
+par le feuillet est celle de l'astronomie de son temps ; la parallaxe solaire
+vraie est d'environ $9''$, et l'obliquité de Tycho dépasse d'environ $2'$ celle
+de 1621. Ces trois corrections vont dans le même sens et expliquent l'essentiel
+de l'écart entre la valeur solaire et les valeurs stellaires. Les deux
+méthodes stellaires, elles, ne corrigent pas la réfraction, qui les abaisserait
+d'une minute environ. La latitude de Paris est aujourd'hui voisine de
+$48^\circ 50'$ ($48^\circ 50' 11''$ à l'Observatoire) ; le feuillet ne dit pas
+où les observations furent faites. Ces ordres de grandeur sont de cette
+lecture.} Les trois méthodes donnent ainsi $48^\circ 47' 35''$ (corrigé :
+$48^\circ 47' 40''$), $48^\circ 45' 37\tfrac12''$ et $48^\circ 41' 40''$ ; le
+feuillet ne les compare pas.
+
+\section*{La lettre de Mersenne au P. Petau (vues 39 et 40)}
+
+\pagerange{39}{40}
+Un petit feuillet oblong, monté seul, d'une écriture petite, rapide et très
+liée, dont beaucoup de mots ne se lisent qu'au sens et dont plusieurs ne
+se lisent pas. Il est signé « Mar. Mers. M. », Marin Mersenne, Minime ; une
+main plus tardive a écrit au-dessous « Cette lettre est du P. Mersenne,
+minime ».\footnote{Le dos du feuillet (vue 40) ne porte que l'adresse, « Au
+R. […] père Petau », un mot bref n'ayant pas été lu. Aucune date, aucun lieu,
+aucune marque postale. Le chiffre de la série courante à l'encre, en haut à
+droite du feuillet, se lit 25 ou 26 ; le catalogue en ligne de la
+correspondance de Mersenne cite cette lettre comme « nouv. acq. fr. 9544,
+f. 25r ».} Voici ce qui s'en lit, en français d'aujourd'hui ; les crochets
+marquent les mots non lus.
+
+Mon révérend père, me souvenant de ce que vous me demandâtes l'hiver passé
+sur la hauteur du pôle, pour la latitude de Paris, il m'est souvenu de
+quelques observations […] de janvier 1621, […] lesquelles je vous envoie, si
+tant est que vous […] ; si vous ne les avez, je vous pourrais servir assez à
+propos. Je n'en ai point retenu de copie : c'est pourquoi je vous prie de me
+renvoyer celle-ci quand vous vous en serez servi. Je vous prie aussi de
+donner ce petit mot de lettre au révérend père Grandamy […] de ce qui est de
+la longitude de Paris, s'il vous vient quelque chose de […]. Cependant je me
+recommande à vos saintes prières. Votre très affectionné […], Marin Mersenne,
+minime.\footnote{Sont donnés avec doute, dans l'ordre : « Révérend »,
+« hiver », « passé », « sur », « Jan. », « suivant », « ou », « pourrais »,
+« servir », « retenu », « Grandamy », « vous vient », « cependant »,
+« saintes », « Vostre ». Le millésime 1621 est net. Au-delà de « quelque chose
+de », la ligne porte un mot de six ou sept lettres puis un nombre de quatre
+signes, que la transcription n'a pu fixer. Le cachet de la bibliothèque couvre
+la fin de la cinquième ligne.}
+
+La lettre et la feuille se répondent : la lettre envoie des observations de
+janvier 1621 sur la hauteur du pôle, la feuille les contient et porte au dos
+l'adresse de Petau au Collège de Clermont. La lettre ne se date pas
+elle-même : elle est postérieure à l'hiver où Petau posa sa question, et aux
+observations qu'elle envoie. La seconde demande, qui touche la longitude de
+Paris, ne trouve rien sur la feuille : la hauteur du pôle donne la latitude,
+non la longitude, qui demandait des observations simultanées en deux lieux,
+d'éclipses par exemple.\footnote{La remarque sur la longitude est de cette
+lecture ; le passage de la lettre qui la concerne n'est lu qu'en partie.}
+
+\section*{La description des manuscrits de Roberval par Libri (vues 41 à 55)}
+
+\pagerange{41}{55}
+Une fiche moderne (vue 41) donne le titre : « G. Libri. Description des
+manuscrits de Roberval conservés à la Bibliothèque nationale ». Suivent onze
+feuillets d'un format plus grand que l'album, écrits recto et verso d'une
+seule main ronde et régulière, que le rédacteur pagine de 1 à 20 ; la
+première page porte « Manuscrit de Roberval. par G. Libri ».\footnote{« par
+G. Libri » est d'une plume plus fine, peut-être d'une autre main. Rien ne dit
+si la pièce est l'autographe de Libri ou une copie. Au pied de la première
+page : « Vente B. Boncompagni, VI. Autogr. (1898), n\textsuperscript{o} 673. »
+Sur les versos, la fin des lignes passe sous le montage, au pli ; la plupart
+des mots perdus du texte le sont là, et non par défaut de lecture. Les nombres
+de la marge renvoient aux pages ou aux feuillets des manuscrits décrits.} Le
+texte décrit cinq volumes l'un après l'autre, chacun sous son titre courant.
+Ce n'est pas un texte de mathématiques mais un inventaire commenté ; on en
+donne ici le contenu, et l'on énonce en termes d'aujourd'hui ce qui peut
+l'être.
+
+\subsection*{Le manuscrit français au numéro laissé en blanc (vues 42 à 49)}
+
+Un in-folio de 948 pages non numérotées, dont le numéro est resté en blanc
+dans la description. Il contient cinq écrits : des éléments de géométrie
+(pages 11 à 681) ; un petit écrit sur la quadrature de la parabole, composé
+en mars 1651 (685 à 703) ; des propositions sur la comparaison et la mesure
+des surfaces (705 à 747) ; des éléments de musique en latin (751 à 818) ; des
+observations sur la composition des mouvements et sur le moyen de trouver les
+tangentes des courbes (821 à la fin).\footnote{Le feuillet écrit « de la page
+821 à la page 643 », lu nettement : lapsus du rédacteur, la dernière page
+devant dépasser 821 ; la description suivante mène l'écrit au moins jusqu'à
+la page 945. La page 11 porte, selon Libri, le n\textsuperscript{o} 141, et le
+volume les lettres « D. d », la seconde douteuse.}
+
+\emph{Les éléments de géométrie.} Roberval prévoit dix livres pour la
+géométrie de la pratique ordinaire — cinq pour la géométrie plane, les
+rapports et les proportions, trois pour la géométrie dans l'espace, deux pour
+les nombres — et promet dix autres livres de spéculation.\footnote{« dix » est
+un mot repassé et empâté ; le total cinq, trois et deux le confirme.} Il donne
+d'abord les définitions, axiomes, demandes et énoncés des neuf premiers
+livres, et quatre définitions pour un treizième livre qui devait reprendre
+les livres XIII et XIV d'Euclide.\footnote{Le second ordinal est caché au pli ;
+la lecture « XIV » est celle du sens.} Libri critique plusieurs définitions :
+celle de l'unité, « ce par quoi une chose est dite une », qui n'apprend rien
+à qui ne le sait déjà ; celle du solide, longue et obscure. Il approuve
+l'ordre qui définit ensuite la surface comme l'extrémité du solide, la ligne
+comme l'extrémité d'une surface et le point comme l'extrémité d'une ligne ;
+la droite est la ligne qui reste immobile quand tout tourne autour de deux de
+ses points. Roberval nomme « portion de cercle » le segment, « angle de
+contingence » l'angle d'une tangente avec le cercle, et définit la tangente
+comme une droite passant par deux points consécutifs de la courbe — définition
+que Libri rapproche de la théorie des infiniment petits.\footnote{La définition
+est soulignée mot à mot dans le manuscrit. Le rapprochement est celui de
+Libri : en termes d'aujourd'hui, la tangente est la limite des sécantes quand
+les deux points se rapprochent, ce que « deux points consécutifs » dit sans
+la notion de limite.} Les triangles sont dits rectangles, amblygones
+(obtusangles) et oxygones (acutangles) ; les solides semblables, ceux qui
+sont compris sous un même nombre de plans semblables ; la « portion de
+sphère » est un segment sphérique, le « trapèze sphérique » la portion comprise
+entre deux plans. Libri juge que les définitions n'ont pas toute la précision
+voulue.
+
+Chaque proposition porte en marge la proposition d'Euclide dont elle relève,
+ou la mention qu'elle est nouvelle. Libri compte les propositions : 32 au
+livre I, dont sept nouvelles ; 32 au livre II ; 32 au livre III ; 35 au
+livre IV ; 39 au livre V, dont 25 tirées d'Euclide ; 33 au livre VI, dont
+deux seulement tirées d'Euclide ; 38 au livre VII, qui est le livre XII
+d'Euclide amplifié et réordonné, avec quatre propositions nouvelles ; rien
+pour le livre VIII ; 35 propositions élémentaires sur les nombres au livre
+IX, sans les irrationnelles d'Euclide.\footnote{Plusieurs nombres, cachés
+au pli, manquent : combien de propositions « nouvelles » au livre II, combien
+« sans indication » au livre III, combien « tirées d'Euclide » au livre IV.
+Le renvoi marginal du livre VII se lit 557, le dernier chiffre pouvant être un
+7 ou un 9.} Il relève quelques énoncés, tous justes : il existe des plans, et
+l'on peut leur mener une perpendiculaire, une droite tournant autour d'une
+droite qui lui est perpendiculaire engendrant un plan ; trois points non
+alignés déterminent un plan ; un cercle a un seul centre ; par trois points
+non alignés passe un seul cercle ; deux cercles concentriques ne peuvent se
+couper sans se confondre ; la position relative de deux cercles se lit sur
+la distance $d$ des centres comparée aux rayons $r$ et $r'$ — ils se coupent
+si et seulement si $|r - r'| < d < r + r'$ — et réciproquement.\footnote{Pour
+les trois points et le cercle, le texte dit « on peut faire passer qu'une
+circonférence » : un « ne » a pu disparaître au pli, et l'énoncé correct est
+celui de l'unicité. La condition sur $d$ est l'énoncé moderne, que Libri ne
+donne pas ; il dit seulement que la proposition établit « les rapports » de la
+ligne des centres et des rayons selon la position des cercles.}
+
+Parmi les nouveautés du livre II, Libri cite la septième : des droites
+parallèles ont des perpendiculaires communes, démontré à partir d'une
+définition des parallèles comme droites équidistantes. Il faut noter ce que
+cette définition contient : poser qu'il existe des droites équidistantes
+d'une droite donnée équivaut au cinquième postulat d'Euclide, de sorte que la
+proposition, juste, repose sur un postulat des parallèles caché dans la
+définition.\footnote{Cette remarque est de cette lecture ; Libri n'en dit
+rien. Elle est au cœur de la longue histoire des tentatives de démonstration
+du postulat des parallèles, et elle n'enlève rien à la validité de la
+proposition sous la définition adoptée.}
+
+\emph{La quadrature de la parabole (1651).} Par la méthode des indivisibles,
+Roberval donne l'aire du segment parabolique, d'abord du côté convexe, puis
+du côté concave ; puis il montre que le conoïde parabolique (le paraboloïde de
+révolution) est la moitié du cylindre de même base et de même hauteur, et que
+le fuseau parabolique — le solide engendré par un segment de parabole
+tournant autour de sa base — est les $8/15$ du cylindre qui l'enveloppe. Ces
+deux rapports sont justes.\footnote{En termes d'aujourd'hui : en faisant
+tourner autour de l'axe $Ox$ la région $0 \le y \le \sqrt{x}$, $0 \le x \le
+a$, on obtient $\pi \int_0^a x\,dx = \tfrac12 \pi a^2$, moitié du cylindre
+$\pi a \cdot a$. Pour le fuseau, avec $y = h(1 - x^2/b^2)$ tournant autour de
+$Ox$ entre $-b$ et $b$, $\pi \int_{-b}^{b} h^2 (1 - x^2/b^2)^2\,dx =
+\tfrac{8}{15}\,\pi h^2 \cdot 2b$. Les calculs sont de cette lecture.} Il
+donne ensuite la quadrature de « toutes les paraboles à l'infini », le
+triangle étant la parabole du premier degré : en termes d'aujourd'hui,
+\[
+\int_0^a x^n\,dx = \frac{a^{n+1}}{n+1},
+\]
+l'aire sous la parabole de degré $n$ est la fraction $1/(n+1)$ du rectangle
+circonscrit. Il en tire les rapports des solides engendrés par ces paraboles
+tournant autour de leur ordonnée commune, puis autour de leur axe — pour la
+courbe $x = y^n$ tournant autour de son axe, le conoïde est au cylindre comme
+$n$ est à $n + 2$, ce qui redonne la moitié pour $n = 2$ — puis autour d'un
+diamètre quelconque.\footnote{Libri dit que Roberval donne ces rapports sans
+les écrire. Le rapport $n/(n+2)$ est calculé par cette lecture comme exemple
+de ce que ces propositions établissent ; il n'est pas sur le feuillet. Le
+cachet de la bibliothèque couvre une partie de « cylindre » et un mot après
+« le second ».}
+
+\emph{La comparaison des surfaces.} L'écrit porte en marge « Archimède, livre
+I de la sphère et du cylindre », et en reprend les grands énoncés, tous justes :
+la surface de la sphère est égale à la surface latérale du cylindre circonscrit
+($4\pi r^2 = 2\pi r \cdot 2r$) ; la surface latérale d'un cylindre droit est
+au cercle de base comme le côté est à la moitié du rayon ($2\pi r h : \pi r^2
+= h : \tfrac{r}{2}$) ; celle d'un cône droit est à sa base comme le côté est
+au rayon ($\pi r l : \pi r^2 = l : r$) ; la sphère est au cylindre circonscrit
+comme 2 est à 3, et de même, dit Libri, pour le secteur.\footnote{Plusieurs
+fins de ligne sont cachées au pli ; « pour le secteur » est lu par le sens, le
+l de « le » étant tracé comme un f.} Vient ensuite un lemme qui ramène les
+démonstrations par les indivisibles à la méthode d'exhaustion des Anciens :
+si deux quantités sont telles qu'en augmentant ou en diminuant très peu l'une,
+leur rapport devienne dans un cas plus grand, dans l'autre plus petit qu'un
+rapport donné, elles sont entre elles dans ce rapport. Tel quel, l'énoncé
+n'est vrai que si « très peu » s'entend « aussi peu qu'on veut » : si, pour
+tout $\epsilon > 0$, on a $(A - \epsilon)/B < r < (A + \epsilon)/B$, alors
+$A/B = r$.\footnote{La précision est de cette lecture ; Libri rapporte le
+lemme en ces termes et Roberval l'entendait sans doute ainsi. Libri ajoute que
+Roberval appuie la proposition de quelques exemples.}
+
+Suivent : l'ellipse est au cercle de même diamètre comme la perpendiculaire
+abaissée de l'extrémité du diamètre conjugué sur le premier diamètre est au
+rayon du cercle, ce qui est juste, l'aire de l'ellipse de demi-diamètres
+conjugués $a'$, $b'$ faisant l'angle $\theta$ étant $\pi a' b' \sin\theta$ ; la
+comparaison des conoïdes hyperboliques et du sphéroïde avec leurs cylindres et
+leurs cônes ; un article sur les spirales, comparées à leur cercle pour en
+conclure l'aire ; deux autres démonstrations du rapport du conoïde hyperbolique
+au cylindre ; enfin les conchoïdes, celle de Nicomède d'abord, avec des
+comparaisons d'aires, puis des conchoïdes en nombre infini.
+
+\emph{Les éléments de musique.} Un traité latin, \emph{Elementa Musicae}, en six
+chapitres : les rapports et proportions de l'harmonie ; le son et ses
+accidents, et les intervalles ; les trois genres ; l'espèce, le système et le
+mode ; un chapitre très court sur le chant, qui n'examine aucun instrument
+malgré son titre ; la durée, la mesure et la valeur des notes, et les
+instruments.\footnote{Le titre latin du cinquième chapitre commence au pli,
+où un mot est caché. Les trois genres sont, dans la tradition grecque que le
+traité suit, le diatonique, le chromatique et l'enharmonique ; l'explication
+est de cette lecture.}
+
+\emph{La composition des mouvements et les tangentes.} C'est la méthode des
+tangentes de Roberval : une courbe étant décrite par un point animé de deux
+mouvements connus, la tangente en un point est la direction de la vitesse
+résultante, obtenue en composant les deux vitesses par le parallélogramme.
+Libri note que l'écrit est imprimé dans le tome VI des anciens Mémoires de
+l'Académie des sciences, mais que l'imprimé s'arrête au treizième exemple, la
+tangente à la parabole de Descartes, alors que le manuscrit en contient un
+quatorzième, sur une courbe qu'il appelle « Téroïde ou Aile de
+Rob[erval] ».\footnote{Les deux mots sont lus lettre à lettre et restent
+douteux. Si le premier est « Ptéroïde », du grec \emph{pteron}, aile, les deux
+noms disent la même chose ; cette lecture ne l'affirme pas. La « parabole de
+Descartes » est le nom de la cubique de la \emph{Géométrie}, aussi appelée
+trident.} Suivent cinq planches de vingt-six figures ; une série de
+propositions attribuée à « M. de Rob », où l'auteur donne une parabole égale à
+une hélice ; une septième proposition qui applique la méthode des mouvements
+composés à plusieurs problèmes et retrouve les conséquences que Fermat avait
+tirées de sa méthode \emph{de maximis et minimis} ; enfin une copie de lettre,
+sans signature ni adresse, sur les oscillations de corps de figures
+diverses.\footnote{« Hélice » désigne au XVII\textsuperscript{e}
+siècle aussi la spirale d'Archimède ; si c'est le cas ici, la proposition est
+l'égalité, bien connue alors, d'un arc de spirale et d'un arc de parabole.
+Libri ne précise pas. Le dernier chiffre du renvoi « 926 » est repassé.}
+
+\subsection*{Le manuscrit latin 7226 (vues 51 et 52)}
+
+Un in-folio relié de 532 pages non numérotées, qui contient : un
+\emph{Tractatus mechanicus} de Roberval daté de 1648 (pages 7 à 70) ; une
+lettre de Roberval à Fermat, « conseiller de Toulouse » (71 à 111) ; une
+proposition pour trouver les centres de gravité (112 à 116), adressée à Fermat
+le 1\textsuperscript{er} avril 1645 et réduite à des définitions et des
+énoncés ; un \emph{Theorema lemmaticum} sur les centres de gravité, daté de
+1645 (121 à 167) ; un traité de mécanique « et spécialement de la conduite et
+élévation des eaux » (173 à 421).\footnote{Le nom de Fermat est écrit
+« Fermates » dans la description, finale nettement formée. Le mot latin lu
+« nisu » dans le titre du \emph{Theorema lemmaticum} n'est pas sûr. La page 7
+porte, selon Libri, le n\textsuperscript{o} 289 et la lettre A.}
+
+Le \emph{Tractatus mechanicus} pose des postulats et des définitions, traite
+de l'équilibre de forces situées dans un même plan, définit un « centre de la
+vertu de la puissance », et se termine par la démonstration mécanique de la
+loi du levier : deux poids en raison inverse des bras se font équilibre. La
+lettre à Fermat démontre de même l'équilibre du levier et envoie à Fermat « un
+principe de géostatique » qu'il avait demandé. Le \emph{Theorema lemmaticum}
+distingue trois cas selon la position de points donnés par rapport à un plan
+— tous du même côté ; certains sur le plan, les autres d'un même côté ; des
+deux côtés, avec parfois des points sur le plan — et l'applique au
+demi-cercle, à la demi-circonférence, à la trochoïde, à sa « compagne » et au
+triangle.\footnote{La trochoïde est la cycloïde ; sa compagne, la courbe que
+Roberval associait à la cycloïde pour en quarrer l'aire, est une sinusoïde.
+Si le lemme porte, comme les trois cas le suggèrent, sur la distance du centre
+de gravité d'un système de points à un plan, sa forme moderne ne fait qu'un
+cas : la distance algébrique du centre de gravité au plan est la moyenne
+pondérée des distances algébriques des points. C'est une interprétation de
+cette lecture ; Libri ne donne pas l'énoncé. « à la demi-circonférence » lit
+« à la d[…] circonférence », le mot étant caché au pli.}
+
+Le traité des eaux explique d'abord les machines simples — balance, levier,
+roue et essieu, poulies et moufles, plan incliné, coin, vis, marteau — puis
+la pesanteur des corps plongés dans les liquides, les formes propres à nager,
+la conduite naturelle des eaux (siphon, écluses), et la conduite forcée, dont
+Roberval dit qu'elle se fait de deux manières, par une pression plus forte
+que la pesanteur et par « la crainte du vide » : contrepoids, moulins,
+chapelets, vis d'Archimède, « escalier », pompes aspirantes et
+foulantes.\footnote{La « crainte du vide » est l'\emph{horror vacui} de la
+physique ancienne, que la pression atmosphérique a remplacée comme
+explication de l'aspiration ; le mot est celui du manuscrit, rapporté par
+Libri.} Le volume se termine par le principe d'Archimède, que Roberval fonde
+sur l'action de l'eau qui soulève le corps par-dessous ; d'où il conclut qu'un
+corps même plus léger que l'eau, appliqué contre le fond sans liquide
+au-dessous de lui, ne remonterait pas. La conclusion est juste : la poussée
+est la résultante des pressions sur la surface mouillée, et si la face
+inférieure ne l'est pas, la résultante des pressions est dirigée vers le
+bas.\footnote{L'explication par la résultante des pressions est de cette
+lecture. Le mot « il », avant « ne remonterait », est surchargé.}
+
+\subsection*{Le supplément français 597 (vue 53)}
+
+Un in-folio relié de 430 pages, dont la page 9 porte le
+n\textsuperscript{o} 290.\footnote{À la suite du titre courant, d'une autre
+encre et semble-t-il d'une autre main, « (Fr. 12279) », les deux derniers
+chiffres surchargés : une concordance ajoutée plus tard, que cette lecture ne
+vérifie pas.} Il contient un « livre troisième de dioptrique, ou des
+lunettes » (pages 7 à 197) ; un traité de Roberval sur la résolution
+géométrique des équations planes et cubiques (247 à 309) ; un traité de la
+division des lieux en divers degrés (310 à 329) ; un traité pour ramener un
+lieu géométrique donné à une équation analytique (330 à 354).
+
+Le premier ouvrage paraît à Libri être du P. Mersenne, dont les deux premiers
+livres auraient été publiés à la suite du traité de perspective du P. Niceron,
+et ce troisième livre, incomplet, être l'analyse d'un traité d'optique de
+Roberval.\footnote{Le nom est coupé au pli après « Mer ». L'attribution est
+celle de Libri.} Il traite de la réfraction et de la densité des corps, du
+rapport de réfraction et de sa détermination — l'indice de réfraction —, des
+termes de la dioptrique, de la différence entre réfraction et réflexion, des
+lunettes simples, dont il distingue dix-huit cas, des lunettes composées d'un
+ou de plusieurs verres ; une dix-septième proposition, seulement énoncée,
+devait traiter de l'œil, de ses défauts et des lunettes qui les corrigent.
+Sept planches, huit figures. Le traité des équations n'est, dit Libri, que le
+commencement d'un travail plus étendu imprimé dans le tome VI des anciens
+Mémoires.
+
+Le traité des lieux reprend la classification des Anciens : il y a une
+infinité de degrés de lieux ; au premier genre, les lieux qui sont des lignes,
+au second ceux qui sont des surfaces. Les lignes se répartissent en lieux
+plans (la droite et le cercle), lieux solides (les trois coniques) et lieux
+linéaires (toutes les autres courbes), et l'auteur ne retient que ceux qui
+s'enferment dans une équation. En termes d'aujourd'hui, les lieux plans sont
+les courbes de degré 1 et le cercle, les lieux solides les courbes de degré 2,
+c'est-à-dire les coniques ; la classification est celle de Pappus, et la
+restriction aux courbes qui ont une équation est le programme de la géométrie
+analytique. Le dernier écrit l'applique au cercle, à la parabole, à
+l'hyperbole, à l'ellipse et à la conchoïde.\footnote{Le renvoi « 332 » a un
+dernier chiffre incertain, 2 ou 7. Libri dit ces deux derniers ouvrages
+« imprimés avec le précédent ».}
+
+\subsection*{Le supplément latin 218, et ce qu'il est devenu (vues 54 et 55)}
+
+Le supplément latin 218, dit Libri, se compose de trois volumes in-quarto
+reliés.
+
+\emph{Le tome I} porte au recto de son deuxième feuillet le
+n\textsuperscript{o} 171 et le titre \emph{De recognitione aequationum}, au
+verso le n\textsuperscript{o} 26 ; l'ouvrage commence au feuillet suivant et
+compte 37 pages.\footnote{Le premier mot du titre latin est caché au pli ;
+la lecture « De » est celle du sens.} Libri en donne le plan : les équations
+du second degré en quatre chapitres (deux racines positives ; deux négatives ;
+une de chaque signe ; l'équation qui « subsiste par elle-même ») ; les
+équations cubiques en six chapitres, suivis de leur « détermination » ; les
+équations du quatrième degré en dix chapitres, jusqu'aux racines
+« fictives ». Il ajoute qu'un ouvrage du même titre est imprimé dans le tome
+VI des anciens Mémoires de l'Académie des sciences, mais que la rédaction et
+la disposition des matières ne ressemblent pas à celles du manuscrit. Le
+volume se termine, dit-il, par une petite dissertation latine sur l'art de
+voler, et par un article italien avec figures, où l'auteur soutient qu'il
+n'est pas impossible à l'homme de voler et fait intervenir les noms de Galilée
+et d'Archimède.\footnote{En termes d'aujourd'hui, les racines « négatives »
+sont les racines réelles négatives, les « fictives » les racines complexes non
+réelles ; la « détermination » est l'étude des racines multiples.}
+
+Ce tome I est l'actuel Latin 11195. La transcription de ce volume, faite dans
+ce projet, relève sur les feuillets exactement ce que Libri décrit : l'ancienne
+cote « Suppl. lat. 218 » sur la garde et sur la première page du traité ; au
+recto du deuxième feuillet (vue 2), le titre \emph{De Recognitione Æquationum}
+sous un « 171 » à l'encre ; au verso (vue 3, page de gauche), un « 26 » ; le
+traité commençant à la page suivante, paginé par son scripteur de 1 à 37 et
+s'achevant à la vue 23 ; quatre chapitres pour les équations du second degré,
+six pour les cubiques, dix pour les quarto-quadratiques ; puis le dossier du
+vol, avec un feuillet de titre « Ars Volandi », des notes latines, et un traité
+italien illustré de deux dessins, qui nomme Galilée, Sagredo et
+Archimède.\footnote{Voir \emph{transcripts/latin-11195/batch-01.fr.tex}, en-tête
+et vues 1 à 3, et \emph{batch-02.fr.tex}, en-tête. La garde de la vue 1 porte
+« Suppl.\textsuperscript{t} lat. 218. A. », la page de la vue 3
+« Suppl.\textsuperscript{t} Lat. n\textsuperscript{o} 218. » et
+« Suppl.\textsuperscript{t} l. 218. + I. ». La « petite dissertation latine » de Libri correspond aux notes latines des vues 26 à 29, qui
+comprennent la page de titre recopiée de l'\emph{Ars volandi} de Flayder.}
+Une différence doit être dite. Libri range le traité sur les équations parmi
+les manuscrits de Roberval ; les feuillets du Latin 11195 ne nomment Roberval
+que comme l'auteur, « D. Rob. », de lemmes que le traité emprunte, et la
+lecture modernisée de ce volume n'attribue le traité à personne. Le classement
+de Libri est un fait sur Libri ; il n'est pas une preuve.
+
+\emph{Le tome II}, de 41 feuillets, porte le n\textsuperscript{o} 27 au verso
+du feuillet 2 et le n\textsuperscript{o} 119 en haut du feuillet 3. Il
+contient un petit écrit d'optique, \emph{Appendix ad tractatum de legitimo
+Dioptrarum usu}, de cinq propositions (deux théorèmes, trois problèmes) avec
+huit planches et vingt-quatre figures, qui renvoie souvent au traité des
+coniques de son auteur ; un problème adressé au P. Mersenne le 10 novembre
+1642, « trouver le cylindre de plus grand \emph{ambitus} inscrit dans une
+sphère donnée » ; l'extrait d'une lettre au P. Mersenne du 3 juin 1639 qui
+annonce de nouvelles hélices avec leur démonstration ; et le \emph{De Vacuo}
+de Roberval, adressé à Des Noyers aux ides de mai 1648, qui rapporte ses
+propres expériences sur le vide, celle de Pascal sur la cause de l'ascension
+du mercure dans le baromètre, et des expériences semblables faites sur les
+petites montagnes des environs de Paris.\footnote{La parenthèse qui suit le
+renvoi aux coniques est lue lettre à lettre (« mo. x. lib. nothorum
+conicorum ») et reste douteuse. « Invenire » est écrit avec une initiale en
+forme de S. Les ides de mai sont le 15 mai.}
+
+Le problème de 1642 se résout aisément aujourd'hui, et sa réponse dépend du
+sens d'\emph{ambitus}. Soit $R$ le rayon de la sphère, $r = R\cos t$ le rayon
+du cylindre inscrit et $2R\sin t$ sa hauteur. Si l'\emph{ambitus} est la
+surface latérale, $4\pi R^2 \sin t \cos t = 2\pi R^2 \sin 2t$ est maximale pour
+$t = 45^\circ$, et vaut $2\pi R^2$. Si c'est la surface totale,
+$2\pi R^2(\cos^2 t + \sin 2t)$ est maximale pour $\tan 2t = 2$, et vaut
+$\pi R^2 (1 + \sqrt5)$.\footnote{Ces deux solutions sont de cette lecture. Libri
+ne donne que l'énoncé, et le feuillet ne dit pas quelle surface Roberval
+entendait.}
+
+\emph{Le tome III}, de 68 feuillets, porte le n\textsuperscript{o} 28 au verso
+du feuillet 1 et le n\textsuperscript{o} 172 au recto du feuillet 2. Libri y
+compte dix lettres, dont certaines sont des écrits : une lettre de Roberval à
+Torricelli datée de Paris aux calendes de janvier 1646 (le 1\textsuperscript{er}
+janvier), où il revendique la priorité des découvertes sur la cycloïde et
+attribue à la France presque toutes les inventions faites sur cette courbe ;
+une lettre de Huygens, datée de Leyde en octobre 1646, sur le mouvement des
+corps, où l'auteur soutiendrait que la parabole décrite par les projectiles
+n'est pas un effet de l'attraction terrestre ; une lettre de Torricelli à
+Roberval, de Florence, 7 juillet 1646, avec plusieurs problèmes sur la
+cycloïde ; une lettre à Roberval contenant un théorème sur une sorte de
+spirale ; une lettre de Torricelli au P. Mersenne, de la même date ; un
+théorème sur l'hyperbole ; une lettre de Torricelli à Carcavi, 8 juillet 1646,
+sur un problème de Fermat sur les nombres et sur la priorité de la cycloïde ;
+une lettre de Roberval à Torricelli, imprimée dans le tome VI des anciens
+Mémoires ; un « nouvel usage en analyse des radicaux du second degré et des
+degrés supérieurs » par Fermat, avec un appendice ; enfin la copie d'une
+lettre de Fermat à Carcavi du 20 août 1650 sur le « débrouillement des
+asymétries ».\footnote{Le nombre de feuillets, « 68 », a son second chiffre
+empâté. Le quantième de la lettre de Huygens est caché au pli : seul se voit
+un premier chiffre 2. « Carcavi » se lit « Careavi » à la lettre. Libri donne
+la même date, 7 juillet 1646, aux deux lettres de Torricelli. Les
+« asymétries » sont les quantités irrationnelles, et leur « débrouillement »
+l'élimination des radicaux d'une équation ; la glose est de cette lecture.
+Libri résume la lettre de Huygens en une phrase, et cette lecture ne la
+corrige pas faute d'avoir le texte.}
+
+Ces deux derniers volumes sont, sous leurs cotes d'aujourd'hui, les Latin
+11196 et 11197, que la notice de la bibliothèque groupe avec le Latin 11195
+sans en décrire le contenu, et qui ne sont pas numérisés : la description de Libri est ici le seul inventaire de
+leur contenu que le projet ait sous les yeux. Laquelle des deux cotes répond
+à quel tome, les feuillets de cet album ne le disent pas.\footnote{Le texte
+s'arrête sur un trait horizontal, à la vue 55, qui clôt la description du
+supplément latin 218.}
+
+\end{document}
