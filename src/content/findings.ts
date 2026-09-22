@@ -219,4 +219,117 @@ export const FINDINGS: Finding[] = [
     settle:
       'Open de Waard\u2019s Correspondance du P. Marin Mersenne, tome 12 (for the Torricelli letter of October 1643) and tomes 14\u201315 (for 1646\u201347), in a library: they are not online, and that is why this is still open. Failing that, read Latin 11196 and 11197 in the reading room. Either would give the contents of the two undigitised volumes and show whether Flayder\u2019s opusculum and the Huygens letters of the group title are there. What is already settled is that they are not in Latin 11195, and that at least one of the letters is in Latin 11196.',
   },
+  // NAF 5176 — /find-novelty, 22 September 2026, on claude-opus-5-5, the model
+  // that wrote transcripts/naf-5176/naf-5176.modern.tex. To be merged into
+  // FINDINGS in src/content/findings.ts by the coordinator. Search conditions
+  // for every entry below: the web_search tool returned HTTP 403 for the whole
+  // session, and Google, DuckDuckGo and Bing were unusable (consent wall,
+  // CAPTCHA, irrelevant results), so nothing here rests on a general web
+  // search. What was read was fetched directly: the BnF notice, Delisle 1888 and
+  // the Œuvres de Fermat and of Descartes on archive.org, Huygens's Œuvres
+  // complètes on DBNL, and Persée's search page (titles only; its PDFs sit
+  // behind a bot check that was not bypassed).
+  {
+    id: 'naf-5176-partis-huygens-sequence',
+    cote: 'naf-5176',
+    pages: 'views 40–42 (hand C); the modern note at view 6',
+    kind: 'codicological',
+    claim:
+      "The French text on the division of stakes and on dice at views 40–42 of NAF 5176 follows, in order and largely in its numbers, propositions I–XII of Huygens's De ratiociniis in ludo aleae (1657), down to the unanswered question of proposition XII. It is nevertheless not a literal translation. None of the published sources read here records the text as a French version of Huygens: Delisle 1888 describes it only as « Calcul des probabilités », and the Œuvres complètes of Huygens name no French manuscript. The only identification found is an unsigned note of 21 May 1962 pasted in the volume.",
+    basis:
+      "On the leaves: the rule « hasard égal de 10 ou 12 vaut 11 », proved by a fair game in which the winner gives the loser the smaller sum (Huygens prop. I's proof); the p-and-q rule proved by a game among p + q players each staking the value (prop. III); the shares 3/4, 7/8, 11/16, 13/16, 15/16 (props. IV–VII) and the remark that 2 games to win against 4 is better than 1 against 2, by 1/16 (Huygens's comment after prop. VII); three players, 4/9, 4/9, 1/9 (as 12/27, 12/27, 3/27) and 17/27, 5/27, 5/27 for A lacking one game and B, C two (props. VIII–IX); the tables of the throws of two and three dice; 11/36, 91/216, 671/1296, 4651/7776, 31031/46656 with the same verbal approximations (« un peu moins que 3 contre 4 », « un peu moins que 3 contre 2 », « un peu moins que 2 contre 1 ») as prop. X; 71/1296, 3781/46656, 178991/1679616 and the 24-throw disadvantage and 25-throw advantage of prop. XI; the question « avec combien de dés entreprendre de faire du premier coup deux six », prop. XII, left without answer. Against a literal translation: the text reckons in écus, says « je » and « quidam », gives the value of each game in sixteenths and thirty-seconds (3/16, 3/16, 2/16; 5/32, 5/32, 4/32, 2/32), which Huygens does not, and carries the one-die series to seven throws where Huygens stops at six. The note at view 6 (transcription batch 1, header) reads: the text corresponds to Huygens's « de ratiociniis in ludo aleae », probably a French translation earlier than the version given to Van Schooten, « Date possible : 1656 », « Copiste et traducteur possible : Des Billettes ».",
+    ours:
+      "The proposition-by-proposition collation against the French translation printed in Huygens, Œuvres complètes XIV, and the observation that the text is an adaptation rather than a translation. The attribution to Huygens as source is the 1962 note's, not ours; the date and the copyist are the note's suggestions and are not adopted. One constraint follows from a dated source, but only conditionally: Œuvres XIV, Avertissement pp. 5–8, says the manuscript Huygens sent Van Schooten on 20 April 1656 probably lacked prop. IX, which he wrote after Carcavy's reply of early October 1656. If the leaves depend on Huygens at all, they depend on the text as it stood after October 1656. That dependence is itself an inference from the collation, not a fact on the leaf. Nothing on the leaves names Huygens, Pascal, Fermat, de Méré or Des Billettes.",
+    literature: [
+      "Delisle, Catalogue des manuscrits des fonds Libri et Barrois (1888), p. 167, no. CXXIII « Nouv. acq. franc. 5176 (Libri, 1848) » — read (archive.org full text). It describes « Huit feuillets réunis par Libri sous le titre de « Pascal, autographes et copies ». — Calcul des probabilités. « Règles auxquelles se peuvent rapporter les paris » » and the incipits of the pieces of hand D. It does not mention Huygens.",
+      "BnF Archives et manuscrits, notice NAF 5176 (ark:/12148/cc408093) — read. Two sub-units, « Fol. 1 · Notes du Père Mersenne, se rapportant principalement à la théorie de la lumière » and « Fol. 31 · Notes réunies par Libri sous le titre de « Pascal, autographes et copies » ». Only bibliography: Delisle p. 167. No mention of Huygens.",
+      "Huygens, Œuvres complètes XIV (1920), « Van rekeningh in spelen van geluck / Du calcul dans les jeux de hasard », Avertissement and text — read on DBNL (huyg003oeuv14_01_0001 to _0005, _0063, _0066), and searched for Billettes, 5176, Libri, Mersenne and « traduction française ». The only French translations mentioned are modern (Gallas 1898, and the edition's own). No manuscript French version is recorded.",
+      "Persée, search « Des Billettes Huygens » — result titles only. Among them are R. Taton, « Tableau chronologique sommaire de la vie et des travaux scientifiques de Pascal », Revue d'histoire des sciences 15 (1962), and a review (Annales ESC 18, 1963) of P. Costabel, Leibniz et la dynamique (1960), which says Costabel identified Des Billettes's hand in copies kept at the Académie des sciences. Neither is read on the question: the 1962 article's text is behind Persée's bot check.",
+      "Not searched, and the first places this can fail: J. Mesnard's edition of Pascal, Œuvres complètes (Desclée de Brouwer, from 1964), whose apparatus on the « règle des partis » is the likeliest printed place for the 1962 note's identification; E. Coumet's work on the partis; de Waard's Correspondance du P. Marin Mersenne for 1656 (not digitised).",
+    ],
+    status: 'candidate',
+    settle:
+      "Read Mesnard's apparatus on the problème des partis and on NAF 5176. If it prints or describes this text as a French Huygens, the entry becomes matched. Independently, identify the 1962 annotator, and compare hand C with the Des Billettes hand Costabel established from the Académie copies.",
+  },
+  {
+    id: 'naf-5176-fermat-material-libri-1848',
+    cote: 'naf-5176',
+    pages: 'views 31–32 (hand A)',
+    kind: 'codicological',
+    claim:
+      "NAF 5176 holds, at views 31–32, a French text of the tangent method by « adæqualité » and a note citing « M. Fermat dans sa derniere let. de Juillet 1638 ». Tannery and Henry, who went through Libri's portfolio no. 1848 in 1888 before it was split, say they found in it only one folder of Fermat pieces, now in NAL 2339. The ellipse-tangent text of view 31 was not found in Œuvres de Fermat I–II by the searches made here.",
+    basis:
+      "View 31: tangent to an ellipse by adequality in species notation (B in G, Aq, « bis »), yielding A = 2BG/(B − G), compared with Apollonius's construction. It closes: « Je pourrois adiouster plusieurs autres exemples tant du 1er que du 2 cas de ma methode … comme de l'invention des centres de gravité, dont j'ay envoyé les exemples à M. Roberval », then announces a « question à soudre » not written there. View 32: the note with « Juillet 1638 », the substitution (BA − BE)/A for x and D − E for y « sans rencontrer jamais une seule asymmetrie », a curve of degree ten, the charge against « M. de Cartes » that his method « s'embarrasse dans les asymmetries » (« page 344. l. 3. »), and four Latin questions (six semicircles; maximum or minimum; the surface of a scalene cone; right triangles in numbers with square area, or proof of impossibility). Tannery–Henry, Œuvres de Fermat I, Avertissement pp. xxi–xxii and n. 2: « on n'a retrouvé, sous le n° 1848 de Libri, qu'une seule chemise de pièces provenant de Fermat ». The pieces of no. 1848 are now in NAL 2339, 2340, 2341 and two NAF numbers, and « celles relatives à Fermat se trouvent dans le premier de ces cinq manuscrits ». The two NAF numbers are OCR'd « 517o, Sl'fi » and « ,jl7.'i, Si7f> » in the two archive.org scans, most likely 5175 and 5176; that reading needs checking on the page. Their piece XXXI (June 1638, Œuvres II, 154–162), known only through Arbogast's transcriptions of « une copie de Mersenne, aujourd'hui perdue », shares the vocabulary of view 32: (BA − BE)/A for x, D − E for y, asymmetries, a page of Descartes's Géométrie, an equation of high degree in x and y. It is not the same text: it cites page 342, its curve is of lower degree, and it closes on the centre of gravity of the parabolic conoid.",
+    ours:
+      "The collation, and nothing more. Whose text view 31 is, and whose note view 32 is, is not claimed. Hand A is Mersenne's only by inference (view 16), the name « Fermat » at view 32 is a doubtful reading, and the same page speaks of « ma methode » and « la ligne que j'appelle B ». Whether Tannery–Henry saw these leaves and judged them not to be Fermat's, or did not see them, cannot be told from their note.",
+    literature: [
+      "Tannery and Henry, Œuvres de Fermat I (1891), Avertissement pp. xxi–xxii and n. 2 — read (archive.org, two OCR copies).",
+      "Œuvres de Fermat II (1894), pièce XXXI « Méthode de maximis et minimis expliquée et envoyée par M. Fermat à M. Descartes », pp. 154–162, and the letter of Descartes of 27 July 1638, p. 163 — read. Œuvres I–II were also searched by keyword for the closing sentences of view 31 (« second cas », « envoyé les exemples », « à soudre », « Pour l'ellipse ») and for the Latin questions (« scaleni », « semicirculi », « area … quadrato »): nothing matching surfaced. The OCR is poor, so this is weak evidence.",
+      "Adam and Tannery, Œuvres de Descartes II — searched by keyword (archive.org OCR) for 5176 and for the four questions: nothing.",
+      "Not searched: Œuvres de Fermat III–IV and the 1922 Supplément; Ch. Henry, Recherches sur les manuscrits de Pierre de Fermat (1880); de Waard's Mersenne correspondence for June–August 1638 (tome VII–VIII), where a copy of this kind would most likely be recorded.",
+    ],
+    status: 'candidate',
+    settle:
+      "Look up NAF 5176 in the index of manuscripts of de Waard's Correspondance du P. Marin Mersenne (tomes VII–VIII) and in the Fermat Supplément of 1922. Separately, read Tannery–Henry's note 2, p. xxii, on paper to fix its two NAF numbers.",
+  },
+  {
+    id: 'naf-5176-frenicle-ellipses',
+    cote: 'naf-5176',
+    pages: 'views 12 R–13 (hand B)',
+    kind: 'codicological',
+    claim:
+      "Hand B's problems 1–8 at views 12 R–13 of NAF 5176 work the question of rational ellipses on a common major axis that Frenicle put to Descartes in 1638–1639 and that Fermat answered in his letter of 25 December 1640. They use Fermat's condition and his very example triangle 29, 21, 20. Neither Adam–Tannery nor the Œuvres de Fermat, as searched here, cite this manuscript for the question.",
+    basis:
+      "The leaves ask for a major axis serving any number of ellipses whose axes and focal distance are integers, and, in problems 5–6, whose focal distance exceeds the minor axis and whose other lines (FO, OB) are rational. They take the major axis as a square, or twice a square, of a hypotenuse so that the perpendicular on the focus is an integer: 578 = 2·17², PH = 64. Problem 7 asks for triangles in which the hypotenuse times the least side exceeds the square of the other side, and takes « AC est 29. KI. 21. et BD. 20 ». Fermat, Œuvres II, p. 216 (letter XLV, 25 December 1640): the question reduces to a number that is hypotenuse to 12 triangles, each such that « la dite hypoténuse ait plus grande proportion au plus grand des deux autres côtés que le dit plus grand au moindre … comme, par exemple, 29, 21, 20 », whose square is the half-axis, « il le faut quarrer, afin que la perpendiculaire sur le foyer soit un nombre entier ». The editors' note there gives Frenicle's conditions: a − c, the minor axis, and the excess over the focal distance of the distance from a focus to the end of the ordinate through the other. Descartes's solution, AT II, 472–473 (9 January 1639), uses other numbers (422500, 42250, 8450, 253500).",
+    ours:
+      "The identification of the problem and the recomputation: every triple and every line on views 12–13 was checked and is right, save a « 6 ellipses » for 8 and an unexplained « 15 et 28 ». The date is the letters', not the leaves'. The leaves are undated and anonymous, and nothing here says whose working they are or when it was done. A word read « Carles » at view 13 (« … de Carles ») may be a proper name. « Cartes » is a possible reading that only the image can settle, and it is not adopted.",
+    literature: [
+      "Œuvres de Fermat II (1894), letter XLV of 25 December 1640, pp. 215–217 and n. 1 — read (archive.org).",
+      "Adam and Tannery, Œuvres de Descartes II, letter CLIII of 9 January 1639, pp. 472–473, and the editors' éclaircissement pp. 478–479 — read (archive.org). The OCR of the whole volume was searched for 5176: nothing.",
+      "Not searched: de Waard's Mersenne correspondence for 1639–1640, where Frenicle's question and any Paris working of it would be recorded; the Frenicle literature.",
+    ],
+    status: 'candidate',
+    settle:
+      "Check de Waard's Correspondance du P. Marin Mersenne (tomes VIII–X) for the Frenicle ellipse question and its manuscript witnesses. If NAF 5176 ff. 3–4 are cited there, the entry becomes matched.",
+  },
+  {
+    id: 'naf-5176-foliation-series',
+    cote: 'naf-5176',
+    pages: 'views 9–51 (the ink series 1–42); view 39 = « Fol. 31 »',
+    kind: 'codicological',
+    claim:
+      "The continuous ink series 1–42 that the three transcriptions read on NAF 5176, and decline to write as foliation because it is penned, is the foliation the BnF catalogue uses. The notice's sub-unit « Fol. 31 », Libri's « Pascal, autographes et copies », falls at view 39, the separator leaf numbered 31 in that series. Delisle's « huit feuillets » for that part are the eight written leaves 32–34 and 38–42 of the series.",
+    basis:
+      "Batch 2's header maps the series: v. 21 = 15, v. 29 = 21, v. 31 = 23, v. 33 = 25, v. 38 = 30, v. 39 = 31 (the modern separator « Pascal / autographe / et copies »), v. 40 = 32. Batch 3 continues 33 (v. 41 R) to 42 (v. 51 R), with 35–37 blank. The 1888 certificate's blank leaves (22, 24, 29, 35, 36) fall on blank leaves of the series, as the transcriptions note. The BnF notice divides the volume at Fol. 1 and Fol. 31. Delisle 1888 counts « huit feuillets » in Libri's Pascal part; the written leaves from 32 to 42 are 32, 33, 34, 38, 39, 40, 41, 42.",
+    ours:
+      "The concordance of the notice's « Fol. 31 » and Delisle's count with the transcriptions' series. No \\folio{} has been written on the strength of it. Delisle's « Seize feuillets écrits par le Père Mersenne » for ff. 1–30 was not reconciled: the series there counts pasted slips and printed figures as leaves, and which sixteen Delisle meant is not established.",
+    literature: [
+      "BnF Archives et manuscrits, notice NAF 5176 — read: sub-units at Fol. 1 and Fol. 31; 42 feuillets; microfilm MF 16621.",
+      "Delisle 1888, p. 167 — read.",
+    ],
+    status: 'candidate',
+    settle:
+      "A person looks at the rectos of views 9–51 for a pencil foliation distinct from the ink series. If there is none, the ink series is the foliation and the three transcriptions can write \\folio{} from it, which would let pieces.json record the two parts at ff. 1–30 and 31–42.",
+  },
+  {
+    id: 'naf-5176-genoese-lottery-odds',
+    cote: 'naf-5176',
+    pages: 'views 49 R–51 L (hand D)',
+    kind: 'mathematical',
+    claim:
+      "Hand D's « Hasard » at views 49–51 of NAF 5176 computes, for a yearly draw of 5 names out of 100 « à Gennes » and bankers paying 20000, 5000, 300 and 4 for one on 5, 4, 3 and 2 hits, the full distribution of hits C(5,k)·C(95,5−k). It writes the binomials as figurate numbers (« triangle de 94 », « tetraedre de 93 », « triangle triangle de 92 ») and justifies them. It then derives the bettor's expected return, 21326600 in 75287520 (about 0.283 per pistole staked). This analysis could not be checked against the literature on the Genoese lotto; the entry claims no priority, the leaf being undated.",
+    basis:
+      "C(100,5) = 75287520 (« multiplier seulement 80 par 97, 98 et 99 »); 475, 44650, 1384150, 15917725 draws with 4, 3, 2, 1 of the five, and a remainder 57940519 = C(95,5) — all right. The sum 1·20000 + 475·5000 + 44650·300 + 1384150·4 = 21326600, set against 75287520 « comme 1 à un peu plus de 3 1/2 », and against it without the 2-hit payment « un peu plus de 4 3/4 » — both right. The « fondement » derives C(95,2) = 94 + 93 + … + 1 by a counting argument. Two intermediate odds are wrong on the leaf, 3764 3/4 for 3764 3/8 and 13 1/2 for 13 1/3. Delisle 1888 already records the piece by its incipit, reading « d'entre les cent sénateurs », which is where the transcription has illegible words.",
+    ours:
+      "The recomputation, the identification of the figurate numbers with binomial coefficients, and the reading of the final comparison as an expected return. The number 100 is taken from the leaf's arithmetic, not from Delisle.",
+    literature: [
+      "Delisle 1888, p. 167 — read: records the piece (« Hasars. C'est la coustume à Gennes d'eslire ou plutost de tirer au sort tous les ans d'entre les cent sénateurs… ») without its content.",
+      "Wikipedia, « Lottery » (English) — read for orientation only: Genoese betting on 5 names drawn from 90 candidates of the Great Council twice a year. Not a source for the history of the probabilistic analysis.",
+      "D. R. Bellhouse, « The Genoese Lottery », Statistical Science 6 (1991), 141–148 — sought on Project Euclid and NOT read: the request was refused. It is the obvious first place to check which early analyses of the Genoese lotto the literature records.",
+      "Not searched: the eighteenth-century analyses usually cited for the lotto (Euler's memoirs on the « loterie génoise », Nicolaus Bernoulli), and any study of Libri's no. 1848.",
+    ],
+    status: 'unsearched',
+    settle:
+      "Read Bellhouse 1991 and the sources it cites for the earliest known computations of lotto odds. Only then can it be said whether an undated seventeenth-century French computation of this kind is recorded. A date for hand D would have to come from elsewhere; the leaf gives none.",
+  },
 ];
