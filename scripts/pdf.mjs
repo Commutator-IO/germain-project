@@ -43,6 +43,8 @@ const BOOK_DIR = resolve(ROOT, 'exercises');
 const BOOK_SOURCE = resolve(BOOK_DIR, 'exercices.fr.tex');
 const BOOK_PREAMBLE = resolve(SOURCE, 'preamble', 'exercices.sty');
 const PREAMBLE = resolve(SOURCE, 'preamble', 'germain.sty');
+// Input by both preambles: the fallback fonts for what Latin Modern lacks.
+const GLYPHS = resolve(SOURCE, 'preamble', 'glyphs.sty');
 const BOOK_PDF = resolve(ROOT, 'public', 'exercises', 'exercices.pdf');
 
 async function has(cmd) {
@@ -115,7 +117,8 @@ async function compileTranscripts(engine, only) {
       // byte-identical file; skipping is what makes `npm run pdf` safe to run
       // after every batch. The preamble counts too: a change of font there
       // changes every PDF, and none of their sources.
-      if ((await mtime(pdf)) > Math.max(await mtime(src), await mtime(PREAMBLE))) continue;
+      const newest = Math.max(await mtime(src), await mtime(PREAMBLE), await mtime(GLYPHS));
+      if ((await mtime(pdf)) > newest) continue;
 
       /**
        * Twice, and the first failure is not reported.
@@ -198,7 +201,7 @@ async function compileBook(engine, source, required) {
     return;
   }
   await mkdir(resolve(BOOK_PDF, '..'), { recursive: true });
-  const newest = Math.max(await mtime(source), await mtime(BOOK_PREAMBLE));
+  const newest = Math.max(await mtime(source), await mtime(BOOK_PREAMBLE), await mtime(GLYPHS));
   if ((await mtime(BOOK_PDF)) > newest) return;
 
   const name = basename(source, '.tex');

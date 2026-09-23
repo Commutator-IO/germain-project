@@ -1,0 +1,121 @@
+% Fallback fonts for the characters Latin Modern does not have.
+%
+% Input by `germain.sty` and `exercices.sty` right after fontspec — a
+% `.sty`, not a `.tex`, because `scripts/pdf.mjs` compiles every `.tex` it
+% finds under `transcripts/` as a document.
+%
+% The text face stays fontspec's default, Latin Modern. What it lacks, XeTeX
+% drops with a line in the log (« Missing character ») and nothing on the page:
+% that is how the Greek words the manuscripts quote, the barred p of per (ꝑ),
+% the looped z (ʒ) and the rest vanished from the PDFs while the HTML reading
+% views, set by the browser, showed them. So each fallback font gets a XeTeX
+% character class, and a run of characters of that class switches the family
+% to the font and back:
+%
+%   CMU Serif           Greek and Greek Extended, ʒ — the same Computer
+%                       Modern design as Latin Modern, with polytonic Greek
+%   Latin Modern Math   ∂ — the glyph the PDFs already print for $\partial$
+%   Junicode            ꝑ, ꝓ, ǂ — the medievalists' font for scribal signs,
+%                       scaled to Latin Modern's x-height; CMU has ǂ but not
+%                       in italic, where the notes that cite it are set
+%
+% Only the family changes: a character in \textit or \textbf keeps its shape
+% and series where the font has one. The transitions to and from every other
+% class carry the tokens that class has towards an ordinary letter, so French
+% spacing before « ; » or inside « » still holds next to a switched character.
+% No grouping, so no brace or \endgroup can come out unbalanced; maths is left
+% alone, since XeTeX inserts nothing there.
+%
+% To cover another character: check that one of the fonts has it (or add a
+% family with \germain@fallback), then give it a \germain@fallbackchars line.
+
+\ProvidesFile{glyphs.sty}[2026/09/23 Fallback fonts for characters Latin Modern lacks]
+
+\makeatletter
+
+\newfontfamily\germainCMUfont{cmun}[
+  Extension=.otf, NFSSFamily=germaincmu,
+  UprightFont=*rm, ItalicFont=*ti, SlantedFont=*sl,
+  BoldFont=*bx, BoldItalicFont=*bi, BoldSlantedFont=*bl]
+% One upright face only: named for every shape so NFSS never substitutes.
+\newfontfamily\germainMathfont{latinmodern-math.otf}[
+  NFSSFamily=germainmath,
+  ItalicFont=latinmodern-math.otf, SlantedFont=latinmodern-math.otf,
+  BoldFont=latinmodern-math.otf, BoldItalicFont=latinmodern-math.otf,
+  BoldSlantedFont=latinmodern-math.otf]
+\newfontfamily\germainJunicodefont{Junicode.ttf}[
+  NFSSFamily=germainjunicode, Scale=MatchLowercase,
+  ItalicFont=Junicode-Italic.ttf, SlantedFont=Junicode-Italic.ttf,
+  BoldFont=Junicode-Bold.ttf, BoldItalicFont=Junicode-BoldItalic.ttf,
+  BoldSlantedFont=Junicode-BoldItalic.ttf]
+
+% \germain@fallback{<NFSS family>} gives the family a character class, and
+% the class a macro, \germain@in<class>, that switches to it.
+\def\germain@fallback#1{%
+  \expandafter\newXeTeXintercharclass\csname germain@class@#1\endcsname
+  \expandafter\edef\csname germain@in\number\csname germain@class@#1\endcsname\endcsname{%
+    \noexpand\edef\noexpand\germain@prev{\noexpand\f@family}%
+    \noexpand\fontfamily{#1}\noexpand\selectfont}}
+% \germain@fallbackchars{<NFSS family>}{<first>}{<last>}: a range of code points.
+\def\germain@fallbackchars#1#2#3{%
+  \@tempcnta=#2\relax
+  \loop
+    \XeTeXcharclass\@tempcnta=\csname germain@class@#1\endcsname
+    \ifnum\@tempcnta<#3\advance\@tempcnta\@ne\repeat}
+
+\germain@fallback{germaincmu}
+\germain@fallbackchars{germaincmu}{"0370}{"03FF}  % Greek and Coptic
+\germain@fallbackchars{germaincmu}{"1F00}{"1FFF}  % Greek Extended
+\germain@fallbackchars{germaincmu}{"0292}{"0292}  % ʒ
+\germain@fallback{germainmath}
+\germain@fallbackchars{germainmath}{"2202}{"2202} % ∂
+\germain@fallback{germainjunicode}
+\germain@fallbackchars{germainjunicode}{"A751}{"A751} % ꝑ
+\germain@fallbackchars{germainjunicode}{"A753}{"A753} % ꝓ
+\germain@fallbackchars{germainjunicode}{"01C2}{"01C2} % ǂ
+
+\def\germain@prev{\rmdefault}
+\def\germain@out{\fontfamily{\germain@prev}\selectfont}
+
+% For every fallback class f and every other class k: f→k leaves the font and
+% then does what an ordinary letter followed by k would; k→f does what k
+% followed by an ordinary letter would, then enters it. Between two fallback
+% classes, leave one and enter the other.
+\def\germain@join{%
+  \XeTeXinterchartokenstate=\@ne
+  \@tempcntb=\z@
+  \loop
+    \ifcsname germain@in\number\@tempcntb\endcsname
+      \germain@joinclass
+    \fi
+    \ifnum\@tempcntb<4095\advance\@tempcntb\@ne\repeat}
+\def\germain@joinclass{%
+  \@tempcnta=\z@
+  \germain@joinloop}
+\def\germain@joinloop{%
+  \ifnum\@tempcnta=\@tempcntb\else
+    \ifcsname germain@in\number\@tempcnta\endcsname
+      \edef\germain@tmp{\noexpand\germain@out
+        \expandafter\noexpand\csname germain@in\number\@tempcnta\endcsname}%
+      \XeTeXinterchartoks\@tempcntb\@tempcnta=\expandafter{\germain@tmp}%
+    \else
+      \toks@=\expandafter{\the\XeTeXinterchartoks\z@\@tempcnta}%
+      \edef\germain@tmp{\noexpand\germain@out\the\toks@}%
+      \XeTeXinterchartoks\@tempcntb\@tempcnta=\expandafter{\germain@tmp}%
+      \toks@=\expandafter{\the\XeTeXinterchartoks\@tempcnta\z@}%
+      \edef\germain@tmp{\the\toks@
+        \expandafter\noexpand\csname germain@in\number\@tempcntb\endcsname}%
+      \XeTeXinterchartoks\@tempcnta\@tempcntb=\expandafter{\germain@tmp}%
+    \fi
+  \fi
+  \ifnum\@tempcnta<4095
+    \advance\@tempcnta\@ne
+    \expandafter\germain@joinloop
+  \fi}
+% babel-french sets its own classes, and saves and restores the interchar
+% state, each time a language is selected: join again after it does.
+\addto\extrasfrench{\germain@join}
+\@ifundefined{extrasenglish}{}{\addto\extrasenglish{\germain@join}}
+\AtBeginDocument{\germain@join}
+
+\makeatother
