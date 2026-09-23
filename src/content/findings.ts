@@ -578,25 +578,38 @@ export const FINDINGS: Finding[] = [
   // that was not attempted; what was searched was reached directly — the BnF OAI
   // record, the full texts of Adam and Tannery tomes I–III on French Wikisource,
   // Crossref, and the OEIS. Paywalled and undigitised sources are named as NOT read.
+  // Re-check, 23 September 2026, same model, all three batches and the reading read
+  // whole first. The web-search tool again answered HTTP 403; Gallica's SRU search
+  // reset the connection; the Google Books API was over its daily quota; HathiTrust
+  // full-text search answered with a bot challenge, which was not attempted; OpenAlex
+  // search was paused. Reached and searched in full text: on archive.org, Tannery and
+  // Henry, Œuvres de Fermat t. II (oeuvresdefermat02ferm), de Waard, Correspondance du
+  // P. Marin Mersenne t. V (correspondancedu0005paul), Mersenne's Cogitata
+  // physico-mathematica 1644 (fmarinimersennic00mers) and Novarum observationum 1647
+  // (novarvmobservati00mers), Favaro's Opere di Galileo XVIII–XX (agh6462.0018–0020);
+  // the BnF Archives et manuscrits notice ark:/12148/cc43548k; van der Miesen 2021 on
+  // OAPEN; Gominet-Brun 2022 (Mosaïque). The OCR of these texts was searched, so a
+  // number or a word the OCR mangled can have been missed.
   {
     id: 'fr-12357-ink-foliation',
     cote: 'fr-12357',
     pages: 'views 3–56 (ff. 1–26)',
     kind: 'codicological',
     claim:
-      "In Français 12357 the fine ink figure at the top right of each recto is the library's foliation: the BnF record places the music tables « en tête du volume (fol. 1-2) », which are views 3–5, and the series reads 3 at view 6 and runs to 26 at view 55. From f. 3 to f. 15, f. Nr is view 2N; the fold-out leaf (view 32) and the two loose slips (views 34, 49) are not counted; the Paris academy's letter of 1643 is ff. 25r–26r, views 53–55. No source searched cites any folio of the volume.",
+      "In Français 12357 the fine ink figure at the top right of each recto is the library's foliation: the BnF record places the music tables « en tête du volume (fol. 1-2) », which are views 3–5, and the series reads 3 at view 6 and runs to 26 at view 55. From f. 3 to f. 15, f. Nr is view 2N; the fold-out leaf (view 32) and the two loose slips (views 34, 49) are not counted; the Paris academy's letter of 1643 is ff. 25r–26r, views 53–55. The literature already cites the volume by this foliation.",
     basis:
-      "The three transcriptions read, one per recto and none on a verso: 3 (v. 6), 5 (v. 10), 6 (v. 12), 7 (v. 14), 8 (v. 16), 9 (v. 18), 10 (v. 20), 11 (v. 22), 12 (v. 24), 13 (v. 26), 14 (v. 28), 15 (v. 30), 16 (v. 33), 17 (v. 36), 18 (v. 38), 19 (v. 40), 20 (v. 42), 21 (v. 44), 22 (v. 46), 23 (v. 48), 24 (v. 51), 25 (v. 53), 26 (v. 55, underlined). The librarian's certificate on view 2 reads « Volume de 26 Feuillets 3 Août 1894 », and the BnF record gives 26 feuillets. The record's « fol. 1-2 » for the tables « des consonnes et des dissonances » and the « Disposition des tons et semi-tons » matches the plate of view 3 and the keyboard leaf of views 4–5, the leaves just before the « 3 » of view 6.",
+      "The three transcriptions read, one per recto and none on a verso: 3 (v. 6), 5 (v. 10), 6 (v. 12), 7 (v. 14), 8 (v. 16), 9 (v. 18), 10 (v. 20), 11 (v. 22), 12 (v. 24), 13 (v. 26), 14 (v. 28), 15 (v. 30), 16 (v. 33), 17 (v. 36), 18 (v. 38), 19 (v. 40), 20 (v. 42), 21 (v. 44), 22 (v. 46), 23 (v. 48), 24 (v. 51), 25 (v. 53), 26 (v. 55, underlined). The librarian's certificate on view 2 reads « Volume de 26 Feuillets 3 Août 1894 », and the BnF record gives 26 feuillets. The record's « fol. 1-2 » for the tables « des consonnes et des dissonances » and the « Disposition des tons et semi-tons » matches the plate of view 3 and the keyboard leaf of views 4–5, the leaves just before the « 3 » of view 6. Three printed folio citations land where the series puts them: fol. 10r at the foot (view 20, the remark on p. 111 of the book of songs), fol. 13r (view 26, the remark on p. 145 with Le Maire's syllables), and fol. 25 for the Latin piece (view 53).",
     ours:
-      'The concordance, and only that. The transcriptions deliberately wrote no \\folio{} because the series is in ink and not in the pale pencil this project takes for the library\'s foliation; they flagged it for a human look. The « (4 » in the title line of view 8, in a heavier stroke, is taken here as f. 4 on the strength of the series, which is an inference.',
+      'The view-by-view concordance, and only that. The transcriptions deliberately wrote no \\folio{} because the series is in ink and not in the pale pencil this project takes for the library\'s foliation; they flagged it for a human look. The « (4 » in the title line of view 8, in a heavier stroke, is taken here as f. 4 on the strength of the series, which is an inference that no printed citation tests.',
     literature: [
-      'BnF, OAI-PMH record oai:bnf.fr:gallica/ark:/12148/btv1b90609195 — read, 22 September 2026: title, « Papier. - 26 feuillets. - 330 × 220 mm », « On a joint en tête du volume (fol. 1-2) des tables des « consonnes » et des « dissonances », et une « Dispositions des tons et semi-tons » musicaux », and « Contient : Academia Parisiensis … 1643 » with no folio.',
-      'BnF Archives et manuscrits, notice ark:/12148/cc43548k — NOT read: the server refused the request (HTTP 403).',
-      'Crossref, searched for studies of the volume and of Mersenne\'s annotated Harmonie: nothing surfaced that cites Français 12357 by folio (see fr-12357-copy-of-annotations for what surfaced).',
+      'BnF, OAI-PMH record oai:bnf.fr:gallica/ark:/12148/btv1b90609195 — read, 22 September 2026: title, « Papier. - 26 feuillets. - 330 × 220 mm », the tables at « fol. 1-2 », and the 1643 piece with no folio.',
+      'BnF Archives et manuscrits, notice ark:/12148/cc43548k — read, 23 September 2026 (refused with HTTP 403 the day before): it describes the Latin piece as a sub-unit headed « Fol. 25 », which is view 53 and the ink « 25 »; it also says the Gallica images were made from the substitute microfilm (MF 33771), not from the volume.',
+      'de Waard, Correspondance du P. Marin Mersenne, t. V (1959), full text on archive.org — read in the relevant passages: in the notes to letter 422 (Mersenne to Peiresc, about 20 April 1635), p. 139, footnote 1, the note on p. 111 of the book of songs is located in « f. fr. 12357 » at fol. 10 recto, at the foot; in the notes to letter 444 (Villiers to Mersenne, 10 June 1635), p. 236, footnote 3, the note on p. 145 is located at fol. 13 recto. Both agree with the ink series (views 20 and 26).',
+      'Crossref, 22 September 2026, searched for studies of the volume and of Mersenne\'s annotated Harmonie: nothing surfaced that cites Français 12357 by folio; de Waard does, and Crossref does not index his notes.',
     ],
-    status: 'candidate',
+    status: 'matched',
     settle:
-      'A look at views 6, 8 and 55 beside the leaves in the reading room, or against the notice ark:/12148/cc43548k if it gives a fuller foliation, decides whether the ink series is the library\'s count; if it is, the \\folio{} marks can be written and pieces.json can carry the 1643 letter as ff. 25r–26r.',
+      "Nothing further is needed to use the series: de Waard in 1959 and the BnF notice cite this volume by it. What is still open is only whether the « (4 » of view 8 is f. 4 and whether views 32, 34 and 49 were left uncounted, which one look at the leaves settles; the \\folio{} marks can then be written and pieces.json can carry the 1643 piece as ff. 25r–26r.",
   },
   {
     id: 'fr-12357-academy-letter-1643',
@@ -608,12 +621,14 @@ export const FINDINGS: Finding[] = [
     basis:
       "The date is on the leaf, underlined (view 55). The objections cite pages 2–3, 17, 23, 28, 42, 50, 54, 70, 73, 103, 166, 236, 280 and 288 of « dialogorum libri », and the piece ends with two requests: the weight and size of the flasks with which Galileo weighed air, and his treatise on the force of percussion. The subjects — strength of large machines, the vacuum and suction pumps, the wheel of Aristotle, Archimedes' burning mirrors, drawn gold wire, gold strings, the beam as a lever, the isochronism of pendulums, inclined planes, projectiles — are those of the Discorsi of 1638; that identification is the reading's, the leaf saying only « dialogorum libri ».",
     ours:
-      "The identification with the Discorsi, and the modern verdicts on the objections given in the modernised reading. The piece names no author and none is proposed; it is in the copy's hand. The name: the transcription reads « Santininum », the BnF record « Sanctininum »; the leaf should settle it. That Galileo died in January 1642 is general knowledge, not the leaf's.",
+      "The identification with the Discorsi, and the modern verdicts on the objections given in the modernised reading. The piece names no author and none is proposed; it is in the copy's hand. The name: the transcription reads « Santininum », the BnF record « Sanctininum »; the leaf should settle it. That the Genoese geometer is Antonio Santini is Favaro's index (Opere XX), applied here to the leaf's « D. Santininum » by this entry. That Galileo died in January 1642 is general knowledge, not the leaf's.",
     literature: [
-      'BnF OAI record for btv1b90609195 — read: « Contient : Academia Parisiensis viros clarissimos Galilæi familiares et amicos lyncæos precatur, uti sequentibus in Dialogorum libros notis respondeant... et ad eximium geometram Genuensem D. Sanctininum mittant,... 1643 ». So the piece is catalogued; the claim is only about its text and its use.',
-      'Adam and Tannery, Œuvres de Descartes, tomes I–III, full text on French Wikisource — searched for « Santin », « Academia Parisiensis »: nothing.',
-      'Crossref, searched « Mersenne Galileo Discorsi objections 1643 », « Mersenne Santini Genoa Galileo »: surfaced, NOT read — Raphael, « Galileo\'s Discorsi and Mersenne\'s Nouvelles pensées », Nuncius 2008; Lewis, « Mersenne as Translator and Interpreter of the Works of Galileo », MLN 2012; Vergara Caffarelli, « Marin Mersenne… », in Galileo Galilei and Motion, 2009.',
-      'NOT searched, and the first place this fails: de Waard et al., Correspondance du P. Marin Mersenne, tome XII (1643), not reachable online from here; and the Edizione Nazionale of Galileo\'s Opere (Favaro), vol. XIX, for posthumous papers and letters to his circle.',
+      'BnF OAI record for btv1b90609195 and the Archives et manuscrits notice ark:/12148/cc43548k — read: the piece is catalogued by its incipit, at « Fol. 25 », with no reference to an edition. So the piece is known to the catalogue; the claim is only about its text and its use.',
+      'Favaro, Le Opere di Galileo Galilei, Edizione Nazionale, vols. XVIII (correspondence 1639–1642), XIX (documents) and XX (supplement and indexes), archive.org OCR — searched for « Santini », « Sanctinin », « Academia Parisiensis », « Parisiensis », « lyncaeos », « Lutetiae », « precatur », « dialogorum libros »: the piece is not there. Vol. XVIII prints Mersenne\'s letter to Galileo of 1 May 1640 (p. 187), which already asks for the treatise on percussion; the index of vol. XX, under Mersenne and under Antonio Santini, lists nothing that answers to the 1643 piece.',
+      'Mersenne, Cogitata physico-mathematica (1644) and Novarum observationum tomus III (1647), archive.org OCR — searched for « Santin », « Sanctin », « Genuens », « Academia Parisiensis »: nothing.',
+      'Adam and Tannery, Œuvres de Descartes, tomes I–III, full text on French Wikisource, 22 September 2026 — searched for « Santin », « Academia Parisiensis »: nothing; French Wikisource search, 23 September, for « Academia Parisiensis » and « Santini Galilée 1643 »: nothing relevant.',
+      'Crossref — surfaced, NOT read: Raphael, « Galileo\'s Discorsi and Mersenne\'s Nouvelles pensées », Nuncius 2008; Lewis, « Mersenne as Translator and Interpreter of the Works of Galileo », MLN 2012; Vergara Caffarelli, « Marin Mersenne… », in Galileo Galilei and Motion, 2009.',
+      'NOT reached, and still the first place this fails: de Waard et al., Correspondance du P. Marin Mersenne, t. XII (1643). Only t. V is open on archive.org; t. V shows that de Waard used this manuscript (see fr-12357-copy-of-annotations), so t. XII may well print or cite the piece from it.',
     ],
     status: 'candidate',
     settle:
@@ -625,19 +640,21 @@ export const FINDINGS: Finding[] = [
     pages: 'views 8–52',
     kind: 'codicological',
     claim:
-      "Français 12357 is a copy, in one anonymous hand, of Mersenne's marginal and flyleaf notes to his Harmonie universelle, keyed page by page and treatise by treatise, with three passages that name « le P. Mersenne » in the third person and one that corrects him. Whether the literature on Mersenne's own annotated copy collates this manuscript with it was not established; nothing found here cites it.",
+      "Français 12357 is a copy, in one anonymous hand, of Mersenne's marginal and flyleaf notes to his own Harmonie universelle, keyed page by page and treatise by treatise, with three passages that name « le P. Mersenne » in the third person and one that corrects him.",
     basis:
       "The title at the head of view 8 says the remarks are copied « ainsy qu'il les avoit escrites de sa main a la marge et aux feuillets blancs deuant et derriere dud. liure ». Each remark opens with a page of the book and a place on it (« p. 94 au commencemt », « p. 189. prop. XVme »), and the copy's running titles name thirteen treatises in the book's order. The third-person passages are on views 10 (« la voix du P. Mersenne »), 11 (« les experiences du pere Mersenne ») and 45 (three magic sums « selon le pere mersenne, mais il est faux »). The copy's own first person (« j'ay trouvé par la pompe Aeolipile ») is kept elsewhere.",
     ours:
-      "The reading of the copy, and the observation that it is not uniformly in Mersenne's voice. Nothing is attributed to the copyist or to an intermediate owner. That Mersenne's annotated exemplar survives and was published in facsimile in 1963 is this edition's knowledge, not verified here; the Crossref records below show only that a 1963 edition introduced by Lesure exists.",
+      "The reading of the copy, and the observation that it is not uniformly in Mersenne's voice; the literature found here says nothing of the third-person passages. Nothing is attributed to the copyist or to an intermediate owner.",
     literature: [
-      'Crossref, « Mersenne Harmonie universelle annotated copy marginal notes » and the French equivalent — surfaced, NOT read: Lenneberg\'s review of the 1963 edition (Lesure), Notes, DOI 10.2307/894839; Verchaly\'s review, Revue de musicologie 1964, DOI 10.2307/927541; « Appendix A », in Marin Mersenne and the Study of Harmony (2025), DOI 10.2307/jj.26844242.13; Gominet-Brun, L\'Harmonie universelle du Père Marin Mersenne : musique et théologie au XVIIe siècle.',
-      'BnF OAI record — read: it names the volume\'s title, the tables of ff. 1–2 and the 1643 letter, and says nothing of how the copy relates to the annotated exemplar.',
-      'NOT searched: Lesure\'s introduction to the 1963 facsimile, which is where a collation or a mention of this copy would most likely be.',
+      'de Waard, Correspondance du P. Marin Mersenne, t. V (1959), archive.org full text — read in the relevant passages. Notes to letter 422 (Mersenne to Peiresc, about 20 April 1635), pp. 138–140: de Waard quotes the note Mersenne wrote on p. 111 of the book of songs in his own copy, which he places at the Bibliothèque du Conservatoire des Arts et Métiers, and says in footnote 1, p. 139, that the copy of all these notes is Bibl. nat. f. fr. 12357, the passage being at fol. 10 recto; he also lists the long notes on pp. 111, 113, 131, 135, 144, 146, 152 and 154 of that book, which are the copy\'s remarks on views 20–24, and identifies the « gros volume manuscrit » of the same note (view 20) as Bibl. nat. f. fr. 24256, a table of the permutations of eight notes from the Minimes. Notes to letter 444 (Villiers to Mersenne, 10 June 1635), p. 236: he prints Mersenne\'s ink note on Le Maire\'s seven syllables from the Arts et Métiers copy and says in footnotes 2–3 that these notes are gathered, in copy, in f. fr. 12357, this one at fol. 13 recto (view 26). The statement that the volume copies the annotated exemplaire is therefore in print since 1959, with folio references.',
+      'van der Miesen, « “Unbelievably hard work”: Marin Mersenne\'s Harmonie universelle at the printers », in Early Printed Music and Material Culture in Central and Western Europe (Routledge, 2021, open access), ch. 10 — read on OAPEN: Mersenne\'s own copy, full of alterations, is cited from Lesure\'s introduction to the 1963 facsimile, pp. v–viii; the chapter mentions no copy of the notes and calls for a study of the surviving annotated copies.',
+      'Gominet-Brun, « Musique et physique dans l\'Harmonie universelle de Marin Mersenne (1636) », Mosaïque 18 (2022) — read: cites the CNRS edition, says nothing of the annotated copy or of this manuscript.',
+      'Crossref, 22 September 2026 — surfaced, NOT read: Lenneberg\'s review of the 1963 edition (Lesure), Notes, DOI 10.2307/894839; Verchaly\'s review, Revue de musicologie 1964, DOI 10.2307/927541; « Appendix A », in Marin Mersenne and the Study of Harmony (2025), DOI 10.2307/jj.26844242.13; Fabbri, « Genesis of Mersenne\'s Harmonie universelle: the manuscript Livre de la nature des sons », Nuncius 2007, DOI 10.1163/221058707x00558 (surfaced 23 September).',
+      'NOT read: Lesure\'s introduction to the 1963 facsimile of the Arts et Métiers copy. Archive.org holds vol. 1 of that facsimile (bwb_S0-EBU-560_1) only as a restricted lending item, and its text file answered HTTP 500.',
     ],
-    status: 'unsearched',
+    status: 'matched',
     settle:
-      "Read Lesure's introduction to the 1963 facsimile and the 2025 appendix. Then collate a sample of the copy's remarks — e.g. those on pp. 94–98 of the book of movement, with the spiral — against the marginalia in the facsimile: the collation decides whether the copy is complete, whether it adds notes the exemplar lost, and whose the third-person remarks are.",
+      "Nothing is needed for the identification. Two things remain for a person with the 1963 facsimile of the Arts et Métiers copy: collate a sample of the copy (views 20 and 26, which de Waard quotes from the autograph, are the first) to see whether the copy is complete and exact, and look at the places of the three third-person passages, which decide whether they are the copyist's or already in the exemplaire.",
   },
   {
     id: 'fr-12357-spiral-area-table',
@@ -645,19 +662,20 @@ export const FINDINGS: Finding[] = [
     pages: 'views 11–14',
     kind: 'mathematical',
     claim:
-      'The unlabelled two-column table in the left margin of view 14 — 3|1, 15|8, 14|9, 45|32, 33|25, 91|72, 60|49, 153|128 — gives exactly 2n²/((n+1)(2n+1)) for n = 1 to 8, the ratio of the area of the spiral r = R(1 − (θ/Θ)ⁿ) to its sector. It is the answer, for the first eight degrees, to the general problem the facing remark poses on p. 98 of the book (Archimedes\' spiral n = 1, Galileo\'s n = 2). No source searched here records that the Mersenne material gives this general rule.',
+      'The unlabelled two-column table in the left margin of view 14 — 3|1, 15|8, 14|9, 45|32, 33|25, 91|72, 60|49, 153|128 — gives exactly 2n²/((n+1)(2n+1)) for n = 1 to 8, the ratio of the area of the spiral r = R(1 − (θ/Θ)ⁿ) to its sector. It is the answer, for the first eight degrees, to the general problem the facing remark poses on p. 98 of the book (Archimedes\' spiral n = 1, Galileo\'s n = 2).',
     basis:
       "View 14, marginal table, with the remark « p. 98 au commencemt »: « donner la regle generale pr trouuer la proportion du cercle BCX, à l'espace compris de la droite AB, et de ces helices AFB de quelque degré qu'elle puisse estre. la premiere helice est d'Archimede, et la seconde celle de Galilée pr les graues ». Views 11–12 prove the case n = 2, the 8/15, by inscribed and circumscribed sectors, and check the needed lemma on sums of squares for sixteen divisions in a marginal table whose every number is right (592008·15 = 8880120 > 8388608 > 7897080 = 526472·15).",
     ours:
-      "The identification of the table — the transcription describes it without interpreting it, and the copy never refers to it — and the general formula. Also ours: the proof of the lemma for all n (Σ(n²−k²)² from k=1 to n equals 8n⁵/15 − n⁴/2 − n/30), which the leaf says only one « will find true by looking for the demonstration ». The remark's own wording of the problem puts the powers on the wrong side (it would give 1/6 for Galileo's spiral); the table agrees with the 8/15 of p. 94, not with the wording. The copy ties the n = 2 spiral to Fermat (« l'helice descritte par mr fermat », view 12); nothing is claimed about who found the table.",
+      "The identification of the table — the transcription describes it without interpreting it, and the copy never refers to it — and the general formula, which Tannery and Henry had already given (see literature). Also ours: the proof of the lemma for all n (Σ(n²−k²)² from k=1 to n equals 8n⁵/15 − n⁴/2 − n/30), which the leaf says only one « will find true by looking for the demonstration ». The remark's own wording of the problem puts the powers on the wrong side (it would give 1/6 for Galileo's spiral); the table agrees with the 8/15 of p. 94, not with the wording. The copy ties the n = 2 spiral to Fermat (« l'helice descritte par mr fermat », view 12); nothing is claimed about who found the table.",
     literature: [
-      'Adam and Tannery, Œuvres de Descartes, tomes I–III, full text on French Wikisource — searched for « spirale », « hélice », « 8 à 15 »: only unrelated hits (the helix and quadratrix, AT I; Roberval\'s spiral and parabola, AT III).',
-      'Crossref — surfaced, NOT read (paywalled): Koyré, A Documentary History of the Problem of Fall from Kepler to Newton (1955), chapter III, « Galileo, Mersenne, Fermat », DOI 10.70249/9798893984019-003. It is the first place the 8/15 and any general rule would be recorded.',
-      'NOT searched: Fermat, Œuvres (Tannery and Henry), his letters of 1636 on the spiral of fall; the printed Harmonie universelle, Traité du mouvement, pp. 94–98; de Waard\'s Correspondance, tomes V–VI (1635–37).',
+      'Mersenne, Cogitata physico-mathematica (Paris, 1644), Ballistica, Corollarium II « De linea helice a motu lapidis a terrae circumferentia ad eius centrum descripta », pp. 57–58 (running heads as the archive.org OCR of the Toronto copy reads them) — read: it prints the general problem in the words of the p. 98 remark, then « eight helices » with the same eight pairs as the leaf, the larger number for the circle, the smaller for the helix; then the beginning of the proof that the path is no circle (views 12–13), breaking off because the printer lacked the characters, the statement on the pole, the equator and the cone (view 13), and Fermat\'s 8 to 15.',
+      'Tannery and Henry, Œuvres de Fermat, t. II (1894), pieces IIIa and IIIb under the letter of 3 June 1636, pp. 15–17, archive.org full text — read: they reprint that Cogitata passage and the Harmonie\'s Nouvelles observations, 1st obs., p. 2 (the « raison perpétuelle de 15 à 8 » of an unnamed geometer), and in footnote 2, p. 16, say that Mersenne\'s definition does not fit his numbers, that the numbers belong to the spirals (R − ρ)/R = (ω/Ω)ⁿ, and give for these the ratio 2n²/((n+1)(2n+1)). Both the table and the rule, and the inversion in the wording, are therefore in print. Their notes to letters I, 9 (p. 5) and III, 3–4 (pp. 12–13) tie the helix to Fermat and to Galileo\'s semicircle.',
+      'Crossref, 22 September 2026 — surfaced, NOT read (paywalled): Koyré, A Documentary History of the Problem of Fall from Kepler to Newton (1955), ch. III, « Galileo, Mersenne, Fermat », DOI 10.70249/9798893984019-003.',
+      'Adam and Tannery, Œuvres de Descartes, tomes I–III, Wikisource full text, 22 September 2026 — searched for « spirale », « hélice », « 8 à 15 »: only unrelated hits.',
     ],
-    status: 'candidate',
+    status: 'matched',
     settle:
-      "Read Koyré 1955, ch. III, and Fermat's letters to Mersenne on the spiral (Œuvres, t. II). If either gives the area ratio for spirals of any degree, the entry is matched; if they give only the 8/15, the table stands as the only statement of the general rule in the Mersenne material found so far.",
+      "Matched by the Cogitata of 1644 and by Tannery–Henry's note. One point is left that this entry does not claim: the leaf (view 13) carries the algebra in b, e, s of the non-circle proof that the Cogitata left unprinted; whether that part is printed anywhere — de Waard's Correspondance, t. V–VI, or the 1963 facsimile of the annotated copy — was not established.",
   },
   {
     id: 'fr-12357-multiperfect-readings',
@@ -669,11 +687,12 @@ export const FINDINGS: Finding[] = [
     basis:
       'With the transcription\'s 594323 (= 61 · 9743) the product has σ(P)/P ≈ 3.33; the factor needed for σ(P) = 5P must have σ(x)/x = 2391484/1594323, and 2391484 = σ(3¹³). With 1594323 the product (65 digits) is P = 2³¹·3¹³·7⁴·11³·13·17·31·41·43·61·83·163·257·307·331·467·613·1093·2801·65537·547², it is not divisible by 5, and σ(5P) = 6·5P, the « quintuple » the box goes on to claim. 508666803200 has σ/n ≈ 2.51; 518666803200 is 5-perfect. The amicable text: « Si sumatur binarius… partes aliquotae dabunt alium numerum… Sic assumendo tres numeros, 2, 8 et 64 … 284: 220, 18416: 17296, 9437056: 9363584 » (view 44).',
     ours:
-      'The two corrections, which rest on computation and on the OEIS list; both may be the copyist\'s slips rather than misreadings, and the leaf must decide. The matching to Descartes. Neither correction has been made in the transcription.',
+      'The two corrections, which rest on computation and on the OEIS list; both may be the copyist\'s slips rather than misreadings, and the leaf must decide. The matching to Descartes. Neither correction has been made in the transcription. The transcription marks one digit of 4\\uncertain{0}3031236608 as doubtful; the reading settles it as 0 by computation.',
     literature: [
       'Adam and Tannery, Œuvres de Descartes, tome II, full text on French Wikisource — read in the relevant passages: letter to Mersenne of 31 March 1638, p. 93–94, gives the same Latin rule and the same three pairs (« aliaque infinita possunt inueniri eodem modo »); p. 168, the 3-perfect 1476304896 « compose de 3, 11, 43, 127 & 8192 »; letter CXXX, 13 July 1638, pp. 250–251, the 4-perfect 30240, 32760, 23569920, 142990848, 66433720320, 403031236608 and the 5-perfect 14182439040.',
       'OEIS A046060 (5-perfect numbers), b-file read 22 September 2026: term 1 = 14182439040, term 3 = 518666803200, term 45 = the corrected product; 30823866178560 is also a term.',
-      'Adam and Tannery tomes I and III, Wikisource full text — searched for 2801, 65537, 299209, 1594323, 2147483648: nothing, so the 5-perfect product itself was not traced to a letter.',
+      'Mersenne, Novarum observationum tomus III (1647), Reflexiones physico-mathematicae, c. p. 156 (archive.org OCR) — read, 23 September 2026: the sixth number whose aliquot parts are double, 51001180160, with the remark that there may be no other; the rule that a « double » not divisible by 3, multiplied by 3, gives a « triple », and likewise with 5; and counts of the multiply perfect numbers then found (34, 18, 10, 7, no septuple). The box of view 44 states the same rule.',
+      'Adam and Tannery tomes I and III, Wikisource full text; Tannery–Henry, Œuvres de Fermat t. II; Mersenne\'s Cogitata (1644) and Novarum observationum (1647), archive.org OCR — searched for 2801, 65537, 299209, 1594323, 594323, 2147483648, 508666803200, 518666803200: nothing, so the 5-perfect product itself was not traced to a printed source.',
     ],
     status: 'matched',
     settle:
@@ -685,18 +704,20 @@ export const FINDINGS: Finding[] = [
     pages: 'view 46',
     kind: 'historical',
     claim:
-      'The copy cites « une lettre de mr fermat au pere mersenne du pr [ ] Apvril 1640 » for a bordered magic square of 14 (rows summing to 1379) from which two borders can be removed to leave a magic square of 10 (985) and two more to leave one of 6 (591). The square itself is not copied. Whether this letter, with this date and this square, is in the Fermat literature was not established here.',
+      'The copy cites « une lettre de mr fermat au pere mersenne du pr [ ] Apvril 1640 » for a bordered magic square of 14 (rows summing to 1379) from which two borders can be removed to leave a magic square of 10 (985) and two more to leave one of 6 (591). The square itself is not copied. The letter, its date and its square are in the Fermat literature.',
     basis:
       'View 46, first paragraph, continuing the catchword « voyez le quarré » of view 45. The three sums are right for concentric squares built from 1 to 196: k·197/2 for k = 14, 10, 6.',
     ours:
-      'Only the check of the three sums. The day of the month is the transcription\'s inference: « du pr » is read as « premier », and the sign after it, at the gutter, is underlined and not read. Nothing is claimed about priority for bordered squares.',
+      'Only the check of the three sums. The transcription reads « du pr » as « premier » and leaves the underlined sign after it, at the gutter, unread (\\ill{}); the printed date agrees with « premier » and says nothing of that sign. Nothing is claimed about priority for bordered squares.',
     literature: [
-      'NOT searched: Fermat, Œuvres (Tannery and Henry), t. II, letters to Mersenne of spring 1640; de Waard, Correspondance du P. Marin Mersenne, t. IX (1640). Neither was reachable from here, and web search was refused.',
-      'Adam and Tannery, Œuvres de Descartes, tomes I–III, Wikisource — searched for « quarré magique » with 1379: nothing.',
+      'Tannery and Henry, Œuvres de Fermat, t. II (1894), letter XXXVIII bis, Fermat to Mersenne, dated Sunday 1 April 1640, from p. 186, from the Varia of 1679, pp. 173–176 — read in the archive.org full text: in § 5 (pp. 188–189) Fermat answers Frenicle\'s challenge by sending a square of 14 from which two borders, then two more, can be removed, the remainders staying magic, and gives the sums 1379, 985 and 591. The editors print the square and note that it is published there for the first time. The leaf\'s date, its « premier », its square of 14 and its three sums all agree.',
+      'Same volume, letter XXXVIII (Frenicle to Mersenne, March 1640), § 3, p. 183: the challenge itself, a square of 22 that stays magic when three, then two, then one border are removed, leaving 16, 12 and 10 — the specification of the square of 22 on view 45 of this volume. Letter XL (Fermat to Mersenne, June 1640), § 3, p. 196, with the square on the next page: Fermat sends only the inner square of 12 and promises the rest; the editors note that the letter so announced is missing. Compared in the OCR only: the numbers of Fermat\'s printed 12 (361–366, 338–345, 318–321…) do not match the inner 12 of view 45 (241, 450, 449, 448, 40, 41, 42…), so view 45 is not a copy of Fermat\'s June square as printed. Recorded for whoever takes up view 45; nothing is claimed here about whose it is.',
+      'Adam and Tannery, Œuvres de Descartes, tomes I–III, Wikisource, 22 September 2026 — searched for « quarré magique » with 1379: nothing.',
+      'NOT reached: de Waard, Correspondance du P. Marin Mersenne, t. IX (1640), which would give the letter from its manuscript source.',
     ],
-    status: 'unsearched',
+    status: 'matched',
     settle:
-      "Find a Fermat letter to Mersenne of April 1640 on magic squares in Fermat's Œuvres, t. II, or in de Waard, t. IX; compare its date and its square of 14. If it is there with 1 April, the entry is matched and the leaf's unread sign is settled by it.",
+      "Nothing is needed for the letter. The one open point is the unread underlined sign after « du pr » on view 46; the printed date cannot read it, only the leaf can.",
   },
   {
     id: 'fr-12357-dated-experiments',
@@ -704,18 +725,22 @@ export const FINDINGS: Finding[] = [
     pages: 'views 39 and 41',
     kind: 'historical',
     claim:
-      "The copied remarks date two of Mersenne's experiments in the first person: arquebus ranges measured « le dernier jr de may 1636. sur la Foire a St. Clou » (view 39, the year doubtful), and « le 4e Juin 1638 j'ay trouvé que le plomb est a la vessie, coe 1890 a 1 » (view 41). Whether either date is recorded in Mersenne's printed works or in the literature on his experiments was not established here.",
+      "The copied remarks date two of Mersenne's experiments in the first person: arquebus ranges measured « le dernier jr de may 1636. sur la Foire a St. Clou » (view 39, the year doubtful), and « le 4e Juin 1638 j'ay trouvé que le plomb est a la vessie, coe 1890 a 1 » (view 41). Neither date was found in Mersenne's printed Latin works of 1644 and 1647 or in the other printed sources searched here.",
     basis:
       "View 39, remark on p. 42 of De l'utilité de l'harmonie, « au 3me advertissemt »: the date stands at the head of three measurements (vertical to horizontal range as 14 to 5, the ball's time of flight between 22 and 26 seconds, the great range on the Marne near Lagny about 330 toises). View 41, remark « Ibid. coroll. 8 » of the Nouvelles observations: the 1890 to 1 ratio also appears undated a few lines above (« ie trouve qu'il est seulemt 1890 fois plus pesant qu'elle »).",
     ours:
-      'Nothing but the reading. The transcription marks 1636 as doubtful (the first digit small and ill-formed); this entry claims no date the leaf does not give.',
+      'Nothing but the reading. The transcription marks 1636 as doubtful (\\uncertain{1636}, the first digit small and ill-formed); on view 41 a word after the 1638 date is under a blot (\\ill{}), not the date itself. This entry claims no date the leaf does not give. That the view 41 remark cites the « reflexions physicomathematiques … chap. 22 » (the title of a part of the Novarum observationum of 1647) suggests the notes were still being written late; that is an inference and dates nothing.',
     literature: [
-      'Crossref — surfaced, NOT read: Meli, « The Role of Numerical Tables in Galileo and Mersenne », Perspectives on Science 2004, DOI 10.1162/106361404323119862, the likeliest modern study to discuss dated experiments.',
-      "NOT searched: Mersenne's Cogitata physico-mathematica (1644) and Novarum observationum tomus III (1647), which the copy cites by title (« l'hydraulique pneumatique », « les reflexions physicomathematiques »); de Waard, Correspondance, tomes V–VII.",
+      'Mersenne, Cogitata physico-mathematica (1644), archive.org OCR of the Toronto copy — searched for 1890, 1636, 1638, « Iunii », « Maii », « Clodoald », « Latiniac », « Matron », 330: nothing dated. In the Hydraulica pneumatica, prop. XXIII (page not fixed from the OCR), a carp\'s bladder is said to be at least 1800 times lighter than lead of the same size, undated and with 1800, not 1890.',
+      'Mersenne, Novarum observationum tomus III (1647), archive.org OCR — searched for the same terms: nothing dated; the carp\'s bladder is compared with air, not with lead, in the Reflexiones physico-mathematicae, pp. 185–186.',
+      'Tannery–Henry, Œuvres de Fermat, t. II, and de Waard, Correspondance, t. V (1635), archive.org full text — searched for « Clou », « Cloud », « Lagny », « vessie », 1890: nothing.',
+      'French Wikisource search (Adam and Tannery among others), 23 September 2026, for « vessie plomb Mersenne », « arquebuse Lagny », « Sainct Clou arquebuse », « portée arquebuse 45 degrez Mersenne »: nothing relevant.',
+      'Crossref — surfaced, NOT read: Meli, « The Role of Numerical Tables in Galileo and Mersenne », Perspectives on Science 2004, DOI 10.1162/106361404323119862.',
+      'NOT reached: de Waard, Correspondance, tomes VI (1636–37) and VII (1638), where a date in a letter would most likely be; the printed Harmonie universelle, Traité de l\'utilité, p. 42, 3e advertissement (Gallica unreachable); the 1963 facsimile of the annotated copy, which would show whether the dates are Mersenne\'s own marginalia.',
     ],
-    status: 'unsearched',
+    status: 'candidate',
     settle:
-      "Search the Cogitata of 1644 (Hydraulica pneumatica, Ballistica) for the 1890 ratio and the Saint-Cloud ranges, and de Waard's indexes for June 1638 and May 1636. A printed date agreeing with the leaf makes the entry matched; a different one is worth recording.",
+      "Search de Waard's Correspondance, tomes VI and VII, for May 1636 at Saint-Cloud and 4 June 1638, and read the Harmonie's Utilité, p. 42, for what the printed advertissement already says of the Lagny range. A printed date agreeing with the leaf makes the entry matched; a different one is worth recording.",
   },
   // fr-9115 — Français 9115 (Sophie Germain), /find-novelty, 23 September 2026, on
   // claude-opus-5-5, the model that wrote transcripts/fr-9115/fr-9115.modern.tex.
