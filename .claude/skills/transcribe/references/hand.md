@@ -345,6 +345,123 @@ The critique of Euler ends in draft at v. 308 (§ 24); a fair redaction of it fo
 | « S » heading a boundary term | her summation sign along the contour, kept as S | Français 9115, v. 433–437 |
 | « = … » inside a formula | a factor she leaves blank, as in the Euler copy's « y = . . . . » | Français 9115, v. 422, 436–440 |
 
+### Français 9115, v. 441–750 (batches 23–38)
+
+The prize memoir on elastic surfaces runs on in fair copy to page (165), view 592, with slips and notes bound among its leaves; then other copies and drafts of its opening; then heat, after Fourier (v. 630–720); number theory on slips (v. 704–730), including Manuscript C at v. 708–710; and reading notes from the Turin memoirs to the end. The top-right ink series runs 216 (v. 441) to 372 (v. 748), one per physical leaf, slips and most blank leaves included, and ends at the catalogue's count, with a struck « 373 » on the last leaf. It meets the folios the literature cites (348–349 for Manuscript C). Still penned: still no \folio{} until a human has looked; but the case for it is now strong.
+
+- **The square plate compared with Chladni** (v. 441–459, pages (35)–(53) of the prize-memoir draft): § 4 goes on with N.o 11 (v. 443) and N.o 12 (v. 457), and headings « 1.ere / 2.eme / 3.eme valeur de l'angle ω » (v. 443, 444, 447). She numbers her plate figures « par le chiffre que porte son analogue dans l'ouvrage de M.r Chladni » (v. 445): figs 64, 65, 67, 67 b, 67 c, 72 a, 72 b, 73 a, 73 b are Chladni's numbers, not hers. Figures drawn on the page (v. 445, 448): square abcd, dotted « lignes fictives », small i at their intersections, e at the origin of a nodal curve.
+- **Notes that run from the interline into the left margin** (v. 457, 458): read the two as one note; place it where it begins.
+- **The foot of a page cancelled in several drafts at once** (v. 444, 459): lines struck one by one, additions above them struck in turn, a fragment left unstruck. Transcribe line by line, and give the kept sense in the note.
+- **The mirror can have holes**: an archive run can give up on views after repeated timeouts and move on (v. 449–454, 456, 460 and 570–573 were missing on 23 September 2026). Check that every view of the batch is on disk before starting; re-run `npm run archive -- fr-9115 --batches N` for the batch rather than fetching by hand.
+- **Her description of the square-plate figures runs value by value** (v. 443–460): headings « 1.ere » to « 5.eme valeur de l'angle ω », then « Les cas suivans n'ayant pas été soumis à l'experience, je ne m'y arreterai pas » (v. 456).
+- **A figure cancelled by hatching** (v. 450): a square covered with long parallel oblique strokes beside a kept figure; do not read the lines under the hatching as part of the kept figure.
+- **Her corrections can leave a sentence without its verb** (v. 456, 460): transcribe the struck word and say so in a note; do not supply the verb.
+- **A stray fragment inside the memoir** (v. 465, ink 228): a torn piece in a larger hand, no pagination, two theorems on the measure of curvature (the sum and the difference of the inverse principal radii). Her pagination jumps straight over it from (58) to (59): read the page number before assuming a leaf belongs to the text around it.
+- **Her own experiment** (v. 463–464): a quarter of a square plate cut away while it showed Chladni's fig. 64; cited as « fig. A » « ci-joint », which is not bound here.
+- **The integrals are labelled by the paragraphs of batch 21**: (C) N.o 3, (D) N.o 4, (E) and (F) N.o 4, (G) N.o 5. Use them to settle a blotted label.
+- **Additions in a finer pen that fill the foot of a page and climb into the left margin** (v. 462, 480): one continuous addition, read in the order of the syntax, not line by line.
+- **The square plates against Chladni** (v. 481–500, pp. (73)–(90)): nodal figures by Chladni's figure numbers (63–88, a/b) against integrals (G), (H), (I); then N.o 16 « comparaison des sons » (v. 491): tables of theoretical numbers against « la table p. 152 du traité d'acoustique », intervals judged in tones and commas (128/125); his mode notation « m/n », whose numbers are m²+n².
+- **Her pagination drops its parentheses on some pages** (« 80 » v. 490, « 86 » v. 496) and strikes only some odd pages: the run is still continuous.
+- **A slip of pure calculation inside the fair copy** (v. 483, ink 237 between pages (74) and (75), as the slip at v. 428 took 210): variation of ∬ ds/(1/R+1/R′)²; it belongs to no page and has pen trials in its margin.
+- **A new section at v. 508**: « §.5 Comparaison dela théorie à l'experience dans le cas des plaques rectangulaires differentes du quarré », N.o 17, then N.o 18 « surfaces periodiques » at v. 514. The previous page (v. 507) ends two thirds down on « Je vais m'occuper àprésent des plaques rectangulaires… »: a page that stops short announces a section, not a lost leaf.
+- **Chladni's figure notation** « 0|4 », « 5|0 », « 1|4 » (lines in each direction) and his figure numbers with a letter (« 163b », « 175b ») recur throughout; the letter is underlined on the leaf and set in \emph{}, because text-mode \underline fails the TEI check.
+- **Leaves mounted low on their guard sheets** (v. 505, 509, 513, 517): a blank band a quarter of the view high above the text is the guard sheet, not a blank top of the page.
+- **Her formula for the sounds of rectangular plates** is (t²n²+s²m²)/t², with a long s: at v. 524 the s reads like « l » or « 1 » and the t like a crossed f; v. 534 settles it (« En fesant donc s=2 t=1 », giving n²+4m²).
+- **Chladni's cases** are written as two figures with an oblique stroke (« 2/3 »: transverse/longitudinal nodal lines); set $2|3$. **Notes** are written name + octave number, the ♯ or ♭ small above between them (« si♭3 + aigu »); set si$^{\flat}$3. A figure in parentheses after a note — « sol (1) » — is the octave number, not a footnote call (v. 540).
+- **A large pen cross cancels a whole paragraph** (the quotation of Chladni's N.o 124, v. 536), with guillemets repeated at the head of each quoted line.
+- **Numbers she brings to a common denominator** (985 and 960, 15777 and 16384 …) check against her tables (v. 525–526, 534): use them to confirm a blotted digit, and say so in a note.
+- **The plate memoir runs on to page (139)**: (131)–(137) at v. 541–548 (wax-loaded square plates, then « § 7 », the circular plate), pages (138)–(139) at v. 557, 560 after calculation slips bound in between. **Two consecutive pages both read (132)** (v. 542, 543): record, do not correct.
+- **Slips on one mount are numbered out of order**: v. 553 carries 273 on the upper slip and 272 on the lower. Read each slip's number; do not number by position. **A blank leaf carries the ink series** (271, v. 551): one number per physical leaf.
+- **A foreign draft among the fair copy**: v. 549, heat in a cylinder (dv/dr + (h/k)v = 0 (D), terms K/CD(…)), fast hand, two inks, trial words in the margin; ink 270, no page number. The sheet does not say whose argument it is.
+- **Note names followed by a figure** (« re 1 », « sol 1 »): the octave number, counted from the tuning-fork la as she defines it at v. 539. Not a note call.
+- **Slips bound between the pages, each with its own ink number and no page number**: 276 (v. 561), 277 (v. 563, « addition a la p. 140 », written on both sides), 283 (v. 575). The text of the memoir runs over them: (139)→(140) across v. 561–564, (149)→(150) across v. 575.
+- **A first-person note on Fourier and Poisson** (v. 575, ink 283): a different paper and a faster, heavier hand — « Le mauvais état de ma santé m'a empêché d'étudier le mémoire que Monsieur fourier a eu la complaisance de me prêter », Poisson's reply to Navier « Dans le N.o d'aout », « cette hypothese que j'ai donné en 1811 ». Record it as a note bound in, not as a page of the memoir.
+- **Raw `&` and text-mode `\{` in a \note break the checks**: `&c` stops tectonic (« Misplaced alignment tab »), so write `\&c`; a text-mode `\{` fails check-tei, so write `$\{$`.
+- **The long memoir ends at v. 592**, page (165): « Je termine enfin ce long mémoire … les conditions du programme proposé par la classe. » Pages (154)–(165) on the ring and the curved lamina against Euler and Chladni, and her own experiments on glass laminae (N.o 25).
+- **Her struck page numbers follow the recto, not the page parity**: at v. 581–592 the struck numbers are (154), (156) … (164), on the rectos that carry the ink series — the alternation of v. 429–439 with the parity reversed.
+- **A second fair copy of the prize memoir's opening** (v. 593–595), in a larger, very regular hand, keeping some old lines hatched with small crosses letter by letter; **v. 594 = v. 593** (same ink 292); a third, rougher state of the same opening at v. 598. **Three runs of pagination meet in twenty views** ((154)–(165), (2), (23)–(24), (61)): read the head of every page before assuming a sentence runs on.
+- **Integral labels made of small crosses** (v. 600): « (++) » — keep them as drawn; they are not the lettered labels (C)–(I). **A long, fine oblique stroke across two paragraphs** cancels them: say so in a note rather than wrapping them in \struck{}.
+- **Two redactions of the square-plate comparison.** Pages (62)–(72) at v. 601–613 repeat, often word for word, pages (78)–(90) at v. 488–500: same N.o 16 « comparaison des sons », same tables against Chladni's « table p. 152 ». A reading doubtful in one can be compared with the other; transcribe each as it stands.
+- **Her « N.o 13 », « N.o 15 », « N.o 16 »**: the 1 is a short low stroke after the « o » and reads as a comma (« N.o,6 »).
+- **A single long thin oblique line across a paragraph** (v. 601–607) is a cancellation, matching table lines struck horizontally; note it, do not wrap the prose in \struck{}.
+- **From v. 614 a different paper and a faster hand** (ink 301–304, no pagination): drafts of a memoir addressed to « la classe », citing « le programme publié par la classe » and Biot. The writer's participles switch gender within two leaves: « parvenu », « heureux » (v. 618) against « privée », « résolue » (v. 620). Transcribe as written.
+- **Another draft of the prize memoir's opening** (v. 620–626, pages 1–4): experiments on square glass plates bent into cylindrical surfaces, and a cross-reference « N.o 11 de mon memoire pour 1813 » (v. 626) — the one dated reference to her own memoir so far.
+- **Heat leaves bound out of order** (v. 630–640): her pages 6, 7, 7, 8; v. 639 (6) runs on to v. 636 (7), which ends in the margin with « Retournez » (continued on its back, v. 637). Follow the sentence, not the view order.
+- **A leaf numbered twice** (v. 638–639): « 312 » struck on the written side, « 313 » on the blank side. **A number on a strip of another leaf**: the « 8 » at the top of v. 637 and 639 belongs to v. 635, whose head shows above them.
+- **A marginal note that continues the text**: a « × » at the end of the line calls it, the note opens with the same sign and runs down the margin (v. 636).
+- **Heat in a sphere and a cylinder** (v. 641–660), in spherical coordinates, and one leaf on the curvature of the sphere (v. 650). **A titled heat memoir, bound out of order** (v. 652–660): « Équation du mouvement varié dela chaleur dans une sphère solide échauffée d'une manière entièrement arbitraire » opens on the leaf inked 320 (v. 652) and runs on 321 (v. 654) and 324 (v. 660), ending on (A); a « Note » (322, v. 656), which cites « l'équation (A) p. 3 », and a blank leaf are bound between them. Follow the equation letters, not the binding.
+- **Poisson named** (v. 656): « cette maniere dela déduire est plus simple que celle imployée par M^r Poisson ».
+- **The ink number can stand on the blank side of a slip** (315, v. 642), with the calculation on the other view showing through reversed. Blank leaves carry the series too (318, 323).
+- **Pen trials in the margin**, written vertically (« S », « Sphere », « Somme », an isolated « 4 »): not text, not numbers.
+- **Heat, after Fourier** (v. 662–680): the sphere heated arbitrarily (v. 662–670), then « Equation du mouvement varié dela chaleur dans un cylindre solide », articles 1–4 (v. 672–680). She cites the « théorie dela chaleur » by page (p. 110, 141, 348) and article (N.o 104, 111, 119, 120), and « M.r Fourier » by name. Equations lettered (A), (A)′, (B), (C), (D).
+- **A second, small struck figure beside the ink number**, in the text's ink: 4, 5?, 6, 7, –, 9 on v. 662–670 and –, 2, –, 4?, 5? on v. 672–680. With « 1 » at v. 652 and a struck 2 at v. 654, this reads as her own pagination of each heat memoir, struck when the ink series was added — an inference; zoom each one before recording it.
+- **Letters inked out solid** — full black teardrops where a letter should be (v. 664, 670): her own deletions, not blots; \ill{}, not a reading from the calculation.
+- **A written verso struck with two long crossing strokes** (v. 679) can hold the end of a later stage of the argument, not the continuation of its recto.
+- **Two copies of the cylinder heat piece.** « Equation du mouvement varié dela chaleur dans un cylindre solide » is a draft at v. 672–691, her pages (1)–10 struck obliquely beside the ink number; a second, uncorrected copy follows at v. 692–695 (« 2 », « 7 », « 8 »), recopying the draft almost word for word. Compare the two before correcting either.
+- **Lines struck on a back can reappear unstruck on a later leaf** (v. 679 → v. 684).
+- **Order indices written as exponents**: g, g′, g², … g^β and A^β, B^β are orders, not powers; set them as written.
+- Her references to Fourier are « N.o 306 », « l'art 308 », « art 245 p 277 dela Théorie dela chaleur » (v. 682–690): not folios.
+- **Manuscript C is at v. 708–710**: the leaf inked 348 (recto v. 708, verso v. 709) and the leaf inked 349 (v. 710; back v. 711 blank). A fair copy, one text over three pages: « Théorème » 2z^{2n} = y^{2n} + x^{2n} impossible for n odd > 1, extended to 2z^{2(n+2d)}, then « Pour toute valeur de n plus grande que l'unité … Z^{2n} = X^{2n} + Y^{2n} ». The ink series meets here exactly the folios Laubenbacher–Pengelley cite (348r–349r).
+- **Two leaves on one mounting sheet, each with its own ink number** (353 + 354 at v. 718, 355 + 356 at v. 720): one view, two numbers. **A back written upside down** (v. 719): rotate 180° before reading.
+- **« l'auteur »** in her number-theory notes (v. 718–722) is someone she is reading; leaf 355 names « Gauss … (N.o 125) »; her « P. 125 », « N.o 139 », « § 146 », « §126 », « P. 116 » (v. 722–728) match the Disquisitiones article numbers — an inference, not a reading.
+- Her « plus petit que » is a small Z on its side (set $<$); her congruence sign has three bars (set \equiv), distinct from her two-stroke =.
+- **Slips mounted two to a guard, numbered bottom to top** (v. 726, 728): the upper slip carries the higher ink number (361 over 360). Read each figure; do not assume top-down order. **A leaf with no ink number** (v. 732–733, blank on both sides): the series skips this blank leaf, unlike 318, 323 and 271.
+- **She cancels her own proof between the lines** (v. 730, Fermat primes as primitive roots): « cela est faux parcequ'il suffit que … ≡ x² », in a finer pen. Transcribe it as an addition; do not strike the argument it condemns.
+- **« Retournez », underlined**, at the foot of a slip (v. 722): her turn-over mark.
+- **The volume ends on reading notes, not on her own mathematics** (v. 740–749): French extracts from the Turin memoirs, vols. 3–4 — Euler on vibrating strings, Lagrange on separated differential equations, Condorcet and Lagrange on variations, Lagrange on motion towards fixed centres, and Lagrange on x² − ay² = 1 (v. 749, the only number theory at the end, copied — not Manuscript C). The copyist's own remarks are in square brackets. Nothing on the leaves settles whether the regular slanted hand is hers.
+- **The top-right ink series ends at 372 (v. 748)**, exactly the catalogue's « 372 feuillets »; on the blank last leaf (v. 750) an ink « 373 » is struck through with two strokes. Strong evidence that the series is the library's foliation — still penned, so still no \folio{} until a human looks. No « Volume de N feuillets » certificate on the last view.
+
+| The stroke looks like | A pass settled on | Where |
+|---|---|---|
+| « N » with « ta » raised, before a margin note beside a figure | « N.ta » (nota), as at v. 334 | Français 9115, v. 445 |
+| « Chladni » run into « M.r » as « Mr Ch » with a looped C | Chladni, confirmed by « traité d'acoustique » on the same line | Français 9115, v. 457–459 |
+| a heavy blotted capital in parentheses after « l'intégrale » | (D), the integral of N.o 4 | Français 9115, v. 472–478 |
+| a tall-legged capital like « M » or « rr » in the sound formulas | Π, Π′, Π″ (Π = 1 − p²); the π of the sines is smaller | Français 9115, v. 476–479 |
+| « h » in figure and paragraph numbers | her 4: « 64 », « 74a », « N.o 4 », « h−p² » for 4−p² | Français 9115, v. 463, 473, 477 |
+| « P » like an 8 before a page number | P., as in « P. 143 des leçons » | Français 9115, v. 477 |
+| « Lulr », « Lobr » in « au sens d'… » | Euler, with her L-shaped E | Français 9115, v. 467–468 |
+| « 11″ » or « 17 » after a bracket, in −m²(…−2) | Π″, her tall-legged Π, distinct from the π of the cosines | Français 9115, v. 481, 485 |
+| « N.o 5 » in a reference | N.o 15, the 1 reduced to a dot; the facing table settles it | Français 9115, v. 493 |
+| a word written under the line and circled | an addition placed without a caret | Français 9115, v. 493 |
+| « 96 » in « 16.25+96 » | her 3 with a closed loop; the calculation needs 36. Kept as written, with a note | Français 9115, v. 518 |
+| « ton » and « son » | the same initial in this hand; « ton » where an interval is meant, « son » where a particular sound is | Français 9115, v. 501–520 |
+| a bold « B » written over another capital in « B = 0 » | B corrected; the paired coefficient is the looped $\mathcal{A}$ | Français 9115, v. 508, 514 |
+| notes of music « sol♯3 », « fa♯5 », « ut.6 » | Chladni's pitch names with octave numbers, set with $^{\sharp}$ | Français 9115, v. 501, 502 |
+| « Chaldni » | her own metathesis of Chladni, once; kept, flagged uncertain | Français 9115, v. 536 |
+| « 16 » before an underlined title | offered as « § 6 », with doubt | Français 9115, v. 538 |
+| « 4 tons », « 45 » with the 4 like « b » or « h » | 4 | Français 9115, v. 531, 540 |
+| a small « n » with a bar and a stop, « n.nx/A » | π: sin(πnx/A) | Français 9115, v. 555 |
+| a « D » with a dot before « 7 » at a section heading | § 7 | Français 9115, v. 548 |
+| the middle figure of her page numbers, like 9 | 3: (131)…(139) | Français 9115, v. 541–560 |
+| a looped letter like « 8 » for the angle | θ (« si on prend θ = 0 ») | Français 9115, v. 561, 563 |
+| « p. 160 » heading a slip | « p. 140 », the 4 formed like b; the page (140) that follows settles it | Français 9115, v. 563 |
+| « tome + de pétersbourg » | tome X, the Roman numeral as a cross | Français 9115, v. 569 |
+| « b 38 » after « p » | 438, her 4 formed like b (doubtful) | Français 9115, v. 575 |
+| a « 8 » followed by a point before an underlined heading | §, as the draft's « § 1 » at v. 399 | Français 9115, v. 595 |
+| « ett » | « est » | Français 9115, v. 586 |
+| « ramimé » | « ramené », by the sense | Français 9115, v. 581 |
+| « ou valevoir » | « on va le voir », run together (doubtful) | Français 9115, v. 614 |
+| « naudz » | « nœuds », the œ opened and her small x ending | Français 9115, v. 616 |
+| a tall Π with unequal legs, read « 17 » | π, in π/2 | Français 9115, v. 632 |
+| a « 7 » crossed by an oblique stroke beside the ink number | her page number, struck, not a mark | Français 9115, v. 632, 636 |
+| small pen drawings of flowers and leaves in the margin | hers, doodles beside a calculation; described in a note | Français 9115, v. 632 |
+| a capital dome on a bar in « K/c.D » | set D, as at v. 549; could be Ω | Français 9115, v. 646–660 |
+| « implogée », « spérique » | her spellings of « employée », « sphérique » | Français 9115, v. 656 |
+| a long horizontal through « deux », « faut », « par » | her joining stroke, not a deletion; the sense needs the word | Français 9115, v. 676, 678 |
+| a looped letter or « z » after « page » or before t² | 2, her 2 formed like her z | Français 9115, v. 662, 670 |
+| « indequeroit » | indiqueroit, her i formed like an e (offered \uncertain) | Français 9115, v. 686 |
+| a looped letter with a stem in exponents and indices | β, as in the elasticity leaves | Français 9115, v. 682–688 |
+| « Lk+3 », « Ln+1 » | 4k+3, 4n+1: her L-shaped 4 | Français 9115, v. 718–720 |
+| a ζ-like figure in the ink series (« 3ζ2 ») | 5 (352, 353 …) | Français 9115, v. 712–720 |
+| a capital U looped like υ beside plain u, v | U and V distinct from u and v; keep them apart | Français 9115, v. 708–709 |
+| an = sign with three strokes | ≡, distinct from her two-stroke = | Français 9115, v. 722–730 |
+| a capital R between two letters (a R a′) | « is a residue of », kept as R | Français 9115, v. 730 |
+| « 8n+5 » beside 24n+17 | 8n+1; her 1 is a short s-shaped stroke | Français 9115, v. 723–724 |
+| a looped figure like « A » or « L » in page and volume numbers | 4 (« T. 4 », « 4me V. », « P. 46 »), read with doubt | Français 9115, v. 743, 746, 749 |
+| « 11 » in sin 11x | π, drawn as two minims | Français 9115, v. 742 |
+| « d » with a loop, beside a plain d | the variation sign δ, distinct from d | Français 9115, v. 746 |
+| a colon after Γ or Δ | Euler's function sign, Γ:(x+ct), kept | Français 9115, v. 741 |
+
 ---
 
 ## Other mathematicians
