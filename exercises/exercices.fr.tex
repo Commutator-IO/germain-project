@@ -2957,6 +2957,1210 @@ $0 < t < \frac{\pi}{2}$.
 \end{enumerate}
 \end{solution}
 
+\section*{Sophie Germain : surfaces élastiques, chaleur et nombres (Français 9115)}
+\chapitre{fr-9115}
+
+Français 9115, « Recueil de dissertations et problèmes mathématiques et physiques »,
+relie sans ordre de sujet ni de date sept cent cinquante vues de papiers de Sophie
+Germain, avec quelques pièces d'autres mains. La plus grande masse porte sur les
+vibrations des plaques élastiques : une « Exposition des principes qui servent de base
+à la théorie des surfaces élastiques », un « Mémoire sur la courbure des surfaces » et
+ses brouillons, une copie latine du mémoire d'Euler de 1779 sur les lames et les
+verges vibrantes, une critique de son paragraphe 47, et un long mémoire de cent
+soixante-cinq pages « sur la question proposée par la première classe de
+l'Institut », qui confronte ses sons à ceux que Chladni a notés. Viennent ensuite une
+quarantaine de pages sur la chaleur dans la sphère, le cône et le cylindre, puis de
+l'arithmétique : les trois pages que la littérature appelle le « manuscrit C », des
+notes sur les résidus quadratiques, et des extraits des Mémoires de Turin. Les
+exercices suivent cet ordre. Le volume se prête plus que d'autres aux niveaux de
+licence : ses feuillets écrivent l'équation des plaques, des séries de Bessel qu'ils ne
+nomment pas, des équations aux fréquences transcendantes ; les solutions disent
+chaque fois ce que la théorie actuelle en retient.
+
+\begin{exercice}{Les sections d'une surface, de la formule d'Euler à la sphère de courbure moyenne}{L1}
+\manuscrit{fr-9115}{15}{19}
+\manuscrit{fr-9115}{64}{75}
+\manuscrit{fr-9115}{88}{88}
+\manuscrit{fr-9115}{114}{114}
+L'Exposition des principes et le Mémoire sur la courbure des surfaces font reposer la
+théorie des plaques sur la somme $\frac1\rho + \frac1{\rho'}$ des courbures
+principales. On place l'origine en un point $O$ d'une surface régulière, le plan
+tangent horizontal et les axes des $x$ et des $y$ selon les directions principales, de
+sorte que, près de $O$, la surface est $z = \frac12(k_1x^2 + k_2y^2) + o(x^2+y^2)$ ;
+on note $H = \frac12(k_1+k_2)$ la courbure moyenne. On rappelle qu'une courbe plane
+$w = f(t)$ avec $f(0) = f'(0) = 0$ a pour courbure $f''(0)$ au point $t = 0$.
+\begin{enumerate}
+\item La section normale de direction $(\cos\varphi, \sin\varphi)$ est la courbe
+  découpée par le plan vertical de cette direction. Montrer que sa courbure en $O$ est
+  $\kappa(\varphi) = k_1\cos^2\varphi + k_2\sin^2\varphi$ (formule d'Euler), puis que
+  $\kappa(\varphi) = H + \frac{k_1-k_2}{2}\cos 2\varphi$. En déduire que deux sections
+  normales perpendiculaires ont une somme de courbures égale à $2H$, et que la section
+  à $45^\circ$ des directions principales a la courbure $H$.
+\item Pour écarter les sections obliques, l'Exposition (vue 15) soutient que deux
+  sections de même tangente, dont les plans font avec la normale les angles $\theta$
+  et $\pi - \theta$, ont des courbures $\frac{\cos\theta}{\rho_p}$ et
+  $\frac{\cos(\pi-\theta)}{\rho_p}$, de somme nulle ($\rho_p$ étant le rayon de la
+  section normale). Sur une sphère de rayon $R$, calculer le rayon du cercle que
+  découpe un plan passant par un point $P$ de la sphère et faisant l'angle $\theta$
+  avec la normale en $P$. Conclure.
+\item Un feuillet de brouillon (vue 114) compare trois sections normales aux angles
+  $A - a$, $A$ et $A + a$ de la direction de plus grande courbure. Démontrer
+  \[
+  \kappa(A-a) + \kappa(A+a) - 2\kappa(A) = -2(k_1-k_2)\sin^2 a\,\cos 2A,
+  \]
+  et en déduire $\kappa(45^\circ - a) + \kappa(45^\circ + a) = k_1 + k_2$ pour tout
+  $a$. Le feuillet en conclut que « la somme des rayons de courbure des deux sections
+  est égale à la somme des rayons de courbure principale ». Est-ce exact ?
+\item Le Mémoire sur la courbure prend sur chaque section normale un arc de longueur
+  $s$ issu de $O$, et appelle « ligne de distance » l'écart de son extrémité au plan
+  tangent. On admet qu'elle vaut $\frac12\kappa(\varphi)s^2$ à l'ordre considéré, et
+  que ces lignes, dressées sur le cercle de rayon $s$ du plan tangent, engendrent une
+  « surface des distances » d'aire $\int_0^{2\pi}\frac12\kappa(\varphi)s^2\cdot
+  s\,d\varphi$. Calculer cette aire, et montrer qu'elle est celle du cylindre droit de
+  rayon $s$ et de hauteur constante $\frac12Hs^2$, que le mémoire attache à la sphère
+  de rayon $\frac1H$. Quelle propriété de $H$ l'égalité des deux aires exprime-t-elle ?
+\item Le mémoire finit sur cet exemple : le cylindre circonscrit à une sphère de rayon
+  $a$ et le quart de la sphère de rayon $2a$ ont « même étendue » et « même courbure
+  moyenne » en tout point. Vérifier.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Dans le plan vertical de direction $(\cos\varphi, \sin\varphi)$, on prend pour
+  abscisse $t$, avec $x = t\cos\varphi$ et $y = t\sin\varphi$ ; la section est
+  $w = \frac12(k_1\cos^2\varphi + k_2\sin^2\varphi)t^2 + o(t^2)$, de courbure
+  $f''(0) = k_1\cos^2\varphi + k_2\sin^2\varphi$. Avec
+  $\cos^2\varphi = \frac{1+\cos2\varphi}{2}$ et $\sin^2\varphi = \frac{1-\cos2\varphi}{2}$,
+  il vient $\kappa(\varphi) = \frac{k_1+k_2}{2} + \frac{k_1-k_2}{2}\cos2\varphi$. Comme
+  $\cos2(\varphi + \frac\pi2) = -\cos2\varphi$, on a
+  $\kappa(\varphi) + \kappa(\varphi + \frac\pi2) = k_1 + k_2 = 2H$ ; et
+  $\cos\frac\pi2 = 0$ donne $\kappa(\frac\pi4) = H$. L'Exposition (vue 16) écrit la
+  formule d'Euler avec le sinus et le cosinus échangés, ce qui ne change pas la somme,
+  seule employée.
+\item Le centre $C$ de la sphère est sur la normale en $P$, à la distance $R$ de $P$ ;
+  la droite $PC$ fait l'angle $\theta$ avec le plan, donc la distance de $C$ au plan
+  vaut $R\sin\theta$, et le cercle de section a pour rayon
+  $\sqrt{R^2 - R^2\sin^2\theta} = R\cos\theta$. Sa courbure est
+  $\frac{1}{R\cos\theta} = \frac{1}{\rho_p\cos\theta}$ : le cosinus est au
+  dénominateur (théorème de Meusnier), et les deux sections inclinées de $\theta$ et
+  de $\pi - \theta$ sont le même cercle, de même courbure. Rien ne se compense ;
+  l'argument du feuillet renverse la relation. Ce qui est vrai, et suffit à sa
+  conclusion, c'est que la courbure d'une section oblique est déterminée par celle de
+  la section normale de même tangente : seules les sections normales portent de
+  l'information.
+\item Par la forme du 1,
+  \[
+  \kappa(A-a) + \kappa(A+a) - 2\kappa(A)
+  = \tfrac{k_1-k_2}{2}\bigl(\cos(2A-2a) + \cos(2A+2a) - 2\cos2A\bigr),
+  \]
+  qui vaut $(k_1-k_2)\cos2A\,(\cos2a - 1)$ puisque $\cos(2A-2a) + \cos(2A+2a) =
+  2\cos2A\cos2a$ ; et $\cos2a - 1 = -2\sin^2a$. Pour $A = 45^\circ$, $\cos2A = 0$, donc
+  $\kappa(45^\circ - a) + \kappa(45^\circ + a) = 2\kappa(45^\circ) = 2H = k_1 + k_2$.
+  L'énoncé est vrai des courbures, non des rayons : pour $k_1 = 2$, $k_2 = 1$ et
+  $a = 0$, les deux rayons valent $\frac1H = \frac23$, de somme $\frac43$, alors que
+  $\frac1{k_1} + \frac1{k_2} = \frac32$.
+\item L'aire vaut $\frac{s^3}{2}\int_0^{2\pi}\kappa(\varphi)\,d\varphi =
+  \frac{s^3}{2}\cdot2\pi H = \pi Hs^3$, puisque $\cos2\varphi$ est d'intégrale nulle
+  sur une période. Le cylindre de rayon $s$ et de hauteur $\frac12Hs^2$ a pour aire
+  latérale $2\pi s\cdot\frac12Hs^2 = \pi Hs^3$. L'égalité dit que
+  $\frac{1}{2\pi}\int_0^{2\pi}\kappa(\varphi)\,d\varphi = H$ : la courbure moyenne est
+  la moyenne des courbures normales dans toutes les directions, ce qui est l'une de
+  ses définitions actuelles, et justifie le nom.
+\item Le cylindre circonscrit à la sphère de rayon $a$ a le rayon $a$ et la hauteur
+  $2a$ : aire latérale $2\pi a\cdot 2a = 4\pi a^2$. Le quart de la sphère de rayon
+  $2a$ a l'aire $\frac14\cdot4\pi(2a)^2 = 4\pi a^2$. Le cylindre a pour courbures
+  principales $\frac1a$ et $0$, donc $H = \frac1{2a}$ ; la sphère de rayon $2a$ a
+  $H = \frac{1}{2a}$. La sphère de courbure moyenne du cylindre de rayon $a$ est bien
+  celle de rayon $2a$.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{La première racine de la verge encastrée, $107^\circ 26'$}{Lycée}
+\manuscrit{fr-9115}{175}{180}
+La copie latine du mémoire d'Euler (vues 144 à 206) traite, dans son « cas III », une
+verge élastique encastrée à un bout et libre à l'autre ; ses sons sont proportionnels
+aux carrés $\omega^2$ des racines de l'équation $\cos\omega\cosh\omega = -1$, où l'on
+note $\cosh x = \frac{e^x + e^{-x}}{2}$. Euler cherche la plus petite racine. Les
+logarithmes sont décimaux, et celui d'un sinus est augmenté de $10$, selon l'usage des
+tables.
+\begin{enumerate}
+\item Montrer que l'équation a une racine dans $]\frac\pi2, \pi[$. En posant
+  $\omega = \frac\pi2 + \varphi$, montrer qu'elle s'écrit
+  $\sin\varphi = \frac{1}{\cosh(\frac\pi2 + \varphi)}$, et que la fonction
+  $g(\varphi) = \sin\varphi - \frac{1}{\cosh(\frac\pi2+\varphi)}$ est strictement
+  croissante sur $[0, \frac\pi2]$ : la racine y est unique.
+\item Euler néglige d'abord $\varphi$ au second membre et résout
+  $\sin\varphi = \frac{1}{\cosh(\pi/2)}$. Calculer $e^{\pi/2}$, $e^{-\pi/2}$ et l'angle
+  obtenu (Euler trouve $23^\circ 29'$). Est-il trop grand ou trop petit ?
+\item Il essaie ensuite $\varphi = 12^\circ$, puis $\varphi = 15^\circ$. Pour
+  $12^\circ$, il trouve $\frac{1}{\cosh(\frac\pi2 + \varphi)} = \frac{1}{3{,}0499}$, de
+  logarithme $9{,}51572$, contre $\log\sin12^\circ = 9{,}31788$. Pour $15^\circ$, il
+  écrit $\log e^{\frac\pi2+\varphi} = 1{,}83259\times0{,}43429 = 0{,}79405$, puis
+  $\frac{1}{\cosh(\frac\pi2+\varphi)} = \frac{1}{3{,}19223}$, de logarithme
+  $9{,}49590$, contre $\log\sin15^\circ = 9{,}41300$. Refaire ces deux calculs.
+  L'erreur éventuelle change-t-elle la conclusion d'Euler, qu'« il faut prendre l'angle
+  plus grand » ?
+\item Déterminer $\varphi$ à la minute près par dichotomie sur $g$, puis la racine
+  $\omega$ en degrés et minutes, et en radians.
+\item Euler prend alors le milieu des deux logarithmes trouvés pour $15^\circ$ comme
+  logarithme de $\sin\varphi$, obtient $\varphi = 16^\circ 33'$, qu'il juge « un peu
+  trop petit », adopte $16^\circ 45'$, soit $\omega = 106^\circ 45'$, et arrondit enfin
+  à $\omega \approx \frac35\pi$. Vérifier $16^\circ 33'$, et comparer $106^\circ 45'$ et
+  $\frac35\pi$ à la racine.
+\item La première racine du cas des deux bouts libres (cas I) est
+  $\omega_1 = 4{,}7300$. Euler en conclut que le son fondamental du cas III est à celui
+  du cas I « comme 4 à 25 ». Calculer le rapport exact, et l'écart en cents (un
+  intervalle de rapport $r$ vaut $1200\log_2 r$ cents).
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item La fonction $f(\omega) = \cos\omega\cosh\omega + 1$ est continue,
+  $f(\frac\pi2) = 1 > 0$ et $f(\pi) = 1 - \cosh\pi = -10{,}59 < 0$ : elle s'annule sur
+  $]\frac\pi2, \pi[$. Comme $\cos(\frac\pi2 + \varphi) = -\sin\varphi$, l'équation
+  devient $\sin\varphi\cosh(\frac\pi2+\varphi) = 1$. Sur $[0, \frac\pi2]$, $\sin$
+  croît, et $\cosh$ croît sur $[\frac\pi2, \pi]$, donc $\frac1{\cosh}$ y décroît :
+  $g$ est strictement croissante, $g(0) < 0 < g(\frac\pi2)$, et la racine est unique.
+\item $e^{\pi/2} = 4{,}8105$ et $e^{-\pi/2} = 0{,}2079$ (Euler : $4{,}8104$ et
+  $0{,}2079$), $\cosh\frac\pi2 = 2{,}5092$, $\sin\varphi = 0{,}39854$ et
+  $\varphi = 23^\circ 29'$ : c'est juste. Cette valeur est trop grande. En effet, en
+  $\varphi_1 = 23^\circ 29'$, $\cosh(\frac\pi2 + \varphi_1) > \cosh\frac\pi2$, donc
+  $g(\varphi_1) > \sin\varphi_1 - \frac{1}{\cosh(\pi/2)} = 0$, et la racine, où $g$
+  s'annule, est plus petite puisque $g$ croît.
+\item Pour $12^\circ = 0{,}20944$ rad : $1{,}78023\times0{,}43429 = 0{,}77314$,
+  $e^{1{,}78023} = 5{,}9313$, $e^{-1{,}78023} = 0{,}1686$, et
+  $\frac{2}{6{,}0999} = \frac{1}{3{,}0499}$, de logarithme $9{,}5157$ ; et
+  $\log\sin12^\circ = 9{,}31788$. Tout est juste. Pour $15^\circ$ :
+  $1{,}83260\times0{,}43429 = 0{,}79588$, et non $0{,}79405$. D'où
+  $e^{1{,}83260} = 6{,}2501$, $e^{-1{,}83260} = 0{,}1600$,
+  $\frac{2}{6{,}4101} = \frac{1}{3{,}2050}$, de logarithme $9{,}49417$ au lieu de
+  $9{,}49590$. Les nombres qui suivent sur la page découlent du produit fautif
+  ($10^{0{,}79405} = 6{,}2238$ et $6{,}2238 + 0{,}16067 = 6{,}38447$, la somme
+  qu'écrit la copie) ; la transcription lit « $6{,}22980$ » pour la première
+  exponentielle, chiffre que cette somme ne permet pas et qui serait à revoir sur
+  l'image. La lecture modernisée tient ces logarithmes pour justes ; le second ne
+  l'est pas. La conclusion ne change pas : $\log\sin15^\circ = 9{,}41300$ reste
+  inférieur à $9{,}49417$, soit $g(15^\circ) = -0{,}053 < 0$, et la racine dépasse
+  $15^\circ$.
+\item $g(15^\circ) < 0 < g(20^\circ)$. En coupant en deux : $g(17{,}5^\circ) > 0$,
+  $g(16{,}25^\circ) < 0$, $g(16{,}875^\circ) < 0$, $g(17{,}19^\circ) < 0$,
+  $g(17{,}34^\circ) < 0$, $g(17{,}42^\circ) < 0$, $g(17{,}46^\circ) > 0$,
+  $g(17{,}44^\circ) > 0$, $g(17{,}43^\circ) < 0$ : la racine est
+  $\varphi = 17{,}436^\circ$, soit $17^\circ 26'$. Donc $\omega = 107^\circ 26'$, soit
+  $1{,}8751$ rad.
+\item $\frac12(9{,}41300 + 9{,}49590) = 9{,}45445$, d'où $\sin\varphi = 0{,}28474$ et
+  $\varphi = 16^\circ 32{,}6'$ : c'est bien $16^\circ 33'$. Avec le logarithme juste,
+  $9{,}49417$, on trouverait $16^\circ 30{,}6'$. Dans les deux cas l'estimation reste
+  loin de la racine, comme Euler le soupçonne, mais sa correction à $16^\circ 45'$ ne
+  suffit pas : $\omega = 106^\circ 45'$ est trop petit de $41'$, alors que
+  $\frac35\pi = 108^\circ$ est trop grand de $34'$ seulement. L'arrondi est plus près
+  de la racine que la valeur calculée.
+\item $\bigl(\frac{4{,}7300}{1{,}8751}\bigr)^2 = 6{,}363$, contre $\frac{25}{4} = 6{,}25$,
+  rapport qui vient de $\omega \approx \frac35\pi$ pour le cas III et
+  $\omega_1 \approx \frac32\pi$ pour le cas I. L'écart vaut
+  $1200\log_2\frac{6{,}363}{6{,}25} = 31$ cents, le tiers d'un demi-ton tempéré.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Une verge ronde équivalente à une verge rectangulaire}{L1}
+\manuscrit{fr-9115}{190}{192}
+Aux paragraphes 45 et 46 de la copie latine, Euler établit que, sous des circonstances
+semblables, les sons de verges d'une même matière sont comme $\frac{c}{a^2}$, $a$ étant
+la longueur et $c$ l'« épaisseur » ; pour une section rectangulaire $ABCD$, $c$ est le
+côté situé dans le plan de la flexion, l'autre « n'entrant pas dans le calcul » ; pour
+une section circulaire de diamètre $AB$, la copie écrit « $c = \frac34AB$ ». On admet la
+loi actuelle : une verge de longueur $a$, de module d'élasticité $E$ et de masse
+volumique $\mu$, dont la section a l'aire $S$ et le moment quadratique
+$I = \iint_{\text{section}} y^2\,dy\,dz$ (l'axe de flexion passant par le centre de la
+section), a des fréquences égales à $\frac{\beta^2}{2\pi a^2}\sqrt{\frac{EI}{\mu S}}$, où
+$\beta$ ne dépend que des conditions aux bouts et du rang du son.
+\begin{enumerate}
+\item Pour une section rectangulaire de côté $c$ dans le plan de flexion et de largeur
+  $\ell$, calculer $I$ et $\sqrt{I/S}$. Retrouver la loi d'Euler, et le fait que $\ell$
+  n'intervient pas.
+\item Pour une section circulaire de diamètre $d$, calculer $I$ en coordonnées
+  polaires, et $\sqrt{I/S}$.
+\item En déduire le côté $c$ de la verge rectangulaire qui, de même longueur et de même
+  matière, rend les mêmes sons qu'une verge ronde de diamètre $d = AB$. Comparer à
+  « $\frac34AB$ », et dire ce que représente $\frac34$.
+\item De combien de cents se tromperait-on sur les sons d'une verge ronde en prenant
+  $c = \frac34AB$ ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $I = \int_{-c/2}^{c/2}y^2\,\ell\,dy = \frac{\ell c^3}{12}$ et $S = \ell c$, d'où
+  $\sqrt{I/S} = \frac{c}{\sqrt{12}}$. Les fréquences sont donc proportionnelles à
+  $\frac{c}{a^2}$ pour une même matière et les mêmes conditions aux bouts : c'est la
+  loi d'Euler. La largeur $\ell$ multiplie à la fois la rigidité $EI$ et la masse
+  linéique $\mu S$, et disparaît du quotient.
+\item $I = \int_0^{2\pi}\int_0^{d/2}(r\sin\theta)^2\,r\,dr\,d\theta =
+  \pi\cdot\frac{(d/2)^4}{4} = \frac{\pi d^4}{64}$, et $S = \frac{\pi d^2}{4}$, d'où
+  $\sqrt{I/S} = \frac d4$.
+\item Il faut $\frac{c}{\sqrt{12}} = \frac d4$, soit
+  $c = \frac{\sqrt{12}}{4}d = \frac{\sqrt3}{2}d \approx 0{,}866\,d$. La valeur
+  $\frac34$ de la copie est celle de $\frac{c^2}{d^2}$ : on a
+  $c^2 = \frac34AB^2$, et non $c = \frac34AB$. La lecture modernisée ne dit pas si
+  l'écart est d'Euler, de l'imprimé ou de la copie, et les feuillets ne permettent pas
+  de le décider.
+\item Avec $c = 0{,}75\,d$ au lieu de $0{,}866\,d$, on multiplie toutes les
+  fréquences par $\frac{0{,}75}{0{,}866} = 0{,}866$ : l'erreur vaut
+  $1200\log_2 0{,}866 = -249$ cents, un ton et quart trop bas.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{La verge appuyée en son milieu : les deux familles de sons}{L2}
+\manuscrit{fr-9115}{192}{202}
+\manuscrit{fr-9115}{320}{334}
+Au paragraphe 47 de son mémoire, Euler appuie une verge, déjà appuyée à ses deux bouts, en un
+point intermédiaire $L$ sur un « stylet ». Avec l'abscisse réduite $u \in [0,1]$ et un
+facteur périodique du temps sous-entendu, l'ordonnée $Y(u)$ vérifie
+$Y'''' = \omega^4Y$ sur chacune des deux portions, les sons étant comme $\omega^2$. Aux
+bouts : $Y = Y'' = 0$. Au stylet, en $u = \lambda$ : $Y = 0$, et $Y$, $Y'$, $Y''$ sont
+continus ; $Y'''$ peut sauter, et son saut mesure la force que le stylet exerce (paragraphe 8
+d'Euler). On prend d'abord $\lambda = \frac12$.
+\begin{enumerate}
+\item Montrer que si $Y$ est une solution, $u \mapsto Y(1-u)$ en est une. En déduire que
+  toute solution est somme d'une solution symétrique ($Y(1-u) = Y(u)$) et d'une
+  solution antisymétrique ($Y(1-u) = -Y(u)$) de même $\omega$.
+\item Solutions antisymétriques. Montrer que $Y''(\frac12) = 0$, que chaque moitié
+  vibre comme une verge appuyée à ses deux bouts, que $\omega = 2k\pi$ et que
+  $Y = \sin\omega u$ sur toute la verge, à un facteur près. Le stylet exerce-t-il une
+  force ?
+\item Au paragraphe 50, Euler écrit $Y = \gamma\sin\omega u$ sur $[0,\frac12]$ et
+  $Y = \gamma'\sin\omega u$ sur $[\frac12, 1]$, avec $\gamma' = -\gamma$. Montrer que
+  c'est impossible pour $\omega = 2\pi$.
+\item Solutions symétriques. Montrer que $Y'(\frac12) = 0$, que chaque moitié vibre
+  comme une verge appuyée à un bout et encastrée à l'autre, et que
+  $\tan\frac\omega2 = \tanh\frac\omega2$, équation qu'Euler écrit
+  $\tan\frac12\omega = \frac{e^\omega-1}{e^\omega+1}$. Montrer que le stylet exerce une
+  force.
+\item La critique de ce paragraphe (« Remarques sur le mémoire d'Euler ») rejette cette
+  seconde famille : une verge appuyée à ses bouts, sans stylet, ne rend que des sons
+  où $\sin\omega = 0$ ; or elle montre que $\tan\frac\omega2 = \tanh\frac\omega2$
+  entraîne $\sin\omega = \tanh\omega$, qui ne s'annule pas pour $\omega > 0$. Vérifier
+  ce calcul. L'objection est-elle fondée ?
+\item La plus petite racine positive de $\tan t = \tanh t$ est $t_1 = 3{,}9266$. Quel
+  est le son le plus grave de la verge ainsi appuyée ? Calculer le rapport du premier
+  son symétrique au premier son antisymétrique, et le comparer à $\frac{25}{16}$.
+\item Pour un stylet en $\lambda = 0{,}3$, l'équation aux fréquences s'écrit
+  $\sinh\omega\,\sin\lambda\omega\,\sin(1-\lambda)\omega =
+  \sin\omega\,\sinh\lambda\omega\,\sinh(1-\lambda)\omega$. Montrer qu'elle a une
+  racine entre $\pi$ et $2\pi$. Que penser de la conclusion des « Remarques », qu'aucun
+  son mesurable n'est possible quand le stylet n'est pas placé à une « division
+  aliquote » de la verge ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Si $\tilde Y(u) = Y(1-u)$, alors $\tilde Y'''' = Y''''(1-u) = \omega^4\tilde Y$ ;
+  les conditions aux bouts s'échangent, $\tilde Y$ s'annule en $\frac12$, et la
+  continuité de $\tilde Y$, $\tilde Y'$, $\tilde Y''$ en $\frac12$ vient de celle de
+  $Y$, $-Y'$, $Y''$. C'est une solution, et $Y = \frac12(Y + \tilde Y) +
+  \frac12(Y - \tilde Y)$, somme d'une solution symétrique et d'une antisymétrique
+  (l'une peut être nulle).
+\item En dérivant deux fois $Y(1-u) = -Y(u)$ : $Y''(1-u) = -Y''(u)$, et en
+  $u = \frac12$, par continuité, $Y''(\frac12) = 0$. Sur $[0, \frac12]$, $Y = Y'' = 0$
+  aux deux bouts : c'est une verge appuyée à ses deux bouts. Les conditions en $0$
+  réduisent $Y$ à $A\sin\omega u + B\sinh\omega u$ ; en $\frac12$,
+  $A\sin\frac\omega2 + B\sinh\frac\omega2 = 0$ et
+  $-A\sin\frac\omega2 + B\sinh\frac\omega2 = 0$, d'où $B = 0$ et
+  $\sin\frac\omega2 = 0$ : $\omega = 2k\pi$. Sur $[\frac12,1]$,
+  $Y(u) = -A\sin(\omega - \omega u) = A\sin\omega u$ puisque $\sin\omega = 0$ et
+  $\cos\omega = 1$ : c'est le même sinus d'un bout à l'autre. Sa dérivée troisième est
+  continue : le stylet, placé sur un nœud, n'exerce aucune force.
+\item Les pentes en $\frac12$ valent $\gamma\omega\cos\pi = -\gamma\omega$ à gauche et
+  $\gamma'\omega\cos\pi = -\gamma'\omega$ à droite : leur égalité exige
+  $\gamma' = \gamma$. Avec $\gamma' = -\gamma \neq 0$, la verge ferait un angle en $L$.
+  Selon la lecture modernisée, le signe vient de ce que ces coefficients sont, chez
+  Euler, des formes $\frac00$ en $\sin\frac12\omega = 0$.
+\item $Y(1-u) = Y(u)$ donne $-Y'(1-u) = Y'(u)$, d'où $Y'(\frac12) = 0$ : chaque moitié
+  vérifie $Y = Y'' = 0$ en $0$ et $Y = Y' = 0$ en $\frac12$, appuyée et encastrée. Avec
+  $Y = A\sin\omega u + B\sinh\omega u$ et $t = \frac\omega2$ :
+  $A\sin t + B\sinh t = 0$ et $A\cos t + B\cosh t = 0$, système qui a une solution non
+  nulle si et seulement si $\sin t\cosh t - \cos t\sinh t = 0$, soit
+  $\tan t = \tanh t$ ; et $\tanh\frac\omega2 = \frac{e^\omega-1}{e^\omega+1}$. Alors
+  $B = -\frac{A\cos t}{\cosh t}$ et
+  $Y'''(\frac12^-) = \omega^3(-A\cos t + B\cosh t) = -2A\omega^3\cos t$, non nul
+  ($\cos t \neq 0$, sinon $\tan t$ ne serait pas défini). En dérivant trois fois
+  $Y(1-u) = Y(u)$, $Y'''(\frac12^+) = -Y'''(\frac12^-)$ : $Y'''$ saute de
+  $4A\omega^3\cos t \neq 0$, et le stylet exerce une force.
+\item Avec $T = \tan\frac\omega2 = \tanh\frac\omega2$,
+  $\sin\omega = \frac{2T}{1+T^2} = \frac{2\tanh\frac\omega2}{1 + \tanh^2\frac\omega2}
+  = \tanh\omega$, par la formule de duplication de $\tanh$ ; et $\tanh\omega > 0$ pour
+  $\omega > 0$. Le calcul est juste : ces modes ne sont pas ceux de la verge sans
+  stylet. Mais l'objection suppose que le stylet ne fait que choisir parmi les
+  mouvements de la verge libre de tout appui intermédiaire, c'est-à-dire qu'il
+  n'exerce aucune force ; le 4 montre que, dans la seconde famille, il en exerce une,
+  comme le paragraphe 8 d'Euler le prévoit. La seconde solution d'Euler est juste, et
+  l'objection ne l'atteint pas.
+\item Le premier son antisymétrique a $\omega = 2\pi = 6{,}2832$ ; le premier symétrique
+  $\omega = 2t_1 = 7{,}8532$. Le plus grave est donc antisymétrique, celui où chaque
+  moitié vibre comme une corde. Le rapport des sons vaut
+  $\bigl(\frac{7{,}8532}{6{,}2832}\bigr)^2 = 1{,}5622$, contre
+  $\frac{25}{16} = 1{,}5625$, que donne l'approximation $t_1 \approx \frac{5\pi}{4}$
+  d'Euler.
+\item Soit $F(\omega)$ la différence des deux membres. En $\omega = \pi$, $\sin\omega =
+  0$ et $F(\pi) = \sinh\pi\,\sin(0{,}3\pi)\sin(0{,}7\pi) = 11{,}549\times0{,}809^2 =
+  7{,}56 > 0$ ; en $\omega = 2\pi$, $F(2\pi) = \sinh2\pi\,\sin(0{,}6\pi)\sin(1{,}4\pi)
+  = -267{,}7\times0{,}951^2 = -242 < 0$. Par continuité, $F$ s'annule entre les deux (en
+  $\omega = 5{,}132$). La verge a donc un mouvement régulier pour ce stylet, qui n'est
+  pas à une division aliquote ; elle en a d'ailleurs une infinité. Ce qui est vrai,
+  c'est qu'aucun de ces mouvements n'est un mode de la verge sans stylet : tous font
+  travailler le stylet. La conclusion des « Remarques » est fausse.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{L'équation de la plaque s'abaisse au second degré}{L2}
+\manuscrit{fr-9115}{399}{409}
+\manuscrit{fr-9115}{469}{485}
+Le paragraphe 1 du long mémoire sur les surfaces élastiques établit l'équation
+$\frac{\partial^2z}{\partial t^2} + b\tau^2\Delta^2z = 0$ (A), où $\Delta$ est le
+laplacien en $(x,y)$, $\Delta^2 = \Delta\Delta$, $\tau$ l'épaisseur et $b$ une
+constante de la matière. Pour un « mouvement régulier »,
+$z = Z(x,y)\sin\bigl(\frac{t}{\sqrt K} + \zeta\bigr)$, et, en posant $Kb\tau^2 = h^4$,
+elle obtient $h^4\Delta^2Z = Z$ (B).
+\begin{enumerate}
+\item Montrer que $Z$ satisfait (B) dès qu'il satisfait $h^2\Delta Z = Z$ ou
+  $h^2\Delta Z = -Z$ (l'équation « peut s'abaisser au second degré »), et que toute
+  solution de (B) s'écrit $Z' + Z''$ avec $h^2\Delta Z' = Z'$ et $h^2\Delta Z'' = -Z''$.
+\item Plaque carrée de côté $A$, origine en un coin. Montrer que
+  $Z = \sin\frac{n\pi x}{A}\sin\frac{m\pi y}{A}$ satisfait (B) pour une valeur de $K$ à
+  déterminer, et que le son, mesuré par $\sqrt{1/K}$, est proportionnel à $m^2 + n^2$.
+  Vérifier que $Z = 0$ et $\Delta Z = 0$ sur les quatre côtés. Une membrane tendue de
+  même forme, $\frac{\partial^2z}{\partial t^2} = c^2\Delta z$, a les mêmes figures :
+  comment ses sons dépendent-ils de $m$ et de $n$ ?
+\item Au N\textsuperscript{o} 15, avec $u = \frac{\pi x}{A}$ et $v = \frac{\pi y}{A}$,
+  elle forme
+  \[
+  Z = \sin u\,\sin v\Bigl(\beta\cos^2u + \beta'\cos^2v - \frac{\beta+\beta'}{4}\Bigr),
+  \]
+  $\beta$ et $\beta'$ étant deux constantes (ses $b$ et $B$). Montrer que
+  $Z = \frac\beta4\sin3u\,\sin v + \frac{\beta'}{4}\sin u\,\sin3v$, que $Z$ satisfait
+  (B), et que son son est proportionnel à $10$.
+\item Pour $\beta' = -\beta$, montrer que les deux diagonales du carré sont des lignes
+  nodales. Pour $\beta' = 0$, décrire les lignes nodales.
+\item On pose $r = \frac{\beta'}{\beta}$ ($\beta \neq 0$). Sur la médiane
+  $y = \frac A2$, où $\cos v = 0$, la ligne nodale du facteur entre parenthèses passe
+  aux points où $\cos^2u = \frac{\beta+\beta'}{4\beta}$ ; sur la médiane
+  $x = \frac A2$, aux points où $\cos^2v = \frac{\beta+\beta'}{4\beta'}$. Montrer que
+  ces deux sortes de points existent ensemble si et seulement si
+  $\frac13 \le r \le 3$ ou $r = -1$.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Les opérateurs $h^2\Delta - 1$ et $h^2\Delta + 1$ commutent, et
+  $(h^2\Delta - 1)(h^2\Delta + 1)Z = h^4\Delta^2Z - Z$. Si $h^2\Delta Z = \pm Z$, alors
+  $h^4\Delta^2Z = h^2\Delta(\pm Z) = \pm h^2\Delta Z = Z$. Réciproquement, soit $Z$ une
+  solution de (B), $Z' = \frac12(Z + h^2\Delta Z)$ et $Z'' = \frac12(Z - h^2\Delta Z)$ :
+  $Z' + Z'' = Z$, $h^2\Delta Z' = \frac12(h^2\Delta Z + h^4\Delta^2Z) =
+  \frac12(h^2\Delta Z + Z) = Z'$, et de même $h^2\Delta Z'' = -Z''$. La seconde de ces
+  équations est celle des mouvements réguliers des surfaces tendues, qu'on nomme
+  aujourd'hui équation de Helmholtz.
+\item $\Delta Z = -\frac{\pi^2}{A^2}(m^2+n^2)Z$ et
+  $\Delta^2Z = \frac{\pi^4}{A^4}(m^2+n^2)^2Z$ ; (B) a lieu si
+  $Kb\tau^2\frac{\pi^4}{A^4}(m^2+n^2)^2 = 1$, c'est-à-dire
+  $\sqrt{1/K} = \frac{\pi^2(m^2+n^2)\tau\sqrt b}{A^2}$, proportionnel à $m^2 + n^2$ :
+  c'est la formule du feuillet. Sur les côtés $x = 0$ et $x = A$,
+  $\sin\frac{n\pi x}{A} = 0$, donc $Z = 0$, et $\Delta Z$, proportionnel à $Z$, s'annule
+  aussi ; de même sur $y = 0$ et $y = A$. Ce sont, sur un bord droit, les conditions
+  d'un appui simple dans la théorie actuelle : ces produits de sinus sont exactement
+  les modes de la plaque carrée appuyée sur son contour (solution de Navier). Pour la
+  membrane, $\Omega^2 = c^2\frac{\pi^2}{A^2}(m^2+n^2)$ : le son est proportionnel à
+  $\sqrt{m^2+n^2}$. Pour un même nombre d'onde, la plaque a pour sons les carrés de
+  ceux de la membrane, ce que le mémoire dit au N\textsuperscript{o} 19.
+\item $\sin3u = 3\sin u - 4\sin^3u = \sin u(4\cos^2u - 1)$, donc
+  $\frac\beta4\sin3u\sin v + \frac{\beta'}4\sin u\sin3v =
+  \sin u\sin v\bigl(\beta\cos^2u - \frac\beta4 + \beta'\cos^2v - \frac{\beta'}4\bigr)$,
+  qui est $Z$. Chacun des deux termes, modes $(3,1)$ et $(1,3)$ du 2, a
+  $\Delta = -\frac{\pi^2}{A^2}\cdot10$ : ils ont le même $K$, leur somme satisfait (B),
+  et le son est proportionnel à $3^2 + 1^2 = 10$, comme elle l'écrit.
+\item Pour $\beta' = -\beta$, $Z = \beta\sin u\sin v(\cos^2u - \cos^2v) =
+  \beta\sin u\sin v(\cos u - \cos v)(\cos u + \cos v)$. Sur $[0,\pi]$, $\cos u = \cos v$
+  équivaut à $u = v$, soit $y = x$, et $\cos u = -\cos v$ à $u = \pi - v$, soit
+  $x + y = A$ : les deux diagonales sont nodales. Pour $\beta' = 0$,
+  $Z = \frac\beta4\sin3u\sin v$ ne s'annule à l'intérieur que pour $\sin3u = 0$, soit
+  $x = \frac A3$ et $x = \frac{2A}{3}$ : deux droites parallèles à un côté, au tiers de
+  la largeur.
+\item Le premier point existe si et seulement si $0 \le \frac{1+r}{4} \le 1$, soit
+  $-1 \le r \le 3$. Le second, avec $\frac{\beta+\beta'}{4\beta'} = \frac{1+r}{4r}$
+  ($r \neq 0$) : pour $r > 0$, il faut $1 + r \le 4r$, soit $r \ge \frac13$ ; pour
+  $r < 0$, $\frac{1+r}{4r} \ge 0$ exige $1 + r \le 0$, soit $r \le -1$, et
+  $\frac{1+r}{4r} \le 1$ a alors lieu. Les deux ensemble : $\frac13 \le r \le 3$, ou
+  $r = -1$, cas où les deux points se réduisent au centre du carré. Si $r$ est positif
+  et hors de $[\frac13, 3]$, ou négatif et différent de $-1$, une seule des médianes
+  est coupée, ce que le feuillet dit en termes de « lignes sinueuses ».
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Un lagrangien nul, et ce qui se passe au bord libre}{L3}
+\manuscrit{fr-9115}{21}{35}
+\manuscrit{fr-9115}{433}{440}
+L'Exposition des principes compare deux hypothèses sur les forces d'élasticité d'une
+plaque naturellement plane : la sienne, qui les fait dépendre de la somme
+$\frac1\rho + \frac1{\rho'}$ des courbures principales, et celle d'« un membre de la
+classe », qui les fait dépendre de leur différence. Elle remarque que les deux
+diffèrent par une intégrale dont la variation est « identiquement » nulle, de sorte
+qu'elles donnent la même équation pour les points intérieurs et diffèrent au bord. On
+le vérifie dans la théorie linéaire. Pour une flèche $z(x,y)$ petite, les courbures
+principales sont, au premier ordre, les valeurs propres $k_1$, $k_2$ de la hessienne de
+$z$. On pose $J(z) = z_{xx}z_{yy} - z_{xy}^2$ et, pour un réel $\nu$,
+\[
+U_\nu(z) = \frac12\iint\Bigl[(\Delta z)^2 - 2(1-\nu)J(z)\Bigr]dx\,dy .
+\]
+\begin{enumerate}
+\item Exprimer $k_1 + k_2$ et $k_1k_2$ à l'aide des dérivées secondes, et montrer que
+  $(\Delta z)^2 - 4J(z) = (k_1 - k_2)^2$. Quelles valeurs de $\nu$ répondent aux deux
+  hypothèses ?
+\item Vérifier l'identité $J(z) = \partial_x(z_xz_{yy}) - \partial_y(z_xz_{xy})$. En
+  déduire, par la formule de Green, que pour tout ouvert $\Omega$ et toute $\varphi$
+  de classe $C^\infty$ à support compact dans $\Omega$,
+  $\iint_\Omega J(z + \varepsilon\varphi) = \iint_\Omega J(z)$ pour tout $\varepsilon$ :
+  $J$ est un « lagrangien nul ». Qu'en résulte-t-il pour l'équation intérieure ?
+\item On considère le demi-plan $x > 0$, de bord $x = 0$, et des fonctions régulières
+  $z$ et $\varphi$, $\varphi$ nulle hors d'un compact du demi-plan fermé (elle peut ne
+  pas s'annuler sur le bord). Montrer que
+  $\frac{d}{d\varepsilon}U_\nu(z + \varepsilon\varphi)\big|_{\varepsilon=0}$ vaut
+  \[
+  \iint_{x>0}(\Delta^2z)\,\varphi\,dx\,dy + \int_{-\infty}^{+\infty}
+  \Bigl[-(z_{xx} + \nu z_{yy})\,\varphi_x + \bigl(z_{xxx} + (2-\nu)z_{xyy}\bigr)\varphi
+  \Bigr]_{x=0}dy .
+  \]
+  En déduire les deux conditions d'un bord libre, et les écrire pour $\nu = 1$ et pour
+  $\nu = -1$. Les comparer à celles de l'Exposition : $\Delta z = 0$ et
+  $\partial_x\Delta z = 0$ pour sa propre hypothèse ; $z_{xx} - z_{yy} = 0$ et
+  $\partial_x(z_{xx} + 3z_{yy}) = 0$ pour l'autre.
+\item Sur un bord $x = 0$ où $z = 0$ pour tout $y$ (bord appuyé, où l'on prend
+  $\varphi = 0$), montrer que la seule condition restante se réduit à $\Delta z = 0$
+  quel que soit $\nu$. Qu'en conclure pour les produits de sinus de l'exercice
+  précédent ?
+\item Le paragraphe 4 du long mémoire explique les figures de la plaque carrée libre de côté
+  $A$ par $z = \mathcal Af(x) + Bf(y)$, où $f$ est une fonction de la lame libre
+  d'Euler : $f'''' = k^4f$ ($k > 0$), $f''$ et $f'''$ nuls en $0$ et en $A$. Montrer que
+  $\Delta^2z = k^4z$, puis que les conditions du bord libre du 3 sont remplies sur les
+  quatre côtés si et seulement si $\nu = 0$ (pour $\mathcal A$, $B$ non tous deux
+  nuls). Qu'en est-il avec ses propres conditions ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item La trace et le déterminant de la hessienne donnent $k_1 + k_2 = z_{xx} + z_{yy} =
+  \Delta z$ et $k_1k_2 = J(z)$, d'où $(k_1-k_2)^2 = (k_1+k_2)^2 - 4k_1k_2 =
+  (\Delta z)^2 - 4J$. Pour $\nu = 1$, $U_1 = \frac12\iint(k_1+k_2)^2$ : c'est son
+  hypothèse. Pour $\nu = -1$, $U_{-1} = \frac12\iint(k_1-k_2)^2$ : c'est l'autre. La
+  théorie actuelle (Kirchhoff, 1850) prend pour $\nu$ le coefficient de Poisson de la
+  matière, voisin de $0{,}3$ pour le verre et les métaux : entre les deux.
+\item $\partial_x(z_xz_{yy}) = z_{xx}z_{yy} + z_xz_{xyy}$ et
+  $\partial_y(z_xz_{xy}) = z_{xy}^2 + z_xz_{xyy}$ ; la différence est $J(z)$. Soit $D$
+  un ouvert régulier tel que $\operatorname{supp}\varphi \subset D$ et
+  $\overline D \subset \Omega$, et $w = z + \varepsilon\varphi$. Par la formule de
+  Green, $\iint_D J(w) = \oint_{\partial D}\bigl(w_xw_{yy}\,dy + w_xw_{xy}\,dx\bigr)$ ;
+  près de $\partial D$, $w = z$, donc cette intégrale ne dépend pas de $\varepsilon$,
+  et sur $\Omega \setminus D$ on a aussi $J(w) = J(z)$. Ainsi $\iint_\Omega J$ ne change
+  pas, et sa dérivée en $\varepsilon$ est nulle : l'expression d'Euler--Lagrange de $J$
+  est identiquement nulle. Pour les variations intérieures, $U_\nu$ a donc la même
+  dérivée que $U_1 = \frac12\iint(\Delta z)^2$, soit $\iint\Delta z\,\Delta\varphi =
+  \iint(\Delta^2z)\varphi$ : l'équation intérieure est $\Delta^2z = 0$ (et, avec
+  l'inertie, l'équation de la plaque) quel que soit $\nu$. C'est exactement ce que dit
+  l'Exposition (vue 24).
+\item On note que, sur $x > 0$, $\iint\partial_xF = -\int F|_{x=0}\,dy$ et
+  $\iint\partial_yF = 0$ pour $F$ nulle hors d'un compact. La dérivée vaut
+  $\iint\bigl[\Delta z\,\Delta\varphi - (1-\nu)(z_{xx}\varphi_{yy} + z_{yy}\varphi_{xx} -
+  2z_{xy}\varphi_{xy})\bigr]$. On intègre par parties :
+  $\iint\Delta z\,\varphi_{xx} = -\int\bigl[\Delta z\,\varphi_x - (\Delta z)_x\varphi
+  \bigr]_{x=0} + \iint(\Delta z)_{xx}\varphi$ et
+  $\iint\Delta z\,\varphi_{yy} = \iint(\Delta z)_{yy}\varphi$ ;
+  $\iint z_{xx}\varphi_{yy} = \iint z_{xxyy}\varphi$ ;
+  $\iint z_{yy}\varphi_{xx} = -\int\bigl[z_{yy}\varphi_x - z_{xyy}\varphi\bigr]_{x=0} +
+  \iint z_{xxyy}\varphi$ ; enfin
+  $\iint z_{xy}\varphi_{xy} = -\int[z_{xy}\varphi_y]_{x=0} + \iint z_{xxyy}\varphi =
+  \int[z_{xyy}\varphi]_{x=0} + \iint z_{xxyy}\varphi$, en intégrant par parties en
+  $y$ le long du bord. Les termes doubles du crochet en $(1-\nu)$ se détruisent (c'est
+  le 2), et il reste $\iint(\Delta^2z)\varphi$ plus le terme de bord
+  \[
+  \int\Bigl[\bigl(-\Delta z + (1-\nu)z_{yy}\bigr)\varphi_x + \bigl((\Delta z)_x +
+  (1-\nu)z_{xyy}\bigr)\varphi\Bigr]_{x=0}dy,
+  \]
+  qui est la formule annoncée. Si le bord est libre, $\varphi$ et $\varphi_x$ y sont
+  arbitraires, et il faut $z_{xx} + \nu z_{yy} = 0$ (moment de flexion nul) et
+  $z_{xxx} + (2-\nu)z_{xyy} = 0$ (effort tranchant réduit nul). Pour $\nu = 1$ :
+  $z_{xx} + z_{yy} = \Delta z = 0$ et $z_{xxx} + z_{xyy} = \partial_x\Delta z = 0$, ses
+  conditions. Pour $\nu = -1$ : $z_{xx} - z_{yy} = 0$ et $z_{xxx} + 3z_{xyy} =
+  \partial_x(z_{xx} + 3z_{yy}) = 0$, celles qu'elle tire de l'autre hypothèse. Les deux
+  hypothèses sont les deux cas extrêmes d'une même famille ; aucune n'est celle d'une
+  matière réelle.
+\item Si $z(0,y) = 0$ pour tout $y$, alors $z_{yy}(0,y) = 0$ ; avec $\varphi = 0$ sur
+  le bord, seul le terme en $\varphi_x$ subsiste, et la condition
+  $z_{xx} + \nu z_{yy} = 0$ se réduit à $z_{xx} = 0$, c'est-à-dire à $\Delta z = 0$.
+  Les couples $z = 0$, $\Delta z = 0$ de l'exercice précédent sont donc les conditions
+  exactes d'un bord droit appuyé pour toute matière : les produits de sinus sont des
+  modes exacts de la plaque rectangulaire appuyée, quel que soit $\nu$.
+\item Les dérivées croisées de $\mathcal Af(x) + Bf(y)$ sont nulles, donc
+  $\Delta^2z = \mathcal Af''''(x) + Bf''''(y) = k^4z$. Sur $x = 0$ :
+  $z_{xx} + \nu z_{yy} = \mathcal Af''(0) + \nu Bf''(y) = \nu Bf''(y)$ et
+  $z_{xxx} + (2-\nu)z_{xyy} = \mathcal Af'''(0) = 0$ ; de même en $x = A$, et sur les
+  côtés $y = 0$, $y = A$ le moment vaut $\nu\mathcal Af''(x)$. Comme $f''$ n'est pas
+  identiquement nulle (sinon $f$ serait affine et $k^4f = 0$), les conditions ont lieu
+  si et seulement si $\nu B = \nu\mathcal A = 0$, c'est-à-dire $\nu = 0$ ; la condition
+  propre aux coins libres de la théorie de Kirchhoff, $z_{xy} = 0$, est d'ailleurs
+  remplie partout. Avec ses conditions ($\nu = 1$), $\Delta z = Bf''(y) \neq 0$ sur
+  $x = 0$ : l'intégrale ne les satisfait pas non plus. Pour une matière réelle, les
+  deux fonctions $f(x)$ et $f(y)$ sont couplées par le terme en $\nu$, et les figures
+  $\mathcal A = B$ et $\mathcal A = -B$ n'ont plus exactement le même son ; l'accord
+  de ces figures avec celles de Chladni ne peut être qu'approché.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Les sons de la plaque rectangulaire $9 : 8$}{Lycée}
+\manuscrit{fr-9115}{524}{533}
+Au N\textsuperscript{o} 19 du long mémoire, elle compare aux notes de Chladni les sons
+d'une plaque de verre rectangulaire dont les côtés sont comme $9$ à $8$. On note $T|L$
+la figure formée de $T$ lignes nodales droites parallèles au petit côté (elles
+partagent le grand) et de $L$ lignes parallèles au grand côté. Dans sa théorie, le son
+de $T|L$ est proportionnel à $\frac{T^2}{9^2} + \frac{L^2}{8^2}$ ; en multipliant par
+$81$, elle l'écrit $N = \frac{64T^2 + 81L^2}{64}$. On rappelle les intervalles : demi-ton
+mineur $\frac{25}{24}$, demi-ton majeur $\frac{16}{15}$, ton mineur $\frac{10}{9}$, ton
+majeur $\frac98$ ; un intervalle de rapport $r$ vaut $1200\log_2 r$ cents.
+\begin{enumerate}
+\item Calculer $N$, sous forme de fraction irréductible, pour $2|2$, $2|3$, $3|3$,
+  $4|3$, $5|5$ et $6|2$.
+\item Elle rapporte chaque nombre au nombre $8$ de la figure $2|2$ de la plaque carrée
+  (figure 68 de Chladni), ce qui donne le rapport théorique $R = \frac N8$, et le compare
+  à l'intervalle qu'elle entend entre cette figure et la figure $T|L$ : $\frac{15}{8}$
+  pour $2|3$, $\frac83$ pour $3|3$, $\frac{32}{9}$ pour $4|3$, $8$ pour $5|5$, et « un
+  peu moindre » que $\frac{50}{9}$ pour $6|2$. Pour chacun de ces cas, calculer le
+  rapport de l'intervalle entendu à $R$, puis sa valeur en cents.
+\item Pour $2|2$, elle dit que $R$ est plus grand que $\frac98$ « d'une quantité
+  inappréciable ». Pour $3|3$, que l'écart est « bien moindre qu'un demi-ton mineur » ;
+  pour $4|3$, qu'il est « d'un peu plus d'un demi-ton » ; pour $5|5$, qu'il est d'« un
+  ton mineur » ; pour $6|2$, d'« environ un demi-ton ». Juger chaque phrase.
+\item Elle conclut que, parmi ses dix-huit comparaisons, « il ne se trouve qu'un seul
+  cas » où l'écart excède un demi-ton. Que peut-on dire de cette conclusion au vu des
+  cas calculés ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $2|2$ : $\frac{256+324}{64} = \frac{145}{16}$ ; $2|3$ : $\frac{256+729}{64} =
+  \frac{985}{64}$ ; $3|3$ : $\frac{576+729}{64} = \frac{1305}{64}$ ; $4|3$ :
+  $\frac{1024+729}{64} = \frac{1753}{64}$ ; $5|5$ : $\frac{1600+2025}{64} =
+  \frac{3625}{64}$ ; $6|2$ : $\frac{2304+324}{64} = \frac{2628}{64} = \frac{657}{16}$.
+  Ce sont les nombres du feuillet.
+\item $2|3$ : $R = \frac{985}{512}$ ; $\frac{15}{8} : \frac{985}{512} = \frac{960}{985}
+  = \frac{192}{197}$, soit $-45$ cents (le son entendu est plus grave). $3|3$ :
+  $R = \frac{1305}{512}$ ; $\frac83 : R = \frac{4096}{3915}$, soit $+78$ cents. $4|3$ :
+  $R = \frac{1753}{512}$ ; $\frac{32}{9} : R = \frac{16384}{15777}$, soit $+65$ cents.
+  $5|5$ : $R = \frac{3625}{512}$ ; $8 : R = \frac{4096}{3625}$, soit $+212$ cents.
+  $6|2$ : $R = \frac{657}{128}$ ; $\frac{50}{9} : R = \frac{6400}{5913}$, soit
+  $+137$ cents. Les produits en croix du feuillet ($960$ et $985$, $15777$ et $16384$,
+  $3625$ et $4096$, $5913$ et $6400$) sont justes.
+\item En cents, le demi-ton mineur vaut $71$, le demi-ton majeur $112$, le ton mineur
+  $182$ et le ton majeur $204$. Pour $2|2$ : $\frac{145}{128} : \frac98 =
+  \frac{145}{144}$, $12$ cents : la phrase est juste. Pour $3|3$ : $78 > 71$, l'écart
+  dépasse le demi-ton mineur ; la phrase est fausse. Sa vérification écrite,
+  $\frac{3\cdot1305}{8\cdot512} < \frac{25}{24}$, compare au demi-ton un rapport plus
+  petit que $1$, ce qui est toujours vrai ; il fallait comparer
+  $\frac{4096}{3915}$, et $4096\times24 = 98\,304 > 3915\times25 = 97\,875$. Pour
+  $4|3$ : $65$ cents, c'est moins qu'un demi-ton mineur, et non « un peu plus d'un
+  demi-ton » ; l'erreur est ici en défaveur de sa théorie. Pour $5|5$ : $212$ cents,
+  plus qu'un ton majeur, a fortiori qu'un ton mineur ; elle le compte pourtant, à juste
+  titre, comme dépassant le demi-ton. Pour $6|2$ : $137$ cents, plus qu'un demi-ton
+  majeur, si l'on prend l'intervalle entendu pour $\frac{50}{9}$.
+\item Sur les cas calculés, $5|5$ dépasse le demi-ton sans discussion, et $6|2$ aussi
+  si l'on prend l'intervalle entendu pour $\frac{50}{9}$ ; comme elle ne le donne que
+  pour « un peu moindre », l'écart réel peut être plus petit, mais le cas n'est pas
+  acquis. La conclusion « un seul cas » est donc trop favorable. L'accord reste bon
+  pour la plupart des cas, à l'échelle de la tolérance d'un demi-ton qu'elle s'est
+  donnée. Les nombres $\frac{T^2}{a^2} + \frac{L^2}{b^2}$ sont exacts pour une plaque
+  appuyée sur son contour (exercice précédent) ; pour la plaque libre de Chladni, ils
+  ne sont qu'approchés, ce que le feuillet ne pouvait savoir.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{La cire sur les bords : une erreur d'unité et sa correction}{Lycée}
+\manuscrit{fr-9115}{416}{416}
+\manuscrit{fr-9115}{539}{546}
+Au paragraphe 6 du long mémoire, elle charge de cire les côtés d'une plaque carrée de verre de
+$106$ mm de côté, pesant $1$ once $18$ grains, et en rend compte par une règle : une
+dose de cire répartie le long d'un côté équivaut à un prolongement de la plaque de
+même poids. On rappelle $1$ once $= 8$ gros $= 576$ grains. Pour la figure de deux
+lignes nodales croisées, le son d'une plaque rectangulaire de côtés $a$ et $b$ est,
+dans sa théorie, proportionnel à $\frac1{a^2} + \frac1{b^2}$.
+\begin{enumerate}
+\item Chaque dose pèse $1$ gros $2$ grains. Vérifier qu'elle est le huitième du poids
+  de la plaque, et qu'elle équivaut à environ $13$ mm de plaque.
+\item Une dose sur un côté : la plaque devient fictivement un rectangle de $119$ mm
+  sur $106$ mm, « à très peu près $9 : 8$ ». Le feuillet écrit que le son est
+  proportionnel à $\frac{9^2+8^2}{64} = \frac{145}{64}$, celui de la plaque non chargée
+  à $2$, et que l'intervalle est $\frac{145}{128}$. Calculer l'intervalle juste, en
+  prenant $8$ pour le côté du carré. D'où vient l'erreur ? Un petit feuillet relié plus
+  haut dans le mémoire (vue 416) la corrige : « l'intervalle que j'ai exprimé par
+  $\frac{N^2+n^2}{2n^2}$ doit l'être par $\frac{2N^2}{N^2+n^2}$ ». Vérifier, et
+  comparer les deux valeurs en cents. Elle entend le son passer d'« un peu plus bas que
+  sol 1 » à « entre mi 1 et fa 1 ».
+\item Deux doses sur deux côtés contigus : la plaque devient un carré de $119$ mm.
+  Quel intervalle prévoit-on ? L'erreur du 2 joue-t-elle ici ?
+\item Deux doses sur deux côtés opposés : la plaque devient un rectangle « $10 : 8$ ».
+  Le feuillet trouve $\frac{41}{32}$, « un peu plus que deux tons majeurs », et entend
+  « de ré 1 à sol 1 » plus de deux tons majeurs. Calculer l'intervalle corrigé, et
+  juger l'accord avec l'expérience (deux tons majeurs : $\frac{81}{64}$).
+\item Une lame de verre de $200$ mm, pesant $4$ gros $12$ grains, montre deux lignes
+  nodales transversales, l'intervalle qui les sépare étant double de celui qui les
+  sépare des bouts. Chargée à un bout de $1$ gros $3$ grains, elle les montre à $12$ mm
+  du bout chargé et à $121$ mm l'une de l'autre, $61$ mm restant jusqu'à l'autre bout.
+  Appliquer la règle et comparer.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item La plaque pèse $576 + 18 = 594$ grains et la dose $72 + 2 = 74$ grains ; or
+  $\frac{594}{8} = 74{,}25$. Une dose vaut donc le huitième de la plaque, soit une bande
+  de $\frac{106}{8} = 13{,}25$ mm sur toute la longueur d'un côté.
+\item En prenant pour unité le huitième du côté, le carré a pour nombre
+  $\frac1{8^2} + \frac1{8^2} = \frac{2}{64}$ et le rectangle $\frac1{9^2} + \frac1{8^2} =
+  \frac{145}{5184}$ ; le rapport du son de la plaque non chargée à celui de la plaque
+  chargée est $\frac{2}{64}\cdot\frac{5184}{145} = \frac{162}{145} = 1{,}117$, la
+  plaque chargée étant la plus grave. Le nombre $\frac{145}{64} = 81\bigl(\frac1{81} +
+  \frac1{64}\bigr)$ est rapporté au grand côté du rectangle, le nombre
+  $2 = 64\bigl(\frac1{64} + \frac1{64}\bigr)$ au côté du carré : les deux nombres ne sont
+  pas dans la même unité, et, pris tels quels, ils feraient la plaque chargée plus
+  aiguë. Avec $N = 9$ et $n = 8$, $\frac{N^2+n^2}{2n^2} = \frac{145}{128}$ et
+  $\frac{2N^2}{N^2+n^2} = \frac{162}{145}$ : la correction de la vue 416 est exacte.
+  En cents, $216$ contre $192$ ; l'une et l'autre valeurs sont voisines d'un ton
+  ($200$ cents), comme l'intervalle entendu, qui va d'un peu moins d'un ton à un peu
+  moins d'un ton et demi selon la note, entre mi et fa : la correction ne change presque rien, et le feuillet a raison d'écrire que les deux « ne different pas
+  sensiblement ».
+\item Le rapport de deux carrés de côtés $9$ et $8$ vaut $\frac{2/64}{2/81} =
+  \frac{81}{64}$, deux tons majeurs ($408$ cents). Les deux nombres étant rapportés
+  chacun à son propre côté, sans mélange d'unités, l'erreur du 2 ne joue pas.
+\item Rectangle $10 \times 8$ : $\frac1{100} + \frac1{64} = \frac{164}{6400}$, et le
+  carré $\frac{2}{64} = \frac{200}{6400}$ ; l'intervalle corrigé est
+  $\frac{200}{164} = \frac{50}{41} = 1{,}220$, soit $344$ cents, moins que deux tons
+  majeurs ($408$ cents), alors que le calcul du feuillet donnait $\frac{41}{32}$, soit
+  $429$ cents. Avec les longueurs mêmes, $132$ et $106$ mm,
+  $\frac{2\times132^2}{132^2 + 106^2} = 1{,}216$, soit $338$ cents. Elle entend plus de
+  deux tons majeurs, de ré à un peu moins que sol, près d'une quarte ($498$ cents) : la
+  correction abaisse la prévision de $85$ cents, au-dessous de deux tons majeurs, et
+  l'éloigne de l'expérience ; la phrase de la vue 416 ne vaut que pour le premier cas. La lecture modernisée ajoute que
+  l'équivalence d'une masse à une longueur n'est exacte qu'au premier ordre, pour de
+  petites charges.
+\item La lame pèse $4\times72 + 12 = 300$ grains, la cire $72 + 3 = 75$ grains, le
+  quart ; elle équivaut à $\frac{200}{4} = 50$ mm de lame. La lame fictive a $250$ mm,
+  partagée en $\frac14$, $\frac12$, $\frac14$ : lignes à $62{,}5$ mm et à $187{,}5$ mm de
+  son bout fictif, soit à $12{,}5$ mm du bout chargé, à $125$ mm l'une de l'autre, et à
+  $62{,}5$ mm de l'autre bout. On observe $12$, $121$ et $61$ mm, qui font $194$ mm, les
+  $6$ mm restants étant pris, selon le feuillet, par la cire et les lignes : l'accord
+  est bon, et une portion de $12$ mm rend le même son qu'une portion dix fois plus
+  longue.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{La série de la plaque circulaire}{L2}
+\manuscrit{fr-9115}{557}{572}
+Au paragraphe 7 du long mémoire, elle cherche les mouvements réguliers d'une plaque circulaire
+de rayon $a$. En coordonnées polaires, avec $z = u(r)\sin(\beta\varphi + B)$, $\beta$
+entier $\ge 0$, puis $u = r^\beta s(r)$ et $n = 2\beta + 1$, elle trouve la série
+\[
+s = 1 - \frac{gr^2}{2(n+1)} + \frac{g^2r^4}{2\cdot4\,(n+1)(n+3)}
+- \frac{g^3r^6}{2\cdot4\cdot6\,(n+1)(n+3)(n+5)} + \cdots
+\]
+et la même série aux signes tous positifs ; la même série reparaît dans sa pièce sur le
+refroidissement du cylindre (vues 678 à 682). On note, pour $x$ réel,
+\[
+J_\beta(x) = \sum_{j\ge0}\frac{(-1)^j}{j!\,(j+\beta)!}\Bigl(\frac x2\Bigr)^{2j+\beta},
+\qquad
+I_\beta(x) = \sum_{j\ge0}\frac{1}{j!\,(j+\beta)!}\Bigl(\frac x2\Bigr)^{2j+\beta},
+\]
+les fonctions de Bessel, que le feuillet ne nomme pas. On prend $g > 0$.
+\begin{enumerate}
+\item Montrer que $2\cdot4\cdots(2j)\,(n+1)(n+3)\cdots(n+2j-1) =
+  4^j\,j!\,(\beta+1)(\beta+2)\cdots(\beta+j)$, et en déduire
+  $r^\beta s(r) = \beta!\bigl(\frac{2}{\sqrt g}\bigr)^\beta J_\beta(\sqrt g\,r)$.
+  Quel est le rayon de convergence de la série ?
+\item Montrer que $s'' + \frac nrs' + gs = 0$, puis que $w = J_\beta(kr)\sin\beta\varphi$
+  vérifie $\Delta w = -k^2w$, en admettant
+  $\Delta = \partial_r^2 + \frac1r\partial_r + \frac1{r^2}\partial_\varphi^2$. On admet
+  de même $\Delta\bigl(I_\beta(kr)\sin\beta\varphi\bigr) = k^2I_\beta(kr)\sin\beta\varphi$.
+  En déduire que $z = \bigl(AJ_\beta(kr) + A'I_\beta(kr)\bigr)\sin(\beta\varphi + B)$
+  vérifie $\Delta^2z = k^4z$, et calculer $\Delta z$.
+\item Plaque « appuyée » au sens du feuillet : $z = 0$ et $\Delta z = 0$ pour $r = a$.
+  Montrer que $A' = 0$ et $J_\beta(ka) = 0$. Les premiers zéros positifs de $J_0$ et de
+  $J_1$ sont $2{,}405$ et $3{,}832$ : dans quel rapport sont les sons les plus graves à
+  zéro et à un diamètre nodal ? Et pour une membrane circulaire de même rayon ?
+\item Pour le contour libre, ses conditions sont $\Delta z = 0$ et
+  $\partial_r\Delta z = 0$ en $r = a$ ; le feuillet les écrit avec $\partial_x$ au lieu
+  de la dérivée normale $\partial_r$, n'en garde que la partie angulaire, et conclut
+  qu'elles « auront lieu d'elles-mêmes » sans déterminer $k$. Montrer qu'au contraire
+  elles imposent $J_\beta(ka)I_\beta'(ka) - I_\beta(ka)J_\beta'(ka) = 0$, et que c'est
+  l'équation de la plaque encastrée ($z = \partial_rz = 0$ en $r = a$). Pour $\beta = 0$
+  sa plus petite racine est $ka = 3{,}196$.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $2\cdot4\cdots(2j) = 2^jj!$ et, comme $n + 2i - 1 = 2(\beta + i)$,
+  $(n+1)(n+3)\cdots(n+2j-1) = 2^j(\beta+1)\cdots(\beta+j) = 2^j\frac{(\beta+j)!}{\beta!}$.
+  Le terme général de $s$ est donc
+  $\frac{(-1)^jg^jr^{2j}\beta!}{4^jj!\,(\beta+j)!} =
+  \beta!\,\frac{(-1)^j}{j!\,(j+\beta)!}\bigl(\frac{\sqrt g\,r}{2}\bigr)^{2j}$, et
+  $r^\beta s = \beta!\bigl(\frac{2}{\sqrt g}\bigr)^\beta\sum_j\frac{(-1)^j}{j!\,(j+\beta)!}
+  \bigl(\frac{\sqrt g\,r}{2}\bigr)^{2j+\beta}$, qui est la formule. Le rapport de deux
+  termes consécutifs vaut $\frac{gr^2}{4(j+1)(\beta+j+1)} \to 0$ : la série converge
+  pour tout $r$.
+\item Avec $s = \sum c_jr^{2j}$ et $c_j = -\frac{g\,c_{j-1}}{2j(2j+n-1)}$ (c'est la loi
+  des coefficients, puisque $2j(n+2j-1) = 4j(\beta+j)$), on a
+  $s'' + \frac nrs' = \sum_{j\ge1}c_j\,2j(2j+n-1)\,r^{2j-2} =
+  -g\sum_{j\ge1}c_{j-1}r^{2j-2} = -gs$. Pour $U = r^\beta s$ :
+  $U'' + \frac1rU' - \frac{\beta^2}{r^2}U = r^\beta\bigl(s'' + \frac{2\beta+1}{r}s'\bigr)
+  + \bigl(\beta(\beta-1) + \beta - \beta^2\bigr)r^{\beta-2}s = -gU$ ; donc
+  $\Delta(U\sin\beta\varphi) = -gU\sin\beta\varphi$, et, par le 1, avec $k = \sqrt g$,
+  $\Delta w = -k^2w$. Alors $\Delta z = k^2\bigl(-AJ_\beta(kr) +
+  A'I_\beta(kr)\bigr)\sin(\beta\varphi+B)$, et
+  $\Delta^2z = k^4\bigl(AJ_\beta + A'I_\beta\bigr)\sin(\beta\varphi+B) = k^4z$ : c'est
+  l'équation (B) du mouvement régulier. Les deux séries du feuillet sont, à des
+  facteurs près, $J_\beta$ et $I_\beta$.
+\item En $r = a$ : $AJ_\beta(ka) + A'I_\beta(ka) = 0$ et $-AJ_\beta(ka) +
+  A'I_\beta(ka) = 0$, d'où $A'I_\beta(ka) = 0$ et $AJ_\beta(ka) = 0$. Comme
+  $I_\beta(x) > 0$ pour $x > 0$, $A' = 0$, et $A \neq 0$ impose $J_\beta(ka) = 0$. Les
+  sons étant proportionnels à $k^2$, le rapport vaut
+  $\bigl(\frac{3{,}832}{2{,}405}\bigr)^2 = 2{,}54$ ; pour la membrane, dont les sons
+  sont proportionnels à $k$, il vaut $1{,}59$. Dans sa théorie, la plaque appuyée a les
+  figures du tambour et les carrés de ses sons, comme elle le dit. Dans la théorie
+  actuelle, ce n'est pas la plaque circulaire appuyée d'une matière réelle : sur un
+  bord courbe, le moment de flexion ne se réduit pas à $\Delta z$.
+\item $\Delta z = k^2(-AJ_\beta + A'I_\beta)\sin(\beta\varphi+B)$ et
+  $\partial_r\Delta z = k^3(-AJ_\beta' + A'I_\beta')\sin(\beta\varphi+B)$ en
+  $r = a$. Le système $-AJ_\beta + A'I_\beta = 0$, $-AJ_\beta' + A'I_\beta' = 0$ a une
+  solution $(A,A')$ non nulle si et seulement si
+  $-J_\beta I_\beta' + I_\beta J_\beta' = 0$. Pour l'encastrement, $AJ_\beta + A'I_\beta
+  = 0$ et $AJ_\beta' + A'I_\beta' = 0$ donnent $J_\beta I_\beta' - I_\beta J_\beta' = 0$ :
+  la même équation. Dans sa théorie, la plaque circulaire libre a donc les sons de la
+  plaque encastrée, et $k$ est bien déterminé. L'erreur du feuillet vient de ce qu'au
+  contour la dérivée à prendre est la dérivée normale, alors que $\partial_x$, en
+  $r = a$, contient aussi $\cos\varphi\,\partial_r$.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{L'élément de la sphère dans la pièce sur la chaleur}{L1}
+\manuscrit{fr-9115}{652}{670}
+La pièce « Équation du mouvement varié de la chaleur dans une sphère solide échauffée
+d'une manière entièrement arbitraire » repère un point par sa distance $r$ au centre,
+l'arc $\theta$ compris entre le pôle et ce point, et la longitude $\varphi$. Pour
+retrouver l'équation de la chaleur par un bilan sur un petit élément, elle donne à
+l'élément de la sphère de rayon $r$ l'aire $r^2\sin^2\theta\,d\theta\,d\varphi$, et le
+justifie ainsi : la partie d'un demi-fuseau comprise entre l'équateur et le parallèle
+de $45^\circ$ de latitude serait à ce demi-fuseau entier comme $\frac12r^2$ à $r^2$.
+\begin{enumerate}
+\item Avec $x = r\sin\theta\cos\varphi$, $y = r\sin\theta\sin\varphi$, $z = r\cos\theta$
+  et $r$ fixé, calculer les vecteurs $\frac{\partial M}{\partial\theta}$ et
+  $\frac{\partial M}{\partial\varphi}$, montrer qu'ils sont orthogonaux, de normes $r$
+  et $r\sin\theta$, et en déduire l'élément d'aire $r^2\sin\theta\,d\theta\,d\varphi$.
+\item Calculer l'aire de la calotte $0 \le \theta \le \theta_0$, puis la fraction de
+  l'hémisphère que forme la zone comprise entre le parallèle $\theta = 45^\circ$ et
+  l'équateur. Quelle aire aurait la sphère entière avec l'élément du feuillet ?
+\item Montrer que la projection de la calotte sur le plan de l'équateur a l'aire
+  $\pi r^2\sin^2\theta_0$, et que celle de la zone du 2 est la moitié du grand cercle.
+  Qu'a donc mesuré le feuillet ? Montrer au contraire que l'aire d'une zone est
+  proportionnelle à sa hauteur mesurée sur l'axe.
+\item Plus loin, elle cherche des températures de la forme $w(r,t)\,Y(\theta,\varphi)$
+  et isole le cas où $Y$ annule la partie angulaire du laplacien,
+  \[
+  \Delta_SY = \frac{1}{\sin\theta}\frac{\partial}{\partial\theta}\Bigl(\sin\theta
+  \frac{\partial Y}{\partial\theta}\Bigr) + \frac{1}{\sin^2\theta}
+  \frac{\partial^2Y}{\partial\varphi^2} .
+  \]
+  Son exemple est $Y = \cot\theta\sin\varphi$. Vérifier que $\Delta_SY = 0$, et calculer
+  $\Delta_S(\cot\theta\sin m\varphi)$ pour $m$ entier. Exprimer $Y$ en coordonnées
+  cartésiennes, et dire pourquoi ce ne peut pas être le facteur angulaire d'une
+  température d'une sphère pleine.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $\frac{\partial M}{\partial\theta} = r(\cos\theta\cos\varphi,
+  \cos\theta\sin\varphi, -\sin\theta)$ et $\frac{\partial M}{\partial\varphi} =
+  r(-\sin\theta\sin\varphi, \sin\theta\cos\varphi, 0)$. Leur produit scalaire vaut
+  $r^2(-\cos\theta\sin\theta\cos\varphi\sin\varphi + \cos\theta\sin\theta\sin\varphi
+  \cos\varphi) = 0$, et leurs normes $r$ et $r\sin\theta$. L'élément est un petit
+  rectangle de côtés $r\,d\theta$ (le long du méridien) et $r\sin\theta\,d\varphi$ (le
+  long du parallèle, de rayon $r\sin\theta$, comme le dit la note de la vue 664) :
+  son aire est $r^2\sin\theta\,d\theta\,d\varphi$, non $r^2\sin^2\theta\,d\theta\,d\varphi$.
+\item $\int_0^{2\pi}\int_0^{\theta_0}r^2\sin\theta\,d\theta\,d\varphi =
+  2\pi r^2(1 - \cos\theta_0)$. La zone de $\theta = 45^\circ$ à $\theta = 90^\circ$ a
+  l'aire $2\pi r^2(\cos45^\circ - \cos90^\circ) = \sqrt2\,\pi r^2$, soit
+  $\frac{\sqrt2}{2} \approx 0{,}707$ de l'hémisphère ($2\pi r^2$), et non $\frac12$ ; le
+  rapport est le même pour un demi-fuseau, l'aire étant proportionnelle à l'angle en
+  $\varphi$. Avec l'élément du feuillet,
+  $\int_0^{2\pi}\int_0^\pi r^2\sin^2\theta\,d\theta\,d\varphi = 2\pi r^2\cdot\frac\pi2 =
+  \pi^2r^2 \approx 9{,}87\,r^2$, au lieu de $4\pi r^2 \approx 12{,}57\,r^2$.
+\item La calotte se projette sur le disque de rayon $r\sin\theta_0$, d'aire
+  $\pi r^2\sin^2\theta_0$. La zone se projette sur la couronne comprise entre les
+  rayons $r\sin45^\circ$ et $r$, d'aire $\pi r^2(1 - \frac12) = \frac12\pi r^2$ : la
+  moitié du grand cercle. Le rapport $\frac12$ et la loi en $\sin^2\theta$ du feuillet
+  sont ceux des projections sur l'équateur, non des surfaces. Au contraire, la zone
+  comprise entre $\theta_1$ et $\theta_2$ a l'aire
+  $2\pi r^2(\cos\theta_1 - \cos\theta_2) = 2\pi r\cdot h$, où
+  $h = r\cos\theta_1 - r\cos\theta_2$ est sa hauteur sur l'axe : c'est la projection
+  sur le cylindre circonscrit, et non sur l'équateur, qui conserve les aires
+  (Archimède). L'erreur ne passe pas dans l'équation finale de la page, qu'elle écrit
+  avec $\sin\theta$ et qui est exacte.
+\item $\partial_\theta Y = -\frac{\sin\varphi}{\sin^2\theta}$, donc
+  $\sin\theta\,\partial_\theta Y = -\frac{\sin\varphi}{\sin\theta}$, dont la dérivée en
+  $\theta$ vaut $\frac{\sin\varphi\cos\theta}{\sin^2\theta}$ ; divisé par
+  $\sin\theta$ : $\frac{\cos\theta\sin\varphi}{\sin^3\theta}$. Et
+  $\frac{1}{\sin^2\theta}\partial_\varphi^2Y = -\frac{\cos\theta\sin\varphi}{\sin^3\theta}$ :
+  la somme est nulle. Avec $\sin m\varphi$, le second terme porte $-m^2$, et
+  $\Delta_S(\cot\theta\sin m\varphi) = (1-m^2)\frac{\cos\theta\sin m\varphi}{\sin^3\theta}$,
+  nul seulement pour $m = \pm1$ : c'est le cas qu'elle garde, après un premier essai
+  barré avec $\sin m\varphi$. En cartésiennes, $\cot\theta = \frac{z}{\sqrt{x^2+y^2}}$
+  et $\sin\varphi = \frac{y}{\sqrt{x^2+y^2}}$, d'où $Y = \frac{yz}{x^2+y^2}$. Cette
+  fonction n'est pas bornée au voisinage de l'axe des pôles (en $x = 0$, elle vaut
+  $\frac zy$), alors qu'une température d'une sphère pleine doit rester finie et
+  continue dans tout le solide : la solution ne vaut que hors de l'axe.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le refroidissement du cylindre échauffé arbitrairement}{L3}
+\manuscrit{fr-9115}{672}{691}
+La pièce sur le cylindre dont les tranches sont échauffées « d'une manière entièrement
+arbitraire, mais semblable pour chacune d'elles » écrit, en coordonnées polaires
+$(r,\varphi)$ d'une tranche de rayon $R$,
+\[
+\frac{\partial v}{\partial t} = k\Bigl(\frac{\partial^2v}{\partial r^2} +
+\frac1r\frac{\partial v}{\partial r} + \frac{1}{r^2}\frac{\partial^2v}{\partial\varphi^2}
+\Bigr) \quad (C), \qquad \frac{\partial v}{\partial r} + \frac hKv = 0 \text{ pour }
+r = R \quad (D),
+\]
+avec $k$, $h$, $K$ positifs. Elle cherche
+$v = e^{-gkt}\,r^\beta s(r)\,(A\sin\beta\varphi + B\cos\beta\varphi)$, $\beta$ entier
+$\ge 0$ ; d'après l'exercice précédent, $r^\beta s(r)$ est proportionnel à
+$u(r) = J_\beta(\sqrt g\,r)$, qui vérifie $(ru')' - \frac{\beta^2}{r}u = -g\,r\,u$. On
+pose $x = \sqrt g\,R$ et $H = \frac{hR}{K}$.
+\begin{enumerate}
+\item Montrer que (D) s'écrit $xJ_\beta'(x) + HJ_\beta(x) = 0$. Le feuillet écrit la
+  condition $b\,s(R) + s'(R) = 0$ sans dire ce qu'est $b$ : le déterminer.
+\item Montrer que, pour toute racine, $g\int_0^Rru^2\,dr = \int_0^R\bigl(ru'^2 +
+  \frac{\beta^2}{r}u^2\bigr)dr + \frac hKR\,u(R)^2$, et en déduire que $g > 0$. Montrer
+  que la même identité, appliquée à une solution complexe et à sa conjuguée, rend
+  $g$ réel. Montrer enfin que deux fonctions $u_i$, $u_j$ du même ordre $\beta$, de
+  racines $g_i \neq g_j$, vérifient $\int_0^Rr\,u_iu_j\,dr = 0$. (Le feuillet affirme,
+  en renvoyant à Fourier, que les racines sont réelles ; il ne dit rien de cette
+  orthogonalité, qui sert à calculer les coefficients à partir de l'état initial.)
+\item Cas $H = 1$. En admettant $J_0' = -J_1$ et $xJ_\beta'(x) = xJ_{\beta-1}(x) -
+  \beta J_\beta(x)$ pour $\beta \ge 1$, écrire l'équation pour $\beta = 0, 1, 2$, et
+  montrer que pour $\beta = 1$ elle se réduit à $J_0(x) = 0$. On admet les premières
+  racines : $1{,}256$ et $4{,}080$ pour $\beta = 0$ ; $2{,}405$ pour $\beta = 1$ ;
+  $3{,}518$ pour $\beta = 2$ ; $4{,}613$ pour $\beta = 3$. Le feuillet suppose (« si on
+  admet ») que toutes les racines d'un ordre sont plus grandes que celles de l'ordre
+  précédent et plus petites que celles de l'ordre suivant. Est-ce vrai ? Quelle partie
+  de cette hypothèse sa conclusion demande-t-elle ?
+\item Elle conclut que, le temps croissant, il reste sensiblement
+  $v \approx a\,e^{-g_{0,1}kt}J_0(\sqrt{g_{0,1}}\,r) + (A'\sin\varphi +
+  B'\cos\varphi)\,e^{-g_{1,1}kt}J_1(\sqrt{g_{1,1}}\,r)$. Montrer que, dans cet état, la
+  demi-somme des températures de deux points d'une même couche diamétralement opposés
+  est la température moyenne de la couche, et que sur le diamètre perpendiculaire à
+  celui des températures extrêmes le refroidissement est celui du cylindre échauffé
+  uniformément par couches. Pourquoi ce n'est vrai qu'asymptotiquement ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $\partial_rv$ contient le facteur $\sqrt g\,J_\beta'(\sqrt g\,r)$ ; en $r = R$,
+  (D) donne $\sqrt gJ_\beta'(x) + \frac hKJ_\beta(x) = 0$, et en multipliant par $R$,
+  $xJ_\beta'(x) + HJ_\beta(x) = 0$. Avec $v$ proportionnel à $r^\beta s$,
+  $\partial_r(r^\beta s) = r^\beta\bigl(s' + \frac\beta rs\bigr)$, et (D) devient
+  $s'(R) + \bigl(\frac hK + \frac\beta R\bigr)s(R) = 0$ : $b = \frac hK + \frac\beta R$.
+\item On multiplie l'équation par $u$ et l'on intègre sur $[0,R]$ :
+  $\bigl[ruu'\bigr]_0^R - \int_0^Rru'^2 - \int_0^R\frac{\beta^2}{r}u^2 = -g\int_0^Rru^2$.
+  Le crochet est nul en $0$ ($u$ est régulière, et $u \sim cr^\beta$) ; en $R$, (D)
+  donne $u'(R) = -\frac hKu(R)$, d'où l'identité. Son second membre est strictement
+  positif pour $u \neq 0$, donc $g > 0$. Si $g$ et $u$ étaient complexes, on
+  multiplierait par $\bar u$ : l'identité, avec $|u|^2$ et $|u'|^2$, donne
+  $g\int r|u|^2$ égal à un réel positif, donc $g$ réel positif. Pour deux racines,
+  $(ru_i')'u_j - (ru_j')'u_i = -(g_i - g_j)\,r\,u_iu_j$, les termes en $\beta^2$ se
+  détruisant, et le premier membre est la dérivée de $r(u_i'u_j - u_j'u_i)$. En
+  intégrant : $R\bigl(u_i'(R)u_j(R) - u_j'(R)u_i(R)\bigr) = R\frac hK\bigl(-u_iu_j +
+  u_ju_i\bigr)(R) = 0$, d'où $(g_i - g_j)\int_0^Rru_iu_j\,dr = 0$ et l'orthogonalité.
+\item $\beta = 0$ : $-xJ_1(x) + J_0(x) = 0$, soit $J_0(x) = xJ_1(x)$. $\beta = 1$ :
+  $xJ_0 - J_1 + J_1 = xJ_0(x) = 0$, soit $J_0(x) = 0$ : la racine $2{,}405$ est le
+  premier zéro de $J_0$. $\beta = 2$ : $xJ_1 - 2J_2 + J_2 = 0$, soit $xJ_1(x) = J_2(x)$.
+  L'hypothèse est fausse : la deuxième racine d'ordre $0$, $4{,}080$, dépasse la
+  première d'ordre $1$ ($2{,}405$) et même celle d'ordre $2$ ($3{,}518$). Mais sa
+  conclusion n'en demande qu'une partie : que la plus petite racine soit $x_{0,1}$,
+  d'ordre $0$, et la suivante $x_{1,1}$, d'ordre $1$, toutes les autres étant plus
+  grandes. C'est vrai ici : $1{,}256 < 2{,}405 < 3{,}518 < 4{,}080$, et $4{,}613$ au
+  rang suivant ; la lecture modernisée l'a vérifié pour $H$ de $0{,}01$ à $10\,000$.
+  Comme $g = \frac{x^2}{R^2}$, les termes décroissent comme $e^{-gkt}$, d'autant plus
+  vite que la racine est grande.
+\item Sur le cercle de rayon $r$, la moyenne en $\varphi$ de $A'\sin\varphi +
+  B'\cos\varphi$ est nulle : la température moyenne de la couche est le terme d'ordre
+  $0$. En $\varphi$ et $\varphi + \pi$, le facteur d'ordre $1$ change de signe : la
+  demi-somme est encore le terme d'ordre $0$. En écrivant $A'\sin\varphi + B'\cos\varphi
+  = C\cos(\varphi - \varphi_1)$ avec $\tan\varphi_1 = \frac{A'}{B'}$, les extrêmes sont
+  aux bouts du diamètre $\varphi = \varphi_1$, et sur le diamètre perpendiculaire le
+  facteur est nul : il ne reste que le terme d'ordre $0$, qui est la solution du
+  cylindre échauffé par couches. Tout cela suppose les termes d'ordre $\beta \ge 2$
+  négligeables : les termes d'ordre pair, en $\cos2\varphi$, $\sin2\varphi$, ne changent
+  pas quand on ajoute $\pi$ à $\varphi$, et faussent la demi-somme tant qu'ils ne sont
+  pas éteints. L'écart relatif décroît comme $e^{-(g_{2,1} - g_{0,1})kt}$ : l'état
+  décrit n'est atteint qu'asymptotiquement.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le manuscrit C : deux cas et trois lacunes}{L3}
+\manuscrit{fr-9115}{708}{710}
+Les trois pages du « manuscrit C » énoncent : « $n$ étant un nombre impair plus grand
+que l'unité, il est impossible de satisfaire en nombres entiers à l'équation
+$2z^{2n} = y^{2n} + x^{2n}$ » ; elles en déduisent le théorème de Fermat pour les
+exposants pairs, $Z^{2n} = X^{2n} + Y^{2n}$ impossible pour $n > 1$, et démontrent le
+premier énoncé en supposant $x$, $y$, $z$ premiers entre eux.
+\begin{enumerate}
+\item Le cas $n = 1$. Vérifier l'identité $(P^2 - Q^2 - 2PQ)^2 + (P^2 - Q^2 + 2PQ)^2 =
+  2(P^2 + Q^2)^2$, qui ouvre la démonstration, et en tirer deux solutions de
+  $x^2 + y^2 = 2z^2$ en entiers premiers entre eux avec $x^2 \neq y^2$. Pourquoi
+  l'énoncé exclut-il $n = 1$ ?
+\item Montrer que $x = y = z = 1$ est solution pour tout $n$. La démonstration finit
+  ainsi : dans le dernier cas, $x^n = x$ et $y^n = y$, et « ce cas est donc le seul
+  dans lequel il soit possible de satisfaire à l'équation », c'est-à-dire $n = 1$. Où
+  est la faute ? Corriger l'énoncé.
+\item Montrer que si $x$, $y$, $z$ sont premiers entre eux et $x^{2n} + y^{2n} =
+  2z^{2n}$, ils sont impairs.
+\item La page écrit $x^{2n} + y^{2n} = (x^2 + y^2)\Phi$, avec
+  $\Phi = x^{2n-2} - x^{2n-4}y^2 + \cdots + y^{2n-2}$ ($n$ impair), puis $z = z'z''$,
+  $x^2 + y^2 = 2z'^{2n}$ et $\Phi = z''^{2n}$, ce qui suppose $x^2 + y^2$ et $\Phi$
+  premiers entre eux, au facteur $2$ près. Montrer que $\Phi \equiv ny^{2n-2}
+  \pmod{x^2+y^2}$ et que le plus grand commun diviseur de $x^2+y^2$ et de $\Phi$ divise
+  $n$. Calculer $\Phi$ et ce diviseur pour $n = 5$, $x = 1$, $y = 3$. Conclure.
+\item Plus loin, avec $x = p^2 - q^2 - 2pq$ et $y = p^2 - q^2 + 2pq$, la page affirme
+  $2(y^2 - x^2) > (x+y)^2$, puis emploie $(x+y)^2 \ge y^2$. Montrer que
+  $2(y^2 - x^2) - (x+y)^2 = (x+y)(y - 3x)$. Tester les deux inégalités pour
+  $(p,q) = (3,2)$, puis pour la solution obtenue en changeant le signe de $x$.
+  Conclure.
+\item Le cas $n = 2$, que l'énoncé laisse de côté. On admet le théorème de Fermat :
+  $X^4 - Y^4 = W^2$ n'a pas de solution en entiers avec $XYW \neq 0$.
+  Montrer que si $x^4 + y^4 = 2z^4$, alors $(z^2)^4 - (xy)^4 =
+  \bigl(\frac{x^4-y^4}{2}\bigr)^2$, et en déduire les solutions en entiers premiers
+  entre eux. Pour le second théorème, la page passe d'une égalité $Z^n \pm Y^n =
+  2x'^{2n}$ à une égalité entre les bases en divisant par $Z \pm Y$ : montrer que ce
+  pas ne vaut pas pour $n = 2$, et démontrer directement que $Z^4 = X^4 + Y^4$ est
+  impossible avec $XYZ \neq 0$.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Avec $a = P^2 - Q^2$ et $b = 2PQ$ : $(a-b)^2 + (a+b)^2 = 2(a^2 + b^2)$ et
+  $a^2 + b^2 = (P^2 + Q^2)^2$. Pour $(P,Q) = (2,1)$ : $x = -1$, $y = 7$, $z = 5$, et
+  $1 + 49 = 2\cdot25$. Pour $(3,2)$ : $x = -7$, $y = 17$, $z = 13$, et
+  $49 + 289 = 2\cdot169$. L'équation de degré $2$ a une infinité de solutions
+  primitives non triviales : il faut exclure $n = 1$.
+\item $1 + 1 = 2\cdot1$. L'égalité $x^n = x$ n'entraîne pas $n = 1$ : elle a lieu pour
+  tout $n$ si $x = \pm1$. La démonstration aboutit donc, dans son dernier cas, à
+  $n = 1$ ou $x^2 = y^2 = 1$, et la conclusion oublie la seconde possibilité. L'énoncé
+  correct est : pour $n$ impair $> 1$, les seules solutions en entiers premiers entre
+  eux sont $x^2 = y^2 = z^2 = 1$. Sous cette forme, il est vrai ; il n'a été démontré
+  qu'en 1997, par Darmon et Merel, par de tout autres moyens.
+\item Si $x$ et $y$ étaient pairs tous deux, $2^{2n}$ diviserait $2z^{2n}$, donc $z$
+  serait pair, et $x$, $y$, $z$ ne seraient pas premiers entre eux. Si l'un est pair et
+  l'autre impair, $x^{2n} + y^{2n}$ est impair, alors que $2z^{2n}$ est pair. Donc $x$
+  et $y$ sont impairs, leurs puissances paires valent $1$ modulo $8$, et
+  $2z^{2n} \equiv 2 \pmod 8$ donne $z^{2n} \equiv 1 \pmod 4$ : $z$ est impair.
+\item Modulo $x^2 + y^2$, $x^2 \equiv -y^2$, et le terme
+  $(-1)^jx^{2(n-1-j)}y^{2j}$ de $\Phi$ est congru à
+  $(-1)^j(-1)^{n-1-j}y^{2n-2} = y^{2n-2}$ puisque $n - 1$ est pair ; les $n$ termes
+  donnent $\Phi \equiv ny^{2n-2}$. Un diviseur commun $d$ de $x^2+y^2$ et de $\Phi$
+  divise donc $ny^{2n-2}$ ; il est premier avec $y$ (un facteur premier de $y$ et de
+  $x^2 + y^2$ diviserait $x$), donc $d \mid n$. Pour $n = 5$, $x = 1$, $y = 3$ :
+  $x^2 + y^2 = 10$ et $\Phi = 1 - 9 + 81 - 729 + 6561 = 5905 = 5\times1181$ ; le plus
+  grand commun diviseur est $5$. Le couple $(1,3)$ n'est pas une solution, mais il
+  montre que le pgcd peut valoir un facteur premier de $n$ de la forme $4k+1$ (les
+  facteurs premiers impairs de $x^2 + y^2$ sont de cette forme) : le partage de la page
+  n'est justifié que si aucun facteur premier de $n$ n'est $\equiv 1 \pmod 4$. C'est
+  une première lacune.
+\item $2(y^2 - x^2) - (x+y)^2 = (x+y)\bigl(2(y-x) - (x+y)\bigr) = (x+y)(y - 3x)$. Pour
+  $(p,q) = (3,2)$ : $x = -7$, $y = 17$. Alors $2(y^2 - x^2) = 480 > (x+y)^2 = 100$, mais
+  $(x+y)^2 = 100 < y^2 = 289$ : la seconde inégalité tombe. Pour $x = 7$, $y = 17$,
+  autre solution de $x^2 + y^2 = 2\cdot13^2$ : $480 < (x+y)^2 = 576$, c'est la première
+  qui tombe. La chaîne ne conclut que si $x$ et $y$ sont de même signe et
+  $|y| > 3|x|$ : c'est une deuxième lacune ; l'oubli de la solution triviale (2) en
+  est une troisième, et la lecture modernisée en relève une quatrième (deux valeurs
+  d'un même produit, l'une par signe, supposées divisibles ensemble par le même
+  nombre).
+\item $\bigl(\frac{x^4+y^4}{2}\bigr)^2 - (x^2y^2)^2 = \bigl(\frac{x^4-y^4}{2}\bigr)^2$,
+  et $\frac{x^4+y^4}{2} = z^4$ : c'est l'identité. Pour une solution primitive, $x$ et
+  $y$ sont impairs (par le 3, qui vaut pour $n = 2$), donc non nuls, et
+  $W = \frac{x^4-y^4}{2}$ est entier. Par le théorème admis, $W = 0$, d'où
+  $x^4 = y^4 = z^4$ et, les nombres étant premiers entre eux, $x^2 = y^2 = z^2 = 1$ :
+  pour $n = 2$ aussi, il n'y a que la solution triviale. Pour le second théorème, la
+  page utilise que $Z + Y$ divise $Z^n + Y^n$, vrai pour $n$ impair seulement : pour
+  $n = 2$, $Z = 3$, $Y = 1$, $Z + Y = 4$ ne divise pas $Z^2 + Y^2 = 10$. Mais
+  $Z^4 = X^4 + Y^4$ s'écrit $Z^4 - Y^4 = (X^2)^2$ avec $X^2 \neq 0$, ce que le théorème
+  admis exclut : le cas $n = 2$ est dû à Fermat. Pour $n$ impair $> 1$, le second
+  théorème contient un cas du théorème démontré par Wiles en 1995.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le nombre 2 et les formes $8k \pm 3$ ; une extension fausse}{L2}
+\manuscrit{fr-9115}{704}{704}
+\manuscrit{fr-9115}{720}{723}
+On note $\bigl(\frac ap\bigr)$ le symbole de Legendre ($p$ premier impair, $p \nmid a$),
+qui vaut $1$ si $a$ est un carré modulo $p$ (« résidu ») et $-1$ sinon. On admet
+$\bigl(\frac{-1}{p}\bigr) = (-1)^{\frac{p-1}{2}}$ et la loi de réciprocité quadratique :
+pour $p$, $q$ premiers impairs distincts,
+$\bigl(\frac qp\bigr)\bigl(\frac pq\bigr) = (-1)^{\frac{p-1}{2}\cdot\frac{q-1}{2}}$.
+\begin{enumerate}
+\item Une note (vue 704) donne « une autre démonstration de la propriété du nombre 2
+  d'être résidu ou non résidu des nombres premiers suivant leurs formes par rapport à
+  8 ». Elle part de $-1 \equiv 2\cdot\frac{p-1}{2} \pmod p$. Soit $q$ un facteur premier
+  de $\frac{p-1}{2}$ : montrer que $\bigl(\frac pq\bigr) = 1$, puis que
+  $\bigl(\frac qp\bigr) = 1$ si $q \equiv 1 \pmod 4$ et $\bigl(\frac{-q}{p}\bigr) = 1$ si
+  $q \equiv 3 \pmod 4$.
+\item En déduire $\bigl(\frac2p\bigr) = -1$ pour $p \equiv 3 \pmod 8$ et
+  $\bigl(\frac2p\bigr) = 1$ pour $p \equiv 7 \pmod 8$. Vérifier sur $p = 11$, $19$ et
+  $23$ en dressant la liste des carrés.
+\item Soit $p \equiv 1 \pmod 4$, et $2^e$ la plus grande puissance de $2$ qui divise
+  $p - 1$. Montrer que la méthode donne $\bigl(\frac2p\bigr) = 1$ si $e$ est impair, et
+  qu'elle « n'apprend rien » si $e$ est pair. Dresser la liste des nombres premiers
+  inférieurs à $60$ qu'elle ne couvre pas.
+\item Un billet (vue 722) démontre que tout nombre de la forme $4n+2$ est non-résidu
+  d'un nombre premier. Justifier : $4n + 3$ a un facteur premier $q \equiv 3 \pmod 4$,
+  et $4n + 2 \equiv -1 \pmod q$.
+\item Un autre feuillet (vue 720) étend une proposition qu'il lit dans « l'auteur » :
+  « tout nombre de la forme $4n+1$ pris négativement est non résidu de quelque nombre
+  premier moindre que lui et de la forme $4n+3$ ». Montrer que $-5$, $-17$ et $-21$
+  sont résidus de tous les nombres premiers de la forme $4k+3$ plus petits qu'eux et
+  qui ne les divisent pas.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $q$ divise $p - 1$, donc $p \equiv 1 \pmod q$ et $\bigl(\frac pq\bigr) =
+  \bigl(\frac1q\bigr) = 1$. Par la réciprocité, $\bigl(\frac qp\bigr) =
+  (-1)^{\frac{p-1}{2}\cdot\frac{q-1}{2}}$. Si $q \equiv 1 \pmod 4$, l'exposant est pair
+  et $\bigl(\frac qp\bigr) = 1$. Si $q \equiv 3 \pmod 4$, $\frac{q-1}{2}$ est impair et
+  $\bigl(\frac qp\bigr) = (-1)^{\frac{p-1}{2}} = \bigl(\frac{-1}{p}\bigr)$, d'où
+  $\bigl(\frac{-q}{p}\bigr) = \bigl(\frac{-1}{p}\bigr)\bigl(\frac qp\bigr) = 1$. La note
+  emploie ces faits sans les justifier : sa démonstration suppose la réciprocité pour
+  deux nombres premiers impairs.
+\item Si $p \equiv 3 \pmod 4$, le 1 donne $\bigl(\frac qp\bigr) = 1$ pour
+  $q \equiv 1$ et $\bigl(\frac qp\bigr) = -1$ pour $q \equiv 3 \pmod 4$. Pour
+  $p = 8K + 3$, $\frac{p-1}{2} = 4K + 1 \equiv 1 \pmod 4$ a un nombre pair de facteurs
+  premiers (comptés avec multiplicité) congrus à $3$ modulo $4$ : il est résidu. Comme
+  $-1$ est non-résidu, $-1 \equiv 2(4K+1)$ donne $\bigl(\frac2p\bigr) = -1$. Pour
+  $p = 8K + 7$, $\frac{p-1}{2} = 4K + 3$ en a un nombre impair : il est non-résidu, et
+  $-1 = \bigl(\frac2p\bigr)\cdot(-1)$ donne $\bigl(\frac2p\bigr) = 1$. Modulo $11$, les
+  carrés non nuls sont $1, 4, 9, 5, 3$ : $2$ n'y est pas ($11 \equiv 3$). Modulo $19$ :
+  $1, 4, 9, 16, 6, 17, 11, 7, 5$ : $2$ n'y est pas ($19 \equiv 3$). Modulo $23$,
+  $5^2 = 25 \equiv 2$ ($23 \equiv 7$).
+\item Écrivons $\frac{p-1}{2} = 2^{e-1}m$, $m$ impair ; ici $-1$ est résidu. Par le 1,
+  tout facteur premier $q$ de $m$ a $\bigl(\frac qp\bigr) = 1$, puisque
+  $\bigl(\frac{-1}{p}\bigr) = 1$ ; donc $\bigl(\frac mp\bigr) = 1$. Si $e - 1$ est pair,
+  $2^{e-1}$ est un carré, $\frac{p-1}{2}$ est résidu, et $-1 \equiv 2\cdot\frac{p-1}{2}$
+  donne $\bigl(\frac2p\bigr) = 1$. Si $e - 1$ est impair,
+  $\bigl(\frac{(p-1)/2}{p}\bigr) = \bigl(\frac2p\bigr)$, et la relation devient
+  $1 = \bigl(\frac2p\bigr)^2$, qui n'apprend rien : c'est ce que dit la dernière ligne
+  de la note (« cette méthode n'apprend rien pour le cas $p = 2^{2m}n+1$ »). Sont dans
+  ce cas les $p \equiv 5 \pmod 8$ ($e = 2$) et ceux où $e \ge 4$ est pair. En dessous
+  de $60$ : $5$, $13$, $17$, $29$, $37$, $53$ ($41$, où $e = 3$, est couvert).
+\item $4n + 3$ est impair et congru à $3$ modulo $4$ ; s'il n'avait que des facteurs
+  premiers $\equiv 1 \pmod 4$, il serait $\equiv 1$. Il a donc un facteur premier
+  $q \equiv 3 \pmod 4$, qui ne divise pas $4n+2$ (sinon il diviserait $1$). Alors
+  $4n + 2 = (4n + 3) - 1 \equiv -1 \pmod q$, et $\bigl(\frac{-1}{q}\bigr) = -1$ :
+  $4n + 2$ est non-résidu de $q$. (Le billet prend $4n + 2 + (2k+1)^2$ ; c'est ici le
+  cas $k = 0$.)
+\item $-5 \equiv 1 = 1^2 \pmod 3$, et $3$ est le seul nombre premier $4k+3$ inférieur
+  à $5$. Pour $-17$ : $-17 \equiv 1 \pmod 3$, $\equiv 4 = 2^2 \pmod 7$,
+  $\equiv 5 \equiv 4^2 \pmod{11}$. Pour $-21$ : $3$ et $7$ divisent $21$ ; $-21 \equiv
+  1 \pmod{11}$ et $-21 \equiv 17 \equiv 6^2 \pmod{19}$. Dans les trois cas, aucun
+  nombre premier de la forme voulue ne convient : l'extension est fausse. Selon la
+  lecture modernisée, ce sont, avec $3$, les seules exceptions en dessous de
+  $200\,000$, et c'est la restriction à la forme $4k+3$ qui rend l'énoncé faux.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{L'équation $x^2 - ay^2 = 1$ dans un extrait de Turin}{L1}
+\manuscrit{fr-9115}{749}{749}
+La dernière page écrite du volume résume, d'après un mémoire de Lagrange des Mémoires
+de Turin, l'étude de $x^2 - ay^2 = 1$, $a$ étant un entier positif non carré : le
+lemme $(x^2 - ay^2)(x'^2 - ay'^2) = (xx' \pm ayy')^2 - a(xy' \pm yx')^2$ ; puis, si
+$p^2 - aq^2 = 1$, les solutions
+\[
+x = \frac{(p + q\sqrt a)^m + (p - q\sqrt a)^m}{2}, \qquad
+y = \frac{(p + q\sqrt a)^m - (p - q\sqrt a)^m}{2\sqrt a} ;
+\]
+enfin, « La Grange démontre ensuite » que si $(p,q)$ est la plus petite solution en
+entiers positifs, toutes s'obtiennent ainsi.
+\begin{enumerate}
+\item Vérifier le lemme.
+\item Montrer que $x$ et $y$ ainsi définis sont entiers et vérifient $x^2 - ay^2 = 1$.
+  Pour $m = 2$, la copie écrit
+  $q' = \frac{(p+q\sqrt a)^2 + (p - q\sqrt a)^2}{2\sqrt a}$ : calculer cette quantité,
+  et la valeur juste de $q'$.
+\item Pour $a = 2$ et $(p,q) = (3,2)$, donner les deux solutions suivantes. Pour
+  $a = 13$, vérifier que $(649, 180)$ est solution, et calculer la suivante.
+\item On démontre l'énoncé attribué à Lagrange ; on pose $\varepsilon = p + q\sqrt a$.
+  Montrer que si $u^2 - av^2 = 1$ avec $u$, $v$ entiers et $\xi = u + v\sqrt a > 1$,
+  alors $u > 0$ et $v > 0$. En déduire que $\varepsilon$ est le plus petit des nombres
+  $\xi > 1$ de cette sorte.
+\item Soit $(x,y)$ une solution en entiers positifs, $\eta = x + y\sqrt a$, et $m$
+  l'entier tel que $\varepsilon^m \le \eta < \varepsilon^{m+1}$. Montrer que
+  $\eta\,\varepsilon^{-m} = \eta\,(p - q\sqrt a)^m$ s'écrit $u + v\sqrt a$ avec $u$, $v$
+  entiers et $u^2 - av^2 = 1$, et conclure.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $(xx' + ayy')^2 - a(xy' + yx')^2 = x^2x'^2 + 2axx'yy' + a^2y^2y'^2 - ax^2y'^2 -
+  2axx'yy' - ay^2x'^2 = x^2x'^2 - ax^2y'^2 - ay^2x'^2 + a^2y^2y'^2$, qui est
+  $(x^2 - ay^2)(x'^2 - ay'^2)$ ; de même avec les signes inférieurs. C'est l'identité
+  qu'on attribue à Brahmagupta.
+\item Par récurrence sur $m$, $(p + q\sqrt a)^m = X_m + Y_m\sqrt a$ avec $X_m$, $Y_m$
+  entiers, et $(p - q\sqrt a)^m = X_m - Y_m\sqrt a$ (on multiplie par
+  $p \pm q\sqrt a$ : $X_{m+1} = pX_m + aqY_m$, $Y_{m+1} = qX_m + pY_m$). Donc
+  $x = X_m$ et $y = Y_m$ sont entiers, et
+  $x^2 - ay^2 = (x + y\sqrt a)(x - y\sqrt a) = \bigl((p+q\sqrt a)(p-q\sqrt a)\bigr)^m =
+  (p^2 - aq^2)^m = 1$. Pour $m = 2$, $(p+q\sqrt a)^2 + (p-q\sqrt a)^2 = 2(p^2 + aq^2)$,
+  et la quantité de la copie vaut $\frac{p^2 + aq^2}{\sqrt a}$, qui n'est pas même
+  rationnelle ; il faut le signe moins :
+  $q' = \frac{4pq\sqrt a}{2\sqrt a} = 2pq$, avec $p' = p^2 + aq^2$.
+\item $a = 2$ : $(17, 12)$, puisque $17 = 9 + 8$ et $12 = 2\cdot3\cdot2$, puis
+  $(3\cdot17 + 2\cdot2\cdot12,\ 2\cdot17 + 3\cdot12) = (99, 70)$ ; en effet
+  $289 - 288 = 1$ et $9801 - 9800 = 1$. $a = 13$ : $649^2 = 421\,201$ et
+  $13\times180^2 = 421\,200$. La suivante est $p' = 649^2 + 13\times180^2 = 842\,401$,
+  $q' = 2\times649\times180 = 233\,640$.
+\item $(u + v\sqrt a)(u - v\sqrt a) = 1$, donc $u - v\sqrt a = \frac1\xi \in\, ]0,1[$,
+  et $u = \frac12\bigl(\xi + \frac1\xi\bigr) > 0$,
+  $v\sqrt a = \frac12\bigl(\xi - \frac1\xi\bigr) > 0$. Les $\xi > 1$ sont donc
+  exactement les $x + y\sqrt a$ des solutions en entiers positifs ; pour celles-ci,
+  $x = \sqrt{1 + ay^2}$ croît avec $y$, et la plus petite solution donne le plus petit
+  $\xi$, qui est $\varepsilon$.
+\item Comme $\eta \ge \varepsilon > 1$, l'entier $m \ge 1$ existe. On a
+  $\varepsilon^{-1} = p - q\sqrt a$, donc $\eta\varepsilon^{-m} = (x + y\sqrt a)(p -
+  q\sqrt a)^m$, qui, développé, est de la forme $u + v\sqrt a$ avec $u$, $v$ entiers ;
+  et $u^2 - av^2 = (x^2 - ay^2)(p^2 - aq^2)^m = 1$ par le lemme. Or
+  $1 \le u + v\sqrt a < \varepsilon$. Si $u + v\sqrt a > 1$, le (a) en fait une
+  solution positive plus petite que $\varepsilon$, ce qui est exclu ; donc
+  $u + v\sqrt a = 1$ et $\eta = \varepsilon^m$ : $(x,y)$ est la solution de rang $m$
+  de la formule. L'extrait ne rappelle pas que $a$ doit être positif et non carré ;
+  c'est ce qui assure l'existence de $(p,q)$ et l'irrationalité de $\sqrt a$, utilisée
+  en identifiant $x + y\sqrt a$.
+\end{enumerate}
+\end{solution}
+
 \section*{Sophie Germain : la mécanique d'un essai de philosophie (Français 9117)}
 \chapitre{fr-9117}
 
@@ -3699,10 +4903,18 @@ exercices, qui ne reposent que sur les feuillets.
 \item Autolycus, \emph{De la sphère en mouvement} ; Théodose, \emph{Des habitations} ;
   Euclide, \emph{Phénomènes} --- dans les versions de Maurolico copiées en
   Latin 17859.
+\item Ernst Florens Friedrich Chladni, \emph{Traité d'acoustique}, Paris, 1809.
+\item Henri Darmon et Loïc Merel, article de 1997 sur l'équation
+  $a^\ell + b^\ell = 2c^\ell$, \emph{Journal für die reine und angewandte Mathematik}.
 \item René Descartes, \emph{Discours de la méthode} et \emph{La Géométrie},
   1637.
+\item Leonhard Euler, « Recherches sur la courbure des surfaces », \emph{Mémoires de
+  l'Académie de Berlin} pour 1760 ; « Investigatio motuum quibus laminae et virgae
+  elasticae contremiscunt », \emph{Acta Academiae scientiarum imperialis
+  Petropolitanae} pour 1779 (copie latine en Français 9115).
 \item Le P. Fabri, \emph{Thèses de géométrie}, discutées dans une lettre de NAF 5161.
 \item Friedrich Hermann Flayder, \emph{De arte volandi}, Tübingen, 1627.
+\item Joseph Fourier, \emph{Théorie analytique de la chaleur}, 1822.
 \item Galileo Galilei, \emph{Dialogue} ;
   \emph{Discorsi e dimostrazioni matematiche intorno a due nuove scienze}, 1638 ;
   \emph{Discorso intorno alle cose che stanno in su l'acqua}.
@@ -3713,8 +4925,15 @@ exercices, qui ne reposent que sur les feuillets.
 \item Paul Guldin, « problème arithmétique » à la fin du second tome de son traité
   des centres de gravité.
 \item Christiaan Huygens, \emph{De ratiociniis in ludo aleae}, 1657.
+\item Gustav Kirchhoff, mémoire de 1850 sur l'équilibre et le mouvement d'une plaque
+  élastique, \emph{Journal für die reine und angewandte Mathematik}.
 \item Joseph-Louis Lagrange, note aux commissaires du prix de la surface élastique,
   décembre 1811 (copie en Français 9118).
+\item Joseph-Louis Lagrange, mémoire sur l'équation $x^2 - ay^2 = 1$, \emph{Mémoires}
+  de l'Académie de Turin, t. 4 (résumé en Français 9115).
+\item Reinhard Laubenbacher et David Pengelley, article de 2010 dans \emph{Historia
+  Mathematica} sur les manuscrits de Sophie Germain relatifs au théorème de Fermat
+  (désignation « manuscrit C »).
 \item Guglielmo Libri, \emph{Description des manuscrits de Roberval conservés à la
   Bibliothèque nationale} (NAF 9544).
 \item Francesco Maurolico, volume sur la sphère (\emph{Sphériques} de Théodose, de
@@ -3722,6 +4941,9 @@ exercices, qui ne reposent que sur les feuillets.
   Spira, 1558, dont Latin 17859 est une copie ; \emph{Opuscula mathematica}, 1575.
 \item Ménélas d'Alexandrie, \emph{Sphériques}, livre III.
 \item Marin Mersenne, \emph{Harmonie universelle}.
+\item Jean-Baptiste Meusnier, mémoire sur la courbure des surfaces, lu en 1776,
+  publié en 1785.
+\item Claude-Louis Navier, mémoire sur la flexion des plaques élastiques, 1820.
 \item Blaise Pascal, lettre à Pierre de Fermat du 29 juillet 1654.
 \item Regiomontanus (Johannes de Monteregio), table des tangentes (« table
   féconde ») et règles de calcul commentées par Maurolico.
@@ -3729,6 +4951,8 @@ exercices, qui ne reposent que sur les feuillets.
   une note marginale de Latin 11195.
 \item François Viète et son école, \emph{De recognitione et emendatione
   aequationum} (notation des espèces et loi des homogènes).
+\item Andrew Wiles, démonstration du théorème de Fermat, \emph{Annals of
+  Mathematics}, 1995.
 \end{itemize}
 
 \end{document}
