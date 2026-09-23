@@ -1,0 +1,654 @@
+% NAL 1644, batch 8 — Gallica views 141–160.
+% Pass: Opus 5.5 (claude-opus-5-5), 2026-09-23 — first pass, unchecked against the views by a human.
+%
+% Dating. The catalogue gives no date for this volume (an empty string in
+% holdings.json); \dating{} is left empty on purpose, and this pass infers
+% none. No date is written on these twenty views. A later reader's marginal
+% note on view 141 cites "editionis elzevir. anni 1646, infolio": that is a
+% date of a printed book, not of these leaves.
+%
+% What the views are. Greyscale scans, portrait, about 3750 × 5620, one page
+% per view, read from the local mirror as full-width bands at 2400 px (and
+% half-width bands at 2000 px on the crowded drafts), with tight crops for
+% struck words, figures and numbers; the marginal table of view 156, written
+% across the page, was read from rotated crops. Nothing was fetched from
+% Gallica. \page{N} is always the view. As in batch 2, leaves are of unequal
+% size: on views 157 and 160 the top of the next, taller leaf projects above
+% the page photographed; those strips are described, not transcribed, at the
+% view where they project.
+%
+% One hand throughout, the same regular cursive as batch 2's treatise, here
+% often fast and heavily corrected (views 148, 155, 156). The pass does not
+% attribute it. Latin throughout, with a few Greek words (αὐτόπται? v. 150,
+% χρεώστης? v. 157, Δεδομένον on the projecting leaf of v. 160, Greek letters
+% as quantities on v. 153 and 156) and one French word ("monsieur", read with
+% doubt, v. 156). Nothing on the leaves names an author. The hypothesis of
+% views 148 and 150 is said to be "a Tychone Brahe proposita", then
+% rewritten "ab Astroscopo Dano proposita"; Copernicus, Ptolemy and
+% Aristarchus are named on view 157. These are the only proper names.
+%
+% What the twenty views hold.
+%   v. 141     End of an algebraic text: the last equation of a product of
+%              five factors (A − B)(A − D)… written in species, the numerical
+%              example 1QC − 15QQ + 85C − 225Q + 274N æquatur 120, "fit 1N 1,
+%              2, 3, 4 vel 5", a closing sentence ("Atq; hæc … Sylloge
+%              tractatui … finem aliquem et coronida tandem Imponito") and
+%              "Finis". It CONTINUES a text begun before view 141 (the page
+%              opens on "−" before a column of products, with no first
+%              member). Whether this is the end of batch 2's treatise the
+%              pass cannot tell from its own views.
+%   v. 142–145 (leaves 67–69) "Ad Tabulas Prostaphæreseōn Lunarium":
+%              Propositiones I–V on the lunar prostaphaereses (eccentric
+%              and epicycle, AB : BC = 91 : 1, EG : GI = 10 : 2), each with
+%              a worked example for a double elongation of 60°; v. 145 is a
+%              small table "Canonici numeri in Sole" (Sun and Moon).
+%   v. 146     Blank recto of leaf 70, number only. Skipped (no \page).
+%   v. 147     Two ruled tables, the Moon's (only the 60° line filled, with
+%              the values of props. I–V) and the Sun's ("In sole"), almost
+%              empty.
+%   v. 148     (leaf 71) A heavily corrected draft: "Hypothesis Lunæ a
+%              Tychone … proposita", the writer's "restitution" of it in five
+%              articles (ellipse, "ellipsidium", libration on a straight
+%              line), a legend of letters, a figure, and a worked example
+%              in columns of figures (anomaly 45° 37½′, double elongation
+%              230° 23⅖′, result 4° 40′).
+%   v. 149     "Ad condendum Canonas Problematia": the first prostaphaeresis
+%              for the new hypothesis (libration circle, LM : AB = 1 : 92).
+%   v. 150     (leaf 72) Fair copy of v. 148's text, now eight articles; the
+%              heading changes Tycho's name to "Astroscopo Dano"; article 6
+%              mixes the mathematics with struck-out verse (Aen. IV, 511, as
+%              the pass recognises it).
+%   v. 151     The legend and figure for v. 150, and the data of the example.
+%   v. 152     (leaf 73) The example worked through (AI 28 498 668, IP
+%              2 325 666, angle IAP 4° 40′), then "Problema 1" (distance from
+%              the Sun 45° either way), with a figure.
+%   v. 153     A problem for anomaly 90° or 270°, with a figure, a table
+%              headed "Factio" and sign-calculations in Greek letters.
+%   v. 154     (leaf 74) Two finished figures, "Sol." and "Luna.".
+%   v. 155     (leaf 75) Problems II (Moon full or new) and III (half Moon),
+%              legends, figures, the first worked (AE 3 536 602, 2° 25¾′).
+%   v. 156     Problem III worked (AE 2 386 602, 3° 35⅘′); a struck-out new
+%              problem; a table of the prostaphaereses at the phases written
+%              across the margin; scattered figures and notes, including a
+%              hexagram in a circle.
+%   v. 157     (leaf 76) "Harmonici Ptolemaici Constructio CAPUT XII": the
+%              preamble only (Copernicus builds his hypotheses with bad
+%              geometry; a Ptolemaic "harmonic" will be built first for
+%              comparison). Two thirds blank.
+%   v. 158     (leaf 77) Legend, figure and construction text for the lunar
+%              model (homocentre, ellipse, ellipsidium, "circellus");
+%              whether it continues v. 157's chapter is an inference.
+%   v. 159     Verso of 77: only a calculation figure and columns of
+%              figures.
+%   v. 160     (leaf 78) Opens mid-sentence ("peripheriam HP vel CI dum
+%              secabit AG …" — the parallax of the orbit), a figure, and the
+%              statement of "Propositio II" ("In ysdem Planetis …"), cut off
+%              at the foot of the page.
+%
+% Batch edges.
+%   - View 141 continues a text begun before it (see above).
+%   - View 160 runs on into the next view: its Propositio II stops on "ad".
+%     Its first line also continues a text this batch does not hold. The
+%     taller leaf 79 projecting above it (heading "Δεδομένον") is not
+%     photographed within views 141–160. The last views are not end-leaves
+%     or binding: they are written leaves; only onglets show at the edge of
+%     view 159.
+%
+% Numbers on the leaves.
+%   (a) An ink figure at the top right of rectos, one per leaf, in the ink
+%       and apparently the hand of the text: 67 (v. 142), 68 (v. 144), 69
+%       (v. 145), 70 (v. 146), 71 (v. 148), 72 (v. 150), 73 (v. 152), 74
+%       (v. 154), 75 (v. 155), 76 (v. 157), 77 (v. 158, and on the strip
+%       projecting at v. 157), 78 (v. 160), 79 (on the strip projecting at
+%       v. 160). Versos carry none (v. 141, 143, 147, 149, 151, 153, 156,
+%       159). No gap. It is the same kind of series batch 2 reads (9–17 on
+%       views 22–39), still one number per leaf; which suggests (an
+%       inference) the same foliation continued. Ink, not pale pencil:
+%       no \folio{} is written, as in batch 2. Note that leaf 75 is view
+%       155 and 76 is view 157, so view 156 is 75's verso.
+%   (b) "pag. 158" in a later reader's note (v. 141): the page of a printed
+%       book, not of the manuscript.
+%   (c) Proposition, problem and chapter numbers (Propositio I–V; Problema
+%       1, II, III, with corrections; CAPUT XII; articles 1–8) and all
+%       figures inside calculations and drawings are content.
+%
+% Notation. Species as written, "in" for the product, equality in words
+% ("æquatur"); the double horizontal stroke "=" of v. 141 is set "=" and
+% flagged, as in batch 2. Cossic signs N, Q, C, QQ, QC as capitals after the
+% coefficient (v. 141). Angles are written "partium 0. 32 15/29", degrees
+% then minutes with a fraction of a minute: kept so. Large numbers carry the
+% writer's separators (commas, points, vertical strokes, spaces); kept as
+% far as LaTeX allows. Figures are not drawn; each is described in a
+% \note{} with its lettering. A cross, a hexagram, and a looped paraph have
+% no LaTeX equivalent and are described.
+%
+% Spelling. Latin as written: "ysdem", "Epicycly", "Ellipsios",
+% "Alblatiuam", "Prostaphæreseōn", nasal bars (ū, ō, ā) kept; "-que" as
+% "q;" kept; the long s is set s; æ for the ligature and the hooked e.
+%
+% The worked examples were checked by the pass where the operations are
+% given (props. I–V, v. 142–144; v. 152; v. 155; v. 156): all hold, with the
+% slips noted where they stand (AF vs AE on v. 143; 2 325 665 for 2 325 666
+% on v. 152; the 941/946 value on v. 149). The draft calculations of v. 148
+% and v. 159 were not checked.
+
+% Coordinator's reconciliation (2026-09-23), after all nine batches:
+%   One ink series of leaf numbers runs top right of the rectos through the
+%   whole volume, with no gap: 1–8 and « 5 bis » (v. 5–20), 9–17 (v. 22–39),
+%   18–27 (v. 41–59), 28–37 (v. 61–79), 38–47 and « 46 bis » (v. 81–100),
+%   « 47 bis » and 48–56 (v. 102–120), 57–66 (v. 122–140), 67–78
+%   (v. 142–160), 79 (v. 162). It crosses the three pieces of the volume, and
+%   the writer cites it himself (« fol. 18. », v. 43; « pag. 48 », v. 100), so
+%   it is the writer's or copyist's count of leaves, not the library's. Being
+%   ink, it gets no \folio{}, in any batch.
+%   The pieces: « Francisci Vietæ De Recognitione Æquationum tractatus »
+%   (heading on v. 5), Cap. 1–XXI, v. 5–68; « Francisci Vietæ. De æquationum
+%   Emendatione tractatus secundus » (heading on v. 69), Cap. I–XIIII, ending
+%   « Finis » on v. 141; then astronomy without a name, v. 142–163 (lunar
+%   prostaphaereses, Tycho's lunar hypothesis restated, « Harmonici
+%   Ptolemaici Constructio Caput XII », Mercury). Two doubtful notes may mark
+%   the treatises as a copy: « transcripta ex exemplari » (v. 100) and
+%   « deerant hæc in exemplari » (v. 114). The name on the leaves is in the
+%   headings; who wrote the hands is not settled.
+
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{nal-1644}
+\shelfmark{NAL 1644}
+\batch{8}
+\pages{141}{160}
+\dating{}
+\watermark{Lecture automatique\\non vérifiée}
+\foldertitle{Viète (François). Papiers divers. NAL 1644}
+
+\begin{document}
+
+\page{141}
+\note{Le feuillet est plus petit que la vue et son bord supérieur est déchiré ; le bord gauche, irrégulier, est le bord extérieur (un verso), la reliure à droite. Aucun chiffre en tête. La page commence au milieu d'une égalité : la première colonne est précédée d'un signe « $-$ », sans premier membre sur cette page ; elle continue donc un texte commencé avant la vue 141, que cette passe n'a pas lu. Même encre pour tout le texte ; à gauche, au bas, une note d'une autre main (voir plus bas).}
+
+\[ - \left\{\begin{array}{l} B \text{ in } D \text{ in } G \\ B \text{ in } D \text{ in } H \\ B \text{ in } D \text{ in } K \\ B \text{ in } G \text{ in } H \\ B \text{ in } G \text{ in } K \\ B \text{ in } H \text{ in } K \\ D \text{ in } G \text{ in } H \\ D \text{ in } G \text{ in } K \\ D \text{ in } H \text{ in } K \\ G \text{ in } H \text{ in } K \end{array}\right\} \text{in } A \text{ quadratum} \]
+\note{Dix produits de trois lettres, en colonne sous une accolade ouvrante, fermée à droite par une accolade suivie de « in A quadratum ». Deux traits horizontaux coupent la colonne, sous « B in H in K » et sous « D in H in K » : ils séparent les groupes qui commencent par B, par D et par G.}
+
+\[ + \left\{\begin{array}{l} B \text{ in } D \text{ in } G \text{ in } H \\ B \text{ in } D \text{ in } G \text{ in } K \\ B \text{ in } D \text{ in } H \text{ in } K \\ B \text{ in } G \text{ in } H \text{ in } K \\ D \text{ in } G \text{ in } H \text{ in } K \end{array}\right\} = \]
+\note{À gauche de cette seconde colonne, isolé et souligné, « in A. » (précédé d'un point) : le facteur de ces cinq produits, que l'écrivain a porté à gauche du signe « $+$ ». Après l'accolade fermante, un double trait horizontal « = », gardé tel qu'il est écrit.}
+
+æqu\ill{} $B \text{ in } D \text{ in } G \text{ in } H \text{ in } K$
+\note{Un grand trait vertical, courbé en bas, embrasse à droite les deux colonnes ; en face de la première, à droite de ce trait, est écrit « æqu\ldots{} B in D in G in H in K ». Le mot est lu lettre à lettre : l'œ/æ initial, q, u, puis un e ou un c, une haste bouclée (l ou b), t, et une finale en m ou en « -ur » abrégé. Le sens attend un verbe d'égalité (« æquabitur » ?), que les lettres ne donnent pas nettement : le mot reste \ill{} après « æqu- ».}
+
+A explicabilis est de qualibet illarum quinque
+
+B. D. G. H. K.
+
+$1QC - 15QQ + 85C - 225Q + 274N$. æquatur $120$
+
+fit $1N$. $1$. $2$. $3$. $4$. vel $5$.
+\note{Exemple numérique en signes cossiques : QC le quadrato-cube, QQ le quadrato-quarré, C le cube, Q le carré, N la racine. Le « 1 » et le « 2 » de la dernière ligne sont en partie sous le cachet de la Bibliothèque nationale ; les chiffres se lisent. L'exemple se vérifie : $x^5 - 15x^4 + 85x^3 - 225x^2 + 274x = 120$ a pour racines $1, 2, 3, 4, 5$ (vérification du transcripteur).}
+
+Atq; hæc \uncertain{elegans} et perpulchra Speculationis Sylloge tractatui alioquin effuso finem aliquem et coronida tandem Imponito.
+\note{« elegans » : le début du mot est sous le cachet et traversé d'un trait horizontal (rature ou arc du cachet ?) ; seules les lettres « -gans » sont nettes. « Atq; » : la forme en q; de « atque ».}
+
+Finis
+\note{« Finis », souligné d'un trait ondulé, ferme le texte ; le reste de la page est blanc. Au bas de la page transparaît à l'envers l'écriture de l'autre face.}
+
+\note{En marge de gauche, à la hauteur de « tandem Imponito », d'une main plus récente, plus petite et plus droite que celle du texte : « pag. 158 editionis elzevir. anni 1646, infolio. » — un renvoi à la page 158 d'une édition in-folio imprimée chez les Elzevier en 1646, ajouté par un lecteur ; ce n'est pas un numéro du manuscrit. Le transcripteur n'identifie pas l'édition sur la foi de la page.}
+
+\page{142}
+\note{En haut à droite du feuillet, « 67 » à l'encre, du trait du texte (voir l'en-tête). Une autre pièce commence ici : un titre, et une nouvelle matière, la théorie de la Lune ; la vue 141 s'achevait sur « Finis ». Une cursive régulière, plus grande que celle de la vue 141 ; transparaît à l'envers, sur toute la page, l'écriture de l'autre face. Le feuillet est plus petit que la vue ; son bord inférieur est usé.}
+
+\section*{Ad Tabulas Prostaphæreseōn Lunarium}
+
+AD Tabulas
+
+Prostaphæreseōn Lunarium
+\note{Titre sur deux lignes, souligné. « Prostaphæreseōn » : un trait sur le o final (génitif pluriel grec).}
+
+\subsection*{Propositio I}
+
+Invenire Primam Prostaphæresim \struck{\ill{}} sive Longitudinis sive Anomaliæ ad quascumque partes duplæ mediæ Longitudinis à Sole
+\note{Devant « sive » et après lui, deux courts traits horizontaux à l'encre, le second sur un mot bref biffé qui ne se lit pas.}
+
+Est autem Additiua in priore hemicyclio duplæ longitudinis Ablatiua in secundo sive longitudini, sive Anomaliæ.
+\note{« Additiua », « Ablatiua » : lus d'après les lettres (« Addetiua », « Alblatiua » à la première lecture) et d'après « additiuus », « Ablatiuus », écrits nettement plus bas sur la même page.}
+
+\note{Figure au milieu de la page : un cercle (l'excentrique) de centre B, avec C en haut et D en bas sur le diamètre vertical, prolongé jusqu'à A en bas ; E sur le cercle, à gauche en haut ; F le pied de la perpendiculaire de E sur CB ; les droites EF, EB et EA. Nombres écrits sur la figure : « 30 » sur EF, « 60 » dans l'angle en B, « 100 000 » le long de EB, « 9100, » et « 900 » le long de BD et du cercle, « 9,150,131 » le long de EA, « 0.32 » près de A. Deux lettres « I » et « H », pâles, sur la ligne BA, et une lettre sous A ; ces trois dernières sont peut-être celles de l'autre face qui transparaissent.}
+
+Esto A centrū terræ. AB altitudo media Aequabilis \struck{Numeretur} \struck{Consequentia} Centro B intervallo BC vel BD, talium 1., qualium AB 91. describatur Eccentrulus CED. \struck{Et in recta} \struck{AB à summa} secans AB in signis C, D. Et à summa absidis puncto C. numeretur in consequentia peripheria CE duplæ longitudinis à medio Sole æqualis angulus EAB. est angulus prostaphæreseos primæ additiuus sive longitudini sive Anomaliæ in priore hemicyclio \struck{\ill{}} longitudinis mediæ duplæ; Ablatiuus in posteriore ut prodeat sive longitudo sive Anomalia primò coæquata.
+\note{Le début est écrit en colonne étroite, à gauche de la figure. « centrū » : trait de nasale sur le u. « Numeretur » et « Consequentia » sont biffés d'un trait (le premier terminé par une tache), puis réécrits plus bas dans la phrase ; « Et in recta » et « AB à summa » sont biffés de même. Après « hemicyclio », un mot court est noirci d'une tache. « talium 1., qualium AB 91. » : le rayon de l'excentrique et la distance moyenne dans le rapport 1 à 91.}
+
+Ad factionem in numeris.
+cadat in AB perpendicularis EF erit triangulum rectangulum datorum laterum et angulorum.
+\note{« Ad factionem in numeris » est écrit entre les lignes, au-dessus de « Sit dupla longitudo » ; « cadat in AB perpendicularis EF erit triangulum » est une ligne ajoutée plus petite, continuée dans l'interligne par « rectangulum », « datorum laterum » et « et angulorum ». L'ordre de ces fragments est celui que le transcripteur propose ; les deux \texttt{add} sont les siens.}
+
+Sit dupla longitudo 60 Qualium AB 9,100,000, talium igitur EB erit 100,000 ex hypothesi. Quare EF earundem erit 86,602 et FB 50,000. Et consequenter AF 9,150,000 At se habens ad EF 86,602. sicut 100,000. ad 946. \uncertain{proximum} \struck{\ill{}} anguli EAF ideò dati partium 0. $32 \frac{15}{29}$.
+\note{« 9,150,000 » : le premier séparateur est un point surmontant une virgule. « At » en tête de ligne est biffé d'un trait épais, sans remplaçant. « proximum » : les lettres donnent « prosinum » ou « prosimum », suivi d'un mot biffé ; le sens (« 946 à peu près ») et la même forme aux vues 143 et 149 donnent « proximum ». Le calcul se tient : $86\,602 / 9\,150\,000 \times 100\,000 \approx 946$, et l'angle dont la tangente est $0{,}00946$ vaut environ $0^\circ 32{,}5'$, soit $32 \frac{15}{29}$ minutes (vérification du transcripteur). Le rapport employé est celui de la tangente, non du sinus.}
+
+\subsection*{Propositio II}
+
+Ad easdem Parodos Invenire altitudinem mediam \uncertain{æquatam}.
+\note{« Propositio II » est écrit au-dessus de la ligne, en petit ; en tête de ligne un pied-de-mouche. Le dernier mot est couvert d'une tache d'encre qui en cache le début ; seule la fin « -tam » est nette, et « æquatam » est une lecture proposée. À gauche, dans la marge, une tache et un trait d'encre.}
+
+Altitudo AB est altitudo centri Eccentruli \struck{deferentis} centrum Epicycli. \struck{Altitudo} E intelligitur media. At \struck{\ill{}} E est centrum Epicycli et AE altitudo centri Epicycli, quæ intelligatur
+\note{Le texte s'arrête au bord inférieur du feuillet sur « quæ intelligatur » et reprend en tête de la vue 143. « deferentis » est traversé d'un trait (lecture des lettres sous la rature) ; « Altitudo » à la ligne suivante est biffé d'un trait et taché ; après « At », un mot noirci.}
+
+\page{143}
+\note{Aucun chiffre en tête : le coin supérieur droit du feuillet est vide (un verso). Même main que la vue 142, dont la page se continue ici sans rupture : la phrase « quæ intelligatur » s'achève en tête de celle-ci. Transparaît à l'envers, à gauche et dans le bas, l'écriture de l'autre face (des nombres, « AF 9150 000 », « 946 », « 0. 32 »), c'est-à-dire la vue 142 vue par transparence.}
+
+altitudo media æquata. quam licet adsequi ex triangulo rectangulo EFA Cuius anguli dantur ex \struck{propositione prima} \add{antecedente propositione} Cum unâ lateribus AF EF Itaque \struck{non potest} tertium \add{latus} AE non potest \struck{AE} ignorari
+\note{« antecedente propositione » est écrit au-dessus de « propositione prima », biffé ; « unâ » au-dessus de « Cum ». « latus » est écrit au-dessus de la ligne après « tertium, », au-dessus de « AE » ; « non potest » est ajouté en petit au bout de la ligne ; le premier « non potest » est biffé, comme « AE » en tête de la ligne suivante.}
+
+Sic in proposita specie datur EF particularū 9,150,131 qualium AB 9,100,000.
+\note{« particularū » : trait de nasale. Le nombre 9 150 131, qui s'inscrit sur la figure de la vue 142 le long de EA, est donné ici pour « EF » : c'est l'hypoténuse AE que le raisonnement demande. Le transcripteur trouve, avec AF = 9 150 000 et EF = 86 602, $AE \approx 9\,150\,410$ ; le nombre est gardé tel qu'il est écrit.}
+
+\subsection*{Propositio III.}
+
+Invenire Prostaphæresim Anomaliæ \struck{\ill{}} Lunaris Secundam \uncertain{i.} additiuam Anomaliæ Lunari in priore hemicyclio Longitudinis duplæ a medio Sole. Ablatiuam in posteriore.
+\note{Le mot biffé devant « Lunaris » est noirci d'un trait épais. Entre « Secundam » et « additiuam », un petit signe en forme de c ou de i, lu « i. » (id est) avec doute. « Ablatiuam » est écrit « Alblatiuam ».}
+
+\note{Figure : un cercle (l'épicycle) de centre G, traversé par le diamètre vertical IH prolongé jusqu'à E en bas ; K sur le cercle à droite ; L le pied de la perpendiculaire de K sur IH ; la droite KE. Nombres : « 200,000. » le long de GI, « 100000 » près de G sur GL, « 173,205 » le long de LK, « 60 » sur l'arc HK, « 9001 » et « 000 » (9 001 000 ?) près de H, sur HE. Une tache d'encre devant I.}
+
+Esto E centrum Epicycli Lunaris EG. semidiameter illius. Et centro G intervallo GH vel GI. \add{talium 1. qualium GE 10.} describatur Epicyclum quod EG secet in signis H I. Illo depressiore hoc altiore. Et a depressiore numeretur in consequentia peripheria HK \struck{\ill{}} Longitudinis mediæ duplæ a medio Sole æqualis prostaphæresis Anomaliæ secunda erit angulus GEK additiuus in priore hemicyclio longitudinis duplæ a medio. ablatiuus in posteriore.
+\note{« Esto E centrum Epicycli Lunaris » est écrit sur deux lignes courtes, sous la figure. « talium 1. qualium GE 10. » est une ligne ajoutée entre les lignes, au-dessus de « describatur Epicyclum ». La phrase « E centrum Epicycli » et « EG semidiameter » sont gardées telles qu'elles sont écrites, bien que la figure mette E hors du cercle et G en son centre. Après « HK », un mot court noirci.}
+
+Ad factionem in numeris cadat in EG perpendicularis KL erit triangulum rectangulum \struck{\ill{}} EXK datorum \struck{laterum} et angulorum.
+\note{Deux lignes plus petites, ajoutées entre les lignes au-dessus de « Sit ut in… ». Devant « EXK » un mot court biffé (« in » ?) ; « laterum » est surchargé et paraît biffé ; « EXK » est lu tel quel, là où le raisonnement attend le triangle KLE.}
+
+Sit ut in \struck{prop.} antecedente specie longitudo dupla 60. Qualium AG 1,000,000. talium erit GK 200 000. Quare KL earundem erit \struck{86602} 173 205 et GL 100,000. Et consequenter EL 900,000 se habens ad KL \struck{86602} 173 205 sicut 100 000 ad \struck{946,} \struck{\ill{}} 19245 \struck{proximum} ideò anguli LEK ideò dati partium \struck{0. 32 $\frac{15}{29}$} \struck{10} Par 10. $53 \frac{3}{5}$
+\note{La page a été écrite en recopiant la proposition I, puis corrigée : les nombres de la vue 142 (86 602, 946, « proximum » écrit « prosimum », 0.\,32 $\frac{15}{29}$) sont biffés et les nouveaux écrits au-dessus ou à la suite, parfois avec des guillemets de renvoi (« 100 000 " », « " ad »). « proximum » et les nombres qui le suivent sont enfermés dans un cadre à l'encre, qui paraît les annuler. « AG » est écrit là où la figure donne EG ; « GK 200 000 » a son 2 récrit sur un autre chiffre ; « EL » est récrit sur un autre groupe de lettres et suivi d'un grand trait courbe qui renvoie à « 192|45 », écrit plus bas après un nombre noirci. Le calcul se tient avec ces nombres : $173\,205 / 900\,000 \times 100\,000 \approx 19\,245$, et l'angle dont la tangente est $0{,}19245$ vaut environ $10^\circ 53{,}6'$ (vérification du transcripteur).}
+
+\page{144}
+\note{En haut à droite du feuillet, « 68 » à l'encre, suivi d'un petit crochet. Même main ; la page fait suite à la vue 143 (propositions IIII et V de la même suite). Pas de figure : les lettres renvoient aux figures des vues 142 et 143.}
+
+\subsection*{Propositio IIII.}
+
+Ad easdem Parodos Invenire Semidiametrum Epicycli æquatam.
+
+Intervallum AG. est distantia centri Epicycli ad centrum Epicycly. et Intelligitur Semidiameter Epicycli æquabilis. \struck{AE} Intervallum AK est distantia centri Epicycly ad centrum stellæ et Intelligitur Semidiameter Epicycli æquata. Quam licet adsequi ex antecedente propositione una cum lateribus EL LK Itaque \struck{non potest} tertium latus AE \add{non potest} ignorari.
+\note{« Intervallum AG. est distantia centri Epicycli ad centrum Epicycly » : ainsi sur la page, où l'on attendrait un autre point que le centre de l'épicycle en tête. « Epicycly » avec y, deux fois ; « æquabilis » puis « æquata ». Devant le second « Intervallum », « AE » est biffé d'un trait. « non potest », biffé sur la ligne, est récrit au-dessus de « AE », entre deux guillemets de renvoi ; « una » a un trait sous le premier mot. « AE » dans la dernière phrase là où le raisonnement porte sur AK : gardé tel qu'il est écrit.}
+
+Sic in proposita specie datur EK particularum 916. \struck{\ill{}} 515 qualium EG 1,000,000, \struck{\ill{}}
+\note{« 515 » est écrit au-dessus d'un groupe de trois chiffres biffé ; en fin de ligne suivante, un autre nombre biffé. Le nombre se vérifie avec les côtés de la vue 143 : $\sqrt{900\,000^2 + 173\,205^2} \approx 916\,515$ (vérification du transcripteur).}
+
+\subsection*{Propositio V.}
+
+Ad easdem Parodos Invenire maximam Prostaphæresim
+
+Erit ut AE AK ita Sinus Totus ad Sinum maximæ prostaphæreseos in proposita ad Solem parodo. Dabuntur autem AE ad AK in ysdem partibus ob datas AB EG.
+\note{« ysdem » : ainsi, pour « iisdem ».}
+
+Sic in proposita specie \struck{Quonam} Qualium AB 9 100,000. talium AG 100,000 \add{GI. 200000} AE vero in ysdem data est 9 150 131 et AK \struck{953 939} 916 515 Quoniam itaque est ut, 9,150, 131 ad \struck{953 939} 916,515, ita 100,000 ad \struck{10425} 10016. Erit Sinus maximæ prostaphæreseos ideo data partium
+\note{« Quonam » est écrit au-dessus de « Qualium » et biffé ; « GI. 200000 » est ajouté entre les lignes, au-dessus de « AE vero ». Les nombres biffés (953 939 deux fois, 10425) sont lus sous la rature, avec doute pour les derniers chiffres ; les nouveaux sont au-dessus. « AG 100,000 » ici, là où la vue 143 écrivait « AG 1,000,000 ». Les nombres corrigés se tiennent : $916\,515 / 9\,150\,131 \times 100\,000 \approx 10\,016$, et les nombres biffés aussi ($953\,939$ donne $10\,425$) — vérification du transcripteur. La phrase s'arrête sur « partium », sans valeur de l'angle ; le reste du feuillet est blanc.}
+
+\page{145}
+\note{En haut à droite du feuillet, « 69 » à l'encre. Même main. La page ne porte qu'un titre et un petit tableau dans son tiers supérieur ; le reste du feuillet est blanc (un pli horizontal au milieu, quelques taches). Les lettres AB, BC, EG, GI sont celles des figures des vues 142 et 143.}
+
+Canonici numeri in Sole
+
+\[ \begin{array}{l|r|r|r||l|r|r|r|l} \text{In Sole} & & & & & \text{In Luna} & & & \\ AB & 700 & 000 & 000 & AB & 9, & 100 & 000 & AB \\ BC & 3 & 000 & 000 & BC & & 100 & 000 & BC \\ \hline EG & 27 & 000 & 000 & EG & 1, & 000 & 000 & EG \\ GI & 2 & 000 & 000 & GI & & 200 & 000 & GI \end{array} \]
+\note{Tableau à l'encre, à colonnes tracées : « In Sole » à gauche, « In Luna » à droite, chaque ligne nommée par ses lettres, répétées au milieu et à droite ; les nombres sont écrits par tranches de trois chiffres séparées par des traits verticaux. Un trait horizontal sépare BC de EG. « In Luna » est en partie sous le cachet de la Bibliothèque nationale. Dans « 1, 000 000 » (EG, Lune), le premier 0 est surchargé. Le titre dit « in Sole » seul, alors que le tableau donne aussi la Lune.}
+
+\page{147}
+\note{Aucun chiffre en tête : c'est le verso du feuillet numéroté « 70 » (vue 146), dont le recto est blanc ; l'écriture de cette page y transparaît à l'envers. Même main. Deux tableaux tracés à la plume, presque vides : les cadres des tables de la Lune et du Soleil que les propositions des vues 142–144 servent à remplir. À droite de la vue, au-delà de la reliure, dépassent les débuts de lignes de la page de la vue 148 (« Esto… », « RH… », « A… », « B… ») : ils sont transcrits à leur vue.}
+
+\[ \begin{array}{l|l|l|l|l|l} \text{Partes lōgitudinis} & \text{Prostaph. 1}^{\text{a}} & \text{Altitudo media} & \text{Prostaphæresis} & \text{Semidiameter} & \text{Secūda Prostaph.} \\ \text{duplæ à Sole.} & \text{longitudinis \& Anomaliæ} & \text{coæquata} & \text{secunda Anomaliæ} & \text{Epicycli coæquata} & \text{maxima lōgitudinis} \\ \hline D & & 9.\,100\,000 & & 1\,000,000 & \\ 5 & & & & & \\ 10 & & & & & \\ 15 & & & & & \\ 20 & & & & & \\ 25 & & & & & \\ 30 & & & & & \\ 35 & & & & & \\ 40 & & & & & \\ 45 & & & & & \\ 50 & & & & & \\ 55 & & & & & \\ 60 & 0 \;\; 32 \frac{15}{29} & 9,150, \; 131 & 10 \;\; 53 \frac{3}{5} & 9\,16, \; 515. & 5 \;\; 44 \frac{26}{29} \\ \hline \end{array} \]
+\note{Table de la Lune, sur la moitié supérieure de la page. Les en-têtes sont écrits en deux ou trois lignes au-dessus des colonnes, et le transcripteur les a répartis sur deux lignes. La première ligne de la colonne de gauche porte un signe lu « D » (peut-être un 0 barré) ; les lignes 5 à 55 sont vides. Sous « 9,150, 131 » est écrit en petit « 100 000 » (sous « 150 » et sous « 131 ») ; sous « 916, 515. », « 10 016 », souligné : ce sont les nombres de la proposition V (vue 144). Les valeurs de la ligne 60 sont celles des propositions I, III, IIII et V (vues 142–144). Dans « 5 44 $\frac{26}{29}$ », le 44 est récrit ; le transcripteur trouve que l'angle dont le sinus vaut $0{,}10016$ est d'environ $5^\circ 44{,}9'$, ce qui s'accorde.}
+
+In sole
+
+\[ \begin{array}{l|l|l|l|l} \text{Partes Anomaliæ} & \text{Prostaphæresis prima sive} & \text{Altitudo media} & \text{Prostaphæresis secunda} & \text{Semid}^{\text{r}} \text{ Epicycli} \\ \text{obliquitatis Sphæræ} & \text{Longitudinis sive Anomaliæ ad terram.} & \text{coæquata} & \text{Anomaliæ terrenæ} & \text{coæquata} \\ \hline 0 & & 700,000. & & 27,000 \\ \hline \end{array} \]
+\note{Table du Soleil, dans la moitié inférieure, sous le titre « In sole ». À gauche, au-dessus de « Partes Anomaliæ », un premier en-tête (« Prostaphæresis… » sur deux lignes) est noirci d'un trait épais et d'une tache. Une seule ligne est remplie. Les colonnes tracées se prolongent vides jusqu'au bas de la page.}
+
+\page{148}
+\note{En haut à droite du feuillet, « 71 » à l'encre. Même main que les vues 142–147, mais la page est un brouillon très raturé, écrit en plusieurs temps et dans tous les sens : un préambule et un texte numéroté de 1 à 5 au centre, une légende des lettres et des calculs dans la marge de gauche, une figure et des colonnes de nombres dans le bas et à droite. La page ne continue pas la vue 147 : elle ouvre une autre matière, l'hypothèse lunaire de Tycho Brahe et la sienne propre, que l'écrivain « restitue ». Une première rédaction au propre du même texte se lit à la vue 150. L'ordre de transcription est celui du transcripteur : le texte central d'abord, puis les marges et les calculs.}
+
+\section*{Hypothesis Lunæ a Tychone Brahe proposita}
+
+Hypothesis Lunæ a \struck{Tychone} \struck{proposita} \add{Tychone} \struck{Dano} \add{proposita} \struck{Brahe} \add{Brahe} \struck{Tychone Dano} sive \struck{\ill{}} \struck{\ill{}} \struck{suam} \struck{\ill{}} in Geometricis \struck{et Astronomicis} sive opticis et physicis \struck{\ill{}} \struck{\ill{}} \struck{\ill{}} \struck{\ill{}} \struck{\ill{}} infelicitatem aliquam \ill{} manifesto argu\ill{}. An igitur suis fidendum observatis Viderint Astroscopi. Ego suam hypothesim Ita restituo.
+\note{Les cinq premières lignes sont surchargées de ratures, d'ajouts interlinéaires et de mots écrits dans les marges, reliés au texte par des traits. Ce qui se lit sûrement : « Hypothesis Lunæ a », puis « Tychone proposita » écrit trois fois (sur la ligne, au-dessus, en dessous), avec « Dano » biffé deux fois et « Brahe » biffé puis récrit au-dessus ; « sive » deux fois ; « in Geometricis », suivi de « et Astronomicis » biffé ; « sive opticis et physicis » ; « infelicitatem aliquam » à droite, suivi d'un mot qui se perd au bord ; dans la marge de gauche, « manifesto argu\ldots{} » (« arguit » ?), et devant la deuxième ligne un mot commençant par « a- » (« arcessens » ?), qui ne se lit pas. Les mots biffés — plusieurs lignes, dont « ignorantiam » (?) après « physicis », « suam » et « Canonum defectu » (?) — ne se lisent pas assez pour être donnés. L'ordre des fragments dans la phrase est celui que propose le transcripteur, d'après les traits de renvoi. « suam hypothesim » : c'est-à-dire l'hypothèse de Tycho, que l'écrivain rétablit.}
+
+1 Fertur Luna in Ellipsidium. Centrum Ellipsidij in Ellipsi. Centrum Ellipseos in Homocentro.
+\note{Les chiffres 1 à 5 sont écrits au-dessus du début des alinéas. « Ellipsidij » est suivi d'une petite tache. « Homocentro » : l'H initial est une grande boucle, qui se lirait « Domo Centro » ; le mot est écrit en toutes lettres à la vue 150.}
+
+2 Sed et libratur centrum Ellipseos ad partes occiduas ortiuasue in lineam rectam.
+
+3 Libramen in lineam rectam fit ad motum duplæ Longitudinis mediæ Lunæ a medio sole ad partes primum occiduas deinde ortiuas
+
+4 Describitur Ellipsis ad motum \struck{Anomaliæ} ad terram a summa abside in antecedentia
+
+5 Describitur Ellipsidium \struck{ad} ad motum Anomaliæ mixtæ ab infima abside in \struck{antecedentia} Consequentia.
+\note{« Describitur » est récrit sur une autre terminaison (« Describuntur » ?). « Anomaliæ » est en partie sous le cachet de la Bibliothèque nationale ; il ne paraît pas biffé.}
+
+\struck{Est autem} Semidiameter, sive Ellipseos sive Ellipsidij \struck{\ill{}} recta est ad transversam tripla Est enim Luna \ill{} ex \ill{}
+\note{Au-dessus de « Semidiameter », un mot biffé ; au-dessus de « recta », un autre. La dernière ligne, « Est enim Luna\ldots{} », est plus petite et paraît ajoutée ; ses deux derniers mots ne se lisent pas (« necesse ex informis » ?).}
+
+Cum \struck{\ill{}} è dupla media Lunæ longitudine a medio Sole aufertur Anomalia ad terram relinquitur Anomalia mixta numerata ab Infima abside In consequentia.
+\note{« numerata » a sa fin récrite (« -ta » sur « -tur » ?). Au-dessus de « è », un mot biffé (« prima » ?).}
+
+Posita Semidiametro Homocentri \struck{276}. \struck{\ill{}} 276 fit Semidiameter Ellipseos transversa \struck{\ill{}} 10. Recta \struck{\ill{}} 30. Semidiameter Ellipsidij \struck{\ill{}} 2 Recta \struck{\ill{}} 6 Semidiameter circelli librationis 3 \struck{\ill{}}
+\note{Les nombres sont écrits sur d'autres, biffés ou surchargés (10 sur 20 ?, 30 sur 90 ?, 2 sur 4 ?, 6 sur 16 ?), et « transversa » est écrit au-dessus de la seconde ligne. À droite, une accolade embrasse les trois lignes et porte « 552 », « 20 60 », « .4. » : les doubles des valeurs, pour les diamètres. Sous la dernière ligne, « 0 | 0 » deux fois, et une tache.}
+
+\note{Dans la marge de gauche, en haut, une note écrite en petit et en partie biffée : « Esto CE 45 37 $\frac{1}{2}$ » avec au-dessus « numerata in antecedentia parte » (?), au-dessous « Anomalia terrena » et « numerata in consequentia » ; « Centro » (?) biffé ; « 230 23 $\frac{2}{5}$ Longitudo dupla à Sole » ; « numerata in consequentia » biffé ; « RH Par 4 45 numerata in co\ldots{} ». Ce sont les données d'un exemple numérique : l'anomalie à la Terre, la longitude double au Soleil, et l'arc RH.}
+
+\note{Plus bas dans la même marge, un calcul en colonnes, encadré : « 28 | 276 », « 30 | 10 », « 6 | 2 », « 14 | 3 » (les premiers chiffres surchargés) ; puis « Est expeditior. » ; puis une addition : « 28 498 635 » (?), « 85 | 495 | 904 », « 7 | 054 | 036 », avec sous le trait « 100 000 000 » (lecture incertaine) ; puis « 6283656 », « 693352 », somme « 6977008 », et au-dessous « 2325669 » souligné (le tiers de 6 977 008, vérification du transcripteur) ; puis « 0 | 0 ».}
+
+\note{Légende des lettres, dans la marge de gauche du bas, écrite en petit et corrigée : « Esto / A centrū terræ AB / B centrum ellipseos AB Semid. linea Epochæ mediæ lunæ. / BE Transversa Ellipseos / BED Epicyclus ad Ellipsim / CE Anomalia ad terrā AB \ldots{} / E centrum Epicycli \struck{circelli} ad Ellipsidium / R E noua æquatis semidiametro recto Ellipsidij / QBR Epicyclus \struck{circellus} ad Ellipsidium / \struck{KN} K \struck{punctum in Ellipsidio}, \struck{Et} Centrum Lunæ in Ellipsideo / KD recta æquatis semidiametro Ellipsidij circelli librationis / \struck{Long.} 1 \ill{} 10. Longitudo a Sole dupla. / \struck{\ill{}} A.P linea adparentis \ill{} ». Au milieu, à côté : « ut in \struck{Diagrammate} », une croix « $+$ », et « Qualium AB \struck{276} \struck{Talium} Talium BE 10 EG 6 KL 3 », chaque nombre récrit sur un autre ; un grand trait courbe relie ces lignes à la figure.}
+
+\note{Figure au bas, à droite du centre : un grand cercle de centre B (C en haut, D en bas, I, F, B sur la gauche), un cercle plus petit de centre E (lettres H, R, G, F, Q), et un troisième cercle, à droite, de centre K (L en haut, M en bas, N, P, O), traversés par une droite horizontale et par des droites issues du bas. Nombres autour : « 4.45. » biffé et « 4.40. » ; « 4.45.54. » ; « FE » avec « 2 44 | 400 » et « 49 848 » ; « 8308 », « 99654 » ; « 77038 », « 63756 » ; « 53.23.23 », « 199308 » ; « 45.37.29 » (l'anomalie de l'exemple), « 69936 », « 71480 ».}
+
+\note{Colonnes de nombres à droite du centre, en tête de la moitié inférieure : « FE ou IE 714 | 200 », « SE 16 | 616 », « KPL 698 | 124 », puis « 2094 | 552 », « Ellipsim 231 | 114 », somme « 2325 | 666 » (juste) ; et, à droite, « AB 27 | 600 | 000 », « BF 699 | 360 », « FL 199 | 358 », avec un trait et « 100 000 » en marge, somme « AL 28 | 498 | 718 » (le 7 récrit ; la somme est juste) et « LP 2 | 325 | 666 ». Plus bas : « KP 7 770 | 380 » (surchargé), « 27 600 000 », « AB \struck{27 800 000} », « BH 2 098 080 », « FL 597 924 », « 85 495 904 », puis « IH 2 094 592 », « ad » et « A 6 283 656 », « 7 770 380 ». Les nombres surchargés sont donnés avec doute.}
+
+\note{Au bas de la page, à droite : « æquabitur qui ad \struck{librationis} », « \struck{1om circellus librationis} », « 1om circellus \struck{\ill{}} », puis « KP libramen centri Lunæ a puncto K ad P. ob motum centri B » ; « centri » est écrit au-dessus de « Lunæ », « centri B » au-dessous de « motum ». La dernière ligne de gauche, « A.P linea adparentis\ldots{} », passe sous le bord usé du feuillet.}
+
+\page{149}
+\note{Aucun chiffre en tête : le verso du feuillet « 71 » (vue 148), dont les nombres et les ratures transparaissent à l'envers sur toute la page (les traits noirs du haut à gauche, les colonnes de chiffres du bas). Même main. Une nouvelle pièce, au propre, commence ici sous un titre ; elle reprend, pour la nouvelle hypothèse (le petit cercle de libration), la proposition I de la vue 142. Une longue droite fine traverse la page en diagonale, de la figure vers le bas.}
+
+\section*{Ad condendum Canonas Problematia}
+
+Ad condendum Canonas
+
+Problematia
+\note{« Problematia » : ainsi, lettre à lettre. Sous le titre, une ligne courte biffée, puis un double trait.}
+
+Invenire Primam prostaphæresim sive Anomaliæ sive longitudinis mediæ a Medio sole.
+
+\note{Figure : un cercle (le « circellus librationis ») de centre B, avec le diamètre vertical LM et le diamètre horizontal RS ; O sur le cercle, en haut à gauche ; T le pied de la perpendiculaire de O sur RS ; les droites OT, TA et BA, qui descendent jusqu'à A, le centre de la Terre, plus bas. Une droite en pointillés passe près de T, parallèle à BA. Nombres et signes : « 75 » précédé d'un signe en L entre O et B, « 84 39 » précédé du même signe le long de TA, « 92 » le long de BA. Le signe en L est peut-être celui de l'angle.}
+
+Esto A centrum terræ B centrum circelli librationis LM circellus librationis, \struck{\ill{}} Interceptus ab AB in signis L M illo altiore hoc depressiore. posita LM talium \struck{\ill{}} \struck{\ill{}} 3 qualium AB \struck{\ill{}} \struck{\ill{}} 276, id est LM 1 qualium AB 92 Et numeretur In consequentia peripheria LO \struck{\ill{}} æqualis duplæ longitudini mediæ a medio Sole \struck{\ill{}} Et cadit in Diametrum RS normalem ad LM recta OT ipsi AB parallela et iungatur AT erit angulus TAB prostaphæreseos primæ Addenda sive longitudini mediæ simplici à Sole sive Anomaliæ. ut prodeat Longitudo primum coæquata Anomaliaue Lunaris primum coæquata.
+\note{« Esto A centrum terræ », « B centrum circelli librationis », « LM circellus librationis » sont écrits en colonne étroite à gauche de la figure. Le premier mot de « Interceptus » est un mot biffé (« positum » ?). « altiore » est surchargé ; « hoc » est taché. Les nombres biffés devant « 3 » et « 276 » sont noircis. « duæ » (?) est biffé après « LO » ; après « Sole », un mot noirci d'une grosse tache.}
+
+Sit OL 60. fit TB 86602 \add{qualium LB 100 000 AB erit 9,200,000} \struck{\ill{}} autem ut 9200 000. ad 86602 ita 100 000 ad 941. \uncertain{Proximum} anguli BAT ideo dati Partium \struck{\ill{}} 0.\,32 $\frac{15}{29}$
+\note{« qualium LB 100 000 AB erit 9,200,000 » est écrit au-dessus de la ligne, à droite ; « erit » est abrégé. Devant « autem », une grosse tache. « Proximum » : les lettres donnent « Prosimum » ; le sens (« 941 à peu près ») donne « proximum » ; la même forme se lit aux vues 142 et 143. Le calcul se tient : $86\,602 / 9\,200\,000 \times 100\,000 \approx 941$ (vérification du transcripteur). La valeur finale, « 0.\,32 $\frac{15}{29}$ », est celle de la vue 142, pour un rapport de 946 et non de 941 : gardée telle qu'elle est écrite. Un nombre biffé la précède.}
+
+\note{Au bas de la page, à droite, un grand paraphe à la plume, fait de boucles, sans lettre lisible : un essai de plume, ou une signature abrégée que le transcripteur ne sait pas lire.}
+
+\page{150}
+\note{En haut à droite du feuillet, « 72. » à l'encre. Même main. La page est une mise au net, encore corrigée, du texte central de la vue 148 : le même préambule et les mêmes articles, numérotés ici de 1 à 8 dans la marge de gauche. Transparaît à l'envers, à droite et dans le bas, l'écriture de l'autre face (vue 151 : « Esto CE, 45 37 $\frac{1}{2}$ Anomalia ad terram\ldots{} »).}
+
+\section*{Hypothesis Lunæ ab Astroscopo Dano proposita}
+
+Hypothesis Lunæ a \struck{Tychone Brahe} \add{ab Astroscopo Dano} proposita magnum \struck{infelicitatem artificis sive in Geometricis} eum Geometram nequaquam \struck{esse} \struck{sive Opticis et physicis manifesto arguit} arguit. An igitur suis fidendum observatis Viderint \struck{Astroscopi} \uncertain{αὐτόπται}. Ego suam Hypothesim ita restituo.
+\note{« ab Astroscopo Dano » est écrit au-dessus de la ligne, au-dessus de « Tychone Brahe », biffé : le nom de Tycho est ôté du texte et remplacé par une périphrase. Les deux lignes suivantes, biffées d'un trait chacune (« infelicitatem artificis sive in Geometricis », « sive Opticis et physicis manifesto arguit »), reprennent la rédaction de la vue 148 ; la nouvelle leçon, « eum Geometram nequaquam\ldots{} arguit », est écrite à droite, sur et entre ces lignes, et « esse » y est biffé. « Astroscopi » est biffé et remplacé dans la marge de gauche par un mot grec, lu « αὐλοσδι » à la lettre ; « αὐτόπται » est une lecture proposée par le sens (ceux qui ont vu de leurs yeux).}
+
+1 Fertur Luna In Ellipsidium Centrum Ellipsidij in Ellipsim Centrum Ellipseos in Homocentro
+
+2 Sed et libratur centrum Ellipseos ad partes occiduas ortiuasue in Lineam rectam
+
+3 Libramen in Lineam rectam fit ad motum duplæ longitudinis mediæ Lunæ a medio Sole ad partes primum occiduas deinde ortiuas
+
+4 Describitur Ellipsis ad motum Anomaliæ ad terram a summa abside In antecedentia
+
+5 Describitur Ellipsidium ad motum Anomaliæ mixtæ ab Infima abside in Consequentia
+\note{« in » est en partie sous le cachet de la Bibliothèque nationale.}
+
+6 Semidiameter \struck{recta} sive Ellipseos sive Ellipsidij \add{recta} \struck{tergemina} est ad transversam tripla \struck{triformis} \struck{\ill{}} \struck{\ill{} Diana} \struck{\ill{}} \struck{\ill{}} scilicet ora Tonantis \ill{} omnes effigies \ill{} tergeminamque Hecaten, tria virginis ora Dianæ \ill{}
+\note{L'article 6 est surchargé. La phrase mathématique se lit : « Semidiameter [recta] sive Ellipseos sive Ellipsidij est ad transversam tripla », avec « recta » écrit au-dessus de la ligne et biffé sur la ligne. Autour et entre les lignes, des mots biffés et des ajouts en latin poétique : « tergemina » et « triformis » biffés, « \ldots{} Diana » biffé, « scilicet ora Tonantis », « omnes effigies » suivi d'un mot (« facientis » ?), « tergeminamque Hecaten, », et plus bas « tria virginis ora Dianæ » (« ora » et « Dianæ » surchargés). Les deux derniers fragments forment un vers de l'Énéide (IV, 511) ; le jeu porte, semble-t-il, sur « tripla » et la triple Hécate (interprétation du transcripteur). L'ordre des fragments est celui que propose le transcripteur ; plusieurs mots biffés ne se lisent pas, dont un au début de la troisième ligne (« tricipitis » ?) et un avant « tergeminamque » (« sacra » ?). Un double trait vertical sépare « tripla » de la suite.}
+
+7 Cum è dupla media Lunæ longitudine a medio Sole aufertur Anomalia ad Terram relinquitur Anomalia mixta numerata ab Infima abside In consequentia
+
+8 Posita Semidiametro Homocentri, \uncertain{mediane} \struck{\ill{}} 276 fit \struck{Semidiameter} Ellipseos Transversa 10 Recta 30 \struck{Semidiameter} \struck{Ellipsidij} Transversa 2 Recta 6 Semidiameter circelli librationis 3
+\note{« mediane » : ainsi lu, à la fin de la ligne ; au-dessous, un mot biffé (« a Terra » ?). Les valeurs sont disposées en tableau, les nombres en colonne à droite ; les mots « Ellipsidij » et le second « Semidiameter » sont biffés d'un trait, de sorte que la ligne se lit « Transversa 2 Recta 6 » à la suite de « Ellipsidij ». Ce sont les nombres de la vue 148, sans ratures.}
+
+\page{151}
+\note{Aucun chiffre en tête : le verso du feuillet « 72 » (vue 150), dont le texte transparaît à l'envers sur la moitié droite. Même main. La page est la mise au net de la légende des lettres et de la figure de la vue 148 : une colonne de définitions à gauche, la figure à droite, puis les données de l'exemple. Elle fait suite à la vue 150 (l'hypothèse restituée) et en donne le diagramme.}
+
+Esto A Centrum terræ \struck{B centrum Ellipseos}
+
+AB Linea Epoches mediæ Lunæ
+
+B Centrū Ellipsios atque ideo AB Semidiameter Homocentri
+
+\struck{CE Anomalia ad terram}
+
+CED Epicyclus ad Ellipsim
+
+CE Anomalia ad terram
+
+E Centrum Epicycli ad Ellipsidium
+
+RE recta æqualis semidiametro rectæ Ellipsidij Lunæ et semidiameter Epicycli ad Ellipsidium, parallela ipsi AB
+
+QFGR Epicyclum ad Ellipsidium
+
+HI normalis FGH \add{mediæ} Longitudo Lunæ dupla a \add{medio} Sole triplata in K Cuius est \struck{K} K. centrum Lunæ in Ellipsidio ante libramen
+\note{Les définitions sont écrites en colonne, chaque lettre en tête de ligne. « Centrū » : trait de nasale ; « Ellipsios » ainsi, pour « Ellipseos ». Les lignes « HI normalis\ldots{} » sont serrées et en partie surchargées : « FGH » est écrit au-dessus de « normalis », « mediæ » au-dessus de « Longitudo », « medio » au-dessus de « Sole » ; « in AB » (?) sous « normalis » ; « triplata » (lecture des lettres, « triplicata » ?) ; le premier « K » est souligné et paraît biffé. La syntaxe est celle de la page, et l'ordre des fragments celui que propose le transcripteur.}
+
+KN recta æqualis Semidiametro circelli librationis
+
+LOM Circellus librationis
+
+LMO longitudo a Sole dupla æqualis FGH
+
+KP libramen centri Lunæ a puncto K ad P ob motum centri B
+
+AP linea adparentis Epoches Lunæ
+
+\note{Figure, à droite de la colonne : un grand cercle (l'homocentre, ou l'excentrique), avec C en haut, D en bas, B et le point T à gauche, et I ; A, le centre de la Terre, en bas, d'où partent la droite AD\ldots{}C et une longue droite oblique vers la droite (l'angle en A marqué « 40. ») ; un cercle moyen de centre E, sur la circonférence du premier (lettres H, R, G, S, F, Q ; « 45 37 $\frac{1}{2}$ » le long de BE ; « 4 45 $\frac{9}{10}$ » (?) au-dessus de H et R) ; une droite horizontale depuis I jusqu'à un petit cercle à droite, de centre K (lettres L en haut, M et O en bas, N à gauche, P), avec « 50 23 $\frac{2}{5}$ » sous O. Les lettres sont celles de la légende.}
+
+\[ \begin{array}{lll} \text{Qualium} & AB & 276. \\ \text{Talium} & BE & 10 \\ & EQ & 2 \\ & KL & 3 \end{array} \]
+\note{Un « Q » est écrit devant « ualium », et un « c » isolé à gauche de « EQ ». Une accolade relie « AB 276 » au mot « Lunæ » de la ligne précédente. Les nombres sont ceux de l'article 8 de la vue 150 (homocentre 276, ellipse 10, ellipsidium 2, cercle de libration 3).}
+
+Esto CE, 45 37 $\frac{1}{2}$ \add{numerata in antecedentia Partium} Anomalia \struck{ad} ad terram \quad FGH seu Longitudo
+
+LMO numerata in consequentia Partium 230 23 $\frac{2}{5}$ dupla media Lunæ a Medio Sole
+\note{« numerata in antecedentia Partium » est écrit au-dessus de la ligne. « ad » est récrit. Un trait relie « ad terram » à « FGH seu Longitudo », écrit à droite. Dans « 230 », le 3 est récrit sur un autre chiffre. La page s'arrête ici ; le calcul de l'exemple ne suit pas sur cette vue.}
+
+\page{152}
+\note{En haut à droite du feuillet, « 73 » à l'encre. Même main. La moitié supérieure achève l'exemple numérique posé au bas de la vue 151 (« Esto CE 45 37 $\frac{1}{2}$\ldots{} ») : elle en calcule la prostaphérèse avec les lettres de la figure de la vue 151 et les nombres de la vue 148. La moitié inférieure commence, sous le même titre qu'à la vue 149, un « Problema 1 » avec une nouvelle figure.}
+
+Esto QH Part 184 45 $\frac{9}{10}$ Anomalia mixta Unde RH Part. 4 45 $\frac{9}{10}$
+
+Cadat \add{autem} in AB normalis ET, et in ET normalis HS et in IK normalis OP.
+\note{« autem » est écrit au-dessus de la ligne, sur un premier mot surchargé (« Cadatque » ?). « OP » : lu ainsi ; la figure de la vue 151 porte O et P sur le petit cercle.}
+
+\[ \begin{array}{llr} \text{Qualium} & AB & 27\;600,000 \\ \text{Talium} & BT & 699,360 \\ & TI & 199\cdot 308 \\ \hline \text{Itaque fit} & AI & 28,498,668. \end{array} \]
+\note{« BE » est noirci et « BT » écrit à la suite ; à la ligne suivante, deux groupes de lettres noircis devant « TI ». La somme est juste (vérification du transcripteur).}
+
+\[ \begin{array}{llr} & TE \text{ verò} & 714,800 \\ & SE & 16,616 \\ \hline & TS \text{ seu } IH & 698,184. \\ & IK \text{ quæ tripla est } IH & 2,094,552 \\ & KP & 231,114. \\ \hline \text{Itaque fit} & IP & 2,325,666. \end{array} \]
+\note{Les opérations sont justes : $714\,800 - 16\,616 = 698\,184$, $3 \times 698\,184 = 2\,094\,552$, $2\,094\,552 + 231\,114 = 2\,325\,666$ (vérification du transcripteur).}
+
+Est autem ut AI 28, 498. 668 Ad IP 2, 325, 665 Ita 100, 000 Ad 8, 161 proximū anguli IAP ideo dati Partium 4. 40.
+\note{« 2, 325, 665 » : ainsi, là où la ligne précédente donne 2 325 666. « proximū » : trait de nasale ; la forme confirme la lecture « proximum » des vues 142, 143 et 149. Le calcul se tient : $2\,325\,666 / 28\,498\,668 \times 100\,000 \approx 8\,161$, et l'angle dont la tangente est $0{,}08161$ vaut environ $4^\circ 40'$ (vérification du transcripteur) ; c'est le « 4.40. » inscrit sur la figure de la vue 148.}
+
+\section*{Ad Condendum Canonas Problematia. 1.}
+
+Ad Condendum Canonas Problematia
+
+1.
+
+Invenire Prostaphæresim Lunæ distantiæ a Sole per partes 45 in consequentia antecedentiave in quacunque ad \struck{Solem} \add{Terram} parodo.
+\note{« Terram » est écrit au-dessus de « Solem », biffé.}
+
+Esto A centrum terræ B Centrū Ellipseos CED \struck{circuli} Epicyclus ad Ellipsim CE Anomalia ad terram
+
+Qualium AB 276. talium BC 10. Semidiameter vero Ellipsidij transversa 2.
+\note{Les définitions sont écrites en colonne, à gauche de la figure.}
+
+Cadat autem in CB normalis ET. \add{cuius tripla fiat TEG.} Et cum distabit Luna a Sole per partes 45, \add{in consequentia} \struck{\ill{}} X TB resecetur TX earundem particularum. 2. Vel Cum distantia est in antecedentia BT producatur in Z posita TZ particularum 2. Et agantur XV ZY ipsi TG æquales. Ex VX autem resecetur primo Casu recta VΘ earundem particularum 3. Vel secundo producatur ZY in Ψ posita YΨ earundem particularum 3. Fit angulus ZAΘ prostaphæreseos primo Casu. Et angulus ZAΨ secundo.
+\note{« cuius tripla fiat TEG » et « in consequentia » sont écrits entre les lignes, marqués de guillemets de renvoi. Devant « X TB », un mot court noirci (« ex » ?). À la fin de la page, les lignes sont coupées par la figure et reprennent à sa droite : « est in antecedentia BT producatur in Z » ; « XV ZY ipsi TG æquales » ; « 3. Vel secundo producatur ZY in Ψ » ; « Casu. Et angulus ZAΨ secundo ». L'ordre donné est celui que propose le transcripteur. « ZAΘ » : la dernière lettre est un Θ (ou ω) ; « ZAΨ » avec un ψ, comme sur la figure. Le texte s'arrête au bord inférieur du feuillet.}
+
+\note{Figure, à droite de la moitié inférieure : un cercle de centre B (C en haut, D en bas), une droite verticale CBD prolongée vers A en bas ; sur cette droite Z, T, 2 (un chiffre) et X ; des droites horizontales partent de Z, T et X vers la droite, jusqu'à une verticale portant Y, G et V, et au-delà jusqu'à Ψ ; E sur le cercle ; Θ sous la troisième horizontale, marquée « 3. » ; le long de celle-ci, « Circelli ad libramen ». Deux droites obliques descendent de Θ et de Ψ vers A.}
+
+\page{153}
+\note{Aucun chiffre en tête : le verso du feuillet « 73 » (vue 152), dont les colonnes de nombres et le texte transparaissent à l'envers sur toute la page. Même main. Un nouveau problème, énoncé seul, avec une figure au milieu de la page et, dans le bas, un tableau de cas intitulé « Factio » et des calculs de signes en lettres grecques ; aucune démonstration n'est rédigée.}
+
+Invenire Prostaphæresim Lunæ cum Anomalia est 90 \struck{vel} vel 270 In quacunque ad Solem parodo
+\note{Devant le second « vel », un « vel » (?) taché, d'une autre encre ou effacé.}
+
+\note{Figure : un grand cercle de centre B (C en haut, D en bas), la droite verticale CBD prolongée jusqu'à A, et trois horizontales passant par la verticale (la deuxième par B, la troisième par I) ; un cercle moyen de centre E sur l'horizontale de B (F, G, H ; « 30 » et « 30 » près de F) ; un petit cercle à droite, de centre K (O, P, M ; « 30 », « 30 » et une tache d'encre qui couvre son bord droit) ; deux droites de A vers P et K. Sous la figure, deux légendes : « IAP Dum Anomalia 90 » et « IAK Dum Anomalia 270. »}
+
+\section*{Factio}
+
+\[ \begin{array}{l|l|l} \text{Cū Anomalia est 90} & \text{Cū Ano. est 90} & \text{Cum Anomalia est 90} \\ \text{Vera in dist 45} & \text{Vera in dist 45} & \quad \text{Vera in Distantia 45} \\ \text{-- vera in dist 0.} & \text{--- Vera in dist 0} & \quad \text{-- vera in distantia 30.} \end{array} \qquad \begin{array}{l} \text{Cum Ano. est 90} \\ \quad \text{vera in Distātia 45} \\ \quad \text{-- vera in dist. 30.} \end{array} \]
+\note{Sous le titre « Factio », quatre cas, en colonnes séparées de traits verticaux ; les deux premières, à gauche, sont serrées en marge. Les chiffres « 90 » des deuxième et quatrième colonnes se liraient aussi « 40 » : la première lettre du chiffre est ouverte. « Cū », « Distātia » : traits de nasale. Le signe « -- » en tête de la dernière ligne de chaque cas est un trait : « moins ».}
+
+\[ \begin{array}{l} \phi \\ -\gamma \end{array} \quad \begin{array}{l} \chi \\ -\rho \end{array} \qquad \begin{array}{l} \phi \\ -\beta \end{array} \qquad \begin{array}{l} \chi \\ -\alpha \end{array} \]
+\note{Sous les deux premières colonnes et sous la troisième, des différences écrites en lettres grecques, une sous chaque cas. Dans la dernière, le χ est surchargé d'un autre signe biffé (un φ ?), et le α se lirait aussi « ∂ ».}
+
+\[ \begin{array}{l} \chi \text{ in } \phi \\ - \chi \text{ in } \beta \\ - \phi \text{ in } \beta \\ + \beta \text{ in } \rho \\ \hline \chi \text{ in } \gamma \\ \hline \gamma \\ -\chi \end{array} \qquad \begin{array}{l} \chi \text{ in } \phi \\ - \chi \text{ in } \alpha \\ - \chi \text{ in } \gamma \\ + \gamma \text{ in } \alpha \end{array} \]
+\note{À droite, en bas, deux produits développés en lettres grecques, sur le modèle des espèces : $(\chi - \beta)(\phi - \rho)$ ou semblable. La première ligne de chaque colonne (« χ in φ ») est biffée d'un même trait qui court sur les deux ; dans la seconde colonne, « $-\chi$ in γ » est biffé aussi. Sous la première colonne, un trait, « χ in γ » sur un second trait, puis « γ » et « $-\chi$ » : une division, semble-t-il. Le transcripteur donne les signes tels qu'ils se lisent, sans reconstituer le calcul.}
+
+\page{154}
+\note{En haut à droite du feuillet, « 74 » à l'encre. Une page de deux figures soignées, tracées au compas d'un trait fin, sans autre texte que les lettres et deux mots. Elles illustrent les hypothèses des pages précédentes : la figure du haut, « Sol. », celle du Soleil ; celle du bas, « Luna. », celle de la Lune (l'homocentre, l'ellipse et les petits cercles de la vue 150).}
+
+Sol.
+
+\note{Figure du haut : deux courbes presque confondues (un cercle et une ellipse, ou deux cercles excentriques), qui se touchent en C en haut, en F à gauche et en E à droite, marqués chacun d'un petit soleil ; A, au croisement du diamètre horizontal FE et de la verticale ; B un peu au-dessus de A, sur la verticale, près du mot « Sol. » ; D en bas, à la pointe inférieure de la verticale.}
+
+Luna.
+
+\note{Figure du bas : un grand cercle de centre B, traversé par la verticale et l'horizontale et par deux diagonales ; A sous B, sur la verticale ; S (?) en haut, P et un P barré (le signe de la Lune ?) en bas ; f à gauche, E à droite. Sur le cercle, à chaque demi-quadrant, un petit cercle, parfois deux qui se chevauchent (les épicycles et le « circellus » à différentes élongations), et une ellipse qui s'écarte légèrement du cercle vers le bas. Les lettres du haut de la figure (« S », « R », « m » ?) sont petites et en partie sous le cachet de la Bibliothèque nationale ; le transcripteur ne les donne pas pour sûres. En bas à gauche, hors de la figure, un « v » à l'encre, isolé.}
+
+\page{155}
+\note{En haut à droite du feuillet, « 75 » à l'encre. Même main. Un brouillon très corrigé : deux problèmes de la suite « Ad condendum Canonas » (vues 149 et 152), chacun avec sa légende de lettres, sa figure et, pour le premier, un exemple numérique. Les numéros des problèmes sont corrigés (« II » puis « III »). Les ratures sont nombreuses ; le transcripteur donne la dernière leçon et signale dans les notes ce qui est biffé, sans lire tout ce qui l'est.}
+
+
+\struck{Ad Condendum Canonas Problemata} \struck{Problematum} II
+\note{Le titre de tête est traversé d'un trait, comme la ligne « Problematum \ldots{} II » écrite au-dessous (un chiffre noirci avant « II »). Un « II » isolé, non biffé, est écrit entre les lignes au-dessous : le numéro du problème.}
+
+Invenire Prostaphæresim \struck{\ill{}} \struck{\ill{}} Lunæ plenæ vel nouæ \struck{\ill{}} \struck{\ill{}} in quacumque ad terram parodo, \struck{cum Luna plena est vel noua}
+\note{« Lunæ plenæ vel nouæ » est écrit à droite de « Prostaphæresim », avec « noua » sous la ligne et un signe d'insertion ; la ligne suivante, « Lunæ plenæ vel nouæ » (?), est biffée, et un mot biffé, « mense » (?), est seul à gauche au-dessous.}
+
+Esto A centrum terræ AB. \struck{Semidiameter homocentri æquata} \add{eademque} Linea mediæ Epoches Lunæ B. centrum \struck{Epicycli} Ellipseos, \struck{\ill{}} \struck{compositæ} Itaque sit AB semid. \struck{\ill{}} \add{homocentri} BE Semidiameter \struck{Epicycli} \struck{æquata} \struck{Epicycli} transversa Ellipseos \struck{\ill{}} compositæ. CFD \struck{Epicyclus \ill{} C \ill{} Circulus} Epicyclus ad Ellipsim \struck{compositam describens} \add{componentem} C axis summa Epicycli D. infima CE Anomalia ad terram. numerata ab abside summa in antecedentia
+\note{Légende en colonne, très raturée. « eademque » est écrit au-dessus de « æquata », biffé ; « homocentri » au-dessus d'un mot noirci. Au-dessus de la ligne de BE : « Epicycli », « Epicycli intra Ellipsim », « compositum » et « congruum describens » (?), tous biffés. « axis » est écrit dans la marge de gauche, devant « summa » ; « infima » sous « D. ». Le reste de la phrase sur CE est écrit à droite, en fin de ligne.}
+
+Qualium AB \struck{9} 34 $\frac{1}{2}$ Talium BF 1.
+\note{Un premier chiffre (« 9 » ?) noirci devant « 34 $\frac{1}{2}$ ». Le « 1 » est surchargé.}
+
+\note{Figure, en haut à droite : un cercle de centre B (C en haut, D en bas), la verticale CBD, E sur la verticale au-dessus de B, F sur le cercle à droite ; les droites BF, EF prolongée jusqu'à G, et une longue droite de G vers le bas (vers A). À droite, un petit cadre tracé à deux traits, contenant deux lignes biffées (« 5 ad 7 », « 5 ad 15 » ?).}
+
+Cadat igitur in CD normalis FE \add{cuius tripla sit EG. Et connectatur AG} \struck{\ill{}} dabitur triangulum rectangulum BEF in partibus AB ob datam \add{in ysdem} BF et angulum anomaliæ \add{terrenæ} EBF. Quare dabitur AE, quæ \struck{\ill{}} adiunctum \add{est} \struck{vel} differentia \add{ipsarum} AB \struck{et} BE. Sed et datur \struck{quoque} EG \struck{quæ tripla est EF} \add{quæ tripla est EF} atque adeo \struck{Quare dabitur} angulus EAG prostaphæresis Lunæ plenæ vel nouæ in proposita ad terram parodo.
+\note{« cuius tripla sit EG. Et connectatur AG » est écrit au-dessus de la ligne, avec un signe d'insertion ; « triplex » y est récrit. « in ysdem », « terrenæ », « est », « ipsarum » sont interlinéaires. « quæ tripla est EF » est biffé sur la ligne et récrit au-dessus. « Quare dabitur » (?) biffé en tête de la ligne de « angulus ». « adiunctum » : lecture des lettres (« adiunctum » ou « adiungatum »).}
+
+Proponatur CE \struck{\ill{}} Anomalia ad terram \struck{est} partium 30. Quorum Qualium AB 3,450,000 talium BF 100,000, \struck{Erunt igitur} Ideo erit \struck{\ill{}} EF earundem 50,000 et EB 86,602 \struck{\ill{}} \add{Ac proinde} AE 3,536,602 EG 150,000. Qualium autem EG 100\,000 talium AE 2,357,734. Proximus anguli EGA cuius ideo complementum AEG datur 2 25 $\frac{3}{4}$ \struck{2 26 $\frac{1}{4}$}
+\note{« Proponatur » est récrit sur « Proponatur » à une autre terminaison. « Quorum » et « Qualium » sont écrits l'un sur l'autre. « earundem » est abrégé. « Ac proinde » est écrit au-dessus d'un groupe biffé. Dans « 3,536,602 », le 6 et le séparateur sont surchargés. La valeur biffée en bas à gauche est lue « 2 26 $\frac{1}{4}$ » avec doute. Les nombres se tiennent : $3\,450\,000 + 86\,602 = 3\,536\,602$, $3\,536\,602 / 150\,000 \times 100\,000 \approx 2\,357\,735$, et l'angle dont la tangente est $150\,000 / 3\,536\,602$ vaut environ $2^\circ 25{,}7'$ (vérification du transcripteur). Le texte appelle « complementum AEG » l'angle qui vaut 2° 25 $\frac{3}{4}$' ; c'est l'angle EAG que l'énoncé demande : gardé tel qu'il est écrit.}
+
+
+\struck{Problematium} III
+
+Invenire Prostaphæresin \struck{\ill{}} Lunæ dimidiæ \struck{\ill{}} \struck{Lunæ dimidiæ} in quacumque ad terram Parodo, \struck{cum Luna est dimidia}.
+\note{« Problematium » (?) est biffé, avec un groupe noirci, et « III » écrit au-dessus. « Lunæ dimidiæ » est écrit au-dessus de la ligne ; au-dessous, « Lunæ dimidiæ » biffé ; à gauche, un mot biffé (« Plenæ vel nouæ » ?). La proposition finale est biffée.}
+
+Esto. A centrum terræ AB Semidiameter Homocentri æquata B centrum \struck{Epicycli} Ellipseos \struck{compositæ} BE Semidiameter \struck{Epicycli} \struck{æquata} \add{transversa Ellipseos compositæ} \struck{sive Ellipsim compositam describens} CFD Epicyclus \struck{\ill{}} \struck{\ill{}} \struck{\ill{}} ad Ellipsim componentem C absis summa \add{altior} Epicycli D Infima CE Anomalia ad terram numeratâ in a[ntecedentia] a summa abside
+
+Qualium AB 23. Talium BF 1.
+\note{Seconde légende, plus propre que la première, mêmes lettres. « transversa Ellipseos compositæ » est écrit au-dessus d'une ligne biffée. « altior » (?) est au-dessus de « summa ». Après « numeratâ in », le reste du mot est caché par la reliure. « 23 » là où la première légende donnait « 34 $\frac{1}{2}$ ».}
+
+\note{Seconde figure, à droite de cette légende : un cercle de centre B (C en haut, D en bas), E sur la verticale, F sur le cercle, EF prolongée jusqu'à G, et une droite de G vers le bas ; un arc de cercle plus grand passe derrière le haut de la figure. Deux taches d'encre.}
+
+\page{156}
+\note{Aucun chiffre en tête : le verso du feuillet « 75 » (vue 155), dont l'écriture transparaît à l'envers. Même main. La moitié supérieure continue le problème III de la vue 155 (la prostaphérèse de la Lune « dimidia ») : démonstration et exemple numérique, sur le modèle du problème II. La moitié inférieure est un brouillon en tous sens : un nouvel énoncé, une figure, un tableau écrit en travers de la marge de gauche, et des notes et calculs dispersés.}
+
+Cadat igitur \struck{\ill{}} in AB normalis FE \add{cuius tripla sit EG et connectatur AG} Dabitur triangulum BEF \struck{in partibus AB} ob datam in ysdem BF et angulum Anomaliæ \add{terrenæ} EBF
+
+Quare dabitur AE quæ adiunctum est vel differentia ipsarum AB BE Sed Et dabitur \struck{quoque} EG quæ tripla est EF atque adeo angulus EAG prostaphæresis Lunæ dimidiæ In proposita ad terram parodo.
+\note{« cuius tripla sit EG et connectatur AG » est écrit au-dessus de la première ligne, avec un signe d'insertion. « in partibus AB » est biffé d'un trait taché. « terrenæ » est interlinéaire. « EAG » est souligné et barré d'un trait qui peut être un soulignement ; « parodo » est écrit sous la ligne. Mêmes tournures qu'à la vue 155 (« adiunctum », lu de même).}
+
+\struck{Quare} Proponatur CE Anomalia ad terram Partium 30 \struck{Erit igitur}
+
+Quoniam qualium AB 2,300,000, talium BF \struck{\ill{}} 100,000 ideo erit EF Earundem \struck{ideo erit EF} 50,000 \struck{et EB 2,386,602} Et EB 86,602 \struck{Erit igitur} \add{Ac proinde} AE 2,386,602. Et EG 150,000
+
+Qualium autem EG 100\,000 talium AE 1,591,068 proximus anguli EGA cuius ideo complementum \struck{est} AEG datur Part. 3, 35 $\frac{4}{5}$
+\note{« ideo erit EF » est écrit en marge, devant « Earundem », puis biffé sur la ligne. « et EB 2,386,602 », écrit d'abord, est biffé et reporté plus bas. « Ac proinde » est au-dessus de « Erit igitur », biffé. Les nombres se tiennent : $2\,300\,000 + 86\,602 = 2\,386\,602$ ; $2\,386\,602 / 150\,000 \times 100\,000 = 1\,591\,068$ ; l'angle dont la tangente est $150\,000 / 2\,386\,602$ vaut environ $3^\circ 35{,}8'$ (vérification du transcripteur). Comme à la vue 155, la valeur est donnée pour « complementum AEG » ; c'est l'angle EAG. « AB 2,300,000 » répond à « AB 23 » de la légende de la vue 155.}
+
+\marginal{ut se habet \ldots{}}
+\note{Dans la marge de droite, écrits verticalement de bas en haut, quelques mots (« ut se habet » au bas, puis « Ex calculo \ldots{} media B \ldots{} ad \ldots{} eandem \ldots{} E », en partie biffés, et un nombre biffé) : le transcripteur ne les lit pas assez pour les donner. Un « 100,000 » est écrit dans le même sens.}
+
+Invenire Prostaphæresim \struck{maximam} in quacumque ad Solem \add{parodo} \add{medio} autem ad terram situ id est \add{Cum} Anomalia terrena \struck{ad terram} est 90 vel 270. \struck{in quacumque ad Solem parodo}
+\note{Énoncé d'un nouveau problème, sous un trait. Il est barré en entier d'une grande croix de Saint-André, à deux traits obliques épais. « maximam » est biffé ; « in quacumque ad Solem » est écrit au-dessus de la ligne, « parodo » et « medio » en dessous, avec un signe d'insertion ; « terrena » est écrit sous « ad terram », biffé ; la dernière ligne, « in quacumque ad Solem parodo », est biffée. Un grand C, en marge à gauche, devant « Cum ».}
+
+\note{Tableau écrit en travers de la marge de gauche (à lire en tournant la page d'un quart de tour), sous le titre « \ldots{} Prostaphæreses Lunæ in quacumque a[d terram parodo] » : quatre colonnes séparées de traits, « Cum Noua est » (« Prostaph. Lunæ » biffé au-dessus), « Cum distat a Sole partibus 45 », « Cum dimidia est », « Cum distat a Sole partibus 135 », et une cinquième, « Cum plena » (« dimidia » biffé) ; sous le trait, une lettre grecque par colonne : δ, ξ, γ (ou ϑ), une tache et un 9, δ. Au-dessous : « β dū 45 deficit a ξ », « \struck{ergo dimidio} a β \struck{deficit} a γ vero », « Quæsita » ; « ν − ξ », un groupe biffé, « ν − φ » (?). À gauche du tableau, dans le même sens : « π Mediæ Prostaphæreses Lunæ in quacumque ad terram parodo », « ν − β ». Le sens de ces lettres (les prostaphérèses aux phases et aux octants) n'est pas établi par la page.}
+
+\note{Figure, au milieu du bas de la page : un cercle (centre marqué d'un point) et un plus petit à droite, traversés par des horizontales et une verticale, A en bas de la verticale ; des arcs de courbe et un long trait en boucle. Autour, écrits en divers sens : « Cum vero 90 deficit per \ldots{} ergo quæ est 89. prosthaphæresis q[uæ]\ldots{} opposita » (?), « β dū 45 », « ξ dū 45 », « ν − ξ », « ξ − β », « mediæ 45 deficit a ξ cum 45 », « ν », « inuenire » (biffé), et un paraphe à droite. Dans la marge de droite, plus bas, « Commoda » (?) et « Prosthaphæresis media \ldots{} » écrits verticalement, peu lisibles.}
+
+\note{En bas à droite, un cercle inscrit d'un hexagone étoilé (deux triangles), avec un diamètre vertical ; à côté « 120 » et « 60 », et, au-dessous, une note barbouillée d'encre frottée : « \ldots{} nouma \ldots{} monsieur R\ldots{} » (« monsieur » lu avec doute), puis « Plusieurs R\ldots{} » (?), « tria sign[a] » et « motum R\ldots{} ». Le nom qui suit « monsieur » est effacé par la tache ; le transcripteur n'en lit que l'initiale R. C'est le seul mot français de la page.}
+
+\[ \begin{array}{r} 45 \\ \hline 120 \\ 240 \\ \hline \end{array} \qquad \begin{array}{rrr} 23 & 2 & 3 \\ & 4 & 6 \\ 46 & 3 & \\ 92 & 10 & \end{array} \]
+\note{Petits calculs du bas de la page. Le groupe de droite reprend les nombres de la vue 150 (homocentre 23 ou 276, ellipse 2 et 6, cercle 3) et leurs doubles.}
+
+\page{157}
+\note{Le feuillet photographié porte en haut à droite « 76 » à l'encre. Au-dessus de son bord supérieur, déchiré, dépasse le haut d'un feuillet plus grand, numéroté « 77 », avec deux lignes (« Esto A centrum terræ / BZ homocentrus ») et le haut d'une figure (C, K, M, O, F, G) : ce sont les premières lignes de la page de la vue 158, où elles sont transcrites. Même main que les vues précédentes, ici au propre. Une pièce nouvelle commence : un chapitre XII intitulé « Harmonici Ptolemaici Constructio » ; seul son préambule est sur cette page, dont les deux tiers inférieurs sont blancs.}
+
+\section*{Harmonici Ptolemaici Constructio Caput XII}
+
+Harmonici Ptolemaici
+
+Constructio \quad CAPUT \quad XII
+\note{Titre en grandes lettres, sur deux lignes ; « CAPUT » en capitales.}
+
+Copernicus sibi suarumque hypotheseōn si qua est præstantiæ detrahit adeò eas mala construit Geometriâ. Itaque cum in quinque Planetis angulum exquirit quem vocat Prostaphæreseos eccentri, Triangulum rectangulum ex quo is statiū dabatur proscindit in duo, quæ dicuntur obliquangula sex septemue Analogias pro una exercens. Quinquies is repetitur Solæcismus, Immò vero ter quaterue quinquies vix ab æquiore condonaretur Aristarcho.
+\note{« hypotheseōn », « statiū » : traits de nasale. « sibi » est écrit « sibj ». Après « eccentri », une tache d'encre et deux points. « Solæcismus » : lecture des lettres (« Solæcesmus » ?). « Aristarcho » : le nom se lit nettement. Le « Copernicus » de la première ligne a sa première lettre en grande capitale.}
+
+Quamobrem ea emenda \uncertain{χρεώστης} nouæ est. Primum autem construam Harmonicum Ptolemaicum, ut ex collatione Ptolemaici et Copernicæi magis undique conspicua sit motuum doctrina.
+\note{Après « emenda », un mot en caractères grecs, lu lettre à lettre « χρεωστες » (χ, ρ, ε, ω, σ, τ, ε, ς) ; « χρεώστης » (le débiteur) est la lecture proposée, sans que le sens de la phrase en soit assuré. « nouæ » (?) est écrit à la suite avec un signe d'insertion. « Primum » porte un signe d'insertion au-dessus de « -mum », sans ajout visible. Le texte s'arrête sur « doctrina. » ; le reste de la page est blanc, sous le cachet de la Bibliothèque nationale.}
+
+\page{158}
+\note{En haut à droite du feuillet, « 77 » à l'encre ; le haut de cette page dépasse déjà sur la vue 157. Même main. Une légende des lettres, une figure (l'homocentre, l'ellipse, l'ellipsidium et le petit cercle de libération) et un texte qui décrit la construction : la page semble continuer la « constructio » annoncée à la vue 157, mais elle ne porte ni titre ni rappel, et c'est une inférence. Le bas du feuillet est blanc.}
+
+Esto A centrum terræ
+
+BZ homocentrus
+
+B centrum Ellipseos
+
+CED Ellipses
+
+CD Diameter transuersa ellipseos in Linea AB
+
+C altius punctum à centro Terræ
+
+D depressius
+
+E centrum Ellipsidij
+
+GFH Ellipsidium
+
+FG Diameter transuersa Ellipsidij parallela CD
+
+F signum remotius à Terrâ
+
+G propius
+
+H centrum Lunæ
+\note{« CED » : le E est surchargé (C, E ou O). « Ellipses » : ainsi, pour « Ellipsis ». « Terrâ » : trait sur le a. Le premier jambage de « H centrum Lunæ » se lirait aussi « IH » ; le H est celui de la figure.}
+
+Fit angulus CAH angulus differentiæ Inter mediam Lunam et adparentem
+\note{« differentiæ » est en partie sous le cachet de la Bibliothèque nationale.}
+
+Agantur autem in AC normales HI, EK et ideo parallelæ \add{centro B intervallo BL describatur circellus ad ellipsim \struck{\ill{}} secans ab EK in} \struck{et ponatur in EK recta BL ipsi BC æqualis} erit angulus CBL \add{seu peripheria CL} Anomalia Lunæ.
+\note{La ligne « et ponatur in EK recta BL ipsi BC æqualis » est biffée d'un trait ; la leçon nouvelle, « centro B intervallo BL describatur circellus ad ellipsim [\ldots{}] secans ab EK in », est écrite au-dessus, en plus petit, avec un mot noirci (« quem » ?). « seu peripheria CL » est écrit au-dessus de « Anomalia », entre guillemets de renvoi. Un grand « L » est écrit seul dans la marge de gauche, en face : le point L de la phrase, reporté en marge. « secans ab EK in » s'arrête sans lettre finale.}
+
+Et cum ducetur MN ipsi GEF æqualis et parallela et centro L Intervallo LM vel LN describetur circellus ad Ellipsidium quem \struck{recta} semidiameter quidem BL secet in signis O P illo \struck{depressiore} altiore hoc depressiore, acta vero HI in signo Q. erit peripheria PQ dupla longitudo \add{mediæ} Lunæ a medio Sole et peripheria NQ Anomalia mixta
+\note{« LM » : le M est récrit sur un autre signe. « quidem » est taché. « mediæ » est écrit au-dessus de « Lunæ », entre guillemets de renvoi. Une tache d'encre pâle avant la seconde « peripheria ».}
+
+Et cum acta HI \uncertain{abscisas} GF MN intercipiet in signis R S erit HR dupla ad QS sicut KE seu IR dupla ad KL seu IS atque adeo tota IQ dupla ad totum IH.
+\note{« abscisas » : le mot est récrit (« adstrias » ?) et lu avec doute. « IQ » : lu « ιQ » ; « IH » a son I en capitale ornée. La page s'arrête ici.}
+
+\note{Figure, en haut à droite : une grande ellipse (CED) de centre B, avec son diamètre vertical CD prolongé jusqu'à A en bas et un diamètre horizontal ; sur la verticale K et I ; un petit cercle (M en haut, N en bas, O, P, Q, et L au centre, marqué de rayons en étoile) sur l'horizontale de K ; à droite, une petite ellipse (l'ellipsidium, F en haut, G en bas, E au centre, H et un R) ; de A, deux droites montent vers C et vers H.}
+
+\page{159}
+\note{Aucun chiffre en tête : le verso du feuillet « 77 » (vue 158), dont la légende et la figure transparaissent à l'envers dans le haut. Aucun texte suivi : dans la moitié inférieure, une figure de calcul et des colonnes de nombres, de la même encre et de la même main que les nombres des vues précédentes. À droite de la vue, hors du feuillet, le bord d'un onglet blanc.}
+
+\note{Figure : un grand cercle, un cercle moyen dont le centre est marqué E, et un petit cercle à droite, barré d'une croix ; une verticale et des obliques qui descendent vers un point en bas, où sont écrits « 1081 » (ou « 2081 ») et, plus bas, « 1338 ». Nombres sur la figure : « 19,396 » le long de la verticale, « 385 \ldots{} » et « 95840 » (?) sur une horizontale, « 460 » (?) au milieu, « 199402 » (?) sur une autre horizontale, « 4 19° » (?) et « 0.37 » le long des obliques. Les chiffres serrés dans le cercle moyen sont surchargés et lus avec doute.}
+
+\[ \begin{array}{r|r|r} 276 & & \\ 1\,010\,10 & 856 & \\ 2 \;\; 65\,89 & 144 & \\ \hline 2 \;\; 6 \; 589 & 144 & 287|520 \end{array} \qquad \begin{array}{r|r} 199 & 402 \\ 95 & 840 \\ \hline 103 & 562 \end{array} \]
+\note{En bas à gauche, une multiplication ou une division à colonnes séparées de traits verticaux, dont la disposition exacte n'est pas sûre ; le transcripteur donne les nombres dans l'ordre de la page. À droite, une soustraction juste : $199\,402 - 95\,840 = 103\,562$ (vérification du transcripteur).}
+
+\[ \begin{array}{r} 287\,520\,000\,00 \\ 205\,891\,44 \\ \hline 21\,628\,560 \\ 26\,658\,414 \\ 21\,261\,232 \end{array} \]
+\note{En bas à droite, une colonne de nombres ; « 26 » en tête de la quatrième ligne est biffé (donné ici sans marque, faute de rature possible dans une formule), avec un « 2 » écrit au-dessous. Les chiffres sont serrés et le transcripteur ne reconstitue pas l'opération.}
+
+\page{160}
+\note{Le feuillet photographié porte en haut à droite « 78 » à l'encre, sur une tache d'eau. Au-dessus de son bord supérieur dépasse le haut d'un feuillet plus grand, numéroté « 79 », avec un seul mot en grec à gauche, « Δεδομένον » (lecture claire) : ce feuillet n'est pas photographié dans ce lot, et le mot est laissé à la vue où sa page le sera. Même main, au propre. La page commence au milieu d'une phrase (« peripheriam HP vel CI dum secabit\ldots{} ») : elle continue un texte commencé sur une page que ce lot ne contient pas — ni la vue 158, qui s'achève sur une phrase complète, ni la vue 159, qui ne porte que des calculs. Une figure au milieu, puis l'énoncé d'une « Propositio II », qui s'arrête au bas de la page.}
+
+peripheriam HP vel CI dum secabit AG Epicyclum in Signis P, Q illo alto, hoc depresso dabitur angulus KAG parallaxis orbis
+\note{« Epicyclum » est écrit « Epuyclum » ou « Epicyclum » avec un i sans point. Le texte s'arrête sur « orbis », sans point, et la page est blanche ensuite jusqu'à la figure.}
+
+\note{Figure : une verticale CFB\ldots{} qui descend jusqu'à A, en bas, avec C en haut et F plus bas ; une horizontale de F vers E et G ; un demi-cercle intérieur de centre B et un grand arc extérieur (H en haut, P à droite, K à gauche, Q en bas) ; une verticale par G et H jusqu'à I en bas ; une droite de G vers P, et deux droites vers A. Le cachet de la Bibliothèque nationale est posé sur la figure.}
+
+\section*{Propositio II}
+
+Propositio \quad II
+
+In ysdem Planetis Ex datis Anomalijs et prostaphæresi adparentia, Una cum Altitudine media et \uncertain{Adlateralibus} ad
+\note{« prostaphæresi » : la fin du mot est surchargée. « Adlateralibus » : lecture des lettres, sans sens établi ; la dernière syllabe est tachée. L'énoncé s'arrête sur « ad » au bord inférieur du feuillet, qui est déchiré : il se poursuit sur une page que ce lot ne contient pas (vue 161 ou suivante).}
+
+\end{document}

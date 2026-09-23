@@ -1,0 +1,897 @@
+% NAL 1644, batch 2 — Gallica views 21–40.
+% Pass: Opus 5.5 (claude-opus-5-5), 2026-09-23 — first pass, unchecked against the views by a human.
+%
+% Dating. The catalogue gives no date for this volume (an empty string in
+% holdings.json); \dating{} is left empty on purpose, and this pass infers
+% none. Nothing on these twenty views is dated.
+%
+% What the views are. Greyscale scans (colour for views 28, 30, 31, 32, 37
+% and 39, with nothing else distinguishing those pages), portrait, about
+% 3750 × 5620, one page per view. The leaves are smaller than the frame and
+% of unequal size, so that on almost every view the top or the foot of a
+% taller neighbouring leaf projects past the edge of the page photographed,
+% with a few lines of its text (views 22, 24, 26, 28, 29, 30, 31, 32, 33, 39),
+% and the line-ends or margins of the facing page show at one side. Those
+% projecting lines are identified in the view's opening \note{} and are
+% transcribed only at the view where their own page is photographed; one
+% strip (under views 26, 28, and again under 39) belongs to pages outside
+% what this batch could place, and is only described. Each view was read from
+% the local mirror as four full-width bands at 2400 px, with tight crops at
+% 1400–1800 px for struck signs, marginal calculations and doubtful words.
+% Nothing was fetched from Gallica. \page{N} is always the view.
+%
+% What the twenty views hold. ONE Latin treatise, in one regular
+% cursive (the pass puts no date on the hand), on the
+% "plasmatic" derivation of affected equations from purer ones — the
+% transformation of an equation by a change of root (A ± B = E, B − A = E,
+% B in A = E quadratum, B quadratum in A = E cubus) — stated as theorems and
+% proved by expanding and "ordering" the terms. It is written in species in
+% the Viète manner. These twenty leaves carry no title, no author's name and
+% no signature; the treatise's heading, with Viète's name, is on v. 5 (batch 1
+% — see the reconciliation below). This pass does not assume the hand is
+% Viète's. No view is skipped: all twenty carry text.
+%
+%   v. 21      (verso, unnumbered) Continues a text begun before view 21: it
+%              opens on a complete sentence (« Quod cum deprehendit … ») in
+%              the middle of an argument, and gives « Omnino etiam est primum
+%              animadversione dignum » and « Secundum esto », general rules on
+%              which affected powers arise from which (by addition or
+%              subtraction of a part of a coefficient; by multiplication).
+%              Two calculations in species in the left margin, same ink.
+%   v. 22      (leaf « 9 ») « Tertium esto » and « Quartum esto et
+%              postremum »: the remaining rules, ending the general part.
+%   v. 23      A remark on « anomalæ plasmaticæ » and a porism; then
+%              « Deductio quadratorum adfectorum a puris Cap. \struck{VIII}
+%              IX », theorems I–II (quadratics, A ± B = E).
+%   v. 24      (leaf « 10 ») End of theorem II; theorem III (B − A = E, with
+%              a second case A + B = E).
+%   v. 25      « Deductio Adfectorum aliquot Cuborum sub quadrato, a Cubis
+%              adfectis sub Latere Cap. \struck{I}X. », theorem I and
+%              « Aliter theorema i ».
+%   v. 26      (leaf « 11 ») End of Aliter I; theorem II; statement of
+%              « Aliter theorema ii ».
+%   v. 27      End of Aliter II; « Deductio adfectorum Cuborum, tam sub
+%              quadrato, quam latere, a Cubis affectis sub latere. Cap. XI »,
+%              theorem I begun.
+%   v. 28–33   (leaves « 12 »–« 14 ») Cap. XI continued: theorems I–IX on
+%              cubes affected sub latere (A³ ± D pl. A, D pl. A − A³ = Z
+%              solido), each by A ± B = E or B − A = E, every page running on
+%              into the next; view 32 carries a column of marginal
+%              calculations with numerical examples in cossic signs and a
+%              small figure. Cap. XI ends on view 33.
+%   v. 33      « Deductio potestatum aliquot radices planas, solidasque
+%              habentium a potestatibus simplicium radicum. Cap. XII »,
+%              theorem I stated.
+%   v. 34–36   (leaves « 15 », « 16 ») Cap. XII: proof of theorem I and
+%              theorems II–IX, substitutions B in A = E quadratum and
+%              B quadratum in A = E cubus, with « Aliter » forms in « E
+%              planum » and « E solidum ». Ends on view 36.
+%   v. 37      « Deductio adfectorum quadratoquadratorum ab affectis
+%              quadratis. Cap. XIII. De quadratoquadratis adfectis sub
+%              Latere. »: theorem I and theorem « iii », each followed by a
+%              numerical example in cossic signs; no theorem II on the page.
+%   v. 38      A paper slip mounted on an otherwise blank page, same hand:
+%              « Theorema ii », headed « ad faciem aversam foly 16. » and
+%              marked with an asterisk that answers the asterisk in the margin
+%              of view 37: the missing theorem II, to be read on the back of
+%              leaf 16, i.e. on view 37. Kept at its own view, in Gallica's
+%              order.
+%   v. 39      (leaf « 17 ») « De quadratoquadratis adfectis sub latere et
+%              quadrato. », theorems IIII and V.
+%   v. 40      Theorems VI, « De iisdem Aliter » VII, and the hypothesis of
+%              theorem VIII.
+%
+% Batch edges.
+%   - View 21 continues a text begun before it (see above): the pass cannot
+%     say how far back the treatise begins.
+%   - View 40 runs on into view 41: it stops on the hypothesis of theorem VIII
+%     (« Si A quadratum − B in A æquetur S plano − D plano: »), with no
+%     conclusion and no proof. The mirror holds views 1–40 only, so view 41
+%     was not seen.
+%   - Within the batch every view continues the one before, except where a
+%     theorem or chapter ends at the foot of a page.
+%
+% Numbers on the leaves.
+%   (a) An ink figure at the top right of each recto, one per leaf, in a
+%       hand and ink that look like the text's: 9 (v. 22), 10 (v. 24),
+%       11 (v. 26), 12 (v. 28), 13 (v. 30), 14 (v. 32), 15 (v. 34), 16 (v. 36),
+%       17 (v. 39), without a gap; versos carry none (v. 21, 23, 25, 27, 29,
+%       31, 33, 35, 37, 40). The slip of view 38 refers to « foly 16 »
+%       (folij 16) and, by its asterisk, points to the verso of the leaf numbered
+%       16 here (view 37): which suggests (an inference) that the series was
+%       already on the leaves when the slip was written — a foliation of the
+%       treatise, by the writer or someone near him.
+%       Whether it is also the library's count of the volume, this batch
+%       cannot tell: the figures are ink, not pale pencil, and no \folio{} is
+%       written anywhere, as for Latin 11195, NAF 5176 and NAF 5161.
+%   (b) « 16 bis », on the slip of view 38, in a blacker ink, a heavier
+%       stroke and another hand: a later numbering of the slip as a leaf
+%       inserted after leaf 16. Recorded in a note.
+%   (c) Chapter numbers « Cap. IX » to « Cap. XIII », corrected twice
+%       (« \struck{VIII} IX », v. 23; « \struck{I}X », v. 25), and theorem
+%       numbers restarting in each chapter. Content, not numbering of leaves.
+%   (d) Figures inside the calculations (numerical examples) are content.
+%
+% Notation. The species, in the Viète manner, as written: A the unknown, E the new
+% unknown, B, D, S given magnitudes, Z the given homogeneous term; the
+% dimension is named in words and kept: « Z plano », « Z solido », « D
+% plano », « S plano plano », « B quadrato », « B cubo », « E quadratum »,
+% « E cubocubus », « E plani quadratum », « E solidum »; products written
+% « B in A », « B in E quadratum ter ». Equality is written in words
+% (« æquatur », « æquabitur », « æquetur ») and never with a sign; the
+% page's braces are kept as \left.\right\} and \left\{ … \right. arrays,
+% including where the writer turns a brace the "wrong" way (v. 25, 32).
+% Signs + and − as written; in three places a double horizontal stroke « = »
+% stands where the calculation needs a subtraction (v. 23, twice; v. 30):
+% set « = » and flagged, since the pass cannot tell a doubled minus from a
+% distinct sign. Terms stacked in a column are set as arrays in the page's
+% order. Numerical examples use the cossic signs N (the root), Q (the
+% square), C (the cube), QQ (the square-square), written as capitals after
+% the coefficient (« 1QQ − 74Q + 240N ») and kept so. Margin sums use Aq,
+% Bq, Bc, Eqq for the powers (v. 21, 32). A root sign on the figure of v. 32
+% has no LaTeX equivalent and is described in words, not drawn. No other
+% glyph lacks a LaTeX equivalent.
+%
+% Spelling and hand. Latin as written; the diphthong is written as a
+% ligature or an e with a hook and set æ throughout; « -que » as « q; »
+% (atq;, utraq;, itaq;) kept; « foly » (folij), « iuuat » kept. The long s is
+% set s. Corrections are frequent and done in three ways, all kept: signs
+% struck or hatched with the new sign written beside them (v. 28, 32);
+% a word underlined in the text with its replacement in the left margin
+% (v. 22 « donata » / « ductâ »; v. 34 « B in D » / « B quadrato »; v. 35
+% « quadratum » / « quad. quad. »); a caret with the inserted word in the
+% margin (v. 25 « solido », v. 37).
+%
+% The numerical examples whose root is stated (« valor radicis », « fit
+% 1N … »: v. 32 « 52N − 1C æq. 96 », v. 37, 38, 39, 40) were checked by the
+% pass and all satisfy their equations; the other marginal sums of v. 32 were
+% not checked. The species
+% derivations were followed only enough to read the signs.
+
+% Coordinator's reconciliation (2026-09-23), after all nine batches:
+%   One ink series of leaf numbers runs top right of the rectos through the
+%   whole volume, with no gap: 1–8 and « 5 bis » (v. 5–20), 9–17 (v. 22–39),
+%   18–27 (v. 41–59), 28–37 (v. 61–79), 38–47 and « 46 bis » (v. 81–100),
+%   « 47 bis » and 48–56 (v. 102–120), 57–66 (v. 122–140), 67–78
+%   (v. 142–160), 79 (v. 162). It crosses the three pieces of the volume, and
+%   the writer cites it himself (« fol. 18. », v. 43; « pag. 48 », v. 100), so
+%   it is the writer's or copyist's count of leaves, not the library's. Being
+%   ink, it gets no \folio{}, in any batch.
+%   The pieces: « Francisci Vietæ De Recognitione Æquationum tractatus »
+%   (heading on v. 5), Cap. 1–XXI, v. 5–68; « Francisci Vietæ. De æquationum
+%   Emendatione tractatus secundus » (heading on v. 69), Cap. I–XIIII, ending
+%   « Finis » on v. 141; then astronomy without a name, v. 142–163 (lunar
+%   prostaphaereses, Tycho's lunar hypothesis restated, « Harmonici
+%   Ptolemaici Constructio Caput XII », Mercury). Two doubtful notes may mark
+%   the treatises as a copy: « transcripta ex exemplari » (v. 100) and
+%   « deerant hæc in exemplari » (v. 114). The name on the leaves is in the
+%   headings; who wrote the hands is not settled.
+
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{nal-1644}
+\shelfmark{NAL 1644}
+\batch{2}
+\pages{21}{40}
+\dating{}
+\watermark{Lecture automatique\\non vérifiée}
+\foldertitle{Viète (François). Papiers divers. NAL 1644}
+
+\begin{document}
+
+\page{21}
+\note{Aucun chiffre lisible en tête de la page ; l'angle supérieur droit est occupé par la reliure. La page commence sans titre, par une phrase complète (« Quod cum… ») qui suppose un exposé commencé avant elle : le texte continue celui de la vue 20, que cette passe n'a pas lue. Une seule main, une cursive régulière, en latin, dans une colonne décalée vers la droite ; la marge de gauche, large, porte des calculs de la même encre, plus petits et plus rapides, donnés ci-dessous en \texttt{marginal}.}
+
+Quod cum deprehendit \uncertain{sic mutatarius}, adnotabit sedulo, ac finem tandem proferet symbolum, in artis commendationem et illustrationem.
+\note{« sic mutatarius » : lecture des lettres (f ou s long, i, c, puis m, u, t, a, t, a, r, i, u, s) ; le mot ne donne pas de latin connu du transcripteur et reste douteux.}
+
+Omnino etiam est primum animadversione dignum.
+
+Si qua potestas adfecta est, vel adficitur, sub singulis gradibus ad eam parodicis, plasmatica est per modum additionis, vel subductionis, quoniam radix intelligitur adfecta fuisse cremento vel decremento desumpto ex coefficiente sub gradu altiore sed intra potestatis conditionem.
+
+In quadratis videlicet adfecta fuisse, radix semisse coefficientis sub latere. In cubis triente coefficientis sub quadrato. In quadratoquadratis quadrante coefficientis sub cubo. in quadratocubis quintante coefficientis sub quadratoquadrato, et eo continuo progressu.
+
+Sic quadrata quæcunq; adfecta originem sumunt a puris, cubi adfecti sub quadrato et latere, a cubis affectis sub latere. quadratoquadrata adfecta sub cubo, quadrato, et latere, a quadratoquadratis adfectis sub quadrato, vel latere, aut tam sub quadrato quam sub latere. et eo deinceps ordine.
+\note{L'écriture des mots « adfecta » et « affectis » alterne sur la page : elle est gardée.}
+
+Secundum esto. Si qua potestas a radice plana\struck{\ill{}} solidave vel ulterioris ordinis homogenea \textsuperscript{climactica potius}, plasmatica est per multiplicationis modum, vel simpliciter analogiae.
+\note{Après « plana », deux ou trois lettres biffées d'un trait épais. Au-dessus de « homogenea », d'une écriture plus petite de la même encre, « climactica potius » : une correction proposée par l'écrivain, sans que « homogenea » soit biffé ; les deux sont donnés. « analogiae » : la fin du mot est un simple crochet.}
+
+\marginal{Posit. quadrat. affect. sub latere $\begin{array}{l} Aq \\ + B \text{ in } A \end{array}$ et per \uncertain{simplicitam} analogiam $B \text{ in } A$ æquetur E quadrato. Ergo $\frac{Eq}{B}$ erit $A$. et $\frac{Eqq}{Bq}$ erit $Aq$. igitur $\frac{Eqq}{Bq} + \frac{B \text{ in } Eq}{B}$ æquabitur $\begin{array}{l} Aq \\ + B \text{ in } A \end{array}$. et facta additione $\dfrac{B \text{ in } Eqq + Bq \text{ in } Eq}{Bc}$ æquabit $\begin{array}{l} Aq \\ + B \text{ in } A \end{array}$. itaque si $\begin{array}{l} Aq \\ + B \text{ in } A \end{array}$ æquetur D \uncertain{solido} : $\left.\begin{array}{l} B \text{ in } Eqq \\ + Bc \text{ in } Eq \end{array}\right\}$ D \uncertain{so.} in $Bc$. et omnibus per $B$ divisis $\left.\begin{array}{l} Eqq \\ + Bq \text{ in } Eq \end{array}\right\}$ D \uncertain{so.} in $Bq$. \uncertain{Erit} itaque E. Cubi affecti quadratoquadrati media proportionalis inter B. et A}
+\note{Calcul en marge de gauche, en regard du premier et du deuxième alinéa, de la même encre que le texte ; une accolade en tête le rattache à la ligne « Si qua potestas… ». Les puissances sont écrites en abrégé : « Aq » (A quadratum), « Eqq » (quadrato-quadratum), « Bq », « Bc » ; « B in A » est le produit. Après « facta additione », les deux termes sont écrits l'un sous l'autre, joints par une accolade, et soulignés d'un trait sous lequel est écrit « Bc » (ou « Br ») : une fraction, mise ici sur une ligne. « D solido » est surchargé et noirci ; la même abréviation « D so. » (lue avec doute, ou « D pl. ») revient deux fois. Le tout est gardé tel qu'il est écrit, sans vérifier l'homogénéité des termes. « Erit » est traversé d'un trait qui peut être une rature ; la phrase finale est lue « E. Cubi affecti » là où l'on attendrait « E latus » : la lecture est celle des lettres.}
+
+Sit quadratoquadratum adfectum sub quadrato, originem sumit a quadrato adfecto sub latere, quoniam ducta sunt omnia, quibus æquatio constat singularia homogenea in quadratum coefficientis sub latere. unde radix effecti quadratoquadrati intelligitur media proportionalis inter coefficientem sublateralem, et eam quæ primum proponebatur radicem.
+
+\marginal{$\left.\begin{array}{l} Aq \\ + B \text{ in } A \end{array}\right\}$ $Dq$. et $Bq$ in $A$ æquabit $Ec$. \ldots{} $\left.\begin{array}{l} Ecc \\ + Bc \text{ in } Ec \end{array}\right\}$ $Bqq$ in $Dq$.}
+\note{Second calcul marginal, en regard de l'alinéa sur le cubo-cube. Le « Aq » de tête est surchargé, et porte au-dessus un « h » sous un trait ; un « A » sur un trait au-dessus d'un « h » est écrit aussi après « Ec. », avec deux lettres rognées au bord (« p… ») : un renvoi ou une fraction $\frac{A}{h}$, que le transcripteur ne sait pas interpréter.}
+
+Sit cubocubus, adfectus sub cubo, originem sumit a quadrato quoque adfecto sub latere, unde radix effecti cubocubi fit secunda continue proportionalium, quarum coefficiens sublateralis est prima, radix vero quæ primo proponebatur earundem quarta.
+
+Sit cubocubus adfectus sub quadratoquadrato, originem sumit a cubo adfecto sub quadrato, ductis omnibus quibus æquatio constat, singularibus homogeneis in cubum coefficientis sub quadrato unde radix effecti cubocubi media proportionalis est inter coefficientem subquadraticam et eam quæ primum proponebatur.
+\note{Fin de page, et fin de l'exposé : sous ce dernier alinéa le bas du feuillet est blanc.}
+
+\page{22}
+\note{Le feuillet photographié est plus court que celui qui est derrière lui : au-dessus de son bord supérieur, déchiré, dépasse le haut d'un autre feuillet, qui porte en tête à droite le chiffre « 11 » et trois lignes de calcul (« E cubo / $-$ B in E quadrato 3 / $+$ B quadrato in E 3 ») ; ce sont les premières lignes de la page de la vue 26, où elles sont transcrites. Sur le feuillet lui-même, en haut à droite, un petit « 9 » à l'encre : la pagination de l'écrivain (voir l'en-tête). Même main que la vue 21, et le texte y fait suite : après « Omnino etiam est primum » et « Secundum esto » (vue 21), cette page donne « Tertium esto » et « Quartum esto et postremum ».}
+
+Tertium esto omne quadratoquadratum affectum sub parodico ad illud gradu, uno vel pluribus, plasmaticum est, suam videlicet ducens per climacticum adscensum originem a quadrato affecto sub latere.
+\note{« pluribus » : la fin du mot est surchargée et noircie.}
+
+Adficiatur quadratoquadratum sub latere, Æquatio adfecti quadrati, a quo deducta quadratoquadratica est, eam passa est, suorum quibus constat singularium homogeneorum, distributionem, ut quadrati symbolum, fecerit partem unam æquationis. planum vero sub latere, una cum data comparationis magnitudine, alteram. et utraq; tandem parte donata quadraticè, interpretationem \uncertain{congruam} accepit homogeneum sub quadrato, atq; adeo omnia fuerint ordinata.
+\note{« distributionem » : la syllabe « -tio- » est surchargée d'une tache. « donata » est souligné, et la marge de gauche porte en regard, de la même main, « ductâ, » : une correction, sans que le mot du texte soit biffé ; plus bas la même tournure est écrite « utraq; parte ductâ quadraticè ». « congruam » : le mot commence par « con- » et la suite est récrite par-dessus, de sorte qu'il se lirait aussi « externam » ; la même phrase, plus bas, porte nettement « congruam acceperint ».}
+
+\marginal{ductâ,}
+
+Adficiatur vero quadratoquadratum, tam sub quadrato quam latere, æquatio adfecti quadrati a quo deducta quadratoquadratica est, eam passa est suorum quibus constat singularium homogeneorum distributionem ut quadratica potestas, una cum dicti dati plani comparationis vel ejusdem productione, fecerit partem unam Æquationis planum vero sub latere una cum apotome dati plani comparationis, vel eodem producto, partem alteram, atq; adeo utraq; parte ductâ quadraticè, omnia fuerint ordinata.
+
+Adficiatur denique quadrato quadratum sub cubo. æquatio adfecti quadrati, a quo deducta quadratoquadratica est eam suorum quibus constat singularium homogeneorum passa est distributionem, ut quadrati symbolum una cum plano sub latere, fecerit partem unam æquationis. datum vero planum comparationis alteram, et utraq; tandem parte ducta quadraticè, interpretationem congruam acceperint, ut homogenea tam sub latere quam quadrato. atq; adeo omnia fuerint ordinata.
+\note{Devant « quadrato. atq; adeo », en marge, un petit point noir, sans renvoi repéré.}
+
+Quartum esto et postremum, cubicas omnes adfectiones per climacticum regularem adscensum, a quadraticis posse deduci, verum in illis ad primigenias, non patere reductionis viam, nisi per æquationes potestatum æque altarum, et adfectarum. Æquationum tandem inde constitutarum spectata proprietas maxime iuuat.
+\note{Fin du texte de la page ; le bas du feuillet est blanc. Le mot qui suit « æque » est lu « altarum » ; « iuuat » est écrit avec un grand I initial.}
+
+\page{23}
+\note{Le feuillet est plus court que la vue ; au-dessus de son bord, le fond est vide. Aucun chiffre en tête. Même main. La page fait suite à la vue 22, qui s'achevait sur le quatrième point (« Quartum esto et postremum ») : elle ajoute une remarque sur les « anomalæ plasmaticæ », puis ouvre le chapitre IX.}
+
+Sed \struck{et} inter anomalas plasmaticas digne speciali nota sunt eæ quæ \struck{\ill{}} pertinent ad homogenea adfectionum, quæ de potestatibus negantur.
+\note{« et » est biffé d'une tache ; devant « pertinent », deux lettres biffées de même (« pe » ?). « negantur » est récrit sur un premier mot.}
+
+Creantur illæ sua primigenia origine, a puri quadrati æquatione, instituto plasmate, per additionem vel subductionem, nam cum ad plasma adsumitur coefficiens quælibet maior radice proposita, sive ea adficiatur per hypothesin sive negetur, semper incidetur in æquationem plani sub latere negati de quadrato. unde porisma.
+
+Quoties cunq; potestas negatur de affectionis homogeneo radicem potestatis esse ancipitem, quoniam ex ancipite illa quadratica reliquæ omnes fluunt, et deducuntur, salva radicis primigeniæ amphibolia.
+\note{« Quoties cunq; » : en deux mots. « affectionis » : le groupe « ffe » est surchargé.}
+
+\section*{Deductio quadratorum adfectorum a puris Cap. IX}
+
+Deductio quadratorum adfectorum a puris Cap. \struck{VIII} IX
+\note{Titre centré, sur deux lignes. Le numéro du chapitre était d'abord « viii », biffé, et « IX » est écrit à la suite.}
+
+Quæ omnia ut fiant evidentiora, theorematum aliquot ad plasmata, de quibus monuimus, pertinentium, iam sequitur farrago.
+
+\subsection*{Theorema 1.}
+
+Si $A$ quadratum æquetur $Z$ plano
+
+$A + B$ esto $E$
+
+\[ E \text{ quadratum minus } B \text{ in } E \text{ bis æquabitur } \begin{array}{l} Z \text{ plano} \\ = B \text{ quadrato} \end{array} \]
+
+quoniam enim $A$ quadratum propositum æquale $Z$ plano, est autem $A + B$ radici $E$ æqualis, ergo $E - B$ æquabitur $A$. itaq; quadratum abs $E - B$ æquabitur $Z$ plano. quadratum autem illud constat singularibus planis
+\[ \begin{array}{l} E \text{ quadrato} \\ - B \text{ in } E \text{ bis} \\ + B \text{ quadrato} \end{array} \]
+quare omnibus sic ordinatis
+\[ \left.\begin{array}{l} E \text{ quadratum} \\ - B \text{ in } E \text{ bis} \end{array}\right\} \text{æquabitur } \begin{array}{l} Z \text{ plano} \\ = B \text{ quadrato.} \end{array} \]
+ut est enunciatum.
+\note{Deux fois dans ce théorème, devant « B quadrato » au second membre, le signe est un double trait « = », là où le calcul demande la soustraction et où le théorème II, plus bas, écrit un simple « $-$ ». Il est gardé tel qu'il est écrit ; le transcripteur ne décide pas s'il s'agit d'un moins tracé deux fois ou d'un signe distinct.}
+
+\subsection*{Theorema ii}
+
+Si $A$ quadratum æquetur $Z$ plano
+
+$A - B$ esto $E$.
+
+\[ \left.\begin{array}{l} E \text{ quadratum} \\ + B \text{ in } E \text{ bis} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} Z \text{ plano} \\ - B \text{ quadrato.} \end{array}\right. \]
+\note{Le bas de la page est blanc sous ces lignes ; la démonstration du théorème II commence en tête de la vue 24.}
+
+\page{24}
+\note{En haut à droite du feuillet, « 10 » à l'encre. Au-dessus du bord supérieur dépasse de nouveau le haut du feuillet « 11 » (voir la vue 22), et à gauche de la vue restent visibles les fins de lignes de la page précédente (vue 23). La page continue sans rupture le théorème II laissé à la fin de la vue 23.}
+
+quoniam enim $A$ quadratum æquatur $Z$ plano est autem $A - B$ radici $E$ æqualis, $A - B$ æquetur $E$. ergo $E + B$ æquabitur $A$. itaq; quadratum ab $E + B$ æquabitur $Z$ plano. quadratum autem illud constat singularibus planis.
+\[ \begin{array}{l} E \text{ quadrato} \\ + B \text{ in } E \text{ bis} \\ + B \text{ quadrato} \end{array} \]
+quare omnibus bene ordinatis
+\[ \left.\begin{array}{l} E \text{ quadratum} \\ + B \text{ in } E \text{ bis} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} Z \text{ plano} \\ - B \text{ quadrato.} \end{array}\right. \]
+ut est enunciatum.
+
+\subsection*{Theorema iii}
+
+Si $A$ quadratum æquetur $Z$ plano.
+
+$B - A$ vel $A + B$ esto $E$
+\[ \left.\begin{array}{l} B \text{ in } E \text{ bis} \\ - E \text{ quadrato} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} B \text{ quadrato} \\ - Z \text{ plano.} \end{array}\right. \]
+\note{Dans « $A + B$ », le trait vertical du « + » est plus appuyé que le reste, comme ajouté sur un « $-$ ». La démonstration traite plus bas le cas « si $A + B$ æquetur $E$ », sans signe douteux.}
+
+quoniam enim $A$ quadratum propositum æquale $Z$ plano est autem $B - A$ radici $E$ æqualis, igitur $B - E$ æquabitur $A$. itaq; quadratum abs $B - E$ æquabitur $Z$ plano. quadratum autem illud constat.
+\[ \begin{array}{l} B \text{ quadrato} \\ - B \text{ in } E \text{ bis} \\ + E \text{ quadrato} \end{array} \]
+quare omnibus bene ordinatis
+\[ \left.\begin{array}{l} B \text{ in } E \text{ bis} \\ - E \text{ quadrato} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} B \text{ quadrato} \\ - Z \text{ plano} \end{array}\right. \]
+ut est enunciatum.
+
+Et si $A + B$ æquetur $E$. igitur $E - B$ æquatur $A$. itaq; quadratum abs $E - B$ æquabitur $Z$ plano. quadratum autem illud constat
+\[ \begin{array}{l} E \text{ quadrato} \\ - B \text{ in } E \text{ bis} \\ + B \text{ quadrato} \end{array} \]
+quare omnibus bene ordinatis
+\[ \left.\begin{array}{l} B \text{ in } E \text{ bis} \\ - E \text{ quadrato} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} B \text{ quadrato} \\ - Z \text{ plano.} \end{array}\right. \]
+ut est quoq; enunciatum.
+\note{Fin du théorème III et du texte de la page ; le bas du feuillet est blanc. Une tache d'encre sur « E quadrato » dans la dernière disposition.}
+
+\page{25}
+\note{Verso, sans chiffre en tête ; le feuillet est plus court que la vue, et le fond est vide au-dessus de lui. À droite de la vue, le bord du feuillet suivant. Même main. La page ouvre un nouveau chapitre en haut, après la fin du théorème III (vue 24).}
+
+\section*{Deductio Adfectorum aliquot Cuborum sub quadrato, a Cubis adfectis sub Latere Cap. X}
+
+Deductio Adfectorum aliquot Cuborum sub quadrato, a Cubis adfectis sub Latere Cap. \struck{I}X.
+\note{Titre centré, en trois lignes. Le numéro du chapitre est « IX » dont le I est biffé d'une boucle, ce qui laisse « X » : le chapitre précédent était numéroté « \struck{VIII} IX » (vue 23).}
+
+\subsection*{Theorema. 1.}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ cubus} \\ - B \text{ quadrato ter in } A \end{array}\right\} \text{æquetur } Z \text{ solido} \]
+
+$A - B$ esto $E$
+\[ \left.\begin{array}{l} E \text{ cubus} \\ + B \text{ in } E \text{ quadratum ter} \end{array}\right\} \text{æquabitur} \left\}\begin{array}{l} Z \text{ solido} \\ + B \text{ cubo bis} \end{array}\right. \]
+\note{Devant le second membre, l'écrivain trace ici une accolade tournée dans le même sens que la première, fermante, là où la version « Aliter » écrit plus bas une accolade ouvrante ; les deux sont gardées.}
+
+quoniam enim $A$ cubus minus $B$ quadrato ter in $A$ æquatur $Z$ solido; est autem $A - B$ radici $E$ æqualis, igitur $E + B$ æquabitur $A$, quare Cubus ab $E + B$ multatus solido ab $B$ quadrato ter in $E + B$, æquabitur $Z$ solido. Cubus autem abs $E + B$ constat.
+\[ \begin{array}{l} E \text{ cubo.} \\ + B \text{ in } E \text{ quadrato } 3 \\ + B \text{ quadrato in } E\ 3 \\ + B \text{ cubo} \end{array} \]
+Solidum vero adfectionis
+\[ \begin{array}{l} - B \text{ quadrato } 3 \text{ in } E \\ - B \text{ cubo } 3 \end{array} \]
+quare omnibus bene ordinatis
+\[ \left.\begin{array}{l} E \text{ cubus} \\ + B \text{ in } E \text{ quadratum } 3 \end{array}\right\} \text{æquabitur} \left\}\begin{array}{l} Z \text{ solido} \\ + B \text{ cubo bis} \end{array}\right. \]
+ut est enunciatum.
+\note{« adfectionis » : les lettres « fe » sont récrites.}
+
+\subsection*{Aliter theorema i}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ cubus} \\ - B \text{ quadrato ter in } A \end{array}\right\} \text{æquetur } Z \text{ solido.} \]
+
+$A + B$ esto $E$
+\[ \left.\begin{array}{l} E \text{ cubus} \\ - B \text{ in } E \text{ quadratum ter} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} Z \text{ solido} \\ - B \text{ cubo bis} \end{array}\right. \]
+
+quoniam enim $A$ cubus, minus $B$ quadrato ter in $A$ æquatur $Z$ solido: est autem \struck{plus} $A + B$ radici $E$ æqualis, igitur $E - B$ æquabitur $A$. quare cubus ab $E - B$, multatus \add{solido} abs $B$ quadrato ter in $E - B$, æquabitur $Z$ solido, cubus autem abs $E - B$ constat.
+\note{« plus » est biffé d'un trait épais. Entre « multatus » et « abs », un signe d'insertion en forme de chevron ; le même signe, suivi de « solido », est écrit dans la marge de gauche, à la hauteur de la ligne : l'écrivain insère le mot, qui est donné ici à sa place. La phrase s'arrête sur « constat » ; le développement suit en tête de la vue 26.}
+
+\page{26}
+\note{En haut à droite, « 11 » à l'encre : c'est le feuillet dont le haut dépassait aux vues 22 et 24. Le feuillet est plus court en bas que celui qui est derrière lui : sous son bord inférieur se lisent les dernières lignes d'un autre feuillet (« ut est enunciatum » ; « Si $A$ cubus $- D$ plano in $A$ \ldots{} æquetur $Z$ solido »), qui appartiennent à une page suivante et n'ont pas été rapportées ici. La page continue sans rupture la démonstration de l'« Aliter theorema i » laissée à la fin de la vue 25 (« cubus autem abs $E - B$ constat »).}
+
+\[ \begin{array}{l} E \text{ cubo} \\ - B \text{ in } E \text{ quadrato } 3 \\ + B \text{ quadrato in } E\ 3 \\ - B \text{ cubo} \end{array} \]
+Solidum vero adfectionis
+\[ \begin{array}{l} - B \text{ quadrato in } E\ 3 \\ + B \text{ cubo } 3 \end{array} \]
+quare omnibus bene ordinatis
+\[ \left.\begin{array}{l} E \text{ cubus} \\ - B \text{ in } E \text{ quadratum } 3 \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} Z \text{ solido} \\ - B \text{ cubo bis} \end{array}\right. \]
+ut est enunciatum.
+
+\subsection*{Theorema ii}
+
+\[ \text{Si } \left.\begin{array}{l} B \text{ quadratum ter in } A \\ - A \text{ cubo} \end{array}\right\} \text{æquetur } Z \text{ solido} \]
+
+$B - A$ esto $E$
+\[ \left.\begin{array}{l} B \text{ in } E \text{ quadratum } 3 \\ - E \text{ cubo} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} B \text{ cubo bis} \\ - Z \text{ solido.} \end{array}\right. \]
+
+quoniam enim $B$ quadratum ter in $A$ minus $A$ cubo æquatur $Z$ solido. est autem $B - A$ radici $E$ æqualis. igitur $B - E$ æquabitur $A$. quare solidum abs $B$ quadrato ter in $B - E$ minus cubo abs $B - E$ æquabitur $Z$ solido.
+
+Solidum autem illud adfectum constat.
+\[ \begin{array}{l} B \text{ cubo } 3 \\ - B \text{ quadrato } 3 \text{ in } E \end{array} \]
+Cubus vero negatus de solido illo
+\[ \begin{array}{l} - B \text{ cubo} \\ + B \text{ in } E \text{ quadratum ter} \\ - E \text{ quadrato in } B\ 3 \\ + E \text{ cubo} \end{array} \]
+\note{À la deuxième ligne, « B in E quadrat- » est biffé d'un trait et « ter » ne l'est pas ; la marge de gauche porte en regard, de la même main, « B quadrato in E ter », qui remplace les mots biffés. La colonne est donnée telle qu'elle était écrite d'abord, la correction en marge.}
+
+\marginal{$B$ quadrato in $E$ ter}
+
+quare omnibus bene ordinatis
+\[ \left.\begin{array}{l} B \text{ in } E \text{ quadratum } 3 \\ - E \text{ cubo} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} B \text{ cubo bis} \\ - Z \text{ solido.} \end{array}\right. \]
+ut est enunciatum.
+\note{Après « quadratum 3 », deux accolades fermantes à la suite, la première sans doute de trop.}
+
+\subsection*{Aliter Theorema ii}
+
+\[ \text{Si } \left.\begin{array}{l} B \text{ quadratum ter in } A \\ - A \text{ cubo} \end{array}\right\} \text{æquetur } Z \text{ solido} \]
+\note{Le texte de la page s'arrête ici ; le reste du feuillet est blanc. La suite de l'« Aliter theorema ii » est en tête de la vue 27.}
+
+\page{27}
+\note{Verso du feuillet « 11 », sans chiffre en tête. Sous son bord inférieur se lisent les deux dernières lignes de la vue 25, avec le « solido » inséré en marge : c'est le feuillet précédent, plus long, vu par-dessous ; elles ne sont pas répétées ici. La page reprend l'« Aliter theorema ii » laissé à la fin de la vue 26.}
+
+$B + A$ esto $E$.
+\[ \left.\begin{array}{l} B \text{ in } E \text{ quadratum } 3 \\ - E \text{ cubo} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} B \text{ cubo bis} \\ + Z \text{ solido.} \end{array}\right. \]
+
+quoniam $B$ quadratum ter in $A$ minus $A$ cubo æquatur $Z$ solido est autem $B + A$ radici $E$ æqualis, igitur $E - B$ æquabitur $A$ quare solidum abs $B$ quadrato ter in $E - B$ minus cubo abs $E - B$ æquabitur $Z$ solido.
+
+Solidum autem illud affectum constat
+\[ \begin{array}{l} B \text{ quadrato } 3 \text{ in } E \\ - B \text{ cubo } 3 \end{array} \]
+Cubus vero negatus de solido illo
+\[ \begin{array}{l} - E \text{ cubo} \\ + B \text{ in } E \text{ quadratum ter} \\ - B \text{ quadrato ter in } E \\ + B \text{ cubo.} \end{array} \]
+quare omnibus bene ordinatis
+\[ \left.\begin{array}{l} B \text{ in } E \text{ quadratum ter} \\ - E \text{ cubo} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} B \text{ cubo bis} \\ + Z \text{ solido.} \end{array}\right. \]
+ut est enunciatum.
+\note{« negatus » : la dernière lettre est récrite.}
+
+\section*{Deductio adfectorum Cuborum, tam sub quadrato, quam latere, a Cubis affectis sub latere. Cap. XI}
+
+Deductio adfectorum Cuborum, tam sub quadrato, quam latere, a Cubis affectis sub latere. Cap. XI
+\note{Titre en trois lignes, précédé d'un point en marge.}
+
+\subsection*{Theorema 1.}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ cubus} \\ + D \text{ plano in } A \end{array}\right\} \text{æquetur } Z \text{ solido.} \]
+
+$A + B$ esto $E$
+\[ \left.\begin{array}{l} E \text{ cubus} \\ - B \text{ in } E \text{ quadratum ter} \\ \left.\begin{array}{l} + B \text{ quadrato ter} \\ + D \text{ plano} \end{array}\right\} \text{in } E \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} Z \text{ solido} \\ + D \text{ plano in } B \\ + B \text{ cubo} \end{array}\right. \]
+
+quoniam enim $A$ cubus $+ D$ plano in $A$ proponitur æquari $Z$ solido: est autem $A + B$ radici $E$ æqualis. igitur $E - B$ æquabitur $A$. itaq; cubus abs $E - B$, admotus solido abs $D$ plano in $E - B$ æquabitur $Z$ solido.
+
+cubus autem abs $E - B$ constat
+\note{La page s'arrête ici, au bas du feuillet ; le développement du cube suit en tête de la vue 28.}
+
+\page{28}
+\note{En haut à droite, « 12 » à l'encre. Vue en couleur, comme les vues 30, 31, 32, 37 et 39 ; rien ne distingue pour autant la page des autres. Sous le bord inférieur du feuillet, comme à la vue 26, les dernières lignes d'un feuillet suivant plus long (« ut est enunciatum » ; « Si $A$ cubus $- D$ plano in $A$ \ldots{} æquetur $Z$ solido. »), non rapportées ici. La page continue sans rupture le théorème I du chapitre XI, laissé à la fin de la vue 27 (« cubus autem abs $E - B$ constat »).}
+
+\[ \begin{array}{l} E \text{ cubo} \\ - B \text{ in } E \text{ quadratum ter} \\ + B \text{ quadrato in } E \text{ ter} \\ - B \text{ cubo} \end{array} \]
+Solidum vero affectionis
+\[ \begin{array}{l} + D \text{ plano in } E \\ - D \text{ plano in } B \end{array} \]
+quare omnibus bene ordinatis
+\[ \left.\begin{array}{l} E \text{ cubus} \\ - B \text{ in } E \text{ quadratum ter} \\ \left.\begin{array}{l} + B \text{ quadrato ter} \\ + D \text{ plano} \end{array}\right\} \text{in } E \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} Z \text{ solido} \\ + B \text{ cubo} \\ + D \text{ plano in } B \end{array}\right. \]
+ut est enunciatum.
+\note{Le second membre donne ici « $+ B$ cubo » puis « $+ D$ plano in $B$ », dans l'ordre inverse de l'énoncé (vue 27).}
+
+\subsection*{Theorema ii.}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ cubus} \\ + D \text{ plano in } A \end{array}\right\} \text{æquetur } Z \text{ solido} \]
+
+$A - B$ esto $E$
+\[ \left.\begin{array}{l} E \text{ cubus} + B \text{ in } E \text{ quadratum ter} \\ \left.\begin{array}{l} + B \text{ quadrato ter} \\ + D \text{ plano} \end{array}\right\} \text{in } E \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} Z \text{ solido} \\ - D \text{ plano in } B \\ - B \text{ cubo.} \end{array}\right. \]
+\note{Au second membre, les deux signes étaient d'abord « + » ; chacun est barré d'une croix et surmonté d'un trait, qui en fait un « $-$ ». Le transcripteur donne le signe corrigé. De même, plus bas, dans la conclusion.}
+
+quoniam enim $A$ cubus $+ D$ plano in $A$ æquatur $Z$ solido. est autem $A - B$ radici $E$ æqualis. Igitur $E + B$ æquabitur $A$ itaq; cubus abs $E + B$ admotus solido abs $D$ plano in $E + B$ æquabitur $Z$ solido.
+
+Cubus autem ab $E + B$ constat.
+\[ \begin{array}{l} E \text{ cubo} \\ + B \text{ in } E \text{ quadratum ter} \\ + B \text{ quadratum in } E \text{ ter} \\ + B \text{ cubo} \end{array} \]
+Solidum vero affectionis
+\[ \begin{array}{l} + D \text{ plano in } E \\ + D \text{ plano in } B \end{array} \]
+quare omnibus bene ordinatis
+\[ \left.\begin{array}{l} E \text{ cubus} \\ + B \text{ in } E \text{ quadratum ter} \\ \left.\begin{array}{l} + B \text{ quadrato } 3 \\ + D \text{ plano} \end{array}\right\} \text{in } E \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} Z \text{ solido} \\ - B \text{ cubo} \\ - D \text{ plano in } B \end{array}\right. \]
+ut est enunciatum.
+\note{Les deux « $-$ » du second membre sont, comme plus haut, des « + » corrigés. Le reste du feuillet est blanc.}
+
+\page{29}
+\note{Verso du feuillet « 12 », sans chiffre en tête. Sous son bord inférieur reparaissent, à demi cachées, les deux dernières lignes de la vue 25 (feuillet plus long, vu par-dessous), non répétées ici. La page commence par un nouveau théorème, le théorème II du chapitre XI s'étant achevé en bas de la vue 28.}
+
+\subsection*{Theorema iii}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ cubus} \\ + D \text{ plano in } A \end{array}\right\} \text{æquetur } Z \text{ solido} \]
+
+$B - A$ æquetur $E$
+\[ \left.\begin{array}{l} E \text{ cubus} \\ - B \text{ in } E \text{ quadratum ter} \\ \left.\begin{array}{l} + B \text{ quadrato ter} \\ + D \text{ plano} \end{array}\right\} \text{in } E \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} B \text{ cubo} \\ + D \text{ plano in } B \\ - Z \text{ solido} \end{array}\right. \]
+\note{Dans l'énoncé, la lettre de « B cubo » a la forme d'un D ; la conclusion, plus bas, écrit nettement « B cubo », et c'est ce que donne le calcul. Elle est transcrite B.}
+
+quoniam enim $A$ cubus $+ D$ plano in $A$ æquatur $Z$ solido est autem $B - A$ radici $E$ æqualis. igitur $B - E$ æquabitur $A$. itaq; cubus abs $B - E$ admotus solido abs $D$ plano in $B - E$ æquabitur $Z$ solido
+
+Cubus autem abs $B - E$ constat.
+\[ \begin{array}{l} B \text{ cubo} \\ - E \text{ in } B \text{ quadratum ter} \\ + E \text{ quadrato in } B \text{ ter} \\ - E \text{ cubo} \end{array} \]
+Solidum vero adfectionis
+\[ \begin{array}{l} + D \text{ plano in } B \\ - D \text{ plano in } E. \end{array} \]
+quare omnibus bene ordinatis.
+\[ \left.\begin{array}{l} E \text{ cubus} \\ - B \text{ in } E \text{ quadratum ter} \\ \left.\begin{array}{l} + B \text{ quadrato ter} \\ + D \text{ plano} \end{array}\right\} \text{in } E \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} B \text{ cubo} \\ + D \text{ plano in } B \\ - Z \text{ solido.} \end{array}\right. \]
+ut est enunciatum.
+\note{« æquabitur » (première ligne de la démonstration) est abrégé, avec un trait au-dessus de la syllabe finale.}
+
+\subsection*{Theorema iiii}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ cubus} \\ - D \text{ plano in } A \end{array}\right\} \text{æquetur } Z \text{ solido} \]
+
+$A + B$ esto $E$
+\[ \left.\begin{array}{l} E \text{ cubus} \\ - B \text{ in } E \text{ quadratum ter} \\ \left.\begin{array}{l} + B \text{ quadrato } 3 \\ - D \text{ plano} \end{array}\right\} \text{in } E \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} Z \text{ solido} \\ + B \text{ cubo} \\ - D \text{ plano in } B. \end{array}\right. \]
+
+quoniam enim $A$ cubus $- D$ plano in $A$ æquatur $Z$ solido. est autem $A + B$ radici $E$ æqualis. igitur $E - B$ æquabitur $A$. itaq; cubus abs $E - B$ multatus solido abs $D$ plano in $E - B$ æquatur $Z$ solido
+
+Cubus autem abs $E - B$ constat.
+\note{La page s'arrête ici ; le développement suit en tête de la vue 30.}
+
+\page{30}
+\note{En haut à droite du feuillet, « 13 » à l'encre. Au-dessus de son bord supérieur dépasse le haut d'un feuillet plus grand, numéroté « 15 », avec trois lignes de sa page (« quoniam enim A quadratum + B in A æquatur Z plano. est autem B in A æquale E quadrato igitur $\frac{E \text{ quadrat.}}{B}$ æquabit A. Itaq; quadratum ab E quadrato \ldots{} »), qui n'est pas lu ici. Ce feuillet 13 est celui dont le pied dépassait aux vues 26 et 28. La page continue le théorème IIII laissé à la fin de la vue 29 (« Cubus autem abs $E - B$ constat. »).}
+
+\[ \begin{array}{l} E \text{ cubo} \\ - B \text{ in } E \text{ quad. ter} \\ + B \text{ quad. in } E \text{ ter} \\ - B \text{ cubo} \end{array} \]
+Solidum vero affectionis
+\[ \begin{array}{l} - D \text{ plano in } E \\ + D \text{ plano in } B \end{array} \]
+quare omnibus bene ordinatis
+\[ \left.\begin{array}{l} E \text{ cubus} \\ - B \text{ in } E \text{ quad. ter} \\ \left.\begin{array}{l} + B \text{ quad. ter} \\ - D \text{ plano} \end{array}\right\} \text{in } E \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} Z \text{ solido} \\ + B \text{ cubo} \\ = D \text{ plano in } B. \end{array}\right. \]
+ut est enunciatum.
+\note{Devant « D plano in B », au second membre, le signe est de nouveau le double trait « = » là où l'énoncé (vue 29) écrit « $-$ » ; voir la vue 23. Il est gardé.}
+
+\subsection*{Theorema v}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ cubus} \\ - D \text{ plano in } A \end{array}\right\} \text{æquetur } Z \text{ solido.} \]
+
+$A - B$ esto $E$
+\[ \left.\begin{array}{l} E \text{ cubus} \\ + B \text{ in } E \text{ quad. ter.} \\ \left.\begin{array}{l} + B \text{ quad. ter} \\ - D \text{ plano} \end{array}\right\} \text{in } E \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} Z \text{ solido} \\ + D \text{ plano in } B \\ - B \text{ cubo} \end{array}\right. \]
+\note{Devant « D plano in B », le « + » est surchargé ; il est lu « + », comme dans la conclusion plus bas.}
+
+quoniam enim $A$ cubus $- D$ plano in $A$ æquatur $Z$ solido. est autem $A - B$ radici $E$ æqualis. Igitur $E + B$ æquabitur $A$ itaq; cubus ab $E + B$ multatus solido ab $D$ plano in $E + B$ æquabitur $Z$ solido
+
+Cubus autem abs $E + B$ constat
+\[ \begin{array}{l} E \text{ cubo} \\ + B \text{ in } E \text{ quad. ter} \\ + B \text{ quadrato in } E \text{ ter} \\ + B \text{ cubo} \end{array} \]
+Solidum vero affectionis
+\[ \begin{array}{l} - D \text{ plano in } E \\ - D \text{ plano in } B \end{array} \]
+quare omnibus bene ordinatis
+\[ \left.\begin{array}{l} E \text{ cubus} \\ + B \text{ in } E \text{ quad. ter} \\ \left.\begin{array}{l} + B \text{ quad. ter} \\ - D \text{ plano} \end{array}\right\} \text{in } E \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} Z \text{ solido} \\ + D \text{ plano in } B \\ - B \text{ cubo.} \end{array}\right. \]
+ut est enunciatum.
+
+\subsection*{Theorema vi}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ cubus} \\ - D \text{ plano in } A \end{array}\right\} \text{æquetur } Z \text{ solido.} \]
+\note{Une tache d'encre couvre le « $-$ » et le début de « D ». Fin du texte de la page ; le théorème VI se poursuit à la vue suivante.}
+
+\page{31}
+\note{Verso du feuillet « 13 », sans chiffre en tête. Au-dessus de son bord supérieur dépasse le haut du feuillet précédent, plus grand (« Theorema iii / Si A cubus + D plano in A \ldots{} æquetur Z solido », le haut de la vue 29), non répété ici. Au bord droit de la vue, les notes marginales d'un feuillet voisin, transcrites à la vue 32 où elles sont entières. La page continue le théorème VI laissé à la fin de la vue 30.}
+
+$B - A$ esto $E$
+\[ \left.\begin{array}{l} E \text{ cubus} \\ - B \text{ in } E \text{ quadratum ter} \\ \left.\begin{array}{l} + B \text{ quadrato ter} \\ - D \text{ plano} \end{array}\right\} \text{in } E \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} B \text{ cubo} \\ - D \text{ plano in } B \\ - Z \text{ solido.} \end{array}\right. \]
+
+quoniam enim $A$ cubus minus $D$ plano in $A$ æquatur $Z$ solido. est autem $B - A$ radici $E$ æqualis. Igitur $B - E$ æquabitur $A$ Itaq; cubus abs $B - E$ multatus solido abs $D$ plano in $B - E$ æquabitur $Z$ solido.
+
+cubus autem abs $B - E$ constat
+\[ \begin{array}{l} B \text{ cubo} \\ - B \text{ quad. in } E \text{ ter} \\ + B \text{ in } E \text{ quad. ter} \\ - E \text{ cubo.} \end{array} \]
+Solidum vero adfectionis
+\[ \begin{array}{l} - D \text{ plano in } B \\ + D \text{ plano in } E \end{array} \]
+quare omnibus bene ordinatis
+\[ \left.\begin{array}{l} E \text{ cubus} \\ - B \text{ in } E \text{ quadratum ter} \\ \left.\begin{array}{l} + B \text{ quadrato ter} \\ - D \text{ plano} \end{array}\right\} \text{in } E. \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} B \text{ cubo} \\ - D \text{ plano in } B \\ - Z \text{ solido.} \end{array}\right. \]
+ut est enunciatum.
+\note{En marge de gauche, à la hauteur de « quare omnibus bene ordinatis », un long trait horizontal, sans texte.}
+
+\subsection*{Theorema vii}
+
+\[ \text{Si } \left.\begin{array}{l} D \text{ plano in } A \\ - A \text{ cubo} \end{array}\right\} \text{æquetur } Z \text{ solido} \]
+
+$A + B$ esto $E$
+\[ \left.\begin{array}{l} \left.\begin{array}{l} D \text{ plano} \\ - B \text{ quadrato ter} \end{array}\right\} \text{in } E \\ + B \text{ in } E \text{ quad. ter} \\ - E \text{ cubo} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} Z \text{ solido} \\ + D \text{ plano in } B \\ - B \text{ cubo} \end{array}\right. \]
+\note{« D plano » (énoncé et première ligne) est récrit sur un premier « D plano ».}
+
+quoniam enim $D$ plano in $A$ minus $A$ cubo, æquatur $Z$ solido est autem $A + B$ radici $E$ æqualis. Igitur $E - B$ æquabitur $A$ Itaq; solidum abs $D$ plano in $E - B$, multatum $E - B$ cubo æquatur $Z$ solido.
+
+Solidum autem abs $D$ plano in $E - B$ constat
+\[ \begin{array}{l} D \text{ plano in } E \\ - D \text{ plano in } B \end{array} \]
+\note{La page s'arrête ici ; le bas du feuillet est blanc. La démonstration continue en tête de la vue 32 (« cubus vero ablatitius »).}
+
+\page{32}
+\note{En haut à droite du feuillet, « 14 » à l'encre ; au-dessus de lui dépasse de nouveau le haut du feuillet « 15 » (voir la vue 30). La page continue le théorème VII laissé à la fin de la vue 31 (« Solidum autem abs D plano in E $-$ B constat / D plano in E / $-$ D plano in B ») : elle commence par le cube à retrancher. La marge de gauche, large, porte de haut en bas des calculs d'une écriture plus petite et plus pâle, donnés à la fin de la page.}
+
+cubus vero ablatitius
+\[ \begin{array}{r|l} & E \text{ cubo.} \\ - & + B \text{ in } E \text{ quadratum ter} \\ + & - B \text{ quadrato in } E \text{ ter} \\ - & + B \text{ cubo.} \end{array} \]
+\note{Les signes écrits d'abord devant les trois derniers termes sont biffés de hachures et ne se lisent plus. À leur gauche, l'écrivain a posé deux colonnes de signes séparées d'un trait vertical : « $+$, $-$, $+$ » contre les termes, et « $-$, $+$, $-$ » au-delà du trait. Les deux colonnes sont données comme elles sont écrites. Le calcul demande, pour le cube retranché, $-E^3 + 3BE^2 - 3B^2E + B^3$, soit la colonne intérieure, avec un « $-$ » devant « E cubo » que la ligne n'a pas.}
+
+quare omnibus bene ordinatis
+\[ \left.\begin{array}{l} \left.\begin{array}{l} D \text{ plano} \\ - B \text{ quad. ter} \end{array}\right\} \text{in } E. \\ + B \text{ in } E \text{ quad. ter} \\ - E \text{ cubo.} \end{array}\right\} \text{æquabitur} \left\}\begin{array}{l} Z \text{ solido} \\ + D \text{ plano in } B \\ - B \text{ cubo.} \end{array}\right. \]
+ut est ordinatum.
+
+\subsection*{Theorema viii}
+
+\[ \text{Si } \left.\begin{array}{l} D \text{ plano in } A \\ - A \text{ cubo} \end{array}\right\} \text{æquetur } Z \text{ solido.} \]
+
+$A - B$ esto $E$
+\[ \left.\begin{array}{l} \left.\begin{array}{l} D \text{ plano} \\ - B \text{ quadrato } 3 \end{array}\right\} \text{in } E \\ - B \text{ in } E \text{ quad. ter} \\ - E \text{ cubo} \end{array}\right\} \text{æquatur} \left\{\begin{array}{l} Z \text{ solido} \\ - D \text{ plano in } B \\ + B \text{ cubo.} \end{array}\right. \]
+\note{Devant « B in E quad. ter », deux « + » sont biffés et un « $-$ » est écrit à leur gauche ; le signe corrigé est donné.}
+
+quoniam enim $D$ plano in $A$ minus $A$ cubo æquatur $Z$ solido est autem $A - B$ radici $E$ æquali igitur $E + B$ æquabitur $A$ Itaq; solidum abs $D$ plano in $E + B$ multatum $E + B$ cubo æquabitur $Z$ solido
+
+Solidum autem abs $D$ plano in $E + B$ constat
+\[ \begin{array}{l} D \text{ plano in } E \\ + D \text{ plano in } B \end{array} \]
+cubus vero ablatitius
+\[ \begin{array}{l} - E \text{ cubo} \\ - B \text{ in } E \text{ quad. ter} \\ - B q \text{ in } E \text{ ter} \\ - B \text{ cubo} \end{array} \]
+\note{Devant la deuxième et la quatrième ligne, un « + » biffé et un « $-$ » écrit à sa gauche, et deux petits traits en équerre dans l'interligne : le signe corrigé est donné.}
+
+quare omnibus bene ordinatis
+\[ \left.\begin{array}{l} \left.\begin{array}{l} D \text{ planum} \\ - B \text{ quadrato ter} \end{array}\right\} \text{in } E \\ - B \text{ in } E \text{ quad. ter} \\ - E \text{ cubo} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} Z \text{ solido} \\ - D \text{ plano in } B \\ + B \text{ cubo} \end{array}\right. \]
+ut est enunciatum.
+\note{« B in E quad. ter » : le « + » initial est biffé, un « $-$ » écrit devant et souligné ; le E de « in E » est ajouté au-dessus de la ligne. Le bas du feuillet est blanc sous « ut est enunciatum ».}
+
+\marginal{\uncertain{αυτοσεκριναι}. $D$ plano in $B$ / $B$ cubo. / $- Z$ solido. [trait] π. æq. $E$ cubo. / $- B$ in $E$ quad. $3$ / $\left.\begin{array}{l} + B \text{ quad. } 3 \\ - D \text{ plano.} \end{array}\right\}$ in $E$ \ldots{} \struck{3 9} / 3 9 / 2 4 6 \ldots{} $\begin{array}{l} 19N \\ - 1C \end{array}$ | æq. 30. \ldots{} $E$ cub. / $+ B$ in $E$ quad. $3$ / $- D$ plano in $E$ / æq. / $Z$ solido | $1C$ / $+ 9Q$. / $- 24N$ / æq. / 33. \ldots{} $A$ c / $- Bq$ in $A$ $3$. / $- D$ plano in $A$ | æq. $Z$ solido / $- B$ cub. bis / $- D$ plano in $B$. \ldots{} $D$ plano in $B$ / $B$ cubo bis / $- Z$ solido | $Bqq$ in $A$ / $D$ plano in $A$ / $- A$ cubo. \ldots{} $\begin{array}{l} 52N \\ - 1C \end{array}$ | æq. 96. fit N 2 vel 6.}
+\note{Notes de la marge de gauche, de haut en bas, séparées ici par « \ldots{} » d'un groupe à l'autre et par « / » d'une ligne à l'autre ; « | » rend le trait vertical qui sépare deux colonnes. Écriture plus petite et plus pâle que le texte, peut-être la même main ; le transcripteur ne tranche pas. Le premier mot, en lettres grecques, est lu lettre à lettre (α, υ, τ, ο, σ, ε, κ, ρ, ι, ν, α, ι) et ne donne pas de mot sûr. « π. æq. » : ainsi sur la page. Les exemples numériques emploient les signes cossiques N (la racine), Q (le carré), C (le cube), écrits en capitales, à côté des espèces de la colonne principale : « 19N $-$ 1C æq. 30 », « 1C $+$ 9Q $-$ 24N æq. 33 », « 52N $-$ 1C æq. 96. fit N 2 vel 6 ». « 3 9 » est d'abord écrit puis biffé, et récrit dessous ; « 2 4 6 » se lit en deux lignes (« 2 4 » et, sous le 4, « 6 »). « Bqq in A » est lu tel quel. Les deux racines 2 et 6 de la dernière équation la vérifient ($52 \cdot 2 - 8 = 96$, $52 \cdot 6 - 216 = 96$) ; le transcripteur n'a pas vérifié les autres.}
+\note{Au pied de la marge, sous « fit N 2 vel 6 », une petite figure : un demi-cercle sur son diamètre, divisé en deux segments cotés « 2 » et « 6 », avec la perpendiculaire élevée au point de division, cotée d'un signe de racine suivi de « 12 » (lu avec doute), et la corde menée de l'extrémité du diamètre au sommet de la perpendiculaire, cotée du même signe suivi de « 16 ». Le signe de racine a la forme d'un « 2x » ou d'un R barré ; il n'est pas reproduit.}
+
+\page{33}
+\note{Verso du feuillet « 14 », sans chiffre en tête. Au-dessus de son bord supérieur dépasse de nouveau le haut de la vue 29 (« Theorema iii / Si A cubus + D plano in A \ldots{} æquetur Z solido »), non répété ici. Au bord droit, des traces des notes marginales de la vue 32. La page commence par un nouveau théorème, le théorème VIII s'étant achevé en bas de la vue 32.}
+
+\subsection*{Theorema IX}
+
+\[ \text{Si } \left.\begin{array}{l} D \text{ plano in } A \\ - A \text{ cubo.} \end{array}\right\} \text{æquetur } Z \text{ solido} \]
+
+$B - A$ esto $E$.
+\[ \left.\begin{array}{l} \left.\begin{array}{l} D \text{ plano} \\ - B \text{ quad. ter} \end{array}\right\} \text{in } E. \\ + B \text{ in } E \text{ quad. ter} \\ - E \text{ cubo} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} D \text{ plano in } B \\ - B \text{ cubo} \\ - Z \text{ solido.} \end{array}\right. \]
+\note{Le chiffre du titre, « IX », est récrit (le X sur une première lettre). Dans « $B - A$ esto », le A est surchargé.}
+
+Quoniam enim $D$ plano in $A$, minus $A$ cubo æquatur $Z$ solido, est autem $B$ minus $A$ radici $E$ æqualis, igitur $B - E$ æquabitur $A$ Itaq; $D$ planum in $B - E$ minus $B - E$ cubo æquabitur $Z$ solido.
+
+Solidum autem abs $D$ plano in $B - E$ constat
+\[ \begin{array}{l} D \text{ plano in } B \\ - D \text{ plano in } E \end{array} \]
+cubus vero ablatitius
+\[ \begin{array}{l} - B \text{ cubo} \\ + B \text{ quadrato in } E \text{ ter} \\ - B \text{ in } E \text{ quadratum ter} \\ + E \text{ cubo.} \end{array} \]
+quare omnibus bene ordinatis
+\[ \left.\begin{array}{l} \left.\begin{array}{l} D \text{ planum} \\ - B \text{ quadrato } 3 \end{array}\right\} \text{in } E \\ + B \text{ in } E \text{ quadratum ter} \\ - E \text{ cubo} \end{array}\right\} \text{æquatur} \left\{\begin{array}{l} D \text{ plano in } B \\ - B \text{ cubo} \\ - Z \text{ solido} \end{array}\right. \]
+ut est enunciatum.
+
+\section*{Deductio potestatum aliquot radices planas, solidasque habentium a potestatibus simplicium radicum. Cap. XII}
+
+Deductio potestatum aliquot radices planas, solidasque habentium a potestatibus simplicium radicum. Cap. XII
+\note{Titre centré, en quatre lignes. « potestatibus » : la syllabe « -ti- » est surchargée.}
+
+\subsection*{Theorema 1.}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ quadratum} \\ + B \text{ in } A \end{array}\right\} \text{æquetur } Z \text{ plano} \]
+
+$B$ in $A$ esto $E$ quadratum
+\[ \left.\begin{array}{l} E \text{ quadratoquadratum} \\ + B \text{ quadrato in } E \text{ quadratum} \end{array}\right\} \text{æquabitur } B \text{ quadrato in } Z \text{ plano} \]
+\note{Après « Z », le mot « quadratum » est biffé d'un trait et « plano » écrit à la suite ; un petit signe en forme de croix est tracé sous la ligne, devant « Z ». La démonstration n'est pas sur cette page, dont le bas est blanc ; elle est en tête de la vue 34 (« quoniam enim A quadratum + B in A æquatur Z plano… »), la page que les vues 30 et 32 laissaient voir au-dessus de leurs feuillets.}
+
+\page{34}
+\note{En haut à droite, « 15 » à l'encre : c'est le feuillet dont le haut dépassait aux vues 30 et 32. Dans la moitié gauche de la page transparaît, à l'envers, l'écriture du verso ; elle n'est pas lue ici. La page donne la démonstration du théorème I du chapitre XII énoncé au bas de la vue 33.}
+
+quoniam enim $A$ quadratum $+ B$ in $A$ æquatur $Z$ plano. est autem $B$ in $A$ æquale $E$ quadrato igitur $\frac{E \text{ quadrat.}}{B}$ æquabit $A$. Itaq; quadratum ab $\frac{E \text{ quadrato}}{B}$ admot\struck{\ill{}} plano sub $B$ et $\frac{E \text{ quadrat.}}{B}$ id est
+\[ \left.\begin{array}{l} \dfrac{E \text{ quadrat. quadrat.}}{B \text{ quadrat.}} \\ + E \text{ quadratum} \end{array}\right\} \text{æquabitur } Z \text{ plano} \]
+omnia ducantur in $B$ quadratum: ergo,
+\[ \left.\begin{array}{l} E \text{ quadratoquadratum} \\ + B \text{ quadrato in } E \text{ quadratum} \end{array}\right\} \text{æquabitur } B \text{ quadrato in } Z \text{ plano} \]
+ut est enunciatum.
+\note{« admot- » : la fin du mot est surchargée d'une croix et de lettres biffées. Dans la dernière disposition, le coefficient était d'abord écrit autrement (trois ou quatre lettres biffées et noircies, avec un « + » au-dessus) ; « B quadrato » est écrit en marge de gauche, précédé d'un « + » de renvoi, et c'est lui que donne la ligne ci-dessus.}
+
+\marginal{$+ B$ quadrato}
+
+Cum autem ipsum $E$ quadratum radix statuitur plana hæc erit æquationis enunciatio.
+\[ \left.\begin{array}{l} E \text{ plani quadratum} \\ + B \text{ in } D \text{ in } E \text{ plano} \end{array}\right\} \text{æquabitur } B \text{ quadrato in } Z \text{ plano} \]
+\note{« hæc » : « ha » en fin de ligne, la suite en tête de la suivante. « enunciatio » est souligné. « B in D » est surligné d'un trait avec un « + » au-dessus ; en marge de gauche, de la même main, « + B quadrato in E/ », qui remplace « B in D in E » : l'énoncé du théorème (vue 33) a « B quadrato ».}
+
+\marginal{$+ B$ quadrato in $E$}
+
+\subsection*{Theorema ii}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ quadratum} \\ - B \text{ in } A \end{array}\right\} \text{æquetur } Z \text{ plano} \]
+
+$B$ in $A$ esto $E$ quadratum planumve
+\[ \left.\begin{array}{l} E \text{ quadratoquadratum} \\ - B q \text{ in } E \text{ quadratum} \end{array}\right\} \text{æquabitur } B \text{ quadrato in } Z \text{ plano} \]
+\note{En fin de ligne, après « in », un premier « Z » biffé ; « Z plano » est récrit sur la ligne suivante.}
+
+Aliter
+\[ \left.\begin{array}{l} E \text{ plani quadratum} \\ - B \text{ quad. in } E \text{ plano} \end{array}\right\} \text{æquabitur } B \text{ quad. in } Z \text{ plano} \]
+nec dissimilis est ab ea quæ in antecedente theoremate exposita est demonstratio.
+
+\subsection*{Theorema iii}
+
+\[ \text{Si } \left.\begin{array}{l} B \text{ in } A \\ - A \text{ quadrato} \end{array}\right\} \text{æquetur } Z \text{ plano.} \]
+
+$B$ in $A$ esto $E$ quadratum, planumve
+\[ \left.\begin{array}{l} B \text{ quadratum in } E \text{ quadratum} \\ - E \text{ quadratoquadrato} \end{array}\right\} \text{æquabitur } B \text{ quadrato in } Z \text{ plano.} \]
+
+Aliter
+\[ \left.\begin{array}{l} B \text{ in } D \text{ in } E \text{ plano} \\ - E \text{ plani quadrato} \end{array}\right\} \text{æquabitur } B \text{ quad. in } Z \text{ plano.} \]
+nec dissimilis est ab ea quæ in primo huius capitis theoremate exposita est demonstratio
+\note{« B in D » : le D est surchargé. En marge de gauche, en regard, « (q)/ » entre deux traits, qui semble corriger, comme plus haut, « B in D » en « B q » (B quadrato). Le bas du feuillet est blanc.}
+
+\page{35}
+\note{Verso du feuillet « 15 », sans chiffre en tête. Le recto transparaît, à l'envers, dans la marge de gauche. Sous le bord inférieur du feuillet, le pied d'un feuillet plus long, où seuls quelques jambages dépassent. La page commence par un nouveau théorème, après la fin du théorème III (vue 34).}
+
+\subsection*{Theorema IIII}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ quadrat.} \\ + B \text{ in } A \end{array}\right\} \text{æquetur } Z \text{ plano} \]
+
+$B$ quadratum in $A$ esto $E$ cubus
+\[ \left.\begin{array}{l} E \text{ cubocubus} \\ + B \text{ cubo in } E \text{ cubum} \end{array}\right\} \text{æquabitur } B \text{ quadrato quadrato in } Z \text{ plano} \]
+
+quoniam enim $A$ quadratum $+ B$ in $A$ æquatur $Z$ plano est autem $B$ quadratum in $A$ æquale $E$ cubo; igitur $\frac{E \text{ cubus}}{B \text{ quad.}}$ æquabitur $A$ Itaq; quadratum ab $\frac{E \text{ cubo}}{B \text{ quad.}}$ plus $\frac{B \text{ in } E \text{ cubum}}{B \text{ quad.}}$ id est $\frac{E \text{ cubocubus}}{B \text{ quad. quad.}}$ plus $\frac{E \text{ cubo}}{B}$ æquabitur $Z$ plano
+
+omnia ducantur in $B$ quadratum
+\[ \text{Ergo } \left.\begin{array}{l} E \text{ cubocubus} \\ + B \text{ cubo in } E \text{ solidum} \end{array}\right\} \text{æquabitur } B \text{ quad. quad. in } Z \text{ plano.} \]
+\note{« quadratum » dans « omnia ducantur in B quadratum » est souligné, et la marge de gauche porte en regard « quad. quad. », qui le corrige (le calcul demande de multiplier par le carré-carré de B). Après « Ergo », « E cubocubus / + B in » est d'abord écrit, puis biffé de plusieurs traits et récrit à droite. La conclusion écrit « E solidum » là où l'énoncé a « E cubum ».}
+
+\marginal{quad. quad.}
+
+\subsection*{Theorema V.}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ quadratum} \\ - B \text{ in } A \end{array}\right\} \text{æquetur } Z \text{ plano} \]
+
+$B$ quadratum in $A$ esto $E$ cubus, solidumve
+\[ \left.\begin{array}{l} E \text{ cubocubus} \\ - B \text{ cubo in } E \text{ cubum} \end{array}\right\} \text{æquabitur } B \text{ quad. quad. in } Z \text{ plano} \]
+\note{Le signe devant « B cubo » est noirci d'une tache ; il est lu « $-$ », comme l'énoncé le demande.}
+
+Aliter
+\[ \left.\begin{array}{l} E \text{ solidi quadratum} \\ - B \text{ cubo in } E \text{ solidum} \end{array}\right\} \text{æquabitur } B \text{ quad. quad. in } Z \text{ plano} \]
+nec dissimilis est ab ea quæ in antecedente theoremate exposita est demonstratio
+
+\subsection*{Theorema VI}
+
+\[ \text{Si } \left.\begin{array}{l} B \text{ in } A \\ - A \text{ quad.} \end{array}\right\} \text{æquetur } Z \text{ plano.} \]
+
+$B$ quad. in $A$ esto $E$ cubus solidumve
+\[ \left.\begin{array}{l} B \text{ cubus in } E \text{ cubum} \\ - E \text{ cubocubo.} \end{array}\right\} \text{æquabitur } B \text{ quadrato quadrato in } Z \text{ plano} \]
+
+Aliter
+\[ \left.\begin{array}{l} B \text{ cubus in } E \text{ solidum} \\ - E \text{ solidi quadrato} \end{array}\right\} \text{æquabitur } B \text{ quad. quad. in } Z \text{ plano} \]
+nec dissimilis est ab ea quæ in quarto huius capitis theoremate exposita est demonstratio
+\note{Fin du texte de la page ; le bas du feuillet est blanc.}
+
+\page{36}
+\note{En haut à droite, « 16 » à l'encre. À gauche de la vue, les fins de lignes de la page précédente (vue 35) ; dans la moitié gauche transparaît, à l'envers, l'écriture du verso. Sous le bord inférieur, le pied d'un feuillet plus long, blanc. La page commence par un nouveau théorème, après la fin du théorème VI (vue 35).}
+
+\subsection*{Theorema VII}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ cubus.} \\ + B \text{ in } A \text{ quadratum} \end{array}\right\} \text{æquetur } Z \text{ solido.} \]
+
+$B$ in $A$ esto $E$ quadratum
+\[ \left.\begin{array}{l} E \text{ cubocubus} \\ + B \text{ quadrato in } E \text{ quadratoquadrat.} \end{array}\right\} \text{æquabitur } B \text{ cubo in } Z \text{ solidum} \]
+
+quoniam enim $A$ cubus plus $B$ in $A$ quadratum æquatur $Z$ solido est autem $B$ in $A$ æquale $E$ quadrato, igitur $\frac{E \text{ quadratum}}{B}$ æquabitur $A$. quare ex iis quæ proponuntur $\frac{E \text{ cubocubus}}{B \text{ cubo}}$ plus $\frac{E \text{ quad. quad.}}{B}$ æquabitur $Z$ solido.
+
+Omnia in $B$ cubum ducuntur: ergo $E$ cubocubus plus $B$ quadrato in $E$ quadratoquadratum æquabitur $B$ cubo in $Z$ solidum.
+
+ut est enunciatum
+
+Cum autem ipsum $E$ quadratum statuetur radix plana hæc erit enunciatio
+\[ \left.\begin{array}{l} E \text{ plani cubus} \\ + B \text{ quadrato in } E \text{ plani quadratum.} \end{array}\right\} \text{æquatur } B \text{ cubo in } Z \text{ solidum} \]
+
+\subsection*{Theorema VIII}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ cubus} \\ - B \text{ in } A \text{ quadratum} \end{array}\right\} \text{æquetur } Z \text{ solido} \]
+
+$B$ in $A$ esto $E$ quadratum planumve
+\[ \left.\begin{array}{l} E \text{ cubocubus} \\ - B \text{ quadrato in } E \text{ quadratoquadrat.} \end{array}\right\} \text{æquabitur } B \text{ cubo in } Z \text{ solidum} \]
+
+Aliter
+\[ \left.\begin{array}{l} E \text{ plani cubus} \\ - B \text{ quadrato in } E \text{ plani quadrat.} \end{array}\right\} \text{æquabitur } B \text{ cubo in } Z \text{ solidum.} \]
+nec dissimilis est ab ea quæ in antecedente theoremate exposita est demonstratio.
+
+\subsection*{Theorema IX}
+
+\[ \text{Si } \left.\begin{array}{l} B \text{ in } A \text{ quadratum} \\ - A \text{ cubo} \end{array}\right\} \text{æquetur } Z \text{ solido} \]
+
+$B$ in $A$ esto $E$ quadratum planumve
+\[ \left.\begin{array}{l} B \text{ quad. in } E \text{ quad. quad.} \\ - E \text{ cubocubo} \end{array}\right\} \text{æquabitur } B \text{ cubo in } Z \text{ solidum.} \]
+
+Aliter
+\[ \left.\begin{array}{l} B \text{ quad. in } E \text{ plani quadrat.} \\ - E \text{ plani cubo} \end{array}\right\} \text{æquabitur } B \text{ cubo in } Z \text{ solidum.} \]
+nec dissimilis est ab ea quæ in septimo huius capitis theoremate exposita est demonstratio.
+\note{Fin du texte de la page ; le bas du feuillet est blanc.}
+
+\page{37}
+\note{Verso du feuillet « 16 », sans chiffre en tête ; vue en couleur. Le recto transparaît, à l'envers, dans la marge de gauche. Au bord droit de la vue, des marques d'un feuillet voisin (« 1N », un astérisque, « valor ») ; sous le bord inférieur, le pied d'un feuillet plus long où ne dépassent que des jambages. La page ouvre un nouveau chapitre, après la fin du chapitre XII (vue 36).}
+
+\section*{Deductio adfectorum quadratoquadratorum ab affectis quadratis. Cap. XIII.}
+
+Deductio adfectorum quadratoquadratorum ab affectis quadratis. Cap. XIII.
+
+De quadratoquadratis adfectis sub Latere.
+
+\subsection*{Theorema 1}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ quadratum} \\ + B \text{ in } A \end{array}\right\} \text{æquetur } Z \text{ plano.} \]
+
+\[ \left.\begin{array}{l} A \text{ quadratoquadrat.} \\ \left.\begin{array}{l} + B \text{ cubo} \\ + B \text{ in } Z \text{ plano bis} \end{array}\right\} \text{in } A \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} Z \text{ plano plano} \\ + B \text{ quadrato in } Z \text{ plano} \end{array}\right. \]
+
+quoniam enim $A$ quad. plus $B$ in $A$, æquatur $Z$ plano. igitur per antithesim $A$ quadratum æquabitur $\begin{array}{l} Z \text{ plano} \\ - B \text{ in } A \end{array}$. ergo $A$ quad. quad. æquabitur
+\[ \begin{array}{l} Z \text{ plano plano} \\ - B \text{ in } A \text{ in } Z \text{ plano bis} \\ + B \text{ quad. in } A \text{ quadratum} \end{array} \]
+\note{Devant « B in A in Z plano bis », une lettre (A ?) est biffée ; elle n'est pas donnée dans la colonne.}
+
+at affectio $B$ quadrati in $A$ quadratum, interpretationem ex proposita æquatione accipiens valet
+\[ \begin{array}{l} B \text{ quad. in } Z \text{ plano} \\ - B \text{ cubo in } A \end{array} \]
+\note{« interpretationem » est souligné et suivi d'un signe de renvoi ; le renvoi est en marge de gauche, de la même main : « ducta scilicet æquationis primo propositæ terminis in B quadrat. ».}
+
+\marginal{ducta scilicet æquationis primo propositæ terminis in B quadrat.}
+
+quare ea interpretatione adscita et omnibus bene ordinatis
+\[ \left.\begin{array}{l} A \text{ quad. quad.} \\ \left.\begin{array}{l} + B \text{ cubo} \\ + B \text{ in } Z \text{ plano bis} \end{array}\right\} \text{in } A \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} Z \text{ plano plano} \\ + B \text{ quadrato in } Z \text{ plano} \end{array}\right. \]
+ut est enunciatum.
+
+Si $1Q + 8N$ æquetur $20$.
+
+$1QQ + 832N$. æquabitur $1680$.
+
+\marginal{valor radicis 2}
+\note{Exemple numérique en signes cossiques (N la racine, Q le carré, QQ le carré-carré), avec en marge de gauche « valor radicis 2/ » et, plus à droite, un petit « o ». Il se vérifie : $B = 8$, $Z = 20$ donnent $512 + 320 = 832$ et $400 + 1280 = 1680$, et $N = 2$ satisfait les deux équations. Sous l'exemple, dans la marge, un astérisque : un signe de renvoi, sans doute vers la fiche de la vue 38, qui porte le théorème II que cette page n'a pas ; voir la vue 38.}
+
+\subsection*{Theorema iii}
+
+\[ \text{Si } \left.\begin{array}{l} B \text{ in } A \\ - A \text{ quadrato.} \end{array}\right\} \text{æquetur } Z \text{ plano.} \]
+
+\[ \left.\begin{array}{l} \left.\begin{array}{l} B \text{ cubus} \\ - B \text{ in } Z \text{ plano bis.} \end{array}\right\} \text{in } A \\ - A \text{ quad. quadrato} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} B \text{ quadrato in } Z \text{ plano} \\ - Z \text{ plano plano.} \end{array}\right. \]
+nec dissimilis est ab ea quæ primo huius capitis theoremate exposita est demonstratio
+
+Si $12N - 1Q$ æquetur $20$
+
+$1248N - 1QQ$ æquabitur $2480$.
+
+\marginal{valor radicis 2}
+\note{Le théorème qui suit le théorème I est numéroté « iii » ; aucun théorème II n'est sur la page. L'exemple se vérifie de même : $B = 12$, $Z = 20$ donnent $1728 - 480 = 1248$ et $2880 - 400 = 2480$, et $N = 2$ convient. Le bas du feuillet est blanc.}
+
+\page{38}
+\note{Une fiche de papier, oblongue, montée dans la moitié inférieure d'une page par ailleurs blanche. Elle est de la même main que le traité. En haut à droite, de cette main : « ad faciem aversam foly 16. » (folij), « au revers du feuillet 16 », c'est-à-dire à la page de la vue 37 ; au-dessus, d'une encre plus noire, d'une autre main et d'un trait plus épais, « 16 bis ». En haut à gauche, un astérisque surmonté d'un petit « o » : le même signe est en marge de la vue 37, sous l'exemple du théorème I, là où manque le théorème II. La fiche porte ce théorème II, que la vue 37 saute (elle passe de « Theorema 1 » à « Theorema iii »).}
+
+\subsection*{Theorema ii}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ quad.} \\ - B \text{ in } A \end{array}\right\} \text{æquetur } Z \text{ plano} \]
+
+\[ \left.\begin{array}{l} A \text{ quad. quad.} \\ \left.\begin{array}{l} - B \text{ cubo} \\ - B \text{ in } Z \text{ plano bis} \end{array}\right\} \text{in } A \end{array}\right\} \text{æquabit} \left\{\begin{array}{l} Z \text{ plano plano} \\ + B \text{ quad. in } Z \text{ plano.} \end{array}\right. \]
+
+nec dissimilis est \struck{ab} ea quæ in antecedente theoremate exposita est demonstratio
+
+Si $1Q - 8N$ æquet. $20$
+
+$1QQ - 832N$ æquabit $1680$.
+
+\marginal{valor radicis 10}
+\note{« ab » est biffé. En marge de gauche, « valor radicis/10/ ». L'exemple se vérifie : $N = 10$ donne $100 - 80 = 20$ et $10000 - 8320 = 1680$. Le reste de la fiche et la page de montage sont blancs.}
+
+\page{39}
+\note{En haut à droite, « 17 » à l'encre ; vue en couleur. À gauche de la vue, les fins de lignes de la page de la vue 37, et deux pinces noires de la prise de vue. Dans la page transparaît, à l'envers, l'écriture du verso. Sous le bord inférieur du feuillet dépasse le pied d'un feuillet plus long, avec quatre lignes (« $- A$ cubo / ut est enunciatum. / Si 1Q + 8N æquet. 20 / 84N $-$ 1C æquabit 160. », et en marge « fit 1N 2. ») qui appartiennent à une page que ce lot ne contient pas en entier ; elles ne sont pas rapportées ici. La page ouvre une nouvelle section du chapitre XIII et poursuit la numérotation des théorèmes (IIII après le III de la vue 37).}
+
+\subsection*{De quadratoquadratis adfectis sub latere et quadrato.}
+
+De quadratoquadratis adfectis sub latere et quadrato.
+
+\subsection*{Theorema IIII}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ quadratum} \\ + B \text{ in } A \end{array}\right\} \text{æquetur} \left\{\begin{array}{l} S \text{ plano} \\ + D \text{ plano} \end{array}\right. \]
+
+\[ \left.\begin{array}{l} A \text{ quad. quadratum} \\ \left.\begin{array}{l} - D \text{ plano bis} \\ - B \text{ quadrato} \end{array}\right\} \text{in } A \text{ quadratum} \\ + B \text{ in } S \text{ plano in } A \text{ bis} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} S \text{ plano plano} \\ - D \text{ plano plano.} \end{array}\right. \]
+\note{Devant « B quadrato », le signe et le B sont repassés à l'encre plus noire ; le signe est lu « $-$ ».}
+
+quoniam enim $A$ quadratum plus $B$ in $A$ æquatur $S$ plano $+ D$ plano igitur per antithesim
+\[ \left.\begin{array}{l} A \text{ quadratum} \\ - D \text{ plano} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} S \text{ plano} \\ - B \text{ in } A. \end{array}\right. \]
+utraq; pars ita transpositæ æquationis, ducatur quadratice ergo
+\[ \left.\begin{array}{l} A \text{ quad. quad.} \\ - D \text{ plano in } A \text{ quad. bis} \\ + D \text{ plano plano} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} S \text{ plano plano} \\ - B \text{ in } A \text{ in } S \text{ plano bis} \\ + B \text{ quad. in } A \text{ quadratum.} \end{array}\right. \]
+et omnibus rite ordinatis
+\[ \left.\begin{array}{l} A \text{ quad. quad.} \\ \left.\begin{array}{l} - D \text{ plano bis} \\ - B \text{ quadrato} \end{array}\right\} \text{in } A \text{ quadrat.} \\ + B \text{ in } S \text{ plano bis in } A \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} S \text{ plano plano} \\ - D \text{ plano plano.} \end{array}\right. \]
+ut est enunciatum.
+
+Si $1Q + 8N$ æquatur $20$, composito ex $15$ et $5$.
+
+$1QQ - 74Q + 240N$ æquabitur $200$.
+
+\marginal{1N 2}
+\note{En marge, « 1N 2 » : la valeur de la racine. L'exemple se vérifie : $B = 8$, $S = 15$, $D = 5$ donnent $2 \cdot 5 + 64 = 74$, $2 \cdot 8 \cdot 15 = 240$ et $225 - 25 = 200$, et $N = 2$ convient.}
+
+\subsection*{Theorema V}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ quadratum} \\ - B \text{ in } A \end{array}\right\} \text{æquetur} \left\{\begin{array}{l} S \text{ plano} \\ + D \text{ plano} \end{array}\right. \]
+
+\[ \left.\begin{array}{l} A \text{ quad. quad.} \\ \left.\begin{array}{l} - D \text{ plano bis} \\ - B \text{ quad.} \end{array}\right\} \text{in } A \text{ quadratum} \\ - B \text{ in } S \text{ plano bis in } A \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} S \text{ plano plano} \\ - D \text{ plano plano.} \end{array}\right. \]
+nec dissimilis est ab ea quæ in antecedente capite exposita est demonstratio
+\note{« capite » est lu tel qu'il est écrit, bien que la démonstration visée soit celle du théorème précédent, dans le même chapitre.}
+
+Si $1Q - 8N$ æquatur $20$, composito ex $15$ et $5$.
+
+$1QQ - 74Q - 240N$. æquabitur $200$.
+
+\marginal{fit 1N. 10.}
+\note{Le signe devant « 240N » est un « $-$ » suivi d'un point. L'exemple se vérifie avec $N = 10$ : $10000 - 7400 - 2400 = 200$. Sous ces lignes le feuillet est blanc.}
+
+\page{40}
+\note{Verso du feuillet « 17 », sans chiffre en tête. Dans la page transparaît, à l'envers, l'écriture du recto. Au bord droit de la vue, au-delà du bord du feuillet, les débuts de lignes et les notes de marge d'une autre page (« quoniam… », « A cub. », « fit 1N ») : elles ne sont pas de ce feuillet et ne sont pas rapportées. La page commence par un nouveau théorème, après la fin du théorème V (vue 39).}
+
+\subsection*{Theorema VI}
+
+\[ \text{Si } \left.\begin{array}{l} B \text{ in } A \\ - A \text{ quadrato} \end{array}\right\} \text{æquetur} \left\{\begin{array}{l} S \text{ plano} \\ + D \text{ plano} \end{array}\right. \]
+
+\[ \left.\begin{array}{l} \left.\begin{array}{l} B \text{ quadratum} \\ - S \text{ plano bis} \end{array}\right\} \text{in } A \text{ quadrat.} \\ - B \text{ in } D \text{ plano bis in } A \\ - A \text{ quad. quad.} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} S \text{ plano plano} \\ - D \text{ plano plano.} \end{array}\right. \]
+nec dissimilis est ab ea quæ in quarto huius capitis theoremate exposita est demonstratio.
+
+Si $12N - 1Q$ æquetur $20$ composito ex $15$ et $5$
+
+$114Q - 120N - 1QQ$ æquabitur $200$.
+
+\marginal{1N 2.}
+\note{En marge de gauche, « 1N 2. ». L'exemple se vérifie : $B = 12$, $S = 15$, $D = 5$ donnent $144 - 30 = 114$ et $2 \cdot 12 \cdot 5 = 120$, et $N = 2$ convient ($456 - 240 - 16 = 200$).}
+
+\subsection*{De iisdem Aliter}
+
+De iisdem Aliter.
+
+\subsection*{Theorema VII}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ quadratum} \\ + B \text{ in } A \end{array}\right\} \text{æquetur} \left\{\begin{array}{l} S \text{ plano} \\ - D \text{ plano.} \end{array}\right. \]
+
+\[ \left.\begin{array}{l} A \text{ quad. quad.} \\ \left.\begin{array}{l} + D \text{ plano bis} \\ - B \text{ quadrat.} \end{array}\right\} \text{in } A \text{ quadrat.} \\ + B \text{ in } S \text{ plano bis in } A \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} S \text{ plano plano} \\ - D \text{ plano plano.} \end{array}\right. \]
+\note{Sous « D plano plano », deux points, sans renvoi repéré.}
+
+quoniam enim $A$ quad. plus $B$ in $A$ æquatur $S$ plano minus $D$ plano igitur per antithesim
+\[ \left.\begin{array}{l} A \text{ quadrat.} \\ + D \text{ plano} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} S \text{ plano} \\ - B \text{ in } A. \end{array}\right. \]
+utraq; pars ita expositæ æquationis ducatur quadratice. ergo
+\[ \left.\begin{array}{l} A \text{ quadratoquadrat.} \\ + D \text{ plano in } A \text{ quadrat. bis} \\ + D \text{ plano plano} \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} S \text{ plano plano} \\ - B \text{ in } S \text{ plano in } A \text{ bis} \\ + B \text{ quad. in } A \text{ quadratum.} \end{array}\right. \]
+et omnibus rite ordinatis
+\[ \left.\begin{array}{l} A \text{ quadratoquadrat.} \\ \left.\begin{array}{l} + D \text{ plano bis} \\ - B \text{ quadrat.} \end{array}\right\} \text{in } A \text{ quadrat.} \\ + B \text{ in } S \text{ plano bis in } A \end{array}\right\} \text{æquabitur} \left\{\begin{array}{l} S \text{ plano plano} \\ - D \text{ plano plano.} \end{array}\right. \]
+ut est enunciatum
+\note{En marge de gauche, à la hauteur de « igitur per antithesim », un long trait horizontal.}
+
+Si $1Q + 8N$ æquetur $20$, differentiæ inter $40$ et $60$.
+
+$1QQ + 16Q + 960N$. æquabitur $2000$.
+
+\marginal{1N 2.}
+\note{L'exemple se vérifie : $S = 60$, $D = 40$, $B = 8$ donnent $80 - 64 = 16$, $2 \cdot 8 \cdot 60 = 960$ et $3600 - 1600 = 2000$, et $N = 2$ convient.}
+
+\subsection*{Theorema VIII}
+
+\[ \text{Si } \left.\begin{array}{l} A \text{ quadratum.} \\ - B \text{ in } A \end{array}\right\} \text{æquetur} \left\{\begin{array}{l} S \text{ plano} \\ - D \text{ plano:} \end{array}\right. \]
+\note{La page s'arrête sur l'hypothèse du théorème VIII ; le bas du feuillet est blanc. La conclusion et la démonstration sont à chercher à la vue 41, hors de ce lot.}
+
+\end{document}

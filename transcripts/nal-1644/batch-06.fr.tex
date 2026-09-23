@@ -1,0 +1,954 @@
+% NAL 1644, batch 6 — Gallica views 101–120.
+% Pass: Opus 5.5 (claude-opus-5-5), 2026-09-23 — first pass, unchecked against
+% the views by a human.
+% Read from the local mirror only (archives/nal-1644/f0101.jpg … f0120.jpg):
+% a 1000-px thumbnail of each view, then four full-width bands at 2400 px
+% (normalised), and tight crops at 1.5–3× for marginal notes, struck words,
+% corrected signs and numbers. Each view was drafted as soon as it was read.
+%
+% Dating. The catalogue gives no dating for this volume: \dating{} is left
+% empty, and this pass infers no date. No date is written on these leaves.
+%
+% What the views are. Greyscale scans, portrait, about 3750 × 5620, one page
+% per view. The volume mixes large leaves with smaller slips bound between
+% them, and the camera often caught two leaves at once: the top lines of a
+% large leaf above a small one laid over it (views 102, 106, 108, 114, 116),
+% or the foot of the next leaf below the edge of the page (views 101, 104,
+% 105, 111, 113, 118, 120), or a strip of the facing leaf's margin at one
+% side (views 107, 108, 111, 115, 119). Such overlaps are transcribed once,
+% on the view where their page is seen whole, and a \note{} at the head of
+% each view says what else shows. Every one of the twenty views carries
+% text; none is skipped.
+%
+% What the twenty views hold. One continuous run of Latin algebra, in the
+% manner and the notation of Viète's school: the reduction of affected
+% quadrato-quadratic equations to quadratics by way of a cubic resolvent
+% (an equation in E, or in E planum, whose root « investigatur » as D or F),
+% set out as problems, their « syncrisis », and numbered theorems each
+% followed by a numerical example in cossic signs.
+%
+%   v. 101      [page before the leaf numbered 47 bis; unnumbered] « Hinc
+%               poterunt ordinari tria reductionis Theoremata »: Theorema I
+%               (A⁴ + B·A = Z) and II (A⁴ − B·A = Z), the cubic in E,
+%               the resulting quadratic, the « constitutio » (two sides, their
+%               difference E) and the series of four continued proportionals,
+%               with the example 2, ∛40, ∛200, 10 (1 QQ + 832 N = 1680, N = 2).
+%               The view opens on the theorems of a reduction whose problem
+%               stands on earlier views: it continues batch 5.
+%   v. 102–103  The small slip numbered « 47 bis », both sides: the
+%               « syncrisis » of theorems I and II worked out with the sides
+%               A and A + E (A and E − A on the verso), and the same values
+%               from four continued proportionals. A supplement to v. 101.
+%   v. 104      Leaf « 48 » recto: the numerical example of theorem II
+%               (1 QQ − 832 N = 1680, N = 10), Theorema III (B·A − A⁴ = Z)
+%               with its example (N = 2 or 10), then Problema II:
+%               « Aequalitatem quadrato-quadrati affecti sub cubo … ad
+%               quadraticam deprimere ».
+%   v. 105–107  Leaf 48 verso, the slip « 49 » recto and verso: problem II
+%               worked through (the square formed on A² + B·A − E/2, the
+%               comparison of the two sides, the cubic in E plani), the four
+%               sign-cases, « Fit itaque … reductio quæ imperata est », and
+%               « tria reductionis Theoremata »: I and II.
+%   v. 108–109  The slip « 50 », both sides: theorem II's examples (1 2 4 8;
+%               1 QQ ∓ 5 C = 216), Theorema III with its example, then
+%               Problema III: the quadrato-quadratic « adfecti tum sub latere
+%               quam quadrato », begun.
+%   v. 110–111  Leaf « 51 », both sides: problem III worked through and its
+%               sign-cases, each with the equation « post metamorphosin » in
+%               the margin; then « Aliter », the same problem by a second
+%               « formula ».
+%   v. 112–113  Leaf « 52 », both sides: the « Aliter » worked through and its
+%               cases; « Ac secundum priorem quidem formulam ordinata sunt
+%               theoremata hæc »: Theorema I and II.
+%   v. 114–115  The slip « 53 », both sides: theorems II (example) to VII
+%               « secundum priorem formulam », each with an example.
+%   v. 116–117  The slip « 54 », both sides: theorem VII's example, then
+%               « Ad posteriorem autem formulam pertinent quæ sequuntur »:
+%               theorems I to V « secundum posteriorem formulam ».
+%   v. 118–119  Leaf « 55 », both sides: theorems V (example) to VII; « Hæc
+%               itaque sunto satis superque »; then a chapter heading,
+%               « Quemadmodum æquationes cubicæ deprimuntur ad quadraticas a
+%               radice solida. Seu de duplicata hypostasi Cap. VII. », a
+%               paragraph on the method, and Problema I (A³ + 3B·A = 2Z),
+%               begun.
+%   v. 120      Leaf « 56 » recto: problem I concluded, its « Consectarium »
+%               with the example 1 C + 81 N = 702 (N = 6), « Aliter et
+%               secundo », and « Consectarium secundum », which stops at the
+%               foot of the page: the text runs on into view 121 (batch 7).
+%
+% The hand. What looks like one seventeenth-century italic-cursive hand
+% writes text and margins alike, in the same ink. The margins are full of
+% the writer's corrections: a word or sign in the line is underlined,
+% overlined or doubled with strokes, and the right one is written in the
+% margin between two short rules (« Aq » for « A » in the roots from v. 105
+% on, « bis », « 4 », « ex », « cubus »; numbers such as 702 for 700, 5400
+% for 540, 1600 for 160). Such corrections are given as \marginal{} beside
+% the line, with a \note{}. At v. 114 an interlinear phrase, struck through,
+% reads « deerant hæc in exemplari » with much doubt; if that reading is
+% right the leaf would be a copy, but the pass does not settle it and
+% attributes nothing.
+%
+% Notation, kept as written. A the unknown; E (or E planum) the unknown of
+% the resolvent, found to be D (or F planum); B, G, Z given, with their
+% dimension written out (« B solido », « G plano », « Z plano-plano », « Z
+% solido bis ») or abbreviated (BS, BSS, Bq, Zpp, Ep, Epp, Eppp, Gp, Gpp,
+% Aq, Ac, Aqq, Eqqq, Ecc…); « in » for a product; « bis », « ter », « quat. »
+% for coefficients; LV (latus universale) and L for roots, set over a brace
+% or array; a brace « } » between the two members for equality, and in some
+% marginal notes a plain vertical stroke, set «|». The numerical examples
+% use the cossic signs N, Q, C, QQ, and « æquatur ». Where the writer
+% corrects a sign by doubling or crossing it, the result is set as he left
+% it (= , ≡, ±, ∓) and explained in a \note{}; « × » and « * » are his
+% reference marks. The long s is set s; spelling and abbreviations as
+% written.
+%
+% Numbers on the leaves. One ink figure at the top right of each recto that
+% this batch sees: 47 bis (v. 102), 48 (v. 104, and above the slip at
+% v. 102), 49 (v. 106), 50 (v. 108), 51 (v. 110, and at the top of v. 106
+% and 108), 52 (v. 112), 53 (v. 114), 54 (v. 116), 55 (v. 118, and at the
+% top of v. 114 and 116), 56 (v. 120). The figure shows through, mirrored,
+% at the top left of the versos of views 105, 109, 111, 113, 115 and 117;
+% the versos carry no number of their own. One
+% number per leaf, running across large leaves and small slips alike and
+% taking a « bis » for an inserted slip: a leaf count, not the writer's
+% pagination. But the figures are ink, not a pale pencil series, and no
+% library certificate is in this batch, so the pass cannot say whether it is
+% the library's foliation: no \folio{} is written. The page of view 101
+% carries no number; by the numbering it would be the verso of leaf 47,
+% which the pass does not assert. Other numbers on the pages are the
+% writer's: running figures in the calculations, a « 4 » as a reference
+% mark (v. 104), « /5/ » in a margin (v. 108), I–IIII over continued
+% proportionals.
+
+% Coordinator's reconciliation (2026-09-23), after all nine batches:
+%   One ink series of leaf numbers runs top right of the rectos through the
+%   whole volume, with no gap: 1–8 and « 5 bis » (v. 5–20), 9–17 (v. 22–39),
+%   18–27 (v. 41–59), 28–37 (v. 61–79), 38–47 and « 46 bis » (v. 81–100),
+%   « 47 bis » and 48–56 (v. 102–120), 57–66 (v. 122–140), 67–78
+%   (v. 142–160), 79 (v. 162). It crosses the three pieces of the volume, and
+%   the writer cites it himself (« fol. 18. », v. 43; « pag. 48 », v. 100), so
+%   it is the writer's or copyist's count of leaves, not the library's. Being
+%   ink, it gets no \folio{}, in any batch.
+%   The pieces: « Francisci Vietæ De Recognitione Æquationum tractatus »
+%   (heading on v. 5), Cap. 1–XXI, v. 5–68; « Francisci Vietæ. De æquationum
+%   Emendatione tractatus secundus » (heading on v. 69), Cap. I–XIIII, ending
+%   « Finis » on v. 141; then astronomy without a name, v. 142–163 (lunar
+%   prostaphaereses, Tycho's lunar hypothesis restated, « Harmonici
+%   Ptolemaici Constructio Caput XII », Mercury). Two doubtful notes may mark
+%   the treatises as a copy: « transcripta ex exemplari » (v. 100) and
+%   « deerant hæc in exemplari » (v. 114). The name on the leaves is in the
+%   headings; who wrote the hands is not settled.
+
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{nal-1644}
+\shelfmark{NAL 1644}
+\batch{6}
+\pages{101}{120}
+\dating{}
+\watermark{Lecture automatique\\non vérifiée}
+\foldertitle{Viète (François). Papiers divers. NAL 1644}
+
+\begin{document}
+
+\page{101}
+\note{Un feuillet plus petit, posé sur un feuillet plus grand dont on voit la bande inférieure au pied de la vue ; sur cette bande, quelques traits pâles d'une écriture et d'un tableau à colonnes, qui ne se lisent pas et ne sont pas transcrits ici (la face écrite est probablement celle d'un autre feuillet). Aucun numéro dans l'angle supérieur. La page commence sur un titre et n'enchaîne pas visiblement sur une phrase interrompue.}
+
+Hinc poterunt ordinari tria reductionis Theoremata
+
+\subsection*{Theorema I.}
+
+\[ \text{Si } \left.\begin{array}{l} A\ \text{quad.-quad.} \\ +\,B\ \text{solido in } A \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano.} \]
+\[ \left.\begin{array}{l} E\ \text{quadrati-cubus} \\ +\,Z\ \text{plano-plano } 4 \text{ in } E\ \text{quad.} \end{array}\right\}\ \text{æquetur } B\ \text{solido-solido} \]
+Investigat autem $E$ esse $D$.
+\[ \left.\begin{array}{l} A\ \text{quad.} \\ +\,D \text{ in } A \end{array}\right\}\ \text{æquabitur } \begin{array}{l} \dfrac{B\ \text{solido}}{D\,2} \\ -\,D\ \text{quadrato } \frac{1}{2} \end{array} \]
+
+\subsection*{Theorema II.}
+
+\[ \text{Si } \left.\begin{array}{l} A\ \text{quadrato-quadrat.} \\ -\,B\ \text{solido in } A \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano.} \]
+\marginal{$B$}
+\[ \left.\begin{array}{l} E\ \text{quadrati-cubus} \\ +\,Z\ \text{plano-plano } 4 \text{ in } E\ \text{quad.} \end{array}\right\}\ \text{æquetur } A\ \text{solido-solido} \]
+\note{Le « A » de « A solido-solido » est souligné, et un « B » souligné de deux traits est écrit en regard dans la marge de gauche : correction de l'auteur, $B$ au lieu de $A$, comme au théorème I.}
+Investigat autem $E$ esse $D$.
+\marginal{$D$ quadrato $\frac{1}{2}$.}
+\[ \left.\begin{array}{l} A\ \text{quad.} \\ -\,D \text{ in } A \end{array}\right\}\ \text{æquabitur } \begin{array}{l} \dfrac{B\ \text{solido}}{D\,2} \\ -\,E\ \text{quadrato} \end{array} \]
+\note{« $-$ E quadrato » est souligné, et la marge de gauche porte en regard « D quadrato ½ » : correction de l'auteur, qui rétablit la forme du théorème I.}
+
+\marginal{$*$}
+Constitutione autem tum huius tum antecedentis æquationis bene agnita, sunt duo latera a quibus quadrato-quadratorum differentia applicata ad aggregat. laterum facit $B$ solidum \struck{idest}
+\note{« idest » paraît barré d'un trait ; la lecture du mot barré est incertaine.}
+factum duplum ex rectangulo sub lateribus in differentiam \uncertain{adiunct.} differentiæ cubo.
+
+differentia vero ipsorum laterum est $E$, seu $D$. et fit $Z$ plano-plano a quadrato differentiæ laterum plus rectangulo sub lateribus \uncertain{Inductum} rectangulum.
+\note{Le mot est souligné dans le manuscrit.}
+
+et $A$ est latus unum hic maius illic minus
+
+\marginal{In ipsum sub lateribus sc. siquidem ex agnita iam constitutione $\left.\begin{array}{l} D \text{ in } Aq\,2 \\ +\,Dq \text{ in } A\,2 \\ +\,Dc \end{array}\right\} BS$. $\left.\begin{array}{l} Aqq \\ +\,D \text{ in } Ac\,2 \\ +\,Dq \text{ in } Aq\,2 \\ +\,Dc \text{ in } A \end{array}\right\}$ est $Z$ pl.pl. illud \ill{} est quod fit ex $\begin{array}{l} Aq \\ +\,D \text{ in } A \end{array}$ rectangulo sc. sub lateribus in $\begin{array}{l} Dq \\ +\,Aq \\ +\,D \text{ in } A \end{array}$ quad\ill{} differentiæ laterum plus rectang. sub lateribus.}
+\note{Longue note marginale, dans la marge de gauche, de la même encre et apparemment de la même main, écrite en regard des trois alinéas qui précèdent et du suivant ; elle développe $B$ solide et $Z$ plan-plan à partir des côtés $A$ et $A + D$. Le mot après « illud » se perd dans la ligne du texte principal.}
+
+In serie vero quatuor continue proportionalium fit $D$ differentia extremarum, $B$ solidum differentia cuborum a singulis alterne sumptorum. $Z$ plano-plano quod fit ex utraque extremarum in differentiam cuborum a reliquis alterne sumptorum et fit $A$ prima hic maior inter extremas illic minor
+
+sunt proportionales continuæ $\overset{\text{I}}{2}$. $\overset{\text{II}}{LC\,40}$. $\overset{\text{III}}{LC\,200}$. $\overset{\text{IIII}}{10}$
+\[ 1\,QQ + 832\,N \text{ æquat. } 1680. \]
+\[ \text{igitur } 1\,Q + 8\,N \text{ æquabitur } 20. \]
+\[ \text{et fit } 1\,N\ 2. \]
+\note{Au-dessus des quatre proportionnelles, de petits traits verticaux en nombre croissant (un, deux, trois, quatre), qui les numérotent. « LC » : latus cubicum. L'exemple est juste : $2^4 + 832 \cdot 2 = 1680$, et $4 + 16 = 20$.}
+
+\page{102}
+\note{La vue montre deux feuillets superposés. En haut, sur une bande d'environ six lignes, le haut d'un grand feuillet numéroté « 48 » à l'encre dans l'angle supérieur droit, avec ses notes marginales : c'est le feuillet donné en entier à la vue 104, où il est transcrit. Posé dessus, un feuillet plus petit, numéroté « 47 bis » à l'encre en haut à droite, dont on transcrit ici la page.}
+
+Ita vero instituetur \uncertain{Syncrisis}
+\[ \left.\begin{array}{l} \dfrac{BS \;-\; Eq \text{ in } A\,2}{E\,2} \end{array}\right\} \begin{array}{l} Aq \\ +\,Eq\,\frac{1}{2}. \end{array} \quad \text{ergo} \quad \left.\begin{array}{l} BS \\ -\,Eq \text{ in } A\,2 \end{array}\right\} \begin{array}{l} E \text{ in } Aq\,2 \\ +\,Ec \end{array} \]
+\uncertain{ac}
+\note{Dans « $+\,Ec$ », le « c » est surchargé d'une tache d'encre.}
+\[ \text{proinde } \left.\begin{array}{l} E \text{ in } Aq\,2 \\ +\,Eq \text{ in } A\,2 \\ +\,Ec \end{array}\right\} BS. \]
+\struck{sunt latera duo \add{quorum quidem} A minus. A + E maius}
+
+Sunto duo latera quorum minus sit $A$. maius vero $A + E$.
+q\textsuperscript{d} lateris \uncertain{minoris}\note{Les trois mots sont soulignés.}
+\[ \begin{array}{lll} Aq & Aqq & Aqq \\ +\,A \text{ in } E\,2 & +\,Ac \text{ in } E\,2 & +\,Ac \text{ in } E\,4 \\ +\,Eq & +\,Aq \text{ in } Eq\ \struck{4} & \struck{+\,Aq \text{ in } Eq} \\ & +\,Ac \text{ in } E\,2 & +\,Aq \text{ in } Eq\,6 \\ & +\,Aq \text{ in } Eq\,4 & +\,A \text{ in } Ec\,4 \\ & +\,A \text{ in } Ec\,2 & +\,Eqq \\ & +\,Aq \text{ in } Eq & \\ & +\,A \text{ in } Ec\,2 & \\ & +\,Eqq & \end{array} \quad \text{quad.quad. lateris maioris} \]
+\note{Le carré posé en tête de la première colonne est celui de $A + E$, le plus grand côté ; le mot lu « minoris » est peut-être « maioris » mal formé. La deuxième colonne est le produit de ce carré par lui-même, terme à terme ; une accolade réunit ses termes semblables, et la troisième colonne en donne la somme. Un terme de la troisième colonne est barré et récrit à la ligne suivante.}
+
+\[ \text{Differentia quadrato-quadratorum \add{a duobus lateribus} } \dfrac{\begin{array}{l} Ac \text{ in } E\,4 \\ +\,Aq \text{ in } Eq\,6 \\ +\,A \text{ in } Ec\,4 \\ +\,Eqq \end{array}}{\text{aggregat. laterum } A\,2 + E} \;\Big\} \left.\begin{array}{l} E \text{ in } Aq\,2 \\ +\,Eq \text{ in } A\,2 \\ +\,Ec \end{array}\right\} \text{æq. } BS. \]
+
+rectangulo sub lateribus $\begin{array}{l} Aq \\ +\,A \text{ in } E \end{array}$ differentia $E$ fact. $\begin{array}{l} E \text{ in } Aq \\ +\,A \text{ in } Eq \end{array}$ cuius duplum $\begin{array}{l} E \text{ in } Aq\,2 \\ +\,A \text{ in } Eq\,2 \end{array} + E\,\text{cub.} \}$ æq. $BS$.
+
+Itaque quod dicitur $\left.\begin{array}{l} Aqq \\ +\,BS \text{ in } A \end{array}\right\} Zpp.$ pro $BS$ substituto eius valore erit per interpretationem
+\[ \left.\begin{array}{l} Aqq \\ +\,E \text{ in } Ac\,2 \\ +\,Eq \text{ in } Aq\,2 \\ +\,Ec \text{ in } A \end{array}\right\} Zpp. \text{ id est} \]
+factum abs $\begin{array}{l} Eq \\ +\,Aq \\ +\,E \text{ in } A \end{array}$ quadrato differentiæ laterum plus rectangulo sub lateribus in \struck{\ill{}} $\begin{array}{l} Aq \\ +\,E \text{ in } A \end{array}$ rectangulum sub lateribus.
+
+Vel si statuatur $A$ latus maius erit $A - E$ latus minus. et $E$ differentia laterum ut supra. eadem erit Syncriseos ratio.
+
+Vel in serie quatuor continue proportionalium posita $A$ latere primo minore \struck{\& quarto} $A + E$ quarto maiore. erunt quatuor proportionalium cubi
+\[ \overset{\text{I}}{Ac.} \qquad \begin{array}{l} \overset{\text{II}}{Ac} \\ +\,Aq \text{ in } E \end{array} \qquad \begin{array}{l} \overset{\text{III}}{Ac} \\ +\,Aq \text{ in } E\,2 \\ +\,Eq \text{ in } A. \end{array} \qquad \begin{array}{l} \overset{\text{IIII}}{Ac} \\ +\,Aq \text{ in } E\,3 \\ +\,Eq \text{ in } A\,3 \\ +\,E\,\text{cub.} \end{array} \]
+differentia cuborum alterne sumptorum erit
+\[ \left.\begin{array}{l} E \text{ in } Aq\,2 \\ +\,Eq \text{ in } A\,2 \\ +\,E\,\text{cub.} \end{array}\right\} BS. \]
+Factum vero ab \uncertain{alterutra} extremarum in differentiam cuborum a reliquis alterne sumptorum erit
+\[ \left.\begin{array}{l} Aqq \\ +\,E \text{ in } Ac\,2 \\ +\,Eq \text{ in } Aq\,2 \\ +\,Ec \text{ in } A \end{array}\right\} Zpp. \]
+\note{Le reste de la page est blanc.}
+
+\page{103}
+\note{Le petit feuillet « 47 bis » est ici vu par son verso, posé sur la page de la vue 101 ; les deux premières lignes de celle-ci (« Hinc poterunt ordinari tria reductionis Theoremata », « Theorema I. », « Si A quad.-quad. ») dépassent au-dessus de lui et ne sont pas répétées. Aucun numéro sur ce verso. Un petit cercle à l'encre dans la marge de gauche, en tête du texte.}
+
+In æqualitate \uncertain{Syncriseos} negata quoniam
+\[ \left.\begin{array}{l} BS \\ +\,Eq \text{ in } A\,2 \end{array}\right\} \begin{array}{l} E \text{ in } Aq\,2 \\ +\,Ec. \end{array} \quad \text{igitur} \quad \left.\begin{array}{l} E \text{ in } Aq\,2 \\ -\,Eq \text{ in } A\,2 \\ +\,Ec \end{array}\right\} BS. \]
+Sit autem aggregat. duorum laterum \struck{\ill{}} $E$, latus maius minusve $A$. ergo latus alterum erit $E - A$. aggregatum quadratorum erit $\begin{array}{l} Aq\,2 \\ -\,E \text{ in } A\,2 \\ +\,Eq \end{array}$ quod ductum in aggregat. laterum $E$. facit $\begin{array}{l} E \text{ in } Aq\,2 \\ -\,Eq \text{ in } A\,2 \\ +\,Ec \end{array}$
+\note{Après « duorum laterum », une lettre surchargée et barrée, puis « E » à la ligne suivante.}
+
+seu aliter $Ec$. minus facto duplo sub rectangulo $\begin{array}{l} E \text{ in } A \\ -\,Aq \end{array}$ in $E$
+\[ \text{id est } \left.\begin{array}{l} Ec \\ -\,Eq \text{ in } A\,2 \\ +\,E \text{ in } Aq\,2 \end{array}\right\} BS. \]
+Quum itaque $\left.\begin{array}{l} BS \text{ in } A \\ -\,Aqq \end{array}\right\} Zpp.$ pro $BS$ substituatur agnitus eius valor et
+\[ \left.\begin{array}{l} Ec \text{ in } A \\ -\,Eq \text{ in } Aq\,2 \\ +\,E \text{ in } Ac\,2 \\ -\,Aqq \end{array}\right\} Zpp. \]
+æquale et quod fit abs $\begin{array}{l} Eq \\ -\,E \text{ in } A \\ +\,Aq \end{array}$ quadrato aggregati laterum minus rectangulo sub lateribus in $\begin{array}{l} E \text{ in } A \\ -\,Aq \end{array}$ rectangulum sub lateribus.
+
+In serie vero quatuor continue proportionalium quarum extremæ $A$ et $E - A$, cubi a singulis quatuor erunt.
+\[ \overset{\text{I}}{Ac} \qquad \begin{array}{l} \overset{\text{II}}{Aq \text{ in } E} \\ -\,Ac \end{array} \qquad \begin{array}{l} \overset{\text{III}}{Eq \text{ in } A} \\ -\,E \text{ in } Aq\,2 \\ +\,Ac \end{array} \qquad \begin{array}{l} \overset{\text{IIII}}{Ec} \\ -\,Eq \text{ in } A\,3 \\ +\,E \text{ in } Aq\,3 \\ -\,Ac \end{array} \]
+quorum omnium aggregatum est
+\[ \left.\begin{array}{l} Ec \\ -\,Eq \text{ in } A\,2 \\ +\,E \text{ in } Aq\,2 \end{array}\right\} BS. \]
+aggregatum vero cuborum a tribus videlicet posterioribus \struck{est} $\begin{array}{l} Aq \text{ in } E\,2 \\ -\,Ac \\ -\,Eq \text{ in } A\,2 \\ +\,Ec \end{array}$ si ducatur in $A$ primam fiet
+\[ \left.\begin{array}{l} Ac \text{ in } E\,2 \\ -\,Aqq \\ -\,Eq \text{ in } Aq\,2 \\ +\,Ec \text{ in } A \end{array}\right\} Zpp. \]
+
+Itemq; \struck{fiet} si aggregatum cuborum a tribus prioribus ducatur in quartam.
+\note{Le reste du petit feuillet est blanc. Le calcul est juste : la somme des quatre cubes et celle des trois derniers, multipliée par $A$, donnent bien les valeurs de $BS$ et de $Zpp$ trouvées plus haut.}
+
+\page{104}
+\note{Le grand feuillet numéroté « 48 » à l'encre dans l'angle supérieur droit, vu en entier ; son haut était visible à la vue 102 sous le petit feuillet « 47 bis ». Au pied, une bande d'un feuillet plus grand placé dessous, où se lit « $-$ A quad.quad. » et quelques traits pâles ; elle n'est pas transcrite ici. La page commence sur la fin d'un exemple numérique : la règle qu'il illustre (sans doute le théorème II de la vue 101) est antérieure à ce feuillet.}
+
+\marginal{Et ex agnita tum æqualitatis constitutione est $E$ differentia duorum laterum. quorum quidem $A$ in prima æquatione est minus \add{2}, in secunda vero maius \uncertain{id est} 10. horum differentia 8. est $E$.}
+\note{Note marginale en haut à gauche, de la même main, en regard des lignes qui suivent. Le « 2 » est ajouté dans l'interligne au-dessus d'un signe d'insertion.}
+
+\[ \text{Si } 1\,QQ - 832\,N \text{ æquetur } 1680. \]
+\[ \text{Igitur } 1\,Q - 8\,N \text{ æquabitur } 20 \text{ et fit } 1\,N\ 10. \]
+Nota autem est 8 differentia inter 2 et 10 quoniam $1\,C + 6720\,N$ æquatur 692,224. unde fit $1\,N\ 64$. quantum est quadratum abs 8.
+\note{« 6720 » est écrit « 67 20 », en deux groupes. Les nombres sont justes : $10^4 - 8320 = 1680$ ; $832^2 = 692\,224$ et $64^3 + 6720 \cdot 64 = 692\,224$.}
+
+\subsection*{Theorema III.}
+
+\[ \text{Si } \left.\begin{array}{l} B\ \text{solidum in } A \\ -\,A\ \text{quad.-quad.} \end{array}\right\}\ \text{æquet. } Z\ \text{plano-plano.} \]
+\[ \left.\begin{array}{l} E\ \text{quadrati-cubus} \\ -\,Z\ \text{plano-plano } 4 \text{ in } E\ \text{quadrat.} \end{array}\right\}\ \text{æquet. } B\ \text{solido-solido} \]
+Investigat autem $E$ esse $D$.
+\[ \left.\begin{array}{l} D \text{ in } A \\ -\,A\ \text{quadrato} \end{array}\right\}\ \text{æquabit. } \begin{array}{l} D\ \text{quadrato } \frac{1}{2} \\ -\,\dfrac{B\ \text{solido}}{D\,2}. \end{array} \]
+\marginal{4 hinc \add{facile} apparet $\frac{BS}{D2}$ \uncertain{cedere} $E$ vel $Dq$. semis. quum in negata \ill{} \ill{} $\frac{BS}{D2}$ \struck{\ill{}} ipsi $Dq$. semis. ut patet ex præcedente pagina}
+\note{Un « 4 » écrit à droite de la ligne « Investigat autem E esse D » renvoie à cette note marginale, qui porte le même « 4 ». Le mot après « facile » est ajouté dans l'interligne.}
+
+\marginal{$\odot$}
+Constitutione autem æqualitatis bene agnita est $B$ solidum quod fit sub aggregato quadratorum in aggregatum laterum seu aliter cubus aggregati duorum laterum multatus facto \uncertain{duplo} abs rectangulo sub lateribus in aggregatum laterum $Z$ plano-plano factum abs quadrato aggregati laterum minus rectangulo in ipsum rectangulum. et fit $E$ seu $D$ aggregat. ipsorum laterum $A$ maius ipsorum minusve
+\note{Le mot lu « duplo » a la forme de « complo ». Dans la marge de gauche, un petit cercle pointé, comme à la vue 103.}
+
+In serie autem quatuor continue proportionalium est $B$ solidum aggregatum cuborum a quatuor singulis $Z$ plano-plano quod fit sub utraque extremarum in aggregatum cuborum a reliquis $D$ aggregat. extremarum et fit $A$ prima vel quarta
+
+sunt proportionales continuæ 2. $LC\,40$. $LC\,200$. 10
+\[ 1248\,N - 1\,QQ \text{ æquatur } 2480 \]
+\marginal{quoniam ex agnita huius æquationis constitutione est $E$ aggregatum duorum laterum quorum $A$ est maius minusve. itaque cum sit $E$ 12. potest $A$ esse 10 vel 2.}
+\[ \text{Igitur } 12\,N - 1\,Q \text{ æquabitur } 20 \text{ et fit } 1\,N\ 2 \text{ vel } 10. \]
+Nota autem est 12 aggregatum 2 et 10.
+\note{Un même signe de renvoi, une sorte de « D » barré d'une flèche, se trouve devant « Igitur » et en tête de la note marginale ; « Nota » est souligné.}
+
+\marginal{$1{,}557{,}50\uncertain{4}$}
+$1\,C - 9920\,N$ æquabitur $\overline{1557}$. et fit $1\,N\ 144$. quantum est quadratum abs 12.
+\note{Dans le texte, « 1557 » est surligné d'un trait ; le nombre entier est écrit dans la marge de gauche, encadré de traits et précédé d'un signe « = » : « 1,557,50 » suivi d'un dernier chiffre surchargé, un 4 écrit sur un 7 ou l'inverse. La valeur juste est $1248^2 = 1\,557\,504$, et $144^3 - 9920 \cdot 144 = 1\,557\,504$.}
+
+\subsection*{Problema II}
+
+Aequalitatem quadrato-quadrati affecti sub cubo per medium \uncertain{cubicæ} radicem habentis planam ad quadraticam deprimere.
+\note{« affecti » est corrigé sur un autre mot ; « cubicæ » est surchargé. Le reste du feuillet est blanc ; l'énoncé se poursuit sur la page de la vue 105.}
+
+\page{105}
+\note{Verso du feuillet « 48 » : le « 48. » qu'on voit en haut à gauche est à l'envers, c'est le numéro du recto vu par transparence, comme les lignes pâles et inversées de la marge de gauche. Au pied, la bande d'un feuillet plus grand placé dessous, sans écriture lisible. La page continue le problème II de la vue 104.}
+
+\[ \text{Proponat. } \left.\begin{array}{l} A\ \text{quad.quad.} \\ +\,B \text{ in } A\ \text{cubo bis} \end{array}\right\}\ \text{æquari } Z\ \text{plano-plano.} \]
+oportet facere quod imperatum est.
+
+Sane si quadratum effingatur abs
+\[ \left.\begin{array}{l} A\ \text{quadrato} \\ +\,B \text{ in } A \\ -\,E\ \text{plano } \frac{1}{2}. \end{array}\right\}\ \text{erit illud} \begin{array}{l} A\ \text{quad.quad.} \\ +\,B \text{ in } A\ \text{cubum bis} \\ +\,B\ \text{quad. in } A\ \text{quad.} \\ +\,E\ \text{plano-plano } \frac{1}{4} \\ -\,E\ \text{plano in } A\ \text{quad. } \frac{1}{2} \\ -\,E\ \text{plano in } B \text{ in } A. \end{array} \]
+\marginal{$B+$}
+\note{Le « $\frac{1}{2}$ » de « $-$ E plano in A quad. » est souligné : il est de trop ($-E \cdot A^2$ sans demi), et l'auteur le barre à la ligne suivante. En regard, dans la marge de droite, « B+ ». Dans la marge de gauche, deux signes faits d'un « Q » ou d'un « G » barré précédé de deux ou trois traits horizontaux, à hauteur de ce calcul et de l'alinéa suivant ; leur sens n'est pas établi.}
+
+Utrique igitur æquationis parti addatur id quod deficit prima pars ab effecto a statuta radice plana quadrato concludetur ex illa æqualium æqualibus additione
+\[ \left.\begin{array}{l} A\ \text{quad.quad.} \\ +\,B \text{ in } A\ \text{cubo bis} \\ +\,B\ \text{quad. in } A\ \text{quad.} \\ +\,E\ \text{plano-plano } \frac{1}{4} \\ -\,E\ \text{plano in } A\ \text{quad. } \struck{\frac{1}{2}} \\ -\,\struck{A}\ \struck{B \text{ in}}\ E\ \text{plano in } B \text{ in } A \end{array}\right\}\ \text{æquari } \begin{array}{l} Z\ \text{plano-plano} \\ +\,B\ \text{quad. in } A\ \text{quad.} \\ +\,E\ \text{plano-plano } \frac{1}{4} \\ -\,E\ \text{plano in } A\ \text{quad.} \\ -\,E\ \text{plano in } B \text{ in } A. \end{array} \]
+\note{« effecto » est corrigé sur un autre mot ; « prima pars » est souligné.}
+
+Utraque pars \uncertain{dividatur} sub quadratice. Illic reducta ad analysin \ill{} \uncertain{oritur} manifesto.
+\[ \begin{array}{l} A\ \text{quadrat.} \\ +\,B \text{ in } A \\ -\,E\ \text{plano } \frac{1}{2} \end{array} \]
+quod si altera æqualitatis pars posset quoque dividi subquadratice quod oriretur foret æquale radicibus illis planis e prima parte ortis
+
+Effingendum est igitur quadrat. a radice plana et illud alteri æqualitatis parti idest $Z$ plano-plano una cum suis \struck{adfectionibus} adfectionibus comparandum et adæquandum ut radices quoque comparentur et adæquentur inter se
+
+\marginal{\struck{$LV\ E$ \ill{}} — quadrati}
+Statuetur idcirco radix illa plana effingendi quadrato-quadrati
+\[ \times\ \dfrac{E\ \text{plano in } B}{\begin{array}{l} LV.\ B\ \text{quad. } \struck{\text{quad.}}\ 4. \\ -\,E\ \text{plano } 4. \end{array}} \qquad = \left.\begin{array}{l} LV.\ B\ \text{quad.} \\ -\,E\ \text{plano.} \end{array}\right\} \text{in } Aq. \]
+\note{« quadrato-quadrati » est souligné dans le texte et la marge de gauche porte, entre deux traits, « quadrati » : correction de l'auteur ; au-dessus, dans la même marge, quelques signes lourdement biffés. Les signes « × » et « = » sont de l'auteur ; ils semblent marquer les deux termes de la racine, $\sqrt{B^2 - E}\cdot A$ et $\frac{E B}{\sqrt{4B^2 - 4E}}$.}
+
+Sic enim in comparatione evanescent adfectiones sub $A$ vel gradibus et reducetur in æqualitatem de $E$ quo tendendum est.
+
+\marginal{\struck{\ill{}} ex rectangulo sub radicibus $\dfrac{E\,pl \text{ in } B}{\begin{array}{l} LV\ Bq\,4 \\ -\,Ep\,4 \end{array}}$ id $\left.\begin{array}{l} LV.\ Bq \\ -\,Ep \end{array}\right\}$ in $Aq$. scilicet}
+
+Effectum igitur quadrat. erit
+\[ \begin{array}{l} \dfrac{E\ \text{plano-plano in } B\ \text{quad.}}{\begin{array}{l} B\ \text{quad. } 4 \\ \struck{\ill{}}\ -\,E\ \text{plano } 4. \end{array}} \\ +\,B\ \text{quad. in } A\ \text{quad.} \\ -\,E\ \text{plano in } A\ \text{quad.} \\ -\,E\ \text{plano in } B \text{ in } A. \end{array} \]
+\marginal{$\left.\dfrac{\begin{array}{l} Epp \text{ in } Bqq \text{ in } Aq\,4 \\ -\,\uncertain{Eppp} \text{ in } Bq \text{ in } Aq\,4 \end{array}}{\begin{array}{l} LV\ Bq\,4 \\ -\,Ep\,4 \end{array}}\right\}$ \uncertain{fiet} $Ep \text{ in } B \text{ in } A$}
+\note{Devant les trois derniers termes de l'effectum, des signes « $\pm$ » et « = » tracés entre des traits horizontaux, et à droite du dénominateur une suite de petits traits obliques et de croix ; dans la marge de gauche, une colonne de signes semblables (« + », « = », « ± »). Le calcul marginal encadré, relié au texte par un grand trait courbe, est le produit des deux termes de la racine ; ses premières lettres sont surchargées. Le reste de la page est blanc.}
+
+\page{106}
+\note{Deux feuillets superposés. En haut, sur trois lignes, le haut d'un grand feuillet numéroté « 51 » à l'encre, transcrit à la vue 110 où il est vu en entier. Posé dessus, un feuillet plus petit numéroté « 49 » à l'encre en haut à droite, dont on transcrit ici la page. Elle enchaîne sur la vue 105 : la phrase commence au milieu de la démonstration du problème II.}
+
+ad æquandum $Z$ plano-plano una cum reliquis quæ illud comitantur \struck{et adfirmat} expositis plano-planis et deletis utrinque adfectionibus sub \struck{A et} $A$ quadrato
+\note{« et adfirmat » (lecture incertaine du mot barré) et « A et » sont barrés d'un trait.}
+\[ \left.\dfrac{E\ \text{plano-plano in } B\ \text{quad.}}{\begin{array}{l} B\ \text{quad. } 4 \\ -\,E\ \text{plano } 4. \end{array}}\right\}\ \text{æquabit. } \begin{array}{l} Z\ \text{plano-plano} \\ +\,E\ \text{plano-plano } \frac{1}{4}. \end{array} \]
+Et omnibus ductis in $\begin{array}{l} B\ \text{quadrat. } 4 \\ -\,E\ \text{plano } 4. \end{array}$
+\[ E\ \text{plano-plano in } B\ \text{quadratum æquabitur } \begin{array}{l} Z\ \text{plano-plano in } B\ \text{quad.} \\ +\,E\ \text{plano-plano in } B\ \text{quad.} \\ -\,Z\ \text{plano-plano in } E\ \text{plano} \\ -\,E\ \text{plano-plano-plano.} \end{array} \]
+\marginal{4 — 4}
+\note{Le premier et le troisième terme du second membre sont soulignés, et la marge de gauche porte en regard, entre deux traits, deux fois « 4 » : correction de l'auteur, qui a omis le coefficient 4 de ces deux termes.}
+
+\marginal{cubus}
+Et deleto utrinque $E$ plano-plano in $B$ quadrat. omnibusque rite ordinatis
+\[ \left.\begin{array}{l} E\ \text{plani quadratum} \\ +\,Z\ \text{plano-plano } 4 \text{ in } E\ \text{plano} \end{array}\right\}\ \text{æquabit. } Z\ \text{plano-plano in } B\ \text{quad. } 4. \]
+\note{« quadratum » est souligné et la marge porte « cubus », souligné : correction de l'auteur, $E$ plani cubus.}
+Investigat autem $E$ planum esse $D$ planum.
+\[ \text{Ergo } \left.\begin{array}{l} A\ \text{quadrat.} \\ +\,B \text{ in } A \\ -\,D\ \text{plano } \frac{1}{2} \end{array}\right\}\ \text{æquabit. } \begin{array}{l} \dfrac{D\ \text{plano in } B}{\begin{array}{l} LV.\ B\ \text{quad. } 4. \\ -\,D\ \text{plano } 4. \end{array}} \\[2ex] -\,\left.\begin{array}{l} LV.\ B\ \text{quad.} \\ -\,D\ \text{plano.} \end{array}\right\} \text{in } Aq \end{array} \]
+\note{Ici comme à la vue 105, la racine est écrite « in Aq » ; le sens demande le côté $A$, et la lettre qui suit $A$ est peut-être un trait final. Transcrit tel qu'il se lit.}
+
+Et æqualitate secundum artem ordinata
+\[ \left.\begin{array}{l} A\ \text{quadrat.} \\ +\,B \text{ in } A \\ +\,\left.\begin{array}{l} LV.\ B\ \text{quad.} \\ -\,D\ \text{plano} \end{array}\right\} \text{in } Aq \end{array}\right\}\ \text{æquabit. } \begin{array}{l} D\ \text{plano } \frac{1}{2} \\ +\,\dfrac{D\ \text{plano in } B}{\begin{array}{l} LV.\ B\ \text{quad. } 4. \\ -\,D\ \text{plano } \underline{4}. \end{array}} \end{array} \]
+
+\marginal{bis}
+\[ \text{Et si proponat. } \left.\begin{array}{l} A\ \text{quad.-quad.} \\ -\,B \text{ in } A\ \text{cub.} \end{array}\right\}\ \text{æquari } Z\ \text{plano-plano.} \]
+\note{« cub. » est souligné et la marge porte « bis », souligné : correction de l'auteur, $B$ in $A$ cubum bis.}
+radix plana effingendi quadrati statuetur
+\[ \left.\begin{array}{l} \dfrac{E\ \text{plano in } B}{\begin{array}{l} LV\ B\ \text{quad. } 4. \\ -\,E\ \text{plano } 4 \end{array}} \\[2ex] -\,\left.\begin{array}{l} LV\ B\ \text{quad.} \\ -\,E\ \text{plano} \end{array}\right\} \text{in } Aq \end{array}\right\}\ \text{comparanda } \begin{array}{l} A\ \text{quad.} \\ -\,B \text{ in } A \\ -\,E\ \text{plano } \frac{1}{2}. \end{array} \]
+\marginal{$\left.\begin{array}{l} \dfrac{Ep \text{ in } B}{\begin{array}{l} LV\ Bq\,4 \\ -\,Ep\,4 \end{array}} \\ +\,\left.\begin{array}{l} LV\ Bq \\ -\,Ep \end{array}\right\} \text{in } Aq. \end{array}\right.$ comparanda $\begin{array}{l} Aq \\ -\,B \text{ in } A \\ -\,Ep\,\frac{1}{2}. \end{array}$}
+\note{Devant le signe « $-$ » de la racine, dans la marge de gauche, des astérisques et un « + » entre deux traits, avec une tache biffée au-dessus ; devant « B in A » du membre de droite, un signe « = » (ou « $-$ » repassé). Dans la marge de droite, une version corrigée de la même comparaison, entourée d'un trait, où le signe de la racine est « + » et les lettres $E$ sont repassées.}
+
+\[ \text{Et si proponat. } \left.\begin{array}{l} B \text{ in } A\ \text{cubum bis} \\ -\,A\ \text{quad.-quad.} \end{array}\right\}\ \text{æquari } Z\ \text{plano-plano.} \]
+\note{Le reste de la page est blanc ; au pied, des traces pâles vues par transparence. L'énoncé qui la termine se poursuit au-delà, sans doute au verso (vue 107).}
+
+\page{107}
+\note{Verso du petit feuillet « 49 », sans numéro. Le haut de la vue montre le carton de fond au-dessus du bord du feuillet. Le long du bord droit, une bande étroite d'un autre feuillet, avec des bouts de lignes (« bis », « Zpp. in », « E plani », « æque », « Investig. », « et fit Z », « ex applica… », « quadratum ») : ce sont les marges d'une autre page, qui ne sont pas transcrites ici. La page continue la vue 106, qui s'arrêtait sur l'énoncé « Et si proponatur B in A cubum bis $-$ A quad.quad. æquari Z plano-plano ».}
+
+\marginal{$\times^{\circ}$ fiet autem post metamorphosin æqualitas $\left.\begin{array}{l} Eppp \\ -\,Zpp \text{ in } Ep\,4. \end{array}\right\} Bq \text{ in } Zpp\,4.$}
+\note{Note de la marge supérieure gauche ; son signe de renvoi, une croix surmontée d'un petit cercle, se retrouve plus bas devant « Et radix plana ».}
+
+licebit argumentari
+\[ \left.\begin{array}{l} A\ \text{quad.quad.} \\ -\,B \text{ in } A\ \text{cub. bis} \end{array}\right\}\ \text{æquari } Z\ \text{plano-plano.} \]
+quod erit auferre æqualia ab æqualibus.
+
+\marginal{$\underline{B}$}
+$\times^{\circ}$ Et radix plana effingendi quadrati statuetur
+\[ \left.\begin{array}{l} \dfrac{E\ \text{plano in } \overline{E}}{\begin{array}{l} LV.\ B\ \text{quad. } 4. \\ +\,E\ \text{plano } 4. \end{array}} \\[2ex] -\,\left.\begin{array}{l} LV\ B\ \text{quad.} \\ +\,E\ \text{plano.} \end{array}\right\} \text{in } \overline{A} \end{array}\right\}\ \text{comparanda } \begin{array}{l} B \text{ in } A. \\ +\,E\ \text{plano } \frac{1}{2} \\ -\,A\ \text{quad.} \end{array} \]
+\marginal{$\underline{Aq}$}
+\note{Le second « E » du numérateur est surligné et la marge porte « B » : correction de l'auteur, $E$ plano in $B$. De même « A » est surligné dans « in A », et la marge porte « Aq ». Devant le numérateur, un « 4 » barré ; devant « LV B quad. », deux traits horizontaux ; dans la marge, un astérisque et un signe biffé.}
+\marginal{$\left.\begin{array}{l} 4\ \dfrac{Ep \text{ in } B}{\begin{array}{l} LV\ Bq\,4 \\ +\,Ep\,4. \end{array}} \\ -\,LV \left\{\begin{array}{l} Bq \\ +\,Eq \end{array}\right\} \text{in } Aq. \end{array}\right.$ comparanda $\begin{array}{l} B \text{ in } A \\ -\,Aq \\ -\,Ep\,\frac{1}{2}. \end{array}$}
+\note{Dans la marge de droite, séparée du texte par un long trait vertical, une version récrite de la même comparaison ; plusieurs « E » y sont repassés, et devant « B in A » un mot biffé.}
+
+Fit itaque \uncertain{omni rite} reductio quæ imperata est
+
+Hinc ordinabuntur tria reductionis Theoremata.
+
+\subsection*{Theorema I.}
+
+\[ \text{Si } \left.\begin{array}{l} A\ \text{quad.quad.} \\ +\,B \text{ in } A\ \text{cubum bis} \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano.} \]
+\[ \left.\begin{array}{l} E\ \text{plani cubus} \\ +\,Z\ \text{plano-plano } \struck{+} \text{ in } E\ \text{plano} \end{array}\right\}\ \text{æquet. } Z\ \text{plano-plano in } B\ \text{quad. } \underline{4}. \]
+\marginal{$\times$ Investigat autem \struck{A} $E$ plano esse $D$ plano.}
+\[ \left.\begin{array}{l} A\ \text{quad.} \\ +\,B \text{ in } A \\ +\,\left.\begin{array}{l} LV.\ B\ \text{quad.} \\ -\,D\ \text{plano} \end{array}\right\} \text{in } A \end{array}\right\}\ \text{æquabitur } \begin{array}{l} \dfrac{D\ \text{plano in } B}{LV \left\{\begin{array}{l} B\ \text{quad. } 4 \\ -\,D\ \text{plano } 4. \end{array}\right.} \\ +\,D\ \text{plano } \frac{1}{2} \end{array} \]
+\marginal{$Aq$}
+\note{Dans le second membre de la cubique, un signe « + » barré tient la place du coefficient ; la ligne « Investigat autem E planum esse D planum » manque dans le texte et est donnée dans la marge de gauche, avec le renvoi « × ». Le premier membre de l'équation finale est cerné d'un trait ; en regard, dans la marge, « Aq ».}
+
+\marginal{$*$ quoniam $\begin{array}{l} LBq \\ -\,Dp \end{array}$ adiectum $B$ facit 3. \& æqualitate ordinata \uncertain{sublata} 2. ergo eiusdem duplum $\begin{array}{l} LV\ Bq\,4 \\ -\,Dp\,4 \end{array}$ adiectum $B$ 2. idest \ill{} faciet 6. duplum ipsius 3.}
+\note{Note encadrée dans la marge de droite, avec un astérisque ; ses fins de lignes passent sous le bord du feuillet voisin.}
+
+\subsection*{Theorema II.}
+
+\[ \text{Si } \left.\begin{array}{l} A\ \text{quad.quad.} \\ -\,B \text{ in } A\ \text{cub. bis.} \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano.} \]
+\marginal{4}
+\[ \left.\begin{array}{l} E\ \text{plani cubus} \\ \struck{+}\ Z\ \text{plano-plano } 4 \text{ in } E\ \text{plano} \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano in } B\ \text{quad. } 4 \]
+Investigat autem $E$ planum esse $D$ planum.
+\[ \left.\begin{array}{l} A\ \text{quad.} \\ -\,B \text{ in } A \\ -\,\left.\begin{array}{l} LV\ B\ \text{quad.} \\ -\,D\ \text{plano.} \end{array}\right\} \text{in } \underline{A} \end{array}\right\}\ \text{æquabit. } \begin{array}{l} \dfrac{D\ \text{plano in } B}{\begin{array}{l} LV\ B\ \text{quad. } 4. \\ -\,D\ \text{plano } 4 \end{array}} \\ +\,D\ \text{plano } \frac{1}{2} \end{array} \]
+\marginal{$Aq$}
+\note{Devant « Z plano-plano 4 in E plano », un signe biffé de plusieurs traits, et un « 4 » dans la marge. Devant les deux derniers termes du premier membre de l'équation finale, deux signes « $-$ » dans la marge, le second repassé ; en regard, « Aq ». Au-dessous, dans la marge de gauche, un grand signe en forme de « Y » ouvert, sans texte.}
+
+Constitutione autem tum huius tum antecedentis æqualitatis bene agnita sunt duo latera a quibus quadrato-quadratorum differentia applicata ad aggregatum cuborum facit $B$ bis. quadratum vero differentiæ laterum multatæ ipsa $B$, ablatum ex eiusdem $B$ quadrato relinquit $D$ planum sive $E$ planum et fit $Z$ plano-plano \struck{ex applicatione quadrati aggregati laterum minus triplo rectangulo sub lateribus ad rectangulum \uncertain{subcubis}}
+\marginal{ex applicatione quadrati \add{cubi} a $Dp$. ad differentiam \struck{\ill{}} quadruplati quadratorum a $D$ et $B$}
+\note{Les deux lignes « ex applicatione … subcubis » sont cernées d'un trait fermé, que l'on prend pour une suppression ; la note marginale, entre deux traits horizontaux dans la marge de gauche, en donne le remplacement. Dans cette note, « cubi » est ajouté au-dessus de la ligne, et un mot est biffé après « differentiam ».}
+
+\marginal{quoniam ex prædicta \ill{} demonstratis $D\,ppp$. $\left\{\begin{array}{l} Zpp \text{ in } Bqq \\ -\,Zpp \text{ in } \ill{} \end{array}\right.$ $\dfrac{Dppp.}{Bq\,4 \;-\; Bqq}$ $Zpp$. lateribus vel si in locum $B\,2$}
+\note{Note marginale au pied de la marge de gauche, en partie sous le bord du feuillet ; la lecture de sa disposition est très incertaine.}
+
+\struck{subrogetur agnitus eius valor} $\dfrac{\begin{array}{l} Aqq \\ -\,Eqq \end{array}}{\begin{array}{l} Ac \\ +\,Ec \end{array}}$. $B\,2$. $\left.\dfrac{\begin{array}{l} Aqq \\ +\,\uncertain{Aqq \text{ in } Ec} \\ -\,\uncertain{Eqq \text{ in } Ac} \end{array}}{\begin{array}{l} Ac \\ +\,Ec \end{array}}\right\}$ æqual. $Zpp$
+\note{La dernière ligne, au ras du bord inférieur déchiré, est barrée d'un long trait qui la traverse ; on ne sait s'il porte sur toute la ligne ou sur les seuls mots « agnitus eius valor ». Les termes du second numérateur sont serrés et en partie surchargés ; au-dessus du premier, « 2 ».}
+
+\page{108}
+\note{Deux feuillets superposés, comme à la vue 106. En haut, les trois premières lignes du grand feuillet « 51 » (transcrit à la vue 110). Posé dessus, un petit feuillet numéroté « 50 » à l'encre en haut à droite, dont on transcrit la page. À gauche, une bande du feuillet précédent laisse voir des bouts de ses notes marginales (« Aq », « …anda », « adiectum B », « æqualitate », « idest », « ipsius ») : ce sont ceux de la vue 107. La page continue la vue 107.}
+
+\marginal{$\underline{\text{bis}}$}
+et $A$ est latus unum hic maius illic minus
+
+In serie vero quatuor continue proportionalium $B$ \add{bis} est differentia illarum omnium alterne sumptarum $Z$ plano-plano quod fit ab utraque extremarum in cubum differentiæ reliquarum alterne sumptarum et fit $E$ plano sive $D$ plano differentia sub quadrupla inter quadratum differentiæ omnium alterne sumptarum et quadratum differentiæ extremarum multatæ triplo differentiæ mediarum.
+\note{« bis » est écrit au-dessus de « B » et répété, souligné, dans la marge de gauche.}
+\[ \text{unde } \left.\begin{array}{l} LV.\ B\ \text{quad. } \boxed{4}. \\ -\,D\ \text{plano } \boxed{4}. \end{array}\right\}\ \text{est differentia extremarum} \]
+\marginal{\struck{$LV\ Bq \ldots -\,Dp\,4$}}
+\note{Les deux « 4 » sont encadrés d'un trait. Dans la marge de gauche, en regard, une formule lourdement biffée dont on distingue la fin « $-$ Dp 4 ».}
+minus triplo differentiæ mediarum et tum prima intelligitur minor inter extremas illic fit $A$ differentia binarum primarum alterne sumptarum hic binarum postremarum.
+
+sunt proportionales continuæ. 1. 2. 4. 8.
+\marginal{$+$}
+\[ 1\,QQ - 5\,C \text{ æquatur } 216. \]
+\[ \text{Igitur } 1\,Q + 3\,N \text{ æquabitur } 18 \text{ et fit } 1\,N\ 3. \]
+\note{Le signe « $-$ » de « $-$ 5 C » est souligné, et la marge porte « + » entre deux traits : correction de l'auteur. Avec « + », l'exemple est juste : $81 + 135 = 216$.}
+\[ \text{et si } 1\,QQ - 5\,C \text{ æquat. } 216. \]
+\[ \text{Igitur } 1\,Q - 3\,N \text{ æquabit. } 18. \text{ et fit } 1\,N\ \overline{6}. \]
+
+\marginal{5400.}
+$*$ Nota est autem 3. quoniam $1\,C + 864\,N$. æquatur $\underline{540}$ et fit $1\,N\ 6$. differentia sub quadrupla inter quadratum a dato latere 5. et quadratum abs 1. unde dignoscitur ipsa longitudo quæ adiecta longitudini 5 facit 6. duplum ipsius 3.
+\note{« 540 » est souligné et la marge porte « 5400. » : correction de l'auteur ; $6^3 + 864 \cdot 6 = 5400$. Dans « 864 N », le N est surchargé. Plus bas dans la marge, « /5/ » entre deux traits obliques.}
+
+\subsection*{Theorema III}
+
+\[ \text{Si } \left.\begin{array}{l} B \text{ in } A\ \text{cubum bis} \\ -\,A\ \text{quad.-quad.} \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano } \text{in } B\ \text{quad. } 4. \]
+\note{« in B quad. 4 », après « Z plano-plano », est cerné d'un trait, avec au-dessus un signe pareil à celui de la marge plus bas (« + Dq ») ; le « 4 » est surchargé. Le cerne marque sans doute une suppression.}
+\marginal{\struck{$Zpp \text{ in } Bq\,4.$} $\left.\begin{array}{l} -\,E\ \text{plani cubus} \\ +\,\struck{Z\ \text{plano-plano in } E\ \text{plan.}} \end{array}\right.$ æquetur $Zpp \text{ in } B\,q\,4$. Investigat autem $E$ plano esse $D$ plano.}
+\note{Note de la marge de gauche, écrite en regard de l'énoncé : l'équation en $E$ manque dans le texte. La première ligne est barrée, et une partie de la troisième ; le « $-$ » initial est repassé.}
+\[ \left.\begin{array}{l} B \text{ in } A \\ +\,\left.\begin{array}{l} LV.\ B\ \text{quad.} \\ +\,D\ \text{plano} \end{array}\right\} \overline{A} \\ -\,A\ \text{quad.} \end{array}\right\}\ \text{æquabitur } \begin{array}{l} \dfrac{D\ \text{plano in } B}{\begin{array}{l} LV\ B\ \text{quad. } 4. \\ +\,D\ \text{plano } 4. \end{array}} \\ \struck{\ill{}}\ +\,D\ \text{plano } \frac{1}{2}. \end{array} \]
+\note{La lettre qui suit l'accolade de la racine est surchargée ; dans la marge, deux traits horizontaux. Devant « + D plano ½ », un signe biffé.}
+
+\marginal{$+\,Dq$}
+Constitutione autem æqualitatis bene agnita sunt duo latera a quibus differentia quadrato-quadratorum applicata differentiæ cuborum facit $B$ bis. differentia vero inter quadratum aggregati laterum multati $B$ \add{+} \struck{quadrato} et ipsum $B$ quadratum relinquit $D$ planum
+\note{« quadrato » est encadré d'un trait (supprimé), un « + » est écrit au-dessus, et la marge porte « + Dq » entre deux traits : correction de l'auteur, dont la place exacte dans la phrase n'est pas sûre.}
+
+\struck{et est $A$ latus maius minusve.}
+\marginal{et fit $Z$ plano-plano ex applicatione cubi a $D$ pl. ad aggregatum \add{quadruplum} quadratorum a $\begin{array}{l} Bq \\ +\,Dq \end{array}$.}
+\note{La ligne « et est A latus maius minusve » est barrée d'un trait ; la note marginale, soulignée et reliée par un trait, en prend la place. « quadruplum » est ajouté au-dessus de la ligne.}
+
+In serie quatuor continue proportionalium $B$ \add{bis} est composita ex illis omnibus
+\note{Cette ligne et la suivante sont barrées d'un trait léger, qui paraît les supprimer. Le reste du petit feuillet est blanc.}
+
+\page{109}
+\note{Verso du petit feuillet « 50 », vu seul ; en haut à gauche, le « 50 » du recto par transparence, à l'envers. Le haut de la vue montre le carton de fond ; à droite, le bord d'un autre feuillet avec un astérisque isolé. La page continue la vue 108, qui s'arrêtait sur « In serie quatuor continue proportionalium B bis est composita ex illis omnibus ».}
+
+$Z$ plano-plano quod fit ab utraque extremarum in cubum compositæ ex tribus reliquis
+
+et fit $E$ plano sive $D$ plano differentia sub quadrupla inter quadratum aggregati extremarum adiuncti triplo aggregato mediarum et quadratum aggregati omnium.
+\[ \text{unde } \left.\begin{array}{l} LV.\ B\ \text{quad. } 4 \\ +\,D\ \text{plano } 4 \end{array}\right\}\ \text{est aggregatum extremarum plus triplo} \]
+\marginal{$\underline{Q\ I}$}
+aggregati mediarum et fit $A$ \uncertain{sive} $E$ composita ex tribus primis sive ex tribus postremis
+\note{« A sive E » : les deux mots après « fit » sont soulignés ou barrés d'un même trait, et la marge porte en regard un signe fait d'un « Q » (ou « G ») barré et d'un « I », souligné ; on ne sait s'il corrige ou renvoie.}
+
+sunt proportionales continuæ $\overset{\text{I}}{1}$. $\overset{\text{II}}{2}$. $\overset{\text{III}}{4}$. $\overset{\text{IIII}}{8}$.
+\[ 15\,C - 1\,QQ \text{ æquatur } 2744. \]
+\marginal{$\times$ $21\,N - 1\,Q$ (et fit $1\,N\ 7$ vel 14)}
+\[ \text{Igitur } 21\,N\ \times\ \text{æquabitur } 98 \]
+\note{Le texte porte « Igitur 21 N » souligné, puis une croix, puis « æquabitur 98 » ; la marge de gauche, avec la même croix, donne le premier membre complet, « 21 N $-$ 1 Q », et, cerclé, « et fit 1 N 7 vel 14 ». Les valeurs sont justes : $15 \cdot 343 - 2401 = 2744$, $21 \cdot 7 - 49 = 98$ et $21 \cdot 14 - 196 = 98$.}
+
+\marginal{$\begin{array}{l} 10{,}976\,N \\ -\,\struck{\ill{}}\,N \text{ æquat.} \\ 617{,}400. \end{array}$}
+Nota est autem 21 quoniam $1\,C$ \struck{$-$ \ill{}} $*$
+\note{Après « 1 C », un mot barré, précédé d'un trait ; l'astérisque, plus loin sur la ligne, renvoie à la marge, où l'équation est donnée : $1\,C - 10\,976\,N$ æquat. $617\,400$ ; le nombre barré de la deuxième ligne de la marge paraît être une première écriture de 10976. Les valeurs sont justes : $4 \cdot 2744 = 10\,976$, et $126^3 - 10\,976 \cdot 126 = 617\,400$.}
+
+\marginal{$* 729$}
+et fit $1\,N$ $\underline{126}$. differentia sub quadrupla inter 225. et $\underline{725}$. unde dignoscitur $L.\,729$ id est longitudo 27 quæ adiecta longitudini 15 facit 42 duplum ipsius 21.
+\note{Au-dessus de « 126 », un nombre récrit ; « 725 » est souligné, et la marge porte « 729 » avec un astérisque, au-dessus d'un nombre biffé : correction de l'auteur ($729 - 225 = 504 = 4 \cdot 126$).}
+
+\subsection*{Problema III.}
+
+Æqualitatem quadrato-quadrati adfecti tum sub latere quam quadrato per medium cubicæ radicem habentis planam ad quadraticam deprimere
+\[ \text{Proponatur } \left.\begin{array}{l} A\ \text{quadrato-quadrat.} \\ +\,G\ \text{plano in } A\ \text{quad. bis} \\ +\,B\ \text{solido in } A. \end{array}\right\}\ \text{æquari } Z\ \text{plano-plano} \]
+oportet facere quod imperatum est
+
+Sane si quadratum effingatur abs
+\[ \begin{array}{l} A\ \text{quadrato} \\ +\,G\ \text{plano} \\ +\,E\ \text{quadrato } \frac{1}{2} \end{array} \quad \text{erit illud} \quad \begin{array}{l} A\ \text{quad.quad.} \\ =\,G\ \text{plano-plano} \\ +\,\underline{G \text{ in } A\ \text{quad. bis}} \\ -\,E\ \text{quad.quad. } \underline{4}. \\ +\,E\ \text{quad. in } A\ \text{quad.} \\ +\,G\ \text{plano in } E\ \text{quad.} \end{array} \]
+\marginal{$\begin{array}{c} + \\ G\ \text{plano in } Aq\ \text{bis} \\ \pm \\ \frac{1}{4} \end{array}$}
+\note{Les signes des deuxième, troisième et quatrième termes sont doublés de traits horizontaux, et la marge de gauche donne, chacun entre deux traits, les corrections de l'auteur : « + » pour le deuxième, « G plano in Aq bis » pour le troisième, « ± » et « ¼ » pour le quatrième. Corrigé, le carré est juste.}
+
+quoniam igitur ex iis quæ proposita sunt \uncertain{adhibita methodo}
+\[ \left.\begin{array}{l} A\ \text{quad.quad.} \\ +\,G\ \text{plano in } A\ \text{quad. bis} \end{array}\right\}\ \text{æquabitur } \begin{array}{l} Z\ \text{plano-plano.} \\ -\,B\ \text{solido in } A. \end{array} \]
+\marginal{utrique igitur æquationis parti addatur id quod deficit ab effecto a statuto radice plana quadrato}
+\note{Note de la marge de gauche, soulignée, en regard de la ligne suivante.}
+ergo hac æqualium æqualibus additione rursum pars parti erit æqualis
+
+Tam utraque pars dividitur subquadratice, illic reducta ad analysin \ill{} \uncertain{oritur} manifesto.
+\[ \begin{array}{l} A\ \text{quadratum} \\ +\,G\ \text{plano} \\ +\,E\ \text{quadrato } \frac{1}{2}. \end{array} \]
+\note{Le reste de la page est blanc. Le mot illisible après « analysin » est celui de la même formule à la vue 105.}
+
+\page{110}
+\note{Le grand feuillet numéroté « 51 » à l'encre en haut à droite, vu en entier ; ses trois premières lignes étaient visibles aux vues 106 et 108. Au pied, la bande d'un feuillet plus grand placé dessous, avec des traces pâles. La page continue le problème III de la vue 109.}
+
+\marginal{ex}
+quod si altera quoque æqualitatis pars posset dividi subquadratice quod oriretur foret radicibus illis planis \struck{et} prima parte ortis æquale
+\note{« et » est souligné et la marge porte « ex », souligné : correction de l'auteur.}
+
+Effingendum est igitur quadratum a radice plana. et illud alteri æqualitatis parti id est $Z$ plano-plano una cum suis adfectionibus comparandum et adæquandum ut radices quoque comparentur et adæquentur inter se et statuetur idcirco radix illa plana effingendi quadrati
+\[ \begin{array}{l} \dfrac{B\ \text{solido}}{E\ \text{bis}} \\ -\,E \text{ in } A. \end{array} \]
+\marginal{$\times$ et reducetur in æqualitatem de $E$,}
+Sic enim in comparatione evanescent adfectiones sub $A$ \struck{et quadrato} gradibus $\times$ quo tendendum est.
+\note{« et quadrato » paraît barré d'un trait ; la croix renvoie à la note marginale, écrite en regard.}
+
+Effectum igitur quadratum erit
+\[ \left.\begin{array}{l} E\ \text{quad. in } A\ \text{quad.} \\ \dfrac{B\ \text{solido-solidum}}{E\ \text{quad. } 4.} \\ -\,B\ \text{solido in } A \end{array}\right\}\ \text{æquale } \begin{array}{l} Z\ \text{plano-plano} \\ \pm\,B\ \text{solido in } A \\ =\,G\ \text{plano-plano} \\ =\,E\ \text{quad.quad. } \underline{4}. \\ =\,E\ \text{quad. in } A\ \text{quad.} \\ =\,G\ \text{plano in } E\ \text{quad.} \end{array} \]
+\marginal{$\begin{array}{cc} \frac{1}{4} & + \\ & + \\ & + \\ & + \end{array}$}
+\note{Les signes du second membre sont récrits ou doublés de traits (« ± », « = »), et la marge de gauche porte une colonne de quatre « + », chacun entre deux traits, avec « ¼ » : corrections de l'auteur, qui donnent le carré de $A^2 + G + \frac{E^2}{2}$ augmenté de $Z - BA$. « ¼ » est aussi écrit dans la marge de droite, en regard de « E quad.quad. 4 », souligné.}
+
+Et deletis utrinque adfectionibus sub $A$ et $A$ quadrato
+\[ \dfrac{B\ \text{solido-solidum}}{E\ \text{quad. } 4}\ \text{æquabitur } \begin{array}{l} Z\ \text{plano-plano} \\ \struck{\pm}\,E\ \text{quad.quad. } \frac{1}{4} \\ -\,G\ \text{plano in } E\ \text{quad.} \end{array} \]
+\marginal{$+\,\underline{Gpp.}$ \quad $\mp$ \quad $\pm$}
+\note{La marge ajoute « + Gpp. », omis dans le second membre, et corrige les signes des deux derniers termes.}
+
+Et omnibus in $E$ quadratum 4 ductis et rite ordinatis
+\[ \left.\begin{array}{l} E\ \text{quadrati cubus} \\ +\,G\ \text{plano } 4 \text{ in } E\ \text{quadrato-quadrat.} \\ +\,\left.\begin{array}{l} Z\ \text{plano-plano } 4 \\ =\,G\ \text{plano-plano } 4 \end{array}\right\} \text{in } E\ \text{quadrat.} \end{array}\right\}\ \text{æquabitur } B\ \text{solido-solido} \]
+\marginal{$+$}
+\note{Devant « G plano-plano 4 », un signe récrit ; la marge porte « + » entre deux traits.}
+
+\marginal{$\underline{Q/}$}
+Investigat autem $E$ esse $D$.
+\[ \text{Ergo } \left.\begin{array}{l} A\ \text{quad.} \\ +\,G\ \text{plano} \\ =\,D\ \text{quadrato } \frac{1}{2} \end{array}\right\}\ \text{æquabitur } \begin{array}{l} \overline{G\ \text{plano}} \\ \pm\,\dfrac{B\ \text{solido}}{D\ \text{bis}} \\ -\,\underline{D\ \text{quad. } \frac{1}{2}} \end{array} \]
+\marginal{$\pm$ \quad $\underline{D \text{ in } A}$}
+\note{Dans la marge de gauche, le même signe « Q » barré qu'aux vues 105 et 109, puis « ± » et, encadré, « D in A » en regard de la troisième ligne du premier membre ; dans le second membre, « G plano » est surligné et « D quad. ½ » souligné. Ces marques corrigent l'équation sans que la forme finale voulue se lise avec certitude.}
+
+Et si proponatur
+\[ \left.\begin{array}{l} A\ \text{quad.quad.} \\ +\,G\ \text{plano in } A\ \text{quad. bis} \\ -\,B\ \text{solido in } A \end{array}\right\}\ \text{æquari } Z\ \text{plano-plano} \]
+radix effingendi quadrati statuetur
+\[ * \left.\begin{array}{l} \dfrac{B\ \text{solidum}}{E\ \text{bis}} \\ =\,B \text{ in } A \end{array}\right\}\ \text{comparanda } \begin{array}{l} A\ \text{quadrato} \\ =\,G\ \text{plano} \\ +\,E\ \text{quadrato } \frac{1}{2} \end{array} \]
+\marginal{$+$ \quad $\underline{+\,E}$}
+\note{La marge corrige les signes : « + » en regard de la ligne du numérateur, et « + E » souligné en regard de « = B in A » ; la racine doit être $\frac{B}{2E} + E A$.}
+
+$*$ Facta metamorphosi hæc erit æquatio
+\[ \begin{array}{l} Eqqq \\ +\,Gp \text{ in } Eqq\,4 \\ +\,Gpp \text{ in } Eq\,4 \\ +\,Zpp \text{ in } Eq\,4 \end{array} \;\Big|\; BSS. \]
+\note{Cette dernière ligne commence dans la marge, sous un trait horizontal qui traverse la page ; entre les deux membres, un simple trait vertical. Le reste du feuillet est blanc.}
+
+\page{111}
+\note{Verso du feuillet « 51 » : en haut à gauche, le « 51 » du recto par transparence, à l'envers, et toute la page est traversée des lignes du recto vues à l'envers. Au pied, sous le bord du feuillet, reparaissent les deux dernières lignes de la page de la vue 109 (« … oritur manifesto. A quadratum + G plano + E quadrato ½ », avec la fin de la note marginale « plana quadrato ») : elles ne sont pas répétées. Le long du bord droit, une bande de la marge gauche d'un autre feuillet (« LV. Ep. $-$ G… », « + BS », « facto æquali… », « Eppp », « + Gp in E… ») : elle est transcrite avec sa page, à la vue 112. La page continue le problème III de la vue 110.}
+
+\marginal{incidetur autem in æquationem hanc. $BSS. \left|\begin{array}{l} Eqqq. \\ +\,Zpp \text{ in } Eq\,4 \\ +\,Gpp \text{ in } Eq\,4. \\ -\,Gp \text{ in } Eqq\,4. \end{array}\right.$}
+\note{Note de la marge supérieure gauche, soulignée ; les termes sont serrés et repassés, et le premier après $Eqqq$ se lit aussi « Gpp ».}
+
+Et si proponatur
+\[ \left.\begin{array}{l} A\ \text{quad.quad.} \\ -\,G\ \text{plano in } A\ \text{quad. bis} \\ -\,B\ \text{solido in } A. \end{array}\right\}\ \text{æquari } Z\ \text{plano-plano.} \]
+radix plana effingendi quadrati statuetur
+\[ \left.\begin{array}{l} \dfrac{B\ \text{solidum}}{E\ \text{bis}} \\ +\,E \text{ in } A \end{array}\right\}\ \text{comparanda } \begin{array}{l} A\ \text{quadrato} \\ -\,G\ \text{plano} \\ +\,E\ \text{quadrato } \frac{1}{2} \end{array} \]
+
+Et si proponatur
+\[ \left.\begin{array}{l} G\ \text{plano in } A\ \text{quad. bis} \\ +\,B\ \text{solido in } A \\ -\,A\ \text{quad.quad.} \end{array}\right\}\ \text{æquari } Z\ \text{plano-plano} \]
+\marginal{Inversis adfectionum notis æquatio sic constabit $\begin{array}{l} Aqq \\ -\,Gp \text{ in } Aq\,2 \end{array} \left|\begin{array}{l} Bs \text{ in } A. \\ -\,Zpp. \end{array}\right.$ Et post metamorphosin $\begin{array}{l} Eqqq \\ +\,Gpp \text{ in } Eq\,4. \\ -\,Gp \text{ in } Eqq\,4. \\ -\,Zpp \text{ in } Eq\,4 \end{array} \Big|\ BSS.$ Eadem hic erit metamorphoseos æquatio \add{\uncertain{proxima}} quæ supra.}
+Inversis adfectionum notis radix plana effingendi quadrati statuetur quoque
+\[ \left.\begin{array}{l} \dfrac{B\ \text{solidum}}{E\ \text{bis}} \\ +\,E \text{ in } A \end{array}\right\}\ \text{comparanda } \begin{array}{l} A\ \text{quadrato} \\ -\,G\ \text{plano} \\ +\,E\ \text{quadrato } \frac{1}{2} \end{array} \]
+
+Et si proponatur
+\[ \left.\begin{array}{l} G\ \text{plano in } A\ \text{quad. bis} \\ -\,B\ \text{solido in } A \\ -\,A\ \text{quad.quad.} \end{array}\right\}\ \text{æquari } Z\ \text{plano-plano} \]
+Inversis adfectionum notis radix plana effingendi quadrati statuetur
+\[ \begin{array}{l} E \text{ in } A \\ *\ =\,\dfrac{B\ \text{solido}}{E\ \text{bis}} \end{array}\ \text{comparanda } \begin{array}{l} A\ \text{quadrato} \\ -\,G\ \text{plano} \\ \struck{\ill{}}\ E\ \text{quad. } \frac{1}{2} \end{array} \]
+\note{Devant « B solido », un astérisque et un signe doublé de traits, repris dans la marge (astérisque, traits, signe biffé) ; le signe devant « E quad. ½ » est lourdement surchargé. Dans « E bis », le « b » est repassé.}
+
+Et si proponatur denique
+\[ \left.\begin{array}{l} B\ \text{solidum in } A \\ -\,G\ \text{plano in } A\ \text{quad. } 2 \\ -\,A\ \text{quad.quad.} \end{array}\right\}\ \text{æquari } Z\ \text{plano-plano} \]
+\marginal{æquatio post metamorphosin hisce terminis constabit $BSS \left|\begin{array}{l} Gpp \text{ in } Eq\,4 \\ +\,Gp \text{ in } Eqq\,4 \\ +\,Eqqq. \\ -\,Zpp \text{ in } Eq\,4 \end{array}\right.$}
+Inversis adfectionum notis radix plana effingendi quadrati statuetur
+\[ \begin{array}{l} E \text{ in } A \\ +\,\dfrac{B\ \text{solido}}{E\ \text{bis}} \end{array}\ \text{comparanda } \begin{array}{l} A\ \text{quadrato} \\ +\,G\ \text{plano} \\ +\,E\ \text{quadrato } \frac{1}{2} \end{array} \]
+Fit itaque \uncertain{omni rite} reductio quæ imperata est.
+\note{Dans les trois notes marginales de cette page, les deux membres des équations sont séparés par un simple trait vertical, qui tient lieu du signe d'égalité.}
+
+\subsection*{Aliter}
+
+Æqualitatem quadrato-quadrati adfecti tam sub latere quam quadrato per medio cubicæ radicem habentis planam ad quadraticam reducere
+\marginal{$\underline{\text{II}}$}
+\[ \text{Proponatur } \left.\begin{array}{l} A\ \text{quad.quad.} \\ +\,G\ \text{plano in } A\ \text{quad.} \\ +\,B\ \text{solido in } A \end{array}\right\}\ \text{æquari } Z\ \text{pla-plano.} \]
+oportet facere quod imperatum est
+\note{Dans la marge de gauche, en regard de « Proponatur », un signe souligné, « II » ou un « E » couché. Le reste du feuillet est blanc ; la suite est sur une autre page.}
+
+\page{112}
+\note{Feuillet numéroté « 52 » à l'encre en haut à droite. Au pied, la bande d'un feuillet plus grand placé dessous, avec des traces pâles. La page continue la démonstration « Aliter » commencée au bas de la vue 111.}
+
+quoniam per ea quæ proponuntur facta metathesi
+\[ A\ \text{quad.quad. æquatur } \begin{array}{l} Z\ \text{plano-plano} \\ -\,G\ \text{plano in } A\ \text{quad.} \\ -\,B\ \text{solido in } A. \end{array} \]
+\marginal{$\mp$}
+\[ \text{Utrobique addatur } \begin{array}{l} E\ \text{plano in } A\ \text{quadrat.} \\ =\,E\ \text{plano-plano } \frac{1}{4} \end{array} \]
+\note{Le signe du second terme est doublé d'un trait, et la marge porte « $\mp$ » entre deux traits.}
+pars igitur parti rursus adæquabitur
+
+Et ab illa quidem una dividitur subquadratice oritur
+\[ \begin{array}{l} A\ \text{quadratum} \\ +\,E\ \text{plano } \frac{1}{2} \end{array} \]
+dividatur igitur quoque altera subquadratice et idcirco effingatur quadratum abs commoda radice et illud comparetur et adæquetur alteri illi parti ut posito statuitoque radix
+\[ \begin{array}{l} \dfrac{B\ \text{solidum}}{\begin{array}{l} LV.\ E\ \text{plano } 4 \\ -\,G\ \text{plano } 4 \end{array}} \\[2ex] =\,\left.\begin{array}{l} LV\ E\ \text{plano} \\ =\,G\ \text{plano} \end{array}\right\} \text{in } \overline{A} \end{array} \]
+\marginal{$\underline{Aq.}$ \quad $=$}
+\note{« A » est surligné et la marge porte « Aq. », souligné, comme aux vues 105 à 107 ; les signes de la racine sont doublés de traits, et la marge porte en regard deux traits superposés.}
+
+\marginal{$\underline{Q/}$}
+\[ \text{Igitur } \left.\begin{array}{l} \dfrac{B\ \text{solido-solidum}}{\begin{array}{l} \struck{LV}\ E\ \text{plano } 4 \\ -\,G\ \text{plano } 4 \end{array}} \\ +\,E\ \text{plano in } A\ \text{quad.} \\ \pm\,G\ \text{plano in } A\ \text{quad.} \\ -\,B\ \text{solido in } A \end{array}\right\}\ \text{æquabitur } \left\{\begin{array}{l} Z\ \text{plano-plano} \\ -\,G\ \text{plano in } A\ \text{quad.} \\ -\,B\ \text{solido in } A. \\ +\,E\ \text{plano in } A\ \text{quad.} \\ +\,E\ \text{plano-plano } \frac{1}{4} \end{array}\right. \]
+\note{Dans la marge, le signe « Q » barré déjà vu aux vues 105, 109 et 110, entre deux traits.}
+
+\[ \text{Itaque } \left.\begin{array}{l} E\ \text{plani cubus} \\ -\,G\ \text{plano in } E\ \text{plani quad.} \\ +\,Z\ \text{plano-plano } 4 \text{ in } E\ \text{plano} \end{array}\right\}\ \text{æquabit. } \left\{\begin{array}{l} B\ \text{solido-solido} \\ +\,Z\ \text{plano-plano in } G\ \text{plano } 4 \end{array}\right. \]
+
+$E$ planum autem investigat esse \uncertain{F} planum.
+\note{Dans la formule suivante, les « E » sont surlignés, ce qui s'accorde avec le changement de lettre annoncé.}
+\[ \text{Igitur } \left.\begin{array}{l} \dfrac{B\ \text{solidum}}{\begin{array}{l} LV\ \overline{E}\ \text{plani } 4 \\ -\,G\ \text{plano } 4. \end{array}} \\[2ex] -\,\left.\begin{array}{l} LV\ \overline{E}\ \text{plano} \\ -\,G\ \text{plano} \end{array}\right\} \text{in } \underline{A}. \end{array}\right\}\ \text{æquabitur } \left\{\begin{array}{l} A\ \text{quadrato} \\ +\,\overline{E}\ \text{plano } \frac{1}{2} \end{array}\right. \]
+\marginal{$\mp$ \quad $\mp$ \quad $\mp$ \quad $\underline{Aq}$}
+\note{Dans la marge, trois signes « $\mp$ » entre des traits, en regard des signes de la racine, et « Aq » souligné en regard de « in A ».}
+
+\[ \text{Et si proponatur } \left.\begin{array}{l} A\ \text{quad.quad.} \\ +\,G\ \text{plano in } A\ \text{quad.} \\ -\,B\ \text{solido in } A \end{array}\right\}\ \text{æquari } Z\ \text{plano-plano.} \]
+radix plana effingendi quadrati statuetur
+\[ \left.\begin{array}{l} \left.\begin{array}{l} LV\ E\ \text{plani} \\ +\,G\ \text{plano} \end{array}\right\} \text{in } \underline{A} \\[2ex] -\,\dfrac{B\ \text{solido}}{\begin{array}{l} LV\ E\ \text{plani } 4 \\ +\,G\ \text{plano } 4 \end{array}} \end{array}\right\}\ \text{comparanda } \left\{\begin{array}{l} E\ \text{plano } \frac{1}{2} \\ \pm\,A\ \text{quadrato.} \end{array}\right. \]
+
+\marginal{$\left.\begin{array}{l} \left.\begin{array}{l} LV.\ Ep \\ -\,G \end{array}\right\} \text{in } A \\ +\,\dfrac{BS}{\begin{array}{l} LV.\ Ep\,4 \\ -\,Gp\,4 \end{array}} \end{array}\right.$}
+\marginal{facto metamorphosi æquatio sic se habebit $\begin{array}{l} Eppp \\ +\,Zpp \text{ in } Ep\,4. \\ +\,Gp \text{ in } Epp. \end{array} \left|\begin{array}{l} BSS. \\ -\,Zpp \text{ in } Gp\,4. \end{array}\right.$}
+\note{Deux notes au pied de la marge de gauche. La première, cernée de traits en forme d'accolade et accompagnée de deux signes en « γ », donne une racine récrite ; devant elle et au-dessous, « Aq » souligné, « q » et un « $\mp$ » entre deux traits. La seconde, soulignée, donne l'équation en $E$ ; ses deux membres sont séparés par un trait vertical. Le reste de la page est blanc.}
+
+\page{113}
+\note{Verso du feuillet « 52 » ; en haut à gauche, le « 52 » du recto par transparence, à l'envers. Au pied, sous le bord du feuillet, reparaissent de nouveau les dernières lignes de la page de la vue 109 (« Tam utraque pars dividitur subquadratice … A quadratum + G plano + E quadrato ½ », et la fin de la note marginale « a statuto radice plana quadrato ») : elles ne sont pas répétées. La page continue la vue 112.}
+
+Et si proponatur denique
+\[ \left.\begin{array}{l} B\ \text{solidum in } A \\ -\,G\ \text{plano in } A\ \text{quad.} \\ -\,A\ \text{quad.quad.} \end{array}\right\}\ \text{æquari } Z\ \text{plano-plano} \]
+radix plana effingendi quadrati statuetur
+\[ \left.\begin{array}{l} \left.\begin{array}{l} LV.\ E\ \text{plani} \\ -\,G\ \text{plano} \end{array}\right\} \text{in } \underline{A} \\[2ex] +\,\dfrac{B\ \text{solido}}{\begin{array}{l} LV.\ E\ \text{plani } \struck{\text{in } A}\ 4 \\ \ill{}\,G\ \text{plano } 4 \end{array}} \end{array}\right\}\ \text{comparanda } \left\{\begin{array}{l} E\ \text{plano } \frac{1}{2} \\ +\,A\ \text{quadrato.} \end{array}\right. \]
+\marginal{$\underline{Aq}$}
+\note{« A » est souligné et la marge porte « Aq » entre deux traits. Au dénominateur, « in A » est biffé avant « 4 », et le signe de la seconde ligne est corrigé par surcharge.}
+
+\marginal{Facta metamorphosi talis erit æquatio $\begin{array}{l} Eppp \\ -\,Zpp \text{ in } Ep\,4 \\ -\,Gp \text{ in } Epp \end{array} \left|\begin{array}{l} BSS \\ +\,Zpp \text{ in } Gp\,4. \end{array}\right.$}
+Fit itaque \uncertain{omni rite} reductio quæ imperata est
+
+Ac secundum priorem quidem formulam ordinata sunt theoremata hæc
+
+\subsection*{Theorema I. secundum priorem formulam.}
+
+\[ \text{Si } \left.\begin{array}{l} A\ \text{quadrato-quadratum} \\ +\,G\ \text{plano bis in } A\ \text{quad.} \\ +\,B\ \text{solido in } A. \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano} \]
+\[ \left.\begin{array}{l} E\ \text{quadrati cubus.} \\ +\,G\ \text{plano quat. in } E\ \text{quadrati-quadrat.} \\ +\,\left.\begin{array}{l} Z\ \text{plano-plano } 4 \\ =\,G\ \text{plano-plano } 4 \end{array}\right\} \text{in } E\ \text{quadratum} \end{array}\right\}\ \text{æquet. } B\ \text{solido-solid}\underline{\text{um}} \]
+\marginal{solido-solido. \quad $+$}
+\note{La fin de « solido-solidum » est soulignée et la marge porte « solido-solido. » : correction de l'auteur. Le signe devant « G plano-plano 4 » est doublé de traits et la marge porte « + ».}
+Investigat autem $E$ esse $D$.
+\[ \left.\begin{array}{l} A\ \text{quad.} \\ +\,D \text{ in } A \end{array}\right\}\ \text{æquabitur } \begin{array}{l} \dfrac{B\ \text{solido}}{D\ \text{bis}} \\ =\,D\ \text{quadrato } \frac{1}{2} \\ -\,G\ \text{plano.} \end{array} \]
+\marginal{$+$}
+\note{Un « + » dans la marge, à hauteur de « + D in A » ; le signe de « D quadrato ½ » est doublé de traits. L'exemple qui suit demande $-\frac{D^2}{2}$.}
+
+\[ 1\,QQ + 6\,Q + 880\,N \text{ æquatur } 1800 \text{ fit } 1\,N\ 2 \]
+\[ 1\,C + 12\,Q + 7236\,N \text{ æquatur } 774400 \text{ fit } 1\,N\ 64 \text{ quadratum a radice } 8. \]
+\[ 1\,Q + 8\,N \text{ æquabitur } 20. \text{ fit } 1\,N\ 2. \]
+\note{Les nombres sont justes : $16 + 24 + 1760 = 1800$ ; avec $G = 3$, $Z = 1800$, $B = 880$, l'équation en $E$ corrigée donne $12$ et $4 \cdot 1800 + 4 \cdot 9 = 7236$, $880^2 = 774\,400$, et $64^3 + 12 \cdot 64^2 + 7236 \cdot 64 = 774\,400$ ; enfin $\frac{880}{16} - 32 - 3 = 20$. Une parenthèse isolée dans la marge de gauche.}
+
+\subsection*{Theorema II.}
+
+\[ \text{Si } \left.\begin{array}{l} A\ \text{quad.quad.} \\ +\,G\ \text{plano } \struck{\text{bis}} \text{ in } A\ \text{quad. bis} \\ -\,B\ \text{solido in } A. \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano} \]
+\[ \left.\begin{array}{l} E\ \text{quadrati cubus} \\ +\,G\ \text{plano } 4 \text{ in } E\ \text{quadrati-quadrat.} \\ +\,\left.\begin{array}{l} Z\ \text{plano-plano } 4 \\ =\,G\ \text{plano-plano } 4 \end{array}\right\} \text{in } E\ \text{quadrato} \end{array}\right\}\ \text{æquatur } B\ \text{solido-solidum.} \]
+\marginal{$+$}
+Et $E$ investigat esse $D$
+\[ \left.\begin{array}{l} A\ \text{quad.} \\ -\,D \text{ in } A \end{array}\right\}\ \text{æquabitur } \begin{array}{l} \dfrac{B\ \text{solido}}{D\,2} \\ -\,D\ \text{quadrato } \frac{1}{2} \\ -\,G\ \text{plano} \end{array} \]
+\note{Le reste de la page est blanc.}
+
+\page{114}
+\note{Deux feuillets superposés. En haut, sur deux lignes, le haut d'un grand feuillet numéroté « 55 » à l'encre en haut à droite (« Aq. » en marge ; « LV \{F plano + G plano\} in A $-$ A quadrato æquabitur F plano ½ $-$ B solido… ») : il est transcrit à la vue 118, où il est vu en entier. Posé dessus, un feuillet plus petit numéroté « 53 » à l'encre en haut à droite, dont on transcrit la page. Elle commence sur l'exemple numérique du théorème II de la vue 113.}
+
+\marginal{$\underline{10.}$}
+\[ 1\,QQ + 6\,Q - 880\,N \text{ æquabitur } 1800 \text{ fit } 1\,N\ \underline{20}. \]
+\note{« 20 » est souligné et la marge porte « 10. », souligné : correction de l'auteur ($10^4 + 600 - 8800 = 1800$).}
+\marginal{\struck{7296}}
+\[ 1\,C + 12\,Q + \underline{7236}\,N \text{ æquatur } 774400 \text{ fit } 1\,N\ 64 \text{ quadratum abs } 8 \]
+\note{« 7236 » est souligné ; en regard, dans la marge, un nombre biffé qui paraît être 7296.}
+\[ \struck{+}\,1\,Q - 8\,N \text{ æquatur } 20 \text{ fit } 1\,N\ 10 \]
+\note{Devant « 1 Q », un signe surchargé. Au-dessous, dans la marge, un trait horizontal et une petite croix.}
+
+\subsection*{Theorema III}
+
+\[ \text{Si } \left.\begin{array}{l} A\ \text{quad.quad.} \\ -\,G\ \text{plano bis in } A\ \text{quad.} \\ +\,B\ \text{solido in } A \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano} \]
+\marginal{$\underline{4}$ \quad $\pm$}
+\[ \left.\begin{array}{l} E\ \text{quadrati cubus} \\ -\,G\ \text{plano} \times \text{ in } E\ \text{quadrati-quadrat.} \\ +\,\left.\begin{array}{l} Z\ \text{plano-plano } 4 \\ =\,G\ \text{plano-plano } 4 \end{array}\right\} \text{in } E\ \text{quadrat.} \end{array}\right\}\ \text{æquet. } B\ \text{solido-solidum} \]
+\note{Une croix après « G plano » marque la place du « 4 » écrit dans la marge ; le signe de « G plano-plano 4 » est doublé de traits, et la marge porte « $\pm$ » entre deux traits.}
+Et $E$ investigat esse $D$.
+\[ \left.\begin{array}{l} A\ \text{quadratum} \\ +\,D \text{ in } A \end{array}\right\}\ \text{æquabitur } \begin{array}{l} \dfrac{B\ \text{solido}}{D\ \text{bis}} \\ -\,D\ \text{quadrato } \frac{1}{2} \\ +\,G\ \text{plano} \end{array} \]
+
+\marginal{$\underline{1600}$}
+\[ 1\,QQ - 4\,Q + 800\,N \text{ æquatur } \underline{160} \text{ fit } 1\,N\ 2. \]
+\marginal{$\underline{6416.\,N.}$ \quad $\underline{\text{fit } 1\,N.\ 2.}$}
+\[ 1\,C - 8\,Q + \underline{6410}\times \text{æquatur } 640{,}000 \text{ fit } 1\,N\ 64 \text{ quadrat. abs } 8. \]
+\[ 1\,Q + 8\,N \text{ æquatur } 20. \]
+\note{Trois corrections marginales, chacune soulignée : « 1600 » pour « 160 » ; « 6416 N. » pour « 6410 », suivi d'une croix de renvoi ; et « fit 1 N. 2. » qui complète la dernière ligne, laissée en blanc après « 20 ». Corrigé, l'exemple est juste : $16 - 16 + 1600 = 1600$, $4 \cdot 1600 + 4 \cdot 4 = 6416$, $800^2 = 640\,000$, et $\frac{800}{16} - 32 + 2 = 20$.}
+
+\subsection*{Theorema IIII}
+
+\[ \text{Si } \left.\begin{array}{l} A\ \text{quad.quad.} \\ -\,G\ \text{plano bis in } A\ \text{quad.} \\ -\,B\ \text{solido in } A \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano} \]
+\marginal{$\pm$}
+\[ \left.\begin{array}{l} E\ \text{quadrati cubus} \\ -\,G\ \text{plano } 4 \text{ in } E\ \text{quadrati-quadratum} \\ +\,\left.\begin{array}{l} Z\ \text{plano-plano } 4 \\ =\,G\ \text{plano-plano } 4 \end{array}\right\} \text{in } E\ \text{quadratum} \end{array}\right\}\ \text{æquet. } B\ \text{solido-solidum.} \]
+\struck{\uncertain{deerant hæc in exemplari}}
+\note{Ces mots, écrits au-dessus de « æquet. B solido-solidum » et soulignés, sont barrés d'un trait ; la lecture est incertaine, en particulier celle du dernier mot, dont la fin est écrite sous la ligne et soulignée. S'ils se lisent bien ainsi, ils disent que le passage manquait dans un modèle : la note serait celle d'un copiste. Cette transcription ne tranche pas.}
+Et $E$ investigat esse $D$.
+\[ \left.\begin{array}{l} A\ \text{quadratum} \\ -\,D \text{ in } A \end{array}\right\}\ \text{æquabitur } \begin{array}{l} \dfrac{B\ \text{solido}}{D\ \text{bis}} \\ -\,D\ \text{quadrato } \frac{1}{2} \\ +\,G\ \text{plano.} \end{array} \]
+
+\marginal{$\underline{1600.}$}
+\[ 1\,QQ - 4\,Q - 800\,N \text{ æquatur } \underline{160} \text{ fit } 1\,N.\ 10 \]
+\[ 1\,C \mp 8\,Q + 6416\,N. \text{ æquatur } 640{,}000 \text{ fit } 1\,N\ 64 \text{ quadrat. abs } 8 \]
+\[ 1\,Q - 8\,N \text{ æquatur } 20 \text{ fit } 1\,N.\ 10. \]
+\note{« 160 » est de nouveau corrigé en « 1600 » dans la marge ; devant « 8 Q », un signe récrit (« $\mp$ »), avec un trait dans la marge. Corrigé, l'exemple est juste : $10^4 - 400 - 8000 = 1600$ et $100 - 80 = 20$. Le reste du petit feuillet est blanc.}
+
+\page{115}
+\note{Verso du petit feuillet « 53 » ; en haut à gauche, le « 53 » du recto par transparence, à l'envers, et des lignes du recto vues à l'envers. Le haut de la vue montre le carton de fond. Le long du bord droit, la marge gauche d'un autre feuillet (« fit », « X », « fit 1N 2 », « + 7200 », « 81760 »…), qui n'est pas transcrite ici. La page continue la série de théorèmes de la vue 114.}
+
+\subsection*{Theorema V.}
+
+\[ \text{Si } \left.\begin{array}{l} G\ \text{plano bis in } A\ \text{quad.} \\ +\,B\ \text{solido in } A \\ -\,A\ \text{quad.quad.} \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano} \]
+\marginal{$\underline{4}$}
+\[ \left.\begin{array}{l} E\ \text{quadrati cubus} \\ -\,G\ \text{plano} \times \text{ in } E\ \text{quadrati-quadratum} \\ -\,\left.\begin{array}{l} Z\ \text{plano-plano } 4 \\ +\,G\ \text{plano-plano } 4 \end{array}\right\} \text{in } E\ \text{quadrat.} \end{array}\right\}\ \text{æquet. } B\ \text{solido-solidum} \]
+\note{Le « 4 » de la marge se place au trait oblique écrit après « G plano ».}
+Et $E$ investigat esse $D$
+\[ \left.\begin{array}{l} D \text{ in } A \\ -\,A\ \text{quadrato} \end{array}\right\}\ \text{æquabitur } \begin{array}{l} D\ \text{quadrato } \frac{1}{2} \\ -\,G\ \text{plano} \\ -\,\dfrac{B\ \text{solido}}{D\ \text{bis}} \end{array} \]
+\[ 44\,Q + 720\,N - 1\,QQ \text{ æquatur } 1600 \text{ fit } 1\,N.\ 10 \text{ vel } 2. \]
+\[ 1\,C - 88\,Q - 4464\,N \text{ æquatur } 518400 \text{ fit } 1\,N\ 144. \text{ quadratum abs } 12 \]
+\[ 12\,N. - 1\,Q \text{ æquatur } 20 \text{ fit } 1\,N\ 10 \text{ vel } 2. \]
+\note{L'exemple est juste : $4400 + 7200 - 10\,000 = 1600$ et $176 + 1440 - 16 = 1600$ ; avec $G = 22$, $4 \cdot 22^2 - 4 \cdot 1600 = -4464$, $720^2 = 518\,400$ ; et $72 - 22 - 30 = 20$.}
+
+\subsection*{Theorema VI.}
+
+\[ \text{Si } \left.\begin{array}{l} G\ \text{plano bis in } A\ \text{quad.} \\ -\,B\ \text{solido in } A. \\ -\,A\ \text{quadrato-quadrato} \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano} \]
+\marginal{$+$ \quad $-$}
+\[ \left.\begin{array}{l} E\ \text{quadrati cubus} \\ -\,G\ \text{plano } 4 \text{ in } E\ \text{quadrati-quadratum} \\ =\,\left.\begin{array}{l} Z\ \text{plano-plano } 4 \\ \mp\,G\ \text{plano-plano } 4 \end{array}\right\} \text{in } E\ \text{quadrat.} \end{array}\right\}\ \text{æquet. } B\ \text{solido-solidum.} \]
+\note{Les signes des deux termes en $Z$ et en $G^2$ sont récrits, et la marge porte « + » puis « $-$ » en regard.}
+Et $E$ investigat esse $D$
+\[ \left.\begin{array}{l} D \text{ in } A \\ -\,A\ \text{quadrato} \end{array}\right\}\ \text{æquabitur } \left\{\begin{array}{l} D\ \text{quadrato } \frac{1}{2} \\ \mp\,G\ \text{plano} \\ \mp\,\dfrac{B\ \text{solido}}{D\ \text{bis}} \end{array}\right. \]
+\marginal{$=$}
+\marginal{fit $1\,N.\ 2$ vel 10}
+\[ 114\,Q - 120\,N - 1\,QQ \text{ æquatur } 200 \times \]
+\[ 1\,C - 228\,Q + 12196\,N \text{ æquatur } 14400 \text{ fit } 1\,N\ 144 \text{ quadratum abs } 12 \]
+\[ 12\,N - 1\,Q \text{ æquatur } 20 \text{ fit } 1\,N\ 10 \text{ vel } 2. \]
+\note{Les signes des deux derniers termes du second membre sont récrits (« $\mp$ »), avec un signe « = » dans la marge. La fin de la première ligne de l'exemple, laissée en blanc après « 200 » et marquée d'une croix, est donnée dans la marge : « fit 1 N. 2 vel 10 ». Dans la dernière ligne, le « 2 » final est surchargé. L'exemple est juste : $456 - 240 - 16 = 200$, $11\,400 - 1200 - 10\,000 = 200$ ; avec $G = 57$, $4 \cdot 57^2 - 4 \cdot 200 = 12\,196$ ; et $72 - 57 + 5 = 20$.}
+
+\subsection*{Theorema VII}
+
+\[ \text{Si } \left.\begin{array}{l} B\ \text{solidum in } A \\ -\,G\ \text{plano bis in } A\ \text{quad.} \\ -\,A\ \text{quad.quad.} \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano} \]
+\marginal{$\underline{4}$}
+\[ \left.\begin{array}{l} E\ \text{quadrati cubus} \\ +\,G\ \text{plano} \times \text{ in } E\ \text{quadrati-quadrato} \\ -\,\left.\begin{array}{l} Z\ \text{plano-plano } 4 \\ +\,G\ \text{plano-plano } 4 \end{array}\right\} \text{in } E\ \text{quadrat.} \end{array}\right\}\ \text{æquetur } B\ \text{solido-solidum} \]
+Et $E$ investigat esse $D$
+\marginal{$\pm$}
+\[ \left.\begin{array}{l} D \text{ in } A \\ -\,A\ \text{quadrato} \end{array}\right\}\ \text{æquabitur } \begin{array}{l} D\ \text{quadrato } \frac{1}{2} \\ -\,G\ \text{plano} \\ -\,\dfrac{B\ \text{solido}}{D\ \text{bis}}. \end{array} \]
+\note{Le signe de « G plano » est doublé d'un trait et la marge porte « $\pm$ ». Le reste du petit feuillet est blanc ; l'exemple numérique du théorème VII n'est pas sur cette page.}
+
+\page{116}
+\note{Deux feuillets superposés, comme à la vue 114. En haut, les deux premières lignes du grand feuillet « 55 » (transcrit à la vue 118). Posé dessus, un petit feuillet numéroté « 54 » à l'encre en haut à droite, dont on transcrit la page. Elle commence sur l'exemple numérique du théorème VII de la vue 115.}
+
+\marginal{fit $1\,N.\ 10.$ vel 2.}
+\[ 1440\,N - 16\,Q - 1\,QQ \text{ æquatur } 2800 \]
+\[ 1\,C + 32\,Q - 10944\,N. \text{ æquatur } 2{,}073{,}600 \text{ et fit } 1\,N\ 144 \text{ quadratum abs } 12 \]
+\marginal{fit $1\,N.\ 10.$ vel 2}
+\[ 12\,N - 1\,Q \text{ æquatur } 20. \]
+\note{Les deux lignes laissées en blanc après la valeur, marquées d'un trait, sont complétées dans la marge de gauche par « fit 1 N. 10. vel 2. », souligné. L'exemple est juste : $14\,400 - 1600 - 10\,000 = 2800$ et $2880 - 64 - 16 = 2800$ ; $1440^2 = 2\,073\,600$, $4 \cdot 2800 - 4 \cdot 64 = 10\,944$ ; $120 - 100 = 24 - 4 = 20$.}
+
+Ad posteriorem autem formulam pertinent quæ sequuntur.
+
+\subsection*{Theorema I secundum posteriorem formulam.}
+
+\[ \text{Si } \left.\begin{array}{l} A\ \text{quad.quad.} \\ +\,G\ \text{plano in } A\ \text{quad.} \\ +\,B\ \text{solido in } A \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano} \]
+\[ \left.\begin{array}{l} E\ \text{plani cubus} \\ -\,G\ \text{plano in } E\ \text{plani quadrat.} \\ +\,Z\ \text{plano quater in } E\ \text{plano} \end{array}\right\}\ \text{æquet. } \begin{array}{l} B\ \text{solido-solidum} \\ +\,Z\ \text{plano-plano } 4 \text{ in } G\ \text{plano} \end{array} \]
+\note{« Z plano quater » : le mot « plano » n'est écrit qu'une fois ; on attend « Z plano-plano quater ».}
+et investigat $E$ planum esse $F$ planum
+\marginal{$Aq.$}
+\[ \left.\begin{array}{l} A\ \text{quadrat.} \\ +\,LV \left\{\begin{array}{l} F\ \text{plano} \\ -\,G\ \text{plano} \end{array}\right\} \text{in } \underline{A} \end{array}\right\}\ \text{æquabitur } \begin{array}{l} \dfrac{B\ \text{solido}}{LV \left\{\begin{array}{l} F\ \text{plano } 4 \\ -\,G\ \text{plano } 4 \end{array}\right.} \\ -\,F\ \text{plano } \frac{1}{2} \end{array} \]
+\note{« A » est souligné et la marge porte « Aq. », comme aux pages précédentes.}
+
+\marginal{$\times$ fit $1\,N\ 2$. $1\,C - 6\,Q + 7200\,N$ æquatur 817600. fit $1\,N\ 70$}
+\[ 1\,QQ + 6\,Q + 880\,N \text{ æquatur } 1800 \text{ fit } 1\,N \times 70 - 6 \text{ quadratum } \struck{\ill{}} \text{ abs } 8 \]
+\[ 1\,Q + 8\,N \text{ æquabitur } 20 \text{ fit } 1\,N\ 2. \]
+\note{La croix placée après « fit 1 N » renvoie à la note marginale, soulignée, qui insère la valeur 2 et l'équation en $F$. Ainsi rétabli : $16 + 24 + 1760 = 1800$ ; avec $G = 6$, $4 \cdot 1800 = 7200$ et $880^2 + 4 \cdot 1800 \cdot 6 = 817\,600$, $70^3 - 6 \cdot 70^2 + 7200 \cdot 70 = 817\,600$ ; $70 - 6 = 64$, carré de 8 ; $4 + 16 = 20$. Devant « abs 8 », un mot barré d'un trait.}
+
+\subsection*{Theorema II.}
+
+\[ \text{Si } \left.\begin{array}{l} A\ \text{quad.quad.} \\ +\,G\ \text{plano in } A\ \text{quad.} \\ -\,B\ \text{solido in } A \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano} \]
+\[ \left.\begin{array}{l} E\ \text{plani cubus} \\ -\,G\ \text{plano in } E\ \text{plani quadratum} \\ +\,Z\ \text{plano-plano } 4 \text{ in } E\ \text{plano} \end{array}\right\}\ \text{æquet. } \begin{array}{l} B\ \text{solido-solidum} \\ +\,Z\ \text{plano-plano } 4 \text{ in } G\ \text{plano} \end{array} \]
+Et investigat $E$ esse $F$ planum
+\marginal{$\underline{A\,\text{quad}}$}
+\[ \left.\begin{array}{l} A\ \text{quadratum} \\ -\,LV \left\{\begin{array}{l} F\ \text{plano} \\ -\,G\ \text{plano} \end{array}\right\} \text{in } \underline{A} \end{array}\right\}\ \text{æquabitur } \begin{array}{l} \dfrac{B\ \text{solido}}{LV \left\{\begin{array}{l} F\ \text{plano } 4 \\ -\,G\ \text{plano } 4 \end{array}\right.} \\ -\,F\ \text{plano } \frac{1}{2} \end{array} \]
+
+\marginal{880.}
+\[ 1\,QQ + 6\,Q - \overline{800}\,N \text{ æquatur } 1800 \text{ fit } 1\,N\ 10. \]
+\[ 1\,C - 6\,Q + 7200\,N \text{ æquatur } 817600 \text{ fit } 1\,N.\ 70 \]
+\[ 70 - 6 \text{ est quadratum abs } 8 \]
+\marginal{$\underline{10}$}
+\[ 1\,Q - 8\,N. \text{ æquabitur } 20 \text{ fit } 1\,N.\ \overline{20}. \]
+\note{« 800 » est surligné et la marge porte « 880. » ; « 20 » est surligné et la marge porte « 10 », souligné : corrections de l'auteur. Corrigé, l'exemple est juste : $10^4 + 600 - 8800 = 1800$ ; $100 - 80 = 20$. Le reste du petit feuillet est blanc.}
+
+\page{117}
+\note{Verso du petit feuillet « 54 » ; en haut à gauche, le « 54 » du recto par transparence, à l'envers. Le haut de la vue montre le carton de fond ; à droite, le bord d'un autre feuillet, sans écriture lisible. La page continue la série « secundum posteriorem formulam » de la vue 116.}
+
+\subsection*{Theorema III}
+
+\[ \text{Si } \left.\begin{array}{l} A\ \text{quad.quad.} \\ -\,G\ \text{plano in } A\ \text{quad.} \\ +\,B\ \text{solido in } A \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano} \]
+\marginal{$\equiv$}
+\[ \left.\begin{array}{l} E\ \text{plani cubus} \\ +\,G\ \text{plano in } E\ \text{plani quadratum} \\ +\,Z\ \text{plano-plano } 4 \text{ in } E\ \text{plano} \end{array}\right\}\ \text{æquetur } \begin{array}{l} B\ \text{solido-solido} \\ \mp\,Z\ \text{plano-plano } 4 \text{ in } G\ \text{plano} \end{array} \]
+\note{Le signe du dernier terme est récrit et la marge porte un signe « = » triple : l'exemple qui suit demande « $-$ ».}
+et investigat $E$ planum esse $F$ planum
+\marginal{$\underline{Aq.}$ \quad $\underline{4}$}
+\[ \left.\begin{array}{l} A\ \text{quadrat.} \\ +\,LV \left\{\begin{array}{l} F\ \text{plano} \\ +\,G\ \text{plano} \end{array}\right\} \text{in } \underline{A} \end{array}\right\}\ \text{æquatur } \begin{array}{l} \dfrac{B\ \text{solido}}{LV \left\{\begin{array}{l} F\ \text{plano } 4 \\ +\,G\ \text{plano } \underline{\tfrac{1}{2}} \end{array}\right.} \\ -\,F\ \text{plano } \frac{1}{2} \end{array} \]
+\note{« A » est souligné et la marge porte « Aq. » ; le « ½ » de « G plano ½ » au dénominateur est souligné et la marge porte « 4 » : corrections de l'auteur.}
+
+\marginal{$\underline{N.}$}
+\[ 1\,QQ - 4\,Q + 800 \times \text{æquatur } 1600 \text{ fit } 1\,N\ 2 \]
+\marginal{$N.$}
+\[ 1\,C + 4\,Q + 6400 \times \text{æquatur } 614400 \text{ fit } 1\,N\ 60 \]
+\marginal{$\underline{60}$}
+\[ \underline{6} + 4 \text{ faciet quadrat. abs } 8 \]
+\[ 1\,Q + 8\,N. \text{ æquatur } 20 \text{ fit } 1\,N\ 2. \]
+\note{Dans « 4 Q » de la première ligne, le 4 est récrit. Les croix marquent la place du « N » omis, donné dans la marge ; « 6 » est souligné et la marge porte « 60 ». Corrigé, l'exemple est juste : $16 - 16 + 1600 = 1600$ ; avec $G = 4$, $4 \cdot 1600 = 6400$, $800^2 - 4 \cdot 1600 \cdot 4 = 614\,400$, et $60^3 + 4 \cdot 60^2 + 6400 \cdot 60 = 614\,400$ ; $60 + 4 = 64$ ; $4 + 16 = 20$.}
+
+\subsection*{Theorema IIII}
+
+\[ \text{Si } \left.\begin{array}{l} A\ \text{quad.quad.} \\ -\,G\ \text{plano in } A\ \text{quad.} \\ -\,B\ \text{solido in } A \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano} \]
+\[ \left.\begin{array}{l} E\ \text{plani cubus} \\ +\,G\ \text{plano in } E\ \text{plani quadratum} \\ +\,Z\ \text{plano-plano } 4 \text{ in } E\ \text{plano} \end{array}\right\}\ \text{æquetur } \begin{array}{l} B\ \text{solido-solido.} \\ +\,Z\ \text{plano-plano } 4 \text{ in } G\ \text{plano} \end{array} \]
+Et investigat $E$ planum esse $F$ planum
+\marginal{$\underline{Aq.}$}
+\[ \left.\begin{array}{l} A\ \text{quadratum} \\ -\,LV \left\{\begin{array}{l} F\ \text{plani} \\ +\,G\ \text{plano} \end{array}\right\} \text{in } \underline{A} \end{array}\right\}\ \text{æquabitur } \begin{array}{l} \dfrac{B\ \text{solido}}{LV \left\{\begin{array}{l} F\ \text{plano } 4 \\ +\,G\ \text{plano } 4 \end{array}\right.} \\ -\,F\ \text{plano } \frac{1}{2} \end{array} \]
+\[ 1\,QQ - 4\,Q - 800\,N. \text{ æquatur } 1600 \text{ fit } 1\,N\ 10. \]
+\[ 1\,C + 4\,Q + 64\,N. \text{ æquatur } 614400 \text{ fit } 1\,N\ 60 \]
+\[ 60 + 4 \text{ est quadratum abs } 8 \]
+\[ 1\,Q - 8\,N \text{ æquatur } 20 \text{ fit } 1\,N\ 10. \]
+\note{« 64 N » est écrit pour « 6400 N » (théorème III). Le terme « + Z plano-plano 4 in G plano » de l'équation en $E$ n'est pas corrigé ici, alors que l'exemple, le même qu'au théorème III, demande « $-$ ». Le reste est juste : $10\,000 - 400 - 8000 = 1600$ ; $100 - 80 = 20$.}
+
+\subsection*{Theorema V.}
+
+\[ \text{Si } \left.\begin{array}{l} G\ \text{plano in } A\ \text{quad.} \\ +\,B\ \text{solido in } A \\ -\,A\ \text{quad.quad.} \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano} \]
+\[ \left.\begin{array}{l} E\ \text{plani cubus} \\ +\,G\ \text{plano in } E\ \text{plani quadrat.} \\ -\,Z\ \text{plano-plano } 4 \text{ in } E\ \text{plano} \end{array}\right\}\ \text{æquetur } \begin{array}{l} B\ \text{solido-solidum} \\ +\,Z\ \text{plano-plano } \uncertain{4} \text{ in } G\ \text{plano} \end{array} \]
+Et investigat $E$ planum esse $F$ planum.
+\note{Un trait et une tache d'encre dans la marge de gauche. Le reste de la page est blanc : le théorème V s'arrête sur cette ligne, et sa suite n'est pas dans le petit feuillet.}
+
+\page{118}
+\note{Le grand feuillet numéroté « 55 » à l'encre en haut à droite, vu en entier ; ses deux premières lignes étaient visibles aux vues 114 et 116. La page continue le théorème V de la vue 117, qui s'arrêtait sur « Et investigat E planum esse F planum ». Au pied, sous le bord du feuillet, deux lignes d'un feuillet placé dessous, avec « quando » et « commoveatur » : elles reparaissent au pied de la vue 120 et ne sont pas transcrites ici.}
+
+\marginal{$Aq.$}
+\[ \left.\begin{array}{l} LV \left\{\begin{array}{l} F\ \text{plano} \\ +\,G\ \text{plano} \end{array}\right\} \text{in } \underline{A} \\ -\,A\ \text{quadrato} \end{array}\right\}\ \text{æquabitur } \begin{array}{l} F\ \text{plano } \frac{1}{2} \\ -\,\dfrac{B\ \text{solido}}{LV \left\{\begin{array}{l} F\ \text{plano } 4 \\ \pm\,G\ \text{plano } 4 \end{array}\right.} \end{array} \]
+\marginal{$\pm$}
+\[ 44\,Q + 720\,N - 1\,QQ \text{ æquatur } 1600 \text{ fit } 1\,N\ 10 \text{ vel } 2 \]
+\marginal{$\pm$ \quad $=$}
+\[ 1\,C = 44\,Q = 6400\,N \text{ æquatur } 800{,}000 \text{ fit } 1\,N\ 100 \]
+\[ 100 + 44 \text{ est quadratum abs } 12 \]
+\[ 12\,N - 1\,Q \text{ æquabitur } 20 \text{ fit } 1\,N\ 10 \text{ vel } 2. \]
+\note{Les signes de la seconde ligne sont doublés de traits (« = »), et la marge donne « ± » et « = » en regard. Lue avec « + 44 Q $-$ 6400 N », la ligne est juste : $10^6 + 440\,000 - 640\,000 = 800\,000$, et $720^2 + 4 \cdot 1600 \cdot 44 = 800\,000$. Le signe devant « G plano 4 » au dénominateur est récrit, et un « ± » est dans la marge en regard.}
+
+\subsection*{Theorema VI}
+
+\[ \text{Si } \left.\begin{array}{l} G\ \text{plano in } A\ \text{quadrat.} \\ -\,B\ \text{solido in } A \\ -\,A\ \text{quad.quad.} \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano} \]
+\marginal{$\pm$ \quad $\mp$}
+\[ \left.\begin{array}{l} E\ \text{plani cubus} \\ =\,G\ \text{plano in } E\ \text{plani quadratum} \\ -\,Z\ \text{plano-plano } 4 \text{ in } E\ \text{plano} \end{array}\right\}\ \text{æquetur } \begin{array}{l} B\ \text{solido-solido} \\ \mp\,Z\ \text{plano-plano } 4 \text{ in } G\ \text{plano} \end{array} \]
+Et $E$ planum investigat esse $F$ planum
+\marginal{$\pm$ \quad $\underline{Aq}$}
+\[ \left.\begin{array}{l} LV \left\{\begin{array}{l} F\ \text{plano} \\ \pm\,G\ \text{plano} \end{array}\right\} \text{in } \underline{A} \\ -\,A\ \text{quadrato} \end{array}\right\}\ \text{æquabitur } \begin{array}{l} F\ \text{plano } \frac{1}{2} \\ +\,\dfrac{B\ \text{solido}}{LV \left\{\begin{array}{l} F\ \text{plano } 4 \\ \pm\,G\ \text{plano } 4 \end{array}\right.} \end{array} \]
+\marginal{$\mp$}
+\note{Signes récrits dans les deux équations, repris un à un dans la marge (« ± », « $\mp$ »). L'exemple qui suit demande $F^3 + G F^2 - 4Z F = B^2 + 4ZG$ et, dans la racine, $F + G$.}
+\[ 114\,Q - 120\,N - 1\,QQ \text{ æquatur } 200 \text{ fit } 1\,N\ 2 \text{ vel } 10 \]
+\marginal{$\underline{30}$}
+\[ 1\,C + 114\,Q - 800\,N \text{ æquatur } 105600 \text{ fit } 1\,N\ \underline{36} \]
+\[ 30 + 114 \text{ facit quadratum abs } 12 \]
+\[ 12\,N - 1\,Q \text{ æquatur } 20 \text{ fit } 1\,N\ 2 \text{ vel } 10. \]
+\note{« 36 » est souligné et la marge porte « 30 » : correction de l'auteur. L'exemple est juste : $456 - 240 - 16 = 200$ ; $30^3 + 114 \cdot 900 - 800 \cdot 30 = 105\,600 = 120^2 + 4 \cdot 200 \cdot 114$ ; $30 + 114 = 144$.}
+
+\subsection*{Theorema VII}
+
+\[ \text{Si } \left.\begin{array}{l} B\ \text{solidum in } A \\ -\,G\ \text{plano in } A\ \text{quadrat.} \\ -\,A\ \text{quadrato-quadrat.} \end{array}\right\}\ \text{æquetur } Z\ \text{plano-plano} \]
+\marginal{$\equiv$}
+\[ \left.\begin{array}{l} E\ \text{plani cubus} \\ -\,G\ \text{plano in } E\ \text{plani quadrat.} \\ -\,Z\ \text{plano-plano } 4 \text{ in } E\ \text{plano} \end{array}\right\}\ \text{æquet. } \begin{array}{l} B\ \text{solido-solidum} \\ =\,Z\ \text{plano-plano } 4 \text{ in } G\ \text{plano} \end{array} \]
+Et $E$ planum investigat esse $F$ planum
+\marginal{$\underline{Aq}$}
+\[ \left.\begin{array}{l} LV \left\{\begin{array}{l} F\ \text{plano} \\ -\,G\ \text{plano} \end{array}\right\} \text{in } \underline{A} \\ -\,A\ \text{quadrato} \end{array}\right\}\ \text{æquabitur } \begin{array}{l} F\ \text{plano } \frac{1}{2} \\ -\,\dfrac{B\ \text{solido}}{LV \left\{\begin{array}{l} F\ \text{plano } 4 \\ -\,G\ \text{plano } 4 \end{array}\right.} \end{array} \]
+\note{Le reste de la page est blanc ; l'exemple numérique du théorème VII est en tête de la vue 119.}
+
+\page{119}
+\note{Verso du feuillet « 55 », sans numéro ; des lignes du recto transparaissent à l'envers. Le long du bord droit, la marge gauche du feuillet de la vue 120, avec ses notes (« nam si utrique… », « fiat utrinque… ab E cubo… ») : elles sont transcrites avec leur page. La page commence par l'exemple numérique du théorème VII de la vue 118.}
+
+\[ 1440\,N - 16\,Q - 1\,QQ \text{ æquatur } 2800 \text{ fit } 1\,N\ 2 \text{ vel } 10 \]
+\[ 1\,C - 16\,Q - 11{,}200\,N \text{ æquatur } 1894400 \text{ fit } 1\,N\ 160 \]
+\[ 160 - 16 \text{ facit quadratum abs } 12 \]
+\[ 12\,N - 1\,Q \text{ æquatur } 20 \text{ fit } 1\,N\ 2 \text{ vel } 10. \]
+\note{L'exemple est juste : $2880 - 64 - 16 = 2800$ ; avec $G = 16$, $1440^2 - 4 \cdot 2800 \cdot 16 = 1\,894\,400$ et $160^3 - 16 \cdot 160^2 - 11\,200 \cdot 160 = 1\,894\,400$ ; $160 - 16 = 144$.}
+
+Et quod attinet \uncertain{vel} quas metatheses \uncertain{per quas} omnium adfectiones sub cubo evanescunt \struck{\ill{}} \uncertain{expurgatione} per utrasque \uncertain{quadrantes}
+
+Hæc itaque sunto satis superque.
+\note{La phrase qui précède est d'une lecture difficile ; plusieurs mots sont donnés sous réserve, et une lettre est biffée avant « expurgatione ».}
+
+\section*{Quemadmodum æquationes cubicæ deprimuntur ad quadraticas a radice solida. Seu de duplicata hypostasi Cap. VII.}
+
+\uncertain{Atque} modus transmutandi qui dicitur duplicata hypostasis non minus elegans et compendiosus est ad exhibendas radicum asymmetrias in cubis aliquot sub latere adfectis ac \uncertain{totius} novam instituendi \uncertain{viam} ex agnita singulari de qua initio præcedentis capitis monuimus cuborum illorum constitutione. Sequentia itaque \uncertain{iuvabit} subnexisse problemata.
+\note{Dans « duplicata hypostasis », les lettres « ta » sont surchargées.}
+
+\subsection*{Problema I}
+
+Cubum adfectum sub latere adfirmate ad quadratum radicem habens solidam idemque adfectum reducere.
+\[ \text{Proponatur } \left.\begin{array}{l} A\ \text{cubus} \\ +\,B\ \text{plano ter in } A \end{array}\right\}\ \text{æquari } Z\ \text{solido } \struck{\ill{}}\ \text{bis} \]
+oportet facere quod propositum est
+\[ \left.\begin{array}{l} E\ \text{quadratum} \\ +\,A \text{ in } E \end{array}\right\}\ \text{æquetur } B\ \text{plano} \]
+unde $B$ planum ex huiusmodi æquationis constitutione intelligitur rectangulum sub duobus lateribus quorum minus est $E$, differentia a maiore $A$.
+\marginal{Igitur $\dfrac{B\ \text{plano} - Eq}{E}$ erit $A$.}
+\note{Note marginale soulignée et cernée d'un trait, reliée au texte après « a maiore A » ; « in » de « A in E » est surchargé.}
+\[ \text{Quare } \left.\begin{array}{l} \dfrac{\begin{array}{l} B\ \text{plano-plano-plano } \struck{\text{plano}} \\ -\,E\ \text{quad. in } B\ \text{plano-plano ter} \\ +\,E\ \text{quad.quad. in } B\ \text{plano ter} \\ -\,E\ \text{cubo-cubo} \end{array}}{E\ \text{cubo}} \\[4ex] +\,\dfrac{\begin{array}{l} B\ \text{plano-plano ter} \\ -\,B\ \text{plano in } E\ \text{quadrato ter} \end{array}}{E} \end{array}\right\}\ \text{æquabitur } Z\ \text{solido bis} \]
+\note{Le calcul est juste : c'est le cube de $\frac{B - E^2}{E}$ augmenté de $3B$ fois ce côté. Le reste de la page est blanc ; la suite est à la vue 120.}
+
+\page{120}
+\note{Feuillet numéroté « 56 » à l'encre en haut à droite. À gauche, le bord du feuillet précédent (vue 119), avec des fins de lignes. Au pied, sous le bord du feuillet, deux lignes d'un feuillet placé dessous, dont « quando » (souligné) et « commoveatur » : déjà visibles à la vue 118, elles ne sont pas transcrites ici. La page continue le problème I de la vue 119.}
+
+et omnibus per $E$ cubum ductis et ex arte concinnatis
+\[ \left.\begin{array}{l} E\ \text{cubi quadratum} \\ +\,Z\ \text{solido bis in } E\ \text{cubum} \end{array}\right\}\ \text{æquabitur } B\ \text{plani cubo.} \]
+\marginal{nam si utrique æquationis ultimæ parti addatur $Zss$. erit $\left.\begin{array}{l} Ecc \\ +\,Zs\,2 \text{ in } Ec \\ +\,Zss \end{array}\right\} \begin{array}{l} \uncertain{Bccc} \\ +\,Zss \end{array}$ et proinde $\left.\begin{array}{l} Ec \\ +\,Zs \end{array}\right\} L. \begin{array}{l} \uncertain{Bccc} \\ +\,Zss \end{array}$ et utrinque ablato $Zs$ erit $Ec \left\} L \begin{array}{l} \uncertain{Bccc} \\ +\,Zss \end{array} \right. - Zs$.}
+\note{Note de la marge de gauche, en regard de ce qui suit ; elle justifie le « Consectarium ». Les accolades y tiennent lieu du signe d'égalité. Le symbole lu « Bccc » est le cube du plan $B$ ; ses lettres sont serrées.}
+quæ æquatio est quadrati adfirmate affecti radicem habentis solidam facta itaque est reductio quæ imperabatur.
+
+\subsection*{Consectarium.}
+
+\marginal{$\underline{\text{in } A}$}
+\[ \text{Itaque si } \left.\begin{array}{l} A\ \text{cubus} \\ +\,B\ \text{plano } \underline{\text{ter}} \end{array}\right\}\ \text{æquetur } Z\ \text{solido bis} \]
+\note{« ter » est souligné et la marge porte « in A », souligné : l'auteur complète « B plano ter in A ».}
+\[ \left.\begin{array}{l} L \left\{\begin{array}{l} B\ \text{plano-plano-plano} \\ +\,Z\ \text{solido-solido} \end{array}\right. \\ -\,Z\ \text{solido} \end{array}\right\}\ \text{æquetur } D\ \text{cubo} \]
+\[ \left.\dfrac{\begin{array}{l} B\ \text{plano} \\ -\,D\ \text{quadrato} \end{array}}{D}\right\}\ \text{fit } A \text{ de qua quæritur} \]
+
+\marginal{$\underline{702}$}
+Si $1\,C + 81\,N$ æquetur $\overline{700}$ quoniam $L\,\overline{\begin{array}{l} 19683 \\ 123201 \end{array}}$ seu 142884 seu denique 378 multatus solido 351 est 27 cubus a latere 3.
+\marginal{$\underline{\begin{array}{r} 19683 \\ +123201 \end{array}}$}
+\[ \struck{Et}\ \dfrac{27 - 9}{3} \text{ seu } 6 \text{ est } 1\,N \text{ de qua quæritur} \]
+\note{« 700 » est surligné et corrigé en « 702 » dans la marge ; la somme est reprise dans la marge. Les nombres sont justes : $27^3 = 19\,683$, $351^2 = 123\,201$, $\sqrt{142\,884} = 378$, $378 - 351 = 27 = 3^3$, et $6^3 + 81 \cdot 6 = 702$.}
+
+\subsection*{Aliter et secundo}
+
+\[ \left.\begin{array}{l} E\ \text{quadratum} \\ -\,A \text{ in } E \end{array}\right\}\ \text{æquetur } B\ \text{plano} \]
+unde $B$ planum ex huiusmodi æquationis constitutione intelligitur rectangulum sub duobus lateribus quorum maius est $E$, excessus vero eiusdem supra minus est $A$
+\[ \text{Igitur } \left.\dfrac{\begin{array}{l} E\ \text{quadratum} \\ -\,B\ \text{plano} \end{array}}{E}\right\}\ \text{æquabitur } A \]
+quare per ea quæ proponuntur omnibus ex arte concinnatis
+\marginal{bis}
+\[ \left.\begin{array}{l} E\ \text{cubi quadrat.} \\ -\,Z\ \text{solido bis in } E\ \text{cubum} \end{array}\right\}\ \text{æquale } B\ \text{plani cubo} \]
+\marginal{fiat utrinque quadratum \ill{} ab $E\ \text{cub.} - Zs$ \ill{}}
+quæ æquatio est quadrati negate adfecti radicem habentis solidam facta itaque est rursus reductio quæ imperabatur
+
+\subsection*{Consectarium secundum.}
+
+\[ \text{Itaque si } \left.\begin{array}{l} A\ \text{cubus} \\ +\,B\ \text{plano ter in } A \end{array}\right\}\ \text{æquetur } Z\ \text{solido bis} \]
+\[ \left.\begin{array}{l} L \left\{\begin{array}{l} B\ \text{plano-plano-plano} \\ +\,Z\ \text{solido-solido} \end{array}\right. \\ +\,Z\ \text{solido} \end{array}\right\}\ \text{æquetur } G\ \text{cubo} \]
+\note{La page s'arrête ici ; la suite du second consectaire (la valeur de $A$ tirée de $G$) n'est pas sur cette page et doit se trouver au verso, hors de ce lot. }
+
+\end{document}
