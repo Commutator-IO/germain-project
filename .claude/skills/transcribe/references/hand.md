@@ -993,3 +993,86 @@ No sign of equality in v. 3–20: « egal a » in words, or all terms equal to
   54 (v. 42) — it breaks, so the pieces came from different bundles.
 - « p. 380 », « pag. 373 », « pag. 339 » in the margins are the writers'
   references to the work they attack.
+
+## Joseph-Louis Lagrange's papers (NAF 5166)
+
+### The views
+
+- Greyscale and colour mixed, portrait, about 4700 × 6430, one page per view.
+  Old leaves, torn at the edges, hinged on stubs over larger modern guards; the
+  facing guard shows at the left. Four full-width bands at 2400 px read the
+  hands; tight crops for blots and hatched corrections.
+- v. 13: title « Papiers de Lagrange », certificate « Volume de 26 Feuillets
+  plus les Feuillets A préliminaire & 6 bis. 27 Septembre 1888 », « Libri
+  1856 ». v. 15: wrapper, leaf « A. », « Lagrange / mémoires et notes
+  autographes / avec des notes etc de / Mlle Sophie Germain ». The wrapper's
+  claim is recorded; the transcription attributes nothing on the strength of it.
+- Written on rectos only, for the most part: the versos are blank with strong
+  show-through and bled ink. Mirror a crop before calling a verso written
+  (v. 18, 20, 32, 69). A verso can carry a cancelled draft upside down —
+  rotate 180° (v. 40: a struck first start of leaf 11).
+- Views that show two pages: a leaf folded over its guard (v. 63/64, 67/68),
+  or a sheet photographed open (v. 59: 21v at left, the left part of 22r at
+  right). Transcribe each page once, where it is whole.
+- One guard can carry two slips, each with its own number (19 and 20, v. 55).
+- v. 60 and v. 61 are the two sides of leaf 22: show-through on v. 61 gives
+  phrases of v. 58–60. v. 81 is the back board; batch 5 has no file.
+
+| Views | Piece and hand |
+|---|---|
+| 17–41 | « Eclaircissement d'une difficulté singuliere … attraction des sphéroïdes … Par J. L. Lagrange », a draft with deletions, numbered paragraphs 1–10; hand 1, quick |
+| 43 | « Notes de M.r Dela Grange », a heading in a fine hand with ornate capitals |
+| 45–51 | short notes: a plane and a sphere; a series « page 623 » on two slips A and B; the arc of an ellipse; hand 1 |
+| 53, 55 | the same two calculations redone in fuller prose; hand 2, careful, rounded |
+| 55–56 | an ink scrap of figures (degree subtractions, a small log-sine table), pencil tables on its back |
+| 58–60 | a first-person draft letter answering « M.r De la Grange »'s judgement, citing the Mécanique analytique; hand 3, sloping thick-and-thin; feminine agreements |
+| 61 | another unfinished letter draft on the back of leaf 22, « Vous … m'engagez à reprendre une tache » |
+| 62–68 | a complete letter recommending « le mémoire N° 1 » to the class, on Chladni, Euler's lamina and ring, the programme; long s; ends « votre servante », unsigned |
+
+Hands 2 and 3 share a straight-stemmed d and a 5 shaped like ſ; whether they
+are one hand at two speeds, and whether either is the hand of v. 62–68, is not
+settled.
+
+### Strokes that mislead
+
+| The stroke looks like | A pass settled on | Where |
+|---|---|---|
+| ∂ in the differentials | the writer's ordinary looped d, the same glyph as in « dans », « devient »; set d, total and partial alike | NAF 5166, v. 19, 23 (compared), 41 |
+| a small « n » or « r » as a denominator (u/n, V/n) or exponent | the hand's 2, formed without a loop; the arithmetic settles it | NAF 5166, v. 23–29 |
+| π with a curled top bar | ϖ, the azimuth angle; the larger Π with a looped first stem is π, the constant | NAF 5166, v. 17, 19, 41 |
+| an inclined oval with no stem beside π' | θ (θ'), never β | NAF 5166, v. 21 on |
+| a large « V( » or « U » before a bracket | the radical, no bar or a short one; keep the parenthesis and any exponent 3/2 | NAF 5166, v. 19, 23, 27 |
+| ∫ with a raised 3 | the triple integral; set \int^{3} | NAF 5166, v. 19 |
+| « (m » with a descender in formulas | μ | NAF 5166, v. 19 |
+| a looped letter crossed by a stem; a cross with a hooked right arm | φ and ψ; the hooked cross also stands for capital Y, told apart only by sense | NAF 5166, v. 35–39, 51 |
+| an α followed by two dots | « &c. » | NAF 5166, v. 27, 29 |
+| « lz », « l2 » | the logarithm, a looped l; hand 2 writes « log. » | NAF 5166, v. 49, 55 |
+| « é » plus a short exit stroke at the end of a participle | not to be told from « -ée »; infer no gender from it | NAF 5166, v. 58 |
+| a thick bar over one or two lines; close vertical hatching over a coefficient | a deletion; \struck{\ill{}} where nothing shows beneath | NAF 5166, v. 17, 19, 31, 33 |
+| a final s or x crossed through | plural corrected to singular | NAF 5166, v. 64 |
+| « § » as two linked s; the 5 of « 25 » as an S | § and 25 | NAF 5166, v. 64, 66 |
+
+Minus signs the calculation needs are sometimes missing on the leaf (v. 23,
+27): keep them as written, with a note. Spelling as written: « complette »,
+« parceque », « ensorte », « differens », « avoit »; « De la Grange » in two
+words, sometimes split across a line (v. 62, 67), « Dela Grange » (v. 43).
+
+### Numbers on the leaves
+
+- **One series, in ink, top right of each written recto: « A. » (v. 15), 1–11
+  with « 6+ » and « 6 bis » (v. 17–39), 12–22 (v. 41–60), 23–26 (v. 62–68).**
+  It is the library's count, as the certificate of v. 13 has it — 26 leaves,
+  plus A and 6 bis — and it crosses four hands without a break. Passes that
+  saw only one batch took it for the writer's pagination (it starts at 3 in
+  views 21–40 and repeats 6); read across the volume it is not. Being ink, it
+  gets no \folio{}, as in NAF 5161. The « + » after the 6 (v. 27) and a « + »
+  near the 7 (v. 31) are unexplained.
+- « A » and « B » beside 15 and 16: marks pairing two slips of one calculation.
+- « 13 feuillets / le 6me double », circled, on v. 17: a count of the dossier.
+- « 1856 » with « Libri »: a Libri number, not a year (« Libri. No. 1856. »,
+  v. 15). « R. c. 8070 (91) » and the stamp « ACQ. 8070 (LIBRI) »: acquisition.
+- In the text: paragraph numbers 1–10 of the memoir, cited as « n°. 3 »;
+  « page 623 », « Pag. 623 » (a work not named); « p. 53 1re édition »,
+  « p. 151 de la 1ère édition » (the Mécanique analytique); « N° 1 », « § 3 »,
+  « § 6 » in the letter of v. 62–68. A boxed « I 65 » in a thinner pen
+  (v. 37), meaning unknown.
