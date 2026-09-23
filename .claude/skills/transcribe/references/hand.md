@@ -1146,3 +1146,64 @@ Greek words are written in Greek letters by a hand unsure of accents
   « R.c. 8070 (73) », « ACQ. 8070 (LIBRI) » (v. 1, 5).
 - « pag. 84 », « p 158 », « p. 127. editionis 1646 » in a later reader's hand:
   pages of the Elzevier Opera of 1646, not of the manuscript (v. 1, 5, 69, 141).
+
+## Mersenne's miscellaneous papers (NAL 2338)
+
+### The views
+
+- Greyscale portrait scans, about 4316 × 5750, with some in colour; one page
+  per view, the leaf lying on the opened volume with the next leaf or the
+  guards at its edge. Text beyond a leaf's edge can belong to the wider leaf
+  beneath (v. 9, 54/55): check which leaf a line is on.
+- v. 1: title leaf « Papiers de Mersenne », « Volume de 50 Feuillets / 1er
+  Octobre 1888 », « Libri 1846 ». v. 104: the blank verso of leaf 50.
+- A figure slip can stand between two text pages whose sentence runs across
+  it (v. 70 → 73, the slip at v. 71, its blank mount v. 72). A letter cover
+  addressed « Au Reuerend Pere / Le Reuerend Pere Mersenne … » is at v. 96.
+
+| Views | Piece and hand |
+|---|---|
+| 2–7 | Torricelli to Mersenne, « Dat: Flor: Kal: Maij: anno 1644 », signed « Euanga Torricellius » in a hand of its own; hand A, a fast Italian cursive |
+| 8–11 | Torricelli, Florence, 7 July 1646, the signature in the copying hand; hand B, a posed italic (a copy) |
+| 12–15 | Torricelli to Mersenne, Florence, 1 February 1647; hand A |
+| 16–19 | a copy quoting Mersenne's letter of 28 June 1644 on the cycloid, with a copyist's boxed notes; hand C |
+| 20–23 | Torricelli to Roberval, a later hand dating it 1 Sept. 1643; ends « Flor. Kal. Octobr. 1643 »; hand B |
+| 24–35 | « Clar.mo Viro Roberuallio / Torr. S.P.D. », Florence, 7 July 1646, with its own pagination 1–11; fast heavy cursive |
+| 36–39 | the demonstration « in folio separato » that letter promises, identified by a note in another hand |
+| 40–50 | a second copy of the 7 July 1646 letter, with its postscript |
+| 53–55 | Torricelli to Carcavy, July 1646 |
+| 57–82 | « Epistola Aegidii Personerii de Roberval ad Euangelistam Torricellium »; hand B's dense successor; an instruction to set large characters in italics (v. 57); ends mid-sentence at v. 82 |
+| 83–88 | Roberval to Mersenne on Torricelli's propositions, articles 10–14, the infinite hyperbolic solid; a pencil note « Il faut commencer par cette lettre » |
+| 89–91 | « Methodus Torricelli de dimensione infinitarum parabolarum », the worst hand of the volume (~310 \ill{}) |
+| 93–94 | « Extraict d'une lettre du Sieur Torricelli » (to Ricci), French titles over Italian text: the mercury tubes |
+| 97–103 | « De Vacuo Narratio Æ.i P.i de Roberual Ad Nob. virum D. des Noyers », crediting « D. de Paschal »; « Parisijs 12 Calend. Octob. 1647 », unsigned |
+
+### Strokes that mislead
+
+| The stroke looks like | A pass settled on | Where |
+|---|---|---|
+| a final m as a descending loop (hand A) | m, not a suspension | NAL 2338, v. 3, 5 |
+| ę (hands A, C) | æ, said once in the header | v. 2, 12 |
+| double s like n (hand A) | ss (« fecisses ») | v. 12 |
+| hand C's final t as an 8-shaped loop; its 8 half-formed like 0 | t; flag every number | v. 16–19 |
+| an open chevron « > » as a figure | 7 (« 7 ad 5 », « die 7 Julij ») | v. 26, 35 |
+| n with a barred ascender (hand B) / n with a raised loop (fast cursive) | « non » (set « nl » / n^o, as each pass read it) | v. 8–10, 20 / v. 22–39 |
+| a 1 with a lead-in hook and a b-shaped 6 in dates | « ıb36 » = 1636, « ıb44 » = 1644 | v. 60, 64 |
+| a hooked 4, open at the top | 7 (the 4 is closed); « 1647 » at v. 103 | v. 101, 103 |
+| « is » standing as a number | 15, the 5 a long s | v. 101, 102 |
+| hand 2's short t like i (« ui », « esi ») | ut, est | v. 83–88 |
+| a word alone at the foot of a page | a catchword: take it once, from the page that begins with it | v. 2–14, 60/61, 62/63, 80 |
+
+All the hands write u inside a word and v at its head (« Roberuallius »,
+« vnicuiq; »): keep it. Large round script marks quotation in Roberval's
+letter to Torricelli (v. 64–79). Faded ink at mid-line (v. 54, 57) comes back a
+little at mid-grey levels (`-level 55%,90%`), not at heavy contrast.
+
+### Numbers on the leaves
+
+- **One ink series, top right of the rectos, 1–50** across every hand, with
+  « 34 bis » for a figure slip; it ends on 50 at the last written leaf, as the
+  1888 certificate has it. The library's count; ink, so no \folio{}.
+- The letter of v. 24–35 carries its own bolder pagination 1–11, which a note
+  on v. 36 cites (« pag. 9.a et pag. 10 »).
+- « R.c. 8070 (86) », stamp « ACQ. 8070 (LIBRI) »: acquisition (v. 2).
