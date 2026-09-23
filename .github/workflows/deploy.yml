@@ -85,6 +85,11 @@ jobs:
           sudo mv tectonic /usr/local/bin/
           tectonic --version
 
+      # The exercise book's figures are SVG; rsvg-convert turns them into
+      # the PDF the engine can include.
+      - name: Install rsvg-convert
+        run: sudo apt-get install -y --no-install-recommends librsvg2-bin
+
       - uses: actions/cache@v4
         with:
           path: ~/.cache/Tectonic

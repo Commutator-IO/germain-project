@@ -19,6 +19,9 @@
 %                                       and a difficulty of 1, 2 or 3 stars
 %   \manuscrit{<volume id>}{<v1>}{<v2>}  the Gallica views it comes from
 %   \begin{solution}                    its solution, printed after it
+%   \exfigure{<nom>}{<légende>}         a figure, a paragraph of its own, drawn in
+%                                       exercises/figures/<nom>.svg — inlined in the
+%                                       page, converted to PDF by `scripts/pdf.mjs`
 
 % \ProvidesFile rather than \ProvidesPackage: the file is \input, not
 % \usepackage'd, and the latter then warns that no package was requested.
@@ -36,6 +39,7 @@
 \usepackage{geometry}
 \geometry{a4paper,margin=25mm}
 \usepackage{xcolor}
+\usepackage{graphicx}
 \setlength{\emergencystretch}{3em}
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=black,urlcolor=black,pdfborder={0 0 0}}
@@ -131,5 +135,18 @@
 \newenvironment{solution}{%
   \par\smallskip\noindent{\bfseries\itshape Solution}\par\nopagebreak\smallskip
 }{\par\smallskip\noindent\hfill\rule{0.3\linewidth}{0.3pt}\hfill\null\par\medskip}
+
+% --- Figures ----------------------------------------------------------------
+% `exercises/figures/<nom>.svg` is the figure's only source. `scripts/pdf.mjs`
+% converts it to `<nom>.pdf` in a directory it puts on the engine's search
+% path, so the name is given bare; the SVG's own size is the printed size.
+
+\newcommand{\exfigure}[2]{%
+  \par\medskip
+  \begin{center}
+    \includegraphics{#1}\par\smallskip
+    {\small\color{exgris}#2}
+  \end{center}
+  \par\medskip\ignorespaces}
 
 \endinput

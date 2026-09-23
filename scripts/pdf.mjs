@@ -46,6 +46,9 @@ const PREAMBLE = resolve(SOURCE, 'preamble', 'germain.sty');
 // Input by both preambles: the fallback fonts for what Latin Modern lacks.
 const GLYPHS = resolve(SOURCE, 'preamble', 'glyphs.sty');
 const BOOK_PDF = resolve(ROOT, 'public', 'exercises', 'exercices.pdf');
+// The book's figures: SVG in the repository, PDF only where the engine looks.
+const BOOK_FIGURES = resolve(BOOK_DIR, 'figures');
+const FIGURES_PDF = resolve(WORK, 'figures');
 
 async function has(cmd) {
   try {
@@ -201,22 +204,36 @@ async function compileBook(engine, source, required) {
     return;
   }
   await mkdir(resolve(BOOK_PDF, '..'), { recursive: true });
-  const newest = Math.max(await mtime(source), await mtime(BOOK_PREAMBLE), await mtime(GLYPHS));
+  const figures = (await readdir(BOOK_FIGURES).catch(() => [])).filter((f) => f.endsWith('.svg'));
+  const newest = Math.max(
+    await mtime(source),
+    await mtime(BOOK_PREAMBLE),
+    await mtime(GLYPHS),
+    ...(await Promise.all(figures.map((f) => mtime(resolve(BOOK_FIGURES, f))))),
+  );
   if ((await mtime(BOOK_PDF)) > newest) return;
+
+  try {
+    await convertFigures(figures);
+  } catch (e) {
+    process.stderr.write(`  ⚠ exercise book: ${e.message}\n`);
+    process.exitCode = 1;
+    return;
+  }
 
   const name = basename(source, '.tex');
   const compile = async () => {
     if (engine === 'tectonic') {
       await exec(engine, [
         '-X', 'compile', source, '--outdir', WORK, '--keep-logs',
-        '-Z', `search-path=${BOOK_DIR}`,
+        '-Z', `search-path=${BOOK_DIR}`, '-Z', `search-path=${FIGURES_PDF}`,
       ]);
     } else {
       for (let pass = 0; pass < 2; pass++) {
         await exec(
           engine,
           ['-interaction=nonstopmode', '-halt-on-error', `-output-directory=${WORK}`, source],
-          { cwd: BOOK_DIR },
+          { cwd: BOOK_DIR, env: { ...process.env, TEXINPUTS: `${FIGURES_PDF}:` } },
         );
       }
     }
@@ -242,6 +259,35 @@ async function compileBook(engine, source, required) {
     const log = /(?:^|\n)(!.*(?:\n.*){0,3})/.exec(out)?.[1] ?? e.stderr ?? e.message;
     process.stderr.write(`  ⚠ exercise book (${relative(ROOT, source)}): ${log.trim().slice(0, 500)}\n`);
     process.exitCode = 1;
+  }
+}
+
+/**
+ * `exercises/figures/*.svg` to PDF, for `\exfigure`. No TeX engine reads SVG,
+ * and the site inlines the same files, so the SVG stays the only source and
+ * the PDF is made here, beside the book's other build products. rsvg-convert
+ * is what CI installs (librsvg2-bin); Inkscape does the same where it is the
+ * one at hand. Neither: an error, not a book with holes where figures were.
+ */
+async function convertFigures(figures) {
+  if (!figures.length) return;
+  const tool = (await has('rsvg-convert')) ? 'rsvg-convert' : (await has('inkscape')) ? 'inkscape' : null;
+  if (!tool) {
+    throw new Error(
+      'the figures need rsvg-convert (`brew install librsvg`, `apt install librsvg2-bin`) or inkscape',
+    );
+  }
+  await mkdir(FIGURES_PDF, { recursive: true });
+  for (const f of figures) {
+    const svg = resolve(BOOK_FIGURES, f);
+    const pdf = resolve(FIGURES_PDF, `${basename(f, '.svg')}.pdf`);
+    if ((await mtime(pdf)) > (await mtime(svg))) continue;
+    await exec(
+      tool,
+      tool === 'inkscape'
+        ? [svg, '--export-type=pdf', `--export-filename=${pdf}`]
+        : ['-f', 'pdf', '-o', pdf, svg],
+    );
   }
 }
 

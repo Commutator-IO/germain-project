@@ -721,7 +721,30 @@ function render(tex, edition) {
   // renderBlocks.
   const ENVS = 'resume|itemize|enumerate|quote';
   const stripped = text.replace(/(?<!\\)%.*$/gm, ''); // LaTeX comments
-  const { text: cleaned, notes } = liftFootnotes(stripped);
+  const { text: unfigured, notes } = liftFootnotes(stripped);
+
+  // A figure is a paragraph of its own: lifted here to a marker renderBlock
+  // sets as a paragraph, and put back, caption and drawing, once the prose
+  // around it is rendered.
+  const figures = [];
+  let cleaned = '';
+  for (let i = 0; ; ) {
+    const at = unfigured.indexOf('\\exfigure', i);
+    if (at === -1) {
+      cleaned += unfigured.slice(i);
+      break;
+    }
+    const n = readBraced(unfigured, at + '\\exfigure'.length);
+    const c = n && readBraced(unfigured, n.end);
+    if (!n || !c) throw new Error('\\exfigure takes {nom}{légende}');
+    const name = n.arg.trim();
+    if (!ctx.figures.has(name)) {
+      throw new Error(`\\exfigure{${name}}: no exercises/figures/${name}.svg`);
+    }
+    figures.push({ name, caption: c.arg.trim() });
+    cleaned += `${unfigured.slice(i, at)}\n\nEXFIG${figures.length - 1}\n\n`;
+    i = c.end;
+  }
   let html = renderBlocks(cleaned, ENVS);
   // The leading space is swallowed and the trailing one kept: a footnote marker
   // hugs the word it follows, as it does in print.
@@ -1241,6 +1264,7 @@ function sourcePage(tex, file, edition, name = EDITION_LABELS[edition].name) {
 
 const BOOK_SOURCE = resolve(ROOT, 'exercises', 'exercices.fr.tex');
 const BOOK_OUT = resolve(ROOT, 'public', 'exercises');
+const BOOK_FIGURES = resolve(ROOT, 'exercises', 'figures');
 
 /** The four levels. The page's filter knows these and no others. */
 export const LEVELS = ['Lycée', 'L1', 'L2', 'L3'];
@@ -1300,7 +1324,48 @@ async function bookContext() {
     groups: new Map(groups.map((g) => [g.id, g])),
     cahierOf,
     modern,
+    figures: await bookFigures(),
   };
+}
+
+/**
+ * The book's figures, `exercises/figures/<nom>.svg`, by name, ready to inline.
+ *
+ * Inlined rather than linked, so that they draw in `currentColor` and in the
+ * page's own serif. The PDF has the same files, converted by
+ * `scripts/pdf.mjs`, so a figure has one source and the two cannot drift. What
+ * a figure may hold is checked here because inlining trusts it: no script, no
+ * `id` (forty figures share one document), and nothing the subset check below
+ * would take for leftover LaTeX — a `<style>` block is braces, and is refused.
+ */
+async function bookFigures() {
+  const figures = new Map();
+  let files = [];
+  try {
+    files = (await readdir(BOOK_FIGURES)).filter((f) => f.endsWith('.svg'));
+  } catch {
+    return figures;
+  }
+  for (const f of files) {
+    const name = f.slice(0, -4);
+    const svg = (await readFile(resolve(BOOK_FIGURES, f), 'utf8'))
+      .replace(/<\?xml[\s\S]*?\?>/, '')
+      .replace(/<!--[\s\S]*?-->/g, '')
+      .trim();
+    const fail = (why) => {
+      throw new Error(`exercises/figures/${f}: ${why}`);
+    };
+    const root = /^<svg\b[^>]*>/.exec(svg);
+    if (!root) fail('not an <svg> element');
+    for (const attr of ['viewBox', 'width', 'height']) {
+      if (!new RegExp(`\\s${attr}="[^"]+"`).test(root[0])) fail(`the <svg> needs a ${attr}`);
+    }
+    if (!/<title>[^<]+<\/title>/.test(svg)) fail('no <title> — it is what a screen reader reads');
+    if (/<script|\son[a-z]+=|href=|\sid=/i.test(svg)) fail('scripts, handlers, links and ids are refused');
+    if (/[{}\\]/.test(svg)) fail('braces and backslashes are refused (no <style>, no LaTeX)');
+    figures.set(name, svg.replace(/^<svg\b/, '<svg role="img"'));
+  }
+  return figures;
 }
 
 /**
@@ -1346,7 +1411,30 @@ function renderExercises(tex, ctx) {
 
   const { text, held } = liftMath(body[1]);
   const stripped = text.replace(/(?<!\\)%.*$/gm, '');
-  const { text: cleaned, notes } = liftFootnotes(stripped);
+  const { text: unfigured, notes } = liftFootnotes(stripped);
+
+  // A figure is a paragraph of its own: lifted here to a marker renderBlock
+  // sets as a paragraph, and put back, caption and drawing, once the prose
+  // around it is rendered.
+  const figures = [];
+  let cleaned = '';
+  for (let i = 0; ; ) {
+    const at = unfigured.indexOf('\\exfigure', i);
+    if (at === -1) {
+      cleaned += unfigured.slice(i);
+      break;
+    }
+    const n = readBraced(unfigured, at + '\\exfigure'.length);
+    const c = n && readBraced(unfigured, n.end);
+    if (!n || !c) throw new Error('\\exfigure takes {nom}{légende}');
+    const name = n.arg.trim();
+    if (!ctx.figures.has(name)) {
+      throw new Error(`\\exfigure{${name}}: no exercises/figures/${name}.svg`);
+    }
+    figures.push({ name, caption: c.arg.trim() });
+    cleaned += `${unfigured.slice(i, at)}\n\nEXFIG${figures.length - 1}\n\n`;
+    i = c.end;
+  }
 
   if ((cleaned.match(/\\livretitre(?![a-zA-Z])/g) ?? []).length > 1) {
     throw new Error('\\livretitre appears more than once');
@@ -1591,7 +1679,15 @@ function renderExercises(tex, ctx) {
     }
   }
 
-  let html = out.join('\n');
+  let html = out.join('\n').replace(
+    /<p class="ltx_p">EXFIG(\d+)<\/p>/g,
+    (_, k) =>
+      `<figure class="ex-figure">SVGFIG${k}` +
+      `<figcaption>${inline(figures[Number(k)].caption)}</figcaption></figure>`,
+  );
+  if (/EXFIG\d/.test(html)) {
+    throw new Error('\\exfigure must be a paragraph of its own, outside lists and quotes');
+  }
 
   // Everything the subset knows has been expanded; what is left is outside it.
   const leftover = /\\[a-zA-Z@]+|\\[^a-zA-Z\s]|[{}]/.exec(html);
@@ -1612,6 +1708,7 @@ function renderExercises(tex, ctx) {
       `<sup class="tr-fnref" id="fnref-${Number(n) + 1}">` +
       `<a href="#fn-${Number(n) + 1}">${Number(n) + 1}</a></sup>`,
   );
+  html = html.replace(/SVGFIG(\d+)/g, (_, k) => ctx.figures.get(figures[Number(k)].name));
   html = dropMathBack(html, held);
 
   return {
@@ -1663,6 +1760,11 @@ const EXERCISES_CSS = `
   .ex-solution:not([open]) .ex-sol-hide, .ex-solution[open] .ex-sol-show { display: none; }
   .ex-sol-body { margin-top: .55rem; padding-left: .9rem; border-left: 2px solid var(--rule); }
   .ex-notes { margin-top: .9rem; padding-top: .55rem; }
+  .ex-figure { margin: 1rem 0; text-align: center; }
+  .ex-figure svg { display: block; margin: 0 auto; max-width: 100%; height: auto;
+             color: var(--ink); font-family: var(--serif); }
+  .ex-figure figcaption { margin-top: .4rem; font-size: 13px; line-height: 1.45;
+             color: var(--ink3); }
 `;
 
 function exercisesPage(html) {

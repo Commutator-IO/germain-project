@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="240" viewBox="0 0 300 240" font-family="Latin Modern Roman, CMU Serif, Georgia, serif">
+  <title>La section du secteur de cylindre : un secteur de centre I, de rayon r et d'angle au centre 2α, de bissectrice IN verticale ; le centre de gravité O et le centre d'oscillation Q sur IN.</title>
+  <path d="M150 36 L9.1 134.7 L12.3 139.1 L15.7 143.5 L19.2 147.7 L22.9 151.8 L26.6 155.8 L30.5 159.7 L34.5 163.5 L38.7 167.1 L42.9 170.6 L47.3 174 L51.8 177.2 L56.3 180.3 L61 183.2 L65.7 185.9 L70.6 188.6 L75.5 191 L80.5 193.3 L85.6 195.5 L90.7 197.5 L95.9 199.3 L101.1 200.9 L106.5 202.4 L111.8 203.7 L117.2 204.8 L122.6 205.8 L128 206.6 L133.5 207.2 L139 207.6 L144.5 207.9 L150 208 L155.5 207.9 L161 207.6 L166.5 207.2 L172 206.6 L177.4 205.8 L182.8 204.8 L188.2 203.7 L193.5 202.4 L198.9 200.9 L204.1 199.3 L209.3 197.5 L214.4 195.5 L219.5 193.3 L224.5 191 L229.4 188.6 L234.3 185.9 L239 183.2 L243.7 180.3 L248.2 177.2 L252.7 174 L257.1 170.6 L261.3 167.1 L265.5 163.5 L269.5 159.7 L273.4 155.8 L277.1 151.8 L280.8 147.7 L284.3 143.5 L287.7 139.1 L290.9 134.7 Z" fill="#38539d" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill-opacity="0.08"/>
+  <line x1="150" y1="36" x2="150" y2="208" stroke="currentColor" stroke-width="0.9" stroke-dasharray="5 4"/>
+  <circle cx="150" cy="36" r="2.6" fill="currentColor" stroke="none"/>
+  <text x="150" y="29" font-size="15" text-anchor="middle" font-style="italic" fill="currentColor">I</text>
+  <circle cx="150" cy="133.9" r="2.6" fill="currentColor" stroke="none"/>
+  <text x="162" y="140.9" font-size="15" text-anchor="start" font-style="italic" fill="currentColor">O</text>
+  <circle cx="150" cy="187.2" r="2.6" fill="#38539d" stroke="none"/>
+  <text x="162" y="194.2" font-size="15" text-anchor="start" font-style="italic" fill="#38539d">Q</text>
+  <text x="150" y="231" font-size="15" text-anchor="middle" font-style="italic" fill="currentColor">N</text>
+  <path d="M117.2 58.9 L118.5 60.7 L119.9 62.3 L121.3 63.9 L122.8 65.4 L124.4 66.8 L126.1 68.1 L127.9 69.3 L129.7 70.4 L131.5 71.5 L133.4 72.4 L135.4 73.2 L137.4 74 L139.5 74.6 L141.5 75.1 L143.6 75.5 L145.7 75.8 L147.9 75.9 L150 76" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+  <path d="M150 80 L152.3 79.9 L154.7 79.7 L157 79.4 L159.3 79 L161.6 78.4 L163.8 77.8 L166 77 L168.2 76.1 L170.3 75 L172.4 73.9 L174.4 72.6 L176.3 71.3 L178.1 69.8 L179.9 68.3 L181.6 66.7 L183.2 64.9 L184.6 63.1 L186 61.2" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+  <text x="123.2" y="92.4" font-size="14" text-anchor="middle" font-style="italic" fill="currentColor">α</text>
+  <text x="177.7" y="94.2" font-size="14" text-anchor="middle" font-style="italic" fill="currentColor">α</text>
+  <text x="232.4" y="86.3" font-size="15" text-anchor="middle" font-style="italic" fill="currentColor">r</text>
+  <circle cx="150" cy="36" r="4.5" fill="currentColor" stroke="none"/>
+  <text x="214" y="29" font-size="12" text-anchor="middle" fill="currentColor">axe</text>
+  <line x1="158" y1="28" x2="194" y2="22" stroke="currentColor" stroke-width="0.7" stroke-opacity="0.6"/>
+</svg>
