@@ -1,0 +1,1469 @@
+% NAF 5166 — lecture modernisée du volume entier.
+%
+% Pass: Opus 5.5 (claude-opus-5-5), 2026-09-23 — first pass, unchecked against
+% the views by a human, and an interpretation rather than a record. Where this
+% file and the transcriptions differ in substance, the transcriptions
+% (batch-01.fr.tex to batch-04.fr.tex) are the record.
+%
+% Sources read: the four batch transcriptions of this volume, in full, twice —
+% once for the mathematics, once for the apparatus — with their header
+% comments and the coordinator's reconciliation notes. Together they cover
+% views 1–80. View 81 is the back board of the binding: there is no batch 5,
+% and the volume is completely transcribed. No image was consulted, and no
+% printed edition was used to fill a gap, settle a word or supply a line.
+%
+% What the volume turned out to be. An unsorted dossier in at least four hands,
+% under a nineteenth-century title « Papiers de Lagrange » and an older wrapper
+% (leaf A) that claims « notes etc de Mlle Sophie Germain ». Three groups:
+%
+%   v. 13, 15   title leaf with the 1888 certificate; the wrapper (leaf A)
+%   v. 17–41    the memoir « Eclaircissement d'une difficulté singuliere …
+%               Par J. L. Lagrange », paragraphs 1–10, leaves 1–12 with 6 bis
+%               (hand 1); v. 40 a cancelled first start of leaf 11
+%   v. 43       a heading « Notes de M.r Dela Grange »
+%   v. 45–51    short notes in hand 1: a plane and a sphere; a series headed
+%               « page 623 » on slips A and B; the arc of an ellipse
+%   v. 53, 55   the plane-and-sphere note and the series redone (hand 2)
+%   v. 55–56    a scrap of numerical reckoning (log-cosines, degrees), pencil
+%               tables on its back
+%   v. 58–60    a draft letter answering a judgement, on « l'équation … d'après
+%               M.r De la Grange » (hand 3, feminine agreements)
+%   v. 61       another unfinished draft, on the other side of leaf 22
+%   v. 62–68    a complete letter recommending « le mémoire N° 1 » to the
+%               class; Chladni, Euler, Sauveur, the programme; « votre servante »
+%
+% Settled by the reconciliation notes and followed here: the ink series A,
+% 1–26 with 6 bis is the library's count of leaves, not the writer's
+% pagination; views 60 and 61 are the two sides of leaf 22. No \folio{} is
+% written, the series being in ink; sections cite views.
+%
+% Notation translated, each with a footnote at first use: the looped d (total
+% and partial alike) → d or ∂; ϖ (and the π' of views 21–39) → ϖ'; π as 180°
+% → π; « V( » radical → √; ∫ with a raised 3 → triple integral over the
+% body; dϖ' dθ' sin θ' → dΩ'; « &c. » → etc.; « l », « log. » → log; « sin φ² »
+% → sin²φ; « b4 » on the line → exponent; R^(n) → P_n(μ); « premieres
+% dimensions de y » → first order; « degré » of an equation → order; § → §.
+%
+% Modern names attached where the statement coincides: Newtonian potential;
+% Newton's shell theorem; Legendre polynomials (Laplace's R^(n)); the
+% generating function Σ(2n+1)P_n t^n; Abel summation; single-layer potential
+% and its jump relation; the direct value as the mean of the two one-sided
+% limits; Poisson kernel of the ball (approximate identity); Laplace's surface
+% equation for spheroids (distinguished from ΔV = 0); spherical trigonometry
+% (cosine and five-part formulas); Hesse normal form; binomial series;
+% incomplete elliptic integral of the second kind; log-cosine tables;
+% Euler–Bernoulli beam; plate equation / Germain–Lagrange equation /
+% biharmonic operator; membrane equation; sum of principal curvatures (twice
+% the mean curvature); simply supported and free edges; Chladni figures;
+% Sauveur's nodes. Later work is footnoted as later where it is used; the
+% memoir's title names Lagrange (d. 1813), and every « later than the leaf »
+% is conditional on that title, stated as such.
+%
+% Every computation was redone; the recomputations are this reading's own.
+% Departures from the leaf, each footnoted at its place: the missing minus
+% signs of v. 23 and v. 27 (and the power of a in dρ/dr at r = a, v. 27); the
+% « = » missing in the second line of v. 27; « 1/r » for a²/r (v. 27); the
+% claim that Σ(2n+1)R^(n) « sera nécessairement nulle » and that its terms
+% cancel (the series diverges; its Abel sum is 0); the third spherical-
+% trigonometry formula (v. 37), whose sign is wrong; « puissances impaires de
+% sin φ » (v. 37), completed; « π' et θ' deviennent π et θ » at ψ = π (v. 39);
+% the component « dans le plan r et R » (v. 19), which lies in the meridian
+% plane; « dx² = a cos φ dφ » (v. 51); « b4 » for b³ (v. 49); the expansion of
+% log(1 + t) at t = √(1+b) > 1 (v. 55), outside its disc; « z » for y (v. 59);
+% « Monsieur d'ageer » (v. 61), read « Monsieur, d'agréer ». Steps supplied:
+% the implicit r ≥ a of views 25–39; the bound that makes paragraph 9 a proof;
+% the reduction of a point below the reference sphere (y < 0) to the case
+% y ≥ 0; the value of the illegible digit of the log table (v. 55) by
+% computation, given as a computation.
+%
+% Attribution. The memoir names Lagrange in its title, in the text's hand;
+% whose hand it is, the transcriptions do not say. The letters of v. 58–68 are
+% unsigned and undated; the writer uses feminine agreements. The wrapper's
+% claim that the volume holds notes by Sophie Germain is reported as the
+% wrapper's. The identification of the letters' writer is given in section IV
+% as an inference, with its evidence, and is adopted nowhere else. No date is
+% inferred for any piece; \dating is the catalogue's, verbatim.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{naf-5166}
+\shelfmark{NAF 5166}
+\pages{1}{80}
+\dating{1701-1900}
+\watermark{Lecture automatique\\interprétation non vérifiée}
+\foldertitle{Papiers du géomètre J.-L. LAGRANGE (1813). NAF 5166 — lecture modernisée du volume entier}
+
+\begin{document}
+
+\section*{Résumé}
+
+\begin{resume}
+Ce volume réunit, sous un titre du XIX\textsuperscript{e} siècle, « Papiers de
+Lagrange », trois ensembles de feuillets qui n'ont pas été classés ensemble.
+Le premier est un mémoire de douze feuillets, « Éclaircissement d'une
+difficulté singulière qui se rencontre dans le calcul de l'attraction des
+sphéroïdes très peu différents de la sphère », signé dans son titre « Par J. L.
+Lagrange ». Viennent ensuite quelques notes de calcul courtes, sous une
+chemise « Notes de M\textsuperscript{r} Dela Grange » : la distance d'un point
+à un plan, une série de logarithmes, l'arc d'ellipse, et un brouillon de
+calculs numériques. Les derniers feuillets sont des lettres et des brouillons
+de lettres, sans nom ni date, d'une personne qui écrit au féminin et qui défend
+son propre mémoire sur les vibrations des surfaces élastiques. La chemise la
+plus ancienne annonce des « notes etc de M\textsuperscript{lle} Sophie Germain ».
+C'est ce qu'affirme la chemise ; les lettres ne le disent pas.
+
+Le mémoire part d'un calcul de Laplace. On cherche l'attraction qu'exerce un
+corps homogène presque sphérique, de rayon \(a(1+y')\) avec \(y'\) petit, sur
+un point de sa propre surface. Laplace en avait tiré une relation simple entre
+le potentiel \(V\) et sa dérivée radiale au point attiré :
+\(\tfrac12 V + a\,\partial V/\partial r = -\tfrac23\pi a^2\). L'auteur annonce
+d'entrée ce qu'il cherche. Le théorème de Laplace est « très remarquable par sa
+simplicité autant que par sa généralité », mais il « donne lieu à une difficulté
+singulière qui paroît n'avoir encore été remarquée par personne ». Voici cette
+difficulté. Si l'on dérive sous le signe d'intégration puis qu'on se place à la
+surface, la fonction à intégrer est identiquement nulle, et le calcul donne
+zéro. Pour une couche d'épaisseur constante, pourtant, le calcul direct donne
+\(-2\pi a^2 y'\). L'auteur appelle cela « un paradoxe dans le Calcul
+intégral ».
+
+Pour le lever, il refait le calcul « sans rien négliger ». Il laisse le point
+attiré à une distance \(r\) du centre plus grande que \(a\), et ne fait \(r=a\)
+qu'à la fin. La fonction à intégrer vaut alors \((r^2-a^2)\) fois une fonction
+qui devient infinie comme \(1/(r-a)\) près du point attiré, et le produit ne
+tend pas vers zéro. L'auteur le calcule d'abord pour une couche uniforme, puis
+en général par une intégration par parties. Il trouve \(-2\pi a^2 y\), et
+retombe, par un chemin qu'il juge rigoureux, sur l'équation de Laplace. Il a
+raison, et sa démonstration est bonne pour le point pris du côté extérieur,
+pourvu qu'on y ajoute une majoration qu'il ne donne pas. Dans le langage
+d'aujourd'hui, on a échangé une limite et une intégrale sans en avoir le droit.
+La fonction \((r^2-a^2)\rho^3\) est, à un facteur près, le noyau de Poisson de
+la boule : quand \(r\) tend vers \(a\), elle se concentre au point attiré. Au
+passage, l'auteur affirme que la série \(1+3P_1(\mu)+5P_2(\mu)+\dots\), bâtie sur
+les polynômes de Legendre, est nulle. C'est faux au sens propre, car elle
+diverge. C'est vrai au sens d'Abel.
+
+Les lettres se rapportent, par leur vocabulaire (« la classe », « le
+programme », les « commissaires », un « mémoire N° 1 » placé sous une
+épigraphe de Bacon), à un concours de l'Institut. Par leur sujet, la théorie
+des plaques élastiques vibrantes comparée aux figures de Chladni, elles se
+rapportent au prix des surfaces élastiques. L'une répond à un jugement.
+M\textsuperscript{r} De la Grange, en suivant « mon hypothèse », a trouvé une
+équation du quatrième ordre, et l'écrivante remarque qu'elle est la somme de
+deux équations qu'on obtient en remplaçant, dans l'équation de la lame
+élastique, la courbure \(1/r\) par la somme des courbures principales
+\(1/r+1/r'\). Cette somme est \(p\,\partial_t^2 z + k^2\Delta^2 z = 0\),
+l'équation des plaques vibrantes, avec l'opérateur biharmonique. Elle sait,
+écrit-elle, que « ce n'est pas ainsi qu'a du operer M\textsuperscript{r} De la
+Grange ». L'autre lettre plaide pour son mémoire, point par point : l'accord
+avec les expériences de Chladni, le sens exact des mots « appuyé » et
+« libre », la différence entre les nœuds d'une lame et ceux d'une corde. Sur
+ses propres raisons, elle écrit : « je n'avois guere de confiance dans mon
+travail j'y avois été entraîné par une analogie qui me sembloit frappante ».
+
+Où cela mène, et quels noms chercher. Pour le mémoire : l'attraction des
+sphéroïdes, le potentiel de simple couche et son saut à la traversée de la
+couche, le noyau de Poisson, la sommation d'Abel, et la dérivation sous le
+signe somme. Pour les notes : la forme normale de Hesse, la série du binôme et
+l'intégrale elliptique de seconde espèce. Pour les lettres : l'équation des
+plaques de Germain–Lagrange, l'opérateur biharmonique, la poutre
+d'Euler–Bernoulli, les figures de Chladni et les lignes nodales. La dernière
+section de cette lecture dit ce que les feuillets permettent d'affirmer sur les
+auteurs, et ce qu'ils ne permettent pas.
+
+\keywords{attraction of spheroids, Newtonian potential, Legendre polynomials, divergent series, Abel summation, single-layer potential, jump relations, Poisson kernel, interchange of limit and integral, differentiation under the integral sign, spherical trigonometry, distance from a point to a plane, Hesse normal form, binomial series, elliptic integral of the second kind, arc length of an ellipse, logarithmic trigonometric tables, vibrating plates, Germain–Lagrange plate equation, biharmonic operator, Euler–Bernoulli beam, membrane equation, sum of principal curvatures, Chladni figures, nodal lines, boundary conditions of plates}
+\end{resume}
+
+\section*{Ce que le volume contient}
+
+\pagerange{1}{80}
+Quatre-vingts vues ont été transcrites. La vue 81 est le plat inférieur de la
+reliure, où rien n'est écrit. Il n'y a donc pas de cinquième lot, et le volume
+est transcrit en entier. Les vues 1 et 2 sont le plat et le contreplat
+supérieurs, où se trouve l'étiquette « FR. / NOUV. ACQ. / 5166 ». Les vues 3 à
+12 et 70 à 79 sont des feuillets de garde modernes, blancs, et la vue 80 est le
+contreplat inférieur. Plusieurs versos sont blancs eux aussi : ce sont les vues
+14, 16, 18, 20, 22 à 38 paires, 42, 44, 46, 48, 50, 52, 54, 57 et 69, que les
+transcriptions ont examinées sans les transcrire.
+
+La vue 13 est un feuillet de titre calligraphié, « Papiers / de / Lagrange ».
+Il porte le certificat de la bibliothèque : « Volume de 26 Feuillets / plus les
+Feuillets A préliminaire \& 6 \textsuperscript{bis}. / 27 Septembre 1888. », et
+la mention « Libri 1856 ». La vue 15 est le feuillet « A », une ancienne chemise.
+On y lit « Lagrange. » en grande écriture, puis, d'une cursive rapide du
+XIX\textsuperscript{e} siècle, « Lagrange / mémoires et notes \emph{autographes} /
+avec des notes etc de / M\textsuperscript{lle} Sophie Germain ».\footnote{La
+transcription lit « mémoires » avec doute (la finale est un simple trait, et
+le pluriel n'est pas sûr) ; elle lit aussi « etc » avec doute (trois lettres
+rapides). Sur la même chemise : « N. a. fr. 5166. », « Libri. N\textsuperscript{o}.
+1856. », un « 1856 » au crayon, « R. c. 8070 (91) ». Précédé de « No. »,
+« 1856 » est un numéro de la collection Libri et non une année. C'est une
+inférence de la transcription, reprise ici. « R. c. 8070 (91) » et le cachet
+« ACQ. 8070 (LIBRI) » de la vue 17 sont des marques d'acquisition. Rien de cela
+n'est de la main des textes.} Aucune de ces mentions n'est de la main des
+textes. Ce sont des notes de possesseur et de bibliothèque, et cette lecture
+ne s'en sert que pour ce qu'elles disent du volume.
+
+Une série de chiffres à l'encre court en haut à droite des rectos. Elle va de
+« A. » (vue 15) à « 1 » et « 2 » (vues 17 et 19), puis de « 3 » à « 11 », avec
+« 6+ » et « 6 bis » (vues 21 à 39), de « 12 » à « 22 » (vues 41 à 60) et de
+« 23 » à « 26 » (vues 62 à 68). C'est la foliotation de la bibliothèque : elle
+traverse quatre mains sans rupture et répond exactement au certificat de 1888.
+Ce n'est pas une pagination de l'auteur, même si elle commence à 3 dans les vues
+21 à 40 et y répète le 6. Comme elle est à l'encre, les transcriptions n'en
+tirent aucun folio, et cette lecture cite les vues.\footnote{Le « + » qui suit
+le 6 (vue 27) et une petite croix près du 7 (vue 31) restent inexpliqués. En
+marge de la vue 17, une autre main a entouré d'un cercle « 13 feuillets / le
+6\textsuperscript{me} double ». Ce compte s'accorde avec ce que les
+transcriptions ont trouvé : le mémoire occupe les feuillets 1 à 12 et le
+feuillet 6 bis, soit treize feuillets, dont le sixième est « double ». Le
+rapprochement est de cette lecture.} Les autres chiffres sont d'une autre
+nature. « A » et « B », à côté de 15 et de 16, apparient deux fiches d'un même
+calcul. Les numéros de paragraphe du mémoire, de 1 à 10, sont cités dans le
+texte sous la forme « n°. 3 ». Il y a aussi « page 623 » et « Pag. 623 », qui
+renvoient à un ouvrage non nommé, et « § 3 », « § 6 », « N° 1 » dans les
+lettres. Un « I 65 » encadré, d'une plume plus fine, se lit dans la marge de la
+vue 37 ; son sens reste inconnu. Les vues 60 et 61 sont les deux faces d'un même
+feuillet, le 22.
+
+\begin{itemize}
+  \item \textbf{Vues 17 à 41 — le mémoire} « Éclaircissement d'une difficulté
+    singulière… », « Par J. L. Lagrange ». C'est un brouillon, avec des
+    ratures, en paragraphes numérotés de 1 à 10, d'une cursive rapide et
+    appuyée (main 1). Il occupe les rectos seulement. Au dos du feuillet 11
+    (vue 40), tête-bêche, se trouve un premier départ de ce feuillet, biffé.
+  \item \textbf{Vue 43 — une chemise}, « Notes de M\textsuperscript{r} Dela
+    Grange », d'une écriture fine et posée.
+  \item \textbf{Vues 45 à 56 — des notes de calcul} : un plan et une sphère
+    (vue 45), une série en \(b\) sur deux fiches « page 623 » (vues 47 et 49),
+    l'arc d'ellipse (vue 51), tous de la main 1. Les deux premiers calculs
+    sont refaits d'une main soignée et arrondie (main 2, vues 53 et 55). Il y a
+    aussi un brouillon de calculs numériques à l'encre, avec des tables au
+    crayon au dos (vues 55 et 56).
+  \item \textbf{Vues 58 à 68 — des lettres}, d'une ou de plusieurs mains
+    penchées (main 3 aux vues 58 à 60 ; celle des vues 61 à 68 emploie le
+    \emph{s} long). Les vues 58 à 60 sont un brouillon de réponse à un
+    jugement, la vue 61 un autre brouillon, inachevé, et les vues 62 à 68 une
+    lettre complète qui recommande « le mémoire N° 1 ».\footnote{Les mains 2 et
+    3 ont en commun un \emph{d} à haste droite et un 5 en forme de \emph{ſ}.
+    Qu'elles soient une seule main à deux vitesses, et que l'une ou l'autre
+    soit celle des vues 61 à 68, les transcriptions ne le tranchent pas. La
+    chemise de la vue 43 est peut-être de la main 2, sans que ce soit établi.}
+\end{itemize}
+
+\section*{I. « Éclaircissement d'une difficulté singulière » : l'attraction d'un sphéroïde en un point de sa surface (vues 17 à 41)}
+
+\pagerange{17}{41}
+\subsection*{Ce que l'auteur annonce, et les notations}
+
+Le mémoire s'ouvre sur un historique. « D'alembert est le premier qui ait donné
+le calcul de l'attraction des sphéroïdes non elliptiques mais peu differens de
+la sphere », dans les deuxième et troisième volumes de ses \emph{Recherches sur
+le système du monde}. Laplace a repris la question « d'une maniere nouvelle et
+plus generale », dans les \emph{Mémoires de l'Académie des sciences} de 1782 et
+dans le second volume de la \emph{Mécanique céleste}. Sa théorie repose sur
+« un beau théoreme très remarquable par sa simplicité autant que par sa
+généralité ; mais ce theoreme donne lieu à une difficulté singuliere qui paroît
+n'avoir encore été remarquée par personne et qui merite d'être
+examinée ».\footnote{Entre « et » et « troisieme », un mot biffé d'un trait
+épais, surmonté d'un second mot biffé ; ni l'un ni l'autre ne se lit. Dans
+« 1782 », le 7 est barré ; le millésime est le même à l'article 1. « paroît » :
+la voyelle après \emph{par} peut être un \emph{o} ou un \emph{a}. Le titre
+tient trois lignes, puis vient la ligne d'auteur, en retrait, de la même main
+et de la même encre que le texte. Le cachet de la Bibliothèque nationale est
+posé sur les mots « très remarquable ».}
+
+L'article 1 fixe les notations « comme dans les Memoires de 1782 p. 134 et dans
+la Mecanique celeste (tome 2) ».\footnote{Le numéro d'article est un trait
+vertical à empattements, qui peut se lire « 1 » ou « I ». « (tome 2) » est écrit
+dans la marge et appelé par un signe d'insertion. Un mot court biffé, après
+« l'angle que », ne se lit pas.} Le point attiré \(P\) a pour coordonnées
+sphériques \((r,\theta,\varpi)\) par rapport au centre du sphéroïde et à un axe
+fixe. La molécule attirante \(M\) a pour coordonnées \((R,\theta',\varpi')\).
+Si \(\gamma\) est l'angle des deux rayons, on pose
+\[
+\mu=\cos\gamma=\cos\theta\cos\theta'+\sin\theta\sin\theta'\cos(\varpi-\varpi'),
+\qquad |PM|=\sqrt{r^2-2rR\mu+R^2}.
+\]
+L'élément de masse est \(R^2\,dR\,d\Omega'\), avec
+\(d\Omega'=\sin\theta'\,d\theta'\,d\varpi'\) l'élément d'aire de la sphère
+unité, et la « somme des molecules divisées par leur distances au point
+attiré » est
+\[
+V(r,\theta,\varpi)=\iiint_{\text{corps}}\frac{R^2\,dR\,d\Omega'}{\sqrt{r^2-2rR\mu+R^2}},
+\]
+où \(R\) va de \(0\) à la surface, \(\varpi'\) de \(0\) à \(2\pi\) et \(\theta'\)
+de \(0\) à \(\pi\).\footnote{Le feuillet écrit l'angle \(\varpi\) d'un \(\pi\)
+au trait supérieur recourbé, et l'intégrale triple d'un seul signe \(\int\)
+suivi d'un 3 en exposant. Le radical est un grand \emph{V} suivi d'une
+parenthèse ; les angles sont en degrés (« \(360^\circ\) », « \(180^\circ\) »).
+Le \(d\) bouclé de la main sert aux différentielles totales comme partielles ;
+on écrit ici \(\partial\) quand la dérivée est partielle. En marge, après
+\(\theta'\), « ou à \(\mu\) » est lu avec doute. Plusieurs passages sont biffés
+et ne se lisent pas : une ligne commençant par « ou \(R^2dR\) », un début de
+formule « \(V=\int\) », une ligne et demie après « \(180^\circ\) ; », où ne se
+lisent que « et que », « depuis » et « jusqu'à », et une fraction commencée
+entre la deuxième et la troisième composante. Une grosse tache couvre le signe
+\(=\) de la formule de \(V\). « leur distances » : ainsi.} La densité est prise
+égale à 1 sans que le feuillet le dise : le corps est supposé homogène.
+\(V\) est ce qu'on appelle aujourd'hui le potentiel newtonien du
+corps.\footnote{Le mot « potentiel » est plus tardif. Green l'emploie en 1828,
+Gauss en 1840. Le titre du mémoire nomme Lagrange, mort en 1813 : si le titre
+dit vrai, le feuillet est antérieur à ces deux textes. La « fonction \(V\) »
+est celle de Laplace, que le feuillet cite.} Ses dérivées
+\(\partial V/\partial r\), \(\frac1r\,\partial V/\partial\theta\) et
+\(\frac{1}{r\sin\theta}\,\partial V/\partial\varpi\) sont les composantes de
+l'attraction selon les directions où croissent \(r\), \(\theta\) et \(\varpi\).
+L'attraction vers le centre est donc \(-\partial V/\partial r\).\footnote{Le
+feuillet place la deuxième composante « perpendiculairement à ce rayon dans le
+plan \(r\) et \(R\) ». En fait, \(\frac1r\,\partial V/\partial\theta\) est la
+composante perpendiculaire à \(r\) dans le plan méridien, qui contient l'axe
+fixe et le rayon \(r\). Le plan de \(r\) et \(R\) change avec la molécule. La
+troisième composante est perpendiculaire à ce plan méridien.}
+
+\subsection*{Le sphéroïde, une sphère et une couche}
+
+\pagerange{21}{21}
+L'article 2 prend un sphéroïde très peu différent d'une sphère de rayon \(a\) :
+\(R=a(1+y')\), où \(y'\) est une fonction très petite de la direction
+\((\theta',\varpi')\), dont on néglige le carré. Le potentiel est celui de la
+sphère, plus celui de l'excès du sphéroïde sur la sphère. Au premier ordre,
+cet excès est une couche de densité superficielle \(\sigma=ay'\) étalée sur la
+sphère \(r=a\). On l'obtient en mettant \(a\) pour \(R\) et \(ay'\) pour \(dR\)
+dans l'intégrale de \(V\). Avec
+\[
+\rho=\frac{1}{\sqrt{r^2-2ar\mu+a^2}},
+\]
+on a donc
+\[
+V=\frac{4\pi a^3}{3r}+u,\qquad u=a^3\int_{S^2}y'\,\rho\;d\Omega'.
+\]
+L'auteur note \(\pi\) l'angle de \(180^\circ\), et il appelle « premières
+dimensions de \(y\) » ce que nous appelons le premier ordre.\footnote{Dans les
+vues 21 à 39, la transcription lit \(\pi'\) la longitude de la molécule, et
+\(\pi\) à la fois l'angle de \(180^\circ\) et la longitude du point attiré.
+Les lots des vues 17--19 et 41, qui lisent la même main, distinguent un petit
+\(\pi\) au trait recourbé (\(\varpi\), l'angle) d'un grand signe en forme de
+\(\Pi\) (\(\pi\), la constante). Cette lecture écrit partout \(\varpi\),
+\(\varpi'\) pour les angles et \(\pi\) pour la constante. Sur la page, « egale »
+qualifie le rayon ; un mot biffé après « ainsi » (« egale » répété ?) ; un
+signe ou un coefficient noyé sous une tache entre « \(u=\) » et \(a^3\), effacé
+par l'auteur ; « \(ay\) » sans prime.} Le terme de la sphère,
+\(4\pi a^3/3r\), n'est valable que pour \(r\ge a\). À l'intérieur de la sphère,
+son potentiel est \(2\pi a^2-\frac23\pi r^2\). Le feuillet emploie la formule
+extérieure sans le dire, et l'on verra que ce choix est le bon.
+
+\subsection*{Le calcul « comme M. Laplace »}
+
+\pagerange{23}{23}
+« Je differentie maintenant comme M. Laplace par rapport à \(r\) ». En
+dérivant sous le signe d'intégration, on trouve
+\[
+\frac{\partial V}{\partial r}=-\frac{4\pi a^3}{3r^2}+\frac{\partial u}{\partial r},
+\qquad
+\frac{\partial u}{\partial r}=-a^3\int_{S^2}\frac{(r-a\mu)\,y'}{(r^2-2ar\mu+a^2)^{3/2}}\,d\Omega'.
+\]
+Le signe moins manque sur le feuillet.\footnote{La transcription note
+qu'aucun signe moins ne précède \(a^3\), et que le dénominateur est écrit avec
+le radical suivi d'une parenthèse, d'un crochet et de l'exposant
+\(\frac32\). Le feuillet écrit ici \(d\varpi'\,d\mu\) au lieu de
+\(d\Omega'\). Ce changement suppose que le pôle des angles a été porté sur le
+rayon \(r\), ce que l'article 3 fera explicitement. Le signe de l'orientation
+est absorbé dans les bornes.} À la surface, \(r=a(1+y)\), où \(y\) est la
+valeur de \(y'\) dans la direction du point attiré. Comme \(u\) est déjà du
+premier ordre, l'auteur fait \(r=a\) dans \(u\) et dans ses dérivées. En
+\(r=a\), on a \(\rho=1/\bigl(a\sqrt{2(1-\mu)}\bigr)\), et il obtient
+\[
+u=\frac{a^2}{\sqrt2}\int\frac{y'\,d\varpi'\,d\mu}{\sqrt{1-\mu}},\qquad
+\frac{\partial u}{\partial r}\Big|_{r=a}=-\frac{a}{2\sqrt2}\int\frac{y'\,d\varpi'\,d\mu}{\sqrt{1-\mu}},
+\qquad\text{donc}\qquad \frac u2+a\frac{\partial u}{\partial r}=0 .
+\]
+Les intégrales sont convergentes, car la singularité en \(\mu=1\) est en
+\(1/\sqrt{1-\mu}\).\footnote{Sous \(u\), \(V\) et \(-a\), le dénominateur est
+le petit 2 de cette main, fait comme un \emph{n} sans boucle ; le calcul
+confirme la lecture 2. Le « 1 » de \((1-\mu)^{3/2}\) est empâté, et le signe
+d'égalité qui suit le deuxième membre est surchargé.} Il en conclut qu'à la
+surface
+\[
+\frac V2+a\frac{\partial V}{\partial r}=\frac{2\pi a^3}{3r}-\frac{4\pi a^4}{3r^2}
+=-\frac{2\pi a^2}{3}+2\pi a^2y\qquad(r=a(1+y)),
+\]
+ce qui est exact pour la partie sphérique, au premier ordre. Or, dit-il,
+« M. Laplace trouve \(\frac V2+a\frac{dV}{dr}=-\frac{2\pi a^2}{3}\) parce qu'il
+suppose que la sphere touche le spheroide, auquel cas \(y=0\) ».\footnote{En
+marge, en regard de ces équations, une note de six lignes de la main du texte
+est barrée de trois grands traits croisés. On y lit : « [n']avoit pas pour
+\ldots{} remplir necessairement la condition que la sphere touche la surface du
+spheroide ». « avoit » et « remplir » sont douteux, et un mot n'est pas lu. Il
+y a aussi, après « cette surface », un petit groupe biffé ; en fin de ligne,
+après « \(y=0\). », « Cependant comme » biffé et lu avec doute, suivi d'un mot
+noyé ; et, dans la marge, un mot noyé sous un trait épais.} Les deux calculs ne
+diffèrent que du terme \(2\pi a^2y\). Toute la suite du mémoire tient à ce
+terme.
+
+Il faut dire tout de suite ce que vaut la dérivée calculée ainsi. Le nombre
+qu'on obtient en posant \(r=a\) sous le signe \(\int\) après la dérivation est
+une intégrale convergente. Ce n'est pourtant pas la dérivée de \(u\) en
+\(r=a\) : en général, \(u\) n'y est pas dérivable. On verra plus bas que cette
+« valeur directe » est la moyenne de deux dérivées latérales qui diffèrent.
+
+\subsection*{Le cas d'une couche uniforme}
+
+\pagerange{25}{25}
+L'article 3 éprouve l'équation \(\frac u2+a\frac{\partial u}{\partial r}=0\)
+sur le cas le plus simple, \(y'\) constant. On porte le pôle des angles sur
+le rayon \(r\), « ce qui est permis, puisque cette ligne est fixe par rapport
+aux memes angles ». On a alors \(\mu=\cos\theta'\), et l'on intègre en
+\(\varpi'\) de \(0\) à \(2\pi\), puis en \(\mu\) de \(-1\) à \(1\) :
+\[
+\int_{S^2}\frac{d\Omega'}{\sqrt{r^2-2ar\mu+a^2}}
+=\frac{2\pi}{ar}\Bigl[\sqrt{r^2-2ar\mu+a^2}\Bigr]_{\mu=1}^{\mu=-1}
+=\frac{2\pi\bigl((r+a)-|r-a|\bigr)}{ar},
+\]
+qui vaut \(4\pi/r\) pour \(r\ge a\) et \(4\pi/a\) pour \(r\le a\).
+Le feuillet ne donne que la première ligne. Il écrit \(r-a\) pour la racine en
+\(\mu=1\), ce qui suppose \(r\ge a\) sans le dire.\footnote{« il est facile de »
+termine la vue 23, au milieu de la phrase, et la vue 25 reprend. Dans la
+fraction du début de la vue 25, le \(\theta'\) est récrit, comme aux vues 21
+et 23 ; dans « \(\frac u2\) », le 2 est le petit 2 en forme de \emph{n}.} Il
+en tire, pour \(r>a\),
+\[
+u=\frac{4\pi a^3y'}{r},\qquad \frac{\partial u}{\partial r}=-\frac{4\pi a^3y'}{r^2},
+\qquad\text{et en }r=a:\qquad \frac u2+a\frac{\partial u}{\partial r}=-2\pi a^2y'\neq0 .
+\]
+C'est juste. Pour \(r<a\), en revanche, \(u=4\pi a^2y'\) est constant.
+C'est le théorème de Newton : une couche sphérique uniforme n'exerce aucune
+attraction à l'intérieur.\footnote{\emph{Principia}, livre I, proposition 70.
+Le théorème est bien antérieur au feuillet.} La dérivée \(\partial u/\partial
+r\) saute donc de \(0\) à \(-4\pi ay'\) quand on traverse la sphère \(r=a\).
+Le calcul direct de l'article 2, refait ici, donne \(-2\pi ay'\), exactement la
+moyenne des deux. La difficulté est déjà tout entière dans ce cas.
+
+\subsection*{Un facteur identiquement nul, et la série de Laplace}
+
+\pagerange{27}{29}
+L'article 4 met le calcul sous une forme qui fait voir la difficulté. Comme
+\(r\) n'entre que dans \(\rho\),
+\[
+\frac u2+a\frac{\partial u}{\partial r}
+=a^3\int_{S^2}\Bigl(\frac\rho2+a\frac{\partial\rho}{\partial r}\Bigr)y'\,d\Omega',
+\]
+« en faisant \(r=a\) après la differentiation ». Or
+\(\partial\rho/\partial r=-(r-a\mu)\rho^3\), et en \(r=a\) on trouve
+\[
+\rho=\frac{1}{a\sqrt{2(1-\mu)}},\qquad
+\frac{\partial\rho}{\partial r}=-\frac{1}{2\sqrt2\,a^2\sqrt{1-\mu}},\qquad
+\frac\rho2+a\frac{\partial\rho}{\partial r}=0\quad(\mu<1),
+\]
+ce que le feuillet appelle une « équation identique ».\footnote{Le feuillet
+écrit \(\frac{d\rho}{dr}=\frac{r-a\mu}{(r^2-2ar\mu+a^2)^{3/2}}\), puis, en
+\(r=a\), \(\rho=\frac{1}{a\sqrt2(1-\mu)}\) et
+\(\frac{d\rho}{dr}=\frac{1}{2a\sqrt2(1-\mu)}\). Les deux valeurs de la dérivée
+n'ont pas de signe moins, comme celle de \(du/dr\) à la vue 23, et avec elles
+l'équation ne s'annulerait pas ; la transcription le relève. La barre du
+radical ne couvre que le 2, alors que les valeurs demandent \(\sqrt{2(1-\mu)}\).
+Enfin, telle qu'elle est transcrite, la valeur de la dérivée porte \(a\) où
+il faut \(a^2\), puisque \(a\,\partial\rho/\partial r\) doit être du même ordre
+que \(\rho\). Les valeurs données ici sont les valeurs exactes.} Le facteur
+est nul pour \(\mu<1\) ; en \(\mu=1\), il n'est pas défini.
+
+Le feuillet le vérifie ensuite, « comme l'a fait M. Laplace », sur le
+développement de \(\rho\) en série descendante. Les \(R^{(n)}\) de Laplace
+sont ici des fonctions de \(\mu\) seul. Ce sont les polynômes de Legendre
+\(P_n(\mu)\) : pour \(r>a\),
+\[
+\begin{aligned}
+\rho&=\sum_{n\ge0}\frac{a^n}{r^{n+1}}P_n(\mu),\qquad
+r\frac{\partial\rho}{\partial r}=-\sum_{n\ge0}(n+1)\frac{a^n}{r^{n+1}}P_n(\mu),\\
+\frac\rho2+r\frac{\partial\rho}{\partial r}&=-\frac12\sum_{n\ge0}(2n+1)\frac{a^n}{r^{n+1}}P_n(\mu).
+\end{aligned}
+\]
+Le nom des polynômes vient après les travaux où ils apparaissent :
+Legendre les introduit dans ses recherches sur l'attraction des sphéroïdes,
+Laplace les note \(R^{(n)}\). Là où le feuillet écrit \(R^{(n)}\), le
+développement coïncide exactement avec celui de \(P_n\).\footnote{Dans la
+deuxième ligne du feuillet, un simple trait sépare
+\(\frac{r\,d\rho}{dr}\) de la suite, sans signe d'égalité, et tous les termes
+sont précédés de « \(-\) ». On lit
+« \(\frac{r\,d\rho}{dr}-\frac{R^{(0)}}{r}-\frac{2aR^{(1)}}{r^2}-\frac{3a^2R^{(2)}}{r^3}+\&c.\) »,
+qui est l'égalité donnée ici. Le 3 de « \(3aR^{(1)}\) » est empâté ; le
+coefficient suivant est lu 5 avec doute (il pourrait être un 3), mais la
+ligne d'après écrit nettement « \(5R^{(2)}\) ». « \&c. » est écrit d'un signe
+en forme d'alpha suivi de deux points ; on écrit « etc. ».} En \(r=a\), le
+feuillet écrit
+\[
+\frac\rho2+a\frac{\partial\rho}{\partial r}=-\frac1{2a}\bigl(R^{(0)}+3R^{(1)}+5R^{(2)}+\text{etc.}\bigr),
+\]
+« serie dans laquelle tous les termes doivent se detruire d'eux memes ; ce
+qu'on trouve en effet après la substitution des valeurs de \(R^{(0)}\),
+\(R^{(1)}\) \&c. en fonctions de \(\mu\) ».
+
+Pour le prouver sans substituer, l'auteur remarque que
+\(\rho\sqrt r=\bigl(r+\frac{a^2}{r}-2a\mu\bigr)^{-1/2}\).\footnote{Le feuillet
+écrit « \(r+\frac1r\) » : le numérateur est un petit trait vertical, lu 1 ; la
+ligne suivante écrit \(\frac{a^2}{r}\) au même endroit, qui est la valeur
+juste.} Il dérive, multiplie par \(\sqrt r\), et obtient
+\[
+\frac\rho2+r\frac{\partial\rho}{\partial r}=-\frac{r^2-a^2}{2}\,\rho^3,
+\]
+d'où, en posant \(t=a/r<1\), l'identité
+\[
+\sum_{n\ge0}(2n+1)P_n(\mu)\,t^n=\frac{1-t^2}{(1-2t\mu+t^2)^{3/2}} .
+\]
+Cette identité est juste pour \(|t|<1\). C'est la fonction génératrice de la
+suite \((2n+1)P_n\), qu'on tire de celle de Legendre,
+\(\sum P_n t^n=(1-2t\mu+t^2)^{-1/2}\), en lui appliquant
+\(1+2t\,\frac{d}{dt}\).\footnote{Le feuillet l'écrit sous la forme
+« \(\frac{R^{(0)}}{r}+\frac{3aR^{(1)}}{r^2}+\ldots=\frac{1-a^2/r^2}{1-2a\mu/r+a^2/r^2}\times
+\bigl(\frac{R^{(0)}}{r}+\frac{aR^{(1)}}{r^2}+\ldots\bigr)\) », ce qui revient au
+même. Les deux dénominateurs de la première ligne de la vue 29 commencent par
+le petit 2 en forme de \emph{n}. Entre le 3 et le \(R\) de « \(3R^{(1)}\) »,
+un trait d'attaque en forme de parenthèse ouvrante, que rien ne ferme.} Le
+feuillet conclut : « par consequent en faisant \(r=a\) la serie
+\(R^{(0)}+3R^{(1)}+5R^{(2)}+\&c.\) sera necessairement nulle ».
+
+Cette conclusion n'est pas juste telle qu'elle est écrite. La série
+\(\sum(2n+1)P_n(\mu)\) diverge pour tout \(\mu\in[-1,1]\) : ses termes ne
+tendent pas vers zéro, et leur module croît comme \(\sqrt n\) pour
+\(-1<\mu<1\). En \(\mu=0\), par exemple, les termes non nuls valent \(1\),
+\(-\tfrac52\), \(\tfrac{27}{8}\), \(-\tfrac{65}{16}\)… Les termes ne « se
+détruisent » donc pas après substitution. Ce qui est vrai, c'est la limite de
+la série entière :
+\[
+\lim_{t\to1^-}\sum_{n\ge0}(2n+1)P_n(\mu)\,t^n=0\quad\text{pour }\mu\ne1,
+\qquad =+\infty\quad\text{pour }\mu=1 .
+\]
+La série a pour somme 0 au sens d'Abel, et elle n'a pas de somme au sens
+ordinaire.\footnote{La sommation d'Abel tire son nom du mémoire d'Abel sur la
+série du binôme (1826). Si le titre du mémoire dit vrai, le feuillet est
+antérieur, et antérieur aussi à la distinction, due à Cauchy (1821), entre
+séries convergentes et divergentes.} Faire \(r=a\) dans la série, c'est donc
+déjà faire le passage à la limite que tout le mémoire va examiner.
+
+\subsection*{Le paradoxe, et le calcul « sans rien négliger »}
+
+\pagerange{31}{33}
+L'article 5 énonce le paradoxe. La fonction \(\frac\rho2+a\frac{\partial
+\rho}{\partial r}\) de \(\mu\) est toujours identiquement nulle. Son intégrale,
+multipliée par \(y'\,d\Omega'\), devrait donc être nulle « par les principes du
+calcul integral, suivant lesquels l'integrale est regardée comme la somme de
+toutes les valeurs successives de la differentielle ». Or « Cependant [nous]
+venons de voir que dans le cas le plus simple où \(y'\) est constant on a
+\(\frac u2+a\frac{du}{dr}=-2\pi a^2y'\) ; ce qui est un paradoxe dans le Calcul
+integral ».\footnote{Le « nous » attendu après « Cependant » n'est ni au pied
+de la vue 29 ni en tête de la vue 31. Le mot biffé après « est » est court et
+couvert d'un trait épais.}
+
+L'article 6 donne l'explication : « je ferai d'abord le calcul sans rien
+negliger ».\footnote{« d'abord », après « je vais », est rayé ; il revient à la
+ligne suivante.} Pour \(r\ne a\), la fonction à intégrer est régulière, et la
+dérivation sous le signe \(\int\) est légitime :
+\[
+\frac{\partial u}{\partial r}=a^3\int_{S^2}\frac{\partial\rho}{\partial r}\,y'\,d\Omega',
+\qquad
+r\frac{\partial\rho}{\partial r}=-r(r-a\mu)\rho^3=-\frac\rho2-\frac{(r^2-a^2)\rho^3}{2},
+\]
+la dernière égalité venant de \(r(r-a\mu)=\frac12(r^2-2ar\mu+a^2)+\frac12(r^2-a^2)\).
+Donc
+\[
+\frac u2+r\frac{\partial u}{\partial r}=-\frac{a^3(r^2-a^2)}{2}\int_{S^2}\rho^3\,y'\,d\Omega' .
+\]
+C'est exact.\footnote{Ces trois lignes de calcul sont très corrigées. Dans
+\(\frac{d\rho}{dr}\), une tache biffée sépare le signe moins de la fraction, et
+le signe entre \(r^2\) et \(2ar\mu\) est surchargé ; il est lu moins avec
+doute, ce qu'exige le calcul. Dans la ligne de \(\frac{r\,d\rho}{dr}\), des
+taches couvrent le début du premier numérateur, un signe après le premier
+terme et le début du numérateur \(r^2-a^2\), et chaque signe moins du dernier
+membre est écrit sur une tache. Dans la dernière équation, un coefficient
+d'abord écrit (une fraction) est couvert de hachures. Ici le 2 sous \(u\) est
+bien formé, ce qui confirme la lecture des vues 23 à 29.} L'auteur voit
+d'abord le terme « disparoître » en \(r=a\), puis il se reprend : puisque
+\(\frac u2+a\frac{\partial u}{\partial r}\) n'est pas toujours nul, « il faut
+que le terme multiplié par \(r^2-a^2\) ne disparoisse pas toujours en faisant
+\(r=a\) ». Autrement dit, \(\int\rho^3y'\,d\Omega'\) doit devenir infinie comme
+\(1/(r^2-a^2)\).
+
+L'article 7 le vérifie pour \(y'\) constant. On porte le pôle sur \(r\),
+comme au n° 3 (\(\mu=\cos\theta'\), \(d\mu=-\sin\theta'\,d\theta'\)). On
+intègre en \(\varpi'\), puis en \(\mu\), avec pour primitive
+\(\int(r^2-2ar\mu+a^2)^{-3/2}d\mu=\frac{1}{ar\sqrt{r^2-2ar\mu+a^2}}\), et
+pour \(r>a\)
+\[
+\int_{S^2}\rho^3\,d\Omega'=\frac{2\pi}{ar}\Bigl(\frac1{r-a}-\frac1{r+a}\Bigr)=\frac{4\pi}{r(r^2-a^2)},
+\qquad
+\frac u2+r\frac{\partial u}{\partial r}=-\frac{2\pi a^3y'}{r}\ \xrightarrow[r\to a]{}\ -2\pi a^2y',
+\]
+« comme on l'a trouvée dans le n°. 3 ».\footnote{Avant \(\rho^3\), au début de
+l'intégrale, une lettre est noyée sous une tache (un premier \(\rho\) ?). Devant
+\(\frac{4\pi}{r(r^2-a^2)}\) et devant \(\frac{4\pi y'}{r(r^2-a^2)}\), une petite
+tache carrée, peut-être un signe effacé. Le premier second membre de
+l'équation finale, où l'on devine \(\pi\), \(a\) et \(y'\), est couvert de
+hachures et barré. Le renvoi au n° 3 vise la valeur \(-2\pi a^2y'\) de la
+vue 25.} Le calcul est juste, et il vaut « quelle que soit la valeur de
+\(r\) » plus grande que \(a\), ce que le feuillet sous-entend.
+
+\subsection*{Le cas général : le pôle transporté, et une intégration par parties}
+
+\pagerange{35}{40}
+L'article 8 traite une fonction \(y'\) quelconque des sinus et cosinus de
+\(\varpi'\) et \(\theta'\). On porte encore le pôle sur la ligne \(r\), et
+l'on nomme \(\varphi\) et \(\psi\) la longitude et la colatitude de la
+molécule autour de ce nouveau pôle. On a
+\(d\Omega'=\sin\psi\,d\psi\,d\varphi\) et \(\mu=\cos\psi\), de sorte qu'il
+faut intégrer \(\rho^3y'\,d\varphi\,d\mu\) pour \(\varphi\) de \(0\) à
+\(2\pi\) et \(\mu\) de \(-1\) à \(1\).\footnote{Les deux nouveaux angles sont
+faits, l'un d'une boucle traversée d'une haste (\(\varphi\)), l'autre d'une
+croix dont la branche droite remonte en crochet (\(\psi\)). La même forme de
+croix sert aussi pour la capitale \(Y\) des vues 37 et 39 ; les deux ne se
+séparent que par le sens. Il y a aussi un mot biffé avant « \(\cos\psi\) »,
+« le » biffé devant « l'element », et de petites lettres serrées au-dessus de
+« dans un axe », non lues. Le premier \(\theta\) de la dernière ligne de la
+vue 35 porte un petit trait empâté, qui n'est pas un prime. Sous le « 9 » du
+feuillet, un petit signe en forme de \emph{c}.} Mais \(y'\) est donné en
+fonction des anciens angles. Il faut donc exprimer ceux-ci par les nouveaux, au
+moyen du triangle sphérique qui a pour sommets le pôle fixe, le point attiré
+et la molécule. Ses côtés sont \(\theta\), \(\theta'\), \(\psi\) ; l'angle au
+pôle est \(\varpi-\varpi'\), opposé à \(\psi\), et l'angle au point attiré
+est \(\varphi\), opposé à \(\theta'\). En mesurant \(\varphi\) à partir de
+l'arc qui va du point attiré vers le pôle fixe, les formules de la
+trigonométrie sphérique donnent
+\[
+\begin{aligned}
+\cos\theta'&=\cos\theta\cos\psi+\sin\theta\sin\psi\cos\varphi,\\
+\sin\theta'\sin(\varpi-\varpi')&=\sin\psi\sin\varphi,\\
+\sin\theta'\cos(\varpi-\varpi')&=\sin\theta\cos\psi-\cos\theta\sin\psi\cos\varphi .
+\end{aligned}
+\]
+La première est la formule des cosinus. La deuxième est celle des sinus, au
+sens de \(\varphi\) près. La troisième est la formule dite « des cinq
+éléments ».\footnote{Le feuillet écrit la troisième avec
+« \(+\cos\theta\sin\psi\cos\varphi\) ». Ce signe est faux dans toute
+convention compatible avec la première formule. Si l'on prend \(\varphi=0\),
+la molécule est sur l'arc qui va vers le pôle, et l'on a \(\theta'=\theta-\psi\),
+\(\varpi'=\varpi\) ; le premier membre vaut alors \(\sin(\theta-\psi)\), et non
+\(\sin(\theta+\psi)\). L'erreur est sans effet sur la suite, qui n'utilise que
+la forme polynomiale de ces expressions.} Si \(y'\) est un polynôme en
+\(\cos\theta'\), \(\sin\theta'\sin\varpi'\) et \(\sin\theta'\cos\varpi'\),
+c'est-à-dire en les cosinus directeurs de la molécule, il devient un polynôme
+en \(\cos\psi\), \(\sin\psi\cos\varphi\) et \(\sin\psi\sin\varphi\).
+L'intégration en \(\varphi\) sur un tour annule tout monôme de degré impair en
+\(\cos\varphi\) ou en \(\sin\varphi\). Il ne reste donc que des puissances
+paires de \(\sin\psi=\sqrt{1-\mu^2}\), et la fonction à intégrer en \(\mu\) est
+un polynôme en \(\mu\) multiplié par \(\rho^3\), que l'on intègre en termes
+finis.\footnote{Le feuillet dit que l'intégration en \(\varphi\) « fera
+disparoitre toutes les puissances impaires de \(\sin\varphi\) ». C'est vrai,
+mais incomplet : les puissances impaires de \(\cos\varphi\) disparaissent
+aussi. Ce qu'il faut pour conclure, c'est qu'il ne reste que des puissances
+paires de \(\sin\psi\). Un petit signe précède « \(\sin\theta'\sin\pi'\) ».
+Dans la marge de droite, en regard de la ligne « Ainsi la formule… », se trouve
+« I 65 » encadré, d'une plume plus fine, avec un crochet ouvrant « [ » au début
+de la ligne. Aucun crochet fermant n'a été vu, et le feuillet ne dit pas ce que
+marquent ces signes.} « C'est ainsi que d'Alembert a calculé l'attraction des
+spheroides peu differens de la sphere ». Mais l'auteur n'a besoin que de la
+réduction à \(-\rho^3y'\,d\varphi\,d\mu\).\footnote{Un trait court et épais
+est biffé devant l'intégrale. Après « \(d\varphi\,d\mu\). », deux mots sont
+rayés d'un trait continu ; le premier se lit « depuis » avec doute.}
+
+L'article 9 intègre par parties en \(\mu\). Comme \(\partial\rho/\partial\mu
+=ar\rho^3\), on a \(\int\rho^3d\mu=\rho/(ar)\). En \(\mu=1\), \(y'\) prend la
+valeur \(y\) du point attiré, et \(\rho=1/(r-a)\) pour \(r>a\). En \(\mu=-1\),
+on nomme \(Y\) la valeur de \(y'\), et \(\rho=1/(r+a)\). Ainsi, pour \(\varphi\)
+fixé,
+\[
+\int_{-1}^{1}\rho^3y'\,d\mu=\frac{y}{ar(r-a)}-\frac{Y}{ar(r+a)}-\frac1{ar}\int_{-1}^{1}\frac{\partial y'}{\partial\mu}\,\rho\,d\mu .
+\]
+En \(\psi=0\) et en \(\psi=\pi\), \(y'\) ne dépend pas de \(\varphi\).
+L'intégration en \(\varphi\) multiplie donc les deux termes tout intégrés par
+\(2\pi\).\footnote{Le feuillet dit qu'en \(\psi=0\) et \(\psi=\pi\) « \(\pi'\)
+et \(\theta'\) deviennent \(\pi\) et \(\theta\) ». C'est vrai en \(\psi=0\).
+En \(\psi=\pi\), la molécule est au point antipode, où
+\(\theta'=\pi-\theta\) et \(\varpi'=\varpi+\pi\). Ce qui importe, et qui est
+vrai dans les deux cas, c'est que \(y'\) y est indépendant de \(\varphi\). Le
+feuillet intègre de \(\mu=1\) à \(\mu=-1\), et son dernier terme porte alors le
+signe \(+\) ; l'orientation choisie ici donne le signe \(-\), et le résultat
+est le même.} En reportant dans l'équation du n° 6, on obtient
+\[
+\frac u2+r\frac{\partial u}{\partial r}
+=-\frac{\pi a^2(r+a)\,y}{r}+\frac{\pi a^2(r-a)\,Y}{r}
++\frac{a^2(r^2-a^2)}{2r}\int_0^{2\pi}\!\!\int_{-1}^{1}\frac{\partial y'}{\partial\mu}\,\rho\,d\mu\,d\varphi ,
+\]
+et, en faisant \(r=a\),
+\[
+\frac u2+a\frac{\partial u}{\partial r}=-2\pi a^2y,
+\]
+« comme dans le cas où \(y\) est constant ».\footnote{\(Y\) est une capitale
+barrée dans les deux premières fractions de la vue 39. Dans l'avant-dernière
+équation, il prend la forme d'un 4 bouclé, qui est aussi celle de \(\psi\). Le
+mot entre « l'equation » et « du n\textsuperscript{o}. 6 » n'a pas été lu
+(« avec ce » ? « ancienne » ?). Deux mots courts sont rayés, avant et après
+« n'ajouteroit ».} Le terme en \(Y\) s'annule avec \(r-a\). Le dernier terme
+s'annule si l'intégrale double reste bornée quand \(r\to a\). Le feuillet
+l'affirme dans sa dernière phrase, qui court de la vue 39 à la vue 41 : « Il
+est bon de remarquer qu'une nouvelle integration par parties executée sur la
+differentielle \(\frac{dy'}{d\mu}\rho\,d\mu\) n'ajouteroit rien à l'equation
+que nous venons de trouver, car l'integrale de \(\rho\,d\mu\) etant
+\(-\frac{1}{ar\rho}=-\frac{\sqrt{r^2-2ar\mu+a^2}}{ar}\) il n'en peut resulter
+aucun terme où le facteur \(r-a\), qui devient nul lorsque \(r=a\), soit
+detruit par la division ».\footnote{La vue 39 s'arrête sur « rien », sans
+ponctuation, et la vue 41 s'ouvre sur « à l'equation que nous venons de
+trouver ». La suite de la phrase, le sujet, les notations et la main font du
+feuillet 12 la fin du mémoire ; c'est la conclusion du coordinateur des
+transcriptions. Dans la vue 41, « \(\rho\) » est une lettre bouclée à longue
+descendante, et la lecture \emph{p} n'est pas exclue. « soit » est récrit sur
+un premier mot. La primitive est juste :
+\(\partial_\mu\sqrt{r^2-2ar\mu+a^2}=-ar\rho\).}
+
+La remarque est juste, et elle se complète ainsi. Pour \(r\ge a\), on a
+\(r^2-2ar\mu+a^2=(r-a)^2+2ar(1-\mu)\ge 2a^2(1-\mu)\), donc
+\(\rho\le1/\bigl(a\sqrt{2(1-\mu)}\bigr)\), qui est intégrable. Il faut encore
+borner \(\partial y'/\partial\mu\). Pour \(\varphi\) fixé, cette dérivée peut
+devenir infinie comme \(1/\sqrt{1-\mu}\) près du pôle, à cause du facteur
+\(1/\sin\psi\), sauf si le gradient de \(y\) s'annule au point attiré. On
+intègre donc d'abord en \(\varphi\) : la moyenne
+\(\bar y(\mu)=\frac1{2\pi}\int_0^{2\pi}y'\,d\varphi\) d'un polynôme en les
+cosinus directeurs, comme le suppose le feuillet, est un polynôme en \(\mu\),
+et sa dérivée est bornée. L'intégrale double est alors bornée uniformément en
+\(r\ge a\), et le dernier terme est \(O(r-a)\).\footnote{Même sans intégrer
+d'abord en \(\varphi\), il suffit que \(y'\) soit de classe \(C^1\). Alors
+\(|\partial y'/\partial\mu|\le C/\sqrt{1-\mu^2}\), l'intégrale double est
+\(O\bigl(\log\frac1{r-a}\bigr)\), et le dernier terme reste
+\(O\bigl((r-a)\log\frac1{r-a}\bigr)\), qui tend vers zéro. Cette majoration est
+de la présente lecture.} Avec cette majoration, les articles 6 à 9 démontrent
+l'égalité \(\lim_{r\to a^+}\bigl(\frac u2+r\frac{\partial u}{\partial r}\bigr)
+=-2\pi a^2y\).
+
+Au dos du feuillet 11 (vue 40), tête-bêche, trois lignes biffées de quatre
+longs traits obliques sont un premier départ de ce feuillet. Elles portent un
+« 11 » barré, les mots de la tête de la vue 39, et une première forme des
+termes tout intégrés, \(\frac{Y(r+a)}{ar}-\frac{y(r\pm a)}{ar}\), récrite en
+\(\frac{Y}{ar(r+a)}-\frac{y}{ar(r-a)}\), qui est la forme juste et celle
+qu'a gardée la vue 39.\footnote{Les premiers mots de la deuxième ligne sont
+noyés d'encre ; le signe du second binôme est douteux ; le dernier mot,
+« ainsi », porte un trait qui lui est propre. À droite, un croquis à la
+plume : deux arcs presque parallèles qui se rejoignent en pointe, coupés d'un
+petit trait, sans aucune lettre. Le feuillet ne dit pas ce qu'il représente,
+et cette lecture ne l'identifie pas.}
+
+\subsection*{La conclusion : l'équation de M. Laplace}
+
+\pagerange{41}{41}
+L'article 10 rassemble les morceaux. Comme \(V=\frac{4\pi a^3}{3r}+u\)
+(n° 2), en faisant \(r=a(1+y)\) et en négligeant les \(y^2\),
+\[
+\frac V2+a\frac{\partial V}{\partial r}
+=-\frac{2\pi a^2}{3}+2\pi a^2y+\Bigl(\frac u2+a\frac{\partial u}{\partial r}\Bigr)
+=-\frac{2\pi a^2}{3},
+\]
+« Comme M. Laplace l'a trouvé », dit la marge.\footnote{Dans la première
+équation détachée de la vue 41, l'exposant de \(a\) au premier terme est un 3
+suivi d'un chiffre noyé dans une tache, et le 4 du second est récrit sur un
+autre chiffre. Le calcul se vérifie. Les deux notes marginales sont appelées
+chacune par un signe d'insertion. Après « nul. », un petit signe barré ; un
+long trait horizontal ferme le texte, et le quart inférieur de la page est
+blanc.} La phrase suivante disait : « C'est l'equation de M. Laplace qui se
+trouve ainsi demontrée rigoureusement et mise à l'abri de toute difficulté ».
+Elle est biffée de trois traits.\footnote{« toute » est récrit et en partie
+couvert d'une tache ; il est lu avec doute.} Le texte finit sur la remarque
+que le terme \(2\pi a^2y\), « du à l'action de la sphere sur un point élevé au
+dessus de sa surface de la quantité \(ay\), et par lequel l'equation que nous
+avons trouvée (n° 2) differoit de celle de M. Laplace », se trouve
+précisément détruit par l'intégrale de \(a^3\bigl(\frac\rho2+a\frac{\partial
+\rho}{\partial r}\bigr)y'\,d\Omega'\), « dans laquelle le facteur
+\(\frac\rho2+a\frac{d\rho}{dr}\) est toujours identiquement nul ».
+
+L'équation obtenue est celle que Laplace place au fondement de sa théorie de
+la figure des planètes : à la surface d'un sphéroïde homogène très peu
+différent d'une sphère de rayon \(a\), on a, au premier ordre en \(y'\),
+\[
+\frac V2+a\,\frac{\partial V}{\partial r}=-\frac{2\pi a^2}{3} .
+\]
+Elle ne doit pas être confondue avec ce qu'on appelle aujourd'hui l'« équation
+de Laplace », \(\Delta V=0\) hors des masses. Dans la lecture moderne, elle en
+découle : on développe \(V\) extérieur en fonctions de Laplace, c'est-à-dire en
+harmoniques sphériques, comme on le fait plus bas pour \(u\). Le feuillet
+n'emploie pas ce développement, et sa démonstration n'en a pas besoin.
+
+\subsection*{Ce qu'il faut en penser aujourd'hui}
+
+Le calcul de l'auteur se laisse lire exactement en termes modernes. Au
+premier ordre, \(u\) est le potentiel d'une couche simple de densité
+\(\sigma=ay'\) portée par la sphère \(r=a\). Si l'on écrit
+\(y'=\sum_nY_n\), avec \(Y_n\) la composante harmonique sphérique de degré
+\(n\), alors
+\[
+u=4\pi a^2\sum_{n}\frac{Y_n}{2n+1}\Bigl(\frac ar\Bigr)^{n+1}\ (r\ge a),\qquad
+u=4\pi a^2\sum_{n}\frac{Y_n}{2n+1}\Bigl(\frac ra\Bigr)^{n}\ (r\le a).
+\]
+Le potentiel \(u\) est continu à la traversée de la sphère, mais sa dérivée
+radiale y saute de \(-4\pi\sigma=-4\pi ay\). C'est la relation de saut d'un
+potentiel de simple couche. On en tire, en \(r=a\),
+\[
+\Bigl(\frac u2+a\frac{\partial u}{\partial r}\Bigr)_{\text{ext}}=-2\pi a^2y,\qquad
+\Bigl(\frac u2+a\frac{\partial u}{\partial r}\Bigr)_{\text{int}}=+2\pi a^2y,
+\]
+et la « valeur directe », qu'on obtient en faisant \(r=a\) sous le signe
+d'intégration, vaut \(0\), la moyenne des deux. Le calcul des articles 2 et 4,
+signes moins rétablis, ne se trompe pas sur cette valeur. Il se trompe en la
+prenant pour une dérivée.\footnote{La théorie du potentiel de simple couche,
+avec ses relations de saut et sa valeur directe, s'est faite au
+XIX\textsuperscript{e} siècle, de Poisson et Gauss à la fin du siècle. Si le
+titre dit vrai, le feuillet est antérieur à ces travaux. Le nom de
+« fonctions de Laplace » pour les \(Y_n\), comme celui d'« harmoniques
+sphériques », est postérieur aux travaux de Laplace eux-mêmes.}
+
+La phrase du paradoxe, « l'integrale est regardée comme la somme de toutes les
+valeurs successives de la differentielle », n'est pas en défaut. Ce qui l'est,
+c'est l'échange de la limite \(r\to a\) et de l'intégration. Pour \(r>a\), la
+fonction
+\[
+K_r(\mu)=\frac{r(r^2-a^2)}{4\pi}\,\rho^3
+\]
+est positive et d'intégrale 1 sur la sphère, d'après l'article 7. Quand
+\(r\to a\), elle tend vers zéro uniformément sur \(\mu\le1-\delta\), pour tout
+\(\delta>0\), et toute sa masse se ramasse au point \(\mu=1\) : c'est, à la
+normalisation près, le noyau de Poisson de la boule, une « approximation de
+l'identité ». Pour \(y'\) seulement continu, on a donc
+\(\int K_r\,y'\,d\Omega'\to y\), et
+\[
+\frac u2+r\frac{\partial u}{\partial r}=-\frac{2\pi a^3}{r}\int_{S^2}K_r\,y'\,d\Omega'
+\ \xrightarrow[r\to a^+]{}\ -2\pi a^2y .
+\]
+C'est la démonstration la plus courte du résultat de l'article 9. La
+fonction à intégrer tend bien vers zéro en chaque point \(\mu<1\), mais son
+intégrale ne tend pas vers zéro, parce que la convergence n'est pas dominée.
+Le « paradoxe » est cette différence.\footnote{Le noyau porte le nom de
+Poisson, qui l'a étudié après 1813, et le critère de convergence dominée celui
+de Lebesgue, au début du XX\textsuperscript{e} siècle. Si le titre dit vrai,
+le feuillet précède l'un et l'autre. L'auteur n'en a pas besoin : il calcule
+l'intégrale exactement.}
+
+Reste à savoir laquelle des trois valeurs est la bonne. Pour le corps réel,
+dont la densité est bornée, le gradient du potentiel est continu partout, et
+il n'y a aucune ambiguïté. Le saut vient de la linéarisation : on a écrasé
+la couche comprise entre les rayons \(a\) et \(a(1+y')\) sur la sphère
+\(r=a\). Le point attiré est au bord extérieur de la matière, et c'est la
+limite extérieure qu'il faut prendre. C'est celle que prend l'auteur aux
+articles 6 à 9, où la racine en \(\mu=1\) vaut \(r-a\). Il suppose ainsi
+\(r\ge a\) sans le dire, c'est-à-dire \(y\ge0\) au point attiré. Le cas
+\(y<0\) se ramène à celui-là. Changer le rayon de la sphère de référence de
+\(a\) en \(a(1+c)\), avec \(c\) petit, change \(\frac V2+a\frac{\partial
+V}{\partial r}\) de \(ac\,\frac{\partial V}{\partial r}=-\frac{4\pi a^2c}{3}\)
+et \(-\frac{2\pi a^2}{3}\) d'autant, au premier ordre. L'équation garde donc
+la même forme, et l'on peut toujours prendre une sphère de référence
+intérieure au corps, pour laquelle \(y'\ge0\). La sphère de rayon \(a(1+c)\)
+elle-même la vérifie exactement, quel que soit le signe de \(c\) :
+\(\frac{2\pi a^2(1+c)^2}{3}-\frac{4\pi a^2(1+c)}{3}=-\frac{2\pi a^2}{3}+O(c^2)\).
+C'est la raison profonde de la note marginale biffée de la vue 23 : Laplace
+n'avait pas besoin, pour que son équation soit vraie, que la sphère touche le
+sphéroïde.\footnote{Cette réduction et cette vérification sont de la présente
+lecture ; le feuillet n'aborde pas le cas \(y<0\).}
+
+Le bilan est donc le suivant. Les articles 2, 4 et 5 ne sont pas une
+démonstration : ils échangent sans droit une limite et une intégrale, et
+l'article 4 conclut à la nullité d'une série divergente. Les articles 3 et 7
+sont des calculs exacts pour \(r>a\). Les articles 6 à 9 démontrent le
+résultat par la limite extérieure, à une majoration près, que la dernière
+phrase indique et que l'on a complétée plus haut. L'article 10 en tire
+l'équation de Laplace au premier ordre. L'auteur a biffé le mot
+« rigoureusement ». Au terme près de cette majoration, il aurait pu le
+garder.
+
+\section*{II. « Notes de M\textsuperscript{r} Dela Grange » : quatre calculs courts (vues 43 à 56)}
+
+\pagerange{43}{56}
+Le feuillet 13 (vue 43), plus petit que les autres, ne porte qu'une ligne, d'une
+plume fine et d'une écriture posée aux majuscules ornées : « Notes de
+M\textsuperscript{r} Dela Grange ». C'est apparemment un titre de chemise pour
+les feuillets qui suivent. Ce qu'il couvre exactement n'est pas écrit, et la
+main n'est pas celle du mémoire.\footnote{« M\textsuperscript{r} » est un M
+suivi d'un petit \emph{r} surélevé, souligné : « Monsieur », et non
+« Mademoiselle ». « Dela Grange » est écrit en deux mots, le D et le G ornés.
+Le 1 de « 13 » porte un long trait d'attaque qui le fait ressembler à un 7.}
+Les quatre calculs qui suivent sont sans titre ni phrase d'introduction. Ils
+sont écrits de la main du mémoire (vues 45 à 51), et deux sont refaits d'une
+main soignée (vues 53 et 55).
+
+\subsection*{La distance d'un point à un plan}
+
+\pagerange{45}{53}
+La vue 45 cherche le point d'un plan passant par l'origine,
+\(Ax+By+Cz=0\), qui est le plus proche du point \((a,0,0)\). Elle écrit que
+la sphère de centre \((a,0,0)\) et de rayon \(r\) touche le plan, c'est-à-dire
+que la différentielle du carré de la distance,
+\((x-a)\,dx+y\,dy+z\,dz\), s'annule pour tout déplacement dans le plan.
+En éliminant \(dz=-(A\,dx+B\,dy)/C\), les coefficients de \(dx\) et de \(dy\)
+doivent s'annuler séparément :
+\[
+x-a-\frac{zA}{C}=0,\qquad y-\frac{zB}{C}=0 .
+\]
+Reporté dans l'équation du plan, cela donne, avec \(N=A^2+B^2+C^2\),
+\[
+\begin{aligned}
+&z=-\frac{ACa}{N},\quad y=-\frac{ABa}{N},\quad x=a-\frac{A^2a}{N},\\
+&r^2=\frac{a^2A^2(A^2+B^2+C^2)}{N^2}=\frac{A^2a^2}{N},\qquad r=\frac{|A|\,a}{\sqrt N}.
+\end{aligned}
+\]
+Tout est juste.\footnote{Le feuillet écrit \(r=\frac{Aa}{\sqrt{A^2+B^2+C^2}}\) :
+\(A\) est pris positif sans que ce soit dit. « et diff. » : « et » suivi d'une
+abréviation chargée d'un paraphe, lue ainsi. Dans « \(y^2\) » de la première
+ligne, le \(y\) est récrit ; une petite tache suit l'exposant de \(a\) dans
+« \(A^2a\) ». Les exposants 2 sont faits comme de petits accents circonflexes.
+Le \(z\) est écrit à queue ; le cachet de la bibliothèque est posé sur la fin
+de la formule de \(r\).} La note conclut que \(r/a\) est le sinus de l'angle du
+plan avec l'axe des \(x\), égal à \(A/\sqrt N\), et que ce nombre est le cosinus
+de l'angle que la normale au plan fait avec cet axe.\footnote{« des \(x\) » :
+la transcription lit « dy » suivi d'un \(x\) isolé, comme l'article et la
+lettre. Le mot « donc » de la dernière phrase est lu avec doute ; au-dessus,
+dans la marge, un petit signe en forme d'accent circonflexe, sans texte qui
+lui réponde.} En langage actuel, la distance du point \(P_0\) au plan
+\(n\cdot X=0\) est \(|n\cdot P_0|/\|n\|\), et \((A,B,C)/\sqrt N\) est le
+vecteur des cosinus directeurs de la normale.
+
+La vue 53, de la main 2, refait le même calcul en phrases complètes, jusqu'à
+la même équation différentielle. Elle en tire l'équation du plan sous la forme
+\[
+\frac{A}{\sqrt N}\,x+\frac{B}{\sqrt N}\,y+\frac{C}{\sqrt N}\,z=0,
+\]
+celle d'un plan passant par l'origine et perpendiculaire à la droite dont les
+coordonnées sont proportionnelles à \(A\), \(B\) et \(C\). C'est la forme
+normale de Hesse, à ce nom près, qui est plus tardif.\footnote{« le resultat
+de ce calcul est de » : « est de » est biffé et « donne » écrit à la suite.
+« proportionnelles » est coupé en fin de ligne et sa finale récrite. Le \(z\)
+est écrit comme un 2 à queue, et la barre du dernier radical est doublée. La
+plume fine rappelle celle du titre de la vue 43, sans que le rapprochement
+puisse être établi.}
+
+\subsection*{Une série « page 623 »}
+
+\pagerange{47}{55}
+Deux demi-feuillets, cotés « 15 A » et « 16 B » (vues 47 et 49), portent en tête
+« page 623 », qui renvoie à un ouvrage non nommé. Ils développent en série la
+quantité
+\[
+Q(b)=-\frac1{\sqrt{1+b}}+\log\frac{1+\sqrt{1+b}}{\sqrt b}
+\]
+pour \(b\) petit et positif. La quantité n'est écrite en entier qu'à la vue 55 ;
+les vues 47 et 49 la dérivent.\footnote{« Je mets \(x\) à la place de \(b\) » :
+la lettre remplacée, lue \(b\) avec doute, ressemble aussi au 6 des
+dénominateurs ; la vue 49 et la vue 55 confirment \(b\). Le logarithme est
+écrit « \(l\) » par la main 1 et « log. » par la main 2 ; il s'agit du
+logarithme naturel, puisque \(\log2=1-\frac12+\frac13-\dots\) (vue 55).}
+L'auteur dérive d'abord. Avec \(\frac{1}{1+\sqrt{1+x}}=\frac{\sqrt{1+x}-1}{x}\),
+il vient
+\[
+Q'(x)=\frac12\Bigl(\frac{1}{(1+x)^{3/2}}+\frac{1}{\sqrt{1+x}\,(1+\sqrt{1+x})}-\frac1x\Bigr)
+=-\frac{1}{2x(1+x)^{3/2}} .
+\]
+Il développe ensuite par la série du binôme, et intègre terme à terme :
+\[
+\begin{aligned}
+-\frac{(1+x)^{-3/2}}{2x}&=-\frac12\Bigl(\frac1x-\frac32+\frac{3\cdot5}{2\cdot4}x-\frac{3\cdot5\cdot7}{2\cdot4\cdot6}x^2+\dots\Bigr),\\
+Q(x)&=-\frac12\log x+\frac{3x}{4}-\frac{3\cdot5}{2\cdot4}\,\frac{x^2}{4}+\frac{3\cdot5\cdot7}{2\cdot4\cdot6}\,\frac{x^3}{6}-\dots+K .
+\end{aligned}
+\]
+Le calcul se vérifie.\footnote{Les produits sont écrits avec des points,
+« 3.5.7 / 2.4.6 ». Un trait oblique traverse la barre d'une fraction sans
+paraître la biffer. La parenthèse ouverte avant \(1-\frac32x\), et celle de
+la ligne « integrant », ne sont pas fermées. À la dernière ligne de la vue 47,
+« \(K\) » est écrit au-dessus de « const. », biffé. Après la virgule vient
+« const. = » suivi d'un mot court, le tout biffé ; la fin ne se lit pas.} La
+vue 49 détermine la constante. « Ayant differentié et ensuite réintegré il
+s'ensuit que cette integrale peut differer de la quantité proposée d'une
+constante qu'il s'agit de trouver. » Pour \(b\to0\), on a
+\(Q(b)=-1+\log2-\frac12\log b+o(1)\), et la série vaut \(-\frac12\log b+K+o(1)\).
+Donc \(K=\log2-1\), et, pour \(0<b<1\),
+\[
+Q(b)=\log2-1-\frac12\log b+\frac{3b}{4}-\frac{3\cdot5}{2\cdot4}\,\frac{b^2}{4}+\frac{3\cdot5\cdot7}{2\cdot4\cdot6}\,\frac{b^3}{6}-\dots
+\]
+Le raisonnement est complet : deux fonctions qui ont la même dérivée sur
+\(]0,1[\) diffèrent d'une constante, et la constante se lit à la
+limite.\footnote{Le feuillet écrit le dernier terme avec « \(b4\) » : les
+exposants sont écrits sur la ligne, « b2 », « b4 ». Le calcul de la vue 47 donne
+\(b^3\), et c'est \(b^3\) qui est juste ; la transcription le relève. La série
+n'est pas close par « \&c. ». « réintegré » : le mot commence par un \emph{r}
+mal formé. Le 2 de « \(-1+l2\) » est récrit sur un autre chiffre. La série
+converge pour \(|b|<1\) ; le logarithme demande \(b>0\).}
+
+La fiche supérieure de la vue 55, de la main 2, porte « Pag. 623 ». Elle
+reprend la même série par un autre chemin. Comme \(\log\frac{1+\sqrt{1+b}}{\sqrt b}
+=\log(1+\sqrt{1+b})-\log\sqrt b\), il faut que
+\[
+-\frac1{\sqrt{1+b}}+\log(1+\sqrt{1+b})=\log2-1+\frac32\cdot\frac b2-\frac{3\cdot5}{2\cdot4}\cdot\frac{b^2}{4}+\dots,
+\]
+ce qui est la série précédente. Pour le vérifier, la fiche développe
+\(\log(1+t)=t-\frac{t^2}{2}+\frac{t^3}{3}-\dots\) avec \(t=\sqrt{1+b}\). Elle
+développe ensuite chaque puissance \((1+b)^{k/2}\) en \(b\), ainsi que
+\(-(1+b)^{-1/2}\), et rappelle \(\log2=1-\frac12+\frac13-\dots\). Les
+développements partiels sont justes.\footnote{\(\sqrt{1+b}=1+\frac b2-\frac{b^2}{8}\),
+\((1+b)^{3/2}=1+\frac32b+\frac38b^2\), \((1+b)^{5/2}=1+\frac52b+\frac{15}{8}b^2\),
+\(-(1+b)^{-1/2}=-1+\frac b2-\frac{1\cdot3}{2\cdot4}b^2+\frac{1\cdot3\cdot5}{2\cdot4\cdot6}b^3-\dots\).
+La transcription lit « \(\frac{1.3}{4.2}\) », avec doute, en partie sous le
+cachet ; la valeur est la même. Le « A » initial est une capitale ornée qu'on
+prendrait pour un C. Le dénominateur 3 de la troisième ligne est récrit en
+gras, et le signe moins devant \(\frac{1+2b+b^2}{4}\) est une tache repassée.}
+Mais ce chemin n'est pas légitime tel quel : pour \(b>0\), \(t=\sqrt{1+b}>1\)
+est hors du disque de convergence de la série de \(\log(1+t)\). Si l'on
+regroupe les termes en \(b\), le coefficient de \(b\) devient
+\(\frac12(1-1+1-\dots)\), qui diverge. Le coefficient vrai, \(\frac14\), n'en
+est que la somme au sens d'Abel. La fiche s'arrête aux développements et ne
+regroupe rien. Elle ne tire donc pas de conclusion fausse, mais elle ne
+démontre rien non plus. Le premier chemin, celui des vues 47 et 49, est le
+bon.
+
+\subsection*{L'arc d'ellipse}
+
+\pagerange{51}{51}
+Le demi-feuillet « 17 » (vue 51) calcule l'élément d'arc d'une ellipse de
+demi-axes \(a\) et \(b\), paramétrée par \(x=a\sin\varphi\) et
+\(y=b\cos\varphi\). Avec \(c=\sqrt{a^2-b^2}\),
+\[
+dx^2+dy^2=(a^2\cos^2\varphi+b^2\sin^2\varphi)\,d\varphi^2=a^2\Bigl(1-\frac{c^2}{a^2}\sin^2\varphi\Bigr)d\varphi^2,
+\qquad
+\int\sqrt{dx^2+dy^2}=a\,E\Bigl(\frac ca,\varphi\Bigr),
+\]
+où \(E(k,\varphi)=\int_0^\varphi\sqrt{1-k^2\sin^2\phi}\;d\phi\) est
+l'intégrale elliptique incomplète de seconde espèce, de module \(k\). C'est
+juste.\footnote{Le feuillet écrit « \(dx^2=a\cos\varphi\,d\varphi\) » : le 2 est
+écrit à gauche alors que le membre droit est la différentielle première ; on
+lit ici \(dx=a\cos\varphi\,d\varphi\). Les carrés sont écrits
+« \(\sin\varphi^2\) », « \(\cos\varphi^2\) ». L'angle est une lettre faite de deux
+boucles, qu'on pourrait lire \emph{œ} ; la dernière formule la montre comme un
+\(\varphi\). Le « \(E\) » porte un petit trait bouclé, sans doute un ornement
+de la majuscule, et un signe semblable à « \& » suit \(E(c,\varphi)\). La
+page commence sur une expression, sans phrase qui la rattache aux fiches
+précédentes.} Le feuillet appelle \(c\) « l'excentricité ». C'est
+aujourd'hui la demi-distance focale, et l'on réserve le mot d'excentricité à
+\(e=c/a\), qui est précisément le module de l'intégrale. La notation
+\(E(c,\varphi)\), module en premier, est celle qu'emploie Legendre. Cette lecture
+n'en tire aucune date.
+
+\subsection*{Un brouillon de calculs numériques}
+
+\pagerange{55}{56}
+La fiche inférieure de la vue 55 (« 20 ») est un morceau de papier déchiré,
+couvert de chiffres à l'encre, sans un mot de texte. Le 4 y est fait comme un
+A. On y trouve des soustractions en degrés et minutes, justes :
+\(7^\circ25'-1^\circ39'=5^\circ46'\), et \(30^\circ04'-2^\circ44'=27^\circ20'\),
+où le chiffre des minutes noyé sous une tache doit être 0 pour que la
+soustraction tombe juste. On y trouve aussi
+\(27^\circ20'-51'=26^\circ29'\), écrit sous un \(28^\circ11'\) biffé, qui était
+la somme au lieu de la différence. Il y a encore la multiplication
+\(346\times4\frac12=1557\) et l'addition \(7681+5740=13421\).\footnote{Les
+vérifications sont de cette lecture, et c'est par elles que le chiffre noyé
+est rendu, non par la vue. Dans la transcription figurent aussi une colonne
+« \(60'\,0''\) / \(10'\,14\) / \(16\ 0\) », une ligne « 5 14 29 57 » et, à sa
+droite, « 26 | 10 4 ||| 17 0 9 | 26 », qui ne sont pas interprétées ici. À
+droite de deux calculs, un double croissant barré, qui a la forme du signe de
+la lune. En bas à droite, tête-bêche, « 100 | 52 / 1001 », de lecture douteuse.}
+Un petit tableau donne trois angles et trois nombres de huit chiffres :
+« SC. \(5\ 6\ 56\) », « SC. \(7\ 10\ 48\) », « S.DAB \(84\ 57\ 18\) », en regard
+de « \(1999658\ldots0\) », « \(99982668\) », « \(99983142\) ». Ce sont des
+logarithmes tabulaires, de caractéristique 10 :
+\[
+\begin{aligned}
+10+\log_{10}\cos5^\circ6'56''&=9{,}9982667,\\
+10+\log_{10}\cos7^\circ10'48''&=9{,}9965810,\\
+10+\log_{10}\sin84^\circ57'18''&=9{,}9983142 .
+\end{aligned}
+\]
+« SC. » se lit donc « sinus du complément », c'est-à-dire cosinus, et
+« S.DAB » « sinus de l'angle \(DAB\) ». Les deux traits croisés que la
+transcription signale entre les angles et les nombres échangent les deux
+premières lignes, comme il le faut ; le 8 final du deuxième nombre est un
+arrondi de table. Le chiffre illisible du premier nombre est
+un 1, par le calcul. Le « 46 » écrit sous le « 42 » final du troisième est
+moins juste que 42. Enfin \(84^\circ57'18''-84^\circ55'35''=1'43''\).\footnote{Les
+calculs de logarithmes sont de cette lecture, à la septième décimale ; ils
+confirment les lectures « SC. » et « S.DAB » que la transcription proposait
+comme une lecture du passage, non du feuillet. Le « 1 » initial de
+« \(1999658\ldots0\) » ne répond à rien dans la valeur ; il n'est pas
+interprété. « ST. » est suivi d'un trait long sans nombre.} Au dos (vue 56),
+des tableaux de chiffres au crayon, en partie tête-bêche, portent des
+colonnes de degrés et minutes (« 55.30 / 56 0 / 56.30 / 57.0 … »), des
+capitales isolées (« G », « K », « E », « D ») et un croissant. S'y ajoutent un
+petit groupe à l'encre écrit en travers, « \(140\mid60\) / \(7\parallel7.\) »,
+et « 420 » souligné.\footnote{\(140\times3=420\), \(60\times7=420\). La
+transcription ne donne que ce qui se lit sûrement : une colonne
+« 54 / 20 4 / 46 / 11 4 / 48.42 », « 27 1 37 », « 437.38 », et une case
+numérotée « 50 / 51 / 52 », où l'un des chiffres de « 47 30 3\ldots{} » ne se
+lit pas.} Rien ne rattache ce brouillon aux calculs qui l'entourent. Le signe
+de la lune et les angles font penser à un calcul d'astronomie. C'est une
+conjecture, et le feuillet ne la confirme pas.
+
+\section*{III. Des lettres sur les surfaces élastiques (vues 58 à 68)}
+
+\pagerange{58}{68}
+\subsection*{La réponse à un jugement : l'équation de M\textsuperscript{r} De la Grange}
+
+Le feuillet 21, recto et verso (vues 58 et 59), et le recto du feuillet 22
+(vue 60) portent un texte continu à la première personne, adressé à un
+« vous ». Il est sans formule d'appel, sans date ni signature : c'est une
+lettre, ou son brouillon, très corrigé. La personne qui écrit remercie son
+correspondant de lui avoir fait « obtenir un jugement qui m'éclaire sur les
+fautes que j'ai commises ». Elle explique son erreur par ses propres mots :
+« je n'avois guere de confiance dans mon travail j'y avois été entraîné par une
+analogie qui me sembloit frappante mais que je ne me croyois pas trop en état
+d'apprecier ».\footnote{« étonné » et « entraîné » finissent par un \emph{é}
+suivi d'un court trait de sortie, qui pourrait porter un second \emph{e} :
+le genre ne se lit pas sur ces deux mots. Il se lit sur « egarée »,
+« persuadée » (vue 58), « revenue », « frappée » (vue 60), où la finale
+\emph{-ée} est nette. « connoître » et « entierement » sont biffés ; la
+lecture de « connoître » sous le trait est incertaine.}
+
+Ce qui la surprend, c'est « l'equation que vous m'indiquez d'après
+M\textsuperscript{r} De la Grange ». Au premier coup d'œil, elle l'aurait crue
+« formée de la somme des deux equations »
+\[
+p\,\frac{\partial^2z}{\partial t^2}+2k^2\Bigl(\frac{\partial^4z}{\partial x^4}+\frac{\partial^4z}{\partial x^2\partial y^2}\Bigr)=0,
+\qquad
+p\,\frac{\partial^2z}{\partial t^2}+2k^2\Bigl(\frac{\partial^4z}{\partial y^4}+\frac{\partial^4z}{\partial y^2\partial x^2}\Bigr)=0 .
+\]
+Leur somme, divisée par 2, est
+\[
+p\,\frac{\partial^2z}{\partial t^2}+k^2\Bigl(\frac{\partial^4z}{\partial x^4}+2\frac{\partial^4z}{\partial x^2\partial y^2}+\frac{\partial^4z}{\partial y^4}\Bigr)
+=p\,\frac{\partial^2z}{\partial t^2}+k^2\,\Delta^2z=0,
+\]
+l'équation des vibrations transversales d'une plaque mince, où
+\(\Delta^2=\Delta\Delta\) est l'opérateur biharmonique. L'histoire de
+l'élasticité l'appelle équation de Germain–Lagrange.\footnote{Le nom est celui
+que la littérature donne à l'équation ; il ne dit rien de la main de ces
+feuillets. La théorie des plaques de Kirchhoff (1850) retient la même équation
+et en fixe les conditions aux bords. Aucune des deux équations écrites ne
+suffit seule : chacune privilégie une direction, et seule leur somme est
+invariante par rotation des axes. Le « \(p\) » en tête des deux équations est
+barré d'un trait oblique ou récrit sur une autre lettre, et il est lu avec
+doute. Dans la seconde, le 2 de « \(2k^2\) » est récrit sur un signe \(+\), et
+un petit « \(k^2\) » isolé se trouve dans l'interligne.} Elle ajoute : « Si je
+me suis egarée dans les doubles integrales je ne dois pas m'étonner que
+l'équation qu'a trouvée M\textsuperscript{r} De la Grange ne monte qu'au
+quatrième degré ». Le « degré » est ici l'ordre de dérivation. La phrase laisse
+entendre que l'équation de l'écrivante était d'un ordre plus élevé. Le
+feuillet ne l'écrit pas.
+
+Elle cite alors l'équation de sa « note », qu'elle dit déduite « des formules
+de la mécanique analytique » :
+\[
+\int dz\,dy\int X\,dm+\int dx\,dz\;Y\,dm-2\int dx\,dy\int Z\,dm=2\,\mathrm{I}\,d^2z\,.\,dx\,dy .
+\]
+La transcription est trop incertaine pour qu'on l'interprète, et cette lecture
+ne l'interprète pas.\footnote{Le second terme n'a qu'un signe d'intégration ;
+le \(Y\) est repassé. Le signe entre « 2 » et « \(d^2z\) » est un trait
+vertical épais, rendu \(\mathrm I\) faute de mieux. Le renvoi qui suit,
+« p. 53 1\textsuperscript{re} édition », est de lecture douteuse : le 5 est
+fait comme un \emph{ſ}.} Sa question est de méthode. Ne faut-il pas
+différencier cette équation quatre fois, deux fois en \(x\) et deux fois en
+\(y\) ? En faisant abstraction du terme dû à l'élasticité et en prenant
+\(X=Y\), on obtient par ce procédé « l'equation connue de la surface tendue »,
+\[
+X\Bigl(\frac{\partial^2z}{\partial x^2}+\frac{\partial^2z}{\partial y^2}\Bigr)=2Z,
+\]
+c'est-à-dire \(X\,\Delta z=2Z\). C'est l'équation d'équilibre d'une membrane
+tendue également dans les deux sens et chargée normalement, au facteur et à
+la convention de signe près. Elle est, dit la lettre, « au fond la même que
+celle donnée par M\textsuperscript{r} La Grange lui même p. 151 de la 1ère
+édition ». Comment le même procédé deviendrait-il « vicieux lorsqu'il
+s'applique au terme dependant de l'elasticité » ?\footnote{« par ce procédé
+des differentiations successives » est écrit dans l'interligne, sans signe
+d'insertion, et placé ici devant « obtient ». Les deux passages biffés qui
+l'encadrent sont « a pour le mo[uvement] » et « pour le mouvement » ; « connue
+de la surface tendue » est aussi biffé. « p. 151 » est de lecture douteuse,
+le troisième chiffre étant chargé d'encre. La phrase finit « suivant les \(x\)
+et les \(z\) » : la lettre anguleuse a la forme d'un \(z\), mais le sens veut
+\(y\), et c'est ce qu'on lit ici. « directions » est biffé devant \(x\), qui
+est souligné.} La question est légitime. Elle a sa réponse dans la mécanique
+actuelle : la différentiation n'est pas en cause, c'est l'expression du terme
+élastique qui l'est.
+
+Le correspondant lui a fait remarquer que l'équation que « M\textsuperscript{r}
+De la Grande a trouvée en suivant mon hypothese » contient celle de la lame
+élastique, tandis que la sienne n'a pas cet avantage. En effet, si \(z\) ne
+dépend pas de \(y\), \(\Delta^2z\) se réduit à
+\(\partial^4z/\partial x^4\), et l'équation des plaques redonne celle de la
+poutre d'Euler–Bernoulli, \(p\,\partial_t^2z+k^2\,\partial_x^4z=0\).
+Elle s'était fait la même objection, et avait cru y répondre. La suite, à la
+vue 60, est un brouillon trop repris pour qu'on en reconstruise la
+construction. On y lit l'idée d'un « facteur qui compose l'équation propre à la
+surface », qui n'est « pas necessairement egal à zéro », et d'un « autre
+facteur » propre à la lame. On y lit aussi qu'elle avait cru que la formule,
+« considerée avant les differentiations successives », renfermait le cas de la
+lame, « et c'est ce que j'ai eu l'intention de prouver à la fin de la
+note ».\footnote{« De la Grande » : ainsi, alors que la vue 58 et la ligne
+précédente portent « Grange ». Après « je », un mot biffé illisible ;
+« m'ettois » : ainsi ; « la même » est écrit au-dessus de « cette », biffé.
+Dans l'interligne, au-dessus de « qu'en differentiant par rapport », biffé, on
+lit « que le resultat de la differenti », dont la fin est biffée aussi ; la
+phrase reste sans construction sûre. En tête de la vue 60 : « satisfesoit à
+l'équation par la supposition A. de constante \(=0\) », où « A. » est de
+lecture douteuse (peut-être un \emph{d} bouclé). « coëfficient » est biffé et
+remplacé par « facteur ». La ligne biffée « tant que par conséquent il fut
+necessaire, pour ce … cas que » contient un mot noyé. « n'étoit » est écrit
+au-dessus de « n'est seroit pas », biffés, et les deux négations se suivent.
+« sujet de » est lu avec doute. « renfermoit le » est écrit au-dessus de
+« étoit également applicable au », biffé.}
+
+La lettre se termine sur une remarque, avec une réserve. « Il est singulier
+que l'on puisse obtenir les deux [équations] dont j'ai deja parlé et dont
+celle-ci semble [la somme] en substituant tout bonnement dans l'équation de la
+lame \(\frac1r+\frac1{r'}\) à la place de \(\frac1r\) », et en prenant
+successivement \(x\) puis \(y\) pour variable de la lame.\footnote{Le passage
+de la vue 60 est très repris : « est la », biffé ; « et dont celle-ci
+semble » et « la somme », biffé, dans l'interligne ; « tout bonnement »
+au-dessus de « dans » ; « mettant » et « pour l'une », biffés ; deux mots
+courts biffés, illisibles, dont le premier paraît fait de deux lettres de
+formule. Puis viennent « \(Z,x\) pour l'autre \(Z,y\) à la place de \(y\) et
+\(Z\) », où \(Z\) est la grande lettre du « \(2Z\) » de la vue 59 ; celui de
+« \(y\) et \(Z\) » est récrit. Le sens de cette dernière substitution n'est
+pas sûr, et la paraphrase qu'on en donne ici est de cette lecture.} La
+remarque est juste. Dans la lame, le terme élastique est
+\(\partial_x^2(1/r)\), avec la courbure \(1/r\approx\partial_x^2z\). Si l'on
+remplace \(1/r\) par la somme des courbures principales,
+\(\frac1r+\frac1{r'}\approx\Delta z\), qui vaut deux fois la courbure moyenne
+au premier ordre, on obtient \(\partial_x^2\Delta z=\partial_x^4z+
+\partial_x^2\partial_y^2z\), puis \(\partial_y^2\Delta z\) de même, et leur
+somme est \(\Delta^2z\). L'opérateur des plaques est le laplacien de la somme
+des courbures. « Je sais bien que ce n'est pas ainsi qu'a du operer
+M\textsuperscript{r} De la Grange mais cette idée m'a tellement frappée à la
+vue de son équation que je n'ai pû resister à la tentation de vous la
+communiquer en protestant au reste de ma parfaite soumission aux oracles
+\ldots{} jugement d'un autre grand géomètre. »\footnote{« par La Grange », sans
+« M\textsuperscript{r} », deux lignes plus haut. « des maîtres et » est biffé
+après « oracles », et « jugement d'un autre grand » est écrit à la suite,
+d'une encre plus pâle et d'un trait plus fin. La phrase qui en résulte est
+incomplète. Le texte finit sur « géomètre. », suivi d'un point ; le reste de
+la page est blanc, sans signature.}
+
+\subsection*{Un second brouillon, au dos du feuillet 22}
+
+\pagerange{61}{61}
+L'autre face du feuillet 22 (vue 61) porte un brouillon de lettre, inachevé
+et très corrigé. « Vous m'engagez à reprendre une tache que j'ai déja fort mal
+remplie ; je m'y sens peu disposée et il faut convenir que puisque j'ai pû me
+tromper si grossierement je ne suis que trop fondée à me méfier de mes forces,
+cependant j'aime assez la verité pour etre encore contente de la connoitre lors
+même qu'elle ne m'est pas favorable ». Le reste remercie le correspondant de
+son intérêt et du « soin que vous prenez de me dissimuler le ridicule attaché
+au mauvais succès ». La lettre s'arrête sur « que vous me témoignez », biffé,
+sans point ni formule.\footnote{« tache » est la « tâche ». « avez la bonté
+de » est biffé devant « m'engagez », dont la fin est surchargée (un \emph{z} ou
+un \emph{r} corrigé). Au-dessus de « reprendre », un grand \emph{D} bouclé isolé.
+« nouvelle » et « d'ailleurs » sont dans l'interligne, et « bien
+sincerement », biffé dans la ligne, est récrit dans la marge. « auquel
+j'attache le plus » et « d'un » sont biffés : la phrase lit « un dédomagement
+grand prix », sans correction complète. « à la médiocrité » est biffé. Deux
+signes brefs biffés, illisibles, suivent un « que ». « à tant de » est écrit
+au-dessus de « à la bontés », et « tant » est peut-être barré.} On y lit :
+« je vous prie, Monsieur \emph{d'ageer}, l'expression de ma
+reconnoissance ». La transcription prend « d'ageer » pour un nom, qu'elle
+n'identifie pas. La construction demande un verbe (« je vous prie … d'agréer
+l'expression … et de croire que »), et la lettre des vues 62 à 68 finit par la
+même formule, « en vous priant, Monsieur, d'agréer l'assurance ». Cette
+lecture lit donc « Monsieur, d'agréer » et non un nom de
+destinataire.\footnote{C'est un écart par rapport à la transcription, fondé
+sur la construction et non sur la vue. La transcription donne les lettres
+\emph{d}, apostrophe ou accent, \emph{a}, \emph{g}, \emph{e}, \emph{e} ou
+\emph{c}, \emph{r}. Il manquerait un \emph{r} à « agréer ». L'image seule en
+décidera.} Les transcriptions ne disent pas lequel des deux textes du feuillet
+22 fut écrit le premier, ni s'ils forment un seul brouillon.
+
+\subsection*{La lettre qui recommande le « mémoire N° 1 »}
+
+\pagerange{62}{68}
+Les feuillets 23 à 26 (vues 62 à 68) portent une lettre complète et continue,
+du premier mot à la souscription, mais sans nom, sans date, sans lieu et sans
+nom de destinataire. Elle est écrite d'une cursive penchée qui emploie le
+\emph{s} long, et ses accords sont au féminin. Elle commence ainsi : « Je
+recommande à votre protection le mémoire N\textsuperscript{o} 1 portant cette
+épigraphe » :
+\begin{quote}
+« Sed longe maximum progressibus scientiarum, et novis pensis ac provinciis in
+isdem suscipiendis obstaculum deprehenditur in desperatione hominum et
+suppositione impossibilis. » \emph{Baco novum org.}
+\end{quote}
+L'épigraphe est tirée du \emph{Novum Organum} de Bacon.\footnote{« Mais de
+loin le plus grand obstacle au progrès des sciences, et à l'entreprise de
+tâches et de domaines nouveaux en elles, se trouve dans le désespoir des
+hommes et dans la supposition de l'impossible. » (traduction de cette
+lecture). « isdem » : ainsi, pour \emph{iisdem}. Chaque ligne de l'épigraphe
+est ouverte par des guillemets en marge, et « Baco novum org. » est souligné.
+« N\textsuperscript{o} 1 » : un \emph{N} à \emph{o} suscrit, puis un chiffre
+bref, lu 1.} L'écrivante aurait voulu consulter son correspondant avant de
+l'adopter, car elle a « un air de venterie » qui ne lui convient guère.
+Elle ne voit pas « de plus forte objection contre ma théorie que
+l'improbabilité d'avoir rencontré juste ».\footnote{« venterie » est lu avec
+doute ; c'est la « vanterie ». « j'en avois » est écrit au-dessus de
+« j'eusse », biffé, et le « en » est peut-être barré aussi.} Elle craint
+« l'influence de l'opinion qu'avoit manifestée M\textsuperscript{r} De la
+Grange ». La question n'a sans doute été abandonnée, écrit-elle, « que
+parceque ce grand géomètre l'avoit jugée difficile », et le même préjugé
+pourrait la faire condamner sans examen. Elle demande que « les commissaires
+prennent la peine d'entendre mon long et ennuieux travail », bien que « le sujet
+du mémoire ne me laisse pas l'espérance de vous avoir pour
+juge ».\footnote{« De la Grange » est écrit en deux mots, coupés en fin de
+ligne. « sentence » : le \emph{n} du milieu est repassé. « d'avantage » :
+ainsi.}
+
+Le plaidoyer suit le mémoire point par point.
+\begin{itemize}
+  \item \textbf{L'accord avec l'expérience.} Elle a comparé sa théorie aux
+    expériences de M\textsuperscript{r} Chladni. Il reste une différence, peu
+    considérable, qui n'apparaît que dans certains cas. Ce sont les cas qui
+    appartiennent à une intégrale particulière « qui donne lieu à une
+    équation de la forme de celle aux cordes vibrantes », quand on compare
+    les sons de ses figures à ceux d'une autre intégrale particulière. Les
+    sons d'une même intégrale, comparés entre eux, donnent des rapports
+    « conformes à l'expérience ». Elle juge sa théorie « plus avancée, sous le
+    rapport de la comparaison à l'expérience que celle des surface tendues
+    sur laquelle personne n'élève de doute ».\footnote{« cette » (« de cette
+    théorie ») est surchargé, peut-être biffé, et gardé. « renfermées » est
+    écrit « renfermés ». « absolument » est biffé deux fois, et « mêmes » et
+    « entièrement » sont biffés aussi. « d'une », « que je crois » et
+    « pense » sont écrits au-dessus de mots biffés. Avant « appuyée », un mot
+    biffé illisible, suivi d'un groupe bref qui ressemble à « dûe ». « des
+    surface tendues » : ainsi.} Les figures sont celles que Chladni rendait
+    visibles avec du sable sur les plaques vibrantes : les figures de Chladni,
+    qui dessinent les lignes nodales.
+  \item \textbf{Le § 3}, sur « la valeur analytique des mots \emph{appuyé} et
+    \emph{libre} », employés « d'une manière tellement vague qu'il en est
+    résulté, même dans le mémoire d'Euler, une grande confusion d'idée ». Ce
+    sont les conditions aux bords : un bord simplement appuyé, où la flèche
+    et le moment de flexion sont nuls, et un bord libre, où le moment et
+    l'effort tranchant sont nuls.\footnote{« principal » (« l'objet principal
+    de mes recherches ») est lu avec doute. « le » est barré devant « § 3 »,
+    et « dans lequel j'ai fait examen » est traversé d'un trait, les deux
+    derniers mots lus avec doute. La phrase qui reste cite le titre d'un
+    paragraphe. Sur la page, les \emph{s} finaux de « mouvements », « lames »,
+    « plaques » et « les » sont barrés, le pluriel ramené au singulier.}
+  \item \textbf{Les lignes de repos.} Les points et lignes de repos de la lame
+    et de la plaque élastiques diffèrent de ceux de la corde et de la surface
+    tendue. Cette différence « tient à l'ordre des équations différentielles
+    de ces corps sonores ». Elle résulte, pour la lame, de la théorie
+    d'Euler, du travail de Ricati, et de l'expérience. Avec des lames assez
+    longues, l'expérience montre entre les lignes de repos des intervalles
+    « sensiblement inégaux », conformes à la théorie d'Euler, ce que Chladni,
+    qui s'est « sans doute » servi de lames trop courtes, n'a pas
+    mentionné.\footnote{« Ricati » : ainsi. La page se termine sur « enfin
+    de », et la phrase continue au verso. Un mot biffé, « un » ou « en »,
+    précède « servi ».} Chez la corde, le nœud de Sauveur est « une véritable
+    limite analytique » : si l'on coupait la corde en son nœud, chaque moitié
+    vibrerait comme avant. Chez la lame, dans « le plus grand nombre » des
+    cas, les parties séparées par des points de repos ne pourraient, isolées,
+    ni se ployer aux mêmes courbures ni rendre les mêmes sons. C'est juste,
+    et c'est bien affaire d'ordre. Pour l'équation de la corde, qui est du
+    second ordre, un nœud (\(z=0\)) est exactement la condition d'extrémité
+    fixe. Pour l'équation de la lame, qui est du quatrième ordre, le moment
+    \(z''\) et l'effort tranchant \(z'''\) ne s'annulent pas en général en un
+    nœud. La partie isolée ne satisferait donc ni aux conditions d'un bord
+    appuyé ni à celles d'un bord libre.
+  \item \textbf{Le programme.} Elle demande qu'en tout état de cause la
+    classe change, si la question est « encore remise », le passage de son
+    programme sur les découvertes de Chladni, qui aurait rendu perceptibles
+    « des \emph{nappes vibrantes} analogues aux \emph{ondes} des cordes de
+    Sauveur, et des courbes \emph{d'équilibres} ou de repos auxquels
+    correspondent les \emph{nœuds} ou \emph{points de repos} des mêmes
+    cordes ». L'analogie qu'il suggère est précisément celle qui est fausse
+    pour les lames.\footnote{« Je crois donc » est écrit au-dessus de « Il
+    résulte de mes remarques », biffé. « dans le cas qu'elle soit encore
+    remise » est écrit dans la marge, sur trois lignes, avec « le » biffé et,
+    au-dessus de « cas », deux lettres brèves (« au » ou « ou ») de place
+    incertaine. « nappes » est lu avec doute. La citation est ouverte par des
+    guillemets en tête de chaque ligne, et le guillemet fermant est restitué.
+    « il s'agit des expériences de » est biffé dans la parenthèse. Les mots
+    en italique sont soulignés sur la page. « d'équilibres » : ainsi.}
+  \item \textbf{Le § 6}, « un véritable hors d'œuvre au sujet du mémoire ».
+    Il expose « un fait singulier » : en appliquant un corps mou aux côtés
+    d'une plaque rectangulaire élastique, on peut tirer d'une portion aussi
+    petite qu'on veut le même son que d'une portion de longueur donnée. Elle
+    en donne la raison : « les termes qui doivent être nuls aux limites, sont
+    l'un et l'autre multipliés par un facteur dépendant de la rigidité
+    naturelle ». Au bord libre, en effet, le moment et l'effort tranchant sont
+    proportionnels à la rigidité de flexion. Là où une matière non élastique
+    remplace la plaque, ces deux conditions sont satisfaites d'elles-mêmes.
+    Le paragraphe du mémoire n'est pas dans ce volume, et cette lecture ne
+    peut pas vérifier le fait lui-même.\footnote{« hors d'œuvre » est lu avec
+    doute, et le « 6 » de « § 6 » est net. « continueroient » (au feuillet
+    précédent) a des lettres repassées. Après « les parties », un mot biffé
+    illisible, peut-être un premier « séparées ». Sous « multipliés », un petit
+    chevron sans appel.}
+  \item \textbf{Le dernier chapitre} explique les différences entre la
+    théorie de l'anneau d'Euler et les expériences de Chladni. « Ainsi voila
+    plusieurs points parfaitement indépendans de la théorie des surfaces et
+    qui sont appuyés tant sur la théorie d'Euler que sur des expériences
+    faciles à répéter. »\footnote{« plusieurs » est écrit au-dessus de
+    « trois », biffé, et « l'explication » après « une », biffé.}
+\end{itemize}
+
+La lettre finit sur un regret : « Combien je regrette l'avis de
+M\textsuperscript{r} De la Grange ! s'il m'eut condamnée il auroit au moins
+remarqué ce qui a indépendamment de la théorie principale, peut mériter
+l'attention, s'il m'eut aprouvé j'aurais été sûre d'avoir raison ».
+L'idée que la question est difficile, qui empêchera peut-être « que l'on ne se
+donne la peine d'examiner un mémoire condamné d'avance », n'aurait alors pu lui
+donner aucune crainte. Elle réclame donc la protection de son correspondant.
+Puis vient la formule finale : « en vous priant, Monsieur, d'agréer l'assurance
+des sentimens de d'admiration et de respect de votre servante ».\footnote{« mes
+idées » est écrit au-dessus de « mon travail », biffé. Avant « Combien », deux
+mots biffés, illisibles. « aurais » : la voyelle se lit plutôt \emph{a}, alors
+que la main écrit ailleurs « auroit ». « mémoire » et « me donner » sont écrits
+au-dessus de « travail » et de « m'inspirer », biffés. Il n'y a pas de point
+après « honoré ». « respect et » est biffé devant « d'admiration » ; « et de »,
+sous le cachet, est peut-être rayé. La lettre s'arrête sur « votre servante »,
+sans nom.} Le regret porte sur un avis que l'écrivante n'a pas eu. La lettre
+ne dit pas pourquoi elle ne l'a pas eu, et cette lecture ne le devine pas.
+
+\section*{IV. Ce que les feuillets permettent d'affirmer}
+
+\pagerange{13}{68}
+\textbf{Le mémoire des vues 17 à 41.} Son titre porte « Par J. L. Lagrange »,
+de la même main et de la même encre que le texte. C'est un brouillon, et
+l'auteur y parle à la première personne. Les transcriptions ne disent pas si
+la main est celle de Lagrange ; la chemise de la vue 15 parle de papiers
+« autographes ». Le mémoire cite le tome 2 de la \emph{Mécanique céleste} et
+lui est donc postérieur. C'est une borne que le contenu impose, pas une date,
+et cette lecture n'en tire pas d'année.
+
+\textbf{Les notes des vues 43 à 56.} La chemise dit « Notes de
+M\textsuperscript{r} Dela Grange ». Les calculs des vues 45 à 51 sont de la
+main du mémoire, et deux d'entre eux sont recopiés par une autre main, aux
+vues 53 et 55. Le brouillon numérique est d'une autre main encore, qui
+n'écrit que des chiffres. La chemise ne dit pas quels feuillets elle couvre.
+
+\textbf{Les lettres des vues 58 à 68.} Voici ce que les feuillets montrent.
+L'écrivante emploie des accords féminins et signe « votre servante ». Elle est
+l'auteur d'une théorie des surfaces élastiques vibrantes et d'un mémoire
+présenté à « la classe », sous le numéro 1 et une épigraphe de Bacon. Ce
+mémoire compare la théorie aux expériences de Chladni, discute Euler, et
+repose sur une « hypothèse » dont M\textsuperscript{r} De la Grange a tiré une
+équation du quatrième ordre. Voici ce que la chemise affirme : que le volume
+contient des « notes etc de M\textsuperscript{lle} Sophie Germain ». Le
+vocabulaire de ces lettres (« la classe », « le programme », les
+« commissaires », un mémoire numéroté sous une épigraphe) est celui d'un
+concours de l'Institut. Leurs sujets, les vibrations des surfaces élastiques
+comparées aux figures de Chladni, sont ceux du prix que la Première classe de
+l'Institut mit au concours sur la théorie des surfaces élastiques.
+
+L'identification de l'écrivante avec Sophie Germain est une inférence de
+cette lecture, non un fait des feuillets. Plusieurs indices la soutiennent. La
+chemise l'annonce. L'écrivante est une femme qui a concouru à un prix de
+l'Institut sur les surfaces élastiques. Son hypothèse porte sur la somme des
+courbures principales \(\frac1r+\frac1{r'}\). Lagrange a tiré de cette
+hypothèse l'équation des plaques, ce qui répond à ce que l'histoire du prix
+rapporte de Sophie Germain et de Lagrange.\footnote{Par exemple L. L.
+Bucciarelli et N. Dworsky, \emph{Sophie Germain: An Essay in the History of
+the Theory of Elasticity}, 1980. Cette lecture n'a pas consulté ce livre pour
+lire les feuillets, et ne s'en sert que pour dire où l'inférence cherche sa
+confirmation.} D'autres éléments manquent ou vont en sens contraire. Aucun
+feuillet ne porte de nom, de date ni de signature. La chemise est d'une main du
+XIX\textsuperscript{e} siècle, qui n'est pas celle des lettres. Les
+transcriptions n'ont comparé ces mains à aucun autographe authentifié. Elles ne
+décident pas non plus si les mains des vues 53--55, 58--60 et 61--68 sont une
+seule main. L'inférence est donc forte, mais elle n'est pas établie. Ni le
+destinataire, un « Monsieur » qui n'est pas nommé, ni l'autre « grand
+géomètre » ne sont identifiés ici.
+
+\textbf{Quand.} Aucun feuillet ne porte de date. Le champ de datation est
+celui du catalogue, 1701--1900, et cette lecture n'en tire aucune année, ni
+pour le mémoire, ni pour les notes, ni pour les lettres. Les « avant » et
+« après » des notes de bas de page qui situent le mémoire par rapport à des
+travaux ultérieurs sont conditionnels : ils supposent que le titre dit vrai
+en nommant Lagrange.
+
+\end{document}
