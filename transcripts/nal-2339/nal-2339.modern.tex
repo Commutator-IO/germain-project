@@ -1,0 +1,1502 @@
+% NAL 2339 — lecture modernisée du volume entier.
+%
+% Pass: Opus 5.5 (claude-opus-5-5), 2026-09-23 — first pass, unchecked against
+% the views by a human, and an interpretation rather than a record. Where this
+% file and the transcriptions differ in substance, the transcriptions
+% (batch-01.fr.tex to batch-03.fr.tex) are the record.
+%
+% Sources read: the three batch transcriptions of this volume, views 1–60, in
+% full, twice — once for the mathematics, once for the apparatus (every
+% \uncertain, \ill, \note, \marginal, \struck, \add and \folio) — with their
+% header comments and the coordinator's reconciliation block closing each
+% header, and the NAL 2339 section of .claude/skills/transcribe/references/
+% hand.md. The volume is completely transcribed. Views 61–66 are binding
+% (endpaper, back board, spine lettered MÉMOIRES DE FERMAT, edges): batch 4
+% has no file because it holds nothing to transcribe, not because it is
+% missing. Views 1–8 (binding, flyleaves, the library's title leaf, a blank)
+% and 36, 39, 52–60 (blanks, endleaves, endpaper) are recorded in the headers
+% and not transcribed. No image was consulted. No printed edition was
+% consulted: not Tannery and Henry's Œuvres de Fermat, not Apollonius,
+% Pappus, Eutocius or Viète. Where the reading states a fact the leaves do not
+% carry (Eutocius's report of Menaechmus, the content of Apollonius III.16,
+% Wantzel 1837, the death of Descartes), it says so in a footnote as general
+% knowledge, checked against no edition; III.16 is in addition verified
+% analytically.
+%
+% Map (settled by the reconciliation notes; library foliation = red crayon,
+% 1–24, v. 9 = f. 1r … v. 51 = f. 22r, ff. 23–24 blank on v. 53–56):
+%   v. 9–26   « Ad locos planos & solidos Isagoge », ink pagination 1–18
+%   v. 27–28  « Copie d'un escrit enuoyé par le R. Pere Marçenne a des Cartes »,
+%             « Methodus ad disquirendam maximam & minimam »
+%   v. 29–30  « De tangentibus Linearum curuarum », same hand, continues it
+%   v. 31–35  « Appendix ad Isagogen topicam … per locos », second hand, foot
+%             numbers 43–45
+%   v. 37–38  headed « Mr. fermat » (paler, perhaps later): three-line locus;
+%             address « Pour Mons.r Carcaui [doubtful] … »; its figure on v. 40
+%   v. 41–48  « [Nouus] Secundarum et Vlterioris ordinis Radicum In Analyticis
+%             Vsus A Domino de Fermat ad Dominum De Carcaui Die 20a. Aprilis
+%             Anno 1650 Missus », with its « Appendix Ad superiorem Methodum »
+%             (v. 44–48)
+%   v. 49–51  « Lettre de Mons.r De fermes A Monsieur De Carcaui De Castres Le
+%             20e auril 1650. », unsigned, ends « &c. »
+%
+% Attribution. Fermat is named on the leaves in three headings only (v. 37,
+% 41, 49) and on the library's 1888 title leaf (v. 7). The reading says
+% exactly that, attributes no hand, and does not extend the name to the
+% unnamed pieces (v. 9–35): there it says « l'écrivain », « l'auteur de
+% l'écrit », « le texte ». That the whole is Fermat's is the catalogue's title,
+% presented as such. The link of the Appendix of v. 31–35 to the Isagoge of
+% v. 9–26, of the letter to the Latin piece, and of the letter's « methode de
+% Tangentibus » to v. 29–30 are stated as inferences (the last one is not
+% drawn).
+%
+% Dating. \dating is empty, as in the catalogue. The only dates are the
+% leaves' own, 20 April 1650, on v. 41 and v. 49; they are reported for those
+% two pieces and extended to no other. Nothing is dated from Mersenne's or
+% Descartes's names; the letter's « a la memoire d'vn si grand … homme » is
+% reported as its wording.
+%
+% Notation translated, each with a note at first use: A → x, E → y (in the
+% Methodus E → e, in the tangent piece A → a, E → e; in the letter A, the
+% ordinate, → y and E, the abscissa, → x); consonants kept; dimension marks
+% (pl., sol., ppl., q^dto) dropped with the law of homogeneity, explained once;
+% « Zq » where the leaf writes it → Z²; « in » → product; Aq, Eq, Aqq, A cubus
+% → powers; '' and « bis » → 2; « æquatur », « Æle », « Æ. » and the double
+% stroke of v. 11 → =; « adæquatur » → ≈ (explained, then replaced by a
+% rigorous statement); Lat. Cub., Lat. quad. quad., Lat. quad. Cub. → cube,
+% fourth, fifth roots; proportions → quotients; rectangulum XYZ → XY·YZ;
+% applicata / ordinata → ordonnée; rectum latus → paramètre; donnée d'espèce →
+% de forme donnée; applicatio → division.
+%
+% Modern names attached, each where the statement coincides: coordinates
+% (oblique / Cartesian); line, conic, degenerate conic; hyperbola referred to
+% its asymptotes; completing the square; discriminant b² − 4ac, only for the
+% leaf's cases (and via the shear that the « triangle given in species » is);
+% derivative, stationary point, Fermat's theorem on interior extrema (named as
+% a later name); subtangent; solution of cubics and quartics by intersecting
+% conics; depressed quartic; resolvent cubic (for Viète's « parapleroses »);
+% two mean proportionals, duplication of the cube; Menaechmus (footnote only,
+% general knowledge); Wantzel 1837 (footnote, the leaf proves nothing);
+% three-line locus / Pappus's problem; bitangent pencil of conics; pole and
+% conjugate diameter; Apollonius III.16 as the leaf cites it, verified by the
+% power of a point with respect to a conic; elimination, resultant (up to an
+% extraneous factor; Sylvester not named, the procedure is not his);
+% rationalisation of radicals; overdetermined systems and gcd; circular
+% sections (cyclic planes) of a quadric cone; n-ellipse and its normal.
+%
+% Departures from the leaf, each footnoted where it occurs: v. 10 the condition
+% « neutra … quadratum prætergrediatur » restated as total degree ≤ 2; v. 11
+% « EI » for ZI (the margin's « forsan ZI » followed); v. 12 the proposition on
+% lines restated with its sign and degenerate cases; v. 13–14 the hyperbola
+% (x−S)(R−y) = D − RS with D = RS and D < RS added; v. 14 « uD siue ZI æquetur
+% R » (a vertical side of the rectangle, ND, ou or Zp, is needed; the margin's
+% « forsan Zp » followed); v. 14–15 homogeneous case restated as a pair of
+% lines through N; v. 16 « applicatæ … parallelæ NP » (NZ needed) and « sub D
+% in IP » (NP needed), « Parobolen » spelling; v. 19 circle with a²/4 + b²/4 − c
+% ≤ 0 added; v. 20–22 degenerate cases of ellipse and hyperbola added; v. 22
+% « Punctum igitur Z » for I; v. 24 the corrector's NZ, NR followed; v. 25
+% « species » read as the squares, the proposition sharpened to an ellipse;
+% v. 25–26 the example is not an instance of the stated proposition, the
+% ratio must exceed 4, and the mirror circle is added; v. 27–30 adæqualitas
+% replaced by an exact statement, « Nec vnquam fallit methodus » qualified
+% (stationary non-extrema, singular points); v. 29 the inequality needed on
+% both sides of B; v. 31–35 missing signs supplied (v. 31, 32, 33), « Bq in Aq »
+% for « Bq in Aq bis » (v. 34), « æquabitur Z Sol. in A + d ppl. » (v. 33) read
+% as D − Zx, « VZ » for nZ (v. 33), extraneous intersections at x = 0 (v. 33,
+% 35), « circulum creari Semper » (v. 35) qualified, v. 34 « Z Sol. in d » kept
+% as a constant; v. 37 « fertur » read as « secetur », « foe » for foc, the
+% analysis replaced by a direct synthesis; v. 42 N²E² for N²E³; v. 43 the final
+% substitution carries the extraneous factor (N² − Bx)²; v. 44 « ZA² » read as
+% ZA² − A³ (the leaf's second writing); v. 46 the claim that no approximation
+% is possible while radicals remain is qualified; v. 47 the abundant example
+% needs a single common root.
+%
+% Steps supplied (the reading's own computations, checked symbolically): the
+% expansions of v. 13, 19, 22–24; the shear and the classification table;
+% the circle of v. 26 and its bound 4; the rigorous forms of v. 28 and v. 30;
+% the general cubic of v. 31; VM as the second mean (v. 33); the conic type
+% by the position of V (v. 37); the resultant P² + D³P + 3DPQ − Q³ of degree 6
+% (v. 43) and the one-step Euclidean alternative y = (P + DQ)/(Q + D²); the
+% sextic (D³ − Zx² − B²x)³ = 27D³(x³ + B²x)(Zx² − x³) completing v. 45; the
+% linear root of the abundant example (v. 47); the rectangle's compatibility
+% condition (v. 47); the cyclic planes (v. 48); the normal to the 4-ellipse
+% (v. 51).
+%
+% Left unread or unreconstructed: « m » raised (v. 21); the struck « quando »
+% (v. 18); « Symetria climatismus Vietæa », « huic », « sese » (v. 44);
+% « Emanuerit », « exulerre » (v. 45); « Exposuit » (v. 47); the two words
+% « Oti di » (v. 48); the doubtful term « − D²BA » of the letter's curve and
+% « B pp^l » (v. 49); the six-point construction of the cone (v. 48) and the
+% extensions to curves on surfaces, which the leaf states without computation;
+% the letter's tangent itself, whose elimination the leaf does not carry out;
+% the pencil note « Mr des Cartes f. 347 » (v. 30); the content of Apollonius's
+% plane loci cited on v. 12, 19–20, 25.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{nal-2339}
+\shelfmark{NAL 2339}
+\pages{1}{66}
+\dating{}
+\watermark{Lecture automatique\\interprétation non vérifiée}
+\foldertitle{Fermat. Mémoires de mathématiques. NAL 2339 — lecture modernisée du volume entier}
+
+\begin{document}
+
+\section*{Résumé}
+
+\begin{resume}
+Ce volume de vingt-deux feuillets écrits réunit six pièces latines et une
+lettre française de géométrie et d'algèbre, sous le titre que la bibliothèque
+lui a donné en 1888 : « Mémoires de Fermat ». Une introduction aux lieux plans
+et solides, « Ad locos planos \& solidos Isagoge » (vues 9 à 26) ; une méthode
+pour trouver le maximum et le minimum, puis une méthode des tangentes, sous le
+titre français « Copie d'un escrit enuoyé par le R. Pere Marçenne a des Cartes »
+(vues 27 à 30) ; un « Appendix ad Isagogen topicam » qui résout les équations du
+troisième et du quatrième degré par des courbes (vues 31 à 35) ; une
+démonstration sur le lieu à trois droites (vues 37 à 40) ; enfin une méthode
+d'élimination des « racines secondes », envoyée à Carcavi avec une lettre
+d'accompagnement en français, datées toutes deux sur les feuillets du 20 avril
+1650 (vues 41 à 51). Le nom de Fermat n'est écrit sur les feuillets que dans
+trois titres, aux vues 37, 41 et 49 ; les quatre premières pièces ne portent
+aucun nom, et c'est le titre du catalogue qui fait de l'ensemble les mémoires
+de Fermat. Aucune main n'est identifiée. Le volume est entièrement transcrit :
+après la vue 51, il n'y a que des feuillets blancs et la reliure.
+
+Le problème commun est de rendre générales et presque mécaniques des questions
+que la géométrie grecque traitait cas par cas : sur quelle courbe se trouve un
+point défini par une condition (un « lieu ») ; où une grandeur atteint son
+maximum ; comment mener la tangente à une courbe ; comment construire la racine
+d'une équation du troisième ou du quatrième degré ; comment débarrasser une
+équation de ses radicaux. Les feuillets disent eux-mêmes ce qu'ils cherchent.
+L'Isagoge s'ouvre sur un reproche aux Anciens, qui ont beaucoup écrit sur les
+lieux mais « ne les ont pas exprimés assez généralement » : « nous soumettons
+donc cette science à une analyse propre, pour ouvrir désormais aux lieux une
+voie générale ». Et la lettre commence ainsi : « Je n'ay point voulu differer a
+vous Enuoyer ma methode generale pour le desbrouilement des Asymmetries »,
+c'est-à-dire des radicaux, en demandant pour seul intérêt « la satisfaction …
+d'auoir deuoilé vne matiere qui n'estoit pas cognüe ».
+
+L'idée de l'Isagoge est celle des coordonnées : deux longueurs inconnues,
+portées sous un angle donné à partir d'un point fixe, font d'une équation entre
+elles une courbe ; si l'équation est du premier degré, c'est une droite ; si
+elle est du second, une conique, que l'on reconnaît en complétant les carrés.
+L'idée de la méthode des maxima est de comparer la grandeur en $x$ et en $x+e$,
+de diviser par $e$, puis d'effacer ce qui contient encore $e$ : on obtient ce
+qu'on écrit aujourd'hui $f'(x)=0$. La tangente à la parabole se trouve de la
+même façon. L'Appendix coupe une équation du troisième ou du quatrième degré en
+deux équations à deux inconnues, deux coniques, dont l'intersection donne la
+racine : parabole et hyperbole, deux paraboles, parabole et cercle ; il en tire
+les deux moyennes proportionnelles. La pièce envoyée à Carcavi combine deux
+équations en deux inconnues pour faire baisser le degré de la seconde jusqu'à ce
+qu'une simple division la donne, puis la remplace dans l'une des équations : on
+a éliminé une inconnue ; en appelant chaque radical une nouvelle inconnue, on
+fait disparaître les radicaux. Les calculs des feuillets ont tous été refaits :
+ils sont justes, à quelques signes et lettres près, qui sont signalés ; là où
+une démarche n'est pas une démonstration — l'« adéquation », l'analyse du lieu à
+trois droites —, la lecture le dit et donne la démonstration.
+
+Ce que ces feuillets construisent s'appelle aujourd'hui la géométrie analytique
+et la classification des coniques (par le discriminant $b^2-4ac$) ; la dérivée,
+les points stationnaires et le théorème de Fermat sur les extremums intérieurs ;
+la sous-tangente ; la résolution des équations par intersection de coniques, les
+deux moyennes proportionnelles et la duplication du cube ; le lieu à trois
+droites, ou problème de Pappus, avec la proposition III.16 des Coniques
+d'Apollonius ; l'élimination et le résultant ; les systèmes surdéterminés ; les
+sections circulaires d'un cône.
+
+\keywords{plane and solid loci, analytic geometry, conic sections, classification of conics, adequality, maxima and minima, interior extremum theorem, method of tangents, subtangent, geometric solution of equations, intersection of conics, resolvent cubic, two mean proportionals, duplication of the cube, three-line locus, Pappus's problem, Apollonius's Conics, elimination theory, resultant, elimination of radicals, overdetermined systems, circular sections of a cone}
+\end{resume}
+
+\section*{Ce que contient le volume}
+
+\pagerange{1}{66}
+Soixante-six vues, une page par vue. Les vues 1 à 6 sont la reliure et les
+gardes (une étiquette « LAT NOUV. ACQ. 2339 » sur la contre-garde). La vue 7 est
+le feuillet de titre de la bibliothèque, calligraphié : « Mémoires de Fermat »,
+le certificat « Volume de 24 Feuillets / Les Feuillets 23 \& 24 sont blancs /
+8 Octobre 1888 », « Libri 1848. » et la cote ; la transcription le relève sans
+le transcrire, puisqu'il n'est pas du manuscrit. La vue 8 est blanche. Le texte
+occupe les vues 9 à 51, avec deux pages blanches (vues 36 et 39) ; suivent la
+page blanche de la vue 52, les deux feuillets blancs 23 et 24 (vues 53 à 56),
+des gardes (vues 57 à 60) et, aux vues 61 à 66, la reliure : garde, plat, dos
+titré « MÉMOIRES DE FERMAT », tranches. C'est pourquoi le quatrième lot de vingt
+vues n'a pas de fichier : il ne contient rien à transcrire, et le volume est
+transcrit en entier.\footnote{Les trois transcriptions (vues 1–20, 21–40,
+41–60) le disent chacune dans la note de réconciliation qui clôt leur en-tête :
+« v. 61–66 (batch 4) are binding, so batch 4 has no file ».}
+
+\begin{itemize}
+  \item \textbf{Vues 9 à 26 (ff. 1r–9v) — « Ad locos planos \& solidos
+    Isagoge »}, « introduction aux lieux plans et solides », en latin, d'une
+    cursive posée, avec des réclames au pied des pages et sa propre pagination
+    à l'encre, 1 à 18. Aucun nom.
+  \item \textbf{Vues 27 et 28 (f. 10r–v) — « Methodus ad disquirendam maximam
+    \& minimam »}, sous le titre français « Copie d'un escrit enuoyé par le R.
+    Pere Marçenne a des Cartes ».
+  \item \textbf{Vues 29 et 30 (f. 11r–v) — « De tangentibus linearum
+    curvarum »}, de la même main, qui renvoie à la méthode précédente (« Ad
+    superiorem methodum »).
+  \item \textbf{Vues 31 à 35 (ff. 12r–14r) — « Appendix ad Isagogen topicam
+    continens solutionem problematum solidorum per locos »}, d'une seconde
+    main, plus calligraphique, avec au pied des rectos les nombres 43 à 45.
+  \item \textbf{Vues 37 et 38 (f. 15r–v), et la figure de la vue 40 (f. 16v)
+    — le lieu à trois droites}, sous l'inscription « Mr. fermat », avec au
+    dos une adresse « Pour Mons.r Carcaui », de lecture douteuse.
+  \item \textbf{Vues 41 à 48 (ff. 17r–20v) — « Novus secundarum et ulterioris
+    ordinis radicum in analyticis usus »}, « envoyé par M. de Fermat à M. de
+    Carcavi le 20 avril 1650 » selon son titre, suivi d'un « Appendix ad
+    superiorem methodum » (vues 44 à 48).
+  \item \textbf{Vues 49 à 51 (ff. 21r–22r) — une lettre française}, « Lettre
+    de Mons.r De fermes A Monsieur De Carcaui De Castres Le 20e auril 1650 »,
+    sans signature.
+\end{itemize}
+
+\subsection*{Le nom de Fermat, et les mains}
+
+Le nom de Fermat est écrit sur les feuillets du manuscrit en trois endroits, et
+en trois seulement : l'inscription « Mr. fermat » en tête de la vue 37, d'une
+encre plus pâle et d'un trait plus fin que le texte, peut-être d'une autre main
+et peut-être plus tardive ; le titre latin de la vue 41, « A Domino de Fermat
+ad Dominum De Carcaui » ; le titre de la lettre de la vue 49, qui écrit « De
+fermes ».\footnote{« De fermes » est lu tel quel, en deux mots, la fin nette ;
+la note de réconciliation compte ce titre parmi les trois qui nomment Fermat.
+La lettre porte le même destinataire et la même date que la pièce latine de la
+vue 41.} Il l'est aussi sur le feuillet de titre de 1888 (vue 7), qui est de la
+bibliothèque. Les pièces des vues 9 à 35 — l'Isagoge, la méthode des maxima et
+minima, la méthode des tangentes, l'Appendix — ne portent aucun nom d'auteur ;
+cette lecture ne leur étend pas celui des titres voisins et parle, pour elles,
+de « l'écrivain » ou de « l'auteur de l'écrit ». Que l'ensemble soit de Fermat,
+c'est le titre du catalogue, « Fermat. Mémoires de mathématiques. », et c'est
+comme tel que cette lecture le présente.
+
+Aucune main n'est attribuée. Les transcriptions décrivent une cursive posée
+pour l'Isagoge ; la même main pour les deux pièces des vues 27 à 30 ; « une
+seconde main, plus calligraphique », pour l'Appendix, qui est peut-être aussi
+celle des vues 37–38, sans que ce soit tranché ; une cursive posée à grandes
+initiales pour les vues 41 à 51. Plusieurs indices montrent des copies : le
+titre de la vue 27 le dit (« Copie d'un escrit »), une note marginale française
+de la vue 29 parle de l'auteur à la troisième personne (« Il a icy nommé B ce
+qu'il nomme d par apres »), deux notes « forsan … » de l'Isagoge proposent
+d'autres lettres, et, dans l'Appendix, les Z sont d'une encre plus noire,
+« comme remplis après coup dans des blancs ».\footnote{Ces trois dernières
+observations sont des transcriptions ; en tirer que les pièces sont des copies
+est une inférence, que les transcriptions font elles-mêmes avec la même
+prudence.} La lettre de la vue 49, elle, dit envoyer « mon original » ; si
+les feuillets d'ici sont cet original ou une copie, rien ne le dit.
+
+\subsection*{Les numéros des feuillets, et les dates}
+
+La foliotation de la bibliothèque est une série au crayon rouge, en haut à
+droite de chaque recto, blancs compris, de 1 (vue 9) à 24 (vue 55) ; elle finit
+sur les deux feuillets blancs 23 et 24, comme le dit le certificat de 1888. Les
+titres de section de cette lecture donnent ces feuillets ; le texte cite les
+vues. Les autres séries n'en sont pas : une série au crayon gris, décalée d'une
+unité aux vues 9 à 19 et irrégulière ensuite ; la pagination à l'encre de
+l'Isagoge, 1 à 18 ; les nombres 43, 44, 45 au pied des rectos de l'Appendix,
+qui paraissent le compte d'un autre assemblage.\footnote{Les autres marques
+sont la cote « Libri 1848 », « R. c. 8070 (88) » et le cachet « ACQ. 8070
+(LIBRI) » (vues 9 et 27), les cachets ronds de la Bibliothèque nationale, et,
+au crayon gris le long de la marge de la vue 30, d'une autre main, « Mr des
+Cartes f. 347 », renvoi dont l'objet n'est pas dit sur le feuillet et que cette
+lecture ne cherche pas à identifier.}
+
+Le catalogue ne donne aucune date, et la lecture n'en infère aucune. Les
+seules dates sont sur les feuillets : « Die 20a. Aprilis Anno 1650 » dans le
+titre de la vue 41 et « Le 20e auril 1650 » dans celui de la vue 49. Elles sont
+les dates de ces deux pièces-là, telles qu'elles les portent ; elles ne disent
+rien des autres.
+
+\subsection*{La notation des feuillets, et sa traduction}
+
+Toutes les pièces écrivent dans l'algèbre « spécieuse » de Viète : les voyelles
+$A$ et $E$ désignent les inconnues, les consonnes $B$, $D$, $G$, $N$, $R$, $S$,
+$Z$ les grandeurs données, « in » le produit, « Aq », « Eq », « A cubus »,
+« Aqq » le carré, le cube, la quatrième puissance, et deux petits traits après
+un terme, ou « bis », le double. L'égalité est dite en mots (« æquatur »,
+« æquale », abrégé « Æle » ou « Æ. » aux vues 41 à 48), une fois par deux traits
+verticaux (vue 11). Chaque grandeur porte sa dimension : « Z planum » est une
+aire, « B solidum » un volume, « D plano-planum » une grandeur de dimension
+quatre, et une équation n'ajoute que des termes de même dimension (la loi des
+homogènes). Cette lecture traduit : $A \to x$, $E \to y$ (sauf avis contraire,
+signalé à chaque fois) ; les consonnes sont gardées ; les marques de dimension
+sont abandonnées, une grandeur étant désormais un nombre positif, et « Zq »,
+quand le feuillet l'écrit, devient $Z^2$ ; « Lat. Cub. », « Lat. quad. quad. »,
+« Lat. quad. Cub. » deviennent $\sqrt[3]{\ }$, $\sqrt[4]{\ }$ et
+$\sqrt[5]{\ }$\footnote{« Latus cubicum », côté du cube : la racine cubique ;
+« latus quadrato-quadratum », la racine quatrième ; « latus quadrato-cubicum »,
+côté du carré-cube, c'est-à-dire de la cinquième puissance : la racine
+cinquième.} ; une proportion « $a$ ad $b$ ita $c$ ad $d$ » devient
+$a/b=c/d$ ; « rectangulum $AEC$ » devient le produit $AE\cdot EC$.
+
+Dans l'Isagoge, un point fixe $N$ est pris sur une droite fixe $NZM$ ; on porte
+$NZ = x$ sur cette droite et, sous un angle donné $\widehat{NZI}$, $ZI = y$. Le
+point $I$ a donc pour coordonnées $(x,y)$, cartésiennes si l'angle est droit,
+obliques sinon. Le vocabulaire des coniques est celui d'Apollonius : un
+« diamètre » et ses « appliquées » ou « ordonnées » (les cordes qu'il coupe en
+leur milieu, et leurs moitiés) ; le « côté droit » (« rectum latus »), le
+paramètre ; « donné de position », fixe ; un triangle « donné d'espèce », de
+forme donnée, c'est-à-dire semblable à un triangle fixe. Enfin les feuillets
+ne connaissent que des grandeurs positives ; cette lecture dit, à chaque fois,
+quand elle passe aux coordonnées signées.
+
+\section*{« Ad locos planos \& solidos Isagoge » : le programme, la droite, l'hyperbole (ff. 1r–4r, vues 9 à 15)}
+
+\pagerange{9}{15}
+L'Isagoge commence par l'histoire du sujet. Pappus, au début de son livre VII,
+atteste qu'Apollonius a écrit sur les lieux plans et Aristée sur les lieux
+solides ; « mais, ou nous nous trompons, ou la recherche des lieux ne leur
+était pas assez aisée : nous le conjecturons de ce qu'ils n'ont pas exprimé
+assez généralement un très grand nombre de lieux ». D'où le programme :
+« Scientiam igitur hanc propriæ et peculiari analysi subiicimus, vt deinceps ad
+locos generalis via pateat. »\footnote{« Nous soumettons donc cette science à
+une analyse propre et particulière, pour ouvrir désormais aux lieux une voie
+générale. » Les ouvrages cités (le livre VII de Pappus, les Lieux plans
+d'Apollonius, les Lieux solides d'Aristée) ne sont pas sur les feuillets, et
+cette lecture n'en dit rien de plus que le texte.}
+
+La définition suit, et c'est tout le principe : « chaque fois que, dans
+l'équation finale, se trouvent deux quantités inconnues, il y a un lieu, et
+l'extrémité de l'une d'elles décrit une ligne, droite ou courbe ». Le lieu est
+« plan » si cette ligne est une droite ou un cercle, « solide » si c'est une
+parabole, une hyperbole ou une ellipse, « linéaire » pour toute autre courbe.
+Aujourd'hui : une équation $F(x,y)=0$ entre les coordonnées d'un point définit
+une courbe. L'écrivain annonce que le lieu est plan ou solide « pourvu
+qu'aucune des inconnues ne dépasse le carré ».\footnote{« Modo neutra
+quantitatum ignotarum, quadratum prætergrediatur » (vue 10). Pris à la lettre,
+ce critère porte sur le degré de chaque inconnue séparément, et admettrait un
+terme comme $x^2y$, qui donne une cubique. La condition exacte est que
+l'équation soit de degré total au plus 2, c'est-à-dire ne contienne que des
+termes en $x^2$, $xy$, $y^2$, $x$, $y$ et une constante ; tous les cas que
+traite le texte la remplissent, le rectangle $xy$ comptant comme un terme du
+« degré du carré ».} L'énoncé moderne est celui-ci : une équation du premier
+degré en $(x,y)$ définit une droite ; une équation du second degré définit une
+conique — ellipse (ou cercle), parabole, hyperbole — ou bien une conique dite
+dégénérée : deux droites, une droite, un point, ou rien. L'Isagoge traite
+toutes les coniques non dégénérées, et les droites ; les cas dégénérés, elle ne
+les nomme pas, et cette lecture les ajoute là où ils se présentent.
+
+\subsection*{Les équations du premier degré : des droites}
+
+Premier cas, $Dx = By$. Le point $I$ est sur une droite passant par $N$ :
+$y/x = D/B$ est un rapport donné, donc le triangle $NZI$, dont l'angle en $Z$
+est donné, est de forme donnée, et la droite $NI$ est fixe.
+
+Deuxième cas, $Z - Dx = By$, où $Z$ est une aire.\footnote{« Z pl. $-$ D in A
+æqu. B in E », avec, pour signe d'égalité, deux traits verticaux entre lesquels
+est écrit « æqu. ».} Posons $R = Z/D$, de sorte que $DR = Z$ ; alors
+$y/(R-x) = D/B$. Sur $NZM$, soit $NM = R$ : le point $M$ est fixe, $MZ = R - x$,
+et le rapport $ZI/MZ$ est donné ; le triangle $IZM$ est de forme donnée et $I$
+est sur une droite fixe passant par $M$.\footnote{Le feuillet écrit « dabitur
+ergo ratio MZ ad EI », $E$ étant le nom de la quantité $ZI$ ; une note de la
+même encre, dans la marge, propose « forsan ZI ». C'est $ZI$ qu'il faut, et
+cette lecture suit la marge.} Et de même, conclut le texte, « dans toute
+équation dont certains termes sont affectés de $A$ ou de $E$ » : toute équation
+$ax + by = c$, avec $a$, $b$ non tous deux nuls, définit une droite. C'est vrai
+dans des coordonnées obliques comme dans des coordonnées rectangulaires.
+L'écrivain en tire que tous les lieux à la droite, par exemple la septième
+proposition du premier livre des Lieux plans d'Apollonius, s'énoncent et se
+construisent désormais plus généralement.
+
+Il ajoute une proposition « très belle, que nous avons découverte par ce
+moyen » : si, d'un point, on mène à des droites données de position, en nombre
+quelconque, des droites sous des angles donnés, et que la somme des rectangles
+formés des droites menées et de droites données soit égale à une aire donnée,
+le point est sur une droite donnée de position.\footnote{« Si sint quodcunq;
+rectæ lineæ positione datæ, atq; ad ipsas a quodam puncto ducantur rectæ in
+datis angulis, sit autem quod sub ductis et datis efficitur dato spatio æquale,
+punctum rectam lineam positione datam continget » (vue 12). « Quod sub ductis
+et datis efficitur » est lu ici comme la somme des rectangles, chacun fait
+d'une droite menée et d'une droite donnée ; c'est une interprétation, que
+demande la conclusion.} La démonstration moderne tient en une ligne. Une
+droite menée du point $(x,y)$ à une droite donnée, sous un angle donné, est
+proportionnelle à la distance du point à cette droite, donc, d'un même côté de
+celle-ci, de la forme $d_i = \alpha_i x + \beta_i y + \gamma_i$. La condition
+$\sum_i c_i d_i = K$ est du premier degré : c'est une droite. L'énoncé exact
+demande deux précisions que le feuillet ne donne pas : les longueurs $d_i$
+étant positives, le lieu est la partie de cette droite qui tombe dans la région
+où chaque $d_i$ garde le signe choisi ; et si
+$\sum c_i\alpha_i = \sum c_i\beta_i = 0$, la condition ne dépend plus du point,
+et le lieu est toute la région ou rien.
+
+\subsection*{Le rectangle des inconnues : l'hyperbole rapportée à ses asymptotes}
+
+Le « second degré » des équations locales est $xy = Z$, avec $Z$ une aire. Le
+point $I$ est sur une hyperbole : on mène par $N$ la parallèle $NR$ à $ZI$, on
+choisit $M$ sur $NZM$ et $MO$ parallèle à $ZI$ de sorte que $NM\cdot MO = Z$, et
+l'hyperbole qui passe par $O$ et a pour asymptotes $NR$ et $NM$ passe par $I$.
+C'est la propriété de l'hyperbole rapportée à ses asymptotes : dans ce repère,
+droit ou oblique, son équation est $xy = $ constante.
+
+Toute équation où se mêlent le rectangle $xy$, des termes du premier degré et
+une constante, sans carré, s'y ramène. L'exemple est $D + xy = Rx + Sy$, où $D$
+est une aire. Comme
+\[ (x - S)(R - y) = Rx + Sy - xy - RS, \]
+l'équation s'écrit
+\[ (x - S)(R - y) = D - RS , \]
+ce que le feuillet dit en ôtant $RS$ de l'aire $D$. Le point $I$ est sur
+l'hyperbole d'asymptotes les droites $x = S$ et $y = R$.\footnote{Le feuillet
+suppose $D > RS$, puisqu'il construit un rectangle égal à $D - RS$. Si
+$D < RS$, l'équation s'écrit $(x-S)(y-R) = RS - D$ : c'est encore une
+hyperbole de mêmes asymptotes, dont on prend les deux autres quarts. Si
+$D = RS$, le lieu dégénère en la paire de droites $x = S$ et $y = R$. En
+général, $bxy + dx + ey + f = 0$ avec $b \neq 0$ s'écrit
+$(bx + e)(by + d) = de - bf$ : une hyperbole d'asymptotes parallèles aux axes
+si $de \neq bf$, deux droites sinon.} La construction : $NO = S$ sur $NZM$, $Nd$
+parallèle à $ZI$ et égale à $R$, $dp$ parallèle à $NM$ et rencontrée en $p$ par
+$ZI$ prolongée ; $u$ est sur $dp$ au-dessus de $O$. Alors $up = OZ = x - S$ et
+$pI = Zp - ZI = R - y$, donc $up \cdot pI = D - RS$, et l'hyperbole
+d'asymptotes $pu$ et $uO$ menée par un point $y$ tel que $ux\cdot xy = D - RS$
+passe par $I$.\footnote{Le point que la vue 13 écrit « d » est celui que la vue
+14 écrit « D » ; les lettres $x$ et $y$ de ce point de la figure sont celles
+du feuillet, non les coordonnées. Le feuillet justifie $pI = R - y$ par « cum
+uD siue ZI æquetur R » : tel qu'il est lu, $uD$ est un segment du côté
+supérieur, égal à $NO = S$, et $ZI$ vaut $y$. Il faut un côté vertical du
+rectangle, $Nd$, $Ou$ ou $Zp$, qui vaut $R$ ; la note de la marge, « + forsan
+Zp », corrige le second terme, et cette lecture la suit.}
+
+\subsection*{Les équations homogènes du second degré : des droites}
+
+Le « degré suivant » est celui où $x^2$ est égal à $y^2$, ou dans un rapport
+donné avec lui, ou encore $x^2 + xy$ dans un rapport donné avec $y^2$ : toutes
+les équations dont chaque terme est de degré deux exactement. Le texte conclut
+que $I$ est sur une droite : si $(x^2 + xy)/y^2$ est donné, et qu'on mène dans
+le triangle $NZI$ une parallèle $OR$ à $ZI$, les triangles $NOR$ et $NZI$ sont
+semblables, et $(NO^2 + NO\cdot OR)/OR^2$ a la même valeur ; la droite $NI$
+convient.\footnote{« Iuncta NR dabitur positione \& satisfaciet proposito » ;
+« satisfaciet » est d'une lecture un peu douteuse, la fin du mot serrée contre
+la marge.} C'est juste, pour des grandeurs positives. L'énoncé moderne est un
+peu plus riche : $ax^2 + bxy + cy^2 = 0$ se factorise en deux droites passant
+par $N$ si $b^2 - 4ac > 0$, en une droite double si $b^2 - 4ac = 0$, et se
+réduit au seul point $N$ si $b^2 - 4ac < 0$. Dans l'exemple, en posant
+$t = x/y$, on a $t^2 + t - k = 0$, qui a une racine positive et une négative :
+la première donne la demi-droite du feuillet, la seconde une autre droite par
+$N$, qui passe hors de l'angle où l'écrivain place ses grandeurs. Ces paires de
+droites sont les coniques dégénérées de la classification.
+
+\section*{L'Isagoge, suite : parabole, cercle, ellipse, hyperbole (ff. 4v–7v, vues 16 à 22)}
+
+\pagerange{16}{22}
+« Si aux puissances des inconnues ou à leurs rectangles se mêlent des termes
+en partie entièrement donnés, en partie faits d'une droite donnée et de l'une
+des inconnues, la construction sera plus difficile. Nous construisons
+brièvement chaque cas, et nous le démontrons. » Ce sont les coniques propres.
+
+\subsection*{La parabole}
+
+Si $x^2 = Dy$, le point $I$ est sur une parabole de sommet $N$, de diamètre la
+parallèle $NP$ à $ZI$ et de paramètre $D$ : par construction,
+$D\cdot NP = PI^2$, c'est-à-dire $Dy = x^2$.\footnote{Le feuillet écrit
+« applicatæ sint parallelæ NP » ; les ordonnées d'une parabole de diamètre $NP$
+sont parallèles à $NZ$, non à $NP$, et c'est ce que demande la suite. Il écrit
+ensuite « rectangulum sub D in IP æquabitur quadrato NZ », où il faut $NP$ (ou
+$ZI$), puisque $IP = NZ = x$ ; la conclusion qu'il en tire, « D in E æquabitur
+Aq », est la bonne. Il écrit « Parobolen », et biffe un « erit » en fin de
+ligne pour le récrire à la suivante. Dans « quadrato N$\overset{Z}{E}$ », un Z
+est écrit au-dessus du E, de la même encre : la leçon corrigée est « quadrato
+NZ ».} Si l'angle $\widehat{NZI}$ est droit, $NP$ est l'axe ; sinon c'est un
+diamètre, et c'est bien le mot du texte.
+
+« À cette équation se ramèneront très facilement toutes celles où $x^2$ se mêle
+à des termes faits de grandeurs données et de $y$, ou $y^2$ à des termes faits
+de grandeurs données et de $x$, et de même s'il s'y mêle des termes entièrement
+donnés. » C'est la complétion du carré : $x^2 + ax + by + c = 0$ s'écrit
+$\bigl(x + \tfrac a2\bigr)^2 = -b\,\bigl(y + \tfrac{c}{b} - \tfrac{a^2}{4b}\bigr)$,
+une parabole, pourvu que $b \neq 0$ ; si $b = 0$, il reste deux droites
+parallèles, une droite ou rien. La condition $b\neq 0$ est celle que l'énoncé
+du feuillet contient en exigeant des termes « sub datis in E ».
+
+Le feuillet traite ensuite trois cas particuliers :
+\begin{itemize}
+  \item $y^2 = Dx$ : parabole de sommet $N$, de diamètre $NZ$, de paramètre $D$,
+    les ordonnées parallèles à $NP$ ;
+  \item $B^2 - x^2 = Dy$ : si $DR = B^2$, l'équation devient
+    $D(R - y) = x^2$ ; on porte $NM = R$ parallèlement à $ZI$, on mène $MO$
+    parallèle à $NZ$, et $OI = R - y$, $MO = x$ : parabole de sommet $M$, de
+    diamètre $MN$, de paramètre $D$, tournée vers $N$ ;
+  \item $B^2 + x^2 = Dy$ : $D(y - R) = x^2$, « et le reste comme plus haut ».
+\end{itemize}
+Tous trois sont justes.
+
+\subsection*{Le cercle}
+
+Si $B^2 - x^2 = y^2$ et que l'angle en $Z$ est droit, $I$ est sur le cercle de
+centre $N$ et de rayon $B$. L'écrivain précise que s'y ramènent toutes les
+équations en $x^2$, $y^2$ et termes du premier degré, « pourvu que l'angle
+$\widehat{NZI}$ soit droit et que les coefficients de $x^2$ égalent ceux de
+$y^2$ ». Son exemple :
+\[ B^2 - 2Dx - x^2 = y^2 + 2Ry . \]
+On ajoute $R^2$, puis $D^2$, aux deux membres, et l'on pose
+$P^2 = B^2 + R^2 + D^2$ :
+\[ P^2 - (x + D)^2 = (y + R)^2 , \]
+de sorte que, en prenant $x + D$ et $y + R$ pour nouvelles inconnues, on
+retombe sur le cas précédent : un cercle de centre le point $(-D, -R)$ et de
+rayon $P$.\footnote{Le « $+$ D » de « loco ipsius A $+$ D » est écrit
+au-dessus de la ligne ; un second « $+$ D », très pâle, se voit au-dessus du
+second A. Le feuillet écrit aussi « Pq $-$ Dq $-$ D in A$''$ $-$ Aq æquabitur
+Rq $+$ Bq $-$ D in A$''$ $-$ Aq », qui n'est que la reformulation de
+$P^2 - D^2 = R^2 + B^2$. En général, $x^2 + y^2 + ax + by + c = 0$ est un
+cercle si $\tfrac{a^2}{4} + \tfrac{b^2}{4} - c > 0$, un point s'il est nul, rien
+s'il est négatif ; dans l'exemple, $P^2 = B^2 + D^2 + R^2$ est toujours
+positif.}
+
+L'écrivain ajoute : « c'est par cette voie que nous avons construit toutes les
+propositions du second livre des Lieux plans d'Apollonius, et démontré que les
+six premières ont lieu pour des points quelconques, ce qui est assurément
+admirable, et peut-être ignoré d'Apollonius ». Cette lecture n'en peut rien
+contrôler : les énoncés d'Apollonius ne sont pas sur les feuillets.\footnote{Le
+dernier mot de la vue 18, biffé d'un trait épais, se lit peut-être
+« quando » ; il n'a pas de suite.}
+
+\subsection*{L'ellipse}
+
+Si $(B^2 - x^2)/y^2$ est un rapport donné, $I$ est sur une ellipse de centre
+$N$, qui passe par le point $M$ tel que $NM = B$, de diamètre $NM$, les
+ordonnées parallèles à $ZI$. Car $B^2 - x^2 = (B - x)(B + x)$ est le produit
+des deux segments du diamètre, et une ellipse est la courbe où le carré de
+l'ordonnée est dans un rapport constant avec ce produit. Aujourd'hui :
+$y^2 = k(B^2 - x^2)$, soit $\dfrac{x^2}{B^2} + \dfrac{y^2}{kB^2} = 1$.
+
+S'y ramènent, dit le texte, les équations où $x^2$ et $y^2$ sont de part et
+d'autre de l'égalité avec des signes contraires et des coefficients
+différents — autrement dit, écrites d'un même côté, avec le même signe. Si les
+coefficients sont égaux et l'angle droit, c'est un cercle ; « si les
+coefficients sont les mêmes, mais que l'angle ne soit pas droit, le lieu sera à
+une ellipse ». Tout cela est exact : $x^2 + y^2 = B^2$ en coordonnées obliques
+est une ellipse, image d'un cercle par une application affine, et non un
+cercle ; et le cercle est la seule des coniques qui dépende de l'angle.
+L'équation $ax^2 + cy^2 + dx + ey + f = 0$ avec $ac > 0$ est une ellipse, ou un
+point, ou rien, selon le signe de ce qui reste après complétion des carrés ;
+les deux derniers cas, le feuillet ne les envisage pas.\footnote{« Et licet
+immisceantur æquationibus homogenea sub datis \& A vel E fiet reductio eo quod
+iam \emph{vsurpauimus} artificio » (vue 21) : la réduction des termes du
+premier degré se fait par l'artifice déjà employé, la complétion des carrés.
+« vsurpauimus » est d'une lecture douteuse.}
+
+\subsection*{L'hyperbole}
+
+Si $(x^2 + B^2)/y^2$ est un rapport donné, $I$ est sur une hyperbole.\footnote{Le
+mot « Hyperbolen » de la vue 21 est lu avec doute, la fin étant une boucle qui
+peut être une abréviation ; c'est le mot que demandent la construction et la
+conclusion. Un petit « m » surélevé, après la parenthèse « (posita MN æquali
+NR) », n'est pas compris.} Écrivons le rapport donné sous la forme $B^2/NR^2$,
+ce qui fixe un point $R$ sur la parallèle $NO$ à $ZI$ menée par $N$ ; soit $M$
+le symétrique de $R$ par rapport à $N$. L'hyperbole de centre $N$, de sommet
+$R$, de diamètre $RO$, les ordonnées parallèles à $NZ$, est celle où
+\[ \frac{MO\cdot OR}{OI^2} = \frac{NR^2}{B^2} . \]
+Le texte ajoute $NR^2$ et $B^2$ aux deux termes du premier rapport
+(« componendo ») : comme $MO\cdot OR + NR^2 = NO^2$ et que $NO = ZI = y$,
+$OI = NZ = x$, il vient
+\[ \frac{y^2}{x^2 + B^2} = \frac{NR^2}{B^2} ,
+   \qquad\text{soit}\qquad \frac{y^2}{NR^2} - \frac{x^2}{B^2} = 1 , \]
+qui est l'équation cherchée.\footnote{Le texte conclut « Punctum igitur Z est
+ad Hyperbolen » ; c'est le point $I$, celui de l'énoncé de la vue 21. La note
+marginale de la vue 22, appelée par un astérisque et de la même main, complète
+le raisonnement : « æquatur quadrato NZ siue Aq vnâ cum Bq ».} Et le texte :
+s'y ramènent toutes les équations en $x^2$ et $y^2$ « pourvu que $x^2$ ait, de
+l'autre côté, le même signe que $y^2$ ; car si les signes sont différents, la
+proposition se conclut par des cercles ou des ellipses ». C'est la règle
+exacte : écrites d'un même côté, $ax^2 + cy^2 + \dots$ avec $ac < 0$ donne une
+hyperbole — ou, si la constante qui reste après complétion des carrés est
+nulle, la paire de ses asymptotes, cas que le feuillet n'examine pas.
+
+\section*{L'Isagoge, fin : le terme rectangle, le bilan, la proposition finale (ff. 7v–9v, vues 22 à 26)}
+
+\pagerange{22}{26}
+\subsection*{« La plus difficile de toutes les équations »}
+
+Reste le cas où le rectangle $xy$ se mêle aux carrés. L'exemple :
+\[ B^2 - 2x^2 = 2xy + y^2 . \]
+En ajoutant $x^2$ aux deux membres,
+\[ B^2 - x^2 = x^2 + 2xy + y^2 = (x + y)^2 . \]
+Si l'on prenait $x + y$ pour seconde coordonnée, ce serait le cercle de centre
+$N$ et de rayon $B$ ; mais c'est l'extrémité $V$ de $y$ qu'on cherche. Le texte
+porte donc $ZI = x + y$ (le point $I$ décrit ce cercle) et, sur $ZI$, le point
+$V$ tel que $VI = NZ = x$, de sorte que $ZV = y$. Il mène $MR$ parallèle à $ZI$
+et égale à $MN$, joint $NR$, que $IZ$ prolongée coupe en $O$. Le triangle $NMR$
+étant isocèle, $ZO = NZ = x$, donc $VO = VZ + ZO = x + y = ZI$, et
+\[ OV^2 = MN^2 - NZ^2 . \]
+Le triangle $NMR$ étant de forme donnée, $NZ^2/NO^2 = NM^2/NR^2$ est donné, donc
+aussi $(MN^2 - NZ^2)/(NR^2 - NO^2)$, et par suite $(NR^2 - NO^2)/OV^2$. Les
+points $N$ et $R$ sont donnés, l'angle $\widehat{NOZ}$ aussi : par le cas de
+l'ellipse, $V$ est sur une ellipse de centre $N$, de diamètre porté par $NR$,
+les ordonnées parallèles à $ZI$.\footnote{À la vue 24, une encre plus noire
+récrit « NZ » au-dessus de « VZ » et « NR » au-dessus de « VR », sans barrer les
+leçons de la ligne. Le raisonnement demande $NZ$ et $NR$ ; cette lecture suit
+la correction.} La vérification moderne : avec l'angle droit, $NO = x\sqrt2$,
+$NR = B\sqrt2$ et $OV = x + y$ ; l'équation $2x^2 + 2xy + y^2 = B^2$ s'écrit
+$NR^2 - NO^2 = 2\,OV^2$, et, dans le repère oblique d'axes $NR$ et $ZI$, le
+point $V$ est sur l'ellipse $\dfrac{X^2}{2B^2} + \dfrac{Y^2}{B^2} = 1$. Le
+discriminant de $2x^2 + 2xy + y^2$ est $2^2 - 4\cdot2\cdot1 = -4 < 0$ : c'est
+bien une ellipse.
+
+« Par une méthode semblable se ramènent aux cas précédents tous les autres
+[…] ; car c'est toujours au moyen d'un triangle de forme connue que la question
+se construit. » Le triangle de forme donnée est un changement de coordonnées
+obliques qui fait disparaître le rectangle. En termes modernes, si $c \neq 0$,
+\[ ax^2 + bxy + cy^2
+   = c\Bigl(y + \frac{b}{2c}\,x\Bigr)^2 + \frac{4ac - b^2}{4c}\,x^2 ; \]
+prendre $y + \tfrac{b}{2c}x$ pour nouvelle coordonnée revient à mesurer
+l'ordonnée le long d'une autre direction, et la conique se trouve ramenée à un
+cas sans rectangle. Les deux nouveaux coefficients des carrés, $c$ et
+$(4ac - b^2)/(4c)$, ont pour produit $(4ac - b^2)/4$ : de même signe, c'est une
+ellipse ; de signes contraires, une hyperbole ; si l'un est nul, une parabole
+ou une conique dégénérée. Le type se lit sur le signe de $b^2 - 4ac$ : c'est le
+discriminant.\footnote{Le cas $c = 0$, $a \neq 0$ se
+traite en échangeant les rôles de $x$ et de $y$ ; le cas $a = c = 0$ est celui
+de l'hyperbole rapportée à ses asymptotes, vu plus haut.} L'écrivain conclut :
+« Breuiter igitur \& dilucidè complexi sumus quidquid de Locis planis \&
+Solidis inexplicatum veteres reliquere. »\footnote{« Nous avons donc embrassé,
+brièvement et clairement, tout ce que les Anciens ont laissé inexpliqué sur les
+lieux plans et solides. » Il ajoute qu'on saura désormais à quel lieu
+appartient chaque cas de la dernière proposition du livre I des Lieux plans
+d'Apollonius, que cette lecture ne peut pas contrôler.} La prétention est
+juste pour les coniques propres : toute équation du second degré définit une
+conique ou une conique dégénérée, et la réduction ci-dessus le démontre. Le
+feuillet, lui, ne démontre pas que ses réductions épuisent tous les cas, et ne
+nomme pas les cas dégénérés.
+
+\subsection*{Le bilan, dans la classification d'aujourd'hui}
+
+Pour l'équation $ax^2 + bxy + cy^2 + dx + ey + f = 0$, voici les cas de
+l'Isagoge et la classification par le discriminant $\Delta = b^2 - 4ac$, là où
+les deux coïncident :
+\begin{itemize}
+  \item $a = b = c = 0$ : une droite (vues 10 à 12) ;
+  \item $a = c = 0$, $b \neq 0$, donc $\Delta > 0$ : une hyperbole
+    d'asymptotes parallèles aux axes, ou deux droites (vues 12 à 14) ;
+  \item $d = e = f = 0$ : une ou deux droites par l'origine, ou l'origine
+    seule (vues 14 et 15) ;
+  \item un seul carré, $b = 0$, donc $\Delta = 0$ : une parabole si le terme du
+    premier degré dans l'autre inconnue est présent (vues 16 à 18) ;
+  \item $b = 0$, $ac > 0$, donc $\Delta < 0$ : une ellipse, un cercle si $a = c$
+    et l'angle droit, ou un point, ou rien (vues 18 à 21) ;
+  \item $b = 0$, $ac < 0$, donc $\Delta > 0$ : une hyperbole, ou deux droites
+    sécantes (vues 21 et 22) ;
+  \item $b \neq 0$ et un carré au moins : réduit par un triangle de forme
+    donnée à l'un des cas précédents ; l'exemple a $\Delta < 0$ et donne une
+    ellipse (vues 22 à 24).
+\end{itemize}
+
+\subsection*{La proposition finale}
+
+« En guise de couronnement », l'écrivain ajoute une proposition « très belle,
+dont la facilité apparaîtra aussitôt » : si, d'un même point, on mène à des
+droites données de position, en nombre quelconque, des droites sous des angles
+donnés, et que les carrés de toutes les droites menées soient ensemble égaux à
+une aire donnée, le point est sur un lieu solide donné de position.\footnote{« Et
+sint species ab omnibus ductis dato spatio æqualis » : « species » est lu ici
+comme les carrés des droites menées, pris ensemble ; c'est une interprétation,
+que demande le mot de « lieu solide ».} C'est vrai, et l'on peut dire mieux.
+Chaque droite menée est une fonction affine $d_i = \alpha_i x + \beta_i y +
+\gamma_i$ du point, et la condition $\sum_i d_i^2 = K$ est du second degré ; sa
+partie quadratique $\sum_i(\alpha_i x + \beta_i y)^2$ est positive, et même
+définie positive dès que deux des droites données ne sont pas parallèles. Le
+lieu est alors une ellipse (un cercle dans certains cas), réduite à un point ou
+vide si $K$ est trop petit ; si toutes les droites sont parallèles, ce sont deux
+droites parallèles, une droite ou rien.
+
+L'exemple qui suit n'est pas un cas de cet énoncé : il porte sur des distances
+à deux points, et sur un rapport à un triangle, non sur des droites. Il
+illustre la méthode. Étant donnés deux points $N$ et $M$, trouver le lieu des
+points $I$ tels que $(IN^2 + IM^2)$ soit dans un rapport donné avec le triangle
+$INM$. Avec $NM = B$, $Z$ le pied de la perpendiculaire abaissée de $I$,
+$NZ = x$ et $ZI = y$ :
+\[ IN^2 + IM^2 = x^2 + y^2 + (B - x)^2 + y^2 = 2x^2 + B^2 - 2Bx + 2y^2 , \]
+que le texte met en rapport avec le rectangle $By$, double du triangle ; le
+rapport reste donné. La construction du feuillet (vue 26) : couper $NM$ en deux
+en $Z$, élever la perpendiculaire $ZV$ telle que le rapport donné soit celui de
+$4\,ZV$ à $ZM$ ; sur $VZ$ comme diamètre, décrire un demi-cercle et y inscrire
+la corde $ZO = ZM$ ; le cercle de centre $V$ et de rayon $VO$ est le lieu : pour
+tout point $R$ de ce cercle, $(RN^2 + RM^2)/\text{triangle }RNM$ est le rapport
+donné.\footnote{La ligne de la construction est corrigée à plusieurs endroits
+(« ipsi » et « ZO » barrés, « ZM » écrit puis barré) ; la leçon finale, que
+suit cette lecture, est « applicetur ZO æqualis ipsi ZM ». Un grand cercle très
+pâle, au crayon, autour de la figure de la vue 25, n'est pas de l'encre du
+texte.}
+
+La vérification. Notons $\rho = 4\,ZV/ZM$ le rapport donné et $h = ZV$. Dans le
+demi-cercle, l'angle $\widehat{VOZ}$ est droit, donc $VO^2 = h^2 - ZM^2$. Si
+$R = (x,y)$ est sur le cercle de centre $V = (B/2, h)$ et de rayon $VO$,
+\[ \Bigl(x - \frac B2\Bigr)^2 + y^2 = 2hy - ZM^2 , \]
+d'où, puisque $ZM = B/2$,
+\[ RN^2 + RM^2 = 2\Bigl(x - \frac B2\Bigr)^2 + 2y^2 + \frac{B^2}{2} = 4hy , \]
+tandis que le triangle vaut $ZM\cdot y$ : le rapport est $4h/ZM = \rho$. La
+construction est juste, sous une condition qu'elle cache : la corde $ZO = ZM$
+ne s'inscrit dans le demi-cercle que si $ZM < ZV$, c'est-à-dire $\rho > 4$. Et
+en effet $IN^2 + IM^2 \geq 2\,IN\cdot IM \geq 4\cdot\text{triangle }INM$, avec
+égalité seulement quand le triangle est rectangle isocèle en $I$ : pour
+$\rho = 4$ le lieu est le seul point $V$, pour $\rho < 4$ il est vide. Enfin,
+l'aire du triangle ne dépendant pas du côté de $NM$ où se trouve $I$, le lieu
+complet est formé de ce cercle et de son symétrique par rapport à $NM$. L'Isagoge
+s'arrête là, au milieu de la vue 26.
+
+\section*{« Methodus ad disquirendam maximam \& minimam » (f. 10r–v, vues 27 et 28)}
+
+\pagerange{27}{28}
+Un nouveau feuillet commence par un titre français : « Copie d'un escrit enuoyé
+par le R. Pere Marçenne a des Cartes ».\footnote{« Monsieur », entre « a » et
+« des Cartes », est biffé et d'une lecture douteuse. Ce titre nomme l'envoyeur
+et le destinataire d'un écrit, le P. Mersenne et Descartes ; il ne nomme pas
+son auteur, et la pièce non plus.} Suit le texte latin, qui tient en une
+règle et un exemple.
+
+\subsection*{La règle}
+
+« Toute la doctrine de l'invention du maximum et du minimum repose sur deux
+positions inconnues et sur cette seule règle. » Qu'on prenne pour inconnue
+$A$ ce qu'il convient dans la question, et qu'on écrive la grandeur à rendre
+maximale ou minimale en fonction de $A$ ; puis qu'on remplace $A$ par $A + E$
+et qu'on écrive de nouveau la grandeur. « Adæquentur, vt Loquitur Diophantus » :
+qu'on « adégale », comme dit Diophante, les deux expressions ; qu'on ôte les
+termes communs ; qu'on divise tout par $E$, ou par une puissance de $E$, jusqu'à
+ce que l'un des termes soit libre de $E$ ; qu'on efface alors les termes qui
+contiennent encore $E$, et qu'on égale le reste.\footnote{« Adæqualitas »,
+« adéquation », rend chez les traducteurs latins de Diophante un terme grec qui
+signifie « presque-égalité » ; c'est un renseignement général, que les feuillets
+ne donnent pas. Le feuillet emploie « adæquentur », « adæquabitur » pour cette
+presque-égalité et « æquabitur » pour l'égalité finale ; cette lecture écrit
+la première $\approx$ et la seconde $=$. Si, après la suppression des termes
+communs, l'un des membres est vide, le feuillet égale « les termes niés aux
+termes affirmés », ce qui revient au même.} Ainsi, en écrivant $x$ pour $A$,
+$e$ pour $E$ et $f$ pour la grandeur :
+\[ f(x + e) \approx f(x), \qquad
+   \frac{f(x+e) - f(x)}{e} \approx 0, \qquad
+   \text{puis } e \text{ effacé}. \]
+
+L'exemple : partager une droite $AC = B$ en un point $E$ de sorte que le
+rectangle $AE\cdot EC$ soit maximal. Avec $AE = x$, le rectangle vaut
+$f(x) = Bx - x^2$, et
+\[ f(x + e) = Bx - x^2 + Be - 2xe - e^2 . \]
+Adégalant et ôtant les termes communs, $Be \approx 2xe + e^2$ ; divisant par
+$e$, $B \approx 2x + e$ ; effaçant $e$, $B = 2x$. Il faut couper la droite en
+son milieu. Le feuillet conclut : « Nec potest generalior dari
+methodus. »\footnote{« On ne peut donner de méthode plus générale. »}
+
+\subsection*{Ce que calcule la règle, et ce qu'il faut pour qu'elle démontre}
+
+Pour une grandeur $f$ polynomiale en $x$, la différence $f(x+e) - f(x)$ est un
+polynôme en $e$ sans terme constant ; elle s'écrit exactement
+\[ f(x+e) - f(x) = e\,\bigl(f'(x) + e\,g(x,e)\bigr), \]
+où $f'$ est la dérivée et $g$ un polynôme. Diviser par $e$ est donc légitime
+($e \neq 0$), et « effacer $e$ » dans le quotient, c'est prendre sa valeur en
+$e = 0$, qui est sa limite quand $e \to 0$ : la règle calcule $f'(x)$ et écrit
+$f'(x) = 0$. Elle donne les points stationnaires de $f$.
+
+Ce n'est pas, telle qu'elle est écrite, une démonstration. L'« adéquation »
+n'est pas une égalité — en un maximum, $f(x+e)$ diffère en général de $f(x)$
+pour $e \neq 0$ —, et l'on ne peut à la fois diviser par $e$, qui suppose
+$e \neq 0$, et poser ensuite $e = 0$ sans dire ce qui l'autorise. Ce qui en
+fait une démonstration aujourd'hui, c'est le théorème suivant : si $f$ est
+dérivable en un point $x$ intérieur à son domaine et y atteint un maximum ou un
+minimum local, alors $f'(x) = 0$. Pour un polynôme la preuve est dans la
+formule ci-dessus : si $f'(x) \neq 0$, le facteur $f'(x) + e\,g(x,e)$ garde le
+signe de $f'(x)$ pour $e$ assez petit, et $f(x+e) - f(x)$ change de signe avec
+$e$ ; $x$ n'est donc pas un extremum.\footnote{On appelle aujourd'hui ce
+résultat « théorème de Fermat » sur les extremums intérieurs ; le nom est une
+attribution moderne. Les feuillets n'emploient ni la dérivée, ni la limite, ni
+aucun énoncé de ce genre ; la dérivée, sous ce nom et dans ce formalisme, est
+postérieure à Mersenne et à Descartes, que nomme le titre.} La règle donne donc
+une condition nécessaire, et seulement pour un extremum intérieur : elle ne
+distingue pas le maximum du minimum, elle retient aussi des points qui ne sont
+ni l'un ni l'autre ($x^3$ en $0$), et elle ne voit pas les extrémités d'un
+intervalle.
+
+Dans l'exemple, la conclusion est juste et se démontre en une ligne :
+$f\bigl(\tfrac B2 + h\bigr) = \tfrac{B^2}{4} - h^2 \leq f\bigl(\tfrac B2\bigr)$,
+avec égalité seulement pour $h = 0$ ; le milieu donne le maximum strict.
+
+\section*{« De tangentibus linearum curvarum » (f. 11r–v, vues 29 et 30)}
+
+\pagerange{29}{30}
+« Nous ramenons à la méthode précédente l'invention des tangentes en des
+points donnés de lignes courbes quelconques. » La pièce est sur le feuillet qui
+suit, de la même main ; qu'elle appartienne à l'« escrit » que désigne le titre
+de la vue 27, le feuillet ne le dit pas, mais elle en continue la méthode.
+
+\subsection*{La tangente à la parabole}
+
+Soit une parabole $Bdn$ de sommet $d$ et de diamètre $dc$, un point $B$ de la
+courbe, et la tangente $BE$ cherchée, qui coupe le diamètre en $E$. On prend
+sur $BE$ un point $O$, et l'on mène les ordonnées $OI$ et $BC$. Comme $O$ est
+hors de la parabole,
+\[ \frac{cd}{di} > \frac{BC^2}{OI^2} , \]
+et, par les triangles semblables, $BC^2/OI^2 = CE^2/IE^2$ ; donc
+$cd/di > CE^2/IE^2$. Posons $cd = d$, donnée,\footnote{Le texte écrit d'abord
+« Sit igitur cd æqualis B data », puis se sert de la lettre d ; la note
+marginale française, appelée par un astérisque et qui parle de l'auteur à la
+troisième personne, le relève : « Il a icy nommé B ce qu'il nomme d par
+apres ».} $CE = a$ l'inconnue (le feuillet l'appelle $A$) et $CI = e$ (le
+feuillet : $E$). Alors $di = d - e$ et $IE = a - e$, et
+\[ \frac{d}{d - e} > \frac{a^2}{a^2 + e^2 - 2ae} ,
+   \qquad\text{soit}\qquad
+   d a^2 + d e^2 - 2dae > d a^2 - a^2 e . \]
+On « adégale » : ôtant $da^2$, $de^2 + a^2 e \approx 2dae$ ; divisant par $e$,
+$de + a^2 \approx 2da$ ; effaçant $de$, $a^2 = 2da$, d'où $a = 2d$. « Nous avons
+prouvé que $CE$ est double de $cd$, ce qui est bien le cas. » C'est exact : pour
+la parabole $y^2 = px$ rapportée à son sommet et à son axe, la tangente au
+point d'abscisse $x_0$ coupe l'axe à la distance $2x_0$ de ce point ; la
+sous-tangente est double de l'abscisse.\footnote{Aux vues 28 et 30, un petit rond
+ou un petit trait posé sur un signe moins ne le change pas : les lignes
+suivantes le confirment.}
+
+\subsection*{Ici, la règle est une démonstration}
+
+L'inégalité du feuillet est exacte, et c'est elle qui fait de ce calcul une
+preuve. Posons
+\[ F(e) = d\,(a - e)^2 - (d - e)\,a^2 = e\,\bigl(a^2 - 2da + de\bigr) . \]
+Dire que la droite $BE$ touche la parabole en $B$ sans la couper, c'est dire
+que ses points autres que $B$ sont hors de la courbe, c'est-à-dire $F(e) > 0$
+pour tout $e \neq 0$ voisin de $0$, des deux côtés de $B$ ; et $F(0) = 0$. Le
+point $e = 0$ est donc un minimum de $F$, et le théorème de la section
+précédente donne $F'(0) = a^2 - 2da = 0$ : c'est exactement l'« adéquation ».
+Réciproquement, pour $a = 2d$, $F(e) = d\,e^2 > 0$ pour $e \neq 0$ : la droite
+reste hors de la parabole, c'est la tangente. Le feuillet ne considère que des
+points $O$ entre $B$ et $E$, c'est-à-dire $e > 0$ ; c'est l'inégalité des deux
+côtés qu'il faut, et elle est vraie.
+
+\subsection*{Les annonces}
+
+« Et la méthode ne trompe jamais. Bien plus, elle peut s'étendre à la plupart
+des plus belles questions » : les centres de gravité des figures limitées par
+des courbes et des droites, et des solides ; les quadratures, et le rapport des
+solides qu'elles engendrent aux cônes de même base et de même hauteur, « dont
+nous avons déjà traité abondamment avec M. de Roberval ». Ces annonces sont
+rapportées ; le feuillet n'en donne aucun calcul.\footnote{« Nec vnquam fallit
+methodus » est trop dire, tel quel : pour les maxima, la règle retient aussi
+des points stationnaires qui ne sont pas des extremums ; pour les tangentes,
+elle suppose la courbe régulière au point considéré, et, en un point double,
+elle ne donne rien. Les exemples du feuillet ne rencontrent aucun de ces cas.
+Le texte s'arrête sur « egimus », sans point.}
+
+\section*{« Appendix ad Isagogen topicam » : les problèmes solides résolus par les lieux (ff. 12r–14r, vues 31 à 35)}
+
+\pagerange{31}{35}
+Le titre complet est « Appendix ad Isagogen topicam continens solutionem
+problematum solidorum per locos » : « appendice à l'introduction aux lieux,
+contenant la solution des problèmes solides par les lieux ». Le texte commence
+par « Patuit methodus quâ lineæ locales deteguntur » et renvoie plusieurs fois à
+« notre méthode » : il se donne pour la suite d'une introduction aux lieux.
+Que cette introduction soit l'Isagoge des vues 9 à 26 est le rapprochement
+naturel, et c'est celui de cette lecture ; le feuillet ne le dit pas en toutes
+lettres, la main est autre, et les nombres 43 à 45 du pied des pages
+appartiennent à un autre assemblage.
+
+\subsection*{Le principe}
+
+Un problème « solide » conduit à une équation du troisième ou du quatrième
+degré en une inconnue. « Il faut restreindre la liberté qu'ont les inconnues
+d'errer hors de leurs limites » : une équation à deux inconnues a une infinité
+de solutions, qui forment une ligne ; deux telles équations, deux lignes, se
+coupent, et le point d'intersection ramène la question « de l'infini à des
+termes prescrits ».\footnote{La phrase est corrigée en plusieurs endroits sur le
+feuillet ; la leçon voulue paraît « Secant quippe se inuicem duæ lineæ locales
+positione datæ, et punctum intersectionis positione datum quæstionem ex
+Infinito ad terminos præscriptos adigit », avec un mot barré illisible après
+« determinatur » et un autre devant « Sectionis ».} Aujourd'hui : on introduit
+une seconde inconnue $y$ de sorte que l'équation se coupe en deux équations en
+$(x,y)$, chacune une conique ; les abscisses des points communs sont les
+racines.
+
+\subsection*{La cubique par une parabole et une hyperbole}
+
+Soit $x^3 + Bx^2 = ZB$, où $Z$ est une aire. On égale chacun des deux membres
+au solide $Bxy$. D'un côté, $x^3 + Bx^2 = Bxy$, soit, en divisant par $x$,
+$x^2 + Bx = By$ : une parabole. De l'autre, $ZB = Bxy$, soit $xy = Z$ : une
+hyperbole. Le point commun donne $x$. En effet, sur l'hyperbole $y = Z/x$, et
+l'équation de la parabole redonne $x^3 + Bx^2 = BZ$. Pour $x > 0$ il y a un
+seul point commun — la parabole croît à partir de $0$, l'hyperbole décroît
+depuis l'infini —, et c'est l'unique racine positive ; les autres points
+communs, s'il y en a, ont $x < 0$ et donnent les racines négatives, dont le
+feuillet, qui ne connaît que des grandeurs positives, ne parle
+pas.\footnote{Le premier « æquari » de l'énoncé est biffé en fin de ligne et
+récrit à la suivante.} Il en va de même, dit le texte, de toute cubique : pour
+$x^3 + ax^2 + bx = c$, on égale les deux membres à $kxy$, et il vient
+$x^2 + ax + b = ky$ (une parabole) et $c = kxy$ (une hyperbole).
+
+\subsection*{La quartique par une parabole et un cercle}
+
+Soit $x^4 + Bx + Z^2x^2 = D$ ($B$ est un volume, $D$ une grandeur de dimension
+quatre).\footnote{Le feuillet écrit le coefficient de $x^2$ « Zpl. », un plan,
+puis « Zq », un carré : il prend ce plan pour le carré d'une droite $Z$, ce
+qui est toujours possible. Les Z de ces pages sont d'une encre plus noire,
+« comme remplis après coup ».} Donc $x^4 = D - Bx - Z^2x^2$, et l'on égale les
+deux membres à $Z^2y^2$.\footnote{Le feuillet n'écrit aucun signe entre
+« Dppl. », « B Sol. in A » et « Zq in Aq » (vue 31), ni entre « Dppl. » et
+« B Solid. » (vue 32) ; les moins sont ceux que demande l'équation de départ, et
+la suite du feuillet les a (« $-$ Zq in Aq », « $-$ B Sol. in A/Zq »). Un
+« Eq » isolé est barré sous la fraction.} D'un côté, $x^4 = Z^2y^2$ donne, par
+« subdivision quadratique » — en prenant la racine carrée —, $x^2 = Zy$ : une
+parabole. De l'autre, en divisant par $Z^2$,
+\[ \frac{D}{Z^2} - \frac{B}{Z^2}\,x - x^2 = y^2 : \]
+un cercle, de centre $\bigl(-\tfrac{B}{2Z^2}, 0\bigr)$ et de rayon
+$\sqrt{D/Z^2 + B^2/(4Z^4)}$. Le calcul est juste : un point commun vérifie
+$x^4 = Z^2y^2 = D - Bx - Z^2x^2$, et toute racine réelle $x$ donne le point
+commun $(x, x^2/Z)$.
+
+« Non dissimili methodo soluentur quæstiones omnes quadrato quadraticæ » : on
+fait d'abord disparaître le terme en $x^3$ par la méthode de Viète, que le
+feuillet cite (« cap. i. de emend. ») — aujourd'hui, la translation qui rend
+la quartique réduite —, puis on met $x^4$ d'un côté, le reste de l'autre, et
+l'on résout « par la parabole, le cercle ou l'hyperbole ».
+
+\subsection*{Les deux moyennes proportionnelles}
+
+Entre deux droites $B$ (la plus grande) et $D$, trouver deux moyennes
+proportionnelles $x$ et $y$, c'est-à-dire $B/x = x/y = y/D$. La plus grande
+vérifie $x^3 = B^2D$.\footnote{« Sint duæ rectæ B maior D minor » : « maior »
+est lu d'après la suite, le mot étant tracé presque comme « minor » ; les
+derniers mots de la ligne suivante, « nempe quod », sont d'une lecture
+douteuse. L'astérisque de « major mediarum ponatur A » est dans la marge.} On
+égale les deux membres à $Bxy$ : d'un côté $x^2 = By$, une parabole ; de l'autre
+$xy = BD$, une hyperbole. La construction : sur une droite $OVN$, $OV = x$ et
+la perpendiculaire $VM = y$ ; la parabole de sommet $O$, de paramètre $B$, de
+diamètre parallèle à $VM$ ; l'hyperbole d'asymptotes $RO$ et $OV$ passant par le
+point $Z$ tel que $On\cdot nZ = BD$ ; elles se coupent en $m$, et la
+perpendiculaire $mV$ donne $OV$, la plus grande des deux
+moyennes.\footnote{Le feuillet écrit « perpendicularis VZ » là où sa figure élève
+la perpendiculaire en $n$ ; la lettre $V$ est le petit u du copiste, que la
+transcription distingue mal du n. Il faut $nZ$. Les fins de « hyperboles » et
+« parabolæ » sont sous un pâté ou surchargées.} La construction est juste, et
+elle donne davantage que ce qu'elle dit : puisque $x^2 = By$, on a $B/x = x/y$,
+et $VM = y$ est l'autre moyenne ; puisque $xy = BD$, $x/D = B/y$, ce qui
+complète la proportion.
+
+En multipliant par $x$, $x^4 = B^2Dx$ ; on égale les deux membres à $B^2y^2$ :
+$x^2 = By$ et $Dx = y^2$, deux paraboles, dont l'intersection donne encore
+$x$. C'est juste, à ceci près que les deux paraboles se coupent aussi à
+l'origine, point introduit par la multiplication par $x$ et qu'il faut écarter ;
+le feuillet ne le dit pas. « Prior constructio et posterior sunt apud Eutocium
+in Archimedem » : les deux constructions sont chez Eutoce, dans son commentaire
+d'Archimède, et se prêtent très facilement à cette méthode.\footnote{Le feuillet
+ne nomme qu'Eutoce. C'est un renseignement général, non vérifié ici sur aucune
+édition, que ce commentaire rapporte deux solutions attribuées à Ménechme, l'une
+par une parabole et une hyperbole, l'autre par deux paraboles, qui sont
+celles-ci.}
+
+Suit une charge contre Viète : « Abeant igitur illæ parapleroses Vietææ », que
+s'en aillent donc les « paraplérôses » de Viète, par lesquelles il ramène les
+quartiques aux quadratiques par l'intermédiaire de cubiques « à racine plane » ;
+quartiques et cubiques se résolvent ici avec la même élégance, « et l'on ne
+peut, je crois, plus élégamment ». Ce que le texte décrit est la méthode de la
+cubique résolvante : une quartique ramenée, par une cubique auxiliaire dont
+l'inconnue est une aire, à deux équations du second degré.
+
+\subsection*{Toutes les cubiques et quartiques par une parabole et un cercle}
+
+« Pour que paraisse l'élégance de cette méthode » : la construction de tous les
+problèmes cubiques et quartiques par la parabole et le cercle. Soit
+$x^4 + Zx = D$ ($Z$ un volume, $D$ de dimension quatre), donc
+$x^4 = D - Zx$.\footnote{Le feuillet écrit ici « ergo Aqq æquabitur Z Sol. in A
+$+$ d ppl. », le tiret de fin de ligne après « Aqq » pouvant être un tiret de
+remplissage, et la transcription le laisse tel quel ; mais la suite (vue 34)
+écrit « $-$ Z sol. in A $+$ Dppl. », qui est $D - Zx$, et c'est ce que demande
+l'équation de départ. Cette lecture suit la suite.} On ajoute aux deux membres
+$B^4 - 2B^2x^2$, pour un $B$ quelconque :
+\[ (x^2 - B^2)^2 = B^4 - 2B^2x^2 - Zx + D . \]
+Soit $N^2 = 2B^2$ ; on égale les deux membres à $N^2y^2$. D'un côté
+$x^2 - B^2 = Ny$ : une parabole. De l'autre
+\[ \frac{B^4}{N^2} - x^2 - \frac{Z}{N^2}\,x + \frac{D}{N^2} = y^2 : \]
+un cercle. Le calcul est juste ; c'est pour que le coefficient de $x^2$ soit
+$-1$ après la division, et que la seconde courbe soit un cercle, que $N^2$ est
+pris égal à $2B^2$.\footnote{Le feuillet écrit, au début de la vue 34, « æquale
+Bqq $-$ Bq in Aq $-$ Z sol. in A $+$ Dppl. » : il faut « Bq in Aq bis »,
+$2B^2x^2$, comme au membre de gauche et comme le demande la fraction qui suit.
+À la fin de la vue 33, entre « Bqq, » et « Bq in Aq bis », aucun signe : il
+faut un moins. La lettre N est écrite comme un n minuscule.}
+
+La méthode s'étend à tous les cas : après la suppression du terme en $x^3$,
+toute quartique s'écrit $x^4 = px^2 + qx + r$ ; toute cubique, débarrassée de
+son terme en $x^2$ par la méthode de Viète puis multipliée par $x$, devient une
+quartique sans terme en $x^3$. « Il faut seulement veiller, dans la seconde
+équation, à ce que $x^2$ d'un côté et $y^2$ de l'autre aient des signes
+contraires. » L'autre exemple du feuillet est $x^4 = px^2 - qd$, où $p$ est le
+plan que le feuillet écrit « Zpl. » et $q$ le solide qu'il écrit « Z Sol. », et
+$d$ une droite.\footnote{Le feuillet appelle $Z$ les deux grandeurs, l'une plane
+et l'autre solide. « Z Sol. in d » est lu avec la lettre d, et fait de $qd$ un
+terme constant : l'équation est alors bicarrée. Si ce « d » était une $A$ mal
+formée, le terme $-qx$ passerait dans l'équation du cercle comme dans l'exemple
+précédent, et la construction serait la même ; cette lecture garde la leçon.}
+Ajoutant $B^4 - 2B^2x^2$ :
+\[ (x^2 - B^2)^2 = B^4 - (2B^2 - p)\,x^2 - qd , \]
+et l'on pose $N^2 = 2B^2 - p$, « la différence entre $2B^2$ et le plan » : la
+parabole $x^2 - B^2 = Ny$ et le cercle
+$\dfrac{B^4}{N^2} - x^2 - \dfrac{qd}{N^2} = y^2$. Il faut que $2B^2$ surpasse
+$p$ : sinon « $x^2$ ne serait pas affecté du signe moins, et au lieu d'un cercle
+nous trouverions une hyperbole ; à quoi le remède est prompt, car nous prenons
+$B$ à volonté ». Tout cela est exact.\footnote{Le feuillet ajoute : « il est
+constant, par la méthode des lieux, qu'il naît toujours un cercle d'une
+équation dans l'un des membres de laquelle un carré inconnu est affecté du signe
+$+$, dans l'autre un autre carré inconnu du signe $-$ ». « Toujours » est trop
+dire : il faut encore que les deux carrés aient le même coefficient — c'est le
+cas ici, après la division par $N^2$ — et que l'angle soit droit, faute de quoi
+c'est une ellipse ; l'Isagoge le disait elle-même (vues 19 et 21). Et le cercle
+peut être vide. Sur le feuillet, « plus » et « minus » sont barrés et remplacés
+par les signes $+$ et $-$.}
+
+Appliquée aux deux moyennes proportionnelles : $x^3 = B^2d$, donc
+$x^4 = B^2dx$ ; ajoutant $B^4 - 2B^2x^2$,
+\[ (x^2 - B^2)^2 = B^4 + B^2dx - 2B^2x^2 ; \]
+avec $N^2 = 2B^2$, la parabole $x^2 - B^2 = Ny$ et le cercle
+\[ \frac{B^2}{2} + \frac{d}{2}\,x - x^2 = y^2 , \]
+ce que le feuillet écrit « Bq ½ $+$ d ½ in A $-$ Aq æquale Eq ». C'est juste.
+Ici aussi la multiplication par $x$ a introduit une intersection parasite :
+en éliminant $y$, on trouve $x\,(x^3 - B^2d) = 0$, et les deux courbes se
+coupent au point $\bigl(0, -B/\sqrt2\bigr)$, qu'il faut écarter ; l'autre point
+commun donne la plus grande moyenne.\footnote{« AC. » est l'abréviation de « A
+cubus ». Les deux petits traits après « Aq » et « Bq » valent « bis ».}
+
+\subsection*{La conclusion}
+
+« Qui aura remarqué ces choses tentera en vain de tirer des lieux plans,
+c'est-à-dire d'expédier par des droites et des cercles, la question des deux
+moyennes, la trisection de l'angle et les semblables. » L'énoncé est vrai, mais
+le feuillet ne le démontre pas, et ce qui précède ne le démontre pas non plus :
+avoir résolu une question par des coniques ne prouve pas qu'on ne puisse la
+résoudre par des cercles. La démonstration demande de savoir qu'un nombre
+constructible à la règle et au compas est de degré une puissance de 2, et que
+$x^3 = 2$, comme l'équation de la trisection d'un angle quelconque, est une
+cubique irréductible ; elle a été donnée par Wantzel en 1837.\footnote{Ce
+renseignement est général ; cette lecture ne prête à l'écrivain aucune
+connaissance de ce résultat.}
+
+\section*{Le lieu à trois droites (ff. 15r–16v, vues 37 à 40)}
+
+\pagerange{37}{40}
+En tête de la vue 37, d'une encre plus pâle et d'un trait plus fin que le
+texte, peut-être d'une autre main : « Mr. fermat ». L'inscription rapporte la
+pièce à Fermat ; elle ne dit pas de qui est l'écriture. Le texte s'adresse à
+quelqu'un (« Superflua præsertim tibi non addimus », nous ne t'ajoutons pas le
+superflu), et, au dos, le long du bord, une adresse est écrite en travers :
+« Pour Mons.r Carcaui. rue michel le Conte au milieu », le nom lu avec
+doute.\footnote{Le feuillet a été plié et porté comme une lettre. L'adresse ne
+nomme pas l'expéditeur ; sa main paraît plus libre que celle du texte, et la
+transcription ne décide pas si c'est la même.} La figure, que la page de texte
+n'a pas, est seule au verso du feuillet suivant (vue 40).
+
+\subsection*{L'énoncé}
+
+Trois droites données de position, $AM$, $MB$, $BA$, forment un triangle. D'un
+point $O$ on mène à ces droites $OE$, $OI$, $OD$ (vers $AM$, $MB$ et $AB$
+respectivement) sous des angles donnés. Si le rapport du rectangle
+$EO\cdot OD$ au carré de $OI$ est donné, le point $O$ est sur une section
+conique. C'est le lieu à trois droites, ou problème de Pappus pour trois
+droites.
+
+La forme moderne. Soient $\ell_1$, $\ell_2$, $\ell_3$ des fonctions affines qui
+s'annulent sur $AM$, $AB$ et $MB$. Une droite menée à une droite fixe sous un
+angle fixe est proportionnelle à la distance du point à cette droite ; la
+condition s'écrit donc $\ell_1\ell_2 = c\,\ell_3^2$, $c$ constant, et c'est une
+équation du second degré : une conique. Toutes les coniques de cette famille
+passent par $M$ et par $B$, où elles touchent respectivement $AM$ et $AB$ ; le
+lieu cherché est celle d'entre elles qui passe par un point donné.
+
+\subsection*{La construction du feuillet}
+
+Couper $MB$ en deux en $q$ et joindre $Aq$. Par $O$ mener $foc$ parallèle à
+$MB$ ($f$ sur $AM$, $c$ sur $AB$) et $On$ parallèle à $MA$ ($n$ sur $MB$). Les
+triangles $Oef$, $Odc$, $Oin$ ont des angles donnés : ils sont de forme donnée,
+et les rapports $OE/Of$, $OD/Oc$, $OI/On$ sont donnés. Donc
+$(fO\cdot Oc)/On^2$ est donné, et, comme $On = fM$ (parallélogramme
+$fMnO$), le rapport
+\[ \frac{fO\cdot Oc}{fM^2} \]
+est donné. Soit $V$ le point de $Aq$ tel que, $VR$ étant menée parallèlement à
+$MB$ jusqu'à $AM$, $VR^2/RM^2$ soit égal à ce rapport ; puis la conique de
+diamètre $Aq$, passant par $V$, que $MA$ et $AB$ touchent en $M$ et en $B$.
+Elle passe par $O$.\footnote{« Si \emph{fertur} Aq in V » : le premier mot se
+lit « fertur » ou « sertur » ; le sens demande « secetur », que $Aq$ soit
+coupée en $V$, et c'est ainsi que cette lecture l'entend. Le feuillet écrit
+une fois « foe » pour « foc », et biffe un mot court après « propter datum ».
+Les lettres de la figure sont écrites tantôt en capitales, tantôt en
+minuscules ; la lettre $V$ est le petit u du copiste.} Un tel point $V$ existe
+et il est unique : quand $V$ va de $q$ vers $A$, $VR^2/RM^2$ décroît
+continûment de l'infini à $0$. Le feuillet ajoute que, selon la position de
+$V$, la conique sera une parabole, une hyperbole ou une ellipse ; précisément,
+c'est une parabole si $V$ est le milieu de $Aq$, une ellipse si $V$ est entre
+ce milieu et $q$, une hyperbole s'il est entre ce milieu et $A$.\footnote{Ce
+critère est un complément de cette lecture. Avec $A = (0,1)$, $M = (-1,0)$,
+$B = (1,0)$ et $V = (0,v)$, la conique est
+$X^2 + \bigl(\tfrac1{v^2} - \tfrac2v\bigr)Y^2 + 2Y - 1 = 0$, de discriminant
+$4(2v-1)/v^2$.}
+
+\subsection*{L'analyse du feuillet, et Apollonius III.16}
+
+Le feuillet raisonne ainsi. Supposons que la conique passe par $O$ et coupe
+encore la parallèle $foc$ en $p$. La tangente en $V$ est $VR$, parallèle aux
+ordonnées du diamètre $Aq$. Par la seizième proposition du troisième livre
+d'Apollonius,
+\[ \frac{pf\cdot fO}{fM^2} = \frac{VR^2}{RM^2} ,\]
+et ce rapport vaut, par construction, $(fO\cdot Oc)/fM^2$. Donc
+$pf\cdot fO = fO\cdot Oc$, $pf = Oc$, et, en ôtant $Op$, $fO = pc$. « Ce qui est
+bien le cas » : $Aq$ coupant $MB$ en deux, elle coupe aussi $fc$ en deux en
+$x$, et, étant un diamètre, la corde $Op$ aussi ; $fx = xc$ et $Ox = xp$
+donnent $fO = pc$.\footnote{« Ex sexta decima propositione 3i. Apoll. » :
+« decima » est écrit au-dessus de « sexta », et « Ideoque est rectangulum » est
+barré juste avant. La leçon finale est la proposition 16 du livre III. La
+lettre $x$ est celle de la figure, non une coordonnée.}
+
+La proposition invoquée est, dans l'énoncé qu'on lui donne d'ordinaire, que,
+si deux tangentes à une conique se rencontrent, et qu'une parallèle à l'une
+d'elles coupe la conique en deux points et l'autre tangente en un point, le
+rectangle des segments compris entre ce point et la conique est au carré du
+segment de tangente qu'elle retranche comme les carrés des deux
+tangentes.\footnote{C'est l'énoncé courant de la proposition ; il n'a été
+confronté à aucune édition d'Apollonius. Il est vérifié ci-dessous.} C'est
+bien ce dont le feuillet se sert, avec les tangentes $RV$ et $RM$ issues de
+$R$, la parallèle $fOp$ à $RV$, et la tangente $AM$ coupée en $f$. La
+proposition est vraie, et se démontre ainsi. Soit $Q = 0$ l'équation de la
+conique et $q$ sa partie quadratique. Sur la droite menée d'un point $P$ dans
+une direction $u$, $Q(P + tu)$ est un trinôme en $t$ de coefficient dominant
+$q(u)$ et de terme constant $Q(P)$ ; le produit des distances (signées) de $P$
+aux deux points d'intersection est donc $Q(P)/q(u)$, et, pour une tangente, le
+carré de la distance au point de contact. Si $u$ est la direction de $MB$ et
+$w$ celle de $AM$,
+\[ \frac{fO\cdot fp}{fM^2} = \frac{Q(f)/q(u)}{Q(f)/q(w)} = \frac{q(w)}{q(u)}
+   = \frac{RV^2}{RM^2} : \]
+le rapport ne dépend que des directions. Le même calcul redonne la
+proposition en toute généralité.
+
+\subsection*{La synthèse que le feuillet laisse à faire}
+
+Le raisonnement du feuillet est une analyse : il suppose ce qu'il faut prouver
+et en tire une chose vraie, ce qui ne prouve rien. Il le sait, et conclut :
+« nec est difficilis ab analysi ad Synthesim per demonstrationem ducentem ad
+impossibile regressus » — le retour de l'analyse à la synthèse, par une
+démonstration par l'absurde, n'est pas difficile. Il ne la donne pas. Voici une
+synthèse directe, sans absurde. Sur la droite $fc$, prenons le milieu $x$
+pour origine ; $x$ étant sur le diamètre conjugué de la direction $u$, le
+trinôme n'y a pas de terme du premier degré, et, pour le point d'abscisse $t$,
+\[ \frac{Q(x + tu)}{q(u)} = \frac{Q(x)}{q(u)} + t^2 . \]
+En $f$, par la tangente $AM$ et la proposition précédente, cette quantité vaut
+$fM^2\cdot q(w)/q(u) = fM^2\cdot RV^2/RM^2 = fO\cdot Oc$ par construction. Donc
+$Q(x)/q(u) = fO\cdot Oc - fx^2$, et en $O$ :
+\[ \frac{Q(O)}{q(u)} = fO\cdot Oc - fx^2 + xO^2
+   = fO\cdot Oc - (fx - xO)(fx + xO) = fO\cdot Oc - fO\cdot Oc = 0 , \]
+puisque $fx - xO = fO$ et $fx + xO = xc + xO = Oc$. Le point $O$ est sur la
+conique.\footnote{Les longueurs sont prises avec leur signe sur la droite
+$fc$, ce qui rend le calcul valable quelle que soit la position de $O$ par
+rapport à $x$. Le texte s'arrête sur « regressus. », au tiers de la vue 38.}
+
+\section*{L'usage des racines secondes, envoyé à Carcavi (ff. 17r–18r, vues 41 à 43)}
+
+\pagerange{41}{43}
+Le titre, en quatre lignes : « Nouus Secundarum et Vlterioris ordinis Radicum
+In Analyticis Vsus A Domino de Fermat ad Dominum De Carcaui Die 20a. Aprilis
+Anno 1650 Missus ».\footnote{« Nouvel usage, en analyse, des racines secondes
+et d'ordre ultérieur, envoyé par M. de Fermat à M. de Carcavi le 20 avril
+1650. » Le premier mot, « Nouus », est lu avec doute : sa dernière lettre a la
+forme d'un e, et « Nouus » est proposé d'après l'accord avec « Vsus » et
+« Missus ». C'est la page, non le catalogue, qui nomme ici Fermat comme auteur,
+Carcavi comme destinataire, et qui donne cette date.} Une « racine seconde »
+est une seconde inconnue. Le programme : ramener les racines secondes et
+ultérieures aux premières, ce qui est « du plus grand moment en algèbre », par
+un seul fondement, l'« analogie d'une égalité double », à itérer autant qu'il
+le faut.\footnote{« Redductio », avec deux d, est l'orthographe du feuillet.}
+
+\subsection*{La méthode sur l'exemple}
+
+Deux équations en $x$ (la racine première, $A$ du feuillet) et $y$ (la racine
+seconde, $E$), où $Z$ est un solide et $N^2$ un plan\footnote{« Item B In A
+$+$ E q $+$ D in E » : le « $+$ » après « E q » est un petit signe surélevé
+qu'on pourrait prendre pour le t d'une abréviation ; la reprise plus bas,
+« $BA + E^2 + DE$ », le confirme.} :
+\[ x^3 + y^3 = Z, \qquad Bx + y^2 + Dy = N^2 . \]
+Premier précepte : dans chaque équation, faire passer d'un même côté les termes qui
+contiennent $y$. Posons $P = Z - x^3$ et $Q = N^2 - Bx$ :
+\[ P = y^3, \qquad Q = y^2 + Dy . \]
+Second précepte : écrire la proportion $P : y^3 = Q : (y^2 + Dy)$ — les deux
+rapports valent $1$ — et égaler le produit des extrêmes à celui des moyens :
+\[ P\,(y^2 + Dy) = Q\,y^3 , \]
+soit $Zy^2 - x^3y^2 + ZDy - x^3Dy = N^2y^3 - Bxy^3$.\footnote{Le feuillet
+écrit « $N^2E^2$ », l'exposant 2 bien net à côté du 3 de « $BAE^3$ » : le
+produit des moyens donne $N^2E^3$, et la ligne suivante, divisée par $E$, a
+bien $N^2E^2$. La transcription laisse la faute ; cette lecture la corrige. Le
+signe devant $A^3DE$ est traversé d'un petit trait vertical ; le calcul demande
+un moins.} Le second et le quatrième terme de la proportion contenant $y$, tout
+se divise par $y$ :
+\[ P\,(y + D) = Q\,y^2 . \]
+« Cette nouvelle équation sera plus basse d'un degré au moins, quant à la
+racine seconde, que la plus haute des deux proposées » : degré 2 en $y$ au lieu
+de 3. On recommence avec elle, mise sous la forme $PD = Qy^2 - Py$, et avec
+$Q = y^2 + Dy$ :
+\[ PD\,(y^2 + Dy) = Q\,(Qy^2 - Py) ,
+   \qquad\text{puis, divisé par } y, \qquad
+   PD\,(y + D) = Q\,(Qy - P) . \]
+Le feuillet développe ces deux lignes terme à terme, et tous ses termes sont
+justes. Cette fois $y$ n'apparaît plus qu'au premier degré, « sous le côté », et
+une seule division, l'« application », le donne :
+\[ y = \frac{ZD^2 - x^3D^2 + N^2Z - N^2x^3 - BZx + Bx^4}
+            {N^4 - N^2Bx - BxN^2 + B^2x^2 - ZD + x^3D}
+     = \frac{P\,(Q + D^2)}{Q^2 - DP} . \]
+Le feuillet écrit ce quotient tel quel, avec les deux termes $-N^2BA$ et
+$-BAN^2$ séparés au dénominateur ; la factorisation est de cette lecture.
+
+Dernier précepte : remplacer $y$ par cette valeur dans l'une des deux
+équations, de préférence la plus basse, pour que le degré ne monte pas ;
+« il est manifeste que la racine seconde a entièrement disparu, qu'on est
+arrivé à une équation libre de toute irrationalité, et que la méthode est
+générale ». S'il y a plus de deux inconnues, on ramène de même les troisièmes
+aux premières et secondes, puis les secondes aux premières.
+
+\subsection*{Ce que la méthode calcule}
+
+Chaque « analogie » remplace les deux équations par une combinaison à
+coefficients polynomiaux — le produit croisé est
+$(y^2 + Dy)\cdot(P - y^3) - y^3\cdot(Q - y^2 - Dy)$ — qui est encore vérifiée
+par toute solution commune et dont le degré en $y$ a baissé d'une unité. Au
+bout, l'équation en $x$ seul est ce qu'on appelle aujourd'hui l'éliminant, et
+la théorie de l'élimination lui donne une forme canonique, le résultant. Ici,
+le résultant en $y$ des deux équations est
+\[ \operatorname{Res}_y = P^2 + D^3P + 3DPQ - Q^3 , \]
+de degré 6 en $x$, comme le veut le produit des degrés, $3\times 2$.
+L'équation finale de la méthode, obtenue en portant la valeur de $y$ dans
+$Q = y^2 + Dy$ et en chassant le dénominateur, est de degré 8 : à un signe
+près, c'est $(N^2 - Bx)^2\cdot\operatorname{Res}_y$. Elle contient donc le
+facteur parasite $(N^2 - Bx)^2$, dont la racine $x = N^2/B$ n'est pas, en
+général, une solution du problème.\footnote{Ces calculs sont de cette lecture,
+et ont été vérifiés par un calcul symbolique. Le nom de résultant est attaché
+ici parce que l'éliminant de la méthode coïncide avec lui à ce facteur près ;
+la procédure du feuillet n'est pas le déterminant de Sylvester, et la lecture
+ne l'appelle pas ainsi.}
+
+Trois précisions rendent la méthode exacte. Les divisions par $y$ perdent les
+solutions où $y = 0$, qui n'existent ici que si $Z = x^3$ et $N^2 = Bx$ à la
+fois. L'« application » suppose le dénominateur non nul : en une solution
+commune, $Q^2 - DP = y^2(y^2 + Dy + D^2)$, qui ne s'annule pas pour $y$ réel
+non nul. Enfin la substitution finale peut introduire des racines étrangères,
+comme on vient de le voir. La division euclidienne, en $y$, du premier
+polynôme par le second aurait donné l'équation du premier degré en une seule
+étape, $y = (P + DQ)/(Q + D^2)$ ; les deux expressions de $y$ coïncident en
+toute solution commune. La méthode est générale au sens où elle élimine
+toujours ; pour qu'elle soit exacte, il faut en contrôler les facteurs perdus
+et ajoutés, ce que fait le résultant.
+
+\section*{L'« Appendix ad superiorem methodum » : radicaux, problèmes abondants, le cône (ff. 18v–20v, vues 44 à 48)}
+
+\pagerange{44}{48}
+\subsection*{Les radicaux}
+
+« C'est à la méthode précédente qu'on doit l'expurgation parfaite et absolue
+des irrationalités en algèbre » ; le remède de Viète, le seul connu jusqu'ici,
+n'y suffit pas.\footnote{Les mots qui désignent ce remède, « Symetria
+climatismus Vietæa », sont lus lettre à lettre, et « huic » avec doute ;
+l'accord demande un nom féminin que la page ne donne pas clairement. Cette
+lecture ne les interprète pas.} Proposons par exemple
+\[ \sqrt[3]{Bx^2 - x^3} + \sqrt{x^2 + Zx} + \sqrt[4]{B^3x - x^4}
+   + \sqrt{Gx - x^2} = N : \]
+comment l'« analyste viétéen » s'en tirera-t-il ? « Tandis que croîtra le
+travail, ne croîtra-t-il pas la difficulté ? »\footnote{La lettre qui ouvre la
+dernière racine se lit G ou D. Le mot après « Extricabit » se lit « sese » ou
+« secet ».}
+
+L'exemple traité\footnote{La première racine est écrite d'abord « Lat. Cub.
+(ZA$^2$) », puis, quatre lignes plus bas, « Lat. Cub. (ZA$^2$ $-$ A$^3$) », et
+c'est cette seconde forme que suit tout le calcul ; cette lecture la suit.} :
+\[ \sqrt[3]{Zx^2 - x^3} + \sqrt[3]{x^3 + B^2x} = D . \]
+On isole un radical, $D - \sqrt[3]{x^3 + B^2x}
+= \sqrt[3]{Zx^2 - x^3}$, puis on nomme racine seconde chacun des autres :
+$y = \sqrt[3]{x^3 + B^2x}$. En cubant,
+\[ D^3 - 3D^2y + 3Dy^2 - y^3 = Zx^2 - x^3, \qquad y^3 = x^3 + B^2x , \]
+deux équations en $x$ et $y$, sans radical, auxquelles s'applique la méthode ;
+le feuillet s'arrête là. Cette lecture a achevé l'élimination. Si $u + v = D$
+avec $u^3 = a$ et $v^3 = b$, alors $D^3 = a + b + 3uvD$, d'où
+$(D^3 - a - b)^3 = 27abD^3$ ; ici $a + b = Zx^2 + B^2x$, et l'équation sans
+radical est
+\[ \bigl(D^3 - Zx^2 - B^2x\bigr)^3 = 27D^3\,(x^3 + B^2x)(Zx^2 - x^3) , \]
+de degré 6 en $x$ (coefficient dominant $27D^3 - Z^3$) ; c'est bien le
+résultant en $y$ des deux équations précédentes. Pour des racines cubiques
+réelles, elle équivaut à l'équation de départ, sauf dans le cas où les deux
+radicaux valent tous deux $-D$.\footnote{Car
+$u^3 + v^3 - D^3 + 3uvD = (u + v - D)\,(u^2 + v^2 + D^2 - uv + uD + vD)$, et le
+second facteur, égal à $\tfrac12\bigl[(u-v)^2 + (u+D)^2 + (v+D)^2\bigr]$, ne
+s'annule que pour $u = v = -D$.}
+
+La règle générale : s'il ne suffit pas de racines secondes, on nomme les
+radicaux racines troisièmes, quatrièmes, et ainsi de suite, et l'on élimine la
+dernière comme une seconde, en tenant les autres pour connues, puis la
+précédente, jusqu'aux premières. « Il n'est donc aucune irrationalité que cette
+méthode ne force à disparaître. »\footnote{« Emanuerit » et « exulerre » sont
+lus lettre à lettre ; le sens attend « euanuerit » (qu'elle ait disparu) et
+une forme d'« exulare » (partir en exil).} C'est exact : une équation où
+figurent des radicaux de polynômes se ramène, en nommant chaque radical une
+nouvelle inconnue et en éliminant, à une équation polynomiale ; celle-ci
+contient toutes les solutions de la première, et peut en avoir d'autres,
+venues des autres déterminations des racines.
+
+Le feuillet ajoute que, les irrationalités disparues, l'artifice de Viète
+pour les questions numériques donne des solutions aussi approchées qu'on veut,
+« alors que, tant que durent les irrationalités, on ne saurait en aucune façon
+obtenir de solutions approchées ». La première affirmation est juste ; la
+seconde est un jugement de l'écrivain, que les méthodes numériques d'aujourd'hui
+démentent : elles s'appliquent directement aux équations à radicaux.\footnote{La
+construction de cette phrase, qui reprend « Imò » à la fin de la vue 45, est
+donnée par la transcription telle qu'elle se lit ; une parenthèse fermante y
+suit « Asymmetriæ » sans parenthèse ouvrante.}
+
+\subsection*{Problèmes déterminés, locaux, « à la surface », abondants}
+
+« Il s'est offert aussi à celui qui cherchait plus loin » une méthode pour la
+connaissance des lieux à la surface, et pour les problèmes où il est donné plus
+qu'il n'en faut.\footnote{« Semira » est écrit en un mot ; le sens le coupe
+« se mira ».} Un problème à une seule inconnue est « déterminé » : on cherche
+un point. Un problème à deux inconnues, qu'on ne peut réduire à une, est
+« local » : on cherche une ligne. À trois inconnues, on cherche une surface :
+ce sont les « lieux à la surface ». Aux premiers les données suffisent ; aux
+seconds il en manque une, aux troisièmes deux. Et il se peut, à l'inverse,
+qu'il y ait trop de données : le problème est alors « abondant ». Les
+problèmes locaux, par opposition, l'écrivain les appelle « déficients ».
+Aujourd'hui : un système de $m$ équations indépendantes en $n$ inconnues
+définit, en général, un ensemble de dimension $n - m$ ; un problème abondant
+est un système surdéterminé, $m > n$.
+
+L'exemple : sur une droite donnée $AC$, un point $B$ tel que le rectangle
+$AB\cdot BC$ soit donné et que la différence des carrés $AB^2 - BC^2$ soit donnée
+aussi. Il y a une donnée de trop.\footnote{Le feuillet écrit ensuite « Ideoque
+Solutio Ipsius quæstionis Exposuit », dont le dernier mot est lu tel quel et
+n'est pas compris.} L'avantage est que la solution ne demande plus
+d'extraction de racine : comme $AB + BC = AC$ et
+$AB^2 - BC^2 = (AB - BC)(AB + BC) = s$, on a $AB - BC = s/AC$, et
+\[ AB = \frac{AC^2 + s}{2\,AC} , \]
+par une simple division ; la donnée du rectangle, $r$, n'est plus qu'une
+condition de compatibilité, $r = \dfrac{AC^4 - s^2}{4\,AC^2}$.\footnote{Ce calcul
+est de cette lecture ; le feuillet ne donne que l'énoncé.} Or ces problèmes
+sont très fréquents, « surtout en physique et chez les artisans », et la
+méthode les expédie tous « par une simple application, sans extraction de
+racines, à quelque puissance que montent les équations ».
+
+L'exemple en lettres :
+\[ x^3 + B^2x = Z^2D, \qquad Gx - x^4 = B^2N , \]
+où $G$ est un solide et $N$ un plan ; le problème est supposé abondant, les
+deux équations ayant une racine commune. On traite la racine $x$ comme on
+traitait la racine seconde, jusqu'à ce qu'elle soit donnée par une simple
+division. Cette lecture a fait le calcul par divisions successives : en
+remplaçant $x^4$ par $Z^2Dx - B^2x^2$, la seconde équation devient
+$B^2x^2 + (G - Z^2D)\,x - B^2N = 0$, du second degré ; la première, divisée par
+celle-ci, laisse une équation du premier degré, qui donne
+\[ x = \frac{B^2\,\bigl(B^2DZ^2 - DNZ^2 + GN\bigr)}
+            {B^6 + B^4N + (G - DZ^2)^2} . \]
+C'est exact sous l'hypothèse que les deux équations ont une racine commune et
+une seule : la racine commune est alors racine de leur plus grand commun
+diviseur, qui est du premier degré, et s'exprime rationnellement par les
+données. Si elles en avaient deux, le plus grand commun diviseur serait du
+second degré, et la dernière division donnerait $0 = 0$.
+
+\subsection*{Le cône coupé suivant un cercle}
+
+« En guise de couronnement », le « fameux problème » : une ellipse et un point
+hors de son plan étant donnés, couper par un plan la surface conique de sommet
+ce point et de base cette ellipse, de sorte que la section soit un
+cercle.\footnote{« Datũ », qualifiant le sommet, est lu avec doute.} Les
+géomètres, dit le texte, prennent cinq points de l'ellipse, les joignent au
+sommet, et cherchent un cercle qui rencontre ces cinq droites ; mais, les
+points de l'ellipse étant en nombre infini, si l'on en prend six, le problème
+devient abondant, et il en naît une égalité double qui donne l'inconnue par une
+simple division. Le feuillet s'en tient à cette indication, sans calcul, et
+cette lecture ne reconstitue pas la solution. Le problème a toujours des
+solutions : le cône sur une ellipse est un cône du second degré, et ses
+sections circulaires sont les sections par les plans parallèles à deux plans
+fixes, ses plans cycliques, qui se confondent quand le cône est de
+révolution.\footnote{Ce fait est général et n'est pas sur le feuillet. Si le
+cône s'écrit $x^2/a^2 + y^2/b^2 = z^2/c^2$ avec $a > b$, les plans cycliques
+sont les deux plans d'équation
+$\bigl(\tfrac1{b^2} - \tfrac1{a^2}\bigr)y^2 = \bigl(\tfrac1{c^2} + \tfrac1{a^2}\bigr)z^2$.}
+
+Le texte annonce enfin qu'on trouvera de même les diamètres et les axes d'une
+courbe plane ou d'une surface donnée, de degré quelconque ; qu'on coupera une
+surface conique dont la base est une parabole ou une ellipse « cubique »,
+« quadrato-quadratique » ou de degré supérieur, de sorte qu'y paraisse telle
+courbe qu'on voudra ; et « nous n'ajoutons rien sur les tangentes des courbes
+et plusieurs autres usages de ce genre ». Ce sont des annonces, rapportées
+comme telles.\footnote{Les deux mots brefs qui ouvrent la phrase sur la
+surface conique, après une initiale en volute, se lisent lettre à lettre
+« Oti di » ou « Vti dr » ; la construction attend un verbe comme « poterit ».
+Ils restent illisibles. « parabole » est lu avec doute pour sa finale. La pièce
+finit sur un trait de plume, sans signature.}
+
+\section*{La lettre à Carcavi (ff. 21r–22r, vues 49 à 51)}
+
+\pagerange{49}{51}
+« Lettre de Mons.r De fermes / A Monsieur De Carcaui De Castres / Le 20e auril
+1650. », de la main des vues 41 à 48, en français.\footnote{« De Castres » est
+écrit à la suite du nom, séparé par un blanc : la page ne dit pas si c'est le
+lieu d'où la lettre part ou une qualité du destinataire, et cette lecture ne
+le dit pas davantage.} Elle commence : « Monsieur Je n'ay point voulu differer
+a vous Enuoyer ma methode generale pour le desbrouilement des Asymmetries ».
+L'épistolier envoie « mon original par pure paresse », demande qu'on le lui
+renvoie « ou bien vne coppie », et ne réclame pour ses intérêts que « la
+satisfaction … d'auoir deuoilé vne matiere qui n'estoit pas cognüe ». Il parle
+à la fin de « mon escrit Latin », que ces éclaircissements doivent rendre moins
+concis.\footnote{Que la lettre accompagne la pièce latine des vues 41 à 48 est
+une inférence, tirée de sa date, de son destinataire et de sa matière ; la
+transcription la fait avec la même réserve. L'épistolier écrit aussi : « En
+voila trop pour vne seconde Lettre ». La lettre finit sur « \&c. », sans
+formule finale ni signature.}
+
+\subsection*{La tangente à une courbe irrationnelle}
+
+« Si vous voulés auoir le plaisir tout entier », proposez de trouver la
+tangente d'une courbe dont la propriété soit, en prenant cette fois $A$ pour
+l'ordonnée et $E$ pour l'abscisse — ici $y$ et $x$\footnote{Le feuillet écrit
+dans la deuxième racine « B pp$^{\text{l}}$ », B plano-plan, une grandeur de
+dimension quatre nommée d'après $B$, que cette lecture écrit $B^4$ ; le terme
+suivant, une lettre bouclée (D ?) avec un 2 repassé, puis « BA », est lu avec
+doute, et son signe se confond avec un soulignement. Le feuillet dit que ces
+quatre termes « sont, dans ce cas, des droites » : chaque radical est de
+dimension un.} :
+\[ \sqrt[3]{Z^2y - y^3} + \sqrt[4]{B^4 - D^2By + y^4} + \sqrt{By - y^2}
+   + \sqrt[5]{y^5 - B^4y} = B + y - x . \]
+Que fera là, demande-t-il, « La methode de Mons.r Des Cartes que vous sçauës estre
+Infiniment plus Embarassée que la mienne si les Asymmetries ne sont ostées » ?
+Sa réponse : en nommant chaque ligne irrationnelle racine seconde, tierce,
+quarte, on arrive toujours à des égalités doubles, que l'on réitère jusqu'à ce
+que la division simple ôte la dernière racine, puis l'avant-dernière ; il reste
+une équation sans irrationalité entre $x$ et $y$, qui « representera la
+proprieté specifique de la Courbe ». Alors « ma methode de Tangentibus » donne
+la tangente « par La seule application », c'est-à-dire par une division, « ce
+qui semble merueilleux ». Il n'ajoute pas l'opération entière, à cause de sa
+longueur.\footnote{Que la « methode de Tangentibus » de la lettre soit celle des
+vues 29 et 30, les feuillets ne le disent pas, et cette lecture ne le dit pas
+non plus. Le jugement sur la méthode de Descartes est celui de l'épistolier ;
+cette lecture ne l'examine pas.}
+
+Ce qu'il affirme est exact. Pour une courbe $F(x,y) = 0$ polynomiale, la
+tangente en un point régulier a pour pente $-F_x/F_y$, fraction rationnelle des
+coordonnées du point : on la trouve sans extraire de racine. On remarquera
+aujourd'hui qu'ici l'élimination n'est même pas nécessaire : l'abscisse $x$
+figure au premier degré, la courbe est le graphe
+$x = B + y - \sum(\text{radicaux})$, et la dérivée de chaque radical,
+$\tfrac{d}{dy}\sqrt[k]{p(y)} = p'(y)/\bigl(k\,\sqrt[k]{p(y)}^{\,k-1}\bigr)$,
+s'exprime rationnellement par $y$ et par la valeur du radical au point.
+
+\subsection*{Le problème de Descartes}
+
+La lettre poursuit : ce que ces méthodes donnent était inconnu « Jusqu'a
+present, puisque Monsieur Des Cartes que Je nomme auec tout le respect qui est
+deub a la memoire d'vn si grand et si merueilleux homme, proposoit comme vne
+difficulté Insurmontable La question suiuante » : étant donnés quatre points,
+et une courbe telle que, pour chacun de ses points, les droites menées aux
+quatre points donnés fassent une somme donnée, trouver la tangente en un point
+quelconque de cette courbe. « Ainsy que Je puis faire voir par vne de ses
+Lettres » ; ce renvoi n'est pas vérifié ici.\footnote{La lettre parle de
+Descartes comme d'un mort (« a la memoire ») ; c'est un renseignement général,
+qui ne sert ici à rien dater, que Descartes est mort en février 1650. Un
+premier « homme » est biffé ; une parenthèse fermante suit « deub » sans
+parenthèse ouvrante.} L'épistolier affirme que ses méthodes jointes en donnent
+la solution simple, et que « l'opération se fait en se jouant ».
+
+La courbe s'appelle aujourd'hui une ellipse à quatre foyers (une
+$n$-ellipse pour $n = 4$). Sa tangente se trouve en effet simplement : si
+$P_1,\dots,P_4$ sont les points donnés et $P$ un point de la courbe, le gradient
+de $\sum_i |P - P_i|$ est $\sum_i u_i$, où $u_i$ est le vecteur unitaire dirigé
+de $P_i$ vers $P$ ; la normale en $P$ est dirigée par la somme de ces quatre
+vecteurs unitaires, et la tangente lui est perpendiculaire — là où cette somme
+n'est pas nulle et où $P$ n'est aucun des $P_i$. La construction se fait à la
+règle et au compas. La lettre, elle, n'en donne pas l'opération.
+
+Elle conclut : le principal effet de la nouvelle méthode « paroist aux
+tangentes de toutte sorte de lignes a l'Infiny », qui s'y trouvent toujours
+« par application simple », et ensuite « aux questions que J'appelle
+abondantes, qui se resoluent aussy par la seule diuision et sans aucunes
+Extractions de Racines ».
+
+\end{document}
