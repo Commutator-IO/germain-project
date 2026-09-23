@@ -1,0 +1,2292 @@
+% NAL 1644 — lecture modernisée du volume entier.
+%
+% Pass: Opus 5.5 (claude-opus-5-5), 2026-09-23 — first pass, unchecked against
+% the views by a human, and an interpretation rather than a record. Where this
+% file and the transcriptions differ in substance, the transcriptions
+% (batch-01.fr.tex to batch-09.fr.tex) are the record.
+%
+% Sources read: the nine batch transcriptions of this volume, views 1–163, in
+% full, twice — once for the mathematics, once for the apparatus (every
+% \uncertain, \ill, \note and the absence of any \folio) — with their header
+% comments and the coordinator's reconciliation block closing each header, and
+% the NAL 1644 section of .claude/skills/transcribe/references/hand.md. The
+% volume is completely transcribed: v. 4 and v. 146 are blank and not
+% transcribed; every other view is. No image was consulted. No printed edition
+% was consulted: not the Elzevier Opera of 1646, not any edition or study of
+% Viète, of Tycho or of Copernicus. The later reader's page references to the
+% 1646 edition (v. 1, 5, 69, 141) are reported as notes on the leaves and were
+% not checked. Where the transcription has a gap, this reading says so.
+%
+% What the volume turned out to be (map settled by the reconciliation notes):
+%
+%   v. 1        cover, « Francisci Vietæ opera nonnulla », later references to
+%               the 1646 edition and a table « 1 » / « 32 » (= ink leaves 1 and
+%               32, where the two treatises begin: an observation, not a reading)
+%   v. 2–4      small leaves A, B, C (C blank), another compact hand: sextic
+%               equations reduced (« duplicata hypostasis », « climactica
+%               paraplerosis »), a theorem on alternate terms
+%   v. 5–68     « Francisci Vietæ De Recognitione Æquationum tractatus. »,
+%               Cap. 1–XXI (heading on the leaf, in the text's hand)
+%   v. 69–141   « Francisci Vietæ. De æquationum Emendatione tractatus
+%               secundus. », Cap. I–XIIII, « Finis » (heading on the leaf)
+%   v. 142–163  astronomy, no name: lunar prostaphaereses and their tables;
+%               Tycho's lunar hypothesis « restored » (Tycho's name struck for
+%               « ab Astroscopo Dano »); « Harmonici Ptolemaici Constructio
+%               Caput XII », against Copernicus's geometry; outer planets and
+%               Venus; Mercury. Breaks off mid-sentence.
+%
+%   One ink series of leaf numbers, 1–79 with « 5 bis », « 16 bis »,
+%   « 46 bis », « 47 bis », crosses all three pieces; the writer cites it
+%   (« fol. 18. », v. 43; « pag. 48 », v. 100). Not the library's foliation:
+%   no folio is cited anywhere; sections cite views by \pagerange.
+%   Chapter numbers are the leaf's corrected ones (VIII→IX, IX→X, XIIII→XV,
+%   XVIII→XIX, XIX→XX in the first treatise; XX→X, XXI→XI … XXIIII→XIIII in
+%   the second).
+%
+% Attribution. The only names for the authorship of the treatises are the two
+% headings and the cover; the reading says what they say and identifies no
+% hand. Doubtful notes that may mark the treatises as a copy are presented as
+% doubtful: « transcripta ex exemplari » (v. 100, probable reading),
+% « deerant hæc in exemplari » (v. 114, struck, very doubtful), and a third,
+% « in exemplari excripto / vel potius adscriptum » (v. 20, partly read, a
+% small pale hand), which batch 1 records and the brief did not list. The
+% second hand of v. 13–18 speaks of its own work on angular sections
+% (« demonstratum a nobis ad sectiones angulares »); reported, not identified.
+% The astronomy is attributed to no one. \dating is empty, as in the catalogue;
+% no date is inferred from the headings, from Tycho's name, or from the 1646
+% references. Every « postérieur » is conditional on the headings'
+% attribution, and is said so.
+%
+% Notation translated, each with a note at first use: A → x, E → y; the
+% consonants kept, a magnitude named by its dimension standing for itself and
+% homogeneity dropped (law of homogeneity explained once); powers in words →
+% exponents; « in » → product; « æquatur », a brace, or a vertical stroke → =;
+% cossic N, Q, C, QQ, QC, CC → x, x², …, x⁶; L, LC, LQQ, LQC, LV, LVC →
+% radicals; the double stroke « = » → the signed difference (an unspecified
+% order), or the margin's « + » where the margin corrects it; positivity of
+% roots stated as the reading's standing convention; astronomy: prostaphaeresis
+% → equation, double elongation → 2η, sines and « Sinus Totus » → sin, tan.
+%
+% Modern names attached, each where the statement coincides, later work
+% footnoted as later: depressed equation (removal of the second term);
+% Vieta's substitution; Cardano's formula; casus irreducibilis and the
+% trigonometric solution of the cubic; the discriminant of x³ − px − q
+% (4p³ − 27q² = (A−B)²(2A+B)²(A+2B)², the reading's factorisation of the
+% second hand's inequality); AM–GM; Ferrari's method and the resolvent cubic;
+% Vieta's formulas / elementary symmetric functions (Cap. XVI of the first
+% treatise; Cap. XIIII of the second); divisibility of xⁿ ± yⁿ by x ± y;
+% extreme and mean ratio (golden ratio), and, in a note only, the n-bonacci
+% constants; the factor theorem; Descartes's rule of signs and the rational
+% root theorem (notes only, as what the text tacitly needs); Tschirnhaus
+% (note only: the leaves carry the linear case). Astronomy: equation (of
+% centre), eccentric and epicycle, arcsin(r/R) for the maximum equation,
+% variation (first prostaphaeresis, ∝ sin 2η), evection (Copernican device of
+% the varying epicycle; the « anomalia mixta » 2η − M of the restored
+% hypothesis), and, to first order, the three terms of lunar longitude with
+% amplitudes 6°14′, 1°15′, 37′ against the modern 6°17′, 1°16′, 39′30″; in a
+% note, the first-order equivalence of the planetary « adlateralis »
+% construction (2φ sin σ, φ cos σ) with the equant and Kepler motion.
+%
+% Every computation the leaves offer was redone; the recomputations are this
+% reading's own. Departures from the leaf, each footnoted where it occurs:
+% leaf A, case 1 of « Facillima resolutio » (the written reduced equation
+% belongs to case 2; true: a quadratic in E³ / in A²); leaf A, the climactic
+% construction (F = D⁵/Z⁴ as read, D⁶/Z⁵ needed); Cap. V the series 27,18,12,8
+% read 8,12,18,27, « B in Z » for D, « secundæ » for primæ; Cap. VI the
+% condition phrase with « medietatis » (factor 4), the equality case D² = 4B³,
+% « faciunt B planum » for the coefficient 3B; the porism (v. 23) restated as
+% « zero or two positive roots »; Cap. XIII th. X–XII (v. 41–43) the division bar
+% over x⁴, « Z plano plano » for Z³; Cap. XV « S² − B² » for B² − S²; the
+% syncrisis signs (« = » for +, « A gradu + B gradu » for + E^k, « D » for B,
+% « per A » for A − E); Cap. XVIII « 124,960 » for 249 920, « 16/15 » for
+% 16/5, « B plano » for planoplano, the roots 25, 100 given for x²; Cap. XIX
+% « 4,618,812 » for 5 153 632; Cap. XX the exponent of Z (quadrato for
+% quadratocubo) and « planoplano »; Emendatio: the uncorrected « 30Q » (v. 78),
+% « 12500 », « 3 vel 6 », « −46Q/160 », the ratios 8 and 18/2, « 8Q », and
+% every other margin correction received; the table « 46 bis » row IIII sign;
+% the posterior-formula theorem IIII « +4ZG » and « 64N »; Cap. IX prop. II
+% « 1Q − 3N » for 1Q + 3N; prop. III as first written (the margin's form
+% followed) and its example « L2 » for √8; prop. IX « +10Q » for −10Q; prop. X
+% « L3 − 1 » for √3 + 1; Cap. X prop. VI, only the minus sign gives a root;
+% the margin's « eadem sequuntur » for 3Bx − x³ = 2Z (no positive root under
+% Z² > B³); Cap. XI prop. V « B in A qq » for B²x⁴; astronomy: 9 150 131 for
+% ≈ 9 150 410 (and « EF » for AE), 0°32 15/29′ kept for 941 (≈ 0°32⅓′),
+% 2 325 665 for 666, « complementum AEG » for EAG, « IQ dupla ad IH »
+% inverted, the contraction quadrants, « talium 1 qualium GE 10 » against the
+% numbers 1 : 5. Steps supplied: roots the page omits (18 at v. 9, 26 at
+% v. 11; second positive roots at v. 10, 13, 74, 88 (1.4026) ; the extra root
+% B of Cap. XIIII th. I and the roots lost by division in Emendatio Cap. IX
+% props. II and IX); the justification of the irrationality test (rational
+% root theorem); the triangular unciae real only for a negated affection; the
+% constitution of Cap. XVIII « De reliquis » (B = u³ + v³ + a v²,
+% Z = u²v²(a + b + c)); the discriminant factorisation; the modern amplitudes.
+% Left unreconstructed: the theorem of leaf B; the margin example
+% « 1C + 9Q − 24N = 33 » (v. 32, no rational root as read); the margins of
+% v. 42, 55, 137–138 (partly), 153, 156; the squaring passage of Cap. X
+% prop. VI (v. 134); the Mercury « factæ » (v. 163).
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{nal-1644}
+\shelfmark{NAL 1644}
+\pages{1}{163}
+\dating{}
+\watermark{Lecture automatique\\interprétation non vérifiée}
+\foldertitle{Viète (François). Papiers divers. NAL 1644 — lecture modernisée du volume entier}
+
+\begin{document}
+
+\section*{Résumé}
+
+\begin{resume}
+Ce volume réunit trois pièces sous une couverture qui porte « Francisci Vietæ
+opera nonnulla », quelques œuvres de François Viète. Les deux premières sont
+deux traités d'algèbre en latin, d'une même écriture selon les transcriptions, titrés sur leurs
+feuillets au nom de Viète : « De Recognitione Æquationum » (vues 5 à 68), sur la
+manière de reconnaître comment une équation est faite, et « De æquationum
+Emendatione tractatus secundus » (vues 69 à 141), sur la manière de la préparer
+pour la résoudre. Qui les a écrits, les feuillets ne le disent pas ; trois
+notes, toutes de lecture douteuse, pourraient en faire la copie d'un
+« exemplar ». La troisième pièce (vues 142 à 163) est un dossier d'astronomie
+sans nom : les tables des inégalités de la Lune, une « restitution » de
+l'hypothèse lunaire de Tycho Brahe, le début d'un chapitre qui reproche à
+Copernic sa mauvaise géométrie, et des fragments sur les planètes, qui
+s'arrêtent au milieu d'une phrase sur Mercure. Aucun feuillet n'est daté.
+
+Le problème des deux traités est celui de toute l'algèbre de leur temps :
+résoudre les équations du troisième et du quatrième degré, et, pour les
+autres, en calculer numériquement les racines. Le premier traité dit
+d'emblée ce qu'il apporte : la doctrine générale de la résolution numérique,
+il la « forme et l'achève », parce que « les équations ont souvent besoin
+d'une préparation avant de se laisser facilement résoudre ». Pour préparer une
+équation, il faut savoir de quoi elle est faite : de quelles racines, par quel
+changement d'inconnue à partir d'une équation plus simple, avec quels
+coefficients. Tout est écrit dans une algèbre de lettres, où chaque grandeur
+porte sa dimension, et où les racines sont toujours positives.
+
+L'idée maîtresse est le changement d'inconnue. Translater la racine d'une
+fraction du second coefficient fait disparaître le terme qui suit la plus haute
+puissance ; prendre pour inconnue le quotient du terme connu par la racine
+change les signes ; poser $x = (B - y^2)/y$ ramène la cubique $x^3 + 3Bx = 2Z$ à
+une équation du second degré en $y^3$, d'où la formule de Cardan ; ajouter aux
+deux membres d'une quartique ce qui en fait deux carrés ramène la quartique à
+une cubique auxiliaire, puis à deux quadratiques. Une seconde idée, la
+« syncrise », compare deux équations de même forme et de mêmes coefficients qui
+ont des racines différentes : en les soustrayant, on exprime les coefficients
+par les racines — le coefficient est leur somme, le terme connu leur produit —,
+et le dernier chapitre du second traité l'énonce pour deux, trois, quatre et
+cinq racines. Le cas où la cubique a trois racines réelles, où la formule de
+Cardan échoue, est résolu par la trisection de l'angle. Les dizaines d'exemples
+chiffrés sont presque tous justes ; les fautes que l'écrivain n'a pas lui-même
+corrigées en marge sont signalées, et quelques énoncés trop forts sont rectifiés.
+Le dossier d'astronomie décompose le mouvement de la Lune en inégalités qui
+dépendent de l'anomalie, du double de l'élongation au Soleil et de leur
+différence ; l'écrivain juge que Tycho « n'est nullement géomètre » et écrit :
+« Ego suam hypothesim ita restituo », je restitue son hypothèse ainsi.
+
+Ce que ces feuillets construisent porte aujourd'hui des noms précis : les
+formules de Viète et les fonctions symétriques élémentaires des racines ;
+l'équation réduite, privée de son second terme ; la substitution de Viète et la
+formule de Cardan ; le cas irréductible et la résolution trigonométrique de la
+cubique ; la méthode de Ferrari et la cubique résolvante ; le discriminant ; la
+moyenne et extrême raison, c'est-à-dire le nombre d'or. En astronomie :
+l'équation du centre, l'évection et la variation, les trois grandes inégalités
+de la longitude de la Lune, et les modèles à excentrique et épicycle.
+
+\keywords{theory of equations, law of homogeneity, Vieta's formulas, elementary symmetric functions, transformation of equations, depressed equation, Vieta's substitution, cubic equations, Cardano's formula, casus irreducibilis, trigonometric solution of the cubic, angle trisection, discriminant, inequality of arithmetic and geometric means, quartic equations, Ferrari's method, resolvent cubic, geometric progressions, extreme and mean ratio, golden ratio, lunar theory, equation of centre, evection, lunar variation, epicycle and eccentric, Tycho Brahe's lunar theory, Copernicus, planetary theory}
+\end{resume}
+
+\section*{Ce que contient le volume}
+
+\pagerange{1}{163}
+Cent soixante-trois vues, une page par vue, feuillets de tailles inégales posés
+les uns sur les autres, de sorte que le haut ou le pied d'un feuillet voisin
+dépasse sur la plupart des images. Sous une couverture de papier fort qui porte,
+d'une grande écriture ancienne, « Francisci Vietæ opera nonnulla »\footnote{« Quelques
+œuvres de François Viète ». La transcription de la vue 1 relève aussi, d'une
+main plus petite et postérieure, « imprimés, pag. 84 de l'edition d'Elzevir
+1646. in folio p 158 », puis une petite table : « de æquationum recognitione 1. /
+De emendatione æquationum 32 » (« pag. 84 », « p » et « de » lus avec doute,
+« emendatione » de même). Les nombres 1 et 32 de cette table sont ceux que
+porte, en tête de page, la série de chiffres à l'encre décrite plus bas, aux
+vues 5 et 69, là où commencent les deux traités : c'est un rapprochement fait
+ici, non une lecture de la table. Les renvois à l'édition de 1646 sont d'un
+lecteur ; ils n'ont été confrontés à aucun imprimé.}, le volume réunit trois
+pièces, précédées de trois petits feuillets lettrés.
+
+\begin{itemize}
+  \item \textbf{Vues 2 à 4 — trois petits feuillets lettrés A, B, C}, d'une
+    écriture serrée différente de celle des traités : deux réductions
+    d'équations du sixième degré et un théorème sur les suites de
+    proportionnelles (A, B) ; le feuillet C est blanc.
+  \item \textbf{Vues 5 à 68 — « Francisci Vietæ De Recognitione Æquationum
+    tractatus. »}, ainsi titré en tête de la vue 5, chapitres 1 à XXI : comment
+    une équation est faite à partir de ses racines, et comment, la voyant, on
+    reconnaît de quoi elle est faite.
+  \item \textbf{Vues 69 à 141 — « Francisci Vietæ. De æquationum Emendatione
+    tractatus secundus. »}, ainsi titré en tête de la vue 69, chapitres I à
+    XIIII, qui s'achève sur « Finis » : comment préparer une équation pour la
+    résoudre.
+  \item \textbf{Vues 142 à 163 — des feuillets d'astronomie, sans nom}, d'une
+    autre matière : les prostaphérèses de la Lune et le cadre de leurs tables,
+    l'hypothèse lunaire de Tycho Brahe « restituée » par l'écrivain, un
+    chapitre XII intitulé « Harmonici Ptolemaici Constructio » qui s'ouvre sur
+    une charge contre la géométrie de Copernic, et deux fragments de théorie
+    planétaire, dont le dernier porte sur Mercure et s'interrompt au milieu
+    d'une phrase.
+\end{itemize}
+
+Les deux traités se suivent sans lacune : le second commence en tête du
+feuillet qui suit la dernière page du premier, et il est dit « secundus ». Leur
+écriture est, selon les transcriptions, une même cursive régulière, qui se
+corrige elle-même dans la marge — un mot souligné dans la ligne, la bonne
+leçon soulignée en regard. D'autres mains interviennent : une main rapide à
+l'encre noire, dans les marges des vues 13 à 18, qui démontre ce que le texte
+énonce et parle de ses propres travaux ; une petite main pâle à la vue 20 ; une
+écriture plus serrée dans les marges des vues 61 à 66 et une couche de
+corrections d'encre plus noire aux vues 121 à 140, dont les transcriptions ne
+décident pas si elles sont de l'écrivain ou d'un autre ; enfin un lecteur plus
+tardif, qui renvoie aux pages d'une édition in-folio de 1646 (vues 1, 5, 69 et
+141).\footnote{Les renvois sont : « page 84 de l'edition d'Elzevir 1646 in
+folio. » (vue 5, en tête du premier traité) ; « p. 127. editionis 1646. »
+(vue 69, en tête du second) ; « pag. 158 editionis elzevir. anni 1646,
+infolio. » (vue 141, à la fin du second). Ce sont des pages d'un livre imprimé,
+non du manuscrit. Aucun n'a été vérifié : cette lecture n'a ouvert aucune
+édition imprimée des œuvres de Viète, ni pour contrôler ces renvois, ni pour
+combler une lacune, ni pour trancher une leçon.}
+
+Le nom qu'on lit sur ces feuillets est celui des deux titres, écrits de la main
+du texte, et celui de la couverture. Qui a tenu la plume, les transcriptions ne
+le disent pas, et cette lecture ne le dit pas davantage. Trois notes, toutes
+douteuses, pourraient faire des traités une copie : « transcripta ex
+exemplari », en tête d'une addition marginale encadrée de la vue 100
+(« copiée sur l'exemplaire », lecture probable, non certaine) ; « deerant hæc
+in exemplari », écrit entre les lignes puis biffé à la vue 114 (« ceci manquait
+dans l'exemplaire », lecture très incertaine) ; et, à la vue 20, une note d'une
+petite main pâle appelée par une croix, « in exemplari \emph{excripto} / vel
+potius \emph{adscriptum} », qui n'est lue qu'en partie.\footnote{Les mots en
+italique dans cette dernière note sont ceux que la transcription donne comme
+incertains. Si ces trois lectures sont bonnes, un modèle (« exemplar ») a été
+recopié ; elles ne disent ni quel modèle, ni par qui, ni quand. Cette lecture
+les donne pour ce qu'elles sont : des indices douteux.} Les feuillets
+d'astronomie ne portent aucun nom d'auteur, et cette lecture ne les attribue à
+personne. Aucun feuillet n'est daté ; le catalogue ne donne pas de datation,
+et il n'en est inféré aucune.
+
+Une seule série de chiffres court sur tout le volume : un chiffre à l'encre en
+haut à droite de chaque recto, de 1 (vue 5) à 79 (vue 162), sans lacune, avec
+« 5 bis », « 16 bis », « 46 bis » et « 47 bis » pour des béquets insérés. Elle
+traverse les trois pièces, et l'écrivain la cite lui-même : « ad sinistram
+paginam fol. 18. » à la vue 43, « vide annotata pag. 48 » à la vue 100. C'est
+donc le compte des feuillets de celui qui a écrit ou copié, non la foliotation
+de la bibliothèque ; les transcriptions ne l'ont pas écrite en \emph{folio}, et
+cette lecture ne cite que des vues.\footnote{Le « 16 bis » de la vue 38 est
+d'une autre encre et d'une autre main que la fiche qu'il numérote, laquelle
+porte, de la main du texte, « ad faciem aversam foly 16. » (« au revers du
+feuillet 16 »). Les autres chiffres des feuillets sont les cotes et cachets
+(« Libri 1201 », « Lat. nouv. acq. 1644 », « R.c. 8070 (73) », « ACQ. 8070
+(LIBRI) », vues 1, 2 et 5), un « 8 » au crayon sur la couverture, et, dans le
+texte, les numéros de chapitres, de théorèmes et de propositions, souvent
+corrigés par l'écrivain (« Cap. VIII » récrit « IX » à la vue 23, « XIIII »
+récrit « XV » à la vue 45, « XX » ramené à « X » dans la marge à la vue 130,
+etc.). Cette lecture suit la numérotation corrigée.}
+
+Parce que les deux traités se tiennent et que l'astronomie en est séparée, la
+lecture qui suit leur donne deux suites de sections : l'algèbre d'abord,
+chapitre par chapitre dans l'ordre des feuillets, puis l'astronomie. Elle ne
+cherche pas de fil entre les deux.
+
+\section*{Les trois petits feuillets A, B et C}
+
+\pagerange{2}{4}
+Trois feuillets plus petits que la page, lettrés A, B et C en haut à droite,
+d'une écriture compacte que la transcription dit différente de celle des
+traités, et que rien ne rattache à eux.\footnote{La marge du feuillet A porte,
+d'une encre plus noire et d'une autre main, « Vid. fol. 2 ». Le feuillet C
+(vue 4) est blanc et n'est pas transcrit.} Le feuillet A traite d'équations du
+sixième degré « a radice plana solidave », c'est-à-dire d'équations qui ne
+contiennent l'inconnue $E$ que par $E^3$ ou par $E^2$.
+
+\subsection*{La « duplicata hypostasis »}
+
+L'équation
+\[ E^6 + Z^3 E^3 = D^6 \]
+est ramenée à la géométrie des moyennes proportionnelles.\footnote{Le feuillet
+écrit « E cc + Z s. in E c. æq. D ss. » : $E$ cubo-cubus, plus $Z$ solide
+multiplié par $E$ cube, égale $D$ solido-solide. Sur la notation, voir la
+section qui suit.} On pose $B = Z^3/D^2$ ; on cherche la plus petite, $F$, de
+trois proportionnelles de moyenne $D$ et de différence des extrêmes $B$,
+c'est-à-dire $F^2 + BF = D^2$ ; on fait $E^3 = D^2 F$ ; et $E$ est la première
+des deux moyennes proportionnelles entre $D$ et $F$. La construction est
+juste : si $u = D^2 F$, alors
+\[ u^2 + Z^3 u = D^4\bigl(F^2 + BF\bigr) = D^6 , \]
+et la première moyenne entre $D$ et $F$ est bien $\sqrt[3]{D^2F}$. C'est la
+résolution d'une équation du second degré en $E^3$, suivie d'une extraction de
+racine cubique, faite en géométrie.
+
+\subsection*{La « climactica paraplerosis »}
+
+L'équation $E^6 + Z^4E^2 = D^6$ est, de même, une équation du troisième degré en
+$E^2$. Le feuillet la ramène à la construction de quatre proportionnelles
+$Z, s, s^2/Z, s^3/Z^2$ dont la somme du second et du quatrième terme est une
+longueur donnée $F$, puis fait $E^2 = Zs$. La réduction est juste à condition
+que
+\[ s + \frac{s^3}{Z^2} = \frac{D^6}{Z^5}, \]
+puisqu'alors $E^6 + Z^4E^2 = Z^5\bigl(s + s^3/Z^2\bigr) = D^6$. Telle que la
+transcription la lit, la construction de $F$ donne $F = D^5/Z^4$ et non
+$D^6/Z^5$ : il manque un facteur $D/Z$.\footnote{Le feuillet pose la série
+$Z, D, D^2/Z, D^3/Z^2$, puis « ut $Z$ ad quartam ita $D\,q.$ ad $C\,q.$ » et « ut
+$Z\,p.$ ad $C$ plano ita $Z$ ad $F$ », d'où $C^2 = D^5/Z^3$ et $F = D^5/Z^4$. Une
+proportion est donc mal lue ou omise ; la transcription note que la lettre lue
+$C$ pourrait être un $G$, et qu'une première proportion, « fiat ut $Z\,ppl.$ ad
+$D\,pp.$ », reste en suspens devant la série. Cette lecture ne restitue pas la
+proportion manquante.}
+
+\subsection*{« Facillima resolutio æquationum cubicarum affectarum »}
+
+Le paragraphe suivant annonce que ces équations « se ramènent aux quadratiques
+et à la racine simple », et traite deux cas. Pour
+\[ E^6 + Z^4E^2 = B^6 , \]
+la substitution $E^2 = ZA$ donne bien
+\[ A^3 + Z^2 A = \frac{B^6}{Z^3}, \]
+une cubique en la racine simple $A$, comme l'écrit le feuillet. Pour le premier
+cas, $E^6 \pm Z^3E^3 = B^6$, le feuillet pose $E^3/Z = A^2$ et écrit la même
+équation $A^3 + Z^2A = B^6/Z^3$ ; ce n'est pas ce que donne la substitution.
+Avec $E^3 = ZA^2$ on obtient
+\[ A^4 \pm Z^2A^2 = \frac{B^6}{Z^2}, \]
+une équation du second degré en $A^2$ ; et, plus simplement, l'équation
+proposée est du second degré en $E^3$.\footnote{Le feuillet écrit, pour le
+premier cas, « fingatur $\frac{E\,c.}{Z}$ æquari $A\,q.$ » puis « æquatio namq;
+orta sic se habebit $A\,c. + Z\,q.$ in $A$ æq. $\frac{B\,ss.}{Z\,c.}$ », c'est-à-dire
+l'équation qui convient au second cas. Il ne donne que le signe $+$ dans les
+deux équations réduites, là où l'énoncé porte « plus minusve ». La finale de
+« $B\,ss.$ » compte un jambage de trop dans le premier cas, et le mot après
+« simplici » est biffé (« quadr\ldots » ?).}
+
+\subsection*{Le théorème du feuillet B}
+
+Le feuillet B énonce un théorème sur les termes « pris alternativement » d'une
+suite de continues proportionnelles, en nombre pair puis en nombre impair, et
+renvoie sa preuve à la « méthode analytique ». Tel que la transcription le lit,
+avec deux additions interlinéaires, l'énoncé ne se laisse pas réduire à une
+identité qu'on puisse vérifier sans deviner la construction de la phrase ; cette
+lecture ne le reformule donc pas.\footnote{Texte lu : « Si fuerit series
+continue proportionalium numero parium, differentia postremarum cum [alterne
+sumptarum] accepta prima, minus differentia cum alterne sumptarum æquatur
+extremæ minori plus eadem maiori », puis le cas impair ; « Debet autem in serie
+proposita intelligi prima minor. quod methodo Analyticâ facile patebit. » Le mot
+lu « cum » est partout abrégé. Les chapitres XVII et XIX du premier traité
+contiennent des énoncés voisins sur les différences de puissances de termes
+alternés ; aucun ne coïncide avec celui-ci tel qu'il est lu.}
+
+\section*{La notation des feuillets, et sa traduction}
+
+\pagerange{5}{23}
+Les traités écrivent l'algèbre en « espèces » : des lettres pour les grandeurs,
+des mots pour les opérations. On la traduit ici une fois pour toutes ; la
+forme du feuillet est rappelée en note là où elle importe.
+
+\begin{itemize}
+  \item \textbf{L'inconnue} est $A$ ; une nouvelle inconnue, après
+    transformation, est $E$. On les écrit $x$ et $y$. Les grandeurs données sont
+    des consonnes, $B$, $D$, $G$, $H$, $S$, $X$, $Z$\ldots, que l'on garde.
+  \item \textbf{L'homogénéité.} Chaque grandeur donnée porte sa dimension :
+    « $B$ planum » est une aire, « $D$ solidum » un volume, « $Z$ plano-planum »
+    une grandeur de dimension 4, et tous les termes d'une équation ont la même
+    dimension. Quand le feuillet nomme ainsi une grandeur par sa dimension, la
+    lettre désigne ici cette grandeur elle-même, un nombre ; quand il écrit une
+    puissance (« $B$ quadratum », « $B$ cubus »), on écrit la puissance, $B^2$,
+    $B^3$. Ainsi « $A$ cubus plus $B$ plano ter in $A$ æquatur $D$ solido »
+    devient $x^3 + 3Bx = D$. La loi d'homogénéité est une contrainte que
+    l'algèbre d'aujourd'hui n'impose pas ; la supprimer ne change aucun
+    résultat, puisqu'un choix d'unité rend toutes les grandeurs numériques.
+  \item \textbf{Les puissances} sont en mots : quadratum, cubus,
+    quadrato-quadratum, quadrato-cubus, cubo-cubus, c'est-à-dire $x^2$ à $x^6$ ;
+    « latus » est la racine. « In » est le produit ; « bis », « ter »,
+    « quater » sont les coefficients 2, 3, 4. Il n'y a pas de signe d'égalité :
+    « æquatur », « æquabitur », ou une accolade entre les deux membres.
+  \item \textbf{Les exemples numériques} sont en signes cossiques, coefficient
+    d'abord : N le nombre (la racine), Q le carré, C le cube, QQ, QC, CC les
+    puissances quatrième, cinquième et sixième. « $1Q + 10N$ æquatur 144 » est
+    $x^2 + 10x = 144$, et « fit $1N$ 8 » donne la racine. « $L\,144$ » est
+    $\sqrt{144}$ ; $LC$, $LQQ$, $LQC$ sont les racines cubique, quatrième et
+    cinquième ; « $LV$ » (latus universale) est la racine de toute la somme qui
+    suit.
+  \item \textbf{Le double trait « = ».} Là où le calcul demande une
+    soustraction, les feuillets portent souvent un double trait horizontal, que
+    la main distingue du moins simple. C'est le signe d'une différence dont
+    l'ordre n'est pas donné : « $Z$ plano $=$ $B$ quadrato » veut dire « la
+    différence entre $Z$ et $B^2$, quelle que soit la plus grande ». Comme
+    l'algèbre d'aujourd'hui admet les nombres négatifs, on l'écrit ici par la
+    différence signée, $Z - B^2$, qui couvre les deux cas ; là où la marge le
+    corrige en « $+$ », on suit la correction et on le dit.
+\end{itemize}
+
+Une convention de fond accompagne cette notation, et il faut la dire parce que
+les énoncés en dépendent : \textbf{les racines des feuillets sont positives}.
+Une équation n'y a de racine que positive ; c'est pourquoi chaque forme
+d'équation est écrite avec tous ses termes positifs de part et d'autre, et
+pourquoi $x^2 + bx = c$, $x^2 - bx = c$ et $bx - x^2 = c$ sont trois espèces
+différentes, que les chapitres traitent séparément. Chaque fois qu'un énoncé
+ci-dessous dit « la racine », il faut entendre « la racine positive », et
+chaque fois qu'une équation a deux racines positives, le traité le dit ou on le
+dit pour lui.\footnote{Les racines négatives, que le traité ne nomme jamais,
+sont données en note quand elles éclairent un énoncé ; ce sont des ajouts de
+cette lecture.}
+
+\section*{Le « De Recognitione » : ce qu'il se propose}
+
+\pagerange{5}{6}
+Le traité s'ouvre en disant à quoi il sert :
+
+\begin{quote}
+« Generalem et generaliter traditam de numerosa potestatum resolutione
+doctrinam informat ac perficit tractatus de recognitione æquationum.
+Præparatione enim indigent æquationes sæpenumero antequam faciliter
+explicentur. »\footnote{« La doctrine générale, et transmise en général, de la
+résolution numérique des puissances, le traité de la reconnaissance des
+équations lui donne sa forme et l'achève. Car les équations ont souvent besoin
+d'une préparation avant de se laisser facilement résoudre. » « Explicare » une
+équation, dans ces traités, c'est la résoudre ; « potestas » est la puissance la
+plus haute de l'inconnue, et, par extension, l'équation qu'elle domine.}
+\end{quote}
+
+Préparer une équation, c'est la transformer ; mais pour savoir comment, il faut
+d'abord savoir comment elle est faite — sa « constitution ». Celle-ci, dit le
+chapitre 1, se reconnaît par trois voies : la \emph{zétèse}, qui retrouve
+l'équation comme la mise en équation d'un problème de proportions ; le
+\emph{plasme}, qui la voit naître d'une équation plus simple par un changement
+d'inconnue ; et la \emph{syncrise}, qui compare deux équations de même forme et
+de mêmes données.\footnote{« Æqualitatum constitutio potissimo deprehenditur,
+Zetesi, plasmate, et Syncrisi » (vue 5). Le premier paragraphe du chapitre dit
+aussi quand la préparation s'impose : quand les termes négatifs l'emportent,
+quand il y a des fractions ou des irrationnelles. La phrase du second
+paragraphe, qui oppose le géomètre, pour qui fractions et irrationnelles ne
+font pas obstacle, à l'arithméticien, contient trois mots grecs dont deux ne
+sont lus qu'en partie (« πολυ\ldots » (polu\ldots), « ἀρρηξία ? ἢ ἀλογία » (arrêxia ? ê alogia)) ; plusieurs mots
+de la page sont lus avec doute (« ari\ldots{} », « solet », « offerre »,
+« Ergo », « imitetur », « suscepto », « ortus », « deductionis »).} Les
+chapitres suivent cet ordre.
+
+Le chapitre II définit la similitude de deux équations : elles sont
+« semblables » si elles ont même degré, les mêmes termes intermédiaires et les
+mêmes signes ; si une condition de plus est requise, la similitude est
+« anomale ».\footnote{« Æquationem Æquationi similem regulariter dicimus cum
+utrobiq; par est potestas, seu æq. alta, ipsaq; affecta affectionibus sub pari
+gradu, et eadem affectionis nota » (vue 6). La deuxième ligne du chapitre est
+d'une lecture très incertaine selon la transcription.}
+
+\section*{Les équations du second degré tirées des proportions}
+
+\pagerange{6}{8}
+Le chapitre III tire trois théorèmes d'un seul problème : trois grandeurs en
+proportion continue, $a : m = m : c$, dont on connaît la moyenne $m$ et la
+différence ou la somme des extrêmes.\footnote{Les trois espèces portent des noms
+grecs, écrits en lettres grecques : καταφατική (kataphatikê, affirmative),
+ἀποφατική (apophatikê, négative), ἀμφίβολος (amphibolos, ambiguë). Le traité appuie l'extension des rapports de
+lignes à des grandeurs de toute dimension sur Campanus, « in libro de
+proportione » (vue 7).} Puisque le produit des extrêmes vaut le carré de la
+moyenne :
+
+\begin{itemize}
+  \item si $x^2 + bx = m^2$, $x$ est le plus petit extrême de trois
+    proportionnelles de moyenne $m$ dont les extrêmes diffèrent de $b$ ;
+  \item si $x^2 - bx = m^2$, $x$ est le plus grand ;
+  \item si $bx - x^2 = m^2$, $x$ est l'un ou l'autre des extrêmes, dont la somme
+    est $b$.
+\end{itemize}
+
+Les trois exemples portent sur la suite $8, 12, 18$ : $x^2 + 10x = 144$ donne
+$8$, $x^2 - 10x = 144$ donne $18$, et $26x - x^2 = 144$ donne $8$ ou $18$. Tous
+sont justes.\footnote{« $1Q + 10N.$ æquatur $144$ » : $x^2 + 10x = 144$ ; « $L.\,144$ »
+est $\sqrt{144} = 12$. La troisième espèce est la seule qui ait deux racines
+positives, d'où son nom d'« ambiguë ». Les deux autres ont chacune une racine
+négative ($-18$ et $-8$), que le traité ne considère pas.}
+
+\section*{Les cubiques tirées des proportions}
+
+\pagerange{8}{13}
+Les chapitres IIII et V font de même avec quatre proportionnelles
+$B, x, x^2/B, x^3/B^2$. Le chapitre IIII prend pour inconnue le second terme
+(les « affections sous le côté ») : puisque le cube du second vaut le carré du
+premier multiplié par le quatrième,
+
+\begin{itemize}
+  \item $x^3 + B^2x = B^2Z$ quand le second et le quatrième ont pour somme $Z$ ;
+  \item $x^3 - B^2x = B^2D$ quand $B$ est le plus petit extrême et que le
+    quatrième surpasse le second de $D$ ;
+  \item $B^2x - x^3 = B^2D$ quand $B$ est le plus grand extrême et que le second
+    surpasse le quatrième de $D$.
+\end{itemize}
+
+Les exemples sont justes : $x^3 + 64x = 2496$ donne $12$ (suite $8, 12, 18,
+27$) ; $x^3 - 64x = 960$ donne $12$ ; $729x - x^3 = 7290$ donne $18$ (suite
+$27, 18, 12, 8$).\footnote{Le second exemple du premier théorème,
+$x^3 + 729x = 18954$, ne donne pas sa racine ; c'est $18$, le second terme de la
+suite $27, 18, 12, 8$ lue à rebours ($18^3 + 729 \cdot 18 = 18954$). Cette valeur
+est un ajout de cette lecture.} Le traité ajoute que, dans la troisième espèce,
+« le second peut être double », et le montre sur deux suites de même premier
+terme $\sqrt{59319}$ et de même différence $70$ entre second et quatrième :
+$\sqrt{59319}, 195, \sqrt{24375}, 125$ et $\sqrt{59319}, 78, \sqrt{624}, 8$. Ce
+sont bien les deux racines positives de $59319x - x^3 = 4\,152\,330$, et
+l'exemple précédent en avait deux aussi.\footnote{Vérifié : $195^2 = 38025$ et
+$38025^2 = 59319 \cdot 24375$ ; $78^2 = 6084$ et $6084^2 = 59319 \cdot 624$ ;
+$195^3 = 59319 \cdot 125$ et $78^3 = 59319 \cdot 8$. L'équation
+$x^3 - 59319x + 4\,152\,330 = 0$ a pour racines $195$, $78$ et $-273$. De même
+$729x - x^3 = 7290$ a, outre $18$, la racine positive $-9 + \sqrt{486} \approx
+13{,}05$, que la page ne donne pas. Le traité montre enfin le même phénomène sur
+trois proportionnelles, $36, 6, 1$ et $36, 30, 25$, dont le second surpasse le
+troisième de $5$ : ce sont les deux racines de $36x - x^2 = 180$.}
+
+Le chapitre V prend pour inconnue la somme ou la différence du premier et du
+troisième terme (les « affections sous le carré ») :
+
+\begin{itemize}
+  \item si $x^3 - Bx^2 = BZ^2$, et que le second et le quatrième ont pour somme
+    $Z$, $x$ est la somme du premier et du troisième ;
+  \item si $x^3 + Bx^2 = BD^2$, avec $B$ le plus petit extrême et $D$ la
+    différence du second et du quatrième, $x$ est la différence du premier et du
+    troisième ;
+  \item si $Bx^2 - x^3 = BD^2$, avec $B$ le plus grand extrême, $x$ est encore
+    la différence du premier et du troisième.
+\end{itemize}
+
+La démonstration est la même dans les trois cas : si $x$ est la somme (ou la
+différence) du premier et du troisième terme, le second vaut $BZ/x$, parce que
+les sommes (ou les différences) de termes de même rang sont dans le rapport de
+la suite ; le produit du premier par le troisième égale le carré du second, et
+l'on multiplie par $x^2/B$. Les exemples sont justes : $x^3 - 8x^2 = 12168$
+donne $26 = 8 + 18$ ; $x^3 + 8x^2 = 1800$ donne $10 = 18 - 8$ ;
+$27x^2 - x^3 = 2700$ donne $15 = 27 - 12$.\footnote{Trois écarts du feuillet.
+(1) Au premier exemple, la suite est écrite $27, 18, 12, 8$, le rang I sur $27$,
+alors que le premier terme de l'exemple est $8$ : il faut la lire $8, 12, 18,
+27$, dont le second et le quatrième font $12 + 27 = 39 = \sqrt{12168/8}$ ; la
+racine, que la page ne donne pas, est $26$. (2) Au deuxième théorème, la fin du
+calcul écrit « $B$ in $Z$ quadratum » là où l'énoncé et le calcul portent $D$.
+(3) Au troisième, le zététique demande « la différence du second et du
+troisième » ; l'énoncé et la suite disent « du premier et du troisième ». Enfin
+$27x^2 - x^3 = 2700$ a une seconde racine positive, $6 + \sqrt{216} \approx
+20{,}70$, que la page ne mentionne pas.}
+
+\section*{Le chapitre VI : la cubique sans second terme}
+
+\pagerange{13}{18}
+Le chapitre VI est le plus important de ce premier groupe. Il donne une
+« constitution singulière » de la cubique privée de son terme en $x^2$, celle
+qui porte aujourd'hui la formule de Cardan, et il traite à part le cas où
+cette formule échoue.
+
+\subsection*{Deux côtés, leur produit et la différence ou la somme de leurs cubes}
+
+\begin{itemize}
+  \item Si $x^3 + 3Bx = D$, il y a deux côtés $u > v$ dont le produit est $B$ et
+    dont les cubes diffèrent de $D$, et $x = u - v$.
+  \item Si $x^3 - 3Bx = D$, et si $D^2 > 4B^3$, il y a deux côtés de produit $B$
+    dont les cubes ont pour somme $D$, et $x = u + v$.
+\end{itemize}
+
+C'est l'identité
+\[ (u \mp v)^3 \pm 3uv\,(u \mp v) = u^3 \mp v^3 . \]
+Les exemples sont justes : $x^3 + 6x = 7$ donne $1 = 2 - 1$ ($2 \cdot 1 = 2$,
+$8 - 1 = 7$) ; $x^3 - 6x = 9$ donne $3 = 2 + 1$. Pour trouver $u$ et $v$ au
+premier cas, il suffit de résoudre une équation du second degré : $u^3$ et
+$-v^3$ sont les racines de $t^2 - Dt - B^3 = 0$. On obtient ainsi, en toutes
+lettres, pour $x^3 + 3Bx = D$ :
+\[ x = \sqrt[3]{\sqrt{\tfrac{D^2}{4} + B^3} + \tfrac{D}{2}}
+     - \sqrt[3]{\sqrt{\tfrac{D^2}{4} + B^3} - \tfrac{D}{2}} . \]
+Cette formule n'est pas écrite ici ; le second traité l'écrit, au chapitre VII
+de l'« Emendatio » (vues 119 à 122).\footnote{La formule est publiée par Cardan
+dans l'\emph{Ars magna} (1545), qui la tient de del Ferro et de Tartaglia ; elle
+porte aujourd'hui son nom. Le traité ne cite personne ici.}
+
+Le traité exige, au second cas, que $D^2$ surpasse $4B^3$. C'est la bonne
+condition : $u^3$ et $v^3$ sont les racines de $t^2 - Dt + B^3 = 0$, qui sont
+réelles et positives si et seulement si $D^2 \ge 4B^3$. L'égalité, que le
+traité n'envisage pas, donne $u = v$ et une racine double $x = 2u$.\footnote{En
+tête du chapitre, la même condition est dite en mots : « quadruplus cubus è
+triente coefficientis plani \emph{cedit} solidi dati \emph{medietatis}
+quadrato » (vue 13), et de même à la vue 14 avec « præstat » (italiques : lectures
+incertaines de la transcription). Telle que la phrase est lue, elle compare
+quatre fois $(p/3)^3$ au carré de la \emph{moitié} du solide, $(q/2)^2$, où $p$ est
+le coefficient et $q$ le second membre ; la bonne condition est soit
+$(q/2)^2 \gtrless (p/3)^3$, soit $q^2 \gtrless 4(p/3)^3$, et c'est la seconde que
+donne l'énoncé du théorème II (« præstet autem $D$ solidi quadratum quadruplo $B$
+plani cubo »). Le mot « medietatis » est donc de trop, ou mal lu.}
+
+\subsection*{La condition démontrée par une seconde main}
+
+Une main rapide, à l'encre noire, ajoute au pied de la vue 13 une preuve de
+cette condition, avec en marge « vide Zet. 20 lib. 2. » : si les côtés sont
+$u$ et $v$, alors $(u^3 + v^3)^2 = u^6 + 2u^3v^3 + v^6 > 4u^3v^3$, parce que
+$u^6$, $u^3v^3$, $v^6$ sont en proportion continue et que, de trois
+proportionnelles inégales, la somme des extrêmes surpasse le double de la
+moyenne.\footnote{C'est l'inégalité entre moyenne arithmétique et moyenne
+géométrique, $a + c > 2\sqrt{ac}$ pour $a \ne c$ positifs. Le renvoi « vide Zet. 20
+lib. 2. » vise un vingtième zététique d'un deuxième livre que ce volume ne
+contient pas ; il n'a pas été suivi.}
+
+La même main démontre, sur un béquet marqué « 5 bis » (vue 15, « vel sic
+ἀποδεικτικῶς », apodeiktikôs, « démonstrativement ») et dans une première rédaction barrée en marge de la vue 16, la
+condition du troisième théorème. Pour deux côtés $A$ et $B$, on pose
+$p = A^2 + AB + B^2$ et $q = AB(A + B)$, et il s'agit de montrer que
+$4(p/3)^3 > q^2$. La main développe, retranche les termes communs et trouve
+qu'il faut
+\[ 4A^6 + 12A^5B + 12AB^5 + 4B^6 \;>\; 3A^4B^2 + 26A^3B^3 + 3A^2B^4 , \]
+ce qu'elle établit en comparant des termes de la suite continue
+\[ A^6,\; A^5B,\; A^4B^2,\; A^3B^3,\; A^2B^4,\; AB^5,\; B^6 . \] Le développement est juste, et la
+preuve aussi : la différence des deux membres est
+\[ 4p^3 - 27q^2 = (A - B)^2\,(2A + B)^2\,(A + 2B)^2 , \]
+qui est, au signe près, le discriminant de la cubique $x^3 - px - q$ — positif
+dès que $A \ne B$.\footnote{Le calcul est de cette lecture ; la main ne factorise
+pas, elle compare. Le mot grec de la vue 15 est lu avec doute ; après
+« hypothesi », une tache couvre un ou deux signes. Le béquet porte en tête un
+signe de renvoi, une croix surmontée d'un petit cercle suivie de « 4 », qui se
+retrouve dans la ligne et dans la marge de la vue 16.}
+
+\subsection*{Le cas irréductible}
+
+Le troisième théorème traite le cas où $x^3 - 3Bx = D$ avec $D^2 < 4B^3$ :
+alors l'équation « inverse » $3By - y^3 = D$ a aussi des racines, et
+\begin{itemize}
+  \item il y a deux côtés $u$ et $v$ tels que $u^2 + uv + v^2$ vaut le
+    coefficient $3B$ et que $uv(u + v) = D$ ;
+  \item $x = u + v$ est la racine de $x^3 - 3Bx = D$, et $u$, $v$ sont les deux
+    racines de $3By - y^3 = D$.
+\end{itemize}
+C'est juste : $(u+v)^3 - (u^2+uv+v^2)(u+v) = uv(u+v)$, et de même pour $u$ et
+$v$ dans l'équation inverse. L'exemple l'est aussi : $x^3 - 21x = 20$ donne
+$5$, et $21y - y^3 = 20$ donne $1$ ou $4$, avec $1 + 4 + 16 = 21$ et
+$1 \cdot 4 \cdot 5 = 20$.\footnote{Le feuillet dit que les carrés des deux côtés,
+ajoutés à leur rectangle, « font $B$ planum » ; il faut « $B$ planum ter », le
+coefficient lui-même, comme le montre l'exemple du feuillet, où la somme vaut
+$21$ et non $7$. Dans l'exemple, « $21N - 1Q$ » est corrigé par l'écrivain en
+« $21N - 1C$ ». Le paragraphe suivant (« Neq; vero in Geometrica phrasi\ldots ») dit
+la même chose en proportions : $1 + 4 + 16 = 21$ est la somme des carrés de
+trois proportionnelles $1, 2, 4$, et $20 = (1 + 4) \cdot 2^2$. En termes
+d'aujourd'hui, l'équation $x^3 - 21x - 20 = 0$ a trois racines réelles, $5$,
+$-1$ et $-4$ ; celles de l'équation inverse en sont les opposées.}
+
+Le traité juge alors plus élégante une constitution tirée « des sections
+angulaires », et la donne sous le titre « Aliter, tertium theorema ». Si
+$x^3 - 3B^2x = B^2D$ avec $B > D/2$, on prend deux triangles rectangles de même
+hypoténuse $B$, l'angle aigu du premier triple de celui du second, et tels que
+le double de la base du premier soit $D$ ; alors $x$ est le double de la base
+du second, et les racines de l'équation inverse $3B^2y - y^3 = B^2D$ sont la base
+du second plus ou moins $\sqrt{3}$ fois sa hauteur. C'est la résolution
+trigonométrique de la cubique : si $x = 2B\cos\theta$,
+\[ x^3 - 3B^2x = 2B^3\cos 3\theta , \]
+de sorte que l'équation revient à $\cos 3\theta = D/(2B)$, qui a une solution
+si et seulement si $D < 2B$ ; les deux autres racines sont
+$2B\cos(\theta \pm 120^\circ) = -B\cos\theta \mp \sqrt{3}\,B\sin\theta$, dont les
+opposées sont les racines positives de l'équation inverse.\footnote{C'est
+le cas que l'on appelle aujourd'hui \emph{casus irreducibilis} : trois racines
+réelles, et une formule de Cardan qui passe par des racines carrées de nombres
+négatifs. Le nom est postérieur au traité ; la condition $D^2 < 4B^3$ du
+théorème III, écrite pour $x^3 - 3Bx = D$, et la condition $B > D/2$ de
+l'« Aliter », écrite pour $x^3 - 3B^2x = B^2D$, sont la même.} L'exemple est juste :
+pour $x^3 - 300x = 432$, l'hypoténuse est $10$ ; le second triangle a pour base
+$9$ et pour hauteur $\sqrt{19}$ ; le premier a pour base $10 \cos 3\theta
+= 2{,}16$, avec $\cos\theta = 0{,}9$ ; $x = 18$, et $300y - y^3 = 432$ donne
+$9 \pm \sqrt{57}$.\footnote{$\cos 3\theta = 4 \cdot 0{,}729 - 3 \cdot 0{,}9 =
+0{,}216$ ; $18^3 - 300 \cdot 18 = 432$ ; $\sqrt{3 \cdot 19} = \sqrt{57}$. La page
+écrit « basis autem primi dupla est $\frac{432}{100}$ » et « fit basis
+$2\frac{16}{100}$ ». Dans « $1C - 300N$ », le $N$ est ajouté au-dessus de la
+ligne. Le mot entre « contracta » et « longitudine », dans l'énoncé, n'est pas
+lu.}
+
+La seconde main démontre cette constitution dans les marges des vues 17 et 18,
+sur la figure d'un cercle de diamètre $AB$ dont l'arc $FB$ est partagé en trois
+en $G$ et $K$. En posant $AB = B$, $2\,AG = A$ et $2\,AF = D$, elle obtient
+$A^3 - 3B^2A = B^2D$ par deux proportions successives ; puis, prolongeant $BG$
+jusqu'à $L$ de sorte que $BL = 2\,BG$, elle traite l'équation inverse. C'est la
+relation $\cos 3\alpha = 4\cos^3\alpha - 3\cos\alpha$ écrite sur les cordes issues
+de l'extrémité d'un diamètre ($AG = B\cos\alpha$, $AF = B\cos 3\alpha$), et le
+calcul qu'on peut suivre est juste.\footnote{La lecture de ces deux longues
+marges est donnée par la transcription « sous réserve » : les fractions y sont
+serrées, plusieurs lettres de la figure sont reprises, un passage s'arrête au
+pied de la vue 17 sur « eiusdem » et reprend à la vue 18. Cette lecture n'en
+restitue pas chaque pas.}
+
+Cette main parle d'elle-même : « quoniam demonstratum a nobis ad sectiones
+angulares », puis « est è demonstratis a nobis \emph{in tractatu de sectionibus
+angularibus} ».\footnote{« Puisqu'il a été démontré par nous aux sections
+angulaires », « il suit de ce que nous avons démontré dans le traité des
+sections angulaires » ; les mots en italique sont une addition interlinéaire lue
+avec doute. Un traité des sections angulaires est connu dans la littérature
+sous le nom de Viète ; la coïncidence du sujet ne suffit pas à identifier cette
+main, et cette lecture ne l'identifie pas.} Le texte principal, de son côté,
+renvoie ce dernier théorème à « un recueil particulier de zététiques qui
+touchent aux sections angulaires », et clôt le chapitre.\footnote{« hoc postremo
+theoremate excepto, quod par est reiici in peculiarem Zeteticorum ad angulares
+sectiones pertinentium \ldots{} » (vue 17) ; le dernier mot, souligné, n'est pas
+lu, ni le mot après « Expositis ».}
+
+\section*{Changer d'inconnue : les chapitres VII et VIII}
+
+\pagerange{18}{23}
+Le chapitre VII pose la doctrine sur laquelle repose tout le reste des deux
+traités : transformer une équation. On peut le faire en changeant l'inconnue,
+ou en la gardant.
+
+\subsection*{Changer l'inconnue}
+
+La nouvelle inconnue $y$ doit avoir avec l'ancienne « une différence ou une
+raison donnée », de sorte que connaître l'une donne l'autre. Le traité énumère
+sept manières :
+
+\begin{itemize}
+  \item première, par addition, $y = x + B$ ;
+  \item deuxième, par soustraction, $y = x - B$ ou $y = B - x$ ;
+  \item troisième, par multiplication, $y = Bx$ ;
+  \item quatrième, par division, $y = x/B$ ;
+  \item cinquième et sixième, par proportion, $B : G = x : y$ ou
+    $x : B = G : y$, c'est-à-dire $x = By/G$ ou $x = BG/y$ ;
+  \item septième, par une relation du second degré entre les deux inconnues
+    (la « parabolica hypostasis ») : $y^2 + xy = D$, $y^2 - xy = D$ ou
+    $xy - y^2 = D$, d'où $x = (D - y^2)/y$, $x = (y^2 - D)/y$ ou
+    $x = (y^2 + D)/y$ ;
+\end{itemize}
+
+et enfin par des manières composées, « à imaginer et à essayer ».
+Dans chaque cas on remplace $x$ par sa valeur en $y$ et l'on « ordonne »
+l'équation nouvelle. Les six premières manières sont les substitutions affines
+et l'inversion ; la septième est une substitution rationnelle, et c'est
+exactement celle dont le second traité se servira pour résoudre la cubique
+(vues 119 à 122) : $x = B/y - y$, qu'on appelle aujourd'hui la substitution de
+Viète.\footnote{Le nom est moderne, et il est donné ici parce que l'énoncé
+coïncide : pour $x^3 + 3Bx = 2Z$, la substitution $x = (B - y^2)/y$ ramène
+l'équation à une équation du second degré en $y^3$. Tschirnhaus (1683)
+généralisera l'idée de changer d'inconnue pour faire disparaître des termes, en
+prenant pour nouvelle inconnue un polynôme en l'ancienne ; les substitutions de
+ces chapitres n'en sont que le cas le plus simple, et le traité ne va pas
+au-delà.}
+
+\subsection*{Garder l'inconnue}
+
+Sans changer l'inconnue, on peut élever ou abaisser le degré de l'équation : la
+« montée climactique » régulière élève les deux membres au carré ou au cube ;
+l'irrégulière multiplie tous les termes par une même puissance de l'inconnue,
+éventuellement affectée ; la descente fait l'inverse, par division, « en
+ajoutant le supplément donné ou à chercher ». La justification tient en une
+phrase : des grandeurs égales ont des puissances égales, et un multiplicateur
+ou un diviseur commun ne change pas l'égalité.\footnote{« quoniam quæ æqualia
+sunt longitudine, æqualia quoq; sunt similis potestate, et contra. neq;
+communis divisor, vel multiplicator æqualitatem Immutat vel rationem »
+(vue 20). La réciproque (« et contra ») n'est vraie que pour des grandeurs
+positives, ce que le traité suppose toujours. La vue 19 porte un mot non lu
+après « in » (« condicibus » ou « ordinibus »).}
+
+\subsection*{Le plasme}
+
+Le chapitre VIII appelle \emph{plasme} la génération d'une équation affectée à
+partir d'une équation plus pure, par l'un de ces changements, et pose quatre
+règles.\footnote{Le chapitre commence à la vue 20 et se poursuit à la vue 21 ;
+la phrase de la vue 20 s'arrête sans ponctuation sur « si quo id liceat
+compendio », et la vue 21 commence par « Quod cum deprehendit \emph{sic
+mutatarius} », lecture que la transcription donne pour douteuse. Une petite main
+pâle a posé dans la marge de la vue 20 deux notes appelées par des croix,
+« + in exemplari \emph{excripto} / vel potius \emph{adscriptum} » et « + vel
+in », lues en partie.}
+
+\begin{enumerate}
+  \item Une équation dont tous les degrés intermédiaires sont présents provient,
+    par addition ou soustraction, d'une équation où manque le terme qui suit la
+    plus haute puissance : la racine a été augmentée ou diminuée de la moitié du
+    coefficient de $x$ dans le second degré, du tiers du coefficient de $x^2$
+    dans le troisième, du quart de celui de $x^3$ dans le quatrième, du
+    cinquième dans le cinquième, « et ainsi de suite ». C'est la réduction à
+    l'\emph{équation privée de son second terme} : la substitution
+    $x = y - a_{n-1}/n$ fait disparaître le terme en $y^{n-1}$ de
+    $x^n + a_{n-1}x^{n-1} + \cdots$. Ainsi les quadratiques affectées viennent
+    des pures, les cubiques affectées sous le carré et le côté viennent des
+    cubiques affectées sous le seul côté, et de même plus haut.
+  \item Une équation dont la racine est « plane » ou « solide » (où l'inconnue
+    n'entre que par son carré ou son cube) provient d'une autre par
+    multiplication ou par proportion.\footnote{Au-dessus de « homogenea »,
+    l'écrivain propose « climactica potius ». La marge de la vue 21 en donne
+    deux exemples : si $x^2 + Bx = D$ et $Bx = y^2$, alors $y^4 + B^2y^2 = B^2D$, et
+    $y$ est moyenne proportionnelle entre $B$ et $x$ ; si $x^2 + Bx = D^2$ et
+    $B^2x = y^3$, alors $y^6 + B^3y^3 = B^4D^2$. Les deux calculs sont justes. Le
+    premier est écrit avec « $D$ \emph{solido} », que la dimension interdit (il
+    faut un plan), et sa conclusion se lit « \emph{Erit} itaque E. Cubi affecti
+    quadratoquadrati media proportionalis » là où l'on attend « $E$ latus » : ce
+    sont des lectures de lettres.}
+  \item Toute équation du quatrième degré dont manquent certains termes provient
+    d'une équation du second degré par « montée climactique » : on répartit les
+    termes de la quadratique entre les deux membres et l'on élève au carré.
+  \item Toutes les affections cubiques se déduisent des quadratiques par montée
+    régulière, mais on ne peut en revenir que par des équations de même degré.
+\end{enumerate}
+
+\subsection*{Les « anomales plasmatiques », et un porisme}
+
+Le chapitre remarque enfin (vue 23) que si l'on forme $y = B - x$ avec $B$ plus
+grand que la racine, à partir de $x^2 = Z$, on tombe toujours sur une équation
+de la forme $2By - y^2 = B^2 - Z$ — celle dont les deux racines $B \pm \sqrt{Z}$
+sont positives. D'où le porisme : « toutes les fois que la puissance est
+retranchée de l'homogène d'affection, la racine est ambiguë ». L'énoncé, pris
+tel quel, est trop fort. Ce qui est vrai : une équation de la forme
+$(\text{termes affectés}) - x^n = c$, avec $c > 0$, a zéro ou deux racines
+positives (comptées avec leur multiplicité) quand ses termes affectés sont d'un
+seul signe ; elle en a deux si elle en a une.\footnote{Par la règle des signes de
+Descartes (1637), postérieure au traité : la suite des coefficients de
+$x^n - (\ldots) + c$ présente alors exactement deux changements de signe, et le
+nombre de racines positives est $2$ ou $0$. Ainsi $Bx - x^3 = c$ a deux racines
+positives si $c < 2(B/3)^{3/2}$ et aucune au-delà. Le chapitre XV du traité
+(vues 45 et 46) démontre l'ambiguïté dans le cas quadratique, où elle est
+exacte.}
+
+\section*{Les plasmes : chapitres IX à XIII}
+
+\pagerange{23}{43}
+Ces cinq chapitres sont une collection de théorèmes, chacun démontré en
+développant et en « ordonnant », la plupart suivis d'un exemple numérique. Ils
+appliquent systématiquement les changements d'inconnue du chapitre VII. On les
+donne ici dans l'ordre, en langage d'aujourd'hui ; tous ont été refaits, et ils
+sont justes, sauf là où une note dit le contraire.
+
+\subsection*{Chapitre IX : les quadratiques tirées des pures}
+
+Si $x^2 = Z$,
+\begin{itemize}
+  \item $y = x + B$ donne $y^2 - 2By = Z - B^2$ ;
+  \item $y = x - B$ donne $y^2 + 2By = Z - B^2$ ;
+  \item $y = B - x$, ou $y = x + B$, donne $2By - y^2 = B^2 - Z$.
+\end{itemize}
+Au premier théorème, le second membre est écrit avec le double trait,
+« $Z$ plano $=$ $B$ quadrato » : $Z$ et $B^2$ peuvent être dans un ordre ou dans
+l'autre, et c'est ce que dit la différence signée $Z - B^2$.\footnote{C'est le
+premier emploi, dans ce volume, du double trait « = » pour une différence
+d'ordre non donné ; voir la section sur la notation. La transcription note que
+le théorème II, à la même place, écrit un moins simple. Sur le feuillet, le numéro
+du chapitre était d'abord « VIII », biffé et récrit « IX ».}
+
+\subsection*{Chapitre X : cubiques affectées sous le carré, tirées des cubiques affectées sous le côté}
+
+Si $x^3 - 3B^2x = Z$, la translation fait apparaître un terme en $y^2$ et fait
+disparaître celui en $y$ :
+\[ y = x - B : \; y^3 + 3By^2 = Z + 2B^3 ; \qquad
+   y = x + B : \; y^3 - 3By^2 = Z - 2B^3 . \]
+Si $3B^2x - x^3 = Z$ :
+\[ y = B - x : \; 3By^2 - y^3 = 2B^3 - Z ; \qquad
+   y = B + x : \; 3By^2 - y^3 = 2B^3 + Z . \]
+
+\subsection*{Chapitre XI : cubiques affectées sous le carré et le côté}
+
+Neuf théorèmes traitent $x^3 + Dx = Z$, $x^3 - Dx = Z$ et $Dx - x^3 = Z$, chacun
+par $y = x + B$, $y = x - B$ et $y = B - x$. Par exemple, $x^3 + Dx = Z$ et
+$y = x + B$ donnent
+\[ y^3 - 3By^2 + (3B^2 + D)\,y = Z + B^3 + DB , \]
+et $Dx - x^3 = Z$ avec $y = B - x$ donne
+\[ -y^3 + 3By^2 + (D - 3B^2)\,y = DB - B^3 - Z . \]
+Les neuf développements ont été refaits ; tous sont justes, une fois les signes
+corrigés par l'écrivain lui-même.\footnote{Aux vues 28 et 32, des « $+$ »
+barrés d'une croix deviennent des « $-$ » ; à la vue 30, le second membre du
+quatrième théorème porte le double trait devant $DB$ ; à la vue 32, le cube à
+retrancher est écrit avec deux colonnes de signes, dont l'intérieure est la
+bonne, et il manque un « $-$ » devant « $E$ cubo ». La marge de la vue 32 porte,
+d'une écriture plus petite et plus pâle, des exemples chiffrés :
+« $19N - 1C$ æq. $30$ », dont les racines positives sont $2$ et $3$ ;
+« $52N - 1C$ æq. $96$. fit N $2$ vel $6$ », qui est juste (et $2^2 + 2 \cdot 6 + 6^2
+= 52$, $2 \cdot 6 \cdot 8 = 96$, comme au chapitre VI) ; et
+« $1C + 9Q - 24N$ æq. $33$ », qui, telle qu'elle est lue, n'a pas de racine
+entière (sa racine positive est voisine de $2{,}946$) : une lecture ou une
+écriture fautive, que cette lecture ne restitue pas. Une petite figure au pied
+de la marge — un demi-cercle sur un diamètre partagé en $2$ et $6$, la
+perpendiculaire cotée « $\sqrt{12}$ » et la corde « $\sqrt{16}$ » — est la
+construction de la moyenne proportionnelle $\sqrt{2 \cdot 6}$. Le premier mot de
+la marge, en lettres grecques, n'est pas lu.}
+
+\subsection*{Chapitre XII : racines planes et solides}
+
+Si $x^2 + Bx = Z$ et $Bx = y^2$, alors $y^4 + B^2y^2 = B^2Z$ ; si $B^2x = y^3$,
+alors $y^6 + B^3y^3 = B^4Z$ ; si $x^3 + Bx^2 = Z$ et $Bx = y^2$, alors
+$y^6 + B^2y^4 = B^3Z$ ; et de même pour les deux autres espèces de chaque
+équation. La nouvelle inconnue est une moyenne proportionnelle entre $B$ et
+$x$, ou la seconde de quatre proportionnelles de premier terme $B$ et de
+quatrième $x$.\footnote{Deux corrections de l'écrivain, toutes deux justes : à la
+vue 34, « $B$ in $D$ » corrigé en marge en « $B$ quadrato » ; à la vue 35,
+« omnia ducantur in $B$ quadratum » corrigé en « quad. quad. ». La conclusion
+du théorème IIII écrit « $E$ solidum » là où l'énoncé a « $E$ cubum » : c'est
+le même objet, nommé par sa dimension.}
+
+\subsection*{Chapitre XIII : quartiques tirées des quadratiques}
+
+C'est ici qu'apparaît l'idée qui fera la force du second traité. Si
+$x^2 + Bx = Z$, on multiplie, on substitue $x^2 = Z - Bx$, et l'on obtient une
+équation du quatrième degré qui a la même racine :
+\[ x^4 + (B^3 + 2BZ)\,x = Z^2 + B^2Z . \]
+Exemple juste : $x^2 + 8x = 20$ donne $x^4 + 832x = 1680$, de racine $2$. De même
+pour $x^2 - Bx = Z$ (racine $10$ de $x^2 - 8x = 20$, et $x^4 - 832x = 1680$) et
+pour $Bx - x^2 = Z$ ($12x - x^2 = 20$, $1248x - x^4 = 2480$, racine $2$).
+Le théorème II, sauté sur la page, est sur une fiche montée (vue 38), qui porte
+« ad faciem aversam foly 16. » et un astérisque répondant à celui de la
+vue 37.\footnote{La quartique n'a pas que la racine de la quadratique dont elle
+vient : $x^4 + (B^3 + 2BZ)x - Z^2 - B^2Z = (x^2 + Bx - Z)(x^2 - Bx + Z + B^2)$, et
+le second facteur n'a pas de racine réelle. Le traité ne le dit pas, mais il
+n'en a pas besoin : il ne prétend pas que la quartique n'ait que cette racine.}
+
+Les théorèmes IIII à XII font de même pour la quadratique dont le second membre
+est une somme ou une différence, $x^2 + Bx = S \pm D$, en portant $\mp D$ du côté de
+$x^2$ et en élevant au carré :
+\[ (x^2 - D)^2 = (S - Bx)^2 \;\Longrightarrow\;
+   x^4 - (2D + B^2)\,x^2 + 2BSx = S^2 - D^2 , \]
+puis toutes les combinaisons de signes. Les exemples sont justes : pour
+$x^2 + 8x = 20 = 15 + 5$, $x^4 - 74x^2 + 240x = 200$ ; pour $12x - x^2 = 20$,
+$114x^2 - 120x - x^4 = 200$ ; pour $x^2 + 8x = 20 = 60 - 40$,
+$x^4 + 16x^2 + 960x = 2000$ ; pour $x^2 - 8x = 20 = 60 - 40$,
+$x^4 + 16x^2 - 960x = 2000$ (racine $10$) ; pour $12x - x^2 = 20 = 60 - 40$,
+$960x + 24x^2 - x^4 = 2000$.\footnote{Au théorème V, le renvoi « in antecedente
+capite » vise le théorème précédent du même chapitre. Au théorème IX, la
+transcription hésite sur les valeurs de $S$ et $D$ ; l'exemple est cohérent avec
+$S = 60$ et $D = 40$ partout ($2 \cdot 12 \cdot 40 = 960$, $144 - 120 = 24$,
+$3600 - 1600 = 2000$). Au même théorème, « antecedente » est biffé et remplacé
+par « septimo ».}
+
+Les théorèmes X à XII (« De quadrato quadratis adfectis sub cubo », vues 41 à
+43) éliminent au contraire le terme en $x^2$. De $x^2 + Bx = Z$ on tire
+$x^3 = (Z + B^2)x - BZ$, donc $x = (x^3 + BZ)/(Z + B^2)$ et
+$x^2 = (Z^2 - Bx^3)/(Z + B^2)$ ; en portant cette valeur dans le carré de
+l'équation, on obtient
+\[ x^4 + \frac{2BZ + B^3}{Z + B^2}\,x^3 = \frac{Z^3}{Z + B^2} . \]
+L'exemple est juste : $x^2 + 14x = 147$ donne $x^4 + 20x^3 = 9261$, de racine
+$7$, car $(2 \cdot 14 \cdot 147 + 14^3)/343 = 20$ et $147^3/343 = 9261$. De même,
+$x^2 - 14x = 147$ donne $x^4 - 20x^3 = 9261$, de racine $21$ ; et, pour
+$Bx - x^2 = Z$,
+\[ \frac{B^3 - 2BZ}{B^2 - Z}\,x^3 - x^4 = \frac{Z^3}{B^2 - Z} , \]
+avec l'exemple $21x - x^2 = 98$, $15x^3 - x^4 = 2744$, de racine $7$.\footnote{Aux
+théorèmes X et XI, le trait de division est tiré sous tout le premier membre,
+$x^4$ compris ; il ne doit porter que sur le coefficient de $x^3$, comme le
+montrent les exemples et comme l'écrit la note marginale du théorème XII. À
+l'énoncé du théorème X (vue 41), le second membre est écrit « $Z$ plano
+plano » sur « $Z$ plano $+ B$ quadrato » ; la fin de la démonstration (vue 42)
+porte « $Z$ plano plano plano », qui est juste ($Z^3$ pour un plan $Z$). La note
+marginale de la vue 43, « ad sinistram paginam fol. 18. », justifie la valeur
+de $x^2$ en renvoyant au feuillet 18 de la série à l'encre (vue 41). Le premier
+chiffre de « 2744 » est écrit sur un 7. La marge de la vue 42 porte des calculs
+et quatre petites figures (demi-cercles, triangle rectangle) qui ne sont pas
+interprétés ici.}
+
+\section*{Des quadratiques aux cubiques ; l'ambiguïté démontrée}
+
+\pagerange{43}{46}
+Le chapitre XIIII multiplie une quadratique par $x$ et remplace $x^2$ par sa
+valeur :
+\[ x^2 + Bx = Z \;\Longrightarrow\; (Z + B^2)\,x - x^3 = BZ , \]
+avec l'exemple $x^2 + 8x = 20$, $84x - x^3 = 160$, de racine $2$. Les théorèmes
+suivants donnent $x^3 - (B^2 + Z)x = BZ$ pour $x^2 - Bx = Z$ (racine $10$),
+$(B^2 - Z)x - x^3 = BZ$ pour $Bx - x^2 = Z$ ($124x - x^3 = 240$, racine $2$),
+puis, pour un second membre $BD$, $x^3 + (B + D)x^2 = BD^2$ ($x^2 + 16x = 80$,
+$x^3 + 21x^2 = 400$, racine $4$), $(B + D)x^2 - x^3 = BD^2$ (racine $20$) et
+$(B - D)x^2 - x^3 = BD^2$ ($9x - x^2 = 18$, $7x^2 - x^3 = 36$, racine $3$). Tous
+sont justes.\footnote{La cubique déduite a d'autres racines que celle de la
+quadratique : au premier théorème,
+$x^3 - (Z + B^2)x + BZ = (x - B)(x^2 + Bx - Z)$, de sorte que $84x - x^3 = 160$ a
+aussi la racine positive $8 = B$ ($672 - 512 = 160$). Le traité ne le dit pas ;
+c'est un ajout. À la vue 44, « $1C - 84$ » est écrit sans le signe N.}
+
+Le chapitre XV démontre, dans le cas quadratique, ce que le porisme de la
+vue 23 affirmait en général : si $x$ diffère de $B$ de $S$, dans un sens ou dans
+l'autre, alors dans les deux cas
+\[ 2Bx - x^2 = B^2 - S^2 , \]
+et la racine est « double », $B - S$ ou $B + S$. Exemple : $B = 6$, $S = 4$,
+$12x - x^2 = 20$, de racines $2$ et $10$. Le traité conclut que toute équation
+$Dx - x^2 = Z$ se lit ainsi, avec $D = 2B$ et $Z = B^2 - S^2$.\footnote{La page écrit
+« $Z$ planum esse $S$ quadratum minus $B$ quadrato » : l'ordre des deux carrés est
+inversé ; l'égalité démontrée juste au-dessus donne $B^2 - S^2$. La fin de la phrase
+se perd dans le pli. Le numéro du chapitre, d'abord « XIIII », est biffé et récrit « XV ». Le paragraphe
+qui suit renvoie, pour les cubes et les carrés-carrés « négatifs », au sixième
+théorème du chapitre précédent et aux théorèmes III, VI et IX d'un chapitre écrit
+« noni », que la marge corrige en « duodecimi » : ce sont ceux du chapitre XIII
+de la numérotation actuelle, qui était le XII\textsuperscript{e} avant que
+l'écrivain ne décale ses numéros d'une unité (vues 23 et 25). C'est une
+inférence de cette lecture.}
+
+\section*{La syncrise : les coefficients par les racines}
+
+\pagerange{46}{55}
+Le chapitre XVI définit la \emph{syncrise} : la comparaison de deux équations
+« corrélatives », c'est-à-dire semblables et faites des mêmes données, mais qui
+ont des racines différentes, soit parce que la forme de l'équation admet deux
+racines, soit parce que les signes diffèrent. Il en distingue trois espèces
+pour les équations à un seul terme affecté, écrites ici avec un exposant
+$n$ pour la puissance et un exposant $k < n$ pour le degré affecté :
+
+\begin{itemize}
+  \item les \emph{ambiguës}, où la puissance est retranchée dans les deux :
+    $Bx^k - x^n = Z$ et $By^k - y^n = Z$ ;
+  \item les \emph{contradictoires}, où elle est ajoutée dans l'une et retranchée
+    dans l'autre : $x^n + Bx^k = Z$ et $y^n - By^k = Z$ ;
+  \item les \emph{inverses}, où la puissance est diminuée du terme affecté dans
+    l'une et le terme affecté diminué de la puissance dans l'autre :
+    $x^n - Bx^k = Z$ et $By^k - y^n = Z$.\footnote{Le nom de la troisième espèce
+    est lu « inversarum » d'après les lettres (« Jnuersarum »), aux vues 46 et
+    47, et « Inversis » ensuite ; la transcription le donne pour douteux aux deux
+    premières occurrences.}
+\end{itemize}
+
+La méthode est toujours la même : deux choses égales à une même troisième sont
+égales entre elles ; on égale les deux premiers membres, on fait passer les
+puissances d'un côté et les termes affectés de l'autre, et l'on divise par la
+différence ou la somme des degrés affectés. On obtient ainsi le coefficient et
+le terme connu en fonction des deux racines. Pour les ambiguës, avec $x > y$ :
+\[ B = \frac{x^n - y^n}{x^k - y^k}, \qquad
+   Z = \frac{x^n y^k - y^n x^k}{x^k - y^k} ; \]
+pour les contradictoires,
+\[ B = \frac{y^n - x^n}{y^k + x^k}, \qquad
+   Z = \frac{x^n y^k + y^n x^k}{y^k + x^k} ; \]
+pour les inverses,
+\[ B = \frac{x^n + y^n}{x^k + y^k}, \qquad
+   Z = \frac{x^n y^k - y^n x^k}{x^k + y^k} ; \]
+et pour les inverses dont l'une est affectée par addition,
+$x^n + Bx^k = Z$ et $By^k - y^n = Z$,
+\[ B = \frac{x^n + y^n}{y^k - x^k}, \qquad
+   Z = \frac{x^n y^k + y^n x^k}{y^k - x^k} . \]
+Les quatre paires de formules ont été vérifiées ; elles sont justes.\footnote{Le
+feuillet écrit plusieurs signes fautifs, que ses propres marges corrigent pour
+la plupart. Au problème II (vue 51), le diviseur porte deux fois le double trait
+« $=$ » là où il faut « $+$ », que la marge rétablit. Au problème III (vues 52 et
+53), l'énoncé porte le double trait devant le terme affecté, là où l'antithèse
+qui suit suppose la soustraction ; au diviseur, la page écrit « $A$ gradu $+ B$
+gradu », avec en marge « $- E.$ » : il faut « $+ E$ gradu », comme l'écrit la
+ligne précédente. Au dernier cas (vues 53 et 54), « $A$ potestatem $- E$ potestate »
+est corrigé en marge par « $+$ », et deux signes sont laissés en blanc (un point),
+avec « $+$ » en marge. Les mots lus « Iucunda » (vue 47), « Divinus »,
+« lucidum », « idq; », « transitus », « retentis », « pugnas » (vue 54) sont
+donnés pour douteux par la transcription, et plusieurs phrases de ces pages
+n'en sont pas sûres ; la substance mathématique ne l'est pas moins, car chaque
+formule est écrite en espèces.}
+
+Dans le cas le plus simple, $Bx - x^2 = Z$ et $By - y^2 = Z$, le traité trouve
+\[ B = x + y, \qquad Z = xy , \]
+et, pour $Bx - x^3 = Z$ et $By - y^3 = Z$,
+\[ B = x^2 + xy + y^2, \qquad Z = xy\,(x + y) . \]
+Ce sont, pour ces deux formes, les \emph{relations entre coefficients et racines}
+que l'on appelle aujourd'hui les formules de Viète : le coefficient est la somme
+des racines, le terme connu leur produit.\footnote{Le nom est moderne, et
+l'énoncé coïncide ici pour les racines positives que le traité considère. Pour
+la cubique, $x^3 - Bx + Z = 0$ a une troisième racine, $-(x + y)$, négative, que
+le traité ne nomme pas ; avec elle, la somme des trois racines est nulle, la
+somme de leurs produits deux à deux vaut $-B$ et leur produit $-Z$, comme le
+veulent les relations générales. La forme la plus générale est au chapitre
+XIIII du second traité (vues 139 à 141). Au cas cubique, la page écrit « $D$
+plano » là où le problème porte « $B$ plano », et la marge corrige par des
+« $B$ » ; elle écrit aussi « omnibus per $A$ divisis » là où le diviseur écrit
+dessous est $A - E$.} Le traité en tire aussitôt des « formules » d'équations
+dont on choisit les racines : pour les racines $F$ et $G$,
+\[ (F + G)\,x - x^2 = FG , \qquad (F^2 + FG + G^2)\,x - x^3 = FG(F + G) , \]
+avec $F = 10$, $G = 2$ : $12x - x^2 = 20$ et $124x - x^3 = 240$, qui ont bien
+pour racines $10$ et $2$.
+
+La fin du chapitre dit pour quelles puissances chaque espèce est
+« efficace », c'est-à-dire donne des coefficients entiers en les racines, et la
+raison qu'il en donne est exacte : $x^n - y^n$ se divise toujours par $x - y$ ;
+$x^n - y^n$ se divise par $x + y$ quand $n$ est pair ; $x^n + y^n$ se divise
+par $x + y$ quand $n$ est impair ; et $x^n + y^n$ ne se divise jamais par
+$x - y$. Les ambiguës sont donc efficaces à tous les degrés, les contradictoires
+aux degrés pairs, les inverses aux degrés impairs.\footnote{Le traité renvoie ces
+faits à un « Caput de genesi potestatum a binomia radice » — un chapitre sur la
+génération des puissances d'un binôme — que ce volume ne contient pas. La
+marge de la vue 54 écrit les quotients pour $n = 2$, $3$, $4$ : $x + y$,
+$x^2 + xy + y^2$, $x^3 + x^2y + xy^2 + y^3$, et renvoie, « pro cubis », à un
+chapitre dont le numéro n'est lu qu'en partie (« Cap. \ldots{} X. lib. 2. »). La
+première phrase de la vue 55 (« Ceterum dum aggregatum potestatum applicatur ad
+differentiam radicum nulla inde orietur magnitudo\ldots ») énonce le dernier des
+quatre faits.}
+
+\section*{La « phrase géométrique » : suites de proportionnelles}
+
+\pagerange{55}{58}
+Le chapitre XVII habille la syncrise en géométrie, par sept propositions sur les
+suites de trois à sept proportionnelles $a_1, a_2, \ldots, a_n$ de raison $r$.
+Toutes sont justes, parce que chaque terme vaut le précédent multiplié par
+$r$.\footnote{La marge de la vue 57 ajoute que $BG^2 - B^2G = F^3 - D^3$, ce qui est
+juste. La marge de la vue 55 porte un calcul très corrigé, avec des « plans
+proportionnels » $F^2$, $FE$, $E^2$, que la transcription ne reconstitue pas ; il
+ne l'est pas ici.}
+\begin{itemize}
+  \item $a_1 : a_n = a_1^{\,n-1} : a_2^{\,n-1}$ (proposition I) ;
+  \item $a_1 : a_n$ est aussi le rapport de la somme des puissances
+    $(n-1)$-ièmes des $n - 1$ premiers termes à celle des $n - 1$ derniers
+    (II), le rapport des puissances $(n-1)$-ièmes de leurs sommes (III), celui
+    des sommes alternées de leurs puissances (IIII), celui des puissances de
+    leurs sommes alternées (V) ;
+  \item pour quatre proportionnelles $B, D, F, G$ (VI et VII) :
+    \[ G^3 + 3D^3 - B^3 - 3F^3 = (G - B)^3 , \qquad
+       G^3 + 3D^3 + B^3 + 3F^3 = (G + B)^3 , \]
+    parce que $D^3 = B^2G$ et $F^3 = BG^2$.
+\end{itemize}
+
+\section*{Les constitutions : ambiguës, contradictoires, inverses}
+
+\pagerange{58}{68}
+Les chapitres XVIII à XXI donnent, pour chaque espèce, la constitution des
+équations à partir des termes d'une suite de proportionnelles, avec pour chaque
+proposition un exemple dont les racines sont connues d'avance. C'est la
+syncrise appliquée : on choisit la suite, on en tire les coefficients.
+
+\subsection*{Chapitre XVIII : les ambiguës}
+
+Pour les ambiguës « affectées sous le côté », $Bx - x^n = Z$ :
+\begin{itemize}
+  \item $n = 2$ : $B$ est la somme de deux côtés, $Z$ leur produit ; exemple
+    $12x - x^2 = 20$, racines $2$ et $10$ ;
+  \item $n = 3$ : $B$ est la somme des carrés de trois proportionnelles
+    $a, b, c$, et $Z = a(b^2 + c^2) = c(a^2 + b^2)$ ; les racines sont $a$ et $c$.
+    Exemple : $2, \sqrt{20}, 10$, et $124x - x^3 = 240$ ;
+  \item $n = 4, 5, 6$ : $B$ est la somme des puissances $(n-1)$-ièmes de $n$
+    proportionnelles, $Z$ le produit d'un extrême par la somme de celles des
+    autres, et les racines sont les deux extrêmes. Exemples :
+    $2, \sqrt[3]{40}, \sqrt[3]{200}, 10$ et $1248x - x^4 = 2480$ ;
+    $2, \sqrt[4]{80}, \sqrt{20}, \sqrt[4]{2000}, 10$ et
+    $12496x - x^5 = 24960$ ; $2, \sqrt[5]{160}, \ldots, 10$ et
+    $124992x - x^6 = 249920$.
+\end{itemize}
+Tout est juste, une fois corrigé le dernier second membre.\footnote{La page écrit
+« $124{,}960$ », souligné, et la marge porte « $249920$ », qui est la bonne valeur :
+$2\,(160 + 800 + 4000 + 20000 + 100000) = 249\,920$. Le second terme de la suite,
+surchargé (« 360 » ou « 160 »), est récrit en marge « $LQC$ 160 », qui est juste.
+Que ces équations aient exactement ces deux racines positives suit de la
+syncrise : $Bx - x^n - Z$ s'annule aux deux extrêmes, et n'a pas d'autre racine
+positive, par la règle des signes (voir la note sur le porisme de la vue 23).}
+
+Pour les ambiguës « sous le degré le plus élevé », $Bx^{n-1} - x^n = Z$, $B$ est la
+somme de $n$ proportionnelles, $Z$ le produit d'un extrême par la puissance
+$(n-1)$-ième de la somme des autres, et les racines sont la somme des $n - 1$
+premiers et la somme des $n - 1$ derniers. Sur la suite $1, 2, 4, \ldots$ :
+$7x^2 - x^3 = 36$ (racines $3$ et $6$), $15x^3 - x^4 = 2744$ ($7$ et $14$),
+$31x^4 - x^5 = 810\,000$ ($15$ et $30$), $63x^5 - x^6 = 916\,132\,832$ ($31$ et
+$62$). Tout est juste.\footnote{Pour $n = 3$ : si $x = a + b$, alors
+$x^2(B - x) = c\,(a + b)^2 = a\,(b + c)^2$, puisque $b + c = r(a + b)$ et $c = ar^2$.
+Les « 7Q » et « 31QQ » de la vue 60 sont écrits « 72 » et « 3122 », le Q ayant la
+forme d'un 2.}
+
+Les « degrés intermédiaires » (vues 60 à 63) se ramènent aux précédents par une
+racine plane ou solide.\footnote{Pour la troisième des propositions qui suivent, la
+page écrit « $B$ plano compositum » là où la dimension demande un plan-plan. Pour
+la dernière, elle donne « fit $1N$ 25 vel 100 », valeurs de $x^2$, et la marge
+corrige en $5$ et $10$, valeurs de $x$. La page dit aussi que, prises comme
+équations en $x^2$ ou en $x^3$, $17N - 1Q = 16$ a les racines $1$ et $16$,
+$513N - 1Q = 512$ les racines $1$ et $512$, et $21N - 1C = 20$ les racines $1$ et
+$4$.}
+\begin{itemize}
+  \item $Bx^2 - x^4 = Z$ : $B$ est la somme de deux carrés $u^2 + v^2$, $Z$ leur
+    produit, et $x^2$ vaut l'un ou l'autre ; exemple $17x^2 - x^4 = 16$, racines $1$
+    et $4$ ;
+  \item $Bx^3 - x^6 = Z$ : $B = u^3 + v^3$, $Z = u^3v^3$ ; exemple
+    $513x^3 - x^6 = 512$, racines $1$ et $8$ ;
+  \item $Bx^2 - x^6 = Z$ : $B$ est la somme des carrés de trois plans
+    proportionnels, $Z$ le produit d'un extrême par la somme des carrés des deux
+    autres, et $x^2$ vaut un extrême ; exemple $21x^2 - x^6 = 20$, avec les plans
+    $1, 2, 4$, racines $1$ et $2$ ;
+  \item $Bx^4 - x^6 = Z$ : $B$ est la somme de trois plans proportionnels, $Z$ le
+    produit d'un extrême par le carré de la somme des deux autres, et $x^2$ vaut
+    la somme des deux premiers ou des deux derniers ; exemple, avec les plans
+    $5, 20, 80$ : $105x^4 - x^6 = 50\,000$, racines $5$ et $10$.
+\end{itemize}
+La vue 62 montre comment trouver trois plans proportionnels
+dont la moyenne, ajoutée au premier ou au dernier, fasse un carré : ce sont
+\[ \frac{B^4}{B^2 + G^2}, \quad \frac{B^2G^2}{B^2 + G^2}, \quad
+   \frac{G^4}{B^2 + G^2} , \]
+car la moyenne plus le premier vaut $B^2$, plus le dernier $G^2$. Avec $B = 1$,
+$G = 2$ on a $\tfrac15, \tfrac45, \tfrac{16}{5}$, et, multipliés par $25$, les
+plans $5, 20, 80$ de l'exemple.\footnote{Aux dénominateurs, la page porte le double
+trait, corrigé en « $+$ » dans la marge. Le troisième plan est écrit
+« $\frac{16}{15}$ », le premier chiffre du dénominateur étant peut-être une rature ;
+le calcul donne $\frac{16}{5}$. La marge établit la formule par
+$(G - E)(D - E) = E^2$, d'où $E = GD/(G + D)$.}
+
+Les deux dernières propositions du chapitre (« De reliquis », vues 62 et 63)
+sont justes dans leurs exemples. Pour $Bx^2 - x^5 = Z$ et la suite $1, 2, 4$ :
+$279x^2 - x^5 = 2268$, racines $3$ et $6$, sommes des deux premiers et des deux
+derniers termes. Le coefficient vaut $B = u^3 + v^3 + a\,v^2$, où $u = a + b$,
+$v = b + c$, et le terme connu $Z = u^2v^2(a + b + c)$.\footnote{La phrase qui
+définit $B$ est lue avec des surcharges et ne donne pas, telle qu'elle est lue,
+la valeur $279 = 27 + 216 + 36$ ; la note marginale qui définit $Z$ est raturée
+et « très incomplète » selon la transcription. Les deux expressions données ici
+sont de cette lecture ; elles se tirent de la syncrise,
+$B = (u^5 - v^5)/(u^2 - v^2)$, et donnent bien $279$ et $9 \cdot 36 \cdot 7 = 2268$.}
+Pour $Bx^3 - x^5 = Z$ et la suite $1, 2, 4, 8$ : $217x^3 - x^5 = 57\,624$, racines
+$7$ et $14$ ; ici $B = u^2 + v^2 - c\,(a + b + c)$, et $Z = (B - u^2)\,v^3 =
+(B - v^2)\,u^3$, avec $u = a + b + c$, $v = b + c + d$, ce que la page dit, une fois
+intervertis par la marge les mots « primis » et « postremis ».\footnote{Vérifié :
+$49 + 196 - 4 \cdot 7 = 217$ ; $(217 - 49) \cdot 343 = (217 - 196) \cdot 2744 =
+57\,624$.}
+
+\subsection*{Chapitre XIX : les contradictoires}
+
+Si $x^2 + Bx = Z$ et $y^2 - By = Z$, les deux racines sont deux côtés dont la
+différence est $B$ et le produit $Z$ ($x^2 + x = 2$ donne $1$, $y^2 - y = 2$
+donne $2$). Si $x^4 + Bx = Z$ et $y^4 - By = Z$, il y a quatre proportionnelles
+$a, b, c, d$ dont les cubes pris alternativement diffèrent de $B$,
+$B = d^3 - c^3 + b^3 - a^3$, avec $Z = a\,(b^3 - c^3 + d^3)$, et $x = a$, $y = d$ :
+sur $1, \sqrt[3]{2}, \sqrt[3]{4}, 2$, $x^4 + 5x = 6$ donne $1$ et $y^4 - 5y = 6$
+donne $2$. De même au sixième degré avec six proportionnelles
+($x^6 \pm 21x = 22$, racines $1$ et $2$). Si $x^4 + Bx^3 = Z$ et $y^4 - By^3 = Z$,
+$B$ est la différence alternée des quatre termes, $x$ celle des trois premiers,
+$y$ celle des trois derniers : sur $1, 2, 4, 8$, $x^4 \pm 5x^3 = 216$ donne $3$
+et $6$. De même au sixième degré sur $1, 2, 4, 8, 16, 32$ : $x^6 \pm 21x^5 =
+5\,153\,632$, racines $11$ et $22$.\footnote{La page écrit deux fois
+« $4{,}618{,}812$ », souligné et surligné, et la marge donne « $5153632$ », qui est
+juste : $11^6 + 21 \cdot 11^5 = 22^6 - 21 \cdot 22^5 = 5\,153\,632$. Le numéro du
+chapitre est écrit « XVIII XIX ». La marge de ces pages, d'une écriture plus
+serrée dont les transcriptions ne décident pas si elle est de l'écrivain,
+démontre les règles sur la suite $A, B, B^2/A, B^3/A^2$ et vérifie que
+$Z/x^3 = B + x$ et $Z/y^3 = y - B$ ; ces vérifications sont justes.}
+
+\subsection*{Chapitres XX et XXI : les inverses}
+
+Si $Bx - x^3 = Z$ et $y^3 - By = Z$, il y a trois proportionnelles dont les
+carrés pris alternativement font $B = a^2 - b^2 + c^2$, avec $Z = a\,(c^2 - b^2)$,
+$x = a$ et $y = c$ (sur $1, \sqrt{2}, 2$ : $3x - x^3 = 2$ donne $1$, $y^3 - 3y = 2$
+donne $2$) ; de même au cinquième degré ($11x - x^5 = 10$ donne $1$,
+$y^5 - 11y = 10$ donne $2$). Si $Bx^2 + x^3 = Z$ et $By^2 - y^3 = Z$, sur $1, 2, 4$ :
+$3x^2 + x^3 = 4$ donne $1$ et $3y^2 - y^3 = 4$ donne $2$ ; au cinquième degré,
+$11x^4 \pm x^5 = 10\,000$ donne $5$ et $10$. Avec six proportionnelles
+$1, 2, \ldots, 32$ : $231x^3 \pm x^5 = 96\,040$ (racines $7$ et $14$) et
+$297x^2 \pm x^5 = 2916$ (racines $3$ et $6$), où $231 = (1 + 32)(8 - 1)$ et
+$297 = (1 + 32)(4 - 1)^2$.\footnote{Corrections de l'écrivain, toutes justes :
+« $B$ cubus » corrigé en « $E$ » (vue 65) ; « $1QQ$ » corrigé en « $C$ », pour
+$y^5 - 11y = 10$ (vue 66) ; au troisième théorème, un « $=$ » barré d'un trait
+vertical, et « $+$ » en marge ; au cinquième, « maior » corrigé en « minor », et
+« $231Q$ » corrigé deux fois en « $C$ » ; au sixième, « tertiam » corrigé en
+« secundam ». Restent deux écarts de dimension : au cinquième théorème, $Z$ est
+dit fait « du cube de la différence $\ldots$ dans $B$ planum plus le carré de la même
+différence », là où l'exemple demande la puissance cinquième
+($7^3 \cdot 231 + 7^5 = 96\,040$) ; au sixième, $Z$ est dit « planoplano » là où
+l'énoncé a « planosolido ». Au quatrième, le signe manque devant « $E$
+quadratocubo » dans la seconde équation.} Le chapitre XXI donne deux
+constitutions de plus : si $Bx - x^3 = Z$ et $y^3 - By = Z$, sur trois
+proportionnelles, $B = a^2 + b^2 + c^2$, $Z = (a + c)\,b^2$, $x$ vaut un extrême et
+$y$ la somme des extrêmes ($21x - x^3 = 20$ donne $1$ ou $4$, $y^3 - 21y = 20$
+donne $5$) ; et si $Bx^2 - x^3 = Z$ et $By^2 + y^3 = Z$, $B = a + b + c$,
+$Z = a(b + c)^2$, $x = a + b$ ou $b + c$, $y = b$ ($7x^2 - x^3 = 36$ donne $3$ ou
+$6$, $7y^2 + y^3 = 36$ donne $2$). C'est la fin du premier traité.\footnote{Dans la
+dernière proposition, la première des deux constructions de $Z$ (« composita
+autem e duabus primis \emph{adducta} compositæ e duabus reliquis, dum ducitur in
+mediæ quadratum ») ne donne pas $36$ telle qu'elle est lue ; la seconde est
+juste. Le mot en italique est une lecture douteuse. Le premier traité n'a pas de
+conclusion : la vue 68 s'arrête sur cet exemple, la moitié inférieure blanche, et
+le second traité commence en tête du feuillet suivant.}
+
+\section*{Le « De Emendatione » : cinq préparations, et l'expurgation}
+
+\pagerange{69}{79}
+Le second traité commence en tête d'un nouveau feuillet, sous son titre, et dit
+d'emblée ce qu'il fait :
+
+\begin{quote}
+« Agnita æquationum constitutione analysta ad præparandum eas quæ sunt alioqui
+\emph{mechanicismo} respuant aut demum ægre subeunt toto se confert [\ldots]
+fere autem quæ prosunt geometricæ ad εὐμηχανίαν prosunt et arithmeticæ ut
+etiam e contra. [\ldots] nunc autem circa numerosam analysim magis esse intentum
+nostri est instituti. »\footnote{« La constitution des équations une fois
+reconnue, l'analyste se consacre tout entier à préparer celles qui, autrement,
+refusent la résolution ou ne s'y prêtent qu'avec peine [\ldots] ; en général, ce
+qui sert à la commodité de la résolution géométrique sert aussi à
+l'arithmétique, et inversement. [\ldots] Mais notre dessein est ici de nous
+appliquer surtout à l'analyse numérique. » Le mot en italique, et le mot grec
+« εὐμηχάνους » un peu plus loin, sont des lectures douteuses de la
+transcription ; « δυσμηχανία » (dusmêchania), dans le titre, est l'incommodité d'une
+équation à se laisser résoudre, « εὐμηχανία » (eumêchania) sa commodité.}
+\end{quote}
+
+Les préparations « solennelles » sont au nombre de cinq, numérotées sur le
+feuillet : l'expurgation par onces, la transmutation πρῶτον ἔσχατον
+(prôton eschaton, « premier-dernier »),
+l'anastrophe, l'isomérie et la paraplérose climactique. S'y ajouteront un
+climactisme « symétrique » (chapitre V), l'hypostase double (chapitre VII) et
+une transmutation « canonique » (chapitre VIII).
+
+\subsection*{L'expurgation par onces}
+
+C'est le remède contre la multiplicité des termes. Une équation dont figure le
+terme de degré $n - 1$ vient, par translation, d'une équation qui ne l'a pas ;
+pour le faire disparaître, on translate la racine en sens contraire d'une
+« once » du coefficient : la moitié pour le carré (« diahemysis »), le tiers pour
+le cube (« diatritemorion »), le quart pour le carré-carré, le cinquième, le
+sixième, « et ainsi à l'infini ». Selon le signe du terme, on pose
+$x = y - B/n$, $x = y + B/n$ ou $x = B/n - y$.\footnote{La page nomme ces trois cas
+« tres casuum differentias ». Le nom de la première opération est lu
+« Diahemysis » avec doute, et celui de la quatrième, « diatetartemorion », est
+écrit dans la marge à la place de « et sic in infinitum ordine », biffé. Deux
+mots de la même racine, vue 70 (« a \ldots, de \ldots »), ne sont pas lus.} En
+termes d'aujourd'hui, c'est la réduction d'une équation à la forme
+\emph{réduite}, sans second terme, par la substitution $x = y - a_{n-1}/n$.
+
+Les deux exemples sont justes : $x^2 + 2Bx = Z$ devient, avec $y = x + B$,
+$y^2 = Z + B^2$ ; et $x^3 + 3Bx^2 + Dx = Z$ devient, avec
+$y = x + B$,\footnote{La page écrit d'abord « $+$ $B$ quadrato » au troisième terme ;
+la marge corrige en « $- B$ quadrato ter », qui est juste. Le signe devant « $D$
+plano in $B$ » est noirci, lu « $\pm$ » sans assurance ; le calcul donne $+$.}
+\[ y^3 + (D - 3B^2)\,y = Z + DB - 2B^3 . \]
+Ainsi,
+conclut le chapitre, toutes les quadratiques se ramènent aux pures, les cubiques
+aux cubiques affectées sous le seul côté, les quartiques à celles qui ne sont
+affectées que sous le côté et le carré, et ainsi de suite.
+
+\subsection*{Les « formules » de réduction}
+
+Suit une phrase sur les anciens, qui s'interrompt au bas de la vue 72 :
+« Credebant autem antiqui quoniam hac reductione æquationes quadraticas omnino
+expurgabant et facile explicabant » ; la vue 73 reprend sur une ligne en partie
+effacée, et la transcription ne sait pas si c'est la suite.\footnote{« Or les
+anciens croyaient, parce que par cette réduction ils purgeaient entièrement les
+équations quadratiques et les résolvaient facilement\ldots ». La vue 73 poursuit :
+ils ont cherché obstinément à purger de même les degrés supérieurs, sans
+chercher d'autre méthode, « et bonas horas mathematicas [\ldots] dispendio
+absumpserunt » — ils y ont perdu de bonnes heures de mathématiques ; la méthode
+n'est pas « catholica », générale. Plusieurs mots de ce passage sont lus avec
+doute (« vel duobus », « accedere », « mechanicorum », « exquisierint »,
+« erraverunt », « collocabant », « hæredium »).} Viennent des formules, chacune
+avec son « conséquent » et des exemples :
+
+\begin{itemize}
+  \item $x^2 + 2Bx = Z$ : $x = \sqrt{Z + B^2} - B$ ; exemple $x^2 + 2x = 20$,
+    $x = \sqrt{21} - 1$ ;
+  \item $x^2 - 2Bx = Z$ : $x = \sqrt{Z + B^2} + B$ ; exemple
+    $x = \sqrt{21} + 1$ ;
+  \item $2Dx - x^2 = Z$ : $x = D \mp \sqrt{D^2 - Z}$ ; exemple $10x - x^2 = 20$,
+    $x = 5 \mp \sqrt{5}$.
+\end{itemize}
+
+Et pour les cubiques affectées sous le carré, ramenées à des cubiques
+affectées sous le côté :
+\begin{itemize}
+  \item $x^3 + 3Bx^2 = Z$, $y = x + B$ : $y^3 - 3B^2y = Z - 2B^3$ ; exemple
+    $x^3 + 6x^2 = 1600$, $x = 10$, et $y^3 - 12y = 1584$, $y = 12$ ;
+  \item $x^3 - 3Bx^2 = Z$, $y = x - B$ : $y^3 - 3B^2y = Z + 2B^3$ ; exemple
+    $x^3 - 6x^2 = 400$, $x = 10$, et $y^3 - 12y = 416$, $y = 8$ ;
+  \item $3Bx^2 - x^3 = Z$, $y = x - B$ ou $y = B - x$ :
+    $3B^2y - y^3 = Z - 2B^3$ ou $2B^3 - Z$ ; exemples $21x^2 - x^3 = 972$,
+    $x = 9$ ou $18$, et $147y - y^3 = 286$, $y = 2$ ou $11$ ; puis
+    $9x^2 - x^3 = 28$, $x = 2$, et $27y - y^3 = 26$, $y = 1$.
+\end{itemize}
+Tout est juste.\footnote{« $1684$ » est corrigé en marge en « $1584$ ». Le premier
+second membre se lit « 600 » ou « 1600 », le 1 mal séparé ; c'est $1600$. La
+marge de la vue 74 ajoute « fit $1N$ 2 », la valeur de $B$, que le texte omet. Le
+feuillet note qu'en arithmétique on peut marquer d'un signe les chiffres de la
+racine altérée (« σημεῖον (sêmeion) aliquod superimponitur »). L'équation
+$9x^2 - x^3 = 28$ a une seconde racine positive, $(7 + \sqrt{105})/2 \approx
+8{,}62$, que la page ne donne pas.}
+
+Puis sept formules pour les cubiques « affectées sous le carré et le côté »,
+$x^3 \pm 3Bx^2 \pm Dx = Z$ et leurs inverses, toutes ramenées par $y = x \pm B$
+ou $y = B - x$ à une cubique sans terme en $y^2$ ; ainsi, pour la première,
+$x^3 + 3Bx^2 + Dx = Z$ et $y = x + B$,
+\[ y^3 + (D - 3B^2)\,y = Z + DB - 2B^3 , \]
+et de même pour les autres, les signes de la page étant souvent le double trait,
+puisque l'ordre des grandeurs comparées dépend des données. Chacune porte deux à quatre
+exemples ; tous ont été refaits et sont justes, une fois reçues les corrections
+que l'écrivain a lui-même portées en marge.\footnote{Corrections marginales, toutes
+justes : « $30N$ » en « $330N$ » (vue 75) ; « $76$ » en « $80$ » (vue 76) ; « $20$ »
+en « $120$ » (vue 77) ; deux fois « $300Q$ » en « $30Q$ » (vues 77 et 78) ;
+« $96$ » en « $36$ » (vue 78) ; « $330X$ » en « $330N$ » ; les signes laissés en
+blanc ou doublés, rétablis en « $+$ » (vues 76, 77). Une faute n'est pas
+corrigée : à la vue 78, « $30Q - 1C$ æquatur 56 », qui doit être $30x - x^3 = 56$
+(racine $4$). Deux coefficients surchargés (« 24 », « 60 ») sont lus d'après le
+calcul par la transcription.}
+
+\subsection*{Les onces triangulaires et pyramidales}
+
+La fin du chapitre (vues 78 et 79) étend l'expurgation : on peut aussi faire
+disparaître, par une translation, un terme de degré plus bas, en prenant pour
+once l'inverse d'un nombre triangulaire ou pyramidal. Pour $x^n$ affecté sous
+$x^{n-2}$ par $B^2$, on prend le carré de la translation égal à $B^2$ divisé par
+le nombre triangulaire $\binom{n}{2}$ (tiers pour le cube, sixième pour le
+carré-carré, dixième pour le carré-cube) ; pour $x^n$ affecté sous $x^{n-3}$ par
+$B^3$, le cube de la translation égal à $B^3$ divisé par le nombre pyramidal
+$\binom{n}{3}$ (quart pour le carré-carré, dixième pour le carré-cube). C'est
+juste : dans $(y + h)^n$, le coefficient de $y^{n-k}$ est $\binom{n}{k}h^k$. Le
+traité ajoute, et c'est exact, qu'à la place du terme supprimé apparaissent les
+autres.\footnote{Deux précisions que le traité ne donne pas. (1) Pour le terme
+en $x^{n-2}$, il faut que ce terme soit retranché : $x^3 - B^2x$ se purge par
+$h^2 = B^2/3$, mais $x^3 + B^2x$ demanderait $h^2 = -B^2/3$, qui n'est pas une
+grandeur ; pour le terme en $x^{n-3}$, le signe est indifférent, puisqu'on
+prend une racine cubique. (2) Faire disparaître un terme autre que le second en
+créant les autres n'avance pas la résolution ; c'est pour en supprimer plusieurs
+à la fois que Tschirnhaus (1683) prendra une substitution de degré plus élevé.
+La marge corrige « $B$ cubo » en « $B$ quadrato » pour le carré-cube affecté sous le
+cube, et « æqualitate » en « æqualitas ». La suite « nempe sunt numeri
+triangulares 3. 6. 10. 15 \&c. » est en tête du feuillet suivant.}
+
+\section*{La transmutation πρῶτον ἔσχατον (prôton eschaton)}
+
+\pagerange{79}{82}
+Le chapitre II est le remède contre la négation : quand le terme connu est
+« nié » de la puissance, c'est-à-dire quand les termes affectés l'emportent, on
+prend pour nouvelle inconnue le quotient du terme connu par la racine,
+$y = Z/x$. Le nom vient de la proportion qui en résulte, où « le premier devient
+le dernier ». Pour $x^3 - Bx = Z$, on obtient
+\[ y^3 + By^2 = Z^2 , \]
+où l'affection négative est devenue positive ; et, en effet,
+$x : \sqrt[3]{Z} = \sqrt[3]{Z^2} : (x^2 - B)$, avec $y = x^2 - B$. Exemple :
+$x^3 - 96x = 40$ ; $y = 40/x$ donne $y^3 + 96y^2 = 1600$, de racine $4$, d'où
+$x = 10$.\footnote{La page écrit « $1C \,-\, 46Q$ æquabitur $160$ », souligné, et la
+marge corrige en « $+ 96$ » et « $1600$ » : $4^3 + 96 \cdot 4^2 = 1600$. La page écrit
+aussi « explicando » et « vocatur », corrigés en marge en « applicando » et
+« renovatur », et « æquationum » en « adfectionum ».} La même transformation
+fait disparaître certaines irrationnelles : $x^3 - 10x = \sqrt{48}$ devient
+$y^3 + 10y^2 = 48$, de racine $2$, et $x = \sqrt{48}/2 = \sqrt{12}$.
+
+Pour la quartique $x^4 - Bx^3 - Dx^2 = Z$, $y = Z/x$ donne
+\[ y^4 + DZ\,y^2 + BZ^2\,y = Z^3 , \]
+avec l'exemple $x^4 - 3x^3 - 8x^2 = 50$ : $y^4 + 400y^2 + 7500y = 125\,000$, de
+racine $10$, d'où $x = 5$ ; et $x^4 - 8x = \sqrt[3]{80}$ donne $y^4 + 8y^3 = 80$,
+de racine $2$, d'où $x = \sqrt[3]{10}$.\footnote{La page écrit « $12500$ »,
+surligné, et la marge « $125000$ », qui est juste. La troisième ligne du calcul
+en espèces porte deux fois « $Z$ plano plano » là où l'on attend « $Z$ plano plano
+plano plano » ; le produit est le même.}
+
+Le chapitre résume la transformation en quatre préceptes, justes : le terme
+connu, inchangé pour les quadratiques, s'élève au carré pour les cubiques, au
+cube pour les quartiques, et ainsi de suite ; les affections négatives
+deviennent positives et inversement ; le coefficient du terme en $x^k$ se
+multiplie par $Z^{k-1}$ ; et la racine cherchée est le terme connu divisé par la
+nouvelle. Il remarque enfin qu'on pourrait diviser par une autre grandeur que
+le terme connu, mais que celui-ci évite les fractions, et qu'en géométrie on
+préfère une grandeur homogène au carré de la racine.\footnote{Les préceptes sont à
+la vue 82, sur un petit feuillet sans numéro ; qu'ils soient ceux qu'annoncent
+les quatre dernières lignes de la vue 81 est une inférence de la transcription.
+Deux mots en sont lus avec doute (« Inuariato », « pronunciato »). L'exemple
+final, $x^3 - Bx^2 = BZ^2$ avec $x = BZ/y$, donne bien $y^3 + B^2y = B^2Z$.}
+
+\section*{L'anastrophe}
+
+\pagerange{83}{92}
+Le chapitre III traite les équations « inversement niées » de degré impair,
+$Bx - x^3 = Z$, qui ont deux racines positives et que l'analyse numérique
+résout mal. L'anastrophe les ramène à une équation plus basse par
+l'intermédiaire de leur corrélative : si $y$ est la racine de $y^3 - By = Z$
+(qui n'en a qu'une positive), on ajoute $y^3$ aux deux membres de
+$x^3 = Bx - Z$ :
+\[ x^3 + y^3 = Bx + By , \]
+et l'on divise par $x + y$ :
+\[ x^2 - xy + y^2 = B , \qquad\text{soit}\qquad yx - x^2 = y^2 - B . \]
+Connaissant $y = D$, les deux racines de l'équation proposée sont celles de cette
+quadratique. Exemple : $39x - x^3 = 70$ ; la corrélative $y^3 - 39y = 70$ a la
+racine $7$ ; d'où $7x - x^2 = 10$, et $x = 2$ ou $5$.\footnote{La page écrit
+d'abord « 3 vel 6 », biffé, et la marge corrige en « 2. vel. 5. », qui est juste.
+C'est, en termes d'aujourd'hui, la division du polynôme $x^3 - Bx + Z$ par le
+facteur $x + D$ que fournit sa racine négative $-D$ : la racine positive de la
+corrélative est l'opposée de la racine négative de la proposée. Le traité, qui
+ne connaît que les racines positives, obtient ce facteur par l'équation
+corrélative.}
+
+De même, pour $Bx^2 - x^3 = Z$, avec $y^3 + By^2 = Z$ de racine $D$ :
+$(B + D)x - x^2 = D^2 + BD$. Exemple : $7x^2 - x^3 = 36$ ; $y^3 + 7y^2 = 36$ donne
+$2$ ; d'où $9x - x^2 = 18$, $x = 3$ ou $6$.\footnote{Au théorème II, le signe
+devant « $B$ » est le double trait, corrigé en « $+$ » dans la marge ; au
+problème II, « fit regularis » est corrigé en « fiat irregularis », comme
+« fit » en « fiat » au problème I.} Le traité dit que la méthode vaut pour les
+degrés impairs, et renvoie les degrés pairs à la paraplérose climactique.
+
+Au cinquième degré, pour $Bx - x^5 = Z$, avec $y^5 - By = Z$ de racine $D$ :
+\[ D^3x - D^2x^2 + Dx^3 - x^4 = D^4 - B ; \]
+exemple : $11x - x^5 = 10$ ; $y^5 - 11y = 10$ donne $2$ ; d'où
+$8x - 4x^2 + 2x^3 - x^4 = 5$, qui donne $1$. Et pour $Bx^4 - x^5 = Z$, avec
+$y^5 + By^4 = Z$ :
+\[ (BD^2 + D^3)\,x - (BD + D^2)\,x^2 + (B + D)\,x^3 - x^4 = BD^3 + D^4 ; \]
+exemple : $11x^4 - x^5 = 10\,000$ ; $y^5 + 11y^4 = 10\,000$ donne $5$ ; d'où
+$400x - 80x^2 + 16x^3 - x^4 = 2000$, qui donne $10$. Tout est juste. Au cinquième
+degré, cependant, l'anastrophe n'abaisse l'équation qu'au quatrième, et
+l'exemple le montre : $11x - x^5 = 10$ a une seconde racine positive,
+$x \approx 1{,}4026$, qui est aussi racine de la quartique obtenue, et que la
+page ne donne pas.\footnote{Vérifié : $x^5 - 11x + 10 = (x - 1)(x + 2)(x^3 - x^2 +
+3x - 5)$, dont le dernier facteur a la racine réelle $1{,}4026\ldots$. Les
+marges de ces pages corrigent plusieurs signes (« $+$ » pour le double trait) et
+ajoutent un terme omis (« $+ 1D$ in $A$ cubum », vue 89), toutes corrections justes.}
+
+La seconde moitié du chapitre prend « la voie contraire » : si l'on connaît une
+racine d'une équation ambiguë, on obtient les autres par la même division. Quatre
+théorèmes, justes.\footnote{Au dernier théorème, la page divise d'abord par
+« $A + D$ », que la marge corrige en « $A - D$ », qui est juste ; la division
+suppose $x \ne D$. Au deuxième, « minus » est corrigé en « plus ». Le double
+trait « $=$ » de ces pages (« $A$ cubus $=$ $D$ cubo », « per $A = D$ ») est la
+différence d'ordre non donné entre les deux racines ; la marge le corrige en
+« $+$ » là où c'est une somme.}
+\begin{itemize}
+  \item $x^3 - Bx = Z$ et $By - y^3 = Z$ de racine $D$ : $x^2 - Dx = B - D^2$ ;
+    exemple $x^3 - 8x = 7$ avec $D = 1$ : $x = \sqrt{29/4} + \tfrac12$ ;
+  \item $Bx^2 + x^3 = Z$ et $By^2 - y^3 = Z$ : $x^2 + (B - D)x = BD - D^2$ ;
+    exemple $9x^2 + x^3 = 8$ avec $D = 1$ : $x = \sqrt{24} - 4$ ;
+  \item $Bx - x^3 = Z$, deux racines $x$ et $D$ : $x^2 + Dx = B - D^2$ ; exemple
+    $8x - x^3 = 7$ avec $D = 1$ : $x = \sqrt{29/4} - \tfrac12$ ;
+  \item $Bx^2 - x^3 = Z$, deux racines $x$ et $D$ : $x^2 + (D - B)x = BD - D^2$ ;
+    exemple $9x^2 - x^3 = 8$ avec $D = 1$ : $x = 4 + \sqrt{24}$.
+\end{itemize}
+
+\section*{L'isomérie, et le climactisme symétrique}
+
+\pagerange{92}{97}
+Le chapitre IIII, l'\emph{isomérie}, chasse les fractions : on réduit les
+fractions au même dénominateur $D$, on pose $y = Dx$, et l'on multiplie le
+coefficient du terme en $x^{n-1}$ par $D$, celui du terme en $x^{n-2}$ par $D^2$,
+et ainsi de suite ; la racine nouvelle est la racine ancienne multipliée par le
+dénominateur. Ou, inversement, on divise. La justification est qu'égaux
+multipliés ou divisés par égaux donnent des égaux. Les exemples sont
+justes.\footnote{Corrections de la marge, justes : le rapport des racines « ut 8 ad 1 »
+en « 48 ad 1 », et « ut $\frac{18}{2}$ ad 1 » en « 12 ad 1 » ; « $+ B$ solido in $A$ »
+rétabli à la vue 93 ; « hic » et « illic » intervertis à la vue 95. Un passage de
+la vue 94 est barré d'une croix, avec en marge « penitus expungenda », et une
+note encadrée de la vue 95, « sic restituantur », le récrit ; la transcription
+en donne la lecture « douteuse dans le détail ». Une note marginale numérotée
+« 4 » (vue 93) est reprise par « 4. vide annotata pag. 48 » à la vue 100. Le mot
+lu « sumptis » à la vue 95 est la lecture la plus douteuse de la page.}
+\begin{itemize}
+  \item $x^3 + \tfrac32 x = 225$ devient $y^3 + 6y = 1800$, $y = 12$, $x = 6$ ;
+    $x^3 + \tfrac32 x = \tfrac{265}{2}$ devient $y^3 + 6y = 1060$, $y = 10$,
+    $x = 5$ ;
+  \item $x^3 + \tfrac32 x^2 = 270$ devient $y^3 + 3y^2 = 2160$, $y = 12$ ;
+    $x^3 + \tfrac32 x^2 = \tfrac{325}{2}$ devient $y^3 + 3y^2 = 1300$, $y = 10$ ;
+  \item $x^3 + \tfrac{11}{12}x = \tfrac{19}{4}$ devient, avec $y = 48x$,
+    $y^3 + 2112y = 525\,312$, $y = 72$, $x = \tfrac32$ ; ou, avec le dénominateur
+    commun $12$, $y^3 + 132y = 8208$, $y = 18$ ; et l'on passe de l'une à l'autre
+    en divisant par $4$ ;
+  \item $x^3 + 12x^2 + 8x = 2280$, $x = 10$, divisée par $2$, donne
+    $y^3 + 6y^2 + 2y = 285$, $y = 5$ ; et $x^3 = 1728$ donne $y^3 = 8$.
+\end{itemize}
+
+Le chapitre V, le \emph{climactisme symétrique}, chasse les irrationnelles en
+élevant les deux membres à la puissance qui les fait disparaître. Si
+$x^3 - Bx = \sqrt{Z}$, on élève au carré :
+\[ x^6 - 2Bx^4 + B^2x^2 = Z , \]
+une cubique en $x^2$ ; exemple : $x^3 - 2x = \sqrt{1200}$ devient, en $u = x^2$,
+$u^3 - 4u^2 + 4u = 1200$, de racine $12$, et $x = \sqrt{12}$. Le traité note qu'on
+y arrivait aussi par πρῶτον ἔσχατον : $y^3 + 2y^2 = 1200$, $y = 10$,
+$x = \sqrt{1200}/10 = \sqrt{12}$. Si $x^3 - \sqrt[3]{B}\,x = Z$, on divise par $x$,
+on élève au cube et l'on multiplie par $x^3$ :
+\[ x^9 - 3Zx^6 + (3Z^2 - B)\,x^3 = Z^3 ; \]
+exemple : $x^3 - \sqrt[3]{18}\,x = 6$ devient, en $u = x^3$,
+$u^3 - 18u^2 + 90u = 216$, de racine $12$, et $x = \sqrt[3]{12}$. Tout est
+juste.\footnote{La page écrit « $B$ plano in $A$ quad. » au deuxième terme du carré,
+corrigé en marge en « $+ B$ plano-plano in $Aq$ », et « $8Q$ », corrigé en « $18$ ».
+Le premier paragraphe du chapitre est d'une écriture rapide dont plusieurs mots
+sont douteux (« facit », « desideres », « veram », « libata », « nec facta »), et
+la transcription le dit non grammatical sous la forme lue.}
+
+\section*{La paraplérose climactique : les quartiques par une cubique}
+
+\pagerange{97}{119}
+Le chapitre VI est le cœur du second traité. Son titre dit ce qu'il fait :
+« Quemadmodum æquationes quadratoquadraticæ deprimuntur ad quadraticas per
+medium cubicarum a radice plana. Seu de climactica paraplerosi. »\footnote{« Comment
+les équations du quatrième degré s'abaissent aux quadratiques par le moyen
+d'équations cubiques dont la racine est plane. Ou de la paraplérose
+climactique. » « Paraplérose » est le « remplissage » : le chapitre dit que le nom
+vient du supplément qu'on ajoute. Le paragraphe d'ouverture (vue 97) dit aussi
+que les cinq modes suffisent à préparer les équations pour la résolution
+numérique, que les racines irrationnelles s'y obtiennent « vero proximæ », au
+plus près du vrai, et qu'« exhiber les racines exactes est l'affaire du géomètre
+plutôt que de l'arithméticien ». Au pied de la vue 98, « regularis » est corrigé
+en « irregularis ».}
+
+\subsection*{La méthode}
+
+Soit $x^4 + Bx = Z$. On écrit $x^4 = Z - Bx$ et l'on ajoute aux deux membres
+$x^2y^2 + \tfrac14 y^4$, où $y$ est une grandeur auxiliaire : le premier membre
+devient le carré $\bigl(x^2 + \tfrac12 y^2\bigr)^2$. On veut que le second,
+$y^2x^2 - Bx + Z + \tfrac14 y^4$, soit aussi un carré, et l'on choisit pour sa
+racine
+\[ \frac{B}{2y} - yx , \]
+dont le carré est $y^2x^2 - Bx + B^2/(4y^2)$. « Ainsi, dit le feuillet, les
+affections sous $A$ disparaîtront dans la comparaison, et l'on sera ramené à une
+équation en $E$, où l'on voulait aller. » Il faut et il suffit que
+$Z + \tfrac14 y^4 = B^2/(4y^2)$, c'est-à-dire
+\[ y^6 + 4Z\,y^2 = B^2 , \]
+une équation du troisième degré en $y^2$. Si $D$ en est la racine, les deux
+carrés sont égaux, leurs racines aussi, et
+\[ x^2 + Dx = \frac{B}{2D} - \frac{D^2}{2} . \]
+C'est la méthode que l'on appelle aujourd'hui de Ferrari : ajouter à une
+quartique un terme qui en fasse une égalité entre deux carrés, et déterminer le
+paramètre par une équation du troisième degré, la \emph{résolvante}.\footnote{Ferrari
+l'avait trouvée et Cardan l'a publiée dans l'\emph{Ars magna} (1545) ; le nom de
+résolvante est moderne. Le traité ne cite personne. Descartes (1637) donnera une
+autre réduction de la quartique au troisième degré.} Tout est juste pour la
+racine positive que cherche le traité ; la quartique a en outre une racine
+négative et deux racines imaginaires, dont le traité ne parle pas.
+
+Pour $x^4 - Bx = Z$, la racine à comparer est $B/(2y) + yx$, la résolvante est la
+même, et $x^2 - Dx = B/(2D) - D^2/2$. Pour $Bx - x^4 = Z$, la résolvante est
+$y^6 - 4Zy^2 = B^2$, et $Dx - x^2 = D^2/2 - B/(2D)$, ce qui suppose
+$B/(2D) < D^2/2$, comme le note une marge de la vue 104.\footnote{Pour ce dernier
+cas, on ajoute $x^2y^2 + \tfrac14y^4$ à $x^4 = Bx - Z$ ; la racine à comparer est
+$yx + B/(2y)$. La note de la vue 104 est numérotée « 4 », et c'est à elle que
+renvoie, à la vue 100, « 4. vide annotata pag. 48 » : la vue 104 est le
+feuillet 48 de la série à l'encre.}
+
+\subsection*{Les trois théorèmes, et la constitution}
+
+La vue 101 et le béquet « 47 bis » (vues 102 et 103) en tirent trois théorèmes et
+les vérifient par la syncrise : l'équation $x^4 + Bx = Z$ est faite de deux côtés
+$x$ et $x + D$, avec
+\[ B = 2x(x + D)\,D + D^3 , \qquad Z = x(x + D)\,\bigl(x^2 + xD + D^2\bigr) , \]
+ou, sur quatre proportionnelles $a, b, c, d$, avec $D = d - a$,
+$B = d^3 - c^3 + b^3 - a^3$ et $Z = a\,(b^3 - c^3 + d^3)$ — la constitution des
+contradictoires du premier traité (chapitre XIX). L'exemple est juste : sur
+$2, \sqrt[3]{40}, \sqrt[3]{200}, 10$, l'équation $x^4 + 832x = 1680$ a pour
+résolvante, en $u = y^2$, $u^3 + 6720u = 692\,224$, de racine $64$ ; donc $D = 8$,
+et $x^2 + 8x = 52 - 32 = 20$ donne $x = 2$. De même, $x^4 - 832x = 1680$ donne
+$x^2 - 8x = 20$, $x = 10$ ; et $1248x - x^4 = 2480$ a pour résolvante
+$u^3 - 9920u = 1\,557\,504$, de racine $144$, d'où $D = 12$ et $12x - x^2 = 20$,
+$x = 2$ ou $10$.\footnote{« $1557$ », surligné dans le texte, est donné en entier
+dans la marge, « $1{,}557{,}504$ », le dernier chiffre surchargé : $1248^2 =
+1\,557\,504$. Au théorème II, « $A$ solido-solido » est corrigé en « $B$ », et
+« $-E$ quadrato » en « $D$ quadrato ½ ». Dans les constitutions, $D$ est la
+différence des deux côtés aux théorèmes I et II, leur somme au théorème III, où
+$B$ est la somme des cubes des quatre proportionnelles et $Z$ le produit d'un
+extrême par la somme des cubes des trois autres.}
+
+\subsection*{La quartique affectée sous le cube}
+
+Le problème II traite $x^4 + 2Bx^3 = Z$. On forme le carré de
+$x^2 + Bx - \tfrac12 y$, où $y$ est un plan :
+\[ \bigl(x^2 + Bx - \tfrac12 y\bigr)^2 = x^4 + 2Bx^3 + (B^2 - y)\,x^2 - Byx
+   + \tfrac14 y^2 . \]
+Il faut que $Z + (B^2 - y)x^2 - Byx + \tfrac14 y^2$ soit un carré, de racine
+$\sqrt{B^2 - y}\;x - By/\bigl(2\sqrt{B^2 - y}\bigr)$ ; d'où la résolvante
+\[ y^3 + 4Z\,y = 4ZB^2 , \]
+et, $D$ en étant la racine,
+\[ x^2 + \Bigl(B + \sqrt{B^2 - D}\Bigr)x = \frac{D}{2} + \frac{DB}{2\sqrt{B^2 - D}} . \]
+Pour $x^4 - 2Bx^3 = Z$, les signes de $B$ changent ; pour $2Bx^3 - x^4 = Z$, la
+résolvante est $y^3 - 4Zy = 4ZB^2$ et la racine carrée porte sur $B^2 + y$. Les
+exemples sont justes : sur $1, 2, 4, 8$, $x^4 + 5x^3 = 216$ a pour résolvante
+$y^3 + 864y = 5400$, de racine $6$ ; comme $\sqrt{4B^2 - 4D} = \sqrt{25 - 24} = 1$,
+on a $x^2 + 3x = 18$, $x = 3$ ; $x^4 - 5x^3 = 216$ donne $x^2 - 3x = 18$, $x = 6$ ;
+$15x^3 - x^4 = 2744$ a pour résolvante $y^3 - 10976y = 617\,400$, de racine $126$,
+d'où $\sqrt{225 + 504} = 27$ et $21x - x^2 = 98$, $x = 7$ ou $14$.\footnote{Le
+feuillet écrit « $\frac{1}{2}$ » de trop au terme « $-E$ plano in $A$ quad. », et le
+barre à la ligne suivante ; « quadratum » est corrigé en « cubus » dans la
+résolvante, et le coefficient $4$ rétabli en marge. Il écrit la racine
+« $LV\{B\,q - E\,p\}$ in $A\,q$ », la racine universelle portant sur tout le produit,
+soit $\sqrt{(B^2 - y)\,x^2} = \sqrt{B^2 - y}\,x$ : la marge corrige « in $A$ » en
+« in $A\,q$ » dans ce sens. Aux exemples, « $- 5C$ » est corrigé en « $+$ », « $540$ »
+en « $5400$ », « $725$ » en « $729$ ». Ici « $B$ bis » vaut $5$, puis $15$ : la
+différence alternée, puis la somme, des quatre proportionnelles.}
+
+\subsection*{La quartique complète, par deux formules}
+
+Le problème III traite $x^4 \pm 2Gx^2 \pm Bx = Z$, la quartique privée seulement
+de son terme en $x^3$ — la forme à laquelle l'expurgation ramène toute
+quartique. La « première formule » forme le carré de
+$x^2 + G + \tfrac12 y^2$ et compare au carré de $B/(2y) - yx$ ; la résolvante est
+\[ y^6 + 4G\,y^4 + (4Z + 4G^2)\,y^2 = B^2 , \]
+et $x^2 + Dx = B/(2D) - D^2/2 - G$ (avec les signes changés selon les cas). La
+« seconde formule » (« Aliter », vues 111 à 113), pour $x^4 + Gx^2 + Bx = Z$,
+ajoute $Fx^2 + \tfrac14F^2$, où $F$ est un plan, et obtient la résolvante
+\[ F^3 - G\,F^2 + 4Z\,F = B^2 + 4ZG , \]
+puis $x^2 + \sqrt{F - G}\;x = B/\bigl(2\sqrt{F - G}\bigr) - F/2$. Chaque formule
+donne sept théorèmes, un par combinaison de signes, chacun avec un exemple ; on
+les a tous refaits. Par exemple, $x^4 + 6x^2 + 880x = 1800$ a pour résolvante,
+selon la première formule ($G = 3$), $u^3 + 12u^2 + 7236u = 774\,400$, de racine
+$64$, et, selon la seconde ($G = 6$), $F^3 - 6F^2 + 7200F = 817\,600$, de racine
+$70$, avec $70 - 6 = 64$ ; dans les deux cas $x^2 + 8x = 20$, $x = 2$. De même
+$44x^2 + 720x - x^4 = 1600$ donne $u = 144$ (première formule) ou $F = 100$,
+$100 + 44 = 144$ (seconde), puis $12x - x^2 = 20$, $x = 2$ ou $10$. Tous les
+exemples sont justes, une fois reçues les corrections de la marge ; une faute
+reste dans l'énoncé du quatrième théorème de la seconde formule.\footnote{Ce
+théorème, pour $x^4 - Gx^2 - Bx = Z$, écrit la résolvante avec
+« $+ Z$ plano-plano $4$ in $G$ plano » au second membre ; il faut
+$F^3 + GF^2 + 4ZF = B^2 - 4ZG$, comme au théorème III, où la marge a corrigé le
+signe, et comme l'exige l'exemple, qui est le même
+($F^3 + 4F^2 + 6400F = 614\,400 = 640\,000 - 25\,600$). Au même exemple, « $64N$ »
+est écrit pour « $6400N$ ». Les corrections marginales de ces pages, toutes
+justes, sont nombreuses : signes rétablis (« $+$ », « $\pm$ », « $\mp$ » à la place du
+double trait), coefficients $4$ ajoutés, « Aq » pour « A » sous la racine
+universelle, et des nombres : « $20$ » en « $10$ », « $160$ » en « $1600$ » (deux
+fois), « $6410$ » en « $6416$ », « $800$ » en « $880$ », « $6$ » en « $60$ »,
+« $36$ » en « $30$ ». Au théorème V de la seconde formule, la ligne
+« $1C = 44Q = 6400N$ æquatur $800{,}000$ », aux signes doublés, se lit
+$F^3 + 44F^2 - 6400F = 800\,000$. Les « équations après métamorphose » que la
+marge donne pour chaque cas des vues 107 à 113 sont les résolvantes ; elles sont
+justes.}
+
+\subsection*{La feuille volante « 46 bis »}
+
+Une feuille volante posée sur la vue 99, numérotée « 46 bis » d'une autre main,
+récapitule en deux tableaux tous les cas : pour chaque forme de quartique, la
+« racine » à former et la grandeur à lui comparer. On les a vérifiés ligne à
+ligne ; tous sont justes, sauf un signe.\footnote{À la quatrième ligne du tableau
+de gauche (série I à VII), pour $x^4 - 2Gx^2 - Bx = Z$, la racine doit être
+$B/(2y) + yx$, comme à la ligne II ; la feuille écrit « $-$ E in A ». Dans le
+tableau de droite, trois écarts d'écriture : « Eq4 » pour « Ep4 » (ligne VI),
+« Eq ½ » pour « Ep ½ » (ligne V), et un dénominateur sans « Lv » (ligne VII). Une
+bande de papier sous le pied de la vue 100, de la même main, porte deux
+constitutions en espèces que la transcription ne rattache à rien de sûr.}
+
+\subsection*{Deux notes marginales}
+
+La marge de la vue 100 porte, en tête d'une addition encadrée, les mots
+« transcripta ex exemplari » — lecture probable, non certaine — puis un calcul
+abrégé du problème ; à quoi ces mots s'appliquent, la marge ne le dit pas. Et, au
+problème IIII de la première formule (vue 114), au-dessus de la résolvante, des
+mots soulignés puis biffés se lisent, avec beaucoup de doute, « deerant hæc in
+exemplari ». Si ces lectures sont bonnes, l'écrivain copie un modèle et note où
+son modèle est défaillant. Cette lecture ne va pas plus loin.\footnote{« Copiée
+sur l'exemplaire » ; « ceci manquait dans l'exemplaire ». La transcription de la
+vue 114 écrit : « S'ils se lisent bien ainsi, ils disent que le passage manquait
+dans un modèle : la note serait celle d'un copiste. Cette transcription ne
+tranche pas. » Le chapitre se clôt à la vue 119 par une phrase de lecture
+difficile sur les métathèses et l'expurgation, puis « Hæc itaque sunto satis
+superque ».}
+
+\section*{L'hypostase double : la formule de Cardan}
+
+\pagerange{119}{122}
+Le chapitre VII revient à la cubique, avec la septième manière de changer
+d'inconnue. Pour $x^3 + 3Bx = 2Z$, on pose
+\[ y^2 + xy = B , \qquad\text{c'est-à-dire}\qquad x = \frac{B - y^2}{y} , \]
+et l'équation devient
+\[ y^6 + 2Z\,y^3 = B^3 , \]
+une équation du second degré en $y^3$, « de racine solide ». D'où le
+conséquent : si $D^3 = \sqrt{B^3 + Z^2} - Z$, alors $x = (B - D^2)/D$. Avec
+$y^2 - xy = B$, on trouve de même $y^6 - 2Zy^3 = B^3$, $G^3 = \sqrt{B^3 + Z^2} + Z$
+et $x = (G^2 - B)/G$. Et, les deux ensemble,
+\[ x = G - D = \sqrt[3]{\sqrt{B^3 + Z^2} + Z} - \sqrt[3]{\sqrt{B^3 + Z^2} - Z} . \]
+C'est la formule de Cardan, et la substitution est celle qu'on appelle
+aujourd'hui la substitution de Viète.\footnote{L'énoncé coïncide avec la formule
+publiée par Cardan en 1545 pour $x^3 + px = q$, avec $p = 3B$ et $q = 2Z$ ; le
+chapitre VI du premier traité en contenait la constitution. Le nom de
+substitution de Viète est moderne.} Les exemples sont justes :
+$x^3 + 81x = 702$ ; $\sqrt{27^3 + 351^2} = \sqrt{142\,884} = 378$ ;
+$378 - 351 = 27 = 3^3$, d'où $x = (27 - 9)/3 = 6$ ; et $378 + 351 = 729 = 9^3$,
+d'où $x = (81 - 27)/9 = 6$ ; enfin $x^3 + 6x = 2$ donne
+$x = \sqrt[3]{4} - \sqrt[3]{2}$.\footnote{« $700$ », surligné, est corrigé en
+« $702$ » dans la marge ; « $B$ plano ter » est complété en « ter in $A$ » ; la
+marge justifie le conséquent en complétant le carré de $y^3 + Z$.}
+
+Le problème II traite $x^3 - 3Bx = 2Z$ sous la condition que le cube du tiers
+du coefficient soit moindre que le quart du carré du terme connu, $B^3 < Z^2$ —
+c'est la bonne condition. Avec $xy - y^2 = B$, $x = (B + y^2)/y$, l'équation
+devient $2Zy^3 - y^6 = B^3$, et
+\[ x = \sqrt[3]{Z + \sqrt{Z^2 - B^3}} + \sqrt[3]{Z - \sqrt{Z^2 - B^3}} ; \]
+exemple : $x^3 - 81x = 756$, $\sqrt{378^2 - 27^3} = 351$, $x = 9 + 3 = 12$. C'est
+juste. Le feuillet remarque que la condition découle de la forme même de
+l'équation réduite ; quand elle n'est pas remplie, on est dans le cas
+irréductible, que le premier traité résolvait par les sections angulaires
+(vues 16 à 18).\footnote{Une note marginale d'encre plus noire ajoute que
+« les mêmes choses suivent » pour $3Bx - x^3 = 2Z$. Ce n'est pas le cas pour une
+racine positive : sous la condition $Z^2 > B^3$, cette équation n'a pas de racine
+positive, puisque $3Bx - x^3$ ne dépasse pas $2B^{3/2}$ ; la formule y donne la
+valeur absolue de sa racine négative. La marge écrit d'ailleurs « $Zs.$ » là où
+l'énoncé porte « $Z$ solido bis ». Une autre note marginale (vue 122) justifie la
+règle : $2Z$ est la somme de deux cubes dont le produit est $B^3$.}
+
+\section*{La transmutation canonique ; les racines entières}
+
+\pagerange{122}{125}
+Le chapitre VIII apprend à transformer une équation pour que son coefficient,
+ou son terme connu, soit une grandeur prescrite. On pose $x = By/X$ pour
+remplacer le coefficient $B$ par $X$ :
+\[ x^3 + Bx^2 = Z \;\Longrightarrow\; y^3 + Xy^2 = \frac{X^3 Z}{B^3} , \]
+et de même pour les autres formes ; pour prescrire le terme connu, on pose
+$x = Zy/D$. Les exemples sont justes : $x^3 + 20x^2 = 96\,000$ devient
+$y^3 + y^2 = 12$, $y = 2$, $x = 40$ ; $x^3 - 144x = 10\,368$ devient $y^3 - y = 6$,
+$y = 2$, $x = 24$ ; $x^3 + 860x = 12^3$ devient $y^3 + 215y = 6^3$, $y = 1$,
+$x = 2$.\footnote{La marge corrige deux dénominateurs, « $X$ » en « $X\,q.$ » et
+« $Z$ solido » en « $X\,c$ in $Z\,s.$ sur $B\,c$ », tous deux justement. « Concedetur »
+est lu par le sens (« Concreditor » ?).}
+
+Le chapitre le justifie par une remarque de calcul : quand le coefficient vaut
+l'unité, on voit tout de suite si la racine est entière. Pour $x^3 + x = 10$, le
+cube le plus proche est $8$, et $8 + 2 = 10$ : la racine est $2$. Pour
+$x^3 - x = 24$, on trouve $3$. Pour $x^3 + x = 9$ ou $x^3 - x = 25$, le calcul
+tombe à côté, « donc la racine est irrationnelle ». La conclusion est juste,
+mais elle suppose un fait que le chapitre ne dit pas : une racine rationnelle
+d'une équation à coefficients entiers dont le premier coefficient vaut $1$ est
+un entier.\footnote{C'est le théorème des racines rationnelles, appliqué au
+cas unitaire : si $p/q$ irréductible est racine, $q$ divise le premier
+coefficient. Il est postérieur au traité. Ici, $x^3 + x$ est croissante et prend
+les valeurs $2$ et $10$ en $1$ et $2$ : aucun entier ne donne $9$ ; de même
+$x^3 - x$ vaut $24$ et $60$ en $3$ et $4$.}
+
+\section*{Réductions « anomales »}
+
+\pagerange{125}{135}
+Les chapitres IX et X rassemblent des équations qu'on abaisse d'un degré parce
+qu'on leur connaît un facteur. Le traité n'en fait pas une règle : « de
+irregularibus autem non statuitur præcepta quoniam anomalia non magis finita
+est quam artificis in indagando vis et solertia ».\footnote{« On ne donne pas de
+préceptes pour les irrégulières, parce que l'anomalie n'a pas plus de bornes que
+la force et l'adresse de l'artisan à chercher. »} En termes d'aujourd'hui, chaque
+proposition divise le polynôme par $x \pm B$, où $\mp B$ est une racine, ce que
+l'on appelle le théorème du facteur ; et chaque fois que le facteur divisé est
+$x - B$ avec $B$ positif, la division fait perdre la racine $x = B$, que le
+traité ne donne pas toujours.
+
+\subsection*{Chapitre IX}
+
+\begin{itemize}
+  \item $x^3 - 2B^2x = B^3$ donne $x^2 - Bx = B^2$ (on ajoute $B^3$ et l'on divise
+    par $x + B$) ; exemple $x^3 - 18x = 27$, $x^2 - 3x = 9$. La racine est
+    $x = \tfrac{1 + \sqrt5}{2}\,B$ : $B$ et $x$ sont dans la \emph{moyenne et extrême
+    raison}.
+  \item $2B^2x - x^3 = B^3$ donne $x^2 + Bx = B^2$ (on divise par $x - B$), dont la
+    racine $\tfrac{\sqrt5 - 1}{2}\,B$ est le plus grand segment de $B$ coupé en
+    moyenne et extrême raison ; mais $x = B$ est aussi racine, et la division la
+    perd.\footnote{La page donne pour exemple « $18N - 1C$ æquatur $27$, igitur
+    $1Q - 3N$ æquabitur $9$ » ; la règle qui précède donne $1Q + 3N$, et c'est
+    juste : $x^3 - 18x + 27 = (x - 3)(x^2 + 3x - 9)$, de racines positives $3$ et
+    $\tfrac{-3 + \sqrt{45}}{2} \approx 1{,}854$. La marge corrige « $B$ quadratum »
+    en « bis ».}
+  \item $x^3 - 3B^2x = 2B^3$ a la racine $x = 2B$ ; exemples $x^3 - 12x = 16$,
+    $x = 4$, et $x^3 - 3x = 2$, $x = 2$. Et $3B^2x - x^3 = 2B^3$ a la racine double
+    $x = B$ : $12x - x^3 = 16$ donne $2$, $6x - x^3 = \sqrt{32}$ donne
+    $\sqrt2$.\footnote{La page énonce d'abord la proposition III sous la forme
+    « $B$ quadrat. in $A$ ter minus $A$ cubo æquetur $B$ cubo bis, $B$ dupla est
+    ipsius $A$ » ; la marge, d'encre plus noire, la récrit sous la forme juste
+    ($A^3 - 3B^2A = 2B^3$, $A$ double de $B$) et ajoute une proposition IIII
+    ($3B^2A - A^3 = 2B^3$, $A = B$). Le second exemple de la page, « $1C - 6N$ æquat.
+    $L\,32$ fit $1N$ $L\,2$ », est faux pour la proposition III (la racine de
+    $x^3 - 6x = \sqrt{32}$ est $2\sqrt2 = \sqrt8$) et juste pour la proposition
+    IIII, d'où il paraît venir. En effet $x^3 - 3B^2x - 2B^3 = (x - 2B)(x + B)^2$ et
+    $3B^2x - x^3 - 2B^3 = -(x - B)^2(x + 2B)$.}
+  \item $x^3 - Bx^2 + Dx = BD$ a la racine $B$ ($x^3 - 4x^2 + 5x = 20$, $x = 4$) ;
+    $x^3 + Bx^2 - D^2x = BD^2$ a la racine $D$ ($x^3 + 5x^2 - 4x = 20$, $x = 2$) ;
+    $Bx^2 + D^2x - x^3 = D^2B$ a les racines $B$ et $D$ ($6x^2 + 4x - x^3 = 24$,
+    $x = 6$ ou $2$). Toutes sont justes : ce sont $(x - B)(x^2 + D) = 0$,
+    $(x + B)(x^2 - D^2) = 0$ et $(x - B)(x^2 - D^2) = 0$.\footnote{« $B$ cubus » est
+    corrigé en « $D$ » à la proposition VI.}
+  \item $Dx^2 + BDx - x^3 = B^3$ donne $(D + B)x - x^2 = B^2$ ; exemple
+    $10x^2 + 20x - x^3 = 8$, $12x - x^2 = 4$, $x = 6 \pm \sqrt{32}$.\footnote{La page
+    écrit « $1Q + 20N - 1C$ », corrigé en marge en « $10$ » ; le signe devant
+    « $B$ in $A$ » est d'abord le double trait, puis un « $+$ » net.}
+  \item $x^3 - Dx^2 + DBx = B^3$ donne $(D - B)x - x^2 = B^2$ ; exemple
+    $8x - x^2 = 4$, $x = 4 \pm \sqrt{12}$. Ici encore la division par $x - B$ fait
+    perdre la racine $x = B$.\footnote{L'exemple est écrit « $1C + 10Q + 20N$
+    æquetur $8$ » ; la proposition demande $x^3 - 10x^2 + 20x = 8$, qui a les trois
+    racines $2$, $4 - \sqrt{12}$ et $4 + \sqrt{12}$.}
+  \item $x^3 - 3Bx = \sqrt{2B^3}$ a la racine $x = \bigl(\sqrt{3B} + \sqrt B\bigr)/\sqrt2$ ;
+    exemple $x^3 - 6x = 4$, $x = \sqrt3 + 1$. Et $3Bx - x^3 = \sqrt{2B^3}$ a les
+    racines $\bigl(\sqrt{3B} - \sqrt B\bigr)/\sqrt2$ et $\sqrt{2B}$ ; exemple
+    $6x - x^3 = 4$, $x = \sqrt3 - 1$ ou $2$. Une marge vérifie le premier cube par
+    un développement juste.\footnote{À l'exemple de la proposition X, la page
+    écrit « igitur $L\,3 - 1$ fit $1N$ » ; la marge porte « $\pm$ » ; la racine positive
+    de $x^3 - 6x = 4$ est $\sqrt3 + 1$, et $\sqrt3 - 1$ est celle de la
+    proposition XI. Le second membre « $L\,B$ plano-plano-plani $\frac{\cdot}{1}$ » est
+    corrigé en marge en « $2$ ». En effet $x^3 - 6x - 4 = (x + 2)(x^2 - 2x - 2)$.}
+\end{itemize}
+
+\subsection*{Chapitre X}
+
+Le chapitre X, « Similium reductionum Continuatio », multiplie une quadratique
+par $x \pm B$ ou $B - x$ :
+\begin{itemize}
+  \item $x^3 + 3Bx^2 + Dx = 2B^3 - DB$ donne $x^2 + 2Bx = 2B^2 - D$ ; exemple
+    $x^3 + 30x^2 + 44x = 1560$, $x^2 + 20x = 156$, $x = 6$ ;
+  \item $x^3 + 3Bx^2 - Dx = 2B^3 + DB$ donne $x^2 + 2Bx = 2B^2 + D$ ; exemple
+    $x^3 + 30x^2 - 24x = 2240$, $x^2 + 20x = 224$, $x = 8$ ;
+  \item $x^3 - 3Bx^2 + Dx = DB - 2B^3$ donne $2Bx - x^2 = D - 2B^2$, et la racine
+    $x = B$ ; exemple $x^3 - 30x^2 + 236x = 360$, racines $2$, $10$ et $18$ ; et
+    $x^3 - 30x^2 + 264x = 640$, racines $4$, $10$, $16$ ;
+  \item $3Bx^2 + Dx - x^3 = 2B^3 + DB$ donne $x^2 - 2Bx = 2B^2 + D$, et la racine
+    $B$ ; exemple $30x^2 + 24x - x^3 = 2240$, racines $28$ et $10$ ;
+  \item $3Bx^2 - Dx - x^3 = 2B^3 - DB$ donne $x^2 - 2Bx = 2B^2 - D$, et la racine
+    $B$ ; exemple $30x^2 - 156x - x^3 = 440$, racines $22$ et $10$.
+\end{itemize}
+Tout est juste, et le chapitre, cette fois, donne toujours la racine $B$ que la
+multiplication a introduite.\footnote{Corrections de la marge, justes : « $756$ »
+en « $156$ », « $22400$ » en « $2240$ », « $- D$ plano » rétabli, « æquabitur » en
+« æquetur », plusieurs signes rétablis à la place du double trait. À la troisième
+proposition, la condition lue « sit $B$ quadratum ter maius $D$ plano »,
+$3B^2 > D$, est celle qui assure que la quadratique a des racines réelles ; pour
+qu'elles soient toutes deux positives il faut en outre $D > 2B^2$, ce que
+l'exemple vérifie ($200 < 236 < 300$). Le numéro du chapitre est écrit « XX »,
+ramené à « X » dans la marge, comme les suivants.}
+
+La proposition VI, « ad quadrato-quadraticam pertinens », est d'une autre
+sorte : pour $x^4 - 2Xx^3 + 4X^3x = 2X^4$, la page, corrigée par la marge, trouve
+\[ 2X^2x^2 - x^4 = \bigl(4 - 2\sqrt3\bigr)\,X^4 , \]
+d'où $x^2 = X^2 \pm X^2\sqrt{\sqrt{12} - 3}$ ; exemple $X = 1$,
+$x^4 - 2x^3 + 4x = 2$. Seul le signe moins donne une racine de l'équation
+proposée : $x = \sqrt{1 - \sqrt{\sqrt{12} - 3}} \approx 0{,}5646$. Le signe plus
+donne $1{,}2966$, valeur absolue de la racine négative, qui est racine de
+$x^4 + 2x^3 - 4x = 2$ et non de l'équation proposée.\footnote{Vérifié : les
+racines réelles de $x^4 - 2x^3 + 4x - 2$ sont $0{,}5646$ et $-1{,}2966$, et toutes
+deux satisfont $2x^2 - x^4 = 4 - \sqrt{12}$. Le passage intermédiaire, où la page
+élève au carré pour retrouver une équation « quadrato-cubique », a des
+coefficients qui ne répondent pas à l'égalité précédente, et plusieurs mots n'en
+sont pas lus ; il n'est pas restitué. La marge corrige « $X$ quad. in $A$ quad. »
+en « $2$ », « $X$ quad.-quad. » en « $4$ », et « $L\,X$ quadrati » en « $3$ ».}
+
+\section*{Quatre recueils ; les relations entre coefficients et racines}
+
+\pagerange{135}{141}
+Les chapitres XI à XIIII sont des recueils de « constitutions singulières »,
+sans démonstration : « hæc singula suam habent ex Zetesi demonstrationem ».
+
+\subsection*{La moyenne et extrême raison, « duplicata, triplicata\ldots »}
+
+Le chapitre XI part de $x^2 + Bx = B^2$ : la longueur $2B$ est coupée en trois
+segments proportionnels, $B$, $x$ et $B - x$, et l'on dit que $B$ est coupée en
+moyenne et extrême raison ; $x = \tfrac{\sqrt5 - 1}{2}B$. Il généralise :
+$x^3 + Bx^2 + B^2x = B^3$ coupe $2B$ en quatre segments continûment
+proportionnels $B, x, x^2/B, x^3/B^2$ (« moyenne et extrême raison
+doublée »), et ainsi de suite jusqu'à sept segments. C'est juste : la somme des
+segments est $2B$ si et seulement si $x^n + Bx^{n-1} + \cdots + B^{n-1}x = B^n$.\footnote{Le
+rapport $B/x$ est alors la racine réelle plus grande que $1$ de
+$t^n = t^{n-1} + \cdots + t + 1$ : le nombre d'or pour $n = 2$, et, pour les degrés
+suivants, les nombres qu'on appelle aujourd'hui « tribonacci »,
+« tétranacci »\ldots{} Ces noms sont modernes. À la cinquième proposition, la page
+écrit « $B$ in $A$ quad.-quad. » là où la suite demande $B^2x^4$. Le numéro du
+chapitre est corrigé de « XXI » en « XI ».}
+
+Le chapitre XII fait de même avec $B$ premier terme d'une suite de
+proportionnelles et $Z$ la somme des autres : $x^2 + Bx = BZ$,
+$x^3 + Bx^2 + B^2x = B^2Z$, \ldots, où $x$ est le second terme. Le chapitre XIII
+prend les sommes alternées : $Bx - x^2 = BZ$, avec deux racines, le second terme
+et la différence du premier et du second ; $x^3 - Bx^2 + B^2x = B^2Z$, etc. Les
+exemples sont justes : sur $4, 6, 9$, $9x - x^2 = 18$ donne $6$ et $3$, et
+$x^2 - 4x = 12$ donne $6$ ; sur $1, 2, 4, 8$, $x^3 - 8x^2 + 64x = 192$ donne $4$ ;
+sur $1, 2, 4, 8, 16$, $4096x - 256x^2 + 16x^3 - x^4 = 20\,480$ donne $8$ ; sur
+$1, 2, \ldots, 32$, $x^5 - 32x^4 + 1024x^3 - 32768x^2 + 1048576x = 11\,534\,336$ donne
+$16$.\footnote{Au chapitre XIII, proposition II, le signe devant « $B$ in $A$
+quad. » est le double trait, corrigé en « $-$ » dans la marge. Les marges des vues
+137 et 138, d'encre plus noire, énoncent d'autres propositions de la même
+série ; elles ne sont pas vérifiées ici, et l'une d'elles omet un terme
+($+B\,x^3$ dans la somme des quatre derniers). Une autre note en tête de la
+vue 138, dans un encadré, n'est pas lue assez pour être interprétée.}
+
+\subsection*{Le chapitre XIIII : les équations à plusieurs racines}
+
+Le dernier chapitre, « Collectio quarta », « laisse librement à l'examen
+analytique » des théorèmes sur les équations « admirablement explicables par
+plusieurs racines ». Ce sont les relations entre coefficients et racines, dans
+leur forme générale :
+\begin{itemize}
+  \item $(B + D)\,x - x^2 = BD$ a pour racines $B$ et $D$ ;
+  \item $x^3 - (B + D + G)\,x^2 + (BD + BG + DG)\,x = BDG$ a pour racines $B$, $D$
+    et $G$ ;
+  \item $(BDG + BDH + BGH + DGH)\,x - (BD + BG + BH + DG + DH + GH)\,x^2
+    + (B + D + G + H)\,x^3 - x^4 = BDGH$ a pour racines $B$, $D$, $G$, $H$ ;
+  \item et de même au cinquième degré, pour cinq racines $B$, $D$, $G$, $H$, $K$.
+\end{itemize}
+Les exemples sont justes : $3x - x^2 = 2$ (racines $1$, $2$) ;
+$x^3 - 6x^2 + 11x = 6$ ($1, 2, 3$) ; $50x - 35x^2 + 10x^3 - x^4 = 24$
+($1, 2, 3, 4$) ; $x^5 - 15x^4 + 85x^3 - 225x^2 + 274x = 120$ ($1, 2, 3, 4,
+5$). C'est l'énoncé que l'on appelle aujourd'hui les formules de Viète : le
+polynôme unitaire de racines $r_1, \ldots, r_n$ a pour coefficients, au signe près,
+les fonctions symétriques élémentaires $\sigma_1 = \sum r_i$,
+$\sigma_2 = \sum_{i<j} r_ir_j$, \ldots, $\sigma_n = r_1\cdots r_n$, de sorte que
+\[ x^n - \sigma_1x^{n-1} + \sigma_2x^{n-2} - \cdots + (-1)^n\sigma_n = 0 . \]
+Le traité l'énonce pour des racines positives données, et répartit les termes
+entre les deux membres pour qu'ils soient tous positifs ; les signes alternés
+que l'on écrit aujourd'hui y sont déjà.\footnote{L'énoncé coïncide exactement, pour
+des racines positives, avec les relations de Viète. Leur forme avec des racines
+quelconques, négatives et imaginaires comprises, est chez Girard (1629), et la
+démonstration générale suppose le théorème fondamental de l'algèbre ; ce sont
+des développements postérieurs au traité, si celui-ci est de Viète, comme le
+disent ses titres. Corrections de la marge : « $- A$ qq. », omis à la proposition
+III, et « $16$ » corrigé en « $10$ » dans son exemple ; à la vue 139, le titre
+« prop. III » est biffé et la proposition récrite à la page suivante. La
+proposition IIII s'achève en tête de la vue 141, dont le dernier membre porte le
+double trait et un mot lu « æqu\ldots » seulement.}
+
+Le traité s'achève là, sur une phrase qui dit ce qu'il pense de ce qu'il vient de
+faire :
+
+\begin{quote}
+« Atq; hæc \emph{elegans} et perpulchra Speculationis Sylloge tractatui alioquin
+effuso finem aliquem et coronida tandem Imponito. »\footnote{« Et que ce recueil
+élégant et très beau de spéculation mette enfin un terme et un couronnement à un
+traité par ailleurs trop étendu. » Le premier mot en italique est une lecture
+douteuse : seules les lettres « -gans » sont nettes sous le cachet. Suit
+« Finis », souligné. Un lecteur postérieur a écrit dans la marge « pag. 158
+editionis elzevir. anni 1646, infolio. ».}
+\end{quote}
+
+\section*{Les tables des prostaphérèses de la Lune}
+
+\pagerange{142}{147}
+Les feuillets d'astronomie commencent à la vue 142, en tête du feuillet 67, sous
+le titre « Ad Tabulas Prostaphæreseōn Lunarium ». La \emph{prostaphérèse} est
+l'angle qu'il faut ajouter au mouvement moyen, ou en retrancher, pour avoir le
+mouvement vrai — ce qu'on appelle aujourd'hui une \emph{équation}, au sens
+astronomique. Les grandeurs dont elle dépend sont l'anomalie, la longitude
+« double » de la Lune au Soleil, c'est-à-dire deux fois l'élongation moyenne,
+qu'on note ici $2\eta$, et les distances des centres, exprimées en parties d'une
+« altitude moyenne ».\footnote{Rien sur ces feuillets ne dit d'où viennent les
+paramètres. Le petit tableau de la vue 145, « Canonici numeri in Sole », les
+donne pour le Soleil et pour la Lune : $AB = 700\,000\,000$, $BC = 3\,000\,000$,
+$EG = 27\,000\,000$, $GI = 2\,000\,000$ au Soleil ; $AB = 9\,100\,000$,
+$BC = 100\,000$, $EG = 1\,000\,000$, $GI = 200\,000$ à la Lune. Le titre ne nomme que
+le Soleil.}
+
+Cinq propositions, chacune avec un exemple calculé pour $2\eta = 60^\circ$ :
+
+\begin{itemize}
+  \item \textbf{La première prostaphérèse.} Le centre $E$ de l'épicycle décrit,
+    autour d'un point $B$ situé à la distance moyenne $AB$ de la Terre $A$, un
+    petit cercle, l'« eccentrulus », de rayon $BC = AB/91$, et il y avance selon
+    $2\eta$. L'angle $EAB$ est la première prostaphérèse, additive dans le premier
+    demi-cercle de $2\eta$, soustractive dans le second :
+    \[ \tan EAB = \frac{BE\sin 2\eta}{AB + BE\cos 2\eta} . \]
+    Pour $2\eta = 60^\circ$ : $EF = 86\,602$, $FB = 50\,000$, $AF = 9\,150\,000$ en
+    parties où $AB = 9\,100\,000$, et l'angle vaut $0^\circ\,32\tfrac{15}{29}'$. C'est
+    juste ; le feuillet calcule par la tangente, « ut $AF$ ad $EF$ ita $100\,000$ ad
+    $946$ ».
+  \item \textbf{L'altitude moyenne corrigée} est $AE$, l'hypoténuse du triangle
+    $AFE$. La page donne $9\,150\,131$ ; le calcul donne
+    $\sqrt{9\,150\,000^2 + 86\,602^2} \approx 9\,150\,410$.\footnote{La page appelle cette
+    grandeur « $EF$ », là où le raisonnement porte sur l'hypoténuse $AE$. L'écart de
+    $279$ parties sur neuf millions ne change pas la cinquième proposition au
+    degré de précision où elle calcule.}
+  \item \textbf{La seconde prostaphérèse.} Un second petit cercle, de centre $G$ et
+    de rayon $GI$, porté à la distance $EG$, est parcouru selon $2\eta$ à partir de
+    son point le plus bas ; l'angle $GEK$ est la seconde prostaphérèse. Pour
+    $2\eta = 60^\circ$, avec $EG = 1\,000\,000$ et $GK = 200\,000$ : $KL = 173\,205$,
+    $EL = 900\,000$, et l'angle vaut $10^\circ\,53\tfrac35'$, ce qui est juste
+    ($\tan = 0{,}19245$).\footnote{Une ligne interlinéaire dit « talium 1. qualium $GE$
+    10. », alors que les nombres de l'exemple et du tableau de la vue 145 sont dans
+    le rapport de $1$ à $5$. La page, écrite en recopiant la proposition I puis
+    corrigée, garde des traces des nombres de celle-ci, biffés. Elle écrit
+    « $AG$ » là où la figure a « $EG$ », et « $EXK$ » pour le triangle $KLE$.}
+  \item \textbf{Le demi-diamètre corrigé de l'épicycle} est
+    $EK = \sqrt{900\,000^2 + 173\,205^2} = 916\,515$. Juste.
+  \item \textbf{La prostaphérèse maximale} a pour sinus $EK/AE$, soit
+    $916\,515/9\,150\,131 = 0{,}10016$, et vaut $5^\circ\,44\tfrac{26}{29}'$. Juste :
+    un épicycle de rayon $r$ vu à la distance $R$ donne une équation maximale
+    $\arcsin(r/R)$.\footnote{La page écrit « ut $AE$ $AK$ ita Sinus Totus ad Sinum
+    maximæ prostaphæreseos », $AK$ pour $EK$. Les nombres biffés d'une première
+    rédaction ($953\,939$, $10\,425$) sont eux aussi cohérents entre eux. L'angle
+    lui-même n'est pas écrit sur cette page ; il l'est dans la table de la vue 147.}
+\end{itemize}
+
+La vue 147 porte, tracés à la plume, les cadres des deux tables, celle de la
+Lune de $0$ à $60$ degrés de $2\eta$ par pas de cinq, et celle du Soleil ; seule la
+ligne de $60^\circ$ de la table lunaire est remplie, avec les cinq valeurs
+ci-dessus.
+
+En termes d'aujourd'hui, ce modèle fait deux choses. La première prostaphérèse
+est une inégalité en longitude à peu près proportionnelle à $\sin 2\eta$, nulle
+aux syzygies et aux quadratures, maximale aux octants, d'amplitude
+$\arcsin(1/91) \approx 0^\circ 38'$ : c'est la forme de l'inégalité que l'on
+appelle la \emph{variation}. La seconde fait dépendre de $2\eta$ le rayon effectif
+de l'épicycle, $EK$, qui va de $800\,000$ à $1\,200\,000$ parties, et donc
+l'équation maximale de l'épicycle : c'est le dispositif par lequel Copernic
+rendait la seconde inégalité de la Lune, que l'on appelle aujourd'hui
+l'\emph{évection}.\footnote{La variation (amplitude moderne $39'30''$, en
+$\sin 2D$, où $D$ est l'élongation) a été découverte par Tycho Brahe. L'évection
+(amplitude moderne $1^\circ 16'$, en $\sin(2D - M)$, où $M$ est l'anomalie) est la
+seconde inégalité de Ptolémée ; Copernic la rendait par un petit épicycle qui
+fait varier le rayon du premier avec $2D$, comme ici. Le mot d'évection est
+postérieur à Ptolémée comme à Copernic, et il n'est pas sur ces feuillets. Ces
+noms sont donnés parce que les dépendances coïncident ; les amplitudes du
+feuillet ne sont pas comparées ici à celles d'aucun auteur ancien.}
+
+\section*{L'hypothèse lunaire de l'« astroscope danois »}
+
+\pagerange{148}{156}
+Les vues 148 à 152 contiennent un brouillon très raturé (vue 148), puis sa mise au
+net (vues 150 à 152), d'un texte qui commence par un jugement : l'hypothèse
+lunaire de Tycho Brahe est mal construite, et l'écrivain la « restitue ». Le
+brouillon nomme Tycho ; la mise au net biffe le nom et écrit à la place « ab
+Astroscopo Dano », « l'astroscope danois » :
+
+\begin{quote}
+« Hypothesis Lunæ ab Astroscopo Dano proposita [\ldots] eum Geometram nequaquam
+[\ldots] arguit. An igitur suis fidendum observatis Viderint \emph{αὐτόπται} (autoptai). Ego
+suam Hypothesim ita restituo. »\footnote{« L'hypothèse de la Lune proposée par
+l'astroscope danois montre qu'il n'est nullement géomètre. Faut-il donc se fier à
+ses observations ? Que ceux qui ont vu de leurs yeux en jugent. Moi, je restitue
+son hypothèse ainsi. » Le mot grec, écrit dans la marge à la place de
+« Astroscopi » biffé, se lit « αὐλοσδι » (aulosdi) à la lettre ; « αὐτόπται » (autoptai) est la lecture
+que la transcription propose par le sens. Le brouillon de la vue 148 portait
+« infelicitatem artificis sive in Geometricis sive Opticis et physicis manifesto
+arguit », biffé.}
+\end{quote}
+
+\subsection*{Le modèle}
+
+Huit articles le décrivent (vue 150) :
+\begin{itemize}
+  \item la Lune se meut sur un « ellipsidium » (une petite ellipse), dont le centre
+    parcourt une ellipse, dont le centre est porté par l'« homocentre », le cercle
+    de rayon moyen autour de la Terre ;
+  \item le centre de l'ellipse oscille (« libratur ») sur une ligne droite, vers
+    l'occident puis vers l'orient, selon la longitude double $2\eta$ ;
+  \item l'ellipse est décrite selon l'anomalie $M$ comptée de l'apogée « in
+    antecedentia » ; l'ellipsidium selon l'« anomalie mixte » $2\eta - M$, comptée
+    du périgée « in consequentia » ;
+  \item dans l'une et l'autre, le demi-axe transversal (vers la Terre) est le tiers
+    du demi-axe droit (perpendiculaire) ;
+  \item en parties où l'homocentre vaut $276$ : ellipse $10$ et $30$, ellipsidium
+    $2$ et $6$, cercle de libration $3$.\footnote{L'article 6, qui énonce le rapport
+    triple, est entouré de mots et de fragments de vers biffés ou ajoutés —
+    « tergemina », « triformis », « tergeminamque Hecaten, tria virginis ora
+    Dianæ », que la transcription reconnaît comme un vers de l'\emph{Énéide} (IV,
+    511) ; le jeu porte, semble-t-il, sur « tripla » et la triple Hécate.}
+\end{itemize}
+
+L'exemple (vues 151 et 152) est calculé pour $M = 45^\circ\,37\tfrac12'$ et
+$2\eta = 230^\circ\,23\tfrac25'$, d'où l'anomalie mixte
+$184^\circ\,45\tfrac{9}{10}'$. En parties où $AB = 27\,600\,000$, la page trouve
+$AI = 27\,600\,000 + 699\,360 + 199\,308 = 28\,498\,668$ pour la composante le long
+de la ligne moyenne, et, perpendiculairement, $IH = 714\,800 - 16\,616 = 698\,184$,
+triplé en $IK = 2\,094\,552$, auquel s'ajoute la libration $KP = 231\,114$, soit
+$IP = 2\,325\,666$ ; l'angle $IAP$, différence entre le lieu moyen et le lieu
+apparent, a pour tangente $0{,}08161$ et vaut $4^\circ\,40'$. Tout est juste :
+$699\,360$ et $714\,800$ sont $10^6\cos M$ et $10^6\sin M$ (à la dernière unité
+près), $199\,308$ et $16\,616$ sont $2 \cdot 10^5\cos$ et $2 \cdot 10^5\sin$ de
+$4^\circ\,45\tfrac{9}{10}'$, et $231\,114$ vaut $3 \cdot 10^5 \sin 50^\circ\,23\tfrac25'$.\footnote{La
+page reporte « $2\,325\,665$ » dans la proportion finale, pour $2\,325\,666$. Le
+brouillon de la vue 148 contient les mêmes nombres, avec des colonnes de calcul et
+une légende des lettres ; le transcripteur ne les a pas tous vérifiés, et ils ne
+le sont pas ici.}
+
+En termes d'aujourd'hui, et au premier ordre dans les petits rapports
+$30/276$, $6/276$, $3/276$, le lieu de la Lune s'écarte donc du lieu moyen de
+trois termes périodiques : un terme en $\sin M$ d'amplitude $30/276$ radian,
+soit $6^\circ 14'$ ; un terme en $\sin(2\eta - M)$ d'amplitude $6/276$ radian,
+soit $1^\circ 15'$ ; un terme en $\sin 2\eta$ d'amplitude $3/276$ radian, soit
+$37'$. Ce sont les arguments de l'\emph{équation du centre}, de l'\emph{évection} et
+de la \emph{variation}, les trois plus grandes inégalités de la longitude de la
+Lune.\footnote{Les amplitudes modernes sont $6^\circ 17'$, $1^\circ 16'$ et $39'30''$.
+Le rapprochement est de cette lecture, au premier ordre seulement : le modèle du
+feuillet est géométrique, et ses signes dépendent des sens de comptage qu'il
+fixe. Il ne dit rien de la date du texte, et cette lecture n'en tire aucune.}
+
+\subsection*{Les problèmes pour construire les tables}
+
+Sous le titre « Ad condendum Canonas Problematia », l'écrivain calcule les
+inégalités de la nouvelle hypothèse dans des cas simples :
+\begin{itemize}
+  \item la première prostaphérèse due au cercle de libration, de rayon
+    $1/92$ de la distance moyenne (vue 149) : pour $2\eta = 60^\circ$, le rapport est
+    $941$ pour $100\,000$ ; la page garde la valeur $0^\circ\,32\tfrac{15}{29}'$ de la
+    vue 142, calculée pour $946$ ; avec $941$, on trouve $0^\circ\,32\tfrac13'$ ;
+  \item la prostaphérèse quand la Lune est à $45^\circ$ du Soleil (vue 152), par une
+    figure où l'on reporte les longueurs $2$ et $3$ de l'ellipsidium et du
+    cercle ;
+  \item quand l'anomalie vaut $90^\circ$ ou $270^\circ$ (vue 153), avec un tableau
+    des cas intitulé « Factio » et des différences en lettres grecques, que la
+    transcription ne reconstitue pas ;
+  \item à la pleine et à la nouvelle Lune (vue 155) : en parties où
+    $AB : BF = 34\tfrac12 : 1$, pour une anomalie de $30^\circ$, $AE = 3\,536\,602$,
+    $EG = 3\,EF = 150\,000$, et l'angle $EAG$ vaut $2^\circ\,25\tfrac34'$ ;
+  \item à la demi-Lune (vues 155 et 156) : $AB : BF = 23 : 1$, $AE = 2\,386\,602$,
+    et l'angle vaut $3^\circ\,35\tfrac45'$.
+\end{itemize}
+Les nombres des deux derniers problèmes sont justes.\footnote{Aux deux, la page
+appelle l'angle trouvé « complementum AEG » ; c'est l'angle $EAG$ que l'énoncé
+demande, et c'est lui qui vaut $2^\circ\,25\tfrac34'$ et $3^\circ\,35\tfrac45'$. Le
+rapport $34\tfrac12$ à la pleine Lune et $23$ à la demi-Lune fait varier, selon la
+phase, la distance au centre de l'ellipse : c'est encore le dispositif de
+l'évection. La vue 154 porte deux figures soignées, « Sol. » et « Luna. ». La vue
+156 porte encore l'énoncé biffé d'un autre problème, un tableau des
+prostaphérèses aux phases écrit en travers de la marge, en lettres grecques, un
+hexagramme inscrit dans un cercle, et une note effacée où la transcription lit,
+avec doute, le mot français « monsieur » suivi d'un nom dont elle ne voit que
+l'initiale R.}
+
+\section*{L'« harmonique ptolémaïque », Copernic, et les planètes}
+
+\pagerange{157}{163}
+La vue 157 ouvre un chapitre, « Harmonici Ptolemaici Constructio CAPUT XII »,
+dont on n'a que le préambule. Il commence par Copernic :
+
+\begin{quote}
+« Copernicus sibi suarumque hypotheseōn si qua est præstantiæ detrahit adeò eas
+mala construit Geometriâ. Itaque cum in quinque Planetis angulum exquirit quem
+vocat Prostaphæreseos eccentri, Triangulum rectangulum ex quo is statim dabatur
+proscindit in duo, quæ dicuntur obliquangula sex septemue Analogias pro una
+exercens. »\footnote{« Copernic retire à ses hypothèses, et à lui-même, ce
+qu'elles ont de mérite, tant il les construit par une mauvaise géométrie. Ainsi,
+quand il cherche dans les cinq planètes l'angle qu'il appelle de la
+prostaphérèse de l'excentrique, il coupe en deux triangles, qu'on dit
+obliquangles, le triangle rectangle qui le donnait tout de suite, employant six
+ou sept proportions pour une seule. » La suite dit que ce « solécisme » est répété
+cinq fois, et qu'Aristarque lui-même le pardonnerait à peine ; puis « Quamobrem
+ea emenda \emph{χρεώστης} nouæ est » (le mot grec, lu « χρεωστες », chreôstes, est
+une lecture douteuse ; le mot χρεώστης, chreôstês, désigne le débiteur), et « je construirai d'abord l'harmonique de Ptolémée, afin que, de la
+comparaison entre celui de Ptolémée et celui de Copernic, la doctrine des
+mouvements soit mieux visible de toutes parts ».}
+\end{quote}
+
+L'objection est de méthode et elle est juste dans son principe : dans les modèles
+à excentrique, l'angle cherché se lit directement dans un triangle rectangle
+dont on connaît deux côtés, comme le fait la première proposition des vues 142
+et 143, par une seule proportion (la tangente). La page ne montre pas le calcul
+de Copernic qu'elle critique, et cette lecture ne le compare à aucun imprimé.
+
+La vue 158 donne, sans titre, une légende et une construction pour la Lune —
+homocentre, ellipse, ellipsidium, petits cercles « ad ellipsim » et « ad
+ellipsidium » — où le rapport des deux demi-axes est double, et non triple comme
+à la vue 150.\footnote{La page conclut « tota $IQ$ dupla ad totum $IH$ » à partir de
+$HR = 2\,QS$ et $IR = 2\,IS$ ; ces prémisses donnent $IH = 2\,IQ$, et la conclusion,
+telle qu'elle est lue, inverse le rapport. Que cette page continue le chapitre XII
+de la vue 157 est une inférence de la transcription.} La vue 160 s'ouvre au
+milieu d'une phrase qui définit « l'angle $KAG$, parallaxe de l'orbe », puis
+énonce une « Propositio II » pour « les mêmes planètes » — Saturne, Jupiter, Mars
+et Vénus, précise la vue 161 : connaissant les anomalies, la prostaphérèse
+apparente, l'altitude moyenne et les « adlaterales » vers la Terre, trouver
+l'« adlateralis » vers le Soleil. La construction commence : un eccentrulus de
+rayon $\varphi$ (le demi-axe transversal), un point $E$ pris selon l'anomalie
+$\sigma$, la perpendiculaire $EF$ prolongée en $G$ avec $FG = 2\,EF$, et $G$ centre
+de l'épicycle ; la page s'arrête là.\footnote{Au premier ordre, un centre
+d'épicycle qui s'écarte de la ligne moyenne de $2\varphi\sin\sigma$ latéralement et
+de $\varphi\cos\sigma$ en distance est ce que donnent, avec une excentricité
+$\varphi$, l'équant de Ptolémée comme le mouvement képlérien. Le rapprochement est de
+cette lecture ; la page ne dit rien de tel. La lettre de l'« adlateralis » est lue
+$\varphi$ avec doute ; « emecata » (vue 161) n'est pas un mot connu de la
+transcription.}
+
+Les deux dernières vues (162 et 163), sous le titre grec « Δεδομένον » (Dedomenon, « donné »),
+posent qu'à partir de l'altitude moyenne de Mercure, des « adlaterales » et des
+anomalies à la Terre et au Soleil, on trouve la distance de Mercure au Soleil.
+Suivent une « préparation » par proportions de sinus — l'altitude moyenne est
+allongée (« protractio ») ou raccourcie (« contractio ») selon le quadrant de
+l'anomalie double à la Terre, puis « corrigée ad Omœopathiam » — et quatre
+« factæ », chacune une proportion « comme le sinus total au sinus de tel angle,
+ainsi telle ligne à telle autre ». Le texte s'arrête sur « Ac denique Vt Altitudo
+media Mercurij », au milieu d'une proportion ; un mot, « emendata », d'une encre
+plus noire au pied de la dernière page, est peut-être une réclame. La suite n'est
+pas dans le volume.\footnote{La page dit la protraction « in primo \& ultimo
+quadrante », la contraction « in tertio \& quarto » : le dernier quadrant est
+nommé deux fois ; on attend, pour la contraction, le deuxième et le troisième.
+Les troisième et quatrième « factæ » nomment le même angle $IMO$ ; ainsi sur la
+page. Les lettres $M$, $N$, $O$ n'ont pas été vues sur la figure de la vue 160 ; les
+proportions ne sont donc pas vérifiées ici. « Omœopathiam » est ainsi écrit.}
+
+\section*{Ce que ces feuillets ne disent pas}
+
+\pagerange{1}{163}
+\textbf{Ils ne disent pas qui les a écrits.} Deux titres, de la main du texte,
+portent le nom de François Viète ; la couverture aussi. Les transcriptions
+n'identifient aucune main, et cette lecture n'en identifie aucune. Une seconde
+main, dans les marges du chapitre VI du premier traité, parle de ses propres
+démonstrations sur les sections angulaires ; elle ne se nomme pas. Les notes
+« transcripta ex exemplari » (vue 100) et « deerant hæc in exemplari » (vue 114),
+et celle de la vue 20, pourraient faire de ces traités la copie d'un
+modèle ; ce sont des lectures douteuses, et elles ne disent ni quel modèle, ni
+qui copie. Les feuillets d'astronomie ne portent pas de nom ; ils nomment Tycho
+Brahe, Copernic, Ptolémée et Aristarque, et ne sont attribués ici à
+personne.\footnote{La transcription du lot 8 décrit l'écriture des feuillets
+d'astronomie comme « la même cursive régulière » que celle du traité du lot 2 ;
+c'est une description d'écriture, qu'elle ne pousse pas jusqu'à une attribution,
+et cette lecture non plus.}
+
+\textbf{Ils ne sont pas datés.} Le catalogue ne donne pas de datation ; cette
+lecture n'en infère aucune, ni des titres, ni du nom de Tycho, ni des renvois
+à l'édition de 1646, qui sont d'un lecteur. Chaque fois qu'un résultat est dit
+« postérieur », c'est par rapport au traité si celui-ci est de Viète, comme
+le disent ses titres ; les feuillets eux-mêmes peuvent être plus tardifs.
+
+\textbf{Ils ont été lus sans imprimé.} Aucune édition imprimée des œuvres de
+Viète n'a été ouverte : ni pour combler une lacune, ni pour trancher une leçon,
+ni pour vérifier les renvois aux pages de 1646. Ce qui manque à la transcription
+manque ici, et est dit à sa place.
+
+\textbf{Ce qui reste illisible ou incertain.} Le théorème du feuillet B (vue 3),
+dont l'énoncé ne se laisse pas reconstituer ; une proportion de la construction
+du feuillet A (vue 2) ; les longues marges de la seconde main aux vues 16 à 18,
+données « sous réserve » ; plusieurs mots grecs (vues 5, 32, 83, 150, 157) ; des
+phrases entières de la syncrise (vues 47 et 54) et du climactisme symétrique
+(vue 96) ; les calculs marginaux des vues 42, 55 et 138 ; la liaison entre les
+vues 72 et 73 ; l'exemple « $1C + 9Q - 24N$ æq. $33$ » de la vue 32 ; le passage
+de la proposition VI du chapitre X de l'« Emendatio » où l'équation est élevée au
+carré (vue 134) ; les tableaux en lettres grecques des vues 153 et 156, et la note
+française de la vue 156 ; les proportions des « factæ » de Mercure (vue 163), dont
+la figure n'a pas été entièrement vue. Tout cela est signalé en note à sa place.
+
+\end{document}
