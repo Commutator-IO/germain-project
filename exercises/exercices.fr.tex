@@ -18,7 +18,7 @@ aujourd'hui. La ligne « Manuscrit » de chaque exercice renvoie aux vues de
 Gallica sur lesquelles il repose, et l'on peut lire ces vues, leur transcription
 et leur lecture modernisée sur le site.
 
-C'est un choix, et non un inventaire : une trentaine d'exercices, retenus pour
+C'est un choix, et non un inventaire : une quarantaine d'exercices, retenus pour
 que chaque mathématicien soit représenté par ce que ses feuillets ont de plus
 parlant, et que chaque chapitre aille du plus abordable au plus exigeant.
 
@@ -299,10 +299,372 @@ vitesses angulaires $\omega_1 > \omega_2 > 0$, $\omega_1/\omega_2 = p/q$.
 \end{enumerate}
 \end{solution}
 
+\section*{François Viète (1540--1603)}
+\chapitre{viete}
+
+NAL 1644 réunit deux traités latins que leurs titres, sur les feuillets mêmes,
+donnent à Viète : « Francisci Vietæ De Recognitione Æquationum tractatus »
+(vues 5 à 68) et « Francisci Vietæ. De æquationum Emendatione tractatus
+secundus » (vues 69 à 141), suivis de pages d'astronomie qui ne portent aucun
+nom. Les mains n'y sont pas identifiées, et deux notes douteuses donnent à
+penser que les traités sont une copie. On y écrit en « espèces » : l'inconnue
+est une voyelle, les grandeurs données des consonnes qui portent leur
+dimension, et l'égalité se dit en toutes lettres. Les exercices traduisent
+cette notation, puis refont sur les exemples des feuillets ce que les traités
+appellent reconnaître et corriger une équation : lire ses coefficients sur ses
+racines, résoudre la cubique dans le cas irréductible, abaisser la quartique à
+deux équations du second degré.
+
+\begin{exercice}{Des racines aux coefficients : la syncrise}{Lycée}{2}
+\manuscrit{nal-1644}{48}{50}
+\manuscrit{nal-1644}{139}{141}
+Le chapitre XVI du traité titré « De Recognitione Æquationum » appelle
+\emph{syncrise} la comparaison de deux équations de même forme et de mêmes
+données qui ont deux racines différentes. Le traité n'admet que des racines
+positives, et il écrit chaque équation avec des termes positifs de part et
+d'autre : $Bx - x^2 = Z$ n'est pas pour lui la même espèce que $x^2 - Bx = Z$.
+Dans les exemples chiffrés, $N$ est l'inconnue et $Q$, $C$, $QQ$, $QC$ ses
+puissances deuxième à cinquième : « $124N - 1C$ æquabitur $240$ » est
+$124x - x^3 = 240$. Le dernier chapitre du second traité, « De æquationum
+Emendatione », donne enfin sans démonstration des équations « de multiplicibus
+radicibus mire explicabiles », admirablement résolubles par plusieurs racines.
+\begin{enumerate}
+\item Soient $x > y > 0$ deux racines de $Bt - t^2 = Z$. En égalant $Bx - x^2$
+  et $By - y^2$, puis en divisant par $x - y$, comme le fait le feuillet, montrer
+  que $B = x + y$ et $Z = xy$. Écrire l'équation de cette forme dont les racines
+  sont $10$ et $2$.
+\item Même question pour $Bt - t^3 = Z$ : montrer que $B = x^2 + xy + y^2$ et
+  $Z = xy(x + y)$, et retrouver l'exemple du feuillet, « $124N - 1C$ æquabitur
+  $240$ », de racines $10$ et $2$. Développer
+  $\bigl(t^2 - (x+y)t + xy\bigr)\bigl(t + x + y\bigr)$ et en déduire la troisième
+  racine de $t^3 - Bt + Z = 0$. Que vaut-elle dans l'exemple ?
+\item La proposition III du dernier chapitre dit que, si $B$, $D$, $G$, $H$ sont
+  quatre grandeurs, l'équation qu'elle écrit a pour racines « l'une quelconque des
+  quatre ». Son exemple est « $50N - 35Q + 16C - 1QQ$ æquatur $24$, fit $1N$ $1$.
+  $2$. $3$. vel $4$ ». Développer $(x-1)(x-2)(x-3)(x-4)$, mettre l'équation sous
+  la forme du feuillet, et trouver la faute de l'exemple. Le nombre $1$ est-il
+  racine de l'équation telle qu'elle est écrite ?
+\item L'exemple de la proposition IIII est « $1QC - 15QQ + 85C - 225Q + 274N$
+  æquatur $120$, fit $1N$ $1$. $2$. $3$. $4$. vel $5$ ». En posant $w = x^2 - 6x$,
+  écrire $(x-1)(x-5)$ et $(x-2)(x-4)$ en fonction de $w$, puis développer
+  $(x-1)(x-2)(x-3)(x-4)(x-5)$ et vérifier l'exemple. Expliquer enfin pourquoi
+  $274 = 120\bigl(1 + \frac12 + \frac13 + \frac14 + \frac15\bigr)$.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item De $Bx - x^2 = Z = By - y^2$ on tire $x^2 - y^2 = B(x - y)$, et, comme
+  $x - y \neq 0$, $B = x + y$. Alors $Z = Bx - x^2 = (x + y)x - x^2 = xy$ : le
+  coefficient est la somme des deux racines, le terme connu leur produit. Pour les
+  racines $10$ et $2$ : $12x - x^2 = 20$, la « formula æquationis » du feuillet, « $12N - 1Q$
+  æquabit $20$ explicabilis de $10$ vel $2$ ».
+\item De $Bx - x^3 = By - y^3$ on tire $x^3 - y^3 = B(x - y)$, et, en divisant par
+  $x - y$, $B = x^2 + xy + y^2$. Alors
+  $Z = Bx - x^3 = x^3 + x^2y + xy^2 - x^3 = xy(x + y)$. Pour $10$ et $2$ :
+  $B = 100 + 20 + 4 = 124$ et $Z = 20 \times 12 = 240$ ; c'est l'exemple du feuillet.
+  À cet endroit la page écrit « $D$ plano » pour le coefficient $B$, ce que la
+  marge corrige par des « $B$ », et « omnibus per $A$ divisis » alors que le
+  diviseur écrit dessous est $A - E$ : deux lapsus, sans effet sur le résultat.
+  Ensuite
+  \[
+  \bigl(t^2 - (x+y)t + xy\bigr)(t + x + y)
+  = t^3 - \bigl((x+y)^2 - xy\bigr)t + xy(x+y) = t^3 - Bt + Z ,
+  \]
+  les termes en $t^2$ se détruisant. La troisième racine est donc $-(x + y)$,
+  toujours négative ; dans l'exemple,
+  $t^3 - 124t + 240 = (t - 2)(t - 10)(t + 12)$ et elle vaut $-12$. Le traité, qui
+  ne connaît que les racines positives, ne la nomme pas.
+\item $(x-1)(x-2) = x^2 - 3x + 2$ et $(x-3)(x-4) = x^2 - 7x + 12$, d'où
+  \[
+  (x-1)(x-2)(x-3)(x-4) = x^4 - 10x^3 + 35x^2 - 50x + 24 .
+  \]
+  Les racines sont $1$, $2$, $3$, $4$ si et seulement si
+  $50x - 35x^2 + 10x^3 - x^4 = 24$ : $10$ est la somme des racines, $35$ la somme de
+  leurs produits deux à deux, $50 = 6 + 8 + 12 + 24$ celle de leurs produits trois à
+  trois et $24$ leur produit, comme le veut la proposition. Le feuillet écrit $16$
+  au lieu de $10$ pour le coefficient de $x^3$ ; la marge le corrige en « $10$ ».
+  Telle qu'elle est écrite, l'équation donne en $x = 1$ la valeur
+  $50 - 35 + 16 - 1 = 30 \neq 24$ : $1$ n'est pas racine (ni $2$, $3$, $4$, qui
+  donnent $72$, $186$, $408$). L'énoncé de la proposition, sur la même page, omet
+  aussi le terme $-x^4$, que la marge ajoute (« $-$ Aqq. »).
+\item $(x-1)(x-5) = x^2 - 6x + 5 = w + 5$ et $(x-2)(x-4) = x^2 - 6x + 8 = w + 8$,
+  d'où
+  \[
+  (w+5)(w+8) = w^2 + 13w + 40 = x^4 - 12x^3 + 49x^2 - 78x + 40 ,
+  \]
+  puis, en multipliant par $x - 3$,
+  \[
+  (x-1)(x-2)(x-3)(x-4)(x-5) = x^5 - 15x^4 + 85x^3 - 225x^2 + 274x - 120 .
+  \]
+  L'équation $x^5 - 15x^4 + 85x^3 - 225x^2 + 274x = 120$ a donc bien pour racines
+  $1$, $2$, $3$, $4$, $5$ : l'exemple est juste. Le coefficient de $x$ est la somme
+  des produits de quatre des cinq racines ; chacun est le produit des cinq,
+  $120$, divisé par la racine qui manque, d'où
+  $274 = \frac{120}{1} + \frac{120}{2} + \frac{120}{3} + \frac{120}{4} + \frac{120}{5}
+  = 120 + 60 + 40 + 30 + 24$.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le cas irréductible par deux triangles rectangles}{L1}{2}
+\manuscrit{nal-1644}{16}{17}
+Le chapitre VI du « De Recognitione Æquationum » traite la cubique sans terme en
+$x^2$. Son théorème III (vue 16) suppose $x^3 - 3Bx = D$ avec $D^2 < 4B^3$, et
+appelle « inverse » l'équation $3By - y^3 = D$. Vient ensuite, sous le titre
+« Aliter, tertium theorema » (vue 17), une constitution « plus élégante », tirée
+des sections angulaires : si $x^3 - 3B^2x = B^2D$ avec $B > D/2$, on prend deux
+triangles rectangles de même hypoténuse $B$, tels que l'angle aigu opposé à la
+hauteur (« perpendiculum ») du premier soit triple de l'angle correspondant du
+second, et que le double de la base du premier soit $D$ ; alors $x$ est le double
+de la base du second, et les racines de l'équation inverse
+$3B^2y - y^3 = B^2D$ sont la base du second augmentée ou diminuée de la droite
+dont le carré est le triple du carré de sa hauteur. On note $\theta$ l'angle aigu
+du second triangle opposé à sa hauteur.
+\begin{enumerate}
+\item Exprimer les bases et les hauteurs des deux triangles à l'aide de $B$ et de
+  $\theta$. Montrer que, si $x = 2B\cos\theta$, alors
+  $x^3 - 3B^2x = 2B^3\cos 3\theta$, et en déduire la première affirmation du
+  feuillet. À quoi sert l'hypothèse $B > D/2$ ?
+\item L'exemple de la page est $x^3 - 300x = 432$. Trouver $B$, $D$ et la base
+  du premier triangle ; la page écrit « basis autem primi dupla est
+  $\frac{432}{100}$ », puis « fit basis $2\frac{16}{100}$ ». Vérifier que le second
+  triangle a pour base $9$ et pour hauteur $\sqrt{19}$, comme le dit la page, et
+  conclure que $x = 18$.
+\item Montrer que les deux autres racines de $x^3 - 3B^2x = B^2D$ sont
+  $2B\cos(\theta \pm 120^\circ)$, et qu'elles sont négatives. En déduire la seconde
+  affirmation du feuillet, et donner les racines de $300y - y^3 = 432$.
+\item Montrer que la condition $D^2 < 4B^3$ du théorème III, écrite pour
+  $x^3 - 3Bx = D$, et la condition $B > D/2$ de l'« Aliter », écrite pour
+  $x^3 - 3B^2x = B^2D$, sont la même.
+\item La formule qu'on appelle aujourd'hui de Cardan donne, pour $x^3 - px = q$,
+  $x = \sqrt[3]{q/2 + \sqrt{\Delta}} + \sqrt[3]{q/2 - \sqrt{\Delta}}$ avec
+  $\Delta = \frac{q^2}{4} - \frac{p^3}{27}$. Calculer $\Delta$ pour
+  $x^3 - 300x = 432$. Calculer $(9 + i\sqrt{19})^3$, et expliquer comment la
+  formule, lue dans $\mathbf{C}$, redonne $x = 18$. Que sont, sur la figure du
+  feuillet, la partie réelle et la partie imaginaire de $9 + i\sqrt{19}$ ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item L'angle opposé à la hauteur est adjacent à la base : le second triangle a
+  pour base $B\cos\theta$ et pour hauteur $B\sin\theta$, le premier pour base
+  $B\cos 3\theta$ et pour hauteur $B\sin 3\theta$ (avec $3\theta < 90^\circ$, puisque
+  $3\theta$ est un angle aigu). De $\cos 3\theta = \cos(2\theta + \theta)
+  = 4\cos^3\theta - 3\cos\theta$ on tire, pour $x = 2B\cos\theta$,
+  \[
+  x^3 - 3B^2x = 8B^3\cos^3\theta - 6B^3\cos\theta = 2B^3\cos 3\theta .
+  \]
+  Si le double de la base du premier triangle vaut $D$, c'est-à-dire
+  $B\cos 3\theta = D/2$, il vient $x^3 - 3B^2x = 2B^2 \cdot \frac{D}{2} = B^2D$ :
+  le double de la base du second est racine. L'hypothèse $B > D/2$ dit que la base
+  $D/2$ est plus petite que l'hypoténuse $B$ : le premier triangle existe, avec
+  $3\theta = \arccos\frac{D}{2B} \in {]0^\circ, 90^\circ[}$, et le second
+  s'obtient en prenant le tiers de son angle, ce qui est la trisection que le
+  feuillet renvoie aux « sections angulaires ».
+\item $3B^2 = 300$ donne $B = 10$, et $B^2D = 432$ donne $D = 4{,}32$ : le double
+  de la base du premier triangle est $\frac{432}{100}$, sa base est $2{,}16$, comme
+  l'écrit la page, et $\cos 3\theta = 0{,}216$. Avec $\cos\theta = 0{,}9$ on trouve
+  $4 \times 0{,}729 - 3 \times 0{,}9 = 2{,}916 - 2{,}7 = 0{,}216$ ; comme
+  $\theta \mapsto \cos 3\theta$ est injective sur ${]0^\circ, 30^\circ[}$,
+  c'est bien l'angle cherché ($\theta \approx 25{,}84^\circ$,
+  $3\theta \approx 77{,}53^\circ$). Le second triangle a pour base $10 \times 0{,}9 = 9$
+  et pour hauteur $\sqrt{100 - 81} = \sqrt{19}$. D'où $x = 18$, et en effet
+  $18^3 - 300 \times 18 = 5832 - 5400 = 432$.
+\item $\cos\bigl(3(\theta \pm 120^\circ)\bigr) = \cos(3\theta \pm 360^\circ)
+  = \cos 3\theta$ : les nombres $2B\cos(\theta \pm 120^\circ)$ sont racines, et,
+  comme $\theta$, $\theta + 120^\circ$ et $\theta - 120^\circ$ ont des cosinus
+  distincts pour $0^\circ < \theta < 30^\circ$, ce sont avec $2B\cos\theta$ les trois
+  racines. Or
+  \[
+  2B\cos(\theta \pm 120^\circ) = -B\cos\theta \mp \sqrt3\,B\sin\theta ,
+  \]
+  et $\theta < 30^\circ$ donne $\tan\theta < \frac{1}{\sqrt3}$, soit
+  $B\cos\theta > \sqrt3\,B\sin\theta$ : les deux racines sont négatives. Si $x$ est
+  racine de $x^3 - 3B^2x = B^2D$, alors $y = -x$ vérifie
+  $3B^2y - y^3 = x^3 - 3B^2x = B^2D$. Les racines de l'équation inverse sont donc
+  $B\cos\theta \pm \sqrt3\,B\sin\theta$, toutes deux positives : la base du second
+  triangle plus ou moins $\sqrt{3\,(B\sin\theta)^2}$, la droite dont le carré est
+  le triple du carré de la hauteur. Dans l'exemple, $9 \pm \sqrt{57}$, soit environ
+  $16{,}550$ et $1{,}450$, comme l'écrit la page (« $9 + L\,57$ vel $9 - L\,57$ ») ;
+  et $x^3 - 300x - 432 = (x - 18)(x^2 + 18x + 24)$.
+\item L'équation $x^3 - 3B^2x = B^2D$ est l'équation $x^3 - 3B'x = D'$ du théorème
+  III avec $B' = B^2$ et $D' = B^2D$. La condition $D'^2 < 4B'^3$ s'écrit
+  $B^4D^2 < 4B^6$, soit $D^2 < 4B^2$, soit $D < 2B$ puisque $B$ et $D$ sont
+  positifs. Dans l'exemple, $432^2 = 186\,624 < 4 \times 100^3$.
+\item Avec $p = 300$ et $q = 432$ : $\frac{q^2}{4} = 46\,656$,
+  $\frac{p^3}{27} = 1\,000\,000$, $\Delta = -953\,344 < 0$, et, comme
+  $224^2 \times 19 = 953\,344$, $\sqrt{\Delta} = 224\,i\sqrt{19}$ : la formule
+  demande la racine carrée d'un nombre négatif, bien que les trois racines soient
+  réelles. Or
+  \[
+  (9 + i\sqrt{19})^3 = 729 + 243\,i\sqrt{19} - 513 - 19\,i\sqrt{19}
+  = 216 + 224\,i\sqrt{19} .
+  \]
+  Les racines cubiques $u = 9 + i\sqrt{19}$ de $216 + 224\,i\sqrt{19}$ et
+  $v = 9 - i\sqrt{19}$ de son conjugué vérifient $uv = 81 + 19 = 100 = p/3$, la
+  condition qui les apparie dans la formule, et $u + v = 18$. Le nombre
+  $9 + i\sqrt{19}$ est $10(\cos\theta + i\sin\theta)$ : sa partie réelle est la base
+  du second triangle, sa partie imaginaire sa hauteur, et son cube,
+  $1000(\cos 3\theta + i\sin 3\theta)$, a pour partie réelle $1000 \times 0{,}216 =
+  216 = q/2$. Les deux triangles du feuillet sont exactement ce que la formule
+  demande en nombres complexes ; la trisection de l'angle remplace l'extraction de
+  la racine cubique d'un nombre complexe. Les deux autres appariements,
+  $ju + \overline{j}v$ et $\overline{j}u + jv$ avec $j = \cos 120^\circ + i\sin 120^\circ$,
+  donnent les racines négatives $-9 \mp \sqrt{57}$.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{La paraplérose climactique d'une quartique, et ses deux formules}{L2}{3}
+\manuscrit{nal-1644}{109}{117}
+Le chapitre VI du traité titré « De æquationum Emendatione tractatus secundus »
+s'intitule « de climactica paraplerosi » : il abaisse une équation du quatrième
+degré sans terme en $x^3$ à des équations du second degré « par le moyen d'une
+cubique », en ajoutant aux deux membres de quoi en faire deux carrés. Le problème
+III (vues 109 à 111) traite $x^4 + 2Gx^2 + Bx = Z$ : la « première formule »
+forme le carré de $x^2 + G + \frac{y^2}{2}$, où $y$ est une grandeur auxiliaire, et
+veut que l'autre membre soit le carré de $\frac{B}{2y} - yx$. La seconde
+(« Aliter », vues 111 et 112), écrite pour $x^4 + Gx^2 + Bx = Z$, ajoute aux deux
+membres de $x^4 = Z - Gx^2 - Bx$ la quantité $Fx^2 + \frac{F^2}{4}$. Chaque formule
+est suivie de sept théorèmes, un par combinaison de signes, chacun avec un exemple
+en signes cossiques ($N$, $Q$, $C$, $QQ$ pour $x$, $x^2$, $x^3$, $x^4$). Les
+grandeurs $B$, $G$, $Z$ sont positives.
+\begin{enumerate}
+\item Montrer qu'en ajoutant aux deux membres de $x^4 + 2Gx^2 = Z - Bx$ ce qui
+  manque au premier pour être le carré de $x^2 + G + \frac{y^2}{2}$, on obtient
+  \[
+  \Bigl(x^2 + G + \frac{y^2}{2}\Bigr)^2 = y^2x^2 - Bx + Z + G^2 + Gy^2 + \frac{y^4}{4} ,
+  \]
+  et que le second membre est, pour tout $x$, le carré de $\frac{B}{2y} - yx$ si et
+  seulement si $u = y^2$ vérifie
+  $u^3 + 4Gu^2 + (4Z + 4G^2)u = B^2$ (la « résolvante »). Montrer que cette
+  équation a une racine positive et une seule.
+\item Soit $D > 0$ tel que $D^2$ soit cette racine. En déduire deux équations du
+  second degré dont les racines sont celles de la quartique ; l'une est celle du
+  feuillet, $x^2 + Dx = \frac{B}{2D} - \frac{D^2}{2} - G$. Appliquer à l'exemple du
+  théorème I (vue 113), « $1QQ + 6Q + 880N$ æquatur $1800$ » : écrire la
+  résolvante, vérifier la valeur de la page, « $1C + 12Q + 7236N$ æquatur $774400$
+  fit $1N$ $64$ », et trouver les quatre racines complexes de la quartique.
+  Lesquelles la page donne-t-elle ?
+\item On cherche aujourd'hui une factorisation
+  $x^4 + 2Gx^2 + Bx - Z = (x^2 + Dx + p)(x^2 - Dx + q)$. Montrer que $D^2$ est
+  alors racine de la même résolvante, et que $p = G + \frac{D^2}{2} - \frac{B}{2D}$.
+  Si $r_1$, $r_2$, $r_3$, $r_4$ sont les racines de la quartique, montrer que les
+  racines de la résolvante sont $(r_1 + r_2)^2$, $(r_1 + r_3)^2$ et $(r_1 + r_4)^2$.
+  Les calculer pour l'exemple.
+\item Montrer que la seconde formule conduit, pour $x^4 + Gx^2 + Bx = Z$, à la
+  résolvante $F^3 - GF^2 + 4ZF = B^2 + 4ZG$ et à
+  $x^2 + \sqrt{F - G}\,x = \frac{B}{2\sqrt{F - G}} - \frac{F}{2}$, et que $F - G$ est
+  racine de la résolvante de la première formule, écrite pour la quartique
+  $x^4 + 2G'x^2 + Bx = Z$ avec $G' = G/2$. Vérifier
+  sur le théorème I « secundum posteriorem formulam » (vue 116), qui reprend la
+  même quartique : la page trouve « $1C - 6Q + 7200N$ æquatur $817600$ fit $1N$
+  $70$ » et « $70 - 6$ quadratum abs $8$ ».
+\item Le théorème IIII de la seconde formule (vue 117), pour
+  $x^4 - Gx^2 - Bx = Z$, écrit la résolvante $F^3 + GF^2 + 4ZF = B^2 + 4ZG$ et
+  donne l'exemple « $1QQ - 4Q - 800N$ æquatur $1600$ fit $1N$ $10$ », « $1C + 4Q +
+  64N$ æquatur $614400$ fit $1N$ $60$ », « $60 + 4$ est quadratum abs $8$ »,
+  « $1Q - 8N$ æquatur $20$ fit $1N$ $10$ ». Refaire la construction et le calcul,
+  et dire exactement où la page se trompe.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $\bigl(x^2 + G + \frac{y^2}{2}\bigr)^2 = x^4 + 2Gx^2 + y^2x^2 + G^2 + Gy^2 +
+  \frac{y^4}{4}$ : il faut ajouter $y^2x^2 + G^2 + Gy^2 + \frac{y^4}{4}$, ce qui donne
+  l'égalité annoncée. Le second membre est un trinôme en $x$ de coefficient
+  dominant $y^2$ et de coefficient de $x$ égal à $-B$ ; le carré
+  $\bigl(\frac{B}{2y} - yx\bigr)^2 = y^2x^2 - Bx + \frac{B^2}{4y^2}$ a les mêmes, et
+  les deux coïncident si et seulement si les termes constants sont égaux :
+  $Z + G^2 + Gy^2 + \frac{y^4}{4} = \frac{B^2}{4y^2}$. En multipliant par $4y^2$ et
+  en posant $u = y^2$ : $u^3 + 4Gu^2 + (4Z + 4G^2)u = B^2$. C'est l'équation en $E$
+  de la page (vues 110 et 113), une fois reçu le « $+$ » que la marge rétablit
+  devant « $G$ plano-plano $4$ ». Le polynôme
+  $R(u) = u^3 + 4Gu^2 + (4Z + 4G^2)u - B^2$ vaut $-B^2 < 0$ en $0$, tend vers
+  $+\infty$, et il est strictement croissant sur $[0, +\infty[$ puisque tous ses
+  coefficients non constants sont positifs : il a une racine positive et une seule.
+\item Avec $u = D^2$, $\bigl(x^2 + G + \frac{D^2}{2}\bigr)^2 =
+  \bigl(Dx - \frac{B}{2D}\bigr)^2$, donc
+  $x^2 + G + \frac{D^2}{2} = \pm\bigl(Dx - \frac{B}{2D}\bigr)$, soit
+  \[
+  x^2 + Dx = \frac{B}{2D} - \frac{D^2}{2} - G
+  \qquad\text{ou}\qquad
+  x^2 - Dx + \frac{B}{2D} + \frac{D^2}{2} + G = 0 .
+  \]
+  La première est celle du feuillet ; à la vue 113, le signe de « $D$ quadrato
+  $\frac12$ » y est doublé de traits, mais l'exemple demande bien $-\frac{D^2}{2}$.
+  Dans l'exemple, $2G = 6$, $G = 3$, $B = 880$, $Z = 1800$ ; la résolvante est
+  $u^3 + 12u^2 + 7236u = 774\,400$, puisque $4 \times 1800 + 4 \times 9 = 7236$ et
+  $880^2 = 774\,400$. Et $u = 64$ convient :
+  $262\,144 + 49\,152 + 463\,104 = 774\,400$. Donc $D = 8$, puis
+  $x^2 + 8x = 55 - 32 - 3 = 20$, de racines $2$ et $-10$ ; et
+  $x^2 - 8x + 90 = 0$, de racines $4 \pm i\sqrt{74}$. En effet
+  $x^4 + 6x^2 + 880x - 1800 = (x^2 + 8x - 20)(x^2 - 8x + 90)$. La page ne donne que
+  la racine positive, « fit $1N$ $2$ » ; $-10$ et les deux racines non réelles ne
+  sont pas de son domaine.
+\item En développant,
+  $(x^2 + Dx + p)(x^2 - Dx + q) = x^4 + (p + q - D^2)x^2 + D(q - p)x + pq$, d'où
+  $p + q = 2G + D^2$, $D(q - p) = B$ (ce qui impose $D \neq 0$) et $pq = -Z$. Comme
+  $(p + q)^2 - (q - p)^2 = 4pq$, il vient
+  $(2G + D^2)^2 - \frac{B^2}{D^2} = -4Z$, et, en multipliant par $u = D^2$,
+  $u(u + 2G)^2 + 4Zu = B^2$, qui est la résolvante. Enfin
+  $p = \frac{(p + q) - (q - p)}{2} = G + \frac{D^2}{2} - \frac{B}{2D}$ : le facteur
+  $x^2 + Dx + p$ est exactement l'équation du feuillet. La quartique n'a pas de terme
+  en $x^3$, donc $r_1 + r_2 + r_3 + r_4 = 0$. En groupant $r_1, r_2$ d'un côté et
+  $r_3, r_4$ de l'autre, $(x - r_1)(x - r_2)(x - r_3)(x - r_4)$ est une factorisation
+  de la forme cherchée avec $D = -(r_1 + r_2) = r_3 + r_4$ : $(r_1 + r_2)^2$ est
+  racine de la résolvante, et de même $(r_1 + r_3)^2$ et $(r_1 + r_4)^2$ pour les
+  deux autres groupements. Dans l'exemple, avec $r_1 = 2$ :
+  $(2 - 10)^2 = 64$ et $(2 + 4 \pm i\sqrt{74})^2 = (6 \pm i\sqrt{74})^2
+  = -38 \pm 12\,i\sqrt{74}$. Ces trois nombres sont distincts, et une équation du
+  troisième degré n'a pas plus de trois racines : ce sont les racines de la
+  résolvante, $u^3 + 12u^2 + 7236u - 774\,400 = (u - 64)(u^2 + 76u + 12\,100)$. La
+  racine positive que prend le feuillet est la seule réelle.
+\item De $x^4 = Z - Gx^2 - Bx$ on tire
+  $\bigl(x^2 + \frac{F}{2}\bigr)^2 = (F - G)x^2 - Bx + Z + \frac{F^2}{4}$. Pour
+  $F > G$, le second membre est le carré de
+  $\sqrt{F - G}\,x - \frac{B}{2\sqrt{F - G}}$ si et seulement si
+  $Z + \frac{F^2}{4} = \frac{B^2}{4(F - G)}$, soit $(F - G)(F^2 + 4Z) = B^2$,
+  c'est-à-dire $F^3 - GF^2 + 4ZF = B^2 + 4ZG$ ; et l'égalité des racines donne
+  $x^2 + \frac{F}{2} = \frac{B}{2\sqrt{F - G}} - \sqrt{F - G}\,x$, l'équation
+  annoncée. En posant $F = u + G$, la résolvante devient
+  $u\bigl((u + G)^2 + 4Z\bigr) = B^2$, soit $u^3 + 2Gu^2 + (G^2 + 4Z)u = B^2$ : c'est
+  celle de la première formule pour $G' = G/2$, puisque $4G' = 2G$ et
+  $4G'^2 = G^2$. Les
+  deux formules donnent donc le même $D = \sqrt{F - G}$ et la même équation du
+  second degré, puisque $\frac{F}{2} = \frac{D^2}{2} + G'$. Dans l'exemple, $G = 6$,
+  et $B^2 + 4ZG = 774\,400 + 43\,200 = 817\,600$ ; pour $F = 70$,
+  $343\,000 - 29\,400 + 504\,000 = 817\,600$, et $70 - 6 = 64 = 8^2$, la racine $u$ de
+  la question 2 ; enfin $x^2 + 8x = 55 - 35 = 20$ et $x = 2$.
+\item De $x^4 = Z + Gx^2 + Bx$ on tire
+  $\bigl(x^2 + \frac{F}{2}\bigr)^2 = (F + G)x^2 + Bx + Z + \frac{F^2}{4}$, carré de
+  $\sqrt{F + G}\,x + \frac{B}{2\sqrt{F + G}}$ si et seulement si
+  $(F + G)(F^2 + 4Z) = B^2$, soit
+  \[
+  F^3 + GF^2 + 4ZF = B^2 - 4ZG ,
+  \]
+  et non $B^2 + 4ZG$ ; puis $x^2 - \sqrt{F + G}\,x = \frac{B}{2\sqrt{F + G}} -
+  \frac{F}{2}$. Pour $G = 4$, $B = 800$, $Z = 1600$ : $4Z = 6400$ et
+  $B^2 - 4ZG = 640\,000 - 25\,600 = 614\,400$, qui est le second membre de la page
+  (avec le signe de l'énoncé, on aurait $665\,600$). L'équation juste est
+  $F^3 + 4F^2 + 6400F = 614\,400$, et $F = 60$ la vérifie :
+  $216\,000 + 14\,400 + 384\,000 = 614\,400$. Avec le coefficient « $64$ » de la
+  page, $F = 60$ donnerait $216\,000 + 14\,400 + 3840 = 234\,240$. Ensuite
+  $\sqrt{60 + 4} = 8$, $x^2 - 8x = \frac{800}{16} - 30 = 20$, et $x = 10$ ; en effet
+  $10^4 - 400 - 8000 = 1600$, et
+  $x^4 - 4x^2 - 800x - 1600 = (x - 10)(x + 2)(x^2 + 8x + 80)$. La page se trompe
+  donc deux fois, et seulement dans l'écriture : le signe du terme $4ZG$ dans
+  l'énoncé de la résolvante, que la marge a corrigé au théorème III mais pas ici,
+  et « $64N$ » pour « $6400N$ » dans l'exemple ; le nombre $614\,400$, la racine $60$
+  et la racine $10$ sont justes.
+\end{enumerate}
+\end{solution}
+
 \section*{Marin Mersenne (1588--1648)}
 \chapitre{mersenne}
 
-Trois volumes nourrissent ce chapitre. Français 12357 est la copie, par une main
+Quatre volumes nourrissent ce chapitre. Français 12357 est la copie, par une main
 anonyme du XVII\textsuperscript{e} siècle, des notes que le P. Mersenne avait
 écrites dans les marges et sur les feuillets blancs de son exemplaire de
 l'\emph{Harmonie universelle} ; la copie le dit dans son titre, et c'est sur ce
@@ -321,6 +683,12 @@ après un feuillet moderne de classement, deux mains rondes qui traitent des
 ne nomment personne : les rapprochements avec la lettre de Pascal à Fermat du
 29 juillet 1654 et avec le traité de Huygens (\emph{De ratiociniis in ludo
 aleae}, 1657) sont des coïncidences d'énoncés, non des attributions.
+NAL 2338, enfin, les « Papiers divers de Mersenne », est le dossier de la
+querelle de la cycloïde entre Torricelli et Roberval, passée par Mersenne de
+1643 à 1647 ; ce sont presque toutes des copies. Les deux exercices qui en
+viennent ici reposent sur des lettres que leur intitulé ou leur souscription
+donnent à Torricelli ; ceux qui reposent sur les pièces de Roberval sont au
+chapitre suivant. Aucune question de priorité n'y est tranchée.
 
 \begin{exercice}{Trois valeurs de $\pi$ et un polygone de 97 côtés}{Lycée}{1}
 \manuscrit{fr-12357}{8}{9}
@@ -657,6 +1025,260 @@ On garde les notations de l'exercice précédent.
 \end{enumerate}
 \end{solution}
 
+\begin{exercice}{L'aire et la tangente des trochoïdes}{L1}{2}
+\manuscrit{nal-2338}{3}{4}
+La lettre à Mersenne datée « Dat: Flor: Kal: Maij: anno 1644 » et signée
+« Euang\textsuperscript{a} Torricellius » définit les trochoïdes : un cercle de
+rayon $r$ roule sur une droite, et chaque point de son rayon prolongé, à la
+distance $d$ du centre, décrit une « cycloïde secondaire » ; la cycloïde
+« primaire » est celle de $d = r$. Le « cercle générateur propre » d'une
+trochoïde est le cercle dont le diamètre est égal à sa hauteur. On prend
+\[
+x(t) = rt - d\sin t, \qquad y(t) = r - d\cos t, \qquad 0 \le t \le 2\pi,
+\]
+de sorte que la base de l'arche est le segment de la droite $y = r - d$ qui va de
+$(0, r-d)$ à $(2\pi r, r-d)$. La lettre énonce que l'espace compris entre la
+trochoïde et sa base est au triangle de même base et de même hauteur « comme la
+circonférence du cercle générateur propre avec le double de la base, au double de
+la base », et qu'il est au cercle générateur propre dans le rapport qu'on en tire
+« per conuersionem rationis ».
+\begin{enumerate}
+\item On suppose $d \le r$. Montrer que $x$ est croissante sur $[0, 2\pi]$, et que
+  l'aire de l'espace vaut
+  $\mathcal A = \int_0^{2\pi}\bigl(y(t) - (r - d)\bigr)\,x'(t)\,dt = 2\pi r d + \pi d^2$.
+\item Vérifier le premier énoncé, puis sa seconde forme « en lignes droites » :
+  l'espace est au triangle comme la hauteur de la trochoïde avec le double de
+  l'axe de la cycloïde primaire, au double de cet axe. Montrer que l'espace
+  diminué du triangle est égal au cercle générateur propre, et en déduire le
+  rapport de l'espace à ce cercle (la « conversion de rapport » passe de $a : b$ à
+  $a : (a - b)$). Que donne $d = r$ ?
+\item La tangente selon la lettre : on trace le cercle générateur propre tangent à
+  la base qui passe par le point $P$ de la trochoïde (on prend celui qui a pour
+  centre le centre du cercle qui roule, dans la position où il porte $P$) ; la
+  tangente en $P$ à ce cercle coupe la base en $T$ ; on prend sur la base, à partir
+  de $T$ et du côté convenable, le point $S$ tel que la hauteur de la trochoïde
+  soit à celle de la primaire comme $PT$ à $TS$ ; la droite $SP$ est la tangente.
+  En écrivant le vecteur vitesse $(x'(t), y'(t))$ comme la somme de la vitesse du
+  centre et de celle de la rotation, démontrer la règle. Pourquoi peut-on, comme
+  le dit la lettre, remplacer la base par n'importe quelle parallèle ?
+\item Montrer que, pour la cycloïde primaire, la tangente en $P$ passe par le point
+  le plus haut du cercle qui roule dans la position où il porte $P$.
+\item On suppose $d > r$. Montrer que $x$ n'est plus monotone et que la courbe se
+  recoupe au-dessus de chacun de ses points les plus bas. Que reste-t-il de la
+  question 1 ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $x'(t) = r - d\cos t \ge r - d \ge 0$, et $x'$ ne s'annule qu'en des points
+  isolés : $x$ est strictement croissante de $[0, 2\pi]$ sur $[0, 2\pi r]$, et
+  l'arche est le graphe d'une fonction de l'abscisse au-dessus de la base.
+  L'aire de l'espace est l'intégrale en $X$ de la hauteur au-dessus de la base, et
+  le changement de variable $X = x(t)$ donne l'intégrale de l'énoncé. Comme
+  $y - (r - d) = d(1 - \cos t)$,
+  \[
+  \mathcal A = d\int_0^{2\pi}(1 - \cos t)(r - d\cos t)\,dt
+  = d\int_0^{2\pi}\bigl(r - (r + d)\cos t + d\cos^2 t\bigr)\,dt
+  = d\,(2\pi r + \pi d).
+  \]
+\item La base vaut $B = 2\pi r$, la circonférence génératrice $C = 2\pi d$, la
+  hauteur $2d$, et le triangle $\tau = \frac12\cdot 2\pi r\cdot 2d = 2\pi r d$.
+  Alors
+  \[
+  \frac{\mathcal A}{\tau} = \frac{2r + d}{2r} = \frac{2\pi d + 2\cdot 2\pi r}{2\cdot 2\pi r}
+  = \frac{C + 2B}{2B},
+  \]
+  et, en divisant les deux termes par $\pi$, c'est aussi $\frac{2d + 2\cdot 2r}{2\cdot 2r}$,
+  où $2d$ est la hauteur de la trochoïde et $2r$ l'axe de la primaire : les deux
+  formes sont le même nombre. Ensuite $\mathcal A - \tau = \pi d^2$, le cercle
+  générateur propre. La conversion de $\mathcal A : \tau = (C + 2B) : 2B$ donne
+  $\mathcal A : (\mathcal A - \tau) = (C + 2B) : C$, c'est-à-dire que l'espace est
+  au cercle générateur propre comme $(C + 2B) : C = (2r + d) : d$. Pour $d = r$,
+  $\mathcal A = 3\pi r^2$ : l'espace de la cycloïde vaut une fois et demie son
+  triangle et trois fois le cercle qui roule.
+\item Le centre du cercle qui roule est $\Omega(t) = (rt, r)$, de vitesse $r(1, 0)$,
+  et $\overrightarrow{\Omega P} = (-d\sin t, -d\cos t)$ a pour dérivée
+  $d\,u$ avec $u = (-\cos t, \sin t)$ ; ainsi
+  \[
+  (x'(t), y'(t)) = r(1, 0) + d\,u .
+  \]
+  Le cercle de centre $\Omega(t)$ et de rayon $d$ passe par $P$ et a son point le
+  plus bas sur la droite $y = r - d$ : c'est le cercle générateur propre tangent à
+  la base de la règle, et $u$ dirige sa tangente en $P$. Si $\sin t \ne 0$, cette
+  tangente coupe la base en $T = P + \lambda u$ pour un réel $\lambda \ne 0$.
+  Posons $S = T + \lambda\frac{r}{d}(1, 0)$ : alors $TS = \frac rd\,PT$,
+  c'est-à-dire $PT : TS = d : r = 2d : 2r$, le rapport des hauteurs, et le signe
+  de $\lambda$ fixe le « côté convenable ». On a
+  \[
+  \overrightarrow{PS} = \lambda u + \lambda\frac rd(1, 0) = \frac{\lambda}{d}\bigl(d\,u + r(1, 0)\bigr)
+  = \frac{\lambda}{d}\,(x'(t), y'(t)),
+  \]
+  donc $SP$ porte la vitesse : c'est la tangente. (Si $\sin t = 0$, $P$ est au plus
+  haut ou au plus bas, la vitesse est horizontale et la règle dégénère.) Une
+  parallèle à la base se déduit de la base par une homothétie de centre $P$ ; elle
+  envoie $T$ et $S$ sur deux points $T'$, $S'$ de la parallèle, conserve le rapport
+  $PT' : T'S'$ et la direction de $PS$ : la construction faite sur la parallèle
+  donne la même droite.
+\item Pour $d = r$, le cercle générateur propre est le cercle qui roule ; son point
+  le plus haut est $H = (rt, 2r)$, et $\overrightarrow{PH} = r(\sin t, 1 + \cos t)$.
+  La vitesse vaut $r(1 - \cos t, \sin t)$, et
+  \[
+  \det\bigl(\overrightarrow{PH}, (x', y')\bigr) = r^2\bigl(\sin^2 t - (1 + \cos t)(1 - \cos t)\bigr) = 0 :
+  \]
+  la tangente passe par $H$. Autrement dit : le point de contact $K = (rt, 0)$ est
+  immobile à l'instant considéré, la vitesse de $P$ est perpendiculaire à $KP$, et,
+  $KH$ étant un diamètre, l'angle $\widehat{KPH}$ est droit.
+\item $x'(0) = r - d < 0$ : $x$ décroît d'abord, et $x(t) < 0$ pour $t > 0$ petit.
+  La fonction $\varphi(t) = d\sin t - rt$ vérifie $\varphi(0) = 0$,
+  $\varphi'(0) = d - r > 0$ et $\varphi(\pi) = -\pi r < 0$ ; elle s'annule donc en
+  un $t_0 \in\, ]0, \pi[$, où $x(t_0) = 0$. Comme $x(-t) = -x(t)$ et $y(-t) = y(t)$,
+  l'arche précédente passe au même point $(0, r - d\cos t_0)$ pour $t = -t_0$ : la
+  courbe se recoupe au-dessus du point le plus bas $(0, r - d)$ et fait une boucle
+  dont ce point est le plus bas ; de même en $2\pi r$. Le calcul de la question 1 reste un calcul
+  juste, et l'intégrale vaut toujours $2\pi r d + \pi d^2$ ; mais le changement de
+  variable qui en faisait l'aire d'une région sous un graphe demandait $x$
+  monotone. Ce n'est plus qu'une aire algébrique, où les portions parcourues à
+  rebours ($x' < 0$) comptent négativement, et « l'espace compris entre la courbe
+  et sa base » n'est plus une région bornée par un arc simple. La lettre dit
+  « quodlibet spatium » sans distinguer : son énoncé vaut tel quel pour la
+  cycloïde primaire et les trochoïdes raccourcies ($d < r$).
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le solide autour de l'axe : 11 à 18, 16 à 11, une seule erreur}{L2}{3}
+\manuscrit{nal-2338}{4}{5}
+\manuscrit{nal-2338}{16}{19}
+La lettre du 1\textsuperscript{er} mai 1644, signée « Euang\textsuperscript{a}
+Torricellius », donne sans démonstration une suite de rapports pour la cycloïde
+primaire engendrée par un cercle de rayon $r$ : l'arche
+$x = r(t - \sin t)$, $y = r(1 - \cos t)$, $0 \le t \le 2\pi$, et l'axe est la droite
+$x = \pi r$. Le centre de gravité de la cycloïde divise l'axe, du sommet à la base,
+comme $7$ à $5$ ; le solide engendré autour de la base est au cylindre de même axe
+et de même diamètre comme $5$ à $8$ ; le solide engendré autour de l'axe est au
+cylindre « de même axe et de même base » comme $11$ à $18$ ; le rapport de ces deux
+solides est « ineffable », composé de $44 : 45$ et du rapport d'un cercle au carré
+circonscrit ; enfin le centre de gravité de la demi-cycloïde est sur la parallèle
+à l'axe qui coupe la base de la cycloïde entière en parties $19$ et $8$, ou celle de
+la demi-cycloïde en parties $16$ et $11$, la plus grande du côté de la courbe. La
+pièce des vues 16--19, écrite à Mersenne à la première personne et close par
+« Torricellium », rapporte un soupçon de Roberval (« quæ Geometricè falsa
+suspicatur »), rappelle qu'Archimède donne le cercle au carré du diamètre comme
+$11$ à $14$, et demande d'où l'on croit qu'il a tiré « le rapport qu'il réduisait
+aux nombres 11 et 18 ». On admet que $\pi^2$ est irrationnel, et la règle de
+Pappus--Guldin : une figure plane d'aire $A$, tournant autour d'une droite de son
+plan qui ne la traverse pas, engendre un volume $2\pi\delta A$, où $\delta$ est la
+distance de son centre de gravité à la droite.
+\begin{enumerate}
+\item Calculer l'aire de la cycloïde et la hauteur $\bar y$ de son centre de
+  gravité. Vérifier les rapports $7 : 5$ et $5 : 8$.
+\item Calculer le volume $V$ du solide engendré autour de l'axe (on pourra écrire
+  $V = 2\pi\int_0^{\pi r}(\pi r - x)\,y\,dx$), puis son rapport au cylindre de rayon
+  $\pi r$ et de hauteur $2r$. Le comparer à $\frac{11}{18}$. Ce rapport peut-il
+  être rationnel ?
+\item Soit $\delta$ la distance à l'axe du centre de gravité de la demi-cycloïde.
+  Montrer que les énoncés $19 : 8$ et $16 : 11$ donnent le même $\delta$, et que ce
+  $\delta$, porté dans la règle de Pappus--Guldin, redonne exactement
+  $\frac{11}{18}$. Calculer le vrai $\delta$, et les vrais rapports des parties des
+  deux bases.
+\item Montrer que le « $44 : 45$ » se déduit de $11 : 18$ et de $5 : 8$. Donner la
+  vraie valeur du rapport des deux solides, et montrer qu'elle n'est pas de la
+  forme $q\cdot\frac{\pi}{4}$ avec $q$ rationnel.
+\item Que vaut le rapport de la question 2 si l'on prend $\pi = \frac{22}{7}$ ? Pour
+  quelle valeur de $\pi$ vaudrait-il $\frac{11}{18}$ ? Cette valeur est-elle
+  compatible avec les bornes d'Archimède $3\frac{10}{71} < \pi < 3\frac17$ ? Que
+  répondre à la question de la pièce ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Avec $dx = r(1 - \cos t)\,dt$ et $\int_0^{2\pi}(1 - \cos t)^2\,dt = 3\pi$,
+  l'aire vaut $A = r^2\cdot 3\pi = 3\pi r^2$. Le moment par rapport à la base est
+  $\int \frac{y^2}{2}\,dx = \frac{r^3}{2}\int_0^{2\pi}(1 - \cos t)^3\,dt$ ; en
+  développant, les termes en $\cos t$ et $\cos^3 t$ ont une intégrale nulle, et
+  $\int_0^{2\pi}(1 + 3\cos^2 t)\,dt = 2\pi + 3\pi = 5\pi$. D'où
+  $\bar y = \frac{5\pi r^3/2}{3\pi r^2} = \frac{5r}{6}$. L'axe mesure $2r$ ; le
+  centre est à $\frac{7r}{6}$ du sommet et à $\frac{5r}{6}$ de la base : $7 : 5$,
+  exact. Autour de la base, Pappus--Guldin donne
+  $2\pi\cdot\frac{5r}{6}\cdot 3\pi r^2 = 5\pi^2r^3$, et le cylindre de rayon $2r$ et
+  de longueur $2\pi r$ vaut $8\pi^2r^3$ : $5 : 8$, exact.
+\item Le solide est engendré par la moitié de l'espace située d'un côté de l'axe ;
+  par tranches cylindriques,
+  \[
+  V = 2\pi\int_0^{\pi r}(\pi r - x)\,y\,dx
+  = 2\pi r^3\int_0^{\pi}(\pi - t + \sin t)(1 - \cos t)^2\,dt .
+  \]
+  Avec $(1 - \cos t)^2 = \frac32 - 2\cos t + \frac12\cos 2t$, et, par parties,
+  $\int_0^\pi(\pi - t)\cos t\,dt = 2$, $\int_0^\pi(\pi - t)\cos 2t\,dt = 0$, on
+  trouve $\int_0^\pi(\pi - t)(1 - \cos t)^2\,dt = \frac{3\pi^2}{4} - 4$ ; et
+  $\int_0^\pi \sin t\,(1 - \cos t)^2\,dt = \bigl[\frac{(1 - \cos t)^3}{3}\bigr]_0^\pi
+  = \frac83$. D'où
+  \[
+  V = 2\pi r^3\Bigl(\frac{3\pi^2}{4} - \frac43\Bigr) = \frac{\pi r^3}{6}\,(9\pi^2 - 16).
+  \]
+  Le cylindre vaut $\pi(\pi r)^2\cdot 2r = 2\pi^3r^3$, et le rapport est
+  \[
+  \frac{9\pi^2 - 16}{12\pi^2} = \frac34 - \frac{4}{3\pi^2} \approx 0{,}61491,
+  \]
+  contre $\frac{11}{18} \approx 0{,}61111$ : la lettre donne un rapport trop petit
+  de $0{,}0038$, soit $0{,}6$ pour cent de la valeur vraie. Si ce rapport était un
+  rationnel $q$, on aurait $\pi^2 = \frac{4}{3(3/4 - q)}$ rationnel : il est
+  irrationnel, et $11 : 18$ ne peut pas être exact.
+\item La demi-cycloïde a pour base le segment de longueur $\pi r$ qui va du point
+  de rebroussement au pied de l'axe. L'énoncé $16 : 11$, la plus grande partie
+  du côté de la courbe, met le centre à $\delta = \frac{11}{27}\pi r$ de l'axe.
+  L'énoncé $19 : 8$ coupe la base entière, de longueur $2\pi r$, en
+  $\frac{38}{27}\pi r$ et $\frac{16}{27}\pi r$ : la parallèle est à
+  $\frac{16}{27}\pi r$ d'un point de rebroussement, donc à
+  $\pi r - \frac{16}{27}\pi r = \frac{11}{27}\pi r$ de l'axe. C'est le même énoncé.
+  Le solide autour de l'axe est celui qu'engendre la demi-cycloïde, d'aire
+  $\frac32\pi r^2$ ; la règle donne $V = 2\pi\delta\cdot\frac32\pi r^2 =
+  3\pi^2r^2\delta$, et
+  \[
+  \frac{V}{2\pi^3r^3} = \frac{3\delta}{2\pi r} = \frac{3}{2}\cdot\frac{11}{27} = \frac{11}{18}
+  \]
+  pour $\delta = \frac{11}{27}\pi r$. Les deux énoncés faux de la lettre sont donc une seule donnée lue dans les deux
+  sens ; la lettre de Roberval à Torricelli le dit à sa manière, qui écrit que ce
+  rapport a été « déduit du centre trouvé auparavant » (vue 79). Le vrai $\delta$
+  est $\frac{V}{3\pi^2r^2} = \frac{9\pi^2 - 16}{18\pi}\,r = \Bigl(\frac{\pi}{2} -
+  \frac{8}{9\pi}\Bigr)r \approx 1{,}2879\,r$, contre $\frac{11}{27}\pi r \approx
+  1{,}2799\,r$. Les vrais rapports sont, pour la base de la demi-cycloïde,
+  $(\pi r - \delta) : \delta = (9\pi^2 + 16) : (9\pi^2 - 16) \approx 1{,}4394$, et non
+  $\frac{16}{11} \approx 1{,}4545$ ; pour la base entière,
+  $(\pi r + \delta) : (\pi r - \delta) = (27\pi^2 - 16) : (9\pi^2 + 16) \approx
+  2{,}3895$, et non $\frac{19}{8} = 2{,}375$. Le soupçon que rapporte la pièce des
+  vues 16--19 est fondé pour la demi-cycloïde ; pour la cycloïde entière, $7 : 5$
+  est exact.
+\item Les deux cylindres sont entre eux comme $2\pi^3r^3 : 8\pi^2r^3 = \pi : 4$,
+  le rapport d'un cercle au carré circonscrit. Avec les nombres de la lettre,
+  \[
+  \frac{V_{\text{axe}}}{V_{\text{base}}} = \frac{11/18}{5/8}\cdot\frac{\pi}{4}
+  = \frac{44}{45}\cdot\frac{\pi}{4} = \frac{11\pi}{45} \approx 0{,}7679 :
+  \]
+  le $44 : 45$ est la conséquence exacte de $11 : 18$ et de $5 : 8$. La vraie valeur
+  est $\frac{\pi r^3(9\pi^2 - 16)/6}{5\pi^2r^3} = \frac{9\pi^2 - 16}{30\pi} \approx
+  0{,}7727$. Si elle valait $q\frac{\pi}{4}$, on aurait
+  $\pi^2\bigl(9 - \frac{15q}{2}\bigr) = 16$ ; $q = \frac65$ donne $0 = 16$, et toute
+  autre valeur rend $\pi^2$ rationnel. Le mot « ineffable » (irrationnel) est juste
+  pour la valeur de la lettre, et le serait pour la vraie, mais cela demande de
+  savoir que $\pi$ n'est racine d'aucune équation du second degré à coefficients
+  rationnels ; la composition, elle, est fausse.
+\item Avec $\pi = \frac{22}{7}$, $\frac34 - \frac{4}{3\pi^2} = \frac34 -
+  \frac{49}{363} = \frac{893}{1452} \approx 0{,}61501$, loin de $0{,}61111$. Le
+  rapport vaut $\frac{11}{18}$ quand $\frac{4}{3\pi^2} = \frac34 - \frac{11}{18} =
+  \frac{5}{36}$, c'est-à-dire $\pi^2 = \frac{48}{5}$, $\pi = \frac{4\sqrt{15}}{5}
+  \approx 3{,}0984$, bien au-dessous de $3\frac{10}{71} \approx 3{,}1408$. Comme
+  $\frac34 - \frac{4}{3\pi^2}$ croît avec $\pi$, les bornes d'Archimède
+  l'enferment entre $0{,}61484$ et $0{,}61501$, et $\frac{11}{18}$ en sort. La
+  réponse à la question de la pièce est donc négative : $11 : 18$ n'est pas la
+  valeur vraie « réduite » par le $11 : 14$ d'Archimède. C'est l'argument de la
+  lettre de Roberval (vue 79), selon qui ce rapport « s'égare loin hors de ces
+  bornes ». La pièce ne dit pas comment il a été obtenu, et le calcul de la
+  question 3 montre seulement qu'il est lié au centre $16 : 11$.
+\end{enumerate}
+\end{solution}
+
 \begin{exercice}{Aucun triangle rectangle en nombres n'a pour aire un carré}{L3}{3}
 \manuscrit{naf-5176}{32}{32}
 La note de la vue 32 pose, parmi quatre questions latines : « trouver des
@@ -890,10 +1512,362 @@ multiplicité.
 \end{enumerate}
 \end{solution}
 
+\begin{exercice}{Un second triangle rectangle d'aire 6}{L3}{2}
+\manuscrit{naf-5161}{27}{28}
+Une note de travail pose : « Il faut trouver un triangle primitif dont l'aire soit
+un sextuple quarré et qui ne soit pas semblable au triangle de 3. 4. 5. » ; en
+divisant ses côtés par la racine du carré, on aura un triangle rectangle à côtés
+rationnels d'aire $6$. Le procédé : du triangle donné, former un triangle avec les
+deux plus petits côtés, puis un troisième avec les deux plus grands côtés du
+second. « Former un triangle » de deux nombres $p > q$, c'est prendre
+$p^2 - q^2$, $2pq$, $p^2 + q^2$.
+\begin{enumerate}
+\item Exécuter le procédé à partir de $(3,4,5)$. Vérifier que l'aire du troisième
+  triangle est $6\cdot 70^2$ et en déduire un triangle rationnel d'aire $6$.
+\item Généraliser : si $(a, b, c)$ est un triangle rectangle rationnel d'aire $n$
+  avec $a \ne b$, le triangle formé de $c^2$ et $2ab$ a pour côtés
+  $(a^2 - b^2)^2$, $4abc^2$, $c^4 + 4a^2b^2$ et pour aire
+  $n\bigl(2c(a^2-b^2)\bigr)^2$. En déduire un nouveau triangle rationnel d'aire $n$.
+\item Au triangle $(a, b, c)$ on associe le point $M = \bigl(\frac{c^2}{4},
+  \frac{c(b^2 - a^2)}{8}\bigr)$. Montrer que $M$ est sur la courbe
+  $y^2 = x^3 - n^2x$.
+\item Pour $(3,4,5)$, $M = \bigl(\frac{25}{4}, \frac{35}{8}\bigr)$. Calculer
+  l'abscisse du point d'intersection (autre que $M$) de la tangente en $M$ avec la
+  courbe, et la comparer au nouveau triangle.
+\item La même page refait le chemin à partir de $(5, 12, 13)$. Donner le triangle
+  rationnel d'aire $30$ que l'on obtient.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $(3,4) \mapsto (16 - 9, 24, 25) = (7, 24, 25)$ ; $(24, 25) \mapsto
+  (625 - 576, 1200, 1201) = (49, 1200, 1201)$. Aire $\frac12\cdot49\cdot1200 =
+  29\,400 = 6\cdot 4900 = 6\cdot 70^2$. En divisant par $70$ :
+  $\bigl(\frac{7}{10}, \frac{120}{7}, \frac{1201}{70}\bigr)$, d'aire
+  $\frac12\cdot\frac{7}{10}\cdot\frac{120}{7} = 6$, et
+  $\frac{49}{100} + \frac{14400}{49} = \frac{2401 + 1\,440\,000}{4900} =
+  \frac{1\,442\,401}{4900} = \bigl(\frac{1201}{70}\bigr)^2$.
+\item Former un triangle de $p = c^2$ et $q = 2ab$ ($p > q$ car
+  $c^2 - 2ab = (a-b)^2 > 0$) : $p^2 - q^2 = c^4 - 4a^2b^2 = (a^2+b^2)^2 - 4a^2b^2 =
+  (a^2 - b^2)^2$, $2pq = 4abc^2$, $p^2 + q^2 = c^4 + 4a^2b^2$. Aire :
+  $\frac12(a^2-b^2)^2\cdot 4abc^2 = 2abc^2(a^2-b^2)^2 = \frac{ab}{2}\,4c^2(a^2 -
+  b^2)^2 = n\bigl(2c(a^2-b^2)\bigr)^2$. En divisant les trois côtés par
+  $2c|a^2 - b^2|$, on obtient un triangle rectangle rationnel d'aire $n$. Pour
+  $(3,4,5)$, $2c|a^2-b^2| = 70$ : c'est le diviseur de la note.
+\item Avec $n = \frac{ab}{2}$ : $x^3 - n^2x = x(x^2 - n^2) = \frac{c^2}{4}\cdot
+  \frac{c^4 - 4a^2b^2}{16} = \frac{c^2(a^2-b^2)^2}{64} = y^2$.
+\item $n = 6$, $y^2 = x^3 - 36x$. Pente de la tangente :
+  $\lambda = \frac{3x_0^2 - 36}{2y_0} = \frac{3\cdot\frac{625}{16} - 36}{\frac{35}{4}}
+  = \frac{1299/16}{35/4} = \frac{1299}{140}$. La droite coupe la cubique en trois
+  points dont la somme des abscisses est $\lambda^2$ (coefficient de $x^2$ dans
+  $x^3 - (\lambda x + \mu)^2 - 36x$), $M$ comptant deux fois :
+  $x_2 = \lambda^2 - 2x_0 = \frac{1\,687\,401}{19\,600} - \frac{25}{2} =
+  \frac{1\,442\,401}{19\,600} = \bigl(\frac{1201}{140}\bigr)^2$. C'est
+  $\frac{c'^2}{4}$ pour $c' = \frac{1201}{70}$ : le point associé au nouveau
+  triangle. Le procédé de la note est la « duplication » d'un point sur cette
+  courbe ; la note ne nomme aucun auteur, et le lien avec les courbes elliptiques
+  est bien postérieur.
+\item $(5,12) \mapsto (119, 120, 169)$ ; $(120, 169) \mapsto (14\,161, 40\,560,
+  42\,961)$, d'aire $30\cdot(2\cdot13\cdot119)^2 = 30\cdot 3094^2$. En divisant
+  par $3094$ : $\bigl(\frac{119}{26}, \frac{1560}{119}, \frac{42\,961}{3094}\bigr)$,
+  d'aire $\frac12\cdot\frac{119}{26}\cdot\frac{1560}{119} = \frac{780}{26} = 30$.
+\end{enumerate}
+\end{solution}
+
+\section*{Pierre de Fermat (1601--1665)}
+\chapitre{fermat}
+
+NAL 2339, que le catalogue et le feuillet de titre de 1888 intitulent
+« Mémoires de Fermat », relie une introduction aux lieux plans et solides, une
+méthode « ad disquirendam maximam et minimam » avec une méthode des tangentes,
+copiées pour être envoyées par le P. Mersenne à Descartes, un appendice qui
+résout les cubiques et les quartiques par l'intersection de deux coniques, et
+une méthode d'élimination envoyée à Carcavi avec une lettre du 20 avril 1650.
+Les feuillets ne nomment Fermat que dans trois intitulés (vues 37, 41 et 49) ;
+les autres pièces ne portent aucun nom, et l'on y dit « l'auteur ». La méthode
+des maxima « adégale » deux valeurs voisines d'une expression, divise par
+l'accroissement et le supprime : on la refait ici, puis on dit ce qui en fait
+une démonstration.
+
+\begin{exercice}{Le plus grand rectangle, par adæqualité puis par la dérivée}{Lycée}{1}
+\manuscrit{nal-2339}{27}{28}
+Sous le titre « Copie d'un escrit enuoyé par le R. Pere Marçenne a des Cartes »,
+qui nomme l'envoyeur et le destinataire mais non l'auteur, le feuillet donne en
+une page une méthode pour trouver le maximum et le minimum. On écrit la
+grandeur à rendre maximale au moyen de l'inconnue $A$, puis on remplace $A$ par
+$A + E$ ; on « adégale » les deux expressions (« Adæquentur, vt Loquitur
+Diophantus »), on ôte les termes communs, on divise par $E$, on efface les
+termes qui contiennent encore $E$, et l'on égale le reste. L'exemple est de
+couper une droite $AC = B$ en un point $E$ de sorte que le rectangle
+$AE \cdot EC$ soit le plus grand. On écrit $x$ pour l'inconnue $A = AE$, et $e$
+pour l'accroissement, que le feuillet appelle $E$ comme le point.
+\begin{enumerate}
+\item Exprimer le rectangle $f(x) = AE \cdot EC$, puis $f(x + e)$. Refaire le
+  calcul du feuillet jusqu'à sa conclusion, « B æquabitur A bis ».
+\item Montrer que, pour $e \neq 0$, $\dfrac{f(x+e) - f(x)}{e} = B - 2x - e$. À
+  quoi revient l'opération qui « efface » $e$ ? Retrouver le résultat avec la
+  dérivée de $f$.
+\item Démontrer que le milieu de $AC$ donne bien le plus grand rectangle, et
+  donner sa valeur. Pour $B = 10$, comparer ce rectangle à celui qu'on obtient
+  pour $AE = 4$.
+\item Appliquer la même règle à la somme des carrés $AE^2 + EC^2$. Quel point
+  trouve-t-on ? Est-ce un maximum ? Qu'en conclure sur ce que la règle
+  démontre ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $EC = B - x$, donc $f(x) = x(B - x) = Bx - x^2$, que le feuillet écrit
+  « B in A $-$ Aq ». Puis
+  $f(x+e) = (x+e)(B - x - e) = Bx - x^2 + Be - 2xe - e^2$. On adégale
+  $f(x+e)$ et $f(x)$ et l'on ôte les termes communs $Bx - x^2$ : il reste
+  $Be \approx 2xe + e^2$. On divise par $e$ : $B \approx 2x + e$. On efface $e$ :
+  $B = 2x$, et $x = \frac B2$. Il faut couper $AC$ en son milieu.
+\item $f(x+e) - f(x) = Be - 2xe - e^2 = e\,(B - 2x - e)$, d'où le quotient
+  $B - 2x - e$ pour $e \neq 0$. C'est une fonction affine de $e$ ; « effacer »
+  $e$, c'est prendre sa valeur en $e = 0$, qui est sa limite quand $e$ tend vers
+  $0$. Cette limite est le nombre dérivé $f'(x) = B - 2x$, et la règle écrit
+  $f'(x) = 0$. On retrouve directement $f'(x) = B - 2x$, qui s'annule en
+  $x = \frac B2$.
+\item $f'(x) = B - 2x$ est positive sur $\left[0, \frac B2\right[$ et négative
+  sur $\left]\frac B2, B\right]$ : $f$ croît puis décroît, et son maximum sur
+  $[0, B]$ est atteint en $\frac B2$. On le voit aussi sans dérivée :
+  $f\bigl(\frac B2 + h\bigr) = \bigl(\frac B2 + h\bigr)\bigl(\frac B2 - h\bigr)
+  = \frac{B^2}{4} - h^2 \le \frac{B^2}{4}$, avec égalité seulement pour $h = 0$.
+  Le plus grand rectangle est le carré de côté $\frac B2$, d'aire
+  $\frac{B^2}{4}$. Pour $B = 10$ : $25$ au milieu, et $4 \times 6 = 24$ pour
+  $AE = 4$, c'est-à-dire $25 - 1^2$.
+\item $g(x) = x^2 + (B - x)^2 = 2x^2 - 2Bx + B^2$, et
+  $g(x+e) - g(x) = 4xe - 2Be + 2e^2$. On divise par $e$ : $4x - 2B + 2e$ ; on
+  efface $e$ : $4x = 2B$, soit encore $x = \frac B2$. Mais
+  $g\bigl(\frac B2 + h\bigr) = \frac{B^2}{2} + 2h^2 \ge \frac{B^2}{2}$ : le milieu
+  donne le \emph{minimum} de la somme des carrés, ce qu'on pouvait prévoir
+  puisque $AE^2 + EC^2 = B^2 - 2\,AE \cdot EC$. La règle a donné le même point
+  pour un maximum et pour un minimum : elle trouve les points où la dérivée
+  s'annule, ce qui est une condition nécessaire pour un extremum intérieur, mais
+  elle ne dit pas lequel des deux on a, ni même qu'on en a un. Pour
+  $k(x) = x^3$, elle donne $3x^2 = 0$, soit $x = 0$, alors que $x^3$ est
+  croissante et n'a en $0$ ni maximum ni minimum. Le « Nec potest generalior
+  dari methodus » du feuillet parle de la généralité de la règle, non de ce
+  qu'elle démontre : il faut chaque fois une vérification, comme à la question
+  précédente.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{La tangente à la parabole : l'inégalité des deux côtés}{L1}{2}
+\manuscrit{nal-2339}{29}{30}
+Sur le feuillet suivant, de la même main, « De tangentibus Linearum curuarum »
+ramène à la méthode des maxima la recherche des tangentes. Soit une parabole de
+sommet $d$ et de diamètre $dc$, un point $B$ de la courbe, d'ordonnée $BC$, et
+la tangente cherchée $BE$, qui coupe le diamètre en $E$, au-delà du sommet.
+L'auteur prend sur $BE$ un point $O$ entre $B$ et $E$, mène l'ordonnée $OI$, et
+écrit que, $O$ étant hors de la parabole, le rapport de $cd$ à $di$ est plus
+grand que celui de $BC^2$ à $OI^2$, donc que celui de $CE^2$ à $IE^2$. Il pose
+$cd = d$, $CE = a$, $CI = e$\footnote{Le feuillet écrit les deux inconnues $A$ et
+$E$. Il appelle d'abord $cd$ « B data », puis $d$ ; une note marginale française
+le relève : « Il a icy nommé B ce qu'il nomme d par apres ».}, « adégale », et
+trouve $a = 2d$. On rapporte la parabole à son sommet : $u$ est l'abscisse
+comptée de $d$ vers $c$ le long du diamètre, $v$ l'ordonnée, et la courbe a pour
+équation $v^2 = pu$, les coordonnées étant obliques si les ordonnées ne sont pas
+perpendiculaires au diamètre ; un point est dit hors de la parabole si
+$v^2 > pu$. Pour tout réel $e$, on note $I$ le point du diamètre tel que
+$CI = e$, compté positivement de $C$ vers $E$, et $O$ le point de la droite $BE$
+situé sur l'ordonnée menée par $I$.
+\begin{enumerate}
+\item Montrer que $\dfrac{BC^2}{OI^2} = \dfrac{CE^2}{IE^2}$, et que, pour
+  $0 < e < d$, le point $O$ est hors de la parabole si et seulement si
+  $\dfrac{cd}{di} > \dfrac{BC^2}{OI^2}$.
+\item Soit $F(e) = d\,(a - e)^2 - (d - e)\,a^2$. Montrer que, pour tout réel
+  $e$, le point $O$ est hors de la parabole si et seulement si $F(e) > 0$, et
+  que $F(e) = e\,(a^2 - 2da + de)$. Refaire l'adæqualité du feuillet, et dire
+  quelle quantité elle calcule.
+\item Le feuillet ne prend que des points $O$ entre $B$ et $E$, c'est-à-dire
+  $0 < e < a$. Montrer que $F(e) > 0$ pour tout $e \in \left]0, a\right[$ si et
+  seulement si $a \ge 2d$. Pour $a = 3d$, trouver le second point commun de la
+  droite $BE$ et de la parabole.
+\item Montrer qu'en demandant aussi $F(e) > 0$ pour $e < 0$ voisin de $0$ (des
+  points $O$ au-delà de $B$), on obtient $a = 2d$, et qu'alors la droite ne
+  rencontre la parabole qu'en $B$. Expliquer pourquoi, l'inégalité étant prise
+  des deux côtés, le calcul du feuillet devient une démonstration.
+\item Retrouver $CE = 2\,cd$ à l'aide de la dérivée de $u \mapsto \sqrt{pu}$.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Les ordonnées $OI$ et $BC$ sont parallèles et $O$ est sur $BE$ : les
+  triangles $EIO$ et $ECB$ sont semblables (Thalès), d'où
+  $\frac{OI}{BC} = \frac{IE}{CE}$, et l'égalité des carrés. Soit $w$ l'ordonnée
+  de la parabole au point $I$ : $w^2 = p \cdot di$, et $BC^2 = p \cdot cd$. Le
+  point $O$ est hors de la parabole si et seulement si $OI^2 > p \cdot di$,
+  c'est-à-dire $OI^2 > BC^2 \cdot \frac{di}{cd}$, soit, puisque $di > 0$,
+  $\frac{cd}{di} > \frac{BC^2}{OI^2}$.
+\item Le point $O$ a pour abscisse $u = cd - CI = d - e$ et, par Thalès, pour
+  ordonnée $v = BC \cdot \frac{a - e}{a}$ (avec son signe). Comme
+  $BC^2 = pd$, la condition $v^2 > pu$ s'écrit
+  $pd\,\frac{(a-e)^2}{a^2} > p\,(d - e)$, soit, en multipliant par
+  $\frac{a^2}{p} > 0$, $d\,(a - e)^2 > a^2(d - e)$ : c'est $F(e) > 0$, sans
+  qu'il faille supposer $d - e > 0$. C'est aussi l'inégalité du feuillet après
+  le produit des extrêmes et des moyens,
+  $da^2 + de^2 - 2dae > da^2 - a^2e$ (« d in Aq $+$ d in Eq $-$ d in A in
+  E$''$ maius erit quàm d in A quadr. $-$ Aq in E »). En développant,
+  $F(e) = -2dae + de^2 + a^2e = e\,(a^2 - 2da + de)$. L'adæqualité : on ôte
+  $da^2$ commun, $de^2 + a^2e \approx 2dae$ ; on divise par $e$,
+  $de + a^2 \approx 2da$ ; on efface $de$, $a^2 = 2da$, d'où $a = 2d$. Diviser
+  $F(e)$ par $e$ puis faire $e = 0$, c'est calculer
+  $F'(0) = a^2 - 2da$ : la règle écrit $F'(0) = 0$.
+\item Pour $e > 0$, $F(e) > 0$ équivaut à $a^2 - 2da + de > 0$. Si $a \ge 2d$,
+  $a^2 - 2da = a(a - 2d) \ge 0$ et $de > 0$ : l'inégalité vaut pour tout
+  $e > 0$. Si $a < 2d$, $a^2 - 2da < 0$, et $a^2 - 2da + de < 0$ pour
+  $0 < e < \frac{a(2d - a)}{d}$ : les points $O$ proches de $B$ sont dans la
+  parabole. L'inégalité que le feuillet écrit, pour les seuls points entre $B$
+  et $E$, ne donne donc que $a \ge 2d$, et non $a = 2d$. Les droites avec
+  $a > 2d$, qui font avec le diamètre un angle plus petit que la tangente, restent hors de la
+  parabole entre $B$ et $E$ mais la recoupent au-delà de $B$, en
+  $e^* = \frac{a(2d - a)}{d} < 0$. Pour $a = 3d$,
+  $F(e) = de\,(3d + e)$ et $e^* = -3d$ : le point commun a pour abscisse
+  $u = d + 3d = 4d$ et pour ordonnée $v = BC \cdot \frac{3d + 3d}{3d} = 2\,BC$ ;
+  on vérifie $v^2 = 4pd = p \cdot 4d$.
+\item Pour $e < 0$, $F(e) > 0$ équivaut à $a^2 - 2da + de < 0$. Si
+  $a^2 - 2da > 0$, cette quantité est positive pour $e < 0$ assez proche de
+  $0$ : il faut donc $a^2 - 2da \le 0$, soit $a \le 2d$. Avec la question
+  précédente, $a = 2d$, et alors $F(e) = de^2 > 0$ pour tout $e \neq 0$ : tout
+  point de la droite autre que $B$ est hors de la parabole, qui est touchée sans
+  être coupée. Pris des deux côtés, l'énoncé « $O$ est hors de la parabole »
+  dit que $F$, nulle en $0$, a en $0$ un minimum ; le quotient $F(e)/e$ est
+  alors positif pour $e > 0$ et négatif pour $e < 0$, et sa limite $F'(0)$ est
+  à la fois positive ou nulle et négative ou nulle : $F'(0) = 0$. C'est exactement le calcul du
+  feuillet, qui est donc une condition nécessaire démontrée, et la vérification
+  $F(e) = de^2$ en donne la réciproque. D'un seul côté, l'inégalité n'impose que
+  $F'(0) \ge 0$, et l'égalité que le feuillet en tire n'est pas justifiée par
+  elle.
+\item Au point $B$, $u = d$ et $v = \sqrt{pd}$ ; la pente de la tangente est
+  $v'(d) = \frac{\sqrt p}{2\sqrt d}$. La tangente rencontre le diamètre
+  ($v = 0$) à l'abscisse $u = d - \frac{v(d)}{v'(d)} = d - 2d = -d$ : le point
+  $E$ est à la distance $d$ du sommet, de l'autre côté, et $CE = 2d = 2\,cd$. La
+  sous-tangente est double de l'abscisse, « quod quidem ita se habet ».
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Éliminer une racine seconde : l'analogie redoublée et le résultant}{L2}{3}
+\manuscrit{nal-2339}{41}{43}
+La pièce latine que son titre dit envoyée par M. de Fermat à M. de Carcavi le
+20 avril 1650 (« A Domino de Fermat ad Dominum De Carcaui Die 20a. Aprilis Anno
+1650 Missus ») enseigne à « ramener les racines secondes aux premières »,
+c'est-à-dire à éliminer une inconnue entre deux équations. Son exemple, en
+écrivant $x$ pour la racine première $A$ et $y$ pour la racine seconde $E$, est
+\[ x^3 + y^3 = Z, \qquad Bx + y^2 + Dy = N^2 . \]
+On pose $P = Z - x^3$ et $Q = N^2 - Bx$, de sorte que les deux équations
+s'écrivent $P = y^3$ et $Q = y^2 + Dy$. L'« analogie de l'égalité double » écrit
+la proportion $P : y^3 = Q : (y^2 + Dy)$, égale le produit des extrêmes à celui
+des moyens et divise par $y$ ; on recommence jusqu'à ce que $y$ ne paraisse plus
+qu'au premier degré, et une division le donne ; on porte enfin cette valeur dans
+l'une des équations. Les grandeurs $B$, $D$, $N$, $Z$ sont des réels, avec
+$D \neq 0$.
+\begin{enumerate}
+\item Le feuillet écrit le produit des extrêmes et des moyens
+  « $Z^sE^2 - A^3E^2 + Z^sDE - A^3DE$ Æle $N^2E^2 - BAE^3$ ». Trouver la faute.
+  Montrer que l'égalité juste, $P(y^2 + Dy) = Qy^3$, est une combinaison des
+  deux équations à coefficients polynomiaux, et qu'après division par $y$ elle
+  n'est plus que du second degré en $y$.
+\item Refaire la seconde analogie, entre $PD = Qy^2 - Py$ et $Q = y^2 + Dy$, et
+  en déduire $y\,(Q^2 - DP) = P\,(Q + D^2)$. Vérifier que le quotient du
+  feuillet,
+  \[ \frac{ZD^2 - x^3D^2 + N^2Z - N^2x^3 - BZx + Bx^4}
+          {N^4 - N^2Bx - BxN^2 + B^2x^2 - ZD + x^3D} , \]
+  est bien $\dfrac{P(Q + D^2)}{Q^2 - DP}$, et qu'en une solution commune réelle
+  avec $y \neq 0$ son dénominateur ne s'annule pas.
+\item La division euclidienne de $y^3 - P$ par $y^2 + Dy - Q$, en $y$, donne
+  une autre expression de $y$. La trouver, et montrer que
+  \[ P(Q + D^2)^2 - (P + DQ)(Q^2 - DP) = D\,R, \qquad
+     R = P^2 + D^3P + 3DPQ - Q^3 . \]
+  Que peut-on en conclure sur les deux expressions de $y$ ?
+\item Montrer que $R$ est le résultant en $y$ des polynômes $y^3 - P$ et
+  $y^2 + Dy - Q$ (on pourra utiliser les racines complexes $y_1$, $y_2$ du
+  second). Quel est son degré en $x$ ? Que signifie $R(x) = 0$ ?
+\item Le dernier précepte porte la valeur de $y$ du feuillet dans
+  $Q = y^2 + Dy$. Montrer qu'après avoir chassé le dénominateur on obtient
+  $-Q^2R = 0$, équation de degré 8 en $x$. Pour $B = D = 1$, $N^2 = 3$, $Z = 2$,
+  vérifier que $(1, 1)$ est solution du système, et que $x = 3$ annule
+  l'équation finale sans être l'abscisse d'aucune solution.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Le produit des extrêmes est $P(y^2 + Dy) = Zy^2 - x^3y^2 + ZDy - x^3Dy$,
+  comme au feuillet ; celui des moyens est $Qy^3 = N^2y^3 - Bxy^3$. Le feuillet
+  écrit $N^2E^2$ au lieu de $N^2E^3$, alors que le terme voisin, $BAE^3$, a bien
+  l'exposant 3 ; la ligne suivante, divisée par $E$, porte $N^2E^2$, qui est
+  juste : la faute est restée sans suite dans le calcul. L'égalité juste s'écrit
+  \[ P(y^2 + Dy) - Qy^3 = (y^2 + Dy)\,(P - y^3) - y^3\,(Q - y^2 - Dy) , \]
+  combinaison des deux équations $P - y^3 = 0$ et $Q - y^2 - Dy = 0$ à
+  coefficients polynomiaux : toute solution commune la vérifie. Divisée par $y$,
+  elle devient $P(y + D) = Qy^2$, du second degré en $y$ au lieu du troisième ;
+  c'est le « vno ad minus gradu depressior » du feuillet. La division perd les
+  solutions où $y = 0$, qui demandent $P = 0$ et $Q = 0$ à la fois.
+\item La proportion $PD : (Qy^2 - Py) = Q : (y^2 + Dy)$ donne
+  $PD\,(y^2 + Dy) = Q\,(Qy^2 - Py)$, soit, développé comme au feuillet,
+  $ZDy^2 + ZD^2y - x^3Dy^2 - x^3D^2y = N^4y^2 - N^2Bxy^2 - N^2Zy + N^2x^3y
+  - BxN^2y^2 + B^2x^2y^2 + BZxy - Bx^4y$ ; tous les termes du feuillet sont
+  justes. Divisée par $y$ : $PD\,(y + D) = Q\,(Qy - P)$, d'où
+  $y\,(Q^2 - DP) = PD^2 + PQ = P\,(Q + D^2)$. Au numérateur du feuillet,
+  $ZD^2 - x^3D^2 = PD^2$ et $N^2Z - N^2x^3 - BZx + Bx^4 = (N^2 - Bx)(Z - x^3)
+  = PQ$ ; au dénominateur, $N^4 - 2N^2Bx + B^2x^2 = Q^2$ (le feuillet laisse
+  séparés les deux termes $-N^2BA$ et $-BAN^2$) et $-ZD + x^3D = -DP$. En une
+  solution commune,
+  $Q^2 - DP = (y^2 + Dy)^2 - Dy^3 = y^2(y^2 + Dy + D^2)
+  = y^2\bigl[\bigl(y + \frac D2\bigr)^2 + \frac{3D^2}{4}\bigr]$, strictement
+  positif pour $y$ réel non nul.
+\item $(y - D)(y^2 + Dy - Q) = y^3 - (Q + D^2)y + DQ$, donc
+  \[ y^3 - P = (y - D)(y^2 + Dy - Q) + (Q + D^2)\,y - (P + DQ) . \]
+  En une solution commune le reste est nul, et $y = \dfrac{P + DQ}{Q + D^2}$ si
+  $Q + D^2 \neq 0$ : une seule division, au lieu de deux analogies. En
+  développant, $P(Q + D^2)^2 = PQ^2 + 2D^2PQ + D^4P$ et
+  $(P + DQ)(Q^2 - DP) = PQ^2 - DP^2 + DQ^3 - D^2PQ$, dont la différence est
+  $DP^2 + D^4P + 3D^2PQ - DQ^3 = D\,R$. Là où les dénominateurs ne s'annulent pas, les deux quotients sont donc
+  égaux exactement quand $R = 0$ (on a supposé $D \neq 0$), en particulier en toute
+  solution commune : le feuillet et la division euclidienne donnent le même $y$.
+\item Le polynôme $g = y^2 + Dy - Q$ est unitaire, de racines $y_1$, $y_2$ avec
+  $y_1 + y_2 = -D$ et $y_1y_2 = -Q$. Le résultant de $f = y^3 - P$ et de $g$
+  est $\prod_i f(y_i)$ (au signe $(-1)^{3 \cdot 2} = 1$ près), soit
+  \[ (y_1^3 - P)(y_2^3 - P) = (y_1y_2)^3 - P\,(y_1^3 + y_2^3) + P^2 . \]
+  Or $(y_1y_2)^3 = -Q^3$ et
+  $y_1^3 + y_2^3 = (y_1 + y_2)^3 - 3y_1y_2(y_1 + y_2) = -D^3 - 3DQ$, d'où
+  $P^2 + D^3P + 3DPQ - Q^3 = R$. Comme $P$ est de degré 3 en $x$ et $Q$ de degré
+  1, $R$ est de degré 6, de terme dominant $x^6$ venu de $P^2$ : c'est le
+  produit $3 \times 2$ des degrés en $y$. $R(x) = 0$ signifie que, pour cette
+  valeur de $x$, les deux équations en $y$ ont une racine complexe commune : les
+  racines de $R$ sont exactement les abscisses des solutions complexes du
+  système.
+\item Avec $y = \frac{P(Q + D^2)}{Q^2 - DP}$, l'équation $Q - y^2 - Dy = 0$,
+  multipliée par $(Q^2 - DP)^2$, devient
+  \[ Q(Q^2 - DP)^2 - P^2(Q + D^2)^2 - DP(Q + D^2)(Q^2 - DP) = 0 . \]
+  En développant, le premier membre vaut
+  $Q^5 - 2DPQ^3 + D^2P^2Q - P^2Q^2 - 2D^2P^2Q - D^4P^2
+  - DPQ^3 + D^2P^2Q - D^3PQ^2 + D^4P^2$, soit
+  $Q^5 - 3DPQ^3 - P^2Q^2 - D^3PQ^2 = -Q^2R$, de degré $2 + 6 = 8$. L'équation
+  finale contient donc, outre le résultant, le facteur parasite
+  $(N^2 - Bx)^2$. Pour les valeurs proposées, $1 + 1 = 2$ et $1 + 1 + 1 = 3$ :
+  $(1, 1)$ est solution ; $P = 2 - x^3$, $Q = 3 - x$, et
+  $R = x^6 + 3x^4 - 13x^3 - 9x^2 + 21x - 3
+  = (x - 1)(x^5 + x^4 + 4x^3 - 9x^2 - 18x + 3)$, tandis que l'équation finale
+  est $(x - 3)^2\,R = 0$. En $x = 3$, $Q = 0$ et $P = -25$ : la seconde équation
+  donne $y^2 + y = 0$, soit $y = 0$ ou $y = -1$, et aucun ne vérifie
+  $y^3 = -25$ ; d'ailleurs $R(3) = 625 - 25 = 600 \neq 0$. La racine double
+  $x = 3$ est étrangère. Le feuillet n'écrit pas cette équation finale et
+  affirme seulement que la méthode est générale ; elle élimine toujours, mais
+  pour qu'elle soit exacte il faut écarter ce facteur, ce que fait le
+  résultant.
+\end{enumerate}
+\end{solution}
+
 \section*{Gilles Personne de Roberval (1602--1675)}
 \chapitre{roberval}
 
-Trois volumes nomment Roberval, et aucun des feuillets lus ici n'est donné pour
+Quatre volumes nomment Roberval, et aucun des feuillets lus ici n'est donné pour
 être de sa main. Latin 11195, que le catalogue range sous son nom, relie un
 traité latin anonyme, « De Recognitione Æquationum », écrit dans la notation de
 l'école de Viète : il fabrique les équations de degré deux, trois et quatre à
@@ -902,9 +1876,116 @@ qu'une note marginale renvoie à « son traité de mécanique des plans incliné
 c'est une citation de Roberval, non une attribution du traité. Guglielmo Libri
 décrit, dans un cahier monté dans l'album NAF 9544, cinq manuscrits de Roberval,
 dont il rapporte des énoncés. Et une lettre anonyme de NAF 5161, sur les thèses
-du P. Fabri, propose « ce beau problème de M. Roberval ». Les exercices partent de
+du P. Fabri, propose « ce beau problème de M. Roberval ». Et NAL 2338 conserve,
+en copie, deux lettres dont l'intitulé le nomme, l'une à Mersenne, l'autre à
+Torricelli, et la « De Vacuo Narratio » adressée à des Noyers, qui rapporte les
+expériences de Rouen de « D. de Paschal ». Les exercices partent de
 ces énoncés tels que les feuillets les rapportent ; on écrit les équations sous
 forme unitaire, avec $=$ pour la double barre du feuillet.
+
+\begin{exercice}{Mercure, eau et vin dans les tubes de Rouen}{Lycée}{1}
+\manuscrit{nal-2338}{97}{103}
+La « De Vacuo Narratio », dont le titre nomme Roberval
+(« Æ.\textsuperscript{i} P.\textsuperscript{i} de Roberual ») et qui finit sur
+« Parisijs 12 Calend. Octob. 1647 », rapporte les expériences faites à Rouen par
+« D. de Paschal ». Le mercure s'arrête toujours à $2\frac{7}{24}$ pieds au-dessus
+du mercure de la cuvette ; « D. de Paschal » calcule d'avance qu'il faut à l'eau
+« environ » $31\frac19$ pieds, et au vin « à peu près » $31\frac23$ pieds, pour lui
+faire équilibre, et deux tubes de 40 pieds attachés à un mât de navire le
+confirment. La pièce donne enfin le poids de l'eau à celui du mercure, sous le
+même volume, « comme 1 à $13\frac47$ ». On admet la loi de la statique des
+fluides : deux colonnes de liquides, surmontées de vide, font équilibre au même
+air quand les produits de leurs hauteurs par leurs densités sont égaux. On prend
+le pied du roi égal à $32{,}5$ cm, et l'on compte 12 pouces au pied.
+\begin{enumerate}
+\item Calculer la hauteur d'eau qui équilibre $2\frac{7}{24}$ pieds de mercure
+  avec le rapport $1 : 13\frac47$, et la comparer à $31\frac19$. Quel rapport des
+  densités les deux hauteurs de « D. de Paschal » donnent-elles exactement ?
+  Convertir $2\frac{7}{24}$ et $31\frac19$ pieds en unités actuelles.
+\item Quelle densité du vin, rapportée à celle de l'eau, les hauteurs $31\frac19$
+  et $31\frac23$ supposent-elles ? Les adversaires avaient accordé que le vin,
+  plus riche en « esprits », laisserait plus de vide que l'eau au sommet de
+  tubes de même hauteur. Pourquoi l'expérience les réfute-t-elle ?
+\item La pièce affirme que, dans un tube qui contient du mercure surmonté d'eau
+  et qui plonge dans une cuvette de mercure pur, la hauteur de l'eau vaut
+  $13\frac47$ fois ce qui manque au mercure pour atteindre $2\frac{7}{24}$ pieds.
+  Le démontrer. Un tube droit de section constante, dont le sommet est à 4 pieds
+  au-dessus de la cuvette, contient $2\frac12$ pieds de mercure et $1\frac12$ pied
+  d'eau ; on l'ouvre, et dans l'état final le mercure occupe le bas du tube et
+  l'eau le surmonte. Calculer la hauteur finale du mercure et celle du vide laissé
+  au sommet (on néglige la variation du niveau de la cuvette).
+\item Si l'on verse sur le mercure de la cuvette une hauteur $e$ d'eau, les
+  colonnes montent, dit la pièce, de la $13\frac47$\textsuperscript{e} partie de
+  $e$. Le justifier, et calculer la montée en pouces pour $e = 1$ pied.
+\item Pourquoi aucun siphon ne fait-il passer l'eau par-dessus une montagne de
+  plus de 31 pieds, ni aucune pompe qui ne fait qu'aspirer ne l'élève-t-elle plus
+  haut, alors qu'une pompe qui refoule le peut ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item L'équilibre s'écrit $\rho_e h_e = \rho_m h_m$, soit $h_e = 13\frac47\,h_m$.
+  Avec $h_m = \frac{55}{24}$ et $13\frac47 = \frac{95}{7}$,
+  \[
+  h_e = \frac{55}{24}\cdot\frac{95}{7} = \frac{5225}{168} = 31\tfrac{17}{168}
+  \approx 31{,}101
+  \]
+  pieds, contre $31\frac19 \approx 31{,}111$ : un centième de pied d'écart, un huitième de
+  pouce environ, et la pièce dit « circiter ». Les deux hauteurs de
+  « D. de Paschal » donnent exactement le rapport
+  $\frac{280/9}{55/24} = \frac{448}{33} = 13\frac{19}{33} \approx 13{,}576$, contre
+  $13\frac47 \approx 13{,}571$ : trois dix-millièmes d'écart relatif, les deux
+  données s'accordent. En unités actuelles, $2\frac{7}{24}\times 32{,}5 \approx
+  74{,}5$ cm et $31\frac19\times 0{,}325 \approx 10{,}1$ m. La pression moyenne au
+  niveau de la mer tient aujourd'hui 76 cm de mercure, ou $10{,}3$ m d'eau :
+  l'écart, de 2 pour cent environ, est de l'ordre des variations de la pression d'un
+  jour à l'autre. Le rapport actuel des densités du mercure et de l'eau, à la
+  température ordinaire, est voisin de $13{,}55$.
+\item Les hauteurs sont en raison inverse des densités :
+  $\frac{\rho_v}{\rho_e} = \frac{31\frac19}{31\frac23} = \frac{280/9}{95/3} =
+  \frac{56}{57} \approx 0{,}982$. Le vin est un peu plus léger que l'eau, donc il
+  monte plus haut, et dans deux tubes de même hauteur le vide au-dessus du vin est
+  plus court que le vide au-dessus de l'eau, de $31\frac23 - 31\frac19 = \frac59$
+  pied, soit $6\frac23$ pouces. C'est exactement le contraire de ce que prédisait
+  la doctrine des esprits, et exactement ce qu'annonçait le calcul par les poids,
+  fait avant l'expérience : seul le poids du liquide compte.
+\item À la hauteur de la surface de la cuvette, la colonne du tube (mercure de
+  hauteur $h$, eau de hauteur $h_e$, vide au-dessus) doit peser autant que la
+  colonne de mercure seul qui fait équilibre à l'air :
+  $\rho_m h + \rho_e h_e = \rho_m H$, avec $H = 2\frac{7}{24}$ pieds. D'où
+  \[
+  h_e = \frac{\rho_m}{\rho_e}\,(H - h) = 13\tfrac47\,(H - h),
+  \]
+  ce qu'affirme la pièce. Dans l'application, l'eau garde sa hauteur de $1\frac12$
+  pied : la section est constante, et l'eau, plus légère, ne peut sortir par le bas
+  à travers le mercure. Le mercure s'écoule en partie dans la cuvette jusqu'à
+  \[
+  h = \frac{55}{24} - \frac{7}{95}\cdot\frac32 = \frac{55}{24} - \frac{21}{190}
+  = \frac{4973}{2280} \approx 2{,}181
+  \]
+  pieds. Le haut de l'eau est à $h + \frac32 \approx 3{,}681$ pieds, et le vide mesure
+  $4 - \frac{8393}{2280} = \frac{727}{2280} \approx 0{,}319$ pied, soit un peu moins
+  de quatre pouces. On vérifie que $\frac32 = \frac{95}{7}\cdot\frac{21}{190}$.
+\item La surface du mercure de la cuvette porte maintenant l'air et l'eau versée.
+  Si $h'$ est la nouvelle hauteur du mercure au-dessus de cette surface,
+  $\rho_m h' = \rho_m H + \rho_e e$, d'où $h' - H = \frac{\rho_e}{\rho_m}\,e =
+  \frac{7}{95}\,e$ : la $13\frac47$\textsuperscript{e} partie de $e$. Pour
+  $e = 1$ pied, la montée est $\frac{7}{95} \approx 0{,}074$ pied, soit
+  $\frac{84}{95} \approx 0{,}88$ pouce. Le raisonnement ne change pas si le tube
+  contient aussi de l'eau : seul compte le poids posé sur la surface de la cuvette.
+\item Dans une colonne d'eau immobile, la pression à la hauteur $z$ au-dessus
+  d'une surface libre exposée à l'air vaut $p_0 - \rho_e g z$, et elle ne peut
+  devenir négative : l'eau ne peut être tenue qu'à $z \le \frac{p_0}{\rho_e g}$,
+  soit $31\frac19$ pieds environ. Si le haut d'un siphon est plus haut, le liquide
+  se sépare au sommet, chaque branche retombe à cette hauteur au-dessus de sa
+  cuvette et le sommet paraît vide : c'est ce que la pièce rapporte pour les
+  siphons de mercure au-delà de $2\frac{7}{24}$ pieds. Une pompe aspirante ne fait
+  que laisser un vide au-dessus de l'eau, que l'air pousse dans le tuyau : la même
+  borne s'applique. Une pompe foulante pousse l'eau par un piston avec la pression
+  que lui donne la machine, qui n'est pas bornée par celle de l'air.
+\end{enumerate}
+\end{solution}
 
 \begin{exercice}{Les lemmes de maximum empruntés à « D. Rob. »}{L1}{1}
 \manuscrit{latin-11195}{9}{10}
@@ -952,6 +2033,90 @@ solide $u^2v$ est celui où $u$ est double de $v$.
   $A = \frac23x$, égal à $T - \frac{4}{27}x^3$. D'où la condition
   $T \le \frac{4}{27}x^3$, qui est encore la positivité du discriminant
   $T(4x^3 - 27T)$.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Le centre des demi-fuseaux paraboliques}{L1}{2}
+\manuscrit{nal-2338}{83}{83}
+La lettre intitulée « Epistola Ægid. Personerii de Roberual ad R. P. Mersennum »
+examine des propositions de Torricelli. À l'article 10, elle offre le centre de
+gravité de la parabole « a priori », et celui des paraboles de tous les degrés et
+de leurs solides, et donne sans démonstration cet exemple : dans le demi-fuseau
+parabolique, le centre de gravité divise l'axe en deux parties, celle du côté du
+sommet étant à celle du côté de la base comme $11$ à $5$ pour la parabole
+« quadratiue », $13$ à $7$ pour la cubique, $15$ à $9$ pour la
+« quadrato-quadratiue », $17$ à $11$ pour la « quadrato-cubique », « et ainsi à
+l'infini, en ajoutant toujours 2 à chacun des termes du rapport précédent ».
+
+Soit une parabole de degré $n$ ($n \ge 1$ entier) de sommet $V$, d'axe
+perpendiculaire à sa base, de hauteur $h$, dont la base est une ordonnée de
+longueur $2a$ : le point de la courbe dont l'ordonnée est $u$ ($|u| \le a$) est à
+la distance $h\,(|u|/a)^n$ de $V$ le long de l'axe. Pour $n = 2$, les carrés des
+ordonnées sont comme les portions de l'axe : c'est la parabole « quadratiue ». Le
+fuseau est le solide engendré par le segment de parabole tournant autour de sa
+base ; le demi-fuseau en est la moitié que coupe le plan perpendiculaire à la base
+mené par l'axe de la parabole. Son sommet est une extrémité de la base, sa base un
+disque de rayon $h$, son axe la demi-base, de longueur $a$. On admet que le centre
+de gravité d'un solide de révolution homogène est sur son axe, à la distance
+$\bar s = \int s\,\rho(s)^2\,ds \big/ \int \rho(s)^2\,ds$ de l'origine, où $\rho(s)$
+est le rayon de la section à l'abscisse $s$.
+\begin{enumerate}
+\item Montrer que la section du demi-fuseau à la distance $s$ de sa base est un
+  disque de rayon $\rho(s) = h\bigl(1 - (s/a)^n\bigr)$. Calculer le rapport du
+  demi-fuseau au cylindre de rayon $h$ et de longueur $a$ qui l'enveloppe : ce sont
+  les rapports que la lettre dit avoir trouvés et qu'elle « passe ».
+\item Montrer que le centre de gravité est à la distance
+  $\bar s = \frac{2n + 1}{4(n + 2)}\,a$ de la base.
+\item En déduire que les deux parties de l'axe sont comme $(2n + 7) : (2n + 1)$, et
+  vérifier les quatre rapports et la règle de la lettre. Pourquoi écrit-elle
+  $15 : 9$ plutôt que $5 : 3$ ?
+\item Que donne la règle pour $n = 1$ ? Reconnaître le solide et contrôler le
+  résultat par un centre de gravité connu. Que devient le rapport quand $n$ tend
+  vers l'infini, et pourquoi fallait-il s'y attendre ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Le point de la base à la distance $s$ du pied de l'axe porte, au-dessus de
+  lui, un segment de hauteur $h - h(s/a)^n$ jusqu'à la courbe. En tournant autour de
+  la base, ce segment décrit un disque perpendiculaire à la base, de rayon
+  $\rho(s) = h\bigl(1 - (s/a)^n\bigr)$. Avec $t = s/a$,
+  \[
+  V = \pi\int_0^a \rho(s)^2\,ds = \pi h^2 a\int_0^1 (1 - t^n)^2\,dt
+  = \pi h^2 a\Bigl(1 - \frac{2}{n+1} + \frac{1}{2n+1}\Bigr)
+  = \frac{2n^2}{(n+1)(2n+1)}\,\pi h^2 a .
+  \]
+  Le rapport au cylindre est $\frac{2n^2}{(n+1)(2n+1)}$ : $\frac{8}{15}$,
+  $\frac{9}{14}$, $\frac{32}{45}$, $\frac{25}{33}$ pour $n = 2, 3, 4, 5$. Pour
+  $n = 2$, ce sont les huit quinzièmes du fuseau parabolique que Libri rapporte
+  d'un manuscrit de Roberval (NAF 9544, dans ce chapitre).
+\item Le numérateur vaut
+  \[
+  \int_0^a s\,\rho(s)^2\,ds = h^2a^2\int_0^1 t(1 - t^n)^2\,dt
+  = h^2a^2\Bigl(\frac12 - \frac{2}{n+2} + \frac{1}{2n+2}\Bigr)
+  = \frac{n^2}{2(n+1)(n+2)}\,h^2a^2 ,
+  \]
+  et le dénominateur $\frac{2n^2}{(n+1)(2n+1)}\,h^2 a$ ; leur quotient est
+  $\bar s = \frac{(2n+1)}{4(n+2)}\,a$.
+\item La partie du côté du sommet vaut $a - \bar s = \frac{2n + 7}{4(n+2)}\,a$ et
+  celle du côté de la base $\frac{2n+1}{4(n+2)}\,a$ : elles sont comme
+  $(2n + 7) : (2n + 1)$. Pour $n = 2, 3, 4, 5$, on trouve $11 : 5$, $13 : 7$,
+  $15 : 9$, $17 : 11$, les quatre rapports de la lettre ; et le passage de $n$ à
+  $n + 1$ ajoute $2$ à chaque terme, ce qui est la règle. Les quatre énoncés et la
+  règle sont exacts. La lettre écrit les termes que donne la règle, et non le
+  rapport réduit : $5 : 3$ cacherait la progression $11, 13, 15, 17$ et
+  $5, 7, 9, 11$. Que les quatre rapports sortent de ce calcul confirme la lecture
+  du solide adoptée ici ; la lettre ne le décrit que par ses mots (« fusi
+  parabolici dimidium plano ad ipsius axem erecto resectum »).
+\item Pour $n = 1$, la règle donne $9 : 3 = 3 : 1$. Le rayon $h(1 - s/a)$ décroît
+  linéairement jusqu'à zéro au sommet : le demi-fuseau est un cône de base le
+  disque de rayon $h$, et l'on sait que le centre de gravité d'un cône est au
+  quart de son axe à partir de la base ; en effet $\bar s = \frac{3}{12}\,a =
+  \frac a4$, et les parties sont comme $\frac34 : \frac14$. Quand $n \to \infty$,
+  $(2n + 7)/(2n + 1) \to 1$ : pour $0 \le t < 1$, $t^n \to 0$ et $\rho(s) \to h$, le
+  demi-fuseau tend vers le cylindre de rayon $h$ et de longueur $a$, dont le
+  centre est au milieu de l'axe.
 \end{enumerate}
 \end{solution}
 
@@ -1056,11 +2221,14 @@ elliptique complète de seconde espèce.
 \section*{Joseph-Louis Lagrange (1736--1813)}
 \chapitre{lagrange}
 
-Les deux exercices de ce chapitre viennent de pièces conservées dans les papiers
+Deux des exercices de ce chapitre viennent de pièces conservées dans les papiers
 de Sophie Germain : un billet de Lagrange à « Mademoiselle Germaine », daté d'un
 jour du calendrier républicain mais sans année (NAF 4073), et le résumé, de la
 main de Sophie Germain, d'un mémoire de Lagrange sur l'équation $x^2 - ay^2 = 1$
-paru dans les Mémoires de l'Académie de Turin (Français 9115).
+paru dans les Mémoires de l'Académie de Turin (Français 9115). Le troisième vient
+de NAF 5166, les « Papiers de Lagrange », où un mémoire intitulé « Eclaircissement
+d'une difficulté singulière … Par J. L. Lagrange » tire un paradoxe de l'équation
+de Laplace à la surface d'un sphéroïde.
 
 \begin{exercice}{Dater un billet de Lagrange par le calendrier républicain}{Lycée}{1}
 \manuscrit{naf-4073}{29}{29}
@@ -1172,6 +2340,200 @@ entiers positifs, toutes s'obtiennent ainsi.
   de la formule. L'extrait ne rappelle pas que $a$ doit être positif et non carré ;
   c'est ce qui assure l'existence de $(p,q)$ et l'irrationalité de $\sqrt a$, utilisée
   en identifiant $x + y\sqrt a$.
+\end{enumerate}
+\end{solution}
+
+\begin{exercice}{Un « paradoxe dans le Calcul intégral » : la couche sphérique uniforme}{L2}{3}
+\manuscrit{naf-5166}{21}{33}
+\manuscrit{naf-5166}{41}{41}
+Le mémoire des vues 17 à 41, « Eclaircissement d'une difficulté singuliere qui se
+rencontre dans le calcul de l'attraction des sphéroïdes très peu differens de la
+sphere », dont le titre porte « Par J. L. Lagrange », examine l'équation que
+« M. Laplace trouve » à la surface d'un sphéroïde homogène de rayon
+$R = a(1+y')$, $y'$ très petit : $\frac V2 + a\frac{dV}{dr} = -\frac{2\pi a^2}{3}$.
+Il écrit $V = \frac{4\pi a^3}{3r} + u$, où $r$ est la distance du point attiré au
+centre, et
+\[
+u = a^3\int \rho\,y'\,d\pi'\,d\theta'\sin\theta', \qquad
+\rho = \frac{1}{\sqrt{r^2 - 2ra\mu + a^2}},
+\]
+$\mu$ étant le cosinus de l'angle du rayon $r$ et du rayon de la
+molécule.\footnote{Sur ces vues, $\pi'$ est la longitude de la molécule (notre
+$\varpi'$), et $\pi$ désigne aussi l'angle de $180^\circ$ ; $d\pi'\,d\theta'\sin\theta'$
+est l'élément d'aire $d\Omega'$ de la sphère unité, et l'intégrale porte sur toute
+la sphère. Le $d$ du feuillet sert aussi pour les dérivées partielles :
+$\frac{du}{dr}$ est notre $\frac{\partial u}{\partial r}$. On garde ses lettres $u$,
+$\rho$, $\mu$, $y'$.} Au premier ordre en $y'$, $u$ est le potentiel d'une couche de
+densité superficielle $ay'$ étalée sur la sphère de rayon $a$. En dérivant sous le
+signe $\int$ et en faisant ensuite $r = a$, le facteur
+$\frac\rho2 + a\frac{d\rho}{dr}$ est une « équation identique » (vue 27), d'où
+$\frac u2 + a\frac{du}{dr} = 0$ ; mais pour $y'$ constant le calcul donne
+$-2\pi a^2y'$ (vue 25), « ce qui est un paradoxe dans le Calcul integral »
+(vue 31). On prend ici, comme aux n\textsuperscript{os} 3 et 7 du mémoire, $y'$
+constant, et positif, et l'on pose $G(r) = \frac u2 + r\frac{\partial u}{\partial r}$.
+\begin{enumerate}
+\item (N\textsuperscript{o} 3, vue 25.) En portant le pôle des angles sur le rayon
+  $r$, de sorte que $\mu = \cos\theta'$, montrer que
+  \[
+  \int\frac{d\pi'\,d\theta'\sin\theta'}{\sqrt{r^2 - 2ra\mu + a^2}}
+  = \frac{2\pi\bigl((r+a) - |r-a|\bigr)}{ar},
+  \]
+  et en déduire $u$ pour $r > a$ et pour $r < a$. Le feuillet complète l'intégrale en
+  $\frac{2\pi(r+a)}{ra} - \frac{2\pi(r-a)}{ra} = \frac{4\pi}{r}$ : quel cas
+  traite-t-il sans le dire ? $u$ est-il continu en $r = a$ ?
+\item Calculer $G(r)$ pour $r > a$ et pour $r < a$, et ses limites quand
+  $r \to a^+$ et quand $r \to a^-$. Même question pour $\frac{\partial u}{\partial r}$,
+  et pour la quantité $\frac u2 + a\frac{\partial u}{\partial r}$ du feuillet. Laquelle
+  de ces limites le feuillet trouve-t-il aux vues 25 et 33 ?
+\item La « valeur directe ». On fait $r = a$ avant d'intégrer, comme aux vues 23
+  et 27. Calculer, pour $\mu < 1$, les valeurs de $\rho$ et de
+  $\frac{\partial\rho}{\partial r}$ en $r = a$, et vérifier que
+  $\frac\rho2 + a\frac{\partial\rho}{\partial r} = 0$. Le feuillet, tel que la
+  transcription le lit, écrit en $r = a$ : $\rho = \frac{1}{a\sqrt2(1-\mu)}$ et
+  $\frac{d\rho}{dr} = \frac{1}{2a\sqrt2(1-\mu)}$ ; corriger. Calculer ensuite les
+  intégrales, prises en $r = a$, $u_d = a^3y'\int\rho\,d\Omega'$ et
+  $u'_d = a^3y'\int\frac{\partial\rho}{\partial r}\,d\Omega'$, puis
+  $G_d = \frac{u_d}{2} + a\,u'_d$, et comparer aux limites de la question 2.
+\item « je ferai d'abord le calcul sans rien negliger » (vue 31). Montrer que, pour
+  $r \ne a$, $r\frac{\partial\rho}{\partial r} = -\frac\rho2 - \frac{(r^2-a^2)\rho^3}{2}$,
+  puis que $G(r) = -\frac{a^3(r^2-a^2)\,y'}{2}\int\rho^3\,d\Omega'$. Calculer
+  $\int\rho^3\,d\Omega'$ pour $r > a$ et pour $r < a$ ; le feuillet donne
+  $\frac{4\pi}{r(r^2-a^2)}$ « quelle que soit la valeur de $r$ » (vue 33) : qu'en
+  penser ? Retrouver les résultats de la question 2. Enfin, $\delta \in\, ]0,2[$ étant
+  fixé, montrer que la part de $(r^2-a^2)\int\rho^3\,d\Omega'$ qui vient des
+  directions $\mu \le 1 - \delta$ tend vers $0$ quand $r \to a^+$, et dire où le
+  raisonnement du n\textsuperscript{o} 5 (vue 29) est en défaut.
+\item Laquelle des trois valeurs faut-il garder ? Le sphéroïde est ici la sphère
+  homogène de rayon $a(1+y')$, et le point attiré est sur sa surface,
+  $r = a(1+y)$ avec $y = y'$. Calculer exactement
+  $\frac V2 + a\frac{\partial V}{\partial r}$ en ce point. Le n\textsuperscript{o} 10
+  (vue 41) écrit, en négligeant les $y^2$,
+  $\frac V2 + a\frac{dV}{dr} = -\frac{2\pi a^2}{3} + 2\pi a^2y + \frac u2 + a\frac{du}{dr}$ :
+  vérifier cette égalité, et en déduire quelle valeur de
+  $\frac u2 + a\frac{du}{dr}$ est la bonne, et pourquoi.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Avec le pôle sur le rayon $r$, $d\Omega' = \sin\theta'\,d\theta'\,d\pi'$,
+  $\mu = \cos\theta'$ et $d\mu = -\sin\theta'\,d\theta'$ ; l'intégrale vaut
+  $2\pi\int_{-1}^{1}\frac{d\mu}{\sqrt{r^2 - 2ar\mu + a^2}}$. Une primitive en $\mu$ est
+  $-\frac{1}{ar}\sqrt{r^2 - 2ar\mu + a^2}$, et
+  \[
+  2\pi\int_{-1}^{1}\frac{d\mu}{\sqrt{r^2 - 2ar\mu + a^2}}
+  = \frac{2\pi}{ar}\Bigl(\sqrt{(r+a)^2} - \sqrt{(r-a)^2}\Bigr)
+  = \frac{2\pi\bigl((r+a) - |r-a|\bigr)}{ar}.
+  \]
+  Elle vaut $\frac{4\pi}{r}$ pour $r \ge a$ et $\frac{4\pi}{a}$ pour $r \le a$. D'où
+  \[
+  u = \frac{4\pi a^3y'}{r}\quad(r \ge a), \qquad u = 4\pi a^2y'\quad(r \le a).
+  \]
+  En écrivant $r - a$ pour la racine en $\mu = 1$, le feuillet suppose $r \ge a$ :
+  c'est le point extérieur à la sphère de rayon $a$. Les deux expressions valent
+  $4\pi a^2y'$ en $r = a$ : $u$ est continu. À l'intérieur il est constant : une
+  couche sphérique uniforme n'attire pas un point placé au dedans (théorème de
+  Newton).
+\item Pour $r > a$, $\frac{\partial u}{\partial r} = -\frac{4\pi a^3y'}{r^2}$ et
+  $G(r) = \frac{2\pi a^3y'}{r} - \frac{4\pi a^3y'}{r} = -\frac{2\pi a^3y'}{r}$ ; pour
+  $r < a$, $\frac{\partial u}{\partial r} = 0$ et $G(r) = 2\pi a^2y'$. Donc
+  \[
+  \lim_{r\to a^+}G = -2\pi a^2y', \qquad \lim_{r\to a^-}G = +2\pi a^2y', \qquad
+  \lim_{r\to a^+}\frac{\partial u}{\partial r} = -4\pi ay', \qquad
+  \lim_{r\to a^-}\frac{\partial u}{\partial r} = 0 .
+  \]
+  La quantité du feuillet diffère de $G$ de $(a - r)\frac{\partial u}{\partial r}$,
+  qui tend vers $0$ : pour $r > a$ elle vaut
+  $\frac{2\pi a^3y'}{r} - \frac{4\pi a^4y'}{r^2}$, et elle a les mêmes limites,
+  $-2\pi a^2y'$ et $+2\pi a^2y'$. La dérivée radiale saute de $-4\pi ay'$, soit
+  $-4\pi$ fois la densité $ay'$ de la couche : c'est la relation de saut d'un
+  potentiel de simple couche. Les valeurs $-2\pi a^2y'$ de la vue 25 et
+  $-2a^2\pi y'$ de la vue 33 sont la limite extérieure.
+\item En $r = a$, $r^2 - 2ar\mu + a^2 = 2a^2(1-\mu)$, donc
+  $\rho = \frac{1}{a\sqrt{2(1-\mu)}}$. Comme
+  $\frac{\partial\rho}{\partial r} = -(r - a\mu)\rho^3$,
+  \[
+  \frac{\partial\rho}{\partial r}\Big|_{r=a}
+  = -\frac{a(1-\mu)}{2\sqrt2\,a^3(1-\mu)^{3/2}}
+  = -\frac{1}{2\sqrt2\,a^2\sqrt{1-\mu}},
+  \qquad
+  \frac\rho2 + a\frac{\partial\rho}{\partial r}
+  = \frac{1}{2\sqrt2\,a\sqrt{1-\mu}} - \frac{1}{2\sqrt2\,a\sqrt{1-\mu}} = 0 .
+  \]
+  Les valeurs lues sur la vue 27 n'ont pas de signe moins (comme $\frac{du}{dr}$ à
+  la vue 23), le radical n'y couvre que le $2$, et la dérivée y porte $a$ où il faut
+  $a^2$ ; avec elles la somme ne s'annulerait pas. Comme
+  $\int_{-1}^{1}\frac{d\mu}{\sqrt{1-\mu}} = 2\sqrt2$, les intégrales convergent et
+  \[
+  u_d = \frac{2\pi a^2y'}{\sqrt2}\cdot2\sqrt2 = 4\pi a^2y', \qquad
+  u'_d = -\frac{2\pi ay'}{2\sqrt2}\cdot2\sqrt2 = -2\pi ay', \qquad
+  G_d = 2\pi a^2y' - 2\pi a^2y' = 0 .
+  \]
+  $u_d$ est bien $u(a)$. Mais $u'_d = \frac12(-4\pi ay' + 0)$ et
+  $G_d = \frac12(-2\pi a^2y' + 2\pi a^2y')$ : la valeur directe est la moyenne des
+  deux limites latérales. Le calcul des vues 23 et 27, signes rétablis, ne se trompe
+  pas sur cette intégrale ; il se trompe en la prenant pour la dérivée de $u$ en
+  $r = a$, où $u$ n'est pas dérivable.
+\item On a $r(r - a\mu) = \frac12(r^2 - 2ar\mu + a^2) + \frac12(r^2 - a^2)$ et
+  $\rho^3(r^2 - 2ar\mu + a^2) = \rho$, d'où
+  $r\frac{\partial\rho}{\partial r} = -r(r-a\mu)\rho^3
+  = -\frac\rho2 - \frac{(r^2-a^2)\rho^3}{2}$. Pour $r$ dans un intervalle fermé qui
+  ne contient pas $a$, $r^2 - 2ar\mu + a^2 \ge (r-a)^2$ est minoré par une constante
+  positive, la fonction à intégrer et sa dérivée en $r$ sont continues, et l'on peut
+  dériver sous le signe $\int$ : $G(r) = a^3y'\int\bigl(\frac\rho2 +
+  r\frac{\partial\rho}{\partial r}\bigr)d\Omega' = -\frac{a^3(r^2-a^2)\,y'}{2}
+  \int\rho^3\,d\Omega'$. Une primitive de $(r^2 - 2ar\mu + a^2)^{-3/2}$ en $\mu$ est
+  $\frac{\rho}{ar}$, donc
+  \[
+  \int\rho^3\,d\Omega' = \frac{2\pi}{ar}\Bigl(\frac{1}{|r-a|} - \frac{1}{r+a}\Bigr)
+  = \begin{cases}
+  \frac{4\pi}{r(r^2-a^2)} & (r > a),\\
+  \frac{4\pi}{a(a^2-r^2)} & (r < a).
+  \end{cases}
+  \]
+  La valeur du feuillet ne vaut que pour $r > a$ : pour $r < a$ elle est négative,
+  alors que $\rho^3 > 0$. On retrouve $G(r) = -\frac{2\pi a^3y'}{r}$ pour $r > a$ et
+  $G(r) = +2\pi a^2y'$ pour $r < a$. Pour $\mu < 1$ fixé, $\rho$ reste borné quand
+  $r \to a$, et $(r^2-a^2)\rho^3 \to 0$ ; pourtant $(r^2-a^2)\int\rho^3\,d\Omega'$ vaut
+  $\frac{4\pi}{r}$ pour $r > a$ et tend vers $\frac{4\pi}{a}$. En
+  $\mu = 1 - \delta$, $r^2 - 2ar\mu + a^2 = (r-a)^2 + 2ar\delta$, et la part des
+  directions $\mu \le 1 - \delta$ est
+  \[
+  2\pi(r^2-a^2)\int_{-1}^{1-\delta}\rho^3\,d\mu
+  = \frac{2\pi(r^2-a^2)}{ar}\Bigl(\frac{1}{\sqrt{(r-a)^2 + 2ar\delta}} - \frac{1}{r+a}\Bigr),
+  \]
+  dont la parenthèse tend vers $\frac{1}{a\sqrt{2\delta}} - \frac{1}{2a}$ : elle tend
+  vers $0$. Toute l'intégrale se ramasse dans une calotte aussi petite qu'on veut
+  autour de la direction du point attiré, là où la fonction à intégrer devient
+  infinie ; la fonction $\frac{r(r^2-a^2)}{4\pi}\rho^3$, positive et d'intégrale $1$,
+  est ce qu'on appelle aujourd'hui le noyau de Poisson de la boule. Le
+  n\textsuperscript{o} 5 intègre la limite $\frac\rho2 + a\frac{d\rho}{dr}$, nulle
+  pour $\mu < 1$, au lieu de prendre la limite des intégrales : il échange la limite
+  $r \to a$ et l'intégration, ce que rien ne permet ici (la convergence n'est ni
+  uniforme ni dominée près de $\mu = 1$). La somme « de toutes les valeurs
+  successives de la differentielle » n'est pas en cause.
+\item La sphère entière a pour potentiel extérieur
+  $V = \frac{4\pi a^3(1+y')^3}{3r}$ ; en $r = a(1+y')$,
+  \[
+  \frac V2 + a\frac{\partial V}{\partial r}
+  = \frac{2\pi a^2(1+y')^2}{3} - \frac{4\pi a^2(1+y')}{3}
+  = -\frac{2\pi a^2}{3}\,(1 - y'^2),
+  \]
+  soit $-\frac{2\pi a^2}{3}$ au premier ordre, sans terme en $y'$. Par ailleurs, en
+  $r = a(1+y)$, $\frac{2\pi a^3}{3r} - \frac{4\pi a^4}{3r^2}
+  = \frac{2\pi a^2}{3}(1 - y) - \frac{4\pi a^2}{3}(1 - 2y) + O(y^2)
+  = -\frac{2\pi a^2}{3} + 2\pi a^2y + O(y^2)$, ce qui est l'égalité du
+  n\textsuperscript{o} 10. Il faut donc
+  $\frac u2 + a\frac{du}{dr} = -2\pi a^2y'$ : c'est la limite extérieure. La limite
+  intérieure donnerait $-\frac{2\pi a^2}{3} + 4\pi a^2y'$, et la valeur directe
+  $-\frac{2\pi a^2}{3} + 2\pi a^2y'$, le résultat de la vue 23, qui n'est l'équation
+  de Laplace que si $y = 0$, comme le feuillet le dit. La raison : le point attiré,
+  à la distance $a(1+y') > a$, est hors de la sphère de rayon $a$ sur laquelle on a
+  étalé la couche ; c'est le côté extérieur qui compte, et l'on vérifie que
+  $V - \frac{4\pi a^3}{3r} = \frac{4\pi a^3}{3r}\bigl((1+y')^3 - 1\bigr)
+  = \frac{4\pi a^3y'}{r} + O(y'^2)$ est bien la branche extérieure de $u$. C'est le
+  remède du mémoire : calculer « sans rien negliger » pour $r > a$, comme aux
+  n\textsuperscript{os} 6 et 7, et ne faire $r = a$ qu'à la fin.
 \end{enumerate}
 \end{solution}
 
@@ -1642,9 +3004,53 @@ pour un nombre premier $p = 4k + 1$ ; une lettre qu'il lui écrit de Florence en
 lui qui décrit, dans l'album NAF 9544, les manuscrits de Roberval d'où vient un
 exercice du chapitre de Roberval.
 
+\begin{exercice}{« Un nombre quelconque de constantes arbitraires »}{L2}{2}
+\manuscrit{naf-4073}{39}{39}
+Libri écrit de Florence en 1825 : « J'ai envoyé un mémoire à l'Institut sur la
+théorie de la chaleur, où je crois avoir démontré qu'on peut donner à l'intégrale
+d'une équation différentielle linéaire un nombre quelconque de constantes
+arbitraires. »
+\begin{enumerate}
+\item Soit l'équation $y^{(n)} + a_{n-1}(t)y^{(n-1)} + \cdots + a_0(t)y = 0$, à
+  coefficients continus sur un intervalle $I$, et $t_0 \in I$. On admet le théorème
+  de Cauchy--Lipschitz linéaire (existence et unicité de la solution de conditions
+  initiales données en $t_0$). Montrer que l'application
+  $y \mapsto (y(t_0), \dots, y^{(n-1)}(t_0))$ est un isomorphisme de l'espace des
+  solutions sur $\mathbf{R}^n$. Combien de constantes arbitraires « essentielles » la
+  solution générale contient-elle ?
+\item Pour $y'' + y = 0$, on écrit $y = A\cos t + B\sin t + C\cos(t - \gamma)$, avec
+  quatre paramètres $A$, $B$, $C$, $\gamma$. L'ensemble des fonctions obtenues est-il
+  plus grand que $\{A\cos t + B\sin t\}$ ? Expliquer en quel sens une écriture peut
+  contenir « un nombre quelconque de constantes ».
+\item Conclure sur l'annonce de Libri.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item L'application est linéaire (la dérivation l'est). Elle est injective par
+  l'unicité : une solution de conditions initiales nulles est nulle. Elle est
+  surjective par l'existence : tout vecteur de $\mathbf{R}^n$ est la donnée initiale
+  d'une solution. C'est donc un isomorphisme, et l'espace des solutions est de
+  dimension $n$ : la solution générale s'écrit $c_1y_1 + \cdots + c_ny_n$ pour une base
+  $(y_i)$, avec exactement $n$ constantes essentielles, où $n$ est l'ordre.
+\item $\cos(t - \gamma) = \cos\gamma\cos t + \sin\gamma\sin t$, donc
+  $y = (A + C\cos\gamma)\cos t + (B + C\sin\gamma)\sin t$ : on n'obtient rien de plus.
+  Les paramètres $C$ et $\gamma$ ne sont pas essentiels, puisque des valeurs
+  différentes donnent la même fonction. Une écriture peut contenir autant de
+  paramètres qu'on veut (par exemple dans une solution écrite comme intégrale
+  définie, où des bornes et un contour sont libres), sans que l'ensemble décrit
+  grandisse.
+\item Telle quelle, l'annonce est fausse : le nombre des constantes essentielles est un
+  invariant de l'équation, égal à son ordre. Elle ne peut être vraie que de constantes
+  non essentielles ; le mémoire n'est pas dans le volume et la lettre ne permet pas de
+  dire ce qu'il démontrait.
+\end{enumerate}
+\end{solution}
+
 \begin{exercice}{La chaleur comme vibration : équation parabolique ou hyperbolique ?}{L3}{2}
 \manuscrit{naf-4073}{39}{39}
-Libri écrit de Florence en 1825 : « J'ai aussi déduit les équations du mouvement de la chaleur de
+Libri ajoute : « J'ai aussi déduit les équations du mouvement de la chaleur de
 l'hypothèse des vibrations calorifiques. » L'équation de Fourier
 $u_t = k\,u_{xx}$ ($k > 0$) est parabolique ; une vibration conduit à une équation
 hyperbolique. On étudie un intermédiaire, l'équation « du télégraphiste »
