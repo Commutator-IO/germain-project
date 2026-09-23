@@ -1076,3 +1076,73 @@ words, sometimes split across a line (v. 62, 67), « Dela Grange » (v. 43).
   « p. 151 de la 1ère édition » (the Mécanique analytique); « N° 1 », « § 3 »,
   « § 6 » in the letter of v. 62–68. A boxed « I 65 » in a thinner pen
   (v. 37), meaning unknown.
+
+## François Viète's papers (NAL 1644)
+
+### The views
+
+- Greyscale portrait scans, about 3750 × 5620, one page per view; a few in
+  colour. Leaves and slips of unequal size lie over one another, so the top or
+  foot of a neighbouring leaf, with lines of its text, shows on most views.
+  Find the view where a line stands in place before transcribing it
+  (v. 14–20, 22–39, 41–59, 61–79, 81–100, 102–120, 126–138, 160, 163).
+- A loose sheet laid over a page is filmed twice, in place and lifted (v. 99,
+  100): transcribe each once. A small slip keyed by an asterisk in the margin
+  carries a missing theorem (v. 37 → v. 38).
+
+| Views | Piece |
+|---|---|
+| 1 | paper cover, « Francisci Vietæ opera nonnulla », with a later hand's references to the Elzevier edition of 1646 |
+| 2–4 | small leaves lettered A, B, C, in a compact hand (C blank) |
+| 5–68 | « Francisci Vietæ De Recognitione Æquationum tractatus », Cap. 1–XXI, one posed cursive in pale ink |
+| 69–141 | « Francisci Vietæ. De æquationum Emendatione tractatus secundus », Cap. I–XIIII, ending « Finis » |
+| 142–163 | astronomy, no name: lunar prostaphaereses, Tycho's lunar hypothesis restated (his name struck for « ab Astroscopo Dano »), « Harmonici Ptolemaici Constructio Caput XII », Mercury; breaks off mid-sentence |
+
+A rapid second hand in black ink annotates and corrects the treatises (from
+v. 13); it writes « a nobis ». Two doubtful notes may mark the treatises as a
+copy, « transcripta ex exemplari » (v. 100) and « deerant hæc in exemplari »
+(v. 114). Attribute no hand.
+
+### Notation
+
+- Species: the unknown A (E after a transformation), given magnitudes as
+  consonants with their dimension in words (« B planum », « D solidum »,
+  « Z plano plano »); « in » for a product. Equality in words (« æquatur »,
+  « æquabitur »); in marginal work a brace « } » alone, or a vertical bar, or a
+  looped z (set \propto, v. 64–66).
+- Numerical examples in cossic signs, coefficient first: N, Q, C, QQ, QC, CC
+  (« 1QQ − 74Q + 240N »); the root in the margin, « Fit 1N 7 », often circled.
+  L, LC, LQQ, LQC before a number are the square, cube, fourth, fifth roots;
+  « LV{…} » a root of a whole sum.
+- Roman numerals of strokes, I–V, over the terms of a series are ranks; set
+  them with \overset. « 1 », « 11 », « 111 » over a line are formula numbers.
+
+### Strokes that mislead
+
+| The stroke looks like | A pass settled on | Where |
+|---|---|---|
+| a double stroke « = » where the argument needs a minus | Viète's sign for a difference whose order is not given; keep « = » and note it; the margin often corrects it to « + » | NAL 1644, v. 23, 30, 51–53, 72, 75–78, 91, 92 |
+| « = » with a vertical stroke through it, or a « + » with a bar above | a sign corrected into « + » (or « − »); give the corrected sign | v. 28, 32, 62, 66, 67 |
+| a word underlined in the line, another underlined in the left margin between two short rules | the writer's correction; give both, the margin as \marginal{} | v. 22, 34, 41–60, 64–80, 104–140 |
+| a Q shaped like 2 (« 72 », « 3122 ») | 7Q, 31QQ; check by the arithmetic | v. 60 |
+| a 3 like a tailed z, a 6 like b, a Q like 9 | 3, 6, Q | v. 85, 86 |
+| « c » in the second hand like « r » (« A rr ») | A cc | v. 13, 15–16 |
+| a long line through « graduum », « est » | a crossbar thrown back, not a deletion | v. 6, 51 |
+| « proximum », « prosinum » before an angle after a proportion | « approximately », not « pro sinu » | v. 142–152 |
+| « æqualtus » | « æque altus », kept as written | v. 123, 124 |
+| ρ like a long-stemmed p; diagram E as ε; Θ against ω, ψ against Y | read by the sense | v. 152, 156, 161 |
+
+Greek words are written in Greek letters by a hand unsure of accents
+(πρῶτον ἔσχατον, κατ' ἰσομοιρίαν, ἀμφιβολίαν, Δεδομένον).
+
+### Numbers on the leaves
+
+- **One ink series, top right of the rectos, 1–79 without a gap** across all
+  three pieces, with « 5 bis », « 46 bis », « 47 bis » for inserted slips.
+  The writer cites it himself (« fol. 18. », v. 43; « pag. 48 », v. 100): it is
+  the writer's or copyist's count of leaves, and being ink it gets no \folio{}.
+  Versos carry none; a verso shows its recto's figure reversed.
+- Shelfmarks and stamps: « Libri 1201 », « Lat. nouv. acq. 1644 »,
+  « R.c. 8070 (73) », « ACQ. 8070 (LIBRI) » (v. 1, 5).
+- « pag. 84 », « p 158 », « p. 127. editionis 1646 » in a later reader's hand:
+  pages of the Elzevier Opera of 1646, not of the manuscript (v. 1, 5, 69, 141).
