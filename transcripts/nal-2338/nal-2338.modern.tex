@@ -1,0 +1,1698 @@
+% NAL 2338 — lecture modernisée du volume entier.
+%
+% Pass: Opus 5.5 (claude-opus-5-5), 2026-09-23 — first pass, unchecked against
+% the views by a human, and an interpretation rather than a record. Where this
+% file and the transcriptions differ in substance, the transcriptions
+% (batch-01.fr.tex to batch-06.fr.tex) are the record.
+%
+% Sources read: the six batch transcriptions of this volume, views 1–104, in
+% full, twice — once for the mathematics, once for the apparatus (every
+% \uncertain, \ill, \note, \marginal, and the absence of any \folio) — with
+% their header comments and the « Coordinator's reconciliation » block closing
+% each header, and the NAL 2338 section of
+% .claude/skills/transcribe/references/hand.md. The volume is completely
+% transcribed: v. 1 (title leaf), 51–52, 56, 72, 86, 92, 95 and 104 are blank
+% or carry nothing of their own and are not transcribed; every other view is.
+% No image was consulted. No printed edition was consulted: not Torricelli's
+% Opere or Opera geometrica, not Roberval's works, not Mersenne's
+% Correspondance, not any edition of Archimedes, Apollonius, Galileo or
+% Cavalieri. Where the transcription has a gap, this reading says so and does
+% not fill it. Three identifications of printed books the leaves name without
+% an author are deliberately NOT made (the « Ars Magna lucis, et Vmbræ »,
+% « Mathematico Romano Societatis Iesu », v. 10; the « libellus sub Aristarchi
+% nomine editus », v. 55; the « libellus De Mirabilibus Mercurij », v. 101).
+%
+% What the volume turned out to be (map settled by the reconciliation notes and
+% hand.md): the Torricelli–Roberval correspondence through Mersenne, 1643–1647,
+% mostly in copies, followed by the mercury tubes and Roberval's narrative of
+% the Rouen experiments.
+%
+%   v. 2–7     Torricelli to Mersenne, « Dat: Flor: Kal: Maij: anno 1644 »,
+%              signed (v. 6), address panel (v. 7): the cycloid and trochoids —
+%              area, tangent, four solids, centres of gravity.
+%   v. 8–11    Torricelli to Mersenne, 7 July 1646, copying hand: lenses, the
+%              Gassendi tube, a false quadrature from « Ars Magna lucis ».
+%   v. 12–15   Torricelli to Mersenne, Kal. Feb. 1647, the hand of v. 2–6:
+%              lenses, Jupiter's belts, spirals, Fermat's three-point problem.
+%   v. 16–19   unsigned, undated copy in Torricelli's voice quoting Mersenne's
+%              letter « sub die 28 Iunij 1644 »: the priority of 7:5 and 11:18.
+%   v. 20–23   Torricelli to Roberval, « Flor. Kal. Octobr. 1643 » (a later hand
+%              writes « 1 Sept. 1643 » at the top): cycloid, Galileo's weighing,
+%              « Quo ad solida nihil habeo », the hyperbolic solid.
+%   v. 24–35   « Clar.mo Viro Roberuallio / Torr. S.P.D. », 7 July 1646, own
+%              pagination 1–11: priority; Lemma I, Lemma II, two quadratures of
+%              all parabolas; the geometrical spiral announced.
+%   v. 36–39   the « folium separatum » promised at pp. 9–10 of that letter,
+%              identified by another hand's note: Roberval's figure equal to its
+%              generating figure, finite and infinite; the geometrical spiral;
+%              generalised Archimedean spirals.
+%   v. 40–50   a second copy of the 7 July 1646 letter, with its postscript.
+%   v. 53–55   Torricelli to Carcavy, « Die [8?] Julij an. 1646 ».
+%   v. 57–82   « Epistola Aegidii Personerii de Roberval ad Euangelistam
+%              Torricellium »: history 1628–1637, indivisibles, sums of powers,
+%              centres, the 11:18, parabolas and helices, quadratrices,
+%              Archimedes defended, a catalogue (the cone 23 − √17), mechanics.
+%              Stops mid-sentence at v. 82; no date, no signature.
+%   v. 83–88   « Epistola Ægid. Personerii(?) de Roberual ad R. P. Mersennum »,
+%              on Torricelli's propositions 9–14: the screw, half parabolic
+%              spindles (11:5, 13:7, 15:9, 17:11), the cycloid, the infinite
+%              hyperbolic solid (figure v. 85). Stops mid-sentence at v. 88.
+%   v. 89–91   « Methodus Torricelli … », hand 3, ~310 \ill{}; figure v. 91.
+%   v. 93–94   « Extraict d'une lettre du Sieur Torricelli » (« Al S.r Ricci »),
+%              Italian: the mercury tubes; a second extract, the wool cylinder.
+%   v. 96      a letter cover addressed to Mersenne.
+%   v. 97–103  « De Vacuo Narratio Æ.i P.i de Roberual Ad Nob. virum D. des
+%              Noyers », « Parisijs 12 Calend. Octob. 1647 », unsigned.
+%
+% Folios. The volume's one ink series (1–50, « 34 bis ») is the library's count
+% by the reconciliation, but it is ink, so no transcription wrote \folio{};
+% nothing here is cited by folio. Views only, by \pagerange{}{} at the head of
+% each section, grounded in the transcriptions' own \page{} marks.
+%
+% Attribution. Only the letter of v. 2–6 carries a subscription with a
+% signature that nothing marks as a copy (date and name in the hand of the
+% body, « autographes en apparence » in batch 1; an address panel and folds on
+% v. 7). The reading says what the headings and closing lines name and calls
+% everything else unsigned. No leaf is in a hand the leaves give to Mersenne;
+% he is only named, addressed and quoted. The identification of the letter of
+% v. 83–88 with the one Roberval says he wrote to Mersenne « de vestris
+% inuentis » in 1643 (v. 64, cf. v. 60, 78) is offered as a rapprochement of
+% the leaves' own cross-references, not as a fact.
+%
+% Dating. \dating{} is empty, as in the catalogue. The dates cited are the
+% letters' own; the Roman dates are converted in footnotes (arithmetic, not
+% inference): Kal. Maij 1644 = 1 May 1644, Kal. Octobr. 1643 = 1 Oct. 1643,
+% Kal. Febr. 1647 = 1 Feb. 1647, 12 Calend. Octob. 1647 = 20 Sept. 1647.
+%
+% Priority. The reading states what each letter claims and proves, with the
+% dates the letters give, and decides no priority. It does check every
+% mathematical statement, which is not the same thing: a false ratio is false
+% whoever found it first.
+%
+% Notation translated, each with a footnote at first use: « ut a ad b » → a:b;
+% « applicata » → ordinate y, « diametralis » → abscissa x from the vertex along
+% the diameter; « exponens » → exponent; « dignitas » → power; « cuboquadratum »
+% → fifth power; « ductus A in B » → product; « latus rectum » → parameter p;
+% « parabola » of exponents (m, n) → y^m = p^{m−n} x^n; « subsesquitertium » →
+% 3/4; « subsesquiseptimum » → 7/8; « ineffabilis ratio » → irrational ratio;
+% « per conuersionem rationis », « componendo », « ex æquo in ratione
+% perturbata », « 19 Quinti » → the corresponding algebra; « trilineum » →
+% region bounded by two segments and an arc; « linea Roberualliana » /
+% Roberval's « quadratrix » → the curve built from the tangents; « fusus
+% parabolicus » → solid of revolution of a parabolic segment about its base;
+% « helix » → spiral; « infinita », « indiuisibilia » → indivisibles; « duplex
+% positio more veterum » → exhaustion by upper and lower bounds; « pes »,
+% « braccio », « dito » kept as units.
+%
+% Modern names attached, each where the statement coincides and footnoted as
+% later: velocity as a vector sum (composition of motions); Pappus–Guldin
+% (Guldin is named on the leaf, Pappus is not); improper integrals; Gabriel's
+% horn; integration by parts (the Roberval line / quadratrix theorems);
+% Cavalieri's principle (for the proofs « per indiuisibilia »); weighted AM–GM;
+% the integral of x^k and Riemann sums; logarithmic spiral; Fermat's spiral;
+% rectification; the Fermat point; loxodromes; the isoperimetric inequality;
+% the Galilean telescope's magnification; centre of percussion; atmospheric
+% pressure, the barometer, hydrostatic equilibrium; Boyle–Mariotte (qualitative
+% only). Every computation is redone; see the list of departures below.
+%
+% Departures from the leaf (each footnoted at its point): the trochoid area
+% holds as a region only for the curtate trochoid; 11:18 is false (exact ratio
+% (9π²−16):(12π²)), and so are 44:45 × π:4, 16:11 and 19:8, which hang
+% together with it; the « Ars Magna » quadrature and the isoperimetric square
+% are false; Lemma I's « tangent » is a supporting line, which needs convexity;
+% the text of v. 31/46 writes « ductus IO in OE » for the powers; Roberval's
+% parabola–helix rule is literally true only for the conic parabola and the
+% Archimedean spiral (general factor q − 1); « angulus ABC » at v. 90 must be
+% BAC (v. 38); « pyramis tetragona » is read as a tetrahedron; the screw's
+% volume needs non-overlapping turns; the missing letter of « inter B et BT »
+% (v. 87) is BN by the sequence; the press paradox assumes no friction; the
+% moon rising twice needs a high latitude. Not verified, and said so: the
+% « impetus maximus » of the centre of percussion; the « omnes &c. » rule of
+% v. 54; Roberval's claim that no second point of the equiangular spiral can be
+% constructed; the truncated Fermat proposition of v. 53.
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{nal-2338}
+\shelfmark{NAL 2338}
+\pages{1}{104}
+\dating{}
+\watermark{Lecture automatique\\interprétation non vérifiée}
+\foldertitle{Papiers divers de Mersenne. NAL 2338 — lecture modernisée du volume entier}
+
+\begin{document}
+
+\section*{Résumé}
+
+\begin{resume}
+Ces feuillets sont le dossier d'une querelle. Entre 1643 et 1647, Evangelista
+Torricelli à Florence et Gilles Personne de Roberval à Paris s'écrivent — le
+plus souvent par l'intermédiaire du P. Mersenne, qui transmet, recopie, cite et
+dont les résumés sont eux-mêmes disputés — au sujet d'une courbe que l'un appelle cycloïde et
+l'autre trochoïde : la courbe que décrit un point d'une roue qui roule. On y
+trouve des lettres de Torricelli à Mersenne, à Roberval et à Carcavy, deux
+longues lettres de Roberval, un feuillet de démonstration envoyé à part, une
+copie très abrégée de la méthode de Torricelli, deux extraits en italien sur les
+tubes de mercure, et, pour finir, le récit latin, daté de Paris en septembre
+1647, des expériences sur le vide faites à Rouen par « D. de Paschal ». Presque
+tout est de la main de copistes ; une seule lettre porte une signature que rien
+ne désigne comme une copie.
+
+Le problème est double. Le premier est mathématique : mesurer l'aire de la
+cycloïde, lui mener une tangente, calculer le volume des solides qu'elle engendre
+en tournant autour de son axe, de sa base ou de ses tangentes, et trouver son
+centre de gravité ; puis, de proche en proche, faire la même chose pour toutes
+les « paraboles » $y^m = p^{m-n}x^n$, pour des spirales, pour des hyperboles et
+pour des figures qui s'étendent à l'infini. Le second problème est de savoir qui
+a trouvé quoi, et quand. Chacun dit aussi ce qu'il cherchait. Torricelli, le
+plaisir de trouver : « Eximium illum voluptatis fructum quem percipimus
+unusquisque in inuentione ueritatis \ldots{} nemo à me auferet » ; Roberval, la
+quadrature des figures : il est tombé sur ses courbes « dum \ldots{} ipsarum
+figurarum in alias figuras transmutationem experior ».\footnote{« Ce fruit
+éminent de plaisir que chacun de nous tire de la découverte de la vérité,
+personne ne me l'ôtera » (vue 24) ; « en essayant \ldots{} de transformer les figures elles-mêmes en d'autres figures » (vue 70).} Cette
+lecture dit ce que chaque lettre affirme et démontre, avec les dates que les
+lettres se donnent ; elle ne tranche aucune priorité.
+
+L'idée qui porte presque tout est la même des deux côtés : remplacer une figure
+par une autre dont l'aire est connue. Torricelli prend une parabole, trace en
+chaque point la tangente, et construit avec les points où elle coupe l'axe une
+seconde courbe — la « ligne de Roberval » ; l'aire comprise entre les deux courbes
+est égale à celle de la figure de départ, ce qui donne d'un coup la quadrature de
+toutes les paraboles. Roberval fait la même chose avec ce qu'il appelle ses
+« quadratrices » ; il y ajoute les sommes de puissances des entiers, qui lui
+donnent les mêmes quadratures par une autre voie. Dans les deux cas, ce qui est
+démontré est ce que nous appelons une intégration par parties, et l'on obtient au
+passage des figures infiniment longues d'aire finie, et des solides infiniment
+longs de volume fini, comme le solide hyperbolique aigu de Torricelli. Du côté des centres de gravité, les deux hommes se servent d'une même
+règle — le solide de révolution égale l'aire multipliée par le chemin du centre
+de gravité ; Torricelli accuse Roberval de la lui avoir prise en l'inversant,
+Roberval répond qu'il s'en servait depuis 1637, et Torricelli apprend de
+Cavalieri qu'un jésuite, Guldin, avait publié avant lui un résultat de cette
+famille. Tout n'est pas juste : l'énoncé de Torricelli pour le solide engendré par la cycloïde autour de son axe
+(11 à 18) est faux, Roberval le dit, et le calcul lui donne raison ; les deux
+rapports de Torricelli pour le centre de gravité de la demi-cycloïde sont faux de
+la même manière, et pour la même raison.
+
+Où cela mène : au calcul intégral avant la lettre — intégrales de $x^k$, sommes
+de Riemann, intégration par parties, intégrales impropres, principe de
+Cavalieri, théorème de Pappus–Guldin — à la rectification des courbes et à la
+spirale logarithmique, au point de Fermat, au centre de percussion, et, pour les
+derniers feuillets, à la pression atmosphérique, au baromètre et à l'équilibre
+des fluides.
+
+\keywords{cycloid, trochoid, area of the cycloid, tangent by composition of motions, centre of gravity, Pappus–Guldin theorem, solids of revolution, higher parabolas, quadrature of parabolas, subtangent, method of indivisibles, Cavalieri's principle, method of exhaustion, integration by parts, improper integrals, Gabriel's horn, logarithmic spiral, Archimedean spiral, Fermat's spiral, arc length, loxodrome, sums of powers, Fermat point, centre of percussion, atmospheric pressure, barometer, Torricelli's experiment, vacuum, hydrostatics, siphon, Galilean telescope}
+\end{resume}
+
+\section*{Ce que ce volume contient}
+
+\pagerange{1}{104}
+Cent quatre vues, une page par vue. La vue 1 est le feuillet de titre de la
+bibliothèque (« Papiers de Mersenne », « Volume de 50 Feuillets / 1er Octobre
+1888 », « Libri 1846 ») ; la vue 104 est le verso blanc du dernier feuillet.
+Sont blancs, ou ne portent rien qui leur soit propre, les vues 51–52, 56, 72, 86,
+92 et 95. Une seule série de numéros à l'encre, de 1 à 50 avec un « 34 bis »,
+court sur les rectos à travers toutes les mains : c'est le compte de la
+bibliothèque ; comme elle est à l'encre, aucune transcription n'a écrit de
+folio, et cette lecture ne cite que des vues.\footnote{La lettre des vues 24--35
+porte en outre sa propre pagination, 1 à 11, que cite la note de la vue 36
+(« pag. 9.\textsuperscript{a} et pag. 10 », c'est-à-dire les vues 32 et 33).}
+Les pièces, dans l'ordre de la reliure :
+
+\begin{itemize}
+  \item \textbf{Vues 2--7.} Torricelli à Mersenne, daté « Dat: Flor: Kal: Maij:
+    anno 1644 »\footnote{Des calendes de mai, soit le 1\textsuperscript{er} mai
+    1644.}, signé « Euang\textsuperscript{a} Torricellius », avec l'adresse au
+    dos (vue 7) : la cycloïde et les trochoïdes.
+  \item \textbf{Vues 8--11.} Torricelli à Mersenne, « Flor: die 7 Iulij 1646 »,
+    d'une main de copie : les verres, la lunette de Gassendi, une fausse
+    quadrature du cercle.
+  \item \textbf{Vues 12--15.} Torricelli à Mersenne, « Florentiæ Kalendis
+    Februarij anno 1647 »\footnote{Le 1\textsuperscript{er} février 1647.}, de
+    la main des vues 2--6 : les verres, les bandes de Jupiter, les spirales, le
+    problème de Fermat.
+  \item \textbf{Vues 16--19.} Une pièce sans date ni signature, au nom de
+    Torricelli, qui cite une lettre de Mersenne « sub die 28 Iunij 1644 » :
+    la priorité du centre de gravité de la cycloïde.
+  \item \textbf{Vues 20--23.} Torricelli à Roberval, « Flor. Kal. Octobr.
+    1643 »\footnote{Le 1\textsuperscript{er} octobre 1643. En tête de la vue 20,
+    une main plus tardive a écrit « 1 Sept. 1643 », qui n'est pas la date de la
+    lettre.} : la cycloïde, Galilée, le solide hyperbolique.
+  \item \textbf{Vues 24--35.} « Clar.\textsuperscript{mo} Viro Roberuallio /
+    Torr. S.P.D. », « die 7 Julij ann. 1646 » : la priorité, puis les tangentes
+    et les quadratures de toutes les paraboles, et la spirale.
+  \item \textbf{Vues 36--39.} Le « feuillet séparé » promis par cette lettre,
+    identifié comme tel par une note d'une autre main.
+  \item \textbf{Vues 40--50.} Une seconde copie de la lettre du 7 juillet 1646,
+    avec son post-scriptum.
+  \item \textbf{Vues 53--55.} Torricelli à Carcavy, « D. flor. Die [8?] Julij an.
+    1646 ».
+  \item \textbf{Vues 57--82.} « Epistola Aegidii Personerii de Roberval ad
+    Euangelistam Torricellium » : la réponse de Roberval, sans date ; elle
+    s'arrête au milieu d'une phrase à la vue 82 ; sa fin n'est pas dans le
+    volume.
+  \item \textbf{Vues 83--88.} « Epistola Ægid. Personerii de Roberual ad R. P.
+    Mersennum », sur les propositions de Torricelli ; figure seule à la vue 85 ;
+    elle s'arrête au milieu d'une phrase à la vue 88.
+  \item \textbf{Vues 89--91.} « Methodus Torricelli de dimensione infinitarum
+    parabolarum », d'une main très rapide ; figure seule à la vue 91.
+  \item \textbf{Vues 93--94.} « Extraict d'une lettre du Sieur Torricelli »,
+    « Al S.\textsuperscript{r} Ricci », en italien : les tubes de mercure.
+  \item \textbf{Vue 96.} Le couvert d'une lettre, adressé « Au Reuerend Pere /
+    Le Reuerend Pere Mersenne Religieux ez minimes de la Place Royale ».
+  \item \textbf{Vues 97--103.} « De Vacuo Narratio Æ.\textsuperscript{i}
+    P.\textsuperscript{i} de Roberual Ad Nob. virum D. des Noyers », « Parisijs
+    12 Calend. Octob. 1647 ».
+\end{itemize}
+
+L'ordre de la reliure n'est pas celui des dates, et une note moderne au crayon,
+sur la vue 83, le sait : « Il faut commencer par cette lettre ». Cette lecture
+suit l'argument, non la reliure : d'abord la cycloïde, puis la querelle lettre
+par lettre dans l'ordre de leurs dates, puis les mathématiques des paraboles,
+des figures infinies et des spirales de chaque côté, et enfin le vide.
+
+\subsection*{Qui écrit : titres, signatures, copies}
+
+Il faut distinguer ce que les feuillets \emph{nomment} de ce qu'ils
+\emph{montrent}.
+
+\begin{itemize}
+  \item \textbf{Une seule signature propre.} La lettre du 1\textsuperscript{er}
+    mai 1644 (vues 2--6) se termine par « Addictiss\textsuperscript{mus} Seruus /
+    Euang\textsuperscript{a} Torricellius. », de la main du corps de la lettre,
+    une cursive italienne rapide ; son dernier verso porte l'adresse et les plis
+    (vue 7). La transcription dit la date et la signature « autographes en
+    apparence ». C'est l'aspect d'un original, non une attribution de la main :
+    les feuillets ne disent nulle part que cette main est celle de Torricelli.
+    La même main écrit la lettre du 1\textsuperscript{er} février 1647 (vues
+    12--15), qui n'a pas de souscription : le nom n'y figure que dans la
+    dernière phrase (« adnumerabis Torricellium »).
+  \item \textbf{Un nom écrit par le copiste.} La lettre du 7 juillet 1646 à
+    Mersenne (vues 8--11) finit sur « Euangelista Torricellius. », mais dans la
+    main posée du corps et de même module : c'est une copie, ou la main d'un
+    secrétaire, et la page ne dit pas laquelle.
+  \item \textbf{Le nom dans l'intitulé seulement.} Torricelli est nommé en tête,
+    et pas au bas, dans les lettres à Roberval de 1643 (vue 20) et de 1646 (vues
+    24 et 40, « Torr. ») et dans la lettre à Carcavy (vue 53), où le nom revient
+    dans la phrase finale ; Roberval est nommé en tête des deux lettres des vues
+    57 et 83 et de la « Narratio » (vue 97). Aucune de ces pièces n'est signée.
+  \item \textbf{Aucun nom d'auteur.} La pièce des vues 16--19 ne nomme celui qui
+    écrit que par le dernier mot, « Atque hic me tibi iterum commendo /
+    Torricellium »\footnote{« Et je me recommande encore à vous, moi,
+    Torricelli. »}, qui tient la place d'une signature ; ses notes encadrées
+    (« uerbum deest », « Parata bis legitur ») sont celles d'un copiste. Le
+    feuillet séparé (vues 36--39) n'est attribué que par la note d'une autre
+    main, et la « Methodus » (vues 89--90) que par son titre.
+  \item \textbf{Mersenne.} Aucun feuillet n'est d'une main que les feuillets
+    attribuent à Mersenne. Il est destinataire, cité, nommé ; le couvert de la
+    vue 96 lui est adressé, d'une main qui n'est celle d'aucune pièce voisine,
+    et rien ne dit quelle lettre il a couverte.
+\end{itemize}
+
+Roberval lui-même fait de cette situation un grief : il demande qu'on ne croie,
+en matière de mathématiques, « nisi manu meâ illæ obsignata sint »\footnote{« [aux lettres de personne] à moins
+qu'elles ne soient scellées de ma main » (vue 66).}, parce
+que les intermédiaires déforment tout. La querelle qui suit est en grande partie
+une querelle sur des lettres recopiées.
+
+\section*{La cycloïde dans la lettre du 1er mai 1644}
+
+\pagerange{2}{7}
+La lettre répond à Mersenne, qui a demandé si Galilée avait laissé quelque chose
+sur la force de la percussion (presque rien, deux expériences), et qui a annoncé
+que Roberval avait pénétré très avant dans la nature de la cycloïde. Torricelli
+concède d'avance « omnium harum inuentionum gloriam » à Roberval \emph{si} c'est
+vrai\footnote{« Je concède volontiers la gloire de toutes ces découvertes à ce
+géomètre éminent » — mais sous la condition « si acutiss\textsuperscript{mus}
+Roberuallius adeò altè naturam huius figuræ penetrauit, quemadmodum ipse refers »,
+« si Roberval a pénétré aussi profondément que vous le rapportez » (vue 3).},
+dit avoir « aussi des solides trouvés il y a peu de mois et communiqués aux
+géomètres italiens », puis donne ses énoncés sans démonstration.
+
+\subsection*{Les définitions}
+
+Un cercle $AB$ de rayon $r$ roule sur une droite et décrit, par son point de
+contact, la cycloïde « primaire ». Le rayon $CA$ est prolongé indéfiniment au-delà
+de $A$ ; chaque point de ce rayon prolongé, à la distance $d$ du centre, décrit
+une « trochoïde » ou « cycloïde secondaire » : raccourcie si $d<r$, allongée si
+$d>r$. Le « cercle générateur propre » de chaque trochoïde est celui dont le
+diamètre égale la hauteur de la courbe, soit le cercle de rayon $d$. En
+coordonnées,
+\[
+x = rt - d\sin t,\qquad y = r - d\cos t ,
+\]
+la base étant la droite $y = r-d$ des points les plus bas, de longueur $2\pi r$
+sur une arche, et la hauteur $2d$.
+
+\subsection*{L'aire}
+
+Le premier énoncé : l'espace compris entre une trochoïde et sa base est au
+triangle de même base et de même hauteur comme la circonférence du cercle
+générateur propre plus deux fois la base, à deux fois la base. On calcule
+\[
+\int_0^{2\pi}\bigl(y-(r-d)\bigr)\,x'(t)\,dt=\int_0^{2\pi} d(1-\cos t)(r-d\cos t)\,dt
+= 2\pi r d+\pi d^2 ,
+\]
+et le triangle vaut $\tfrac12\cdot 2\pi r\cdot 2d = 2\pi r d$ ; le rapport est
+$\frac{2r+d}{2r} = \frac{2\pi d+2\cdot 2\pi r}{2\cdot 2\pi r}$, ce que dit la
+lettre. Sa seconde forme, « comme la hauteur plus deux fois l'axe de la cycloïde
+primaire, à deux fois cet axe », est $\frac{2d+4r}{4r}$, le même nombre. Et
+l'espace est au cercle générateur propre, « par conversion de
+rapport »\footnote{\emph{Per conuersionem rationis} : de $a:b$ on passe à
+$a:(a-b)$. De $(C+2B):2B$, où $C$ est la circonférence génératrice et $B$ la
+base, on tire $(C+2B):C$.}, comme $(2\pi d+4\pi r) : 2\pi d = (2r+d) : d$ ;
+c'est exact, puisque $(2\pi r d+\pi d^2)/(\pi d^2) = (2r+d)/d$. Pour la cycloïde
+primaire, $d=r$ : l'aire est $\tfrac32$ du triangle, soit $3\pi r^2$, trois fois
+le cercle qui roule.\footnote{L'énoncé est vrai tel quel pour la cycloïde
+primaire et les trochoïdes raccourcies. Pour $d>r$, la courbe fait une boucle
+autour de chaque point bas, et « l'espace compris entre la courbe et sa base »
+n'est plus une région simple : le nombre $2\pi rd+\pi d^2$ reste la valeur de
+l'intégrale, c'est-à-dire une aire algébrique où la boucle compte avec son
+signe. La lettre dit « quodlibet spatium » sans faire la distinction.}
+
+\subsection*{La tangente, par composition des mouvements}
+
+La règle de la lettre : par le point donné $P$, placer le cercle générateur
+propre tangent à la base ; mener en $P$ la tangente à ce cercle, qui coupe la
+base en $T$ ; prendre sur la base, à partir de $T$ et du côté convenable, un
+segment $TS$ tel que la hauteur de la trochoïde soit à la hauteur de la cycloïde
+primaire comme $PT$ à $TS$ ; la droite $SP$ est la tangente. Et l'on peut prendre
+au lieu de la base n'importe quelle parallèle.
+
+C'est juste. La vitesse du point est la somme de celle du centre, horizontale, de
+grandeur $r$ par unité de $t$, et de celle de la rotation autour du centre,
+tangente au cercle de rayon $d$, de grandeur $d$ :
+\[
+\bigl(x'(t),\,y'(t)\bigr) = r\,(1,0) + d\,(-\cos t,\ \sin t).
+\]
+Le triangle $PTS$ a ses côtés $PT$ et $TS$ portés par ces deux directions et dans
+le rapport $d : r = 2d : 2r$ ; son troisième côté porte donc leur somme, qui est
+la vitesse. Une parallèle à la base coupe les deux côtés en un triangle
+homothétique de centre $P$, d'où la dernière remarque. Pour la cycloïde
+primaire, $d=r$, $TS=PT$, et la tangente passe par le point le plus haut du
+cercle qui roule, ce que dit la lettre.\footnote{La composition des
+mouvements est ici l'addition des vitesses comme vecteurs. Le mot et la
+notation sont postérieurs ; la chose est dans la règle. Roberval revendique la
+même méthode « circa annum 1636 » (vue 60), et la lettre du 7 juillet 1646
+revendique pour Torricelli la « méthode des tangentes tirée de la doctrine du
+mouvement » (vue 26) ; voir la querelle plus bas.}
+
+\subsection*{Les quatre solides}
+
+Pour la cycloïde primaire, aire $3\pi r^2$, base $2\pi r$, axe $2r$ ; chaque
+solide est comparé au cylindre qui l'enveloppe.
+
+\begin{itemize}
+  \item \textbf{Autour de la tangente parallèle à l'axe} (la verticale à un
+    point de rebroussement) : le solide est « subsesquitertium », les
+    $\tfrac34$ du cylindre. On trouve $V = 2\pi\int x\,y\,dx = 6\pi^3r^3$ contre
+    $\pi(2\pi r)^2\cdot 2r = 8\pi^3r^3$ : exact. La lettre dit n'en avoir pas la
+    démonstration et l'attribue à Antonio Nardi ; « reliqua mea sunt ».
+  \item \textbf{Autour de la tangente au sommet, parallèle à la base} :
+    « subsesquiseptimum », les $\tfrac78$. Le solide vaut
+    $8\pi^2r^3 - \pi\int (2r-y)^2\,dx = 8\pi^2r^3-\pi^2r^3 = 7\pi^2r^3$ contre
+    $\pi(2r)^2\cdot 2\pi r=8\pi^2r^3$ : exact.
+  \item \textbf{Autour de l'axe} : « ut 11 ad 18 ». C'est faux. Le calcul donne
+    \[
+    V_{\text{axe}} = 2\pi\int_0^{\pi r}(\pi r - x)\,y\,dx = \frac{\pi r^3}{6}\,(9\pi^2-16),
+    \]
+    et le cylindre de même axe et de même base vaut $\pi(\pi r)^2\cdot 2r=2\pi^3r^3$ ;
+    le rapport est
+    \[
+    \frac{9\pi^2-16}{12\pi^2} = \frac34-\frac{4}{3\pi^2}\approx 0{,}6149 ,
+    \]
+    irrationnel, alors que $11/18\approx 0{,}6111$ est trop petit d'environ
+    six millièmes.\footnote{La transcription lit le second terme 18 en signalant
+    que ce 8 à demi formé peut se lire 0 ; $11:10$ est impossible (le solide est
+    dans son cylindre), et 18 est confirmé par le rapport $44:45$ de l'énoncé
+    suivant, qui s'en déduit. Roberval dit exactement ce que donne le calcul :
+    le rapport « 11 ad 18 » est « verâ minorem » (vue 65).}
+  \item \textbf{Autour de la base} : $5:8$, que la lettre dit avoir été démontré
+    par Roberval « ante nos ». On trouve $\pi\int y^2dx = 5\pi^2r^3$ contre
+    $8\pi^2 r^3$ : exact.
+\end{itemize}
+
+La lettre ajoute que le solide autour de l'axe et le solide autour de la base
+ont un rapport « ineffable », composé de $44:45$ et du rapport d'un cercle au
+carré circonscrit, soit $\frac{44}{45}\cdot\frac{\pi}{4} = \frac{11\pi}{45}
+\approx 0{,}7679$. C'est la conséquence exacte de $11:18$ et de $5:8$, car les
+deux cylindres sont entre eux comme $\pi:4$ ; mais la valeur vraie est
+$\frac{9\pi^2-16}{30\pi}\approx 0{,}7727$, qui n'est pas de cette forme. Le mot
+« ineffable » (irrationnel) est juste ; la composition ne l'est pas.
+
+\subsection*{Les centres de gravité}
+
+\emph{De la cycloïde entière} : il divise l'axe dans le rapport $7:5$, la plus
+grande partie du côté du sommet. On trouve
+\[
+\bar y = \frac{1}{3\pi r^2}\int_0^{2\pi r}\frac{y^2}{2}\,dx = \frac{5r}{6},
+\]
+soit $\tfrac{7r}{6}$ depuis le sommet et $\tfrac{5r}{6}$ depuis la base : exact.
+
+\emph{De la demi-cycloïde} : il est sur la parallèle à l'axe qui coupe la base de
+la cycloïde entière en parties $19$ et $8$, ou la base de la demi-cycloïde en
+parties $16$ et $11$, la plus grande du côté de la courbe. Les deux énoncés
+s'accordent entre eux ($8 : 5\tfrac12 = 16:11$), mais ni l'un ni l'autre n'est
+exact. L'abscisse du centre de gravité, mesurée depuis le point de rebroussement,
+est
+\[
+\bar x = r\Bigl(\frac{\pi}{2}+\frac{8}{9\pi}\Bigr)\approx 1{,}8537\,r ,
+\]
+et sa distance à l'axe $r\bigl(\frac{\pi}{2}-\frac{8}{9\pi}\bigr)\approx
+1{,}2879\,r$. Le rapport vrai des deux parties de la base de la demi-cycloïde est
+donc $\frac{9\pi^2+16}{9\pi^2-16}\approx 1{,}4394$, non $16/11\approx 1{,}4545$ ;
+et celui des parties de la base entière $\frac{27\pi^2-16}{9\pi^2+16}\approx
+2{,}3895$, non $19/8=2{,}375$. La hauteur de ce centre est la même que pour la
+cycloïde entière, $\tfrac{5r}{6}$ ; la lettre ne la donne pas.
+
+\subsection*{Pourquoi 11 à 18 et 16 à 11 sont une seule erreur}
+
+Le solide engendré par la cycloïde autour de son axe est celui qu'engendre la
+demi-cycloïde, d'aire $\tfrac32\pi r^2$. Si $\delta$ est la distance à l'axe de
+son centre de gravité, la règle que les lettres se disputent plus loin donne
+\[
+V_{\text{axe}} = 2\pi\,\delta\cdot\tfrac32\pi r^2 ,\qquad
+\frac{V_{\text{axe}}}{2\pi^3r^3} = \frac{3\delta}{2\pi r}.
+\]
+Avec la valeur de la lettre, $\delta = \tfrac{11}{27}\pi r$ (les 11 parts sur 27
+de $\pi r$), on obtient exactement $\tfrac{11}{18}$. Les deux énoncés faux
+de la lettre sont donc la même donnée lue dans les deux sens ; avec la valeur
+vraie de $\delta$, la même règle redonne $\frac34-\frac{4}{3\pi^2}$. Roberval
+l'a vu : il écrit que le centre de la demi-trochoïde « ab eo dependet », dépend
+du solide autour de l'axe (vue 66).\footnote{La règle est ce que nous appelons
+le théorème de Pappus–Guldin (volume engendré $=$ aire $\times$ chemin du centre
+de gravité). La lettre de 1644 ne l'énonce pas ; elle est l'objet de la querelle
+des vues 16--19, 25--27 et 62--65. Le calcul qui relie ici $11:18$ à $16:11$ est
+celui de cette lecture ; la lettre ne dit pas comment ses nombres ont été
+obtenus.}
+
+\subsection*{Le reste de la lettre}
+
+Doni a reçu la lettre de Mersenne ; du Verdus, qui a remis la lettre, n'a rien
+dit du « mystère des tangentes » que Mersenne lui prête ; deux des opuscules de
+Torricelli sont imprimés, les deux autres avancent lentement ; il est occupé à la
+verrerie du Grand-Duc pour les lunettes et à construire des machines pour des
+expériences de physique ; on attend les « Cogitata physico-mathematica » de
+Mersenne. Sur la parabole égale en longueur à une autre courbe, attribuée à
+Roberval, et sur un problème numérique de du Verdus, rien.
+
+\section*{Deux lettres à Mersenne, 1646 et 1647 : verres, quadratures, le problème de Fermat}
+
+\pagerange{8}{15}
+\subsection*{La lettre du 7 juillet 1646 (vues 8--11)}
+
+Les lettres de Mersenne et de Roberval datées des calendes de janvier sont
+arrivées à la fin de mars, par le comte Ferdinando Bardi et Andrea Arrighetti.
+Torricelli défend ses verres : aucun, hors de ses mains ou de celles de Fontana,
+n'est aussi bon « in tota Gallia » ; une pièce sur dix seulement est parfaite, à
+cause de la matière. La lunette de Gassendi, qui vient de Galilée, ne peut pas,
+plus courte d'un quart avec les mêmes concaves, montrer l'objet plus grand : ce
+serait dire que de deux triangles isocèles semblables, celui qui a
+les côtés les plus courts a la plus grande base.\footnote{L'argument est juste
+pour la lunette à oculaire concave : le grossissement est $f_1/|f_2|$, rapport
+des focales de l'objectif et de l'oculaire, et la longueur du tube est à peu près
+$f_1-|f_2|$ ; avec le même oculaire, un tube plus court veut un objectif de focale
+plus courte, donc un grossissement moindre. La formule est postérieure à la
+lettre, qui raisonne par triangles semblables.} Une lunette de dix pas a été
+faite, l'hiver passé, dans un mât de galère fendu, creusé et recollé, trop lourde
+pour servir.
+
+Deux quadratures du cercle passent dans la lettre. Baliani a envoyé, de la part
+de Mersenne, l'examen d'une quadrature d'un certain Batanus ; Torricelli juge
+cet examen trop long : il aurait été plus court avec la proposition 3 du livre VI
+d'Euclide.\footnote{La
+bissectrice d'un angle d'un triangle coupe le côté opposé dans le rapport des
+côtés adjacents.} Puis, transmise sans réfutation, celle d'un « mathématicien romain de la
+Compagnie de Jésus », dans un livre intitulé « Ars Magna lucis, et Vmbræ » : si l'on coupe en
+deux le rayon $AB$ en $D$ et l'arc de quadrant en $E$, la droite $DE$ prolongée
+retranche de la tangente en $C$ un segment $CF$ égal à l'arc $CE$. C'est faux.
+Avec le centre à l'origine, $D=(\tfrac r2,0)$, $E = \frac{r}{\sqrt2}(1,1)$, la
+tangente en $C=(0,r)$ étant $y=r$, on trouve
+\[
+CF = \frac{3-\sqrt2}{2}\,r\approx 0{,}7929\,r,\qquad \text{arc } CE=\frac{\pi}{4}\,r\approx 0{,}7854\,r ,
+\]
+ce qui reviendrait à $\pi = 6-2\sqrt2\approx 3{,}1716$.\footnote{La page ne trace
+pas de figure et nomme « radius AB, arcusque quadrantis AC » ; la lecture prend
+$A$ sur le cercle, $B$ au centre, l'arc de $A$ à $C$ et la tangente en $C$. La
+disposition inverse (centre en $A$, arc $BC$) conduit au même calcul.} Le même
+auteur aurait montré que « le carré isopérimètre à un cercle est égal à ce
+cercle » : faux aussi, le carré de périmètre $2\pi r$ a pour aire
+$\pi^2r^2/4$, soit $\pi/4$ du cercle.\footnote{C'est un cas de l'inégalité
+isopérimétrique : de toutes les figures de même périmètre, le cercle a la plus
+grande aire. La phrase de la lettre, « quod et vestris Geometris, quibus nihil
+nouum est, fortasse nouum erit », « ce qui sera peut-être nouveau même pour vos
+géomètres, pour qui rien n'est nouveau », est d'un ton que cette lecture juge
+ironique ; la page ne le dit pas.}
+
+Enfin Torricelli envoie à Roberval des spirales « dont la ligne est montrée égale
+à une droite », à Fermat des hyperboles « peut-être les miennes », et à Mersenne
+un « Carollariolum », une quadrature tirée de ces hyperboles, dont il pourrait
+envoyer « des centaines, et même une infinité » : le corollaire n'est pas sur les
+feuillets. Un post-scriptum règle l'argent du verre prêté.
+
+\subsection*{La lettre du 1er février 1647 (vues 12--15)}
+
+La lettre répond à plusieurs de Mersenne. Roberval tarde à répondre à la lettre
+que Torricelli lui a écrite au début d'août ; qu'il tarde tant qu'il voudra :
+« les lettres enflent démesurément et dégénèrent en volumes ». Le centre de
+percussion, sur lequel Mersenne revient sans cesse, « non arridet animo meo ». Un
+verre concave accompagne la lettre ; un cercle tracé à la plume (vue 13) donne
+l'ouverture à laisser à l'objectif, « un peu plus grande pour les objets
+obscurs, plus petite pour les clairs » ; la meilleure lunette n'est pas celle qui
+grossit le plus mais celle qui donne la vision la plus pure. Les longues lunettes
+n'ont rien montré de nouveau, sinon les bandes de Jupiter.
+
+Torricelli espère que Roberval ne dira plus « impossibles » ses spirales « qui
+font une infinité de révolutions avant d'arriver au centre », ni celles qu'il
+dérive de la définition d'Archimède « étendue aux puissances infinies de
+l'algèbre », ni le problème des hyperboles infinies ; ces spirales sont
+traitées plus bas. Il a résolu, l'automne précédent, un problème qu'on lui dit
+proposé par Fermat : trouver un point dont la somme des distances à trois points
+donnés soit minimale. « Construxi Problema, demonstraui, determinauique », par
+une voie qui passe par les lieux solides et par d'autres qui n'emploient que la
+règle et le compas.\footnote{« J'ai construit le problème, je l'ai démontré et
+j'en ai donné la détermination » (vue 15). Le point cherché est celui que l'on
+appelle aujourd'hui point de Fermat (ou de Fermat--Torricelli). Si tous les
+angles du triangle sont inférieurs à $120^\circ$, c'est le point d'où les trois
+côtés sont vus sous des angles de $120^\circ$, que l'on construit à la règle et
+au compas ; sinon c'est le sommet de l'angle obtus. La lettre ne donne ni la
+construction, ni la détermination ; celles-ci sont rappelées ici comme
+l'énoncé moderne.} Il demande si la solution circule en France.
+
+\section*{La querelle de la cycloïde : ce que chaque pièce affirme}
+
+\pagerange{16}{84}
+Les pièces sont prises ici dans l'ordre des dates qu'elles portent. Pour chacune,
+ce qu'elle affirme et ce qu'elle démontre ; les mathématiques en jeu sont
+vérifiées ailleurs dans cette lecture, et les dates sont celles des lettres. La
+lecture ne dit pas qui a trouvé le premier : une date écrite dans une lettre de
+l'un des deux adversaires, au sujet de sa propre découverte, est un témoignage
+de partie.
+
+\subsection*{1er octobre 1643, Torricelli à Roberval (vues 20--23)}
+
+Torricelli rougirait de présenter le centre de gravité de la parabole comme
+inconnu ; il l'a montré par une démonstration brève. Il admire la fécondité de
+Roberval « circa tot parabolas, atque earum solida », dont lui-même n'a rien et
+n'aura peut-être rien. La « mesure de la cycloïde » — Galilée, écrit-il, a donné
+ce nom à la figure « il y a quarante-cinq ans » — « s'est offerte à lui sans
+qu'il la cherchât », et il l'a démontrée cinq fois par des principes différents.
+Puis : « Quo ad solida nihil habeo. »\footnote{« Pour ce qui est des solides, je
+n'ai rien » (vue 21). Roberval citera cette phrase, mot pour mot, comme tirée de
+« la première de vos lettres à moi » (vue 64).} La tangente lui a été montrée
+par le jeune Vincenzo Viviani. Galilée a pesé des cycloïdes découpées dans une
+matière et a toujours trouvé l'espace « moins que triple » du cercle générateur,
+d'où un soupçon d'incommensurabilité qui lui fit abandonner.\footnote{Le rapport
+vrai est exactement $3$ (section précédente) : la pesée était fausse par défaut,
+et le soupçon d'incommensurabilité sans objet.} Une proposition sur le solide
+engendré par une section conique tournant autour de son axe et sur son centre de
+gravité est démontrée « d'une seule et brève démonstration », mais écartée
+de ses opuscules. Quant au « solide hyperbolique », il est « non plus le mien,
+mais le tien » : Torricelli a deux démonstrations, l'une par les indivisibles,
+l'autre « par inscription et circonscription, à la manière des anciens » ; ce
+qu'il a de commun avec celle de Roberval est la construction qui coupe le solide
+en tranches dans un rapport donné.\footnote{C'est exactement la construction de
+l'article 14 de la lettre de Roberval à Mersenne (vues 87--88), qui divise le
+solide en portions en progression géométrique ; le rapprochement est de cette
+lecture.}
+
+\subsection*{1er mai 1644, Torricelli à Mersenne (vues 2--7)}
+
+Les solides de la cycloïde ont été « trouvés il y a peu de mois ». Torricelli
+concède la gloire des inventions à Roberval sous condition ; attribue le solide
+autour de la tangente parallèle à l'axe à Nardi et le solide autour de la base à
+Roberval, « ante nos » ; revendique le reste, dont $7:5$, $11:18$, $16:11$ et
+$19:8$. Il ne démontre rien.
+
+\subsection*{28 juin 1644, Mersenne à Torricelli, cité (vues 16--19)}
+
+La pièce commence : « Oro P. Vestram ut secum ipsa recordari uelit quando ego
+scripsi Centrum grauitatis Cycloidis secare axem in ratione 7 ad 5, et solidum
+circa axem esse ad cylindrum ut 11 ad 18 »\footnote{« Je prie Votre Paternité de
+se souvenir du moment où j'ai écrit que le centre de gravité de la cycloïde coupe
+l'axe dans le rapport de 7 à 5, et que le solide autour de l'axe est au cylindre
+comme 11 à 18 » (vue 16). Ce sont les énoncés de la lettre du
+1\textsuperscript{er} mai 1644.}, et elle recopie deux passages de la réponse de
+Mersenne, « sub die 28 Iunij 1644 » :
+
+\begin{itemize}
+  \item Roberval « prædictum solidum, et centrum grauitatis tibi debere fatetur,
+    qui primus inuenisti »\footnote{« reconnaît te devoir le solide et le centre
+    de gravité susdits, toi qui les as trouvés le premier ». Le copiste note
+    qu'un mot manque juste avant (« uerbum deest ») ; ce qui précède dit que
+    Roberval a trouvé et démontré « le reste ».} ;
+  \item « Dubitat noster Roberuallus an Mechanicè tantum centra grauitatis
+    Cycloidis, et semicycloidis inueneris, quæ Geometricè falsa
+    suspicatur. »\footnote{« Notre Roberval se demande si tu n'as pas trouvé
+    seulement par la mécanique les centres de gravité de la cycloïde et de la
+    demi-cycloïde, qu'il soupçonne faux géométriquement. » Le soupçon est fondé
+    pour la demi-cycloïde, comme on l'a vu : $16:11$ n'est pas exact. Pour la
+    cycloïde entière, $7:5$ est exact.}
+\end{itemize}
+
+Celui qui écrit affirme avoir alors envoyé la démonstration du centre de
+gravité de la cycloïde et du solide autour de la base, avec « sa » méthode,
+« pour trouver le centre de gravité à partir du solide donné, ou le solide à
+partir du centre » ; que Roberval, dans sa dernière lettre, dit avoir eu ce
+centre « depuis longtemps » et compte la méthode parmi les siennes « par la seule
+inversion de la proposition ». Il demande à Mersenne d'intervenir. Il n'a pas
+répondu à Roberval sur le solide autour de l'axe et demande « d'où Roberval
+croit qu'il a tiré le rapport qu'il réduisait aux nombres 11 et 18 », en
+rappelant qu'Archimède donne le cercle au carré du diamètre comme $11:14$. La
+pièce ne donne pas la réponse.\footnote{Voir, à la section sur la lettre de
+Roberval, pourquoi $11:18$ ne peut pas venir de l'approximation $11:14$ (vue
+79), ce que le calcul confirme.}
+
+\subsection*{7 juillet 1646, Torricelli à Roberval (vues 24--29 ; seconde copie, vues 40--44)}
+
+La trochoïde, italienne ou française, « meum certè non est quod ad inuentionem
+attinet » ; mais Galilée en ignorait la mesure jusqu'à sa mort, et Torricelli a
+trouvé ses démonstrations « proprio Marte ».\footnote{« Pour ce qui est de
+l'invention, elle n'est certainement pas de moi » ; « par mes propres forces »
+(vue 24).} Sur le centre de gravité : il en a envoyé la démonstration en France,
+à la demande de Mersenne, « deux ans entiers avant que tu ne dises l'avoir » ;
+dans cette démonstration il tirait le solide du centre de gravité et de l'aire ;
+Roberval dit avoir une méthode pour tirer le centre de l'aire et du solide ;
+« Propositiones conuersæ sunt. Inuersio autem huiusmodi facillima
+est. »\footnote{« Ce sont des propositions converses. Or une telle inversion est
+très facile » (vue 25).} Argument : Roberval, qui se glorifiait de la
+quadrature, des tangentes et des solides, ne parlait jamais du centre de gravité.
+Il cite la phrase de Mersenne sur le « soupçon » et en tire que Roberval doutait
+de ce qu'il prétend avoir su. Il a « une autre méthode » qui donne d'un seul
+énoncé les centres de gravité des lignes, des surfaces de révolution, des
+figures planes et des corps qui ont un axe, et prie qu'on ne la compte pas
+« inter vestra ». Sur la méthode des tangentes par le mouvement : il l'a
+trouvée « il y a plusieurs années, sans lumière ni secours de personne ».
+
+Deux remarques de la lettre touchent le théorème de Pappus--Guldin. Roberval
+avait proposé comme nouveau que « la quadratrice passe par le centre de gravité
+de la demi-circonférence » ; Torricelli répond que cela a été démontré et publié
+« multo uniuersalius », qu'il l'avait montré lui-même, et qu'il a appris de
+Cavalieri « qu'un certain Guldin, jésuite, l'avait publié » : il a ainsi
+« perdu » une contemplation dont il n'a « aucune plus élégante ».\footnote{Le
+fait est exact : la quadratrice de rayon $r$ rencontre la base à la distance
+$2r/\pi$ du centre, qui est la distance au centre du centre de gravité de la
+demi-circonférence. C'est un cas du premier théorème de Pappus--Guldin (l'aire
+de la sphère $4\pi r^2$ vaut la longueur $\pi r$ de la demi-circonférence
+multipliée par le chemin $2\pi\cdot 2r/\pi$ de son centre de gravité). La lettre
+nomme Guldin ; elle ne nomme pas Pappus.} Et il admire le théorème de Roberval
+« de spatiis in infinitam longitudinem abeuntibus », auquel sa démonstration des
+paraboles infinies s'appliquait aussitôt (section suivante).
+
+Un post-scriptum, d'une encre plus pâle, dit la lettre retenue jusqu'au début
+d'août.
+
+\subsection*{Juillet 1646, Torricelli à Carcavy (vues 53--55)}
+
+Torricelli n'a pas travaillé les problèmes numériques de Fermat, et les juge
+peu plausibles : « Omnes potestates quarum exponens \&c. Si vnitate augeantur
+numeros primos fieri », et un triangle rectangle en nombres dont deux côtés
+fassent un carré, « ou une autre condition semblable dont je ne me souviens
+pas ».\footnote{« Toutes les puissances dont l'exposant [\ldots] augmentées de
+l'unité sont des nombres premiers. » La copie tronque l'énoncé. S'il s'agit de
+l'énoncé connu aujourd'hui sous le nom de Fermat, que les nombres $2^{2^k}+1$
+sont premiers, il est faux : $2^{32}+1 = 641\times 6\,700\,417$ (Euler, 1732,
+bien après la lettre). Le feuillet ne permet pas d'affirmer que c'est celui-là.}
+Le problème des paraboles infinies, il l'a cru de Roberval, puis de Fermat ;
+Cavalieri le revendique, l'ayant publié en 1639 et confié à Niceron, sans en avoir
+la solution. Torricelli a cinq méthodes pour les tangentes et autant pour les
+quadratures. Il énonce une règle pour les centres de gravité : le centre divise
+l'axe de toute figure qui en a un de sorte que la partie vers le sommet soit à
+l'autre « quemadmodum sunt omnes \&c. ad omnes \&c. ».\footnote{« comme tous
+[\ldots] à tous [\ldots] ». La copie omet les termes, et cette lecture ne les
+restitue pas. Toute règle de ce genre est, en termes modernes, un rapport de deux
+moments, $\int x\,dA$ et $\int (h-x)\,dA$ ; laquelle des deux familles de
+« toutes les lignes » la lettre voulait comparer, on ne peut le dire.} Du
+livre paru sous le nom d'Aristarque, il pense qu'il a été écrit de notre temps,
+et refuse d'en donner les raisons.
+Enfin : que Mersenne n'a pas fait circuler, comme il l'en avait prié, la
+démonstration du centre de gravité de la cycloïde et de la méthode, « quod si
+ille fecisset certe nunc mihi mea non eriperentur, quae alij mihi debent, nam
+primus inueni, imo solus inueni ».\footnote{« S'il l'avait fait, on ne
+m'arracherait certainement pas aujourd'hui ce qui est à moi, que d'autres me
+doivent, car je l'ai trouvé le premier, bien plus, je suis seul à l'avoir
+trouvé » (vue 55). Le quantième, lu 8, est douteux.} La vue 54 a pâli sur quatre
+lignes ; huit mots environ n'y sont pas lus, dont un verbe en « -to » après le nom de
+Roberval et le verbe dont « vos géomètres » est le sujet.\footnote{Roberval cite
+la phrase (vue 76) : « Quadraturas ad clarissimum Roberuallium mitto, fortasse ad
+subeundam eandem fortunam cum meo centro grauitatis Cycloidis ». La citation
+concorde avec ce qui reste de la vue 54 ; cette lecture ne comble pas la lacune
+par elle.}
+
+\subsection*{Sans date, Roberval à Torricelli (vues 57--66, 67--69, 75--79)}
+
+La lettre porte en tête « Epistola Aegidii Personerii de Roberval ad Euangelistam
+Torricellium », sur deux lignes françaises barrées ; une consigne en français au
+pied de la vue 57 demande de mettre en italiques « ce qu'il y a icy de gros
+caracteres » — les citations de Torricelli sont en effet en plus gros
+caractères, et la copie paraît préparée pour l'impression.\footnote{Inférence
+de la transcription, reprise ici comme telle.} Les dates qu'elle donne sont
+celles de Roberval :
+
+\begin{itemize}
+  \item 1628 : Mersenne lui propose à Paris la roue et ses trochoïdes ; il la
+    juge au-dessus de ses forces et n'y pense plus pendant six ans (il a alors
+    vingt-sept ans).
+  \item Entre-temps il se forge, en lisant Archimède, la « doctrine de
+    l'infini », qu'il dit être ce que Cavalieri appelle indivisibles, et dont il
+    s'est servi « cinq années entières avant » la publication de Cavalieri, tout
+    en lui en laissant l'invention : « Ille prior vulgauit ».\footnote{« Il l'a
+    publiée le premier » (vue 58).}
+  \item 1634 : Mersenne lui rappelle la trochoïde, qu'il résout alors « nullo
+    negotio » ; « Habes annum quo Trochoidem inuenimus ».\footnote{« Voilà
+    l'année où nous avons trouvé la trochoïde » (vue 60). La lettre ajoute
+    qu'elle l'a « trouvée il y a douze ans », et que Galilée a vécu jusqu'en
+    1642.}
+  \item 1635 : début de la correspondance avec Fermat par Carcavy ; Fermat lui
+    envoie sans démonstration deux propositions, sur les paraboles et sur les
+    aires des spirales, « de tous les degrés ».
+  \item Vers 1636 : la proposition universelle des tangentes par la composition
+    des mouvements, « vulgauimus », avec les leçons recueillies par du Verdus.
+  \item 1637 : sa méthode des centres de gravité ; 1643 : il en énonce des
+    résultats (les demi-fuseaux paraboliques) dans une lettre à Mersenne ; fin
+    1644 : la méthode de Torricelli arrive à Paris.
+\end{itemize}
+
+Sur le centre de gravité, il répond que les centres ne l'intéressaient pas :
+ayant l'aire, il ne cherchait que les solides, et les centres suivaient
+« statim, et absque labore ». C'est la fable du sculpteur d'Ésope : l'aire est la
+statue de Jupiter, le solide celle de Neptune, le centre celle de Mercure, qu'on
+donne par-dessus le marché à qui achète les deux autres.\footnote{L'argument est
+mathématiquement juste : par la règle de Pappus--Guldin, l'aire et le solide
+donnent la distance du centre de gravité à l'axe de rotation. Qu'il ait su ou
+non le centre avant 1644 est une autre question, que les mathématiques ne
+tranchent pas.} Sur les mots de Mersenne : il lui a dit qu'il devrait à
+Torricelli le solide autour de l'axe et le centre de la demi-trochoïde « si vera
+essent » — et ils ne l'étaient pas ; il avait déjà ce solide « in terminis vero
+admodùm proximis », entre des bornes hors desquelles tombait $11:18$, d'où il a
+vu aussitôt que ce rapport était trop petit.\footnote{Juste : $11/18\approx
+0{,}6111$ et la valeur vraie est $0{,}6149$.} Il soupçonnait une approximation
+mécanique. Il cite enfin, comme exemple des erreurs des intermédiaires, deux
+phrases de Torricelli sur ses hyperboles, dont Mersenne avait conclu que
+Torricelli avait quarré l'hyperbole conique ; il n'en est rien, dit Roberval, les
+hyperboles « légitimes » et les « bâtardes » n'obéissent pas aux mêmes
+lois.\footnote{C'est exact : l'aire sous $y=1/x$ est un logarithme, tandis que
+celle sous $y=x^{-k}$, $k\ne 1$, est une puissance ; la quadrature des
+« hyperboles infinies » ne donne pas celle de l'hyperbole ordinaire.}
+
+Puis les griefs de Roberval : Torricelli a publié la trochoïde dans un livre
+imprimé alors qu'il promettait de la lui laisser ; la comparaison des paraboles
+et des spirales en longueur est de Roberval, publiée sous son nom par Mersenne
+« il y a cinq ans », et Torricelli ne s'y est mis qu'en 1645 ; les quadratrices,
+envoyées « à peine il y a deux ans », sont ce que Torricelli appelle « lignes de
+Roberval ». Et une thèse : les quadratures des paraboles ne sont ni à Torricelli
+ni à Roberval, mais à Archimède pour la parabole conique et à Fermat pour les
+autres, parce que le « moyen » de Fermat diffère de celui
+d'Archimède.\footnote{« Florem mittebamus, non arborem » : « nous envoyions la
+fleur, non l'arbre » (vue 77), c'est-à-dire que la quadrature de la seule
+parabole conique, envoyée à Torricelli, contenait celle de toutes les autres.}
+
+\subsection*{Roberval à Mersenne, sur les propositions de Torricelli (vues 83--84)}
+
+À l'article 11 : « In Cycloide Toricellj agnosco nrãm Trochoidem, nec recte
+percipio quomodo ipsa ad Italos peruenerit »\footnote{« Dans la cycloïde de
+Torricelli je reconnais notre trochoïde, et je ne vois pas bien comment elle est
+parvenue aux Italiens » (vues 83--84).}, suivi d'une phrase biffée qui accusait
+Beaugrand d'avoir propagé les découvertes des autres sous d'autres mots. Roberval
+annonce la publication de la trochoïde avec ses tangentes et le solide autour de
+la base, « peut-être autour de l'axe », pour toutes les trochoïdes, allongées et
+raccourcies. Cette lettre n'est pas datée sur les feuillets ; Roberval dit, dans
+la lettre précédente, avoir écrit en 1643 à Mersenne une lettre « de vestris
+inuentis » qui énonçait les centres des demi-fuseaux paraboliques et traitait du
+solide hyperbolique infini (vues 60, 64, 78) : c'est ce que fait celle-ci. Que ce
+soit la même lettre est un rapprochement de cette lecture, non un fait établi.
+
+\subsection*{Ce que cette lecture ne tranche pas}
+
+Les feuillets donnent, pour la cycloïde, des dates qui sont toutes des
+affirmations de parties : 1634 pour Roberval, écrit par Roberval ; « il y a peu de
+mois » en mai 1644 pour les solides de Torricelli, écrit par Torricelli ; la
+lettre de Mersenne du 28 juin 1644 n'existe ici que citée, dans la copie d'une
+pièce écrite au nom de Torricelli, avec un mot qui manque. Ce que les feuillets
+établissent par eux-mêmes est d'un autre ordre : la phrase « Quo ad solida nihil habeo » est
+bien sur la lettre du 1\textsuperscript{er} octobre 1643 (vue 21), comme Roberval
+le dit ; les solides de Torricelli sont annoncés dans celle du
+1\textsuperscript{er} mai 1644 ; et, des énoncés que Torricelli y donne, $7:5$,
+$5:8$, $3:4$ et $7:8$ sont exacts, $11:18$, $16:11$, $19:8$ et $44:45$ ne le sont
+pas. Le reste appartient à l'examen des sources, qui n'est pas celui de cette
+lecture.
+
+\section*{Tangentes et quadratures de toutes les paraboles}
+
+\pagerange{30}{48}
+La lettre du 7 juillet 1646 (vues 30--34 ; seconde copie, vues 45--48) joint,
+« orsus a Tangentibus », la démonstration dont Torricelli s'était servi « dans
+la mesure des paraboles infinies ». Dans les termes de la lettre, une parabole a
+un « exposant des appliquées » $m$ et un « exposant des diamétrales » $n$ ; on
+écrira
+\[
+y^m = p^{\,m-n}\,x^n ,
+\]
+où $y$ est l'ordonnée (« applicata »), $x$ l'abscisse comptée du sommet sur le
+diamètre (« diametralis ») et $p$ le paramètre (« latus rectum »).\footnote{La
+lettre prend l'exemple $m=5$, $n=3$ et écrit : « le cubo-carré de $BI$ est égal
+au produit du cube de $IC$ par le carré de $CL$ à cause du côté droit », soit
+$y^5 = x^3p^2$. Le « cuboquadratum » est la cinquième puissance, le « ductus A
+in B » le produit. La parabole ordinaire est $m=2$, $n=1$.}
+
+\subsection*{Lemme I : la sous-tangente}
+
+\emph{Énoncé.} Si $AD$ est l'ordonnée du point $A$ et si l'on prend sur le
+diamètre $E$ tel que $ED : DC = m : n$, $C$ étant le sommet, la droite $AE$ ne
+rencontre la parabole qu'en $A$. Autrement dit, la sous-tangente vaut
+$\frac{m}{n}\,x$ : c'est bien ce que donne la dérivation de $m\ln y = n\ln x +
+\text{cte}$, qui fournit $y/y' = \frac{m}{n}x$.
+
+\emph{Démonstration de la lettre.} Si $AE$ rencontre encore la courbe en $B$,
+d'ordonnée $BI$, on place $O$ par $EI : IO = ED : DC$ et l'on mène $OP$ parallèle
+au côté droit $CL$, jusqu'à $EL$. Par les triangles semblables, on montre d'abord
+que $BI^5 = IO^3\cdot OP^2$ ; comme $B$ est sur la parabole, $BI^5 = IC^3\cdot
+CL^2$ ; il faudrait donc $IO^3\cdot OP^2 = IC^3\cdot CL^2$. Or $IO : OE = n :
+(m-n) = 3:2$, et c'est le partage de $EI$ qui rend maximal le produit $IO^3\cdot
+OE^2$ ; comme $OP : CL = OE : CE$, on en tire $IO^3\cdot OP^2 > IC^3\cdot CL^2$,
+contradiction.\footnote{Le lemme de maximum invoqué, que la lettre dit avoir
+démontré « universellement, géométriquement, sans aucun secours de l'algèbre »,
+est : pour $u+v$ fixé, $u^nv^{m-n}$ est maximal quand $u:v = n:(m-n)$. C'est
+l'inégalité arithmético-géométrique pondérée, ou l'annulation de la dérivée de
+$n\ln u+(m-n)\ln v$. La transcription relève que la page écrit « ductus IO in OE »
+là où il faut le cube de $IO$ et le carré de $OE$ (vue 46) : c'est un raccourci
+de la lettre, que cette lecture lit comme les puissances.}
+
+La preuve est juste. Elle montre que $AE$ ne recoupe pas la courbe, ce qui est la
+définition ancienne de la tangente ; elle suffit ici parce que l'arc est
+convexe, hypothèse que la lettre ne formule pas.\footnote{Pour une courbe qui
+n'est pas convexe, une droite peut ne rencontrer la courbe qu'en un point sans
+lui être tangente.} « Hæc una est ex quinque Methodis quas habemus pro
+tangentibus. »
+
+\subsection*{Lemme II, et la « ligne de Roberval »}
+
+\emph{Lemme II.} Deux parallélogrammes sont dans le même rapport à leurs
+paraboles inscrites, pourvu que celles-ci soient « de même espèce » (mêmes
+exposants). Vrai : une dilatation dans chacune des deux directions conserve les
+rapports d'aires. La lettre omet la démonstration, « très facile surtout par la
+doctrine des indivisibles ».\footnote{La démonstration par les indivisibles
+compare les deux figures ligne par ligne ; en termes modernes, c'est le principe
+de Cavalieri : deux figures dont les sections par une même famille de droites
+sont dans un rapport constant ont leurs aires dans ce rapport.}
+
+\emph{La ligne de Roberval.} En chaque point $F$ de la courbe, la tangente coupe
+le diamètre en $H$ ; le point $D$ qui a l'ordonnée de $F$ et l'abscisse de $H$
+décrit une nouvelle courbe (vue 33). Pour la parabole, $H$ est à l'abscisse
+$x-\frac{m}{n}x = -\frac{m-n}{n}x$, au-delà du sommet, et la nouvelle courbe est
+$\bigl(-\frac{m-n}{n}x,\ y\bigr)$ : une parabole de même espèce, comme le dit la
+lettre, qui s'en attribue la remarque (« quod ego nouum esse scio »).
+
+\subsection*{Première quadrature}
+
+La parabole $ABC$ a pour diamètre $BC$ et pour base $AC$ ; $FC$ est le
+parallélogramme circonscrit ; la tangente en $A$ coupe le diamètre prolongé en
+$D$ ; au-dessus, dans le parallélogramme $FBDE$, est la ligne de Roberval $EB$.
+La lettre utilise un théorème démontré sur le feuillet séparé (section suivante) :
+le trilinéaire $EBA$, compris entre les deux courbes, est égal à la parabole
+$ABC$. Alors, par le lemme I, $DC : CB = m:n$, donc aussi $EC : FC = m:n$ ; par le
+lemme II, les deux paraboles ensemble sont à $ABC$ dans le même rapport ; par
+Euclide V, 19, les restes $EBA$ et $FBA$ sont encore dans ce rapport, d'où
+$ABC : FBA = m:n$, et, « convertendo, componendoque »,
+\[
+\frac{\text{parallélogramme}}{\text{parabole}} = \frac{m+n}{m}.
+\]
+C'est exact : l'aire comprise entre la courbe, le diamètre et la base, sur une
+hauteur $h$ et une demi-base $a$, est $\int_0^h a\,(x/h)^{n/m}\,dx =
+\frac{m}{m+n}\,ah$.\footnote{« 19 Quinti » : si un tout est à un tout comme une
+partie ôtée à une partie ôtée, le reste est au reste comme le tout au tout.
+« Convertendo, componendo » : les manipulations de proportions qui mènent de
+$ABC:FBA=m:n$ à $(ABC+FBA):ABC = (m+n):m$.}
+
+\subsection*{Seconde quadrature, « par les indivisibles à notre manière »}
+
+La seconde démonstration se passe de connaître l'espèce de la ligne de Roberval.
+Pour chaque point $F$, le segment vertical $DF$ compris entre la ligne de
+Roberval et la parabole est au segment $FO$ compris entre la parabole et la
+tangente au sommet $AL$ comme $HI : IA$, soit $m:n$ par le lemme I ; en effet
+$FO = x$ et $DF = x+\frac{m-n}{n}x = \frac{m}{n}x$. Cela valant pour toutes les
+verticales, « omnes antecedentes simul », c'est-à-dire le trilinéaire $EDAFC$,
+sont à « omnes consequentes », le trilinéaire $LAC$, comme $m:n$ ; et $EDAFC$ est égal à la
+parabole $ABC$ par le théorème du feuillet séparé. D'où la même quadrature. La
+preuve est correcte ; son passage « de toutes les lignes » aux aires est encore le
+principe de Cavalieri.\footnote{La « Methodus » de la vue 89 porte ici « HT ad
+BA » au lieu de « HI ad IA », et « parallelogrammum inscriptum » au lieu de
+« circumscriptum » : ce sont les leçons d'une copie très abrégée et mal lue ; les
+deux copies de la lettre concordent.}
+
+La lettre dit encore avoir quatre autres méthodes pour les tangentes et trois
+autres pour les quadratures, dont une « très générale », commune aux paraboles et
+aux hyperboles, qu'il n'a pas l'intention de faire circuler.
+
+\section*{Le feuillet séparé : la figure de Roberval égale à sa génératrice}
+
+\pagerange{36}{39}
+Une note d'une autre main, en tête de la vue 36, dit : « Hæc est demonstratio,
+quam Torricellius in pag. 9.\textsuperscript{a} et pag. 10 epistolæ ad
+Roberuallium datæ 7.\textsuperscript{o} die Julii, 1646. dicit à se missam fuisse
+in folio separato. »\footnote{« Ceci est la démonstration que Torricelli, aux
+pages 9 et 10 de la lettre à Roberval datée du 7 juillet 1646, dit avoir envoyée
+sur un feuillet séparé. »} Aucune figure n'est tracée sur ces pages.
+
+\subsection*{Ce qui est démontré}
+
+La « figure telle que Roberval l'a définie » est la région comprise entre une
+courbe génératrice et la courbe construite à partir de ses tangentes comme on
+vient de le voir. Le lemme I compare un parallélogramme inscrit dans cette figure
+à un parallélogramme de la figure génératrice : « ducta tangente per A \ldots{}
+æquale erit AB ipsi AI ». Le lemme II fait de même pour les parallélogrammes
+circonscrits. Le théorème montre, par une double réduction à l'absurde — on
+coupe en deux, et encore en deux, jusqu'à ce que l'écart soit moindre que tout
+excès donné — qu'une portion finie de la figure de Roberval est égale à la
+portion correspondante de la génératrice. Puis : « Abeat iam in infinitum \ldots{}
+Dico æquales esse figuras », la même égalité quand la figure s'étend à
+l'infini.\footnote{« Qu'elle s'en aille maintenant à l'infini [\ldots] Je dis que
+les figures sont égales » (vue 37). C'est la méthode d'exhaustion, que la lettre
+appelle « more veterum ».}
+
+En termes modernes : si la génératrice est donnée par l'abscisse $x=g(y)$ en
+fonction de l'ordonnée, avec $g(0)=0$, la tangente au point d'ordonnée $y$ coupe
+le diamètre à l'abscisse $g(y)-y\,g'(y)$, et la largeur de la figure de Roberval
+à cette ordonnée est $y\,g'(y)$. L'énoncé est
+\[
+\int_0^a y\,g'(y)\,dy = a\,g(a)-\int_0^a g(y)\,dy ,
+\]
+le second membre étant l'aire de la figure génératrice comprise entre la courbe,
+le diamètre et l'ordonnée $a$. C'est une intégration par parties. Les deux
+lemmes en sont la version élémentaire : la tranche de la figure de Roberval,
+de largeur $y\,g'(y)$ et d'épaisseur $dy$, et la tranche de la génératrice, de
+largeur $y$ et d'épaisseur $g'(y)\,dy$, sont égales par le triangle de la
+tangente. Quand $g'$ devient infini à une extrémité — la tangente devient
+parallèle au diamètre — la figure de Roberval s'étend à l'infini, et l'égalité
+subsiste : c'est une intégrale impropre convergente.\footnote{Intégration par
+parties et intégrales impropres sont des notions postérieures. La
+reconstruction des lettres des lemmes, faute de figure, n'est pas tentée ; ce
+qui précède est le contenu de la construction décrite à la vue 33, et le
+raisonnement que les lemmes emploient.} C'est ce que Torricelli appelle, dans la
+lettre, le théorème de Roberval sur les espaces « in infinitam longitudinem
+abeuntibus » ; Roberval en donne sa propre version avec ses quadratrices (plus
+bas).
+
+\section*{La spirale géométrique et les spirales d'Archimède généralisées}
+
+\pagerange{34}{39}
+La lettre du 7 juillet 1646 présente la spirale ainsi : Torricelli a mesuré des
+figures planes et solides « qui s'en vont à l'infini en ligne droite » ; « Alium
+modum habet Geometria in infinitum abeundi, et quidem mensurabilem » : une ligne
+courbe faite d'une infinité de spires, et pourtant égale à une droite. « Videbatur
+aliquid deesse \ldots{} nulla de lineis adhuc facta esset mentio. »\footnote{« La
+géométrie a une autre manière d'aller à l'infini, et mesurable » ; « il semblait
+manquer quelque chose [\ldots] on n'avait encore rien dit des lignes » (vues
+34--35).} Il en a envoyé des figures en France deux ans plus tôt, « sans aucune
+définition ».
+
+\subsection*{Les deux définitions}
+
+Sur une droite $AB$ coupée en $C$, on élève $CD$ perpendiculaire, moyenne
+proportionnelle entre $CB$ et $CA$ ; puis $CE$, moyenne entre $CD$ et $CA$, sur la
+bissectrice de l'angle $DCA$ ; puis $CF$, moyenne entre $CD$ et $CE$, sur la
+bissectrice de $DCE$ ; et ainsi de suite. Les points $B, D, E, F, A, \ldots$ sont
+sur la « spirale géométrique ». Autrement dit, le rayon est la moyenne géométrique
+des rayons quand l'angle est la moyenne arithmétique des angles :
+$r(\theta) = CB\,(CA/CB)^{\theta/\pi}$ aux angles dyadiques. Seconde définition :
+une droite tourne uniformément autour de $A$ pendant qu'un point s'y déplace de
+façon que les chemins parcourus en temps égaux soient proportionnels aux
+distances au centre. Les deux définissent la courbe $r = r_0e^{-k\theta}$, la
+spirale logarithmique.\footnote{Le nom est postérieur. Ce que la lettre appelle
+« spiralis geometrica », et la « Methodus » de la vue 90 « spiralis \ldots{} seu
+Torricelliana », coïncide avec elle par l'une et l'autre définition.}
+
+\subsection*{La longueur}
+
+« Si fuerit centrum A, vnusque ex radijs AB, ipsa veró BC tangens, et angulus BAC
+rectus, erit Tangens BC æqualis vniuersæ Speciali BDA. »\footnote{« Si $A$ est le
+centre, $AB$ un des rayons, $BC$ la tangente, et l'angle $BAC$ droit, la tangente
+$BC$ sera égale à la spirale entière $BDA$ » (vue 38). La page écrit
+« Speciali », que le sens corrige en « Spirali ».} C'est exact. Pour $r=r_0e^{-k\theta}$, la
+longueur de $B$ au centre, à travers une infinité de tours, est
+\[
+\int_0^\infty\sqrt{r^2+r'^2}\,d\theta = r_0\,\frac{\sqrt{1+k^2}}{k};
+\]
+la tangente en $B$ fait avec le rayon un angle constant dont la tangente
+trigonométrique vaut $1/k$, de sorte que $AC = r_0/k$ et $BC = r_0\sqrt{1+k^2}/k$.
+Et « dato arcu quocunque BI », la longueur de l'arc est la différence des deux
+segments de tangente correspondants. La lettre dit avoir démontré ces choses par
+exhaustion, « more veterum », plutôt que par les indivisibles, « minus receptam ».
+Elle ajoute que l'aire est « mensurable » et a un rapport connu à une figure
+finie, sans le donner : pour la spirale logarithmique, l'aire balayée de $B$ au
+centre est $\tfrac12\int_0^\infty r^2d\theta = \frac{r_0^2}{4k}$, la moitié du
+triangle $ABC$.\footnote{Le calcul et le rapport sont de cette lecture.} Des
+spirales tracées sur des surfaces courbes sont annoncées, également égales à des
+droites ; la lettre n'en dit pas plus.
+
+\subsection*{Les spirales d'Archimède étendues à toutes les puissances}
+
+Torricelli étend la spirale d'Archimède « in infinitas Species », en demandant
+que « non seulement les chemins parcourus par le point mobile, mais aussi leurs
+puissances » soient proportionnels aux angles : $r^q \propto \theta^p$, soit
+$r = a\theta^k$ avec $k>0$ rationnel ; « il y a autant de spirales que de
+paraboles ». Il attribue à Michelangelo Ricci les rapports de leurs aires au
+cercle, sans les donner.\footnote{Après un tour, l'aire balayée par $r=a\theta^k$
+est au cercle de rayon $r(2\pi)$ comme $1:(2k+1)$ ; pour la spirale d'Archimède,
+$1:3$. Le calcul est de cette lecture.} Il affirme que chaque spirale est égale en
+longueur à une ligne parabolique. C'est vrai : l'arc de $r=a\theta^k$ de
+$0$ à $\theta$ a pour élément $a\theta^{k-1}\sqrt{\theta^2+k^2}\,d\theta$, qui est
+aussi celui de la courbe $X = at^k$, $Y = \frac{a}{k+1}t^{k+1}$, c'est-à-dire de
+la parabole $Y\propto X^{(k+1)/k}$. La lettre n'en donne pas la démonstration.
+
+\section*{Roberval : sommes de puissances, et méthode des centres}
+
+\pagerange{60}{66}
+\subsection*{Les spirales de Fermat}
+
+Fermat, dit Roberval (vues 60--61), a proposé non seulement des puissances mais
+aussi des racines dans les spirales : si les rayons à la fin des tours successifs
+sont comme les racines carrées des entiers, l'aire du premier tour est la moitié
+de son cercle. C'est exact : pour $r^2 = a\theta$, l'aire du premier tour est
+$\tfrac12\int_0^{2\pi}a\theta\,d\theta = \pi^2a$, et le cercle de rayon
+$\sqrt{2\pi a}$ vaut $2\pi^2a$.\footnote{C'est la courbe qu'on appelle aujourd'hui
+spirale de Fermat. Le nom est postérieur ; l'énoncé coïncide.} Fermat lui aurait
+répondu, quand il demandait les démonstrations : « Ego vt inuenirem laboraui;
+labora et ipse ».\footnote{« J'ai travaillé pour trouver ; travaille toi aussi »
+(vue 61).}
+
+\subsection*{Les sommes de puissances}
+
+Pour y répondre, Roberval étend « nos infinis » aux nombres. Les paraboles, leurs
+solides et les aires des spirales se comparent à leurs parallélogrammes,
+cylindres et cercles dès qu'on connaît le rapport de la somme des puissances des
+entiers « pris dans l'ordre naturel et indéfiniment » à la plus grande « prise
+autant de fois » : $\frac13$ pour les carrés, $\frac14$ pour les cubes, $\frac15$
+pour les bicarrés, « et ainsi à l'infini ». Pour les racines : $2:3$ pour les
+racines carrées des entiers, $2:4$ pour celles des carrés, $2:5$ pour celles des
+cubes, $2:9$ pour celles des puissances septièmes ; $3:4$, $3:5$ pour les racines
+cubiques des entiers et des carrés ; en général, pour la racine $p$-ième des
+puissances $q$-ièmes, $p:(p+q)$. Tout est exact, au sens d'une limite :
+\[
+\lim_{n\to\infty}\frac{1}{n\cdot n^{q/p}}\sum_{j=1}^{n} j^{q/p} = \frac{p}{p+q}
+= \int_0^1 x^{q/p}\,dx .
+\]
+La démonstration, dit-il, se fait « per duplicem positionem more veterum », en
+partant de l'unité, et il en donne le ressort pour les carrés :
+\[
+\sum_{j=1}^{n-1} j^2 < \frac{n^3}{3} < \sum_{j=1}^{n} j^2 ,
+\]
+tiré de la « genèse » des carrés, $(a+1)^2 = a^2+2a+1$, et de celle des cubes,
+$(a+1)^3 = a^3+3a^2+3a+1$. Ces deux inégalités sont justes pour tout $n\ge1$
+(la somme vaut $\frac{n^3}{3}+\frac{n^2}{2}+\frac n6$).\footnote{Le passage à la
+limite est ce que nous appelons une somme de Riemann et l'intégrale de $x^k$ sur
+$[0,1]$ ; les deux notions sont postérieures. « Indefinitè sumptorum » dit bien
+que le rapport n'est atteint qu'à la limite, et la double inégalité est la
+manière ancienne de le démontrer.} Il ajoute une règle, qu'il ne donne pas, pour
+sommer les puissances de n'importe quel degré des nombres de $1$ à $100\,000\,000$,
+« ce que les auteurs ne donnent que pour les carrés et les cubes ».\footnote{Les
+formules générales sont aujourd'hui celles de Faulhaber et de Jacques
+Bernoulli, avec les nombres de Bernoulli ; la lettre est antérieure au second, et
+ne permet pas de savoir quelle était sa règle.}
+
+\subsection*{La méthode des centres}
+
+Fermat a ensuite proposé de trouver les centres de gravité ; lui par l'analyse,
+Roberval par ses infinis. La méthode de Roberval, écrite à part avec ses figures,
+n'est pas dans le volume. Il en dit les limites : elle n'est universelle que pour
+un géomètre « absolu », procède rarement « a priori », demande presque toujours
+de comparer à la fois des plans et des solides, et ne donne les centres des
+solides qu'indirectement, par un plan convenable. De celle de Fermat, il dit
+qu'elle donne a priori les centres du triangle, de toutes les paraboles et de
+leurs solides. Les vues 64--66 sont la réponse sur la priorité, résumée plus
+haut.
+
+\section*{Roberval : paraboles et hélices, spirale de Torricelli, loxodromies}
+
+\pagerange{67}{69}
+\subsection*{Paraboles et hélices égales en longueur}
+
+Roberval revendique la comparaison des paraboles et des spirales en longueur, et
+en donne la règle : si la sous-tangente de la parabole au bout d'une ordonnée
+est égale à la circonférence du cercle du premier tour de la spirale, et
+l'ordonnée à son rayon, l'arc de parabole du sommet à cette ordonnée est égal au
+premier tour de la spirale ; et deux portions se correspondent quand le rayon de
+la spirale est égal à l'ordonnée de la parabole. Même chose pour les hélices
+coniques d'un cône droit, en prenant au lieu du rayon la génératrice du
+cône.\footnote{Le texte dit « quæuis parabola vnà cum helice sibi propriâ », « toute
+parabole avec la spirale qui lui est propre » (vues 67--68).}
+
+Pour la parabole ordinaire et la spirale d'Archimède, c'est exact : si
+$r=a\theta$ et $x = y^2/(2a)$, les deux éléments d'arc sont
+$\sqrt{1+y^2/a^2}\,dy$, et au bout du premier tour, $R=2\pi a$, la
+sous-tangente $2x = R^2/a$ vaut $2\pi R$. Pour les hélices coniques
+d'Archimède, le développement du cône donne la même chose. Mais la règle, telle
+qu'elle est écrite, ne vaut que pour ce cas. Si la parabole est $x = Cy^q$, la
+spirale dont les arcs lui correspondent rayon pour ordonnée est $\theta =
+\frac{q}{q-1}\,C\,r^{q-1}$, et au bout du premier tour la sous-tangente vaut
+$(q-1)\cdot 2\pi R$, non $2\pi R$ : il faut le facteur $q-1$, qui ne vaut $1$ que
+pour la parabole conique.\footnote{Pour la spirale de Fermat, par exemple,
+$r^2\propto\theta$, la parabole correspondante est la parabole cubique $x\propto
+y^3$ et la sous-tangente vaut deux fois la circonférence. Le calcul est de cette
+lecture ; la lettre énonce la règle pour « toute parabole ». Le second énoncé,
+sur les portions égales, est juste pour toutes les paraboles.}
+
+\subsection*{La spirale de Torricelli, et les loxodromies}
+
+Roberval sait que la spirale « quæ describuntur, dum recta vniformiter quidem circa
+manens centrum circumuoluitur, at punctum interim secundùm illam rectam fertur
+proportionaliter » est égale à l'hypoténuse d'un triangle rectangle dont un côté
+est le rayon — c'est l'énoncé de Torricelli. Mais « qui donnera ce triangle »
+quand on connaît deux points de la spirale, ou la spirale quand on connaît le
+triangle ? Sans cela, dit-il, la proposition « nullius pretij
+remanebit ».\footnote{« restera sans valeur » (vue 69).} L'objection est juste en
+substance : passer d'un point à l'autre de $r=r_0e^{-k\theta}$ demande de
+calculer $e^{-k\Delta\theta}$, ou un logarithme, ce que la règle et le compas ne
+donnent pas en général.\footnote{Roberval dit plus : qu'on ne peut assigner un
+second point « géométriquement, ni même en supposant la quadrature du cercle ».
+Cette lecture ne vérifie pas cette forme forte, qui touche à la transcendance.}
+
+Il ajoute que la proposition n'est pas nouvelle : c'est celle de la ligne par
+laquelle un poids descendrait vers le centre de la terre avec une inclinaison
+constante sur son horizon — une courbe qui coupe tous les rayons sous le même
+angle, ce qui est bien la définition de la spirale équiangle. Et que les
+loxodromies des globes, « finies des deux côtés », tournent une infinité de fois
+autour de chaque pôle : c'est exact, la loxodromie qui coupe les méridiens sous un
+angle $\alpha$, $0<\alpha<90^\circ$, a une longueur finie d'un pôle à l'autre et s'enroule
+indéfiniment autour de chacun. Il propose enfin d'imiter Apollonius, I, 21, pour
+les hyperboles infinies, comme Fermat a imité I, 20 pour les
+paraboles.\footnote{Dans les \emph{Coniques}, I, 20 est la propriété de
+l'ordonnée de la parabole ($y^2$ proportionnel à $x$), I, 21 son analogue pour
+l'ellipse et l'hyperbole ($y^2$ proportionnel au produit des segments du
+diamètre).}
+
+\section*{Roberval : les quadratrices et les espaces infinis}
+
+\pagerange{70}{77}
+« Ego enim figurarum quadraturæ intentus \ldots{} in tales lineas
+incidi. »\footnote{« Car, occupé de la quadrature des figures [\ldots], je suis
+tombé sur ces lignes » (vue 70).} La construction (vue 70, figure sur la bande
+de la vue 71) : un trilinéaire $ABC$, $B$ sommet, $AB$ hauteur, $AC$ base, $BC$
+une courbe quelconque qui s'éloigne de $BA$ et se rapproche de $CA$, concave vers
+la corde $BC$ et tout entière hors du triangle $ABC$. En chaque point $D$, la tangente coupe l'axe en $F$ ; par $A$ on
+mène la parallèle à $DF$, qui coupe la verticale de $D$, prolongée sous la base,
+en $M$. Les points $M$ décrivent la « quadratrice primaire » $AML\ldots N$ ; si la
+tangente en $C$ est parallèle à l'axe, $N$ est à l'infini et la verticale de $C$
+est asymptote.
+
+\subsection*{Ce qui est démontré}
+
+Avec $A$ à l'origine, la courbe $v=f(u)$, $f(c)=0$ : la tangente en $D=(u,f(u))$ a
+la pente $f'(u)$, et $M = (u,\ u f'(u))$, sous la base à la profondeur $-uf'(u)$.
+Roberval énonce :
+
+\begin{itemize}
+  \item le quadrilinéaire $ABCN$ est double du trilinéaire $ABC$, et donc le
+    trilinéaire $ACN$, sous la base, lui est égal, que $N$ soit à distance finie
+    ou à l'infini :
+    \[
+    \int_0^c -u f'(u)\,du = \int_0^c f(u)\,du ;
+    \]
+  \item chaque trilinéaire $BDX$ (compris entre l'arc $BD$, l'horizontale $DX$ et
+    l'axe) est égal au trilinéaire $AIM$ correspondant sous la base, et le
+    trilinéaire $BDF$ au bilinéaire compris entre la corde $AM$ et
+    l'arc $AM$ ;
+  \item par révolution autour de l'axe, le solide de $ABCN$ est triple de celui
+    de $ABC$, et le solide de $ACN$ double :
+    \[
+    2\pi\!\int_0^c u\,(f-uf')\,du = 3\cdot 2\pi\!\int_0^c u f\,du,\qquad
+    2\pi\!\int_0^c u\,(-uf')\,du = 2\cdot 2\pi\!\int_0^c uf\,du .
+    \]
+\end{itemize}
+
+Tout est exact ; c'est encore l'intégration par parties, $\int u f' =
+[uf]-\int f$ et $\int u^2f' = [u^2f]-2\int uf$. La démonstration de la lettre
+est plus parlante : on découpe $ABC$ en triangles infiniment minces de sommet $A$
+et $ABCN$ en quadrilatères entre les verticales ; chaque triangle et le
+parallélogramme correspondant ont « la même base » (l'élément de courbe) et sont
+« entre les mêmes parallèles » (la tangente $DF$ et sa parallèle $AM$) ; le
+parallélogramme est donc double du triangle, « ex legibus infiniti » — ce que
+Roberval souligne : « absque tangentibus enim falsum esset ».\footnote{« Car sans
+les tangentes ce serait faux » (vue 73). C'est Euclide I, 41, appliqué élément par
+élément. Pour les solides, les triangles deviennent des cônes et les
+parallélogrammes des cylindres, dans le rapport $1:3$.} Il en tire
+« d'innombrables espèces de solides infiniment-finis », qui, à la différence des
+solides hyperboliques de Torricelli, « ne relâchent jamais rien de leur largeur
+extérieure ».\footnote{Quand $N$ est à l'infini, les intégrales sont impropres et
+convergent dès que $\int_0^c f$ et $\int_0^c uf$ sont finies, ce qui est le cas.}
+
+\subsection*{La quadratrice secondaire, et les autres}
+
+En portant au-dessus de la base, sur la verticale de $D$, une longueur égale à
+$DM$, on obtient la « quadratrice secondaire » $BTS$ : son point est à la hauteur
+où la tangente coupe l'axe. C'est exactement la « ligne de Roberval » de
+Torricelli, et Roberval le dit : « hæc autem illa erit quam ad vos
+misimus ».\footnote{« C'est celle que nous vous avons envoyée » (vue 74).} Le
+point $A$ peut être remplacé par tout autre point du plan, ce qui engendre
+d'autres quadratrices ; une addition marginale d'une plume plus rapide précise
+qu'il faut mener par ce point les parallèles aux tangentes.
+
+\subsection*{La quadrature de toutes les paraboles}
+
+Si $BC$ est une parabole quelconque, de sommet $B$, d'axe $AB$ et de base $AC$,
+la profondeur de la quadratrice, $-uf'(u)$, est la sous-tangente, qui est dans un
+rapport constant avec l'abscisse comptée du sommet : la quadratrice $AMN$ est une
+parabole de même espèce, d'axe $AO = AK$, $K$ étant le point où la tangente en $C$
+coupe l'axe. Par les égalités précédentes et deux proportions (« ex æquo in
+ratione perturbata »), Roberval conclut que le rectangle $AY$ circonscrit est à la
+parabole $ABC$ comme $AK+AB$ à $AK$, et que le cylindre est au solide de
+révolution comme $AK+2AB$ à $AK$. Avec $x\propto y^q$ depuis le sommet, $AK = q\,
+AB$, et ces rapports sont $(q+1):q$ et $(q+2):q$ : c'est la quadrature de
+Torricelli, $(m+n):m$ avec $q = m/n$, et le volume exact du paraboloïde
+généralisé de hauteur $h$ et de rayon de base $c$, $\pi c^2h\,\frac{q}{q+2}$.
+
+\subsection*{« Florem mittebamus, non arborem »}
+
+Roberval en tire son grief (vues 75--77) : il avait indiqué à Torricelli la
+quadrature de la seule parabole conique, « comme une fleur cueillie dans ce
+jardin », et Torricelli en a tiré les autres, qui suivent de la même méthode, puis
+a écrit qu'il ne souffrirait pas qu'on les lui arrache. Les trois phrases de
+Torricelli qu'il cite sont celles des vues 34 et 32, et celle de la lettre à
+Carcavy (vue 54). Il demande ce qui, dans ces quadratures, est à Torricelli, et
+répond : peut-être l'usage des compléments égaux des parallélogrammes et de
+l'exhaustion, « ob tantillum ».
+
+\section*{Roberval : Archimède, le 11 à 18, et le catalogue de ses travaux}
+
+\pagerange{79}{82}
+\subsection*{Archimède défendu}
+
+Roberval nie qu'Archimède ait jamais supposé que les projectiles décrivent ses
+spirales, comme l'écrit Torricelli pour excuser son livre du mouvement. Puis il
+reprend le « 11 ad 18 » : Archimède, dans la \emph{Mesure du cercle}, donne
+$11:14$ pour le cercle au carré du diamètre, mais dit aussitôt, à la proposition
+3, que ce rapport n'est qu'approché ; et $11:18$ n'est pas tiré des bornes
+d'Archimède, « cùm eadem extra ipsos terminos longè euagetur ».\footnote{« Car il
+s'égare loin hors de ces bornes » (vue 79).} C'est exact. Avec $3\frac{10}{71} <
+\pi < 3\frac17$, le rapport vrai $\frac34-\frac{4}{3\pi^2}$ est compris entre
+$0{,}61484$ et $0{,}61501$ ; $11/18 = 0{,}6111$ en sort, et aucune valeur de $\pi$
+entre ces bornes ne le donne.
+
+\subsection*{Le cône de plus grande surface inscrit dans la sphère}
+
+Dans la liste de ce qu'il possède « ex nobis, tùm ex nostris », Roberval
+annonce : la sphère ayant pour diamètre $32$, l'axe du cône inscrit dont la
+surface, base comprise, est maximale est « l'apotome » $23-\sqrt{17}$. C'est
+exact. Si le cône a son sommet sur la sphère et pour axe $h$, le rayon de sa base
+vérifie $\rho^2 = h(32-h)$ et son apothème vaut $\sqrt{32h}$ ; sa surface totale
+est
+\[
+S(h) = \pi\bigl(h(32-h) + h\sqrt{32(32-h)}\bigr).
+\]
+$S'(h)=0$ s'écrit $(16-h)\sqrt{32(32-h)} = 8(3h-64)$ ; en élevant au carré,
+$h(h^2-46h+512) = 0$, d'où $h = 23\pm\sqrt{17}$ ; seule la racine $23-\sqrt{17}
+\approx 18{,}877$ satisfait l'équation avant élévation au carré, et comme $S$ est
+nulle en $0$ et en $32$, c'est le maximum.\footnote{Le calcul est de cette
+lecture ; la lettre annonce le résultat sans démonstration, et il est juste.
+« Apotome » est le nom euclidien (livre X) d'une différence $a-\sqrt b$.}
+
+\subsection*{Le reste du catalogue}
+
+Des cylindres et des cônes isopérimètres, avec ou sans base, inscrits et
+circonscrits à la sphère ; les portions de surface sphérique découpées par des
+cercles, comparées entre elles et avec leurs centres de gravité ; une portion de
+cylindre droit égale en surface à une portion donnée de cylindre oblique ; et
+« une portion de surface cylindrique égale à un carré donné, sans supposer la
+quadrature du cercle ».\footnote{De telles portions existent : la surface latérale
+de l'onglet coupé dans un cylindre de rayon $r$ par un plan passant par un
+diamètre de la base et montant à la hauteur $H$ vaut $2rH$, sans $\pi$. L'exemple
+est de cette lecture ; la lettre ne dit pas quelle portion elle prend.} En
+analyse, « de æquationum recognitione, et emendatione » ; les lieux plans,
+solides et à la surface, et « les lieux solides à trois et quatre lignes
+restitués ». La liste continue par l'arithmétique, la musique, l'optique,
+l'astronomie, la gnomonique et la géographie (vue 81), et une question : où la
+lune se lève-t-elle deux fois en moins de vingt-quatre heures ?\footnote{La lettre
+ne donne pas la réponse. Aux hautes latitudes, la variation rapide de la
+déclinaison de la lune le permet ; c'est une précision de cette lecture.}
+
+\subsection*{La mécanique « en huit étages »}
+
+La mécanique de Roberval est « en huit livres » : centre des puissances en
+général, balance, centre des puissances en particulier, cordes, machines,
+puissances dans divers milieux, mouvements composés, centre de percussion. Il en
+tire quelques énoncés (vues 81--82) :
+
+\begin{itemize}
+  \item Il reproche à Torricelli d'avoir démontré la première proposition de son
+    livre du mouvement des graves avec un « postulat nouveau », des poids liés par
+    une corde souple au lieu d'une balance rigide ; lui la démontre par la
+    balance, et l'a publiée en 1636, en français, comme prodrome. Il traite aussi
+    le cas où la force qui retient le poids sur le plan incliné n'est pas
+    parallèle au plan.\footnote{Pour une force faisant l'angle $\varphi$ avec le
+    plan incliné d'angle $\alpha$, l'équilibre sans frottement donne
+    $F\cos\varphi = P\sin\alpha$ ; le rapport du poids à la force « change à
+    l'infini » avec $\varphi$, comme le dit la lettre.}
+  \item Un pressoir à deux plans parallèles parfaitement rigides, non
+    horizontaux, ne retient aucun poids, quelque force qu'on y mette : juste si
+    les plans sont sans frottement, les réactions étant normales aux plans et le
+    poids ayant une composante parallèle à eux.\footnote{L'absence de frottement
+    est une hypothèse que la lettre ne dit pas ; elle est dans « parfaitement
+    plans ».}
+  \item Trois forces tirant sur un nœud par trois cordes et en équilibre : il
+    existe un triangle dont le nœud est le centre de gravité et dont les sommets
+    sont sur les cordes, et les forces sont comme les distances du centre aux
+    sommets ; tous ces triangles sont semblables. Juste : l'équilibre est
+    $\vec F_1+\vec F_2+\vec F_3 = \vec 0$, et les points $N+\lambda\vec F_i$ ont
+    pour isobarycentre le nœud $N$. Pour quatre forces non coplanaires, le même
+    énoncé vaut pour un tétraèdre.\footnote{La lettre dit « pyramis tetragona » ;
+    quatre cordes demandent quatre sommets, et l'énoncé est juste pour le
+    tétraèdre, dont le centre de gravité est l'isobarycentre des sommets.}
+  \item Une corde parfaitement souple qui n'est pas verticale ne peut pas être
+    tendue droite dès qu'elle porte un poids, même le sien ; et des cordes nouées
+    ensemble dans un plan non vertical ne peuvent y rester si l'on y suspend un
+    poids. Juste : la force verticale doit être équilibrée par des tensions qui
+    ne sont pas dans le plan.
+  \item Le centre de percussion d'un secteur circulaire, au plus un
+    demi-cercle, tournant autour du centre du cercle : sur la bissectrice, à une
+    distance $\delta$ du centre telle que la corde soit à l'arc comme
+    $\tfrac34$ du rayon à $\delta$. Juste : $\delta = \frac{I_O}{m\,\bar r}$, avec
+    $I_O = \tfrac12 mr^2$ et $\bar r = \frac{2r\sin\alpha}{3\alpha}$ pour le
+    demi-angle $\alpha$, d'où $\delta = \tfrac34 r\,\frac{\alpha}{\sin\alpha} =
+    \tfrac34 r\,\frac{\text{arc}}{\text{corde}}$, qui dépasse $r$ pour les grands
+    secteurs, « extra sectorem », comme le dit la lettre.\footnote{La lettre
+    ajoute que le choc reçu en ce point est « le plus grand de tous » ceux reçus
+    sur la bissectrice. Le mot « impetus » n'y est pas défini assez pour que
+    cette lecture vérifie l'énoncé ; la propriété moderne du centre de percussion
+    est qu'un choc qui y est appliqué ne produit aucune percussion sur l'axe.}
+\end{itemize}
+
+La lettre finit sur les « lois » d'une amitié par lettres — « Nihil tentandi
+gratiâ scribam » — et s'arrête au milieu d'une phrase, à la vue 82 ; la fin n'est
+pas dans le volume.
+
+\section*{Roberval à Mersenne sur les propositions de Torricelli}
+
+\pagerange{83}{88}
+Roberval passe les huit premières propositions, sur la sphère et ses solides
+inscrits et circonscrits, qu'il juge à la portée de tout géomètre moyen, et
+examine les propositions 9 à 14. La lettre s'arrête au milieu d'une phrase à la
+vue 88.
+
+\subsection*{La vis (proposition 9)}
+
+La mesure de la « cochlea » est vraie, « certissimâ demonstratione », et suffit
+à mettre son auteur parmi les grands ; il importe peu que les spires soient plus
+ou moins serrées, pourvu que ce soit toujours le même triangle qui les
+décrive.\footnote{C'est exact si les spires ne se chevauchent pas, hypothèse
+implicite. Un triangle d'aire $A$, dans un plan méridien, dont le centre de
+gravité est à la distance $\bar\rho$ de l'axe, engendre par mouvement hélicoïdal
+un volume $2\pi\bar\rho A$ par tour, quel que soit le pas : la section par chaque
+demi-plan méridien est le même triangle. Le calcul est de cette lecture.}
+
+\subsection*{Les demi-fuseaux paraboliques (article 10)}
+
+Roberval offre le centre de gravité de la parabole a priori, sans supposer sa
+quadrature, et bien plus : pour la parabole conique (« quadratiua »), la cubique,
+la bicarrée, et leurs solides, autour de l'axe, de la tangente au sommet, ou
+d'une ordonnée. Il en donne un exemple : dans le demi-fuseau parabolique, le
+centre de gravité divise l'axe dans le rapport $11:5$ pour la parabole
+« quadratiua », $13:7$ pour la cubique, $15:9$ pour la bicarrée, $17:11$ pour la
+« quadrato-cubique », « et ainsi à l'infini en ajoutant toujours 2 à chaque
+terme ».
+
+Le fuseau est le solide engendré par la parabole tournant autour de sa base (une
+ordonnée) ; le demi-fuseau en est la moitié coupée par le plan perpendiculaire
+passant par l'axe de la parabole, et son axe va de la pointe au centre de la face
+circulaire.\footnote{L'identification du solide est de cette lecture, sur les
+mots de la lettre (« circa aliquam ex ordinatis \ldots{} fusi parabolici dimidium
+plano ad ipsius axem erecto resectum ») ; les quatre rapports la confirment.} Si
+la parabole, de hauteur $h$ et de demi-base $a$, est $x\propto y^n$ depuis le
+sommet (la « quadratiua » est $n=2$), le rayon du fuseau à la distance $s$ de la
+face est $h\bigl(1-(s/a)^n\bigr)$, et le centre de gravité est à la distance
+\[
+\bar s = a\,\frac{\int_0^1 t(1-t^n)^2\,dt}{\int_0^1 (1-t^n)^2\,dt} = a\,\frac{2n+1}{4(n+2)}
+\]
+de la face. Le rapport de la partie vers la pointe à la partie vers la face est
+$(2n+7):(2n+1)$ : $11:5$, $13:7$, $15:9$, $17:11$ pour $n=2,3,4,5$, et chaque
+terme augmente de 2 quand $n$ augmente de 1. Les quatre énoncés et la règle
+sont exacts.
+
+\subsection*{La cycloïde, les solides des coniques, le segment sphérique (articles 11 à 13)}
+
+Sur la cycloïde, voir la querelle. La proposition sur le solide engendré par une
+section conique autour de son axe, comparé d'un seul énoncé au cône inscrit, et
+celle sur son centre de gravité, sont « très élégantes et très vraies », et
+Roberval dit les avoir démontrées ; il soupçonne Torricelli de les avoir tirées
+des démonstrations d'autres auteurs, ce qui serait encore méritoire. La lettre
+ne donne pas l'énoncé ; cette lecture ne le restitue pas. Sur le segment
+sphérique entre deux plans parallèles, rien.
+
+\subsection*{Le solide hyperbolique aigu (article 14)}
+
+« Omnium elegantissima est decimaquarta » ; Roberval en donne sa démonstration
+« pour savoir s'il est tombé sur le même moyen ». La figure est seule sur le
+feuillet de la vue 85. $B$ est le centre d'une hyperbole équilatère d'asymptotes
+$BA$, $BC$ ; le solide tourne autour de l'asymptote $BA$. Si $y$ est la distance
+à $B$ le long de $BA$, le rayon du solide est $\rho = k/y$.
+
+\emph{Premier énoncé.} Le solide compris entre les plans menés en $H$ et en $A$
+($BH = b < BA = c$) est moyen proportionnel entre les deux cylindres de même
+hauteur $AH$ qui ont pour bases ses deux faces. Exact :
+\[
+V = \int_b^c \pi\frac{k^2}{y^2}\,dy = \pi k^2\,\frac{c-b}{bc}
+= \sqrt{\pi\frac{k^2}{c^2}(c-b)\cdot\pi\frac{k^2}{b^2}(c-b)} .
+\]
+La démonstration insère entre $BH$ et $BA$ des moyennes proportionnelles
+successives ($BT$, puis $BN$, $B4$, $BK$, $BQ$, \ldots), de sorte que les
+tranches soient en progression géométrique ; les cylindres inscrits et
+circonscrits diffèrent de moins que le dernier cylindre, aussi petit qu'on veut ;
+le cylindre moyen, de base $SV$ (au point $T$ où $BT^2 = BA\cdot BH$), coupé aux
+mêmes hauteurs, a ses tranches comprises, dans l'ordre inverse, entre les
+cylindres inscrits et circonscrits. La démonstration est correcte.\footnote{La
+page écrit « inter B et BT, sit Bq » : une lettre manque après le premier $B$, et
+la suite des moyennes demande $BN$ (inférence de la transcription, reprise
+ici).} Un corollaire : les tranches découpées par des plans en progression
+géométrique sont elles-mêmes en progression géométrique, de raison inverse. En
+effet la tranche entre $y_i$ et $y_{i+1} = \lambda y_i$ vaut
+$\pi k^2\frac{\lambda-1}{\lambda y_i}$. C'est la construction que la lettre de
+Torricelli de 1643 disait commune à sa démonstration et à celle de Roberval.
+
+\emph{Second énoncé.} Le solide « infiniment prolongé » vers $A$ au-delà du plan
+mené au point $4$, à la distance $B4 = b$ de $B$, est égal au cylindre qui a pour
+base la face circulaire et pour hauteur $B4$ :
+\[
+\int_b^{\infty}\pi\frac{k^2}{y^2}\,dy = \frac{\pi k^2}{b} = \pi\Bigl(\frac kb\Bigr)^2\cdot b .
+\]
+C'est exact. La démonstration commence par l'absurde (si le cylindre surpassait le
+solide de la grandeur « 25 »\ldots) et s'arrête au bas de la vue 88.\footnote{En
+termes modernes, c'est une intégrale impropre convergente, et le solide est
+celui qu'on appelle trompette de Torricelli, ou cor de Gabriel. Les deux noms
+sont postérieurs, comme la remarque, absente des feuillets, que sa surface est
+infinie.}
+
+\section*{La « Methodus Torricelli »}
+
+\pagerange{89}{91}
+Le titre se lit « Methodus Torricelli de dimensione infinitarum parabolarum » ;
+la suite (« anno 1646 a Roberuallio » ?) est douteuse. La main est la plus rapide
+et la plus abrégée du volume : environ trois cent dix mots ne sont pas lus, et
+seuls les lettres des figures, les nombres et les termes techniques sont sûrs.
+Ce que l'on peut dire avec certitude :
+
+\begin{itemize}
+  \item La vue 89 recopie, dans le même ordre et avec les mêmes lettres, le
+    lemme I de la lettre du 7 juillet 1646 (exposants 5 et 3, cubo-carré,
+    $IO:OE = 3:2$, « maximus »), le lemme II (« Lemma 11 »), la « linea
+    Robervaliana » et les deux quadratures (« 19, 5\textsuperscript{i} »,
+    « trilineum EDAFC », « trilineum LAC »). On y lit encore « 4 alias » et
+    « Torricelli » près de « tangentibus », et « parabolarum et hyperbolarum » :
+    la phrase sur les autres méthodes.
+  \item La vue 90 recopie le feuillet séparé : lemme I, lemme 2, « Theorema »,
+    l'extension à l'infini, puis la spirale, avec la construction par moyennes
+    proportionnelles et bissectrices, la seconde définition, les révolutions
+    infinies, la tangente égale à la spirale entière, l'arc $BI$. La figure de la
+    vue 91, un escalier de rectangles sous une courbe, porte les lettres du
+    « Theorema ».
+  \item Les huit dernières lignes, les plus rapides, laissent lire
+    « Archimedis », « hyperbolas et ellipses », peut-être « Mersenno », « de rectis
+    abscissis à tangentibus » et « lineam spiralem utriusque lineæ parabolicæ
+    æqualem esse demonstrauimus » : la fin du feuillet séparé.
+\end{itemize}
+
+Deux écarts avec les autres copies. La spirale y est dite « spiralis \ldots{} seu
+Torricelliana » là où le feuillet séparé écrit « Spiralem Geometricam ». Et
+l'angle droit est placé en $B$ (« angulus ABC rectus ») au lieu de $A$ ; c'est
+impossible, la tangente à la spirale n'étant jamais perpendiculaire au rayon, et
+la vue 38 porte « angulus BAC », que le calcul confirme. L'ordre de lecture des
+vues 89 et 90 n'est pas établi : la vue 89 invoque un « 2\textsuperscript{m}
+lemma » que la vue 90 énonce. Le reste de la pièce n'est pas lu, et cette
+lecture ne le reconstitue pas à partir des autres copies.
+
+\section*{Le vide : les tubes de Torricelli}
+
+\pagerange{93}{96}
+Deux « extraits » portent des titres français et un texte italien, avec, en
+marge, « Al S.\textsuperscript{r} Ricci ». Le premier décrit l'expérience : des
+vases de verre, dont un à boule, et un tube droit, longs de deux bras, remplis de
+vif-argent, bouchés du doigt et retournés sur une cuvette ; le vif-argent descend
+et reste dans le col à la hauteur « d'un bras et un quart et un doigt de plus » ;
+si l'on verse de l'eau sur le mercure de la cuvette et qu'on soulève le vase
+jusqu'à ce que sa bouche atteigne l'eau, le mercure tombe et l'eau remplit
+tout le vase « con impeto horribile ».
+
+Puis l'interprétation : on a cru jusqu'ici que la force qui retient le mercure
+était intérieure au vase, qu'elle vînt du vide ou d'une matière très raréfiée ;
+« io pretendo che ella si esterna, \& che la forza venga di fuori ». « Su la
+superficie del liquore che è nella catinella grauita l'altezza di 500 miglia
+d'aria. »\footnote{« Je prétends qu'elle est externe, et que la force vient du
+dehors » ; « sur la surface du liquide qui est dans la cuvette pèse une hauteur
+de 500 milles d'air » (vue 93). Le chiffre de 500 milles est celui de la lettre ;
+l'atmosphère n'a pas de hauteur définie, mais l'argument n'en a pas besoin : il
+ne demande que le poids de la colonne d'air.} L'eau, dans un vase semblable
+mais beaucoup plus long, montera à presque 18 bras : plus haut que le mercure
+dans la mesure même où le mercure est plus lourd que l'eau. Et la preuve : dans le
+vase à boule et dans le tube droit, le mercure s'arrête au même niveau $AB$, alors
+qu'il y a bien plus d'espace vide dans la boule ; si la force était dedans, elle
+serait plus grande là où il y a plus de matière raréfiée.
+
+C'est l'équilibre hydrostatique d'une colonne de liquide avec la pression
+atmosphérique, $p_{\text{atm}} = \rho g h$ : la hauteur ne dépend ni de la forme du
+vase ni du volume vide, et les hauteurs de deux liquides sont inversement comme
+leurs densités.\footnote{Le mot « pression atmosphérique » et la formule sont
+postérieurs ; le baromètre est ce tube. Avec le rapport de l'eau au mercure que
+donne la « Narratio » ($1:13\tfrac47$), un bras et un quart de mercure équivalent
+à un peu plus de dix-sept bras d'eau : le « presque 18 » de la lettre, qui compte
+le doigt en plus, est de cet ordre.}
+
+Le second extrait répond à une objection : si l'on couvre la cuvette d'une lame
+soudée qui touche le mercure, le mercure du tube reste suspendu, mais parce que
+celui de la cuvette ne peut céder ; si la lame enferme de l'air au même degré de
+condensation que l'air extérieur, rien ne change ; plus raréfié, le mercure
+descend un peu ; infiniment raréfié, c'est-à-dire vide, il descend tout entier.
+L'exemple est un cylindre de laine comprimée par un poids de plomb : si l'on
+tranche la laine d'une lame, la partie inférieure, toujours comprimée, presse le
+fond comme avant, bien qu'elle ne porte plus le plomb. C'est la pression d'un gaz
+enfermé, qui ne dépend que de son état de compression et non de la colonne qui
+l'a comprimé.
+
+La vue 96 est le couvert d'une lettre adressée à Mersenne « ez minimes de la Place
+Royale » ; rien ne dit qu'il ait couvert ces extraits.
+
+\section*{La « De Vacuo Narratio » de 1647}
+
+\pagerange{97}{103}
+Le titre nomme Roberval (« Æ.\textsuperscript{i} P.\textsuperscript{i} de
+Roberual ») et le destinataire, « D. des Noyers » ; la pièce n'est pas signée et
+se termine sur « Parisijs 12 Calend. Octob. 1647 ».\footnote{Le 20 septembre 1647
+selon le comput romain.} Celui qui écrit parle à la première personne.
+
+\subsection*{Une question de priorité, encore}
+
+Le récit commence contre le capucin Valerianus Magnus, qui s'est présenté comme
+le premier auteur de l'expérience dans un livre paru en juillet 1647 : elle était
+connue en Italie depuis 1643 ; celui qui écrit a la lettre italienne de
+Torricelli à Ricci de la fin de 1643, avec les figures des vases et des tubes,
+envoyée à Mersenne au début de 1644 ; Mersenne l'a essayée sans tube convenable,
+est allé en Italie, a vu les vases chez Torricelli à Florence, est revenu à la fin
+de 1645 et a publié la chose ; faute de tubes à Paris, il a écrit à Rouen, où est
+une grande verrerie ; mais à Rouen l'expérience avait déjà été faite,
+« multoties », en janvier et février « de cette année », par « D. de Paschal »,
+avec du mercure dans des tubes de 3 à 5 pieds, et avec de l'eau et du vin dans
+des tubes de cristal de 40 pieds attachés à un mât.\footnote{Le feuillet ne donne
+pas de prénom à « D. de Paschal » ; cette lecture n'en ajoute pas. Les dates sont
+celles du récit ; comme ailleurs, cette lecture ne tranche pas la priorité.}
+
+\subsection*{Ce que montrent les expériences}
+
+\begin{itemize}
+  \item Le mercure s'arrête toujours à $2\frac{7}{24}$ pieds au-dessus du mercure
+    de la cuvette, quelle que soit la partie du tube immergée, sa largeur et sa
+    hauteur ; si l'on incline le tube jusqu'à ce que son sommet soit à cette
+    hauteur ou plus bas, il se remplit entièrement.\footnote{Environ 74 cm, si
+    l'on prend le pied du roi à 32,5 cm, valeur de référence qui n'est pas sur le
+    feuillet ; la hauteur barométrique moyenne au niveau de la mer est d'environ
+    76 cm.}
+  \item Contre ceux qui disent qu'une goutte d'air imperceptible est restée et
+    s'est raréfiée : la même hauteur de mercure devrait produire des
+    raréfactions très différentes ; un tube évasé en « lagena » de 18 livres de
+    mercure se vide jusqu'à la même hauteur, et il faudrait qu'une goutte
+    s'étende cent mille fois ; or une goutte d'air admise exprès ne se dilate
+    jamais plus de huit fois, se comprime quand on incline le tube et se dilate
+    quand on le redresse, et plus on admet d'air, plus la colonne est
+    basse.\footnote{Qualitativement, c'est la loi de Boyle--Mariotte (le volume
+    d'une masse d'air varie en sens inverse de sa pression), postérieure ; le
+    feuillet ne donne pas de mesure qui permette de la vérifier.}
+  \item L'expérience de celui qui écrit, à Paris : une goutte d'air dans le tube
+    plein, le tube redressé, bouché du doigt et retourné ; le vide apparaît
+    « comme en un instant » contre le doigt, bien avant que la goutte d'air ne
+    monte lentement à travers le mercure. « Vnde omnes exclamarunt tale vacuum non
+    esse aerem. »\footnote{« D'où tous s'écrièrent qu'un tel vide n'est pas de
+    l'air » (vue 100).}
+  \item Contre les « esprits » du mercure : leur quantité devrait varier avec la
+    quantité de mercure. « D. de Paschal » calcule d'abord que $2\frac{7}{24}$ pieds
+    de mercure équilibrent environ $31\frac19$ pieds d'eau et $31\frac23$ de vin,
+    fait admettre à ses adversaires que le vin, plus riche en esprits, devrait
+    laisser plus de vide, puis dresse le mât : l'eau s'arrête à $31\frac19$ et le
+    vin plus haut, à $31\frac23$, comme le calcul l'annonçait et contre ce que la
+    doctrine des esprits prédisait.\footnote{$2\frac{7}{24}\times 13\frac47 =
+    31{,}10$, en accord avec $31\frac19 = 31{,}11$ ; et le vin, plus haut, est plus
+    léger que l'eau, de densité relative $\approx 0{,}98$ selon ces nombres (calcul
+    de cette lecture).}
+  \item Dans un tube de 15 pieds, puis de 4 ou 5, avec du mercure et de l'eau
+    par-dessus : la hauteur d'eau compense le mercure manquant à raison de
+    $13\frac47$ pour un, « quandoquidem grauitas aquæ ad grauitatem hydrargyri sub
+    æquali mole se habet, vt 1. ad $13\frac47$ » ; et si l'on met de l'eau sur le
+    mercure de la cuvette, les colonnes montent d'une hauteur égale à celle de
+    cette eau divisée par $13\frac47$. Tout cela est l'équilibre hydrostatique :
+    ce qui compte est la somme des $\rho h$.\footnote{Le rapport moderne des
+    densités du mercure et de l'eau est d'environ $13{,}6$ ; $13\frac47 \approx
+    13{,}57$.}
+  \item Les siphons de « D. de Paschal » : si le sommet d'un siphon plein de
+    mercure est à moins de $2\frac{7}{24}$ pieds au-dessus des deux cuvettes, il
+    fonctionne ; plus haut, le mercure retombe dans chaque branche jusqu'à cette
+    hauteur, et le sommet paraît vide. D'où : aucun siphon ne fera passer l'eau
+    par-dessus une montagne de plus de 31 pieds, et aucune pompe qui ne fait
+    qu'aspirer ne l'élèvera plus haut ; une pompe qui refoule le peut.
+    Exact.\footnote{En unités modernes, une dizaine de mètres d'eau ; la valeur
+    exacte dépend de la pression du jour.}
+\end{itemize}
+
+Celui qui écrit ne décide pas ce qu'est l'espace « comme vide » : on attend des
+tubes où introduire des animaux, pour voir s'ils y vivent et s'ils y volent — s'ils
+volent, il y a un corps sur lequel s'appuient leurs ailes. Il refuse la « matière
+très subtile » affirmée gratuitement. Du moins presque tous s'accordent que cet espace,
+s'il n'est pas le vide pur, est vide de tous les corps dont parle la philosophie
+péripatéticienne — terre, eau, air, feu et ciel — et que dans le liquide seul
+compte le poids.
+
+Deux questions restent « agitées entre les érudits » : comment le liquide est
+retenu en équilibre à sa hauteur ; et pourquoi, si l'on laisse entrer par la
+bouche du tube une goutte d'un autre liquide, la colonne monte d'un coup au
+sommet, assez fort pour briser les tubes, oscille, et recommence à chaque goutte,
+jusqu'à ce que le liquide plus léger ait remplacé le plus lourd.\footnote{La
+réponse moderne à la première est la pression atmosphérique. Pour la seconde :
+une goutte d'un liquide plus léger qui prend la place d'une goutte du plus lourd
+diminue le poids de la colonne, que la pression extérieure pousse alors vers le
+haut sans rien pour la retenir que le sommet du tube. Le feuillet ne répond pas.}
+Il attendra, sur ce sujet, les lettres de son correspondant.
+
+\section*{Ce qui reste incertain}
+
+\pagerange{2}{103}
+\begin{itemize}
+  \item \textbf{Les lectures qui portent sur un nombre.} Le « 18 » de « 11 ad 18 »
+    (vues 4, 16, 19) et le « 8 » de « 5 ad 8 » (vues 4, 16) ont une forme ouverte
+    qu'on peut lire 0 ou 6 ; les deux lectures sont confirmées ici par le calcul
+    ($5:8$ exact, $44:45$ qui se déduit de $11:18$). Le jour « 28 » de la lettre
+    de Mersenne (vue 16) et le « 8 » de la lettre à Carcavy (vue 55) sont
+    douteux ; le « 7 » de la vue 35 l'est aussi, mais la seconde copie (vue 50)
+    et la note de la vue 36 écrivent 7 sans doute.
+  \item \textbf{Les lacunes.} Quatre lignes pâlies à la vue 54 (environ huit
+    mots), sept lignes à la vue 57 (le début de la lettre de Roberval) ; le mot
+    manquant que signale le copiste de la vue 16 ; les termes omis de la règle
+    « omnes \&c. ad omnes \&c. » (vue 54) ; la fin des lettres des vues 82 et
+    88, qui ne sont pas dans le volume ; le « Carollariolum » et les
+    « Theoremata » des hyperboles, annoncés et absents.
+  \item \textbf{La « Methodus »} (vues 89--90), lue aux lettres et aux termes
+    techniques seulement.
+  \item \textbf{Les noms.} « Personerii » (vue 83), l'initiale de Beaugrand
+    (vue 84), « Caua[serio] » (vue 44), « ez » (vue 96), « exteri » (vue 101)
+    sont des lectures incertaines de la transcription, reprises telles quelles.
+  \item \textbf{Les identifications} proposées ici, et seulement proposées : la
+    lettre des vues 83--88 comme celle que Roberval date de 1643 ; le solide de
+    l'article 10 comme le fuseau engendré autour d'une ordonnée ; la spirale
+    géométrique comme spirale logarithmique ; la courbe de Torricelli comme la
+    quadratrice secondaire de Roberval.
+\end{itemize}
+
+\end{document}
