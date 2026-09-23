@@ -1,0 +1,60 @@
+{
+  "upload_type": "dataset",
+  "title": "Papiers de Sophie Germain (BnF, Français 9115, 9117, 9118 et NAF 4073) : transcriptions LaTeX et lectures modernisées",
+  "creators": [
+    {
+      "name": "Hua, Michel"
+    }
+  ],
+  "description": "<p>Transcriptions of the four volumes of Sophie Germain's papers held by the Bibliothèque nationale de France and digitised whole in Gallica: <strong>Français 9115</strong> (Recueil de dissertations et problèmes mathématiques et physiques, 750 views, ark:/12148/btv1b90724875), <strong>Français 9117</strong> (Considérations générales sur l'état des sciences et des lettres, 113 views, ark:/12148/btv1b90075733), <strong>Français 9118</strong> (correspondence with Cauchy, Delambre, Fourier, Gauss, Legendre and others, 103 views, ark:/12148/btv1b9007572p) and <strong>NAF 4073</strong> (correspondence, 44 views, ark:/12148/btv1b10089787b) — 1,010 Gallica views in all.</p><p>For each volume: the transcription in LaTeX, twenty Gallica views to a file, in the spelling, abbreviations and notation of the manuscript, with a critical apparatus in French (what was read, what was guessed, what is illegible, and the folio where the library's foliation can be read); and the modernised reading, in French and current notation, with footnotes carrying every translation of the period's notation. Each <code>\\page{N}</code> is a Gallica view number, so every passage can be checked against the facsimile Gallica serves.</p><p><strong>Status.</strong> These are first passes made by Claude models (Anthropic) under the depositor's direction — each file names in its header the model and the date of its pass — and have not yet been checked against the views by a human. They are published so that they can be cited and corrected.</p><p><strong>Rights.</strong> The manuscripts are in the public domain. No image is included: the facsimiles are the BnF's and are read in Gallica (« Source gallica.bnf.fr / Bibliothèque nationale de France »). No transcription or edition by anyone else was reproduced or used to seed a reading. The deposit is released under CC0 1.0: a faithful transcription of a public-domain text very probably creates no new right, so on the transcriptions CC0 says only that nothing is claimed; the modernised readings are original texts, and there the waiver has real effect.</p><p>Reading interface, with each view beside its transcription: https://germain.commutator.io/xix/ — source repository: https://github.com/Commutator-IO/germain-project</p>",
+  "access_right": "open",
+  "license": "cc-zero",
+  "language": "fra",
+  "version": "2026-09-23",
+  "keywords": [
+    "Sophie Germain",
+    "mathematical manuscripts",
+    "transcription",
+    "critical apparatus",
+    "LaTeX",
+    "Gallica",
+    "Bibliothèque nationale de France",
+    "Fermat's Last Theorem",
+    "theory of elastic plates",
+    "correspondence with Gauss",
+    "history of mathematics",
+    "nineteenth century"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://gallica.bnf.fr/ark:/12148/btv1b90724875",
+      "relation": "isDerivedFrom",
+      "resource_type": "image"
+    },
+    {
+      "identifier": "https://gallica.bnf.fr/ark:/12148/btv1b90075733",
+      "relation": "isDerivedFrom",
+      "resource_type": "image"
+    },
+    {
+      "identifier": "https://gallica.bnf.fr/ark:/12148/btv1b9007572p",
+      "relation": "isDerivedFrom",
+      "resource_type": "image"
+    },
+    {
+      "identifier": "https://gallica.bnf.fr/ark:/12148/btv1b10089787b",
+      "relation": "isDerivedFrom",
+      "resource_type": "image"
+    },
+    {
+      "identifier": "https://germain.commutator.io/",
+      "relation": "isSupplementTo"
+    },
+    {
+      "identifier": "https://github.com/Commutator-IO/germain-project",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ],
+  "notes": "Prepared on 2026-09-23 for issue #7 of Commutator-IO/germain-project; not yet deposited. The files to upload are transcripts/fr-9115, fr-9117, fr-9118 and naf-4073 (batch-NN.fr.tex and <volume>.modern.tex), with transcripts/preamble and, optionally, the PDFs from npm run pdf and the TEI from npm run tei."
+}

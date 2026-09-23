@@ -3,6 +3,13 @@ import { Footer, Header } from './components/Frame.tsx';
 import { EDITIONS } from './content/books.ts';
 import { COTES, HOLDERS } from './content/catalogue.ts';
 
+const LINK =
+  'font-medium text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700';
+/** Read on 23 September 2026; the address the IIIF manifests give now redirects to a 404. */
+const GALLICA_TERMS = 'https://gallica.bnf.fr/accueil/fr/html/conditions-dutilisation-de-gallica';
+/** Read on 23 September 2026. */
+const ENPC_TERMS = 'https://heritage.ecoledesponts.fr/enpc/fr/content/reutiliser-nos-collections';
+
 /**
  * Sources and rights: what Gallica permits, and what this site therefore does
  * and does not do.
@@ -119,14 +126,54 @@ export function SourcesPage() {
         <section className="mt-12 max-w-[52em]">
           <H2 id="gallica">What Gallica permits, and what was measured</H2>
           <P id="gallica-terms" className="prose-fonds mt-3">
-            Gallica's conditions of use distinguish two cases. For digitisations of works in the
-            public domain — which is every manuscript here — <strong>non-commercial reuse is
-            free</strong>, on condition that the source is stated as « Source gallica.bnf.fr /
-            Bibliothèque nationale de France ». <strong>Commercial reuse</strong> is subject to a
-            paid licence. This site is non-commercial, carries no advertising and sells nothing;
-            its own work is placed in the public domain under CC0, which is the opposite of a
-            commercial exploitation. The metadata Gallica exposes is under the Etalab open
-            licence, which asks only for the source to be mentioned.
+            Gallica's conditions of use were read on 23 September 2026, at{' '}
+            <a href={GALLICA_TERMS} target="_blank" rel="noopener noreferrer" className={`${LINK} break-all`}>
+              {GALLICA_TERMS}
+            </a>
+            . For the BnF's digitisations of works in the public domain — which is every
+            manuscript here — <strong>non-commercial reuse is free</strong>, on condition that the
+            source is stated as « Source gallica.bnf.fr / Bibliothèque nationale de France ».{' '}
+            <strong>Commercial reuse</strong> is paid and licensed; the conditions define it as
+            resale of the contents as products, provision of a service, or any other reuse «
+            générant directement des revenus », and exempt researchers from the fee for their
+            scientific and academic publications. The metadata Gallica exposes are under the Etalab
+            open licence, which asks only for the source to be mentioned.
+          </P>
+          <P id="gallica-commercial" className="prose-fonds">
+            <strong>This site is non-commercial.</strong> It carries no advertising, sells nothing,
+            takes no money and is hosted free of charge. What it reuses of Gallica is the display
+            of an image at a reader's request, and the metadata; the transcriptions and readings
+            are readings of the manuscripts, which nobody owns, and not of anything the BnF
+            licenses. Three things would change the first sentence, and they are named here before
+            they happen: <strong>funding</strong> — a grant, a sponsor or donations tied to the
+            site; <strong>hosting backed by a paid service</strong> — a mirror or a deposit on an
+            infrastructure that sells access to what it holds; and <strong>a third party's
+            commercial reuse of our CC0 material</strong>. The first two would be read against the
+            definition above, and put to the BnF, before being accepted. The third needs nothing
+            from us: CC0 passes on only what is ours, never an image, since none is held here, and
+            whoever sells a product built on the facsimiles answers to the BnF for them directly.
+          </P>
+          <P id="gallica-database" className="prose-fonds">
+            The catalogue is also an extraction from a database — Gallica's search of 14 September
+            2026 — and the BnF's investment in that database is protected in its own right, against
+            the extraction of a substantial part. The position taken here is that nineteen
+            mathematicians and 78 volumes chosen among Gallica's millions of documents are not a
+            substantial part of it, in quantity or in kind, and that what was taken — shelfmarks,
+            view counts, the holders' titles and datings — are facts, which nobody owns, and
+            metadata the BnF itself places under the Etalab licence.
+          </P>
+          <P id="enpc-terms" className="prose-fonds">
+            Prony's journals, ENPC Ms. 1817, are the École des ponts' and not the BnF's. The
+            École's conditions for its digital library, Héritage des ponts et chaussées, were read
+            on 23 September 2026, at{' '}
+            <a href={ENPC_TERMS} target="_blank" rel="noopener noreferrer" className={`${LINK} break-all`}>
+              {ENPC_TERMS}
+            </a>
+            . What it marks as its own is under the Etalab open licence, commercial reuse included,
+            with the École named; what it marks as digitised by the BnF follows the BnF's terms.
+            The volume's Gallica manifest names the BnF as digitiser and points at Gallica's
+            conditions, so this site applies Gallica's, which are the stricter of the two and
+            satisfy both.
           </P>
           <P id="gallica-embedding" className="prose-fonds">
             Gallica itself invites embedding: its June 2019 post « Mettez du Gallica dans votre
@@ -186,11 +233,18 @@ export function SourcesPage() {
         <section className="mt-12 max-w-[52em]">
           <H2 id="ours">What is ours, and its licence</H2>
           <P id="ours-cc0" className="prose-fonds mt-3">
-            The transcriptions, the modernised readings, the catalogue as compiled here, the
-            skills and the code are released under <strong>CC0 1.0</strong> — placed in the public
-            domain, which is the only licence that makes sense for readings of papers nobody owns.
-            The catalogue's facts are the holders' and the literature's, credited line by line; the
-            arrangement is ours and free.
+            The transcriptions, the modernised readings, the exercise book, the catalogue as
+            compiled here, the skills and the code are released under <strong>CC0 1.0</strong> —
+            placed in the public domain, which is the only licence that makes sense for readings of
+            papers nobody owns. The catalogue's facts are the holders' and the literature's,
+            credited line by line; the arrangement is ours and free.
+          </P>
+          <P id="ours-cc0-scope" className="prose-fonds">
+            A faithful transcription of a public-domain text aims at exactness rather than
+            originality and very probably creates no new right, so on the transcriptions CC0 says
+            only that we claim nothing — which is true. The modernised readings and the exercise
+            book are original texts, and there CC0 has real effect: it waives a copyright that
+            exists, for any use, commercial included.
           </P>
           <P id="ours-provenance" className="prose-fonds">
             Every transcription records in its header the model that made it and the date, and

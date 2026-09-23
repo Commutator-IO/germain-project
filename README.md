@@ -184,7 +184,14 @@ Deploys to GitHub Pages from `main` on push, via
 
 ## Licence
 
-CC0 1.0 for everything that is ours — transcriptions, readings, catalogue as
-compiled, skills, code. The manuscripts are in the public domain; the
-digitisations are the BnF's (and, for Prony's journals, the École des ponts')
-under Gallica's conditions; the scholarship is its authors'. See [`/sources/`](https://germain.commutator.io/sources/).
+CC0 1.0 for everything that is ours — transcriptions, modernised readings, the
+exercise book, catalogue as compiled, skills, code. The manuscripts are in the
+public domain; the digitisations are the BnF's (and, for Prony's journals, the
+École des ponts') under Gallica's conditions; the scholarship is its authors'.
+See [`/sources/`](https://germain.commutator.io/sources/#ours).
+
+A faithful transcription of a public-domain text aims at exactness rather than
+originality and very probably creates no new right, so on the transcriptions
+CC0 says only that we claim nothing — which is true. The modernised readings
+and the exercise book are original texts, and there CC0 has real effect: it
+waives a copyright that exists, for any use, commercial included.

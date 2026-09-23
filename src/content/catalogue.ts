@@ -11,18 +11,18 @@ export const HOLDERS: Holder[] = [
     "city": "Paris",
     "url": "https://archivesetmanuscrits.bnf.fr/",
     "access": "iiif",
-    "terms": "Gallica's conditions: non-commercial reuse of public-domain digitisations is free, provided the source is stated as « Source gallica.bnf.fr / Bibliothèque nationale de France »; commercial reuse needs a licence. The IIIF manifests and images are served with Access-Control-Allow-Origin: * (measured 10 September 2026), so a browser may read them directly from this site.",
-    "termsUrl": "https://gallica.bnf.fr/html/und/conditions-dutilisation-des-contenus-de-gallica"
+    "terms": "Gallica's conditions of use, read on 23 September 2026: non-commercial reuse of the BnF's public-domain digitisations is free, provided the source is stated as « Source gallica.bnf.fr / Bibliothèque nationale de France »; commercial reuse — resale as a product, provision of a service, any reuse that directly generates revenue — is paid and licensed, researchers being exempt for their scientific and academic publications; the metadata are under the Etalab open licence. The IIIF manifests and images are served with Access-Control-Allow-Origin: * (measured 10 September 2026), so a browser may read them directly from this site.",
+    "termsUrl": "https://gallica.bnf.fr/accueil/fr/html/conditions-dutilisation-de-gallica"
   },
   {
     "id": "enpc",
     "name": "École nationale des ponts et chaussées, manuscript collection (digitised in Gallica)",
     "short": "ENPC",
     "city": "Champs-sur-Marne",
-    "url": "https://patrimoine.enpc.fr/",
+    "url": "https://heritage.ecoledesponts.fr/enpc/",
     "access": "iiif",
-    "terms": "Digitised by the BnF's Gallica partnership and served under Gallica's conditions and IIIF service, like the BnF's own volumes; the source to state is the ENPC with Gallica.",
-    "termsUrl": "https://gallica.bnf.fr/html/und/conditions-dutilisation-des-contenus-de-gallica"
+    "terms": "The École's own digital library, Héritage des ponts et chaussées, read on 23 September 2026: what it marks « Source : École nationale des ponts et chaussées » is under the Etalab open licence, commercial reuse included, with the École named; what it marks as the BnF's digitisations follows the BnF's terms. The Gallica manifest of Ms. 1817 names the BnF as digitiser and points at Gallica's conditions, so this site applies Gallica's — the stricter of the two, which satisfies both.",
+    "termsUrl": "https://heritage.ecoledesponts.fr/enpc/fr/content/reutiliser-nos-collections"
   }
 ];
 
