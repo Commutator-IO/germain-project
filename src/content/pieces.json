@@ -5,7 +5,10 @@
     "folios": "ff. 348r–349r",
     "title": "[Three pages stating and claiming a proof of Fermat's Last Theorem for all even exponents]",
     "source": "Laubenbacher & Pengelley 2010, § 1.3, « Manuscript C »; the bracketed title is theirs in substance and ours in wording",
-    "views": null,
-    "note": "Located by Laubenbacher and Pengelley. The manifest labels every view « NP », so folios 348–349 have to be found among the 750 images by reading the foliation; once found, `views` is filled here and the cahier opens on them."
+    "views": {
+      "first": 708,
+      "last": 710
+    },
+    "note": "Located by Laubenbacher and Pengelley. Found on 23 September 2026 by the transcription of batch 36: the top-right ink series reads 348 on view 708 (its verso is view 709) and 349 on view 710, so ff. 348r–349r are views 708–710. The series is penned rather than pencilled, so the transcription writes no \\folio{}, but it runs one per leaf from 1 to 372, the catalogue's count, and here meets the folios the literature cites."
   }
 ]
