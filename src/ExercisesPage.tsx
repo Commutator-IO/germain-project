@@ -12,13 +12,15 @@ import { Footer, Header } from './components/Frame.tsx';
  * and this page frames that document, exactly as the reader frames a
  * transcript (see TranscriptPane): the frame is same-origin, grown to its
  * content's height, and never scrolls itself. Beside it, the renderer writes a
- * small index (`exercices.json`) — the chapters and the count per level — that
- * the filters are built from before the frame has loaded.
+ * small index (`exercices.json`) — the chapters, one per mathematician, and the
+ * count per level and per difficulty — that the filters are built from before
+ * the frame has loaded.
  *
- * The filters act inside the frame, through `exercicesFilter(level, volume)`,
- * which the reading view defines: the cards carry `data-level` and
- * `data-volume`, and the chapters `data-volume`. They are mirrored in the
- * query string (`?niveau=L1&volume=naf-5176`), so a filtered view is a link.
+ * The filters act inside the frame, through `exercicesFilter(level, stars,
+ * group)`, which the reading view defines: the cards carry `data-level`,
+ * `data-stars` and `data-group` (the catalogue's id for the mathematician). They
+ * are mirrored in the query string (`?niveau=L1&etoiles=2&auteur=germain`), so
+ * a filtered view is a link.
  */
 
 const BASE = '/exercises/';
@@ -54,14 +56,24 @@ const LEVEL_STYLE: Record<Level, { on: string; off: string; help: string }> = {
   },
 };
 
+const STARS = [1, 2, 3] as const;
+type Stars = (typeof STARS)[number];
+
+const STARS_HELP: Record<Stars, string> = {
+  1: 'Une application directe.',
+  2: 'Une idée à trouver, ou plusieurs étapes à enchaîner.',
+  3: 'Un exercice long ou délicat.',
+};
+
 interface BookIndex {
   exercises: number;
   levels: Record<Level, number>;
-  chapters: { id: string; volume: string; shelfmark: string; title: string; exercises: number }[];
+  stars: Record<`${Stars}`, number>;
+  chapters: { id: string; group: string; name: string; date: string; exercises: number }[];
 }
 
 type BookWindow = Window & {
-  exercicesFilter?: (level: string | null, volume: string | null) => number;
+  exercicesFilter?: (level: string | null, stars: number | null, group: string | null) => number;
   exercicesSolutions?: (open: boolean) => void;
 };
 
@@ -98,12 +110,22 @@ function usePdf(): boolean {
   return ok;
 }
 
-function readQuery(): { level: Level | null; volume: string | null } {
+interface Filter {
+  level: Level | null;
+  stars: Stars | null;
+  group: string | null;
+}
+
+const NO_FILTER: Filter = { level: null, stars: null, group: null };
+
+function readQuery(): Filter {
   const q = new URLSearchParams(location.search);
   const l = q.get('niveau');
+  const e = Number(q.get('etoiles'));
   return {
     level: (LEVELS as readonly string[]).includes(l ?? '') ? (l as Level) : null,
-    volume: q.get('volume'),
+    stars: (STARS as readonly number[]).includes(e) ? (e as Stars) : null,
+    group: q.get('auteur'),
   };
 }
 
@@ -149,7 +171,7 @@ export function ExercisesPage() {
   const index = useBookIndex();
   const pdf = usePdf();
 
-  const [{ level, volume }, setFilter] = useState(readQuery);
+  const [{ level, stars, group }, setFilter] = useState(readQuery);
   const [shown, setShown] = useState<number | null>(null);
   const [allOpen, setAllOpen] = useState(false);
 
@@ -161,10 +183,11 @@ export function ExercisesPage() {
   useEffect(() => {
     const q = new URLSearchParams();
     if (level) q.set('niveau', level);
-    if (volume) q.set('volume', volume);
+    if (stars) q.set('etoiles', String(stars));
+    if (group) q.set('auteur', group);
     const s = q.toString();
     history.replaceState(null, '', `${location.pathname}${s ? `?${s}` : ''}${location.hash}`);
-  }, [level, volume]);
+  }, [level, stars, group]);
 
   /* Grown to its content, as the transcript pane is — but measured off the
      root element's box rather than its scrollHeight: the filters shrink the
@@ -183,7 +206,9 @@ export function ExercisesPage() {
     let doc: Document | null = null;
     const attach = () => {
       doc = el.contentDocument;
-      if (!doc) return;
+      // A frame not yet navigated holds about:blank, already "complete": the
+      // book's filters are not there yet, and its own load will call again.
+      if (!doc || doc.URL === 'about:blank') return;
       measure();
       observer?.disconnect();
       observer = new ResizeObserver(measure);
@@ -207,18 +232,16 @@ export function ExercisesPage() {
 
   useEffect(() => {
     if (!loaded) return;
-    const n = book()?.exercicesFilter?.(level, volume);
+    const n = book()?.exercicesFilter?.(level, stars, group);
     setShown(typeof n === 'number' ? n : null);
     measure();
-  }, [loaded, level, volume, book, measure]);
+  }, [loaded, level, stars, group, book, measure]);
 
   useEffect(() => {
     if (!loaded) return;
     book()?.exercicesSolutions?.(allOpen);
     measure();
   }, [loaded, allOpen, book, measure]);
-
-  const chapter = index?.chapters.find((c) => c.volume === volume);
 
   return (
     <>
@@ -288,7 +311,7 @@ export function ExercisesPage() {
             {index && (
               <div className="mt-5 space-y-2.5">
                 <div className="flex flex-wrap items-center gap-1.5">
-                  <span className="w-[5.5rem] shrink-0 text-[11px] font-bold uppercase tracking-[0.1em] text-ink-400">
+                  <span className="w-[7.5rem] shrink-0 text-[11px] font-bold uppercase tracking-[0.1em] text-ink-400">
                     Niveau
                   </span>
                   <Chip
@@ -312,32 +335,59 @@ export function ExercisesPage() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-1.5">
-                  <span className="w-[5.5rem] shrink-0 text-[11px] font-bold uppercase tracking-[0.1em] text-ink-400">
-                    Chapitre
+                  <span className="w-[7.5rem] shrink-0 text-[11px] font-bold uppercase tracking-[0.1em] text-ink-400">
+                    Difficulté
                   </span>
                   <Chip
-                    active={volume === null}
-                    onClick={() => setFilter((f) => ({ ...f, volume: null }))}
-                    className={volume === null ? 'bg-ink-800 text-white' : 'bg-ink-100 text-ink-600 hover:bg-ink-200'}
+                    active={stars === null}
+                    onClick={() => setFilter((f) => ({ ...f, stars: null }))}
+                    className={stars === null ? 'bg-ink-800 text-white' : 'bg-ink-100 text-ink-600 hover:bg-ink-200'}
+                  >
+                    Toutes
+                  </Chip>
+                  {STARS.map((n) => (
+                    <Chip
+                      key={n}
+                      active={stars === n}
+                      title={STARS_HELP[n]}
+                      onClick={() => setFilter((f) => ({ ...f, stars: f.stars === n ? null : n }))}
+                      className={
+                        stars === n ? 'bg-ink-700 text-white' : 'bg-ink-100 text-ink-600 hover:bg-ink-200'
+                      }
+                    >
+                      <span aria-label={`${n} étoile${n > 1 ? 's' : ''}`}>{'★'.repeat(n)}</span>{' '}
+                      <span className="opacity-60">{index.stars?.[`${n}`] ?? 0}</span>
+                    </Chip>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="w-[7.5rem] shrink-0 text-[11px] font-bold uppercase tracking-[0.1em] text-ink-400">
+                    Mathématicien
+                  </span>
+                  <Chip
+                    active={group === null}
+                    onClick={() => setFilter((f) => ({ ...f, group: null }))}
+                    className={group === null ? 'bg-ink-800 text-white' : 'bg-ink-100 text-ink-600 hover:bg-ink-200'}
                   >
                     Tous
                   </Chip>
                   {index.chapters.map((c) => (
                     <Chip
                       key={c.id}
-                      active={volume === c.volume}
-                      title={c.title}
+                      active={group === c.group}
+                      title={`${c.name} (${c.date.replace('-', '–')})`}
                       onClick={() =>
-                        setFilter((f) => ({ ...f, volume: f.volume === c.volume ? null : c.volume }))
+                        setFilter((f) => ({ ...f, group: f.group === c.group ? null : c.group }))
                       }
                       className={
-                        volume === c.volume
+                        group === c.group
                           ? 'bg-brand-600 text-white'
                           : 'bg-ink-100 text-ink-600 hover:bg-ink-200'
                       }
                     >
-                      {c.shelfmark}{' '}
-                      <span className={volume === c.volume ? 'text-brand-100' : 'text-ink-400'}>
+                      {c.name}{' '}
+                      <span className={group === c.group ? 'text-brand-100' : 'text-ink-400'}>
                         {c.exercises}
                       </span>
                     </Chip>
@@ -345,7 +395,6 @@ export function ExercisesPage() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-3 pt-1">
-                  {chapter && <p className="text-[13px] text-ink-600">{chapter.title}</p>}
                   <button
                     type="button"
                     onClick={() => setAllOpen((o) => !o)}
@@ -363,7 +412,7 @@ export function ExercisesPage() {
                 <button
                   type="button"
                   className="text-brand-700 underline underline-offset-2"
-                  onClick={() => setFilter({ level: null, volume: null })}
+                  onClick={() => setFilter(NO_FILTER)}
                 >
                   Tout afficher
                 </button>

@@ -13,8 +13,10 @@
 % added here must be added there too, or rendering fails loudly.
 %
 %   \livretitre                         the title block
-%   \chapitre{<volume id>}              which volume the chapter reads (prints nothing)
-%   \begin{exercice}{<titre>}{<niveau>}  a numbered exercise; Lycée, L1, L2 or L3
+%   \chapitre{<group id>}               which mathematician the chapter is (prints nothing)
+%   \begin{exercice}{<titre>}{<niveau>}{<étoiles>}
+%                                       a numbered exercise; Lycée, L1, L2 or L3,
+%                                       and a difficulty of 1, 2 or 3 stars
 %   \manuscrit{<volume id>}{<v1>}{<v2>}  the Gallica views it comes from
 %   \begin{solution}                    its solution, printed after it
 
@@ -54,8 +56,8 @@
   \bigskip}
 
 % --- Chapters ---------------------------------------------------------------
-% The volume a chapter reads. The site filters and links on it; the page
-% needs nothing from it.
+% The mathematician a chapter is, as the catalogue's group id (`maurolico`,
+% `germain`). The site filters on it; the page needs nothing from it.
 
 \newcommand{\chapitre}[1]{\ignorespaces}
 
@@ -89,6 +91,18 @@
       { \PackageError {exercices} {Unknown~level~`#1'~---~use~Lycée,~L1,~L2~or~L3} {} }
     #1
   }
+
+% The difficulty inside a level: 1, 2 or 3 stars.
+\NewDocumentCommand \exetoiles { m }
+  {
+    \str_case:nnF {#1}
+      {
+        {1} { $\bigstar$ }
+        {2} { $\bigstar\bigstar$ }
+        {3} { $\bigstar\bigstar\bigstar$ }
+      }
+      { \PackageError {exercices} {Unknown~difficulty~`#1'~---~use~1,~2~or~3} {} }
+  }
 \ExplSyntaxOff
 
 % --- Exercises and solutions ------------------------------------------------
@@ -97,10 +111,10 @@
 
 \newcounter{exercice}
 
-\newenvironment{exercice}[2]{%
+\newenvironment{exercice}[3]{%
   \par\bigskip\goodbreak
   \refstepcounter{exercice}%
-  \noindent{\bfseries Exercice~\theexercice\ (\exniveau{#2}) --- #1}\par
+  \noindent{\bfseries Exercice~\theexercice\ (\exniveau{#2}, \exetoiles{#3}) --- #1}\par
   \nopagebreak\smallskip
 }{\par\medskip}
 

@@ -1246,6 +1246,13 @@ const BOOK_OUT = resolve(ROOT, 'public', 'exercises');
 export const LEVELS = ['Lycée', 'L1', 'L2', 'L3'];
 const levelClass = (l) => (l === 'Lycée' ? 'lycee' : l.toLowerCase());
 
+/**
+ * The difficulty inside a level, in stars: 1 a direct application, 2 an idea
+ * to find or several steps to chain, 3 a long or delicate exercise.
+ */
+const STARS = ['1', '2', '3'];
+const starsLabel = (n) => '★'.repeat(n) + '☆'.repeat(3 - n);
+
 /** `BATCH_SIZE` in src/lib/batches.ts: the reader's hash names a batch. */
 const READER_BATCH = 20;
 
@@ -1256,21 +1263,22 @@ const BOOK_FORBIDDEN =
  * What the book's links need to know about the catalogue: each volume's
  * shelfmark and extent, the cahier whose reader shows it, and whether it has a
  * modernised reading — the edition an exercise is closest to, and the one a
- * link opens when there is one.
+ * link opens when there is one; and the mathematicians (the catalogue's
+ * groups), which name the chapters.
  */
 async function bookContext() {
   const src = await readFile(resolve(ROOT, 'src', 'content', 'catalogue.ts'), 'utf8');
-  const i = src.indexOf('export const COTES');
-  const j = src.indexOf('= [', i) + 2;
-  let cotes = null;
-  for (let k = j, depth = 0; k < src.length; k++) {
-    if (src[k] === '[') depth++;
-    else if (src[k] === ']' && --depth === 0) {
-      cotes = JSON.parse(src.slice(j, k + 1));
-      break;
+  const arrayOf = (name) => {
+    const i = src.indexOf(`export const ${name}`);
+    const j = src.indexOf('= [', i) + 2;
+    for (let k = j, depth = 0; i !== -1 && k < src.length; k++) {
+      if (src[k] === '[') depth++;
+      else if (src[k] === ']' && --depth === 0) return JSON.parse(src.slice(j, k + 1));
     }
-  }
-  if (!cotes) throw new Error('COTES not found in src/content/catalogue.ts');
+    throw new Error(`${name} not found in src/content/catalogue.ts`);
+  };
+  const cotes = arrayOf('COTES');
+  const groups = arrayOf('GROUPS');
 
   const books = JSON.parse(await readFile(resolve(ROOT, 'src', 'content', 'books.json'), 'utf8'));
   const cahierOf = new Map();
@@ -1287,7 +1295,12 @@ async function bookContext() {
       // No modernised reading: the link opens the transcription.
     }
   }
-  return { volumes: new Map(cotes.map((c) => [c.id, c])), cahierOf, modern };
+  return {
+    volumes: new Map(cotes.map((c) => [c.id, c])),
+    groups: new Map(groups.map((g) => [g.id, g])),
+    cahierOf,
+    modern,
+  };
 }
 
 /**
@@ -1380,6 +1393,7 @@ function renderExercises(tex, ctx) {
   let count = 0;
   const chapters = [];
   const levels = Object.fromEntries(LEVELS.map((l) => [l, 0]));
+  const stars = Object.fromEntries(STARS.map((n) => [n, 0]));
   const usedIds = new Set();
   const uniqueId = (base) => {
     let id = base;
@@ -1390,12 +1404,12 @@ function renderExercises(tex, ctx) {
 
   for (const sec of sections) {
     let content = sec.content;
-    let volume = null;
+    let group = null;
     const chap = /^\s*\\chapitre\s*\{([^{}]*)\}/.exec(content);
     if (chap) {
-      volume = chap[1].trim();
-      if (!ctx.volumes.has(volume)) {
-        throw new Error(`\\chapitre{${volume}}: no such volume in src/content/catalogue.ts`);
+      group = chap[1].trim();
+      if (!ctx.groups.has(group)) {
+        throw new Error(`\\chapitre{${group}}: no such mathematician (group) in src/content/catalogue.ts`);
       }
       content = content.slice(chap[0].length);
     }
@@ -1451,10 +1465,11 @@ function renderExercises(tex, ctx) {
         continue;
       }
 
-      // An exercice: {titre}{niveau}, then \manuscrit lines, then the statement.
+      // An exercice: {titre}{niveau}{étoiles}, then \manuscrit lines, then the statement.
       const t = readBraced(it.text, 0);
       const l = t && readBraced(it.text, t.end);
-      if (!t || !l) throw new Error('\\begin{exercice} needs {titre}{niveau}');
+      const d = l && readBraced(it.text, l.end);
+      if (!t || !l || !d) throw new Error('\\begin{exercice} needs {titre}{niveau}{étoiles}');
       count += 1;
       const level = l.arg.trim();
       if (!LEVELS.includes(level)) {
@@ -1462,12 +1477,17 @@ function renderExercises(tex, ctx) {
           `exercice ${count}: level « ${level} » — use one of ${LEVELS.join(', ')}`,
         );
       }
-      if (!volume) {
+      const difficulty = d.arg.trim();
+      if (!STARS.includes(difficulty)) {
+        throw new Error(`exercice ${count}: difficulty « ${difficulty} » — use 1, 2 or 3 stars`);
+      }
+      if (!group) {
         throw new Error(`exercice ${count} sits outside a chapter (no \\chapitre above it)`);
       }
       levels[level] += 1;
+      stars[difficulty] += 1;
 
-      let statement = it.text.slice(l.end);
+      let statement = it.text.slice(d.end);
       const sources = [];
       statement = statement.replace(
         /\\manuscrit\s*\{([^{}]*)\}\s*\{\s*(\d+)\s*\}\s*\{\s*(\d+)\s*\}/g,
@@ -1498,7 +1518,8 @@ function renderExercises(tex, ctx) {
         id: uniqueId(`exercice-${count}`),
         title: inline(t.arg.trim()),
         level,
-        volume,
+        stars: Number(difficulty),
+        group,
         sources,
         statement: prose(statement),
         solution: null,
@@ -1521,7 +1542,9 @@ function renderExercises(tex, ctx) {
         const head = withNotes(
           `<header class="ex-head"><span class="ex-num">Exercice ${b.n}</span>` +
             `<span class="ex-sep"> — </span><span class="ex-title">${b.title}</span>` +
-            `<span class="ex-level ex-level-${levelClass(b.level)}" title="Niveau">${b.level}</span></header>\n` +
+            `<span class="ex-tags"><span class="ex-stars" title="Difficulté : ${b.stars} sur 3" ` +
+            `aria-label="Difficulté : ${b.stars} sur 3">${starsLabel(b.stars)}</span>` +
+            `<span class="ex-level ex-level-${levelClass(b.level)}" title="Niveau">${b.level}</span></span></header>\n` +
             `<p class="ex-sources">${links}</p>\n` +
             `<div class="ex-body">${b.statement}</div>`,
         );
@@ -1533,7 +1556,8 @@ function renderExercises(tex, ctx) {
           : '';
         return (
           `<article class="ex-card" id="${b.id}" data-level="${escapeAttr(b.level)}" ` +
-          `data-volume="${escapeAttr(b.volume)}">\n${head}${solution}\n</article>`
+          `data-stars="${b.stars}" data-group="${escapeAttr(b.group)}" ` +
+          `data-volume="${escapeAttr(b.sources[0].id)}">\n${head}${solution}\n</article>`
         );
       })
       .join('\n');
@@ -1541,15 +1565,25 @@ function renderExercises(tex, ctx) {
     // The chapter's own notes — those its prose calls — close the chapter.
     const proseNotes = notesFor(sectionProse.join('\n'));
     const heading = `<h2 class="ltx_title ltx_title_section">${inline(sec.title.trim())}</h2>`;
-    if (volume) {
-      const v = ctx.volumes.get(volume);
-      const id = uniqueId(`chapitre-${volume}`);
-      const exercises = blocks.filter((b) => typeof b !== 'string').length;
-      chapters.push({ id, volume, shelfmark: v.shelfmark, title: sec.title.trim(), exercises });
+    if (group) {
+      const g = ctx.groups.get(group);
+      const id = uniqueId(`chapitre-${group}`);
+      const cards = blocks.filter((b) => typeof b !== 'string');
+      // The volumes the chapter reads, in the order its exercises first cite them.
+      const read = [...new Set(cards.flatMap((b) => b.sources.map((s) => s.id)))];
+      chapters.push({ id, group, name: g.title, date: g.date, exercises: cards.length });
+      const links = read
+        .map((vid) => {
+          const v = ctx.volumes.get(vid);
+          return (
+            `<a href="${escapeAttr(readerUrl(ctx, vid, 1))}" target="_top" ` +
+            `title="${escapeAttr(v.title)}">${escapeHtml(v.shelfmark)}</a>`
+          );
+        })
+        .join(' · ');
       out.push(
-        `<section class="ex-chapter" id="${id}" data-volume="${escapeAttr(volume)}">\n${heading}\n` +
-          `<p class="ex-volume"><a href="${escapeAttr(readerUrl(ctx, volume, 1))}" target="_top">` +
-          `${escapeHtml(v.shelfmark)} · ${escapeHtml(v.title)}</a></p>\n` +
+        `<section class="ex-chapter" id="${id}" data-group="${escapeAttr(group)}">\n${heading}\n` +
+          `<p class="ex-volume">${read.length > 1 ? 'Volumes lus' : 'Volume lu'} : ${links}</p>\n` +
           `${bodyHtml}${proseNotes}\n</section>`,
       );
     } else {
@@ -1582,7 +1616,7 @@ function renderExercises(tex, ctx) {
 
   return {
     page: exercisesPage(html),
-    index: { exercises: count, levels, chapters },
+    index: { exercises: count, levels, stars, chapters },
   };
 }
 
@@ -1605,7 +1639,11 @@ const EXERCISES_CSS = `
   .ex-num { white-space: nowrap; }
   .ex-sep { color: var(--ink4); }
   .ex-title { min-width: 0; }
-  .ex-level { margin-left: auto; align-self: center; border-radius: 999px;
+  .ex-tags { margin-left: auto; align-self: center; display: inline-flex; align-items: center;
+             gap: .5rem; white-space: nowrap; }
+  .ex-stars { font-family: var(--sans); font-size: 13px; font-weight: 400; letter-spacing: .06em;
+             color: #b07d12; }
+  .ex-level { border-radius: 999px;
              padding: 2px 9px; font-family: var(--sans); font-size: 10px; font-weight: 700;
              letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
   .ex-level-lycee { background: #d4f0e1; color: #0e6744; }
@@ -1675,25 +1713,25 @@ document.addEventListener('click', function (e) {
 
 /**
  * The page's filters, called by /exercises/ from outside the frame: a level
- * (Lycée, L1, L2, L3) and a volume, either null for all. Chapters left with no
- * exercise shown are hidden, and so are the book's other parts — foreword,
- * bibliography — whenever a filter is on. Returns the number of exercises
- * shown.
+ * (Lycée, L1, L2, L3), a difficulty (1, 2 or 3 stars) and a mathematician (a
+ * chapter), each null for all. Chapters left with no exercise shown are
+ * hidden, and so are the book's other parts — foreword, bibliography —
+ * whenever a filter is on. Returns the number of exercises shown.
  */
-window.exercicesFilter = function (level, volume) {
+window.exercicesFilter = function (level, stars, group) {
   var shown = 0;
   document.querySelectorAll('.ex-card').forEach(function (c) {
-    var ok = (!level || c.dataset.level === level) && (!volume || c.dataset.volume === volume);
+    var ok = (!level || c.dataset.level === level) &&
+      (!stars || c.dataset.stars === String(stars)) &&
+      (!group || c.dataset.group === group);
     c.hidden = !ok;
     if (ok) shown++;
   });
   document.querySelectorAll('.ex-chapter').forEach(function (s) {
-    var other = volume && s.dataset.volume !== volume;
-    var empty = level && !s.querySelector('.ex-card:not([hidden])');
-    s.hidden = Boolean(other || empty);
+    s.hidden = !s.querySelector('.ex-card:not([hidden])');
   });
   document.querySelectorAll('.ex-part').forEach(function (p) {
-    p.hidden = Boolean(level || volume);
+    p.hidden = Boolean(level || stars || group);
   });
   return shown;
 };
