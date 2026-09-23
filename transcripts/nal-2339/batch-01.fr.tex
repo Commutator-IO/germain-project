@@ -1,0 +1,365 @@
+% NAL 2339, batch 1 — Gallica views 1–20.
+% Pass: Opus 5.5 (claude-opus-5-5), 2026-09-23 — first pass, unchecked against the views by a human.
+%
+% Dating. The catalogue gives none; \dating{} is left empty and this pass
+% infers no date. No date is written on the leaves of this batch.
+%
+% The views. Colour portrait scans, one page per view (about 4130–4310 ×
+% 5775–5885 for v. 1–9, about 3340–3580 × 5120–5140 for v. 10–20).
+%
+%   v. 1–6    Binding: the boards, a pastedown with the label « LAT NOUV. ACQ.
+%             2339 », a marbled flyleaf, three blank flyleaves. Skipped.
+%   v. 7      A modern title leaf, calligraphed: « Mémoires de Fermat », the
+%             certificate « Volume de 24 Feuillets / Les Feuillets 23 & 24
+%             sont blancs / 8 Octobre 1888 », « Libri 1848. », and the
+%             shelfmark « Lat. Nouv. Acq. 2339 ». Not transcribed (the
+%             library's leaf, not the manuscript); recorded here.
+%   v. 8      Blank. Skipped.
+%   v. 9–20   One piece, one hand, one ink, continuous from page to page:
+%             « Ad locos planos & solidos Isagoge », in Latin. It opens on
+%             v. 9 with its title (so nothing before it in the volume is
+%             continued) and does not end in this batch: v. 20 closes on the
+%             catchword « Locus », mid-sentence. Content, in the leaf's
+%             order: the ancients (Pappus, book 7; Apollonius on plane loci,
+%             Aristaeus on solid loci) and the plan of a « peculiar
+%             analysis » of loci (v. 9); two unknown quantities A and E set
+%             at a given angle, a plane or solid locus as long as neither
+%             passes the square (v. 10); « D in A æquetur B in E » and
+%             « Z pl. − D in A æqu. B in E », the point I on a straight line
+%             given in position, and a proposition « quam nos illius ope
+%             deteximus » on lines drawn to given lines at given angles
+%             (v. 10–12); « A in E æquatur Z pl. », the hyperbola about
+%             asymptotes, and its reduction « D planum + A in E æquari R in A
+%             + S in E » (v. 12–14); Aq and Eq in a given ratio, a straight
+%             line (v. 14–15); Aq = D in E and Eq = D in A, the parabola, and
+%             Bq − Aq = D in E, Bq + Aq = D in E (v. 16–18); Bq − Aq = Eq,
+%             the circle, with the completion of the squares (Rq, Dq, Pq) and
+%             the claim that « omnes propositiones 2i libri Apollonii de
+%             locis planis construximus, Et 6 priores in quibuslibet punctis
+%             habere locum demonstrauimus » (v. 18–20); Bq − Aq to Eq in a
+%             given ratio, the ellipse (v. 20). Every page but the last ends
+%             in a catchword or runs its sentence straight on to the next.
+%
+% Attribution. Nothing on v. 9–20 names an author: no signature, no name in
+% the title, no addressee. The text speaks in the first person plural (« nos
+% … deteximus », « construximus », « demonstrauimus », « construimus »).
+% « Fermat » is on the modern title leaf of v. 7 and in the catalogue's
+% title, not on the manuscript's own leaves. Whether the hand is Fermat's
+% is not settled here, and nothing in this file assumes it. The page is a
+% clean, regular copy with catchwords; two marginal notes « forsan ZI »
+% (v. 11) and « + forsan Zp » (v. 14) propose other letters where the text
+% has a doubtful one. That these are a reader's or copyist's queries on a
+% copy is this pass's inference, not something the leaf says.
+%
+% The hand. A posed, regular italic cursive in brown ink, the same from v. 9
+% to v. 20. Long s set s throughout. The leaf's u and v are kept (v at the
+% head of a word, u inside it: « vt », « vltima », « vnica », « curuam »,
+% « inuestigatio », « eleuata », « breuiter »), and its æ. Accents as written
+% (« facillimè », « Commodè », « modò », « ductâ »). Abbreviations kept as
+% written: « q; » for -que (« Ideoq; », « atq; », « quodcunq; », « vtrimq; »),
+% « grãa » (gratia, v. 12), « ōia » (omnia, v. 14), « oĩo » (omnino, v. 16),
+% a final m as a stroke over the u (« quadratū », v. 15; « planorū » is
+% given expanded with a note, v. 10). Capital « Et » inside sentences, as
+% written. The point I is written like the figure 1; it is read I from the
+% text and the figures.
+%
+% Notation (kept, not modernised). Viète's species: A and E the unknowns,
+% given magnitudes as consonants (B, D, R, S), planes as « Z pl. », « Z
+% plano », « D planum », « D pl. »; « in » for a product; « Aq », « Eq »,
+% « Bq », « Rq », « Dq », « Pq » for squares. Equality in words (« æquatur »,
+% « æquetur », « æquabitur », « æquale »), once (v. 11) as two vertical
+% strokes with « æqu. » written between them. A doubled stroke after a
+% letter (« D in A'' », « R in E'' », v. 19) marks a term taken twice; set
+% $''$. Many letters naming points, lines or quantities carry a bar above
+% them, inconsistently (the same letter barred in one line and not in the
+% next); the bar is given as \overline{} where it is on the leaf and
+% nothing else is inferred from it. Figures are not drawn: their lettering
+% is described in notes.
+%
+% Numbers on the leaves. Three series stand at the top of the pages, none
+% of them written as \folio{}:
+%   – ink, in the text's hand or one like it, one number per PAGE, 1 to 12
+%     without a gap: 1 (v. 9), 2 (v. 10), 3 (v. 11), 4 (v. 12), 5 (v. 13), 6
+%     (v. 14), 7 (v. 15), 8 (v. 16), 9 (v. 17), 10 (v. 18), 11 (v. 19), 12
+%     (v. 20); top right on the rectos, top left on the versos. The
+%     writer's (or copyist's) pagination. On the rectos it is struck through
+%     with a grey pencil stroke (1, 5, 7, 9, 11; the 3 of v. 11 shows no
+%     clear stroke); the versos' numbers are left standing. On v. 13 a
+%     second, heavier black « 5 » stands to the left, struck with red.
+%   – red crayon, top right of the rectos only, one number per LEAF: 1 (v. 9),
+%     2 (v. 11), 3 (v. 13), 4 (v. 15), 5 (v. 17), 6 (v. 19).
+%   – grey pencil, thin, top right of the rectos, written just under or beside
+%     the struck ink page number, one per LEAF and one higher than the red: 2
+%     (v. 9), 3 (v. 11), 4 (v. 13), 5 (v. 15), 6 (v. 17), 7 (v. 19).
+% Two leaf series that disagree by one: the pencil one counts some leaf
+% before v. 9 as 1 (the title leaf of v. 7 or the blank v. 8 carries no
+% visible number in this batch), the red one begins at the first written
+% leaf. Which of them the 1888 certificate (« 24 Feuillets », 23 and 24
+% blank) counted can only be seen at the end of the volume, where its last
+% two leaves should be blank; this batch cannot settle it, so no \folio{} is
+% written. If the red series is the library's, v. 9 = f. 1r, v. 11 = 2r,
+% v. 13 = 3r, v. 15 = 4r, v. 17 = 5r, v. 19 = 6r; if the pencil series,
+% add one.
+% Other marks: « Libri 1848 » and « Lat. nouv. acq. 2339 » at the head of
+% v. 9, « R. c. 8070 (88) » and the stamp « ACQ. 8070 (LIBRI) » at its foot,
+% a short undeciphered ink mark written sideways at the foot of v. 9's left
+% margin, round stamps « BIBLIOTHÈQUE NATIONALE » (v. 9, and « MANUSCRITS
+% R.F. » inside the figure of v. 17), a faint pencil box round two lines of
+% v. 11.
+%
+% Continuities. v. 9 begins the piece (title). v. 20 runs on into v. 21 on
+% the catchword « Locus ».
+
+% Coordinator's reconciliation (2026-09-23), after all three batches:
+%   The red crayon series, top right of every recto, blanks included, runs
+%   1–6 (v. 9–19), 7–16 (v. 21–39), 17–24 (v. 41–55) without a gap, and ends
+%   on the two blank leaves 23 and 24, exactly as the certificate of v. 7
+%   has it (« Volume de 24 Feuillets / Les Feuillets 23 & 24 sont blancs »).
+%   It is the library's foliation, and not ink: \folio{} is written from it
+%   on every transcribed recto, 1r–22r. The grey pencil series beside it is
+%   one higher on v. 9–19, irregular on v. 21–39, and agrees from v. 41; it is
+%   recorded in notes and not used. Batches 1 and 2 first wrote no \folio{};
+%   the coordinator added them. The ink pagination of the loci treatise
+%   (1–18) and the foot numbers 43–45 of the Appendix are the copies' own.
+%   v. 61–66 (batch 4) are binding, so batch 4 has no file.
+%   Fermat is named on the leaves in three headings only: « A Domino de
+%   Fermat ad Dominum De Carcaui » (v. 41), « Lettre de Mons.r De fermes A
+%   Monsieur De Carcaui » (v. 49), and « Mr. fermat » over v. 37 in a paler,
+%   perhaps later hand; the certificate's « Mémoires de Fermat » (v. 7) is
+%   the library's. No hand is attributed.
+
+\documentclass[11pt,a4paper]{article}
+\input{../preamble/germain}
+
+\folder{nal-2339}
+\shelfmark{NAL 2339}
+\batch{1}
+\pages{1}{20}
+\dating{}
+\watermark{Lecture automatique\\non vérifiée}
+\foldertitle{Fermat. Mémoires de mathématiques.}
+
+\begin{document}
+
+\page{9}\folio{1r}
+\note{En tête du feuillet, d'autres mains : « Libri 1848 » à gauche, la cote « Lat. nouv. acq. 2339 » au centre ; en haut à droite un « 1 » au crayon rouge, puis un « 1 » à l'encre barré, avec un « 2 » au crayon gris au-dessous. Au pied : « R. c. 8070 (88) » et le cachet « ACQ. 8070 (LIBRI) » ; un court signe à l'encre écrit en travers au bas de la marge gauche, non déchiffré. Le cachet rond « BIBLIOTHÈQUE NATIONALE » est dans la marge gauche.}
+
+\section*{Ad locos planos \& solidos Isagoge}
+
+De locis quamplurima scripsisse veteres haud dubium. Testis Pappus initio lib. 7. qui Apollonium de locis planis, Aristæum de solidis scripsisse asseuerat. Sed aut fallimur, aut non procliuis satis ipsis fuit locorum inuestigatio. Illud auguramur ex eo quod locos quam plurimos non satis generaliter expresserunt vt infra patebit.
+
+Scientiam igitur hanc propriæ et peculiari analysi subiicimus, vt deinceps ad locos generalis via pateat.
+
+Quoties in vltima æqualitate duæ quantitates ignotæ reperiuntur, fit locus loco, et terminus alterius ex illis describit lineam rectam aut curuam. Linea recta vnica et simplex est: curuæ infinitæ, circulus, parabole, hyperbole, ellipsis \&c. Quoties quantitatis ignotæ terminus localis describit lineam rectam, aut circulum fit locus planus. At quando describit parabolen, hyperbolen, vel ellipsin fit locus solidus. Si alias curuas, locus dicitur linearis.
+
+\page{10}
+\note{En haut à gauche, à l'encre, « 2 » ; le recto de la vue 9 porte à l'encre un « 1 » barré : c'est la pagination de l'écrivain ou du copiste (voir l'en-tête). Un petit point rouge à côté.}
+
+De hoc nihil adiungemus, quia facillimè ex planorum et solidorum inuestigatione linearis loci cognitio deriuabitur mediantibus reductionibus.
+\note{« planorum » : écrit « planorū », le trait sur le u pour le m final.}
+
+Commodè autem institui possunt æquationes si duas quantitates ignotas ad angulum datum constituamus (quem vt plurimum rectum sumemus) et alterius ex illis positione datæ terminus vnus sit datus. Modo neutra quantitatum ignotarum, quadratum prætergrediatur, locus erit planus aut solidus, vt ex dicendis clarum fiet.
+
+Recta data positione sit NZM, cuius punctum datum N. NZ æquetur quantitati ignotæ A. Et ad angulum datum NZI eleuata recta ZI sit æqualis alteri quantitati ignotæ E.
+\note{Figure : la droite NZM, horizontale ; en Z une perpendiculaire ZI (lettre E le long de ZI) ; la droite NI ferme le triangle NZI. Lettres N, Z, M sur la base, A sous NZ, I au sommet. Le point I est écrit comme un « 1 » ; lu I d'après le texte.}
+
+\[ D \text{ in } A. \quad \text{æquetur} \quad B \text{ in } E \]
+
+Punctum I erit ad lineam rectam positione datam.
+\note{Au pied, à droite, la réclame « Erit », reprise en tête de la vue 11.}
+
+\page{11}\folio{2r}
+\note{En haut à droite : « 2 » au crayon rouge ; « 3 » à l'encre ; au-dessous « 3 » au crayon gris (voir l'en-tête).}
+
+Erit enim vt $\overline{B}$ ad $\overline{D}$ ita $\overline{A}$ ad $\overline{E}$. ergo ratio $\overline{A}$ ad $\overline{E}$ data est. Et datur angulus ad Z. Triangulum igitur NIZ specie, et angulus I$\overline{NZ}$. Datur autem punctum $\overline{N}$ et recta NZ positione. Ergo dabitur NI positione. Et est facilis compositio.
+
+Ad hanc æqualitatem reducentur omnes quarum homogenea partim sunt data, partim ignotis $\overline{A}$ \& $\overline{E}$ admixta, vel in datas ductis vel simpliciter sumptis.
+
+\[ Z \text{ pl.} - D \text{ in } A \;\Big|\, \overset{\text{æqu.}}{\phantom{|}} \Big|\; B \text{ in } E \]
+\note{Le signe d'égalité est fait de deux traits verticaux, avec « æqu. » écrit au-dessus, entre eux.}
+
+Fiat D in R æquali Z pl.
+
+Erit vt $\overline{B}$ ad $\overline{D}$ ita R $-$ A ad E. Fiat MN æqualis $\overline{R}$. dabitur punctum M. Ideoq; MZ æquabitur R $-$ A. dabitur ergo ratio MZ ad $\overline{E}$I.
+\marginal{forsan ZI}
+\note{« ad $\overline{E}$I » est souligné et entouré d'un trait courbe, avec au-dessus de la lettre un petit signe à deux barres, comme un renvoi ; en marge de gauche, suivi d'un trait vertical, « forsan ZI ». La note propose ZI (la droite que vaut E) au lieu de « EI ». Elle est de la même encre que le texte ; la main n'est pas distinguée. Le signe moins de « R $-$ A » est un trait épais, empâté.}
+
+Sed datur angulus ad Z. Ergo triangulum IZM specie. Et concluditur rectam MI iunctam dari positione, ideoq; punctum $\overline{I}$ erit ad rectam positione datam. Idemq; nullo negotio concluditur in qualibet æqualitate, cuius homogenea quædam afficiuntur ab $\overline{A}$ vel $\overline{E}$.
+\note{Un rectangle très pâle, au crayon, encadre les deux dernières lignes (« qualibet … vel E »), d'une autre main que le texte.}
+
+Et est simplex hæc et prima locorum æqualitas,
+\note{La phrase se poursuit en tête de la vue 12.}
+
+\page{12}
+\note{En haut à gauche, à l'encre, « 4 ».}
+
+cuius beneficio inueniuntur loci omnes ad lineam rectam, verbi grãa 7ª prop. Lib. 1. Apollonii de locis planis, quæ generalius iam poterit enuntiari et construi.
+\note{« grãa » : abréviation de « gratia », gardée telle qu'elle est écrite.}
+
+Huic æqualitati subest pulcherrima prop. sequens quam nos illius ope deteximus.
+
+Si sint quodcunq; rectæ lineæ positione datæ, atq; ad ipsas a quodam puncto ducantur rectæ in datis angulis, sit autem quod sub ductis et datis efficitur dato spatio æquale, punctum rectam lineam positione datam continget.
+
+Infinitas omittimus quæ Apollonianis meritò possent opponi
+
+Secundus huiusmodi æqualitatum gradus est quando
+
+\[ A \text{ in } E. \qquad \text{æquatur} \quad Z \text{ pl.} \]
+
+quo casu punctum $\overline{I}$ est ad hyperbolen
+\note{Figure : la droite NZM ; trois perpendiculaires, en N (jusqu'à R), en Z (jusqu'à I, la lettre E le long de ZI) et en M (jusqu'à O). A sous NZ. Au pied, à droite, la réclame « Fiat », reprise en tête de la vue 13.}
+
+\page{13}\folio{3r}
+\note{En haut à droite : un « 5 » à l'encre noire, barré d'un trait rouge, avec au-dessous « 3 » au crayon rouge ; à côté, un second chiffre à l'encre (lu « 5 ») barré d'un trait de crayon gris, avec au-dessous « 4 » au crayon gris (voir l'en-tête).}
+
+Fiat $\overline{N}$R parallela $\overline{Z}$I. Sumatur in $\overline{NZ}$ quodlibet punctum vt $\overline{M}$ a quo ducatur MO parallela $\overline{Z}$I. Et fiat rectangulum N$\overline{M}$O æquale Z plano. Per punctum $\overline{O}$ circa Asymptotos NR, NM describatur Hyperbole, dabitur positione et transibit per punctum I cum ponatur rectangulum A in E siue NZI æquale NMO.
+
+Ad hanc æqualitatem reducentur omnes quarum homogenea partim sunt data, vel ab A aut E, aut A in E adfecta.
+\note{Une petite croix dans la marge de gauche, en regard de « homogenea », et une autre au-dessus de la ligne, entre « A » et « aut » ; aucun ajout ne leur répond sur la page.}
+
+Ponatur D planum $+$ A in E æquari R in A $+$ S in E, Igitur ex artis præceptis
+
+\[ R \text{ in } A + S \text{ in } E - A \text{ in } E \quad \text{æquabitur} \quad D \text{ plano} \]
+
+Effingatur rectangulum abs duobus lateribus in quo homogenea R in A $+$ S in E $-$ A in E reperiantur. Erunt duo latera A $-$ S et R $-$ E. Et rectangulum sub ipsis æquabitur
+
+\[ R \text{ in } A + S \text{ in } E - A \text{ in } E - R \text{ in } S \]
+
+Si igitur a D pl. abstuleris R in S rectangulum sub A $-$ S in R $-$ E æquabitur D pl. $-$ R in S.
+
+Fiat $\overline{N}$O æqualis $\overline{S}$, Et $\overline{N\mathrm{d}}$ parallela $\overline{Z}$I fiat.
+\note{« Nd » : la seconde lettre est un d minuscule, nettement écrit ; la figure de la vue 14 porte la même lettre. Une tache d'encre sur le « F » de « Fiat » et une autre dans la marge.}
+
+\page{14}
+\note{En haut à gauche, à l'encre, « 6 » ; à côté, en transparence et à l'envers, les chiffres du recto.}
+
+æqualis R. Per punctum D ducatur $\overline{\mathrm{D}p}$ parall.ª $\overline{NM}$, ou parallela $\overline{ND}$ Et $\overline{Z}$I producatur in $p$.
+\note{Ces lignes sont écrites en colonne étroite à gauche de la figure. « ou » : lu tel quel, deux lettres nettes, là où le latin attendrait « seu » ou « vel ». Le point D est celui que la vue 13 écrit « d ».}
+
+\note{Figure : un rectangle NDpZ, N en bas à gauche, D en haut à gauche, $p$ en haut au-dessus de Z ; la base NZ prolongée jusqu'à M, le côté D$p$ prolongé à droite. Entre N et Z, le point o sur la base et la verticale ou, $u$ sur le côté supérieur ; sur le côté supérieur encore, x, d'où descend une courte droite xy ; sur Z$p$, le point I, et E écrit le long de ZI. A sous la base, entre N et Z.}
+
+Cum NO æquetur S et NZ, A. Ergo A $-$ S æquabitur $\overline{OZ}$ siue $\overline{up}$. Similiter cum $u$D siue ZI æquetur R et ZI, E. Ergo R $-$ E æquabitur $\overline{p\mathrm{I}}$. Rectangulum igitur sub $\overline{up}$ in $\overline{p\mathrm{I}}$ æquatur dato D plano $-$ R in S. Ergo punctum I erit ad hyperbolen, cuius asymptoti $pu$, $u$o. Rectangulo enim D pl. $-$ R in S æquatur (sumpto quouis puncto $\overline{x}$ \& ductâ parallelâ $xy$) Rectangulum $u\overline{x}y$. Et per punctum $y$ circa Asymptotos $pu$, $u$o hyperbole describatur, per punctum I transibit. Nec est difficilis in quibuslibet casibus analysis aut constructio.
+\marginal{+ forsan Zp}
+\note{Une croix au-dessus de la ligne, sur « siue ZI », renvoie à la note de la marge de gauche, « + forsan Zp », fermée d'un double trait vertical : elle propose Z$p$ au lieu de ZI, que le texte vient d'égaler à E. Même disposition qu'à la vue 11.}
+
+Sequens æqualitatum localium gradus est, cum Aq. vel æquatur Eq. vel est in ratione data ad Eq. vel etiam Aq $+$ A in E est ad Eq. in data ratione, Denique hic casus omnes æquationes comprehendit intra metam quadratorum, quarum homogenea ōia vel a quadrato A, vel a quadrato E vel a rectan-
+\note{« ōia » : omnia, abrégé. Au pied, à droite, la réclame « rectan- », la page suivante reprenant sur « rectangulo ».}
+
+\page{15}\folio{4r}
+\note{En haut à droite : « 4 » au crayon rouge ; « 7 » à l'encre, barré d'un trait de crayon gris ; au-dessous « 5 » au crayon gris (voir l'en-tête).}
+
+rectangulo A in E adficiuntur.
+
+His omnibus casibus punctum $\overline{I}$ est ad lineam rectam, cuius rei demonstratio facillima.
+\note{Figure : un triangle rectangle NZI, l'angle droit en Z ; sur la base NZ, le point O, d'où monte la parallèle OR à ZI jusqu'à l'hypoténuse NI.}
+
+Sit NZ quadratum $+$ NZ in ZI ad ZI quadratum in ratione data. Ducatur quouis parallela $\overline{OR}$. Quadratum $\overline{N}$O $+$ NO in $\overline{OR}$ erit ad OR quadratū in eadem ratione, vt est facillimum demonstrare. Punctum igitur I erit ad rectam positione. Sumatur enim quoduis punctum vt $\overline{O}$ Et fiat data ratio quadrati $\overline{N}$O $+$ $\overline{N}$O in $\overline{O}$R ad $\overline{O}$R quadratum. Iuncta NR dabitur positione \& \uncertain{satisfaciet} proposito. Idemq; continget in quibuslibet æquationibus, quarum omnia homogenea a potestatibus ignotarum vel rectangulo sub ipsis adficiuntur, vt inutile sit singulos casus scrupulosius percurrere.
+\note{Une tache d'encre sur l'« \& » ; la fin de « satisfaciet » est serrée contre la marge.}
+
+Si potestatibus ignotarum vel rectangulis sub ipsis admisceantur homogenea partim omnino data, partim sub data recta in alteram ignotarum, difficilior
+\note{Au pied, à droite, la réclame « euadet », reprise en tête de la vue 16.}
+
+\page{16}
+\note{En haut à gauche, à l'encre, « 8 ».}
+
+euadet constructio. Singulos casus construimus breuiter \& demonstramus.
+\note{« euadet », la réclame de la vue 15, est repris ici d'une encre plus pâle.}
+
+Si Aq. æquetur D in E punctum I est ad parabolen.
+\note{Figure : un rectangle NZIP, N en bas à gauche, Z en bas à droite, I en haut à droite, P en haut à gauche ; la diagonale NI ; A sous NZ, E le long de ZI.}
+
+Fiat NP parallela ZI. Et circa diametrum NP describatur parabole cuius rectum latus recta D data, Et applicatæ sint parallelæ NP. Punctum I \struck{erit} erit ad Parobolen hanc positione datam. Ex constructione rectangulum sub D in NP æquabitur quadrato PI. Hoc est rectangulum sub D in IP æquabitur quadrato N$\overset{Z}{E}$, ideoq; D in E æquabitur Aq.
+\note{La lettre lue P (dans NP, trois fois, et PI) est celle du coin supérieur gauche de la figure. « applicatæ sint parallelæ NP » et « sub D in IP » sont lus tels qu'ils sont écrits ; la suite (« D in E ») attend NZ pour les appliquées et ZI (ou NP) pour le côté. « erit » est biffé en fin de ligne et récrit en tête de la suivante. « Parobolen » : lu tel quel. Dans « N$\overset{Z}{E}$ », un Z est écrit au-dessus du E, correction de la même encre : « quadrato NZ ».}
+
+Ad hanc æquationem facillimè reducentur omnes in quibus Aq. miscetur homogeneis sub datis in $\overline{E}$. aut Eq. homogeneis sub datis in $\overline{A}$. Idemq; continget licet homogenea oĩo data æquationibus misceantur.
+\note{« oĩo » : omnino, abrégé. Au pied, à droite, la réclame « Sit Eq. », reprise en tête de la vue 17.}
+
+\page{17}\folio{5r}
+\note{En haut à droite : « 5 » au crayon rouge ; « 9 » à l'encre, barré d'un trait de crayon gris ; à côté « 6 » au crayon gris (voir l'en-tête).}
+
+Sit Eq. æquale D in A
+
+In præcedenti figura vertice N, circa diametrum NZ describatur parabole cuius rectum latus sit D. Et applicatæ rectæ NP parallelæ. Præstabit propositum vt patet
+
+Ponatur Bq $-$ Aq. æquale D in E
+\note{Figure : un rectangle NZOM, N en bas à gauche, Z en bas à droite, O en haut à droite, M en haut à gauche ; sur ZO, le point I un peu sous O, et E le long de ZI ; A sous NZ. Le cachet rond « BIBLIOTHÈQUE NATIONALE MANUSCRITS R.F. » est apposé à l'intérieur du rectangle.}
+
+\[ \text{Ergo } Bq - D \text{ in } E \text{ æquabitur } Aq. \]
+
+Applicetur Bq ad D Et sit æquale D in R.
+
+\[ \text{Ergo } D \text{ in } R - D \text{ in } E \text{ æquabitur } Aq. \]
+
+\[ \text{Ideoq; } D \text{ in } R - E \text{ æquabitur } Aq. \]
+
+Ideoq; hæc æquatio reducetur ad præcedentem. recta quippe R $-$ E succedet ipsi E.
+\note{« æquatio » est souligné d'un trait.}
+
+Fiat quippe NM parallela ZI Et æqualis R, Et per punctum M ducatur MO parallela $\overline{NZ}$ datur punctum M Et recta MO positione. in hâc constructione OI æquatur R $-$ E. Ergo D in OI
+\note{La phrase se poursuit en tête de la vue 18, sans réclame.}
+
+\page{18}
+\note{En haut à gauche, à l'encre, « 10 » ; à côté, en transparence, les chiffres du recto.}
+
+æquatur $\overline{NZ}$ quadrato siue $\overline{M}$O quadrato. Vertice $\overline{M}$, circa diametrum $\overline{M}$N descripta parabole, cuius rectum latus $\overline{D}$. Et applicatæ ipsi $\overline{NZ}$ parallelæ. Præstabit propositum vt patet ex constructione.
+
+Si Bq $+$ Aq. æquetur D in E.
+
+\[ D \text{ in } E - Bq \text{ æquabitur } Aq. \ \text{\&c. vt supra.} \]
+
+Similiter omnes æquationes ab $\overline{E}$ et Aq. affectæ construentur.
+
+Sed Aq. miscetur sæpe Eq. Et homogeneis omnino datis.
+
+\[ Bq. - Aq \quad \text{æquetur} \quad Eq. \]
+
+punctum $\overline{I}$ est ad circulum positione datum, quando angulus $\overline{NZ}$I est rectus.
+\note{Figure : la droite NZM ; en Z, la perpendiculaire ZI.}
+
+Fiat NM æqualis B circulus centro N interuallo NM descriptus præstabit propositum. Hoc est quodcunq; punctum sumpseris in ipsius circumferentia vt I, quadratum ZI æquabitur quadrato NM siue Bq $-$ quadrato NZ siue Aq vt patet. \struck{\uncertain{quando}}
+\note{Le dernier mot de la page est biffé d'un trait épais ; on lit un q initial et une boucle de d. Au pied, à droite, la réclame « Ad hanc », reprise en tête de la vue 19.}
+
+\page{19}\folio{6r}
+\note{En haut à droite : « 7 » au crayon gris ; « 6 » au crayon rouge ; au-dessous, « 11 » à l'encre, barré (voir l'en-tête).}
+
+Ad hanc æquationem reducentur omnes affectæ ab $\overline{A}$q et Eq. et ab $\overline{A}$ vel $\overline{E}$ in datas ductis, modò angulus NZI sit rectus, et præterea coefficientes $\overline{A}$q æquentur coefficientibus Eq.
+
+\[ \text{Sit } Bq - D \text{ in } A'' - Aq \quad \text{æquale} \quad Eq + R \text{ in } E'' \]
+\note{Le double trait en exposant après A et après E (rendu $''$) marque le terme pris deux fois, comme « bis » : « D in A'' » vaut deux fois D in A.}
+
+Addatur vtrimq; Rq vt E $+$ R succedat $\overline{E}$. fiet
+
+\[ Rq + Bq - D \text{ in } A'' - Aq \quad \text{æquale} \quad Eq + Rq + R \text{ in } E'' \]
+
+ipsis Rq et Bq addatur $\overline{D}$q vt D $+$ A succedat ipsi A. Et summa quadratorum Rq Bq et Dq æquetur Pq.
+
+\[ \text{ergo } Pq - Dq - D \text{ in } A'' - Aq \]
+\[ \text{æquabitur} \]
+\[ Rq + Bq - D \text{ in } A'' - Aq \]
+
+Nam ex constructione Pq $-$ Dq æquatur Rq $+$ Bq.
+
+Si igitur loco ipsius A\add{$+$ D} sumpseris A. Et loco E $+$ R sumpseris $\overline{E}$.
+\note{« $+$ D » est écrit au-dessus de la ligne, après le premier A ; un second « $+$ D », très pâle, comme gratté, se voit au-dessus du second A.}
+
+\[ \text{fiet } Pq - Aq \text{ æquale } Eq. \]
+
+Et reducetur æquatio ad præcedentem.
+
+Simili ratiocinatione similes æquationes reducentur Et hac via omnes propositiones 2ⁱ libri Apollonii de locis planis construximus, Et 6 priores
+\note{La phrase se poursuit en tête de la vue 20, sans réclame.}
+
+\page{20}
+\note{En haut à gauche, à l'encre, « 12 ».}
+
+in quibuslibet punctis habere locum demonstrauimus Quod sanè mirabile est, Et ab Apollonio fortasse ignorabatur.
+
+Sed Bq $-$ Aq ad Eq habeat rationem datam punctum $\overline{I}$ erit ad Ellipsim.
+\note{Figure : la droite NZM ; en Z, la perpendiculaire ZI. Une petite tache d'encre au-dessus de « erit ad ».}
+
+Fiat NM æqualis B. Et per verticem $\overline{M}$, diametrum NM, centrum N describatur Ellipsis cuius applicatæ sint rectæ ZI parallelæ. Et quadrata applicatarum ad rectangulum sub segmentis diametri habeant rationem datam. Punctum I erit ad huiusmodi Ellipsim. Et enim quadratum NM $-$ quadrato NZ æquatur rectangulo sub diametri segmentis.
+
+Ad hanc reducentur similes in quibus Aq ex vna parte opponitur Eq sub contraria affectionis nota Et sub coefficientibus diuersis. Nam si coefficientes sint eædem Et angulus sit rectus
+\note{Au pied, à droite, la réclame « Locus » : la phrase se poursuit à la vue 21, hors de ce lot.}
+
+\end{document}
