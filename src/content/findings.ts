@@ -979,4 +979,92 @@ export const FINDINGS: Finding[] = [
     settle:
       'Read Del Centina 2008 and Pengelley 2023 on the 1831 note. Then collate her coefficients for 8k ± 1, 8k ± 3 with the imprint’s A₁–A₄ for the same n; agreement or disagreement is itself worth recording.',
   },
+  {
+    id: 'nal-1644-printed-recognitione-emendatione',
+    cote: 'nal-1644',
+    pages: 'views 5–141 (writer’s ink leaves 1–66)',
+    kind: 'codicological',
+    claim:
+      'The two treatises of NAL 1644 — « De Recognitione Æquationum », views 5–68, and « De æquationum Emendatione tractatus secundus », views 69–141 — are the text Viète’s « De æquationum recognitione et emendatione tractatus duo » printed (Paris 1615, ed. Anderson; Opera, Leiden 1646, pp. 84–158). The chapters are the same in number, order and substance: 21 and 14, none merged, split or missing. Every numerical example on the leaves is in the printed text. This is NOT new: Delisle 1888 already catalogued the volume under these two titles, and it is kept, matched, because the collation also checks the later reader’s page references.',
+    basis:
+      'Headings on the leaves: « Francisci Vietæ De Recognitione Æquationum tractatus. » (v. 5) and « Francisci Vietæ. De æquationum Emendatione tractatus secundus. » (v. 69). Opera 1646 p. 84 opens with the same heading and the same first chapter title, « De dignoscenda æquationum constitutione ex Zetesi, Plasmate, & Syncrisi », and the same incipit, « Generalem & generaliter traditam de numerosa potestatum resolutione doctrinam ». De emendatione begins on p. 127. P. 158 carries the closing sentence the leaf gives at v. 141, « Atque hæc elegans … coronida tandem imponito », and « FINIS ». The later reader’s references therefore agree with this edition: « pag. 84 » on the cover and at v. 5, « p. 127. editionis 1646 » at v. 69, and « pag. 158 editionis elzevir. anni 1646 » at v. 141. Examples checked in print include 1Q + 10N = 144 (p. 85), the double series of √59319 (p. 87), 1C − 300N = 432 (p. 91), 124992N − 1CC = 249920 (p. 111), 63QC − 1CC = 916 132 832 (p. 112), 1C − 96N = 40 (p. 133), 39N − 1C = 70 (p. 135), 1QQ + 832N = 1680 (p. 142), 1C + 81N = 702 and 1C + 6N = 2 (pp. 149–150), and 1QC − 15QQ + 85C − 225Q + 274N = 120 (p. 158).',
+    ours:
+      'The chapter-by-chapter collation. The printed text was searched only to see whether each statement is there; nothing in the edition was taken from it, and no gap or doubtful reading of the transcriptions was filled from it. Differences seen, all in chapter titles: Cap. IIII « desinunt » on the leaf, « existunt » in print; Cap. IX–XIIII « Deductio » on the leaf, « Deductiva » in print; Cap. XII « solidasque » on the leaf, « solidasve » in print. The Opera misnumbers Cap. XVIII as « XV », and the 1615 edition does not. The leaf’s own chapter numbers are corrected in several places (VIII→IX, XX→X …), and the corrected numbers are the printed ones. Two things on the leaves are not on the Opera pages that print them, pp. 89–91: the second hand’s margin proofs in Cap. VI (v. 13–18, « demonstratum a nobis ad sectiones angulares ») and its « vide Zet. 20 lib. 2 ». The 1615 margins were not checked. The collation also bears on some transcription doubts — at v. 5 the print has « num gnarus Anatomices invertet » where the transcription reads « ne ignarus [Anat… struck] imitetur », with doubt — and those doubts are left to a transcription revision; the edition does not settle them from print.',
+    literature: [
+      'Viète, Opera mathematica, ed. van Schooten, Leiden, Elzevier, 1646 — archive.org bub_gb_25iHrtJpy9oC, pp. 84–159 read page by page (p. 84 also seen here as an image). The pagination jumps from 112 to 123 with no break in the text.',
+      'Viète, De æquationum recognitione et emendatione tractatus duo, Paris, Laquehay, 1615 — archive.org bub_gb_Q4dbiZ0apcUC: title page, front matter, pp. 63–64, 120, 128–129, 131, 133, and the OCR. De recognitione runs pp. 1–64, and De emendatione begins on p. 65.',
+      'Delisle, Catalogue des manuscrits des fonds Libri et Barrois, 1888, p. 166, no. CXX — read by the search: « Nouv. acq. lat. 1644. (Libri, 1201.) Papiers de François Viète. Volume jadis coté G », then the two titles and « Fragments astronomiques ».',
+      'Catalogue of the manuscripts at Ashburnham Place, Part I (Libri), no. 1201 — read by the search: « Francisci Vietae Opera nonnulla », paper, folio, 16th century, « en grande partie autographe ».',
+      'BnF Archives et manuscrits, the NAL 1644 notice and the notice for the group NAL 1643–1644 — read by the search: bought from Trübner, 23 February 1888; bibliography « Voy. Catal. du fonds Libri, p. 166 »; no contents and no date.',
+      'Not reached: Witmer, The Analytic Art (1983), Van Egmond’s 1985 catalogue of Viète’s printed and manuscript works, Hoffmann’s 1970 reprint of the Opera and its introduction, Grisard 1968.',
+    ],
+    status: 'matched',
+    settle:
+      'Nothing further for the identification. Two things remain open: collating the 1615 margins against the second hand of v. 13–18, and a full word-by-word collation, which would tell the leaf’s own variants from the transcription’s misreadings.',
+  },
+  {
+    id: 'nal-1644-anderson-exemplar-lacunae',
+    cote: 'nal-1644',
+    pages: 'views 62, 64, 107, 108 (and 32, 50, 140)',
+    kind: 'codicological',
+    claim:
+      'Anderson, in his 1615 edition, says his copy lacked four passages, or needed them reworded, and that he supplied them. On all four the main text of NAL 1644 agrees with the copy he describes. In each case the leaf’s margin carries the passage Anderson printed, in wording that agrees with his list. No source searched here records the comparison, or connects NAL 1644 with Anderson’s copy.',
+    basis:
+      'Anderson 1615, list « Quæ nos ad plenam Autoris mentem in exemplari deesse visa suppleuimus, aut a Typographis & Anagnostis commissa siue omissa animaduertimus ». The four passages: (1) Cap. 18 prop. 14 (« deerant in Exemplari »: the clause defining Z plano-solidum). V. 62 does not define Z in its text, and a note in the smaller marginal hand gives it: « Z planosolidum quod fit … solido … cubo a duabus … in quadratum compositæ ex prima et secunda ». (2) Cap. 19 prop. 4 (« deerant in exemplari nostro, differentia est B, & fit Z plano-planum ex ductu utriusvis extremæ in cubum differentiæ reliquarum, alternè sumptarum »). V. 64 breaks off at a cross with no verb, and the margin at the same cross reads « differentia est B et fit Z planoplanum ex ductu utriusque inter extremas in cubum differentiæ reliquarum alterne sumptarum ». (3) Emendatio, Th. 2 of problem 2 (Anderson: the copy’s words « ex applicatione quadrati aggregati laterum, minus triplo rectangulo sub lateribus, ad rectangulum sub lateribus », changed to « ex applicatione cubi a D plano, ad differentiam quadruplam quadratorum a D & B »). V. 107 has the first wording in its line, ringed off, and in the margin « ex applicatione quadrati [cubi] a Dp. ad differentiam quadruplati quadratorum a D et B ». (4) Th. 3 following (« hæc prorsus deerant in exemplari, & fit Z plano-planum ex applicatione cubi a D plano, ad aggregatum quadruplum quadratorum a D & B »). V. 108 strikes a line of its own, and the margin reads « et fit Z plano-plano ex applicatione cubi a D pl. ad aggregatum [quadruplum] quadratorum a Bq + Dq ». Three other items on the list are errors the main text also has, with the margin correcting two of them: the missing negation sign before « E cubo » (list p. 26; v. 32); « omnibus per A divisis » for « per A − E » (list p. 44; v. 50); and, at Emendatio Cap. XIIII prop. 3, the omitted « − Aqq » and « 16 C » for « 10 C » (list p. 129; v. 140, both corrected in its margin). The 1615 page itself still prints 16 C.',
+    ours:
+      'The collation of Anderson’s list against the transcriptions. The list itself was read here on the page images (1615, the two leaves after the preface). Nothing is attributed. The pattern fits NAL 1644 being Anderson’s exemplar, a copy made from it, or its source corrected against his edition, and it does not choose between these. Against too simple a reading: several items on the list that are printer’s slips are correct in the leaf’s text (list pp. 8, 15, 81, 85, 89), and the clause « & 378 − 351 est 27, cubus a latere 3 », which Anderson says he inserted, stands in the text of v. 122, with its « et » written over. Caveats from the apparatus: the v. 62 margin is struck and read only in part (« lecture très incomplète »). At v. 64 « utriusque » is doubtful. Batch 4 cannot say whether the smaller hand of the v. 61–66 margins is the writer’s. Batch 6 takes the v. 105–119 margins for the text’s own hand and ink. Two further notes may bear on a copy but match no item of the list: the probable « transcripta ex exemplari » (v. 100) and the very doubtful, struck « deerant hæc in exemplari » (v. 114).',
+    literature: [
+      'Anderson, preface « Ad Matheseos studiosos » and supplement list, in Viète, De æquationum recognitione et emendatione, Paris 1615 — archive.org bub_gb_Q4dbiZ0apcUC, read. Anderson had Viète’s « adversaria » from Jacques Aleaume. His copy was corrupt in many places and mutilated in some, and he restored what seemed missing « pro sensus exigentia ».',
+      'Ritter, François Viète, inventeur de l’algèbre moderne (1895), p. 72, on Anderson’s corrupt exemplar, and p. 98, which says Libri 1201 and 1304 were « réintégrées à la Bibliothèque Nationale » — read by the search. Neither connects NAL 1644 with Anderson’s copy.',
+      'Bigourdan, Comptes rendus 162 (1916), pp. 237–240, read here on the page images: « la majeure partie du no 1644 des Nouv. acq. lat., jusqu’au feuillet 66, pourrait être de la même main que le no 7274 du fonds latin », which he takes to be Viète’s own draft of the Harmonicon. This is a claim about the hand, and it says nothing of Anderson.',
+      'Pantin, Littérales 3 (2003), p. 123 n. 22, and Vacca, Comptes rendus 162 (1916), pp. 676–679 — read by the search. Neither discusses the algebra of NAL 1644.',
+      'Searched, nothing found: HAL full text, arXiv, Persée, and the Historia Mathematica open archive, for NAL 1644 or « nouv. acq. lat. 1644 » with Viète. The Libri sale catalogues of 1847–1864 list no Viète manuscript.',
+      'Not reached, and the first places this can fail: Grisard’s 1968 thesis and his Baroque 7 (1974) article; Witmer 1983; Van Egmond 1985; Hoffmann 1970, p. X*; the Vuibert collective volume of 2005.',
+    ],
+    status: 'candidate',
+    settle:
+      'Read Van Egmond 1985, Grisard 1968 and Witmer 1983 on the manuscripts of the two treatises. If none describes this agreement, compare hands: the text and margins of v. 62–64 and 105–108 against autographs of Anderson, of Aleaume, and against lat. 7274, which Bigourdan puts forward for the text hand. That comparison decides which of the three readings in `ours` holds. Whose the hands are is not claimed here.',
+  },
+  {
+    id: 'nal-1644-harmonicon-partial-copy-folios',
+    cote: 'nal-1644',
+    pages: 'views 142–163 (writer’s ink leaves 67–79)',
+    kind: 'codicological',
+    claim:
+      'The astronomy leaves of NAL 1644 are the « copie partielle (nouv. acq. lat. 1644, fol. 67-79) » of Viète’s Harmonicon coeleste that Pantin cites. Her folios are the volume’s own ink series, not a library foliation: fol. 67–79 are Gallica views 142–163. Bigourdan’s « jusqu’au feuillet 66 », on the same series, ends at views 140–141. This is NOT new as an identification; the view mapping is the finding.',
+    basis:
+      'The ink series on the rectos runs 1–79 without a gap across the volume. Leaf 67 is view 142, which opens « Ad Tabulas Prostaphæreseōn Lunarium ». Leaf 79 is view 162, the Mercury « Δεδομένον », whose verso, view 163, is the last written page. Leaf 66 is view 140, and its verso, view 141, closes the Emendatio with « Finis ». Libri 1841 describes the contents of lat. 7274 under titles that recur on these leaves. He lists Viète setting out « l’hypothèse de Tycho-Brahé »; then « ad tabulas prostaphæreseon lunarium », five propositions seeking the first prostaphaeresis, the mean altitude, the second prostaphaeresis of the anomaly, the radius of the epicycle and the greatest prostaphaeresis, closed by a table (views 142–147 hold the same five propositions and table); and « Harmonici Ptolemæi constructio, caput XII », which he quotes as beginning « Copernicus sibi suarumque hypotheseon si qua est præstantiæ detrahit, adeo eas mala construxit geometria » (view 157 reads « … mala construit Geometriâ »).',
+    ours:
+      'The concordance of Pantin’s and Bigourdan’s folios with the views, and the matching of Libri’s summary against the transcription. Libri describes lat. 7274, not NAL 1644, and his summary was matched here title by title only; the order of the pieces and their texts were not collated. The astronomy is attributed only as these sources attribute it. From the leaves themselves the edition draws nothing: no author, and no date from Tycho’s name, which the fair copy of v. 150 strikes out for « ab Astroscopo Dano ».',
+    literature: [
+      'Pantin, Littérales 3 (2003), the article running-headed « Les principes de cosmographie (1637) », p. 123 n. 22 — read here on the page image: four manuscripts plus « une copie partielle (nouv. acq. lat. 1644, fol. 67-79) », with an index in NAF 3282, ff. 119–123.',
+      'Libri, Histoire des sciences mathématiques en Italie, t. IV (1841), p. 23 and Note I, pp. 297–302 — OCR read here: lat. 7274, « Francisci Vietæ ad Harmonicon cœleste libri quinque priores ». The complete autograph is Florence, Magliabechiana, cl. XI no. 36.',
+      'Bigourdan, Comptes rendus 162 (1916), pp. 237–240 — read here on the page images: lat. 7274 described; NAL 1644 described up to f. 66 (the algebra) and its « fragments astronomiques » mentioned, with no folios for them.',
+      'Vacca, Comptes rendus 162 (1916), pp. 676–679; Kristeller, Iter Italicum I, p. 118, and III, pp. 290–291 (NAL 1643–1644, « 45 and 79 fols. »); Delisle 1888, p. 166 — read by the search. None gives folios for the astronomy of NAL 1644.',
+      'Carman, Journal for the History of Astronomy 54 (2023), 55 (2024), 56 (2025), including « François Viète and his versions of the Tychonic lunar models », and Historia Mathematica 58 (2022) — abstracts only. It is not known which manuscripts he used, nor whether he cites NAL 1644.',
+      'Swerdlow, JHA 6 (1975) — full text not reached. Its reference list gives sigla F1, F2, R, P and no NAL 1644.',
+    ],
+    status: 'matched',
+    settle:
+      'Read Carman’s JHA articles for their manuscript sigla. If they cite NAL 1644 by folio, the concordance given here serves them; if they do not use it, the leaves’ « restitution » of Tycho’s lunar hypothesis (v. 148–152) is the thing to compare with his versions of Viète’s Tychonic models.',
+  },
+  {
+    id: 'nal-1644-lalande-notes',
+    cote: 'nal-1644',
+    pages: 'views 1, 5, 69, 141',
+    kind: 'codicological',
+    claim:
+      'The notes the transcriptions give to « a later reader », referring to the Elzevier edition of 1646, are by rapprochement the ones Bigourdan attributes to Lalande. He places them « sur la couverture primitive et sur les marges », and says Lalande compared the manuscript with the Opera of 1646. The identification of the hand is Bigourdan’s; this edition makes it only by bringing the two together.',
+    basis:
+      'V. 1, the cover: « imprimés, pag. 84 de l’edition d’Elzevir 1646. in folio p 158 », and a small table « de æquationum recognitione 1. / De emendatione æquationum 32 ». V. 5: « page 84 de l’edition d’Elzevir 1646 in folio. » V. 69: « p. 127. editionis 1646. » V. 141: « pag. 158 editionis elzevir. anni 1646, infolio. » The transcriptions put them all in one small, later hand; all are on the cover or in margins, and all compare the leaves with the 1646 edition. Bigourdan: « Sur la couverture primitive et sur les marges de ce manuscrit 1644 se trouvent quelques notes de la main de Lalande, qui l’avait comparé à l’Ouvrage : Francisci Vietæ Opera mathematica…, in-fo, 1646, publié par Schooten, chez Elzévier. »',
+    ours:
+      'The rapprochement only; no hand was compared. On v. 1 « pag. 84 », « p » and « de » are read with doubt, and « emendatione » likewise. The « 1 » and « 32 » of the cover table match the ink leaves where the two treatises begin (v. 5, v. 69); that is the reading’s observation, not something the table says.',
+    literature: [
+      'Bigourdan, Comptes rendus 162 (1916), p. 240 note — read here on the page image.',
+      'Not searched: Lalande’s own writings on Viète, or any mention by Lalande of having handled this volume.',
+    ],
+    status: 'matched',
+    settle:
+      'Compare the hand of the four notes with a dated Lalande autograph. Only a person can make the identification.',
+  },
 ];
