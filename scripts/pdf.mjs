@@ -42,6 +42,7 @@ const WORK = resolve(ROOT, 'archives', 'latex');
 const BOOK_DIR = resolve(ROOT, 'exercises');
 const BOOK_SOURCE = resolve(BOOK_DIR, 'exercices.fr.tex');
 const BOOK_PREAMBLE = resolve(SOURCE, 'preamble', 'exercices.sty');
+const PREAMBLE = resolve(SOURCE, 'preamble', 'germain.sty');
 const BOOK_PDF = resolve(ROOT, 'public', 'exercises', 'exercices.pdf');
 
 async function has(cmd) {
@@ -112,8 +113,9 @@ async function compileTranscripts(engine, only) {
       const pdf = resolve(OUT, folder, basename(file, '.tex') + '.pdf');
       // Recompiling an unchanged transcript costs seconds each and produces a
       // byte-identical file; skipping is what makes `npm run pdf` safe to run
-      // after every batch.
-      if ((await mtime(pdf)) > (await mtime(src))) continue;
+      // after every batch. The preamble counts too: a change of font there
+      // changes every PDF, and none of their sources.
+      if ((await mtime(pdf)) > Math.max(await mtime(src), await mtime(PREAMBLE))) continue;
 
       /**
        * Twice, and the first failure is not reported.

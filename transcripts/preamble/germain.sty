@@ -22,6 +22,55 @@
 \usepackage{tikz-cd}
 \usepackage[english,french]{babel}
 \usepackage{fontspec}
+
+% --- Greek ------------------------------------------------------------------
+% The text face stays fontspec's default, Latin Modern, which has no Greek:
+% XeTeX drops every glyph it lacks with a line in the log and nothing on the
+% page, and the Greek words the manuscripts quote vanished from the PDFs. So
+% the Greek and Greek Extended blocks get a XeTeX character class of their own,
+% and entering or leaving a run of it switches the family to CMU Serif — the
+% same Computer Modern design, with polytonic Greek — and back. Only the
+% family changes: a Greek word in \textit or \textbf keeps its shape and series.
+% The transitions to and from every other class carry the tokens that class
+% has towards an ordinary letter, so French spacing before « ; » or inside
+% « » still holds after a Greek word. No grouping, so no brace or \endgroup
+% can come out unbalanced; maths is left alone, since XeTeX inserts nothing
+% there. Kept identical in `exercices.sty`.
+\makeatletter
+\newfontfamily\germainGreekfont{cmun}[
+  Extension=.otf, NFSSFamily=germaingreek,
+  UprightFont=*rm, ItalicFont=*ti, SlantedFont=*sl,
+  BoldFont=*bx, BoldItalicFont=*bi, BoldSlantedFont=*bl]
+\newXeTeXintercharclass\germain@greek
+\def\germain@greekrange#1#2{%
+  \@tempcnta=#1\relax
+  \loop
+    \XeTeXcharclass\@tempcnta=\germain@greek
+    \ifnum\@tempcnta<#2\advance\@tempcnta\@ne\repeat}
+\germain@greekrange{"0370}{"03FF}
+\germain@greekrange{"1F00}{"1FFF}
+\def\germain@greekprev{\rmdefault}
+\def\germain@greekin{%
+  \edef\germain@greekprev{\f@family}\fontfamily{germaingreek}\selectfont}
+\def\germain@greekout{\fontfamily{\germain@greekprev}\selectfont}
+\def\germain@greekjoin{%
+  \XeTeXinterchartokenstate=\@ne
+  \@tempcnta=\z@
+  \loop
+    \ifnum\@tempcnta=\germain@greek\else
+      \XeTeXinterchartoks\germain@greek\@tempcnta=\expandafter{%
+        \expandafter\germain@greekout\the\XeTeXinterchartoks\z@\@tempcnta}%
+      \XeTeXinterchartoks\@tempcnta\germain@greek=\expandafter{%
+        \the\XeTeXinterchartoks\@tempcnta\z@\germain@greekin}%
+    \fi
+    \ifnum\@tempcnta<4095\advance\@tempcnta\@ne\repeat}
+% babel-french sets its own classes, and saves and restores the interchar
+% state, each time a language is selected: join again after it does.
+\addto\extrasfrench{\germain@greekjoin}
+\addto\extrasenglish{\germain@greekjoin}
+\AtBeginDocument{\germain@greekjoin}
+\makeatother
+
 \usepackage{geometry}
 \geometry{a4paper,margin=25mm,marginparwidth=28mm}
 \usepackage{marginnote}

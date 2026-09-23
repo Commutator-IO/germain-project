@@ -28,6 +28,44 @@
 \usepackage{mathrsfs}
 \usepackage[french]{babel}
 \usepackage{fontspec}
+
+% --- Greek ------------------------------------------------------------------
+% Latin Modern has no Greek, so the Greek and Greek Extended blocks switch the
+% family to CMU Serif and back, through a XeTeX character class. The reasons
+% and the details are in `germain.sty`, whose block this is, less English,
+% which the book does not load.
+\makeatletter
+\newfontfamily\germainGreekfont{cmun}[
+  Extension=.otf, NFSSFamily=germaingreek,
+  UprightFont=*rm, ItalicFont=*ti, SlantedFont=*sl,
+  BoldFont=*bx, BoldItalicFont=*bi, BoldSlantedFont=*bl]
+\newXeTeXintercharclass\germain@greek
+\def\germain@greekrange#1#2{%
+  \@tempcnta=#1\relax
+  \loop
+    \XeTeXcharclass\@tempcnta=\germain@greek
+    \ifnum\@tempcnta<#2\advance\@tempcnta\@ne\repeat}
+\germain@greekrange{"0370}{"03FF}
+\germain@greekrange{"1F00}{"1FFF}
+\def\germain@greekprev{\rmdefault}
+\def\germain@greekin{%
+  \edef\germain@greekprev{\f@family}\fontfamily{germaingreek}\selectfont}
+\def\germain@greekout{\fontfamily{\germain@greekprev}\selectfont}
+\def\germain@greekjoin{%
+  \XeTeXinterchartokenstate=\@ne
+  \@tempcnta=\z@
+  \loop
+    \ifnum\@tempcnta=\germain@greek\else
+      \XeTeXinterchartoks\germain@greek\@tempcnta=\expandafter{%
+        \expandafter\germain@greekout\the\XeTeXinterchartoks\z@\@tempcnta}%
+      \XeTeXinterchartoks\@tempcnta\germain@greek=\expandafter{%
+        \the\XeTeXinterchartoks\@tempcnta\z@\germain@greekin}%
+    \fi
+    \ifnum\@tempcnta<4095\advance\@tempcnta\@ne\repeat}
+\addto\extrasfrench{\germain@greekjoin}
+\AtBeginDocument{\germain@greekjoin}
+\makeatother
+
 \usepackage{geometry}
 \geometry{a4paper,margin=25mm}
 \usepackage{xcolor}
