@@ -717,4 +717,241 @@ export const FINDINGS: Finding[] = [
     settle:
       "Search the Cogitata of 1644 (Hydraulica pneumatica, Ballistica) for the 1890 ratio and the Saint-Cloud ranges, and de Waard's indexes for June 1638 and May 1636. A printed date agreeing with the leaf makes the entry matched; a different one is worth recording.",
   },
+  // fr-9115 — Français 9115 (Sophie Germain), /find-novelty, 23 September 2026, on
+  // claude-opus-5-5, the model that wrote transcripts/fr-9115/fr-9115.modern.tex.
+  // Search conditions: the web_search tool returned HTTP 403. What was read was
+  // fetched directly: Laubenbacher and Pengelley 2010 (arXiv 0801.1809, full
+  // text); Todhunter–Pearson, History of the Theory of Elasticity I (1886), the
+  // archive.org OCR, Arts. 283–306 and 414–422; Germain's Recherches sur la
+  // théorie des surfaces élastiques (1821), her Mémoire sur l'emploi de
+  // l'épaisseur (1880) and Stupuy's Œuvres philosophiques (1896), all as archive.org
+  // OCR; Crelle's Journal 7 (1831), archive.org OCR; Euler's 1779 memoir in the
+  // Acta Petropolitana 1779 pars prior, archive.org OCR and page images of pp. 150
+  // and 157. Refused and NOT read: N. Grun's thesis of 2022 on the three prize
+  // memoirs (HAL, behind a bot check that was not attempted), Dahan Dalmédico 1987
+  // (ScienceDirect, HTTP 403), Del Centina 2008 and Del Centina–Fiocca 2012
+  // (Springer, script challenge), the Euler Archive (Cloudflare challenge).
+  // Bucciarelli and Dworsky 1980 is not online and was not read.
+  {
+    id: 'fr-9115-manuscript-c-views',
+    cote: 'fr-9115',
+    pages: 'views 708–710 (ink 348 on v. 708, 349 on v. 710)',
+    kind: 'codicological',
+    claim:
+      "Manuscript C, which Laubenbacher and Pengelley cite as Français 9115 « pp. 348r–349r », is at Gallica views 708 (348r), 709 (348v) and 710 (349r). The figures 348 and 349 at the top right of views 708 and 710 belong to an ink series that runs, one number per leaf, through the whole volume, and so they are the numbers those folios refer to. The sources searched cite the piece by folio only, never by view.",
+    basis:
+      "Batch 36 reads the ink series without a gap: 345 (v. 702), 346 (704), 347 (706), 348 (708), 349 (710), 350 (712). View 709 is the written verso of 348, and it continues the sentence of view 708; view 711, the back of 349, is blank. The three pages are one text in one steady hand, from « Théorème » to the extension of view 710. Across the volume the series runs from 1 (v. 2) to 372 (v. 748), with a « 55 bis » at view 113 and an unnumbered blank leaf at views 732–733; the catalogue gives 372 leaves.",
+    ours:
+      "The concordance, and the identification of the ink series with the folios Laubenbacher and Pengelley cite. The transcriptions write no \\folio{}, because the series is in ink and not in the pencil this project takes for the library's foliation. The count for the whole volume (374 leaves, if the 55 bis and the unnumbered blank both count) is not reconciled with the catalogue's 372.",
+    literature: [
+      'Laubenbacher and Pengelley, « Voici ce que j’ai trouvé »: Sophie Germain’s grand plan to prove Fermat’s Last Theorem, Historia Mathematica 37 (2010); arXiv 0801.1809 read in full. § 1.3 lists Manuscript C as « [26, pp. 348r–349r] », and reference [26] is « Papiers de Sophie Germain, MS. FR9115 ». They give no view.',
+      'Del Centina 2008, Archive for History of Exact Sciences 62: NOT read (Springer script challenge). Laubenbacher and Pengelley, § 1.3, say he does not mention Manuscript C.',
+      'NOT read: Pengelley, Number Theory Through the Eyes of Sophie Germain (AMS Classroom Resource Materials 70, 2023), found only as a Crossref record; the BnF notice for Français 9115.',
+    ],
+    status: 'candidate',
+    settle:
+      'A person checks views 708 and 710 for a pencil foliation distinct from the ink series. If there is none, the series is the foliation cited, and the transcriptions can write \\folio{348} and \\folio{349}. Pengelley 2023 should be checked for a view-level citation.',
+  },
+  {
+    id: 'fr-9115-manuscript-c-case-one',
+    cote: 'fr-9115',
+    pages: 'views 708–710',
+    kind: 'mathematical',
+    claim:
+      "Laubenbacher and Pengelley find a relative-primality flaw at the start of Manuscript C's first proof. On their reading the proof may still hold in « Case 1 » (x, y, z prime to n), and they leave that question open. On the leaves the proof fails in Case 1 as well, at two further steps. First, it treats both signs of UV as divisible by N = pq(p² − q²), though only the sign fixed by the decomposition is (« l'un et l'autre signes », view 709). Second, the inequality chain that excludes the first branch of the final alternative closes only when x and y have the same sign and |y| > 3|x|. The theorem as written also omits x = y = z = 1. The reduction of z²ⁿ = x²ⁿ + y²ⁿ to it works only for odd n, although the statement says « pour toute valeur de n ».",
+    basis:
+      "View 708: « Nous supposerons comme a l'ordinaire, z, y et x premiers entr'eux », then the two parametrisations, the systems (1) and (2), and the divisibility of UV by pq(p² − q²). View 709: « Les valeurs de VU données par l'un et l'autre signes devront également satisfaire », then 32(v² − u²)uv against (x + y)², bounded through « on a z' > 4 », and the second branch closing on « x^n = x, y^n = y et enfin n = 1. Ce cas est donc le seul ». View 710: the extension to 2z^{2(n+2d)} and the reduction of Fermat's equation for even exponents. The transcription marks only two words \\uncertain{} in the three pages, both on view 710 (the exponent read « 8n » and the « 2 » of n + 2d). Neither lies under the steps this entry rests on.",
+    ours:
+      "The analysis is the modernised reading's: the justification of P = Uq ± Vp by Gaussian integers, the identity 2(y² − x²) − (x + y)² = (x + y)(y − 3x), the counterexample p = 3, q = 2 (x = −7, y = 17), the remark that z′ > 4 fails for z′ = 1, and the observation that for even n the cofactors are even. Its example n = 5, x = 1, y = 3 illustrates the relative-primality flaw that Laubenbacher and Pengelley had already named, and it is not claimed here. Nothing is claimed about whether the proof can be repaired. That both statements, corrected for the trivial solution, are true (Darmon and Merel 1997; Wiles 1995) is already said by Laubenbacher and Pengelley for the first.",
+    literature: [
+      'Laubenbacher and Pengelley 2010, §§ 6 and 7.4 (arXiv 0801.1809) — read. They put the flaw in relative primality « near the beginning ». They note it would still allow the proof for Case 1, and leave to others whether the proof is valid there. They state her claim as having no solutions « other than x = y = z ». On the Fermat reduction, they find it fine for Case 1 apart from its appeal to the first theorem.',
+      'NOT read, and the first place this can fail: Pengelley 2023, Number Theory Through the Eyes of Sophie Germain (AMS), which may carry the Case 1 analysis the 2010 paper deferred. Also not read: Del Centina 2008 (by Laubenbacher and Pengelley’s account, it does not treat Manuscript C); Musielak, Prime Mystery (2020).',
+    ],
+    status: 'candidate',
+    settle:
+      'Read Pengelley 2023 on Manuscript C. If it identifies the two-signs step or the bound on |y|/|x|, the entry becomes matched. A person should also check the sentence on « l’un et l’autre signes » on view 709.',
+  },
+  {
+    id: 'fr-9115-printed-counterparts',
+    cote: 'fr-9115',
+    pages: 'view 2 (flyleaf); views 3–41; 43–89; 620–626',
+    kind: 'codicological',
+    claim:
+      "The flyleaf label « Manuscrits de mémoires imprimés » (view 2) holds for three pieces the modernised reading left unidentified. The « Mémoire sur la courbure des surfaces » (views 43–89) corresponds to the memoir Germain printed under that title in Crelle's Journal 7 (1831), pp. 1–29. The « Exposition des principes … » (views 3–41) shares its opening, and its dismissal of oblique sections, with the Avertissement and § I of her Recherches of 1821, but it is a different, longer text. The draft on cylindrical surfaces (views 620–626) reports bent-glass experiments of which the Recherches (Nos. 50–52) print a fuller series.",
+    basis:
+      "Recherches (1821), Avertissement, pp. v–vi: the same sentences as views 3–4 (« l'une … a pour appui un nom justement célèbre », « que le public éclairé les pèse », the « grand géomètre » of the theory of sound, « non pas certainement dans l'intention de concourir au prix extraordinaire »). Its § I is headed « Exposition des principes qui peuvent servir de base à la théorie des surfaces élastiques », where the manuscript has « qui servent de base ». The print lacks the manuscript's account of the 1816 prize and its « restriction », its N° 15 on loaded plates, and its closing « Un pareil prestige n'est pas de mon côté » (none of these found in the OCR). Crelle 7: the memoir carries « surface des distances », « ligne de distance », « distances moyennes » and a reference to Fourier, as the manuscript does.",
+    ours:
+      "The three identifications. The collation is by opening sentences, keywords and section titles. It is not line by line. Whether views 43–89 are the printer's copy of the 1831 memoir, and whether the Exposition precedes or follows the 1821 print, are not decided. The reading's own note that a curvature memoir was printed in 1831 was context, and it is now checked against the journal.",
+    literature: [
+      'Germain, Recherches sur la théorie des surfaces élastiques (Paris, 1821), archive.org TO0E039736_TO0324_PNI-1705_000000, OCR — read: the Avertissement, § I heading, and keyword searches of the whole.',
+      'Crelle’s Journal für die reine und angewandte Mathematik 7 (1831), archive.org journalfrdierei27crelgoog, OCR — read: contents and the opening of « Mémoire sur la courbure des surfaces », pp. 1 ff.',
+      'Todhunter–Pearson, History of the Theory of Elasticity I (1886), Arts. 283–306 — read. It describes the 1821 Recherches section by section and cites no manuscript.',
+      'NOT read: Dahan Dalmédico, « Mécanique et théorie des surfaces : les travaux de Sophie Germain », Historia Mathematica 14 (1987), the likeliest place for a manuscript of the curvature memoir to be cited (ScienceDirect refused the request with HTTP 403). Also not read: Bucciarelli and Dworsky 1980.',
+    ],
+    status: 'candidate',
+    settle:
+      'Collate views 43–89 with Crelle 7, pp. 1–29, and views 3–41 with the Recherches, pp. v–12, line by line, and read Dahan Dalmédico 1987 for any citation of Français 9115.',
+  },
+  {
+    id: 'fr-9115-long-memoir-1813',
+    cote: 'fr-9115',
+    pages: 'views 398–592 (pages (1)–(165)); 593–618; 626; 38',
+    kind: 'codicological',
+    claim:
+      "On internal evidence, the long memoir of views 398–592, paginated (1) to (165), with other states of its opening at views 593–618, is the memoir Germain sent to the concours that closed on 1 October 1813. Français 9115 would then hold a corrected fair copy of a text whose original the Académie des sciences keeps. The identification is an inference: no leaf names the memoir or dates it.",
+    basis:
+      "View 626: « suivant la théorie que j'ai developpée N.o 11 de mon memoire pour 1813 ». The claim it makes there, that the figure of the two diagonals is equivalent to two lines parallel to a side, is exactly the first value of ω in the long memoir's N° 11 (views 443–444). View 38 (the Exposition) refers the experiment on loaded plates to « (M. pour janvier 1814) », and the long memoir's § 6 (views 538–547) contains that experiment down to its ratio of ten to one. The 1821 preface describes the 1813 memoir as giving the equation and the edge conditions drawn from the hypothesis, and as ending on the comparison of theory with experiment. It also says she had argued, against the programme, that lines of rest are like the nodes of strings only where they satisfy the edge conditions. The long memoir has all four (§ 1; § 3, Nos. 7–9, views 414–438; Nos. 16 ff.). It opens with an epigraph from Bacon (view 398); prize pieces were anonymous and known by their epigraphs.",
+    ours:
+      "The identification, and the order of the three states of the opening (views 598 and 614–618 taken as the oldest), are the modernised reading's inferences, gathered here. That the Académie keeps the original is taken from Grun's abstract. The epigraph of the Académie original was not seen.",
+    literature: [
+      'Recherches (1821), Avertissement, p. vi — read (archive.org OCR): the description of the 1813 memoir summarised above.',
+      'Todhunter–Pearson I, Arts. 283–284 — read: it quotes the same preface and records the honourable mention of the 1813 memoir, and names no manuscript.',
+      'NOT read, and the first place this can fail: N. Grun, Le défi de Sophie Germain : ses travaux sur les vibrations des surfaces élastiques (thèse, Université de Lorraine, 2022; HAL tel-04052603). Its abstract, which was read, says the three prize memoirs of 1811, 1813 and 1815 are in the Archives of the Académie and are transcribed in its appendix. The full text sits behind a bot check that was not attempted. Also not read: Bucciarelli and Dworsky 1980, whose account of the 1813 memoir rests on the same archive.',
+    ],
+    status: 'candidate',
+    settle:
+      "Collate views 398–592 with Grun's transcription of the 1813 memoir: the epigraph, the pagination to (165), the N° 11 on the diagonals, § 6 on wax. If they are one text, the entry holds, and pieces.json can name the piece. If Grun or Bucciarelli and Dworsky already cite Français 9115 for it, the entry becomes matched.",
+  },
+  {
+    id: 'fr-9115-unprinted-experiments',
+    cote: 'fr-9115',
+    pages: 'views 416, 463–464, 538–547, 585–590',
+    kind: 'codicological',
+    claim:
+      "The long memoir reports four experiments, with their measurements, that are not in Germain's printed Recherches of 1821 nor in Todhunter–Pearson's account of her work. A square glass plate showing the figure of the two diagonals kept, she says, « le même » sound and figure after a quarter was cut away (views 463–464). Plates loaded along their edges with wax, and a loaded lamina, are reported with weights, notes and nodal distances (views 538–547; the slip of view 416 corrects the calculation). Glass rings of 83 mm, 9 and 20 mm wide, and a plate pierced by an 11 mm hole are reported with their figures and notes (views 585–590).",
+    basis:
+      "Views 463–464: « j'ai fait couper la partie B C D E, c'est adire le quart de la plaque », then « Le son est resté le même que sur la plaque complette ». Views 539–546: a plate of 106 mm weighing 1 once 18 grains; doses of 1 gros 2 grains; the nodal line at 45 and 58 mm against 46½ and 59½ computed; ré 1 with two opposite sides loaded. A lamina of 20 cm × 23 mm has its transverse lines at 12, 121 and 61 mm once loaded. Views 585–590: rings giving si 1, mi 2 and fa♯3 for three, four and six nodes; the plate and the pierced plate giving ut♯2 and mi 3 for four and six diameters. The transcription marks as doubtful « on sait » and a « m. » at view 464, the « 2 » of the transverse lines (546), the octave figure of fa♯3 (585), and « deux nœuds » where « quatre » is expected (589). It also records « 1 once 2 gros » of wax at view 540 against « 1 gros 2 grains » at 541–542.",
+    ours:
+      "The modern comparisons are the reading's. A Ritz computation in Kirchhoff's theory (ν = 0.25–0.33) puts the cut plate a little more than a major tone lower, about 213 cents, where she heard the same sound; the leaves carry neither her figure A nor a measurement to judge by. The wax equivalence holds to first order. The ring's 4-to-6-node ratio of 9/4 is far from Hoppe's law (about 2.8). The pierced plate's 1500 cents is close to Kirchhoff's 1458. Nothing here claims the experiments were never reported: if the long memoir is her 1813 prize piece (fr-9115-long-memoir-1813), they are in the Académie original.",
+    literature: [
+      'Recherches (1821), archive.org OCR — searched for « cire », « couper », « quart », « anneau de verre », « corps mou », « prolong »: none of these experiments. Its glass experiments are on laminas of uneven thickness and on bent plates (Nos. 50–52).',
+      'Germain, Mémoire sur l’emploi de l’épaisseur (1880), archive.org OCR — searched for « cire »: nothing.',
+      'Todhunter–Pearson I, Arts. 283–306 — read: Art. 299 notes only that her sounds came out graver than theory.',
+      'NOT read: Grun 2022 (transcription of the 1813 memoir, bot check); Bucciarelli and Dworsky 1980.',
+    ],
+    status: 'candidate',
+    settle:
+      "Look for these four experiments in Grun's transcription of the 1813 memoir and in Bucciarelli and Dworsky. If they are there, the entry is matched and the leaves are a second witness. A person should read view 540 for the wax dose and view 589 for « deux nœuds ».",
+  },
+  {
+    id: 'fr-9115-euler-47-critique',
+    cote: 'fr-9115',
+    pages: 'views 208–389 (three states: 210–216, 218–316, 320–389)',
+    kind: 'mathematical',
+    claim:
+      "Français 9115 holds, in three states, a critique of §§ 47–51 of Euler's 1779 memoir on elastic laminae. It rejects Euler's second solution for a lamina supported at both ends and at its middle. The rejection is wrong. Euler's second family is the set of modes symmetric about the middle, which load the support. The critique rests on an assumption that its first state writes out once: that the support's effect is « purement exclutif » (view 214), that is, that the support exerts no force. None of the sources searched discusses the critique.",
+    basis:
+      "View 214: the effect of the supports « est consideré comme purement exclutif », and cannot produce motions « inconciliables avec l'état des extrèmités ». View 322 (§ 1): the second solution « sort de l'état de la question », since the modes of the supported lamina require sin ω = 0. View 332 (§ 6): « afin d'être autorisée a conclure qu'Euler a été induit en erreur ». Views 369–371 (§ 20): « je n'ose admettre une opinion si contraire à celle d'Euler, sans la soumettre à un examen plus approfondi ». Euler's § 8, in the copy (view 152), introduces the force F of a stylet about which the rod stays mobile. The 1821 Recherches (p. 78) states the critique's premise as an observation: on a straight lamina, a support placed at a point that belongs to none of the theory's nodal figures gives no sound.",
+    ours:
+      "The verdict is the modernised reading's, checked against 8 × 8 determinants of Euler's conditions (λ = ½, ⅓, 0.3, 1/√2, 0.05, 0.01). What the critique gets right is the leaves' own: the « sympathiques » rest points at rational positions of the support, the expansions of sin nθ, the symmetric form of the frequency equation, and the rarity of modes with zero slope at the support. The hands of the fair copy (views 320–389) are attributed differently by the transcriptions. The text is in the feminine first person (« autorisée », view 332).",
+    literature: [
+      'Euler, Investigatio motuum quibus laminae et virgae elasticae contremiscunt, Acta Acad. Sci. Petropolitanae 1779 pars prior, pp. 103–161 — pp. 150 and 157 read on archive.org page images (actaacademiaesci79impe). At § 46 Euler says he treats only this one case of an intermediate support, to show the method.',
+      'Germain, Recherches (1821), archive.org OCR — read at p. 78; searched for « stilet », « stylet », « n° 47 »: no critique of Euler’s § 47.',
+      'Todhunter–Pearson I, Arts. 283–306 (Germain) — read: no mention.',
+      'NOT read: Bucciarelli and Dworsky 1980; Grun 2022; Truesdell, The Rational Mechanics of Flexible or Elastic Bodies 1638–1788 (Euler, Opera omnia II 11.2, 1960), whose account of E526 is the likeliest to mention later criticism.',
+    ],
+    status: 'candidate',
+    settle:
+      'Look in Bucciarelli and Dworsky and in Grun 2022 for any account of the « Remarques sur le mémoire d’Euler » among the BnF papers, and in Truesdell 1960 for a discussion of § 47 that mentions her.',
+  },
+  {
+    id: 'fr-9115-free-lamina-stylet-equation',
+    cote: 'fr-9115',
+    pages: 'view 342 (§ 8; draft view 254); views 348, 358 (§§ 12, 16)',
+    kind: 'mathematical',
+    claim:
+      "The same critique derives, by eliminating the eight coefficients from Euler's conditions, the exact frequency equation of a lamina free at both ends and held by a point support anywhere along it. In modern form it is C₊(μω)P(λω) + C₊(λω)P(μω) = 0, with P(t) = cosh t sin t − sinh t cos t and C₊(t) = 1 + cosh t cos t. Euler's 1779 memoir does not treat this case. Its form for clamped ends (§ 12, and the table of § 16) is not equivalent to the exact equation except at λ = ½. No priority is claimed: the leaf is undated.",
+    basis:
+      "View 342 writes the equation with exponentials as a sum of two products, the second obtained by exchanging λ and 1 − λ; it is four times the form above. Its roots are 3.7502, 7.8532, 9.3882, 14.1372 for λ = ½ and 4.4831, 6.5842, 10.5736, 13.8915 for λ = 0.3, as the 8 × 8 determinant gives, and its two values of α/α′ are also right. For supported ends, and for one end clamped and the other supported, the § 16 forms are exact. For clamped ends, the leaf's form gives 6.3138 at λ = 0.3 against 6.3015. The transcription marks the leading « 4 » of the brackets as written over another figure at view 340, and as doubtful at views 250 and 252 of the draft; the calculation requires 4.",
+    ours:
+      "The notation P, C±, the check against determinants, the reading of each term as the rotational stiffness of one portion, and the diagnosis of the clamped-end form (her two terms divided by different factors) are the reading's. The elimination and the equation are the leaf's.",
+    literature: [
+      'Euler 1779, Acta Petropolitana 1779 pars prior, p. 150 (§§ 46–47) — read on the page image: only the lamina with supported ends and one intermediate support is treated.',
+      'Recherches (1821) and Todhunter–Pearson I, Arts. 283–306 — read: neither gives this equation or mentions the problem.',
+      'NOT searched: when the frequency equation of a free–free beam on one intermediate point support first appears in print (Rayleigh, Theory of Sound, and the later literature on continuous beams). This entry claims only that the literature on Germain searched here does not record that her leaves contain it.',
+    ],
+    status: 'candidate',
+    settle:
+      'Read Bucciarelli and Dworsky and Grun 2022 for any account of this part of the critique; separately, find the earliest printed statement of the equation, which bears on how the leaf is described but not on the entry.',
+  },
+  {
+    id: 'fr-9115-euler-1779-printed-slips',
+    cote: 'fr-9115',
+    pages: 'views 178–179 (§ 32), 190–192 (§ 46), 200–202 (§§ 50–51); critique views 377–379',
+    kind: 'mathematical',
+    claim:
+      "Three slips that the modernised reading finds in the Latin copy of Euler's 1779 memoir are Euler's own, in the printed Acta, and not the copyist's. § 32 gives 106°45′ for the first root of the free–clamped case, whose value is 107°26′. § 46 gives c = ¾ AB for a circular section, where the equivalent side is (√3/2) AB. § 50 gives γ′ = −γ, with y = −C sin(…) sin uω on the second portion, for the supported lamina with a stylet at its middle; this puts an angle at the stylet, where continuity requires γ′ = γ. Germain's critique (§ 23, views 377–379) remarks on the § 50 sign and puts it down to a convention on the ordinate. The copy departs from the print at § 51: it has « quinto » where the print has « cum casu superiore quarto ».",
+    basis:
+      "Printed p. 157 (page image): « α′ = 0, β′ = 0, γ′ = (e^ω − 1)(1 − e^ω), et δ′ = 0 … praeterea est γ′ = −γ », then y = C sin(…) sin uω for EL and y = −C sin(…) sin uω for LF, « vbi est u = s/a ». Printed p. 150: « erit c = ¾ A B ». Printed § 32 (OCR): φ = 16°45′ and ω = 90° + 16°45′ = 106°45′. In the critique, view 379 reads « le changement de signe est attribué au coëfficient γ′, au lieu » of belonging to the ordinate that is taken on the other side of the axis. There the transcription marks « ordonnée qui » \\uncertain{}.",
+    ours:
+      "The three corrections are computations of the modernised reading: the root found by bisection, radii of gyration equated, and the eight equations checked with (γ, γ′) = (1, 1). This pass attributed the slips to the print by reading the archive.org scans. Germain's § 23 is not presented as having found the error: she explains the sign as a convention and does not call it wrong.",
+    literature: [
+      'Acta Academiae Scientiarum Imperialis Petropolitanae pro anno 1779, pars prior (archive.org actaacademiaesci79impe) — page images of pp. 150 and 157 read; § 32 read in the OCR.',
+      'Euler Archive, E526 — NOT read: the site answered with a Cloudflare challenge that was not attempted.',
+      'NOT searched: the editors’ notes to E526 in Euler’s Opera omnia II 10–11 and Truesdell 1960 (Opera omnia II 11.2), the first places where these slips may already be recorded.',
+    ],
+    status: 'candidate',
+    settle:
+      'Open Opera omnia II 11 (E526) and Truesdell 1960 at § 50. If the editors correct γ′ = −γ, and c = ¾ AB, the entry becomes matched; the copy’s « quinto » for « quarto » remains the copyist’s either way.',
+  },
+  {
+    id: 'fr-9115-heat-leaves',
+    cote: 'fr-9115',
+    pages: 'views 549, 630–701, 712–716',
+    kind: 'codicological',
+    claim:
+      "About forty pages of Français 9115 treat the propagation of heat in a sphere, a cone and a cylinder « échauffés d'une manière entièrement arbitraire ». They are in the rapid working hand that the transcriptions take for Germain's. They set Fourier's solutions in spherical, cone and cylindrical coordinates, give a series solution for the cylinder in every angular order, and describe the final cooling state by comparison with Fourier's ring. None of the sources searched records that Germain worked on heat conduction.",
+    basis:
+      "Titles on the leaves: « Équation du mouvement varié de la chaleur dans une sphère solide échauffée d'une manière entièrement arbitraire » (views 652–670), the same for the cylinder in draft and copy (views 672–695), and « Équations du mouvement de la chaleur dans la sphère, le cône et le cylindre solides … » (view 696). They cite Fourier's Théorie by pages (110, 141, 277, 348) and articles (104, 111, 119, 120, 245, 306–308), and name Laplace and Poisson. View 712 says of the cylinder equation that it is « celle que M. Poisson a donnée en considérant le cas général ». A draft of the cylinder's article 3 is bound inside the long memoir on plates (view 549). The transcriptions of batches 34–35 compare letter forms with those « ailleurs dans sa main ».",
+    ours:
+      "The modern names (Bessel functions, spherical harmonics), the finding that the « cas très remarquable » cot θ sin φ is singular on the axis, and the dating after 1822 (from the citations of Fourier's Théorie) are the reading's. No mathematical novelty is claimed: the leaves themselves credit Poisson with the general cylinder. The attribution of the hand is the transcriptions', and it has not been checked against a dated autograph.",
+    literature: [
+      'Laubenbacher and Pengelley 2010 — full text searched for « heat », « chaleur », « 9115 »: only Manuscript C.',
+      'Todhunter–Pearson I, Arts. 283–306 — read: elasticity only.',
+      'Germain, Mémoire sur l’emploi de l’épaisseur (1880), whose preface prints Fourier’s letters to her of 1820 and 1824 — OCR searched: no « chaleur ». Stupuy, Œuvres philosophiques de Sophie Germain (1896) — OCR searched: one unrelated « chaleur ».',
+      'NOT read: Bucciarelli and Dworsky 1980; Del Centina and Fiocca 2018, On the Correspondence of Sophie Germain (where an exchange with Fourier on heat would show); Grun 2022; Musielak 2020.',
+    ],
+    status: 'candidate',
+    settle:
+      'Read Bucciarelli and Dworsky and Del Centina–Fiocca 2018 for any mention of Germain and heat, or of these leaves.',
+  },
+  {
+    id: 'fr-9115-fermat-primes-residues',
+    cote: 'fr-9115',
+    pages: 'views 704–730 (esp. 720, 729, 730)',
+    kind: 'mathematical',
+    claim:
+      "The undated notes on quadratic residues bound around Manuscript C contain, on a leaf headed « Nombres premiers de la forme 2^{2^i}+1 » (view 730), the statement that 3 and 7 are non-residues, and therefore primitive roots, of every larger Fermat prime; this is true for Fermat primes of 5 and above. The same leaf claims that smaller Fermat primes are non-residues of larger ones, corrects itself between the lines with « cela est faux », and the claim is indeed false from 17 on. The facing leaf (view 729) proves that 3 is a primitive root of every prime 12n + 5 for which 3n + 1 is prime. The notes comment on an « auteur » named once as Gauss (view 720, N° 125). Laubenbacher and Pengelley do not treat these leaves. No priority is claimed against Pépin (1877): the leaves are undated.",
+    basis:
+      "View 730: the heading; « les nombres premiers plus petits et de même forme sont non residus et par conséquent racines primitives »; the interlinear « cela est faux parcequ'il suffit que 2^{2^{i+δ}−2^i m}+1 ≡ x² »; and « 2³−1 = 7 sont non residus (mod 2^{2^i}+1) c'est cequej'avois deja trouvé d'une autre maniere ». View 729: « 3 est racine primitive », with the examples 29 and 53 and 77 and 93 struck out. View 720: « En examinant la manière dont Gauss démontre (N.o 125) ». The transcription's \\ill{} marks in this range fall on struck lines of view 729. Those of view 720 are on a second « 4n+1 », read with doubt, and on two illegible words. None lies under the statements quoted.",
+    ours:
+      "The verifications are the reading's: F_k ≡ 2 (mod F_j), so (F_j/F_k) = (2/F_j), which is −1 for 3 and 5 and +1 from 17 on; 7 checked for 5, 17, 257, 65537; the 12n + 5 result checked for the 97 primes below 20 000. The reading also finds a false extension on view 720 (−5, −17 and −21 are residues of every smaller prime 4k + 3 that does not divide them). The transcription puts the hand of these notes as her rapid working hand.",
+    literature: [
+      'Laubenbacher and Pengelley 2010 — read: Français 9115 is cited only for Manuscript C; they say 150–200 pages of her number-theory manuscripts remain unassessed.',
+      'NOT read: Del Centina 2008 (Springer challenge); Pengelley 2023 (AMS); Dickson, History of the Theory of Numbers I, on primitive roots and Fermat numbers, the place to see how early these facts were printed.',
+    ],
+    status: 'candidate',
+    settle:
+      'Check Pengelley 2023 and Del Centina 2008 for these leaves. Independently, Dickson I would show whether « 3 and 7 are primitive roots of Fermat primes » was in print before Pépin, which bears on how the leaf is described, not on its date.',
+  },
+  {
+    id: 'fr-9115-legendre-imprint-crelle-note',
+    cote: 'fr-9115',
+    pages: 'views 115–134',
+    kind: 'codicological',
+    claim:
+      "The printed memoir of Legendre bound at views 115–134 (« Lu à l'Académie, le 11 octobre 1830 », on 4(xⁿ − 1) = (x − 1)(Y² ± nZ²)) treats the question of Germain's last printed note, « Note sur la manière dont se composent les valeurs de y et z … », Crelle's Journal 7 (1831), pp. 201–203. Both work out the signs of the coefficients of Y and Z according to the form of n, and their first coefficients by residue classes of n. Her note cites Legendre's Théorie des nombres (1830, T. 2, No. 513) and not this memoir. No source searched records that the memoir is among her papers, or connects the two.",
+    basis:
+      "Imprint, pp. 11–13 (views 126–128): the symmetry or antisymmetry of Y and Z for n = 4i ± 1. Pp. 14–19 (views 129–134): A₁ to A₄ for n = 24λ ± 1, ± 5, ± 13, ± 17 and sub-forms 120μ + r. Germain's note, p. 201: the parity of the number of terms of 2(x − 1)^{(p−1)/2} decides whether paired coefficients have equal or opposite signs for 4k + 3 and 4k + 1. P. 202 gives the leading coefficients of y and z for p of the forms 8k + 1, 8k + 3, 8k + 5, 8k + 7.",
+    ours:
+      "The juxtaposition only. Whether the imprint was hers, and whether her note was written before or after she had it, are not claimed; the two sets of formulas have not been collated coefficient by coefficient.",
+    literature: [
+      'Crelle’s Journal 7 (1831), archive.org journalfrdierei27crelgoog, OCR — read: contents entry 22 and pp. 201–202.',
+      'Laubenbacher and Pengelley 2010 — searched: no mention of the 1831 note.',
+      'NOT read: Del Centina 2008, which surveys her number-theoretic work and may discuss the Crelle note; Pengelley 2023.',
+    ],
+    status: 'candidate',
+    settle:
+      'Read Del Centina 2008 and Pengelley 2023 on the 1831 note. Then collate her coefficients for 8k ± 1, 8k ± 3 with the imprint’s A₁–A₄ for the same n; agreement or disagreement is itself worth recording.',
+  },
 ];
