@@ -1207,3 +1207,60 @@ little at mid-grey levels (`-level 55%,90%`), not at heavy contrast.
 - The letter of v. 24–35 carries its own bolder pagination 1–11, which a note
   on v. 36 cites (« pag. 9.a et pag. 10 »).
 - « R.c. 8070 (86) », stamp « ACQ. 8070 (LIBRI) »: acquisition (v. 2).
+
+## Fermat's memoirs (NAL 2339)
+
+### The views
+
+- Colour portrait scans, about 3440–3650 × 4950–5650, one page per view.
+  v. 1–6 binding and flyleaves; v. 7 the title leaf « Mémoires de Fermat »,
+  « Volume de 24 Feuillets / Les Feuillets 23 & 24 sont blancs / 8 Octobre
+  1888 », « Libri 1848 »; v. 53–66 blank leaves, endleaves and binding
+  (batch 4 has no file). Three leaves were folded as letters (v. 27–30,
+  37–40); a figure can stand alone on a verso after its text (v. 40).
+
+| Views | Piece and hand |
+|---|---|
+| 9–26 | « Ad locos planos & solidos Isagoge », a posed italic with catchwords and its own ink pagination 1–18; no name on it |
+| 27–28 | « Copie d'un escrit enuoyé par le R. Pere Marçenne a des Cartes », « Methodus ad disquirendam maximam & minimam », by « adæquentur, vt Loquitur Diophantus » |
+| 29–30 | « De tangentibus Linearum curuarum »; a pencil note « Mr des Cartes f. 347 » |
+| 31–35 | « Appendix ad Isagogen topicam … per locos », a calligraphic second hand, Z's in blacker ink, foot numbers 43–45 |
+| 37–38 | under « Mr. fermat » (paler, finer, perhaps later): the three-line locus; an address « Pour Mons.r Carcaui … rue michel le Conte » |
+| 41–48 | « A Domino de Fermat ad Dominum De Carcaui », « Nouus Secundarum … Radicum In Analyticis Vsus », « Die 20a. Aprilis Anno 1650 » |
+| 49–51 | « Lettre de Mons.r De fermes A Monsieur De Carcaui », « Le 20e auril 1650 », unsigned |
+
+The headings are the only places the leaves name Fermat; no hand is
+attributed.
+
+### Notation and strokes that mislead
+
+- A and E unknown, consonants given, dimensions as superscript abbreviations
+  (« Z^so », « N q^dto », « B pp^l », « Zpl. », « Dppl. »), « in » for the
+  product. « adæquatur » is Diophantus's adæqualitas, kept (v. 27–30).
+- Equality in words or abbreviated: « æquatur », « Æle », « Æ. », « Æ^tur »;
+  once two vertical strokes with « æqu. » between them (v. 11). Roots
+  « Lat. Cub. (…) », « Lat. quad. quad. (…) » (v. 44, 49). Proportions with
+  « / » and « // » (v. 42).
+- Two small strokes after a term mean « bis »; set $''$ (v. 19, 22, 30, 35).
+- Point I is written like the figure 1 (v. 10–20). Bars over point letters
+  are inconsistent: set \overline{} where present, infer nothing (v. 11–20).
+- The Appendix copyist writes a small u for V and a small n for N (v. 24,
+  32–34, 37). A small circle or bar over a minus is not a « + » (v. 28, 30).
+  Line-end filler dashes can pass for minus signs (v. 33).
+- A small raised « + » after a letter can pass for an abbreviation's t;
+  check it against the restated equation (v. 41).
+- « forsan XY » in the margin, tied by a cross to a letter pair in the line,
+  proposes another letter; give both (v. 11, 14).
+- u inside a word, v at its head, kept; « q; » for -que; tilde abbreviations
+  « quæõnem », « æquaõnes », « raõe », « Dño » (v. 11–51).
+
+### Numbers on the leaves
+
+- **Red crayon, top right of every recto, blanks included: 1–24.** It ends
+  on the blank leaves 23 and 24 as the certificate has it: the library's
+  foliation, and not ink, so \folio{1r}–\folio{22r} are written.
+- Grey pencil beside it: one higher on v. 9–19, irregular on v. 21–39,
+  agreeing from v. 41. Not used.
+- Ink pagination 1–18 of the loci treatise (struck in pencil on the
+  rectos); foot numbers 43–45 on the Appendix: the copies' own.
+- « Libri 1848 », « R.c. 8070 (88) », « ACQ. 8070 (LIBRI) » (v. 9, 27).
