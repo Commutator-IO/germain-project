@@ -131,7 +131,7 @@ export function Downloads({
               <a
                 href={`/transcripts/${cote}/${cote}.fr.wiki`}
                 download={`${cote}.wiki`}
-                title="Download the whole volume as wikicode for Wikisource — each view under its ==[[Page:…]]== marker. CC0."
+                title="Download the whole volume as wikicode for Wikisource — each view under a heading with its Gallica view number and link. CC0."
                 className="rounded-md bg-ink-100 px-1.5 py-0.5 font-mono text-[11px] font-semibold uppercase text-ink-600 transition hover:bg-brand-100 hover:text-brand-700"
               >
                 wiki

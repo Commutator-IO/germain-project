@@ -26,7 +26,9 @@
  *
  * The mapping, like tei.mjs's, is one-to-one with the apparatus:
  *
- *   \page{17}          a new file, vue-017.wiki → Page:<file>/<17 + offset>
+ *   \page{17}          a new file, vue-017.wiki; in the concatenated file, a
+ *                      heading « Vue 17 » with its Gallica link, or with
+ *                      --file the split marker ==[[Page:<file>/<17 + offset>]]==
  *   \struck{x}         {{Rature|1=x}}             in math: \cancel{x}
  *   \ill{}             {{Illisible}}              in math: \text{[illisible]}
  *   \uncertain{x}      x                          (--apparatus: x [?])
@@ -90,6 +92,19 @@ const VOLUMES = args.filter((a) => !a.startsWith('--'));
 const APPARATUS = args.includes('--apparatus');
 const NOTES = flag('notes', APPARATUS ? 'ref' : 'none');
 const OFFSET = Number(flag('offset', '1'));
+/**
+ * The name of the facsimile on Commons, once there is one. Until it is given,
+ * no marker names a Page: that does not exist: each view is headed by its
+ * Gallica number and a link to it. Given, the markers become the split tool's,
+ * ==[[Page:<file>/<view + offset>]]==.
+ */
+const FILE = flag('file', '');
+
+/** The line that opens one view in a concatenated file. */
+function viewHeading(view, ark) {
+  if (FILE) return `==[[Page:${FILE}/${view + OFFSET}]]==`;
+  return ark ? `== Vue ${view} ([${GALLICA}/ark:/12148/${ark}/f${view}.item Gallica]) ==` : `== Vue ${view} ==`;
+}
 const CHECK_MATH = args.includes('--check-math');
 const SITE_MODE = args.includes('--site');
 const PUBLIC = resolve(ROOT, 'public', 'transcripts');
@@ -629,13 +644,11 @@ async function volume(id) {
     await writeFile(resolve(target, `vue-${String(p.view).padStart(3, '0')}.wiki`), p.wiki + '\n', 'utf8');
   }
 
-  // The whole volume in one file as well, each view under the marker
-  // Wikisource's split tool reads — ==[[Page:<file>/<n>]]== — so that the file
-  // can be split onto the Page: namespace in one pass, or simply read whole.
-  const file = flag('file', `${entry.shelfmark}.pdf`);
+  // The whole volume in one file as well, each view under its heading — see
+  // viewHeading: the Gallica view until --file names the facsimile on Commons.
   await writeFile(
     resolve(target, `${id}.wiki`),
-    pages.map((p) => `==[[Page:${file}/${p.view + OFFSET}]]==\n${p.wiki}\n`).join('\n'),
+    pages.map((p) => `${viewHeading(p.view, entry.ark)}\n${p.wiki}\n`).join('\n'),
     'utf8',
   );
 
@@ -652,7 +665,9 @@ async function volume(id) {
     `Dérivé de \`transcripts/${id}/\` par \`scripts/wikisource.mjs\` le ${new Date().toISOString().slice(0, 10)}. Ne pas corriger ici : corriger le \`.tex\` et relancer.`,
     '',
     `- Fac-similé : ${GALLICA}/ark:/12148/${entry.ark} — ${entry.pages} vues.`,
-    `- Fichier supposé sur Commons : \`${file}\` ; page Wikisource = vue + ${OFFSET}. **À vérifier sur le fichier réellement téléversé** avant de coller quoi que ce soit (\`--file\`, \`--offset\`).`,
+    FILE
+      ? `- Fichier sur Commons : \`${FILE}\` ; page Wikisource = vue + ${OFFSET}. **À vérifier sur le fichier** avant de coller quoi que ce soit (\`--offset\`).`
+      : '- Pas encore de fac-similé sur Commons : les vues sont désignées par leur numéro Gallica. Une fois le PDF déposé, relancer avec `--file="<nom exact>"` (et `--offset` si la page 1 du PDF n\'est pas la page de garde de la BnF).',
     `- Notes de lecture : ${
       NOTES === 'none'
         ? 'omises (--notes=none)'
@@ -661,11 +676,11 @@ async function volume(id) {
     '',
     'Pour chaque page : ouvrir la page Page: ci-dessous, coller le contenu du fichier dans le corps, mettre `<references/>` dans le pied de page si la colonne « notes » n\'est pas vide, choisir **Non corrigée**, publier avec un résumé qui nomme la source (« transcription automatique, première passe, non relue — germain.commutator.io, ' + id + ' »).',
     '',
-    '| Vue | Page Wikisource | Fichier | Folio | Notes | Formules |',
+    `| Vue | ${FILE ? 'Page Wikisource' : 'Gallica'} | Fichier | Folio | Notes | Formules |`,
     '|---:|---|---|---|---:|---:|',
     ...pages.map(
       (p) =>
-        `| ${p.view} | Page:${file}/${p.view + OFFSET} | vue-${String(p.view).padStart(3, '0')}.wiki | ${p.folios.join(', ')} | ${p.notes || ''} | ${p.formulas.length || ''} |`,
+        `| ${p.view} | ${FILE ? `Page:${FILE}/${p.view + OFFSET}` : `${GALLICA}/ark:/12148/${entry.ark}/f${p.view}.item`} | vue-${String(p.view).padStart(3, '0')}.wiki | ${p.folios.join(', ')} | ${p.notes || ''} | ${p.formulas.length || ''} |`,
     ),
     '',
     `Sans texte (niveau « Sans texte ») : ${blank.length ? blank.join(', ') : 'aucune'}.`,
@@ -952,13 +967,12 @@ async function siteVolume(id) {
     n++;
   }
   // The whole volume in one file, for the « wiki » button of the Source &
-  // print row: every view under the split tool's marker, as in wikisource/.
-  const file = `${entry?.shelfmark ?? id}.pdf`;
+  // print row: every view under its Gallica heading, as in wikisource/.
   await writeFile(
     resolve(PUBLIC, id, `${id}.fr.wiki`),
     mergeViews(whole)
       .filter((p) => p.wiki)
-      .map((p) => `==[[Page:${file}/${p.view + OFFSET}]]==\n${p.wiki}\n`)
+      .map((p) => `${viewHeading(p.view, entry?.ark)}\n${p.wiki}\n`)
       .join('\n'),
     'utf8',
   );
