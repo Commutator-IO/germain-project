@@ -63,19 +63,18 @@ export const FINDINGS: Finding[] = [
     pages: 'views 31–34 (ff. 24r–26v)',
     kind: 'codicological',
     claim:
-      'The three Lagrange leaves bound at NAF 4073 ff. 24–26 are three distinct letters written from Berlin to a correspondent at Turin, none of them addressed to Sophie Germain, and they do not all belong to the date « ce 10 Juillet 1776 » carried by the first: the third is of July 1778.',
+      'The three Lagrange leaves bound at NAF 4073 ff. 24–26 are one letter, bound in reverse order: it begins « Monsieur » on f. 26, runs on at f. 25 and ends on f. 24 with the signature and the date, « à Berlin ce 11 Juillet 1778 ». It is written to a correspondent at Turin, not to Sophie Germain.',
     basis:
-      'Only f. 24 carries a date and a signature. F. 25 has neither salutation nor signature and turns on Denina’s disgrace over a recent book, set against his history of Italy, and on a medal of the Empress of Russia struck for the last academic jubilee. F. 26 opens « Monsieur », breaks off unsigned with the next leaf wanting, and reports « les grandes armées qui sont maintenant en campagne » and « on assure que le Roi est entré en Boheme ». Frederick II entered Bohemia in July 1778, at the opening of the War of the Bavarian Succession.',
+      'Collated on 28 September 2026 with Œuvres de Lagrange t. XIV, which prints the three leaves as one letter in the order 26, 25, 24, headed « Lagrange à …, Berlin, 11 juillet 1778 », from this manuscript. The text runs on across the leaves: f. 26v ends « … qui va se jouer dans nos quartiers », f. 25r opens on Denina; f. 25v ends on the medal of the Empress, f. 24r opens « Voici deux lettres ». The day was re-read « 11 » on the view by a human (Michel Hua). The last figure of the year has the shape of a 6 under the show-through of the verso; the war news — « on assure que le Roi est entré en Boheme », Frederick II in July 1778 — leaves only 1778.',
     ours:
-      'The separation of the run into three pieces and the dating of the third from its war news; the Petersburg jubilee and the Denina affair are brought in as external checks. The addressee is not identified here. Note that the transcription marks the year on f. 24v as a doubtful reading, the third numeral being 7 or 5.',
+      'Nothing new. This entry first claimed three distinct letters of 1776–1778, dated from a misread « 10 Juillet 1776 » and from the leaves lacking a salutation or a signature; the collation refutes it. It is kept, corrected, so that the error is on record: the reverse binding is what made the leaves look like three incomplete letters.',
     literature: [
-      'Œuvres de Lagrange, t. XIII–XIV (correspondance) — not collated. This is the obvious place for these three letters to be already printed and identified, and the entry is written expecting that they may be.',
-      'Searched, nothing surfaced: web search for these leaves as Lagrange letters held in NAF 4073, and for the phrase « le Roi est entré en Bohême » in his published correspondence.',
-      'Del Centina and Fiocca 2018 — searched, not read: paywalled; it describes the correspondence of Germain, which by this entry’s own claim these letters are not.',
+      'Œuvres de Lagrange, t. XIV, « Lagrange à …, Berlin, 11 juillet 1778 », read on fr.wikisource, Page:Joseph Louis de Lagrange - Œuvres, Tome 14.djvu/285–288 (proofread). Its note cites « Ms. fr. Acquisitions nouvelles, n° 4073 ».',
+      'Charles Henry, Revue philosophique t. VIII, p. 633 — the first publication, from the original, as cited by the Œuvres; not read.',
     ],
-    status: 'candidate',
+    status: 'matched',
     settle:
-      'Collate the three leaves against Œuvres de Lagrange t. XIV, letters to his Turin correspondents of 1776–1778. That would both test the tripartition and name the addressee — Saluzzo, who handled Lagrange’s affairs and his father at Turin, is the candidate the contents suggest and is deliberately not asserted here.',
+      'Settled against the Œuvres. What remains open is only the addressee, whom the edition leaves as « … »: Saluzzo, who handled Lagrange’s affairs and his father at Turin, is the candidate the contents suggest and is not asserted here.',
   },
   {
     id: 'naf-4073-lagrange-germinal-date',
