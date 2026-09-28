@@ -29,9 +29,9 @@
  *   \page{17}          a new file, vue-017.wiki → Page:<file>/<17 + offset>
  *   \struck{x}         {{Rature|1=x}}             in math: \cancel{x}
  *   \ill{}             {{Illisible}}              in math: \text{[illisible]}
- *   \uncertain{x}      x [?]                      in math: x\,\text{[?]}
- *   \add{x}            [x]                        in math: [x]
- *   \marginal{x}       [''en marge :'' x]
+ *   \uncertain{x}      x                          (--apparatus: x [?])
+ *   \add{x}            nothing: the transcriber's (--apparatus: [x])
+ *   \marginal{x}       x                          (--apparatus: [''en marge :'' x])
  *   \note{x}           <ref>x</ref> when it is attached to text. A note that
  *                      stands alone as a paragraph describes the leaf (paper,
  *                      stamps, hands) rather than a reading; it is left out,
@@ -40,14 +40,17 @@
  *   \folio{x}          nothing in the text; listed in the volume's index.md,
  *                      for the <pagelist/> of the Livre: page
  *   $…$  \[…\]         <math>…</math>, <math display="block">…</math>
- *   align*, gather*    rewritten as aligned, gathered — MediaWiki's math has
- *                      no top-level alignment environments
+ *   align*, gather*    rewritten as aligned, and as a centred array — MediaWiki's
+ *                      math has no top-level alignment environments, and no
+ *                      gathered either
  *
  * {{Rature}} and {{Illisible}} exist on fr.wikisource (checked 28 September
  * 2026). There is no template there for an uncertain reading or an insertion,
  * hence the brackets; the Scriptorium may prefer something else, and this
  * table is where to change it. The Latin volumes go to la.wikisource, whose
  * templates have not been checked.
+ *
+ * `--apparatus` restores the reading notes and the editorial marks (see APPARATUS).
  *
  * `--check-math` sends every distinct formula to Wikimedia's own validator
  * (the REST endpoint behind <math>) and lists those it refuses, by view: a
@@ -74,7 +77,18 @@ const flag = (name, fallback) => {
   return a ? a.slice(name.length + 3) : fallback;
 };
 const VOLUMES = args.filter((a) => !a.startsWith('--'));
-const NOTES = flag('notes', 'ref');
+/**
+ * What goes to Wikisource is what is on the facsimile, and nothing else: that
+ * is the rule its contributors set on the Scriptorium (28 September 2026). So
+ * by default the reading notes, the « [?] » of a doubtful reading, the
+ * transcriber's supplies and the titles the transcription gives to pieces are
+ * all left out; struck and illegible words keep {{Rature}} and {{Illisible}},
+ * and a marginal note of the writer's keeps its words without a label. The
+ * whole apparatus stays on the site. --apparatus puts it back, for a reader
+ * who wants the wikicode of the edition rather than of the leaf.
+ */
+const APPARATUS = args.includes('--apparatus');
+const NOTES = flag('notes', APPARATUS ? 'ref' : 'none');
 const OFFSET = Number(flag('offset', '1'));
 const CHECK_MATH = args.includes('--check-math');
 const SITE_MODE = args.includes('--site');
@@ -149,6 +163,60 @@ function liftMath(tex) {
 }
 
 /**
+ * Flattens what the apparatus nests inside \\text{}: « \\text{hypothese\\,\\text{[?]}} »
+ * comes from an \\uncertain inside a word of text, and MediaWiki refuses a
+ * \\text within a \\text, and \\, or \\cancel there, where KaTeX lets them pass.
+ */
+function flattenText(tex) {
+  let out = '';
+  let i = 0;
+  const open = /\\(text|mbox)\{/g;
+  for (let m; (m = open.exec(tex)); ) {
+    let depth = 0;
+    let j = m.index + m[0].length - 1;
+    for (; j < tex.length; j++) {
+      if (tex[j] === '\\') j++;
+      else if (tex[j] === '{') depth++;
+      else if (tex[j] === '}' && --depth === 0) break;
+    }
+    let inner = tex.slice(m.index + m[0].length, j);
+    for (let k = 0; k < 20 && /\\(text|mbox|cancel)\{/.test(inner); k++) {
+      inner = inner.replace(/\\(?:text|mbox|cancel)\{([^{}]*)\}/g, '$1');
+    }
+    inner = inner.replace(/\\[,;:! ]/g, ' ');
+    out += tex.slice(i, m.index) + `\\${m[1]}{${inner}}`;
+    i = j + 1;
+    open.lastIndex = i;
+  }
+  return out + tex.slice(i);
+}
+
+/**
+ * Any other character outside ASCII — a dash, an accented letter — is a
+ * syntax error in MediaWiki's math mode, where KaTeX sets it; inside \\text{}
+ * both take it. So every such run outside a \\text{} is put into one.
+ */
+function wrapUnicode(tex) {
+  let out = '';
+  let i = 0;
+  const open = /\\(text|mbox)\{/g;
+  const wrap = (t) => t.replace(/[\u0080-\uffff]+/g, (u) => `\\text{${u}}`);
+  for (let m; (m = open.exec(tex)); ) {
+    let depth = 0;
+    let j = m.index + m[0].length - 1;
+    for (; j < tex.length; j++) {
+      if (tex[j] === '\\') j++;
+      else if (tex[j] === '{') depth++;
+      else if (tex[j] === '}' && --depth === 0) break;
+    }
+    out += wrap(tex.slice(i, m.index)) + tex.slice(m.index, j + 1);
+    i = j + 1;
+    open.lastIndex = i;
+  }
+  return out + wrap(tex.slice(i));
+}
+
+/**
  * One formula, as MediaWiki's <math> takes it. Returns the TeX and the notes
  * found inside it, which cannot stay there: a <ref> is wikitext, not TeX.
  */
@@ -160,19 +228,26 @@ function mathTeX(raw, held) {
     notes.push(a);
     return '';
   });
-  tex = replaceBraced(tex, 'marginal', (a) => `\\text{[en marge : }${a}\\text{]}`);
+  tex = replaceBraced(tex, 'marginal', (a) => (APPARATUS ? `\\text{[en marge : }${a}\\text{]}` : a));
   tex = replaceBraced(tex, 'struck', (a) => `\\cancel{${a}}`);
-  tex = replaceBraced(tex, 'uncertain', (a) => `${a}\\,\\text{[?]}`);
-  tex = replaceBraced(tex, 'add', (a) => `[${a}]`);
+  tex = replaceBraced(tex, 'uncertain', (a) => (APPARATUS ? `${a}\\,\\text{[?]}` : a));
+  tex = replaceBraced(tex, 'add', (a) => (APPARATUS ? `[${a}]` : ''));
   tex = replaceBraced(tex, 'folio', () => '');
   tex = tex.replace(/\\ill\{\}|\\ill(?![a-zA-Z])/g, '\\text{[illisible]}');
+  // MediaWiki has no box at all (\\boxed, \\fbox): a framed figure — Viète
+  // frames his exponents — is drawn with a bar above, a bar below and two
+  // rules, which is the frame near enough.
+  tex = replaceBraced(tex, 'boxed', (a) => `\\underline{\\overline{\\left|${a}\\right|}}`);
   // Top-level alignment environments do not exist in MediaWiki's math; their
   // inner forms do, and render the same inside a display.
-  tex = tex
-    .replace(/\\begin\{(align|gather)\*?\}([\s\S]*?)\\end\{\1\*?\}/g, (_, env, b) =>
-      `\\begin{${env === 'align' ? 'aligned' : 'gathered'}}${b}\\end{${env === 'align' ? 'aligned' : 'gathered'}}`,
-    )
+  // `gathered` is not one of them — MediaWiki refuses it, where KaTeX takes it —
+  // so a gather becomes a centred one-column array, which draws the same.
+  tex = flattenText(tex)
+    .replace(/\\begin\{align\*?\}([\s\S]*?)\\end\{align\*?\}/g, '\\begin{aligned}$1\\end{aligned}')
+    .replace(/\\begin\{(gather\*?|gathered)\}([\s\S]*?)\\end\{\1\}/g, '\\begin{array}{c}$2\\end{array}')
     .replace(/\\begin\{equation\*?\}([\s\S]*?)\\end\{equation\*?\}/g, '$1')
+    // A degree sign typed as a character is a syntax error to MediaWiki.
+    .replace(/°/g, '^{\\circ}')
     // MediaWiki refuses \& inside \text{}, though it takes it in math mode:
     // « \text{ \&c.} » becomes « \text{ }\&\text{c.} ».
     .replace(/\\(text|mbox)\{([^{}]*)\}/g, (_, cmd, t) =>
@@ -182,7 +257,7 @@ function mathTeX(raw, held) {
     .replace(/\\label\{[^{}]*\}/g, '')
     .replace(/\s*\n\s*/g, ' ')
     .trim();
-  return { tex, notes };
+  return { tex: wrapUnicode(tex), notes };
 }
 
 // ---------------------------------------------------------------------------
@@ -210,9 +285,9 @@ function makeInline(unknown, notesOut) {
     });
     out = replaceBraced(out, 'folio', () => '');
     out = replaceBraced(out, 'struck', (a) => `{{Rature|1=${arg(a)}}}`);
-    out = replaceBraced(out, 'uncertain', (a) => `${a} [?]`);
-    out = replaceBraced(out, 'add', (a) => `[${a}]`);
-    out = replaceBraced(out, 'marginal', (a) => `[''en marge :'' ${a}]`);
+    out = replaceBraced(out, 'uncertain', (a) => (APPARATUS ? `${a} [?]` : a));
+    out = replaceBraced(out, 'add', (a) => (APPARATUS ? `[${a}]` : ''));
+    out = replaceBraced(out, 'marginal', (a) => (APPARATUS ? `[''en marge :'' ${a}]` : a));
     out = replaceBraced(out, 'emph', (a) => `''${a}''`);
     out = replaceBraced(out, 'textit', (a) => `''${a}''`);
     out = replaceBraced(out, 'textbf', (a) => `'''${a}'''`);
@@ -356,7 +431,9 @@ function renderPage(src, inline, headings, prefix = '') {
       // chapter pages of the main namespace, and listed in index.md to check.
       if (!section[0].includes('*')) {
         headings.push(head);
-        out.push(`<!-- titre de la transcription : ${head.replace(/--/g, '–')} -->` + tail);
+        out.push(
+          (APPARATUS ? `<!-- titre de la transcription : ${head.replace(/--/g, '–')} -->` : '') + tail,
+        );
         continue;
       }
       out.push((section[1] ? `{{c|1=''${arg(head)}''}}` : `{{c|1='''${arg(head)}'''}}`) + tail);
@@ -855,14 +932,15 @@ async function siteVolume(id) {
       `<div class="ws-intro">` +
       `<p><b>Wikicode pour l'espace Page: de Wikisource</b>, une section par vue de Gallica. ` +
       `Cette transcription est dans le domaine public (CC0) : reprenez-la librement, sans condition.</p>` +
-      `<p>Pour corriger une page sur Wikisource : copier le wikicode de la vue, le coller dans le corps ` +
-      `de la page, ajouter <code>&lt;references/&gt;</code> en pied de page si la vue a des notes, et ` +
-      `la verser au niveau « Non corrigée » : c'est une première lecture automatique, que personne n'a relue.</p>` +
+      `<p>Comme le demandent les usages de Wikisource, ce wikicode ne contient que ce qui est sur le ` +
+      `fac-similé : ni notes de lecture, ni « [?] », ni restitutions du transcripteur. Mots biffés et ` +
+      `illisibles gardent {{Rature}} et {{Illisible}}. L'apparat complet reste dans l'onglet Transcription.</p>` +
+      `<p>C'est une première lecture automatique, que personne n'a relue : chaque page doit être comparée ` +
+      `au fac-similé par la personne qui la verse, avant de la verser, au niveau « Non corrigée ».</p>` +
       (latin
         ? `<p>Volume en latin : il relève de la.wikisource (Vicifons), dont les modèles n'ont pas été vérifiés.</p>`
         : '') +
-      `<p>L'aperçu est approché ; le rendu qui fait foi est celui de Wikisource. Les notes qui ne font ` +
-      `que décrire le feuillet restent dans l'onglet Transcription.</p>` +
+      `<p>L'aperçu est approché ; le rendu qui fait foi est celui de Wikisource.</p>` +
       `</div>`;
     const html = intro + '\n' + pages.map((p) => viewSection(p, entry?.ark)).join('\n');
     const page = readingPage({ meta, lang: 'fr', name: 'Wikisource', html, extraStyle: WS_STYLE });
