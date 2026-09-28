@@ -7,6 +7,16 @@
  *   npm run wikisource -- naf-5166 --check-math     and validate every formula
  *   npm run wikisource -- naf-5166 --notes=none     without the reading notes
  *   npm run wikisource -- naf-5166 --offset=1 --file="Lagrange - NAF 5166.pdf"
+ *   npm run wikisource -- --site                    the site's Wikisource tab
+ *
+ * Two outputs from one conversion. Without --site, wikisource/<volume>/ gets a
+ * file per view and an index.md, for pasting by hand. With --site, every
+ * transcribed batch gets public/transcripts/<volume>/batch-NN.fr.wiki.html:
+ * the reading pane's « Wikisource » tab, one section per view with a preview
+ * and the wikicode behind a copy button. That second output answers the
+ * Scriptorium (Seudo, 28 September 2026): rather than pour on Wikisource
+ * pages nobody may ever proofread, publish the wikicode here, under CC0, for
+ * a Wikisource contributor to take the day they mean to correct a text.
  *
  * Why a third serialisation. Wikisource wants the text page by page against
  * the facsimile, in wikitext, with its own templates for the apparatus. The
@@ -48,6 +58,7 @@
 
 import { mkdir, readdir, readFile, writeFile, rm } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { escapeHtml, readingPage } from './render.mjs';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const SOURCE = resolve(ROOT, 'transcripts');
@@ -65,6 +76,8 @@ const VOLUMES = args.filter((a) => !a.startsWith('--'));
 const NOTES = flag('notes', 'ref');
 const OFFSET = Number(flag('offset', '1'));
 const CHECK_MATH = args.includes('--check-math');
+const SITE_MODE = args.includes('--site');
+const PUBLIC = resolve(ROOT, 'public', 'transcripts');
 
 if (!['ref', 'all', 'none'].includes(NOTES)) throw new Error(`--notes=${NOTES}: expected ref, all or none`);
 
@@ -495,17 +508,11 @@ async function checkMath(formulas) {
   return refused;
 }
 
-async function volume(id) {
-  const entry = CATALOGUE.get(id);
-  if (!entry) throw new Error(`${id}: not in the catalogue`);
-  const dir = resolve(SOURCE, id);
-  const files = (await readdir(dir)).filter((f) => /^batch-\d+\.fr\.tex$/.test(f)).sort();
-  if (!files.length) throw new Error(`${id}: no transcription`);
-
-  let pages = [];
-  for (const file of files) pages.push(...convertBatch(await readFile(resolve(dir, file), 'utf8'), file));
-  // A view may be opened more than once — NAF 4073 repeats \\page{N} for each
-  // letter that starts on it. The parts are one page on Wikisource, in order.
+/**
+ * A view may be opened more than once — NAF 4073 repeats \\page{N} for each
+ * letter that starts on it. The parts are one page on Wikisource, in order.
+ */
+function mergeViews(pages) {
   const byView = new Map();
   for (const p of pages) {
     const seen = byView.get(p.view);
@@ -519,7 +526,19 @@ async function volume(id) {
       for (const u of p.unknown) seen.unknown.add(u);
     }
   }
-  pages = [...byView.values()].sort((a, b) => a.view - b.view);
+  return [...byView.values()].sort((a, b) => a.view - b.view);
+}
+
+async function volume(id) {
+  const entry = CATALOGUE.get(id);
+  if (!entry) throw new Error(`${id}: not in the catalogue`);
+  const dir = resolve(SOURCE, id);
+  const files = (await readdir(dir)).filter((f) => /^batch-\d+\.fr\.tex$/.test(f)).sort();
+  if (!files.length) throw new Error(`${id}: no transcription`);
+
+  let pages = [];
+  for (const file of files) pages.push(...convertBatch(await readFile(resolve(dir, file), 'utf8'), file));
+  pages = mergeViews(pages);
   // A view whose only content was a leaf description has nothing left to
   // paste: it goes with the blank views, not into an empty file.
   const empty = new Set(pages.filter((p) => !p.wiki).map((p) => p.view));
@@ -598,7 +617,263 @@ async function volume(id) {
   return refused.size + unknown.length;
 }
 
+// ---------------------------------------------------------------------------
+// The site's Wikisource tab.
+
+/** The preamble's metadata, as render.mjs reads it, for the page's head line. */
+function readMeta(tex) {
+  const one = (name) => new RegExp(`\\\\${name}\\{([^{}]*)\\}`).exec(tex)?.[1] ?? '';
+  const pages = /\\pages\{(\d+)\}\{(\d+)\}/.exec(tex);
+  return {
+    volume: one('folder'),
+    batch: one('batch'),
+    title: one('foldertitle'),
+    dating: one('dating'),
+    shelfmark: one('shelfmark'),
+    watermark: one('watermark').replace(/\\\\/g, ' — '),
+    first: pages?.[1] ?? '',
+    last: pages?.[2] ?? '',
+  };
+}
+
+/**
+ * An approximate rendering of the wikitext this script writes — and of
+ * nothing else: <math>, <ref>, comments, the templates of the mapping, bold,
+ * italic, lists and paragraphs. It shows a reader what the page will look
+ * like before they paste it; the rendering that counts is Wikisource's.
+ * Mathematics is handed to the page's KaTeX through render.mjs's delimiters.
+ */
+function wikiPreview(wiki) {
+  const held = [];
+  const hold = (html) => `${held.push(html) - 1}`;
+  const notes = [];
+  let t = wiki.replace(/<math( display="block")?>([\s\S]*?)<\/math>/g, (_, d, m) =>
+    hold(d ? `<span class="ws-dmath">\\[${escapeHtml(m)}\\]</span>` : `\\(${escapeHtml(m)}\\)`),
+  );
+  t = t.replace(/<ref>([\s\S]*?)<\/ref>/g, (_, n) => {
+    notes.push(n);
+    return hold(`<sup class="ws-ref">[${notes.length}]</sup>`);
+  });
+  t = t.replace(/<!--\s*([\s\S]*?)\s*-->/g, (_, c) => hold(`<span class="ws-comment">${c}</span>`));
+
+  const inline = (x) => {
+    let out = x;
+    // Innermost template first, until none is left: {{Rature|1=… {{Illisible}} …}}.
+    for (let guard = 0; /\{\{[^{}]*\}\}/.test(out) && guard < 1000; guard++) {
+      out = out.replace(/\{\{([^{}]*)\}\}/g, (_, body) => {
+        const [name, ...rest] = body.split('|');
+        const a = rest.join('|').replace(/^1=/, '');
+        switch (name.trim()) {
+          case '!':
+            return '';
+          case 'Rature':
+            return `<s class="ws-rature">${a}</s>`;
+          case 'Illisible':
+            return '<span class="ws-ill">[illisible]</span>';
+          case 'c':
+            return `<span class="ws-c">${a}</span>`;
+          case 'sc':
+            return `<span class="ws-sc">${a}</span>`;
+          default:
+            return `<code>&#123;&#123;${body}&#125;&#125;</code>`;
+        }
+      });
+    }
+    return out.replace(/'''(.+?)'''/g, '<b>$1</b>').replace(/''(.+?)''/g, '<i>$1</i>');
+  };
+
+  const html = t
+    .split(/\n\s*\n/)
+    .map((b) => b.trim())
+    .filter(Boolean)
+    .map((b) => {
+      const lines = b.split('\n');
+      if (lines.every((l) => /^[*#]/.test(l))) {
+        const items = lines.map((l) => {
+          const m = /^([*#]+)\s*(.*)$/.exec(l);
+          return `<li class="ws-depth-${m[1].length}">${inline(m[2])}</li>`;
+        });
+        return `<ul class="ws-list">${items.join('')}</ul>`;
+      }
+      const one = inline(lines.join('\n')).replace(/\n/g, ' ');
+      return one.startsWith('<blockquote') ? one : `<p>${one}</p>`;
+    })
+    .join('\n');
+  const noteList = notes.length
+    ? `<ol class="ws-notes">${notes.map((n) => `<li>${inline(n)}</li>`).join('')}</ol>`
+    : '';
+  let out = html + noteList;
+  while (/\d+/.test(out)) out = out.replace(/(\d+)/g, (_, i) => held[Number(i)]);
+  return out.replace(//g, '|');
+}
+
+const COPY_ICON =
+  '<svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M11 3.5V3a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
+
+/**
+ * One view: its page marker (which the reading pane watches to turn the
+ * facsimile, as in every other view), a bar with the copy button, the preview,
+ * and the wikicode itself, hidden until asked for — the button copies it
+ * whether it is shown or not.
+ */
+function viewSection(p, ark) {
+  const facs = ark ? `${GALLICA}/ark:/12148/${ark}/f${p.view}.item` : '';
+  const bar =
+    `<p class="ws-bar"><span class="tr-page" data-page="${p.view}" id="page-${p.view}">${p.view}</span>` +
+    `<span class="ws-label">Vue ${p.view}</span>` +
+    (p.notes
+      ? `<span class="ws-hint">${p.notes} note${p.notes > 1 ? 's' : ''} : <code>&lt;references/&gt;</code> en pied de page</span>`
+      : '') +
+    (facs ? `<a class="ws-link" href="${facs}" target="_blank" rel="noopener">Gallica ↗</a>` : '') +
+    (p.wiki
+      ? `<button type="button" class="ws-toggle" aria-pressed="false">Wikicode</button>` +
+        `<button type="button" class="ws-copy" data-src="ws-src-${p.view}" title="Copier le wikicode de la vue ${p.view}">${COPY_ICON}<span>Copier</span></button>`
+      : '') +
+    `</p>`;
+  if (!p.wiki) {
+    return (
+      `<section class="ws-view">${bar}<p class="ws-empty">Rien à verser : la vue ne porte que ` +
+      `la description du feuillet, que le site garde dans l'onglet Transcription.</p></section>`
+    );
+  }
+  return (
+    `<section class="ws-view">${bar}` +
+    `<div class="ws-preview">${wikiPreview(p.wiki)}</div>` +
+    `<pre class="ws-src" id="ws-src-${p.view}" hidden>${escapeHtml(p.wiki)}</pre>` +
+    `</section>`
+  );
+}
+
+const WS_STYLE = `
+  .ws-intro { font-family: var(--sans); font-size: 12.5px; line-height: 1.55; color: #444;
+              border: 1px solid #d9d4c7; border-radius: 8px; background: #faf8f3;
+              padding: .7rem .9rem; margin: -.4rem 0 1.6rem; }
+  .ws-intro p { margin: .25rem 0; }
+  .ws-view { margin: 0 0 1.8rem; }
+  .ws-bar { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: 0 0 .5rem;
+            font-family: var(--sans); font-size: 12px; color: #777;
+            border-bottom: 1px solid #e6e1d5; padding-bottom: .3rem; }
+  .ws-label { font-weight: 700; color: #333; }
+  .ws-hint code { font-size: 11px; }
+  .ws-link { margin-left: auto; color: #38539d; text-decoration: none; font-weight: 600; }
+  .ws-link:hover { text-decoration: underline; }
+  .ws-bar button { font: inherit; font-weight: 600; border: 1px solid #cfc8b8; border-radius: 6px;
+                   background: #fff; color: #333; padding: .15rem .55rem; cursor: pointer;
+                   display: inline-flex; align-items: center; gap: .3rem; }
+  .ws-bar button:hover { border-color: #38539d; color: #38539d; }
+  .ws-bar .ws-copy.done { border-color: #2f7d4a; color: #2f7d4a; }
+  .ws-src { white-space: pre-wrap; word-break: break-word; font-size: 12px; line-height: 1.5;
+            background: #f6f4ee; border: 1px solid #e6e1d5; border-radius: 6px; padding: .6rem .8rem; }
+  .ws-preview p { margin: 0 0 .7rem; }
+  .ws-dmath { display: block; margin: .4rem 0; }
+  .ws-rature { color: #8a8a8a; }
+  .ws-ill { color: #b53d1d; font-size: smaller; font-style: italic; }
+  .ws-c { display: block; text-align: center; }
+  .ws-sc { font-variant: small-caps; }
+  .ws-comment { display: block; font-family: var(--sans); font-size: 11.5px; color: #9a8f78; }
+  .ws-comment::before { content: "commentaire, invisible sur Wikisource : "; font-style: italic; }
+  .ws-ref { font-size: 10px; }
+  .ws-notes { font-size: 12.5px; color: #555; border-top: 1px solid #eee; padding-top: .4rem;
+              margin: .4rem 0 0; }
+  .ws-list { margin: 0 0 .7rem; padding-left: 1.2rem; }
+  .ws-depth-2 { margin-left: 1.2rem; }
+  .ws-depth-3 { margin-left: 2.4rem; }
+  .ws-empty { font-family: var(--sans); font-size: 12.5px; color: #9a8f78; font-style: italic; }
+`;
+
+const WS_SCRIPT = `<script>
+document.addEventListener('click', function (e) {
+  var copy = e.target.closest('.ws-copy');
+  if (copy) {
+    var text = document.getElementById(copy.dataset.src).textContent;
+    var done = function () {
+      var label = copy.querySelector('span');
+      copy.classList.add('done');
+      label.textContent = 'Copié';
+      setTimeout(function () { copy.classList.remove('done'); label.textContent = 'Copier'; }, 1600);
+    };
+    var fallback = function () {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      ta.remove();
+      done();
+    };
+    if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, fallback);
+    else fallback();
+    return;
+  }
+  var toggle = e.target.closest('.ws-toggle');
+  if (toggle) {
+    var view = toggle.closest('.ws-view');
+    var src = view.querySelector('.ws-src');
+    var showSource = src.hidden;
+    src.hidden = !showSource;
+    view.querySelector('.ws-preview').hidden = showSource;
+    toggle.textContent = showSource ? 'Aperçu' : 'Wikicode';
+    toggle.setAttribute('aria-pressed', String(showSource));
+  }
+});
+</script>
+`;
+
+/** Every batch of one volume, as the reading pane's Wikisource tab. */
+async function siteVolume(id) {
+  const entry = CATALOGUE.get(id);
+  const dir = resolve(SOURCE, id);
+  const files = (await readdir(dir)).filter((f) => /^batch-\d+\.fr\.tex$/.test(f)).sort();
+  if (!files.length) return 0;
+  const latin = /^(Latin|NAL)\b/.test(entry?.shelfmark ?? '');
+  await mkdir(resolve(PUBLIC, id), { recursive: true });
+  let n = 0;
+  for (const file of files) {
+    const tex = await readFile(resolve(dir, file), 'utf8');
+    const meta = readMeta(tex);
+    const pages = mergeViews(convertBatch(tex, `${id}/${file}`));
+    for (const p of pages) {
+      if (p.unknown.size) {
+        process.stderr.write(
+          `  ⚠ ${id} vue ${p.view}: left as text: ${[...p.unknown].map((u) => `\\${u}`).join(' ')}\n`,
+        );
+      }
+    }
+    const intro =
+      `<div class="ws-intro">` +
+      `<p><b>Wikicode pour l'espace Page: de Wikisource</b>, une section par vue de Gallica. ` +
+      `Cette transcription est dans le domaine public (CC0) : reprenez-la librement, sans condition.</p>` +
+      `<p>Pour corriger une page sur Wikisource : copier le wikicode de la vue, le coller dans le corps ` +
+      `de la page, ajouter <code>&lt;references/&gt;</code> en pied de page si la vue a des notes, et ` +
+      `la verser au niveau « Non corrigée » : c'est une première lecture automatique, que personne n'a relue.</p>` +
+      (latin
+        ? `<p>Volume en latin : il relève de la.wikisource (Vicifons), dont les modèles n'ont pas été vérifiés.</p>`
+        : '') +
+      `<p>L'aperçu est approché ; le rendu qui fait foi est celui de Wikisource. Les notes qui ne font ` +
+      `que décrire le feuillet restent dans l'onglet Transcription.</p>` +
+      `</div>`;
+    const html = intro + '\n' + pages.map((p) => viewSection(p, entry?.ark)).join('\n');
+    const page = readingPage({ meta, lang: 'fr', name: 'Wikisource', html, extraStyle: WS_STYLE });
+    await writeFile(
+      resolve(PUBLIC, id, file.replace(/\.tex$/, '.wiki.html')),
+      page.replace('</body>', `${WS_SCRIPT}</body>`),
+      'utf8',
+    );
+    n++;
+  }
+  return n;
+}
+
 async function main() {
+  if (SITE_MODE) {
+    const all = (await readdir(SOURCE, { withFileTypes: true }))
+      .filter((d) => d.isDirectory())
+      .map((d) => d.name);
+    let n = 0;
+    for (const id of VOLUMES.length ? VOLUMES : all) n += await siteVolume(id);
+    process.stdout.write(`${n} Wikisource views → public/transcripts/\n`);
+    return;
+  }
   if (!VOLUMES.length) throw new Error('name a volume: npm run wikisource -- naf-5166');
   let problems = 0;
   for (const id of VOLUMES) problems += await volume(id);

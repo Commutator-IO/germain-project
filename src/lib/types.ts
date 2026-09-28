@@ -151,8 +151,14 @@ export type Edition = 'fr' | 'modern';
  * page by page, by `npm run check-tei` — the Transcription tab does not switch
  * over until that is green. Kept out of `Edition`, which is what indexes the
  * manifest: nothing that looks a file up should ever be handed `tei`.
+ *
+ * `wikisource` is the same transcription as wikicode for Wikisource's Page:
+ * namespace (`npm run wikisource -- --site`): per view, a preview and the
+ * wikicode behind a copy button. Unlike `tei` it has a tab — it is for
+ * Wikisource contributors, who have to find it — and the same rule holds:
+ * it is derived from the `fr` files, never looked up in the manifest itself.
  */
-export type PaneView = Edition | 'tei';
+export type PaneView = Edition | 'tei' | 'wikisource';
 
 /** Everything present locally, written by `npm run archive` and `npm run manifest`. */
 export interface Manifest {

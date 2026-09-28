@@ -31,6 +31,16 @@ export const EDITIONS: { key: Edition; label: string; help: string }[] = [
   },
 ];
 
+/**
+ * Not an edition: the transcription again, as wikicode for Wikisource, one
+ * section per view with a preview and a copy button (#10).
+ */
+const WIKISOURCE_TAB: { key: PaneView; label: string; help: string } = {
+  key: 'wikisource',
+  label: 'Wikisource',
+  help: 'The transcription as wikicode for Wikisource, view by view: preview, and copy in one click. CC0.',
+};
+
 /** A view the reader was asked to open on, numbered so it is honoured once. */
 export interface Landing {
   view: number;
@@ -60,14 +70,25 @@ export function TranscriptPane({
   const [height, setHeight] = useState(600);
   const { first, last } = batchRange(batch, cote.pages);
   // The hidden `tei` view is the transcription rendered from its TEI export:
-  // same edition, same tab, another file beside it. Everything that looks a
-  // file up in the manifest is handed `view`, never `tei`.
+  // same edition, same tab, another file beside it. The `wikisource` view is
+  // the same transcription as wikicode, with a tab of its own. Everything
+  // that looks a file up in the manifest is handed `view`, never either.
   const isTei = edition === 'tei';
-  const view: Edition = isTei ? 'fr' : edition;
+  const isWiki = edition === 'wikisource';
+  const view: Edition = isTei || isWiki ? 'fr' : edition;
   const present = available.html.includes(view);
   const manifest = useManifest();
   const texUrl = editionUrl(manifest, cote.id, batch, view, 'html');
-  const url = isTei ? texUrl.replace(/\.fr\.html$/, '.fr.tei.html') : texUrl;
+  const url = isTei
+    ? texUrl.replace(/\.fr\.html$/, '.fr.tei.html')
+    : isWiki
+      ? texUrl.replace(/\.fr\.html$/, '.fr.wiki.html')
+      : texUrl;
+  // Only a transcription has wikicode, so the tab shows only where it exists.
+  const tabs: { key: PaneView; label: string; help: string }[] = [
+    ...EDITIONS,
+    ...(available.html.includes('fr') ? [WIKISOURCE_TAB] : []),
+  ];
   const folder = folderTranscription(manifest, cote.id, cote.pages);
   const landed = useRef(0);
   const landingSeq = landing?.seq ?? null;
@@ -203,22 +224,22 @@ export function TranscriptPane({
         </div>
 
         <div className="ml-auto flex rounded-lg bg-ink-100 p-0.5" role="tablist">
-          {EDITIONS.map((e) => (
+          {tabs.map((e) => (
             <button
               key={e.key}
               type="button"
               role="tab"
-              aria-selected={view === e.key}
+              aria-selected={(isWiki ? edition : view) === e.key}
               title={e.help}
               onClick={() => onEdition(e.key)}
               className={`rounded-md px-2.5 py-1 text-[12px] font-medium transition ${
-                view === e.key
+                (isWiki ? edition : view) === e.key
                   ? 'bg-white text-ink-900 shadow-[0_1px_3px_rgb(19_18_16/.12)]'
                   : 'text-ink-500 hover:text-ink-800'
               }`}
             >
               {e.label}
-              {!available.html.includes(e.key) && (
+              {e.key !== 'wikisource' && !available.html.includes(e.key as Edition) && (
                 <span className="ml-1 text-[9px] text-ink-300">○</span>
               )}
             </button>

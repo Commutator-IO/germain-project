@@ -36,6 +36,7 @@ export const STATE_COLOURS: Record<State, string> = {
  *
  * `#fr-9115/3/tei` is the transcription rendered from its TEI export instead of
  * from the `.tex` (#5) — the same edition, the same tab, another file beside it.
+ * `#fr-9115/3/wikisource` is its wikicode for Wikisource, with a tab of its own.
  */
 export function useReader(cotes: Volume[]) {
   const manifest = useManifest();
@@ -58,7 +59,7 @@ export function useReader(cotes: Volume[]) {
 
   useEffect(() => {
     const readHash = () => {
-      const h = /^#([\w-]+)\/(\d+)(?:\/(fr|modern|tei))?(?:\/(\d+))?$/.exec(location.hash);
+      const h = /^#([\w-]+)\/(\d+)(?:\/(fr|modern|tei|wikisource))?(?:\/(\d+))?$/.exec(location.hash);
       setOpen(h ? { cote: h[1], batch: Number(h[2]) } : null);
       if (h?.[3]) setEdition(h[3] as PaneView);
       if (h?.[4]) setPage(Number(h[4]));
@@ -88,7 +89,7 @@ export function useReader(cotes: Volume[]) {
 
   useEffect(() => {
     if (!open) return;
-    if (/^#[\w-]+\/\d+\/(fr|modern|tei)/.test(location.hash)) return;
+    if (/^#[\w-]+\/\d+\/(fr|modern|tei|wikisource)/.test(location.hash)) return;
     setEdition('fr');
   }, [open, manifest]);
 
@@ -99,11 +100,12 @@ export function useReader(cotes: Volume[]) {
           volume: openCote,
           batch: Math.min(open.batch, batchCount(openCote.pages)),
           page,
-          // The TEI view is the transcription, served per batch like it.
+          // The TEI and Wikisource views are the transcription, served per
+          // batch like it.
           wholeFolder: servedByFolder(
             manifest,
             openCote.id,
-            edition === 'tei' ? 'fr' : edition,
+            edition === 'tei' || edition === 'wikisource' ? 'fr' : edition,
             'html',
           ),
         }
