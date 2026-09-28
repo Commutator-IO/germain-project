@@ -19,6 +19,7 @@
     "tei": "node scripts/tei.mjs",
     "tei-view": "node scripts/tei-view.mjs",
     "check-tei": "node scripts/check-tei.mjs",
+    "wikisource": "node scripts/wikisource.mjs",
     "lexicon": "node scripts/lexicon.mjs",
     "check-sources": "node scripts/check-sources.mjs"
   },

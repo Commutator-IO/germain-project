@@ -20,6 +20,10 @@ public/manifest.json
 # the .tex files themselves are the source of record and are versioned.
 public/transcripts/
 
+# Wikitext for Wikisource, one file per view: derived from transcripts/*.tex
+# by `npm run wikisource`, and pasted from here, never edited here.
+wikisource/
+
 # Likewise the exercise book's reading view, index and PDF: derived from
 # exercises/exercices.fr.tex by `npm run render` and `npm run pdf`.
 public/exercises/
