@@ -35,9 +35,9 @@ import type { Volume } from '../lib/types.ts';
  */
 
 const WIDTH_KEY = 'germain.facsimile.width';
-const MIN_WIDTH = 380;
+const MIN_WIDTH = 320;
 const DEFAULT_WIDTH = 640;
-const MAX_SHARE = 0.72;
+const MAX_SHARE = 0.8;
 
 export interface OpenBatch {
   volume: Volume;
@@ -215,21 +215,51 @@ export function FacsimilePane({
       style={{ width: widthCss }}
       aria-label={`Facsimile — ${v.shelfmark}, views ${first} to ${last}`}
     >
+      {/* The width handle. It used to be an invisible strip along the edge,
+          found only by hovering it, and readers asked for the pane to be
+          resizable without knowing it already was. So the edge now carries a
+          grip that is always drawn, over a wider hit area straddling the
+          border. Drag it, use ← and → once focused (Shift for bigger steps),
+          or double-click it to go back to the default width. */}
       <div
         role="separator"
         tabIndex={0}
         aria-orientation="vertical"
-        aria-label="Facsimile pane width"
+        aria-label="Facsimile pane width — drag, or ← and →; double-click to reset"
+        title="Drag to resize the facsimile — double-click to reset"
         aria-valuenow={Math.round(Math.min(width, window.innerWidth * MAX_SHARE))}
         aria-valuemin={MIN_WIDTH}
         aria-valuemax={Math.round(window.innerWidth * MAX_SHARE)}
         onPointerDown={startDrag}
         onLostPointerCapture={endDrag}
         onKeyDown={onHandleKey}
-        className={`absolute left-0 top-0 h-full w-2 cursor-col-resize touch-none transition focus-visible:bg-brand-400 focus-visible:outline-none ${
-          isDragging ? 'bg-brand-400' : 'bg-transparent hover:bg-brand-200'
-        }`}
-      />
+        onDoubleClick={() => {
+          set(clamp(DEFAULT_WIDTH));
+          persist();
+        }}
+        className="group absolute -left-2 top-0 z-20 flex h-full w-4 cursor-col-resize touch-none items-center justify-center focus-visible:outline-none"
+      >
+        <span
+          aria-hidden="true"
+          className={`absolute inset-y-0 left-1/2 w-0.5 -translate-x-1/2 transition ${
+            isDragging
+              ? 'bg-brand-400'
+              : 'bg-transparent group-hover:bg-brand-200 group-focus-visible:bg-brand-400'
+          }`}
+        />
+        <span
+          aria-hidden="true"
+          className={`relative flex h-12 w-3 flex-col items-center justify-center gap-[3px] rounded-full border shadow-sm transition ${
+            isDragging
+              ? 'border-brand-400 bg-brand-50'
+              : 'border-ink-200 bg-white group-hover:border-brand-400 group-focus-visible:border-brand-400'
+          }`}
+        >
+          {[0, 1, 2].map((i) => (
+            <span key={i} className="h-[3px] w-[3px] rounded-full bg-ink-400" />
+          ))}
+        </span>
+      </div>
 
       <header className="flex shrink-0 items-start gap-3 border-b border-ink-200 px-4 py-2.5 pl-5">
         <div className="min-w-0 flex-1">
