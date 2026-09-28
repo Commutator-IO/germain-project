@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import {
   batchCount,
   batchRange,
@@ -283,13 +283,33 @@ export function FacsimilePane({
   );
 }
 
+/** Zoom stops for the − and + buttons, in multiples of fit-to-width. */
+const ZOOMS = [1, 1.25, 1.5, 2, 2.5, 3, 4, 5, 6, 8];
+const MIN_ZOOM = 1;
+const MAX_ZOOM = 8;
+/** Where a click on the fitted page goes: close enough to read a doubtful word. */
+const CLICK_ZOOM = 2.5;
+
+const clampZoom = (z: number) => Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, z));
+
 /**
- * One view, at the pane's width, from Gallica.
+ * One view, from Gallica, fitted to the pane's width and magnifiable.
  *
- * Fitted to the pane by default; a click toggles the full-resolution image,
- * which scrolls inside the pane — that is the state in which a doubtful word
- * is settled. Each is a separate request to Gallica and each is labelled while
- * it is in flight, because a blank pane and a slow pane look the same.
+ * The zoom is the hopper project's, made finer. The − and + buttons step
+ * through ten stops from ×1 to ×8; Ctrl or ⌘ with the wheel — which is also
+ * what a trackpad pinch sends — zooms continuously, about the pointer, so the
+ * word under the cursor stays under it. A click on the fitted page goes to
+ * ×2.5 at that point, a click on a magnified one comes back to fit. A
+ * magnified page is dragged with the mouse, or scrolled as usual.
+ *
+ * Two images, not one. The fitted image, at the pane's width, is what is
+ * asked for first and always shown; once the page is magnified, the
+ * full-resolution image is asked for too and laid over it as soon as it has
+ * arrived. The reader never waits on a blank pane, and Gallica is asked for
+ * the large image only for the views somebody actually magnifies.
+ *
+ * A new view starts fitted, as in hopper: landing on a magnified corner of a
+ * leaf one has not seen whole says nothing about where one is.
  */
 function ViewImage({
   ark,
@@ -302,38 +322,201 @@ function ViewImage({
   width: number;
   dragging: boolean;
 }) {
-  const [zoom, setZoom] = useState(false);
+  const [zoom, setZoom] = useState(1);
   const [state, setState] = useState<'loading' | 'ready' | 'failed'>('loading');
+  const [full, setFull] = useState<'idle' | 'loading' | 'ready'>('idle');
+  const box = useRef<HTMLDivElement>(null);
+  /** The point to keep still across a change of zoom, in box coordinates. */
+  const anchor = useRef<{ x: number; y: number; from: number } | null>(null);
+  const drag = useRef<{ x: number; y: number; left: number; top: number; moved: boolean } | null>(
+    null,
+  );
   const dpr = typeof window !== 'undefined' ? Math.min(window.devicePixelRatio || 1, 2) : 1;
-  const src = zoom ? iiifFull(ark, view) : iiifImage(ark, view, width * dpr);
+  const src = iiifImage(ark, view, width * dpr);
+  const fullSrc = iiifFull(ark, view);
+  const magnified = zoom > 1.001;
 
   useEffect(() => setState('loading'), [src]);
+  useEffect(() => {
+    setZoom(1);
+    setFull('idle');
+    box.current?.scrollTo({ left: 0, top: 0 });
+  }, [ark, view]);
+  useEffect(() => {
+    if (magnified && full === 'idle') setFull('loading');
+  }, [magnified, full]);
+
+  /** Changes the zoom, keeping the point (x, y) of the box where it is. */
+  const zoomTo = useCallback((next: number, x?: number, y?: number) => {
+    const el = box.current;
+    setZoom((from) => {
+      const to = clampZoom(next);
+      if (el) {
+        anchor.current = {
+          x: x ?? el.clientWidth / 2,
+          y: y ?? el.clientHeight / 2,
+          from,
+        };
+      }
+      return to;
+    });
+  }, []);
+
+  // After the image has been resized, scroll so the anchor has not moved.
+  useLayoutEffect(() => {
+    const el = box.current;
+    const a = anchor.current;
+    if (!el || !a) return;
+    anchor.current = null;
+    const r = zoom / a.from;
+    el.scrollLeft = (el.scrollLeft + a.x) * r - a.x;
+    el.scrollTop = (el.scrollTop + a.y) * r - a.y;
+  }, [zoom]);
+
+  // Ctrl/⌘ + wheel, and the trackpad pinch that arrives as one. Registered
+  // by hand because React's wheel listener is passive: preventDefault there
+  // would not stop the browser zooming the whole page instead.
+  useEffect(() => {
+    const el = box.current;
+    if (!el) return;
+    const onWheel = (e: WheelEvent) => {
+      if (!e.ctrlKey && !e.metaKey) return;
+      e.preventDefault();
+      const r = el.getBoundingClientRect();
+      const factor = Math.exp(-e.deltaY * (e.deltaMode === 1 ? 0.05 : 0.0025));
+      setZoom((from) => {
+        const to = clampZoom(from * factor);
+        anchor.current = { x: e.clientX - r.left, y: e.clientY - r.top, from };
+        return to;
+      });
+    };
+    el.addEventListener('wheel', onWheel, { passive: false });
+    return () => el.removeEventListener('wheel', onWheel);
+  }, []);
+
+  const stepZoom = (dir: 1 | -1) => {
+    const next =
+      dir > 0
+        ? (ZOOMS.find((z) => z > zoom + 0.001) ?? MAX_ZOOM)
+        : ([...ZOOMS].reverse().find((z) => z < zoom - 0.001) ?? MIN_ZOOM);
+    zoomTo(next);
+  };
 
   return (
-    <div
-      className={`relative min-h-0 flex-1 overflow-auto bg-ink-100 ${dragging ? 'pointer-events-none' : ''}`}
-    >
-      {state === 'loading' && (
-        <p className="pointer-events-none absolute left-1/2 top-6 -translate-x-1/2 rounded-md bg-white/85 px-2.5 py-1 text-[12px] text-ink-500 shadow-sm">
-          Asking Gallica for view {view}…
-        </p>
-      )}
-      {state === 'failed' ? (
-        <Failed ark={ark} view={view} onRetry={() => setState('loading')} />
-      ) : (
-        <img
-          key={src}
-          src={src}
-          alt={`View ${view}`}
-          onLoad={() => setState('ready')}
-          onError={() => setState('failed')}
-          onClick={() => setZoom(!zoom)}
-          title={zoom ? 'Click to fit the pane' : 'Click for the full-resolution image'}
-          className={zoom ? 'max-w-none cursor-zoom-out' : 'w-full cursor-zoom-in'}
-          draggable={false}
-        />
+    <div className="relative min-h-0 flex-1">
+      <div
+        ref={box}
+        className={`absolute inset-0 overflow-auto bg-ink-100 ${dragging ? 'pointer-events-none' : ''}`}
+        style={{ cursor: magnified ? (drag.current?.moved ? 'grabbing' : 'grab') : 'zoom-in' }}
+        onPointerDown={(e) => {
+          if (e.button !== 0) return;
+          const el = box.current!;
+          drag.current = { x: e.clientX, y: e.clientY, left: el.scrollLeft, top: el.scrollTop, moved: false };
+        }}
+        onPointerMove={(e) => {
+          const d = drag.current;
+          const el = box.current;
+          if (!d || !el || !magnified) return;
+          const dx = e.clientX - d.x;
+          const dy = e.clientY - d.y;
+          if (!d.moved && Math.hypot(dx, dy) < 4) return;
+          if (!d.moved) el.setPointerCapture?.(e.pointerId);
+          d.moved = true;
+          el.scrollLeft = d.left - dx;
+          el.scrollTop = d.top - dy;
+        }}
+        onPointerUp={(e) => {
+          const d = drag.current;
+          drag.current = null;
+          if (!d || d.moved || state !== 'ready') return;
+          // A click, not a drag: into the page where it was clicked, or back to fit.
+          const r = box.current!.getBoundingClientRect();
+          if (magnified) zoomTo(1);
+          else zoomTo(CLICK_ZOOM, e.clientX - r.left, e.clientY - r.top);
+        }}
+      >
+        {state === 'loading' && (
+          <p className="pointer-events-none absolute left-1/2 top-6 z-10 -translate-x-1/2 rounded-md bg-white/85 px-2.5 py-1 text-[12px] text-ink-500 shadow-sm">
+            Asking Gallica for view {view}…
+          </p>
+        )}
+        {state === 'failed' ? (
+          <Failed ark={ark} view={view} onRetry={() => setState('loading')} />
+        ) : (
+          <div className="relative select-none" style={{ width: `${zoom * 100}%` }}>
+            <img
+              key={src}
+              src={src}
+              alt={`View ${view}`}
+              onLoad={() => setState('ready')}
+              onError={() => setState('failed')}
+              className="block w-full"
+              draggable={false}
+            />
+            {full !== 'idle' && (
+              <img
+                key={fullSrc}
+                src={fullSrc}
+                alt=""
+                aria-hidden="true"
+                onLoad={() => setFull('ready')}
+                className="absolute inset-0 block w-full transition-opacity duration-200"
+                style={{ opacity: full === 'ready' ? 1 : 0 }}
+                draggable={false}
+              />
+            )}
+          </div>
+        )}
+      </div>
+
+      {state === 'ready' && (
+        <div className="absolute bottom-3 right-5 z-10 flex items-center gap-1 rounded-full border border-ink-200 bg-white/92 px-1 py-1 shadow-sm backdrop-blur">
+          {magnified && full === 'loading' && (
+            <span className="px-1.5 text-[10.5px] text-ink-400">full resolution…</span>
+          )}
+          <ZoomBtn label="Zoom out" disabled={!magnified} onClick={() => stepZoom(-1)}>
+            −
+          </ZoomBtn>
+          <button
+            type="button"
+            onClick={() => zoomTo(1)}
+            disabled={!magnified}
+            title="Fit the pane"
+            className="tabular min-w-[3.2em] rounded-full px-1 text-[11px] text-ink-500 enabled:hover:text-brand-700"
+          >
+            ×{zoom < 10 ? zoom.toFixed(zoom % 1 ? 2 : 0).replace(/0$/, '') : Math.round(zoom)}
+          </button>
+          <ZoomBtn label="Zoom in" disabled={zoom >= MAX_ZOOM - 0.001} onClick={() => stepZoom(1)}>
+            +
+          </ZoomBtn>
+        </div>
       )}
     </div>
+  );
+}
+
+function ZoomBtn({
+  label,
+  disabled,
+  onClick,
+  children,
+}: {
+  label: string;
+  disabled: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      aria-label={label}
+      title={`${label} (Ctrl/⌘ + wheel, or pinch)`}
+      disabled={disabled}
+      onClick={onClick}
+      className="grid h-7 w-7 place-items-center rounded-full text-[15px] leading-none text-ink-700 transition enabled:hover:bg-ink-100 enabled:hover:text-brand-700 disabled:opacity-30"
+    >
+      {children}
+    </button>
   );
 }
 
