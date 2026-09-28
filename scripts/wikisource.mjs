@@ -10,7 +10,8 @@
  *   npm run wikisource -- --site                    the site's Wikisource tab
  *
  * Two outputs from one conversion. Without --site, wikisource/<volume>/ gets a
- * file per view and an index.md, for pasting by hand. With --site, every
+ * file per view, the whole volume concatenated in <volume>.wiki, and an
+ * index.md, for pasting by hand. With --site, every
  * transcribed batch gets public/transcripts/<volume>/batch-NN.fr.wiki.html:
  * the reading pane's « Wikisource » tab, one section per view with a preview
  * and the wikicode behind a copy button. That second output answers the
@@ -551,10 +552,19 @@ async function volume(id) {
     await writeFile(resolve(target, `vue-${String(p.view).padStart(3, '0')}.wiki`), p.wiki + '\n', 'utf8');
   }
 
+  // The whole volume in one file as well, each view under the marker
+  // Wikisource's split tool reads — ==[[Page:<file>/<n>]]== — so that the file
+  // can be split onto the Page: namespace in one pass, or simply read whole.
+  const file = flag('file', `${entry.shelfmark}.pdf`);
+  await writeFile(
+    resolve(target, `${id}.wiki`),
+    pages.map((p) => `==[[Page:${file}/${p.view + OFFSET}]]==\n${p.wiki}\n`).join('\n'),
+    'utf8',
+  );
+
   let refused = new Map();
   if (CHECK_MATH) refused = await checkMath([...new Set(pages.flatMap((p) => p.formulas))]);
 
-  const file = flag('file', `${entry.shelfmark}.pdf`);
   const transcribed = new Set(pages.map((p) => p.view));
   const blank = [];
   for (let v = 1; v <= entry.pages; v++) if (!transcribed.has(v) || empty.has(v)) blank.push(v);
@@ -828,10 +838,12 @@ async function siteVolume(id) {
   const latin = /^(Latin|NAL)\b/.test(entry?.shelfmark ?? '');
   await mkdir(resolve(PUBLIC, id), { recursive: true });
   let n = 0;
+  const whole = [];
   for (const file of files) {
     const tex = await readFile(resolve(dir, file), 'utf8');
     const meta = readMeta(tex);
     const pages = mergeViews(convertBatch(tex, `${id}/${file}`));
+    whole.push(...pages);
     for (const p of pages) {
       if (p.unknown.size) {
         process.stderr.write(
@@ -861,6 +873,17 @@ async function siteVolume(id) {
     );
     n++;
   }
+  // The whole volume in one file, for the « wiki » button of the Source &
+  // print row: every view under the split tool's marker, as in wikisource/.
+  const file = `${entry?.shelfmark ?? id}.pdf`;
+  await writeFile(
+    resolve(PUBLIC, id, `${id}.fr.wiki`),
+    mergeViews(whole)
+      .filter((p) => p.wiki)
+      .map((p) => `==[[Page:${file}/${p.view + OFFSET}]]==\n${p.wiki}\n`)
+      .join('\n'),
+    'utf8',
+  );
   return n;
 }
 

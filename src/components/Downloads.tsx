@@ -123,6 +123,20 @@ export function Downloads({
                 </a>
               ) : null,
             )}
+            {/* The whole volume as wikicode for Wikisource (#10), written by
+                `npm run wikisource -- --site` beside every transcription. The
+                one button here that downloads: a .wiki file is for pasting
+                into Wikisource, and a browser has nothing to show it with. */}
+            {r.key === 'fr' && r.tex && (
+              <a
+                href={`/transcripts/${cote}/${cote}.fr.wiki`}
+                download={`${cote}.wiki`}
+                title="Download the whole volume as wikicode for Wikisource — each view under its ==[[Page:…]]== marker. CC0."
+                className="rounded-md bg-ink-100 px-1.5 py-0.5 font-mono text-[11px] font-semibold uppercase text-ink-600 transition hover:bg-brand-100 hover:text-brand-700"
+              >
+                wiki
+              </a>
+            )}
           </li>
         ))}
       </ul>
