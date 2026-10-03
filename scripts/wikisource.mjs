@@ -427,6 +427,13 @@ function takeBracketed(text) {
  * Renders one page's source to wikitext lines. Paragraphs are separated by a
  * blank line; a display formula stands on its own line.
  */
+/** The letters of a wikitext line, for comparing two titles. */
+const plainWords = (s) =>
+  s
+    .replace(/<[^>]*>|\{\{[^{}]*\}\}|&#?\w+;/g, '')
+    .replace(/[^\p{L}\d]/gu, '')
+    .toLowerCase();
+
 function renderPage(src, inline, headings, prefix = '') {
   const { text, kept } = liftEnvs(src);
   const blocks = text
@@ -435,7 +442,7 @@ function renderPage(src, inline, headings, prefix = '') {
     .map((b) => b.trim())
     .filter(Boolean);
   const out = [];
-  for (const block of blocks) {
+  for (const [k, block] of blocks.entries()) {
     if (NOTES !== 'all' && block.startsWith('\\note{') && !replaceBraced(block, 'note', () => '').trim()) continue;
     const env = /^ENVBLOCK(\d+)$/.exec(block);
     if (env) {
@@ -466,6 +473,17 @@ function renderPage(src, inline, headings, prefix = '') {
         out.push(
           (APPARATUS ? `<!-- titre de la transcription : ${head.replace(/--/g, '–')} -->` : '') + tail,
         );
+        continue;
+      }
+      // The site sets a piece's title as a heading and then the title as the
+      // page has it, often longer (« Deffauts de quelques reigles du Sr Cart.
+      // et que… »). On the Page: that is the same words twice: when the next
+      // paragraph opens with the heading's words, the heading goes.
+      const next = blocks.slice(k + 1).find((b) => !b.startsWith('\\note{'));
+      const key = plainWords(head).slice(0, 15);
+      const prose = next && !/^\\(sub)?section|^ENVBLOCK/.test(next);
+      if (key && prose && plainWords(inline(next)).startsWith(key)) {
+        if (tail) out.push(tail);
         continue;
       }
       out.push((section[1] ? `{{c|1=''${arg(head)}''}}` : `{{c|1='''${arg(head)}'''}}`) + tail);
