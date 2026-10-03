@@ -29,7 +29,7 @@
  *   \page{17}          a new file, vue-017.wiki; in the concatenated file, a
  *                      heading « Vue 17 » with its Gallica link, or with
  *                      --file the split marker ==[[Page:<file>/<17 + offset>]]==
- *   \struck{x}         {{Rature|1=x}}             in math: \cancel{x}
+ *   \struck{x}         nothing (--ratures: {{Rature|1=x}}, in math \cancel{x})
  *   \ill{}             {{Illisible}}              in math: \text{[illisible]}
  *   \uncertain{x}      x                          (--apparatus: x [?])
  *   \add{x}            nothing: the transcriber's (--apparatus: [x])
@@ -84,12 +84,21 @@ const VOLUMES = args.filter((a) => !a.startsWith('--'));
  * is the rule its contributors set on the Scriptorium (28 September 2026). So
  * by default the reading notes, the « [?] » of a doubtful reading, the
  * transcriber's supplies and the titles the transcription gives to pieces are
- * all left out; struck and illegible words keep {{Rature}} and {{Illisible}},
- * and a marginal note of the writer's keeps its words without a label. The
- * whole apparatus stays on the site. --apparatus puts it back, for a reader
- * who wants the wikicode of the edition rather than of the leaf.
+ * all left out; illegible words keep {{Illisible}}, and a marginal note of
+ * the writer's keeps its words without a label. The whole apparatus stays on
+ * the site. --apparatus puts it back, for a reader who wants the wikicode of
+ * the edition rather than of the leaf.
+ *
+ * What the writer struck out is left out too: the text is the one he let
+ * stand, which is also what the printed edition beside it gives (Rene1596 on
+ * the Scriptorium, 29 September 2026). --ratures, or --apparatus, keeps it
+ * in {{Rature}}.
+ *
+ * French text gets the space French typography puts before ; : ! ? — the
+ * hand often leaves none, and Wikisource normalises it. Latin does not.
  */
 const APPARATUS = args.includes('--apparatus');
+const RATURES = APPARATUS || args.includes('--ratures');
 const NOTES = flag('notes', APPARATUS ? 'ref' : 'none');
 const OFFSET = Number(flag('offset', '1'));
 /**
@@ -244,7 +253,9 @@ function mathTeX(raw, held) {
     return '';
   });
   tex = replaceBraced(tex, 'marginal', (a) => (APPARATUS ? `\\text{[en marge : }${a}\\text{]}` : a));
-  tex = replaceBraced(tex, 'struck', (a) => `\\cancel{${a}}`);
+  tex = replaceBraced(tex, 'struck', (a) => (RATURES ? `\\cancel{${a}}` : ''));
+  // A struck term left between two signs: « = \\struck{…} = » is one sign.
+  if (!RATURES) tex = tex.replace(/=(\s*(\\[,;:! ]|\s)*\s*)=/g, '=');
   tex = replaceBraced(tex, 'uncertain', (a) => (APPARATUS ? `${a}\\,\\text{[?]}` : a));
   tex = replaceBraced(tex, 'add', (a) => (APPARATUS ? `[${a}]` : ''));
   tex = replaceBraced(tex, 'folio', () => '');
@@ -290,7 +301,7 @@ const escapeWiki = (s) =>
 /** A template argument: pipes would split it. */
 const arg = (s) => s.replace(/\|/g, '{{!}}');
 
-function makeInline(unknown, notesOut) {
+function makeInline(unknown, notesOut, french) {
   return function inline(text) {
     let out = escapeWiki(text);
     out = replaceBraced(out, 'note', (a) => {
@@ -299,7 +310,7 @@ function makeInline(unknown, notesOut) {
       return `<ref>${a.replace(/\s*\n\s*/g, ' ').trim()}</ref>`;
     });
     out = replaceBraced(out, 'folio', () => '');
-    out = replaceBraced(out, 'struck', (a) => `{{Rature|1=${arg(a)}}}`);
+    out = replaceBraced(out, 'struck', (a) => (RATURES ? `{{Rature|1=${arg(a)}}}` : '\uE001'));
     out = replaceBraced(out, 'uncertain', (a) => (APPARATUS ? `${a} [?]` : a));
     out = replaceBraced(out, 'add', (a) => (APPARATUS ? `[${a}]` : ''));
     out = replaceBraced(out, 'marginal', (a) => (APPARATUS ? `[''en marge :'' ${a}]` : a));
@@ -335,6 +346,12 @@ function makeInline(unknown, notesOut) {
       .replace(/---/g, '—')
       .replace(/--/g, '–')
       .replace(/~/g, ' ');
+    // Where a struck passage was: no gap, and no comma left doubled.
+    out = out
+      .replace(/[ \t]*\uE001[ \t]*/g, ' ')
+      .replace(/,(\s*,)+/g, ',')
+      .replace(/ +([,.)])/g, '$1');
+    if (french) out = out.replace(/(?<!&#?[a-zA-Z0-9]*)([\p{L}\d»)\]\uE000])([;:!?])(?=\s|$)/gu, '$1 $2');
     for (const m of out.matchAll(/\\([a-zA-Z]+)/g)) unknown.add(m[1]);
     // One line per paragraph: in wikitext a line starting with a space, a
     // star or a colon is markup.
@@ -500,7 +517,7 @@ function renderEnv(block, inline, prefix) {
 // ---------------------------------------------------------------------------
 // A batch, cut into pages.
 
-function convertBatch(tex, file) {
+function convertBatch(tex, file, french = true) {
   const body = /\\begin\{document\}([\s\S]*)\\end\{document\}/.exec(tex);
   if (!body) throw new Error(`${file}: no \\begin{document} … \\end{document}`);
   const { text, held } = liftMath(body[1]);
@@ -521,7 +538,7 @@ function convertBatch(tex, file) {
     const unknown = new Set();
     const notes = { count: 0 };
     const formulas = [];
-    const inline = makeInline(unknown, notes);
+    const inline = makeInline(unknown, notes, french);
     const headings = [];
     let wiki = renderPage(src, inline, headings);
     wiki = wiki.replace(MARKED(), (_, i) => {
@@ -630,7 +647,8 @@ async function volume(id) {
   if (!files.length) throw new Error(`${id}: no transcription`);
 
   let pages = [];
-  for (const file of files) pages.push(...convertBatch(await readFile(resolve(dir, file), 'utf8'), file));
+  const french = !/^(Latin|NAL)\b/.test(entry.shelfmark ?? '');
+  for (const file of files) pages.push(...convertBatch(await readFile(resolve(dir, file), 'utf8'), file, french));
   pages = mergeViews(pages);
   // A view whose only content was a leaf description has nothing left to
   // paste: it goes with the blank views, not into an empty file.
@@ -934,7 +952,7 @@ async function siteVolume(id) {
   for (const file of files) {
     const tex = await readFile(resolve(dir, file), 'utf8');
     const meta = readMeta(tex);
-    const pages = mergeViews(convertBatch(tex, `${id}/${file}`));
+    const pages = mergeViews(convertBatch(tex, `${id}/${file}`, !latin));
     whole.push(...pages);
     for (const p of pages) {
       if (p.unknown.size) {
@@ -948,8 +966,9 @@ async function siteVolume(id) {
       `<p><b>Wikicode pour l'espace Page: de Wikisource</b>, une section par vue de Gallica. ` +
       `Cette transcription est dans le domaine public (CC0) : reprenez-la librement, sans condition.</p>` +
       `<p>Comme le demandent les usages de Wikisource, ce wikicode ne contient que ce qui est sur le ` +
-      `fac-similé : ni notes de lecture, ni « [?] », ni restitutions du transcripteur. Mots biffés et ` +
-      `illisibles gardent {{Rature}} et {{Illisible}}. L'apparat complet reste dans l'onglet Transcription.</p>` +
+      `fac-similé : ni notes de lecture, ni « [?] », ni restitutions du transcripteur ; ce que l'auteur a ` +
+      `biffé est omis, les mots illisibles gardent {{Illisible}}. L'apparat complet, ratures comprises, ` +
+      `reste dans l'onglet Transcription.</p>` +
       `<p>C'est une première lecture automatique, que personne n'a relue : chaque page doit être comparée ` +
       `au fac-similé par la personne qui la verse, avant de la verser, au niveau « Non corrigée ».</p>` +
       (latin

@@ -1,5 +1,8 @@
 % NAF 5166, batch 2 — Gallica views 21–40.
 % Pass: Opus 5.5 (claude-opus-5-5), 2026-09-23 — first pass, unchecked against the views by a human.
+% Revised 2026-10-03, after Rene1596 on the Wikisource Scriptorium: the
+% constant 180° is the large Π the hand writes (« en nommant Π l'angle de
+% 180° », v. 21), set \Pi; the angle stays the small π, set \pi.
 %
 % What the views are. Scans of about 4707 × 6431–6463, portrait, one page per
 % view, some in colour and some in greyscale. Each leaf is smaller than the
@@ -159,13 +162,13 @@
 \page{21}
 \note{Recto d'un feuillet monté sur onglet. En haut à droite, un grand « 3 » à l'encre noire, du même trait appuyé que le texte : voir l'en-tête pour ce que peut être cette série. La page commence par le paragraphe numéroté « 2. » : le paragraphe 1 et la première expression de $V$, à laquelle renvoie « l'expression precedente de $V$ », sont avant cette vue.}
 
-2. Supposons maintenant que le spheroide soit très peu different d'une sphere dont le rayon soit egale à $a$, on aura $R = a(1+y')$, $y'$ étant une fonction très petite des sinus et cosinus de $\pi'$ et $\theta'$, dont on negligera le carré et les puissances superieures; il est clair que la valeur de $V$ sera egale a sa valeur relativement a la sphere, plus à la valeur relative a l'excès du spheroide sur la sphere. On sait et il est facile de trouver que la premiere est egale a la masse de la sphere divisée par la distance $r$; elle est ainsi \struck{\uncertain{egale}} exprimée par $\frac{4\pi a^3}{3r}$, en nommant $\pi$ l'angle de $180^\circ$. Quant à la seconde, comme nous ne tenons compte que des premieres dimensions de $y$, il est aisé de voir, qu'on l'aura en mettant dans l'expression precedente de $V$, $a$ à la place de $R$ et $ay$ à celle de $dR$. Ainsi en nommant cette seconde partie $u$, on aura
-\[ V = \frac{4\pi a^3}{3r} + u, \quad\text{et}\quad u = \struck{\ill{}}\, a^3 \int \frac{y'\,d\pi'\,d\theta' \sin\theta'}{\sqrt{(r^2 - 2ra\mu + a^2)}} \]
+2. Supposons maintenant que le spheroide soit très peu different d'une sphere dont le rayon soit egale à $a$, on aura $R = a(1+y')$, $y'$ étant une fonction très petite des sinus et cosinus de $\pi'$ et $\theta'$, dont on negligera le carré et les puissances superieures; il est clair que la valeur de $V$ sera egale a sa valeur relativement a la sphere, plus à la valeur relative a l'excès du spheroide sur la sphere. On sait et il est facile de trouver que la premiere est egale a la masse de la sphere divisée par la distance $r$; elle est ainsi \struck{\uncertain{egale}} exprimée par $\frac{4\Pi a^3}{3r}$, en nommant $\Pi$ l'angle de $180^\circ$. Quant à la seconde, comme nous ne tenons compte que des premieres dimensions de $y$, il est aisé de voir, qu'on l'aura en mettant dans l'expression precedente de $V$, $a$ à la place de $R$ et $ay$ à celle de $dR$. Ainsi en nommant cette seconde partie $u$, on aura
+\[ V = \frac{4\Pi a^3}{3r} + u, \quad\text{et}\quad u = \struck{\ill{}}\, a^3 \int \frac{y'\,d\pi'\,d\theta' \sin\theta'}{\sqrt{(r^2 - 2ra\mu + a^2)}} \]
 où il n'y a plus que deux integrations a faire l'une relative a $\pi'$ l'autre relative a $\theta'$ ou à $\mu$.
 \note{« 2. » : le chiffre est fermé d'une boucle à sa base, lu 2. « egale » (le rayon) : ainsi sur la page. Le mot biffé après « ainsi » est rayé d'un trait épais ; on y devine « egale », répété de la ligne précédente. « $\theta'$ » : une boucle ovale inclinée, sans hampe ni jambage, ici et dans tout le lot ; la lecture $\beta'$ est exclue par l'absence de jambage. La lettre qui suit $d\pi'$ au numérateur est récrite sur une autre. Entre « $u =$ » et $a^3$, un signe ou un coefficient noyé sous une grosse tache d'encre, effacement de l'auteur. « $ay$ » : sans prime sur l'$y$, comme « des premieres dimensions de $y$ ». Le signe de différentielle est partout un $d$ rond, gardé.}
 
 Je differentie maintenant comme M. Laplace par rapport à $r$, j'ai
-\[ \frac{d V}{d r} = -\frac{4\pi a^3}{3r^2} + \frac{d u}{d r} \]
+\[ \frac{d V}{d r} = -\frac{4\Pi a^3}{3r^2} + \frac{d u}{d r} \]
 \note{La page s'arrête sur cette équation ; la suite est en tête de la vue 23 (« Or $\frac{d u}{d r} = \ldots$ »).}
 
 \page{23}
@@ -175,21 +178,21 @@ Or
 \[ \frac{d u}{d r} = a^3 \int \frac{(r - a\mu)\,y'\,d\pi'\,d\mu}{\sqrt{(r^2 - 2ar\mu + a^2)}^{\,\frac{3}{2}}}. \]
 Lorsque le point attiré est à la surface du spheroide on a $r = a(1+y)$, en designant par $y$ ce que devient $y'$ lorsque $\theta'$ et $\pi'$ deviennent $\theta$ et $\pi$; mais comme nous negligeons dans $u$ les quantités du second ordre, il suffit de faire $r = a$. On aura ainsi:
 \[ u = \frac{a^2}{\sqrt{2}} \int \frac{y'\,d\pi'\,d\mu}{\sqrt{(1-\mu)}}, \quad \frac{d u}{d r} = \frac{-a}{2\sqrt{2}} \int \frac{(1-\mu)\,y'\,d\pi'\,d\mu}{(1-\mu)^{\frac{3}{2}}} = -\frac{a}{2\sqrt{2}} \int \frac{y'\,d\pi'\,d\mu}{\sqrt{(1-\mu)}}; \]
-\note{Première équation : pas de signe moins devant $a^3$, ainsi sur la page ; le dénominateur porte le même signe radical que partout ailleurs, suivi d'une parenthèse fermée par un crochet et de l'exposant $\frac{3}{2}$ : transcrit tel quel. Sous $u$, $V$ et $-a$, le dénominateur est le petit 2 de cette main, fait comme un n sans boucle, qu'on prendrait pour $r$ ; c'est le 2 des exposants ($r^2$, $a^2$), et le calcul le confirme ($\frac{V}{2} = \frac{2\pi a^3}{3r}$ plus bas). Le « 1 » de $(1-\mu)^{\frac32}$ est empâté. Après le deuxième membre, le signe d'égalité est surchargé.}
+\note{Première équation : pas de signe moins devant $a^3$, ainsi sur la page ; le dénominateur porte le même signe radical que partout ailleurs, suivi d'une parenthèse fermée par un crochet et de l'exposant $\frac{3}{2}$ : transcrit tel quel. Sous $u$, $V$ et $-a$, le dénominateur est le petit 2 de cette main, fait comme un n sans boucle, qu'on prendrait pour $r$ ; c'est le 2 des exposants ($r^2$, $a^2$), et le calcul le confirme ($\frac{V}{2} = \frac{2\Pi a^3}{3r}$ plus bas). Le « 1 » de $(1-\mu)^{\frac32}$ est empâté. Après le deuxième membre, le signe d'égalité est surchargé.}
 
 Donc
 \[ \frac{u}{2} + \frac{a\,d u}{d r} = 0 \]
 equation qui doit avoir lieu à la surface du spheroide.
 
 Donc on aura aussi à cette surface \struck{\ill{}}
-\[ \frac{V}{2} + \frac{a\,d V}{d r} = \frac{2\pi a^3}{3r} - \frac{4\pi a^4}{3r^2} \]
+\[ \frac{V}{2} + \frac{a\,d V}{d r} = \frac{2\Pi a^3}{3r} - \frac{4\Pi a^4}{3r^2} \]
 où il faut faire $r = a(1+y)$ ce qui donnera
-\[ \frac{V}{2} + \frac{a\,d V}{d r} = -\frac{2\pi a^2}{3} + 2\pi a^2 y. \]
+\[ \frac{V}{2} + \frac{a\,d V}{d r} = -\frac{2\Pi a^2}{3} + 2\Pi a^2 y. \]
 \marginal{\struck{\uncertain{avoit} pas pour \ill{} \uncertain{remplir} necessairement la condition que la sphere touche la surface du spheroide.}}
 \note{Après « cette surface », un petit groupe de lettres noyé d'encre, biffé. Dans la marge de droite, en regard de ces deux équations, une note de six lignes, de la main du texte, barrée de trois grands traits croisés ; sa première ligne commence au bord (« avoit », peut-être précédé d'un « n' » caché) et le deuxième mot de la deuxième ligne n'a pas été lu. Elle reprend l'idée de la phrase sur M. Laplace qui suit.}
 
 M. Laplace trouve \struck{\ill{}}
-\[ \frac{V}{2} + \frac{a\,d V}{d r} = -\frac{2\pi a^2}{3} \]
+\[ \frac{V}{2} + \frac{a\,d V}{d r} = -\frac{2\Pi a^2}{3} \]
 parce qu'il suppose que la sphere touche le spheroide, auquel cas $y = 0$. \struck{\uncertain{Cependant comme} \ill{}}
 \marginal{\struck{\ill{}}}
 \note{Avant $\frac{V}{2}$, une petite tache biffée. La fin de la ligne après « $y = 0$. » est rayée d'un trait continu ; on y lit « Cependant comme » avec doute, et un dernier mot noyé. Dans la marge de droite, à la même hauteur, un mot entièrement noyé sous un trait épais.}
@@ -206,14 +209,14 @@ il est facile de
 
 d'avoir l'integrale de $\frac{d\pi'\,d\theta' \sin\theta'}{\sqrt{(r^2 - 2ra\mu + a^2)}}$, car en transportant l'axe, ou le pole des angles $\pi'$, $\theta'$ dans la ligne $r$, ce qui est permis, puisque cette ligne est fixe par rapport aux memes angles, on a $\theta = 0$, ce qui donne $\mu = \cos\theta'$, et reduit la differentielle dont il s'agit à
 \[ -\frac{d\pi'\,d\mu}{\sqrt{(r^2 - 2ra\mu + a^2)}}, \]
-laquelle doit être integrée depuis $\pi' = 0$ jusqu'a $\pi' = 2\pi$, et depuis $\mu = 1$ jusqu'a $\mu = -1$. La premiere integration donne
-\[ -\frac{2\pi\,d\mu}{\sqrt{(r^2 - 2ra\mu + a^2)}}; \]
-la seconde donne d'abord $\frac{2\pi\sqrt{(r^2 - 2ra\mu + a^2)}}{ra}$, et completant
-\[ \frac{2\pi(r+a)}{ra} - \frac{2\pi(r-a)}{ra} = \frac{4\pi}{r}. \]
+laquelle doit être integrée depuis $\pi' = 0$ jusqu'a $\pi' = 2\Pi$, et depuis $\mu = 1$ jusqu'a $\mu = -1$. La premiere integration donne
+\[ -\frac{2\Pi\,d\mu}{\sqrt{(r^2 - 2ra\mu + a^2)}}; \]
+la seconde donne d'abord $\frac{2\Pi\sqrt{(r^2 - 2ra\mu + a^2)}}{ra}$, et completant
+\[ \frac{2\Pi(r+a)}{ra} - \frac{2\Pi(r-a)}{ra} = \frac{4\Pi}{r}. \]
 Ainsi on a
-\[ u = \frac{4\pi a^3 y'}{r}, \quad\text{et de là}\quad \frac{d u}{d r} = -\frac{4\pi a^3 y'}{r^2}; \]
-et faisant $r = a$, $u = 4\pi a^2 y'$, $\frac{d u}{d r} = -4\pi a y'$; mais ces valeurs ne satisfont pas à l'equation $\frac{u}{2} + \frac{a\,d u}{d r} = 0$; car elles donnent
-\[ \frac{u}{2} + \frac{a\,d u}{d r} = -2\pi a^2 y'. \]
+\[ u = \frac{4\Pi a^3 y'}{r}, \quad\text{et de là}\quad \frac{d u}{d r} = -\frac{4\Pi a^3 y'}{r^2}; \]
+et faisant $r = a$, $u = 4\Pi a^2 y'$, $\frac{d u}{d r} = -4\Pi a y'$; mais ces valeurs ne satisfont pas à l'equation $\frac{u}{2} + \frac{a\,d u}{d r} = 0$; car elles donnent
+\[ \frac{u}{2} + \frac{a\,d u}{d r} = -2\Pi a^2 y'. \]
 \note{Dans « $\frac{u}{2}$ », le 2 est le petit 2 en forme de n (voir la vue 23). La première fraction du numérateur, au début de la page, a le $\theta'$ récrit comme aux vues 21 et 23.}
 
 4 Nommons $\rho$ pour abreger le radical $\frac{1}{\sqrt{(r^2 - 2ra\mu + a^2)}}$, ensorte que l'on ait $u = a^3 \int \rho\, y'\,d\pi'\,d\theta' \sin\theta'$; comme $r$ n'est contenu que dans $\rho$, on aura
@@ -265,7 +268,7 @@ sera necessairement nulle.
 \page{31}
 \note{En haut à droite, « 7 » à l'encre ; un peu à sa gauche et plus bas, une petite croix d'encre, comme celle qui suit le 6 à la vue 27. La page reprend la phrase laissée sur « Cependant » à la fin de la vue 29.}
 
-venons de voir que dans le cas le plus simple où $y'$ est constant on a $\frac{u}{2} + \frac{a\,d u}{d r} = -2\pi a^2 y'$; ce qui est \struck{\ill{}} un paradoxe dans le Calcul integral.
+venons de voir que dans le cas le plus simple où $y'$ est constant on a $\frac{u}{2} + \frac{a\,d u}{d r} = -2\Pi a^2 y'$; ce qui est \struck{\ill{}} un paradoxe dans le Calcul integral.
 \note{« venons » : sans sujet sur cette page ; le « nous » attendu après « Cependant » n'est ni au pied de la vue 29 ni en tête de celle-ci. Le mot biffé après « est » est court et couvert d'un trait épais.}
 
 6. Pour en trouver l'explication je vais \struck{d'abord} reprendre l'analyse qui a donné l'equation $\frac{u}{2} + \frac{a\,d u}{d r} = 0$, et je ferai d'abord le calcul sans rien negliger. Puisque $u = a^3 \int \rho\, y'\,d\pi'\,d\theta' \sin\theta'$, et que la quantité $r$ n'est contenue que dans l'expression de $\rho$, il n'y a nul doute qu'en differentiant par rapport à $r$ on n'ait
@@ -287,25 +290,25 @@ On voit ici en effet qu'en faisant $r = a$ le second terme de l'equation disparo
 7. Pour aller du plus simple au plus composé nous commencerons par examiner le cas où $y'$ est une quantité constante. Dans ce cas on n'a qu'à chercher l'integrale de \struck{\ill{}} $\rho^3\,d\pi'\,d\theta' \sin\theta'$, et pour cela nous pouvons supposer comme dans le n\textsuperscript{o}. 3, l'angle $\theta$ nul, ce qui donne $\mu = \cos\theta'$ et $d\mu = -\sin\theta'\,d\theta'$; de sorte que la differentielle dont il s'agit deviendra
 \[ -\frac{d\pi'\,d\mu}{(r^2 - 2ar\mu + a^2)^{\frac{3}{2}}}. \]
 Integrant d'abord par rapport à $\pi'$ on a
-\[ -\frac{2\pi\,d\mu}{(r^2 - 2ar\mu + a^2)^{\frac{3}{2}}}; \]
+\[ -\frac{2\Pi\,d\mu}{(r^2 - 2ar\mu + a^2)^{\frac{3}{2}}}; \]
 integrant ensuite par rapport à $\mu$ on a
-\[ \frac{-2\pi}{ar\sqrt{(r^2 - 2ar\mu + a^2)}}; \]
+\[ \frac{-2\Pi}{ar\sqrt{(r^2 - 2ar\mu + a^2)}}; \]
 et completant depuis $\mu = 1$ jusqu'à $\mu = -1$, on aura l'integrale complette
-\[ \frac{-2\pi}{ar(r+a)} + \frac{2\pi}{ar(r-a)} = \struck{\ill{}}\,\frac{4\pi}{r(r^2 - a^2)}. \]
-Ainsi la valeur complette de $\int \rho^3 y'\,d\pi'\,d\theta' \sin\theta'$ lorsque $y'$ est constant, est $\struck{\ill{}}\,\frac{4\pi y'}{r(r^2 - a^2)}$ quelle que soit la valeur de $r$.
-\note{Avant $\rho^3$, au début de l'intégrale, une lettre noyée sous une tache (un premier $\rho$ ?). « n\textsuperscript{o}. 3 » renvoie au paragraphe 3 (vues 23–25), où l'axe des angles est porté sur la ligne $r$. Le 2 du premier numérateur est empâté, et le $r$ du premier dénominateur porte une tache. Devant $\frac{4\pi}{r(r^2-a^2)}$ et devant $\frac{4\pi y'}{r(r^2-a^2)}$, une petite tache carrée, peut-être un signe effacé.}
+\[ \frac{-2\Pi}{ar(r+a)} + \frac{2\Pi}{ar(r-a)} = \struck{\ill{}}\,\frac{4\Pi}{r(r^2 - a^2)}. \]
+Ainsi la valeur complette de $\int \rho^3 y'\,d\pi'\,d\theta' \sin\theta'$ lorsque $y'$ est constant, est $\struck{\ill{}}\,\frac{4\Pi y'}{r(r^2 - a^2)}$ quelle que soit la valeur de $r$.
+\note{Avant $\rho^3$, au début de l'intégrale, une lettre noyée sous une tache (un premier $\rho$ ?). « n\textsuperscript{o}. 3 » renvoie au paragraphe 3 (vues 23–25), où l'axe des angles est porté sur la ligne $r$. Le 2 du premier numérateur est empâté, et le $r$ du premier dénominateur porte une tache. Devant $\frac{4\Pi}{r(r^2-a^2)}$ et devant $\frac{4\Pi y'}{r(r^2-a^2)}$, une petite tache carrée, peut-être un signe effacé.}
 
 Substituant cette valeur dans l'equation du numero precedent on aura
-\[ \frac{u}{2} + \frac{r\,d u}{d r} = \struck{\ill{}} = -\frac{2\pi a^3 y'}{r} \]
+\[ \frac{u}{2} + \frac{r\,d u}{d r} = \struck{\ill{}} = -\frac{2\Pi a^3 y'}{r} \]
 Si maintenant on fait $r = a$, elle devient
-\[ \frac{u}{2} + \frac{a\,d u}{d r} = -2a^2\pi y' \]
+\[ \frac{u}{2} + \frac{a\,d u}{d r} = -2a^2\Pi y' \]
 comme on l'a trouvée dans le n\textsuperscript{o}. 3, les quantités $y'$ et $y$ étant ici les mêmes.
-\note{Le premier second membre de l'équation, où l'on devine $\pi$, $a$ et $y'$, est couvert de hachures et barré d'un double trait. « l'a trouvée » : ainsi, pour l'équation. Le renvoi au « n\textsuperscript{o}. 3 » vise la valeur $-2\pi a^2 y'$ de la vue 25, qui est en fait au paragraphe 3. La page s'achève sur cette phrase, au pied du feuillet.}
+\note{Le premier second membre de l'équation, où l'on devine $\Pi$, $a$ et $y'$, est couvert de hachures et barré d'un double trait. « l'a trouvée » : ainsi, pour l'équation. Le renvoi au « n\textsuperscript{o}. 3 » vise la valeur $-2\Pi a^2 y'$ de la vue 25, qui est en fait au paragraphe 3. La page s'achève sur cette phrase, au pied du feuillet.}
 
 \page{35}
 \note{En haut à droite, « 9 » à l'encre, et au-dessous, un peu à gauche, un petit signe en forme de c. La page ouvre un nouveau paragraphe, après la fin de la vue 33.}
 
-8 Considerons maintenant le cas general dans lequel $y'$ est supposée une fonction des sinus et des cosinus des angles $\pi'$ et $\theta'$; on aura à integrer la quantité $\rho^3 y'\,d\pi'\,d\theta' \sin\theta'$; et pour cela nous transporterons aussi comme dans le numero 3, l'axe ou le pole des angles variables $\pi'$, $\theta'$ qui determinent la position de chaque molecule sur la sphere, dans la ligne $r$ menée du centre au point attiré; nommons $\varphi$ et $\psi$ ce que deviennent alors les angles $\pi'$ et $\theta'$, on aura egalement $d\varphi\,d\psi \sin\psi$ pour \struck{le} l'element $d\pi'\,d\theta' \sin\theta'$, et \struck{\ill{}} $\cos\psi$ pour la valeur de $\mu$; de sorte que la differentielle dont il s'agit deviendra $-\rho^3 y'\,d\varphi\,d\mu$, qu'il faudra integrer depuis $\varphi = 0$ jusqu'à $\varphi = 2\pi$ et depuis $\mu = 1$ jusqu'a $\mu = -1$.
+8 Considerons maintenant le cas general dans lequel $y'$ est supposée une fonction des sinus et des cosinus des angles $\pi'$ et $\theta'$; on aura à integrer la quantité $\rho^3 y'\,d\pi'\,d\theta' \sin\theta'$; et pour cela nous transporterons aussi comme dans le numero 3, l'axe ou le pole des angles variables $\pi'$, $\theta'$ qui determinent la position de chaque molecule sur la sphere, dans la ligne $r$ menée du centre au point attiré; nommons $\varphi$ et $\psi$ ce que deviennent alors les angles $\pi'$ et $\theta'$, on aura egalement $d\varphi\,d\psi \sin\psi$ pour \struck{le} l'element $d\pi'\,d\theta' \sin\theta'$, et \struck{\ill{}} $\cos\psi$ pour la valeur de $\mu$; de sorte que la differentielle dont il s'agit deviendra $-\rho^3 y'\,d\varphi\,d\mu$, qu'il faudra integrer depuis $\varphi = 0$ jusqu'à $\varphi = 2\Pi$ et depuis $\mu = 1$ jusqu'a $\mu = -1$.
 \note{« 8 » : sans point. Les deux nouveaux angles : le premier est une boucle traversée d'une haste verticale, transcrite $\varphi$ ; le second, une croix dont la branche droite remonte en crochet, transcrite $\psi$ ; ni l'une ni l'autre forme n'est celle du $\theta$ ou du $\pi$ de la main. Le mot biffé avant « $\cos\psi$ » est rayé d'un trait épais qui le couvre entièrement.}
 
 Mais comme $y'$ est supposée fonction des sinus et cosinus des angles $\pi'$ et $\theta'$ qui ont leur pole dans un axe fixe independant de la position du point attiré, ou de la ligne $r$, il faudra substituer dans $y'$ à la place des sinus et cosinus de $\pi'$ et $\theta'$ leurs valeurs en sinus et cosinus de $\varphi$ et $\psi$. Pour cela il n'y a qu'à considerer le triangle spherique qui a les angles $\theta$, $\theta'$ et $\psi$ pour ses trois cotés
@@ -335,14 +338,14 @@ Comme l'integration doit s'etendre depuis $\mu = 1$ jusqu'a $\mu = -1$, et qu'a 
 
 limite, la valeur complette du terme $\frac{y'\rho}{ar}$ hors du signe sera
 \[ \frac{Y}{ar(r+a)} - \frac{y}{ar(r-a)}. \]
-Or $y$ et $Y$ repondant à $\psi = 0$ et $\psi = \pi$ à cause de $\mu = \cos\psi$, auquel cas $\pi'$ et $\theta'$ deviennent $\pi$ et $\theta$, il est visible que ces quantités seront independantes de $\varphi$; ainsi l'integration relative à $\varphi$ depuis $\varphi = 0$ jusqu'à $\varphi = 2\pi$, executée sur les memes termes donnera
-\[ \frac{2\pi Y}{ar(r+a)} - \frac{2\pi y}{ar(r-a)}. \]
+Or $y$ et $Y$ repondant à $\psi = 0$ et $\psi = \Pi$ à cause de $\mu = \cos\psi$, auquel cas $\pi'$ et $\theta'$ deviennent $\pi$ et $\theta$, il est visible que ces quantités seront independantes de $\varphi$; ainsi l'integration relative à $\varphi$ depuis $\varphi = 0$ jusqu'à $\varphi = 2\Pi$, executée sur les memes termes donnera
+\[ \frac{2\Pi Y}{ar(r+a)} - \frac{2\Pi y}{ar(r-a)}. \]
 On pourra donc substituer dans l'equation \ill{} du n\textsuperscript{o}. 6, à la place de $\int \rho^3 y'\,d\pi'\,d\theta' \sin\theta'$ la quantité
-\[ \frac{2\pi y}{ar(r-a)} - \frac{2\pi Y}{ar(r+a)} + \int \frac{d y'}{d\mu} \times \frac{\rho\,d\mu\,d\varphi}{ar} \]
+\[ \frac{2\Pi y}{ar(r-a)} - \frac{2\Pi Y}{ar(r+a)} + \int \frac{d y'}{d\mu} \times \frac{\rho\,d\mu\,d\varphi}{ar} \]
 ce qui la changera en celle-ci
-\[ \frac{u}{2} + \frac{r\,d u}{d r} = -\frac{a^2\pi(r+a)y}{r} + \frac{a^2\pi Y(r-a)}{r} - \frac{a^3(r^2 - a^2)}{2ar} \int \frac{d y'}{d\mu}\,\rho\,d\mu\,d\varphi; \]
+\[ \frac{u}{2} + \frac{r\,d u}{d r} = -\frac{a^2\Pi(r+a)y}{r} + \frac{a^2\Pi Y(r-a)}{r} - \frac{a^3(r^2 - a^2)}{2ar} \int \frac{d y'}{d\mu}\,\rho\,d\mu\,d\varphi; \]
 dans laquelle il faut faire maintenant $r = a$ ce qui la reduit à celle-ci
-\[ \frac{u}{2} + \frac{a\,d u}{d r} = -2a^2\pi y. \]
+\[ \frac{u}{2} + \frac{a\,d u}{d r} = -2a^2\Pi y. \]
 comme dans le cas où $y$ est constant.
 \note{$Y$ (la valeur de $y'$ à la seconde limite) est une capitale barrée d'un trait horizontal dans les deux premières fractions ; dans l'avant-dernière équation elle prend la forme d'un 4 bouclé, la même qu'à la fin de la vue 37 et que l'angle $\psi$ ; les deux lettres se confondent sur la page et ne se séparent que par le sens. Le mot entre « l'equation » et « du n\textsuperscript{o}. 6 » n'a pas été lu (« avec ce » ? « ancienne » ?). Le n\textsuperscript{o}. 6 est celui de la vue 31, où l'équation $\frac{u}{2} + \frac{r\,d u}{d r} = -\frac{a^3(r^2-a^2)}{2}\int\rho^3 y'\ldots$ est établie.}
 
