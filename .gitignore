@@ -37,3 +37,6 @@ public/exercises/
 *.png
 *.tif
 *.tiff
+# The one exception: the link-preview image, which shows no manuscript but a
+# formula of a transcription set by TeX (scripts/og.mjs).
+!public/og/home.png
