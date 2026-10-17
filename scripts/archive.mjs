@@ -23,6 +23,23 @@
  *
  * Nothing is re-fetched: a view already on disk is skipped, so re-running the
  * command after a reset picks up where the last one stopped.
+ *
+ * Sober by construction. On 17 October 2026 Gallica's firewall (Cloudflare,
+ * in front of the BnF) blocked this machine outright — a 403 « Sorry, you have
+ * been blocked » on every URL, the reading pages included — most likely after
+ * the September mirrors. So the mirror now:
+ *
+ * — waits 10 s between images, with jitter, rather than 3;
+ * — takes at most 150 images in any hour (`--per-hour N` to lower it), and
+ *   sleeps when the hour is full instead of pressing on;
+ * — stops the whole run at the first 403, or at a page that is not an image
+ *   where an image was asked for: that is a block, not a hiccup, and retrying
+ *   it is exactly what a firewall counts;
+ * — stops the run, rather than moving on to the next view, when a view is
+ *   still refused with 429 after its back-offs: the quota is per address, so
+ *   the next view would only be refused too.
+ *
+ * A blocked address is lifted by asking the BnF, not by asking again.
  */
 
 import { mkdir, readFile, stat, writeFile } from 'node:fs/promises';
@@ -36,8 +53,17 @@ const MIRROR = resolve(ROOT, 'archives');
 /** Twenty views: one transcription pass. Must agree with src/lib/batches.ts. */
 const BATCH_SIZE = 20;
 
-/** Between two images. Gallica answered a burst with resets; this is not a burst. */
-const PAUSE_MS = 3000;
+/**
+ * Between two images, plus up to half again at random so the requests do not
+ * tick like a metronome. Gallica answered a burst with resets (September 2026)
+ * and later blocked the address altogether (October): this is not a burst.
+ */
+const PAUSE_MS = 10_000;
+const pause = () => PAUSE_MS + Math.floor(Math.random() * PAUSE_MS * 0.5);
+
+/** No more than this many images in any sliding hour. `--per-hour` lowers it. */
+const PER_HOUR = 150;
+const HOUR_MS = 3_600_000;
 
 /**
  * After a 429. Gallica's quota is per minute, not per request: at one image
@@ -57,6 +83,25 @@ const ATTEMPTS = 5;
 const FETCH_TIMEOUT_MS = 120_000;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/** Gallica has refused the address: stop everything, retry nothing. */
+class Blocked extends Error {}
+
+/** The start times of the requests of the last hour, for the hourly ceiling. */
+const recent = [];
+async function withinHourlyCeiling(perHour) {
+  for (;;) {
+    const now = Date.now();
+    while (recent.length && now - recent[0] > HOUR_MS) recent.shift();
+    if (recent.length < perHour) {
+      recent.push(now);
+      return;
+    }
+    const wait = HOUR_MS - (now - recent[0]) + 1000;
+    process.stdout.write(`    ${perHour} images in the last hour — waiting ${Math.ceil(wait / 60000)} min\n`);
+    await sleep(wait);
+  }
+}
 
 /** The catalogue is a .ts file with JSON arrays in it; read the one we need. */
 async function volumes() {
@@ -92,12 +137,22 @@ async function exists(path) {
   }
 }
 
-async function fetchView(ark, view, target) {
+async function fetchView(ark, view, target, perHour) {
   const url = `${GALLICA}/iiif/ark:/12148/${ark}/f${view}/full/full/0/native.jpg`;
+  let refused = 0;
   for (let attempt = 0; attempt < ATTEMPTS; attempt++) {
     try {
+      await withinHourlyCeiling(perHour);
       const r = await fetch(url, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });
+      if (r.status === 403) {
+        const ray = r.headers.get('cf-ray');
+        throw new Blocked(
+          `f${view}: HTTP 403 from Gallica${ray ? ` (Cloudflare Ray ID ${ray})` : ''} — this address is blocked. ` +
+            'Stopping without retrying. Ask the BnF to lift the block (give the Ray ID); do not route around it.',
+        );
+      }
       if (r.status === 429) {
+        refused++;
         // Honour the server's own figure when it gives one.
         const hinted = Number(r.headers.get('retry-after')) * 1000;
         const wait = Math.max(hinted || 0, RETRY_AFTER_MS * (attempt + 1));
@@ -107,13 +162,23 @@ async function fetchView(ark, view, target) {
       }
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       const type = r.headers.get('content-type') ?? '';
-      if (!type.startsWith('image/')) throw new Error(`not an image (${type})`);
+      // An HTML page where an image was asked for is a challenge or a block
+      // page, whatever the status says.
+      if (!type.startsWith('image/')) {
+        throw new Blocked(`f${view}: Gallica answered ${type || 'something'} instead of an image — stopping.`);
+      }
       await writeFile(target, Buffer.from(await r.arrayBuffer()));
       return true;
     } catch (e) {
+      if (e instanceof Blocked) throw e;
       process.stderr.write(`    f${view}: ${e.message}${attempt < ATTEMPTS - 1 ? ' — waiting, then retrying' : ''}\n`);
       await sleep(PAUSE_MS * (attempt + 3));
     }
+  }
+  // Still refused after every back-off: the quota is the address's, so the
+  // next view would be refused too. Stop the run rather than press on.
+  if (refused === ATTEMPTS) {
+    throw new Blocked(`f${view}: refused with 429 ${ATTEMPTS} times running — stopping. Try again in an hour or more.`);
   }
   return false;
 }
@@ -122,10 +187,13 @@ async function main() {
   const args = process.argv.slice(2);
   const bi = args.indexOf('--batches');
   const only = bi >= 0 ? args[bi + 1] : null;
-  // The value after --batches is not a volume.
-  const ids = args.filter((a, i) => !a.startsWith('--') && !(bi >= 0 && i === bi + 1));
+  const hi = args.indexOf('--per-hour');
+  // Lower only: the ceiling is a promise to Gallica, not a default to raise.
+  const perHour = hi >= 0 ? Math.min(PER_HOUR, Math.max(1, Number(args[hi + 1]) || PER_HOUR)) : PER_HOUR;
+  // The values after --batches and --per-hour are not volumes.
+  const ids = args.filter((a, i) => !a.startsWith('--') && !(bi >= 0 && i === bi + 1) && !(hi >= 0 && i === hi + 1));
   if (!ids.length) {
-    process.stderr.write('Usage: npm run archive -- <volume> [--batches 1-3]\n');
+    process.stderr.write('Usage: npm run archive -- <volume> [--batches 1-3] [--per-hour N]\n');
     process.exit(1);
   }
 
@@ -152,9 +220,9 @@ async function main() {
       for (let view = first; view <= last; view++) {
         const target = resolve(dir, `f${String(view).padStart(4, '0')}.jpg`);
         if (await exists(target)) continue;
-        if (await fetchView(v.ark, view, target)) fetched++;
+        if (await fetchView(v.ark, view, target, perHour)) fetched++;
         else missing.push(`${id} f${view}`);
-        await sleep(PAUSE_MS);
+        await sleep(pause());
       }
     }
   }
@@ -169,7 +237,12 @@ async function main() {
   }
 }
 
-main().catch((e) => {
+main().catch(async (e) => {
   process.stderr.write(`${e.message}\n`);
+  if (e instanceof Blocked) {
+    // Keep what did arrive usable before leaving.
+    await writeManifest().catch(() => {});
+    process.exit(3);
+  }
   process.exit(1);
 });
