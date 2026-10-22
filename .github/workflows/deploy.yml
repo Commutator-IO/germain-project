@@ -96,7 +96,7 @@ jobs:
       - name: Install rsvg-convert
         run: sudo apt-get install -y --no-install-recommends librsvg2-bin
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: ~/.cache/Tectonic
           key: tectonic-${{ runner.os }}-v1
@@ -159,7 +159,7 @@ jobs:
 
       - name: Keep the production SBOM
         if: github.event_name != 'pull_request'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: sbom-production
           path: |
