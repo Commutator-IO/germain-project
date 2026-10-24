@@ -58,15 +58,15 @@ export function SourcesPage() {
             </li>
             <li id="rule-no-scholarly-copying" className="anchored ml-5">
               <strong>Nobody else's transcription is reproduced</strong>, not a sentence, and none
-              is used to seed a reading here. Where a volume has a scholarly edition — Pascal's
-              Pensées and Descartes's letters have several — the site links to it and says whose it
+              is used to seed a reading here. Where a volume has a scholarly edition (Pascal's
+              Pensées and Descartes's letters have several), the site links to it and says whose it
               is; a reading made here from the images is a different object, and cites it.
             </li>
             <li id="rule-nothing-shown-offline" className="anchored ml-5">
               <strong>Only what Gallica serves whole is listed</strong>. A manuscript that is not
               digitised, or is only referenced by Gallica and hosted elsewhere, is not in the
-              catalogue at all — not a detail, not a thumbnail from a publication that reproduced
-              one. The inventory says which archives that leaves out.
+              catalogue at all, not even as a detail or as a thumbnail from a publication that
+              reproduced one. The inventory says which archives that leaves out.
             </li>
           </ol>
         </section>
@@ -130,8 +130,8 @@ export function SourcesPage() {
             <a href={GALLICA_TERMS} target="_blank" rel="noopener noreferrer" className={`${LINK} break-all`}>
               {GALLICA_TERMS}
             </a>
-            . For the BnF's digitisations of works in the public domain — which is every
-            manuscript here — <strong>non-commercial reuse is free</strong>, on condition that the
+            . For the BnF's digitisations of works in the public domain (which is every
+            manuscript here), <strong>non-commercial reuse is free</strong>, on condition that the
             source is stated as « Source gallica.bnf.fr / Bibliothèque nationale de France ».{' '}
             <strong>Commercial reuse</strong> is paid and licensed; the conditions define it as
             resale of the contents as products, provision of a service, or any other reuse «
@@ -145,21 +145,21 @@ export function SourcesPage() {
             of an image at a reader's request, and the metadata; the transcriptions and readings
             are readings of the manuscripts, which nobody owns, and not of anything the BnF
             licenses. Three things would change the first sentence, and they are named here before
-            they happen: <strong>funding</strong> — a grant, a sponsor or donations tied to the
-            site; <strong>hosting backed by a paid service</strong> — a mirror or a deposit on an
-            infrastructure that sells access to what it holds; and <strong>a third party's
+            they happen: <strong>funding</strong> (a grant, a sponsor or donations tied to the
+            site); <strong>hosting backed by a paid service</strong> (a mirror or a deposit on an
+            infrastructure that sells access to what it holds); and <strong>a third party's
             commercial reuse of our CC0 material</strong>. The first two would be read against the
             definition above, and put to the BnF, before being accepted. The third needs nothing
             from us: CC0 passes on only what is ours, never an image, since none is held here, and
             whoever sells a product built on the facsimiles answers to the BnF for them directly.
           </P>
           <P id="gallica-database" className="prose-fonds">
-            The catalogue is also an extraction from a database — Gallica's search of 14 September
-            2026 — and the BnF's investment in that database is protected in its own right, against
+            The catalogue is also an extraction from a database (Gallica's search of 14 September
+            2026), and the BnF's investment in that database is protected in its own right, against
             the extraction of a substantial part. The position taken here is that nineteen
             mathematicians and 78 volumes chosen among Gallica's millions of documents are not a
-            substantial part of it, in quantity or in kind, and that what was taken — shelfmarks,
-            view counts, the holders' titles and datings — are facts, which nobody owns, and
+            substantial part of it, in quantity or in kind, and that what was taken (shelfmarks,
+            view counts, the holders' titles and datings) are facts, which nobody owns, and
             metadata the BnF itself places under the Etalab licence.
           </P>
           <P id="enpc-terms" className="prose-fonds">
@@ -179,13 +179,13 @@ export function SourcesPage() {
             Gallica itself invites embedding: its June 2019 post « Mettez du Gallica dans votre
             site web » describes integrating a document to browse, an image or a region of an image
             through the IIIF API, and the BnF's data.gouv listing for that API says access is open
-            « sans restriction, sauf en cas d'usage abusif ». This site does exactly and only
-            that — one image per view, at the width of the pane, at the reader's request.
+            « sans restriction, sauf en cas d'usage abusif ». This site does that and nothing
+            more: one image per view, at the width of the pane, at the reader's request.
           </P>
           <P id="gallica-measured" className="prose-fonds">
             Three facts were measured on 10 September 2026 rather than assumed. The IIIF manifests
             and images answer with <code>Access-Control-Allow-Origin: *</code>, so a browser on
-            this origin may read them without any intermediary — which is why, unlike the parent
+            this origin may read them without any intermediary. That is why, unlike the parent
             project, this site has no relay. The manifests' own <code>license</code> field points
             at Gallica's conditions page. And Gallica <strong>rate-limits</strong>: a dozen
             requests in a few seconds from one address were answered with connection resets. The
@@ -208,7 +208,7 @@ export function SourcesPage() {
             Every work this site draws on, with its rights position. « Linked and cited » means
             the site names it, links to it, and quotes at most a phrase; « never copied » means
             its transcriptions of manuscripts are not reproduced. Where a paper is behind a
-            paywall the site says so rather than pretending the link is a text.
+            paywall, the site says so.
           </P>
           <ul className="mt-4 space-y-2">
             {EDITIONS.map((e) => (
@@ -219,7 +219,7 @@ export function SourcesPage() {
                   rel="noopener noreferrer"
                   className="font-medium text-ink-900 underline decoration-ink-300 underline-offset-2 hover:text-brand-700"
                 >
-                  {e.editors}, {e.year} — {e.title} ↗
+                  {e.editors}, {e.year}, {e.title} ↗
                 </a>
                 <span className="text-ink-500"> · {e.venue}</span>
                 <p className="mt-1 text-ink-600">
@@ -234,15 +234,15 @@ export function SourcesPage() {
           <H2 id="ours">What is ours, and its licence</H2>
           <P id="ours-cc0" className="prose-fonds mt-3">
             The transcriptions, the modernised readings, the exercise book, the catalogue as
-            compiled here, the skills and the code are released under <strong>CC0 1.0</strong> —
-            placed in the public domain, which is the only licence that makes sense for readings of
+            compiled here, the skills and the code are released under <strong>CC0 1.0</strong>,
+            which places them in the public domain: the only licence that makes sense for readings of
             papers nobody owns. The catalogue's facts are the holders' and the literature's,
             credited line by line; the arrangement is ours and free.
           </P>
           <P id="ours-cc0-scope" className="prose-fonds">
             A faithful transcription of a public-domain text aims at exactness rather than
             originality and very probably creates no new right, so on the transcriptions CC0 says
-            only that we claim nothing — which is true. The modernised readings and the exercise
+            only that we claim nothing, which is true. The modernised readings and the exercise
             book are original texts, and there CC0 has real effect: it waives a copyright that
             exists, for any use, commercial included.
           </P>

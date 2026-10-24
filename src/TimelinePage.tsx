@@ -228,8 +228,8 @@ export function TimelinePage() {
           <h1 className="titre text-[34px] leading-tight text-ink-900">Timeline</h1>
           <p className="mt-3 text-[15.5px] leading-relaxed text-ink-700">
             The nineteen mathematicians whose manuscripts Gallica serves, in the order of their
-            births, from Maurolico in 1494 to Libri, who died in 1869. A paragraph each — enough to
-            place a volume — and, under it, what of theirs can be opened here.
+            births, from Maurolico in 1494 to Libri, who died in 1869. Each gets a paragraph, enough to
+            place a volume, and under it what of theirs can be opened here.
           </p>
         </header>
 
@@ -281,7 +281,7 @@ export function TimelinePage() {
                     {cahier && (
                       <>
                         {' '}
-                        —{' '}
+                        ·{' '}
                         <a
                           href={`${cahier.path}`}
                           className="font-medium text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700"
@@ -312,8 +312,8 @@ export function TimelinePage() {
                 className="underline underline-offset-2 hover:text-ink-800"
               >
                 {life.name}
-              </a>{' '}
-              — {portrait.by}, {portrait.licence}
+              </a>
+              : {portrait.by}, {portrait.licence}
             </span>
           ))}
           .

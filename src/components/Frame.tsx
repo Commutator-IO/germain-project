@@ -131,16 +131,16 @@ export function Footer() {
         <p className="max-w-[52em]">
           The facsimiles shown on this site are digitisations in{' '}
           <strong className="font-semibold text-ink-700">Gallica</strong>, the Bibliothèque nationale de
-          France's digital library — the BnF's own manuscripts and, for one volume, the École des ponts
-          et chaussées' — read from Gallica's IIIF service as you turn the pages:{' '}
+          France's digital library (the BnF's own manuscripts and, for one volume, the École des ponts
+          et chaussées'), read from Gallica's IIIF service as you turn the pages:{' '}
           <span className="text-ink-700">Source gallica.bnf.fr / Bibliothèque nationale de France</span>.
           Every volume in the catalogue is one anyone can open there; nothing that is not online is
           listed.
         </p>
         <p className="mt-3 max-w-[52em]">
           This site neither hosts nor redistributes any image of a manuscript. It gives the
-          catalogue, and reads the holders' own files at the moment you open them. What is ours —
-          the transcriptions, the readings, the code — is released under CC0.
+          catalogue, and reads the holders' own files at the moment you open them. What is ours
+          (the transcriptions, the readings and the code) is released under CC0.
         </p>
         <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1">
           <a

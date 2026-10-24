@@ -36,7 +36,7 @@ export function issueUrl({ cote, ark, batch, page }: ReportContext): string {
     `**Volume** ${cote}`,
     batch ? `**Batch** ${batchName(batch)}` : null,
     `**View** ${page ? page : '<which Gallica view?>'}`,
-    '**Edition** transcription (`.fr`) / modernised reading (`.modern`) — delete one',
+    '**Edition** transcription (`.fr`) / modernised reading (`.modern`): delete one',
     '',
     '### What the reading says',
     '',
@@ -45,7 +45,7 @@ export function issueUrl({ cote, ark, batch, page }: ReportContext): string {
     '### Anything else',
     '',
     '---',
-    ark ? `Facsimile: ${gallicaView(ark, page ?? 1)}` : 'Facsimile: not online — say how you consulted it.',
+    ark ? `Facsimile: ${gallicaView(ark, page ?? 1)}` : 'Facsimile: not online. Say how you consulted it.',
     'Reported from the reading view. These editions are first-pass machine work;',
     'corrections are the point of publishing them.',
   ]

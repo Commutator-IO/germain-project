@@ -51,7 +51,7 @@ const STATUS: Record<
 > = {
   unsearched: {
     label: 'not looked up',
-    help: 'Nobody has searched the literature for this yet. It is a question, not a finding.',
+    help: 'Nobody has searched the literature for this yet, so it is still only a question.',
     className: 'bg-ink-100 text-ink-600',
   },
   candidate: {
@@ -172,7 +172,7 @@ function Row({ n }: { n: Finding }) {
             carries this alone" from "nobody said", and an absent row says the
             second while meaning the first. */}
         <Field label="Ours, not his" muted={!n.ours}>
-          {n.ours ? notation(n.ours) : 'Nothing — the page carries the statement alone.'}
+          {n.ours ? notation(n.ours) : 'Nothing: the page carries the statement alone.'}
         </Field>
 
         <Field label="Searched" muted={n.literature.length === 0}>
@@ -242,7 +242,7 @@ function Section({
   return (
     <section className="mt-10">
       <h2 className="text-[11px] font-bold uppercase tracking-[0.12em] text-ink-400">
-        {title} — {rows.length}
+        {title} · {rows.length}
       </h2>
       {note && (
         <p className="mt-2 max-w-[44em] text-[13.5px] leading-relaxed text-ink-500">{note}</p>
@@ -303,8 +303,8 @@ export function FindingsPage() {
             Nothing here claims priority. A claim that something is <em>new</em> is a
             claim about the literature, and the literature can be searched but never
             exhausted; a claim that something came <em>first</em> needs a date, and these
-            volumes are undated — the inventory's «&nbsp;vers 1963-1973&nbsp;» is an
-            archivist's guess from a verso. So each row says what was searched, what the
+            volumes are undated (the inventory's «&nbsp;vers 1963-1973&nbsp;» is an
+            archivist's guess from a verso). So each row says what was searched, what the
             edition supplied rather than the page, and what would settle it.
           </p>
         </header>
@@ -405,16 +405,16 @@ export function FindingsPage() {
           <p className="mt-2">
             By <code className="rounded bg-ink-100 px-1 py-0.5 text-[12px]">/find-novelty</code>,
             a skill that reads a volume's transcriptions and its modernised reading and
-            proposes candidates — never the facsimile, which is the transcription's job.
+            proposes candidates. It never reads the facsimile; that is the transcription's job.
             It is written around refusing to overclaim: it may not assert priority, it
             must name the sources it searched, and it must separate what the page carries
             from what the edition supplied. It may not mark anything{' '}
             <em>checked by a person</em>; only a person may.
           </p>
           <p className="mt-2">
-            None of these has been reviewed by a mathematician. If one of them is wrong —
-            and the mathematical ones are the likeliest things on this site to be wrong —
-            the fastest way to say so is an issue against the volume.
+            None of these has been reviewed by a mathematician, and the mathematical ones are
+            the likeliest things on this site to be wrong. If one of them is, the fastest
+            way to say so is an issue against the volume.
           </p>
         </section>
       </main>

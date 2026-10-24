@@ -39,12 +39,12 @@ export const STATES: { key: State; label: string; help: string }[] = [
   {
     key: 'drafted',
     label: 'Drafted',
-    help: 'The transcription exists — read from the files, not declared.',
+    help: 'The transcription exists. Read from the files, not declared.',
   },
   {
     key: 'reviewed',
     label: 'AI-reviewed',
-    help: 'A modernised reading exists, so the transcription has been read again — by machine.',
+    help: 'A modernised reading exists, so a machine has read the transcription a second time.',
   },
   {
     key: 'checked',
@@ -54,7 +54,7 @@ export const STATES: { key: State; label: string; help: string }[] = [
   {
     key: 'skipped',
     label: 'Skipped',
-    help: 'Unrelated versos, separators, illegible pages — nothing to transcribe. Declared.',
+    help: 'Nothing to transcribe: unrelated versos, separators or illegible pages. Declared.',
   },
 ];
 

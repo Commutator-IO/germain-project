@@ -263,8 +263,8 @@ export function ExercisesPage() {
           </p>
           <p className="mt-3 text-[15.5px] leading-relaxed text-ink-600">
             Les solutions sont repliées ; on les déplie après avoir cherché. Énoncés et solutions
-            sont une première rédaction par une machine, que personne n'a encore relue — une
-            erreur signalée est la façon la plus utile d'aider.
+            sont une première rédaction par une machine, que personne n'a encore relue. Signaler
+            une erreur est la façon la plus utile d'aider.
           </p>
         </header>
 
@@ -293,7 +293,7 @@ export function ExercisesPage() {
                   does: a static host serves .tex as a download. */}
               <OpenButton
                 href={`${TEX}.html`}
-                title="Ouvrir la source LaTeX dans un nouvel onglet — le fichier y est lié pour le télécharger"
+                title="Ouvrir la source LaTeX dans un nouvel onglet (le fichier y est lié pour le télécharger)"
               >
                 <span className="rounded-md bg-ink-100 px-1.5 py-0.5 font-mono text-[11px] font-semibold uppercase text-ink-600">
                   tex

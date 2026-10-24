@@ -314,7 +314,7 @@ function MissingTranscript({
         {published && (
           <p className="max-w-[40em] rounded-[var(--radius-card)] border border-relu-200 bg-relu-50/60 px-4 py-3 text-[13.5px] leading-relaxed text-ink-700">
             It has been {published.kind === 'published' ? 'printed' : 'transcribed'} by{' '}
-            {published.editors} —{' '}
+            {published.editors}:{' '}
             <a
               href={published.url}
               target="_blank"
@@ -330,7 +330,7 @@ function MissingTranscript({
           href="/sources/"
           className="text-[12.5px] font-medium text-brand-600 underline decoration-brand-200 underline-offset-2 transition hover:text-brand-700"
         >
-          Where every volume is, and on what terms — Sources &amp; rights
+          Sources &amp; rights: where every volume is, and on what terms
         </a>
       </div>
     );
@@ -344,7 +344,7 @@ function MissingTranscript({
 
       {published && (
         <p className="max-w-[40em] rounded-[var(--radius-card)] border border-relu-200 bg-relu-50/60 px-4 py-3 text-[13.5px] leading-relaxed text-ink-700">
-          This volume is in print — {published.editors},{' '}
+          This volume is in print: {published.editors},{' '}
           <a
             href={published.url}
             target="_blank"
@@ -360,10 +360,10 @@ function MissingTranscript({
       {edition === 'modern' ? (
         <>
           <p className="max-w-[40em] text-[13.5px] leading-relaxed text-ink-600">
-            <Skill>modernize</Skill> derives this edition — a « Résumé » that orients a
+            <Skill>modernize</Skill> derives this edition: a « Résumé » that orients a
             reader new to the subject, then the mathematics in current notation and current
             names, in French. It reads the transcription, never the facsimile, and it takes the
-            volume whole rather than one batch: the argument it restates runs across the batch
+            whole volume in one pass because the argument it restates runs across the batch
             boundaries.
           </p>
           {folder.complete ? (
@@ -380,7 +380,7 @@ function MissingTranscript({
             <>
               <p className="max-w-[40em] text-[13.5px] leading-relaxed text-ink-600">
                 <strong className="font-semibold text-ink-800">It cannot run on this volume yet.</strong>{' '}
-                It needs every batch transcribed first — {folder.done} of {folder.total}{' '}
+                It needs every batch transcribed first, and {folder.done} of {folder.total}{' '}
                 {folder.total === 1 ? 'is' : 'are'} done. A reading made without the rest would
                 guess where the argument was going.
               </p>
@@ -393,18 +393,18 @@ function MissingTranscript({
       ) : (
         <>
           <p className="max-w-[40em] text-[13.5px] leading-relaxed text-ink-600">
-            <Skill>transcribe</Skill> reads the very views shown on the right — mirrored
-            locally from Gallica's IIIF service — and writes the LaTeX transcription. It works
-            one batch at a time, {BATCH_SIZE} views per pass; past that the quality of reading
-            falls away with nothing to signal it.
+            <Skill>transcribe</Skill> reads the views shown on the right (mirrored
+            locally from Gallica's IIIF service) and writes the LaTeX transcription. It works
+            one batch at a time, {BATCH_SIZE} views per pass. Past that, the reading gets
+            worse with nothing to signal it.
           </p>
           <code className="w-full max-w-[40em] rounded-lg border border-ink-200 bg-ink-50 px-3 py-2 font-mono text-[12.5px] text-ink-900">
             npm run archive -- {cote.id} --batches {batch}
             {'\n'}/transcribe {cote.id} {batch}
           </code>
           <p className="max-w-[40em] text-[12.5px] leading-relaxed text-ink-500">
-            The mirror is for the pass, not for the site: it lands in <code>archives/</code>,
-            git-ignored, and nothing from Gallica is ever committed.
+            The mirror serves the pass only. It lands in <code>archives/</code>, which git
+            ignores, and nothing from Gallica is ever committed.
           </p>
         </>
       )}

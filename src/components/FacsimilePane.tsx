@@ -213,7 +213,7 @@ export function FacsimilePane({
     <aside
       className="fixed right-0 top-0 z-50 hidden h-dvh flex-col border-l border-ink-200 bg-white shadow-[-8px_0_24px_-16px_rgb(19_18_16/.35)] lg:flex"
       style={{ width: widthCss }}
-      aria-label={`Facsimile — ${v.shelfmark}, views ${first} to ${last}`}
+      aria-label={`Facsimile of ${v.shelfmark}, views ${first} to ${last}`}
     >
       {/* The width handle. It used to be an invisible strip along the edge,
           found only by hovering it, and readers asked for the pane to be
@@ -225,8 +225,8 @@ export function FacsimilePane({
         role="separator"
         tabIndex={0}
         aria-orientation="vertical"
-        aria-label="Facsimile pane width — drag, or ← and →; double-click to reset"
-        title="Drag to resize the facsimile — double-click to reset"
+        aria-label="Facsimile pane width: drag, or use ← and →; double-click to reset"
+        title="Drag to resize the facsimile; double-click to reset"
         aria-valuenow={Math.round(Math.min(width, window.innerWidth * MAX_SHARE))}
         aria-valuemin={MIN_WIDTH}
         aria-valuemax={Math.round(window.innerWidth * MAX_SHARE)}
@@ -274,7 +274,7 @@ export function FacsimilePane({
           href={v.ark ? gallicaView(v.ark, view) : sourceUrl(v)}
           target="_blank"
           rel="noopener noreferrer"
-          title={v.ark ? 'This very view in Gallica’s own reader' : 'The holder’s catalogue notice'}
+          title={v.ark ? 'This view in Gallica’s reader' : 'The holder’s catalogue notice'}
           className="mt-0.5 shrink-0 rounded-lg border border-ink-200 px-2.5 py-1 text-[12px] font-medium text-ink-600 transition hover:border-brand-500 hover:text-brand-700"
         >
           {v.ark ? 'Gallica' : 'Notice'} ↗
@@ -302,7 +302,7 @@ export function FacsimilePane({
           />
           <ViewImage ark={v.ark} view={view} width={width} dragging={isDragging} />
           <p className="shrink-0 border-t border-ink-100 bg-ink-50 px-5 py-2 text-[11.5px] leading-relaxed text-ink-500">
-            Source gallica.bnf.fr / Bibliothèque nationale de France — {v.shelfmark}, view{' '}
+            Source gallica.bnf.fr / Bibliothèque nationale de France · {v.shelfmark}, view{' '}
             {view}. Read from Gallica's IIIF service as you turn the pages; nothing is stored here.
           </p>
         </>
@@ -624,7 +624,7 @@ function NotOnline({ volume: v }: { volume: Volume }) {
         </a>
       </div>
       <p className="max-w-[36em] text-[12.5px] leading-relaxed text-ink-500">
-        Nothing can be transcribed here from a volume nobody can see. If a digitisation appears,
+        A volume nobody can see cannot be transcribed here. If a digitisation appears,
         or if you have consulted the original and want to add what you read, the{' '}
         <a
           href={`${REPO}/issues`}

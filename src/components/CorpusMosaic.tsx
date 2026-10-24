@@ -307,7 +307,7 @@ export function CorpusMosaic({
       onClick={() => onOpen(c.cote.id)}
       onMouseEnter={() => setHover(c)}
       onFocus={() => setHover(c)}
-      title={`${c.cote.shelfmark} — ${c.cote.title}`}
+      title={`${c.cote.shelfmark} · ${c.cote.title}`}
       className="overflow-hidden text-left transition-[filter] hover:brightness-110 focus:z-10 focus:outline-2 focus:outline-offset-[-3px] focus:outline-white"
       style={style}
     >
@@ -322,8 +322,8 @@ export function CorpusMosaic({
         All {COTES.length} volumes, each block sized by what there is to read and nested under the
         mathematician whose archive it is. The {online.length} volumes are drawn by their{' '}
         {views.toLocaleString()} Gallica views, the unit the batches are cut in
-        {railCount > 0 ? `; ${railCount} without a count sit in the rail below` : ''}. Colour is
-        what has been done to a volume, not what is in it.
+        {railCount > 0 ? `; ${railCount} without a count sit in the rail below` : ''}. Colour
+        shows the work done on a volume, not its contents.
       </p>
 
       {/* Only the states actually on this wall. A key for a colour that never

@@ -53,7 +53,7 @@ export function Downloads({
   if (!rows.length) {
     return (
       <p className="mt-4 text-[12.5px] leading-relaxed text-ink-500">
-        Nothing to open for this batch yet — the skill writes the LaTeX, and{' '}
+        Nothing to open for this batch yet. The skill writes the LaTeX, and{' '}
         <code className="rounded border border-ink-200 bg-ink-50 px-1 py-0.5 font-mono text-[11.5px]">
           npm run pdf
         </code>{' '}
@@ -70,7 +70,7 @@ export function Downloads({
       href={issueUrl({ cote, ark, batch, page })}
       target="_blank"
       rel="noopener noreferrer"
-      title="Open a prefilled issue — the shelfmark, batch and view come with it"
+      title="Open an issue prefilled with the shelfmark, batch and view"
       className="ml-auto flex items-center gap-1.5 rounded-lg border border-ink-200 bg-white px-2.5 py-1.5 text-[12.5px] font-medium text-ink-600 transition hover:border-relu-400 hover:text-relu-700"
     >
       <svg viewBox="0 0 16 16" className="h-3.5 w-3.5" aria-hidden="true" fill="none">
@@ -114,7 +114,7 @@ export function Downloads({
                   rel="noopener noreferrer"
                   title={
                     ext === 'xml'
-                      ? `Open the ${r.label.toLowerCase()} rendered from its TEI P5 export in a new tab — the XML is linked there to open or download`
+                      ? `Open the ${r.label.toLowerCase()} rendered from its TEI P5 export in a new tab, with a link there to open or download the XML`
                       : `Open the ${r.label.toLowerCase()} ${ext.toUpperCase()} in a new tab`
                   }
                   className="rounded-md bg-ink-100 px-1.5 py-0.5 font-mono text-[11px] font-semibold uppercase text-ink-600 transition hover:bg-brand-100 hover:text-brand-700"
@@ -131,7 +131,7 @@ export function Downloads({
               <a
                 href={`/transcripts/${cote}/${cote}.fr.wiki`}
                 download={`${cote}.wiki`}
-                title="Download the whole volume as wikicode for Wikisource — each view under a heading with its Gallica view number and link. CC0."
+                title="Download the whole volume as wikicode for Wikisource, each view under a heading with its Gallica view number and link. CC0."
                 className="rounded-md bg-ink-100 px-1.5 py-0.5 font-mono text-[11px] font-semibold uppercase text-ink-600 transition hover:bg-brand-100 hover:text-brand-700"
               >
                 wiki

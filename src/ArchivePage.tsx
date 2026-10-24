@@ -17,7 +17,7 @@ const KIND_STYLE: Record<PublishedEdition['kind'], string> = {
 
 const KIND_LABEL: Record<PublishedEdition['kind'], string> = {
   published: 'in print, public domain',
-  transcribed: 'transcribed — theirs',
+  transcribed: 'transcribed (theirs)',
   analysis: 'analysis',
 };
 
@@ -193,7 +193,7 @@ export function ArchivePage() {
                             <button
                               type="button"
                               onClick={() => goTo(id, 1)}
-                              title={online ? `Open ${c.shelfmark} beside its views` : `Open ${c.shelfmark} — where it is, and who has edited it`}
+                              title={online ? `Open ${c.shelfmark} beside its views` : `Open ${c.shelfmark}: where it is, and who has edited it`}
                               className="text-left underline decoration-ink-200 underline-offset-2 transition hover:text-brand-700 hover:decoration-brand-400"
                             >
                               {c.title}
@@ -242,7 +242,7 @@ export function ArchivePage() {
                                 href={published.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                title={`${published.title} — ${published.editors}, ${published.year}. ${published.rights}`}
+                                title={`${published.title} · ${published.editors}, ${published.year}. ${published.rights}`}
                                 className={`ml-2 inline-block rounded-full border px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide transition hover:brightness-95 ${KIND_STYLE[published.kind]}`}
                               >
                                 {KIND_LABEL[published.kind]} ↗
@@ -306,7 +306,7 @@ export function ArchivePage() {
 function Literature() {
   const kinds: PublishedEdition['kind'][] = ['transcribed', 'published', 'analysis'];
   const heading: Record<PublishedEdition['kind'], string> = {
-    transcribed: 'Scholarly transcriptions — theirs, linked and never copied',
+    transcribed: 'Scholarly transcriptions: theirs, linked and never copied',
     published: 'In print, in the public domain',
     analysis: 'Analyses that located or read the manuscripts',
   };
@@ -314,7 +314,7 @@ function Literature() {
     <section className="mt-14">
       <h2 className="titre text-[24px] text-ink-900">Already edited, printed, or read</h2>
       <p className="mt-2 max-w-[48em] text-[14px] leading-relaxed text-ink-600">
-        Before transcribing anything, look here first. The three kinds are kept apart because the
+        Look here before transcribing anything. The three kinds are kept apart because the
         distinction is legal before it is scholarly: a public-domain printing may be quoted and
         framed at will; a scholar's recent transcription may be cited and linked and nothing more;
         an analysis is what tells us where a piece is.

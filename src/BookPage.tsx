@@ -106,11 +106,11 @@ export function BookPage({ bookKey }: { bookKey: BookKey }) {
                     <strong className="font-semibold text-relu-600">{transcribedBatches}</strong>{' '}
                     transcribed
                   </span>
-                  <span title="Batches with a modernised reading — read again by machine">
+                  <span title="Batches with a modernised reading, read again by machine">
                     <strong className="font-semibold text-brand-600">{modernisedBatches}</strong>{' '}
                     modernised
                   </span>
-                  <span title="Batches a person compared against the leaves — a declaration">
+                  <span title="Batches a person compared against the leaves (a declaration)">
                     <strong className="font-semibold text-ink-800">{t.byState.checked}</strong>{' '}
                     checked
                   </span>
@@ -215,7 +215,7 @@ function Pieces({
             ) : (
               <p className="mt-1.5 text-[12px] text-ink-500">
                 Views not yet located in the images
-                {p.volume === 'fr-9115' ? ' — the folio has to be found by reading.' : '.'}
+                {p.volume === 'fr-9115' ? '; the folio has to be found by reading.' : '.'}
               </p>
             )}
           </li>
@@ -283,7 +283,7 @@ function CoteCard({
                 href={published.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                title={`${published.title} — ${published.editors}, ${published.year}. ${published.rights}`}
+                title={`${published.title} · ${published.editors}, ${published.year}. ${published.rights}`}
                 className="ml-1.5 inline-block whitespace-nowrap rounded-full border border-relu-200 bg-relu-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-relu-700 hover:brightness-95"
               >
                 {published.kind === 'published' ? 'in print' : 'transcribed by ' + published.editors.split(' ').pop()} ↗
@@ -411,7 +411,7 @@ function MirrorCommand({ cotes }: { cotes: Volume[] }) {
     <section className="card mt-12 max-w-[52em] px-5 py-4">
       <h2 className="titre text-[17px] text-ink-900">Mirroring, for transcription</h2>
       <p className="mt-2 text-[13.5px] leading-relaxed text-ink-600">
-        Not needed to read — the pane asks Gallica for each view as you turn it. The
+        Reading does not need it: the pane asks Gallica for each view as you turn it. The
         transcription pass works from a local batch of {BATCH_SIZE} images:
       </p>
       <code className="mt-3 block rounded-lg border border-ink-200 bg-ink-50 px-3 py-2 font-mono text-[12.5px] text-ink-900">

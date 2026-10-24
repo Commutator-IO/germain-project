@@ -111,8 +111,8 @@ export function HomePage() {
               copies made in the period; the catalogue title says which where it knows.
             </p>
             <p>
-              They came to the BnF by every route it has — the royal collection, the Latin series,
-              purchases, the seizure of Libri's collection in 1848 — and are catalogued
+              They came to the BnF by every route it has (the royal collection, the Latin series,
+              purchases, the seizure of Libri's collection in 1848) and are catalogued
               accordingly, by fonds and number. The one rule of selection here is that{' '}
               <strong>Gallica serves the whole volume</strong>, free, to anyone. The{' '}
               <a
@@ -129,8 +129,8 @@ export function HomePage() {
             <h2 className="titre text-[22px] text-ink-900">What is being made of them</h2>
             <p className="mt-3">
               Every volume yields two documents per batch of twenty views, in the language of the
-              volume. The <strong>transcription</strong> is the leaves as written — the writer's
-              notation, spelling and paragraphing, and a critical apparatus that keeps what was
+              volume. The <strong>transcription</strong> is the leaves as written: the writer's
+              notation, spelling and paragraphing, with a critical apparatus that keeps what was
               read apart from what was guessed. An illegible word stays illegible.
             </p>
             <p>
@@ -150,9 +150,9 @@ export function HomePage() {
             <h2 className="titre text-[22px] text-ink-900">Why nothing passes through here</h2>
             <p className="mt-3">
               The facsimile is Gallica's own file, read from its IIIF service at the moment you
-              turn the page. Gallica answers a browser on any origin — its images carry{' '}
-              <code>Access-Control-Allow-Origin: *</code> — so this site needs no relay, no
-              mirror and no copy: the bytes go from the BnF to you, and this origin never holds
+              turn the page. Gallica answers a browser on any origin (its images carry{' '}
+              <code>Access-Control-Allow-Origin: *</code>), so this site needs no relay, no
+              mirror and no copy. The bytes go from the BnF to you, and this origin never holds
               them.
             </p>
             <p>
@@ -177,8 +177,8 @@ export function HomePage() {
         <section className="card mt-12 max-w-[52em] px-5 py-4">
           <p className="text-[13.5px] leading-relaxed text-ink-600">
             Nothing here is an edition. A machine pass over a centuries-old hand produces a
-            reading, checkable against the facsimile on the same screen — that is its whole value
-            and its whole claim. Where a scholarly edition of a volume already exists, the{' '}
+            reading that you can check against the facsimile on the same screen, and it claims
+            nothing more. Where a scholarly edition of a volume already exists, the{' '}
             <a
               href="/archive/"
               className="font-medium text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700"
@@ -272,7 +272,7 @@ function Progress({ done }: { done: { total: number; transcribed: number; modern
       </div>
 
       <p className="mt-1 text-[12.5px] leading-relaxed text-ink-500">
-        Counted against the volumes that are online and unedited — the only ones a pass can read.
+        Counted against the volumes that are online and unedited, the only ones a pass can read.
       </p>
 
       <div className="tabular mt-3 flex flex-wrap gap-x-7 gap-y-2 text-[13.5px] text-ink-600">
@@ -295,9 +295,9 @@ function Progress({ done }: { done: { total: number; transcribed: number; modern
       </div>
 
       <p className="mt-3 text-[12.5px] leading-relaxed text-ink-500">
-        Counted from the files themselves, not from a tally kept by hand. A batch counts as
-        transcribed once its LaTeX exists, and as modernised once the modernised reading does —
-        neither claims anyone has checked it against the leaves.{' '}
+        The counts come from the files themselves. A batch counts as transcribed once its LaTeX
+        exists, and as modernised once the modernised reading does. Neither count means anyone
+        has checked it against the leaves.{' '}
         <a
           href="/method/"
           className="font-medium text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700"

@@ -30,20 +30,20 @@ const SKILLS: {
   {
     name: 'transcribe',
     produces:
-      'the transcription — twenty Gallica views at a time, the mathematics and the prose in LaTeX with the critical apparatus that says which words were read and which were guessed, and the folio where the pencil can be read',
+      'the transcription, twenty Gallica views at a time: the mathematics and the prose in LaTeX with the critical apparatus that says which words were read and which were guessed, and the folio where the pencil can be read',
     lines: 247,
     extra: 'references/specimen.tex',
   },
   {
     name: 'modernize',
     produces:
-      'the modernised reading — a volume at a time: a résumé for someone new to the subject, then the mathematics in current notation and current names, held to being correct as it stands',
+      'the modernised reading, a volume at a time: a résumé for someone new to the subject, then the mathematics in current notation and current names, held to being correct as it stands',
     lines: 147,
   },
   {
     name: 'tag',
     produces:
-      "the volume's tags — three to six English keywords closing the résumé, which the manifest extracts and the archive search matches on",
+      "the volume's tags: three to six English keywords closing the résumé, which the manifest extracts and the archive search matches on",
     lines: 52,
   },
 ];
@@ -68,8 +68,8 @@ export function ContributePage() {
           <h1 className="titre text-[34px] leading-tight text-ink-900">Contribute</h1>
           <p className="mt-3 text-[15.5px] leading-relaxed text-ink-700">
             Everything here is first-pass machine work, and it says so on every page. That
-            admission is worth nothing without a way to act on it. There are three ways in, and
-            they are listed cheapest first — the cheapest is also the most useful, because a
+            admission is worth nothing without a way to act on it. There are three ways in,
+            listed cheapest first. The cheapest is also the most useful, because a
             reader who spots a misread word is, at that moment, the only person who knows.
           </p>
           <p className="mt-3 text-[15.5px] leading-relaxed text-ink-700">
@@ -96,7 +96,7 @@ function Routes() {
       n: '1',
       title: 'Report a reading',
       cost: 'one click',
-      body: 'Every batch carries a Report a reading button, and every transcribed volume a Report link. Both open a GitHub issue with the shelfmark, the batch and the view you are looking at already filled in. You need a GitHub account and nothing else — not the repository, not LaTeX, not an opinion about what the word should be.',
+      body: 'Every batch carries a Report a reading button, and every transcribed volume a Report link. Both open a GitHub issue with the shelfmark, the batch and the view you are looking at already filled in. You need a GitHub account and nothing else: not the repository, not LaTeX, not an opinion about what the word should be.',
       href: issueUrl({ cote: 'fr-9115', ark: 'btv1b90724875', batch: 1, page: 5 }),
       hrefLabel: 'See what the form looks like ↗',
     },
@@ -104,7 +104,7 @@ function Routes() {
       n: '2',
       title: 'Correct a reading',
       cost: 'a pull request',
-      body: 'The .tex under transcripts/ is the source of record; the HTML and the PDFs are rebuilt from it on every deploy. So a correction is one edit to one file, and the diff shows exactly what changed about the reading — which is the whole reason the source is LaTeX and not a database.',
+      body: 'The .tex under transcripts/ is the source of record; the HTML and the PDFs are rebuilt from it on every deploy. So a correction is one edit to one file, and the diff shows exactly what changed about the reading. That is why the source is LaTeX and not a database.',
       href: `${REPO}/tree/main/transcripts`,
       hrefLabel: 'Browse the transcripts ↗',
     },
@@ -112,7 +112,7 @@ function Routes() {
       n: '3',
       title: 'Transcribe a batch',
       cost: 'an afternoon',
-      body: 'Install the three skills, mirror a batch of a digitised volume nobody has taken, and run the two passes. Roughly an hour of machine time per twenty-view batch, most of it spent reading images. The result is a draft nobody has checked — which is exactly what the rest of the site is, and it is labelled that way.',
+      body: 'Install the three skills, mirror a batch of a digitised volume nobody has taken, and run the two passes. Roughly an hour of machine time per twenty-view batch, most of it spent reading images. The result is a draft nobody has checked, like the rest of the site, and it is labelled that way.',
       href: '#skills',
       hrefLabel: 'Install the skills ↓',
     },
@@ -158,9 +158,9 @@ function Skills() {
     <section id="skills" className="mt-14 max-w-[52em] scroll-mt-16">
       <h2 className="titre text-[22px] text-ink-900">The skills</h2>
       <p className="prose-corpus mt-3">
-        Three skills drive the whole pipeline. Each is a Markdown file of instructions —
-        readable start to finish in a few minutes, and worth reading before running, since
-        what they mostly contain is a list of things not to do. They are written for{' '}
+        Three skills drive the whole pipeline. Each is a Markdown file of instructions
+        that takes a few minutes to read start to finish. Read it before running it: most of
+        what it contains is a list of things not to do. They are written for{' '}
         <a
           href="https://claude.com/claude-code"
           target="_blank"
@@ -169,9 +169,9 @@ function Skills() {
         >
           Claude Code
         </a>
-        . None pins a model; each says which it accepts — Opus 5.5 and Opus 5 — and refuses to
-        run on any other. Every file records in its header the model that produced it. Provenance
-        is a fact about the file, not about whichever model happened to be selected that day.
+        . None pins a model; each says which it accepts (Opus 5.5 and Opus 5) and refuses to
+        run on any other. Every file records in its header the model that produced it, so its
+        provenance does not depend on whichever model happened to be selected that day.
       </p>
 
       {/* Said here rather than left to the skills' own text: a contributor
@@ -179,20 +179,20 @@ function Skills() {
           in good faith, and discover the problem only in review. */}
       <div className="card mt-5 border-l-4 border-l-encours-500 px-5 py-4">
         <h3 className="text-[14px] font-semibold text-ink-900">
-          Both editions are written in French — including yours
+          Both editions are written in French, including yours
         </h3>
         <p className="mt-1.5 text-[13.5px] leading-relaxed text-ink-600">
           The leaves are in French, the notions were thought in French, and the modernised
           reading has no reason to change language. This holds whoever is running the pass: a
           contributor working in English still produces a French edition, and the skills
-          enforce it. There are exactly two exceptions — the{' '}
+          enforce it. There are exactly two exceptions: the{' '}
           <code>\keywords{'{}'}</code> line, which is English because it is a set of search
           keys pointing into an English literature, and everything outside the editions
           themselves: this site, the code, the commit messages and this page.
         </p>
         <p className="mt-2 text-[13.5px] leading-relaxed text-ink-600">
           If that makes a volume impractical for you to take on, the first two routes above
-          need no French at all — a misread symbol is a misread symbol in any language, and
+          need no French at all. A misread symbol is a misread symbol in any language, and
           reporting one is worth more than a translation nobody asked for.
         </p>
       </div>
@@ -233,8 +233,8 @@ function Skills() {
                   className="underline decoration-ink-300 underline-offset-2 hover:text-brand-700"
                 >
                   <code>{s.extra}</code>
-                </a>{' '}
-                — copy the whole directory, not just <code>SKILL.md</code>.
+                </a>
+                ; copy the whole directory, not just <code>SKILL.md</code>.
               </p>
             )}
           </li>
@@ -254,7 +254,7 @@ function Skills() {
       <div className="mt-4 grid gap-4 md:grid-cols-2">
         <div className="card min-w-0 px-5 py-4">
           <h4 className="text-[14px] font-semibold text-ink-900">
-            With the repository <span className="font-normal text-ink-400">— nothing to install</span>
+            With the repository <span className="font-normal text-ink-400">· nothing to install</span>
           </h4>
           <p className="mt-1.5 text-[13px] leading-relaxed text-ink-600">
             The skills are versioned here, so a clone already has them. Start Claude Code in
@@ -268,7 +268,7 @@ claude   # then type /transcribe`}</Code>
 
         <div className="card min-w-0 px-5 py-4">
           <h4 className="text-[14px] font-semibold text-ink-900">
-            Everywhere <span className="font-normal text-ink-400">— your own machine</span>
+            Everywhere <span className="font-normal text-ink-400">· your own machine</span>
           </h4>
           <p className="mt-1.5 text-[13px] leading-relaxed text-ink-600">
             Copy them under your home directory and they work in any project. Useful for the
@@ -308,9 +308,9 @@ function RunABatch() {
           className="font-medium text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700"
         >
           the archive page
-        </a>{' '}
-        — and check the green ones first: where a scholarly transcription already exists it is
-        better than anything produced here, and it is somebody's; re-transcribing what is in print
+        </a>
+        , and check the green ones first. Where a scholarly transcription already exists it is
+        better than anything produced here, and it is somebody's. Re-transcribing what is in print
         is fine, and you can read the print beside the leaf as a check.
       </p>
 
@@ -323,17 +323,15 @@ npm run render && npm run pdf && npm run manifest
 npm run dev                               # read it beside the facsimile`}</Code>
 
       <p className="prose-corpus mt-4">
-        One batch per conversation for the transcription, which is a real constraint and not a
-        style preference: past twenty handwritten views the quality of reading degrades towards
+        The transcription takes one batch per conversation, because past twenty handwritten views the quality of reading degrades towards
         the end of the pass with nothing to signal it, and a transcription whose weakening point
         is unknown cannot be used.
       </p>
 
       <p className="prose-corpus mt-3">
         The modernised reading goes the other way and takes the volume whole. It reads the
-        transcriptions, not the handwriting, so the twenty-view ceiling does not apply — and its
-        job is to make an argument run continuously, which a proof does not stop at view 20 to
-        let it do. It writes one file for the shelfmark, which the site offers against every
+        transcriptions, not the handwriting, so the twenty-view ceiling does not apply. Its
+        job is to make an argument run continuously, and a proof does not stop at view 20. It writes one file for the shelfmark, which the site offers against every
         batch of it.
       </p>
 
@@ -346,8 +344,8 @@ npm run dev                               # read it beside the facsimile`}</Code
         <li>
           Nothing else to mirror: <code>npm run archive</code> fetches JPEGs from Gallica's
           IIIF service with Node alone, and <code>npm run tiles</code> asks the same service for
-          the regions of a view at full resolution — which is what settles a hard word, and what
-          most of the transcription pass is actually doing.
+          the regions of a view at full resolution. That is what settles a hard word, and most
+          of the transcription pass is spent on it.
         </li>
         <li>
           <strong>A Unicode TeX engine</strong>, only to compile the download PDFs:{' '}
@@ -365,8 +363,8 @@ function PullRequest() {
     <section className="mt-14 max-w-[52em]">
       <h2 className="titre text-[22px] text-ink-900">Opening a pull request</h2>
       <p className="prose-corpus mt-3">
-        The repository is public and the licence is CC0 — the work is placed in the public
-        domain, which is the only licence that makes sense for readings of papers that have
+        The repository is public and the licence is CC0, which places the work in the public
+        domain: the only licence that makes sense for readings of papers that have
         been public for two centuries.
         A pull request is the same shape whether you are fixing one accent or adding a batch.
       </p>
@@ -387,7 +385,7 @@ gh pr create --fill`}</Code>
           <p className="mt-1.5 text-[13px] leading-relaxed text-ink-600">
             The <code>.tex</code> under <code>transcripts/</code> is the only versioned artifact
             of a reading. The HTML, the PDFs and <code>manifest.json</code> are all git-ignored
-            and rebuilt on every deploy — a committed reading view would drift from its source
+            and rebuilt on every deploy. A committed reading view would drift from its source
             the first time someone corrected a word in a hurry.
           </p>
         </div>
@@ -395,7 +393,7 @@ gh pr create --fill`}</Code>
           <h3 className="text-[14px] font-semibold text-ink-900">Both editions move together</h3>
           <p className="mt-1.5 text-[13px] leading-relaxed text-ink-600">
             A correction to a reading is usually also a correction to the modernised reading.
-            Take the two files up in the same pull request, or they drift apart — and the
+            Take the two files up in the same pull request, or they drift apart, and the
             modernised reading is the one nobody can check against a page.
           </p>
         </div>
@@ -404,7 +402,7 @@ gh pr create --fill`}</Code>
       <p className="prose-corpus mt-4">
         CI runs on the pull request: <code>oxlint</code> with warnings denied, then a full
         render of every transcript. The renderer accepts a restricted subset of LaTeX
-        deliberately, and <strong>fails loudly</strong> on anything outside it — a formula
+        deliberately, and <strong>fails loudly</strong> on anything outside it, since a formula
         silently flattened would assert an equation nobody wrote. If
         the build goes red on your batch, that is usually why. Nothing deploys from a pull
         request; only <code>main</code> does.
@@ -422,7 +420,7 @@ function Rules() {
     },
     {
       no: 'Correct the author.',
-      why: 'If a calculation is wrong on the page, it is wrong in the transcription, with a note. The modernised reading is the one place where the true statement is given instead — and it footnotes what the page has.',
+      why: 'If a calculation is wrong on the page, it is wrong in the transcription, with a note. The modernised reading is the one place where the true statement is given instead, and it footnotes what the page has.',
     },
     {
       no: 'Tick a batch as Checked without having done it.',
@@ -430,7 +428,7 @@ function Rules() {
     },
     {
       no: 'Copy anybody else\'s transcription.',
-      why: 'Not a printed edition of the Pensées, not the Adam–Tannery Descartes, not a scholar\'s transcription of a letter, not a line — neither to seed a reading nor to check a word. They are theirs, or they are a different object. The source is the leaf.',
+      why: 'Not a printed edition of the Pensées, not the Adam–Tannery Descartes, not a scholar\'s transcription of a letter, not a line of any of them, whether to seed a reading or to check a word. They are theirs, or they are a different object. The source is the leaf.',
     },
     {
       no: 'Commit an image, a PDF, or any facsimile.',
@@ -462,7 +460,7 @@ function Rules() {
       <div className="card mt-8 px-5 py-4">
         <h3 className="titre text-[17px] text-ink-900">If you would rather just tell us</h3>
         <p className="mt-2 text-[13.5px] leading-relaxed text-ink-600">
-          A GitHub issue in prose is a perfectly good contribution — "view 212 of Français
+          A GitHub issue in prose is a perfectly good contribution: "view 212 of Français
           9115, the exponent reads 2p and not 2n" is worth more than a silent doubt.
           Somebody else can make the edit.
         </p>

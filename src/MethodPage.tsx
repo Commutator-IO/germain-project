@@ -43,20 +43,20 @@ export function MethodPage() {
             <H2 id="how-they-wrote">What the leaves are like</H2>
             <P id="how-they-wrote-kinds">
               Three kinds of volume, and a pass reads each differently. <strong>Working
-              papers</strong> — Fourier's calculations, Germain's « dissertations et problèmes »,
-              Roberval's papers — were never meant to be read: fair copies next to scratch paper,
-              unsorted, numbered by the archive and bound as they came. <strong>Letters</strong> —
-              the three volumes addressed to Mersenne, Descartes's to him, Libri's correspondence —
+              papers</strong> (Fourier's calculations, Germain's « dissertations et problèmes »,
+              Roberval's papers) were never meant to be read: fair copies next to scratch paper,
+              unsorted, numbered by the archive and bound as they came. <strong>Letters</strong>{' '}
+              (the three volumes addressed to Mersenne, Descartes's to him, Libri's correspondence)
               are dated, signed and mostly legible, and the prose is transcribed whole.{' '}
-              <strong>Copies and fair copies</strong> — the copies of Pascal's Pensées, the Vicq
-              d'Azyr copies of Fermat — are the easiest hands, and the ones where it matters most to
+              <strong>Copies and fair copies</strong>, such as the copies of Pascal's Pensées and the
+              Vicq d'Azyr copies of Fermat, are the easiest hands, and the ones where it matters most to
               say that the hand is not the author's.
             </P>
             <H3 id="hand">The hand, and the spelling</H3>
             <P id="hand-orthography">
               Three centuries of French and Latin cursive, from Maurolico's to Libri's. The spelling
-              of the writer's time stays — « seroit », « avoit », « scavoir », the long <em>s</em>{' '}
-              where it is one — and so do the abbreviations: « Mr », the ampersand, Latin
+              of the writer's time stays (« seroit », « avoit », « scavoir », the long <em>s</em>{' '}
+              where it is one), and so do the abbreviations: « Mr », the ampersand, Latin
               contractions expanded only in a note. What earlier passes learn about a hand goes into
               a reference file the skill reads, one section per mathematician, so that no pass
               learns it twice.
@@ -80,8 +80,8 @@ export function MethodPage() {
             </P>
             <H3 id="dating">Dates are often absent</H3>
             <P id="dating-letters">
-              The letters are dated; the working papers mostly are not. The catalogue's dating —
-              « 1601-1700 », « XIXe siècle » — is copied verbatim into <code>\dating{'{}'}</code>, and
+              The letters are dated; the working papers mostly are not. The catalogue's dating,
+              such as « 1601-1700 » or « XIXe siècle », is copied verbatim into <code>\dating{'{}'}</code>, and
               a pass that can date a leaf from its content says so in a note, as its own inference.
             </P>
           </section>
@@ -98,8 +98,8 @@ export function MethodPage() {
             </P>
             <H3 id="mirror">The pass reads a mirror; the reader does not</H3>
             <P id="mirror-why">
-              The facsimile pane reads Gallica directly. The pass cannot — it needs image files it
-              can open, crop and re-open — so <code>npm run archive</code> fetches the batch's
+              The facsimile pane reads Gallica directly. The pass cannot: it needs image files it
+              can open, crop and re-open. So <code>npm run archive</code> fetches the batch's
               twenty views from the IIIF service into <code>archives/</code>, once, with a pause
               between each, under a user agent that names this site. The directory is git-ignored;
               Gallica's terms permit the copy for this use, and nothing of it leaves the machine.
@@ -121,8 +121,8 @@ export function MethodPage() {
             <P id="not-transcribing-offline">
               Anything but Gallica's images of a volume in the catalogue. The skills refuse to work
               from a publication's reproduction of a page, from a thumbnail, or from somebody
-              else's transcription or edition — a printed Pensées, the Adam–Tannery Descartes, the
-              Œuvres de Fermat — not to seed a reading and not to check a word.
+              else's transcription or edition (a printed Pensées, the Adam–Tannery Descartes, the
+              Œuvres de Fermat), neither to seed a reading nor to check a word.
             </P>
           </section>
         </div>
@@ -131,7 +131,7 @@ export function MethodPage() {
           <H2 id="not-claimed">What this site does not claim</H2>
           <ul className="prose-fonds mt-3">
             <LI id="not-claimed-edition">
-              <strong>That any of this is an edition.</strong> A reading, checkable against the
+              <strong>That any of this is an edition.</strong> It is a reading, checkable against the
               leaf on the same screen. Where an edition exists it is marked and linked.
             </LI>
             <LI id="not-claimed-checked">
@@ -317,7 +317,7 @@ function StatusSequence() {
         The step from <em>AI-reviewed</em> to <em>checked</em> is a person reading against the
         leaves, and readers are how it happens. Every transcribed volume carries a{' '}
         <strong className="font-semibold text-ink-800">Report</strong> button, and so does every
-        open batch — it opens an issue with the shelfmark, the batch and the view on screen
+        open batch. It opens an issue with the shelfmark, the batch and the view on screen
         already filled in.
       </P>
     </section>
