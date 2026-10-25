@@ -13,6 +13,16 @@ import type { Finding } from '../lib/types.ts';
  * First harvest: NAF 4073, 12 September 2026, on claude-opus-5, the model
  * that wrote that volume's modernised reading. Nothing here is `confirmed`;
  * only a person may set that.
+ *
+ * NAF 4073 re-check, 25 October 2026: pass on Opus 5.5 (claude-opus-5-5) over a
+ * reading written on Opus 5; same-model rule waived by Michel on 25 October
+ * 2026. READ: C. Henry, Revue philosophique 8 (1879), 619–641, archive.org OCR
+ * (revuephilosophiq08pariuoft), which prints sixteen pieces of NAF 4073 as its
+ * Nos. II–XVII, citing the volume through Delisle's Inventaire général t. II
+ * (1878), p. 253; Œuvres de Lagrange t. XIV on fr.wikisource, pp. 286 and the
+ * table of contents (Page …djvu/298 and /343). Still NOT read: Del Centina and
+ * Fiocca 2018; Bucciarelli and Dworsky 1980; Delisle 1878. Web search was
+ * refused in this session.
  */
 export const FINDINGS: Finding[] = [
   {
@@ -27,14 +37,14 @@ export const FINDINGS: Finding[] = [
     ours:
       'The folio-to-view mapping, and only that. The text of the letter is not ours and is not claimed as unpublished: it was printed in 1879.',
     literature: [
-      'Henry 1879, « Les manuscrits de Sophie Germain et leur récent éditeur. Documents nouveaux », Revue philosophique de la France et de l’étranger 8, 619–641 — reported by search results to print this letter at 631–632, citing « MS. Fr. (Nouv. Acq.) 4073 » with no folio. Not read here.',
+      'Henry 1879, Revue philosophique 8, 619–641 — read 25 October 2026 (archive.org OCR). It prints the letter as No. XII, pp. 631–633, from « un manuscrit d’acquisition récente, déposé à la Bibliothèque avec les papiers de M. Libri », identified in a note as « le n° 4073 du Fonds français (Nouvelles Acquisitions) » after Delisle’s Inventaire t. II, p. 253. No folio for this or any piece of the volume.',
       'Bucciarelli and Dworsky 1980, 121–122 — reported to give the letter in English, shelfmark only. Not read here.',
       'Del Centina and Fiocca 2018, « On the Correspondence of Sophie Germain » (Springer) — searched, not read: paywalled. Its stated aim is a thorough account of the presently known correspondence, so it is the first place this claim can fail.',
       'Del Centina 2005, Historia Mathematica 32; Del Centina 2008, Archive for History of Exact Sciences 62; Del Centina and Fiocca 2012, AHES 66; Laubenbacher and Pengelley 2010, Historia Mathematica 37 — searched for a folio-level citation of NAF 4073; none surfaced.',
     ],
     status: 'candidate',
     settle:
-      'Open Del Centina and Fiocca 2018 and look at its inventory of NAF 4073. If it cites this letter by folio, the entry becomes `matched`; if it cites the shelfmark only, the mapping stands as the first published one.',
+      'Henry 1879 has been read: shelfmark only. Open Del Centina and Fiocca 2018 and look at its inventory of NAF 4073. If it cites this letter by folio, the entry becomes `matched`; if it cites the shelfmark only, the mapping stands as the first published one. Note that the Œuvres de Lagrange t. XIV cite another piece of this volume by folio (f° 22, see naf-4073-lagrange-germinal-date), so a folio citation of the Galois letter in the Lagrange or Galois literature is possible and should be looked for.',
   },
   {
     id: 'naf-4073-triangular-note',
@@ -51,11 +61,11 @@ export const FINDINGS: Finding[] = [
       'The BnF notice for NAF 4073 as recorded in this site’s catalogue — « Lettres de Delambre, Joseph Fourier, Sophie Germain, Lagrange, Lalande et G. Libri. Provient des papiers de Libri. » — which describes the volume as letters and mentions no note and no mathematics.',
       'Del Centina 2008, AHES 62, and Laubenbacher and Pengelley 2010, Historia Mathematica 37 — the two studies that work through her number-theoretic leaves; searched for any use of NAF 4073 as a mathematical source, none surfaced.',
       'Del Centina and Fiocca 2018 — searched, not read: paywalled.',
-      'Not searched: Henry 1879, which printed « documents nouveaux » from these papers and is the likeliest place for a note of this kind to have been mentioned already.',
+      'Henry 1879, Revue philosophique 8, 619–641 — read 25 October 2026 (archive.org OCR). It prints the letter of 13 March 1814 in full as No. XVII, pp. 637–638, signed « D. », and comments on its writer; it says nothing of a note on the cover, and its only remark on mathematics in these papers concerns Français 9118 (p. 623). Nothing in its OCR reads « triangulaire ».',
     ],
     status: 'candidate',
     settle:
-      'Read Henry 1879, 619–641, for any mention of a note on the cover of the 1814 letter. Independently, a palaeographic comparison of these fifteen words against a dated corpus of her hand would settle whose note it is — which the present entry does not claim.',
+      'Henry 1879 has been read and is silent on the note. Check Del Centina and Fiocca 2018 for a description of the cover of the 1814 letter. Independently, a palaeographic comparison of these fifteen words against a dated corpus of her hand would settle whose note it is — which the present entry does not claim.',
   },
   {
     id: 'naf-4073-lagrange-berlin-leaves',
@@ -70,7 +80,7 @@ export const FINDINGS: Finding[] = [
       'Nothing new. This entry first claimed three distinct letters of 1776–1778, dated from a misread « 10 Juillet 1776 » and from the leaves lacking a salutation or a signature; the collation refutes it. It is kept, corrected, so that the error is on record: the reverse binding is what made the leaves look like three incomplete letters.',
     literature: [
       'Œuvres de Lagrange, t. XIV, « Lagrange à …, Berlin, 11 juillet 1778 », read on fr.wikisource, Page:Joseph Louis de Lagrange - Œuvres, Tome 14.djvu/285–288 (proofread). Its note cites « Ms. fr. Acquisitions nouvelles, n° 4073 ».',
-      'Charles Henry, Revue philosophique t. VIII, p. 633 — the first publication, from the original, as cited by the Œuvres; not read.',
+      'Charles Henry, Revue philosophique 8 (1879), pp. 633–635, No. XIV — read 25 October 2026 (archive.org OCR). He prints the letter whole, in the right order, with the note « Les trois feuillets de cette lettre sont intervertis dans le manuscrit », so the reverse binding was recorded in 1879. He says only that the correspondent lived at Turin. The OCR gives the date as « Berlin ce 11 Juillet 1758 » with the note « Lisez 1768 ou 1778 ».',
     ],
     status: 'matched',
     settle:
@@ -90,11 +100,12 @@ export const FINDINGS: Finding[] = [
     literature: [
       'Del Centina and Fiocca 2018, « On the Correspondence of Sophie Germain » — searched, not read: paywalled. A thorough account of her correspondence is where a date for this note would already stand.',
       'Searched, nothing surfaced: web search for a dated Lagrange note to Germain of 17 germinal, and for this note in the literature on their acquaintance.',
-      'Not searched: Henry 1879, and the Lagrange Œuvres.',
+      'Henry 1879, Revue philosophique 8, p. 633, No. XIII — read 25 October 2026 (archive.org OCR): prints « Paris ce 17 germinal (mercredi) » and « le 19 et le 20 (vendredi, et samedi) », undated, without comment.',
+      'Œuvres de Lagrange t. XIV, p. 286 — read on fr.wikisource (Page …djvu/298, proofread): « Lagrange à Mademoiselle Sophie Germain », « Paris, ce 17 germinal (mercredi) », with the note « l’original existe à la Bibliothèque nationale (Mss. fr. Acquisitions nouvelles, n° 4073, f° 22) », after Henry. The table (Page …djvu/343) heads it « Paris, 17 germinal », with no year. The edition prints it between a letter of 10 germinal an III (30 March 1795) and one of September 1796; that placement is the editors’ and gives no date.',
     ],
     status: 'candidate',
     settle:
-      'One look at the view decides the numeral and the word « mercredi »; if both hold, the two candidate days are arithmetic and only an external fact — where Lagrange was in April 1796 and April 1802 — can choose between them.',
+      'Both printings read 17 and « mercredi » and leave the note undated, so the computation is not in the literature read. One look at the view decides the numeral and the word; if both hold, the two candidate days are arithmetic, and only an external fact — where Lagrange was in April 1796 and April 1802 — can choose between them. The Œuvres’ placement before September 1796 is consistent with the first and decides nothing. Check Del Centina and Fiocca 2018 for a date already given.',
   },
   {
     id: 'naf-4073-correspondents-beyond-notice',
@@ -109,11 +120,12 @@ export const FINDINGS: Finding[] = [
     literature: [
       'The BnF notice for NAF 4073, as recorded in this site’s catalogue.',
       'Del Centina and Fiocca 2018 — searched, not read: paywalled; a thorough account of the known correspondence would list both if they are known.',
-      'Not searched: Henry 1879, and the Europeana Transcribe volunteer transcription of this volume, either of which may name Choron already.',
+      'Not searched: the Europeana Transcribe volunteer transcription of this volume.',
+      'MATCHED, 25 October 2026 — Henry 1879, Revue philosophique 8, read (archive.org OCR). He prints both letters from this volume: Choron’s of 29 January 1818 as No. IV (p. 628, identifying him as « le musicographe célèbre, né en 1772, mort en 1834 », and drawing from it his search of Choron’s papers, p. 638), and the letter of 13 March 1814 as No. XVII (pp. 637–638), signed « D. », whose writer he takes for « un homme d’affaires, ami de la famille ».',
     ],
-    status: 'candidate',
+    status: 'matched',
     settle:
-      'Check the inventory in Del Centina and Fiocca 2018 and the Europeana Transcribe record for NAF 4073. Identifying the 1814 writer is a separate question this entry does not open.',
+      'Settled: both correspondents were printed by Henry in 1879; the BnF notice simply does not list them. Henry reads the paraph as « D. »; the transcription reads no letter in it. That difference is for a person to check on view 41, and identifying the 1814 writer is a separate question.',
   },
   {
     id: 'latin-11195-burattini-flight-treatise',
@@ -433,11 +445,13 @@ export const FINDINGS: Finding[] = [
     literature: [
       "Considérations générales sur l'état des sciences et des lettres aux différentes époques de leur culture, 1833 — Internet Archive considrationsgn00germgoog, full OCR text searched 22 September 2026 for « idée fondamentale », « signes de signes », « même au même », « opération mécanique », « inconnu est dans », « inégalement connu », « science toute entière », with loose patterns for OCR damage: no hit. « La langue des calculs » occurs, in other contexts.",
       "Œuvres philosophiques de Sophie Germain, suivies de pensées et de lettres inédites, ed. H. Stupuy, 1896 — Internet Archive oeuvresphilosoph00germ, full OCR text searched for the same phrases and for « certitude mathématique », « la déterminante »: no hit; the Pensées diverses were scanned for « signe », « fondament », « connu », « identit », « définition »: nothing matching.",
-      "Not searched: Henry 1879, Revue philosophique 8, 619–641, which printed « documents nouveaux » from her papers; the first edition of Stupuy (1879); Bucciarelli and Dworsky 1980; Del Centina and Fiocca 2018 (paywalled, per the NAF 4073 entries). Web search was unavailable (HTTP 403).",
+      "First pass, not searched: Henry 1879; the first edition of Stupuy (1879); Bucciarelli and Dworsky 1980; Del Centina and Fiocca 2018 (paywalled, per the NAF 4073 entries). Web search was unavailable (HTTP 403).",
+      "C. Henry, Revue philosophique 8 (1879), 619–641 (running head « Manuscrits de Sophie Germain »; the volume's table lists it as « Documents inédits sur Sophie Germain ») — read 25 October 2026 in the archive.org OCR (revuephilosophiq08pariuoft). It prints early drafts of the Considérations générales against Stupuy's text (pp. 620–623), one piece from Français 9118 with a description of a second, sixteen pieces from NAF 4073 (Nos. II–XVII), and conclusions of two musical memoirs from NAF 298 (pp. 638–640). It does not print this fragment; the OCR has none of « idée fondamentale », « même au même », « inconnu est dans », « opération mécanique », « certitude mathématique », « la déterminante », « langue des calculs ». Henry says (p. 619) that Stupuy's Pensées were taken from Français 9114, and ends (p. 641) by listing what the Bibliothèque nationale holds of hers without any album of autographs.",
+      "Stupuy 1879, first edition (Paris, Paul Ritti), as Henry describes it — NOT read: no copy was found on the Internet Archive. The 1896 edition (oeuvresphilosoph00germ) was searched again in its OCR, 25 October 2026, for « fondamentale », « déterminante », « langue des calculs »: the hits are in other contexts.",
     ],
     status: 'candidate',
     settle:
-      "Read Henry 1879 and Stupuy 1879 for the phrase « l'idée fondamentale d'une science ». If neither prints it, the fragment stands as unpublished on the searched evidence; if one does, the entry becomes matched and the printed text dates the heading's « papiers laissés ».",
+      "Henry 1879 has been read and does not print the fragment. What remains: read Stupuy 1879 (Paul Ritti) for « l'idée fondamentale d'une science », and look in Français 9114, the source of Stupuy's Pensées by Henry's account, for another state of the fragment or for the « papiers laissés » its heading names. A printed text makes the entry matched; another state in Français 9114 makes it a codicological concordance instead.",
   },
   {
     id: 'naf-9544-germain-purchase-1884',
@@ -756,6 +770,26 @@ export const FINDINGS: Finding[] = [
   // (ScienceDirect, HTTP 403), Del Centina 2008 and Del Centina–Fiocca 2012
   // (Springer, script challenge), the Euler Archive (Cloudflare challenge).
   // Bucciarelli and Dworsky 1980 is not online and was not read.
+  //
+  // Re-check, 25 October 2026, on claude-opus-5-5. Web search was refused in
+  // this session; bibliographic details were verified on Crossref and OpenAlex.
+  // READ in full text: N. Grun, Le défi de Sophie Germain (thèse, Université de
+  // Lorraine, 13 December 2022), from hal.univ-lorraine.fr/tel-04052603/document,
+  // 412 pp., including annex D, her transcription of the three prize memoirs
+  // from the Académie originals. Grun cites Français 9115 as « Germain 2013,
+  // Papiers de Sophie Germain – Recueil de dissertations… », by page; at two
+  // checked points her page is this edition's view plus two (her p. 14 is the
+  // « Examen a priori » at view 12, her p. 266 the stylet question at view 264).
+  // That offset is this pass's observation and is not applied beyond the points
+  // checked. Also read: Dickson, History of the Theory of Numbers I (1919),
+  // ch. VII, archive.org OCR; Gauss, Recherches arithmétiques (1807), art. 125,
+  // archive.org OCR; Pengelley 2026 (arXiv 2605.15046) and Musielak 2019 (arXiv
+  // 1904.03553), full text. Still NOT read: Del Centina 2008 (AHES 62(4),
+  // 349–392), Del Centina and Fiocca 2012 (AHES 66(6), 585–700) and 2018
+  // (pp. 147–166), Dahan Dalmédico 1987 (Historia Mathematica 14(4), 347–365;
+  // HTTP 403), Bucciarelli and Dworsky 1980 (Reidel), Pengelley 2023 (AMS
+  // CLRM 70), Boucard 2020 (HAL halshs-03195261, behind a bot check that was
+  // not attempted).
   {
     id: 'fr-9115-manuscript-c-views',
     cote: 'fr-9115',
@@ -771,6 +805,7 @@ export const FINDINGS: Finding[] = [
       'Laubenbacher and Pengelley, « Voici ce que j’ai trouvé »: Sophie Germain’s grand plan to prove Fermat’s Last Theorem, Historia Mathematica 37 (2010); arXiv 0801.1809 read in full. § 1.3 lists Manuscript C as « [26, pp. 348r–349r] », and reference [26] is « Papiers de Sophie Germain, MS. FR9115 ». They give no view.',
       'Del Centina 2008, Archive for History of Exact Sciences 62: NOT read (Springer script challenge). Laubenbacher and Pengelley, § 1.3, say he does not mention Manuscript C.',
       'NOT read: Pengelley, Number Theory Through the Eyes of Sophie Germain (AMS Classroom Resource Materials 70, 2023), found only as a Crossref record; the BnF notice for Français 9115.',
+      'Grun 2022 (thesis, read in full, 25 October 2026) cites Français 9115 by page throughout and never mentions Manuscript C. Pengelley 2026, « Sophie Germain, mathématicienne extraordinaire » (arXiv 2605.15046), and Musielak 2019 (arXiv 1904.03553), both read: no folio or view for Manuscript C.',
     ],
     status: 'candidate',
     settle:
@@ -811,10 +846,11 @@ export const FINDINGS: Finding[] = [
       'Crelle’s Journal für die reine und angewandte Mathematik 7 (1831), archive.org journalfrdierei27crelgoog, OCR — read: contents and the opening of « Mémoire sur la courbure des surfaces », pp. 1 ff.',
       'Todhunter–Pearson, History of the Theory of Elasticity I (1886), Arts. 283–306 — read. It describes the 1821 Recherches section by section and cites no manuscript.',
       'NOT read: Dahan Dalmédico, « Mécanique et théorie des surfaces : les travaux de Sophie Germain », Historia Mathematica 14 (1987), the likeliest place for a manuscript of the curvature memoir to be cited (ScienceDirect refused the request with HTTP 403). Also not read: Bucciarelli and Dworsky 1980.',
+      'MATCHED, 25 October 2026 — N. Grun, Le défi de Sophie Germain : ses travaux sur les vibrations des surfaces élastiques, thèse, Université de Lorraine, 2022 (HAL tel-04052603), read in full. § 7.1, pp. 123–126: in « Germain 2013 » (Français 9115) she identifies a « manuscrit 1 », « Exposition des principes qui servent de base à la théorie des surfaces élastiques » (her pp. 5–13), and a « manuscrit 2 », « Examen a priori, de la nature des deux hypothèses… » (her pp. 14–43), compares both with the Avertissement and § I of the 1821 Recherches, and says the first page of the print is that of manuscrit 1 « à quelques mots près ». § 7.2.3, p. 152: « Un brouillon de cet « article 1831 » » — the Crelle curvature memoir — is in the volume (her pp. 40–44), with a curvature article at her pp. 45–55 and isolated pages 93, 95, 102, 116, 652 (n. 13). Ch. 6, p. 103: her pp. 622–628 are a four-page draft of §§ 14–15 of the 1815 prize memoir.',
     ],
-    status: 'candidate',
+    status: 'matched',
     settle:
-      'Collate views 43–89 with Crelle 7, pp. 1–29, and views 3–41 with the Recherches, pp. v–12, line by line, and read Dahan Dalmédico 1987 for any citation of Français 9115.',
+      "Settled against Grun 2022: the three identifications are hers before they are this edition's. Two points stay open and are not findings. First, her pages for the 1831 draft (40–44) do not fit this edition's views by the offset of two that holds at her pp. 14 and 266, since views 38–42 are the end of the Exposition; her pp. 45–55 would be views 43–53, the « Observations préliminaires » and the opening of the « Mémoire sur la courbure ». Second, she reads views 620–626 (her pp. 622–628) as a draft of the 1815 memoir, where this entry compared them with Recherches Nos. 50–52. A collation of views 620–626 with § 14–15 of her transcription of the 1815 memoir (annex D) decides the second.",
   },
   {
     id: 'fr-9115-long-memoir-1813',
@@ -830,11 +866,12 @@ export const FINDINGS: Finding[] = [
     literature: [
       'Recherches (1821), Avertissement, p. vi — read (archive.org OCR): the description of the 1813 memoir summarised above.',
       'Todhunter–Pearson I, Arts. 283–284 — read: it quotes the same preface and records the honourable mention of the 1813 memoir, and names no manuscript.',
-      'NOT read, and the first place this can fail: N. Grun, Le défi de Sophie Germain : ses travaux sur les vibrations des surfaces élastiques (thèse, Université de Lorraine, 2022; HAL tel-04052603). Its abstract, which was read, says the three prize memoirs of 1811, 1813 and 1815 are in the Archives of the Académie and are transcribed in its appendix. The full text sits behind a bot check that was not attempted. Also not read: Bucciarelli and Dworsky 1980, whose account of the 1813 memoir rests on the same archive.',
+      'First pass: Grun 2022 not read (bot check on theses.hal.science). Also not read: Bucciarelli and Dworsky 1980, whose account of the 1813 memoir rests on the same archive.',
+      "MATCHED, 25 October 2026 — Grun 2022, read in full from hal.univ-lorraine.fr/tel-04052603/document. Ch. 5, § 5.1.1, p. 75 and n. 3: « Il existe plusieurs brouillons du « mémoire 1813 » » in the Papiers (Français 9115), « entre les pages 398 et 615 »; p. 76: successive drafts, « La dernière version est pratiquement la version finale », the main difference being the section on the hemispherical bell. Annex D, p. 256, her transcription of the Académie original « reçu le 21 septembre 1813 »: the same Bacon epigraph, Novum Organum I, XCII, « tom. I p. 298, edit. in f.o London 1740 », as view 398 and the state of views 593 ff.",
     ],
-    status: 'candidate',
+    status: 'matched',
     settle:
-      "Collate views 398–592 with Grun's transcription of the 1813 memoir: the epigraph, the pagination to (165), the N° 11 on the diagonals, § 6 on wax. If they are one text, the entry holds, and pieces.json can name the piece. If Grun or Bucciarelli and Dworsky already cite Français 9115 for it, the entry becomes matched.",
+      "Settled: Grun identifies these leaves as drafts of the 1813 memoir before this edition did. What is left is this edition's own and is not a finding: the view-level boundaries (her pages 398–615 are views 396–613 if the offset of two observed at her pp. 14 and 266 holds here) and the order of the three states of the opening. Grun's ch. 5 compares the drafts with the original and is where that order should be checked.",
   },
   {
     id: 'fr-9115-unprinted-experiments',
@@ -851,11 +888,12 @@ export const FINDINGS: Finding[] = [
       'Recherches (1821), archive.org OCR — searched for « cire », « couper », « quart », « anneau de verre », « corps mou », « prolong »: none of these experiments. Its glass experiments are on laminas of uneven thickness and on bent plates (Nos. 50–52).',
       'Germain, Mémoire sur l’emploi de l’épaisseur (1880), archive.org OCR — searched for « cire »: nothing.',
       'Todhunter–Pearson I, Arts. 283–306 — read: Art. 299 notes only that her sounds came out graver than theory.',
-      'NOT read: Grun 2022 (transcription of the 1813 memoir, bot check); Bucciarelli and Dworsky 1980.',
+      'NOT read: Bucciarelli and Dworsky 1980.',
+      "MATCHED, 25 October 2026 — Grun 2022, read in full. Her transcription of the Académie original of the 1813 memoir (annex D) has all four: the quarter of the square plate cut away after forming Chladni's fig. 64, « le son est resté le même que sur la plaque entière » (pp. 289–290; the cut part is lettered « ACBE » there); the plate of « un décimètre 6 millimètres » weighing « 1 once 18 grains » loaded with « cire verte collante », with nodal lines at 45 and 58 mm (pp. 322–325); the glass lamina of 20 cm × 23 mm with lines at 12 and 121 mm, « dix fois plus étendu » (p. 325); the glass rings of 83 mm, 9 and 20 mm wide, si 1, mi 2, fa♯ 3, and the plate and ring differing by « un espace circulaire vide, de 11 millimètres », ut♯2 and mi 3 (pp. 341–343). Ch. 5, § 5.1.2, pp. 81–83, discusses the wax experiments as « de nouvelles expériences ».",
     ],
-    status: 'candidate',
+    status: 'matched',
     settle:
-      "Look for these four experiments in Grun's transcription of the 1813 memoir and in Bucciarelli and Dworsky. If they are there, the entry is matched and the leaves are a second witness. A person should read view 540 for the wax dose and view 589 for « deux nœuds ».",
+      "Settled: the experiments are printed, in Grun's transcription of the 1813 original, and the leaves are a second witness. Two of the doubts this entry flagged are answered by the original as Grun reads it: it too has « 1 once 2 gras » on first loading and « 1 gras 2 grains » for the doses after, and it too has « deux nœuds » for the second figure of the 20 mm ring (pp. 342–343). A person should still read views 540 and 589 against the leaf.",
   },
   {
     id: 'fr-9115-euler-47-critique',
@@ -863,7 +901,7 @@ export const FINDINGS: Finding[] = [
     pages: 'views 208–389 (three states: 210–216, 218–316, 320–389)',
     kind: 'mathematical',
     claim:
-      "Français 9115 holds, in three states, a critique of §§ 47–51 of Euler's 1779 memoir on elastic laminae. It rejects Euler's second solution for a lamina supported at both ends and at its middle. The rejection is wrong. Euler's second family is the set of modes symmetric about the middle, which load the support. The critique rests on an assumption that its first state writes out once: that the support's effect is « purement exclutif » (view 214), that is, that the support exerts no force. None of the sources searched discusses the critique.",
+      "Français 9115 holds, in three states, a critique of §§ 47–51 of Euler's 1779 memoir on elastic laminae. It rejects Euler's second solution for a lamina supported at both ends and at its middle. The rejection is wrong. Euler's second family is the set of modes symmetric about the middle, which load the support. The critique rests on an assumption that its first state writes out once: that the support's effect is « purement exclutif » (view 214), that is, that the support exerts no force. The critique itself is in the literature (Grun 2022, pp. 43–47); what the sources searched do not say is that its rejection of Euler is mistaken, or why.",
     basis:
       "View 214: the effect of the supports « est consideré comme purement exclutif », and cannot produce motions « inconciliables avec l'état des extrèmités ». View 322 (§ 1): the second solution « sort de l'état de la question », since the modes of the supported lamina require sin ω = 0. View 332 (§ 6): « afin d'être autorisée a conclure qu'Euler a été induit en erreur ». Views 369–371 (§ 20): « je n'ose admettre une opinion si contraire à celle d'Euler, sans la soumettre à un examen plus approfondi ». Euler's § 8, in the copy (view 152), introduces the force F of a stylet about which the rod stays mobile. The 1821 Recherches (p. 78) states the critique's premise as an observation: on a straight lamina, a support placed at a point that belongs to none of the theory's nodal figures gives no sound.",
     ours:
@@ -872,11 +910,12 @@ export const FINDINGS: Finding[] = [
       'Euler, Investigatio motuum quibus laminae et virgae elasticae contremiscunt, Acta Acad. Sci. Petropolitanae 1779 pars prior, pp. 103–161 — pp. 150 and 157 read on archive.org page images (actaacademiaesci79impe). At § 46 Euler says he treats only this one case of an intermediate support, to show the method.',
       'Germain, Recherches (1821), archive.org OCR — read at p. 78; searched for « stilet », « stylet », « n° 47 »: no critique of Euler’s § 47.',
       'Todhunter–Pearson I, Arts. 283–306 (Germain) — read: no mention.',
-      'NOT read: Bucciarelli and Dworsky 1980; Grun 2022; Truesdell, The Rational Mechanics of Flexible or Elastic Bodies 1638–1788 (Euler, Opera omnia II 11.2, 1960), whose account of E526 is the likeliest to mention later criticism.',
+      'Grun 2022, ch. 4, § 4.1.1, pp. 43–47 — read, 25 October 2026. She describes the critique from « Germain 2013 » (Français 9115), her pp. 220–396: Germain « pense que la deuxième solution donnée par Euler ne convient pas », supposing « que la lame ne vibre pas », and takes up the general case of any λ (her pp. 230–246); she then rejects the second solution again for free ends (pp. 248–264), asks the question of p. 266, and reduces Euler’s six cases to four (p. 306). Grun calls these leaves a draft and a phase of apprenticeship, and connects them with Legendre’s letters of 19 and 28 January 1811 (her annex B). She reports the rejection without assessing it.',
+      'NOT read: Bucciarelli and Dworsky 1980; Truesdell, The Rational Mechanics of Flexible or Elastic Bodies 1638–1788 (Euler, Opera omnia II 11.2, 1960), whose account of E526 is the likeliest to mention later criticism.',
     ],
     status: 'candidate',
     settle:
-      'Look in Bucciarelli and Dworsky and in Grun 2022 for any account of the « Remarques sur le mémoire d’Euler » among the BnF papers, and in Truesdell 1960 for a discussion of § 47 that mentions her.',
+      'The existence of the critique is matched by Grun 2022; the entry now stands on its verdict alone. Look in Bucciarelli and Dworsky for an assessment of the critique, and in Truesdell 1960 for a discussion of § 47 that mentions her. An account that calls her rejection of the second solution mistaken makes the entry matched.',
   },
   {
     id: 'fr-9115-free-lamina-stylet-equation',
@@ -893,10 +932,11 @@ export const FINDINGS: Finding[] = [
       'Euler 1779, Acta Petropolitana 1779 pars prior, p. 150 (§§ 46–47) — read on the page image: only the lamina with supported ends and one intermediate support is treated.',
       'Recherches (1821) and Todhunter–Pearson I, Arts. 283–306 — read: neither gives this equation or mentions the problem.',
       'NOT searched: when the frequency equation of a free–free beam on one intermediate point support first appears in print (Rayleigh, Theory of Sound, and the later literature on continuous beams). This entry claims only that the literature on Germain searched here does not record that her leaves contain it.',
+      'Grun 2022, ch. 4, pp. 45–46 — read, 25 October 2026. She summarises the free-ends part of the critique (her pp. 248–266, that is the draft around view 254) by its conclusion, that only with the stylet at the middle can the lamina be treated as two laminae each supported at the stylet. That conclusion is the leaf’s own (view 258, « le cas ou le stilet est appuié au milieu … est le seul »). She gives no frequency equation for a support at an arbitrary point and does not mention the elimination.',
     ],
     status: 'candidate',
     settle:
-      'Read Bucciarelli and Dworsky and Grun 2022 for any account of this part of the critique; separately, find the earliest printed statement of the equation, which bears on how the leaf is described but not on the entry.',
+      'Read Bucciarelli and Dworsky for any account of this part of the critique (Grun 2022 has been read and does not give the equation); separately, find the earliest printed statement of the equation, which bears on how the leaf is described but not on the entry.',
   },
   {
     id: 'fr-9115-euler-1779-printed-slips',
@@ -933,11 +973,12 @@ export const FINDINGS: Finding[] = [
       'Laubenbacher and Pengelley 2010 — full text searched for « heat », « chaleur », « 9115 »: only Manuscript C.',
       'Todhunter–Pearson I, Arts. 283–306 — read: elasticity only.',
       'Germain, Mémoire sur l’emploi de l’épaisseur (1880), whose preface prints Fourier’s letters to her of 1820 and 1824 — OCR searched: no « chaleur ». Stupuy, Œuvres philosophiques de Sophie Germain (1896) — OCR searched: one unrelated « chaleur ».',
-      'NOT read: Bucciarelli and Dworsky 1980; Del Centina and Fiocca 2018, On the Correspondence of Sophie Germain (where an exchange with Fourier on heat would show); Grun 2022; Musielak 2020.',
+      'NOT read: Bucciarelli and Dworsky 1980; Del Centina and Fiocca 2018, On the Correspondence of Sophie Germain (where an exchange with Fourier on heat would show); Musielak 2020.',
+      "MATCHED, 25 October 2026 — Grun 2022, read in full. § 7.2.3, p. 154: the Papiers (Français 9115) « figurent des pages indiquant son intérêt pour la théorie de la chaleur »; undated, unnumbered, disordered pages, with incomplete calculations, where she reads Fourier and states a relation between elasticity and heat, « Mais elle n'ira pas plus loin, elle ne publiera rien sur la théorie de la chaleur »; Grun puts them « aux alentours de l'année 1831 » from their content. Also ch. 2, p. 11: the drafts show « qu'elle n'a pas uniquement étudié la théorie de l'élasticité », with research in mathematical physics never published. Grun gives no page numbers for the heat leaves.",
     ],
-    status: 'candidate',
+    status: 'matched',
     settle:
-      'Read Bucciarelli and Dworsky and Del Centina–Fiocca 2018 for any mention of Germain and heat, or of these leaves.',
+      "Settled: Grun records that the volume holds Germain's unpublished work on heat. What remains is this edition's own description and is not a finding: the forty pages located at views 549, 630–701 and 712–716, the three bodies and the fair copy of the cylinder, where Grun describes the pages as tentative and gives no views. Grun's dating (about 1831) and this reading's (after 1822, from the citations of Fourier's Théorie) are both inferred and neither is asserted here.",
   },
   {
     id: 'fr-9115-fermat-primes-residues',
@@ -945,18 +986,21 @@ export const FINDINGS: Finding[] = [
     pages: 'views 704–730 (esp. 720, 729, 730)',
     kind: 'mathematical',
     claim:
-      "The undated notes on quadratic residues bound around Manuscript C contain, on a leaf headed « Nombres premiers de la forme 2^{2^i}+1 » (view 730), the statement that 3 and 7 are non-residues, and therefore primitive roots, of every larger Fermat prime; this is true for Fermat primes of 5 and above. The same leaf claims that smaller Fermat primes are non-residues of larger ones, corrects itself between the lines with « cela est faux », and the claim is indeed false from 17 on. The facing leaf (view 729) proves that 3 is a primitive root of every prime 12n + 5 for which 3n + 1 is prime. The notes comment on an « auteur » named once as Gauss (view 720, N° 125). Laubenbacher and Pengelley do not treat these leaves. No priority is claimed against Pépin (1877): the leaves are undated.",
+      "The undated notes on quadratic residues bound around Manuscript C contain, on a leaf headed « Nombres premiers de la forme 2^{2^i}+1 » (view 730), the statement that 3 and 7 are non-residues, and therefore primitive roots, of every larger Fermat prime; this is true for Fermat primes of 5 and above. The same leaf claims that smaller Fermat primes are non-residues of larger ones, corrects itself between the lines with « cela est faux », and the claim is indeed false from 17 on. The facing leaf (view 729) proves that 3 is a primitive root of every prime 12n + 5 for which 3n + 1 is prime. The notes comment on an « auteur » named once as Gauss (view 720, N° 125). Laubenbacher and Pengelley do not treat these leaves. No priority is claimed: the leaves are undated, and both results were in print by 1832 (Stern 1830 for primes 12n + 5; Richelot 1832 for Fermat primes, whose non-residues are all primitive roots). The claim is only that the literature on Germain does not record that her leaves contain them.",
     basis:
       "View 730: the heading; « les nombres premiers plus petits et de même forme sont non residus et par conséquent racines primitives »; the interlinear « cela est faux parcequ'il suffit que 2^{2^{i+δ}−2^i m}+1 ≡ x² »; and « 2³−1 = 7 sont non residus (mod 2^{2^i}+1) c'est cequej'avois deja trouvé d'une autre maniere ». View 729: « 3 est racine primitive », with the examples 29 and 53 and 77 and 93 struck out. View 720: « En examinant la manière dont Gauss démontre (N.o 125) ». The transcription's \\ill{} marks in this range fall on struck lines of view 729. Those of view 720 are on a second « 4n+1 », read with doubt, and on two illegible words. None lies under the statements quoted.",
     ours:
       "The verifications are the reading's: F_k ≡ 2 (mod F_j), so (F_j/F_k) = (2/F_j), which is −1 for 3 and 5 and +1 from 17 on; 7 checked for 5, 17, 257, 65537; the 12n + 5 result checked for the 97 primes below 20 000. The reading also finds a false extension on view 720 (−5, −17 and −21 are residues of every smaller prime 4k + 3 that does not divide them). The transcription puts the hand of these notes as her rapid working hand.",
     literature: [
       'Laubenbacher and Pengelley 2010 — read: Français 9115 is cited only for Manuscript C; they say 150–200 pages of her number-theory manuscripts remain unassessed.',
-      'NOT read: Del Centina 2008 (Springer challenge); Pengelley 2023 (AMS); Dickson, History of the Theory of Numbers I, on primitive roots and Fermat numbers, the place to see how early these facts were printed.',
+      'NOT read: Del Centina 2008 (AHES 62(4), 349–392; Springer challenge); Pengelley 2023 (AMS CLRM 70), whose ch. 7, « Primitive roots », pp. 99–123, is known only from its Crossref record and is the first place this entry can fail.',
+      'Dickson, History of the Theory of Numbers I (1919), ch. VII, pp. 184–185 — read in the archive.org OCR (historyoftheoryo01dick). It reports M. A. Stern, Journal für Math. 6 (1830), 147–153: « If p = 4q+1 and q = 3n+1 are primes, 3 and −3 are primitive roots of p », which is the result of view 729 (p = 12n + 5); and F. J. Richelot, Journal für Math. 9 (1832), p. 5: if p = 2^m + 1 is prime, every quadratic non-residue, in particular 3, is a primitive root. Neither original was read. Dickson does not mention Germain here.',
+      'Gauss, Recherches arithmétiques (tr. Poullet-Delisle, 1807), art. 125 — read in the archive.org OCR (recherchesarithm00gaus): the theorem that every number other than a positive square is a non-residue of some primes, proved there for primes 4n + 1. This is the article view 720 names and the case the slip of view 722 says « l\'auteur se borne a démontrer ».',
+      'Grun 2022, ch. 2, p. 11 — read: among the contents of Français 9115 she lists « un papier sur les nombres premiers de la forme 2^{2^i} + 1 écrit par Germain ». She says no more of it. So the existence of the leaf of view 730 is recorded; its content is not, in what was read.',
     ],
     status: 'candidate',
     settle:
-      'Check Pengelley 2023 and Del Centina 2008 for these leaves. Independently, Dickson I would show whether « 3 and 7 are primitive roots of Fermat primes » was in print before Pépin, which bears on how the leaf is described, not on its date.',
+      'Check Pengelley 2023, ch. 7, and Del Centina 2008 for these leaves. If either treats the leaf of view 730 or the 12n + 5 proof of view 729, the entry is matched.',
   },
   {
     id: 'fr-9115-legendre-imprint-crelle-note',
@@ -964,7 +1008,7 @@ export const FINDINGS: Finding[] = [
     pages: 'views 115–134',
     kind: 'codicological',
     claim:
-      "The printed memoir of Legendre bound at views 115–134 (« Lu à l'Académie, le 11 octobre 1830 », on 4(xⁿ − 1) = (x − 1)(Y² ± nZ²)) treats the question of Germain's last printed note, « Note sur la manière dont se composent les valeurs de y et z … », Crelle's Journal 7 (1831), pp. 201–203. Both work out the signs of the coefficients of Y and Z according to the form of n, and their first coefficients by residue classes of n. Her note cites Legendre's Théorie des nombres (1830, T. 2, No. 513) and not this memoir. No source searched records that the memoir is among her papers, or connects the two.",
+      "The printed memoir of Legendre bound at views 115–134 (« Lu à l'Académie, le 11 octobre 1830 », on 4(xⁿ − 1) = (x − 1)(Y² ± nZ²)) treats the question of Germain's last printed note, « Note sur la manière dont se composent les valeurs de y et z … », Crelle's Journal 7 (1831), pp. 201–203. Both work out the signs of the coefficients of Y and Z according to the form of n, and their first coefficients by residue classes of n. Her note cites Legendre's Théorie des nombres (1830, T. 2, No. 513) and not this memoir. No source searched names this memoir among her papers (Grun 2022 says only that the volume holds memoirs of Legendre), or connects the two.",
     basis:
       "Imprint, pp. 11–13 (views 126–128): the symmetry or antisymmetry of Y and Z for n = 4i ± 1. Pp. 14–19 (views 129–134): A₁ to A₄ for n = 24λ ± 1, ± 5, ± 13, ± 17 and sub-forms 120μ + r. Germain's note, p. 201: the parity of the number of terms of 2(x − 1)^{(p−1)/2} decides whether paired coefficients have equal or opposite signs for 4k + 3 and 4k + 1. P. 202 gives the leading coefficients of y and z for p of the forms 8k + 1, 8k + 3, 8k + 5, 8k + 7.",
     ours:
@@ -973,10 +1017,169 @@ export const FINDINGS: Finding[] = [
       'Crelle’s Journal 7 (1831), archive.org journalfrdierei27crelgoog, OCR — read: contents entry 22 and pp. 201–202.',
       'Laubenbacher and Pengelley 2010 — searched: no mention of the 1831 note.',
       'NOT read: Del Centina 2008, which surveys her number-theoretic work and may discuss the Crelle note; Pengelley 2023.',
+      'Grun 2022, ch. 2, p. 11 — read: she says the volume holds « des mémoires de Legendre, Lagrange, D’Alembert, Euler », without naming this one; her thesis treats elasticity and does not discuss the 1831 Crelle note.',
     ],
     status: 'candidate',
     settle:
       'Read Del Centina 2008 and Pengelley 2023 on the 1831 note. Then collate her coefficients for 8k ± 1, 8k ± 3 with the imprint’s A₁–A₄ for the same n; agreement or disagreement is itself worth recording.',
+  },
+  // fr-9118 — Français 9118 (Sophie Germain's correspondence), /find-novelty,
+  // 25 October 2026: pass on Opus 5.5 (claude-opus-5-5) over a reading written
+  // on Opus 5; same-model rule waived by Michel on 25 October 2026. Web search
+  // was refused in this session. READ, as archive.org OCR unless stated:
+  // Stupuy, Œuvres philosophiques de Sophie Germain (1896; oeuvresphilosoph00germ),
+  // Pensées diverses and Correspondance; C. Henry, Revue philosophique 8 (1879),
+  // 619–641 (revuephilosophiq08pariuoft); Œuvres de Fermat IV (1912), Compléments
+  // XVI, pp. 208–209, reprinting C. Henry, « Sur divers points de la théorie des
+  // nombres », AFAS 1880 (oeuvresdefermat04ferm); Dickson, History of the Theory
+  // of Numbers I, p. 382, and II, ch. VI pp. 233–234 and p. 732
+  // (historyoftheoryo01dick, historyoftheoryo02dickuoft); Gauss, Recherches
+  // arithmétiques (1807), art. 243 (recherchesarithm00gaus); Grun 2022 (HAL
+  // tel-04052603, full text), annex B; Laubenbacher and Pengelley 2010 (arXiv
+  // 0801.1809v3, full text). NOT read: Del Centina 2008; Del Centina and Fiocca
+  // 2012 (AHES 66(6), 585–700, the edition of the Germain–Gauss correspondence)
+  // and 2018; Bucciarelli and Dworsky 1980; Stupuy's first edition (1879);
+  // Boncompagni, Cinq lettres de Sophie Germain à C.-F. Gauss (1880).
+  {
+    id: 'fr-9118-p4-plus-4-identity',
+    cote: 'fr-9118',
+    pages: 'view 91 (f. 85; « p. 84 » in Henry 1880 and Dickson)',
+    kind: 'historical',
+    claim:
+      "Dickson (History I, p. 382) credits Sophie Germain with the factorisation p⁴ + 4q⁴ = (p² + 2pq + 2q²)(p² − 2pq + 2q²), now called her identity, and cites Français 9118 « p. 84 » through Henry 1880. Henry quotes from that leaf only the statement « Aucun nombre de la forme p⁴ + 4 excepté 5 n'est un nombre premier », and supplies the factorisation himself (« Or on a … »). The leaf, as transcribed here, proves the statement another way, by two representations as a sum of two squares. On the evidence read, the attribution of the factorisation to her rests on Dickson's reading of Henry, not on the leaf. The literature searched does not say so.",
+    basis:
+      "The leaf (f. 85, view 91, headed « p. 217 »): « Aucun nombre de la forme p⁴ + 4 excepté 5 n'est un nombre premier car p⁴ + 4 = (p² − 2)² + 4p² et par conséquent ces nombres sont, de plusieurs manières la somme de deux quarrés », then the exception 5 = 1 + 4. The facing note (f. 87, view 93, « p. 220 ») has p⁴ + q⁴ = (p² − q²)² + 2(pq)² = (p² + q²)² − 2(pq)², again without a factorisation. Henry, as reprinted in Œuvres de Fermat IV, p. 209: « On trouve, dans un manuscrit de Sophie Germain (n° 9118 du fonds français de la Bibliothèque Nationale, p. 84) la proposition suivante », the statement quoted, then « Or on a p⁴ + 4 = (p² + 2)² − 4p² = (p² + 2 + 2p)(p² + 2 − 2p) », and the general p⁴ + 4q⁴. Dickson I, p. 382 and its note: « Sophie Germain noted that p⁴ + 4q⁴ has the factors p² ± 2pq + 2q² [Euler] », citing « Manuscript 9118 … p. 84. Cf. C. Henry, Assoc. franç. avanc. sc., 1880, 205; Oeuvres de Fermat, 4, 1912, 208 ». The transcription marks nothing doubtful under the statement or the identity of f. 85; one word runs off the frame (« somm[e] »).",
+    ours:
+      "The comparison of the three texts, and the remark that Henry's « p. 84 » falls on the leaf the BnF pencil now numbers 85 (f. 84 is the first draft of the centre of gravity of the triangle, on the same view). That the factorisation is not on ff. 84–87 rests on this edition's transcription, unchecked against the view by a person. Nothing is claimed about whether she knew the factorisation: other leaves of hers, or her letters, may carry it. The modernised reading's own analysis (the two pairs coincide for p = 1 and p = 2) is not part of the claim.",
+    literature: [
+      "Œuvres de Fermat IV (1912), Compléments, XVI, pp. 208–209 — read (archive.org OCR, oeuvresdefermat04ferm): Henry, « Sur divers points de la théorie des nombres », AFAS 1880. The factorisation follows « Or on a » and is not attributed to Germain. Henry's AFAS original (1880, p. 205) was NOT read.",
+      "Dickson, History of the Theory of Numbers I (1919), p. 382 and its note — read (archive.org OCR): attributes the factorisation to her, on the strength of the two references above.",
+      "Laubenbacher and Pengelley 2010 (arXiv 0801.1809v3) — full text searched: no mention of p⁴ + 4 or of the identity. Stupuy 1896, Henry 1879 and Grun 2022 — searched: no mention.",
+      "NOT searched: the later literature that uses the name « Sophie Germain identity », where an earlier critic of the attribution may already stand; Del Centina and Fiocca 2012 and 2018.",
+    ],
+    status: 'candidate',
+    settle:
+      "A person reads view 91 to confirm that f. 85 carries the two-squares argument and no factorisation, and checks the rest of Français 9118 and her other papers for the factorisation in her hand. Then search the literature on the name of the identity for anyone who has already traced it to Dickson's reading of Henry; if someone has, the entry is matched.",
+  },
+  {
+    id: 'fr-9118-libri-1824-binomial',
+    cote: 'fr-9118',
+    pages: 'view 65 (f. 60)',
+    kind: 'historical',
+    claim:
+      "A note in Français 9118 signed « G. Libri » and dated 1824 states that a prime p = 4k + 1 = a² + b², a odd, b even, satisfies 2·6·10⋯(4k − 2)/k! ≡ ±2a, with the sign fixed by a mod 4, and [(k+1)(k+2)⋯2k]² ≡ ±2b (mod p). Gauss announced these congruences in 1825 and printed them in 1828. The literature searched does not record that Libri had them, or that this dated note exists beyond Henry's one-line mention. No priority is claimed for Libri: Gauss may have had the result earlier, and Libri may have had it from him.",
+    basis:
+      "The dated source is the leaf: « Si p est un nombre premier de la forme 4k+1, qui, à ce qu'on sait, peut se mettre sous la forme a² + b², a étant impair, b pair : Je dis que l'on aura », three congruences « (mod. p) », « il faut prendre le signe + si a est de la forme 4n+1, et le signe − lorsque a est de la forme 4n−1 », « On peut décomposer de cette manière directement le nombre p en deux carrés », signed « G. Libri », « 1824 », in a hand other than the pieces before it. The transcription marks nothing doubtful on the leaf. It notes that the first two congruences have the same right-hand side although the second is the square of the first, and that nothing is struck.",
+    ours:
+      "The identification of the product with the central binomial coefficient C(2k, k), and the checks: the third and second congruences hold for p = 5, 13, 17, 29, and the first, as written, fails. The comparison with Gauss's statement, as Dickson reports it: ±e and ±f are the least residues of ½ r/k! and ½ r², with r = (k+1)⋯2k. Gauss has no congruence of the leaf's first, unsquared form.",
+    literature: [
+      "Henry 1879, Revue philosophique 8, p. 625 — read (archive.org OCR): « l'indication d'un procédé pour décomposer directement en deux carrés un nombre premier égal à un multiple de 4 augmenté de l'unité : elle est signée G. Libri et datée de 1824 ». No content.",
+      "Dickson, History II, ch. VI, pp. 233–234 — read (archive.org OCR): the result is Gauss's, Göttingische gelehrte Anzeigen 1825 and Comm. soc. Gott. recent. 6 (1828), Werke II, pp. 168, 90–91, with Cauchy's proof. Libri is not named there, and none of the other entries for Libri found in the OCR of vols. I–III concerns it.",
+      "Laubenbacher and Pengelley 2010, § 3.2 — read: Libri's number theory of 1820–1829 on congruences and Fermat; nothing on this congruence.",
+      "NOT read: Libri's own memoirs (Mémoires de mathématique et de physique, Florence, 1829; Crelle 9, 1832), where he may have printed it; Del Centina 2005 (Historia Mathematica 32, the Germain–Libri letters in Florence); Del Centina and Fiocca 2018.",
+    ],
+    status: 'candidate',
+    settle:
+      "Read Libri's Mémoires de mathématique et de physique (1829) and his 1825 and 1832 memoirs for this congruence, and Del Centina 2005 for the note. If Libri printed it, or a study of Libri records it, the entry is matched. Whether Gauss's result was known in Paris before April 1825 is a separate question, and the leaf cannot answer it.",
+  },
+  {
+    id: 'fr-9118-composition-objection',
+    cote: 'fr-9118',
+    pages: 'view 92 (f. 86)',
+    kind: 'mathematical',
+    claim:
+      "An undated note of Germain's (f. 86) objects to Gauss's worked example of composition, (16, 3, 19) ∘ (8, 1, 37) = (8, −1, 37) in Disquisitiones art. 243, that the product « est aussi (13, −2, 23) », and that his theory of composition needs correcting. The objection fails: (13, −2, 23) is the composite of the opposite form (16, −3, 19) with (8, 1, 37), and Gauss's sign conditions on the composing transformation exclude it. No source searched records the note.",
+    basis:
+      "View 92: « Gauss pag. 272 dit que le produit des deux formes (16, 3, 19) (8, 1, 37) est (8, −1, 37) Ce produit est aussi (13, −2, 23) [struck: Comme] on peut s'en assurer », « En général il y a toujours deux formes qui résultent du produit de deux formes données … Il semble que l'auteur n'a pas fait cette remarque, et alors il y auroit plusieurs choses à rectifier dans la théorie qu'il donne du produit de plusieurs formes quadratiques binaires ». Gauss's example is in art. 243 (French translation of 1807, p. 266: « (8, −1, 37) est la forme cherchée »). Its page in the 1801 Latin edition was not checked against the leaf's « pag. 272 ».",
+    ours:
+      "The verdict and the computation are the modernised reading's: the common determinant −295, the eight reduced forms, (16, −3, 19) ∘ (8, 1, 37) = (13, −2, 23), and the difference by the ambiguous class (5, 0, 59). The twelve numbers were not checked on the view; that all four forms have determinant −295 supports the reading of them.",
+    literature: [
+      "Gauss, Recherches arithmétiques (1807), art. 243 — read (archive.org OCR): the example as the leaf reports it.",
+      "Stupuy 1896, Henry 1879, Laubenbacher and Pengelley 2010 and Grun 2022 — full texts searched for the four forms, « 272 » and « composition »: nothing. Dickson III, on composition — searched for Germain: no mention.",
+      "NOT read: Del Centina and Fiocca 2012, whose edition of the Gauss correspondence is the likeliest place for this note to be described; Del Centina 2008.",
+    ],
+    status: 'candidate',
+    settle:
+      "Read Del Centina and Fiocca 2012 for this leaf. A person checks the twelve numbers on view 92, and the 1801 Latin edition for art. 243 on p. 272, which would date the note after she had the Latin text.",
+  },
+  {
+    id: 'fr-9118-prize-1822-receipt',
+    cote: 'fr-9118',
+    pages: 'view 89 (f. 82)',
+    kind: 'historical',
+    claim:
+      "Français 9118 keeps an Institut receipt dated 8 November 1821 for a memoir entered for the Académie's mathematics prize for 1822 (« le meilleur ouvrage, ou Mémoire de Mathématiques pures ou appliquées » of the two preceding years), under an epigraph signed Gauss. The literature searched records her prize memoirs of 1811, 1813 and 1815, and no entry for the 1822 prize. That the memoir was hers is an inference from where the receipt is kept, and is not claimed.",
+    basis:
+      "The dated source is the receipt: « Institut Royal de France. Paris, le 8 Novembre 1821. J'ai reçu un Mémoire pour concourir au prix de Mathématiques proposé par l'Académie Royale des Sciences pour l'année 1822 … ayant pour épigraphe : « Illecebris harum quaestionum ita sui implicatus ut eas deserere non potuerim. » Gauss. que j'ai numéroté I », signed Cardot, with « Monsieur Le chevalier de Karcher est prié de vouloir bien faire passer ce récépissé à l'auteur du Mémoire ci-dessus ». It is bound with the receipts of 21 September 1811 (Newton epigraph) and 21 September 1813 (Bacon), which Grun's transcriptions of the originals tie to her memoirs. The transcription marks nothing doubtful on it.",
+    ours:
+      "Only the observation that the receipt is a dated source for an entry to the 1822 prize, and the search. The Recherches of 1821 (deposited at the Institut library, per Delambre's letter of 23 July 1821 in this volume) are an obvious candidate for « l'ouvrage » and are not asserted. The epigraph's place in Gauss's works was not located.",
+    literature: [
+      "Grun 2022 — read in full: the three prize memoirs of 1811, 1813 and 1815 and the 1821 Recherches; nothing on the 1822 prize, on « Karcher », or on this epigraph.",
+      "Stupuy 1896, Henry 1879, Laubenbacher and Pengelley 2010 — searched for « 1822 », « Karcher », « Illecebris »: nothing relevant.",
+      "NOT read: Procès-verbaux des séances de l'Académie des sciences, t. VII (1820–1823), which would record the entries and the award; Bucciarelli and Dworsky 1980; Del Centina and Fiocca 2018.",
+    ],
+    status: 'candidate',
+    settle:
+      "Read the Procès-verbaux for 1822 for the mathematics prize, its entries and its award, and Bucciarelli and Dworsky for any mention of an 1822 entry. If either names the memoir with this epigraph, the entry is matched, or it gains its author.",
+  },
+  {
+    id: 'fr-9118-gauss-drafts-printed',
+    cote: 'fr-9118',
+    pages: 'views 43–47 (ff. 38r–41v)',
+    kind: 'codicological',
+    claim:
+      "The two « Le Blanc » drafts to Gauss in Français 9118 have the texts of the letters Stupuy printed in 1896 as Nos. VI and IX of the correspondence. They carry the generalisation of Disquisitiones art. 357 to 4(x^{n^s} − 1)/(x − 1), the claim for n = p − 1 with p ≡ 7 (mod 8), and the conjecture det adj = D^{n−1}. Del Centina 2008 analyses the 1804 Fermat claim. None of this is new.",
+    basis:
+      "Stupuy 1896, pp. 254–258 (No. VI, signed « Le Blanc », to be answered via « M. Silvestre de Sacy … rue Hautefeuille ») and pp. 263–265 (No. IX): the same sentences as the drafts, from « le beau théorème contenu dans l'équation » to « des valeurs de Y et Z indépendantes du tâtonnement », and from « Après avoir réduit, suivant que vous l'indiquez, les formes ternaires » to « de l'ordre n(n − 1) ». Stupuy's text of the Lagrange quantity has the same two differing copies, « 7s⁴r⁴ » then « 7s⁴ », that the transcription records, but cites Lagrange's « page 252 » where the transcription reads « page 352 ».",
+    ours:
+      "The concordance, by opening and closing sentences; not a collation. Whether Stupuy printed from these drafts or from the letters Gauss received is not decided: Dickson (II, p. 732, n. 11) gives the first and third letters from Stupuy 1879 and from Boncompagni's « Cinq lettres » (1880), which come from Gauss's papers. The modernised reading's proofs (the generalisation by composition; the adjugate identity) are elementary and are not offered as findings.",
+    literature: [
+      "Stupuy 1896, Correspondance, Nos. VI and IX — read (archive.org OCR).",
+      "Laubenbacher and Pengelley 2010, §§ 1.2–1.3 — read: Germain's « completely different claim » of her first letter to Gauss in 1804, which Del Centina analyses and transcribes and which they call incorrect.",
+      "Dickson II, p. 732 — read: « stated in her first letter to Gauss, Nov. 21, 1804, that she could prove that xⁿ + yⁿ = zⁿ is impossible if n = p − 1 ».",
+      "NOT read: Del Centina 2008 and Del Centina and Fiocca 2012, where the drafts' relation to the sent letters is the likeliest to be settled.",
+    ],
+    status: 'matched',
+    settle:
+      "Settled as printed. What remains for a person: the page of Lagrange's 1775 memoir (« 252 » in Stupuy, « 352 » in the transcription), and whether Del Centina and Fiocca 2012 cite these drafts by folio.",
+  },
+  {
+    id: 'fr-9118-legendre-euler-notes-dated',
+    cote: 'fr-9118',
+    pages: 'views 47–48 (ff. 42r–43r), 57–58 (ff. 52r–53r), 63–64 (ff. 58–59)',
+    kind: 'codicological',
+    claim:
+      "The three Legendre pieces on Euler's vibrating lamina, whose date and order the modernised reading leaves open, are printed by Stupuy (1896) as Nos. XIII–XV: the note on sin ½ω (« Pag. 155 ») first and « sans date », then « Paris, ce 19 janvier 1811 », then the § 47 note dated « 28 janvier 1811 ». Grun 2022 reprints them in that order, as Legendre's first, second and third letters. The year 1811 against the leaf's « 1814 », and « ma 1ère note » as the Pag. 155 note, are therefore already the printed reading.",
+    basis:
+      "Stupuy 1896, pp. 287–291 (No. XIII, « Sans date », beginning « L'équation sin ½ω = 0 n'est pas une conséquence nécessaire de l'équation à résoudre » and ending on 3α, 3β), p. 291 (No. XIV, « Paris, ce 19 janvier 1811 », « La multiplication par sin ½ω, contre laquelle je m'étais élevé dans ma première note ») and p. 295 (No. XV, « 28 janvier 1811 », « Euler n'a traité qu'en passant et par forme d'exemple son problème § 47 »). Grun 2022, annex B, pp. 204–208, from Stupuy. The reading reports the year on ff. 52r–53r as read « 1814 », against a postmark of January 1811, and calls the § 47 note undated.",
+    ours:
+      "Only the observation that the printed edition answers the reading's two open questions. Stupuy's dates and order are an editor's: where his « 28 janvier 1811 » for the § 47 note comes from, when the reading finds no date on ff. 42r–43r, is not known.",
+    literature: [
+      "Stupuy 1896, Correspondance, Nos. XIII–XV — read (archive.org OCR).",
+      "Grun 2022, annex B, pp. 204–208 — read: the three letters, with the dates above; ch. 4, p. 47, ties them to her work on Euler before the 1811 deadline.",
+    ],
+    status: 'matched',
+    settle:
+      "A person reads the year on f. 53 and looks on ff. 42r–43r and their address leaf for the « 28 janvier 1811 » Stupuy prints. The transcriptions are not to be corrected from Stupuy.",
+  },
+  {
+    id: 'fr-9118-reponse-and-physics-printed',
+    cote: 'fr-9118',
+    pages: 'views 40–42 (ff. 35r–36v); 94–96 (ff. 88–90)',
+    kind: 'codicological',
+    claim:
+      "Two groups of leaves that the modernised reading leaves unattributed are already printed and attributed. Henry (1879) printed the « Réponse aux questions de Mlle *** » from Français 9118, dated it 1790–1800 and gave it, by inference, to the geometer Cousin. Stupuy (1896) printed the three physics leaves — Abeille on cold, the answer on fire and light, « Idées sur les sens » — among Germain's Pensées diverses.",
+    basis:
+      "Henry 1879, pp. 623–625: the text from « Pour faire sentir et évanouir le Paradoxe apparent qui résulte de la propon de M. Monge » to the advice on Bossut's algebra. At p. 625 the attribution: Bernard's letter offering « le géomètre Cousin », and Lalande's of 4 November 1797 naming « son ami Cousin », make it « de toute vraisemblance » Cousin's. Stupuy 1896, Pensées diverses, pp. 241–243: « M. Abeille pense que le froid est un être réel », « L'objection de M. Abeille contre mon opinion sur le feu et la lumière », « Idée sur les sens ».",
+    ours:
+      "Only the concordance. Henry's attribution to Cousin is his inference and is not adopted. Stupuy's attribution of the physics leaves is an editor's, and the reading's note on the rounder hand stands. Henry (p. 619) says Stupuy's Pensées came from Français 9114, so the physics pieces may exist there in another state.",
+    literature: [
+      "Henry 1879, Revue philosophique 8, pp. 623–626 — read (archive.org OCR).",
+      "Stupuy 1896, Pensées diverses, pp. 241–243 — read (archive.org OCR).",
+    ],
+    status: 'matched',
+    settle:
+      "Settled as printed. Open, and not this entry's: the hand of the physics leaves against a dated autograph, and whether Français 9114 holds another state of them.",
   },
   {
     id: 'nal-1644-printed-recognitione-emendatione',

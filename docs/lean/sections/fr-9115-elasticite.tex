@@ -1,0 +1,164 @@
+\section[Français 9115 : la lame vibrante, Euler et les « Remarques »]{Français 9115 : la lame vibrante, le mémoire d'Euler de 1779 et les « Remarques »\protect\verifie{Fr9115Elasticity}}\label{sec:fr-9115-elasticite}
+
+Le volume Français 9115 contient, aux vues 144 à 206, une copie latine du mémoire d'Euler \emph{Investigatio motuum quibus laminae et virgae elasticae contremiscunt} (Acta Petropolitana, 1779), puis, aux vues 208 à 396, plusieurs états d'une critique de ses §§ 47 à 51, les « Remarques sur le mémoire d'Euler », et enfin, à partir de la vue 398, le mémoire sur la question proposée par la première classe de l'Institut, qui commence par l'équation de la plaque vibrante. On démontre ici les énoncés mathématiques que la lecture modernisée tire de ces feuillets : l'intégrale de l'équation du quatrième ordre, les équations aux fréquences, la position de quelques racines, les transformations de l'équation finale du § 47, le verdict sur la critique, l'équation de la lame libre touchée par un stylet, et les premières intégrales de la plaque.
+
+\noindent\emph{Conventions.} L'abscisse réduite est $u = s/a \in [0,1]$, et l'on écrit
+\[
+Y(u) = a\cosh\omega u + b\sinh\omega u + c\cos\omega u + d\sin\omega u
+\]
+(\texttt{modeY}) ; c'est la forme d'Euler $\alpha e^{\omega u} + \beta e^{-\omega u} + \gamma\sin\omega u + \delta\cos\omega u$ avec $a = \alpha+\beta$, $b = \alpha-\beta$, $c = \delta$, $d = \gamma$ (\texttt{eulerY\_eq\_modeY}). Un bout est libre si $Y'' = Y''' = 0$, appuyé si $Y = Y'' = 0$, encastré si $Y = Y' = 0$. La seconde portion d'une lame coupée par un stylet en $u = \lambda$ s'écrit depuis l'autre bout, $Y_2(u) = \tilde Y(1-u)$ avec $\tilde Y$ de la même forme (\texttt{reflY}). On pose $\mu = 1-\lambda$, $P(t) = \cosh t\sin t - \sinh t\cos t$ et $C_+(t) = 1 + \cosh t\cos t$.
+
+\subsection*{L'intégrale de l'équation et les six cas}
+
+\begin{enonce}[Euler, § 9, \vue{fr-9115}{8}{153}]
+$Y'''' = \omega^4 Y$. Si $f^4 = bc^2k$, $k > 0$ et $g \geq 0$, la vibration régulière $y = C\sin\bigl(\zeta + t\sqrt{2g/k}\bigr)\,Y(s/f)$ vérifie $\partial_t^2 y = -2g\,bc^2\,\partial_s^4 y$.
+\end{enonce}
+
+\begin{proof}
+La dérivée de $Y$ est la fonction de même forme de coefficients $\omega(b, a, d, -c)$ : $\cosh$ et $\sinh$ s'échangent, $\cos$ et $\sin$ tournent. Appliquée quatre fois, cette substitution donne $\omega^4(a,b,c,d)$ (\texttt{iteratedDeriv\_four\_modeY}, \texttt{modeY\_ode}). Pour la vibration, on écrit le facteur du temps $C\sin(\zeta + \nu t) = C\sin\zeta\cos\nu t + C\cos\zeta\sin\nu t$, qui est de la même forme en $t$ avec $\omega = \nu$ : sa dérivée seconde est $-\nu^2$ fois lui-même, et $\nu^2 = 2g/k$. En $s$, la dérivée quatrième est $f^{-4}$ fois la fonction. Il reste $-\frac{2g}{k} = -2g\,bc^2 \cdot \frac{1}{bc^2k}$, ce que donne $f^4 = bc^2k$ (\texttt{regular\_vibration}).
+\end{proof}
+
+\begin{remarque}
+Le facteur du temps est $\sin\bigl(\zeta + t\sqrt{2g/k}\bigr)$, comme la lecture le corrige ; la copie écrit le radical sur $2g$ seul. Avec $t\sqrt{2g}/k$, la dérivée seconde serait $-2g/k^2$ fois la fonction, et l'équation n'aurait lieu que pour $k = 1$.
+\end{remarque}
+
+\begin{enonce}[Euler, §§ 13 et 14, \vue{fr-9115}{8}{158} à \vue{fr-9115}{10}{190}]
+Pour $\omega \neq 0$, il existe des coefficients $(a,b,c,d)$ non tous nuls satisfaisant les quatre conditions des deux bouts si et seulement si : $\cos\omega\cosh\omega = 1$ (cas I, libre et libre ; cas VI, encastré et encastré) ; $\sin\omega\cosh\omega = \cos\omega\sinh\omega$, c'est-à-dire $\tan\omega = \tanh\omega$ (cas II, libre et appuyé ; cas V, appuyé et encastré) ; $\cos\omega\cosh\omega = -1$ (cas III, libre et encastré) ; $\sin\omega = 0$ (cas IV, appuyé et appuyé).
+\end{enonce}
+
+\begin{proof}
+La dérivée $k$-ième de $Y$ au point $u$ vaut $\omega^k$ fois le produit scalaire de $(a,b,c,d)$ avec une ligne fixe, $(\cosh x, \sinh x, \cos x, \sin x)$ pour $k = 0$ et ses images par la substitution précédente pour $k = 1, 2, 3$, en $x = \omega u$ (\texttt{iteratedDeriv\_modeV}). Comme $\omega \neq 0$, les quatre conditions forment un système linéaire homogène de matrice $4 \times 4$ (\texttt{bc\_iff}), qui a une solution non nulle si et seulement si son déterminant est nul (\texttt{exists\_mode\_iff}). Le calcul des déterminants (\texttt{det\_free\_free} et suivants) donne $2 - 2\cos\omega\cosh\omega$, $2(\cos\omega\sinh\omega - \cosh\omega\sin\omega)$, $2 + 2\cos\omega\cosh\omega$, $-4\sinh\omega\sin\omega$, $2(\sinh\omega\cos\omega - \sin\omega\cosh\omega)$ et $2 - 2\cos\omega\cosh\omega$. Pour le cas I, par exemple, on ajoute la première colonne à la troisième et la deuxième à la quatrième : le déterminant devient $(\cosh\omega - \cos\omega)^2 - (\sinh\omega - \sin\omega)(\sinh\omega + \sin\omega)$, qui vaut $2 - 2\cos\omega\cosh\omega$ par $\cosh^2 - \sinh^2 = 1$ et $\sin^2 + \cos^2 = 1$. Pour le cas IV, $\sinh\omega \neq 0$ (\texttt{case\_I} à \texttt{case\_VI}).
+\end{proof}
+
+\begin{enonce}[Euler, §§ 16, 17 et 30, \vue{fr-9115}{8}{160}, \vue{fr-9115}{9}{176}]
+On a $\cos x\cosh x < 1$ pour $0 < x \leq 3\pi/2$. L'équation $\cos\omega\cosh\omega = 1$ a une seule racine dans $]0, 2\pi[$, et elle s'écrit $3\pi/2 + \varphi$ avec $0 < \varphi < 1/50$. L'équation $\cos\omega\cosh\omega = -1$ a une racine dans $]\pi/2, \pi[$.
+\end{enonce}
+
+\begin{proof}
+La fonction $g(x) = \sin x\cosh x - \cos x\sinh x$ a pour dérivée $2\sin x\sinh x > 0$ sur $]0, \pi[$ et s'annule en $0$ : elle est positive sur $]0, \pi]$ (\texttt{P\_pos}). La dérivée de $f(x) = \cos x\cosh x$ est $-g(x)$, donc $f$ décroît strictement sur $[0, \pi]$ à partir de $f(0) = 1$ ; sur $[\pi, 3\pi/2]$, $\cos x \leq 0$ et $f \leq 0$ (\texttt{cos\_mul\_cosh\_lt\_one}). Ensuite $f(3\pi/2) = 0$ et $f(3\pi/2 + 1/50) = \sin\frac1{50}\cosh\bigl(\frac{3\pi}2 + \frac1{50}\bigr)$, où $\sin\frac1{50} > 0{,}0199$ et, avec $\pi > 3{,}141592$, $e > 2{,}7182818283$ et $e^{0{,}73} \geq 1 + 0{,}73 + 0{,}73^2/2$, le cosinus hyperbolique dépasse $54$ : le produit dépasse $1$, et le théorème des valeurs intermédiaires donne une racine dans l'intervalle. Sur $]3\pi/2, 2\pi[$, $\cos x > 0$ et $\sin x < 0$, donc $f' = \cos x\sinh x - \sin x\cosh x > 0$ et la racine y est unique ; avec la première partie, c'est la seule de $]0, 2\pi[$ (\texttt{first\_root\_free\_free}). Enfin $\cos x\cosh x + 1$ vaut $1$ en $\pi/2$ et $1 - \cosh\pi < 0$ en $\pi$ (\texttt{root\_free\_clamped}).
+\end{proof}
+
+\begin{remarque}
+Euler fonde l'absence de racine dans le premier quadrant sur une série tronquée, ce qui n'est pas une preuve ; l'argument de monotonie la remplace et va jusqu'à $3\pi/2$. La borne $\varphi < 1/50$ (soit $1^\circ 09'$) s'accorde avec son $\varphi \approx 1/56$ mais ne décide pas de son « à peine un degré » : la racine calculée par la lecture, $3\pi/2 + 1^\circ 01'$, n'est pas vérifiée ici. De même, la valeur $107^\circ 26'$ de la racine du cas III et l'écart avec les $106^\circ 45'$ de la copie ne sont pas démontrés ; seul le quadrant l'est.
+\end{remarque}
+
+\subsection*{La lame sur trois appuis (§§ 47 à 51)}
+
+\begin{enonce}[Euler, § 47, \vue{fr-9115}{10}{195} ; « Remarques », § 2, \vue{fr-9115}{17}{322}]
+Soit $E(\lambda,\omega) = 2 - 2e^{2\omega} - \bigl(e^{\lambda\omega} - e^{(2-\lambda)\omega}\bigr)\bigl(e^{\lambda\omega} - e^{-\lambda\omega}\bigr)\frac{\sin\omega}{\sin\lambda\omega\,\sin\mu\omega}$ le second membre de l'équation finale d'Euler. Si $\sin\lambda\omega\,\sin\mu\omega \neq 0$,
+\[
+E(\lambda,\omega) = -\frac{4e^\omega\bigl(\sinh\omega\,\sin\lambda\omega\,\sin\mu\omega - \sin\omega\,\sinh\lambda\omega\,\sinh\mu\omega\bigr)}{\sin\lambda\omega\,\sin\mu\omega}.
+\]
+La forme $2(1 - e^{2\omega})\sin\lambda\omega\sin\mu\omega - (1 - e^{2\mu\omega})(e^{2\lambda\omega} - 1)\sin\omega$ de la mise au net est $E(\lambda,\omega)\sin\lambda\omega\sin\mu\omega$ ; pour $n\lambda = 1$, sa division par $e^{2\lambda\omega} - 1$ donne au signe près $2\bigl(1 + e^{2\lambda\omega} + \dots + e^{2(n-1)\lambda\omega}\bigr)\sin\lambda\omega\sin\mu\omega + (1 - e^{2\mu\omega})\sin\omega$. Si de plus $\sinh\lambda\omega\,\sinh\mu\omega \neq 0$, l'équation équivaut à $\coth\lambda\omega + \coth\mu\omega = \cot\lambda\omega + \cot\mu\omega$. Pour $\lambda = \frac12$ et $x = \omega/2$, $\sinh 2x\sin^2 x - \sin 2x\sinh^2 x = 2\sin x\sinh x\,(\cosh x\sin x - \cos x\sinh x)$, et le crochet du § 48 vaut $(1 + e^{2x})\sin x - (e^{2x} - 1)\cos x = 2e^x(\cosh x\sin x - \sinh x\cos x)$.
+\end{enonce}
+
+\begin{proof}
+On pose $A = e^{\lambda\omega}$ et $B = e^{\mu\omega}$, de sorte que $e^\omega = AB$, $e^{2\omega} = A^2B^2$, $e^{(2-\lambda)\omega} = AB^2$, $e^{2\lambda\omega} = A^2$ et $e^{2\mu\omega} = B^2$ (\texttt{exp\_split}), et l'on exprime les sinus hyperboliques par $A$, $A^{-1}$, $B$, $B^{-1}$. Après multiplication par $\sin\lambda\omega\sin\mu\omega$, les deux membres de la première égalité sont des polynômes en ces quantités dont la différence est un multiple de $AA^{-1} - 1$ et de $BB^{-1} - 1$ (\texttt{eulerFinal\_mul}, \texttt{eulerFinal\_eq}). La deuxième tient parce que $(A - AB^2)(A - A^{-1}) = (1 - B^2)(A^2 - 1)$ dès que $AA^{-1} = 1$ (\texttt{germainForm\_eq}). La troisième est la somme géométrique $\bigl(\sum_{i<n} q^i\bigr)(q - 1) = q^n - 1$ avec $q = e^{2\lambda\omega}$ et $q^n = e^{2\omega}$ (\texttt{germain\_geom\_form}). Pour la quatrième, on développe $\sinh\omega = \sinh(\lambda\omega + \mu\omega)$ et $\sin\omega$ de même, et l'on réduit les deux sommes de quotients au même dénominateur (\texttt{final\_iff\_coth}). Les deux dernières sont les formules de duplication et $e^{2x} = e^x e^x$ (\texttt{half\_factor}, \texttt{euler\_half\_bracket}).
+\end{proof}
+
+\begin{enonce}[Sophie Germain, « Remarques », § 1, \vue{fr-9115}{11}{214}, \vue{fr-9115}{17}{322}\piste{fr-9115-euler-47-critique}]
+Si $\tan\frac\omega2 = \tanh\frac\omega2$, écrit $\sin x\cosh x = \cos x\sinh x$ avec $x = \omega/2$, alors $\sin\omega\cosh\omega = \sinh\omega$, c'est-à-dire $\sin\omega = \tanh\omega$ ; et $\sin\omega = 0$ entraîne alors $\omega = 0$.
+\end{enonce}
+
+\begin{proof}
+Par duplication, il s'agit de $2\sin x\cos x(\cosh^2x + \sinh^2x) = 2\sinh x\cosh x$. La différence des deux membres est $2(\cos x\cosh x - \sin x\sinh x)(\sin x\cosh x - \cos x\sinh x) + 2\sinh x\cosh x(\sin^2x + \cos^2x - 1)$, nulle sous l'hypothèse (\texttt{objection\_sin\_eq\_tanh}). Si $\sin\omega = 0$, il vient $\sinh\omega = 0$, donc $\omega = 0$ (\texttt{objection\_sin\_zero}).
+\end{proof}
+
+Le calcul de la critique est juste. Sa conclusion, que la seconde solution d'Euler « sort de l'état de la question », ne l'est pas. On note \emph{conditions du § 47} les huit conditions d'Euler pour la lame appuyée à ses deux bouts et touchée par un stylet en $\lambda$ : bouts appuyés, $y = 0$ des deux côtés du stylet, pente et courbure continues. La dérivée troisième n'y est pas supposée continue : son saut est la force du stylet, l'effort $F$ du § 8.
+
+\begin{contrexemple}[à la conclusion du § 1 des « Remarques »]
+Soit $\omega > 0$ une racine de $\tan\frac\omega2 = \tanh\frac\omega2$, et soient, pour $\lambda = \frac12$,
+\[
+Y_1(u) = \frac{\sinh\omega u}{\sinh\frac\omega2} - \frac{\sin\omega u}{\sin\frac\omega2}, \qquad Y_2(u) = Y_1(1-u).
+\]
+Alors $Y_1$ et $Y_2$ satisfont les conditions du § 47, $Y_1$ n'est pas identiquement nulle, et $Y_1'''(\frac12) \neq Y_2'''(\frac12)$ : c'est un vrai mode de la lame tenue en son milieu, et le stylet y exerce une force.
+\end{contrexemple}
+
+\begin{proof}
+D'abord $\sinh\frac\omega2 > 0$, et $\sin\frac\omega2 \neq 0$ : sinon l'hypothèse donnerait $\cos\frac\omega2\sinh\frac\omega2 = 0$, donc $\cos\frac\omega2 = 0$, contre $\sin^2 + \cos^2 = 1$. L'hypothèse s'écrit $\coth\frac\omega2 = \cot\frac\omega2$. En $0$, $\sinh$ et $\sin$ s'annulent avec leurs dérivées secondes : $Y_1(0) = Y_1''(0) = 0$, et de même $Y_2(1) = Y_2''(1) = 0$. En $\frac12$, $Y_1 = 1 - 1 = 0$ et $Y_2 = 0$. La dérivée de $Y_2$ en $\frac12$ est l'opposée de celle de $Y_1$, qui vaut $\omega\bigl(\coth\frac\omega2 - \cot\frac\omega2\bigr) = 0$ : les pentes sont égales, toutes deux nulles. Les dérivées secondes, égales par symétrie, valent $2\omega^2$. Les dérivées troisièmes sont opposées, et $Y_1'''(\frac12) = \omega^3\bigl(\coth\frac\omega2 + \cot\frac\omega2\bigr) = 2\omega^3\coth\frac\omega2 > 0$. Enfin le coefficient de $\sinh\omega u$ est non nul, et les quatre fonctions sont indépendantes pour $\omega \neq 0$ (\texttt{modeY\_eq\_zero\_iff}), donc $Y_1 \neq 0$ (\texttt{second\_family\_is\_mode}).
+\end{proof}
+
+\begin{remarque}
+Les deux fonctions, de la forme d'Euler, sont les modes symétriques de la lecture : chaque moitié vibre comme une lame appuyée à un bout et encastrée au stylet, ainsi que l'écrit le § 51. Le contre-exemple établit le verdict de la lecture sur la seconde solution ; il ne dit rien de l'hypothèse « purement exclutif » de la vue 214, qui est une lecture du feuillet.
+\end{remarque}
+
+\begin{enonce}[Énoncé de l'édition, d'après Euler, § 50, \vue{fr-9115}{10}{200} et \vue{fr-9115}{11}{201}\piste{fr-9115-euler-1779-printed-slips}]
+Pour $\omega = 2i\pi$, $i$ entier non nul, $Y_1 = Y_2 = \sin\omega u$ (soit $\gamma = \gamma' = 1$, les autres coefficients nuls) satisfait les conditions du § 47 avec $y'''$ continu ; avec $Y_2 = -\sin\omega u$ sur la même abscisse ($\gamma' = -\gamma$, le signe imprimé), les pentes en $\frac12$ diffèrent.
+\end{enonce}
+
+\begin{proof}
+$\sin 2i\pi = \sin i\pi = 0$ donne les conditions aux bouts et au stylet ; les autres sont des égalités d'une fonction avec elle-même. Les pentes en $\frac12$ sont $\pm\omega\cos i\pi$, et $\cos i\pi \neq 0$ puisque $\sin i\pi = 0$ (\texttt{first\_family\_sign}).
+\end{proof}
+
+\begin{enonce}[Sophie Germain, « Remarques », §§ 2 et 5, \vue{fr-9115}{17}{324} et \vue{fr-9115}{17}{330}]
+Il existe un entier $k \geq 1$ tel que $\sin k\pi\lambda = 0$ si et seulement si $\lambda$ est rationnel : les modes $\sin k\pi u$ de la lame sans stylet qui ont un nœud au stylet, ses points « sympathiques », n'existent qu'aux positions rationnelles, et à toutes. D'autre part, pour un entier $m$, il existe des entiers $k$ et $j$ avec $(4k+1)m = 4j+1$ si et seulement si $m \equiv 1 \pmod 4$.
+\end{enonce}
+
+\begin{proof}
+$\sin k\pi\lambda = 0$ équivaut à $k\pi\lambda = n\pi$ avec $n$ entier, d'où $\lambda = n/k$ ; réciproquement, si $\lambda = p/q$ on prend $k = q$ (\texttt{sympathetic\_iff\_rational}). Pour la seconde partie, l'égalité donne $m = 4(j - km) + 1$ ; réciproquement $k = 0$ convient (\texttt{common\_term\_iff}).
+\end{proof}
+
+\begin{remarque}
+La seconde partie est l'arithmétique du § 5 : avec $\lambda = 1/\lambda'$ et $m = \lambda' - 1$, les deux suites de sons approchées, en $(4k+1)^2/\lambda^2$ et $(4j+1)^2/\mu^2$, ont un terme commun si et seulement si $m \equiv 1 \pmod 4$, et aucun quand $m$ est pair ou de la forme $4n+3$, comme le dit le feuillet ; pour $\lambda' = 6$ du brouillon, $m = 5$. Cela porte sur les racines approchées $(4k+1)\pi/4$ d'Euler, non sur les racines exactes.
+\end{remarque}
+
+\subsection*{La lame libre touchée par un stylet (§§ 8 et 9)}
+
+On note \emph{conditions du § 8} les huit conditions de la lame libre à ses deux bouts et touchée par un stylet en $\lambda$ : $Y_1'' = Y_1''' = 0$ en $0$, $Y_2'' = Y_2''' = 0$ en $1$, $Y_1 = Y_2 = 0$ en $\lambda$, pente et courbure continues en $\lambda$.
+
+\begin{enonce}[Sophie Germain, « Remarques », § 8, \vue{fr-9115}{18}{342}\piste{fr-9115-free-lamina-stylet-equation}]
+Soient $\omega > 0$ et $0 < \lambda < 1$. Il existe un mouvement non identiquement nul satisfaisant les conditions du § 8 si et seulement si
+\[
+C_+(\mu\omega)\,P(\lambda\omega) + C_+(\lambda\omega)\,P(\mu\omega) = 0 .
+\]
+\end{enonce}
+
+\begin{proof}
+On écrit $Y_1$ avec les coefficients $(a,b,c,d)$ et $Y_2(u) = \tilde Y(1-u)$ avec $(a',b',c',d')$. Les bouts libres donnent $c = a$, $d = b$, $c' = a'$, $d' = b'$. Posons, en $t = \lambda\omega$, $X = \cosh t + \cos t$, qui est $> 0$ pour $t \neq 0$, et $Z = \sinh t + \sin t$, et de même $X'$, $Z'$ en $t' = \mu\omega$. La condition $Y_1(\lambda) = 0$ s'écrit $aX + bZ = 0$. Au moyen de cette relation et des identités $\cosh^2 - \sinh^2 = 1$, $\sin^2 + \cos^2 = 1$, on trouve $X\,Y_1'(\lambda) = 2\omega b\,C_+(t)$ et $X\,Y_1''(\lambda) = -2\omega^2 b\,P(t)$, et de même $X'\,Y_2'(\lambda) = -2\omega b'\,C_+(t')$ et $X'\,Y_2''(\lambda) = -2\omega^2 b'\,P(t')$. La continuité de la pente et celle de la courbure deviennent
+\[
+b\,C_+(t)\,X' + b'\,C_+(t')\,X = 0, \qquad b\,P(t)\,X' - b'\,P(t')\,X = 0 .
+\]
+Soit $G = C_+(t')P(t) + C_+(t)P(t')$. Ces deux relations donnent $bX'G = 0$ et $b'XG = 0$. Si $b \neq 0$ ou $b' \neq 0$, $G = 0$. Si $b = b' = 0$, alors $aX = 0$ et $a'X' = 0$, et tous les coefficients sont nuls ; or un mouvement non nul a des coefficients non tous nuls. Réciproquement, si $G = 0$, on cherche $b = BX$, $a = -BZ$, $b' = B'X'$, $a' = -B'Z'$ avec $B\,C_+(t) + B'\,C_+(t') = 0$ et $B\,P(t) - B'\,P(t') = 0$. Si $C_+(t') \neq 0$, le couple $(B, B') = (C_+(t'), -C_+(t))$ convient ; sinon $P(t') \neq 0$, parce que $C_+$ et $P$ ne s'annulent pas ensemble hors de $0$ (\texttt{not\_both}), et $(P(t'), P(t))$ convient. On a $b \neq 0$, et $Y_1 \neq 0$ par l'indépendance des quatre fonctions (\texttt{core\_forward}, \texttt{core\_backward}, \texttt{free\_stylet\_iff}).
+\end{proof}
+
+\begin{remarque}
+C'est l'équation du feuillet, qui l'écrit avec les exponentielles comme somme de deux produits, le second obtenu en échangeant $\lambda$ et $1-\lambda$ ; ses accolades valent quatre fois les facteurs $C_+$ et $P$, ce qui exige le terme de tête 4 que la transcription marque comme surchargé ou douteux. La preuve élimine d'abord, comme le feuillet, les conditions des bouts puis $Y(\lambda) = 0$, sans passer par le déterminant $8 \times 8$, qui n'est pas formalisé ; elle ne vérifie pas les deux valeurs de $\alpha/\alpha'$ du feuillet.
+\end{remarque}
+
+\begin{contrexemple}[à la conclusion du § 9, \vue{fr-9115}{18}{344}]
+Pour $\lambda = \frac12$ et toute racine $\omega > 0$ de $C_+(\omega/2) = 0$, il existe un mouvement non nul satisfaisant les conditions du § 8, que le feuillet rejette. Ce que le feuillet démontre est juste : pour $x \neq 0$, $C_+(x) = 0$ et $\cos 2x\cosh 2x = 1$ sont incompatibles.
+\end{contrexemple}
+
+\begin{proof}
+Pour $\lambda = \mu = \frac12$, l'équation devient $2\,C_+(\omega/2)P(\omega/2) = 0$, satisfaite (\texttt{free\_stylet\_half}). Pour l'incompatibilité, avec $c = \cosh x$, $\cos 2x = 2\cos^2x - 1$ et $\cosh 2x = \cosh^2x + \sinh^2x$, et $c\cos x = -1$ ; l'égalité $\cos 2x\cosh 2x = 1$ entraîne alors $(c^2 - 1)^2 = 0$, donc $\sinh x = 0$ et $x = 0$ (\texttt{cplus\_incompatible}).
+\end{proof}
+
+\begin{remarque}
+Les mouvements de la première famille de son § 9, $\tan\frac\omega2 = \tanh\frac\omega2$, sont aussi donnés par l'énoncé du § 8 ; ce sont des mouvements de la lame libre, ce que la lecture vérifie et qui n'est pas démontré ici. Ceux de la seconde, $C_+(\omega/2) = 0$, ne le sont pas, comme le feuillet le montre ; mais ce sont des mouvements de la lame touchée par le stylet, et le feuillet n'avait pas à les rejeter.
+\end{remarque}
+
+\subsection*{La plaque : les §§ 1 et 2 du mémoire pour l'Institut}
+
+On note $\Delta = \partial_x^2 + \partial_y^2$ ; l'équation (B) des mouvements réguliers s'écrit $Kb\tau^2\Delta^2 z = z$, ou $h^4\Delta^2 z = z$ avec $h^4 = Kb\tau^2$.
+
+\begin{enonce}[Sophie Germain, N\textsuperscript{o} 2, \vue{fr-9115}{21}{404}]
+Pour tout opérateur linéaire $L$ (le laplacien sur les fonctions régulières), une solution de $h^2Lz = z$ ou de $h^2Lz = -z$ est solution de $h^4L^2z = z$ ; réciproquement, toute solution de $h^4L^2z = z$ est la somme de $z' = \frac12(z + h^2Lz)$, solution de la première, et de $z'' = \frac12(z - h^2Lz)$, solution de la seconde.
+\end{enonce}
+
+\begin{proof}
+$h^4L^2z = h^2L(h^2Lz)$, et l'on remplace deux fois $h^2Lz$ par $\pm z$ (\texttt{factor\_B\_left}). Pour la réciproque, $h^2Lz' = \frac12(h^2Lz + h^4L^2z) = \frac12(h^2Lz + z) = z'$, et de même $h^2Lz'' = -z''$ (\texttt{factor\_B\_split}).
+\end{proof}
+
+\begin{enonce}[Sophie Germain, N\textsuperscript{os} 3 et 4, intégrales (C) et (D), \vue{fr-9115}{21}{405} et \vue{fr-9115}{21}{406}]
+Si $f$ et $g$ sont de la forme d'Euler en la variable $kx$ et $ky$, $z = f(x) + g(y)$ vérifie $\Delta^2 z = k^4 z$, donc (B) si $Kb\tau^2k^4 = 1$. Pour $z = \sin\alpha x\,\sin\beta y$, $\Delta z = -(\alpha^2 + \beta^2)z$ et $\Delta^2 z = (\alpha^2 + \beta^2)^2z$. Avec $\alpha = \pi n/A$, $\beta = \pi m/A$ et $n$, $m$ entiers, $z$ s'annule sur les quatre côtés du carré $[0, A]^2$, et si $Kb\tau^2(\alpha^2 + \beta^2)^2 = 1$ et $\tau > 0$, son son vaut $\frac{\sqrt{1/K}}{\pi} = \frac{\pi(m^2 + n^2)\tau\sqrt b}{A^2}$.
+\end{enonce}
+
+\begin{proof}
+Pour une fonction de $x$ plus une fonction de $y$, le laplacien est la somme des dérivées secondes (\texttt{lap\_sep}) ; pour un produit, $\Delta(FG) = F''G + FG''$ (\texttt{lap\_prod}). Appliqués deux fois avec la règle de dérivation de la forme d'Euler, ils donnent $k^4z$ (\texttt{plate\_C}) et $(\alpha^2+\beta^2)^2z$, la fonction $\Delta z$ étant encore un produit de sinus (\texttt{plate\_D}). Sur les côtés, $\sin 0 = 0$ et $\sin(\pi n) = 0$ (\texttt{plate\_D\_boundary}). Enfin $1/K = \bigl(\tau(\alpha^2+\beta^2)\bigr)^2 b$, d'où $\sqrt{1/K} = \tau(\alpha^2+\beta^2)\sqrt b$ et $\alpha^2 + \beta^2 = \pi^2(n^2+m^2)/A^2$ (\texttt{plate\_D\_sound}).
+\end{proof}
+
+\begin{remarque}
+Par \texttt{plate\_D}, le laplacien de (D) s'annule aussi sur les côtés : (D) est un mode de la plaque carrée appuyée sur son contour, quelle que soit la matière, comme le dit la lecture. Dans (C), on a pris deux fonctions d'Euler quelconques de même $k$ ; le feuillet prend la même fonction $f$ multipliée par $\mathcal A$ et $B$, cas particulier. La factorisation est démontrée pour un opérateur linéaire abstrait ; le laplacien de \texttt{lap} n'est linéaire que sur les fonctions dérivables, et ce passage n'est pas formalisé.
+\end{remarque}
+
+Ne sont pas démontrés ici : que les quatre fonctions $\cosh$, $\sinh$, $\cos$, $\sin$ engendrent toutes les solutions de l'équation du quatrième ordre (les énoncés portent sur cette famille, qui est celle d'Euler) ; les valeurs numériques des racines ($4{,}7300$, $3{,}9266$, $1{,}8751$, $3{,}7502$, $7{,}8532$, \dots) et les intervalles musicaux qu'Euler en tire ; le déterminant $8 \times 8$ des conditions du § 47 et l'existence d'une infinité de modes pour toute position du stylet ; la limite $\lambda \to 0$ ; les §§ 10 à 25 des « Remarques », dont l'équation des bouts encastrés du § 12 et l'écart de sa forme à l'équation exacte hors de $\lambda = \frac12$ ; l'équivalence $c = \frac34 AB$ du § 46 et les anneaux des §§ 53 à 55 ; les séries (E) à (I) et la plaque carrée libre du § 4 ; les feuillets sur la chaleur.

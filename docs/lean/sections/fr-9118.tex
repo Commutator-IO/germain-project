@@ -1,0 +1,194 @@
+\section[Français 9118 : l'arithmétique des brouillons à Gauss, les notes de lecture, le levier, le centre de gravité, la lame]{Français 9118 : l'arithmétique des brouillons à Gauss, les notes de lecture, le levier, le centre de gravité, la lame\protect\verifie{Fr9118}}\label{sec:fr-9118}
+
+Français 9118 est le dossier extérieur d'une carrière : des lettres reçues, trois brouillons de sa main, des copies, des feuillets détachés. La lecture modernisée y relève plusieurs énoncés mathématiques précis. Les deux brouillons de lettres à Gauss, signés \q{Le Blanc} (\vue{fr-9118}{3}{43} à \vue{fr-9118}{3}{46}), portent une généralisation du théorème de l'article~357 des \emph{Disquisitiones}, le passage de $Y, Z$ à $Y', Z'$, une annonce sur l'équation de Fermat pour $n = p - 1$ et une conjecture sur le déterminant de l'adjointe. Trois feuillets de notes de lecture (\vue{fr-9118}{5}{91}, \vue{fr-9118}{5}{92}, \vue{fr-9118}{5}{93}) traitent de $p^4 + 4$, de $p^4 + q^4$ et d'une composition de formes de Gauss. S'y ajoutent un cours d'une autre main sur le levier et l'infini (\vue{fr-9118}{2}{40} à \vue{fr-9118}{3}{42}), deux rédactions de sa main sur le centre de gravité du triangle (\vue{fr-9118}{5}{91}, \vue{fr-9118}{5}{98}, \vue{fr-9118}{5}{99}), la note de Legendre \q{Pag.~155} sur l'équation d'Euler pour la lame (\vue{fr-9118}{4}{63}, \vue{fr-9118}{4}{64}) et sa lettre du 4~décembre 1811 (\vue{fr-9118}{3}{53}).
+
+\noindent\emph{Conventions.} On note $G_m = \sum_{i<m} X^i = (X^m - 1)/(X - 1) \in \mathbf Z[X]$ ; pour $p$ premier, $G_p$ est le polynôme cyclotomique $\Phi_p$ (\texttt{G\_prime}). Une forme binaire est un triplet $(a, b, c)$ d'entiers, pour $ax^2 + bxy + cy^2$ ; le $(a, b, c)$ de Gauss, $ax^2 + 2bxy + cy^2$, est donc ici $(a, 2b, c)$. Deux formes sont proprement équivalentes si l'une se déduit de l'autre par une substitution entière de déterminant~$1$, équivalentes si le déterminant vaut $\pm 1$.
+
+\subsection*{L'article 357 et la généralisation de Sophie Germain}
+
+\begin{enonce}[Énoncé de l'édition, d'après la vue 43, l'article 357 pour $p = 3, 5, 7$]
+$4G_3 = (2X+1)^2 + 3$, $4G_5 = (2X^2+X+2)^2 - 5X^2$ et $4G_7 = (2X^3+X^2-X-2)^2 + 7(X^2+X)^2$.
+\end{enonce}
+
+Ce sont des identités de polynômes, vérifiées par le calcul (\texttt{art357\_three}, \texttt{art357\_five}, \texttt{art357\_seven}).
+
+\begin{enonce}[Sophie Germain, vue 43, la généralisation de l'article 357\pisteresolue{fr-9118-gauss-drafts-printed}]
+Soient $n \geq 1$ et $c$ un entier impair. Si $4G_n = Y^2 - cZ^2$ avec $Y, Z \in \mathbf Z[X]$, alors pour tout $s \geq 0$ il existe $Y_s, Z_s \in \mathbf Z[X]$ tels que
+\[ 4\,\frac{X^{n^s} - 1}{X - 1} = Y_s^2 - c\,Z_s^2 . \]
+En particulier $4G_{3^s} = Y^2 + 3Z^2$, $4G_{5^s} = Y^2 - 5Z^2$ et $4G_{7^s} = Y^2 + 7Z^2$ ont des solutions dans $\mathbf Z[X]$ pour tout $s$.
+\end{enonce}
+
+\begin{proof}
+On suit la démonstration de la lecture. D'abord $G_{ab} = G_a \cdot G_b(X^a)$ : multipliés par $X - 1$, les deux membres valent $X^{ab} - 1$, et $X - 1$ est simplifiable dans $\mathbf Z[X]$ (\texttt{G\_mul}). D'où $G_{n^{s+1}} = G_{n^s} \cdot G_n(X^{n^s})$, et l'hypothèse, transportée par $X \mapsto X^{n^s}$, donne $4G_n(X^{n^s}) = Y(X^{n^s})^2 - cZ(X^{n^s})^2$. Il reste à composer.
+
+Parité (\texttt{parity}) : si $4A = Y^2 - cZ^2$ avec $c = 2k+1$, on réduit modulo~$2$ ; dans $\mathbf F_2[X]$, $0 = \bar Y^2 - \bar Z^2 = (\bar Y - \bar Z)^2$, et comme $\mathbf F_2[X]$ est intègre, $\bar Y = \bar Z$. Le noyau de la réduction $\mathbf Z[X] \to \mathbf F_2[X]$ est l'idéal engendré par $2$ : on a $Y = Z + 2W$.
+
+Composition (\texttt{compose}) : si $4A = Y_1^2 - cZ_1^2$ et $4B = Y_2^2 - cZ_2^2$, écrivons $Y_i = Z_i + 2W_i$. L'identité $(Y_1^2 - cZ_1^2)(Y_2^2 - cZ_2^2) = (Y_1Y_2 + cZ_1Z_2)^2 - c(Y_1Z_2 + Z_1Y_2)^2$ donne $16AB$, et
+\[ Y_1Y_2 + cZ_1Z_2 = 2U, \quad U = (k+1)Z_1Z_2 + W_1Z_2 + Z_1W_2 + 2W_1W_2, \qquad Y_1Z_2 + Z_1Y_2 = 2V, \quad V = Z_1Z_2 + W_1Z_2 + Z_1W_2 . \]
+Donc $16AB = 4(U^2 - cV^2)$, et $4AB = U^2 - cV^2$ après simplification par~$4$. Une récurrence sur $s$, à partir de $4G_1 = 2^2 - c \cdot 0^2$, achève la preuve (\texttt{generalisation}). Les trois cas particuliers en découlent avec $c = -3, 5, -7$ (\texttt{generalisation\_three}, \texttt{\_five}, \texttt{\_seven}).
+\end{proof}
+
+\begin{remarque}
+La preuve n'utilise ni que $n$ soit premier ni que $c$ vaille $\pm n$ : il suffit que $c$ soit impair et que la représentation de $4G_n$ soit donnée. La primalité ne sert qu'à l'article~357 lui-même, qui n'est démontré ici que pour $p = 3, 5, 7$. Le signe est bien celui de $n$ pour toutes les valeurs de~$s$, comme le dit la lecture, puisque $c$ ne change pas.
+\end{remarque}
+
+\begin{enonce}[Sophie Germain, vue 44, le passage de $Y, Z$ à $Y', Z'$]
+Soit $n$ impair. Si $4G_n = Y^2 - cZ^2$, alors $(X+1)\sum_{i<n}(-X)^i = X^n + 1$ et
+\[ 4\,\frac{X^n + 1}{X + 1} = Y(-X)^2 - c\,Z(-X)^2 ; \]
+le coefficient de degré $i$ de $Y(-X)$ est $(-1)^i$ fois celui de $Y$.
+\end{enonce}
+
+On applique à l'hypothèse la substitution $X \mapsto -X$, qui envoie $G_n$ sur $\sum_{i<n}(-X)^i$ (\texttt{passage\_neg}) ; la formule des coefficients se vérifie sur les monômes (\texttt{coeff\_comp\_neg\_X}). Cela revient bien à changer le signe des termes de degré impair.
+
+\begin{remarque}
+L'hypothèse \q{$n$ impair}, absente du feuillet et rétablie par la lecture, est nécessaire : pour $n$ pair, $X + 1$ ne divise pas $X^n + 1$, puisque $X^n + 1$ vaut $2$ en $-1$ (\texttt{not\_dvd\_of\_even}).
+\end{remarque}
+
+\subsection*{Fermat pour l'exposant $n = p - 1$}
+
+\begin{enonce}[Énoncé de l'édition, d'après la vue 44, le premier cas]
+Soit $p$ premier, et $x, y, z$ des entiers dont aucun n'est divisible par $p$. Alors $x^{p-1} + y^{p-1} \neq z^{p-1}$.
+\end{enonce}
+
+\begin{proof}
+Modulo $p$, le petit théorème de Fermat donne $x^{p-1} \equiv y^{p-1} \equiv z^{p-1} \equiv 1$, et l'égalité donnerait $1 + 1 \equiv 1$, soit $1 \equiv 0$ (\texttt{fermat\_first\_case}).
+\end{proof}
+
+La condition $p \equiv 7 \pmod 8$ n'y sert pas, comme le dit la lecture. Les autres affirmations arithmétiques du passage sont vérifiées aussi. Si $p \equiv 7 \pmod 8$, alors $n = p - 1 \equiv 6 \pmod 8$, $4 \nmid n$, $m = (p-1)/2 \equiv 3 \pmod 4$ et $p = 2m + 1$ (\texttt{mod\_eight\_seven}). Pour $p$ premier impair, $p \equiv 7 \pmod 8$ équivaut à ce que $2$ soit un carré et $-1$ ne le soit pas modulo $p$ (\texttt{seven\_mod\_eight\_iff}, par la loi complémentaire de mathlib). Si $3 \mid p - 1$, l'impossibilité pour l'exposant $p - 1$ suit du cas $n = 3$ (\texttt{flt\_of\_three\_dvd}, par le théorème de Fermat pour $n = 3$ de mathlib). Enfin les nombres premiers $p \equiv 7 \pmod 8$ inférieurs à $48$ sont $7, 23, 31, 47$, et $3 \mid p - 1$ pour $7$ et $31$ seulement (\texttt{first\_primes\_seven\_mod\_eight}) : si l'on ne compte comme acquis que les exposants $3$ et $4$, l'annonce n'a de contenu propre qu'à partir de $p = 23$, puis $p = 47$, comme l'écrit la lecture.
+
+\subsection*{Le déterminant de l'adjointe}
+
+\begin{enonce}[Sophie Germain, vue 46, la déterminante de l'adjointe]
+Pour toute matrice $A$ carrée d'ordre $n$ sur un anneau commutatif, $\det(\operatorname{adj} A) = (\det A)^{n-1}$. Dans la convention de Gauss pour les formes ternaires, où la déterminante est $D = -\det M$ et l'adjointe $-\operatorname{adj} M$, la déterminante de l'adjointe est $D^2$.
+\end{enonce}
+
+La première assertion est le lemme \texttt{Matrix.det\_adjugate} de mathlib, récrit pour $\mathrm{Fin}\,n$ (\texttt{det\_adjugate\_fin}) ; la seconde en suit, puisque $-\det(-\operatorname{adj} M) = -(-1)^3 (\det M)^2$ (\texttt{gauss\_ternary\_adjoint}). Pour $n = 2$, la formule donne $D^{n-1} = D$, ce que la lecture retient.
+
+\begin{enonce}[Énoncé de l'édition, d'après la vue 46, le radical]
+Une matrice symétrique $M$ d'ordre $n$ sur un corps, de déterminant nul, admet un vecteur $v \neq 0$ tel que $Q(x + tv) = Q(x)$ pour tout $x$ et tout $t$, où $Q(x) = {}^tx\,M x$.
+\end{enonce}
+
+On prend $v$ non nul avec $Mv = 0$ ; par symétrie ${}^tv\,M x = {}^t(Mv)\,x = 0$, et les termes croisés de $Q(x + tv)$ s'annulent (\texttt{radical\_of\_det\_eq\_zero}). C'est le premier pas de la réduction d'une forme de déterminant nul à une forme en moins de variables ; le changement de base qui achève cette réduction n'est pas formalisé.
+
+\subsection*{$p^4 + 4$}
+
+\begin{enonce}[Sophie Germain, vue 91, $p^4 + 4$\piste{fr-9118-p4-plus-4-identity}]
+Pour tout entier naturel $p$, $p^4 + 4$ est premier si et seulement si $p = 1$. On a $p^4 + 4 = (p^2)^2 + 2^2 = (p^2 - 2)^2 + (2p)^2$, et les deux paires $\{p^2, 2\}$ et $\{|p^2 - 2|, 2p\}$ coïncident si et seulement si $p \leq 2$.
+\end{enonce}
+
+\begin{proof}
+L'identité de Sophie Germain $a^4 + 4b^4 = (a^2 + 2b^2 - 2ab)(a^2 + 2b^2 + 2ab)$ est une identité de polynômes (\texttt{germain\_identity}). Pour $p = q + 1$ elle s'écrit $p^4 + 4 = (q^2 + 1)\big((q+2)^2 + 1\big)$ ; si ce produit est premier, l'un des facteurs vaut $1$, et seul $q^2 + 1$ le peut, d'où $q = 0$ ; et $0^4 + 4 = 4$ n'est pas premier (\texttt{p4\_add\_four\_prime\_iff}). Pour les paires : la première coïncidence demande $2 = 2p$, et la seconde $p^2 = 2p$, soit $p \in \{0, 2\}$ ; réciproquement $p = 0, 1, 2$ conviennent (\texttt{same\_pair\_iff}).
+\end{proof}
+
+\begin{remarque}
+La lecture relève que les deux paires coïncident pour $p = 1$ et $p = 2$. Elles coïncident aussi pour $p = 0$ ($4 = 0 + 4 = 4 + 0$), cas que le feuillet écarte sans doute d'emblée. La factorisation n'est pas sur le feuillet, qui procède par les deux sommes de deux carrés et le théorème d'Euler sur les deux représentations ; ce théorème n'est pas formalisé ici, et la factorisation règle la question sans lui.
+\end{remarque}
+
+\subsection*{$p^4 + q^4$ et les nombres de Fermat}
+
+\begin{enonce}[Sophie Germain, vue 93, $p^4 + q^4$]
+On a $p^4 + q^4 = (p^2 - q^2)^2 + 2(pq)^2 = (p^2 + q^2)^2 - 2(pq)^2$ dans tout anneau commutatif. Pour $i \geq 2$, $2^{2^i} + 1 = (2^{2^{i-2}})^4 + 1^4$, tandis que $3$ et $5$ ($i = 0, 1$) ne sont pas sommes de deux puissances quatrièmes d'entiers naturels.
+\end{enonce}
+
+Les identités sont vérifiées par le calcul (\texttt{p4\_add\_q4\_identities}). Pour les nombres de Fermat, $2^{2^{j+2}} = 2^{4 \cdot 2^j} = (2^{2^j})^4$ (\texttt{fermat\_number\_eq}) ; pour $3$ et $5$, un entier $p \geq 2$ donne déjà $p^4 \geq 16$, et il reste à essayer $p, q \in \{0, 1\}$ (\texttt{three\_five\_not\_sum\_fourth}). La restriction $i \geq 2$, que pose la lecture, est nécessaire.
+
+\begin{contrexemple}[à la lecture et au feuillet, vue 93, l'unicité pour $x^2 - 2y^2$]
+Le nombre premier $17 = 2^4 + 1^4$ s'écrit $5^2 - 2 \cdot 2^2$, qui est $(p^2 + q^2)^2 - 2(pq)^2$, mais aussi $23^2 - 2 \cdot 16^2$. Plus généralement, toute représentation $N = x^2 - 2y^2$ en donne une autre, $N = (3x + 4y)^2 - 2(2x + 3y)^2$.
+\end{contrexemple}
+
+Les deux égalités sont vérifiées numériquement (\texttt{x\_sq\_sub\_two\_y\_sq\_not\_unique}), la seconde formule par le calcul (\texttt{pell\_step}) ; elle traduit la multiplication par l'unité $3 + 2\sqrt 2$ de $\mathbf Z[\sqrt 2]$. Le feuillet affirme que, $p^4 + q^4$ étant premier, il n'est \q{que de ces seules manières} un carré plus ou moins un double carré ; la lecture précise que la représentation par $x^2 - 2y^2$ est unique. C'est faux : elle n'est unique qu'à multiplication près par les unités, qui sont en nombre infini. La remarque vaut pour $x^2 + 2y^2$, où les unités sont $\pm 1$. On le vérifie ici pour $17 = 3^2 + 2 \cdot 2^2$ et $257 = 15^2 + 2 \cdot 4^2$, seules représentations en entiers naturels (\texttt{seventeen\_unique}, \texttt{two\_fifty\_seven\_unique}) ; l'énoncé général pour tous les nombres premiers, qui demande que $\mathbf Z[\sqrt{-2}]$ soit principal, n'est pas formalisé.
+
+\subsection*{L'objection à Gauss sur la composition des formes}
+
+La composition est prise ici au sens de Dirichlet. On dit que $F$ est composée de $f$ et de $g$ s'il existe $a_1, a_2, B, c$ avec $\operatorname{pgcd}(a_1, a_2) = 1$ tels que $f$ soit proprement équivalente à $(a_1, B, a_2c)$, $g$ à $(a_2, B, a_1c)$, et $(a_1a_2, B, c)$ à $F$. L'identité
+\[ (a_1x^2 + Bxy + a_2c\,y^2)(a_2z^2 + Bzw + a_1c\,w^2) = a_1a_2X^2 + BXY + cY^2, \quad X = xz - cyw,\ Y = a_1xw + a_2yz + Byw \]
+justifie le mot (\texttt{dirichlet\_identity}).
+
+\begin{enonce}[Énoncé de l'édition, d'après la vue 92, les quatre compositions\piste{fr-9118-composition-objection}]
+En notation de Gauss : $(16, 3, 19) \circ (8, 1, 37) = (8, -1, 37)$ ; $(16, -3, 19) \circ (8, 1, 37) = (13, -2, 23)$ ; $(8, -1, 37) \circ (5, 0, 59) = (13, -2, 23)$ ; et $(5, 0, 59) \circ (5, 0, 59) = (1, 0, 295)$. Les formes $(16, \pm 3, 19)$ sont équivalentes (improprement), mais $(8, -1, 37)$ et $(13, -2, 23)$ ne sont pas équivalentes, ni proprement ni improprement.
+\end{enonce}
+
+\begin{proof}
+Pour la première, $(16, 6, 19)$ devient $(19, 146, 296)$ par la substitution $(x, y) \mapsto (-y, x + 4y)$, $(8, 2, 37)$ devient $(8, 146, 703)$ par $(x, y) \mapsto (x + 9y, y)$ ; avec $a_1 = 19$, $a_2 = 8$, $B = 146$, $c = 37$, la composée $(152, 146, 37)$ se réduit à $(8, -2, 37)$ par $(x, y) \mapsto (-x, 2x - y)$. Les trois autres se traitent de même, avec $(a_1, a_2, B, c) = (19, 8, 82, 13)$, $(8, 5, 30, 13)$ et $(5, 59, 0, 1)$ ; toutes les substitutions sont de déterminant~$1$ et chaque égalité de formes est une identité vérifiée par le calcul (\texttt{composite\_one} à \texttt{composite\_four}). La substitution $(x, y) \mapsto (x, -y)$, de déterminant $-1$, échange $(16, 3, 19)$ et $(16, -3, 19)$ (\texttt{opposite\_equiv}). Enfin $(8, -1, 37)$ représente $8$ en $(1, 0)$ ; si elle se déduisait de $13x^2 - 4xy + 23y^2$ par une substitution, celle-ci représenterait $8$, soit $104 = (13u - 2v)^2 + 295v^2$, d'où $v = 0$ et $169u^2 = 104$, impossible (\texttt{not\_equiv\_8\_13}).
+\end{proof}
+
+\begin{enonce}[Énoncé de l'édition, d'après la vue 92, les formes réduites]
+Les formes $(a, b, c)$ de Gauss de déterminant $b^2 - ac = -295$, réduites ($a > 0$, $|2b| \leq a \leq c$, $b \geq 0$ si $|2b| = a$ ou $a = c$) et proprement primitives ($\operatorname{pgcd}(a, 2b, c) = 1$) sont les huit formes $(1, 0, 295)$, $(5, 0, 59)$, $(8, \pm 1, 37)$, $(13, \pm 2, 23)$, $(16, \pm 3, 19)$.
+\end{enonce}
+
+\begin{proof}
+De $4b^2 \leq a^2$ et $ac \geq a^2$ on tire $295 = ac - b^2 \geq \tfrac34 a^2$, donc $a \leq 19$ et $|b| \leq 9$ ; $c$ est alors déterminé par $ac = b^2 + 295$, et l'on examine les cas restants (\texttt{reduced\_forms\_295}).
+\end{proof}
+
+\begin{remarque}
+Sans la condition de primitivité propre, on trouve huit formes de plus, $(2, 1, 148)$, $(4, \pm 1, 74)$, $(8, \pm 3, 38)$, $(10, 5, 32)$, $(16, \pm 5, 20)$, qui forment l'ordre improprement primitif ; la lecture parle à juste titre de l'ordre \q{où Gauss compose}. Ce qui est démontré confirme le calcul de la lecture : le produit de Gauss est le bon, et la seconde forme de Sophie Germain provient de la forme opposée du premier facteur. Le contre-exemple \texttt{not\_equiv\_8\_13} montre de plus que les deux résultats ne sont pas même improprement équivalents, de sorte qu'ils ne peuvent être deux valeurs d'un même produit de classes. Ne sont pas démontrés : que la composition de Dirichlet passe aux classes d'équivalence propre et coïncide avec la composition de l'article~235, et que deux formes réduites distinctes ne soient jamais proprement équivalentes, d'où le nombre de classes $8$.
+\end{remarque}
+
+\subsection*{Le levier, l'infini et l'hyperbole}
+
+\begin{enonce}[Énoncé de l'édition, d'après les vues 40 à 42, les formes indéterminées]
+Pour tout réel $c$, $c/x \to 0$ et $x \to +\infty$ quand $x \to +\infty$, tandis que $(c/x) \cdot x \to c$ ; de même $c/x \to 0$ et $1/x \to 0$, tandis que $(c/x)/(1/x) \to c$.
+\end{enonce}
+
+Pour $x > 0$ les deux expressions valent exactement $c$ (\texttt{indeterminate\_product}, \texttt{indeterminate\_quotient}). Chaque hyperbole $xy = c$ réalise ainsi une valeur de \q{$0 \times \infty$}, et \q{$0/0$} vaut \q{tout ce qu'on veut}, ce que le cours dit en refusant l'infini actuel. La première limite est aussi celle du levier : la force qui équilibre un moment donné à la distance $x$ tend vers $0$ quand $x$ croît.
+
+\subsection*{Le centre de gravité du triangle}
+
+\begin{enonce}[Sophie Germain, vues 91, 98 et 99, le centre de gravité du triangle]
+L'équation $2x = (a + x)/2$ équivaut à $x = a/3$. Dans un espace vectoriel réel, soient $D$, $E$, $F$ les milieux de $BC$, $CA$, $AB$, et $g(P, Q, R) = \tfrac13(P + Q + R)$. Alors
+\[ \tfrac14\, g(B, F, D) + \tfrac14\, g(C, E, D) + \tfrac12 \cdot \tfrac12 (A + D) = g(A, B, C), \qquad g(A, B, C) = D + \tfrac13 (A - D), \]
+et $g(B, F, D) = B + \tfrac12\big(g(A, B, C) - B\big)$.
+\end{enonce}
+
+Toutes ces égalités sont linéaires et se vérifient par le calcul (\texttt{centroid\_equation}, \texttt{centroid\_decomposition}, \texttt{centroid\_on\_median}, \texttt{small\_centroid\_homothety}). La première égalité vectorielle est la décomposition du feuillet : le parallélogramme $AFDE$, de centre le milieu de $AD$ et de poids la moitié, et les deux petits triangles, d'un quart chacun ; la deuxième dit que le centre de gravité est au tiers de la médiane à partir de la base ; la troisième est la similitude de rapport $\tfrac12$ que le feuillet invoque pour placer les centres des petits triangles. Les poids, c'est-à-dire les aires, sont posés et non calculés.
+
+\subsection*{Legendre, \q{Pag.~155} : la racine parasite et le cas $\lambda = 1/3$}
+
+On note $F_\lambda(\omega) = 2 - 2e^{2\omega} - (e^{\lambda\omega} - e^{(2-\lambda)\omega})(e^{\lambda\omega} - e^{-\lambda\omega})(\cot\lambda\omega + \cot(1-\lambda)\omega)$ le second membre de l'équation d'Euler telle que Legendre la récrit, et
+\[ H(\omega) = \sin\tfrac{\omega}{2}\,(2 - 2e^{2\omega}) - 2\,(e^{\omega/2} - e^{3\omega/2})(e^{\omega/2} - e^{-\omega/2})\cos\tfrac{\omega}{2} . \]
+
+\begin{enonce}[Legendre, vues 63 et 64, la racine parasite $\sin\frac12\omega = 0$]
+Là où $\sin\frac{\omega}{2} \neq 0$, on a $F_{1/2}(\omega) = H(\omega)/\sin\frac{\omega}{2}$. Pour $\omega = 2k\pi$, $k$ entier non nul, $\sin\frac{\omega}{2} = 0$ mais $H(\omega) \neq 0$.
+\end{enonce}
+
+\begin{proof}
+La première égalité s'obtient en écrivant $\cot = \cos/\sin$ et en réduisant au même dénominateur (\texttt{parasite\_root}). En $\omega = 2k\pi$, le premier terme de $H$ s'annule et il reste $-2(e^{k\pi} - e^{3k\pi})(e^{k\pi} - e^{-k\pi})\cos k\pi$ ; les deux différences sont non nulles parce que l'exponentielle est injective et $k\pi \neq 0$, et $\cos k\pi \neq 0$ parce que $\sin k\pi = 0$ (\texttt{parasite\_H\_ne\_zero}).
+\end{proof}
+
+\begin{remarque}
+L'équation multipliée $\sin\frac{\omega}{2}\,H(\omega) = 0$ admet donc les racines $2k\pi$, qui viennent du seul facteur introduit par la multiplication : c'est le diagnostic de Legendre. Que $|F_{1/2}|$ tende vers l'infini au voisinage de ces points, comme le dit la lecture, en résulte par continuité de $H$, mais la limite n'est pas formalisée, non plus que le cas $\omega \to 0$.
+\end{remarque}
+
+\begin{enonce}[Legendre, vue 64, la réduction pour $\omega$ grand]
+Pour tous $\lambda$ et $\omega$, avec $\varepsilon(\omega) = e^{(2\lambda - 2)\omega} - e^{-2\omega} + e^{-2\lambda\omega}$ et $S = \cot\lambda\omega + \cot(1-\lambda)\omega$,
+\[ e^{-2\omega}\,F_\lambda(\omega) = 2e^{-2\omega} - 2 + \big(1 - \varepsilon(\omega)\big)\,S , \]
+et, si $0 < \lambda < 1$, $\varepsilon(\omega) \to 0$ quand $\omega \to +\infty$.
+\end{enonce}
+
+Le produit des deux premiers facteurs, multiplié par $e^{-2\omega}$, vaut exactement $\varepsilon(\omega) - 1$ (\texttt{euler\_large\_omega}) ; les trois exponentielles de $\varepsilon$ ont des exposants négatifs (\texttt{eps\_tendsto\_zero}). L'équation $F_\lambda = 0$ s'écrit donc $(1 - \varepsilon)S = 2 - 2e^{-2\omega}$, qui tend vers $S = 2$ : c'est la réduction de Legendre, avec son terme d'erreur explicite.
+
+\begin{enonce}[Legendre, vue 64, le cas $\lambda = 1/3$]
+Soit $\theta$ avec $\sin 2\theta \neq 0$, et $x = \cot\theta$. Alors $\cot\theta + \cot 2\theta = 2$ équivaut à $3x^2 - 4x - 1 = 0$, qui équivaut à $x = (2 \pm \sqrt 7)/3$.
+\end{enonce}
+
+\begin{proof}
+On a $\cos 2\theta = \cos^2\theta - \sin^2\theta$ et $\sin 2\theta = 2\sin\theta\cos\theta$, d'où $\cot 2\theta = (x^2 - 1)/(2x)$, avec $x \neq 0$ puisque $\cos\theta \neq 0$. L'équation devient $2x^2 + x^2 - 1 = 4x$. Enfin $3x^2 - 4x - 1 = 3\big(x - \tfrac{2+\sqrt7}{3}\big)\big(x - \tfrac{2-\sqrt7}{3}\big)$ (\texttt{lambda\_third}).
+\end{proof}
+
+\begin{remarque}
+Avec $\theta = \omega/3$, c'est le calcul de la note, qui est juste. Les valeurs numériques que donne la lecture en note ne sont pas vérifiées en Lean ; un calcul direct donne $\alpha \approx 0{,}5734$ et $\beta \approx 1{,}7828$, donc $3\beta \approx 5{,}348$, et non $\beta \approx 1{,}781$ : la lecture arrondit mal la seconde racine, sans conséquence pour le raisonnement.
+\end{remarque}
+
+\subsection*{La vérification par la lame}
+
+\begin{enonce}[Énoncé de l'édition, d'après la vue 53, la condition $dz/dy = 0$]
+Soit $z(x, y)$ dérivable en $y$ pour tout $x$. Si $\partial z/\partial y$ est identiquement nulle, alors $z(x, y) = z(x, 0)$ pour tous $x, y$.
+\end{enonce}
+
+C'est le théorème des accroissements finis, sous la forme \texttt{is\_const\_of\_deriv\_eq\_zero} de mathlib (\texttt{indep\_of\_deriv\_zero}).
+
+\begin{remarque}
+La lecture écrit en note que la condition de Legendre \q{ne suffit pas telle quelle} parce qu'elle n'annule que la dérivée première. Prise comme une identité, ce qui est le sens d'une lame de largeur constante, elle suffit : $z$ ne dépend alors pas de $y$, et toutes les dérivées en $y$ s'annulent. La réserve de la lecture ne vaut que si la condition est lue en un seul point. La réduction de $\Delta^2 z$ à $\partial^4 z/\partial x^4$ qui s'ensuit n'est pas formalisée.
+\end{remarque}
+
+Ne sont pas démontrés ici : le théorème de l'article~357 pour $p$ premier quelconque, qui demande les sommes de Gauss ; les deux démonstrations de Sophie Germain, absentes du volume ; l'annonce sur Fermat pour $p \equiv 7 \pmod 8$ dans le second cas ; la réduction de la quantité de Lagrange (1775) à la forme $t^2 - 11u^2$, dont les deux copies du feuillet diffèrent ; la réduction d'une forme de déterminant nul à moins de variables au-delà du radical ; le théorème d'Euler sur les deux représentations comme somme de deux carrés ; l'unicité de la représentation par $x^2 + 2y^2$ pour tout nombre premier ; la théorie des classes de formes (composition sur les classes, unicité de la forme réduite, nombre de classes) ; les limites de la discussion de la racine parasite ; les erreurs de signe d'Euler ($\gamma = \gamma'$) et les lignes nodales, qui demandent le texte d'Euler ; l'équation de la plaque, la courbure moyenne et la note de Libri, que cette section ne traite pas.

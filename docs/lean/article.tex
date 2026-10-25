@@ -1,0 +1,72 @@
+\documentclass[11pt]{article}
+\usepackage{fontspec}
+% Charter et Menlo (macOS) ; ailleurs, XCharter et DejaVu Sans Mono, dont ils dérivent.
+\IfFontExistsTF{Charter}{\setmainfont{Charter}}{\setmainfont{XCharter}}
+\IfFontExistsTF{Menlo}{\setmonofont{Menlo}[Scale=0.82]}{\setmonofont{DejaVu Sans Mono}[Scale=0.82]}
+\usepackage{polyglossia}\setmainlanguage{french}\setotherlanguage{english}\setotherlanguage{latin}
+\usepackage{microtype}
+\usepackage[most]{tcolorbox}
+\usepackage{etoolbox}
+\usepackage{titlesec}
+\titleformat{\part}[display]{\normalfont\bfseries}{\large Partie~\arabic{part}}{0.4em}{\huge}
+\titlespacing*{\part}{0pt}{0pt}{2em}
+\pretocmd{\part}{\clearpage}{}{}
+\newtcolorbox{encadre}{enhanced, breakable, colback=white, colframe=black!55, boxrule=0.6pt, arc=0pt, left=6pt, right=6pt, top=2pt, bottom=2pt, before skip=8pt, after skip=8pt}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{booktabs,longtable,array}
+\usepackage{setspace}\setstretch{1.1}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath,amssymb,amsthm}
+
+\newcommand{\q}[1]{«\,#1\,»}
+% Une vue de Gallica dans la vue de lecture du site : volume, lot, vue.
+\newcommand{\vue}[3]{\href{https://germain.commutator.io/archive/\##1/#2/fr/#3}{#1, lot~#2, vue~#3}}
+% Le fichier de la preuve vérifiée, une fois par section.
+\newcommand{\leanblob}{https://github.com/Commutator-IO/germain-project/blob/main/lean/Germain}
+\newcommand{\verifie}[1]{\footnote{Preuve vérifiée : \href{\leanblob/#1.lean}{\texttt{lean/Germain/\detokenize{#1}.lean}}.}}
+% Une piste : un énoncé que l'onglet Findings du site tient pour possiblement absent
+% de la littérature. Non établi comme nouveau ; le losange renvoie à la fiche.
+\definecolor{piste}{HTML}{B53D1D}
+\newcommand{\piste}[1]{\,\href{https://germain.commutator.io/findings/\##1}{\textcolor{piste}{\ensuremath{\blacklozenge}}}}
+\definecolor{pisteresolue}{gray}{0.55}
+\newcommand{\pisteresolue}[1]{\,\href{https://germain.commutator.io/findings/\##1}{\textcolor{pisteresolue}{\ensuremath{\blacklozenge}}}}
+\theoremstyle{plain}
+\newtheorem*{enonce}{Énoncé}
+\newtheorem{lemme}{Lemme}[section]
+\newtheorem{theoreme}[lemme]{Théorème}
+\newtheorem{contrexemple}[lemme]{Contre-exemple}
+\newtheorem{corollaire}[lemme]{Corollaire}
+\theoremstyle{definition}
+\newtheorem*{definition}{Définition}
+\theoremstyle{remark}
+\newtheorem*{remarque}{Remarque}
+\raggedbottom\emergencystretch=1.5em
+
+\title{\Large Énoncés des lectures modernisées démontrés en Lean\\[4pt]\large Manuscrits de mathématiciens dans Gallica}
+\author{Michel Hua\\ \small Chercheur indépendant, Paris\\ \small \texttt{michel@commutator.io}}
+\date{\small Octobre 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent Les lectures modernisées de germain.commutator.io reformulent en langage actuel les manuscrits de mathématiciens que Gallica numérise en entier. Elles dérivent d'une transcription faite par un modèle et peuvent se tromper. Ce document démontre des énoncés de ces lectures. Chaque démonstration suit une preuve vérifiée dans l'assistant de preuve Lean~4, avec sa bibliothèque mathlib. Pour chaque énoncé, le document donne le contexte du feuillet, la démonstration, les hypothèses superflues ou nécessaires, et les corrections apportées à la lecture ou au feuillet.
+\end{abstract}
+
+\tableofcontents
+
+\section*{Introduction}\addcontentsline{toc}{section}{Introduction}
+
+Une preuve vérifiée établit que l'énoncé tient sous les hypothèses écrites. Elle ne dit pas que la lecture est fidèle au feuillet, ce qui demande le fac-similé, ni que l'énoncé manque à la littérature. Le losange rouge \textcolor{piste}{\ensuremath{\blacklozenge}} marque les énoncés que l'onglet Findings du site retient comme pistes : des énoncés qui pourraient manquer à la littérature publiée. Une piste n'est ni un résultat établi ni une affirmation de priorité ; le losange renvoie à sa fiche. Chaque lien \vue{fr-9115}{1}{1} conduit à la vue de Gallica dans la vue de lecture du site, à côté de sa transcription.
+
+Les parties suivent les mathématiciens dans l'ordre chronologique. Ce premier état ne contient que Sophie Germain ; les autres viendront.
+
+\part{Sophie Germain (1776--1831)}
+\input{sections/fr-9115-arithmetique}
+\input{sections/fr-9115-elasticite}
+\input{sections/fr-9115-courbure}
+\input{sections/fr-9118}
+\input{sections/naf-4073}
+
+\end{document}

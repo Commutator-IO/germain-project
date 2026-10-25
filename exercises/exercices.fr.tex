@@ -2595,7 +2595,10 @@ chaleur, puis de l'arithmétique, dont les trois pages que la littérature appel
 le « manuscrit C ». Français 9118 est le dossier des lettres qu'elle reçut, de ses
 brouillons à Gauss signés « Le Blanc » et de feuillets détachés de sa main. Les
 exercices vont des plaques vibrantes à l'arithmétique des \emph{Disquisitiones
-arithmeticae} de Gauss (1801) et au théorème de Fermat.
+arithmeticae} de Gauss (1801) et au théorème de Fermat. Leur partie mathématique a
+été vérifiée en Lean 4 avec la bibliothèque mathlib, dans le fichier
+\texttt{lean/Germain/Exercises.lean} du dépôt ; une ligne à la fin de chaque solution
+nomme les théorèmes et dit ce qui reste hors de Lean.
 
 \begin{exercice}{Les sons de la plaque rectangulaire $9 : 8$}{Lycée}{1}
 \manuscrit{fr-9115}{524}{533}
@@ -2637,7 +2640,7 @@ majeur $\frac98$ ; un intervalle de rapport $r$ vaut $1200\log_2 r$ cents.
   \frac{3625}{64}$ ; $6|2$ : $\frac{2304+324}{64} = \frac{2628}{64} = \frac{657}{16}$.
   Ce sont les nombres du feuillet.
 \item $2|3$ : $R = \frac{985}{512}$ ; $\frac{15}{8} : \frac{985}{512} = \frac{960}{985}
-  = \frac{192}{197}$, soit $-45$ cents (le son entendu est plus grave). $3|3$ :
+  = \frac{192}{197}$, soit $-44{,}5$ cents (le son entendu est plus grave). $3|3$ :
   $R = \frac{1305}{512}$ ; $\frac83 : R = \frac{4096}{3915}$, soit $+78$ cents. $4|3$ :
   $R = \frac{1753}{512}$ ; $\frac{32}{9} : R = \frac{16384}{15777}$, soit $+65$ cents.
   $5|5$ : $R = \frac{3625}{512}$ ; $8 : R = \frac{4096}{3625}$, soit $+212$ cents.
@@ -2665,6 +2668,12 @@ majeur $\frac98$ ; un intervalle de rapport $r$ vaut $1200\log_2 r$ cents.
   appuyée sur son contour ; pour la plaque libre de Chladni, ils
   ne sont qu'approchés, ce que le feuillet ne pouvait savoir.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.plate98\_numbers},
+\texttt{plate98\_ratios} et \texttt{plate98\_judgements} (\texttt{lean/Germain/Exercises.lean}) établissent
+les nombres $N$, les rapports et chaque jugement, écrit comme la comparaison de deux
+rapports (ainsi $\frac{4096}{3915} > \frac{25}{24}$ pour $3|3$) ; hors de Lean : les
+valeurs en cents, qui sont des logarithmes, et l'acoustique de la plaque libre.
 \end{solution}
 
 \begin{exercice}{La cire sur les bords : une erreur d'unité et sa correction}{Lycée}{2}
@@ -2732,7 +2741,9 @@ dans sa théorie, proportionnel à $\frac1{a^2} + \frac1{b^2}$.
   $\frac{2\times132^2}{132^2 + 106^2} = 1{,}216$, soit $338$ cents. Elle entend plus de
   deux tons majeurs, de ré à un peu moins que sol, près d'une quarte ($498$ cents) : la
   correction abaisse la prévision de $85$ cents, au-dessous de deux tons majeurs, et
-  l'éloigne de l'expérience ; la phrase de la vue 416 ne vaut que pour le premier cas. La lecture modernisée ajoute que
+  l'éloigne de l'expérience. La remarque de la vue 416, que les deux valeurs « ne
+  different pas sensiblement », ne vaut donc que pour le premier cas : $85$ cents
+  séparent ici l'ancienne et la nouvelle. La lecture modernisée ajoute que
   l'équivalence d'une masse à une longueur n'est exacte qu'au premier ordre, pour de
   petites charges.
 \item La lame pèse $4\times72 + 12 = 300$ grains, la cire $72 + 3 = 75$ grains, le
@@ -2744,6 +2755,14 @@ dans sa théorie, proportionnel à $\frac1{a^2} + \frac1{b^2}$.
   est bon, et une portion de $12$ mm rend le même son qu'une portion dix fois plus
   longue.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.wax\_dose},
+\texttt{wax\_unit\_correction}, \texttt{wax\_one\_side}, \texttt{wax\_two\_adjacent},
+\texttt{wax\_two\_opposite} et \texttt{wax\_lamina} (\texttt{lean/Germain/Exercises.lean}) : les poids, la
+correction d'unité $\frac{2/n^2}{1/N^2 + 1/n^2} = \frac{2N^2}{N^2+n^2}$ (le nombre du
+feuillet est $(N/n)^2$ divisé par celui-ci), et la place de chaque intervalle par
+rapport au ton et aux deux tons majeurs ; hors de Lean : la règle d'équivalence entre
+la cire et la plaque, qui est de la physique, les cents et les mesures.
 \end{solution}
 
 \begin{exercice}{L'équation de la plaque s'abaisse au second degré}{L2}{2}
@@ -2828,25 +2847,122 @@ elle obtient $h^4\Delta^2Z = Z$ (B).
   et hors de $[\frac13, 3]$, ou négatif et différent de $-1$, une seule des médianes
   est coupée, ce que le feuillet dit en termes de « lignes sinueuses ».
 \end{enumerate}
+
+Vérifié en Lean : \texttt{Germain.Exercises.plate\_lowered} et \texttt{plate\_split}
+(question 1, pour un opérateur linéaire quelconque à la place de $\Delta$),
+\texttt{plate\_square\_mode} et \texttt{plate\_square\_sound} (2), \texttt{n15\_eq} et
+\texttt{n15\_lap} (3), \texttt{n15\_diagonals} et \texttt{n15\_thirds} (4),
+\texttt{cos\_sq\_range} et \texttt{n15\_medians} (5), dans \texttt{lean/Germain/Exercises.lean} ; hors de
+Lean : la membrane, qui n'est qu'un rappel, et le fait que les dérivées soient
+celles de fonctions régulières, qui rend $\Delta$ linéaire.
+\end{solution}
+
+\begin{exercice}{La lame tenue en son milieu : la seconde solution d'Euler}{L3}{2}
+\manuscrit{fr-9115}{195}{195}
+\manuscrit{fr-9115}{214}{214}
+\manuscrit{fr-9115}{322}{322}
+Le volume contient une copie du mémoire d'Euler de 1779 sur les lames élastiques.
+Au § 47, Euler y traite une lame appuyée à ses deux bouts et tenue en un point
+intermédiaire par un « stylet » ; pour le stylet au milieu, il trouve deux familles
+de sons. Des « Remarques sur le mémoire d'Euler », reliées plus loin, rejettent la
+seconde. On prend la lame de longueur $1$ ; sur chacune des deux portions,
+l'amplitude $Y(u)$ d'un mouvement régulier vérifie $Y'''' = \omega^4Y$, avec
+$\omega > 0$. Les conditions sont : $Y = Y'' = 0$ en $u = 0$ et en $u = 1$ (bouts
+appuyés) ; au stylet, en $u = \frac12$, $Y = 0$ de part et d'autre, la pente $Y'$ et
+la courbure $Y''$ continues. La dérivée troisième peut sauter au stylet : son saut
+mesure la force que le stylet exerce sur la lame (l'effort $F$ du § 8 d'Euler).
+\begin{enumerate}
+\item Montrer que $Y(u) = \sin 2k\pi u$ ($k$ entier non nul), la même fonction sur les
+  deux portions, satisfait ces conditions avec $\omega = 2k\pi$, et que $Y'''$ ne saute
+  pas : le stylet est sur un nœud et ne fait rien.
+\item On pose, sur $[0, \frac12]$,
+  \[
+  Y_1(u) = \frac{\sinh\omega u}{\sinh\frac\omega2} - \frac{\sin\omega u}{\sin\frac\omega2},
+  \]
+  et, sur $[\frac12, 1]$, $Y_2(u) = Y_1(1-u)$. Vérifier $Y_1'''' = \omega^4Y_1$, les
+  conditions aux bouts et $Y_1(\frac12) = Y_2(\frac12) = 0$. Montrer que la continuité
+  de la pente au stylet équivaut à $\tan\frac\omega2 = \tanh\frac\omega2$, que la
+  courbure est alors continue d'elle-même, et calculer le saut de $Y'''$.
+\item Les « Remarques » (§ 1) observent que, si $\tan x = \tanh x$ et $\omega = 2x$,
+  alors $\sin\omega\cosh\omega = \sinh\omega$ : $\sin\omega$ n'est pas nul, alors
+  que les sons de la lame appuyée à ses seuls bouts demandent $\sin\omega = 0$.
+  Vérifier ce calcul. Elles en concluent que la seconde solution « sort de l'état de
+  la question », et leur premier état (vue 214) précise que l'effet des appuis est
+  considéré comme « purement exclutif ». Que vaut la conclusion ?
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item $Y'''' = (2k\pi)^4Y$. On a $Y(0) = Y''(0) = 0$, $Y(1) = \sin 2k\pi = 0$ et
+  $Y''(1) = -(2k\pi)^2\sin 2k\pi = 0$, $Y(\frac12) = \sin k\pi = 0$. La même fonction
+  servant des deux côtés, toutes ses dérivées sont continues au stylet : $Y'''$ ne saute
+  pas. Ce sont les sons de la lame appuyée à ses bouts dont un nœud tombe au milieu ;
+  c'est la première famille d'Euler.
+\item $\sinh\omega u$ et $\sin\omega u$ vérifient chacune $Y'''' = \omega^4Y$. En $0$,
+  $\sinh$ et $\sin$ s'annulent, ainsi que leurs dérivées secondes, puisque
+  $Y_1''(u) = \omega^2\bigl(\frac{\sinh\omega u}{\sinh\frac\omega2} +
+  \frac{\sin\omega u}{\sin\frac\omega2}\bigr)$. En $\frac12$, $Y_1 = 1 - 1 = 0$. Par
+  symétrie, $Y_2(1) = Y_1(0)$, $Y_2''(1) = Y_1''(0)$ et $Y_2(\frac12) = Y_1(\frac12)$ :
+  tout est nul. Les dérivées de $Y_2$ en $\frac12$ sont celles de $Y_1$ multipliées
+  par $(-1)^j$ pour la dérivée d'ordre $j$. La pente est donc continue si et seulement
+  si $Y_1'(\frac12) = 0$, soit
+  $\omega\bigl(\coth\frac\omega2 - \cot\frac\omega2\bigr) = 0$, c'est-à-dire
+  $\tan\frac\omega2 = \tanh\frac\omega2$. (Sous cette condition, $\sin\frac\omega2 \neq 0$ :
+  sinon $\cos\frac\omega2\sinh\frac\omega2 = 0$, donc $\cos\frac\omega2 = 0$, ce qui
+  est impossible.) La courbure, d'ordre pair, est continue d'elle-même et vaut
+  $2\omega^2$. Enfin $Y_1'''(\frac12) = \omega^3\bigl(\coth\frac\omega2 +
+  \cot\frac\omega2\bigr) = 2\omega^3\coth\frac\omega2$ et $Y_2'''(\frac12) =
+  -Y_1'''(\frac12)$ : le saut vaut $-4\omega^3\coth\frac\omega2$, qui n'est pas nul.
+  Comme le coefficient de $\sinh\omega u$ n'est pas nul et que les quatre fonctions
+  $\cosh$, $\sinh$, $\cos$, $\sin$ de $\omega u$ sont indépendantes, $Y_1$ n'est pas
+  la fonction nulle. La plus petite racine positive est $\frac\omega2 \approx 3{,}9266$.
+\item Avec $\sin 2x = 2\sin x\cos x$, $\cosh 2x = \cosh^2x + \sinh^2x$ et $\sinh 2x =
+  2\sinh x\cosh x$, la différence $\sin 2x\cosh 2x - \sinh 2x$ vaut
+  $2(\cos x\cosh x - \sin x\sinh x)(\sin x\cosh x - \cos x\sinh x)$, nulle sous
+  l'hypothèse (on a utilisé $\sin^2x + \cos^2x = 1$). Si $\sin\omega = 0$, il vient
+  $\sinh\omega = 0$, donc $\omega = 0$. Le calcul est juste : ces sons ne sont pas ceux
+  de la lame appuyée à ses seuls bouts. Mais la lame n'est pas seulement appuyée à ses
+  bouts : le stylet la tient en son milieu, et, d'après le 2, il y pousse, puisque
+  $Y'''$ saute. Supposer l'effet de l'appui « purement exclutif », c'est supposer que le
+  stylet n'exerce aucune force, et cette hypothèse exclut précisément la seconde
+  famille. Celle-ci est formée des mouvements symétriques par rapport au milieu, qui
+  chargent l'appui : ce sont de vrais sons de la lame tenue en son milieu, et c'est
+  Euler qui a raison. Le rejet de la critique est une erreur ; son calcul ne l'est pas.
+\end{enumerate}
+
+Vérifié en Lean : \texttt{Germain.Exercises.lamina\_first\_family} (question 1),
+\texttt{lamina\_second\_family} (2 : les huit conditions, $Y_1 \neq 0$ et le saut
+de $Y'''$) et \texttt{lamina\_objection} (3), dans \texttt{lean/Germain/Exercises.lean} ; hors de Lean : la
+valeur numérique des racines de $\tan x = \tanh x$, et le fait que les quatre fonctions
+donnent toutes les solutions de $Y'''' = \omega^4Y$ (les énoncés portent sur cette
+famille).
 \end{solution}
 
 \begin{exercice}{$p^4 + 4$, $p^4 + q^4$ et les nombres de Fermat}{Lycée}{1}
 \manuscrit{fr-9118}{91}{93}
 Un feuillet détaché de sa main dit : « Aucun nombre de la forme $p^4 + 4$ excepté 5
 n'est un nombre premier, car $p^4 + 4 = (p^2 - 2)^2 + 4p^2$ et par conséquent ces
-nombres sont, de plusieurs manières, la somme de deux quarrés. » Puis :
-$p^4 + q^4 = (p^2 - q^2)^2 + 2(pq)^2 = (p^2+q^2)^2 - 2(pq)^2$, et « les nombres
-$2^{2^i} + 1$ ne sont qu'un cas particulier de la forme $p^4 + q^4$ ».
+nombres sont, de plusieurs manières, la somme de deux quarrés. » Un autre
+donne $p^4 + q^4 = (p^2 - q^2)^2 + 2(pq)^2 = (p^2+q^2)^2 - 2(pq)^2$, ajoute que
+« lorsque $p^4+q^4$ est un nombre premier on peut être assuré que ce nombre n'est que de
+ces seules manières la somme d'un quarré $+$ ou $-$ un double quarré », et finit par :
+« les nombres $2^{2^i} + 1$ ne sont qu'un cas particulier de la forme $p^4 + q^4$ ».
 \begin{enumerate}
 \item Vérifier les identités du feuillet.
 \item Démontrer l'identité $a^4 + 4b^4 = (a^2 + 2b^2 - 2ab)(a^2 + 2b^2 + 2ab)$, et en
   déduire directement que $p^4 + 4$ ($p \ge 1$ entier) n'est premier que pour $p = 1$.
-\item L'argument du feuillet par deux sommes de deux carrés demande que les deux
+\item L'argument du feuillet repose sur un théorème d'Euler : un entier qui est de
+  deux manières essentiellement différentes la somme de deux carrés premiers entre
+  eux est composé. Il demande que les deux
   décompositions $p^4 + 4 = (p^2)^2 + 2^2 = (p^2 - 2)^2 + (2p)^2$ soient
   différentes. Pour quelles valeurs de $p$ coïncident-elles ? Le feuillet en
   exclut-il assez ?
 \item Pour quels $i$ le nombre $2^{2^i} + 1$ est-il de la forme $p^4 + q^4$ avec
   $p, q$ entiers positifs ?
+\item Le nombre premier $17 = 2^4 + 1^4$ a-t-il une seule écriture $x^2 + 2y^2$ en
+  entiers naturels ? Une seule écriture $x^2 - 2y^2$ ? Montrer que
+  $x^2 - 2y^2 = (3x + 4y)^2 - 2(2x + 3y)^2$, et juger la phrase du feuillet.
 \end{enumerate}
 \end{exercice}
 
@@ -2858,8 +2974,11 @@ $2^{2^i} + 1$ ne sont qu'un cas particulier de la forme $p^4 + q^4$ ».
   $b = 1$ : $p^4 + 4 = (p^2 - 2p + 2)(p^2 + 2p + 2)$. Le second facteur vaut au moins
   $5$ ; le premier, $(p-1)^2 + 1$, vaut $1$ seulement pour $p = 1$. Pour $p \ge 2$
   les deux facteurs sont $\ge 2$ et le nombre est composé ; pour $p = 1$ on a $5$,
-  premier. (L'identité porte aujourd'hui le nom de Sophie Germain ; le feuillet
-  donne l'autre argument.)
+  premier. Cette factorisation porte aujourd'hui le nom de Sophie Germain, mais elle
+  n'est pas sur le feuillet, qui démontre l'énoncé autrement, par les deux sommes de
+  deux carrés de la question 3. Dickson la lui attribue en citant ce feuillet d'après
+  Charles Henry (1880) ; or Henry ne cite du feuillet que l'énoncé sur $p^4 + 4$, et
+  écrit lui-même la factorisation, sans la lui prêter.
 \item Les paires $\{p^2, 2\}$ et $\{|p^2 - 2|, 2p\}$ coïncident si $p^2 = 2p$ et
   $|p^2 - 2| = 2$, soit $p = 2$, ou si $p^2 = |p^2 - 2|$ et $2 = 2p$, soit $p = 1$.
   Le feuillet exclut $p = 1$ (« excepté 5 ») mais pas $p = 2$ ; ce cas ne menace pas
@@ -2868,7 +2987,26 @@ $2^{2^i} + 1$ ne sont qu'un cas particulier de la forme $p^4 + q^4$ ».
   $257 = 4^4 + 1$, $65\,537 = 16^4 + 1$. Pour $i = 0$ et $i = 1$ ($3$ et $5$), il
   faudrait $p^4 + q^4 \le 5$ avec $p, q \ge 1$, soit $2$ : impossible. L'hypothèse
   $i \ge 2$ est implicite sur le feuillet.
+\item $17 - 2y^2$ doit être un carré avec $y \le 2$ : $y = 2$ donne $9 = 3^2$, $y = 0$
+  et $y = 1$ donnent $17$ et $15$. L'écriture $17 = 3^2 + 2\cdot2^2$ est donc unique.
+  En revanche $17 = 5^2 - 2\cdot2^2$, qui est $(p^2+q^2)^2 - 2(pq)^2$ pour $p = 2$,
+  $q = 1$, et aussi $17 = 23^2 - 2\cdot16^2$, obtenu par la formule avec $x = 5$,
+  $y = 2$. L'identité se vérifie en développant :
+  $(3x+4y)^2 - 2(2x+3y)^2 = 9x^2 + 24xy + 16y^2 - 8x^2 - 24xy - 18y^2 = x^2 - 2y^2$.
+  Elle traduit la multiplication par $3 + 2\sqrt2$, de norme $1$ ; chaque écriture
+  $x^2 - 2y^2$ en donne ainsi une infinité. La phrase du feuillet vaut pour
+  $x^2 + 2y^2$ (l'unicité vaut pour tout nombre premier, ce que ce livre ne démontre
+  pas), elle est fausse pour $x^2 - 2y^2$ ; la lecture modernisée la tient pour
+  juste dans les deux cas, et se trompe sur le second. L'unicité n'y vaut qu'au
+  produit près par les puissances de $3 + 2\sqrt2$.
 \end{enumerate}
+
+Vérifié en Lean : \texttt{Germain.Exercises.p4\_plus\_four\_leaf} (question 1),
+\texttt{p4\_plus\_four\_factor} et \texttt{p4\_plus\_four\_prime\_iff} (2),
+\texttt{p4\_plus\_four\_pairs} (3, qui trouve aussi $p = 0$),
+\texttt{fermat\_as\_p4\_plus\_q4} (4) et \texttt{x\_sq\_sub\_two\_y\_sq} (5), dans
+\texttt{lean/Germain/Exercises.lean} ; hors de Lean : le théorème d'Euler sur les deux sommes de deux carrés,
+et l'unicité de $x^2 + 2y^2$ pour tous les nombres premiers.
 \end{solution}
 
 \begin{exercice}{Le nombre 2 et les formes $8k \pm 3$ ; une extension fausse}{L2}{2}
@@ -2896,7 +3034,8 @@ $\bigl(\frac qp\bigr)\bigl(\frac pq\bigr) = (-1)^{\frac{p-1}{2}\cdot\frac{q-1}{2
 \item Un billet (vue 722) démontre que tout nombre de la forme $4n+2$ est non-résidu
   d'un nombre premier. Justifier : $4n + 3$ a un facteur premier $q \equiv 3 \pmod 4$,
   et $4n + 2 \equiv -1 \pmod q$.
-\item Un autre feuillet (vue 720) étend une proposition qu'il lit dans « l'auteur » :
+\item Un autre feuillet (vue 720) étend une proposition qu'il lit dans « l'auteur »,
+  Gauss, dont la même page cite l'article 125 :
   « tout nombre de la forme $4n+1$ pris négativement est non résidu de quelque nombre
   premier moindre que lui et de la forme $4n+3$ ». Montrer que $-5$, $-17$ et $-21$
   sont résidus de tous les nombres premiers de la forme $4k+3$ plus petits qu'eux et
@@ -2944,10 +3083,88 @@ $\bigl(\frac qp\bigr)\bigl(\frac pq\bigr) = (-1)^{\frac{p-1}{2}\cdot\frac{q-1}{2
   à $5$. Pour $-17$ : $-17 \equiv 1 \pmod 3$, $\equiv 4 = 2^2 \pmod 7$,
   $\equiv 5 \equiv 4^2 \pmod{11}$. Pour $-21$ : $3$ et $7$ divisent $21$ ; $-21 \equiv
   1 \pmod{11}$ et $-21 \equiv 17 \equiv 6^2 \pmod{19}$. Dans les trois cas, aucun
-  nombre premier de la forme voulue ne convient : l'extension est fausse. Selon la
-  lecture modernisée, ce sont, avec $3$, les seules exceptions en dessous de
-  $200\,000$, et c'est la restriction à la forme $4k+3$ qui rend l'énoncé faux.
+  nombre premier de la forme voulue ne convient : l'extension est fausse, et, $17$
+  étant premier, elle l'est même restreinte aux nombres premiers. Selon la lecture
+  modernisée, ce sont, avec $3$, les seules exceptions en dessous de $200\,000$, et
+  c'est la restriction à la forme $4k+3$ qui rend l'énoncé faux.
 \end{enumerate}
+
+Vérifié en Lean : \texttt{Germain.Exercises.two\_method\_divisors} (question 1, pour
+tout diviseur de $p-1$, premier ou non), \texttt{two\_method} et
+\texttt{two\_method\_checks} (2), \texttt{two\_method\_gaps} (3), \texttt{four\_n\_two}
+(4) et \texttt{false\_extension} (5), dans \texttt{lean/Germain/Exercises.lean}. Les démonstrations Lean
+passent par le symbole de Jacobi et la réciprocité de mathlib, que l'exercice admet.
+\end{solution}
+
+\begin{exercice}{Les nombres premiers de Fermat : 3, 5, 7 et « cela est faux »}{L2}{2}
+\manuscrit{fr-9115}{729}{730}
+Un feuillet de notes porte le titre « Nombres premiers de la forme $2^{2^i}+1$ ». On
+note $F_k = 2^{2^k} + 1$ ; $F_0 = 3$, $F_1 = 5$, $F_2 = 17$, $F_3 = 257$ et
+$F_4 = 65\,537$ sont premiers. On garde les notations de l'exercice précédent, et l'on
+admet en outre que $\bigl(\frac2p\bigr) = 1$ si et seulement si $p \equiv \pm1
+\pmod 8$, et le critère d'Euler : $a^{\frac{p-1}{2}} \equiv \bigl(\frac ap\bigr)
+\pmod p$.
+\begin{enumerate}
+\item Montrer que $F_0F_1\cdots F_{k-1} = F_k - 2$, et en déduire $F_k \equiv 2
+  \pmod{F_j}$ pour $j < k$.
+\item Le feuillet affirme que « les nombres premiers plus petits et de même forme sont
+  non residus et par conséquent racines primitives » des plus grands. Soient
+  $F_j < F_k$ deux nombres premiers de Fermat. Montrer que $\bigl(\frac{F_j}{F_k}\bigr)
+  = \bigl(\frac{2}{F_j}\bigr)$. En déduire que $3$ et $5$ sont non-résidus de tout
+  nombre premier de Fermat plus grand, mais que $17$ est résidu de $257$ et de
+  $65\,537$. Entre les lignes, le feuillet ajoute « cela est faux » : a-t-il raison ?
+\item Il affirme aussi que $3 = 2^2 - 1$ et $7 = 2^3 - 1$ sont non-résidus de $F_i$.
+  Montrer que $2^{2^k}$ est congru à $2$ ou à $4$ modulo $7$, et en déduire
+  $\bigl(\frac{7}{F_k}\bigr) = -1$ pour tout $F_k$ premier, $k \ge 1$.
+\item Montrer que tout non-résidu d'un nombre premier de Fermat en est une racine
+  primitive. En déduire que $3$ et $7$ sont racines primitives de tout nombre premier de
+  Fermat $F_k$, $k \ge 1$, et $5$ de tout $F_k$ premier, $k \ge 2$.
+\item La page voisine (vue 729) énonce : si $p = 12n + 5$ et $3n + 1$ sont premiers,
+  $3$ est racine primitive de $p$. Le démontrer, et l'appliquer à $29$ et à $53$.
+\end{enumerate}
+\end{exercice}
+
+\begin{solution}
+\begin{enumerate}
+\item Par récurrence : $F_0 = 3 = F_1 - 2$, et si $F_0\cdots F_{k-1} = F_k - 2 =
+  2^{2^k} - 1$, alors $F_0\cdots F_k = (2^{2^k} - 1)(2^{2^k} + 1) = 2^{2^{k+1}} - 1 =
+  F_{k+1} - 2$. Pour $j < k$, $F_j$ divise donc $F_k - 2$, et comme $F_j > 2$, le reste
+  de $F_k$ modulo $F_j$ est $2$.
+\item Pour $k \ge 1$, $4$ divise $2^{2^k}$, donc $F_k \equiv 1 \pmod 4$, et la
+  réciprocité donne $\bigl(\frac{F_j}{F_k}\bigr) = \bigl(\frac{F_k}{F_j}\bigr) =
+  \bigl(\frac{2}{F_j}\bigr)$ par le 1. Comme $3 \equiv 3$ et $5 \equiv 5 \pmod 8$, $2$
+  est non-résidu de $3$ et de $5$ : $3$ et $5$ sont non-résidus des $F_k$ premiers plus
+  grands. Pour $j \ge 2$, $8$ divise $2^{2^j}$, $F_j \equiv 1 \pmod 8$, et $2$ est
+  résidu de $F_j$ : $F_j$ est résidu de tout $F_k$ premier plus grand ; ainsi $17$ de
+  $257$ et de $65\,537$, et $257$ de $65\,537$. La note interlinéaire a raison :
+  l'affirmation ne vaut que pour $3$ et $5$.
+\item $2^{2^0} = 2$, et l'élévation au carré échange $2$ et $4$ modulo $7$
+  ($4^2 = 16 \equiv 2$) : $2^{2^k} \equiv 2$ ou $4$, et $F_k \equiv 3$ ou $5 \pmod 7$.
+  Les carrés non nuls modulo $7$ sont $1$, $2$, $4$ : $\bigl(\frac{F_k}{7}\bigr) = -1$,
+  et, $F_k$ étant $\equiv 1 \pmod 4$, la réciprocité donne
+  $\bigl(\frac{7}{F_k}\bigr) = \bigl(\frac{F_k}{7}\bigr) = -1$. Pour $3$, c'est le 2.
+\item $F_k - 1 = 2^{2^k}$. Si $a$ est non-résidu, le critère d'Euler donne
+  $a^{2^{2^k - 1}} \equiv -1 \not\equiv 1$, tandis que $a^{2^{2^k}} \equiv 1$ ; l'ordre
+  de $a$ divise $2^{2^k}$ sans diviser $2^{2^k - 1}$ : c'est $2^{2^k} = F_k - 1$, et $a$
+  est racine primitive. Les 2 et 3 donnent les cas de $3$, $5$ et $7$.
+\item On a $n \ge 1$, puisque $1$ n'est pas premier ; $p \equiv 1 \pmod 4$ et
+  $p \equiv 2 \pmod 3$, donc $\bigl(\frac3p\bigr) = \bigl(\frac p3\bigr) =
+  \bigl(\frac23\bigr) = -1$, et $3^{\frac{p-1}{2}} \equiv -1$. L'ordre de $3$ divise
+  $p - 1 = 4(3n+1)$, dont les facteurs premiers sont $2$ et $3n+1$ ; il vaut $p - 1$
+  si $3^{\frac{p-1}{2}} \not\equiv 1$, ce qu'on vient de voir, et si $3^4 \not\equiv 1$,
+  c'est-à-dire si $p$ ne divise pas $80$, ce qui a lieu puisque $p \ge 17$. Pour
+  $n = 2$, $7$ et $29$ sont premiers ; pour $n = 4$, $13$ et $53$ : $3$ est racine
+  primitive de $29$ et de $53$. La page écarte l'ordre $4$ par $3^2 + 1 \equiv 0$,
+  soit $p \mid 10$, sans écarter $3^2 \equiv 1$ ; la démonstration ci-dessus les écarte
+  ensemble.
+\end{enumerate}
+
+Vérifié en Lean : \texttt{Germain.Exercises.fermat\_primes\_mod} (questions 1 et 2),
+\texttt{fermat\_primes\_residues} (2 et 3), \texttt{fermat\_primes\_roots} (4) et
+\texttt{twelve\_n\_five} (5), dans \texttt{lean/Germain/Exercises.lean} ; la primalité de $257$ et de
+$65\,537$ y est vérifiée par le calcul. Hors de Lean : rien de ce que l'exercice
+demande ; seule la primalité de $F_0$ à $F_4$ est connue, et les énoncés portent sur
+les $F_k$ premiers.
 \end{solution}
 
 \begin{exercice}{Le manuscrit C : deux cas et trois lacunes}{L3}{3}
@@ -2966,8 +3183,8 @@ premier énoncé en supposant $x$, $y$, $z$ premiers entre eux.
   ainsi : dans le dernier cas, $x^n = x$ et $y^n = y$, et « ce cas est donc le seul
   dans lequel il soit possible de satisfaire à l'équation », c'est-à-dire $n = 1$. Où
   est la faute ? Corriger l'énoncé.
-\item Montrer que si $x$, $y$, $z$ sont premiers entre eux et $x^{2n} + y^{2n} =
-  2z^{2n}$, ils sont impairs.
+\item Montrer que si $x$ et $y$ sont premiers entre eux et $x^{2n} + y^{2n} =
+  2z^{2n}$ ($n \ge 1$), alors $x$, $y$ et $z$ sont impairs.
 \item La page écrit $x^{2n} + y^{2n} = (x^2 + y^2)\Phi$, avec
   $\Phi = x^{2n-2} - x^{2n-4}y^2 + \cdots + y^{2n-2}$ ($n$ impair), puis $z = z'z''$,
   $x^2 + y^2 = 2z'^{2n}$ et $\Phi = z''^{2n}$, ce qui suppose $x^2 + y^2$ et $\Phi$
@@ -3003,8 +3220,8 @@ premier énoncé en supposant $x$, $y$, $z$ premiers entre eux.
   correct est : pour $n$ impair $> 1$, les seules solutions en entiers premiers entre
   eux sont $x^2 = y^2 = z^2 = 1$. Sous cette forme, il est vrai ; il n'a été démontré
   qu'en 1997, par Darmon et Merel, par de tout autres moyens.
-\item Si $x$ et $y$ étaient pairs tous deux, $2^{2n}$ diviserait $2z^{2n}$, donc $z$
-  serait pair, et $x$, $y$, $z$ ne seraient pas premiers entre eux. Si l'un est pair et
+\item Si $x$ et $y$ étaient pairs tous deux, ils ne seraient pas premiers entre eux.
+  Si l'un est pair et
   l'autre impair, $x^{2n} + y^{2n}$ est impair, alors que $2z^{2n}$ est pair. Donc $x$
   et $y$ sont impairs, leurs puissances paires valent $1$ modulo $8$, et
   $2z^{2n} \equiv 2 \pmod 8$ donne $z^{2n} \equiv 1 \pmod 4$ : $z$ est impair.
@@ -3019,7 +3236,7 @@ premier énoncé en supposant $x$, $y$, $z$ premiers entre eux.
   montre que le pgcd peut valoir un facteur premier de $n$ de la forme $4k+1$ (les
   facteurs premiers impairs de $x^2 + y^2$ sont de cette forme) : le partage de la page
   n'est justifié que si aucun facteur premier de $n$ n'est $\equiv 1 \pmod 4$. C'est
-  une première lacune.
+  une première lacune, que Laubenbacher et Pengelley avaient déjà relevée.
 \item $2(y^2 - x^2) - (x+y)^2 = (x+y)\bigl(2(y-x) - (x+y)\bigr) = (x+y)(y - 3x)$. Pour
   $(p,q) = (3,2)$ : $x = -7$, $y = 17$. Alors $2(y^2 - x^2) = 480 > (x+y)^2 = 100$, mais
   $(x+y)^2 = 100 < y^2 = 289$ : la seconde inégalité tombe. Pour $x = 7$, $y = 17$,
@@ -3041,6 +3258,14 @@ premier énoncé en supposant $x$, $y$, $z$ premiers entre eux.
   admis exclut : le cas $n = 2$ est dû à Fermat. Pour $n$ impair $> 1$, le second
   théorème contient un cas du théorème démontré par Wiles en 1995.
 \end{enumerate}
+
+Vérifié en Lean : \texttt{Germain.Exercises.manuscriptC\_case\_one} (question 1),
+\texttt{manuscriptC\_trivial} (2), \texttt{manuscriptC\_odd} (3),
+\texttt{manuscriptC\_Phi} (4), \texttt{manuscriptC\_inequalities} (5),
+\texttt{manuscriptC\_n\_two} et \texttt{manuscriptC\_fermat\_four} (6), dans
+\texttt{lean/Germain/Exercises.lean}. Le théorème de Fermat sur $X^4 - Y^4 = W^2$, que l'exercice admet, y
+figure comme hypothèse ; l'exposant $4$ du second théorème vient de mathlib. Hors de
+Lean : l'énoncé corrigé pour $n$ impair $> 1$ (Darmon et Merel) et le théorème de Wiles.
 \end{solution}
 
 \section*{Guillaume Libri (1803--1869)}
@@ -3207,10 +3432,18 @@ exercices, qui ne reposent que sur les feuillets.
   $a^\ell + b^\ell = 2c^\ell$, \emph{Journal für die reine und angewandte Mathematik}.
 \item René Descartes, \emph{Discours de la méthode} et \emph{La Géométrie},
   1637.
+\item Leonard Eugene Dickson, \emph{History of the Theory of Numbers}, t. I, 1919
+  (p. 382, sur $p^4 + 4q^4$).
+\item Leonhard Euler, \emph{Investigatio motuum quibus laminae et virgae elasticae
+  contremiscunt}, \emph{Acta Academiae Scientiarum Petropolitanae}, 1779 (copie en
+  Français 9115).
 \item Le P. Fabri, \emph{Thèses de géométrie}, discutées dans une lettre de NAF 5161.
 \item Joseph Fourier, \emph{Théorie analytique de la chaleur}, 1822.
 \item Carl Friedrich Gauss, \emph{Disquisitiones arithmeticae}, 1801
-  (article 357).
+  (articles 125 et 357).
+\item Charles Henry, « Sur divers points de la théorie des nombres », Association
+  française pour l'avancement des sciences, 1880 (repris dans les \emph{Œuvres de
+  Fermat}, t. IV, 1912, p. 208--209).
 \item Christiaan Huygens, \emph{De ratiociniis in ludo aleae}, 1657.
 \item Joseph-Louis Lagrange, mémoire sur l'équation $x^2 - ay^2 = 1$, \emph{Mémoires}
   de l'Académie de Turin, t. 4 (résumé en Français 9115).

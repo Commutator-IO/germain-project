@@ -1,0 +1,199 @@
+\section[Français 9115 : le manuscrit C et les résidus quadratiques]{Français 9115 : le manuscrit C et les résidus quadratiques\protect\verifie{Fr9115Arithmetic}}\label{sec:fr-9115-arithmetique}
+
+Vers la fin du volume Français 9115, entre les vues 704 et 730, sont reliés trois pages d'une mise au net sur des équations de Fermat à exposants pairs, le « manuscrit C » de Laubenbacher et Pengelley (ff. 348r--349r, \vue{fr-9115}{36}{708} à \vue{fr-9115}{36}{710}), et, autour d'elles, des feuillets et des billets de travail sur les résidus quadratiques (\vue{fr-9115}{36}{704} à \vue{fr-9115}{37}{730}). La lecture modernisée restitue l'argument du manuscrit C pas à pas et relève quatre points où il ne tient pas ; elle vérifie ensuite, billet par billet, les énoncés sur les résidus. On démontre ici ce qui, dans ces deux parties de la lecture, se laisse énoncer et démontrer : les identités et les divisibilités sur lesquelles repose le manuscrit C, des contre-exemples aux pas qui échouent, et la plupart des énoncés des notes sur les résidus, avec leurs exceptions.
+
+\noindent\emph{Conventions.} « $a$ est résidu de $p$ » se lit : $a$ est un carré dans $\mathbf Z/p\mathbf Z$ (\texttt{IsSquare}). Avec cette convention, $0$ est un carré : un multiple de $p$ est résidu de $p$. On note $\left(\frac{a}{n}\right)$ le symbole de Jacobi pour $n$ impair positif, qui est le symbole de Legendre quand $n$ est premier. Les nombres de Fermat sont $F_k = 2^{2^k}+1$.
+
+\subsection*{Le manuscrit C}
+
+\begin{contrexemple}[Sophie Germain, vue 708, l'énoncé tel qu'il est écrit]
+Pour tout $n$, $x = y = z = 1$ satisfait $2z^{2n} = x^{2n} + y^{2n}$ avec $x$, $y$ premiers entre eux ; l'énoncé « il est impossible de satisfaire en nombres entiers à l'équation $2z^{2n} = y^{2n} + x^{2n}$ » est donc faux tel quel. Pour $n = 1$, on a en outre $1^2 + 7^2 = 2\cdot 5^2$ et $7^2 + 17^2 = 2 \cdot 13^2$.
+\end{contrexemple}
+
+C'est \texttt{manuscriptC\_not\_as\_written} et \texttt{manuscriptC\_n\_one}. L'énoncé corrigé (seules solutions primitives, $x^2 = y^2 = z^2 = 1$, pour $n$ impair $> 1$) est le théorème de Darmon et Merel ; il n'est pas démontré ici.
+
+\begin{enonce}[Énoncé de l'édition, vue 708, les hypothèses]
+Soit $n \geq 1$. Si $x$, $y$ sont premiers entre eux et $x^{2n} + y^{2n} = 2z^{2n}$, alors $x$, $y$ et $z$ sont impairs.
+\end{enonce}
+
+\begin{proof}
+On réduit modulo $4$, où le carré d'un impair vaut $1$ et celui d'un pair $0$. Si $x$ et $y$ étaient pairs, $2$ diviserait leurs coefficients de Bézout, ce qui est exclu. Si exactement l'un est pair, le membre de gauche vaut $1$ modulo $4$, et le membre de droite $0$ ou $2$. Si $x$ et $y$ sont impairs et $z$ pair, le membre de gauche vaut $2$ et le membre de droite $0$ (\texttt{manuscriptC\_odd}).
+\end{proof}
+
+\begin{enonce}[Sophie Germain, vue 708, les paramétrisations et le système (1)]
+On a les identités
+\[ (P^2-Q^2-2PQ)^2 + (P^2-Q^2+2PQ)^2 = 2(P^2+Q^2)^2, \]
+et, pour $x = p^2-q^2-2pq$, $y = p^2-q^2+2pq$ : $x + y = 2(p^2-q^2)$, $y - x = 4pq$, $y^2 - x^2 = 8\,pq(p^2-q^2)$.
+\end{enonce}
+
+Ce sont des identités polynomiales (\texttt{param\_identity}, \texttt{system\_one}). La dernière donne le $N = \tfrac18(y^2-x^2)$ de la lecture.
+
+\begin{enonce}[Énoncé de l'édition, vue 708, la factorisation et la première lacune]
+Pour $n$ impair, posons $\Phi = \sum_{i=0}^{n-1} (x^2)^i (-y^2)^{n-1-i} = x^{2n-2} - x^{2n-4}y^2 + \cdots + y^{2n-2}$. Alors $x^{2n} + y^{2n} = (x^2+y^2)\,\Phi$ et $\Phi \equiv n\,y^{2n-2} \pmod{x^2+y^2}$. Si $x$ et $y$ sont premiers entre eux, tout diviseur commun de $x^2+y^2$ et de $\Phi$ divise $n$.
+\end{enonce}
+
+\begin{proof}
+La première égalité est l'identité $(\sum_i a^i b^{n-1-i})(a-b) = a^n - b^n$ appliquée à $a = x^2$, $b = -y^2$, avec $(-y^2)^n = -y^{2n}$ pour $n$ impair (\texttt{factor\_Phi}). Comme $n-1$ est pair, $y^{2n-2} = (-y^2)^{n-1}$, et
+\[ \Phi - n\,y^{2n-2} = \sum_{i=0}^{n-1} \bigl((x^2)^i - (-y^2)^i\bigr)(-y^2)^{n-1-i}, \]
+où chaque terme est divisible par $x^2 - (-y^2) = x^2+y^2$ (\texttt{Phi\_modEq}). Un diviseur commun $d$ divise donc $n\,y^{2n-2}$. De $ax + by = 1$ on tire $a^2(x^2+y^2) + (2b - a^2y - b^2y)\,y = 1$, de sorte que $x^2+y^2$, et donc $d$, est premier avec $y$ et avec $y^{2n-2}$ : $d$ divise $n$ (\texttt{dvd\_n\_of\_dvd\_both}).
+\end{proof}
+
+\begin{contrexemple}[Énoncé de l'édition, vue 708]
+Pour $n = 5$, $x = 1$, $y = 3$ : $x^2+y^2 = 10$, $\Phi = 5905 = 5 \cdot 1181$, et $5$ divise les deux.
+\end{contrexemple}
+
+C'est \texttt{Phi\_counterexample}. Le partage $x^2+y^2 = 2z'^{2n}$, $\Phi = z''^{2n}$ demande que $x^2+y^2$ et $\Phi$ soient premiers entre eux au facteur $2$ près ; l'exemple montre que cela peut manquer quand un facteur premier de $n$ est de la forme $4k+1$. Ce n'est pas une solution de l'équation ; il montre seulement que le pas ne va pas de soi. Laubenbacher et Pengelley avaient déjà relevé cette lacune.
+
+\begin{enonce}[Sophie Germain, vue 708, le système (2)\piste{fr-9115-manuscript-c-case-one}]
+Soit $s = \pm 1$, $P = Uq + sVp$, $Q = Up - sVq$. Alors $P^2 + Q^2 = (U^2+V^2)(p^2+q^2)$,
+\[ P^2 - Q^2 = \bigl[U(p+q) + sV(p-q)\bigr]\bigl[U(q-p) + sV(p+q)\bigr] = (p^2-q^2)(V^2-U^2) + 4s\,pq\,UV, \]
+\[ PQ = (U^2-V^2)\,pq + s\,(p^2-q^2)\,UV. \]
+Si de plus $p$ et $q$ sont premiers entre eux et de parités différentes, et si $P^2 - Q^2 = H(p^2-q^2)$ et $PQ = F\,pq$, alors $pq(p^2-q^2)$ divise $UV$.
+\end{enonce}
+
+\begin{proof}
+Les trois identités se vérifient en développant, avec $s^2 = 1$ (\texttt{system\_two}). Pour la divisibilité (\texttt{N\_dvd\_UV}), $p^2 - q^2 = (p+q)(p-q)$ est impair, donc premier avec $4$ ; de $ap + bq = 1$ on tire des relations de Bézout entre $p^2-q^2$ et $p$, et entre $p^2-q^2$ et $q$ (ainsi $-b^2(p^2-q^2) + (b^2p + 2a - a^2p)\,p = 1$). Donc $p^2-q^2$ est premier avec $4pq$. La première équation donne $s \cdot 4pq\,UV = (p^2-q^2)\bigl(H - (V^2-U^2)\bigr)$, et, en multipliant par $s$, $p^2-q^2 \mid 4pq\,UV$, d'où $p^2-q^2 \mid UV$. La seconde donne de même $pq \mid (p^2-q^2)\,UV$, d'où $pq \mid UV$. Comme $pq$ et $p^2-q^2$ sont premiers entre eux, leur produit divise $UV$.
+\end{proof}
+
+\begin{remarque}
+Les hypothèses de coprimalité et de parité sur $p$, $q$ sont celles que la lecture tire de $x$, $y$ premiers entre eux et impairs ; la page ne les écrit pas. Que $P$ et $Q$ s'écrivent $Uq \pm Vp$, $Up \mp Vq$ avec $U^2 + V^2 = z''^n$ est supposé ici, comme sur la page ; la lecture le justifie par les entiers de Gauss, ce qui n'est pas formalisé.
+\end{remarque}
+
+\begin{enonce}[Sophie Germain, vue 709, les deux signes\piste{fr-9115-manuscript-c-case-one}]
+Soit $s = \pm 1$. On a $(U'u + sV'v)(U'v - sV'u) = (U'^2-V'^2)\,uv + s\,(v^2-u^2)\,U'V'$. Si $U'$ et $V'$ sont premiers entre eux et si $N$ divise \emph{à la fois} $(U'^2-V'^2)\,uv + (v^2-u^2)\,U'V'$ et $(U'^2-V'^2)\,uv - (v^2-u^2)\,U'V'$, alors $N$ divise $2(v^2-u^2)\,uv$.
+\end{enonce}
+
+\begin{proof}
+L'identité se vérifie en développant (\texttt{UV\_identity}). La somme et la différence des deux valeurs donnent $N \mid 2(U'^2-V'^2)\,uv$ et $N \mid 2(v^2-u^2)\,U'V'$. Les relations de Bézout du paragraphe précédent, appliquées à $U'$, $V'$, montrent que $U'^2 - V'^2$ est premier avec $U'$ et avec $V'$, donc avec $U'V'$ : $\alpha(U'^2-V'^2) + \beta\,U'V' = 1$. Alors
+\[ 2(v^2-u^2)\,uv = \alpha(v^2-u^2)\cdot 2(U'^2-V'^2)\,uv + \beta\,uv\cdot 2(v^2-u^2)\,U'V', \]
+et les deux termes sont divisibles par $N$ (\texttt{two\_signs}).
+\end{proof}
+
+\begin{remarque}
+La conclusion de la page est juste \emph{sous l'hypothèse} que les deux valeurs soient divisibles par $N$. Cette hypothèse est la deuxième lacune relevée par la lecture : le signe $s$ est fixé par la décomposition, une seule des deux expressions est $UV$, et seule celle-là est divisible par $N$ d'après l'énoncé précédent. La démonstration ci-dessus ne comble pas cette lacune ; elle établit seulement que le reste du pas est correct.
+\end{remarque}
+
+\begin{contrexemple}[Sophie Germain, vue 709, la chaîne d'inégalités\piste{fr-9115-manuscript-c-case-one}]
+On a $2(y^2-x^2) - (x+y)^2 = (x+y)(y-3x)$. Pour $p = 3$, $q = 2$, la paramétrisation donne $x = -7$, $y = 17$, avec $x^2+y^2 = 2\cdot 13^2$ : $(x+y)^2 = 100 < 480 = 2(y^2-x^2)$ mais $(x+y)^2 < y^2 = 289$. Pour $x = 7$, $y = 17$ : $2(y^2-x^2) = 480 < 576 = (x+y)^2$.
+\end{contrexemple}
+
+\texttt{inequality\_identity} et \texttt{inequality\_counterexamples} les établissent par le calcul. L'inégalité $2(y^2-x^2) > (x+y)^2$ que la page affirme n'est donc vraie que si $(x+y)(y-3x) > 0$, et la comparaison avec $y^2$ demande $(x+y)^2 \geq y^2$. Les deux exemples sont des solutions de $x^2+y^2 = 2z^2$ et non de l'équation de degré $2n$ : ils montrent que la chaîne, telle qu'écrite, n'utilise rien qui exclue ces cas. Ils ne montrent pas qu'une autre borne serait impossible.
+
+\begin{enonce}[Énoncé de l'édition, vue 709, le cas oublié]
+Pour $n$ impair et $x = \pm 1$, on a $x^n = x$.
+\end{enonce}
+
+\texttt{trivial\_case} le vérifie. Les égalités $x^n = x$, $y^n = y$ auxquelles aboutit le second cas de l'alternative n'entraînent donc pas $n = 1$ : elles ont lieu pour $x^2 = y^2 = 1$ et tout $n$ impair.
+
+\begin{enonce}[Sophie Germain, vue 710, le théorème de Fermat pour les exposants pairs]
+Soit $n \geq 1$. Si $X^{2n} + Y^{2n} = Z^{2n}$, l'un de $X$, $Y$ est pair. L'équation $Z^{2n} = X^{2n} + Y^{2n}$ n'a pas de solution en entiers non nuls si $n$ est pair, ni si $3$ divise $n$.
+\end{enonce}
+
+\begin{proof}
+Si $X$ et $Y$ étaient impairs, le membre de gauche vaudrait $2$ modulo $4$, et une puissance paire vaut $0$ ou $1$ (\texttt{fermat\_not\_both\_odd}). Si $n$ est pair, $4$ divise $2n$, et une solution donnerait une solution de $a^4 + b^4 = c^4$ en entiers non nuls, que le théorème de Fermat pour l'exposant $4$ (mathlib, \texttt{fermatLastTheoremFour}) exclut ; si $3$ divise $n$, de même avec l'exposant $3$ (\texttt{fermatLastTheoremThree}) (\texttt{fermat\_two\_n\_of\_even}, \texttt{fermat\_two\_n\_of\_three\_dvd}).
+\end{proof}
+
+\begin{remarque}
+Pour $n$ pair, la réduction de la page au premier théorème ne vaut pas : $Z + Y$ ne divise pas $Z^n + Y^n$ en général, ainsi $4 \nmid 3^2 + 1^2$ (\texttt{even\_n\_no\_factor}). Le cas $n$ pair est couvert ici par l'exposant $4$, que la page ne mentionne pas. Le cas $n$ impair sans facteur $3$, que la page ramène au premier théorème, demande le théorème de Fermat pour un exposant premier $\geq 5$, absent de mathlib.
+\end{remarque}
+
+\subsection*{Résidus quadratiques}
+
+\begin{enonce}[Sophie Germain, vue 704, la méthode]
+Soit $p$ un nombre premier impair et $m$ un diviseur de $p-1$. Si $m \equiv 1 \pmod 4$, $m$ est résidu de $p$ ; si $m \equiv 3 \pmod 4$, $-m$ est résidu de $p$. En conséquence, $2$ est non-résidu de $p$ si $p \equiv 3 \pmod 8$, résidu si $p \equiv 7 \pmod 8$, et résidu si $p = 2^{2k+3}w + 1$ avec $w$ impair.
+\end{enonce}
+
+\begin{proof}
+Par la loi de réciprocité pour le symbole de Jacobi, $\left(\frac{m}{p}\right) = \left(\frac{p}{m}\right)$ si $m \equiv 1 \pmod 4$ ; comme $p \equiv 1 \pmod m$, cela vaut $\left(\frac{1}{m}\right) = 1$ (\texttt{residue\_of\_dvd\_pred\_one}). Si $m \equiv 3 \pmod 4$, $\left(\frac{-m}{p}\right) = (-1)^{(p-1)/2}\,(-1)^{\frac{m-1}{2}\frac{p-1}{2}}\left(\frac{p}{m}\right)$, et l'exposant total $\frac{p-1}{2}\bigl(1 + \frac{m-1}{2}\bigr)$ est pair (\texttt{neg\_residue\_of\_dvd\_pred\_three}).
+
+Si $p \equiv 3 \pmod 8$, $m = \frac{p-1}{2} \equiv 1 \pmod 4$ est résidu, $-1$ est non-résidu, et $2m \equiv -1$ : si $2$ était résidu, $-1$ le serait (\texttt{two\_nonresidue\_of\_three\_mod\_eight}). Si $p \equiv 7 \pmod 8$, $m \equiv 3 \pmod 4$, $-m = s^2$ et $2 \cdot (-m) \equiv 1$, d'où $2 = (1/s)^2$ (\texttt{two\_residue\_of\_seven\_mod\_eight}). Si $p = 2^{2k+3}w + 1$, $-1 = t^2$ (car $p \equiv 1 \pmod 4$), $w$ est résidu ($w$ ou $-w$ l'est, et $-1$ aussi), $w = s^2$, et $2\,(2^{k+1}s)^2 = 2^{2k+3}w = -1 = t^2$ : $2 = \bigl(t/(2^{k+1}s)\bigr)^2$ (\texttt{two\_residue\_of\_odd\_two\_power}).
+\end{proof}
+
+\begin{remarque}
+La méthode suppose la loi de réciprocité, que la page emploie sans la nommer. Elle ne dit rien quand la puissance de $2$ qui divise exactement $p - 1$ a un exposant pair, en particulier pour $p \equiv 5 \pmod 8$ : c'est ce que dit la dernière ligne de la page, et l'énoncé n'en couvre pas davantage. Le second complément lui-même, $\left(\frac{2}{p}\right) = 1 \iff p \equiv \pm 1 \pmod 8$, est dans mathlib (\texttt{ZMod.exists\_sq\_eq\_two\_iff}, repris en \texttt{two\_residue\_iff}).
+\end{remarque}
+
+\begin{enonce}[Énoncé de l'édition, vue 706, les nombres premiers $4n+1$]
+Pour deux nombres premiers $P \equiv p \equiv 1 \pmod 4$, $P$ est résidu de $p$ si et seulement si $p$ est résidu de $P$ ; si $P$ est résidu de $p$, $-P$ l'est aussi. On a, pour $s = \pm 1$,
+\[ (a^2+b^2)(\pi^2+\rho^2+\sigma^2+\tau^2) = (a\pi + sb\rho)^2 + (b\pi - sa\rho)^2 + (a\sigma + sb\tau)^2 + (a\tau - sb\sigma)^2. \]
+\end{enonce}
+
+La première partie est le cas $p \equiv q \equiv 1 \pmod 4$ de la loi de réciprocité (mathlib ; \texttt{four\_n\_one\_reciprocity}) ; la deuxième vient de ce que $-1$ est résidu de $p$ (\texttt{neg\_residue\_of\_one\_mod\_four}) ; l'identité se vérifie en développant (\texttt{four\_square\_expansion}). La page cherche la première partie par l'égalité terme à terme des deux membres de l'identité, ce qui n'est pas une inférence valable ; la démonstration ci-dessus ne suit pas la page.
+
+\begin{enonce}[Sophie Germain, vue 722, la proposition générale]
+Tout entier $a$ qui n'est pas un carré (en particulier tout $-t^2$, $t \neq 0$) est non-résidu d'un nombre premier $p$ qui ne le divise pas. Réciproquement, un carré est résidu de tout nombre premier.
+\end{enonce}
+
+\begin{proof}
+Il suffit de trouver $N$ impair avec $\left(\frac{a}{N}\right) = -1$ : la multiplicativité du symbole de Jacobi en bas fournit alors un facteur premier $p$ de $N$ avec $\left(\frac{a}{p}\right) = -1$, donc $a$ non-résidu de $p$ et $p \nmid a$ (\texttt{exists\_prime\_nonresidue}). On a $a \neq 0$ ; écrivons $|a| = b^2 s$ avec $s$ sans facteur carré (\texttt{exists\_jacobiSym\_eq\_neg\_one}).
+
+Si un nombre premier impair $q$ divise $s$, on écrit $s = qs'$ avec $q \nmid s'$, et $b = q^e b'$ avec $q \nmid b'$. Soit $c$ un non-résidu de $q$. Par le théorème chinois, il existe $N$ avec $N \equiv c \pmod q$ et $N \equiv 1 \pmod{4s'b'}$. Alors $N \equiv 1 \pmod 4$, $N$ est premier avec $q$ et avec $b'$, donc avec $b$ ; $\left(\frac{\pm1}{N}\right) = 1$, $\left(\frac{b^2}{N}\right) = 1$ ; $\left(\frac{s'}{N}\right) = \left(\frac{s'}{1}\right) = 1$, le symbole $\left(\frac{s'}{\cdot}\right)$ ne dépendant que de la classe modulo $4s'$ ; et $\left(\frac{q}{N}\right) = \left(\frac{N}{q}\right) = \left(\frac{c}{q}\right) = -1$, par la réciprocité ($N \equiv 1 \pmod 4$). Le produit vaut $-1$.
+
+Sinon, $s$ n'a que $2$ pour facteur premier, et, étant sans facteur carré, vaut $1$ ou $2$. Écrivons $b = 2^j(2t+1)$. Le cas $a = b^2$ est exclu. Pour $a = -b^2$ et $a = 2b^2$, on prend $N = 4(2t+1)^2 - 1$, qui est $\equiv 3 \pmod 8$ et premier avec $b$ : $\left(\frac{-1}{N}\right) = -1$ et $\left(\frac{2}{N}\right) = -1$. Pour $a = -2b^2$, on prend $N = 4(2t+1)^2 + 1 \equiv 5 \pmod 8$, et $\left(\frac{-2}{N}\right) = -1$. La réciproque est immédiate (\texttt{isSquare\_zmod\_of\_isSquare}).
+\end{proof}
+
+\begin{remarque}
+La démonstration est celle qu'on donne aujourd'hui, par le symbole de Jacobi (postérieur aux feuillets) ; elle ne suit pas la réduction de la page aux nombres $4n+1$, $4n+2$, $4n+3$, qui admet le cas $4n+1$. Les pas de cette réduction que la page démontre sont l'objet de l'énoncé suivant.
+\end{remarque}
+
+\begin{enonce}[Sophie Germain, vues 720 à 723, les nombres $4n+2$ et $4n+3$]
+Tout $m \equiv 2 \pmod 4$ est non-résidu d'un nombre premier $q \equiv 3 \pmod 4$. Soit $N \equiv 3 \pmod 4$, $N \geq 7$, premier ou non. Alors $-N$ est non-résidu d'un nombre premier $q \equiv 3 \pmod 4$ plus petit que $N$, et $N$ est non-résidu d'un nombre premier plus petit que $N$.
+\end{enonce}
+
+\begin{proof}
+Pour $m$ : $m+1 \equiv 3 \pmod 4$, donc $\left(\frac{-1}{m+1}\right) = -1$, et $m+1$ a un facteur premier $q$ dont $-1$ est non-résidu, c'est-à-dire $q \equiv 3 \pmod 4$ ; comme $m \equiv -1 \pmod q$, $m$ est non-résidu de $q$ (\texttt{four\_n\_two\_nonresidue}). C'est l'argument de la page avec $2k+1 = 1$.
+
+Pour $-N$ : $N - 4 \equiv 3 \pmod 4$ est positif ; il a un facteur premier $q \equiv 3 \pmod 4$, $q \leq N - 4 < N$, et $N \equiv 4$, $-N \equiv -1\cdot 2^2 \pmod q$ ; si $-N$ était un carré, $-1$ en serait un, $2$ étant inversible (\texttt{neg\_nonresidue\_smaller}). Pour $+N$ : si $N \equiv 3 \pmod 8$, $N \geq 11$ et $N - 8 \equiv 3 \pmod 8$, donc $\left(\frac{2}{N-8}\right) = -1$, et un facteur premier $q$ de $N - 8$ a $2$ pour non-résidu ; $N \equiv 2 \cdot 2^2 \pmod q$ conclut. Si $N \equiv 7 \pmod 8$, $N - 2 \equiv 5 \pmod 8$, un facteur premier $q$ de $N-2$ a $2$ pour non-résidu, et $N \equiv 2 \pmod q$ (\texttt{pos\_nonresidue\_smaller}).
+\end{proof}
+
+\begin{remarque}
+Comme $q$ divise $N - 4$ (ou $N - 8$, ou $N - 2$) et non $4$, $8$, $2$, il ne divise pas $N$ : la précaution que la lecture demande pour $N$ composé est remplie d'elle-même par ce choix. Il faut $N \geq 7$ : pour $N = 3$, le seul nombre premier plus petit est $2$, dont $3$ et $-3$ sont résidus (\texttt{three\_exception}). Le choix $a = 1$ dans $p - 4a^2$, $p - 8a^2$, $p - 2a^2$ est permis par la remarque finale de la page, qui n'exige que $2a < \sqrt p$ ou $2a < \sqrt{p/2}$.
+\end{remarque}
+
+\begin{contrexemple}[Sophie Germain, vue 720, l'extension]
+$-5$, $-17$ et $-21$ sont résidus de tous les nombres premiers $q \equiv 3 \pmod 4$ plus petits qu'eux. L'énoncé « tout nombre de la forme $4n+1$ pris négativement est non résidu de quelque nombre premier moindre que lui et de la forme $4n+3$ » est donc faux.
+\end{contrexemple}
+
+\texttt{false\_extension} l'établit par énumération : $-17 \equiv 1^2 \pmod 3$, $\equiv 2^2 \pmod 7$, $\equiv 4^2 \pmod{11}$ ; $-21 \equiv 0 \pmod 3$ et $\pmod 7$, $\equiv 1 \pmod{11}$, $\equiv 6^2 \pmod{19}$. $17$ est premier, de sorte que l'extension échoue même pour $p$ premier. Que ce soient les seules exceptions en dessous de $200\,000$, comme le dit la lecture, n'est pas démontré ici.
+
+\begin{contrexemple}[Sophie Germain, vues 718 et 726]
+Pour $p = 19 = 12 \cdot 1 + 7$, le nombre pair immédiatement supérieur à $\sqrt{19/3}$ est $a = 4$, et $3a^2 - p = 29 > p$ ; $19$ est pourtant non-résidu de $7$. Le nombre $3$ est résidu de $11$ ($5^2 \equiv 3$), et $11$ n'est pas de la forme $3m + b^2$ avec $m$, $b$ entiers.
+\end{contrexemple}
+
+C'est \texttt{nineteen\_exception} et \texttt{three\_eleven} ; la seconde partie se voit modulo $3$, où $b^2 \equiv 2$ est impossible. La première réfute l'affirmation « $3aa - p$ sera $<$ que $p$ » du billet 354, la seconde l'énoncé que vise l'induction du feuillet 360.
+
+\begin{enonce}[Sophie Germain, vue 728]
+Soit $p$ premier, $p \equiv 3 \pmod 4$. Si $n$ est non-résidu de $p$, $-n$ est résidu. Si $p \equiv 11 \pmod{12}$, $3$ est résidu et $-3$ non-résidu de $p$. Tout nombre premier qui divise $a^2 + a + 1$ a $-3$ pour résidu, puisque $4(a^2+a+1) = (2a+1)^2 + 3$ ; aucun nombre premier $12n+11$ ne divise donc $a^2+a+1$.
+\end{enonce}
+
+\begin{proof}
+Par le critère d'Euler, $n^{(p-1)/2} = -1$ et, $\frac{p-1}{2}$ étant impair, $(-n)^{(p-1)/2} = (-1)(-1) = 1$ (\texttt{neg\_residue\_of\_nonresidue}). La page passe par une racine primitive ; le critère d'Euler en est une forme. Pour $p \equiv 11 \pmod{12}$, la réciprocité pour deux premiers $\equiv 3 \pmod 4$ donne $\left(\frac{3}{p}\right) = -\left(\frac{p}{3}\right) = -\left(\frac{2}{3}\right) = 1$, et $-3 = -1 \cdot 3$ avec $-1$ non-résidu (\texttt{twelve\_n\_eleven}). Enfin $a^2 + a + 1 \equiv 0$ donne $-3 \equiv (2a+1)^2$ (\texttt{neg\_three\_of\_dvd}, \texttt{cube\_identity}, \texttt{twelve\_n\_eleven\_not\_dvd}).
+\end{proof}
+
+La dernière partie confirme le constat de la page, qu'on ne peut « rien conclure pour ces nombres » de la formule $\frac{4(a^3-1)}{a-1} = (2a+1)^2 + 3$.
+
+\begin{enonce}[Sophie Germain, vue 729\piste{fr-9115-fermat-primes-residues}]
+Si $p = 12n + 5$ et $3n + 1$ sont premiers, $3$ est racine primitive de $p$.
+\end{enonce}
+
+\begin{proof}
+On a $n \geq 1$, puisque $1$ n'est pas premier. Par la réciprocité ($p \equiv 1 \pmod 4$), $\left(\frac{3}{p}\right) = \left(\frac{p}{3}\right) = \left(\frac{2}{3}\right) = -1$, donc $3^{(p-1)/2} = 3^{2(3n+1)} = -1$ par le critère d'Euler. L'ordre de $3$ divise $p - 1 = 4(3n+1)$ ; pour qu'il soit $p-1$, il suffit que $3^{(p-1)/r} \neq 1$ pour chaque facteur premier $r$ de $p-1$, soit $r = 2$ et $r = 3n+1$. Pour $r = 2$, c'est $-1 \neq 1$. Pour $r = 3n+1$, $3^4 = 1$ donnerait $p \mid 80$, donc $p \leq 80$ et $n \leq 6$, et aucun des nombres $17, 29, 41, 53, 65, 77$ ne divise $80$ (\texttt{three\_primitive\_root}).
+\end{proof}
+
+\begin{remarque}
+La page exclut l'ordre $4$ par $3^2 + 1 \equiv 0$, soit $p \mid 10$, sans écarter $3^2 \equiv 1$ ; la démonstration ci-dessus écarte $3^4 \equiv 1$ d'un coup. L'hypothèse « $3n + 1$ premier » sert à réduire les facteurs premiers de $p - 1$ à $2$ et $3n+1$.
+\end{remarque}
+
+\begin{enonce}[Sophie Germain, vue 730, les nombres premiers de Fermat\piste{fr-9115-fermat-primes-residues}]
+Pour $j < k$, $F_k \equiv 2 \pmod{F_j}$. Si $F_j$ et $F_k$ sont premiers, $F_j$ est résidu de $F_k$ si et seulement si $2$ est résidu de $F_j$. En conséquence, pour $F_k$ premier, $3$ est non-résidu de $F_k$ si $k \geq 1$, $5$ si $k \geq 2$, et $7$ si $k \geq 1$ ; mais $F_j$ est résidu de $F_k$ dès que $2 \leq j < k$ (ainsi $17$ est résidu de $257$ et de $65537$, et $257$ de $65537$). Enfin tout non-résidu d'un nombre premier de Fermat en est racine primitive : $3$ et $7$ sont racines primitives de tout nombre premier de Fermat $F_k$, $k \geq 1$, et $5$ de tout $F_k$ premier, $k \geq 2$.
+\end{enonce}
+
+\begin{proof}
+Le produit $F_0 F_1 \cdots F_{k-1}$ vaut $F_k - 2$ (mathlib), d'où $F_j \mid F_k - 2$, et $F_j > 2$ (\texttt{fermatNumber\_mod}). Pour $k \geq 1$, $F_k \equiv 1 \pmod 4$, et la réciprocité donne $\left(\frac{F_j}{F_k}\right) = \left(\frac{F_k}{F_j}\right) = \left(\frac{2}{F_j}\right)$ (\texttt{fermat\_residue\_iff}). Pour $F_0 = 3$ et $F_1 = 5$, $2$ est non-résidu (\texttt{three\_nonresidue\_fermat}, \texttt{five\_nonresidue\_fermat}) ; pour $j \geq 2$, $8 \mid 2^{2^j}$, $F_j \equiv 1 \pmod 8$ et $2$ est résidu (\texttt{fermat\_residue\_of\_two\_le}, \texttt{seventeen\_residue}, où $257$ et $65537$ sont prouvés premiers par calcul). Pour $7$ : $2^{2^k} \equiv 2$ ou $4 \pmod 7$ par récurrence (le carré échange $2$ et $4$), donc $F_k \equiv 3$ ou $5 \pmod 7$, non-résidus de $7$, et $\left(\frac{7}{F_k}\right) = \left(\frac{F_k}{7}\right) = -1$ (\texttt{seven\_nonresidue\_fermat}). Enfin, si $a$ est non-résidu de $F_k = 2 \cdot 2^m + 1$, $m = 2^k - 1$, on a $a^{2^m} = -1 \neq 1$ (critère d'Euler) et $a^{2^{m+1}} = 1$ ; l'ordre de $a$ est donc $2^{m+1} = F_k - 1$ (\texttt{fermat\_primitive\_root} et ses trois corollaires).
+\end{proof}
+
+\begin{remarque}
+L'énoncé principal de la page, que les nombres premiers de Fermat plus petits sont non-résidus et donc racines primitives des plus grands, n'est vrai que pour $3$ et $5$ ; la correction interlinéaire « cela est faux » est confirmée par $17$, résidu de $257$. Le second paragraphe, $3 = 2^2 - 1$ et $7 = 2^3 - 1$ non-résidus de $F_i$, est vrai pour $i \geq 1$, bien que l'argument employé (exiger un carré exact) ait le défaut que la page vient de relever. La démonstration ci-dessus ne suit pas cet argument. Les énoncés portent sur les nombres de Fermat premiers : la primalité de $F_k$ est une hypothèse, et seule celle de $F_0$ à $F_4$ est établie.
+\end{remarque}
+
+Ne sont pas démontrés ici : le premier théorème du manuscrit C, corrigé de la solution triviale, qui est le théorème de Darmon et Merel, ni son extension à $2z^{2(n+2d)} = x^{2n} + y^{2n}$ ; le théorème de Fermat pour les exposants $2n$ avec $n$ impair sans facteur $3$, qui demande le théorème de Wiles ; la justification de $P = Uq \pm Vp$ et de $U = U'u \pm V'v$ par les entiers de Gauss ; le second cas de l'alternative ($v = 0$ ou $u = 0$) ; l'énoncé de Gauss (art.~125) que la page prête à « l'auteur », que tout nombre premier $p \equiv 1 \pmod 4$, $p > 5$, pris négativement est non-résidu d'un nombre premier plus petit ; les arguments des vues 718, 719, 722 et 724 sur les nombres $12n+7$, $12n+5$, $120k+1$, $3k-1$ et $24k+17$, hors l'exception $p = 19$ ; les vérifications numériques de la lecture (jusqu'à $5000$, $20\,000$ ou $200\,000$).

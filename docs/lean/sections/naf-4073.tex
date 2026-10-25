@@ -1,0 +1,35 @@
+\section[NAF 4073 : le triangulaire d'un carré]{NAF 4073 : le triangulaire d'un carré\protect\verifie{Naf4073}}\label{sec:naf-4073}
+
+NAF 4073 est un volume de lettres. La seule ligne de mathématiques qu'il contienne est écrite tête-bêche au haut du feuillet d'adresse de la lettre non signée du 13~mars 1814, d'une main qui n'est pas celle de la lettre (\vue{naf-4073}{3}{42}) : l'égalité
+\[ \Big(\frac{n^2 - n}{2}\Big)^2 + \Big(\frac{n^2 + n}{2}\Big)^2 = \frac{n^4 + n^2}{2}, \]
+avec la phrase qui la lit, \q{le triangulaire d'un quarré est la somme des quarrés des deux Triangulaires consécutifs}. Sous l'égalité, une ligne isolée que la transcription lit $1 + 64 + 49$. La lecture modernisée note $T_k = k(k+1)/2$ et lit l'égalité comme $T_{n-1}^2 + T_n^2 = T_{n^2}$.
+
+\begin{enonce}[Note de NAF 4073, vue 42, le triangulaire d'un carré\piste{naf-4073-triangular-note}]
+Dans tout corps où $2 \neq 0$, $\big(\frac{n^2 - n}{2}\big)^2 + \big(\frac{n^2 + n}{2}\big)^2 = \frac{n^4 + n^2}{2}$. En entiers naturels, pour tout $n$,
+\[ T_n + T_{n+1} = (n+1)^2, \qquad T_{n+1} - T_n = n + 1, \qquad T_n^2 + T_{n+1}^2 = T_{(n+1)^2}, \]
+et, pour $n \geq 1$, $\binom{n}{2}^2 + \binom{n+1}{2}^2 = \binom{n^2+1}{2}$.
+\end{enonce}
+
+\begin{proof}
+La première égalité est une identité de fractions rationnelles (\texttt{leaf\_identity}). En entiers, la division par $2$ est exacte puisque $k(k+1)$ est pair, d'où $2T_k = k(k+1)$ (\texttt{two\_mul\_T}) et $T_k = \binom{k+1}{2}$ (\texttt{T\_eq\_choose}). Posons $a = T_n$, $b = T_{n+1}$ : $2a + 2b = n(n+1) + (n+1)(n+2) = 2(n+1)^2$ et $2b - 2a = 2(n+1)$ (\texttt{T\_add\_T}, \texttt{T\_succ\_sub\_T}). L'identité du parallélogramme donne alors $4(a^2 + b^2) = (2a)^2 + (2b)^2 = (n+1)^2\big(n^2 + (n+2)^2\big) = 2(n+1)^2\big((n+1)^2 + 1\big) = 4\,T_{(n+1)^2}$, et l'on simplifie par $4$ (\texttt{triangular\_of\_square}). La forme binomiale en découle par $T_k = \binom{k+1}{2}$, en posant $n = m + 1$ (\texttt{triangular\_of\_square\_choose}).
+\end{proof}
+
+\begin{remarque}
+L'énoncé est démontré sous la forme $T_n^2 + T_{n+1}^2 = T_{(n+1)^2}$, qui est celle de la lecture avec $n + 1$ au lieu de $n$ ; elle évite la soustraction tronquée des entiers naturels et vaut pour tout $n$, y compris $n = 0$. Aucune hypothèse n'est superflue ni manquante. La preuve ne dit rien de la main ni de la date de la note, qui font l'objet de la piste : celle-ci porte sur l'existence de la note dans ce volume, non sur l'identité, qui est classique.
+\end{remarque}
+
+\begin{enonce}[Énoncé de l'édition, d'après la vue 42, la conséquence par Nicomaque]
+Pour tout $n$, $\sum_{i=0}^{n} i^3 = T_n^2$, et $T_{(n+1)^2} + (n+1)^3 = 2\,T_{n+1}^2$, c'est-à-dire $T_{m^2} = 2T_m^2 - m^3$ pour $m \geq 1$.
+\end{enonce}
+
+\begin{proof}
+Par récurrence : $4\big(T_n^2 + (n+1)^3\big) = n^2(n+1)^2 + 4(n+1)^3 = (n+1)^2(n+2)^2 = 4\,T_{n+1}^2$ (\texttt{nicomachus}). Le même calcul donne $T_{n+1}^2 = T_n^2 + (n+1)^3$, qu'on porte dans l'énoncé précédent (\texttt{triangular\_of\_square\_cubes}).
+\end{proof}
+
+\begin{enonce}[Énoncé de l'édition, d'après la vue 42, la ligne $1 + 64 + 49$]
+On a $1 + 64 + 49 = 114$ ; $114$ n'est ni un nombre triangulaire ni un carré, et $1 + 64 \neq 49$.
+\end{enonce}
+
+Si $T_k = 114$, alors $k(k+1) = 228$, ce qui force $k \leq 15$, et aucun $k \leq 15$ ne convient ; de même $m^2 = 114$ force $m \leq 11$ (\texttt{line\_114}). Le constat de la lecture se trouve confirmé : aucune interprétation de ces trois nombres n'instancie l'identité. Ce que la ligne additionne reste inconnu.
+
+Ne sont pas démontrés ici : l'attribution de la main et la date de la note, qui relèvent du fac-similé et non d'une preuve.

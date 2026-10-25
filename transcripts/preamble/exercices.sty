@@ -44,6 +44,23 @@
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=black,urlcolor=black,pdfborder={0 0 0}}
 
+% Lean names and paths in \texttt (`Germain.Exercises.p4\_plus\_four`,
+% `lean/Germain/Exercises.lean`) are long words with no hyphen: let them break
+% after a dot, an underscore or a slash, rather than run into the margin. The
+% site renders \texttt as <code>, which wraps by itself.
+\ExplSyntaxOn
+\tl_new:N \l__exercices_tt_tl
+\RenewDocumentCommand \texttt { m }
+  {
+    \tl_set:Nn \l__exercices_tt_tl {#1}
+    \tl_replace_all:Nnn \l__exercices_tt_tl { . } { . \allowbreak }
+    \tl_replace_all:Nnn \l__exercices_tt_tl { \_ } { \_ \allowbreak }
+    \tl_replace_all:Nnn \l__exercices_tt_tl { / } { / \allowbreak }
+    \mode_leave_vertical:
+    \group_begin: \ttfamily \tl_use:N \l__exercices_tt_tl \group_end:
+  }
+\ExplSyntaxOff
+
 \definecolor{exgris}{gray}{0.40}
 \definecolor{exstatut}{rgb}{0.63,0.29,0.18}
 

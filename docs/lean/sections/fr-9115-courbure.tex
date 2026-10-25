@@ -1,0 +1,103 @@
+\section[Français 9115 : la courbure des surfaces]{Français 9115 : la courbure des surfaces\protect\verifie{Fr9115Curvature}}\label{sec:fr-9115-courbure}
+
+Le volume Français 9115 s'ouvre sur l'« Exposition des principes qui servent de base à la théorie des surfaces élastiques » (vues 3 à 41) et le « Mémoire sur la courbure des surfaces » (vues 43 à 89), suivis de brouillons sur les « moyennes courbures » (vues 91 à 114) et de feuillets épars, dont un calcul sur la sphère relié parmi les calculs de la chaleur (vue 650). Sophie Germain y propose de mesurer la courbure d'une surface par la somme des inverses des rayons principaux, et son irrégularité par leur différence. On démontre ici les énoncés de la lecture modernisée sur la courbure normale.
+
+\noindent\emph{Conventions.} Pour une surface dont le plan tangent est horizontal au point, $z = \frac12(rx^2 + 2sxy + ty^2) + \dots$, la courbure de la section normale de direction $A$ est $k(A) = r\cos^2A + 2s\sin A\cos A + t\sin^2A$ (\texttt{kq}). En axes principaux, c'est la formule d'Euler $\kappa(\varphi) = \kappa_1\cos^2\varphi + \kappa_2\sin^2\varphi$ (\texttt{kappa}), $\varphi$ étant compté depuis la direction de courbure $\kappa_1$, et $H = \frac12(\kappa_1 + \kappa_2)$ est la courbure moyenne.
+
+\subsection*{Le théorème d'Euler et la loi de répartition}
+
+\begin{enonce}[Euler, Recherches sur la courbure des surfaces, 1760, cité aux vues 16 et 48]
+Pour tous $r$, $s$, $t$, il existe $\theta_0$ et $\kappa_2 \leq \kappa_1$ avec $\kappa_1 + \kappa_2 = r + t$, $\kappa_1\kappa_2 = rt - s^2$ et $k(A) = \kappa_1\cos^2(A - \theta_0) + \kappa_2\sin^2(A - \theta_0)$ pour tout $A$.
+\end{enonce}
+
+\begin{proof}
+Soient $R \geq 0$ et $\phi$ le module et l'argument du nombre complexe $\frac{r-t}2 + is$, de sorte que $R\cos\phi = \frac{r-t}2$ et $R\sin\phi = s$. On prend $\theta_0 = \phi/2$ et $\kappa_{1,2} = \frac{r+t}2 \pm R$. Alors $\kappa_1\kappa_2 = \bigl(\frac{r+t}2\bigr)^2 - R^2$ et $R^2 = \bigl(\frac{r-t}2\bigr)^2 + s^2$. Par duplication, $k(A) = \frac{r+t}2 + \frac{r-t}2\cos 2A + s\sin 2A = \frac{r+t}2 + R\cos(2A - \phi)$, et le second membre vaut $\frac{r+t}2 + R\cos 2(A - \theta_0)$ (\texttt{euler\_principal}).
+\end{proof}
+
+\begin{enonce}[Sophie Germain, Exposition, N\textsuperscript{o} 4, \vue{fr-9115}{1}{17} à \vue{fr-9115}{1}{19}]
+$k(A) - k(A + \frac\pi2) = (r - t)\cos 2A + 2s\sin 2A$ et $k(\frac\pi2 - A) - k(\pi - A) = -(r - t)\cos 2A + 2s\sin 2A$ ; la somme des deux écarts, $4s\sin 2A$, est nulle en axes principaux.
+\end{enonce}
+
+\begin{proof}
+On remplace $\cos(A + \frac\pi2)$ par $-\sin A$, $\sin(A + \frac\pi2)$ par $\cos A$, et de même pour les autres angles, puis $\cos 2A$ et $\sin 2A$ par leurs formules de duplication (\texttt{kq\_perp\_diff}, \texttt{kq\_complement\_diff}).
+\end{proof}
+
+\begin{enonce}[Sophie Germain, mémoire sur la courbure, N\textsuperscript{o} 3, \vue{fr-9115}{3}{57} à \vue{fr-9115}{4}{62}]
+Deux sections normales perpendiculaires ont la somme de courbures $\kappa_1 + \kappa_2$. On a $\kappa(\varphi) = H + \frac{\kappa_1 - \kappa_2}2\cos 2\varphi$, avec $\bigl(\frac{\kappa_1 - \kappa_2}2\bigr)^2 = H^2 - \kappa_1\kappa_2$. La section à $45^\circ$ des plans principaux a la courbure moyenne, et $\kappa(\frac\pi4 + u) + \kappa(\frac\pi4 - u) = \kappa_1 + \kappa_2$ pour tout $u$. Enfin $\kappa(-\varphi) = \kappa(\pi - \varphi) = \kappa(\varphi)$.
+\end{enonce}
+
+\begin{proof}
+$\cos(\varphi + \frac\pi2)^2 = \sin^2\varphi$ et $\sin(\varphi + \frac\pi2)^2 = \cos^2\varphi$ donnent la somme (\texttt{kappa\_add\_perp}). La forme harmonique vient de $\cos 2\varphi = 2\cos^2\varphi - 1$ et $\sin^2 + \cos^2 = 1$ (\texttt{kappa\_harmonic}, \texttt{amplitude\_sq}). En $\varphi = \frac\pi4$, $\cos 2\varphi = 0$ (\texttt{kappa\_pi\_div\_four}) ; en $\frac\pi4 \pm u$, les cosinus valent $\mp\sin 2u$ et se compensent (\texttt{kappa\_quarter\_symm}). La dernière égalité vient de la parité des carrés (\texttt{kappa\_symm}).
+\end{proof}
+
+\begin{remarque}
+La formule du N\textsuperscript{o} 2 (\vue{fr-9115}{3}{54}) donne $r = f$, le plus grand rayon, pour $\varphi = 0$ : son angle est compté depuis le plan de moindre courbure, comme la lecture l'a vu. Pour $\varphi' = 45^\circ$ dans la troisième proposition, la direction obtenue est à $90^\circ$ du point de départ et sa courbure est $1/g$, non $1/f$ : c'est $\kappa(\frac\pi2) = \kappa_2$ dans la forme harmonique. La note de l'Exposition (\vue{fr-9115}{1}{19}) sur la sphère de rayon égal au rayon de la section à $45^\circ$ est l'égalité $\kappa(\frac\pi4) = H$.
+\end{remarque}
+
+\begin{enonce}[Énoncé de l'édition, d'après les « Idées à vérifier », \vue{fr-9115}{7}{137}]
+Si $\kappa_1 \neq \kappa_2$, la section de direction $\varphi$ a la courbure moyenne si et seulement si $\cos 2\varphi = 0$, c'est-à-dire pour les deux sections à $45^\circ$ des plans principaux.
+\end{enonce}
+
+\begin{proof}
+Par la forme harmonique, $\kappa(\varphi) = H$ équivaut à $\frac{\kappa_1 - \kappa_2}2\cos 2\varphi = 0$ (\texttt{kappa\_eq\_mean\_iff}).
+\end{proof}
+
+\subsection*{La moyenne sur toutes les directions}
+
+\begin{enonce}[Sophie Germain, mémoire sur la courbure, N\textsuperscript{os} 4 à 6, \vue{fr-9115}{4}{64} à \vue{fr-9115}{4}{72}]
+$\int_0^{2\pi}\kappa(\varphi)\,d\varphi = 2\pi H$ : la moyenne de la courbure normale sur toutes les directions est $H$. La surface des distances, de lignes de distance $\frac12\kappa(\varphi)s^2$ sur le cercle de rayon $s$, a l'étendue $\int_0^{2\pi}\frac12\kappa(\varphi)s^2\cdot s\,d\varphi = 2\pi s\cdot\frac12 Hs^2$ du cylindre de hauteur $\frac12 Hs^2$, la surface des distances moyennes. Enfin, pour un arc d'angle $x$, $|x| \leq 1$, sur un cercle de rayon $\rho \geq 0$, la ligne de distance $\rho(1 - \cos x)$ diffère de $\rho x^2/2$ d'au plus $\frac5{96}\rho x^4$.
+\end{enonce}
+
+\begin{proof}
+$\int_0^{2\pi}\cos^2 = \int_0^{2\pi}\sin^2 = \pi$, d'où $\pi(\kappa_1 + \kappa_2)$ (\texttt{integral\_kappa}) ; l'intégrande de la surface des distances est $\frac{s^3}2\kappa(\varphi)$ (\texttt{distance\_surface}). Pour la dernière, $\rho(1 - \cos x) - \rho x^2/2 = -\rho\bigl(\cos x - (1 - x^2/2)\bigr)$, et $|\cos x - (1 - x^2/2)| \leq \frac5{96}|x|^4$ pour $|x| \leq 1$ (\texttt{sinus\_verse}).
+\end{proof}
+
+\begin{remarque}
+Avec $s = \rho x$, $\rho x^2/2 = s^2/(2\rho)$ : à arc égal et infiniment petit, la ligne de distance est proportionnelle à la courbure, ce que dit le N\textsuperscript{o} 4. L'égalité des deux étendues ne demande donc que la moyenne des courbures ; la somme sur « toutes les sections, répétée un nombre infini de fois » de l'Exposition n'a pas de sens, et l'intégrale la remplace. Le développement des deux surfaces sur un plan et les triangles de la vue 75 ne sont pas formalisés.
+\end{remarque}
+
+\subsection*{Trois sections normales voisines}
+
+\begin{enonce}[Sophie Germain, feuillet « 55 bis », \vue{fr-9115}{6}{114}]
+\begin{align*}
+\kappa(A) - \kappa(A+a) &= (\kappa_1-\kappa_2)\sin a\,\sin(2A+a), \\
+\kappa(A-a) - \kappa(A) &= (\kappa_1-\kappa_2)\sin a\,\sin(2A-a), \\
+\kappa(A-a) + \kappa(A+a) - 2\kappa(A) &= -2(\kappa_1-\kappa_2)\sin^2 a\,\cos 2A .
+\end{align*}
+Si $\kappa_2 < \kappa_1$, $0 \leq A < \frac\pi4$ et $\sin a \neq 0$, la diminution de $A - a$ à $A$ est plus petite que celle de $A$ à $A + a$. La dérivée $\kappa'(\theta) = -(\kappa_1 - \kappa_2)\sin 2\theta$ vérifie $|\kappa'(\theta)| \leq |\kappa'(\frac\pi4)|$.
+\end{enonce}
+
+\begin{proof}
+Dans la forme harmonique, on écrit $2A = (2A + a) - a$ et $2(A+a) = (2A + a) + a$ ; la différence $\cos(P - a) - \cos(P + a)$ vaut $2\sin P\sin a$ (\texttt{three\_sections\_one}, et de même \texttt{three\_sections\_two} avec $P = 2A - a$). Pour la troisième, $\cos(2A - 2a) + \cos(2A + 2a) - 2\cos 2A = 2\cos 2A(\cos 2a - 1)$ et $\cos 2a = 1 - 2\sin^2a$ (\texttt{three\_sections\_three}). Dans les conditions énoncées, $\cos 2A > 0$ et $\sin^2a > 0$, et la différence seconde est négative (\texttt{decrease\_compare}). La dérivée se calcule terme à terme, et $|\sin 2\theta| \leq 1 = \sin\frac\pi2$ (\texttt{hasDerivAt\_kappa}, \texttt{abs\_deriv\_kappa\_le}).
+\end{proof}
+
+\begin{contrexemple}[à la conclusion du feuillet sur les rayons]
+Si $0 < \kappa_2 < \kappa_1$, les rayons des deux sections à $45^\circ$ n'ont pas pour somme celle des rayons principaux : $\frac1{\kappa(\pi/4)} + \frac1{\kappa(\pi/4)} \neq \frac1{\kappa_1} + \frac1{\kappa_2}$.
+\end{contrexemple}
+
+\begin{proof}
+Le premier membre vaut $4/(\kappa_1 + \kappa_2)$, le second $(\kappa_1 + \kappa_2)/\kappa_1\kappa_2$, et leur égalité donnerait $(\kappa_1 + \kappa_2)(\kappa_1 - \kappa_2)^2 = 0$ (\texttt{radii\_counterexample}).
+\end{proof}
+
+\begin{remarque}
+L'énoncé juste porte sur les courbures, $\kappa(\frac\pi4 - a) + \kappa(\frac\pi4 + a) = \kappa_1 + \kappa_2$ (\texttt{kappa\_quarter\_symm}). La borne sur la dérivée confirme la dernière phrase du feuillet, que la courbure varie d'autant plus vite qu'on approche de la section de courbure moyenne, et contredit la phrase intermédiaire selon laquelle, à partir de $45^\circ$, l'augmentation serait plus rapide près du plan de plus grande courbure.
+\end{remarque}
+
+\subsection*{La somme des courbures sur la sphère}
+
+\begin{enonce}[Sophie Germain, « Somme des raisons inverses des deux rayons de principale courbure », \vue{fr-9115}{33}{650}]
+Soit $z = \sqrt{\rho^2 - x^2 - y^2}$ avec $\rho > 0$ et $\rho^2 - x^2 - y^2 > 0$. Ses dérivées partielles sont $p = -x/z$, $q = -y/z$, $r = -(\rho^2 - y^2)/z^3$, $s = -xy/z^3$, $t = -(\rho^2 - x^2)/z^3$, et
+\[
+\frac{(1+q^2)\,r - 2pq\,s + (1+p^2)\,t}{(1+p^2+q^2)^{3/2}} = -\frac2\rho .
+\]
+\end{enonce}
+
+\begin{proof}
+La dérivée de $\sqrt{D}$, $D = \rho^2 - x^2 - y^2$, est $-2x/(2\sqrt D)$ (\texttt{sphere\_p}, \texttt{sphere\_q}) ; celles de $-x/z$ et de $-y/z$ se calculent par la règle du quotient, en se servant de $z^2 = D$ (\texttt{sphere\_r}, \texttt{sphere\_s}, \texttt{sphere\_t}). Posons $w = 1/z$, de sorte que $Dw^2 = 1$. Alors $1 + p^2 + q^2 = (\rho w)^2$, dont la racine est $\rho w$. Le numérateur vaut $-2\rho^2w^3$, car sa différence avec $-2\rho^2w^3$ est $-w^3(x^2+y^2)(Dw^2 - 1)$. Le quotient est $-2\rho^2w^3/(\rho w)^3 = -2/\rho$ (\texttt{sphere\_sum}).
+\end{proof}
+
+\begin{remarque}
+La valeur $-2/\rho$ est la somme $\frac1R + \frac1{R'}$ attendue, avec le signe de la normale dirigée vers le bas. Les dérivées secondes sont celles des expressions de $p$ et de $q$ sur le disque ouvert, et la démonstration établit que la formule du feuillet est juste sur la sphère. Le changement de variables qu'elle fait ensuite, en $\theta$ et $\varphi$ à $r$ constant, n'est pas formalisé ; la lecture le juge faux.
+\end{remarque}
+
+Ne sont pas démontrés ici : le théorème de Meusnier et ce que l'Exposition dit des sections obliques ; le développement sur un plan des surfaces des distances (vues 72 à 77) ; les surfaces dont les rayons principaux sont de sens contraires (N\textsuperscript{o} 8) ; la comparaison avec l'anneau de Fourier ; la courbure comme quantité dynamique et les voûtes (N\textsuperscript{o} 9) ; le calcul de variation de la vue 483 ; les « Idées à vérifier » sur la chaînette, dont seule la remarque sur les sections à $45^\circ$ est démontrée ; les deux théorèmes proposés aux géomètres (vue 465), qui sont des définitions.

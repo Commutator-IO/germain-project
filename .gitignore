@@ -40,3 +40,6 @@ public/exercises/
 # The one exception: the link-preview image, which shows no manuscript but a
 # formula of a transcription set by TeX (scripts/og.mjs).
 !public/og/home.png
+
+# Lean build products and the mathlib checkout (cloned from grothendieck-project).
+lean/.lake/

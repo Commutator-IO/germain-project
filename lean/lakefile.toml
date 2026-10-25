@@ -1,0 +1,15 @@
+name = "germain"
+defaultTargets = ["Germain"]
+
+# A `sorry` is a warning, and a proof with a warning in it proves nothing: the
+# build fails on either.
+[leanOptions]
+warningAsError = true
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "715a03a90adf491de40fbec8b456c179a623435f"
+
+[[lean_lib]]
+name = "Germain"
