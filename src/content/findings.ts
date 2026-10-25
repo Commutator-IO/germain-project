@@ -62,10 +62,11 @@ export const FINDINGS: Finding[] = [
       'Del Centina 2008, AHES 62, and Laubenbacher and Pengelley 2010, Historia Mathematica 37 — the two studies that work through her number-theoretic leaves; searched for any use of NAF 4073 as a mathematical source, none surfaced.',
       'Del Centina and Fiocca 2018 — searched, not read: paywalled.',
       'Henry 1879, Revue philosophique 8, 619–641 — read 25 October 2026 (archive.org OCR). It prints the letter of 13 March 1814 in full as No. XVII, pp. 637–638, signed « D. », and comments on its writer; it says nothing of a note on the cover, and its only remark on mathematics in these papers concerns Français 9118 (p. 623). Nothing in its OCR reads « triangulaire ».',
+      'G. L. Alexanderson, « About the cover: Sophie Germain and a problem in number theory », Bulletin of the AMS 49 (2012), 327–331 (doi:10.1090/S0273-0979-2012-01370-8) — read 27 October 2026, pointed out by Georg Essl on History of Science and Mathematics (hsm.stackexchange.com/a/19744). It reproduces an unsigned manuscript sold by Bernard Quaritch in the 1990s and dated by the dealer « circa 1797 », attributed to Germain, in which, after answering a problem « La Grange m’ayant proposé », the writer adds « J’ai aussi remarqué que » ((n²+n)/2)² + ((n²−n)/2)² = (n⁴+n²)/2 — the identity of this leaf, in the same notation. It does not mention NAF 4073.',
     ],
     status: 'candidate',
     settle:
-      'Henry 1879 has been read and is silent on the note. Check Del Centina and Fiocca 2018 for a description of the cover of the 1814 letter. Independently, a palaeographic comparison of these fifteen words against a dated corpus of her hand would settle whose note it is — which the present entry does not claim.',
+      'The identity, in her notation, is already published as Germain’s from another manuscript (Alexanderson 2012, dealer’s date c. 1797), so nothing here is new on the mathematics or on her knowing it; what stays open is only that NAF 4073 carries a second copy, unrecorded. Alexanderson’s facsimile also gives a sample of the hand to set beside these fifteen words. Check Del Centina and Fiocca 2018 for a description of the cover of the 1814 letter.',
   },
   {
     id: 'naf-4073-lagrange-berlin-leaves',
