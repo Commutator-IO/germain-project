@@ -10,3 +10,5 @@ import Germain.Exercises.Descartes
 import Germain.Exercises.Fermat
 import Germain.Exercises.Lagrange
 import Germain.Exercises.Libri
+import Germain.Exercises.Maurolico
+import Germain.Exercises.Roberval

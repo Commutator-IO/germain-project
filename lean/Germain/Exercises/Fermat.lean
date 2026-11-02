@@ -12,8 +12,11 @@ import Mathlib
   proved; question 4 is proved in the form the solution uses, the product `f(y₁) f(y₂)` over the
   two roots of the quadratic.
 
-Not formalised: the largest rectangle and the tangent to the parabola (analysis, in the book's
-category 2).
+* « Le plus grand rectangle, par adæqualité puis par la dérivée » (nal-2339, views 27–28):
+  `rect_adequality`, `rect_max`, `rect_squares`, `rect_cube`.
+* « La tangente à la parabole : l'inégalité des deux côtés » (nal-2339, views 29–30): `F_factor`,
+  `outside_iff`, `one_side_iff`, `second_point`, `two_sides_iff`, `tangent_F`, `subtangent`. The
+  similar triangles of question 1 are taken as the coordinates of `O`, as in the solution.
 -/
 
 namespace Germain.Exercises.Fermat
@@ -105,5 +108,165 @@ theorem elim_example (x y : ℝ) :
   rcases mul_eq_zero.1 this with h | h
   · left; exact h
   · right; linarith
+
+
+/-! ## « Le plus grand rectangle, par adæqualité puis par la dérivée » -/
+
+/-- The rectangle `AE · EC` with `AE = x`, `AC = B`. -/
+def rect (B x : ℝ) : ℝ := x * (B - x)
+
+/-- **Le plus grand rectangle**, questions 1 and 2. `f(x + e) − f(x) = e (B − 2x − e)`; for
+`e ≠ 0` the quotient is `B − 2x − e`, whose value at `e = 0` is the derivative `B − 2x`. -/
+theorem rect_adequality (B x e : ℝ) (he : e ≠ 0) :
+    rect B (x + e) - rect B x = e * (B - 2 * x - e) ∧
+    (rect B (x + e) - rect B x) / e = B - 2 * x - e ∧
+    HasDerivAt (rect B) (B - 2 * x) x := by
+  refine ⟨by unfold rect; ring, ?_, ?_⟩
+  · rw [show rect B (x + e) - rect B x = e * (B - 2 * x - e) by unfold rect; ring]
+    field_simp
+  · have h := ((hasDerivAt_id x).mul ((hasDerivAt_const x B).sub (hasDerivAt_id x)))
+    convert h using 1
+    · ext y; simp [rect]
+    · simp; ring
+
+/-- **Le plus grand rectangle**, question 3. `f(B/2 + h) = B²/4 − h²`: the middle gives the largest
+rectangle, `B²/4`, and only the middle; for `B = 10`, `25` against `4 · 6 = 24`. -/
+theorem rect_max (B h : ℝ) :
+    rect B (B / 2 + h) = B ^ 2 / 4 - h ^ 2 ∧ (∀ x, rect B x ≤ B ^ 2 / 4) ∧
+    (∀ x, rect B x = B ^ 2 / 4 → x = B / 2) ∧ rect 10 5 = 25 ∧ rect 10 4 = 24 := by
+  refine ⟨by unfold rect; ring, fun x => ?_, fun x hx => ?_, by norm_num [rect],
+    by norm_num [rect]⟩
+  · unfold rect; nlinarith [sq_nonneg (x - B / 2)]
+  · unfold rect at hx
+    have : (x - B / 2) ^ 2 = 0 := by linear_combination -hx
+    have := pow_eq_zero_iff two_ne_zero |>.1 this
+    linarith
+
+/-- **Le plus grand rectangle**, question 4. For `g(x) = x² + (B − x)²` the rule gives the same
+point, `g(x + e) − g(x) = e (4x − 2B + 2e)`, but `g(B/2 + h) = B²/2 + 2h²`: it is a minimum. -/
+theorem rect_squares (B x e h : ℝ) :
+    (x + e) ^ 2 + (B - (x + e)) ^ 2 - (x ^ 2 + (B - x) ^ 2) = e * (4 * x - 2 * B + 2 * e) ∧
+    (B / 2 + h) ^ 2 + (B - (B / 2 + h)) ^ 2 = B ^ 2 / 2 + 2 * h ^ 2 ∧
+    (∀ y : ℝ, B ^ 2 / 2 ≤ y ^ 2 + (B - y) ^ 2) := by
+  refine ⟨by ring, by ring, fun y => by nlinarith [sq_nonneg (y - B / 2)]⟩
+
+/-- **Le plus grand rectangle**, question 4. The rule finds where the derivative vanishes, which is
+not an extremum in general: `x³` has derivative `0` at `0` and is strictly increasing. -/
+theorem rect_cube : HasDerivAt (fun x : ℝ => x ^ 3) 0 0 ∧ StrictMono (fun x : ℝ => x ^ 3) := by
+  refine ⟨?_, Odd.strictMono_pow (by decide)⟩
+  simpa using hasDerivAt_pow 3 (0 : ℝ)
+
+/-! ## « La tangente à la parabole : l'inégalité des deux côtés » -/
+
+/-- `F(e) = d (a − e)² − (d − e) a²`. -/
+def F (a d e : ℝ) : ℝ := d * (a - e) ^ 2 - (d - e) * a ^ 2
+
+/-- **La tangente à la parabole**, question 2. `F(e) = e (a² − 2da + de)`, and `F'(0) = a² − 2da`:
+the leaf's adæqualitas computes `F'(0)`. -/
+theorem F_factor (a d e : ℝ) :
+    F a d e = e * (a ^ 2 - 2 * d * a + d * e) ∧ HasDerivAt (F a d) (a ^ 2 - 2 * d * a) 0 := by
+  refine ⟨by unfold F; ring, ?_⟩
+  have h := ((((hasDerivAt_id (0 : ℝ)).const_sub a).pow 2).const_mul d).sub
+    (((hasDerivAt_id (0 : ℝ)).const_sub d).mul_const (a ^ 2))
+  convert h using 1
+  · funext e; simp [F]
+  · simp; ring
+
+/-- **La tangente à la parabole**, question 2. With `BC² = pd`, `p > 0`, `a ≠ 0`, the point `O`
+of abscissa `d − e` and ordinate `BC (a − e)/a` is outside the parabola `v² = pu` exactly when
+`F(e) > 0`, for every real `e`. -/
+theorem outside_iff (p a d e BC : ℝ) (hp : 0 < p) (ha : a ≠ 0) (hB : BC ^ 2 = p * d) :
+    (BC * (a - e) / a) ^ 2 > p * (d - e) ↔ F a d e > 0 := by
+  have ha2 : 0 < a ^ 2 := by positivity
+  have key : (BC * (a - e) / a) ^ 2 - p * (d - e) = p / a ^ 2 * F a d e := by
+    unfold F; rw [div_pow, mul_pow, hB]; field_simp
+  constructor
+  · intro h
+    have : 0 < p / a ^ 2 * F a d e := by rw [← key]; linarith
+    exact pos_of_mul_pos_right this (by positivity)
+  · intro h
+    have : 0 < p / a ^ 2 * F a d e := mul_pos (by positivity) h
+    linarith
+
+/-- **La tangente à la parabole**, question 3. For `a, d > 0`, `F(e) > 0` for every `e ∈ ]0, a[`
+exactly when `a ≥ 2d`: from one side the inequality only gives `a ≥ 2d`. -/
+theorem one_side_iff (a d : ℝ) (ha : 0 < a) (hd : 0 < d) :
+    (∀ e, 0 < e → e < a → F a d e > 0) ↔ 2 * d ≤ a := by
+  constructor
+  · intro h
+    by_contra hlt0
+    have hlt := not_le.1 hlt0
+    -- take `e = a(2d − a)/(2d)`, half of the root `a(2d − a)/d`, inside `]0, a[`
+    set e := a * (2 * d - a) / (2 * d) with he
+    have he0 : 0 < e := by rw [he]; apply div_pos (mul_pos ha (by linarith)) (by linarith)
+    have hea : e < a := by
+      rw [he, div_lt_iff₀ (by linarith)]; nlinarith
+    have := h e he0 hea
+    rw [(F_factor a d e).1] at this
+    have h2 : a ^ 2 - 2 * d * a + d * e = -(a * (2 * d - a)) / 2 := by
+      rw [he]; field_simp; ring
+    rw [h2] at this
+    have : 0 < -(a * (2 * d - a)) / 2 := pos_of_mul_pos_right this he0.le
+    nlinarith [mul_pos ha (show 0 < 2 * d - a by linarith)]
+  · intro h e he0 _
+    rw [(F_factor a d e).1]
+    exact mul_pos he0 (by nlinarith [mul_nonneg ha.le (show 0 ≤ a - 2 * d by linarith)])
+
+/-- **La tangente à la parabole**, question 3. For `a = 3d`, `F(e) = de(3d + e)`, and the line
+meets the parabola again at `e = −3d`: abscissa `4d`, ordinate `2 BC`, and `(2BC)² = p · 4d`. -/
+theorem second_point (p d BC e : ℝ) (hd : d ≠ 0) (hB : BC ^ 2 = p * d) :
+    F (3 * d) d e = d * e * (3 * d + e) ∧ F (3 * d) d (-3 * d) = 0 ∧
+    d - (-3 * d) = 4 * d ∧ BC * (3 * d - (-3 * d)) / (3 * d) = 2 * BC ∧
+    (2 * BC) ^ 2 = p * (4 * d) := by
+  refine ⟨by unfold F; ring, by unfold F; ring, by ring, by field_simp; ring, by
+    linear_combination 4 * hB⟩
+
+/-- **La tangente à la parabole**, question 4. Asking also `F(e) > 0` for `e < 0` near `0` forces
+`a = 2d`; then `F(e) = de² > 0` for every `e ≠ 0`: the line touches the parabola only at `B`. -/
+theorem two_sides_iff (a d : ℝ) (ha : 0 < a) (hd : 0 < d) :
+    ((∀ e, 0 < e → e < a → F a d e > 0) ∧ ∃ ε > 0, ∀ e, -ε < e → e < 0 → F a d e > 0) ↔
+      a = 2 * d := by
+  constructor
+  · rintro ⟨h1, ε, hε, h2⟩
+    have hge := (one_side_iff a d ha hd).1 h1
+    by_contra hne
+    have hgt : 2 * d < a := lt_of_le_of_ne hge (Ne.symm hne)
+    -- for `e < 0` near `0`, `a² − 2da + de > 0`, so `F(e) < 0`
+    set e := -min (ε / 2) (a * (a - 2 * d) / (2 * d)) with he
+    have hpos : 0 < a * (a - 2 * d) / (2 * d) := div_pos (mul_pos ha (by linarith)) (by linarith)
+    have hm : 0 < min (ε / 2) (a * (a - 2 * d) / (2 * d)) := lt_min (by linarith) hpos
+    have he0 : e < 0 := by rw [he]; linarith
+    have heε : -ε < e := by rw [he]; have := min_le_left (ε / 2) (a * (a - 2 * d) / (2 * d)); linarith
+    have := h2 e heε he0
+    rw [(F_factor a d e).1] at this
+    have hq : 0 < a ^ 2 - 2 * d * a + d * e := by
+      have hmin := min_le_right (ε / 2) (a * (a - 2 * d) / (2 * d))
+      have : d * min (ε / 2) (a * (a - 2 * d) / (2 * d)) ≤ a * (a - 2 * d) / 2 := by
+        calc d * min (ε / 2) (a * (a - 2 * d) / (2 * d)) ≤ d * (a * (a - 2 * d) / (2 * d)) :=
+              mul_le_mul_of_nonneg_left hmin hd.le
+          _ = a * (a - 2 * d) / 2 := by field_simp
+      rw [he]; nlinarith [mul_pos ha (show 0 < a - 2 * d by linarith)]
+    nlinarith [mul_neg_of_neg_of_pos he0 hq]
+  · intro h
+    subst h
+    refine ⟨fun e he0 _ => ?_, ⟨1, one_pos, fun e _ he0 => ?_⟩⟩
+    · rw [(F_factor _ d e).1]; nlinarith [mul_pos hd (mul_pos he0 he0)]
+    · rw [(F_factor _ d e).1]; nlinarith [mul_pos hd (mul_pos_of_neg_of_neg he0 he0)]
+
+/-- **La tangente à la parabole**, question 4. With `a = 2d`, `F(e) = de²`. -/
+theorem tangent_F (d e : ℝ) : F (2 * d) d e = d * e ^ 2 := by unfold F; ring
+
+/-- **La tangente à la parabole**, question 5. The derivative of `u ↦ √(pu)` at `d > 0` is
+`p / (2√(pd))`, and the subtangent `v / v'` is `2d`: `CE = 2 cd`. -/
+theorem subtangent (p d : ℝ) (hp : 0 < p) (hd : 0 < d) :
+    HasDerivAt (fun u => Real.sqrt (p * u)) (p / (2 * Real.sqrt (p * d))) d ∧
+    Real.sqrt (p * d) / (p / (2 * Real.sqrt (p * d))) = 2 * d := by
+  have hpd : 0 < p * d := mul_pos hp hd
+  have hs : 0 < Real.sqrt (p * d) := Real.sqrt_pos.2 hpd
+  constructor
+  · have h := ((hasDerivAt_id d).const_mul p).sqrt (by simpa using hpd.ne')
+    convert h using 1 <;> simp
+  · field_simp
+    rw [Real.sq_sqrt hpd.le]
 
 end Germain.Exercises.Fermat

@@ -46,17 +46,21 @@ personne sur les images. Elles peuvent se tromper sur un chiffre, sur une
 lettre de figure, sur l'ordre des feuillets. Le lecteur qui trouve un désaccord
 entre un exercice et le feuillet doit croire le feuillet.
 
-La partie mathématique de dix-sept exercices a été vérifiée en Lean~4 avec la
+La partie mathématique de vingt-sept exercices a été vérifiée en Lean~4 avec la
 bibliothèque mathlib, dans le dossier \texttt{lean/Germain/} du dépôt : les huit
-exercices du chapitre de Sophie Germain, les deux exercices de Viète sur les
-équations, le triangle rectangle d'aire carrée du chapitre de Mersenne, les trois
-exercices algébriques de Descartes, l'élimination de Fermat, l'équation
-$x^2 - ay^2 = 1$ de Lagrange et le coefficient binomial central de Libri. Une ligne
+exercices du chapitre de Sophie Germain ; les exercices d'algèbre et d'arithmétique des
+autres chapitres (les trois de Viète, le triangle rectangle d'aire carrée du chapitre de
+Mersenne, les trois exercices algébriques de Descartes, l'élimination de Fermat,
+l'équation $x^2 - ay^2 = 1$ de Lagrange, le coefficient binomial central de Libri) ; et
+les exercices d'analyse et de géométrie (le théorème de Ptolémée et le « très noble
+théorème » de Maurolico, le rectangle et la tangente de Fermat, les trochoïdes et le
+solide de la cycloïde, les demi-fuseaux et les paraboles de Roberval, la couche
+sphérique de Lagrange). Une ligne
 à la fin de chacune de ces solutions nomme les théorèmes et dit ce qui reste hors
 de Lean. Une preuve vérifiée dit que l'énoncé, tel qu'il est formalisé, est vrai et
 que la solution tient ; elle ne dit pas que l'exercice lit correctement le feuillet.
-Les autres exercices, d'analyse, de géométrie, de calcul numérique ou de physique,
-ne sont pas encore vérifiés.
+Les autres exercices, de calcul numérique, de musique, de jeux ou de physique, ne
+sont pas encore vérifiés.
 
 Les chapitres suivent l'ordre du catalogue du site, du XVII\textsuperscript{e} au
 XIX\textsuperscript{e} siècle. Un exercice est rangé sous un mathématicien quand le
@@ -198,6 +202,13 @@ $\widehat{ABE} = \widehat{DBC}$.}
   donc séparément les deux formules d'addition ; le feuillet, qui n'en voulait
   que le rapport, n'en tire que la proportion.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Maurolico.ptolemy} (question 1, le
+théorème de mathlib), \texttt{chord\_sq} et \texttt{chord\_eq} (2), \texttt{ptolemy\_chords\_add}
+(3), \texttt{ptolemy\_chords\_sub} et \texttt{sine\_ratio} (4), dans \texttt{lean/Germain/Exercises/Maurolico.lean}. Les
+cordes sont calculées en coordonnées, chaque point du cercle étant donné par son angle au
+centre, et non par les angles inscrits de la solution ; la relation de Ptolémée entre ces
+cordes y est vérifiée, et c'est la formule d'addition.
 \end{solution}
 
 \begin{exercice}{Le « très noble théorème »}{L1}{2}
@@ -259,6 +270,11 @@ On place $C = (0,0,1)$, $A = (\sin b, 0, \cos b)$, $B = (0, \sin a, \cos a)$.
   cinquième proposition du troisième livre des \emph{Sphériques} ; il le démontre
   « autrement et encore autrement », trois fois (propositions X, XII et XIV).
 \end{enumerate}
+
+Vérifié en Lean : \texttt{Germain.Exercises.Maurolico.noble\_vectors} (question 1),
+\texttt{noble\_cosA} (2), \texttt{noble\_theorem} et \texttt{noble\_c\_gt\_b} (3),
+\texttt{noble\_cot\_sq} (4), dans \texttt{lean/Germain/Exercises/Maurolico.lean}. L'angle $A$ entre les deux vecteurs
+tangents y est donné par son cosinus, calculé à partir du produit scalaire et des normes.
 \end{solution}
 
 \begin{exercice}{Les rencontres de deux mobiles sur un cercle}{L2}{2}
@@ -542,6 +558,14 @@ du second triangle opposé à sa hauteur.
   $ju + \overline{j}v$ et $\overline{j}u + jv$ avec $j = \cos 120^\circ + i\sin 120^\circ$,
   donnent les racines négatives $-9 \mp \sqrt{57}$.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Viete.irreducible\_root} et
+\texttt{irreducible\_angle} (question 1), \texttt{irreducible\_example} (2),
+\texttt{irreducible\_other\_roots} et \texttt{irreducible\_inverse} (3),
+\texttt{irreducible\_conditions} (4), \texttt{irreducible\_cardan} (5), dans
+\texttt{lean/Germain/Exercises/Viete.lean} ; hors de Lean : l'injectivité de $\theta \mapsto \cos 3\theta$ sur
+$]0^\circ, 30^\circ[$, qui fait de $\cos\theta = 0{,}9$ l'angle cherché, et le fait que les trois
+racines soient distinctes.
 \end{solution}
 
 \begin{exercice}{La paraplérose climactique d'une quartique, et ses deux formules}{L2}{3}
@@ -1194,6 +1218,12 @@ la base », et qu'il est au cercle générateur propre dans le rapport qu'on en 
   cycloïde primaire et les trochoïdes raccourcies ($d < r$).
 \end{enumerate}
 
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Mersenne.trochoid\_x\_monotone} et
+\texttt{trochoid\_area} (question 1), \texttt{trochoid\_ratios} (2), \texttt{trochoid\_tangent} (3),
+\texttt{cycloid\_tangent\_top} (4), \texttt{trochoid\_prolate} (5), dans \texttt{lean/Germain/Exercises/Mersenne.lean} ;
+hors de Lean : le changement de variable qui fait de l'intégrale l'aire d'une région sous un
+graphe, l'homothétie de la question 3 et la boucle de la question 5.
+
 \exfigure{trochoide-tangente}{La règle de la question 3 pour $d = 0{,}6\,r$ : $PT$ est tangente au cercle générateur propre de centre $\Omega$, $TS = \frac rd\,PT$, et $SP$ est la tangente à la trochoïde.}
 \end{solution}
 
@@ -1331,6 +1361,13 @@ distance de son centre de gravité à la droite.
   bornes ». La pièce ne dit pas comment il a été obtenu, et le calcul de la
   question 3 montre seulement qu'il est lié au centre $16 : 11$.
 \end{enumerate}
+
+Vérifié en Lean : \texttt{Germain.Exercises.Mersenne.cycloid\_area},
+\texttt{cycloid\_moment} et \texttt{cycloid\_ratios} (question 1), \texttt{solid\_integral} et
+\texttt{solid\_ratio} (2), \texttt{solid\_centre} (3), \texttt{solid\_ineffable} (4),
+\texttt{solid\_archimedes} (5), dans \texttt{lean/Germain/Exercises/Mersenne.lean}. La règle de Pappus--Guldin, le
+découpage du solide en tranches cylindriques et l'irrationalité de $\pi^2$ y sont admis, comme
+dans l'énoncé ; le dernier figure en hypothèse.
 \end{solution}
 
 \begin{exercice}{Aucun triangle rectangle en nombres n'a pour aire un carré}{L3}{3}
@@ -1735,6 +1772,10 @@ pour l'accroissement, que le feuillet appelle $E$ comme le point.
   qu'elle démontre : il faut chaque fois une vérification, comme à la question
   précédente.
 \end{enumerate}
+
+Vérifié en Lean : \texttt{Germain.Exercises.Fermat.rect\_adequality} (questions 1 et 2, avec
+la dérivée), \texttt{rect\_max} (3), \texttt{rect\_squares} et \texttt{rect\_cube} (4), dans
+\texttt{lean/Germain/Exercises/Fermat.lean}.
 \end{solution}
 
 \begin{exercice}{La tangente à la parabole : l'inégalité des deux côtés}{L1}{2}
@@ -1833,6 +1874,12 @@ situé sur l'ordonnée menée par $I$.
   $E$ est à la distance $d$ du sommet, de l'autre côté, et $CE = 2d = 2\,cd$. La
   sous-tangente est double de l'abscisse, « quod quidem ita se habet ».
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Fermat.F\_factor},
+\texttt{outside\_iff} (question 2), \texttt{one\_side\_iff} et \texttt{second\_point} (3),
+\texttt{two\_sides\_iff} et \texttt{tangent\_F} (4), \texttt{subtangent} (5), dans
+\texttt{lean/Germain/Exercises/Fermat.lean} ; hors de Lean : les triangles semblables de la question 1, qui donnent les
+coordonnées de $O$ prises pour point de départ.
 \end{solution}
 
 \begin{exercice}{Éliminer une racine seconde : l'analogie redoublée et le résultant}{L2}{3}
@@ -2217,6 +2264,12 @@ est le rayon de la section à l'abscisse $s$.
   demi-fuseau tend vers le cylindre de rayon $h$ et de longueur $a$, dont le
   centre est au milieu de l'axe.
 \end{enumerate}
+
+Vérifié en Lean : \texttt{Germain.Exercises.Roberval.fuseau\_volume} (question 1),
+\texttt{fuseau\_moment} et \texttt{fuseau\_centre} (2), \texttt{fuseau\_ratios} (3),
+\texttt{fuseau\_cone} (4), dans \texttt{lean/Germain/Exercises/Roberval.lean}. Les intégrales y sont écrites dans la
+variable $t = s/a$ ; la section en disque et la formule du centre de gravité d'un solide de
+révolution sont admises, comme dans l'énoncé.
 \end{solution}
 
 \begin{exercice}{Les paraboles de tous les degrés, selon la description de Libri}{L1}{2}
@@ -2257,6 +2310,9 @@ de sa base) les $\frac{8}{15}$ du cylindre qui l'enveloppe, puis la quadrature d
   apparaître, comme le volume de révolution $\pi\int y^2dx$, le carré de
   $1 - u^2$.
 \end{enumerate}
+
+Vérifié en Lean : \texttt{Germain.Exercises.Roberval.parabola\_area} (question 1),
+\texttt{conoid\_volume} (2) et \texttt{fuseau\_eight\_fifteenths} (3), dans \texttt{lean/Germain/Exercises/Roberval.lean}.
 \end{solution}
 
 \begin{exercice}{Le beau problème de M. Roberval : un cylindre oblique mesuré au compas}{L3}{3}
@@ -2650,6 +2706,14 @@ constant, et positif, et l'on pose $G(r) = \frac u2 + r\frac{\partial u}{\partia
   remède du mémoire : calculer « sans rien negliger » pour $r > a$, comme aux
   n\textsuperscript{os} 6 et 7, et ne faire $r = a$ qu'à la fin.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Lagrange.shell\_integral} et
+\texttt{shell\_two\_cases} (question 1), \texttt{shell\_G} (2), \texttt{shell\_direct\_identity}
+et \texttt{shell\_direct\_values} (3), \texttt{shell\_rdrho}, \texttt{shell\_rho\_cubed} et
+\texttt{shell\_rho\_cubed\_cases} (4), \texttt{shell\_surface} (5), dans
+\texttt{lean/Germain/Exercises/Lagrange.lean}. Les intégrales sur la sphère y sont écrites en $\mu$, après le facteur
+$2\pi$ de la longitude. Hors de Lean : la dérivation sous le signe $\int$, et, à la question 4,
+la limite de la part des directions $\mu \le 1 - \delta$.
 
 \exfigure{couche-spherique}{Questions 1 à 3 : $u$ est continu en $r = a$, mais $G$ y saute de $+2\pi a^2y'$ à $-2\pi a^2y'$ ; la valeur directe $G_d = 0$ est la moyenne des deux limites.}
 \end{solution}

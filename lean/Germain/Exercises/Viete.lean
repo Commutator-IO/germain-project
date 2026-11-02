@@ -14,7 +14,10 @@ exercise; each docstring names the exercise and the question.
   `paraplerose_example`, `paraplerose_factorisation`, `paraplerose_resolvent_roots`,
   `paraplerose_second_formula`, `paraplerose_theorem_four`.
 
-Not formalised: the irreducible case by two right triangles (trigonometry of the construction).
+* « Le cas irréductible par deux triangles rectangles » (nal-1644, views 16–17):
+  `irreducible_root`, `irreducible_angle`, `irreducible_example`, `irreducible_other_roots`,
+  `irreducible_inverse`, `irreducible_conditions`, `irreducible_cardan`. The injectivity of
+  `θ ↦ cos 3θ` on `]0, π/6[` (that `cos θ = 9/10` is the angle sought) is not proved.
 -/
 
 namespace Germain.Exercises.Viete
@@ -229,5 +232,123 @@ theorem paraplerose_theorem_four (G B Z F x : ℝ) :
   refine ⟨fun h => by linear_combination h, ⟨fun h => by linear_combination h,
     fun h => by linear_combination h⟩, by norm_num, by norm_num, by norm_num, by norm_num,
     by norm_num, by ring⟩
+
+
+/-! ## « Le cas irréductible par deux triangles rectangles » -/
+
+open Real in
+/-- **Le cas irréductible**, question 1. If `x = 2B cos θ`, then `x³ − 3B²x = 2B³ cos 3θ`; so if
+the base of the first triangle is `B cos 3θ = D/2`, the double of the base of the second is a
+root of `x³ − 3B²x = B²D`. -/
+theorem irreducible_root (B D θ : ℝ) (hbase : B * cos (3 * θ) = D / 2) :
+    (2 * B * cos θ) ^ 3 - 3 * B ^ 2 * (2 * B * cos θ) = 2 * B ^ 3 * cos (3 * θ) ∧
+    (2 * B * cos θ) ^ 3 - 3 * B ^ 2 * (2 * B * cos θ) = B ^ 2 * D := by
+  have h3 : (2 * B * cos θ) ^ 3 - 3 * B ^ 2 * (2 * B * cos θ) = 2 * B ^ 3 * cos (3 * θ) := by
+    rw [cos_three_mul]; ring
+  exact ⟨h3, by rw [h3]; linear_combination 2 * B ^ 2 * hbase⟩
+
+open Real in
+/-- **Le cas irréductible**, question 1. `B > D/2 > 0` is what makes the first triangle exist:
+`3θ = arccos (D/2B)` lies in `]0, π/2[`. -/
+theorem irreducible_angle (B D : ℝ) (hD : 0 < D) (hB : D / 2 < B) :
+    0 < arccos (D / (2 * B)) ∧ arccos (D / (2 * B)) < π / 2 ∧
+    B * cos (arccos (D / (2 * B))) = D / 2 := by
+  have hB0 : 0 < B := by linarith
+  have h1 : 0 < D / (2 * B) := by positivity
+  have h2 : D / (2 * B) < 1 := by rw [div_lt_one (by positivity)]; linarith
+  refine ⟨arccos_pos.2 h2, arccos_lt_pi_div_two.2 h1, ?_⟩
+  rw [cos_arccos (by linarith) h2.le]; field_simp
+
+/-- **Le cas irréductible**, question 2. For `x³ − 300x = 432`: `B = 10`, `D = 432/100`, the
+first base is `216/100`; with `cos θ = 9/10`, `cos 3θ = 4 cos³θ − 3 cos θ = 216/1000`, the second
+triangle has base `9` and height `√19`, and `x = 18`. -/
+theorem irreducible_example :
+    3 * (10 : ℝ) ^ 2 = 300 ∧ (10 : ℝ) ^ 2 * (432 / 100) = 432 ∧ (432 / 100 : ℝ) / 2 = 216 / 100 ∧
+    4 * (9 / 10 : ℝ) ^ 3 - 3 * (9 / 10) = 216 / 1000 ∧ 10 * (216 / 1000 : ℝ) = 216 / 100 ∧
+    10 * (9 / 10 : ℝ) = 9 ∧ (10 : ℝ) ^ 2 - 9 ^ 2 = 19 ∧ (18 : ℝ) ^ 3 - 300 * 18 = 432 := by
+  norm_num
+
+open Real in
+/-- **Le cas irréductible**, question 3. `2B cos(θ ± 2π/3)` are roots too, equal to
+`−B cos θ ∓ √3 B sin θ`, and negative for `0 < θ < π/6`, `B > 0`. -/
+theorem irreducible_other_roots (B θ : ℝ) (hB : 0 < B) (hθ : 0 < θ) (hθ' : θ < π / 6) :
+    cos (3 * (θ + 2 * π / 3)) = cos (3 * θ) ∧ cos (3 * (θ - 2 * π / 3)) = cos (3 * θ) ∧
+    2 * B * cos (θ + 2 * π / 3) = -(B * cos θ) - √3 * (B * sin θ) ∧
+    2 * B * cos (θ - 2 * π / 3) = -(B * cos θ) + √3 * (B * sin θ) ∧
+    2 * B * cos (θ + 2 * π / 3) < 0 ∧ 2 * B * cos (θ - 2 * π / 3) < 0 := by
+  have c23 : cos (2 * π / 3) = -(1 / 2) := by
+    rw [show 2 * π / 3 = π - π / 3 by ring, cos_pi_sub, cos_pi_div_three]
+  have s23 : sin (2 * π / 3) = √3 / 2 := by
+    rw [show 2 * π / 3 = π - π / 3 by ring, sin_pi_sub, sin_pi_div_three]
+  have e1 : 2 * B * cos (θ + 2 * π / 3) = -(B * cos θ) - √3 * (B * sin θ) := by
+    rw [cos_add, c23, s23]; ring
+  have e2 : 2 * B * cos (θ - 2 * π / 3) = -(B * cos θ) + √3 * (B * sin θ) := by
+    rw [cos_sub, c23, s23]; ring
+  -- `θ < π/6` gives `√3 sin θ < cos θ`
+  have hc : 0 < cos θ := cos_pos_of_mem_Ioo ⟨by linarith, by linarith [pi_pos]⟩
+  have hs : 0 < sin θ := sin_pos_of_pos_of_lt_pi hθ (by linarith [pi_pos])
+  have key : √3 * sin θ < cos θ := by
+    -- `cos θ − √3 sin θ = 2 cos(θ + π/3) > 0`
+    have : cos θ - √3 * sin θ = 2 * cos (θ + π / 3) := by
+      rw [cos_add, cos_pi_div_three, sin_pi_div_three]; ring
+    have : 0 < cos (θ + π / 3) := cos_pos_of_mem_Ioo ⟨by linarith [pi_pos], by linarith⟩
+    linarith
+  have h3 : 0 ≤ √3 := sqrt_nonneg 3
+  refine ⟨?_, ?_, e1, e2, ?_, ?_⟩
+  · rw [show 3 * (θ + 2 * π / 3) = 3 * θ + (1 : ℕ) * (2 * π) by push_cast; ring,
+      cos_add_nat_mul_two_pi]
+  · rw [show 3 * (θ - 2 * π / 3) = 3 * θ - (1 : ℕ) * (2 * π) by push_cast; ring,
+      cos_sub_nat_mul_two_pi]
+  · rw [e1]; nlinarith [mul_pos hB hc, mul_nonneg h3 (mul_pos hB hs).le]
+  · rw [e2]; nlinarith [mul_lt_mul_of_pos_left key hB]
+
+/-- **Le cas irréductible**, question 3. If `x` is a root of `x³ − 3B²x = B²D`, `y = −x` is a root
+of the inverse equation `3B²y − y³ = B²D`; for the example, `9 ± √57` are the roots of
+`300y − y³ = 432` besides `−18`, and `x³ − 300x − 432 = (x − 18)(x² + 18x + 24)`. -/
+theorem irreducible_inverse (B D x t : ℝ) (h : x ^ 3 - 3 * B ^ 2 * x = B ^ 2 * D) :
+    3 * B ^ 2 * (-x) - (-x) ^ 3 = B ^ 2 * D ∧
+    t ^ 3 - 300 * t - 432 = (t - 18) * (t ^ 2 + 18 * t + 24) ∧
+    300 * (9 + √57) - (9 + √57) ^ 3 = 432 ∧ 300 * (9 - √57) - (9 - √57) ^ 3 = 432 ∧
+    √57 ^ 2 = 3 * √19 ^ 2 := by
+  have h57 : √(57 : ℝ) ^ 2 = 57 := Real.sq_sqrt (by norm_num)
+  have h19 : √(19 : ℝ) ^ 2 = 19 := Real.sq_sqrt (by norm_num)
+  refine ⟨by linear_combination h, by ring, ?_, ?_, by rw [h57, h19]; norm_num⟩
+  · linear_combination (-27 - √57) * h57
+  · linear_combination (√57 - 27) * h57
+
+/-- **Le cas irréductible**, question 4. For `B, D > 0`, the condition `D'² < 4B'³` of theorem III,
+written with `B' = B²` and `D' = B²D`, is `D < 2B`, the condition `B > D/2` of the « Aliter »;
+for the example, `432² < 4·100³`. -/
+theorem irreducible_conditions (B D : ℝ) (hB : 0 < B) (hD : 0 < D) :
+    ((B ^ 2 * D) ^ 2 < 4 * (B ^ 2) ^ 3 ↔ D / 2 < B) ∧ (432 : ℝ) ^ 2 < 4 * 100 ^ 3 := by
+  refine ⟨?_, by norm_num⟩
+  have hB4 : 0 < B ^ 4 := by positivity
+  constructor
+  · intro h
+    have h2 : D ^ 2 < 4 * B ^ 2 := by
+      by_contra hn
+      have := not_lt.1 hn
+      nlinarith [mul_le_mul_of_nonneg_left this hB4.le]
+    by_contra hn
+    have h3 : 2 * B ≤ D := by have := not_lt.1 hn; linarith
+    nlinarith [mul_le_mul h3 h3 (by positivity) (by linarith)]
+  · intro h
+    have h2 : D ^ 2 < 4 * B ^ 2 := by nlinarith
+    nlinarith [mul_lt_mul_of_pos_left h2 hB4]
+
+/-- **Le cas irréductible**, question 5. For `x³ − 300x = 432`, `Δ = q²/4 − p³/27 = −953344`
+`= −224² · 19`; `(9 + i√19)³ = 216 + 224 i√19`; `u = 9 + i√19` and `v = 9 − i√19` have `uv = 100`
+`= p/3` and `u + v = 18`. -/
+theorem irreducible_cardan :
+    (432 : ℝ) ^ 2 / 4 - 300 ^ 3 / 27 = -953344 ∧ (224 : ℝ) ^ 2 * 19 = 953344 ∧
+    ((9 : ℂ) + Complex.I * √19) ^ 3 = 216 + 224 * Complex.I * √19 ∧
+    ((9 : ℂ) + Complex.I * √19) * (9 - Complex.I * √19) = 100 ∧
+    ((9 : ℂ) + Complex.I * √19) + (9 - Complex.I * √19) = 18 := by
+  have hs : ((√19 : ℝ) : ℂ) ^ 2 = 19 := by
+    rw [← Complex.ofReal_pow, Real.sq_sqrt (by norm_num)]; norm_num
+  refine ⟨by norm_num, by norm_num, ?_, ?_, by ring⟩
+  ·     linear_combination (27 * Complex.I ^ 2 + Complex.I ^ 3 * (√19 : ℂ)) * hs +
+      (513 + 19 * Complex.I * (√19 : ℂ)) * Complex.I_sq
+  · linear_combination (-(Complex.I ^ 2)) * hs - 19 * Complex.I_sq
 
 end Germain.Exercises.Viete

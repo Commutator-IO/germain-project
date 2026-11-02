@@ -16,8 +16,17 @@ import Mathlib
   `m, n, m + n, m − n`) are the book's route and are not proved step by step. What is proved is
   the conclusion of question 3 and all of question 4.
 
+* « L'aire et la tangente des trochoïdes » (nal-2338, views 3–4): `trochoid_x_monotone`,
+  `trochoid_area`, `trochoid_ratios`, `trochoid_tangent`, `cycloid_tangent_top`,
+  `trochoid_prolate`. The change of variable from the area under a graph to the parametric
+  integral, the homothety of question 3 and the loop of question 5 are not formalised.
+* « Le solide autour de l'axe : 11 à 18, 16 à 11, une seule erreur » (nal-2338, views 4–5,
+  16–19): `cycloid_area`, `cycloid_moment`, `cycloid_ratios`, `solid_integral`, `solid_ratio`,
+  `solid_centre`, `solid_ineffable`, `solid_archimedes`. Pappus–Guldin and the slicing of the solid
+  into cylinders are taken as the exercise takes them; the irrationality of `π²` is a hypothesis.
+
 Not formalised in this chapter: numerical values (π, the polygon of 97 sides, latitudes, commas),
-music and the games of NAF 5176, the trochoids and the solid of revolution (analysis).
+music and the games of NAF 5176.
 -/
 
 namespace Germain.Exercises.Mersenne
@@ -239,5 +248,246 @@ theorem no_square_area {a b c k : ℤ} (ha : 0 < a) (hb : 0 < b) (hpyth : a ^ 2 
     have : c ^ 4 = (a ^ 2 + b ^ 2) ^ 2 := by rw [hpyth]; ring
     rw [this]
     linear_combination (4 * a * b + 8 * k ^ 2) * harea
+
+
+/-! ## « L'aire et la tangente des trochoïdes » -/
+
+section Trochoid
+
+open Real intervalIntegral
+
+/-- `∫ cos² = (t + sin t cos t)/2`: the derivative used below. -/
+private theorem hasDerivAt_cos_sq_prim (t : ℝ) :
+    HasDerivAt (fun t => (t + sin t * cos t) / 2) (cos t ^ 2) t := by
+  have h := ((hasDerivAt_id t).add ((hasDerivAt_sin t).mul (hasDerivAt_cos t))).div_const 2
+  refine h.congr_deriv ?_
+  linear_combination (-1 / 2) * sin_sq_add_cos_sq t
+
+/-- **Les trochoïdes**, question 1. For `d ≤ r`, `x(t) = rt − d sin t` is monotone. -/
+theorem trochoid_x_monotone (r d : ℝ) (hdr : d ≤ r) (hd : 0 ≤ d) :
+    Monotone (fun t : ℝ => r * t - d * sin t) := by
+  have hder : ∀ t, HasDerivAt (fun t : ℝ => r * t - d * sin t) (r - d * cos t) t := fun t => by
+    have := ((hasDerivAt_id t).const_mul r).sub ((hasDerivAt_sin t).const_mul d)
+    exact this.congr_deriv (by ring)
+  apply monotone_of_deriv_nonneg (fun t => (hder t).differentiableAt)
+  intro t
+  rw [(hder t).deriv]
+  nlinarith [cos_le_one t, mul_le_mul_of_nonneg_left (cos_le_one t) hd]
+
+/-- **Les trochoïdes**, question 1. The area `∫₀^{2π} (y − (r − d)) x' dt = 2πrd + πd²`, with
+`y − (r − d) = d(1 − cos t)` and `x' = r − d cos t`. (The integral is computed for every `d`;
+that it is the area of a region under a graph needs `x` monotone, question 5.) -/
+theorem trochoid_area (r d : ℝ) :
+    ∫ t in (0)..(2 * π), d * (1 - cos t) * (r - d * cos t) = 2 * π * r * d + π * d ^ 2 := by
+  have hF : ∀ t, HasDerivAt (fun t => d * (r * t - (r + d) * sin t + d * ((t + sin t * cos t) / 2)))
+      (d * (1 - cos t) * (r - d * cos t)) t := fun t => by
+    have h := ((((hasDerivAt_id t).const_mul r).sub ((hasDerivAt_sin t).const_mul (r + d))).add
+      ((hasDerivAt_cos_sq_prim t).const_mul d)).const_mul d
+    exact h.congr_deriv (by ring)
+  rw [integral_eq_sub_of_hasDerivAt (fun t _ => hF t) (by
+    apply Continuous.intervalIntegrable; fun_prop)]
+  simp only [sin_two_pi, cos_two_pi, sin_zero, cos_zero]
+  ring
+
+/-- **Les trochoïdes**, question 2. Base `2πr`, generating circumference `2πd`, height `2d`,
+triangle `τ = 2πrd`: `A/τ = (C + 2B)/(2B) = (2d + 2·2r)/(2·2r)`, `A − τ = πd²` (the generating
+circle), `A : (A − τ) = (C + 2B) : C`; for `d = r`, `A = 3πr²`. -/
+theorem trochoid_ratios (r d : ℝ) (hr : 0 < r) (hd : 0 < d) :
+    let A := 2 * π * r * d + π * d ^ 2
+    let τ := (1 / 2) * (2 * π * r) * (2 * d)
+    let B := 2 * π * r
+    let C := 2 * π * d
+    A / τ = (C + 2 * B) / (2 * B) ∧ A / τ = (2 * d + 2 * (2 * r)) / (2 * (2 * r)) ∧
+    A - τ = π * d ^ 2 ∧ A / (A - τ) = (C + 2 * B) / C ∧
+    (2 * π * r * r + π * r ^ 2 = 3 * π * r ^ 2) := by
+  intro A τ B C
+  have hπ : 0 < π := pi_pos
+  have hd0 : d ≠ 0 := hd.ne'
+  have hAτ : A - τ = π * d ^ 2 := by simp only [A, τ]; ring
+  refine ⟨?_, ?_, hAτ, ?_, by ring⟩
+  · simp only [A, τ, B, C]; field_simp; ring
+  · simp only [A, τ]; field_simp; ring
+  · rw [hAτ]; simp only [A, B, C]; field_simp; ring
+
+/-- **Les trochoïdes**, question 3. The velocity is the centre's velocity plus the rotation's:
+`(x', y') = r(1, 0) + d u` with `u = (−cos t, sin t)`, which directs the tangent at `P` to the
+circle of centre `Ω` and radius `d`. If `T = P + λu` and `S = T + λ(r/d)(1, 0)`, then
+`PS = (λ/d)(x', y')`: `SP` is the tangent, and `PT : TS = d : r`. -/
+theorem trochoid_tangent (r d t lam : ℝ) (hd : d ≠ 0) :
+    (r - d * cos t = r * 1 + d * (-cos t) ∧ d * sin t = r * 0 + d * sin t) ∧
+    (lam * (-cos t) + lam * (r / d) * 1 = lam / d * (r - d * cos t) ∧
+      lam * sin t + lam * (r / d) * 0 = lam / d * (d * sin t)) := by
+  refine ⟨⟨by ring, by ring⟩, ?_, ?_⟩ <;> field_simp <;> ring
+
+/-- **Les trochoïdes**, question 4. For the primary cycloid, `PH = r(sin t, 1 + cos t)` and the
+velocity `r(1 − cos t, sin t)` are collinear: the tangent passes through the top `H` of the
+rolling circle. -/
+theorem cycloid_tangent_top (r t : ℝ) :
+    (r * sin t) * (r * sin t) - (r * (1 + cos t)) * (r * (1 - cos t)) = 0 := by
+  linear_combination r ^ 2 * sin_sq_add_cos_sq t
+
+/-- **Les trochoïdes**, question 5. For `d > r`, `x'(0) = r − d < 0`, and `x(−t) = −x(t)`,
+`y(−t) = y(t)`: the arch before passes through the same points, and the curve loops. -/
+theorem trochoid_prolate (r d t : ℝ) (hdr : r < d) :
+    r - d * cos 0 < 0 ∧ r * (-t) - d * sin (-t) = -(r * t - d * sin t) ∧
+    r - d * cos (-t) = r - d * cos t := by
+  refine ⟨by rw [cos_zero]; linarith, by rw [sin_neg]; ring, by rw [cos_neg]⟩
+
+end Trochoid
+
+/-! ## « Le solide autour de l'axe : 11 à 18, 16 à 11, une seule erreur » -/
+
+section Solid
+
+open Real intervalIntegral
+
+/-- **Le solide autour de l'axe**, question 1. The area of the cycloid,
+`∫₀^{2π} y x' dt = r² ∫ (1 − cos t)² = 3πr²`. -/
+theorem cycloid_area (r : ℝ) :
+    ∫ t in (0)..(2 * π), r * (1 - cos t) * (r * (1 - cos t)) = 3 * π * r ^ 2 := by
+  have hF : ∀ t, HasDerivAt (fun t => r ^ 2 * (t - 2 * sin t + (t + sin t * cos t) / 2))
+      (r * (1 - cos t) * (r * (1 - cos t))) t := fun t => by
+    have h := (((hasDerivAt_id t).sub ((hasDerivAt_sin t).const_mul 2)).add
+      (hasDerivAt_cos_sq_prim t)).const_mul (r ^ 2)
+    exact h.congr_deriv (by ring)
+  rw [integral_eq_sub_of_hasDerivAt (fun t _ => hF t) (by
+    apply Continuous.intervalIntegrable; fun_prop)]
+  simp only [sin_two_pi, cos_two_pi, sin_zero, cos_zero]
+  ring
+
+/-- **Le solide autour de l'axe**, question 1. The moment about the base,
+`∫₀^{2π} (y²/2) x' dt = (r³/2) ∫ (1 − cos t)³ = 5πr³/2`. -/
+theorem cycloid_moment (r : ℝ) :
+    ∫ t in (0)..(2 * π), (r * (1 - cos t)) ^ 2 / 2 * (r * (1 - cos t)) = 5 * π * r ^ 3 / 2 := by
+  have hF : ∀ t, HasDerivAt
+      (fun t => r ^ 3 / 2 * (t - 3 * sin t + 3 * ((t + sin t * cos t) / 2) - (sin t - sin t ^ 3 / 3)))
+      ((r * (1 - cos t)) ^ 2 / 2 * (r * (1 - cos t))) t := fun t => by
+    have h := ((((hasDerivAt_id t).sub ((hasDerivAt_sin t).const_mul 3)).add
+      ((hasDerivAt_cos_sq_prim t).const_mul 3)).sub ((hasDerivAt_sin t).sub
+        (((hasDerivAt_sin t).pow 3).div_const 3))).const_mul (r ^ 3 / 2)
+    refine h.congr_deriv ?_
+    push_cast
+    linear_combination (r ^ 3 / 2 * cos t) * sin_sq_add_cos_sq t
+  rw [integral_eq_sub_of_hasDerivAt (fun t _ => hF t) (by
+    apply Continuous.intervalIntegrable; fun_prop)]
+  simp only [sin_two_pi, cos_two_pi, sin_zero, cos_zero]
+  ring
+
+/-- **Le solide autour de l'axe**, question 1. `ȳ = (5πr³/2)/(3πr²) = 5r/6`: the centre divides
+the axis `2r` as `7 : 5`; Pappus–Guldin about the base gives `2π · 5r/6 · 3πr² = 5π²r³`, against
+the cylinder `8π²r³`: `5 : 8`. -/
+theorem cycloid_ratios (r : ℝ) (hr : 0 < r) :
+    (5 * π * r ^ 3 / 2) / (3 * π * r ^ 2) = 5 * r / 6 ∧ (2 * r - 5 * r / 6) / (5 * r / 6) = 7 / 5 ∧
+    2 * π * (5 * r / 6) * (3 * π * r ^ 2) = 5 * π ^ 2 * r ^ 3 ∧
+    π * (2 * r) ^ 2 * (2 * π * r) = 8 * π ^ 2 * r ^ 3 := by
+  have hπ : 0 < π := pi_pos
+  refine ⟨by field_simp; ring, by field_simp; ring, by ring, by ring⟩
+
+/-- **Le solide autour de l'axe**, question 2. `∫₀^π (π − t + sin t)(1 − cos t)² dt = 3π²/4 − 4/3`,
+so `V = 2πr³(3π²/4 − 4/3) = πr³(9π² − 16)/6`. -/
+theorem solid_integral :
+    ∫ t in (0)..π, (π - t + sin t) * (1 - cos t) ^ 2 = 3 * π ^ 2 / 4 - 4 / 3 := by
+  have hF : ∀ t, HasDerivAt
+      (fun t => (π * t - t ^ 2 / 2) - 2 * ((π - t) * sin t - cos t) +
+        (π - t) * (t + sin t * cos t) / 2 + t ^ 2 / 4 + sin t ^ 2 / 4 + (1 - cos t) ^ 3 / 3)
+      ((π - t + sin t) * (1 - cos t) ^ 2) t := fun t => by
+    have h1 := ((hasDerivAt_id t).const_mul π).sub (((hasDerivAt_id t).pow 2).div_const 2)
+    have h2 := ((((hasDerivAt_id t).const_sub π).mul (hasDerivAt_sin t)).sub
+      (hasDerivAt_cos t)).const_mul 2
+    have h3 := (((hasDerivAt_id t).const_sub π).mul ((hasDerivAt_id t).add
+      ((hasDerivAt_sin t).mul (hasDerivAt_cos t)))).div_const 2
+    have h4 := ((hasDerivAt_id t).pow 2).div_const 4
+    have h5 := ((hasDerivAt_sin t).pow 2).div_const 4
+    have h6 := (((hasDerivAt_cos t).const_sub 1).pow 3).div_const 3
+    have h := ((((h1.sub h2).add h3).add h4).add h5).add h6
+    refine h.congr_deriv ?_
+    simp only [id_eq, Pi.add_apply, Pi.mul_apply]
+    push_cast
+    linear_combination (-(π - t) / 2) * sin_sq_add_cos_sq t
+  rw [integral_eq_sub_of_hasDerivAt (fun t _ => hF t) (by
+    apply Continuous.intervalIntegrable; fun_prop)]
+  simp only [sin_pi, cos_pi, sin_zero, cos_zero]
+  ring
+
+/-- **Le solide autour de l'axe**, question 2. The ratio to the cylinder `2π³r³` is
+`(9π² − 16)/(12π²) = 3/4 − 4/(3π²)`; it is not `11/18`, and, `π²` being irrational (admitted, as
+in the exercise), it is not rational. -/
+theorem solid_ratio (r : ℝ) (hr : 0 < r) (hirr : Irrational (π ^ 2)) :
+    (π * r ^ 3 * (9 * π ^ 2 - 16) / 6) / (2 * π ^ 3 * r ^ 3) = 3 / 4 - 4 / (3 * π ^ 2) ∧
+    3 / 4 - 4 / (3 * π ^ 2) ≠ 11 / 18 ∧ ∀ q : ℚ, 3 / 4 - 4 / (3 * π ^ 2) ≠ q := by
+  have hπ : 0 < π := pi_pos
+  have hπ2 : (0 : ℝ) < 3 * π ^ 2 := by positivity
+  refine ⟨by field_simp; ring, fun h => ?_, fun q h => ?_⟩
+  · -- `11/18` would make `π² = 48/5` rational
+    have e : 4 / (3 * π ^ 2) = 5 / 36 := by linarith
+    rw [div_eq_iff hπ2.ne'] at e
+    have : π ^ 2 = ((48 / 5 : ℚ) : ℝ) := by push_cast; linear_combination (-12 / 5) * e
+    exact hirr ⟨48 / 5, this.symm⟩
+  · have e : 4 / (3 * π ^ 2) = 3 / 4 - q := by linarith
+    have hq : (3 : ℝ) / 4 - q ≠ 0 := by
+      intro hq; rw [hq] at e
+      have : (0 : ℝ) < 4 / (3 * π ^ 2) := by positivity
+      linarith
+    rw [div_eq_iff hπ2.ne'] at e
+    have : π ^ 2 = ((4 / (3 * (3 / 4 - q)) : ℚ) : ℝ) := by
+      push_cast
+      rw [eq_div_iff (mul_ne_zero three_ne_zero hq)]
+      linear_combination -e
+    exact hirr ⟨_, this.symm⟩
+
+/-- **Le solide autour de l'axe**, question 3. `16 : 11` and `19 : 8` give the same
+`δ = (11/27)πr`, and Pappus–Guldin with this `δ` gives exactly `11/18`; the true `δ` is
+`(π/2 − 8/(9π)) r`, and the true ratios are `(9π² + 16) : (9π² − 16)` and
+`(27π² − 16) : (9π² + 16)`. -/
+theorem solid_centre (r : ℝ) (hr : 0 < r) :
+    let δ := 11 / 27 * π * r
+    π * r - 16 / 27 * π * r = δ ∧ (2 * π * r) * 19 / 27 = 38 / 27 * π * r ∧
+    (2 * π * δ * (3 / 2 * π * r ^ 2)) / (2 * π ^ 3 * r ^ 3) = 11 / 18 ∧
+    (π * r ^ 3 * (9 * π ^ 2 - 16) / 6) / (3 * π ^ 2 * r ^ 2) = (π / 2 - 8 / (9 * π)) * r ∧
+    (π * r - (π / 2 - 8 / (9 * π)) * r) / ((π / 2 - 8 / (9 * π)) * r) =
+      (9 * π ^ 2 + 16) / (9 * π ^ 2 - 16) ∧
+    (π * r + (π / 2 - 8 / (9 * π)) * r) / (π * r - (π / 2 - 8 / (9 * π)) * r) =
+      (27 * π ^ 2 - 16) / (9 * π ^ 2 + 16) := by
+  intro δ
+  have hπ : 0 < π := pi_pos
+  have hπ3 : 3 < π := pi_gt_three
+  have h1 : 9 * π ^ 2 - 16 ≠ 0 := by nlinarith
+  have h2 : 9 * π ^ 2 + 16 ≠ 0 := by positivity
+  have h3 : π / 2 - 8 / (9 * π) ≠ 0 := by
+    rw [show π / 2 - 8 / (9 * π) = (9 * π ^ 2 - 16) / (18 * π) by field_simp; ring]
+    exact div_ne_zero h1 (by positivity)
+  refine ⟨by simp only [δ]; ring, by ring, by simp only [δ]; field_simp; ring, by field_simp; ring,
+    ?_, ?_⟩
+  · rw [div_eq_div_iff (mul_ne_zero h3 hr.ne') h1]; field_simp; ring
+  · have h4 : π * r - (π / 2 - 8 / (9 * π)) * r ≠ 0 := by
+      rw [show π * r - (π / 2 - 8 / (9 * π)) * r = (9 * π ^ 2 + 16) / (18 * π) * r by field_simp; ring]
+      exact mul_ne_zero (div_ne_zero h2 (by positivity)) hr.ne'
+    rw [div_eq_div_iff h4 h2]; field_simp; ring
+
+/-- **Le solide autour de l'axe**, question 4. The two cylinders are as `π : 4`; with the letter's
+numbers, `(11/18)/(5/8) · π/4 = (44/45) π/4`; the true ratio `(9π² − 16)/(30π)` is not
+`q π/4` for any rational `q` (`π²` irrational). -/
+theorem solid_ineffable (hirr : Irrational (π ^ 2)) :
+    (2 * π ^ 3) / (8 * π ^ 2) = π / 4 ∧ (11 / 18 : ℝ) / (5 / 8) = 44 / 45 ∧
+    ∀ q : ℚ, (9 * π ^ 2 - 16) / (30 * π) ≠ q * (π / 4) := by
+  have hπ : 0 < π := Real.pi_pos
+  refine ⟨by field_simp; ring, by norm_num, fun q h => ?_⟩
+  have e := h
+  rw [div_eq_iff (by positivity)] at e
+  have h' : π ^ 2 * (9 - 15 * q / 2) = 16 := by linear_combination e
+  by_cases hq : (9 : ℝ) - 15 * q / 2 = 0
+  · rw [hq, mul_zero] at h'; norm_num at h'
+  · have : π ^ 2 = ((16 / (9 - 15 * q / 2) : ℚ) : ℝ) := by
+      push_cast; rw [eq_div_iff hq]; linear_combination h'
+    exact hirr ⟨_, this.symm⟩
+
+/-- **Le solide autour de l'axe**, question 5. With `π = 22/7` the ratio is `893/1452`; it would be
+`11/18` only for `π² = 48/5`, and `48/5 < (3 + 10/71)²`: below Archimedes' lower bound. -/
+theorem solid_archimedes :
+    (3 : ℝ) / 4 - 4 / (3 * (22 / 7) ^ 2) = 893 / 1452 ∧ (3 : ℝ) / 4 - 4 / (3 * (48 / 5)) = 11 / 18 ∧
+    (48 / 5 : ℝ) < (3 + 10 / 71) ^ 2 := by
+  norm_num
+
+end Solid
 
 end Germain.Exercises.Mersenne
