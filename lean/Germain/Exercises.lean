@@ -2,6 +2,7 @@ import Mathlib
 import Germain.Fr9115Arithmetic
 import Germain.Fr9115Elasticity
 import Germain.Fr9118
+import Germain.Exercises.Mersenne
 
 /-!
 # The Sophie Germain chapter of the exercise book
@@ -32,11 +33,12 @@ comparison of intervals, the unit correction, the solutions of the plate and lam
   `fermat_primes_mod`, `fermat_primes_residues`, `fermat_primes_roots`, `twelve_n_five`.
 * « Le manuscrit C : deux cas et trois lacunes » (fr-9115, views 708–710): `manuscriptC_case_one`,
   `manuscriptC_trivial`, `manuscriptC_odd`, `manuscriptC_Phi`, `manuscriptC_inequalities`,
-  `manuscriptC_n_two`, `manuscriptC_fermat_four`.
+  `manuscriptC_n_two`, `manuscriptC_n_two_proved`, `manuscriptC_fermat_four`.
 
 Not formalised: logarithms and cents, the acoustics of the experiments; the numerical roots of
 `tan x = tanh x`; Darmon–Merel and Wiles; Fermat's theorem on `X⁴ − Y⁴ = W²`, which the exercise
-admits and which appears here as a hypothesis.
+admits, is a hypothesis of `manuscriptC_n_two`; `manuscriptC_n_two_proved` discharges it with the
+proof of the Mersenne chapter, `Germain.Exercises.Mersenne.not_fourth_sub_fourth`.
 -/
 
 namespace Germain.Exercises
@@ -562,6 +564,13 @@ theorem manuscriptC_n_two
   have hz4 : (z ^ 2) ^ 2 = 1 := by nlinarith
   have hz2 : 0 < z ^ 2 := by positivity
   nlinarith
+
+/-- **Le manuscrit C**, question 6, the case `n = 2`, without the admitted theorem: Fermat's
+theorem on `X⁴ − Y⁴ = W²` is `Germain.Exercises.Mersenne.not_fourth_sub_fourth`. -/
+theorem manuscriptC_n_two_proved {x y z : ℤ} (hxy : IsCoprime x y) (h : x ^ 4 + y ^ 4 = 2 * z ^ 4) :
+    x ^ 2 = 1 ∧ y ^ 2 = 1 ∧ z ^ 2 = 1 :=
+  manuscriptC_n_two (fun _ _ W hX hY hW => by
+    by_contra hW0; exact Germain.Exercises.Mersenne.not_fourth_sub_fourth hX hY hW0 hW) hxy h
 
 /-- **Le manuscrit C**, question 6, the second theorem for `n = 2`: `Z + Y` need not divide
 `Z² + Y²` (`4 ∤ 10`), and `Z⁴ = X⁴ + Y⁴` has no solution in nonzero integers (Fermat's

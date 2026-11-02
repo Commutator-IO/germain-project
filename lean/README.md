@@ -22,3 +22,16 @@ Each statement, its written-out proof and what the verification found are in
 `cd docs/lean && tectonic -X compile article.tex`. In CI
 (`.github/workflows/lean.yml`), lean-action's axiom audit fails if any
 declaration depends on an axiom beyond Lean's three standard ones.
+
+## The exercise book
+
+`Germain/Exercises.lean` and `Germain/Exercises/<Mathematician>.lean` prove the
+mathematical part of exercises in `exercises/exercices.fr.tex` (issue #12): one
+file per chapter, one group of theorems per exercise, each docstring naming the
+exercise and the question. So far: the eight exercises of the Sophie Germain
+chapter, and the algebra and arithmetic of the other chapters (Viète's syncrisis
+and paraplerosis, Mersenne's right triangle with square area, Descartes' three
+algebraic exercises, Fermat's elimination, Lagrange's `x² − ay² = 1`, Libri's
+central binomial coefficient). The last line of each of these solutions in the
+book names its theorems and says what stays outside Lean. Analysis, geometry,
+numerical tables and physics are not yet formalised.

@@ -46,6 +46,18 @@ personne sur les images. Elles peuvent se tromper sur un chiffre, sur une
 lettre de figure, sur l'ordre des feuillets. Le lecteur qui trouve un désaccord
 entre un exercice et le feuillet doit croire le feuillet.
 
+La partie mathématique de dix-sept exercices a été vérifiée en Lean~4 avec la
+bibliothèque mathlib, dans le dossier \texttt{lean/Germain/} du dépôt : les huit
+exercices du chapitre de Sophie Germain, les deux exercices de Viète sur les
+équations, le triangle rectangle d'aire carrée du chapitre de Mersenne, les trois
+exercices algébriques de Descartes, l'élimination de Fermat, l'équation
+$x^2 - ay^2 = 1$ de Lagrange et le coefficient binomial central de Libri. Une ligne
+à la fin de chacune de ces solutions nomme les théorèmes et dit ce qui reste hors
+de Lean. Une preuve vérifiée dit que l'énoncé, tel qu'il est formalisé, est vrai et
+que la solution tient ; elle ne dit pas que l'exercice lit correctement le feuillet.
+Les autres exercices, d'analyse, de géométrie, de calcul numérique ou de physique,
+ne sont pas encore vérifiés.
+
 Les chapitres suivent l'ordre du catalogue du site, du XVII\textsuperscript{e} au
 XIX\textsuperscript{e} siècle. Un exercice est rangé sous un mathématicien quand le
 feuillet le nomme comme l'auteur de ce qu'il traite (« ce beau problème de
@@ -413,6 +425,11 @@ radicibus mire explicabiles », admirablement résolubles par plusieurs racines.
   $274 = \frac{120}{1} + \frac{120}{2} + \frac{120}{3} + \frac{120}{4} + \frac{120}{5}
   = 120 + 60 + 40 + 30 + 24$.
 \end{enumerate}
+
+Vérifié en Lean : \texttt{Germain.Exercises.Viete.syncrise\_quadratic} (question 1),
+\texttt{syncrise\_cubic}, \texttt{syncrise\_cubic\_factor} et \texttt{syncrise\_example} (2),
+\texttt{syncrise\_quartic} et \texttt{syncrise\_quartic\_copy} (3), \texttt{syncrise\_quintic} (4),
+dans \texttt{lean/Germain/Exercises/Viete.lean}.
 \end{solution}
 
 \begin{exercice}{Le cas irréductible par deux triangles rectangles}{L1}{2}
@@ -671,6 +688,17 @@ grandeurs $B$, $G$, $Z$ sont positives.
   et « $64N$ » pour « $6400N$ » dans l'exemple ; le nombre $614\,400$, la racine $60$
   et la racine $10$ sont justes.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Viete.paraplerose\_square},
+\texttt{paraplerose\_resolvent} et \texttt{paraplerose\_unique\_root} (question 1),
+\texttt{paraplerose\_example} (2, avec les quatre racines complexes),
+\texttt{paraplerose\_product}, \texttt{paraplerose\_factorisation} et
+\texttt{paraplerose\_resolvent\_roots} (3), \texttt{paraplerose\_second\_formula} et
+\texttt{paraplerose\_second\_example} (4), \texttt{paraplerose\_theorem\_four} (5), dans
+\texttt{lean/Germain/Exercises/Viete.lean} ; hors de Lean : les deux équations du second degré de la question 2 dans
+le cas général, vérifiées seulement sur l'exemple, et, à la question 3, l'énoncé selon lequel
+les racines de la résolvante sont $(r_1 + r_2)^2$, $(r_1 + r_3)^2$ et $(r_1 + r_4)^2$, vérifié
+seulement sur l'exemple par la factorisation de la résolvante.
 \end{solution}
 
 \section*{Marin Mersenne (1588--1648)}
@@ -1359,6 +1387,15 @@ appelle aujourd'hui le théorème du triangle rectangle de Fermat).
   d'être exclu. La note ne dit pas qui propose la question, ni si elle en avait
   la réponse.
 \end{enumerate}
+
+Vérifié en Lean : \texttt{Germain.Exercises.Mersenne.no\_square\_area} (l'énoncé),
+\texttt{not\_fourth\_sub\_fourth} et \texttt{no\_fourth\_sum\_fourth} (question 4),
+\texttt{descent\_identities} et \texttt{triangle\_of\_fourth\_powers} (les identités des
+questions 3 et 4), dans \texttt{lean/Germain/Exercises/Mersenne.lean}. La preuve Lean ne suit pas la descente de la
+solution sur les triangles : elle descend sur $X^4 - Y^4 = Z^2$, par récurrence sur $|X|$, à l'aide
+de la classification des triplets pythagoriciens primitifs de mathlib, puis en déduit l'énoncé
+par $(a^2 - b^2)^2 = c^4 - (2k)^4$ si l'aire vaut $k^2$. Les étapes des questions 1 et 2 ne sont
+donc pas vérifiées une à une.
 \end{solution}
 
 \section*{René Descartes (1596--1650)}
@@ -1408,6 +1445,10 @@ autres ne sont « que des rêveries et des extravagances de sa belle méthode »
   réels, et les racines « imaginaires » de Descartes ne sont ni positives ni
   négatives. On ne peut pas renommer l'une par l'autre.
 \end{enumerate}
+
+Vérifié en Lean : \texttt{Germain.Exercises.Descartes.reveries\_factor} (question 1),
+\texttt{reveries\_real\_root} (2) et \texttt{reveries\_complex\_roots} (3), dans
+\texttt{lean/Germain/Exercises/Descartes.lean} ; hors de Lean : la question 4, qui porte sur des mots.
 \end{solution}
 
 \begin{exercice}{Le centre d'agitation d'un secteur de cylindre}{L2}{2}
@@ -1539,6 +1580,12 @@ multiplicité.
   $P(x) \to -\infty$ en $-\infty$. Chacune a exactement une racine négative ;
   l'affirmation de l'auteur est fausse.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Descartes.signs\_descartes\_example}
+et \texttt{signs\_objection} (question 3), \texttt{signs\_missing\_term} (4) et
+\texttt{signs\_one\_negative\_root} (5, une racine négative et une seule pour chacune des deux
+formes), dans \texttt{lean/Germain/Exercises/Descartes.lean} ; hors de Lean : la règle elle-même (questions 1 et 2), et
+le compte des changements de signe aux questions 3 et 4, fait à la main.
 \end{solution}
 
 \begin{exercice}{Un second triangle rectangle d'aire 6}{L3}{2}
@@ -1602,6 +1649,11 @@ $p^2 - q^2$, $2pq$, $p^2 + q^2$.
   par $3094$ : $\bigl(\frac{119}{26}, \frac{1560}{119}, \frac{42\,961}{3094}\bigr)$,
   d'aire $\frac12\cdot\frac{119}{26}\cdot\frac{1560}{119} = \frac{780}{26} = 30$.
 \end{enumerate}
+
+Vérifié en Lean : \texttt{Germain.Exercises.Descartes.area6\_from\_345} (question 1),
+\texttt{area6\_doubling} et \texttt{area6\_divide} (2), \texttt{area6\_point\_on\_curve} (3),
+\texttt{area6\_tangent\_general} et \texttt{area6\_tangent} (4), \texttt{area30\_from\_5\_12\_13}
+(5), dans \texttt{lean/Germain/Exercises/Descartes.lean}.
 \end{solution}
 
 \section*{Pierre de Fermat (1601--1665)}
@@ -1894,6 +1946,15 @@ $D \neq 0$.
   pour qu'elle soit exacte il faut écarter ce facteur, ce que fait le
   résultant.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Fermat.elim\_first\_analogy} et
+\texttt{elim\_divided} (question 1), \texttt{elim\_second\_analogy}, \texttt{elim\_leaf\_quotient}
+et \texttt{elim\_denominator\_pos} (2), \texttt{elim\_division} et \texttt{elim\_two\_quotients}
+(3), \texttt{elim\_resultant} (4, sous la forme du produit $f(y_1)f(y_2)$),
+\texttt{elim\_final\_equation} et \texttt{elim\_example} (5), dans \texttt{lean/Germain/Exercises/Fermat.lean} ; hors de
+Lean : à la question 4, l'identification de ce produit au résultant au sens de mathlib, le degré
+de $R$ en $x$ et le sens de $R(x) = 0$ ; à la question 1, la faute d'exposant, qui est une
+lecture du feuillet.
 \end{solution}
 
 \section*{Gilles Personne de Roberval (1602--1675)}
@@ -2385,6 +2446,16 @@ entiers positifs, toutes s'obtiennent ainsi.
   c'est ce qui assure l'existence de $(p,q)$ et l'irrationalité de $\sqrt a$, utilisée
   en identifiant $x + y\sqrt a$.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Lagrange.pell\_lemma} (question 1),
+\texttt{pell\_powers}, \texttt{pell\_powers\_real}, \texttt{pell\_copy\_square} et
+\texttt{pell\_copy\_irrational} (2), \texttt{pell\_numbers} (3), \texttt{pell\_xi\_pos} (4, la
+première affirmation), \texttt{pell\_all\_solutions} et \texttt{pell\_pow\_succ} (5), dans
+\texttt{lean/Germain/Exercises/Lagrange.lean}. Pour la question 5, la preuve Lean est celle de mathlib
+(\texttt{Pell.IsFundamental.eq\_pow\_of\_nonneg}) et non le raisonnement de la solution ; la
+solution fondamentale de mathlib est celle dont le $x > 1$ est le plus petit, qui est la plus
+petite solution en entiers positifs de l'extrait. Hors de Lean : la minimalité de $\varepsilon$
+parmi les $\xi > 1$, à la fin de la question 4.
 \end{solution}
 
 \begin{exercice}{Un « paradoxe dans le Calcul intégral » : la couche sphérique uniforme}{L2}{3}
@@ -3262,9 +3333,12 @@ premier énoncé en supposant $x$, $y$, $z$ premiers entre eux.
 Vérifié en Lean : \texttt{Germain.Exercises.manuscriptC\_case\_one} (question 1),
 \texttt{manuscriptC\_trivial} (2), \texttt{manuscriptC\_odd} (3),
 \texttt{manuscriptC\_Phi} (4), \texttt{manuscriptC\_inequalities} (5),
-\texttt{manuscriptC\_n\_two} et \texttt{manuscriptC\_fermat\_four} (6), dans
-\texttt{lean/Germain/Exercises.lean}. Le théorème de Fermat sur $X^4 - Y^4 = W^2$, que l'exercice admet, y
-figure comme hypothèse ; l'exposant $4$ du second théorème vient de mathlib. Hors de
+\texttt{manuscriptC\_n\_two}, \texttt{manuscriptC\_n\_two\_proved} et
+\texttt{manuscriptC\_fermat\_four} (6), dans \texttt{lean/Germain/Exercises.lean}. Le théorème de
+Fermat sur $X^4 - Y^4 = W^2$, que l'exercice admet, figure comme hypothèse de
+\texttt{manuscriptC\_n\_two} ; \texttt{manuscriptC\_n\_two\_proved} s'en passe, avec la preuve
+du chapitre de Mersenne (\texttt{Germain.Exercises.Mersenne.not\_fourth\_sub\_fourth}). L'exposant
+$4$ du second théorème vient de mathlib. Hors de
 Lean : l'énoncé corrigé pour $n$ impair $> 1$ (Darmon et Merel) et le théorème de Wiles.
 \end{solution}
 
@@ -3415,6 +3489,13 @@ $\bigl[(k+1)(k+2)\cdots2k\bigr]^2 \equiv \pm 2b \pmod p$.
   première congruence est fausse ; la note porte le même second membre pour une
   quantité et son carré, et la faute peut être du feuillet comme de sa lecture.
 \end{enumerate}
+
+Vérifié en Lean : \texttt{Germain.Exercises.Libri.libri\_product} (question 1),
+\texttt{libri\_gauss\_checks} (2), \texttt{libri\_determines\_a} (3),
+\texttt{libri\_wilson\_square}, \texttt{libri\_square\_of\_product} et \texttt{libri\_square\_check}
+(4), \texttt{libri\_first\_false} (5), dans \texttt{lean/Germain/Exercises/Libri.lean}. La congruence de Gauss,
+$\binom{2k}{k} \equiv 2a \pmod p$, admise par l'énoncé, y figure en hypothèse ; le théorème de
+Wilson est celui de mathlib.
 \end{solution}
 
 \section*{Bibliographie}

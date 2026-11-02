@@ -4,3 +4,9 @@ import Germain.Fr9115Curvature
 import Germain.Fr9118
 import Germain.Naf4073
 import Germain.Exercises
+import Germain.Exercises.Viete
+import Germain.Exercises.Mersenne
+import Germain.Exercises.Descartes
+import Germain.Exercises.Fermat
+import Germain.Exercises.Lagrange
+import Germain.Exercises.Libri
