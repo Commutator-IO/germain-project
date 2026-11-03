@@ -559,7 +559,7 @@ section Commas
 open Real
 
 /-- If `2ᵃ < rⁿ` then `a < n log₂ r`. -/
-theorem lt_mul_logb {r : ℝ} (hr : 0 < r) (a n : ℕ) (h : (2 : ℝ) ^ a < r ^ n) :
+theorem lt_mul_logb {r : ℝ} (_hr : 0 < r) (a n : ℕ) (h : (2 : ℝ) ^ a < r ^ n) :
     (a : ℝ) < n * logb 2 r := by
   have := Real.logb_lt_logb one_lt_two (by positivity) h
   rwa [Real.logb_pow, Real.logb_pow, Real.logb_self_eq_one one_lt_two, mul_one] at this
@@ -589,25 +589,37 @@ theorem commas :
     |53 * logb 2 (5 / 4) - 17| < 1 / 2 ∧ |53 * logb 2 (4 / 3) - 22| < 1 / 2 ∧
     |53 * logb 2 (3 / 2) - 31| < 1 / 2 ∧ |53 * logb 2 (8 / 5) - 36| < 1 / 2 ∧
     |53 * logb 2 (5 / 3) - 39| < 1 / 2 ∧ (25 / 24 : ℚ) * (16 / 15) = 10 / 9 := by
-  refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, by norm_num⟩ <;>
-  · first
-    | exact_mod_cast nearest_comma (by norm_num) 2 (by norm_num) (by norm_num) (by norm_num)
-    | exact_mod_cast nearest_comma (by norm_num) 3 (by norm_num) (by norm_num) (by norm_num)
-    | exact_mod_cast nearest_comma (by norm_num) 5 (by norm_num) (by norm_num) (by norm_num)
-    | exact_mod_cast nearest_comma (by norm_num) 8 (by norm_num) (by norm_num) (by norm_num)
-    | exact_mod_cast nearest_comma (by norm_num) 9 (by norm_num) (by norm_num) (by norm_num)
-    | exact_mod_cast nearest_comma (by norm_num) 14 (by norm_num) (by norm_num) (by norm_num)
-    | exact_mod_cast nearest_comma (by norm_num) 17 (by norm_num) (by norm_num) (by norm_num)
-    | exact_mod_cast nearest_comma (by norm_num) 22 (by norm_num) (by norm_num) (by norm_num)
-    | exact_mod_cast nearest_comma (by norm_num) 31 (by norm_num) (by norm_num) (by norm_num)
-    | exact_mod_cast nearest_comma (by norm_num) 36 (by norm_num) (by norm_num) (by norm_num)
-    | exact_mod_cast nearest_comma (by norm_num) 39 (by norm_num) (by norm_num) (by norm_num)
+  have c2 := nearest_comma (r := 128 / 125) (by norm_num) 2 (by norm_num) (by norm_num)
+    (by norm_num)
+  have c3 := nearest_comma (r := 25 / 24) (by norm_num) 3 (by norm_num) (by norm_num)
+    (by norm_num)
+  have c5 := nearest_comma (r := 16 / 15) (by norm_num) 5 (by norm_num) (by norm_num)
+    (by norm_num)
+  have c8 := nearest_comma (r := 10 / 9) (by norm_num) 8 (by norm_num) (by norm_num)
+    (by norm_num)
+  have c9 := nearest_comma (r := 9 / 8) (by norm_num) 9 (by norm_num) (by norm_num)
+    (by norm_num)
+  have c14 := nearest_comma (r := 6 / 5) (by norm_num) 14 (by norm_num) (by norm_num)
+    (by norm_num)
+  have c17 := nearest_comma (r := 5 / 4) (by norm_num) 17 (by norm_num) (by norm_num)
+    (by norm_num)
+  have c22 := nearest_comma (r := 4 / 3) (by norm_num) 22 (by norm_num) (by norm_num)
+    (by norm_num)
+  have c31 := nearest_comma (r := 3 / 2) (by norm_num) 31 (by norm_num) (by norm_num)
+    (by norm_num)
+  have c36 := nearest_comma (r := 8 / 5) (by norm_num) 36 (by norm_num) (by norm_num)
+    (by norm_num)
+  have c39 := nearest_comma (r := 5 / 3) (by norm_num) 39 (by norm_num) (by norm_num)
+    (by norm_num)
+  push_cast at *
+  exact ⟨c2, c3, c5, c8, c9, c14, c17, c22, c31, c36, c39, by norm_num⟩
 
 /-- **Cinquante-trois commas**, question 2. The convergents of `[0; 1, 1, 2, 2, 3, 1, 5]` are
-`0/1, 1/1, 1/2, 3/5, 7/12, 24/41, 31/53`; and `7/12 < log₂(3/2)`, `31/53 < log₂(3/2) < 24/41`
+`0/1, 1/1, 1/2, 3/5, 7/12, 24/41, 31/53` (and then `179/306`); and `7/12 < log₂(3/2)`, `31/53 < log₂(3/2) < 24/41`
 (from `2¹⁹ < 3¹²`, `2⁸⁴ < 3⁵³`, `3⁴¹ < 2⁶⁵`), so `0 < log₂(3/2) − 31/53 < 1/2173`. -/
 theorem fifth_convergents :
-    ((0 : ℚ) + 1 / (1 + 1 / (1 + 1 / (2 + 1 / (2 + 1 / (3 + 1 / (1 + 1 / 5))))))) = 31 / 53 ∧
+    ((0 : ℚ) + 1 / (1 + 1 / (1 + 1 / (2 + 1 / (2 + 1 / (3 + 1 / 1)))))) = 31 / 53 ∧
+    ((0 : ℚ) + 1 / (1 + 1 / (1 + 1 / (2 + 1 / (2 + 1 / (3 + 1 / (1 + 1 / 5))))))) = 179 / 306 ∧
     (0 : ℚ) + 1 / (1 + 1 / (1 + 1 / (2 + 1 / 2))) = 7 / 12 ∧
     (7 / 12 : ℝ) < logb 2 (3 / 2) ∧ (31 / 53 : ℝ) < logb 2 (3 / 2) ∧ logb 2 (3 / 2) < 24 / 41 ∧
     (24 / 41 : ℝ) - 31 / 53 = 1 / 2173 := by
@@ -615,7 +627,7 @@ theorem fifth_convergents :
   have l31 := lt_mul_logb (r := 3 / 2) (by norm_num) 31 53 (by norm_num)
   have l24 := mul_logb_lt (r := 3 / 2) (by norm_num) 24 41 (by norm_num)
   push_cast at l7 l31 l24
-  refine ⟨by norm_num, by norm_num, by linarith, by linarith, by linarith, by norm_num⟩
+  refine ⟨by norm_num, by norm_num, by norm_num, by linarith, by linarith, by linarith, by norm_num⟩
 
 /-- **Cinquante-trois commas**, question 3. The tempered major third is closer to the just one than
 the tempered minor third: `0 < 400 − 1200 log₂(5/4) < 1200 log₂(6/5) − 300`, which comes down to
@@ -678,8 +690,8 @@ theorem stakes :
     P 2 4 = (P 1 4 + P 2 3) / 2 ∧ P 3 3 = 1 / 2 ∧ P 3 4 = 21 / 32 ∧ P 3 4 = (P 2 4 + P 3 3) / 2 ∧
     (11 / 16 - 8 / 16 : ℚ) = 3 / 16 ∧ (14 / 16 - 11 / 16 : ℚ) = 3 / 16 ∧ (1 - 14 / 16 : ℚ) = 2 / 16 ∧
     (13 / 16 : ℚ) - 3 / 4 = 1 / 16 ∧ (3 / 4 : ℚ) - 1 / 2 = 1 / 4 := by
-  simp only [P, tail]
-  decide
+  simp only [P]
+  norm_num [show tail 1 0 = 2 by decide, show tail 0 1 = 0 by decide, show tail 1 1 = 1 by decide, show tail 2 1 = 3 by decide, show tail 3 2 = 4 by decide, show tail 3 1 = 7 by decide, show tail 4 2 = 11 by decide, show tail 4 1 = 15 by decide, show tail 3 0 = 8 by decide, show tail 5 2 = 26 by decide, show tail 5 3 = 16 by decide, show tail 6 3 = 42 by decide]
 
 /-- **La formule générale des partis**, question 2. Three players, a match of two games: with
 `A`, `B` one game each and `C` none, `A` has `(1 + 0 + 1/3)/3 = 12/27` and `C` `3/27`; with `A` one

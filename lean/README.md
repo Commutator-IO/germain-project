@@ -28,13 +28,9 @@ declaration depends on an axiom beyond Lean's three standard ones.
 `Germain/Exercises.lean` and `Germain/Exercises/<Mathematician>.lean` prove the
 mathematical part of exercises in `exercises/exercices.fr.tex` (issue #12): one
 file per chapter, one group of theorems per exercise, each docstring naming the
-exercise and the question. So far: the eight exercises of the Sophie Germain
-chapter; the algebra and arithmetic of the other chapters (Viète's syncrisis,
-paraplerosis and irreducible case, Mersenne's right triangle with square area,
-Descartes' three algebraic exercises, Fermat's elimination, Lagrange's
-`x² − ay² = 1`, Libri's central binomial coefficient); and their analysis and
-geometry (Maurolico's Ptolemy and « très noble théorème », Fermat's rectangle and
-tangent, the trochoids and the cycloid's solid, Roberval's half-spindles and
-parabolas, Lagrange's spherical shell). The last line of each of these solutions
-in the book names its theorems and says what stays outside Lean. Numerical
-tables, music, games and physics are not yet formalised.
+exercise and the question. All forty-two exercises are covered, some
+entirely and the others in part: the last line of each solution in the book
+names its theorems and says what stays outside Lean (physics, the decimal values
+of sines, tangents and logarithms, elliptic integrals, a few steps of analysis).
+Comparisons of logarithms are reduced to comparisons of integers
+(`lt_mul_logb`, `mul_logb_lt` in `Exercises/Mersenne.lean`).

@@ -145,7 +145,7 @@ theorem telegraph_roots (τ k q : ℝ) (hτ : 0 < τ) (hd : 0 ≤ 1 - 4 * τ * k
   refine ⟨?_, ?_, ?_, ?_⟩
   · field_simp; linear_combination hD
   · field_simp; linear_combination hD
-  · rw [div_eq_div_iff (by positivity) (by positivity)]; linear_combination -hD
+  · rw [div_eq_div_iff (by positivity) (by positivity)]; linear_combination hD
   · apply div_le_div_of_nonneg_right (by linarith) (by positivity)
 
 /-- **La chaleur comme vibration**, question 1, the limit. `−2kq²/(1 + √(1 − 4τkq²)) → −kq²` as
@@ -182,7 +182,9 @@ theorem telegraph_waves (τ k utt ut uxx q : ℝ) (hτ : 0 < τ) (hk : 0 ≤ k) 
     have hE : ((E : ℝ) : ℂ) ^ 2 = 4 * τ * k * q ^ 2 - 1 := by
       rw [← Complex.ofReal_pow, Real.sq_sqrt (by linarith)]; push_cast; ring
     have hτc : (τ : ℂ) ≠ 0 := by exact_mod_cast hτ0
-    field_simp
-    linear_combination (τ * Complex.I ^ 2) * hE + (τ * (4 * τ * k * q ^ 2 - 1) - τ * 0) * Complex.I_sq
+    have key : (τ : ℂ) * ((-1 + E * Complex.I) / (2 * τ)) ^ 2 + (-1 + E * Complex.I) / (2 * τ) +
+        k * q ^ 2 = ((E : ℂ) ^ 2 * Complex.I ^ 2 - 1 + 4 * τ * k * q ^ 2) / (4 * τ) := by
+      field_simp; ring
+    rw [key, hE, Complex.I_sq]; ring
 
 end Germain.Exercises.Libri

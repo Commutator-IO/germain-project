@@ -46,21 +46,14 @@ personne sur les images. Elles peuvent se tromper sur un chiffre, sur une
 lettre de figure, sur l'ordre des feuillets. Le lecteur qui trouve un désaccord
 entre un exercice et le feuillet doit croire le feuillet.
 
-La partie mathématique de vingt-sept exercices a été vérifiée en Lean~4 avec la
-bibliothèque mathlib, dans le dossier \texttt{lean/Germain/} du dépôt : les huit
-exercices du chapitre de Sophie Germain ; les exercices d'algèbre et d'arithmétique des
-autres chapitres (les trois de Viète, le triangle rectangle d'aire carrée du chapitre de
-Mersenne, les trois exercices algébriques de Descartes, l'élimination de Fermat,
-l'équation $x^2 - ay^2 = 1$ de Lagrange, le coefficient binomial central de Libri) ; et
-les exercices d'analyse et de géométrie (le théorème de Ptolémée et le « très noble
-théorème » de Maurolico, le rectangle et la tangente de Fermat, les trochoïdes et le
-solide de la cycloïde, les demi-fuseaux et les paraboles de Roberval, la couche
-sphérique de Lagrange). Une ligne
-à la fin de chacune de ces solutions nomme les théorèmes et dit ce qui reste hors
-de Lean. Une preuve vérifiée dit que l'énoncé, tel qu'il est formalisé, est vrai et
-que la solution tient ; elle ne dit pas que l'exercice lit correctement le feuillet.
-Les autres exercices, de calcul numérique, de musique, de jeux ou de physique, ne
-sont pas encore vérifiés.
+La partie mathématique des quarante-deux exercices a été vérifiée en Lean~4 avec la
+bibliothèque mathlib, dans le dossier \texttt{lean/Germain/} du dépôt, entièrement pour
+certains, en partie pour les autres. Une ligne à la fin de chaque solution nomme les
+théorèmes et dit ce qui reste hors de Lean : la physique, les valeurs décimales des sinus,
+des tangentes et des logarithmes (les comparaisons de logarithmes sont, elles, ramenées à
+des comparaisons d'entiers), les intégrales elliptiques et quelques étapes d'analyse. Une
+preuve vérifiée dit que l'énoncé, tel qu'il est formalisé, est vrai et que la solution
+tient ; elle ne dit pas que l'exercice lit correctement le feuillet.
 
 Les chapitres suivent l'ordre du catalogue du site, du XVII\textsuperscript{e} au
 XIX\textsuperscript{e} siècle. Un exercice est rangé sous un mathématicien quand le
@@ -134,6 +127,10 @@ $a{:}b$, qui signifie $a + b/60$.
   que le soixantième $2{:}16$ est bien celui de $136$. C'est donc la colonne des
   différences qui est fautive, et le soixantième qui est juste.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Maurolico.sexagesimals} (l'arithmétique
+des trois questions) et \texttt{sine\_above\_chord} (2, la concavité du sinus), dans
+\texttt{lean/Germain/Exercises/Maurolico.lean} ; hors de Lean : les valeurs à cinq chiffres des sinus.
 \end{solution}
 
 \begin{exercice}{Le théorème de Ptolémée et la formule d'addition}{Lycée}{2}
@@ -332,6 +329,10 @@ vitesses angulaires $\omega_1 > \omega_2 > 0$, $\omega_1/\omega_2 = p/q$.
   juste pour deux mobiles ; il reste que la disposition revient aussi près qu'on
   veut.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Maurolico.meetings\_bijective} et
+\texttt{meetings\_coprime} (questions 1 et 2), \texttt{meetings\_distinct} (3, les points
+distincts), dans \texttt{lean/Germain/Exercises/Maurolico.lean} ; hors de Lean : la densité des points de rencontre.
 
 \exfigure{mobiles}{Les points de rencontre pour $p = 5$ et $q = 2$, numérotés dans l'ordre où ils sont atteints : $p - q = 3$ dans le même sens, $p + q = 7$ en sens contraires.}
 \end{solution}
@@ -814,6 +815,10 @@ de Fabre, et opposent trois règles.
   valeur de $\pi$, le cercle vaut $50{,}27$, et l'excès est d'environ
   $\frac{1}{189}$.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Mersenne.fabre\_rule} (question 1),
+\texttt{cornu\_rule} et \texttt{circumscribed\_gt} (2), \texttt{pi\_values} (3 à 5), dans
+\texttt{lean/Germain/Exercises/Mersenne.lean} ; hors de Lean : la valeur de $97\tan\frac{\pi}{97}$.
 \end{solution}
 
 \begin{exercice}{Les chants de huit notes sans septième ni sixte}{Lycée}{2}
@@ -848,6 +853,10 @@ $2\cdot 6! = 1440$. Elle conclut à $21\,600$ chants permis. La copie écrit « 
   « 4320 » est $40\,320$ privé de son zéro, une faute de plume ou de copie. Un
   dénombrement exhaustif des $40\,320$ permutations confirme $21\,600$.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Mersenne.songs}, les nombres des trois
+questions, dans \texttt{lean/Germain/Exercises/Mersenne.lean} ; hors de Lean : le dénombrement exhaustif des
+$40\,320$ permutations.
 \end{solution}
 
 \begin{exercice}{Cinquante-trois commas, douze demi-tons et les fractions continues}{L2}{2}
@@ -905,6 +914,14 @@ compare l'intonation juste au tempérament égal à douze demi-tons.
   \frac{128}{125}$, le dièse. En demi-tons égaux, $3\times7 = 21 = 12 + 9$ et
   $3\times4 = 12$ : les deux égalités deviennent exactes.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Mersenne.commas} (question 1, les entiers
+les plus proches), \texttt{fifth\_convergents} (2), \texttt{thirds} (3) et
+\texttt{tempered\_identities} (4), dans \texttt{lean/Germain/Exercises/Mersenne.lean}. Chaque comparaison de logarithmes
+y est ramenée à une comparaison d'entiers, par exemple $2^{84} < 3^{53}$ pour
+$\frac{31}{53} < \log_2\frac32$. Hors de Lean : les valeurs décimales des logarithmes et des
+cents, et la borne $\frac{1}{53 \times 306}$, remplacée par $\frac{1}{2173}$, qui découle des
+réduites $\frac{31}{53}$ et $\frac{24}{41}$.
 \end{solution}
 
 \begin{exercice}{La latitude de Paris par l'étoile polaire et par le Soleil}{Lycée}{1}
@@ -961,6 +978,11 @@ $41^\circ 18' 20''$.
   plus basse que les valeurs stellaires, et toutes un peu au-dessous de $48^\circ 50'$ ;
   la feuille ne dit pas où les observations furent faites.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Mersenne.latitude}, l'arithmétique
+sexagésimale des questions 1 et 2, dans \texttt{lean/Germain/Exercises/Mersenne.lean} ; hors de Lean : le calcul de la
+déclinaison par $\sin\delta = \sin\varepsilon\sin\lambda$, et la question 3, qui est de
+physique.
 \end{solution}
 
 \begin{exercice}{Le partage des enjeux}{Lycée}{1}
@@ -1024,6 +1046,10 @@ en manque $j$ à l'autre.
   ($\frac34$ de la mise) avec ce que vaut le jeu au sens employé partout ailleurs
   sur le feuillet, l'accroissement de la part : $\frac34 - \frac12 = \frac14$.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Mersenne.stakes}, les parts des
+questions 2 à 5 et la récurrence aux positions du feuillet, dans \texttt{lean/Germain/Exercises/Mersenne.lean} ; hors de
+Lean : la récurrence pour toute position, que justifie la question 1.
 \end{solution}
 
 \begin{exercice}{La formule générale des partis, et trois joueurs}{L1}{2}
@@ -1093,6 +1119,11 @@ On garde les notations de l'exercice précédent.
   l'équivalence avec un jeu équitable ; c'est aussi, presque mot pour mot, la
   démonstration de la première proposition du traité de Huygens de 1657.
 \end{enumerate}
+
+Vérifié en Lean en partie : la formule de la question 1 sert de définition à
+\texttt{Germain.Exercises.Mersenne.P}, et \texttt{stakes} vérifie la récurrence aux positions du
+feuillet ; \texttt{three\_players} (2) et \texttt{fair\_game} (3), dans \texttt{lean/Germain/Exercises/Mersenne.lean} ;
+hors de Lean : la récurrence pour tout $(i, j)$, par la formule de Pascal.
 \end{solution}
 
 \begin{exercice}{L'aire et la tangente des trochoïdes}{L1}{2}
@@ -1544,6 +1575,12 @@ $0 \le \rho \le r$, $-\alpha \le \theta \le \alpha$.
   est hors du secteur. Pour le demi-cylindre, $\alpha = \frac{\pi}{2}$ et
   $IQ = \frac{3\pi}{8}r \approx 1{,}178\,r$.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Descartes.agitation\_integrals} (les
+intégrales en coordonnées polaires), \texttt{agitation\_centres} (questions 1 à 3) et
+\texttt{agitation\_half} (4, le demi-cylindre), dans \texttt{lean/Germain/Exercises/Descartes.lean} ; hors de Lean : la
+racine de $\alpha/\sin\alpha = \frac43$, et la formule du pendule équivalent, admise comme dans
+l'énoncé.
 \end{solution}
 
 \begin{exercice}{La règle des signes de Descartes, bien énoncée}{L2}{3}
@@ -2128,6 +2165,11 @@ le pied du roi égal à $32{,}5$ cm, et l'on compte 12 pouces au pied.
   borne s'applique. Une pompe foulante pousse l'eau par un piston avec la pression
   que lui donne la machine, qui n'est pas bornée par celle de l'air.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Roberval.rouen} (les nombres des
+questions 1 à 4) et \texttt{rouen\_law} (3 et 4, la loi d'équilibre résolue), dans
+\texttt{lean/Germain/Exercises/Roberval.lean} ; la loi de la statique des fluides y est admise, comme dans l'énoncé.
+Hors de Lean : la question 5, qui est de physique.
 \end{solution}
 
 \begin{exercice}{Les lemmes de maximum empruntés à « D. Rob. »}{L1}{1}
@@ -2177,6 +2219,11 @@ solide $u^2v$ est celui où $u$ est double de $v$.
   $T \le \frac{4}{27}x^3$, qui est encore la positivité du discriminant
   $T(4x^3 - 27T)$.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Roberval.max\_first} (question 1),
+\texttt{max\_second} (2), \texttt{max\_third} (3) et \texttt{max\_fourth} (4), dans
+\texttt{lean/Germain/Exercises/Roberval.lean} ; hors de Lean : l'existence des racines positives quand le minimum est
+négatif (valeurs intermédiaires) et celle de la racine négative.
 \end{solution}
 
 \begin{exercice}{Le centre des demi-fuseaux paraboliques}{L1}{2}
@@ -2377,6 +2424,10 @@ elliptique complète de seconde espèce.
   lettre ne donne pas de solution ; celle-ci repose sur une notion bien
   postérieure.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Roberval.oblique\_section} (question 1,
+la section droite) et \texttt{oblique\_solution} (3), dans \texttt{lean/Germain/Exercises/Roberval.lean} ; hors de Lean :
+les deux aires comme intégrales elliptiques (questions 1 et 2).
 \end{solution}
 
 \section*{Joseph-Louis Lagrange (1736--1813)}
@@ -2431,6 +2482,10 @@ vendémiaire tombe, pour les ans I à XIV, les 22 septembre 1792, 1793, 1794, 23
   ($196$ jours après le 23 septembre 1795), le 17 germinal an X le 7 avril 1802 : le
   billet est de l'un de ces deux jours, et d'aucun autre.
 \end{enumerate}
+
+Vérifié en Lean : \texttt{Germain.Exercises.Lagrange.republican}, les jours de la semaine par
+la congruence de Zeller, dans \texttt{lean/Germain/Exercises/Lagrange.lean} ; la question 1 est une remarque sur la
+lecture.
 \end{solution}
 
 \begin{exercice}{L'équation $x^2 - ay^2 = 1$ dans un extrait de Turin}{L1}{2}
@@ -3458,6 +3513,10 @@ arbitraires. »
   non essentielles ; le mémoire n'est pas dans le volume et la lettre ne permet pas de
   dire ce qu'il démontrait.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Libri.four\_constants} (question 2), dans
+\texttt{lean/Germain/Exercises/Libri.lean} ; hors de Lean : l'isomorphisme de la question 1, qui demande le théorème de
+Cauchy--Lipschitz.
 \end{solution}
 
 \begin{exercice}{La chaleur comme vibration : équation parabolique ou hyperbolique ?}{L3}{2}
@@ -3502,6 +3561,11 @@ $\tau u_{tt} + u_t = k\,u_{xx}$, avec un temps de relaxation $\tau > 0$.
   vitesse $c$ devient infinie. Une dérivation « à partir de vibrations » ne peut donc
   être exacte ; ce que valait le mémoire de Libri, la lettre ne permet pas de le dire.
 \end{enumerate}
+
+Vérifié en Lean en partie : \texttt{Germain.Exercises.Libri.telegraph\_roots} et
+\texttt{telegraph\_limit} (question 1), \texttt{heat\_kernel\_pos} (2) et
+\texttt{telegraph\_waves} (3), dans \texttt{lean/Germain/Exercises/Libri.lean} ; hors de Lean : que le noyau résolve
+l'équation de la chaleur, et les types des équations.
 \end{solution}
 
 \begin{exercice}{Le coefficient binomial central et la décomposition en deux carrés}{L3}{3}
