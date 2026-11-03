@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="190" viewBox="0 0 440 190" font-family="Latin Modern Roman, CMU Serif, Georgia, serif">
+  <title>À gauche le triangle 3, 4, 5 ; à droite, à la même échelle, le triangle de côtés 7/10, 120/7 et 1201/70 que donne le procédé de la note ; tous deux ont pour aire 6.</title>
+  <polygon points="30,150 99.2,150 30,98.1" fill="#38539d" fill-opacity="0.12" stroke="#38539d" stroke-width="1.4"/>
+  <text x="64.6" y="166" font-size="12" text-anchor="middle" fill="currentColor">4</text>
+  <text x="20" y="128.0" font-size="12" text-anchor="middle" fill="currentColor">3</text>
+  <text x="69.8" y="120.6" font-size="12" text-anchor="start" fill="currentColor">5</text>
+  <polygon points="123.2,150 420.0,150 123.2,137.9" fill="#38539d" fill-opacity="0.12" stroke="#38539d" stroke-width="1.4"/>
+  <text x="271.6" y="166" font-size="12" text-anchor="middle" fill="currentColor">120/7</text>
+  <text x="127.2" y="131.9" font-size="12" text-anchor="start" fill="currentColor">7/10</text>
+  <text x="286.5" y="131.9" font-size="12" text-anchor="middle" fill="currentColor">1201/70</text>
+  <text x="220" y="184" font-size="12.5" text-anchor="middle" fill="currentColor">même échelle : deux triangles rectangles rationnels d’aire 6, non semblables</text>
+</svg>
