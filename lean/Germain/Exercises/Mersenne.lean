@@ -25,8 +25,16 @@ import Mathlib
   `solid_centre`, `solid_ineffable`, `solid_archimedes`. Pappus–Guldin and the slicing of the solid
   into cylinders are taken as the exercise takes them; the irrationality of `π²` is a hypothesis.
 
-Not formalised in this chapter: numerical values (π, the polygon of 97 sides, latitudes, commas),
-music and the games of NAF 5176.
+* « Trois valeurs de π et un polygone de 97 côtés » (fr-12357, views 8–9): `fabre_rule`,
+  `cornu_rule`, `circumscribed_gt`, `pi_values`. `97 tan(π/97)` is not computed.
+* « Les chants de huit notes sans septième ni sixte » (fr-12357, view 21): `songs`.
+* « Cinquante-trois commas, douze demi-tons et les fractions continues » (fr-12357, views 5, 43):
+  `commas`, `fifth_convergents`, `thirds`, `tempered_identities`, with `lt_mul_logb`,
+  `mul_logb_lt`, `nearest_comma`: every comparison of a logarithm is reduced to one of integers.
+* « La latitude de Paris par l'étoile polaire et par le Soleil » (naf-9544, views 38–39):
+  `latitude`.
+* « Le partage des enjeux » and « La formule générale des partis » (naf-5176, views 40–41):
+  `stakes`, `three_players`, `fair_game`.
 -/
 
 namespace Germain.Exercises.Mersenne
@@ -489,5 +497,202 @@ theorem solid_archimedes :
   norm_num
 
 end Solid
+
+
+/-! ## « Trois valeurs de π et un polygone de 97 côtés » -/
+
+section Pi
+
+open Real
+
+/-- **Trois valeurs de π**, question 1. Fabre's rule, `(√5/2) a = p a/(2√2)`, assumes `p = √10`. -/
+theorem fabre_rule (a p : ℝ) (ha : 0 < a) (h : √5 / 2 * a = p * a / (2 * √2)) : p = √10 := by
+  have h2 : (0 : ℝ) < √2 := by positivity
+  have : p = √5 * √2 := by field_simp at h; nlinarith
+  rw [this, ← Real.sqrt_mul (by norm_num)]; norm_num
+
+/-- **Trois valeurs de π**, question 2. Cornu's rule, `(p r/2)/(r√2) = 10/9`, assumes
+`p = 20√2/9`; and the perimeter `n tan(π/n)` of the circumscribed `n`-gon (diameter 1) exceeds
+`π`. The value `97 tan(π/97)` is not computed. -/
+theorem cornu_rule (r p : ℝ) (hr : 0 < r) (h : (p * r / 2) / (r * √2) = 10 / 9) :
+    p = 20 * √2 / 9 := by
+  have h2 : (0 : ℝ) < √2 := by positivity
+  field_simp at h; linarith
+
+theorem circumscribed_gt (n : ℕ) (hn : 2 < n) : π < n * tan (π / n) := by
+  have hn' : (0 : ℝ) < n := by positivity
+  have h1 : 0 < π / n := by positivity
+  have h2 : π / n < π / 2 := by
+    apply div_lt_div_of_pos_left pi_pos (by norm_num); exact_mod_cast hn
+  have := Real.lt_tan h1 h2
+  calc π = n * (π / n) := by field_simp
+    _ < n * tan (π / n) := by gcongr
+
+/-- **Trois valeurs de π**, questions 3–5. `3 + (112/113)(1/7) = 355/113`; `99² = 2·70² + 1`, so
+`(99/70)² = 2 + 1/4900`; with `π = 22/7`, the circle of diameter 8 is `352/7 = 50 + 2/7` (not
+`50 + 4/7`), the square of diagonal 10 is `50`, and the excess `2/7` is `1/176` of the circle
+(not `1/88`). -/
+theorem pi_values :
+    (3 : ℚ) + 112 / 113 * (1 / 7) = 355 / 113 ∧ (99 : ℤ) ^ 2 = 2 * 70 ^ 2 + 1 ∧
+    ((99 : ℚ) / 70) ^ 2 = 2 + 1 / 4900 ∧
+    (22 : ℚ) / 7 * 4 ^ 2 = 352 / 7 ∧ (352 : ℚ) / 7 = 50 + 2 / 7 ∧ (352 : ℚ) / 7 ≠ 50 + 4 / 7 ∧
+    (10 : ℚ) ^ 2 / 2 = 50 ∧ ((352 : ℚ) / 7 - 50) / (352 / 7) = 1 / 176 := by
+  norm_num
+
+end Pi
+
+/-! ## « Les chants de huit notes sans septième ni sixte » -/
+
+/-- **Les chants de huit notes**, the counts: `|X| = |Y| = 2·7! = 10080`, `|X ∩ Y| = 2·6! = 1440`,
+`|X ∪ Y| = 18720`, and `8! − 18720 = 21600` permitted songs; `8! = 40320`, of which « 4320 » is a
+slip. The exhaustive count over the permutations is not done here. -/
+theorem songs :
+    2 * Nat.factorial 7 = 10080 ∧ 2 * Nat.factorial 6 = 1440 ∧
+    10080 + 10080 - 1440 = 18720 ∧ Nat.factorial 8 = 40320 ∧ Nat.factorial 8 - 18720 = 21600 ∧
+    Nat.factorial 8 ≠ 4320 := by
+  decide
+
+/-! ## « Cinquante-trois commas, douze demi-tons et les fractions continues » -/
+
+section Commas
+
+open Real
+
+/-- If `2ᵃ < rⁿ` then `a < n log₂ r`. -/
+theorem lt_mul_logb {r : ℝ} (hr : 0 < r) (a n : ℕ) (h : (2 : ℝ) ^ a < r ^ n) :
+    (a : ℝ) < n * logb 2 r := by
+  have := Real.logb_lt_logb one_lt_two (by positivity) h
+  rwa [Real.logb_pow, Real.logb_pow, Real.logb_self_eq_one one_lt_two, mul_one] at this
+
+/-- If `rⁿ < 2ᵃ` then `n log₂ r < a`. -/
+theorem mul_logb_lt {r : ℝ} (hr : 0 < r) (a n : ℕ) (h : r ^ n < (2 : ℝ) ^ a) :
+    n * logb 2 r < a := by
+  have := Real.logb_lt_logb one_lt_two (by positivity) h
+  rwa [Real.logb_pow, Real.logb_pow, Real.logb_self_eq_one one_lt_two, mul_one] at this
+
+/-- `53 log₂ r` is within `1/2` of `c` when `2^{2c−1} < r^{106} < 2^{2c+1}`. -/
+theorem nearest_comma {r : ℝ} (hr : 0 < r) (c : ℕ) (hc : 1 ≤ c)
+    (h1 : (2 : ℝ) ^ (2 * c - 1) < r ^ 106) (h2 : r ^ 106 < (2 : ℝ) ^ (2 * c + 1)) :
+    |53 * logb 2 r - c| < 1 / 2 := by
+  have a := lt_mul_logb hr _ _ h1
+  have b := mul_logb_lt hr _ _ h2
+  push_cast [Nat.cast_sub (show 1 ≤ 2 * c by omega)] at a b
+  rw [abs_lt]; constructor <;> linarith
+
+/-- **Cinquante-trois commas**, question 1. The nearest integers to `53 log₂ r`: `2` for the
+diesis `128/125` (the leaf's `3` is `25/24`), and `5, 8, 9, 14, 17, 22, 31, 36, 39` for
+`16/15, 10/9, 9/8, 6/5, 5/4, 4/3, 3/2, 8/5, 5/3`, the leaf's numbers; `25/24 · 16/15 = 10/9`. -/
+theorem commas :
+    |53 * logb 2 (128 / 125) - 2| < 1 / 2 ∧ |53 * logb 2 (25 / 24) - 3| < 1 / 2 ∧
+    |53 * logb 2 (16 / 15) - 5| < 1 / 2 ∧ |53 * logb 2 (10 / 9) - 8| < 1 / 2 ∧
+    |53 * logb 2 (9 / 8) - 9| < 1 / 2 ∧ |53 * logb 2 (6 / 5) - 14| < 1 / 2 ∧
+    |53 * logb 2 (5 / 4) - 17| < 1 / 2 ∧ |53 * logb 2 (4 / 3) - 22| < 1 / 2 ∧
+    |53 * logb 2 (3 / 2) - 31| < 1 / 2 ∧ |53 * logb 2 (8 / 5) - 36| < 1 / 2 ∧
+    |53 * logb 2 (5 / 3) - 39| < 1 / 2 ∧ (25 / 24 : ℚ) * (16 / 15) = 10 / 9 := by
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, by norm_num⟩ <;>
+  · first
+    | exact_mod_cast nearest_comma (by norm_num) 2 (by norm_num) (by norm_num) (by norm_num)
+    | exact_mod_cast nearest_comma (by norm_num) 3 (by norm_num) (by norm_num) (by norm_num)
+    | exact_mod_cast nearest_comma (by norm_num) 5 (by norm_num) (by norm_num) (by norm_num)
+    | exact_mod_cast nearest_comma (by norm_num) 8 (by norm_num) (by norm_num) (by norm_num)
+    | exact_mod_cast nearest_comma (by norm_num) 9 (by norm_num) (by norm_num) (by norm_num)
+    | exact_mod_cast nearest_comma (by norm_num) 14 (by norm_num) (by norm_num) (by norm_num)
+    | exact_mod_cast nearest_comma (by norm_num) 17 (by norm_num) (by norm_num) (by norm_num)
+    | exact_mod_cast nearest_comma (by norm_num) 22 (by norm_num) (by norm_num) (by norm_num)
+    | exact_mod_cast nearest_comma (by norm_num) 31 (by norm_num) (by norm_num) (by norm_num)
+    | exact_mod_cast nearest_comma (by norm_num) 36 (by norm_num) (by norm_num) (by norm_num)
+    | exact_mod_cast nearest_comma (by norm_num) 39 (by norm_num) (by norm_num) (by norm_num)
+
+/-- **Cinquante-trois commas**, question 2. The convergents of `[0; 1, 1, 2, 2, 3, 1, 5]` are
+`0/1, 1/1, 1/2, 3/5, 7/12, 24/41, 31/53`; and `7/12 < log₂(3/2)`, `31/53 < log₂(3/2) < 24/41`
+(from `2¹⁹ < 3¹²`, `2⁸⁴ < 3⁵³`, `3⁴¹ < 2⁶⁵`), so `0 < log₂(3/2) − 31/53 < 1/2173`. -/
+theorem fifth_convergents :
+    ((0 : ℚ) + 1 / (1 + 1 / (1 + 1 / (2 + 1 / (2 + 1 / (3 + 1 / (1 + 1 / 5))))))) = 31 / 53 ∧
+    (0 : ℚ) + 1 / (1 + 1 / (1 + 1 / (2 + 1 / 2))) = 7 / 12 ∧
+    (7 / 12 : ℝ) < logb 2 (3 / 2) ∧ (31 / 53 : ℝ) < logb 2 (3 / 2) ∧ logb 2 (3 / 2) < 24 / 41 ∧
+    (24 / 41 : ℝ) - 31 / 53 = 1 / 2173 := by
+  have l7 := lt_mul_logb (r := 3 / 2) (by norm_num) 7 12 (by norm_num)
+  have l31 := lt_mul_logb (r := 3 / 2) (by norm_num) 31 53 (by norm_num)
+  have l24 := mul_logb_lt (r := 3 / 2) (by norm_num) 24 41 (by norm_num)
+  push_cast at l7 l31 l24
+  refine ⟨by norm_num, by norm_num, by linarith, by linarith, by linarith, by norm_num⟩
+
+/-- **Cinquante-trois commas**, question 3. The tempered major third is closer to the just one than
+the tempered minor third: `0 < 400 − 1200 log₂(5/4) < 1200 log₂(6/5) − 300`, which comes down to
+`7/12 < log₂(3/2)`; in « commas », `4 · 53/12 = 17 + 2/3` and `3 · 53/12 = 13 + 1/4`. -/
+theorem thirds :
+    0 < 400 - 1200 * logb 2 (5 / 4) ∧ 0 < 1200 * logb 2 (6 / 5) - 300 ∧
+    400 - 1200 * logb 2 (5 / 4) < 1200 * logb 2 (6 / 5) - 300 ∧
+    (4 : ℚ) * 53 / 12 = 17 + 2 / 3 ∧ (3 : ℚ) * 53 / 12 = 13 + 1 / 4 := by
+  have a := mul_logb_lt (r := 5 / 4) (by norm_num) 1 3 (by norm_num)
+  have b := lt_mul_logb (r := 6 / 5) (by norm_num) 1 4 (by norm_num)
+  have c := lt_mul_logb (r := 3 / 2) (by norm_num) 7 12 (by norm_num)
+  have hm : logb 2 (3 / 2) = logb 2 (5 / 4) + logb 2 (6 / 5) := by
+    rw [← Real.logb_mul (by norm_num) (by norm_num)]; norm_num
+  push_cast at a b c
+  refine ⟨by linarith, by linarith, by linarith, by norm_num, by norm_num⟩
+
+/-- **Cinquante-trois commas**, question 4. `(3/2)³/(10/3) = 81/80`, `2/(5/4)³ = 128/125`;
+in equal semitones `3·7 = 12 + 9` and `3·4 = 12`. -/
+theorem tempered_identities :
+    ((3 : ℚ) / 2) ^ 3 / (2 * (5 / 3)) = 81 / 80 ∧ (2 : ℚ) / (5 / 4) ^ 3 = 128 / 125 ∧
+    3 * 7 = 12 + 9 ∧ 3 * 4 = 12 := by
+  norm_num
+
+end Commas
+
+/-! ## « La latitude de Paris par l'étoile polaire et par le Soleil » -/
+
+/-- Degrees, minutes, seconds, in seconds. -/
+def dms (d m s : ℚ) : ℚ := d * 3600 + m * 60 + s
+
+/-- **La latitude de Paris**, questions 1 and 2, the arithmetic of the sheet. `φ` is half the sum
+of the two heights of the pole star, `48°45'37½''`, and `p` half the difference, `2°43'7½''`;
+`17°45' + 2'58'' + 23°30'22'' = 41°18'20''`, and `90° − 41°18'20'' = 48°41'40''`. The declination
+by `sin δ = sin ε sin λ` is not computed. -/
+theorem latitude :
+    (dms 51 28 45 + dms 46 2 30) / 2 = dms 48 45 (37 + 1 / 2) ∧
+    (dms 51 28 45 - dms 46 2 30) / 2 = dms 2 43 (7 + 1 / 2) ∧
+    dms 17 45 0 + dms 0 2 58 + dms 23 30 22 = dms 41 18 20 ∧
+    dms 90 0 0 - dms 41 18 20 = dms 48 41 40 := by
+  norm_num [dms]
+
+/-! ## « Le partage des enjeux » and « La formule générale des partis » -/
+
+/-- `Σ_{k=i}^{N} C(N, k)`. -/
+def tail (N i : ℕ) : ℕ := ∑ k ∈ Finset.Icc i N, N.choose k
+
+/-- The formula of « La formule générale des partis »: `P(i, j) = 2^{−N} Σ_{k ≥ i} C(N, k)`, with
+`N = i + j − 1`. -/
+def P (i j : ℕ) : ℚ := (tail (i + j - 1) i : ℚ) / 2 ^ (i + j - 1)
+
+/-- **Le partage des enjeux**, questions 2–4, and **La formule générale des partis**, question 1,
+on the positions of the leaf: the boundary values, the recurrence
+`P(i, j) = (P(i − 1, j) + P(i, j − 1))/2` at each position used, and the values `3/4`,
+`11/16`, `14/16`, `12/16`, `15/16`, `13/16`, `21/32`; the games are worth `3/16`, `3/16`,
+`2/16`. The recurrence for every `(i, j)` is not proved. -/
+theorem stakes :
+    P 0 2 = 1 ∧ P 1 0 = 0 ∧ P 1 1 = 1 / 2 ∧ P 1 2 = 3 / 4 ∧ P 1 2 = (P 0 2 + P 1 1) / 2 ∧
+    P 2 2 = 1 / 2 ∧ P 1 3 = 7 / 8 ∧ P 2 3 = 11 / 16 ∧ P 2 3 = (P 1 3 + P 2 2) / 2 ∧
+    P 1 4 = 15 / 16 ∧ P 1 4 = (P 0 4 + P 1 3) / 2 ∧ P 2 4 = 13 / 16 ∧
+    P 2 4 = (P 1 4 + P 2 3) / 2 ∧ P 3 3 = 1 / 2 ∧ P 3 4 = 21 / 32 ∧ P 3 4 = (P 2 4 + P 3 3) / 2 ∧
+    (11 / 16 - 8 / 16 : ℚ) = 3 / 16 ∧ (14 / 16 - 11 / 16 : ℚ) = 3 / 16 ∧ (1 - 14 / 16 : ℚ) = 2 / 16 ∧
+    (13 / 16 : ℚ) - 3 / 4 = 1 / 16 ∧ (3 / 4 : ℚ) - 1 / 2 = 1 / 4 := by
+  simp only [P, tail]
+  decide
+
+/-- **La formule générale des partis**, question 2. Three players, a match of two games: with
+`A`, `B` one game each and `C` none, `A` has `(1 + 0 + 1/3)/3 = 12/27` and `C` `3/27`; with `A` one
+game and `B`, `C` none, `A` has `(1 + 12/27 + 12/27)/3 = 17/27`, `B` and `C` `5/27` each. -/
+theorem three_players :
+    (1 + 0 + 1 / 3 : ℚ) / 3 = 12 / 27 ∧ 1 - 2 * (12 / 27 : ℚ) = 3 / 27 ∧
+    (1 + 12 / 27 + 12 / 27 : ℚ) / 3 = 17 / 27 ∧ (1 - 17 / 27 : ℚ) / 2 = 5 / 27 := by
+  norm_num
+
+/-- **La formule générale des partis**, question 3. With `x = (a + b)/2` in hand, playing `x`
+against `x` with the winner giving `a` to the loser leaves the winner `b` and the loser `a`; for
+`11`: `22 − 9 = 13`. -/
+theorem fair_game (a b : ℚ) : 2 * ((a + b) / 2) - a = b ∧ (22 - 9 : ℚ) = 13 := by
+  constructor <;> ring
 
 end Germain.Exercises.Mersenne

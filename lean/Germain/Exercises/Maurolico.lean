@@ -14,7 +14,11 @@ import Mathlib
 * « Le « très noble théorème » » (latin-17859, views 35–37): `noble_vectors` (question 1),
   `noble_cosA` (question 2), `noble_theorem` (question 3), `noble_cot_sq` (question 4).
 
-Not formalised: the table of sines (numbers, category 3) and the meetings of two moving points.
+* « Les soixantièmes de la table des sinus » (latin-17859, view 16): `sexagesimals`,
+  `sine_above_chord`. The five-digit values of the sines are not computed.
+* « Les rencontres de deux mobiles sur un cercle » (latin-17859, views 9–10):
+  `meetings_bijective`, `meetings_coprime`, `meetings_distinct`. The density of the meetings
+  (question 3, which the leaf does not state) is not formalised.
 -/
 
 namespace Germain.Exercises.Maurolico
@@ -209,5 +213,63 @@ theorem noble_cot_sq (A : ℝ) (hA : sin (A / 2) ≠ 0) :
     rw [cos_two_mul]; nlinarith [sin_sq_add_cos_sq (A / 2)]
   rw [h1, h2]
   field_simp
+
+
+/-! ## « Les soixantièmes de la table des sinus » -/
+
+/-- **Les soixantièmes**, questions 1–3, the arithmetic. With `E(23) = 39073`, `E(24) = 40674`:
+`D(24) = 1601 = 26·60 + 41`; the interpolation `39073 + 30·1601/60 = 39873.5`; line 59,
+`85717 − 84805 = 912 = 15·60 + 12` (the leaf has `15:21`); line 86, `99756 − 99620 = 136`
+`= 2·60 + 16` (the leaf has `139` for the difference). The values of the sines are not computed
+here. -/
+theorem sexagesimals :
+    (40674 - 39073 : ℤ) = 1601 ∧ (1601 : ℤ) = 26 * 60 + 41 ∧
+    (39073 : ℚ) + 30 * (1601 / 60) = 39873.5 ∧
+    (85717 - 84805 : ℤ) = 912 ∧ (912 : ℤ) = 15 * 60 + 12 ∧ (15 * 60 + 21 : ℤ) ≠ 912 ∧
+    (99756 - 99620 : ℤ) = 136 ∧ (136 : ℤ) = 2 * 60 + 16 ∧ (136 : ℤ) ≠ 139 := by
+  norm_num
+
+/-- **Les soixantièmes**, question 2. The interpolation errs low because the sine is concave on
+`[0, π/2]`: between two points its graph is above its chord. -/
+theorem sine_above_chord {x y t : ℝ} (hx : 0 ≤ x) (hy : y ≤ π / 2) (hxy : x < y) (ht0 : 0 < t)
+    (ht1 : t < 1) :
+    (1 - t) * sin x + t * sin y < sin ((1 - t) * x + t * y) := by
+  have hc := strictConcaveOn_sin_Icc
+  have hxI : x ∈ Set.Icc 0 π := ⟨hx, by linarith [pi_pos]⟩
+  have hyI : y ∈ Set.Icc 0 π := ⟨by linarith, by linarith [pi_pos]⟩
+  have := hc.2 hxI hyI hxy.ne (by linarith : 0 < 1 - t) ht0 (by ring)
+  simpa [smul_eq_mul] using this
+
+/-! ## « Les rencontres de deux mobiles sur un cercle » -/
+
+/-- **Les rencontres de deux mobiles**, questions 1 and 2. If `p` is coprime to `m`
+(`m = p − q` or `p + q`, both coprime to `p` when `p, q` are), `k ↦ kp` is a bijection of
+`ℤ/mℤ`: the meetings `2πkp/m` are the `m` points `2πj/m`, all of them, periodically. -/
+theorem meetings_bijective (m p : ℕ) (h : Nat.Coprime p m) :
+    Function.Bijective (fun k : ZMod m => k * (p : ZMod m)) := by
+  have hu : IsUnit (p : ZMod m) := (ZMod.unitOfCoprime p h).isUnit
+  exact (hu.unit.mulRight).bijective
+
+/-- `gcd(p, p − q) = gcd(p, p + q) = gcd(p, q)`. -/
+theorem meetings_coprime (p q : ℕ) (hqp : q ≤ p) (h : Nat.Coprime p q) :
+    Nat.Coprime p (p - q) ∧ Nat.Coprime p (p + q) := by
+  constructor
+  · have h1 : Nat.Coprime (p - q) q := (Nat.coprime_sub_self_left hqp).2 h
+    have h2 : Nat.Coprime (p - q) (q + (p - q)) := Nat.coprime_add_self_right.2 h1
+    rw [show q + (p - q) = p by omega] at h2
+    exact h2.symm
+  · exact Nat.coprime_self_add_right.2 h
+
+/-- **Les rencontres de deux mobiles**, question 3. If `β` is irrational, `kβ ≡ lβ (mod 1)`
+forces `k = l`: the meeting points never repeat. -/
+theorem meetings_distinct (β : ℝ) (hβ : Irrational β) (k l : ℤ) (h : ∃ n : ℤ, k * β - l * β = n) :
+    k = l := by
+  obtain ⟨n, hn⟩ := h
+  by_contra hkl
+  have hk : ((k - l : ℤ) : ℝ) ≠ 0 := by exact_mod_cast sub_ne_zero.2 hkl
+  have hb : β = (n : ℝ) / ((k : ℝ) - l) := by
+    push_cast at hk
+    rw [eq_div_iff hk]; linear_combination hn
+  exact hβ ⟨(n : ℚ) / ((k : ℚ) - l), by push_cast; exact hb.symm⟩
 
 end Germain.Exercises.Maurolico

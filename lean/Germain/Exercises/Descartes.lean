@@ -17,7 +17,10 @@ exercise, in the book's order; each docstring names the exercise and the questio
   `area6_doubling`, `area6_divide`, `area6_point_on_curve`, `area6_tangent_general`,
   `area6_tangent`, `area30_from_5_12_13`.
 
-Not formalised: the centre of agitation of a cylindrical sector (physics).
+* « Le centre d'agitation d'un secteur de cylindre » (naf-5161, views 31–39):
+  `agitation_integrals`, `agitation_centres`, `agitation_half`. The formula for the length of the
+  equivalent pendulum is admitted, as in the exercise; the root of `α/sin α = 4/3` is not
+  computed.
 -/
 
 namespace Germain.Exercises.Descartes
@@ -219,5 +222,41 @@ theorem area30_from_5_12_13 :
     (119 / 26 : ℚ) ^ 2 + (1560 / 119) ^ 2 = (42961 / 3094) ^ 2 ∧
     (1 / 2 : ℚ) * (119 / 26) * (1560 / 119) = 30 := by
   norm_num [form]
+
+
+/-! ## « Le centre d'agitation d'un secteur de cylindre » -/
+
+section Agitation
+
+open Real intervalIntegral
+
+/-- **Le centre d'agitation**, the integrals in polar coordinates: `∫₀ʳ ρ dρ = r²/2`,
+`∫₀ʳ ρ² dρ = r³/3`, `∫₀ʳ ρ³ dρ = r⁴/4`, `∫_{−α}^{α} cos θ dθ = 2 sin α`. -/
+theorem agitation_integrals (r α : ℝ) :
+    ∫ ρ in (0 : ℝ)..r, ρ = r ^ 2 / 2 ∧ ∫ ρ in (0 : ℝ)..r, ρ ^ 2 = r ^ 3 / 3 ∧
+    ∫ ρ in (0 : ℝ)..r, ρ ^ 3 = r ^ 4 / 4 ∧ ∫ θ in (-α)..α, cos θ = 2 * sin α := by
+  refine ⟨by simp [integral_id], by simp [integral_pow]; norm_num, by simp [integral_pow]; norm_num, ?_⟩
+  rw [integral_cos, sin_neg]; ring
+
+/-- **Le centre d'agitation**, questions 1–3. With `M = αr²`, `∫ρ cos θ dm = 2r³ sin α/3`,
+`∫ρ² dm = αr⁴/2` and `∫ρ dm = 2αr³/3`: `IO = (2/3) r sin α/α`, `ℓ = (3/4) r α/sin α`,
+`ℓ_D = 3r/4`, and `ℓ_D < ℓ` since `sin α < α`. -/
+theorem agitation_centres (r α : ℝ) (hr : 0 < r) (hα : 0 < α) (hα' : α < π) :
+    (r ^ 3 / 3 * (2 * sin α)) / (α * r ^ 2) = 2 / 3 * r * (sin α / α) ∧
+    (2 * α * (r ^ 4 / 4)) / (r ^ 3 / 3 * (2 * sin α)) = 3 / 4 * r * (α / sin α) ∧
+    (2 * α * (r ^ 4 / 4)) / (2 * α * (r ^ 3 / 3)) = 3 / 4 * r ∧
+    3 / 4 * r < 3 / 4 * r * (α / sin α) := by
+  have hs : 0 < sin α := sin_pos_of_pos_of_lt_pi hα hα'
+  have hsa : sin α < α := sin_lt hα
+  have hr0 := hr.ne'; have hα0 := hα.ne'; have hs0 := hs.ne'
+  refine ⟨by field_simp, by field_simp, by field_simp, ?_⟩
+  have : 1 < α / sin α := by rw [lt_div_iff₀ hs]; linarith
+  nlinarith
+
+/-- **Le centre d'agitation**, question 4. For the half-cylinder, `α = π/2`, `IQ = 3πr/8`. -/
+theorem agitation_half (r : ℝ) : 3 / 4 * r * ((π / 2) / sin (π / 2)) = 3 * π / 8 * r := by
+  rw [sin_pi_div_two]; ring
+
+end Agitation
 
 end Germain.Exercises.Descartes

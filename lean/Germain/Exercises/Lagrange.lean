@@ -19,8 +19,8 @@ per exercise; each docstring names the exercise and the question.
   longitude; differentiation under the integral sign and the vanishing of the part `μ ≤ 1 − δ`
   (question 4) are not formalised.
 
-Not formalised: the dating of a note by the Republican calendar (`Dater un billet`), whose
-arithmetic is a count of days.
+* « Dater un billet de Lagrange par le calendrier républicain » (naf-4073, view 29): `republican`,
+  with Zeller's congruence for the weekdays. Question 1 is a remark on the reading.
 -/
 
 namespace Germain.Exercises.Lagrange
@@ -319,5 +319,29 @@ theorem shell_surface (a y : ℝ) (ha : 0 < a) (hy : 0 < 1 + y) :
   constructor <;> (simp only [r]; field_simp; ring)
 
 end Shell
+
+
+/-! ## « Dater un billet de Lagrange par le calendrier républicain » -/
+
+/-- Zeller's congruence for a Gregorian date with month `m ∈ [3, 12]`: `0` is Saturday, `1` Sunday,
+…, `4` Wednesday. -/
+def zeller (y m d : ℕ) : ℕ :=
+  (d + 13 * (m + 1) / 5 + y % 100 + y % 100 / 4 + y / 100 / 4 + 5 * (y / 100)) % 7
+
+/-- **Dater un billet**, questions 2 and 3. The 17 germinal is day `6·30 + 17 = 197`, `196 = 28·7`
+days after the 1 vendémiaire; the weekdays of the 1 vendémiaire of years I to XIV (Saturday,
+Sunday, Monday, Wednesday, Thursday, Friday, Saturday, Monday, Tuesday, Wednesday, Thursday,
+Saturday, Sunday, Monday): the only Wednesdays are years IV and X; the 17 germinal of those years
+is `196` days after (`7 + 31 + 30 + 31 + 31 + 29 + 31 + 6` and `7 + 31 + 30 + 31 + 31 + 28 + 31 + 7`),
+the 6 April 1796 and the 7 April 1802, both Wednesdays. -/
+theorem republican :
+    6 * 30 + 17 = 197 ∧ 196 = 28 * 7 ∧
+    [zeller 1792 9 22, zeller 1793 9 22, zeller 1794 9 22, zeller 1795 9 23, zeller 1796 9 22,
+      zeller 1797 9 22, zeller 1798 9 22, zeller 1799 9 23, zeller 1800 9 23, zeller 1801 9 23,
+      zeller 1802 9 23, zeller 1803 9 24, zeller 1804 9 23, zeller 1805 9 23] =
+      [0, 1, 2, 4, 5, 6, 0, 2, 3, 4, 5, 0, 1, 2] ∧
+    7 + 31 + 30 + 31 + 31 + 29 + 31 + 6 = 196 ∧ 7 + 31 + 30 + 31 + 31 + 28 + 31 + 7 = 196 ∧
+    zeller 1796 4 6 = 4 ∧ zeller 1802 4 7 = 4 := by
+  decide
 
 end Germain.Exercises.Lagrange
