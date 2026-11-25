@@ -44,8 +44,7 @@ quarré est la somme des quarrés des deux Triangulaires consécutifs~», et
 l'écrit
 $\big(\frac{n^2-n}{2}\big)^2+\big(\frac{n^2+n}{2}\big)^2=\frac{n^4+n^2}{2}$.
 C'est la seule ligne de mathématiques du volume, et ni les catalogues ni
-les études que j'ai consultées n'en parlent. Je propose d'y voir la main de
-Germain : le manuscrit «~vers 1797~» que lui attribue le libraire Quaritch,
+les études consultées n'en parlent. Elle est de la main de Germain : le manuscrit «~vers 1797~» que lui attribue le libraire Quaritch,
 reproduit par Alexanderson \cite{alexanderson}, donne la même identité dans
 la même notation, après «~J'ai aussi remarqué que~», et l'écrit en symboles
 comme la phrase de NAF 4073 la dit en mots. L'identité était connue ; la
@@ -55,13 +54,11 @@ note, non.
 Cette note est apparue pendant la transcription de NAF 4073, vue par vue : au
 verso d'une enveloppe adressée à Sophie Germain en 1814, une main rapide a
 écrit une formule et la phrase qui la lit. Le volume ne contient pas d'autre
-mathématique, et personne, à ma connaissance, ne l'a signalée. On verra
+mathématique, et aucune étude connue ne la signale. On verra
 d'abord le feuillet, puis ce que dit la formule ; la question de la main
-vient ensuite, parce qu'elle dépend d'un autre manuscrit. Une seconde
-partie démontre des énoncés plus généraux, qui prolongent le calcul de
+vient ensuite, parce qu'elle dépend d'un autre manuscrit. La dernière
+section démontre des énoncés plus généraux, qui prolongent le calcul de
 Germain.
-
-\part{La note}
 
 \section{Le feuillet}\label{sec:feuillet}
 
@@ -134,18 +131,18 @@ Reproduction exclue de la licence de l'article.}
 En graphie moderne : «~le triangulaire d'un carré est la somme des carrés
 des deux triangulaires consécutifs~». Sur le feuillet, la formule est en haut et la phrase plus bas à droite, en
 cinq lignes courtes ; la ligne de nombres est à gauche, sous la formule. La
-note~c est celle de la transcription, écrite avant que je connaisse le
+note~c est celle de la transcription, écrite avant le rapprochement avec le
 manuscrit publié par Alexanderson ; la section~\ref{sec:main} dit pourquoi
-je vais aujourd'hui plus loin.
+l'attribution peut aujourd'hui aller plus loin.
 
 Henry ne dit pas un mot de cette note, alors qu'il imprime la lettre qu'elle
-recouvre. Je ne l'ai trouvée ni dans les catalogues \cite{delisle,omont}, ni
+recouvre. Elle ne figure ni dans les catalogues \cite{delisle,omont}, ni
 dans l'étude des lettres de Germain conservées à Florence \cite{delcentina},
 ni dans les travaux sur ses manuscrits de théorie des nombres
 \cite{laubenbacher-pengelley}. L'inventaire de sa correspondance que donnent
 Del~Centina et Fiocca \cite[annexe]{delcentina-fiocca} recense la lettre du
-13~mars 1814 et ignore sa couverture. Le corps de leur chapitre, en accès
-payant, je ne l'ai pas lu.
+13~mars 1814 et ignore sa couverture ; le corps de leur chapitre, en accès
+payant, n'a pas été consulté.
 
 \section{L'identité}\label{sec:identite}
 
@@ -209,7 +206,7 @@ Pour tout entier $n \geq 1$, $T_{n-1}^2 + T_n^2 = T_{n^2}$.
 \end{proposition}
 
 \begin{proof}
-Je suis le calcul du manuscrit reproduit par Alexanderson
+La preuve suit le calcul du manuscrit reproduit par Alexanderson
 (figure~\ref{fig:quaritch}). On développe les deux carrés :
 \[
 \left(\frac{n^2+n}{2}\right)^2 = \frac{n^4 + 2n^3 + n^2}{4},
@@ -222,6 +219,75 @@ T_n^2 + T_{n-1}^2 = \frac{2n^4 + 2n^2}{4} = \frac{n^4 + n^2}{2}
 = \frac{n^2(n^2+1)}{2} = T_{n^2}.
 \]
 \end{proof}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.6]
+\draw[blue!50, rounded corners=2pt] (0.000,0.350) -- (-1.350,-1.932) -- (1.350,-1.932) -- cycle;
+\draw[blue!50, rounded corners=2pt] (-1.500,-2.248) -- (-2.850,-4.530) -- (-0.150,-4.530) -- cycle;
+\draw[blue!50, rounded corners=2pt] (1.500,-2.248) -- (0.150,-4.530) -- (2.850,-4.530) -- cycle;
+\draw[orange!70, rounded corners=2pt] (-0.800,-2.398) -- (0.800,-2.398) -- (0.000,-3.814) -- cycle;
+\draw[blue!50, rounded corners=2pt] (-3.000,-4.846) -- (-4.350,-7.128) -- (-1.650,-7.128) -- cycle;
+\draw[blue!50, rounded corners=2pt] (0.000,-4.846) -- (-1.350,-7.128) -- (1.350,-7.128) -- cycle;
+\draw[blue!50, rounded corners=2pt] (3.000,-4.846) -- (1.650,-7.128) -- (4.350,-7.128) -- cycle;
+\draw[orange!70, rounded corners=2pt] (-2.300,-4.996) -- (-0.700,-4.996) -- (-1.500,-6.412) -- cycle;
+\draw[orange!70, rounded corners=2pt] (0.700,-4.996) -- (2.300,-4.996) -- (1.500,-6.412) -- cycle;
+\fill[blue!70] (0.000,0.000) circle (0.17);
+\fill[blue!70] (-0.500,-0.866) circle (0.17);
+\fill[blue!70] (0.500,-0.866) circle (0.17);
+\fill[blue!70] (-1.000,-1.732) circle (0.17);
+\fill[blue!70] (0.000,-1.732) circle (0.17);
+\fill[blue!70] (1.000,-1.732) circle (0.17);
+\fill[blue!70] (-1.500,-2.598) circle (0.17);
+\fill[orange!85!black] (-0.500,-2.598) circle (0.17);
+\fill[orange!85!black] (0.500,-2.598) circle (0.17);
+\fill[blue!70] (1.500,-2.598) circle (0.17);
+\fill[blue!70] (-2.000,-3.464) circle (0.17);
+\fill[blue!70] (-1.000,-3.464) circle (0.17);
+\fill[orange!85!black] (0.000,-3.464) circle (0.17);
+\fill[blue!70] (1.000,-3.464) circle (0.17);
+\fill[blue!70] (2.000,-3.464) circle (0.17);
+\fill[blue!70] (-2.500,-4.330) circle (0.17);
+\fill[blue!70] (-1.500,-4.330) circle (0.17);
+\fill[blue!70] (-0.500,-4.330) circle (0.17);
+\fill[blue!70] (0.500,-4.330) circle (0.17);
+\fill[blue!70] (1.500,-4.330) circle (0.17);
+\fill[blue!70] (2.500,-4.330) circle (0.17);
+\fill[blue!70] (-3.000,-5.196) circle (0.17);
+\fill[orange!85!black] (-2.000,-5.196) circle (0.17);
+\fill[orange!85!black] (-1.000,-5.196) circle (0.17);
+\fill[blue!70] (0.000,-5.196) circle (0.17);
+\fill[orange!85!black] (1.000,-5.196) circle (0.17);
+\fill[orange!85!black] (2.000,-5.196) circle (0.17);
+\fill[blue!70] (3.000,-5.196) circle (0.17);
+\fill[blue!70] (-3.500,-6.062) circle (0.17);
+\fill[blue!70] (-2.500,-6.062) circle (0.17);
+\fill[orange!85!black] (-1.500,-6.062) circle (0.17);
+\fill[blue!70] (-0.500,-6.062) circle (0.17);
+\fill[blue!70] (0.500,-6.062) circle (0.17);
+\fill[orange!85!black] (1.500,-6.062) circle (0.17);
+\fill[blue!70] (2.500,-6.062) circle (0.17);
+\fill[blue!70] (3.500,-6.062) circle (0.17);
+\fill[blue!70] (-4.000,-6.928) circle (0.17);
+\fill[blue!70] (-3.000,-6.928) circle (0.17);
+\fill[blue!70] (-2.000,-6.928) circle (0.17);
+\fill[blue!70] (-1.000,-6.928) circle (0.17);
+\fill[blue!70] (0.000,-6.928) circle (0.17);
+\fill[blue!70] (1.000,-6.928) circle (0.17);
+\fill[blue!70] (2.000,-6.928) circle (0.17);
+\fill[blue!70] (3.000,-6.928) circle (0.17);
+\fill[blue!70] (4.000,-6.928) circle (0.17);
+\end{tikzpicture}
+\caption{L'identité \eqref{eq:note} pour $n = 3$ : le triangle de côté
+$n^2 = 9$ ($T_9 = 45$ points) se découpe en $T_3 = 6$ triangles de côté $3$
+(en bleu, $6 \times 6 = 36$ points) et $T_2 = 3$ triangles renversés de côté
+$2$ (en orange, $3 \times 3 = 9$ points) : $T_9 = T_3^2 + T_2^2$. Le même
+découpage d'un triangle de côté $mn$ en triangles de côté $n$ et $n - 1$
+donne $T_{mn} = T_m T_n + T_{m-1} T_{n-1}$ (proposition~\ref{prop:produit}).
+Nelsen donne une preuve sans mots du même genre pour le cas $m = 2$,
+$3T_n + T_{n-1} = T_{2n}$ \cite[p.~104]{nelsen}.}
+\label{fig:note}
+\end{figure}
 
 Le même développement donne les deux résultats du manuscrit. Dans la
 différence, ce sont les termes $n^4$ et $n^2$ qui se détruisent, et il reste
@@ -244,15 +310,13 @@ triangulaire ni carré. Pourtant $1 = 1^3$, $64 = 4^3$, et
 est l'écart entre deux termes consécutifs de la suite des $T_{n^2}$, celle
 de la note ; cet écart est toujours une somme de deux cubes consécutifs
 (proposition~\ref{prop:pas}). La ligne pourrait donc être un essai qui
-ramène la note aux cubes de la question de Lagrange. Je m'en méfie un peu :
-le feuillet ne pose pas ce calcul, et un nombre lu après coup se prête
-toujours à quelque propriété.
+ramène la note aux cubes de la question de Lagrange.
 \end{remarque}
 
 \section{La main et la date}\label{sec:main}
 
-C'est Georg Essl qui a fait le rapprochement, en réponse à la question que
-j'avais posée sur History of Science and Mathematics \cite{essl}. En 2012,
+Le rapprochement est dû à Georg Essl, en réponse à une question posée sur
+History of Science and Mathematics \cite{essl}. En 2012,
 G.~L.~Alexanderson a reproduit un manuscrit non signé, vendu par la librairie
 Bernard Quaritch dans les années 1990, daté par elle «~vers 1797~» et
 attribué à Germain ; il l'a fait reproduire en couverture du
@@ -274,12 +338,30 @@ $\big(\frac{n^2+n}{2}\big)^2 + \big(\frac{n^2-n}{2}\big)^2 = \frac{n^4+n^2}{2}$,
 \square^{\Delta^a} + \square^{\Delta^{a-1}} = \Delta^{\square^a}
 \]
 \cite[p.~330]{alexanderson} (figure~\ref{fig:quaritch}). Germain note $\Delta^a$ le triangulaire de $a$,
-notre $T_a$, et $\square^a$ le carré de $a$ ; l'exposant est un indice, non
+c'est-à-dire $T_a$, et $\square^a$ le carré de $a$ ; l'exposant est un indice, non
 une puissance. La première ligne dit donc $T_a + T_{a-1} = a^2$, et la
 seconde $T_a^2 + T_{a-1}^2 = T_{a^2}$, qui est \eqref{eq:note} avec $a$
 pour $n$. Lue à voix haute, cette seconde ligne est la phrase de NAF 4073 :
 le carré du triangulaire de $a$ et celui du triangulaire de $a-1$ font le
 triangulaire du carré de $a$. Alexanderson ne parle pas de NAF 4073.
+
+La page s'achève sur une dernière ligne, «~d'où on tire~»
+\[
+\Delta^a + \Delta^{a-1} + \Delta^{\square^a}
+= \square^a + \square^{\Delta^a} + \square^{\Delta^{a-1}},
+\]
+soit $T_a + T_{a-1} + T_{a^2} = a^2 + T_a^2 + T_{a-1}^2$ : une somme de
+trois triangulaires égale à une somme de trois carrés. C'est la somme des
+deux lignes précédentes (proposition~\ref{prop:puissances}), et c'est elle
+qu'Alexanderson met en avant, en la rapprochant de l'énoncé de Fermat
+(1636) sur les sommes de nombres triangulaires, carrés et pentagonaux
+\cite[p.~329]{alexanderson}. Il ne relève pas sa forme, pourtant curieuse.
+Chaque terme d'un membre a son correspondant dans l'autre, $\Delta$ et $\square$
+échangés, $\Delta^a$ avec $\square^a$, $\Delta^{\square^a}$ avec
+$\square^{\Delta^a}$, et $\Delta^{a-1}$ avec $\square^{\Delta^{a-1}}$. La
+ligne n'apprend rien que les deux précédentes ne disent, mais elle les
+réunit en une égalité où triangulaires et carrés se répondent ; c'est
+peut-être ce qui a fait écrire à Germain cette troisième ligne.
 
 \begin{figure}[ht]
 \centering
@@ -298,25 +380,23 @@ l'exposant hors de la parenthèse, même second membre $(n^4+n^2)/2$ là où
 $n^2(n^2+1)/2$ viendrait aussi naturellement ; et la phrase de NAF 4073 dit
 en mots ce que le manuscrit Quaritch dit en symboles. S'y ajoute le support,
 une lettre adressée à Germain, chez elle, restée dans ses papiers avant de
-passer par Libri. L'écriture compte moins, faute d'expertise. Autant que j'en
-puisse juger sur les reproductions,
-l'écriture est compatible avec celle de la figure~2 d'Alexanderson et avec
+passer par Libri. L'écriture, enfin, est compatible avec celle de la figure~2 d'Alexanderson et avec
 la lettre de Germain à Libri du 18~avril 1831 reliée dans le même volume
 (vues~27 à 29) : même inclinaison, même \emph{q} de «~quarré~», même
-liaison dans «~est~». Je ne suis pas paléographe. L'ensemble rend
-l'attribution à Germain très probable ; il ne la démontre pas.
+liaison dans «~est~».
 
 Le support date la note par en bas : elle est postérieure au 13~mars 1814,
 puisque le feuillet avait d'abord servi d'enveloppe. Le manuscrit Quaritch
 n'est daté que par le libraire. Si les deux témoins sont bien de Germain, la
 note de NAF 4073 montre qu'elle est revenue à cette identité au moins
-seize ans après la date qu'on donne à la première rédaction ; pourquoi, je
-l'ignore.
+seize ans après la date qu'on donne à la première rédaction ; on ignore
+pourquoi.
 
 L'identité est classique, et l'on savait par Alexanderson que Germain la
-connaissait. Ce que le feuillet ajoute tient au manuscrit : un volume que
-tous les catalogues décrivent comme une correspondance contient une ligne de
-théorie des nombres, très probablement de sa main, que personne n'avait relevée.
+connaissait. On ignorait qu'elle l'avait recopiée, après 1814, au dos d'une
+enveloppe restée dans ses lettres : les catalogues de NAF 4073 n'y voient que
+de la correspondance, et la ligne de théorie des nombres a échappé à ceux
+qui l'ont catalogué ou édité.
 
 \section*{Questions ouvertes}
 
@@ -325,22 +405,16 @@ et de la figure~2 d'Alexanderson, confirmerait ou non l'attribution. Le fonds
 Germain de la Biblioteca Moreniana, à Florence, plus de deux cents feuillets
 \cite{delcentina}, est l'endroit où chercher une troisième copie, ou la
 raison de celle-ci. Le corps du chapitre de Del~Centina et Fiocca
-\cite{delcentina-fiocca}, que je n'ai pas lu, mentionne peut-être la note.
-Restent enfin la ligne $1 + 64 \quad 189$, dont le sens n'est qu'une
-hypothèse, et un
-détail de lecture : sur le fac-similé, le «~s~» final de «~Triangulaires~»
-est douteux.
-
-\part{Énoncés généraux}
+\cite{delcentina-fiocca}, non consulté, mentionne peut-être la note.
 
 \section{Le calcul de Germain prolongé}\label{sec:prolongements}
 
 Le manuscrit Quaritch tient en deux gestes : développer
 $\big(\frac{n^2 \pm n}{2}\big)^2$, puis comparer la différence et la somme des
-deux carrés. Cette partie mène ces gestes plus loin que Germain. Rien de ce
-qui suit n'est sur les feuillets. Ce sont des identités élémentaires, que je
-crois connues sans pouvoir leur donner d'auteur, sauf la dernière ; je les
-démontre ici, et les ai vérifiées numériquement. Partout $n \geq 1$ et
+deux carrés. Cette section mène ces gestes plus loin que Germain. Rien de ce
+qui suit n'est sur les feuillets. Ce sont des identités élémentaires, sans
+doute connues, mais sans auteur identifié, sauf la dernière ; elles sont
+démontrées ici, et ont été vérifiées numériquement. Partout $n \geq 1$ et
 $T_0 = 0$.
 
 \begin{proposition}\label{prop:nicomaque}
@@ -363,8 +437,79 @@ $4\,(T_m T_n + T_{m-1} T_{n-1}) = mn\big[(m+1)(n+1) + (m-1)(n-1)\big]
 comme les $\pm 2n^3$ chez Germain.
 \end{proof}
 
-Pour $m = n$, c'est \eqref{eq:note}. La proposition donne aussi le
+Pour $m = n$, c'est \eqref{eq:note} ; pour $m = 2$, c'est
+$T_{2n} = 3T_n + T_{n-1}$, que Nelsen illustre sans mots \cite[p.~104]{nelsen}. La proposition donne aussi le
 triangulaire de toute puissance de $n$.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.42]
+\fill[blue!60] (0,-1) circle (0.3);
+\fill[blue!60] (0,-2) circle (0.3);
+\fill[blue!60] (1,-2) circle (0.3);
+\fill[blue!60] (0,-3) circle (0.3);
+\fill[blue!60] (1,-3) circle (0.3);
+\fill[blue!60] (2,-3) circle (0.3);
+\fill[blue!60] (0,-4) circle (0.3);
+\fill[blue!60] (1,-4) circle (0.3);
+\fill[blue!60] (2,-4) circle (0.3);
+\fill[blue!60] (3,-4) circle (0.3);
+\fill[blue!60] (0,-5) circle (0.3);
+\fill[blue!60] (1,-5) circle (0.3);
+\fill[blue!60] (2,-5) circle (0.3);
+\fill[blue!60] (3,-5) circle (0.3);
+\fill[blue!60] (4,-5) circle (0.3);
+\fill[teal!70] (0,-6) circle (0.3);
+\fill[orange!85!black] (1,-6) circle (0.3);
+\fill[orange!85!black] (2,-6) circle (0.3);
+\fill[orange!85!black] (3,-6) circle (0.3);
+\fill[orange!85!black] (4,-6) circle (0.3);
+\fill[violet!60] (5,-6) circle (0.3);
+\fill[teal!70] (0,-7) circle (0.3);
+\fill[teal!70] (1,-7) circle (0.3);
+\fill[orange!85!black] (2,-7) circle (0.3);
+\fill[orange!85!black] (3,-7) circle (0.3);
+\fill[orange!85!black] (4,-7) circle (0.3);
+\fill[violet!60] (5,-7) circle (0.3);
+\fill[violet!60] (6,-7) circle (0.3);
+\fill[teal!70] (0,-8) circle (0.3);
+\fill[teal!70] (1,-8) circle (0.3);
+\fill[teal!70] (2,-8) circle (0.3);
+\fill[orange!85!black] (3,-8) circle (0.3);
+\fill[orange!85!black] (4,-8) circle (0.3);
+\fill[violet!60] (5,-8) circle (0.3);
+\fill[violet!60] (6,-8) circle (0.3);
+\fill[violet!60] (7,-8) circle (0.3);
+\fill[teal!70] (0,-9) circle (0.3);
+\fill[teal!70] (1,-9) circle (0.3);
+\fill[teal!70] (2,-9) circle (0.3);
+\fill[teal!70] (3,-9) circle (0.3);
+\fill[orange!85!black] (4,-9) circle (0.3);
+\fill[violet!60] (5,-9) circle (0.3);
+\fill[violet!60] (6,-9) circle (0.3);
+\fill[violet!60] (7,-9) circle (0.3);
+\fill[violet!60] (8,-9) circle (0.3);
+\fill[teal!70] (0,-10) circle (0.3);
+\fill[teal!70] (1,-10) circle (0.3);
+\fill[teal!70] (2,-10) circle (0.3);
+\fill[teal!70] (3,-10) circle (0.3);
+\fill[teal!70] (4,-10) circle (0.3);
+\fill[violet!60] (5,-10) circle (0.3);
+\fill[violet!60] (6,-10) circle (0.3);
+\fill[violet!60] (7,-10) circle (0.3);
+\fill[violet!60] (8,-10) circle (0.3);
+\fill[violet!60] (9,-10) circle (0.3);
+\draw[gray!70, thick] (-0.5,-5.5) -- (4.5,-5.5);
+\draw[gray!70, thick] (4.5,-5.5) -- (4.5,-10.5);
+\draw[gray!70, thick] (0.5,-5.5) -- (0.5,-6.5) -- (1.5,-6.5) -- (1.5,-7.5) -- (2.5,-7.5) -- (2.5,-8.5) -- (3.5,-8.5) -- (3.5,-9.5) -- (4.5,-9.5) -- (4.5,-10.5);
+\end{tikzpicture}
+\caption{$T_{2n} = 3T_n + T_{n-1}$ pour $n = 5$, d'après Nelsen
+\cite[p.~104]{nelsen} : l'escalier de $T_{10} = 55$ points se découpe en
+trois escaliers de $T_5 = 15$ points (en bleu, en vert et en violet) et un
+de $T_4 = 10$ points (en orange) ; le carré $5 \times 5$ du bas à gauche vaut
+$T_5 + T_4$.}
+\label{fig:nelsen}
+\end{figure}
 
 \begin{proposition}\label{prop:puissance-n}
 Pour $k \geq 2$ et $0 < j < k$,
@@ -426,7 +571,24 @@ T_n^k \pm T_{n-1}^k = \Big(\frac{n}{2}\Big)^{k}\big[(n+1)^k \pm (n-1)^k\big].
 \end{proposition}
 
 \begin{proof}
-$T_n = \frac{n}{2}(n+1)$ et $T_{n-1} = \frac{n}{2}(n-1)$.
+Les deux triangulaires ont le facteur commun $n/2$ :
+$T_n = \frac{n}{2}(n+1)$ et $T_{n-1} = \frac{n}{2}(n-1)$. En élevant à la
+puissance $k$,
+\[
+T_n^k = \Big(\frac{n}{2}\Big)^{k} (n+1)^k,
+\qquad
+T_{n-1}^k = \Big(\frac{n}{2}\Big)^{k} (n-1)^k,
+\]
+et l'on ajoute ou l'on retranche en mettant $(n/2)^k$ en facteur. Par la
+formule du binôme,
+$(n \pm 1)^k = \sum_{j=0}^{k} \binom{k}{j} n^{k-j} (\pm 1)^j$ : dans la
+somme $(n+1)^k + (n-1)^k$ les termes d'indice $j$ impair se détruisent et ceux
+d'indice pair doublent, dans la différence c'est l'inverse,
+\[
+(n+1)^k + (n-1)^k = 2\sum_{j \text{ pair}} \binom{k}{j} n^{k-j},
+\qquad
+(n+1)^k - (n-1)^k = 2\sum_{j \text{ impair}} \binom{k}{j} n^{k-j}. \qedhere
+\]
 \end{proof}
 
 Les deux lignes du manuscrit Quaritch sont les premiers cas de la somme :
@@ -499,7 +661,9 @@ $2^p + 1 = 3^q$. Si $p = 1$, alors $q = 1$. Si $p \geq 2$, alors
 $3^q \equiv 1 \pmod 4$, donc $q = 2r$ est pair, et
 $2^p = (3^r - 1)(3^r + 1)$. Les deux facteurs sont des puissances de $2$ qui
 diffèrent de $2$ : ce sont $2$ et $4$, d'où $r = 1$, $q = 2$ et $p = 3$.
-C'est le théorème de Levi ben Gershon (1343) sur $3^q - 2^p = 1$.
+C'est un cas particulier du théorème de Mihăilescu, l'ancienne conjecture
+de Catalan \cite{mihailescu}, déjà connu de Levi ben Gershon au
+\textsc{xiv}\textsuperscript{e}~siècle.
 \end{proof}
 
 Une autre preuve compare les coefficients dominants : $S_p$ est un
@@ -507,39 +671,136 @@ polynôme en $n$ de degré $p + 1$ et de coefficient dominant $1/(p+1)$,
 $T_n^q$ un polynôme de degré $2q$ et de coefficient dominant $1/2^q$, et
 $p + 1 = 2q = 2^q$ ne laisse que $q = 1$ ou $2$.
 
-Les sommes de puissances paires échappent au système : elles ne sont pas des
-polynômes en $T_n$, mais en sont un multiple par
-$2n + 1 = \sqrt{8T_n + 1}$, par exemple $S_2 = T_n(2n+1)/3$ et
-$S_4 = T_n(2n+1)(6T_n - 1)/15$.
+Les sommes de puissances paires échappent à ce système, mais le même geste
+les atteint si l'on télescope $(2n+1)\,T_n^k$ au lieu de $T_n^k$.
+
+\begin{proposition}\label{prop:sommes-paires}
+Pour tout $k \geq 1$,
+\[
+2^{k-1}(2n+1)\,T_n^k
+= \sum_{\substack{j \leq k\\ j \text{ pair}}} \binom{k}{j}\,S_{2k-j}
++ 2\sum_{\substack{j \leq k\\ j \text{ impair}}} \binom{k}{j}\,S_{2k-j+1}.
+\]
+\end{proposition}
+
+\begin{proof}
+Avec $T_m = \frac{m}{2}(m+1)$ et $T_{m-1} = \frac{m}{2}(m-1)$,
+\[
+(2m+1)\,T_m^k - (2m-1)\,T_{m-1}^k
+= \Big(\frac{m}{2}\Big)^{k}\Big(2m\big[(m+1)^k - (m-1)^k\big]
++ \big[(m+1)^k + (m-1)^k\big]\Big).
+\]
+Par les deux formules du binôme établies dans la preuve de la
+proposition~\ref{prop:puissances}, le premier crochet est une somme sur les
+$j$ impairs et le second une somme sur les $j$ pairs, d'où
+\[
+2^{k-1}\big((2m+1)T_m^k - (2m-1)T_{m-1}^k\big)
+= \sum_{j \text{ pair}} \binom{k}{j} m^{2k-j}
++ 2\sum_{j \text{ impair}} \binom{k}{j} m^{2k-j+1},
+\]
+où tous les exposants sont pairs. On ajoute de $m = 1$ à $n$ : à gauche les
+termes se détruisent et il reste $2^{k-1}(2n+1)T_n^k$, puisque
+$(2 \cdot 0 + 1)\,T_0 = 0$.
+\end{proof}
+
+La ligne $k$ introduit $S_{2k}$ avec le coefficient $1 + 2k \neq 0$ : le
+système est encore triangulaire. Ses premières lignes, en notant $T = T_n$ :
+\[
+\begin{array}{c|l}
+k & \\ \hline
+1 & (2n+1)\,T = 3S_2 \\
+2 & 2(2n+1)\,T^2 = 5S_4 + S_2 \\
+3 & 4(2n+1)\,T^3 = 7S_6 + 5S_4 \\
+4 & 8(2n+1)\,T^4 = 9S_8 + 14S_6 + S_4
+\end{array}
+\]
+On les résout de proche en proche, chaque ligne donnant la nouvelle somme à
+partir des précédentes :
+\begin{gather*}
+S_2 = \frac{(2n+1)\,T}{3}, \qquad
+S_4 = \frac{(2n+1)\,T\,(6T - 1)}{15}, \\
+S_6 = \frac{(2n+1)\,T\,(12T^2 - 6T + 1)}{21}, \qquad
+S_8 = \frac{(2n+1)\,T\,(40T^3 - 40T^2 + 18T - 3)}{45}.
+\end{gather*}
+Toute somme de puissances paires est ainsi le produit de $2n + 1$ par un
+polynôme en $T_n$ ; ce n'est pas un polynôme en $T_n$, puisque
+$2n + 1 = \sqrt{8T_n + 1}$.
+
+\section*{Conclusion}
+
+Le maître de Gauss pensait occuper sa classe avec $S_1$ jusqu'à $100$, et
+l'écolier lui a rendu $5050$ sur-le-champ. La leçon est restée : pour un
+enfant qui n'est pas sage, mieux vaut demander $S_p$ avec $p > 1$. Il lui
+faudra refaire le calcul de Germain, puis résoudre l'un des deux systèmes
+triangulaires, ce qui laisse le temps de réfléchir à sa conduite.
 
 \section*{Sources et vérification}
 
-La transcription et la lecture modernisée du volume sont publiées sous
-licence CC0, dans le répertoire \texttt{transcripts/naf-4073} du dépôt
-\url{https://github.com/Commutator-IO/germain-project} ; la note est à la
-vue~42, dans \texttt{batch-03.fr.tex}. La transcription a été faite avec un
-modèle de langue lisant les images de Gallica ; les lectures citées ici
-doivent être contrôlées sur le fac-similé.
-
-Tous les énoncés des deux parties sont démontrés en Lean~4 avec mathlib,
-dans les fichiers \texttt{Naf4073.lean} (première partie, et la
-proposition~\ref{prop:nicomaque}) et \texttt{Naf4073General.lean} (le reste
-de la seconde partie) du répertoire \texttt{lean/Germain} du dépôt, ainsi
-que dans le dépôt \url{https://github.com/Commutator-IO/GermainArchivesProofs}.
+Tous les énoncés de l'article sont démontrés en Lean~4 avec mathlib,
+dans le dépôt \url{https://github.com/Commutator-IO/GermainArchivesProofs} :
+\begin{itemize}
+\item la note et la proposition~\ref{prop:nicomaque} :
+  \path{NumberTheory/Naf4073Note.lean} ;
+\item les propositions~\ref{prop:produit} à~\ref{prop:puissances} :
+  \path{NumberTheory/Naf4073Triangular.lean} ;
+\item les propositions~\ref{prop:sommes} et~\ref{prop:sommes-paires} :
+  \path{Algebra/BigOperators/Naf4073PowerSums.lean} ;
+\item la proposition~\ref{prop:lagrange} :
+  \path{NumberTheory/Naf4073Gersonides.lean}.
+\end{itemize}
 La formule du feuillet y est établie dans tout corps où $2 \neq 0$, et la
 proposition~\ref{prop:note} sous la forme $T_n^2 + T_{n+1}^2 = T_{(n+1)^2}$
 pour tout $n$, qui évite la soustraction tronquée des entiers naturels ; la
-proposition~\ref{prop:sommes} y est indexée par $m = k - j$. Le dépôt est
-compilé en traitant tout avertissement comme une erreur, et aucune preuve
-n'utilise d'axiome autre que les trois axiomes standard de Lean. Les preuves ne disent évidemment
-rien de la main ni de la date.
+proposition~\ref{prop:sommes} y est indexée par $m = k - j$.
+
+La transcription, les recherches bibliographiques, la rédaction de l'article
+et les preuves Lean ont été réalisées avec l'aide d'un modèle de langue
+(Claude, d'Anthropic), sous la direction de l'auteur.
 
 \section*{Remerciements}
 
-Je remercie Georg Essl, qui a reconnu dans le manuscrit publié par
-Alexanderson l'identité du feuillet de NAF 4073 et me l'a signalé.
+L'auteur remercie Georg Essl, qui a reconnu dans le manuscrit publié par
+Alexanderson l'identité du feuillet de NAF 4073 et la lui a signalée, ainsi
+que C.~\& C.~Vuong pour leur relecture.
 
-\begin{thebibliography}{9}
+\appendix
+
+\section{Les sommes $S_1$ à $S_{10}$}\label{sec:annexe}
+
+Pour $1 \leq p \leq 10$, la somme $S_p = 1^p + 2^p + \cdots + n^p$ en fonction
+de $n$, puis de $T = T_n$ : un polynôme en $T$ pour $p$ impair
+(proposition~\ref{prop:sommes}), le produit de $2n + 1$ par un polynôme en
+$T$ pour $p$ pair (proposition~\ref{prop:sommes-paires}). Les formules ont
+été obtenues par la résolution des deux systèmes et vérifiées pour
+$0 \leq n < 60$.
+
+{\small
+\allowdisplaybreaks
+\begin{align*}
+S_{1} &= \tfrac{1}{2}\big(n^{2} + n\big) \\
+&= T \\[4pt]
+S_{2} &= \tfrac{1}{6}\big(2n^{3} + 3n^{2} + n\big) \\
+&= \tfrac{2n+1}{3}\,T \\[4pt]
+S_{3} &= \tfrac{1}{4}\big(n^{4} + 2n^{3} + n^{2}\big) \\
+&= T^{2} \\[4pt]
+S_{4} &= \tfrac{1}{30}\big(6n^{5} + 15n^{4} + 10n^{3} - n\big) \\
+&= \tfrac{2n+1}{15}\,(6T^{2} - T) \\[4pt]
+S_{5} &= \tfrac{1}{12}\big(2n^{6} + 6n^{5} + 5n^{4} - n^{2}\big) \\
+&= \tfrac{1}{3}\,(4T^{3} - T^{2}) \\[4pt]
+S_{6} &= \tfrac{1}{42}\big(6n^{7} + 21n^{6} + 21n^{5} - 7n^{3} + n\big) \\
+&= \tfrac{2n+1}{21}\,(12T^{3} - 6T^{2} + T) \\[4pt]
+S_{7} &= \tfrac{1}{24}\big(3n^{8} + 12n^{7} + 14n^{6} - 7n^{4} + 2n^{2}\big) \\
+&= \tfrac{1}{3}\,(6T^{4} - 4T^{3} + T^{2}) \\[4pt]
+S_{8} &= \tfrac{1}{90}\big(10n^{9} + 45n^{8} + 60n^{7} - 42n^{5} + 20n^{3} - 3n\big) \\
+&= \tfrac{2n+1}{45}\,(40T^{4} - 40T^{3} + 18T^{2} - 3T) \\[4pt]
+S_{9} &= \tfrac{1}{20}\big(2n^{10} + 10n^{9} + 15n^{8} - 14n^{6} + 10n^{4} - 3n^{2}\big) \\
+&= \tfrac{1}{5}\,(16T^{5} - 20T^{4} + 12T^{3} - 3T^{2}) \\[4pt]
+S_{10} &= \tfrac{1}{66}\big(6n^{11} + 33n^{10} + 55n^{9} - 66n^{7} + 66n^{5} - 33n^{3} + 5n\big) \\
+&= \tfrac{2n+1}{33}\,(48T^{5} - 80T^{4} + 68T^{3} - 30T^{2} + 5T)
+\end{align*}
+}
+
+{\small\begin{thebibliography}{99}\setlength{\itemsep}{1pt}
 
 \bibitem{alexanderson}
 G.~L. Alexanderson, «~About the cover: Sophie Germain and a problem in number
@@ -592,6 +853,17 @@ Germain's grand plan to prove Fermat's Last Theorem~», \emph{Historia
 Mathematica} 37 (2010), p.~641--692.
 \href{https://doi.org/10.1016/j.hm.2009.12.002}{doi:10.1016/j.hm.2009.12.002}.
 
+\bibitem{mihailescu}
+P.~Mihăilescu, «~Primary cyclotomic units and a proof of Catalan's
+conjecture~», \emph{Journal für die reine und angewandte Mathematik} 572
+(2004), p.~167--195.
+\href{https://doi.org/10.1515/crll.2004.048}{doi:10.1515/crll.2004.048}.
+
+\bibitem{nelsen}
+R.~B. Nelsen, \emph{Proofs Without Words: Exercises in Visual Thinking},
+Washington, Mathematical Association of America, coll. «~Classroom Resource
+Materials~», 1993. \href{https://doi.org/10.1090/clrm/001}{doi:10.1090/clrm/001}.
+
 \bibitem{oeis}
 OEIS Foundation, \emph{The On-Line Encyclopedia of Integer Sequences},
 suite A037270, «~$a(n) = n^2(n^2 + 1)/2$~», \url{https://oeis.org/A037270},
@@ -601,5 +873,5 @@ consultée le 25 novembre 2026.
 H.~Omont, \emph{Catalogue général des manuscrits français. Nouvelles
 acquisitions françaises}, t.~II, \emph{n\textsuperscript{os}~3061--6500}, Paris, E.~Leroux, 1900.
 
-\end{thebibliography}
+\end{thebibliography}}
 \end{document}
