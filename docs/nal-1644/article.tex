@@ -1,0 +1,640 @@
+% Le manuscrit BnF NAL 1644 et l'édition par Anderson (1615) du
+% « De aequationum recognitione et emendatione » de Viète.
+% Compiler avec : tectonic -X compile article.tex
+\documentclass[11pt,a4paper]{article}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{lmodern}
+\else
+  \usepackage{fontspec}
+\fi
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{array,booktabs}
+\setlength{\emergencystretch}{2em}
+\usepackage[margin=2.8cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{proposition}{Proposition}
+\theoremstyle{remark}
+\newtheorem*{remarque}{Remarque}
+
+% Lien vers une vue de Gallica du manuscrit.
+\newcommand{\vue}[1]{\href{https://gallica.bnf.fr/ark:/12148/btv1b10033620q/f#1.item}{vue~#1}}
+\newcommand{\vues}[2]{\href{https://gallica.bnf.fr/ark:/12148/btv1b10033620q/f#1.item}{vues~#1}--#2}
+
+\title{Le manuscrit BnF NAL 1644 et l'exemplaire d'Anderson :\\
+une collation du \emph{De aequationum recognitione et emendatione}\\
+de Viète (Paris, 1615)}
+\author{Michel Hua\\\small Chercheur indépendant}
+\date{Novembre 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+En 1615, Alexander Anderson publie les deux traités de Viète sur les
+équations d'après un exemplaire qu'il dit «~corrompu en bien des endroits,
+mutilé en quelques-uns~», et dresse à la fin de sa préface la liste de ce
+qu'il y a suppléé ou corrigé. Quatre articles de cette liste désignent
+expressément l'exemplaire : trois passages qui y manquaient, une phrase qu'il
+a récrite. Le manuscrit latin NAL 1644 de la Bibliothèque nationale de
+France, qui contient les deux mêmes traités, présente aux quatre endroits le
+texte que décrit Anderson, et porte dans sa marge, au point d'insertion où
+l'imprimé place l'addition, le passage qu'il a imprimé, dans des termes
+voisins des siens. Quatre fautes que sa liste corrige sont aussi dans le texte
+du manuscrit, dont la marge corrige deux. Le lien entre le manuscrit et
+l'édition d'Anderson n'est pas nouveau : à une question de H.~Braid (1902),
+Paul Tannery répondait qu'il avait collationné le manuscrit avec les
+\emph{Opera} de 1646, qu'il y voyait une copie ancienne qui représentait, si
+l'on croit le récit d'Anderson, sa rédaction définitive, et que quelques
+corrections marginales lui paraissaient de la main d'Anderson ; il ne
+désignait aucun passage où se verrait le travail de l'éditeur. Faite sur
+l'édition de 1615 et sur la liste d'Anderson, la collation précise cette
+lecture : aux quatre endroits, le texte du manuscrit a l'état de
+l'exemplaire, et la marge porte la rédaction d'Anderson. Quelques faits
+s'y accordent mal, et la collation ne permet pas de choisir entre trois
+hypothèses : le manuscrit serait l'exemplaire d'Anderson, une copie de cet
+exemplaire, ou un témoin de la même source corrigé d'après l'imprimé. Les lectures du manuscrit
+viennent d'une transcription automatique qu'aucun humain n'a encore
+vérifiée sur les images.
+\end{abstract}
+
+\section{L'édition de 1615 et l'exemplaire d'Anderson}\label{sec:anderson}
+
+Viète meurt en 1603. Le \emph{De aequationum recognitione et emendatione
+tractatus duo} paraît douze ans plus tard à Paris, chez Jean Laquehay, par
+les soins du mathématicien écossais Alexander Anderson
+\cite{anderson1615}. Le volume réunit le \emph{De recognitione aequationum}
+(p.~1--64) et le \emph{De emendatione aequationum} (à partir de la p.~65) ;
+les \emph{Opera mathematica} de 1646, éditées par Frans van Schooten,
+reprennent les deux textes aux p.~84--158 \cite{opera1646}.
+
+La préface «~Ad Matheseos studiosos~» dit d'où vient le texte. Anderson
+remercie «~Iacobo Alelmo~», Jacques Aleaume, ingénieur du roi, «~qui quidem
+Vietae aduersaria liberrime mecum communicauit, ex quibus haec sunt
+deprompta~» : les papiers de travail de Viète, dont ces traités sont tirés.
+Puis il décrit son propre travail sur l'exemplaire dont il s'est servi,
+«~non paucis in locis depravato, quibusdam etiam mutilo~»\,: chaque équation
+et chaque preuve numérique des exemples ont été réexaminées, les fautes
+corrigées, et ce qui paraissait manquer au texte a été «~restitué selon
+l'exigence du sens~» et soumis au jugement du lecteur
+\cite[préface, 2\textsuperscript{e} page]{anderson1615}.
+
+Ce jugement, il le rend possible par une liste de deux pages placée après la
+préface et intitulée «~Quae nos ad plenam Autoris mentem in exemplari deesse
+visa suppleuimus, aut a Typographis \& Anagnostis commissa siue omissa
+animaduertimus, haec fere sunt~» \cite[liste, après la préface]{anderson1615}.
+Le titre mêle deux catégories : ce qui manquait dans l'exemplaire et a été
+suppléé, et ce que les typographes et les correcteurs ont commis ou omis.
+Pour la plupart des trente-deux articles, la liste ne dit pas à quelle
+catégorie ils appartiennent. Quatre seulement nomment l'exemplaire :
+
+\begin{enumerate}
+\item p.~58, \emph{De recognitione}, chap.~18, prop.~14 : «~deerant in
+Exemplari haec~», et suit la définition de $Z$ \emph{plano-solidum} ;
+\item p.~60, chap.~19, prop.~4 : «~deerant in exemplari nostro~», et suit
+«~differentia est B, \& fit Z plano-planum ex ductu utriusuis extremae, in
+cubum differentiae reliquarum, alterne sumptarum~» ;
+\item p.~98, \emph{De emendatione}, «~Theor.~2. ad probl.~2.~» : «~haec
+verba exemplaris, \emph{ex applicatione quadrati aggregati laterum, minus
+triplo rectangulo sub lateribus, ad rectangulum sub lateribus}, ita
+mutauimus \emph{ex applicatione cubi a D plano, ad differentiam quadruplam
+quadratorum a D \& B}~» ;
+\item p.~99, «~Theor.~3. proxime sequenti~» : «~haec prorsus deerant in
+exemplari~», et suit «~\& fit Z plano-planum ex applicatione cubi a D plano,
+ad aggregatum quadruplum quadratorum a D \& B~».
+\end{enumerate}
+
+\noindent Dans l'imprimé, les trois passages suppléés et la phrase récrite
+sont dans le corps du texte, aux p.~58, 60, 98 et~99 ; la liste en garde la
+trace. Elle se clôt sur «~De his aliisque penes lectorem iudicium esto~».
+
+On sait par ailleurs, grâce aux lettres que cite Bigourdan, que les papiers
+de Viète étaient passés à Aleaume, et qu'à sa mort, en 1627, ses livres et
+ses papiers furent dispersés : Peiresc le déplore le 11~novembre 1627, et
+Jacques Dupuy lui répond que «~quelques-uns des héritiers~» se sont
+accommodés des ouvrages de Viète \cite[p.~237--238]{bigourdan1916}. Le
+prénom n'est pas sûr : de Thou, cité par Henry, dit les papiers de Viète
+confiés par ses héritiers à «~Petri Alealmi Aurelianensis~», Pierre
+Aleaume d'Orléans, là où Anderson nomme Jacques \cite{henry1880}. Ce que
+devint l'exemplaire d'Anderson n'est pas connu des sources consultées ici.
+
+\section{Le manuscrit NAL 1644}\label{sec:manuscrit}
+
+Le volume latin des Nouvelles acquisitions 1644 vient du fonds Libri
+(Ashburnham, Libri~1201). Delisle le décrit en 1888 : «~Papiers de François
+Viète. Volume jadis coté G~», contenant les deux traités, puis «~Fragments
+astronomiques~» \cite[p.~166, n\textsuperscript{o}~CXX]{delisle1888} ;
+l'inventaire des nouvelles acquisitions de 1891 enregistre ensemble les
+papiers de Viète des NAL 1643 et~1644 \cite[t.~II, p.~664]{delisle1891}. Il est
+numérisé dans Gallica \cite{gallica} ; on le cite ici par les vues de cette
+numérisation, et par la série de numéros à l'encre portée en haut des recto
+(1 à~79), qui court sans lacune à travers tout le volume et que l'écrivain
+cite lui-même.
+
+Une couverture (vue~1) précède trois petits feuillets lettrés «~A~»,
+«~B~» et «~C~» (vues~2--4), d'une écriture serrée que la transcription dit
+autre que celle des traités. Le feuillet~A (\vue{2}) traite, par la
+«~duplicata hypostasis~» et la «~climactica paraplerosis~», des équations
+qui s'écriraient aujourd'hui $x^6 + px^3 = q$ et $x^6 + px^2 = q$, puis,
+sous le titre «~Facillima resolutio aequationum cubicarum affectarum~»,
+les ramène par un changement d'inconnue à une équation cubique «~a radice
+simplici~» ; le
+feuillet~B (\vue{3}) énonce un théorème sur les différences des termes pris
+alternativement dans une suite de proportionnelles ; le feuillet~C est
+blanc. C'est sans doute le «~court fragment sur la solution de l'équation
+du troisième degré~» que Tannery place au commencement du manuscrit et
+qu'il attribue à Anderson \cite{tannery1902} ; la transcription n'en a pas
+comparé l'écriture à celle des marges. Le
+\emph{De recognitione} occupe les \vues{5}{68}, sous le titre «~Francisci
+Vietae De Recognitione Aequationum tractatus~», en vingt et un chapitres ; le
+\emph{De emendatione} les \vues{69}{141}, sous le titre «~Francisci Vietae. De
+aequationum Emendatione tractatus secundus~», en quatorze chapitres, jusqu'à
+«~Finis~». Les chapitres sont ceux de l'imprimé, dans le même ordre ; chaque
+exemple numérique des feuillets est dans l'imprimé. Les \vues{142}{163}
+(feuillets~67 à~79 de la série à l'encre) sont de l'astronomie sans nom
+d'auteur ; ce sont les feuillets que Pantin cite comme «~copie partielle~»
+de l'\emph{Harmonicon coeleste} de Viète \cite[p.~123,
+n.~22]{pantin2003}.
+
+Les feuillets sont de tailles inégales : de petits feuillets sont reliés entre
+de plus grands et en recouvrent une partie sur les vues. Le texte des traités
+est d'une même cursive posée. Les marges sont pleines de corrections : un mot
+ou un nombre souligné dans la ligne, le bon écrit dans la marge entre deux
+traits. Une main plus rapide, à l'encre noire, annote et corrige à partir de
+la vue~13 ; elle écrit «~a nobis~». Aux \vues{61}{66}, des notes et calculs
+d'une écriture plus petite occupent la marge, sans que la transcription
+puisse dire si c'est une autre main ; aux \vues{105}{119}, les marges
+paraissent de la main et de l'encre du texte. Bigourdan, qui cherchait le
+manuscrit de l'\emph{Harmonicon}, a comparé les écritures : «~la majeure
+partie du n\textsuperscript{o}~1644 des Nouv. acq. lat., jusqu'au
+feuillet~66, pourrait être de la même main que le n\textsuperscript{o}~7274
+du fonds latin~», volume qu'il tient pour le brouillon de l'\emph{Harmonicon}
+et peut-être pour un autographe de Viète, tout en notant que la comparaison
+ne fournit «~pas de résultat absolument probant~»
+\cite[p.~238--240]{bigourdan1916}.
+
+Les avis sur les mains divergent. Tannery tenait le manuscrit pour «~une
+copie ancienne (pas plus de la main d'Anderson que de celle de Viète)~»
+\cite{tannery1902}, déjà décrite en 1896 comme «~copie ancienne~»
+\cite[p.~209--210]{tannery1896} ; Bigourdan, on l'a vu, envisage pour les
+feuillets~1 à~66 la main de Viète. Pour les feuillets d'astronomie, le
+catalogue de Van~Egmond range les ff.~67r--79v parmi des «~miscellaneous
+autograph pages~» \cite{vanegmond1985}, et Busard les donnerait aussi
+pour autographes \cite{busard1964}, ce qui n'est connu ici que de
+seconde main ; Tannery y voyait «~un brouillon de Viète~» pour un
+théorème de l'\emph{Harmonicon}, Pantin une «~copie partielle~».
+
+Une main plus tardive renvoie à l'édition de 1646 sur la couverture et aux
+\vue{5}, \vue{69} et \vue{141} («~p.~127. editionis 1646.~», «~pag.~158
+editionis elzevir. anni 1646~»). Bigourdan signale sur la couverture et les
+marges «~quelques notes de la main de Lalande, qui l'avait comparé~» aux
+\emph{Opera} de 1646 \cite[p.~240]{bigourdan1916} ; ce sont vraisemblablement
+celles-ci.
+
+\subsection*{La question de Braid et la réponse de Tannery}
+
+En 1902, H.~Braid demande dans l'\emph{Intermédiaire des mathématiciens}
+ce qui, dans le traité de 1615, revient à Viète et ce qui revient à
+Anderson, et si «~le manuscrit de la Bibliothèque Nationale de Paris
+[nouv. acq. lat., 1644 (Libri, 1201)]~» peut éclairer la question
+\cite{braid1902}. Tannery répond dans le même volume. Il a collationné
+«~le manuscrit Bibl. Nat. lat. n. a. 1644, avec l'édition de 1646~» : les
+différences sont «~exclusivement d'ordre typographique~», et portent
+surtout sur les notations, moins abrégées dans le manuscrit. La copie est
+«~passablement incorrecte~», et plusieurs fautes grossières se retrouvent
+dans l'imprimé ; il cite «~\emph{vocum} au lieu de \emph{vitium}~»
+(1646, p.~134, l.~12 en remontant). «~Si l'on regarde comme vrai le récit
+d'Anderson~», conclut-il, cette copie représente sa rédaction définitive,
+d'après les brouillons de Viète. Il ajoute que les marges portent, «~de
+plusieurs mains différentes~», des corrections qui «~n'ont pas passé dans
+le texte imprimé~», et que «~quelques-unes paraissent de l'écriture
+d'Anderson~», connue par ses notes sur l'exemplaire du Diophante de Bachet
+conservé à la Sorbonne \cite[réimpr. p.~410--411]{tannery1902}. Il avait
+déjà relevé en 1896 les différences de notation et confronté une équation
+de la «~page 13~v.~» du manuscrit à la p.~98 de l'édition Elzevier
+\cite[p.~209--210]{tannery1896}.
+
+Le rapprochement entre NAL 1644 et le travail d'Anderson est donc fait
+depuis 1902, mais sans le détail. Tannery a collationné le manuscrit sur
+les \emph{Opera} de 1646, non sur l'édition de 1615 ni sur la liste où
+Anderson dit ce qu'il a suppléé, et il n'indique aucun passage où se
+verrait sa rédaction. Ces passages existent, et ils déplacent un peu sa
+conclusion : aux quatre endroits que la liste attribue à l'exemplaire, le
+texte du manuscrit a l'état d'avant Anderson, et sa rédaction est dans la
+marge.
+
+Trois notes marginales, toutes de lecture douteuse, peuvent indiquer que le
+texte est une copie : «~in exemplari excripto / vel potius adscriptum~»
+(vue~20, lue en partie), «~transcripta ex exemplari~» en tête d'une addition
+encadrée (\vue{100}, lecture probable) et «~deerant haec in exemplari~»,
+biffé (\vue{114}, lecture très incertaine). Cette dernière ne correspond à
+aucun article de la liste d'Anderson.
+
+\section{La collation}\label{sec:collation}
+
+\subsection{Les quatre passages}
+
+\paragraph{1. \emph{De recognitione}, chap.~18, prop.~14 (\vue{62}).}
+L'énoncé est
+$B\,A^2 - A^5 = Z$ («~Si B solidum in A quadratum $-$ A quadratocubo
+aequetur Z planosolido~»). Le texte du manuscrit définit $B$ à l'aide de
+trois proportionnelles, puis passe à «~vel a cubo compositae ex secunda et
+tertia~\dots~» sans avoir défini $Z$. Un «~1\textsuperscript{o}~» est écrit
+au-dessus de ce «~vel~», et la marge, de la main plus petite, porte au même
+appel une note qui définit $Z$ : «~et [\dots] Z planosolidum quod fit
+[\dots] solido [\dots] cubo a duabus [\dots] in quadratum compositae ex
+prima et secunda~». Elle est biffée en plusieurs endroits et tachée ; la
+transcription la donne pour «~très incomplète~». Ce qui se lit est compatible
+avec la phrase d'Anderson, «~\& Z plano-solidum quod fit a B solido minus
+cubo a duabus primis, in quadratum compositae ex prima \& secunda~», et
+l'imprimé de la p.~58 insère cette phrase exactement devant «~vel a cubo
+compositae ex secunda \& tertia~», là où le manuscrit place son appel.
+
+\paragraph{2. \emph{De recognitione}, chap.~19, prop.~4 (\vue{64}).}
+Le texte du manuscrit s'arrête après «~Sunt quatuor continue proportionales
+quarum alterne sumptarum~» sur une croix, sans verbe, et reprend «~dum
+intelligitur prima, minor inter extremas~\dots~». À la même croix, la marge
+donne : «~differentia est B et fit Z planoplanum ex ductu utriusque [lecture
+douteuse] inter extremas in cubum differentiae reliquarum alterne
+sumptarum~», suivi d'une vérification sur l'exemple $1, 2, 4, 8$. L'imprimé
+de la p.~60 porte, au même endroit : «~quarum alterne sumptarum differentia
+est B : \& fit z plano-planum, ductu utriusuis extremae, in cubum
+differentiae reliquarum alterne sumptarum, \& dum intelligitur prima~\dots~».
+La proposition suivante (prop.~5, \vue{65}), de même forme, a dans le texte
+du manuscrit la clause entière, «~differentia est B. fit autem Z
+solidosolidum ductu utriusque extremae~\dots~» ; la lacune est propre à la
+prop.~4, comme chez Anderson.
+
+\paragraph{3. \emph{De emendatione}, problème~2, théorème~2 (\vue{107}).}
+Le texte du manuscrit donne la constitution de l'équation
+$A^4 - 2B\,A^3 = Z$ et finit sur «~et fit Z plano-plano ex applicatione
+quadrati aggregati laterum minus triplo rectangulo sub lateribus ad
+rectangulum [sub lateribus]~» ; ces deux lignes sont cernées d'un trait
+fermé. La marge porte : «~ex applicatione quadrati \emph{cubi} a Dp. ad
+differentiam [mot biffé] quadruplati quadratorum a D et B~», où «~cubi~»
+est écrit au-dessus de la ligne. Le passage cerné est, mot pour mot, la
+leçon qu'Anderson attribue à son exemplaire ; la note marginale est la leçon
+qu'il imprime (p.~98), à l'ajout près de «~cubi~» au-dessus de
+«~quadrati~», qui n'est pas biffé, et à «~quadruplati~» pour
+«~quadruplam~». Le dernier mot du passage cerné est lu «~subcubis~» ; la
+leçon d'Anderson est «~sub lateribus~».
+
+\paragraph{4. \emph{De emendatione}, problème~2, théorème~3 (\vue{108}).}
+Le texte du manuscrit donne la constitution de l'équation
+$2B\,A^3 - A^4 = Z$ sans dire ce qu'est $Z$ ; il porte à cet endroit la
+ligne «~et est A latus maius minusve~», barrée. La marge, soulignée et
+reliée au texte par un trait, la remplace par «~et fit Z plano-plano ex
+applicatione cubi a D pl. ad aggregatum \emph{quadruplum} quadratorum a
+Bq${}+{}$Dq~», «~quadruplum~» étant ajouté au-dessus de la ligne. C'est la
+phrase qu'Anderson dit absente de son exemplaire et qu'il imprime p.~99.
+
+\subsection{Les fautes communes}
+
+Quatre articles de la liste, sur trois pages, corrigent des fautes que le
+texte du manuscrit présente aussi :
+\begin{itemize}
+\item p.~26, l.~2, «~addatur ipsi Ec negationis nota~» : à la \vue{32}, le
+cube retranché $-E^3 + 3BE^2 - 3B^2E + B^3$ est écrit sans le signe moins
+devant «~E cubo~» ; la marge ne le restitue pas ;
+\item p.~44, «~pro, \emph{hisce omnibus per A diuisis} lege \emph{per
+A~$-$~E}~» : la \vue{50} porte «~et omnibus per A divisis~», alors que le
+diviseur écrit dessous est $A - E$ ; la marge ne corrige pas ;
+\item p.~129, prop.~3, «~prioris aequationis partis fini adijciatur
+$-$~Aqq~», et «~in notis Arithmeticis pro 16~C. lege 10~C.~» : à la
+\vue{140}, l'énoncé de la prop.~3 du chapitre~XIV omet le terme $-A^4$ et
+l'exemple écrit $16C$ ; la marge porte «~$-$~Aqq.~» et «~10~».
+\end{itemize}
+La faute de l'exemple est réelle :
+$(x-1)(x-2)(x-3)(x-4) = x^4 - 10x^3 + 35x^2 - 50x + 24$.
+
+La faute que cite Tannery, «~vocum~» pour «~vitium~», est hors de la
+liste. L'édition de 1615 l'a aussi, dans le sommaire en italique qui suit
+le titre «~De Anastrophe~» (p.~79) : «~Aut quemadmodum aduersus vocum
+\emph{amphibolias}~\dots~» (le dernier mot en grec), là où le sens
+demande «~adversus vitium~», comme dans les titres des chapitres~II, IV
+et~V du manuscrit. Au même endroit (\vue{83}), la transcription lit
+«~Et quemadmodum ad nostras \emph{vicinas}~» suivi d'un mot grec lu
+\emph{hyperbolas}, avec «~vicinum~» en marge ; le mot douteux est
+souligné et surligné. Cette lecture ne s'accorde ni avec «~vocum~» ni avec
+«~vitium~», et le mot grec qu'elle donne n'est pas celui de l'imprimé ;
+elle est sans doute fautive. Le passage est à relire sur l'image : s'il
+porte «~vocum~», c'est une faute commune de plus, et la plus nette, parce
+qu'elle ne peut guère venir de deux lecteurs indépendants.
+
+\subsection{Ce que l'imprimé suit sans le dire}
+
+La liste ne recense pas toutes les corrections de l'imprimé ; Anderson dit
+d'ailleurs avoir revu tous les exemples. Sur les pages vérifiées, plusieurs
+corrections de la marge du manuscrit sont dans l'imprimé sans figurer dans
+la liste. À la \vue{65}, l'exemple de la prop.~5 du chapitre~19 écrit
+$4\,618\,812$, nombre souligné, et la marge donne $5\,153\,632$ ; l'imprimé
+(p.~61) porte «~5,153,632~». À la \vue{108}, l'exemple
+«~1~QQ~$-$~5~C æquatur 216~» a son signe corrigé en «~$+$~» dans la marge, et
+«~540~» y devient «~5400~» ; l'imprimé (p.~99) porte «~1~QQ.~$+$~5~C.~» et
+«~5,400~». Au théorème~3, l'équation de la résolvante, absente du texte du
+manuscrit, est donnée dans sa marge, et l'imprimé l'a.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}>{\raggedright}p{2.6cm}>{\raggedright}p{2.1cm}>{\raggedright}p{4.1cm}>{\raggedright\arraybackslash}p{4.6cm}@{}}
+\toprule
+Passage & Anderson 1615 & Texte de NAL 1644 & Marge de NAL 1644\\
+\midrule
+\emph{Rec.} 18, prop.~14 & p.~58 : manquait & $Z$ non défini (\vue{62}) & définition de $Z$, biffée, lue en partie\\
+\emph{Rec.} 19, prop.~4 & p.~60 : manquait & phrase sans verbe, croix (\vue{64}) & «~differentia est B et fit Z\dots~» à la croix\\
+\emph{Em.} pb.~2, th.~2 & p.~98 : leçon changée & leçon de l'exemplaire, cernée (\vue{107}) & leçon imprimée, «~cubi~» ajouté\\
+\emph{Em.} pb.~2, th.~3 & p.~99 : manquait & ligne barrée, $Z$ non défini (\vue{108}) & «~et fit Z\dots\ quadruplum\dots~»\\
+\midrule
+p.~26, signe de $E^3$ & erratum & faute (\vue{32}) & non corrigée\\
+p.~44, «~per A~» & erratum & faute (\vue{50}) & non corrigée\\
+p.~129, $-A^4$ & erratum & omis (\vue{140}) & «~$-$~Aqq.~»\\
+p.~129, $16C$ & erratum & $16$ (\vue{140}) & «~10~»\\
+\bottomrule
+\end{tabular}
+\caption{Les articles de la liste d'Anderson qui nomment l'exemplaire, et
+les errata dont la faute est aussi dans le texte du manuscrit. Lectures du
+manuscrit d'après une transcription non vérifiée par un humain.}
+\label{tab:collation}
+\end{table}
+
+\section{Ce qui s'accorde mal}\label{sec:desaccords}
+
+Plusieurs articles de la liste corrigent des fautes que le texte du
+manuscrit n'a pas. Les mots omis p.~15 («~quadratice, cubice, \& ulterius
+Climactice. Descensus contra~\dots~») sont dans le texte de la \vue{20}, et
+«~simpliciores~» (p.~16) aussi. À la p.~99, l'imprimé écrit
+«~fit 1~N.~16~» et la liste corrige en «~6~» ; le manuscrit porte «~6~»
+(\vue{108}). La collation faite sur les transcriptions en relève d'autres
+aux p.~8, 81, 85 et~89. Ces articles relèvent sans doute de la seconde
+catégorie du titre, les fautes des typographes : ils ne s'opposent à aucune
+des hypothèses.
+
+Un article est plus gênant. À la p.~112, la liste demande qu'on insère, dans
+les exemples du corollaire de la formule de Cardan, «~\& 378~$-$~351 est 27,
+cubus a latere 3~». Le texte de la \vue{122} a cette ligne, son «~et~»
+surchargé. Si Anderson l'a ajoutée parce que son exemplaire ne l'avait pas,
+le manuscrit n'est pas cet exemplaire tel qu'il l'a lu. Mais la liste ne dit
+pas ici «~deerant in exemplari~» : la ligne peut avoir été sautée par le
+compositeur.
+
+L'imprimé ne suit pas non plus toutes les marges. À la \vue{108}, il garde
+la ligne barrée «~et est A latus maius minusve~» après la phrase suppléée,
+et la phrase «~In serie quatuor continue proportionalium B bis est composita
+ex illis omnibus~», que le manuscrit barre d'un trait léger ; il ignore la
+correction marginale «~$+$~Dq~» de la même page ; il ne corrige pas les
+fautes de la p.~129 que la marge de la \vue{140} corrige, et doit les
+reprendre dans ses errata. Les marges du manuscrit ne sont donc pas une
+collation mécanique de l'imprimé, et l'imprimé n'est pas une copie
+mécanique des marges.
+
+\section{Trois hypothèses}\label{sec:hypotheses}
+
+La lecture de Tannery tient en trois points : le manuscrit est une copie,
+qui n'est ni de la main de Viète ni de celle d'Anderson ; il représente la
+rédaction définitive d'Anderson ; quelques marges sont de la main
+d'Anderson. La collation s'accorde avec le troisième point et nuance le
+deuxième. Aux quatre endroits que la liste rapporte à l'exemplaire, le
+texte du manuscrit est celui de l'exemplaire, lacunes et leçon fautive
+comprises, et la rédaction définitive n'est que dans les marges. Le
+manuscrit serait donc moins une copie de cette rédaction que le support
+sur lequel elle a été faite, ou la copie d'un tel support. Trois
+hypothèses précisent cette alternative ; la première est la plus
+proche de Tannery, si l'on donne aux marges des quatre passages la main
+qu'il croyait reconnaître.
+
+\paragraph{(a) NAL 1644 est l'exemplaire d'Anderson.}
+Les marges des quatre passages seraient alors la préparation de l'édition,
+par Anderson lui-même ou par Aleaume, et postérieures à l'état que la liste
+appelle «~l'exemplaire~». Cette hypothèse rend compte de l'emplacement des
+additions, des corrections de calcul que l'imprimé suit sans les lister, de
+la correction en cours d'écriture de la \vue{107} («~quadrati~» puis
+«~cubi~»), et des fautes communes (p.~26, 44) que le compositeur aurait
+reproduites. Elle doit expliquer les marges que l'imprimé ne suit pas
+(\vue{108}, \vue{140}) : elles peuvent être postérieures à la composition.
+Elle prédit que la main des quatre notes marginales est celle d'Anderson ou
+d'Aleaume, et que le papier est antérieur à 1615.
+
+\paragraph{(b) NAL 1644 est une copie de l'exemplaire, annotée plus tard.}
+Un copiste aurait reproduit l'exemplaire d'Anderson, lacunes comprises, puis
+les additions et corrections portées dans ses marges, ou l'imprimé. Les
+notes «~transcripta ex exemplari~» et «~deerant haec in exemplari~», si
+elles se lisent ainsi, vont dans ce sens, comme l'impression que les marges
+des \vues{105}{119} sont de la main et de l'encre du texte. On attendrait
+alors une écriture de copiste dans le texte et les marges, éventuellement
+un papier postérieur à 1615. Les marges que Tannery croyait de la main
+d'Anderson, si elles le sont, s'expliquent mal dans ce cas.
+
+\paragraph{(c) NAL 1644 dérive de la même source et a été corrigé d'après l'imprimé.}
+Le texte viendrait d'un autre témoin des papiers de Viète, défectueux aux
+mêmes endroits, et un lecteur l'aurait complété sur l'édition de 1615 et sa
+liste. Les écarts de formulation («~utriusque inter extremas~» contre
+«~utriusuis extremae~», «~quadruplati~» contre «~quadruplam~») et les marges
+que l'imprimé ne suit pas, ou qu'il contredit (lignes barrées qu'il garde),
+s'accordent mal avec une simple collation sur le livre ; ils ne
+l'excluent pas.
+
+\paragraph{Ce qui trancherait.}
+La comparaison des écritures du texte et des marges des \vues{61}{66} et
+\vues{105}{108}, et des feuillets~A et~B (\vues{2}{3}), avec des
+autographes d'Anderson et d'Aleaume, et avec le lat.~7274 que Bigourdan
+rapproche de la main principale ; pour Anderson, l'échantillon est celui
+que désignait Tannery, les notes de sa main sur l'exemplaire du Diophante
+de Bachet conservé à la Sorbonne ; la relecture de la \vue{83}, où
+«~vocum~» ferait une faute commune de plus ; l'examen du papier
+(filigranes) et des encres sur l'original ; la collation complète du
+manuscrit avec l'édition de 1615, qui dirait si d'autres corrections
+silencieuses d'Anderson sont dans ses marges ; la lecture assurée des notes
+des vues~20, 100 et~114. Si le texte était de la main de Viète, comme
+Bigourdan l'envisage pour les feuillets~1 à~66, l'hypothèse~(c) perdrait
+beaucoup et l'exemplaire d'Anderson pourrait être un autographe.
+
+\section{Les énoncés en notation moderne}\label{sec:moderne}
+
+Les quatre passages portent sur des équations dont Viète donne la
+«~constitution~», c'est-à-dire les racines en fonction de grandeurs en
+proportion continue. En notation moderne, et pour des grandeurs positives :
+
+\begin{proposition}[\emph{Rec.}~18, prop.~14]\label{prop:rec18}
+Soient $a, b, c$ en proportion continue ($b^2 = ac$), $s = a + b$,
+$t = b + c$, $B = s^3 + t^3 + a\,t^2$ et $Z = (B - s^3)\,s^2$. Alors
+$s$ et $t$ sont racines de $B x^2 - x^5 = Z$.
+\end{proposition}
+
+\noindent Pour $s$ c'est la définition de $Z$, qui est le passage suppléé
+par Anderson ; pour $t$, on vérifie $(B - s^3)s^2 = (B - t^3)t^2$ en posant
+$a = 1$, $b = r$, $c = r^2$ : les deux membres valent $r^2 s^4(1 + r + r^2)$.
+Sur $1, 2, 4$, on trouve $B = 279$, $Z = 2268$, et les racines $3$ et $6$ de
+l'exemple du manuscrit et de l'imprimé.
+
+\begin{proposition}[\emph{Rec.}~19, prop.~4]\label{prop:rec19}
+Soient $a, b, c, d$ en proportion continue, $a < d$,
+$B = (b + d) - (a + c)$ et $Z = a(b - c + d)^3 = d(a - b + c)^3$. Alors
+$x = a - b + c$ est racine de $x^4 + Bx^3 = Z$ et $y = b - c + d$ est racine
+de $y^4 - By^3 = Z$.
+\end{proposition}
+
+\noindent En effet $x + B = d$ et $y - B = a$, d'où $x^3(x + B) = d\,x^3 = Z$
+et $y^3(y - B) = a\,y^3 = Z$. La phrase que l'exemplaire n'avait pas est la
+définition de $B$ et de $Z$. Sur $1, 2, 4, 8$ : $B = 5$, $Z = 216$, $x = 3$,
+$y = 6$.
+
+\begin{proposition}[\emph{Em.}, pb.~2, th.~2 et~3]\label{prop:em}
+La quartique $x^4 - 2Bx^3 = Z$ se ramène au second degré par la résolvante
+$D^3 + 4ZD = 4ZB^2$, et la quartique $2Bx^3 - x^4 = Z$ par
+$D^3 - 4ZD = 4ZB^2$. Ainsi $Z = D^3 / \bigl(4(B^2 - D)\bigr)$ dans le
+premier cas, et $Z = D^3 / \bigl(4(B^2 + D)\bigr)$ dans le second.
+\end{proposition}
+
+\noindent C'est la méthode qu'on attribue aujourd'hui à Ferrari : on forme
+le carré de $x^2 - Bx - \tfrac12 D$ et l'on choisit $D$ pour que l'autre
+membre soit aussi un carré. Les deux phrases d'Anderson, «~ex applicatione
+cubi a D plano ad differentiam [aggregatum] quadruplam quadratorum a D \& B~»,
+ne sont que la résolvante résolue en~$Z$. La leçon de l'exemplaire est
+fausse : sur l'exemple $1, 2, 4, 8$ du manuscrit et de l'imprimé, les deux
+côtés sont $3$ et $6$ ($2B = (6^4 - 3^4)/(6^3 + 3^3) = 5$), et la leçon
+cernée donne $\bigl((3+6)^2 - 3\cdot 18\bigr)/18 = 3/2$, quand $Z = 216$ ;
+elle n'a pas non plus la dimension d'un \emph{plano-planum}. La leçon
+d'Anderson donne, avec $D = 6$ (racine de $D^3 + 864D = 5400$, l'équation
+«~$1C + 864N$ æquatur 5400~» de l'exemple), $6^3 / \bigl(4(6{,}25 - 6)\bigr)
+= 216$.
+
+\section*{Questions ouvertes}
+
+Plusieurs travaux n'ont pas été lus et peuvent déjà contenir tout ou
+partie de ce qui précède. L'article de Busard sur les papiers de Viète à la
+Bibliothèque nationale \cite{busard1964} porte surtout sur le NAL 1643,
+mais touche au NAL 1644 et en dit les ff.~67--79 autographes, d'après une
+source secondaire ; il faut savoir ce qu'il dit des traités algébriques et
+de leurs marges. La thèse de Jean Grisard \cite{grisard1970}, dont le seul
+exemplaire signalé est à la réserve de la Bibliothèque de la Sorbonne, est
+le premier endroit où une collation avec l'édition de 1615 pourrait se
+trouver. Il faut lire en entier la notice du \emph{De recognitione et
+emendatione} dans le catalogue de Van~Egmond (n\textsuperscript{o}~15)
+\cite{vanegmond1985}, et les pages de Hofmann qui mentionnent le
+lat.~1644 à propos de ces deux traités \cite{hofmann1962}. La traduction
+de Witmer \cite{witmer1983} ne paraît pas traiter du manuscrit, ce qui n'a
+pas été vérifié page à page. La comparaison des mains suppose des
+échantillons de l'écriture d'Anderson et d'Aleaume ; pour Anderson, le
+Diophante annoté de la Sorbonne que citait Tannery est le premier à
+consulter. Toutes les lectures du manuscrit citées ici restent à
+contrôler sur les images, en particulier la note biffée de la vue~62,
+«~utriusque~» à la vue~64, le cerne de la vue~107, les traits qui barrent
+les lignes de la vue~108 et le sommaire du chapitre~III de la vue~83.
+
+\section*{Sources et vérification}
+
+Les lectures de NAL 1644 viennent d'une première transcription du volume,
+faite vue par vue sur les images de Gallica par un modèle de langue et
+publiée avec son apparat critique sur \url{https://germain.commutator.io}
+(par exemple \url{https://germain.commutator.io/archive/#nal-1644/4/fr/62}).
+Elle n'a été vérifiée sur les images par aucun humain, et aucune des lectures
+du manuscrit données ici n'a été recontrôlée sur l'image pour cet article.
+Les citations de l'édition de 1615 (préface, liste, p.~58, 60, 61, 98
+et~99) ont été lues sur les images de la numérisation d'archive.org
+\cite{anderson1615}, ainsi que la p.~79 ; les citations de Bigourdan et de
+Delisle, sur l'OCR des numérisations d'archive.org ; la question de Braid et
+la réponse de Tannery, sur les images de la réimpression des
+\emph{Mémoires scientifiques} \cite{tannery1902}. La recension de 1896
+\cite{tannery1896}, le catalogue de Van~Egmond \cite{vanegmond1985} et
+l'article de Busard \cite{busard1964} ne sont connus ici que par des
+extraits ou de seconde main, et Grisard, Hofmann et Witmer n'ont pas été
+lus. Les calculs des propositions~\ref{prop:rec18}
+à~\ref{prop:em} ont été refaits à la main.
+
+La transcription, les recherches bibliographiques et la rédaction de
+l'article ont été réalisées avec l'aide d'un modèle de langue (Claude,
+d'Anthropic), sous la direction de l'auteur.
+
+{\small\begin{thebibliography}{99}\setlength{\itemsep}{1pt}
+
+\bibitem{anderson1615}
+F.~Viète, \emph{De aequationum recognitione et emendatione tractatus duo},
+éd. A.~Anderson, Paris, J.~Laquehay, 1615.
+\url{https://archive.org/details/bub_gb_Q4dbiZ0apcUC}. La préface
+«~Ad Matheseos studiosos~» et la liste des suppléments occupent les
+quatre pages non paginées qui précèdent le texte (images n12 à n15 de la
+numérisation).
+
+\bibitem{bigourdan1916}
+G.~Bigourdan, «~Sur un ouvrage de F.~Viète, supposé perdu :
+\emph{Harmonicon coeleste}~», \emph{Comptes rendus hebdomadaires des
+séances de l'Académie des sciences} 162 (1916), p.~237--240.
+\url{https://archive.org/details/comptes-rendus-hebdomadaires-academie-des-sciences_1916-02-14_162_7}.
+
+\bibitem{braid1902}
+H.~Braid, question 2406, \emph{L'Intermédiaire des mathématiciens} 9
+(1902), p.~206 ; réimprimée avec la réponse de Tannery dans
+\cite[p.~410]{tannery1902}.
+
+\bibitem{busard1964}
+H.~L.~L.~Busard, «~Über einige Papiere aus Viètes Nachlaß in der Pariser
+Bibliothèque Nationale~», \emph{Centaurus} 10 (1964), p.~65--126.
+\href{https://doi.org/10.1111/j.1600-0498.1964.tb00393.x}{doi:10.1111/j.1600-0498.1964.tb00393.x}.
+
+\bibitem{delisle1888}
+L.~Delisle, \emph{Catalogue des manuscrits des fonds Libri et Barrois},
+Paris, H.~Champion, 1888.
+\url{https://archive.org/details/cataloguelibri00bibl}.
+
+\bibitem{delisle1891}
+L.~Delisle, \emph{Manuscrits latins et français ajoutés aux fonds des
+nouvelles acquisitions pendant les années 1875--1891}, t.~II, Paris, 1891.
+
+\bibitem{gallica}
+Bibliothèque nationale de France, Nouvelles acquisitions latines 1644,
+\url{https://gallica.bnf.fr/ark:/12148/btv1b10033620q}.
+
+\bibitem{grisard1970}
+J.~Grisard, \emph{François Viète, mathématicien de la fin du seizième
+siècle : essai bio-bibliographique}, thèse de 3\textsuperscript{e} cycle,
+Lettres, Paris, 1970 (date du SUDOC, PPN 174496044 ; la thèse est datée de
+1968 par Van~Egmond et par un recenseur de Witmer). Bibliothèque de la
+Sorbonne, Réserve I~4=~1248 (1--2).
+
+\bibitem{henry1880}
+C.~Henry, \emph{Recherches sur les manuscrits de Pierre de Fermat}, 1880.
+
+\bibitem{hofmann1962}
+J.~E.~Hofmann, «~Über Viètes Beiträge zur Geometrie der Einschiebungen~»,
+\emph{Mathematisch-Physikalische Semesterberichte} 8 (1962), p.~191--214.
+
+\bibitem{opera1646}
+F.~Viète, \emph{Opera mathematica}, éd. F.~van Schooten, Leyde,
+B. et A.~Elzevier, 1646.
+\url{https://archive.org/details/bub_gb_25iHrtJpy9oC}.
+
+\bibitem{pantin2003}
+I.~Pantin, «~Les \emph{Principes de cosmographie} (1637). Quelques
+interrogations~», \emph{Littérales}, hors-série 3 (2003), p.~117--133.
+\href{https://doi.org/10.3406/litra.2003.1906}{doi:10.3406/litra.2003.1906}.
+
+\bibitem{tannery1896}
+P.~Tannery, compte rendu de F.~Ritter, \emph{François Viète, inventeur de
+l'algèbre moderne}, \emph{Bulletin des sciences mathématiques},
+2\textsuperscript{e} sér., 20, 1\textsuperscript{re} partie (1896),
+p.~204--211. HathiTrust hvd.32044102908712.
+
+\bibitem{tannery1902}
+P.~Tannery, réponse à la question 2406, \emph{L'Intermédiaire des
+mathématiciens} 9 (1902), p.~329 ; réimpr. dans P.~Tannery,
+\emph{Mémoires scientifiques}, t.~X, 1930,
+p.~410--411, n\textsuperscript{o}~21.
+\url{https://archive.org/details/in.ernet.dli.2015.377303}.
+
+\bibitem{vanegmond1985}
+W.~Van~Egmond, «~A catalog of François Viète's printed and manuscript
+works~», dans M.~Folkerts et U.~Lindgren (éd.), \emph{Mathemata. Festschrift
+für Helmuth Gericke}, Stuttgart, F.~Steiner, coll. «~Boethius~» 12, 1985,
+p.~359--396.
+
+\bibitem{witmer1983}
+F.~Viète, \emph{The Analytic Art: Nine Studies in Algebra, Geometry and
+Trigonometry}\dots, trad. T.~R.~Witmer, Kent (Ohio), Kent State University
+Press, 1983, 450~p.
+
+\end{thebibliography}}
+\end{document}
