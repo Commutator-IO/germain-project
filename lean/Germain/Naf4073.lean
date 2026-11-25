@@ -20,8 +20,10 @@ quarrés des deux Triangulaires consécutifs », that is `T_{n−1}² + T_n² = 
   `triangular_of_square_choose`: `C(n, 2)² + C(n + 1, 2)² = C(n² + 1, 2)`.
 * `nicomachus`, `triangular_of_square_cubes`: `∑_{i ≤ n} i³ = T_n²`, hence
   `T_{n²} = 2 T_n² − n³` (stated as `T_{(n+1)²} + (n + 1)³ = 2 T_{n+1}²`).
-* `line_114`: the line `1 + 64 + 49` sums to `114`, which is neither triangular nor a square,
-  and `1 + 64 ≠ 49`.
+* `sq_T_succ`, `square_step`: `T_{n+1}² = T_n² + (n + 1)³`, hence
+  `T_{(n+2)²} = T_{(n+1)²} + (n + 1)³ + (n + 2)³`.
+* `line_189`: the line `1 + 64 … 189` (re-read on 25 November 2026; first read `1 + 64 + 49`):
+  `189 = 4³ + 5³ = T_25 − T_16`, and `189` is neither triangular nor a square.
 
 Not formalised: anything about the hand or the date of the note.
 -/
@@ -104,16 +106,36 @@ theorem triangular_of_square_cubes (n : ℕ) :
     omega
   omega
 
-/-- The line `1 + 64 + 49` of the leaf: its sum `114` is neither triangular nor a square, and
-`1 + 64 = 49` is false. -/
-theorem line_114 :
-    1 + 64 + 49 = 114 ∧ (∀ k, T k ≠ 114) ∧ (∀ m : ℕ, m ^ 2 ≠ 114) ∧ 1 + 64 ≠ 49 := by
-  refine ⟨rfl, fun k hk => ?_, fun m hm => ?_, by norm_num⟩
+/-- `T_{n+1}² = T_n² + (n + 1)³`: Germain's difference. -/
+lemma sq_T_succ (n : ℕ) : T (n + 1) ^ 2 = T n ^ 2 + (n + 1) ^ 3 := by
+  have h1 := two_mul_T n
+  have h2 := two_mul_T (n + 1)
+  have e : 4 * T (n + 1) ^ 2 = 4 * (T n ^ 2 + (n + 1) ^ 3) := by
+    calc 4 * T (n + 1) ^ 2 = (2 * T (n + 1)) ^ 2 := by ring
+      _ = (2 * T n) ^ 2 + 4 * (n + 1) ^ 3 := by rw [h1, h2]; ring
+      _ = 4 * (T n ^ 2 + (n + 1) ^ 3) := by ring
+  omega
+
+/-- Consecutive terms of `T_{n²}` differ by the sum of two consecutive cubes. -/
+theorem square_step (n : ℕ) :
+    T ((n + 2) ^ 2) = T ((n + 1) ^ 2) + (n + 1) ^ 3 + (n + 2) ^ 3 := by
+  have a := triangular_of_square n
+  have b := triangular_of_square (n + 1)
+  have c := sq_T_succ n
+  have d := sq_T_succ (n + 1)
+  rw [show n + 1 + 1 = n + 2 by ring] at b d
+  omega
+
+/-- The line `1 + 64 … 189` of the leaf: `189 = 4³ + 5³ = T_25 − T_16`, the step of
+`square_step` at `n = 3`; `189` itself is neither triangular nor a square. -/
+theorem line_189 :
+    189 = 4 ^ 3 + 5 ^ 3 ∧ T 25 = T 16 + 189 ∧ (∀ k, T k ≠ 189) ∧ (∀ m : ℕ, m ^ 2 ≠ 189) := by
+  refine ⟨by norm_num, by norm_num [T], fun k hk => ?_, fun m hm => ?_⟩
   · have h := two_mul_T k
     rw [hk] at h
-    have : k ≤ 15 := by nlinarith
+    have : k ≤ 19 := by nlinarith
     interval_cases k <;> omega
-  · have : m ≤ 11 := by nlinarith
+  · have : m ≤ 13 := by nlinarith
     interval_cases m <;> omega
 
 end Germain.Naf4073

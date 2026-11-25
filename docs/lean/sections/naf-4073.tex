@@ -2,7 +2,7 @@
 
 NAF 4073 est un volume de lettres. La seule ligne de mathématiques qu'il contienne est écrite tête-bêche au haut du feuillet d'adresse de la lettre non signée du 13~mars 1814, d'une main qui n'est pas celle de la lettre (\vue{naf-4073}{3}{42}) : l'égalité
 \[ \Big(\frac{n^2 - n}{2}\Big)^2 + \Big(\frac{n^2 + n}{2}\Big)^2 = \frac{n^4 + n^2}{2}, \]
-avec la phrase qui la lit, \q{le triangulaire d'un quarré est la somme des quarrés des deux Triangulaires consécutifs}. Sous l'égalité, une ligne isolée que la transcription lit $1 + 64 + 49$. La lecture modernisée note $T_k = k(k+1)/2$ et lit l'égalité comme $T_{n-1}^2 + T_n^2 = T_{n^2}$.
+avec la phrase qui la lit, \q{le triangulaire d'un quarré est la somme des quarrés des deux Triangulaires consécutifs}. Sous l'égalité, une ligne isolée que la transcription lit $1 + 64 \quad 189$, un trait horizontal traversant $64$ jusqu'au premier chiffre de $189$ (relu le 25~novembre 2026 ; une première lecture donnait $1 + 64 + 49$). La lecture modernisée note $T_k = k(k+1)/2$ et lit l'égalité comme $T_{n-1}^2 + T_n^2 = T_{n^2}$.
 
 \begin{enonce}[Note de NAF 4073, vue 42, le triangulaire d'un carré\piste{naf-4073-triangular-note}]
 Dans tout corps où $2 \neq 0$, $\big(\frac{n^2 - n}{2}\big)^2 + \big(\frac{n^2 + n}{2}\big)^2 = \frac{n^4 + n^2}{2}$. En entiers naturels, pour tout $n$,
@@ -26,10 +26,14 @@ Pour tout $n$, $\sum_{i=0}^{n} i^3 = T_n^2$, et $T_{(n+1)^2} + (n+1)^3 = 2\,T_{n
 Par récurrence : $4\big(T_n^2 + (n+1)^3\big) = n^2(n+1)^2 + 4(n+1)^3 = (n+1)^2(n+2)^2 = 4\,T_{n+1}^2$ (\texttt{nicomachus}). Le même calcul donne $T_{n+1}^2 = T_n^2 + (n+1)^3$, qu'on porte dans l'énoncé précédent (\texttt{triangular\_of\_square\_cubes}).
 \end{proof}
 
-\begin{enonce}[Énoncé de l'édition, d'après la vue 42, la ligne $1 + 64 + 49$]
-On a $1 + 64 + 49 = 114$ ; $114$ n'est ni un nombre triangulaire ni un carré, et $1 + 64 \neq 49$.
+\begin{enonce}[Énoncé de l'édition, d'après la vue 42, la ligne $1 + 64 \quad 189$]
+Pour tout $n$, $T_{n+1}^2 = T_n^2 + (n+1)^3$, et $T_{(n+2)^2} = T_{(n+1)^2} + (n+1)^3 + (n+2)^3$. En particulier $189 = 4^3 + 5^3 = T_{25} - T_{16}$ ; $189$ n'est ni un nombre triangulaire ni un carré.
 \end{enonce}
 
-Si $T_k = 114$, alors $k(k+1) = 228$, ce qui force $k \leq 15$, et aucun $k \leq 15$ ne convient ; de même $m^2 = 114$ force $m \leq 11$ (\texttt{line\_114}). Le constat de la lecture se trouve confirmé : aucune interprétation de ces trois nombres n'instancie l'identité. Ce que la ligne additionne reste inconnu.
+\begin{proof}
+La première égalité est le calcul de \texttt{nicomachus}, isolé (\texttt{sq\_T\_succ}). Par l'énoncé du feuillet appliqué en $n$ et en $n+1$, $T_{(n+2)^2} - T_{(n+1)^2} = T_{n+2}^2 - T_n^2$, qui vaut $(n+1)^3 + (n+2)^3$ par deux applications de la première égalité (\texttt{square\_step}). Pour $189$ : si $T_k = 189$, alors $k(k+1) = 378$, ce qui force $k \leq 19$, et aucun $k \leq 19$ ne convient ; de même $m^2 = 189$ force $m \leq 13$ (\texttt{line\_189}).
+\end{proof}
+
+La ligne n'instancie pas directement l'identité, mais $1 = 1^3$, $64 = 4^3$ et $189 = T_{5^2} - T_{4^2}$ est le pas de la suite $T_{n^2}$ en $n = 5$. Que la ligne soit ce calcul reste une hypothèse ; la preuve établit seulement que l'arithmétique le permet.
 
 Ne sont pas démontrés ici : l'attribution de la main et la date de la note, qui relèvent du fac-similé et non d'une preuve.

@@ -1,0 +1,415 @@
+% Article court : la note sur les nombres triangulaires de NAF 4073, f. 32v.
+% Compiler : tectonic -X compile docs/naf-4073/article.tex
+%
+% Destiné à Hexagon (hexagonmath.org) : sources TeX seules, sans code Lean.
+% À FAIRE avant le dépôt : relire la note sur l'image de Gallica (vue 42) et
+% la comparer à la fig. 2 d'Alexanderson 2012. Après relecture, la section
+% « Sources » peut dire que les lectures ont été contrôlées.
+\documentclass[11pt,a4paper]{article}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{lmodern}
+\else
+  \usepackage{fontspec}
+\fi
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[margin=2.8cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{proposition}{Proposition}
+\theoremstyle{remark}
+\newtheorem*{remarque}{Remarque}
+
+\title{«~Le triangulaire d'un carré~» : une note inédite\\
+attribuée à Sophie Germain (BnF, NAF 4073)}
+\author{Michel Hua\\\small Chercheur indépendant}
+\date{Novembre 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Le volume NAF 4073 de la Bibliothèque nationale de France réunit des lettres
+adressées à Sophie Germain ou écrites par elle. Au verso du feuillet~32, qui
+a servi de couverture à une lettre non signée du 13~mars 1814, une note
+d'une autre main que celle de la lettre énonce : «~le triangulaire d'un
+quarré est la somme des quarrés des deux Triangulaires consécutifs~», et
+l'écrit
+$\big(\frac{n^2-n}{2}\big)^2+\big(\frac{n^2+n}{2}\big)^2=\frac{n^4+n^2}{2}$.
+C'est la seule ligne de mathématiques du volume ; ni les catalogues ni les
+études que j'ai consultées n'en font mention. Je propose de l'attribuer à
+Germain. Un manuscrit qui lui est attribué, daté «~vers 1797~» par le
+libraire qui l'a vendu et reproduit par Alexanderson \cite{alexanderson},
+donne la même identité, dans la même notation, après les mots «~J'ai aussi
+remarqué que~», et l'écrit en symboles exactement comme la phrase de
+NAF 4073 la dit en mots. L'identité n'est pas nouvelle ; la note l'est.
+\end{abstract}
+
+Au verso d'une enveloppe adressée à Sophie Germain en 1814, une main
+rapide a écrit une formule et la phrase qui la lit : le triangulaire d'un
+carré est la somme des carrés de deux triangulaires consécutifs. Aucun
+catalogue ni aucune étude ne signale cette note. Je la décris
+(section~\ref{sec:feuillet}), j'en donne le sens et la preuve
+(section~\ref{sec:identite}), puis j'expose pourquoi je la crois de Germain
+et ce que cela permet de dire de sa date (section~\ref{sec:main}). Ce qui
+reste ouvert est rassemblé à la fin.
+
+\section{Le feuillet}\label{sec:feuillet}
+
+NAF 4073 vient des papiers de Guillaume Libri, et les catalogues n'y voient
+que des lettres : «~Lettres adressées à Sophie Germain ou écrites par elle~»
+pour Delisle \cite[p.~183]{delisle} ; «~Lettres de Delambre, Joseph Fourier,
+Sophie Germain, Lagrange, Lalande et G.~Libri~» pour la notice actuelle de la
+BnF. Le volume est numérisé dans Gallica \cite{gallica}.
+
+Le feuillet~32 enveloppait une lettre non signée du 13~mars 1814, que
+Charles Henry a publiée en entier \cite[n\textsuperscript{o}~XVII,
+p.~637--638]{henry}. Le verso (vue~42 de Gallica) porte l'adresse,
+«~Mademoiselle Germain, rue Sainte-Croix-de-la-Bretonnerie~», à Paris, dont
+le numéro a été recouvert après coup par deux larges boucles d'encre, et un
+cachet postal. En haut du feuillet, tête-bêche par rapport à l'adresse, une
+autre main a écrit une note (figure~\ref{fig:f32v}). La voici telle que la transcrit l'édition, avec
+son apparat ; les crochets marquent la restitution, les appels renvoient aux
+notes de l'éditeur.
+
+\begin{center}
+\fbox{\begin{minipage}{0.9\textwidth}\small
+\medskip
+\centerline{\textsc{NAF 4073, f.~32v (vue 42)}}
+\[
+\left(\frac{(n^2-n)}{2}\right)^2 + \left(\frac{(n^2+n)}{2}\right)^2
+= \frac{n^4+n^2}{2}
+\]
+\smallskip
+$1 + 64 \quad 189$\,\textsuperscript{a}
+
+\smallskip
+le triangulaire d'un quarré est la somme des quarrés des deux Triangulaires
+consécu[tifs]\,\textsuperscript{b,\,c}
+
+\medskip
+\hrule
+\medskip
+\footnotesize
+\textsuperscript{a}\,Les nombres sont écrits sur une seule ligne ; un trait
+horizontal continu part du signe plus et traverse $64$ jusqu'au premier
+chiffre de $189$, qu'une première lecture avait pris pour un second signe
+plus suivi de $49$. Relu $189$ sur l'agrandissement de la vue par un humain
+(Michel Hua), le 25~novembre 2026. Le trait peut être une rature. Rien ne
+rattache explicitement cette ligne à l'égalité qui la précède.
+
+\textsuperscript{b}\,Le dernier mot est coupé par la reliure au bord du
+feuillet : les lettres «~consécu~» sont entières, la suite est prise dans le
+fond du cahier.
+
+\textsuperscript{c}\,Cette note est écrite à l'encre, tête-bêche par rapport
+à l'adresse, en haut du feuillet ; la main n'est pas celle de la lettre. Elle
+est plus rapide et plus anguleuse, et rappelle celle de la lettre du
+18~avril 1831 aux vues~27 à~29, sans que quinze mots suffisent à
+l'établir : la présente lecture ne tranche pas.
+\medskip
+\end{minipage}}
+\end{center}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.72\textwidth]{naf-4073-f32v.png}
+\caption{BnF, NAF 4073, f.~32v (vue~42), partie haute : la formule, la ligne
+$1 + 64 \quad 189$ et, à droite, la phrase ; en bas à gauche, l'adresse.
+Source : gallica.bnf.fr / Bibliothèque nationale de France,
+\url{https://gallica.bnf.fr/ark:/12148/btv1b10089787b/f42.item}.
+Reproduction exclue de la licence de l'article.}
+\label{fig:f32v}
+\end{figure}
+
+En graphie moderne : «~le triangulaire d'un carré est la somme des carrés
+des deux triangulaires consécutifs~». Sur le feuillet, la formule est en haut et la phrase plus bas à droite, en
+cinq lignes courtes ; la ligne de nombres est à gauche, sous la formule. La
+note~c est celle de la transcription, écrite avant que je connaisse le
+manuscrit publié par Alexanderson ; la section~\ref{sec:main} dit pourquoi
+je vais aujourd'hui plus loin.
+
+Henry ne dit pas un mot de cette note, alors qu'il imprime la lettre qu'elle
+recouvre. Je ne l'ai trouvée ni dans les catalogues \cite{delisle,omont}, ni
+dans l'étude des lettres de Germain conservées à Florence \cite{delcentina},
+ni dans les travaux sur ses manuscrits de théorie des nombres
+\cite{laubenbacher-pengelley}. L'inventaire de sa correspondance que donnent
+Del~Centina et Fiocca \cite[annexe]{delcentina-fiocca} recense la lettre du
+13~mars 1814 et ignore sa couverture. Le corps de leur chapitre, en accès
+payant, je ne l'ai pas lu.
+
+\section{L'identité}\label{sec:identite}
+
+Notons $T_k = 1 + 2 + \cdots + k = k(k+1)/2$ le $k$-ième nombre
+triangulaire, la somme des entiers de $1$ à $k$, ainsi nommé parce que
+$T_k$ points se rangent en triangle de côté $k$ : $T_1 = 1$, $T_2 = 3$,
+$T_3 = 6$, $T_4 = 10$\dots{} «~Le triangulaire d'un carré~» est
+$T_{n^2}$, le triangulaire d'indice $n^2$ ; «~le carré d'un triangulaire~»
+est $(T_k)^2$.
+
+La formule $1 + 2 + \cdots + k = k(k+1)/2$ est celle de l'anecdote de Gauss
+écolier : prié de faire la somme des entiers de $1$ à $100$, il l'aurait
+donnée sur-le-champ, $5050$, en associant les termes deux à deux,
+$1 + 100 = 2 + 99 = \cdots = 101$, cinquante fois. En général, écrire la
+somme à l'endroit et à l'envers donne $k$ paires valant chacune $k+1$, d'où
+$2T_k = k(k+1)$. L'histoire a enflé avec les récits ; le plus ancien, celui
+de Sartorius von Waltershausen en 1856, ne donne ni la suite ni le nombre
+$100$ \cite{hayes}. La formule, elle, est bien plus vieille que Gauss.
+
+Sur le feuillet, les deux nombres élevés au carré,
+$(n^2-n)/2$ et $(n^2+n)/2$, sont $T_{n-1}$ et $T_n$, et le second membre,
+$(n^4+n^2)/2 = n^2(n^2+1)/2$, est $T_{n^2}$. La note dit donc
+\begin{equation}\label{eq:note}
+(T_{n-1})^{2} + (T_n)^{2} = T_{n^2}.
+\end{equation}
+Pour $n = 2$, $1^2 + 3^2 = 10 = T_4$ ; pour $n = 3$, $3^2 + 6^2 = 45 = T_9$ ;
+pour $n = 4$, $6^2 + 10^2 = 136 = T_{16}$. La suite $1, 10, 45, 136,
+325, \dots$ des $T_{n^2}$ est la suite A037270 de l'OEIS, où l'identité
+figure parmi les formules depuis 2013, sans référence historique
+\cite{oeis}. La phrase française dit cela, et
+un peu plus : «~les deux Triangulaires consécutifs~» ne sont pas n'importe
+quels triangulaires qui se suivent, ce sont les deux dont le carré $n^2$ est
+la somme, puisque $T_{n-1} + T_n = n^2$.
+
+\begin{proposition}\label{prop:note}
+Pour tout entier $n \geq 1$, $(T_{n-1})^2 + (T_n)^2 = T_{n^2}$.
+\end{proposition}
+
+\begin{proof}
+Je suis le calcul du manuscrit reproduit par Alexanderson
+(figure~\ref{fig:quaritch}). On développe les deux carrés :
+\[
+\left(\frac{n^2+n}{2}\right)^2 = \frac{n^4 + 2n^3 + n^2}{4},
+\qquad
+\left(\frac{n^2-n}{2}\right)^2 = \frac{n^4 - 2n^3 + n^2}{4}.
+\]
+Dans la somme, les termes $\pm 2n^3$ se détruisent :
+\[
+(T_n)^2 + (T_{n-1})^2 = \frac{2n^4 + 2n^2}{4} = \frac{n^4 + n^2}{2}
+= \frac{n^2(n^2+1)}{2} = T_{n^2}.
+\]
+\end{proof}
+
+Le même développement donne les deux résultats du manuscrit. Dans la
+différence, ce sont les termes $n^4$ et $n^2$ qui se détruisent, et il reste
+$(T_n)^2 - (T_{n-1})^2 = 4n^3/4 = n^3$, d'où la proposition de Lagrange
+en ajoutant ces égalités de $1$ à $n$ ; dans la somme, ce sont les cubes qui
+s'en vont, et il reste $T_{n^2}$. On peut aussi raisonner sans développer :
+avec $a = T_{n-1}$ et $b = T_n$, on a $a + b = n^2$ et $b - a = n$, donc
+$a^2 + b^2 = \frac12\big((a+b)^2 + (b-a)^2\big) = \frac12(n^4+n^2)$. La
+phrase du feuillet suit plutôt cet ordre-là : un carré, puis les deux
+triangulaires dont il est la somme et dont sa racine est la différence.
+Rien de tout cela ne dépasse ce qu'on savait faire en 1797.
+
+L'identité est aussi le cas $m = n$ d'une formule plus générale, facile à
+vérifier et dont je ne connais pas l'origine :
+\[
+T_{mn} = T_m\,T_n + T_{m-1}\,T_{n-1},
+\]
+car $4\,(T_m T_n + T_{m-1} T_{n-1}) = mn\big[(m+1)(n+1) + (m-1)(n-1)\big]
+= mn\,(2mn + 2) = 4\,T_{mn}$. Les termes croisés $\pm(m+n)$ s'y détruisent,
+comme les $\pm 2n^3$ dans le calcul de Germain.
+
+Si l'on joint \eqref{eq:note} à l'identité de Nicomaque,
+$1^3 + \cdots + n^3 = (T_n)^2$, on a $(T_{n-1})^2 = (T_n)^2 - n^3$, et une
+forme que le feuillet ne donne pas :
+
+\begin{proposition}
+Pour tout $n \geq 1$, $T_{n^2} = 2\,(T_n)^2 - n^3$ : le triangulaire d'un
+carré vaut deux fois la somme des $n$ premiers cubes, moins le dernier. Pour
+$n = 3$ : $T_9 = 2 \cdot 36 - 27 = 45$.
+\end{proposition}
+
+\begin{remarque}[La ligne $1 + 64 \quad 189$]
+La ligne n'instancie pas l'identité : $1 + 64 = 65$, et $189$ n'est ni
+triangulaire ($T_{18} = 171$, $T_{19} = 190$) ni carré. Mais $1 = 1^3$,
+$64 = 4^3$, et
+\[
+189 = 4^3 + 5^3 = T_{25} - T_{16} = T_{5^2} - T_{4^2}.
+\]
+C'est le pas de la suite $T_{n^2}$ entre $n = 4$ et $n = 5$, et ce pas vaut
+toujours $n^3 + (n-1)^3$ : par \eqref{eq:note},
+$T_{n^2} - T_{(n-1)^2} = (T_n)^2 - (T_{n-2})^2$, et chaque
+$(T_k)^2 - (T_{k-1})^2$ vaut $k^3$ (c'est la différence de Germain,
+figure~\ref{fig:quaritch}). C'est aussi la somme des $2n-1$ entiers de
+$(n-1)^2 + 1$ à $n^2$, dont la moyenne est $n^2 - n + 1$ : pour $n = 5$,
+$17 + 18 + \cdots + 25 = 9 \times 21 = 189$. Plus généralement, pour
+$m < n$, $(T_n)^2 - (T_m)^2 = (m+1)^3 + \cdots + n^3$. La ligne serait alors un essai qui relie la note
+aux cubes de la question de Lagrange. Ce n'est qu'une hypothèse : le feuillet
+ne pose pas ce calcul, et un nombre lu après coup se prête toujours à
+quelque propriété.
+\end{remarque}
+
+\section{La main et la date}\label{sec:main}
+
+C'est Georg Essl qui a fait le rapprochement, en réponse à la question que
+j'avais posée sur History of Science and Mathematics \cite{essl}. En 2012,
+G.~L.~Alexanderson a reproduit un manuscrit non signé, vendu par la librairie
+Bernard Quaritch dans les années 1990, daté par elle «~vers 1797~» et
+attribué à Germain ; il l'a fait reproduire en couverture du
+\emph{Bulletin of the AMS} d'avril 2012 \cite{alexanderson}. La page commence
+par «~La Grange m'ayant proposé de démontrer / Que le quarré d'un
+triangulaire quelconque est égal à la somme des cubes de tous les nombres
+naturels pris depuis 1 jusqu'à $n$ inclusivement~». Avec $T_n = 1 + 2 +
+\cdots + n$, c'est l'identité de Nicomaque,
+$(1 + 2 + \cdots + n)^2 = 1^3 + 2^3 + \cdots + n^3$. La preuve tient dans
+une différence :
+$\big(\frac{n^2+n}{2}\big)^2 - \big(\frac{n^2-n}{2}\big)^2 = n^3$,
+c'est-à-dire $(T_n)^2 - (T_{n-1})^2 = n^3$ ; en ajoutant ces égalités de
+$1$ à $n$, les termes se compensent deux à deux et il reste
+$(T_n)^2 = 1^3 + \cdots + n^3$. Sous un trait vient la somme des deux mêmes
+carrés : «~J'ai aussi remarqué que~»
+$\big(\frac{n^2+n}{2}\big)^2 + \big(\frac{n^2-n}{2}\big)^2 = \frac{n^4+n^2}{2}$,
+«~donc~» $\Delta^a + \Delta^{a-1} = \square^a$ et
+\[
+\square^{\Delta^a} + \square^{\Delta^{a-1}} = \Delta^{\square^a}
+\]
+\cite[p.~330]{alexanderson} (figure~\ref{fig:quaritch}). Germain note $\Delta^a$ le triangulaire de $a$,
+notre $T_a$, et $\square^a$ le carré de $a$ ; l'exposant est un indice, non
+une puissance. La première ligne dit donc $T_a + T_{a-1} = a^2$, et la
+seconde $(T_a)^2 + (T_{a-1})^2 = T_{a^2}$, qui est \eqref{eq:note} avec $a$
+pour $n$. Lue à voix haute, cette seconde ligne est la phrase de NAF 4073 :
+le carré du triangulaire de $a$ et celui du triangulaire de $a-1$ font le
+triangulaire du carré de $a$. Alexanderson ne parle pas de NAF 4073.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{quaritch-germain.png}
+\caption{Le manuscrit attribué à Germain, vendu par Bernard Quaritch et daté
+par lui «~vers 1797~», tel que le reproduit Alexanderson
+\cite[fig.~2, p.~330]{alexanderson}. En haut, la question de Lagrange et la
+différence qui donne $n^3$ ; sous le trait, «~J'ai aussi remarqué que~», la
+somme, puis les mêmes égalités écrites avec $\Delta$ et $\square$.}
+\label{fig:quaritch}
+\end{figure}
+
+Trois sortes d'indices portent l'attribution, et ils n'ont pas le même
+poids. Le plus fort est textuel. Les deux témoins écrivent la formule de la
+même façon : mêmes termes $(n^2 \pm n)/2$ entre parenthèses, l'exposant hors
+de la parenthèse, même second membre $(n^4+n^2)/2$, et non $n^2(n^2+1)/2$,
+qui viendrait aussi naturellement ; et la phrase de NAF 4073 dit en mots ce
+que le manuscrit Quaritch dit en symboles. Le deuxième est matériel : la
+note est écrite sur une lettre adressée à Germain, chez elle, et conservée
+dans ses papiers, passés ensuite par Libri. Le troisième, le plus faible,
+est paléographique. Autant que j'en puisse juger sur les reproductions,
+l'écriture est compatible avec celle de la figure~2 d'Alexanderson et avec
+la lettre de Germain à Libri du 18~avril 1831 reliée dans le même volume
+(vues~27 à 29) : même inclinaison, même \emph{q} de «~quarré~», même
+liaison dans «~est~». Je ne suis pas paléographe. L'ensemble rend
+l'attribution à Germain très probable ; il ne la démontre pas.
+
+Le support date la note par en bas : elle est postérieure au 13~mars 1814,
+puisque le feuillet avait d'abord servi d'enveloppe. Le manuscrit Quaritch
+n'est daté que par le libraire. Si les deux témoins sont bien de Germain, la
+note de NAF 4073 montre qu'elle est revenue à cette identité au moins
+seize ans après la date qu'on donne à la première rédaction ; pourquoi, je
+l'ignore.
+
+L'identité est classique, et l'on savait par Alexanderson que Germain la
+connaissait. Ce que le feuillet ajoute tient au manuscrit : un volume que
+tous les catalogues décrivent comme une correspondance contient une ligne de
+théorie des nombres, très probablement de sa main, que personne n'avait relevée.
+
+\section*{Ce qui reste ouvert}
+
+Une expertise paléographique de la note, à partir du fac-similé de Gallica
+et de la figure~2 d'Alexanderson, confirmerait ou non l'attribution. Le fonds
+Germain de la Biblioteca Moreniana, à Florence, plus de deux cents feuillets
+\cite{delcentina}, est l'endroit où chercher une troisième copie, ou la
+raison de celle-ci. Le corps du chapitre de Del~Centina et Fiocca
+\cite{delcentina-fiocca}, que je n'ai pas lu, mentionne peut-être la note.
+Restent enfin la ligne $1 + 64 \quad 189$, dont le sens n'est qu'une
+hypothèse, et un
+détail de lecture : sur le fac-similé, le «~s~» final de «~Triangulaires~»
+est douteux.
+
+\section*{Sources et vérification}
+
+La transcription et la lecture modernisée du volume sont publiées sous
+licence CC0, dans le répertoire \texttt{transcripts/naf-4073} du dépôt
+\url{https://github.com/Commutator-IO/germain-project} ; la note est à la
+vue~42, dans \texttt{batch-03.fr.tex}. La transcription a été faite avec un
+modèle de langue lisant les images de Gallica ; les lectures citées ici
+doivent être contrôlées sur le fac-similé.
+
+Les deux propositions et les constats arithmétiques de la remarque sont
+démontrés en Lean~4 avec mathlib, dans le fichier
+\href{https://github.com/Commutator-IO/germain-project/blob/main/lean/Germain/Naf4073.lean}{\texttt{lean/Germain/Naf4073.lean}}
+du même dépôt : la formule du feuillet dans tout corps où $2 \neq 0$,
+l'identité \eqref{eq:note} dans les entiers, la
+conséquence par Nicomaque, le pas $T_{(n+1)^2} - T_{n^2} = n^3 + (n+1)^3$
+et les constats sur $189$. L'intégration continue le
+compile en traitant tout avertissement comme une erreur et refuse tout axiome
+autre que les trois axiomes standard de Lean. La forme démontrée,
+$T_n^2 + T_{n+1}^2 = T_{(n+1)^2}$ pour tout $n$, évite la soustraction
+tronquée des entiers naturels. Aucune preuve ne dit rien, évidemment, de la
+main ni de la date.
+
+\section*{Remerciements}
+
+Je remercie Georg Essl, qui a reconnu dans le manuscrit publié par
+Alexanderson l'identité du feuillet de NAF 4073 et me l'a signalé.
+
+\begin{thebibliography}{9}
+
+\bibitem{alexanderson}
+G.~L. Alexanderson, «~About the cover: Sophie Germain and a problem in number
+theory~», \emph{Bulletin of the American Mathematical Society} 49, n\textsuperscript{o}~2 (avril 2012),
+p.~327--331. \href{https://doi.org/10.1090/S0273-0979-2012-01370-8}{doi:10.1090/S0273-0979-2012-01370-8}.
+
+\bibitem{delcentina}
+A.~Del~Centina, «~Letters of Sophie Germain preserved in Florence~»,
+\emph{Historia Mathematica} 32 (2005), p.~60--75.
+\href{https://doi.org/10.1016/j.hm.2003.11.001}{doi:10.1016/j.hm.2003.11.001}.
+
+\bibitem{delcentina-fiocca}
+A.~Del~Centina et A.~Fiocca, «~On the correspondence of Sophie Germain~»,
+dans M.~T.~Borgato, E.~Neuenschwander et I.~Passeron (dir.),
+\emph{Mathematical Correspondences and Critical Editions}, Cham, Springer,
+coll. «~Trends in the History of Science~», 2018, p.~147--166.
+\href{https://doi.org/10.1007/978-3-319-73577-1_9}{doi:10.1007/978-3-319-73577-1\_9}.
+
+\bibitem{delisle}
+L.~Delisle, \emph{Catalogue des manuscrits des fonds Libri et Barrois},
+Paris, H.~Champion, 1888.
+
+\bibitem{essl}
+G.~Essl, réponse à «~Who wrote this note on triangular numbers in Sophie
+Germain's correspondence (BnF NAF 4073)?~», History of Science and
+Mathematics, 25 octobre 2026, \url{https://hsm.stackexchange.com/a/19744}.
+
+\bibitem{gallica}
+Bibliothèque nationale de France, Nouvelles acquisitions françaises 4073,
+\url{https://gallica.bnf.fr/ark:/12148/btv1b10089787b}.
+
+\bibitem{hayes}
+B.~Hayes, «~Gauss's day of reckoning~», \emph{American Scientist} 94,
+n\textsuperscript{o}~3 (2006), p.~200.
+\href{https://doi.org/10.1511/2006.59.200}{doi:10.1511/2006.59.200}.
+
+\bibitem{henry}
+C.~Henry, «~Les manuscrits de Sophie Germain et leur récent éditeur.
+Documents nouveaux~», \emph{Revue philosophique de la France et de
+l'étranger} 8 (1879), p.~619--641.
+
+\bibitem{laubenbacher-pengelley}
+R.~Laubenbacher et D.~Pengelley, «~“Voici ce que j'ai trouvé:” Sophie
+Germain's grand plan to prove Fermat's Last Theorem~», \emph{Historia
+Mathematica} 37 (2010), p.~641--692.
+\href{https://doi.org/10.1016/j.hm.2009.12.002}{doi:10.1016/j.hm.2009.12.002}.
+
+\bibitem{oeis}
+OEIS Foundation, \emph{The On-Line Encyclopedia of Integer Sequences},
+suite A037270, «~$a(n) = n^2(n^2 + 1)/2$~», \url{https://oeis.org/A037270},
+consultée le 25 novembre 2026.
+
+\bibitem{omont}
+H.~Omont, \emph{Catalogue général des manuscrits français. Nouvelles
+acquisitions françaises}, t.~II, \emph{n\textsuperscript{os}~3061--6500}, Paris, E.~Leroux, 1900.
+
+\end{thebibliography}
+\end{document}
