@@ -43,3 +43,6 @@ public/exercises/
 
 # Lean build products and the mathlib checkout (cloned from grothendieck-project).
 lean/.lake/
+
+# Deposit archives (Hexagon), built locally
+exports/

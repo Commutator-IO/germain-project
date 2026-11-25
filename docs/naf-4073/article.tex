@@ -1,10 +1,6 @@
-% Article court : la note sur les nombres triangulaires de NAF 4073, f. 32v.
-% Compiler : tectonic -X compile docs/naf-4073/article.tex
-%
-% Destiné à Hexagon (hexagonmath.org) : sources TeX seules, sans code Lean.
-% À FAIRE avant le dépôt : relire la note sur l'image de Gallica (vue 42) et
-% la comparer à la fig. 2 d'Alexanderson 2012. Après relecture, la section
-% « Sources » peut dire que les lectures ont été contrôlées.
+% « Le triangulaire d'un carré » : une note inédite attribuée à Sophie Germain
+% (BnF, NAF 4073). Compile avec pdfLaTeX ou XeLaTeX ; figures :
+% naf-4073-f32v.png et quaritch-germain.png, à côté de ce fichier.
 \documentclass[11pt,a4paper]{article}
 \usepackage{iftex}
 \ifPDFTeX
@@ -48,7 +44,9 @@ les études consultées n'en parlent. Elle est de la main de Germain : le manusc
 reproduit par Alexanderson \cite{alexanderson}, donne la même identité dans
 la même notation, après «~J'ai aussi remarqué que~», et l'écrit en symboles
 comme la phrase de NAF 4073 la dit en mots. L'identité était connue ; la
-note, non.
+note, non. Une dernière section prolonge le calcul de Germain jusqu'aux
+sommes de puissances, exprimées en fonction de $T_n$ ; tous les énoncés
+sont démontrés en Lean~4.
 \end{abstract}
 
 Cette note est apparue pendant la transcription de NAF 4073, vue par vue : au
