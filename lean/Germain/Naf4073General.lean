@@ -1,0 +1,300 @@
+import Germain.Naf4073
+
+/-!
+# NAF 4073: the general statements of the short article
+
+`docs/naf-4073/article.tex`, second part (« Énoncés généraux »), extends Germain's computation
+in the manuscript reproduced by Alexanderson (2012): expand `((n² ± n)/2)²`, then compare the
+difference and the sum. This file proves every statement of that part.
+
+* `T_cast`: `T k = k(k + 1)/2` in `ℚ`; `T_sub`: `T a − T b = (a − b)(a + b + 1)/2`.
+* `T_mul` (proposition « produit »): `T (m n) = T m T n + T (m − 1) T (n − 1)`.
+* `T_pow_split`, `T_pow_even`, `T_pow_step` (proposition « puissance de n »): the triangular
+  number of a power of `n`.
+* `step_sq`, `T_sq_sub_T_sq`, `T_sq_sub_T_sq_closed` (proposition « pas »):
+  `T (b²) − T (a²) = a³ + 2(a+1)³ + ⋯ + 2(b−1)³ + b³ = (b² − a²)(a² + b² + 1)/2`.
+* `T_pow_sub`, `T_pow_add` (proposition « puissances »):
+  `T_{n+1}^k ∓ T_n^k = ((n+1)/2)^k ((n+2)^k ∓ n^k)`; `T_four_sub` for `k = 4`.
+* `S`, `sum_odd_binom`, `T_pow_eq_sum` (proposition « sommes »):
+  `2^(k−1) T_n^k = ∑_{m ≤ k, k − m odd} C(k, m) S_{k+m}`; `S_one`, `S_three`, `S_five`,
+  `S_seven` for the first rows.
+* `gersonides`, `lagrange_unique` (proposition « Lagrange »): if `S_p = T^q` for every `n`,
+  then `(p, q) = (1, 1)` or `(3, 2)`; `n = 2` alone forces it, through `2^p + 1 = 3^q`
+  (Levi ben Gershon).
+
+Proposition « Nicomaque » of the article is `triangular_of_square_cubes` in `Germain.Naf4073`.
+-/
+
+namespace Germain.Naf4073
+
+open Finset
+
+/-- `T k = k(k + 1)/2`, in `ℚ`. -/
+lemma T_cast (k : ℕ) : (T k : ℚ) = k * (k + 1) / 2 := by
+  have h : ((2 * T k : ℕ) : ℚ) = ((k * (k + 1) : ℕ) : ℚ) := by rw [two_mul_T]
+  push_cast at h
+  linarith
+
+/-- The difference of two triangular numbers. -/
+lemma T_sub (a b : ℕ) : (T a : ℚ) - T b = ((a : ℚ) - b) * (a + b + 1) / 2 := by
+  rw [T_cast, T_cast]
+  ring
+
+/-! ## The triangular number of a product -/
+
+/-- `T (m n) = T m T n + T (m − 1) T (n − 1)`; the note of NAF 4073 is `m = n`. -/
+theorem T_mul (m n : ℕ) : T (m * n) = T m * T n + T (m - 1) * T (n - 1) := by
+  rcases m with _ | a
+  · simp [T]
+  rcases n with _ | b
+  · simp [T]
+  have h : (T ((a + 1) * (b + 1)) : ℚ) = T (a + 1) * T (b + 1) + T a * T b := by
+    rw [T_cast, T_cast, T_cast, T_cast, T_cast]
+    push_cast
+    ring
+  simp only [Nat.add_sub_cancel]
+  exact_mod_cast h
+
+/-! ## The triangular number of a power of `n` -/
+
+/-- `T (n^k) = T (n^j) T (n^(k−j)) + T (n^j − 1) T (n^(k−j) − 1)` for `j ≤ k`. -/
+theorem T_pow_split (n k j : ℕ) (hj : j ≤ k) :
+    T (n ^ k) = T (n ^ j) * T (n ^ (k - j)) + T (n ^ j - 1) * T (n ^ (k - j) - 1) := by
+  rw [← T_mul, ← pow_add, Nat.add_sub_cancel' hj]
+
+/-- An even power: `T (n^(2j)) = T (n^j)² + T (n^j − 1)²`. -/
+theorem T_pow_even (n j : ℕ) : T (n ^ (2 * j)) = T (n ^ j) ^ 2 + T (n ^ j - 1) ^ 2 := by
+  rw [show 2 * j = j + j by ring, pow_add, T_mul, sq, sq]
+
+/-- The step between consecutive `k`-th powers:
+`T ((n+1)^k) − T (n^k) = ((n+1)^k − n^k)((n+1)^k + n^k + 1)/2`. -/
+theorem T_pow_step (n k : ℕ) :
+    (T ((n + 1) ^ k) : ℚ) - T (n ^ k)
+      = (((n : ℚ) + 1) ^ k - (n : ℚ) ^ k) * (((n : ℚ) + 1) ^ k + (n : ℚ) ^ k + 1) / 2 := by
+  rw [T_sub]
+  push_cast
+  ring
+
+/-! ## The steps of `T (n²)` -/
+
+/-- `T ((a+1)²) = T (a²) + a³ + (a+1)³`, for every `a` (`square_step` starts at `a = 1`). -/
+lemma step_sq (a : ℕ) : T ((a + 1) ^ 2) = T (a ^ 2) + a ^ 3 + (a + 1) ^ 3 := by
+  have h : (T ((a + 1) ^ 2) : ℚ) = T (a ^ 2) + a ^ 3 + (a + 1) ^ 3 := by
+    rw [T_cast, T_cast]
+    push_cast
+    ring
+  exact_mod_cast h
+
+/-- `T (b²) − T (a²) = a³ + 2(a+1)³ + ⋯ + 2(b−1)³ + b³`, with `b = a + d + 1`. -/
+theorem T_sq_sub_T_sq (a d : ℕ) :
+    T ((a + d + 1) ^ 2)
+      = T (a ^ 2) + a ^ 3 + 2 * ∑ i ∈ Ico (a + 1) (a + d + 1), i ^ 3 + (a + d + 1) ^ 3 := by
+  induction d with
+  | zero => simpa using step_sq a
+  | succ d ih =>
+    rw [show a + (d + 1) + 1 = (a + d + 1) + 1 by ring, step_sq, ih,
+      sum_Ico_succ_top (by omega : a + 1 ≤ a + d + 1)]
+    ring
+
+/-- The closed form: `2 (T (b²) − T (a²)) = (b² − a²)(a² + b² + 1)`. -/
+theorem T_sq_sub_T_sq_closed (a b : ℕ) :
+    2 * ((T (b ^ 2) : ℚ) - T (a ^ 2))
+      = ((b : ℚ) ^ 2 - (a : ℚ) ^ 2) * ((a : ℚ) ^ 2 + (b : ℚ) ^ 2 + 1) := by
+  rw [T_sub]
+  push_cast
+  ring
+
+/-! ## Differences and sums of powers of consecutive triangular numbers -/
+
+lemma T_succ_cast (n : ℕ) : (T (n + 1) : ℚ) = ((n + 1) / 2) * (n + 2) := by
+  rw [T_cast]; push_cast; ring
+
+lemma T_cast' (n : ℕ) : (T n : ℚ) = ((n + 1) / 2) * n := by
+  rw [T_cast]; ring
+
+/-- `T_{n+1}^k − T_n^k = ((n+1)/2)^k ((n+2)^k − n^k)`. -/
+theorem T_pow_sub (n k : ℕ) :
+    (T (n + 1) : ℚ) ^ k - (T n : ℚ) ^ k
+      = (((n : ℚ) + 1) / 2) ^ k * (((n : ℚ) + 2) ^ k - (n : ℚ) ^ k) := by
+  rw [T_succ_cast, T_cast', mul_pow, mul_pow]
+  ring
+
+/-- `T_{n+1}^k + T_n^k = ((n+1)/2)^k ((n+2)^k + n^k)`: `k = 1` is `T_n + T_{n+1} = (n+1)²`,
+`k = 2` is the note. -/
+theorem T_pow_add (n k : ℕ) :
+    (T (n + 1) : ℚ) ^ k + (T n : ℚ) ^ k
+      = (((n : ℚ) + 1) / 2) ^ k * (((n : ℚ) + 2) ^ k + (n : ℚ) ^ k) := by
+  rw [T_succ_cast, T_cast', mul_pow, mul_pow]
+  ring
+
+/-- `k = 4`: Germain's difference times the note, `T_{n+1}⁴ − T_n⁴ = (n+1)³ T ((n+1)²)`. -/
+theorem T_four_sub (n : ℕ) :
+    T (n + 1) ^ 4 - T n ^ 4 = (n + 1) ^ 3 * T ((n + 1) ^ 2) := by
+  have h1 := sq_T_succ n
+  have h2 := triangular_of_square n
+  have e : T (n + 1) ^ 4 = T n ^ 4 + (n + 1) ^ 3 * T ((n + 1) ^ 2) := by
+    rw [← h2]
+    calc T (n + 1) ^ 4 = (T (n + 1) ^ 2) ^ 2 := by ring
+      _ = (T n ^ 2 + (n + 1) ^ 3) ^ 2 := by rw [h1]
+      _ = T n ^ 4 + (n + 1) ^ 3 * (T n ^ 2 + (T n ^ 2 + (n + 1) ^ 3)) := by ring
+      _ = T n ^ 4 + (n + 1) ^ 3 * (T n ^ 2 + T (n + 1) ^ 2) := by rw [h1]
+  omega
+
+/-! ## Sums of powers -/
+
+/-- `S p n = 0^p + 1^p + ⋯ + n^p`. -/
+def S (p n : ℕ) : ℕ := ∑ i ∈ range (n + 1), i ^ p
+
+/-- `(x+1)^k − (x−1)^k = 2 ∑_{m ≤ k, k − m odd} C(k, m) x^m`. -/
+lemma sum_odd_binom (x : ℚ) (k : ℕ) :
+    (x + 1) ^ k - (x - 1) ^ k
+      = 2 * ∑ m ∈ (range (k + 1)).filter (fun m => Odd (k - m)), (k.choose m : ℚ) * x ^ m := by
+  rw [sub_eq_add_neg x 1, add_pow, add_pow, ← sum_sub_distrib, sum_filter, mul_sum]
+  refine sum_congr rfl fun m _ => ?_
+  rcases Nat.even_or_odd (k - m) with h | h
+  · rw [ite_eq_right (Nat.not_odd_iff_even.mpr h), h.neg_one_pow]
+    ring
+  · rw [ite_eq_left h, h.neg_one_pow]
+    ring
+
+/-- The triangular system: `2^(k−1) T_n^k = ∑_{m ≤ k, k − m odd} C(k, m) S_{k+m}`, for `k ≥ 1`. -/
+theorem T_pow_eq_sum (k n : ℕ) (hk : 1 ≤ k) :
+    (2 : ℚ) ^ (k - 1) * (T n : ℚ) ^ k
+      = ∑ m ∈ (range (k + 1)).filter (fun m => Odd (k - m)), (k.choose m : ℚ) * (S (k + m) n : ℚ) := by
+  obtain ⟨k, rfl⟩ : ∃ j, k = j + 1 := ⟨k - 1, by omega⟩
+  simp only [Nat.add_sub_cancel]
+  induction n with
+  | zero =>
+    simp only [T, S, zero_add, sum_range_one]
+    norm_num
+  | succ n ih =>
+    have hS : ∀ p, (S p (n + 1) : ℚ) = S p n + ((n : ℚ) + 1) ^ p := by
+      intro p; simp [S, sum_range_succ _ (n + 1)]
+    simp_rw [hS, mul_add, sum_add_distrib, ← ih]
+    have hd := T_pow_sub n (k + 1)
+    have hb := sum_odd_binom ((n : ℚ) + 1) (k + 1)
+    have hsum : ∑ m ∈ (range (k + 1 + 1)).filter (fun m => Odd (k + 1 - m)),
+        (((k + 1).choose m : ℚ) * ((n : ℚ) + 1) ^ (k + 1 + m))
+        = ((n : ℚ) + 1) ^ (k + 1) * ∑ m ∈ (range (k + 1 + 1)).filter (fun m => Odd (k + 1 - m)),
+          ((k + 1).choose m : ℚ) * ((n : ℚ) + 1) ^ m := by
+      rw [mul_sum]; refine sum_congr rfl fun m _ => ?_; rw [pow_add]; ring
+    rw [hsum]
+    have e1 : (n : ℚ) + 1 + 1 = (n : ℚ) + 2 := by ring
+    have e2 : (n : ℚ) + 1 - 1 = (n : ℚ) := by ring
+    rw [e1, e2] at hb
+    have hT : (T n : ℚ) ^ (k + 1) + (((n : ℚ) + 1) / 2) ^ (k + 1)
+        * (((n : ℚ) + 2) ^ (k + 1) - (n : ℚ) ^ (k + 1)) = (T (n + 1) : ℚ) ^ (k + 1) := by
+      rw [← hd]; ring
+    rw [← hT, hb, div_pow]
+    field_simp
+    ring
+
+/-- The first rows of the system, solved: `S₁ = T`, `S₃ = T²`, `3 S₅ = T²(4T − 1)`,
+`3 S₇ = T²(6T² − 4T + 1)`. -/
+theorem S_one (n : ℕ) : S 1 n = T n := by
+  have h := T_pow_eq_sum 1 n le_rfl
+  norm_num [show (range 2).filter (fun m => Odd (1 - m)) = {0} by decide] at h
+  exact_mod_cast h.symm
+
+theorem S_three (n : ℕ) : S 3 n = T n ^ 2 := by
+  have h := T_pow_eq_sum 2 n (by norm_num)
+  norm_num [show (range 3).filter (fun m => Odd (2 - m)) = {1} by decide] at h
+  have h' : ((S 3 n : ℕ) : ℚ) = ((T n ^ 2 : ℕ) : ℚ) := by push_cast; linarith
+  exact_mod_cast h'
+
+theorem S_five (n : ℕ) : 3 * (S 5 n : ℚ) = (T n : ℚ) ^ 2 * (4 * T n - 1) := by
+  have h3 := T_pow_eq_sum 3 n (by norm_num)
+  norm_num [show (range 4).filter (fun m => Odd (3 - m)) = {0, 2} by decide] at h3
+  have h2 : (S 3 n : ℚ) = (T n : ℚ) ^ 2 := by exact_mod_cast S_three n
+  rw [h2] at h3
+  linarith
+
+theorem S_seven (n : ℕ) :
+    3 * (S 7 n : ℚ) = (T n : ℚ) ^ 2 * (6 * (T n : ℚ) ^ 2 - 4 * T n + 1) := by
+  have h4 := T_pow_eq_sum 4 n (by norm_num)
+  norm_num [show (range 5).filter (fun m => Odd (4 - m)) = {1, 3} by decide] at h4
+  have h5 := S_five n
+  linarith
+
+/-! ## Lagrange's formula is the only one of its kind -/
+
+/-- Levi ben Gershon (1343): `2^p + 1 = 3^q` with `p, q ≥ 1` only for `(1, 1)` and `(3, 2)`. -/
+theorem gersonides (p q : ℕ) (hp : 1 ≤ p) (hq : 1 ≤ q) (h : 2 ^ p + 1 = 3 ^ q) :
+    (p = 1 ∧ q = 1) ∨ (p = 3 ∧ q = 2) := by
+  rcases Nat.lt_or_ge p 2 with hp2 | hp2
+  · -- p = 1: 3 = 3^q
+    have hp1 : p = 1 := by omega
+    subst hp1
+    left
+    refine ⟨rfl, ?_⟩
+    by_contra hne
+    have : 3 ^ 2 ≤ 3 ^ q := Nat.pow_le_pow_right (by norm_num) (by omega)
+    omega
+  · right
+    have h4 : 4 ∣ 2 ^ p := by
+      have : 2 ^ 2 ∣ 2 ^ p := pow_dvd_pow 2 hp2
+      simpa using this
+    rcases Nat.even_or_odd' q with ⟨r, rfl | rfl⟩
+    · -- q = 2r: 2^p = (3^r − 1)(3^r + 1)
+      have hr : 1 ≤ r := by omega
+      have h3 : 3 ≤ 3 ^ r := by
+        calc 3 = 3 ^ 1 := by norm_num
+          _ ≤ 3 ^ r := Nat.pow_le_pow_right (by norm_num) hr
+      have hfac : 2 ^ p = (3 ^ r - 1) * (3 ^ r + 1) := by
+        have : 3 ^ (2 * r) = 3 ^ r * 3 ^ r := by rw [two_mul, pow_add]
+        zify [Nat.one_le_pow r 3 (by norm_num)] at h this ⊢
+        nlinarith
+      obtain ⟨i, hi, hi'⟩ := (Nat.dvd_prime_pow Nat.prime_two).1 (Dvd.intro _ hfac.symm)
+      obtain ⟨j, hj, hj'⟩ := (Nat.dvd_prime_pow Nat.prime_two).1 (Dvd.intro_left _ hfac.symm)
+      have hdiff : 2 ^ j = 2 ^ i + 2 := by omega
+      -- i = 1, j = 2
+      have hi1 : i = 1 := by
+        rcases Nat.lt_or_ge i 2 with hi2 | hi2
+        · interval_cases i
+          · -- 2^j = 3
+            have : 2 ^ j % 2 = 1 := by omega
+            rcases j with _ | j
+            · simp at hdiff
+            · rw [pow_succ] at this; omega
+          · rfl
+        · exfalso
+          have a : 4 ∣ 2 ^ i := by
+            have : 2 ^ 2 ∣ 2 ^ i := pow_dvd_pow 2 hi2
+            simpa using this
+          have hj2 : 2 ≤ j := by
+            by_contra hj2
+            interval_cases j <;> [omega; (have : 4 ≤ 2 ^ i := Nat.le_of_dvd (by positivity) a; omega)]
+          have b : 4 ∣ 2 ^ j := by
+            have : 2 ^ 2 ∣ 2 ^ j := pow_dvd_pow 2 hj2
+            simpa using this
+          omega
+      subst hi1
+      have hr1 : 3 ^ r = 3 := by omega
+      have hr1' : r = 1 := by
+        by_contra hne
+        have : 3 ^ 2 ≤ 3 ^ r := Nat.pow_le_pow_right (by norm_num) (by omega)
+        omega
+      subst hr1'
+      refine ⟨?_, rfl⟩
+      have h8 : 2 ^ p = 2 ^ 3 := by norm_num at h; omega
+      exact Nat.pow_right_injective le_rfl h8
+    · -- q = 2r + 1: 3^q ≡ 3 mod 4, but 2^p + 1 ≡ 1
+      exfalso
+      have : 3 ^ (2 * r + 1) % 4 = 3 := by
+        rw [pow_succ, pow_mul, Nat.mul_mod, Nat.pow_mod]
+        norm_num
+      omega
+
+/-- If `S_p = T^q` for every `n`, with `p, q ≥ 1`, then `(p, q) = (1, 1)` or `(3, 2)`:
+`n = 2` gives `1 + 2^p = 3^q`. Both cases occur (`S_one`, `S_three`). -/
+theorem lagrange_unique (p q : ℕ) (hp : 1 ≤ p) (hq : 1 ≤ q) (h : ∀ n, S p n = T n ^ q) :
+    (p = 1 ∧ q = 1) ∨ (p = 3 ∧ q = 2) := by
+  have h2 := h 2
+  have hS : S p 2 = 2 ^ p + 1 := by
+    simp [S, sum_range_succ, zero_pow (by omega : p ≠ 0)]
+    ring
+  have hT : T 2 = 3 := by decide
+  rw [hS, hT] at h2
+  exact gersonides p q hp hq h2
+
+end Germain.Naf4073

@@ -3,6 +3,7 @@ import Germain.Fr9115Elasticity
 import Germain.Fr9115Curvature
 import Germain.Fr9118
 import Germain.Naf4073
+import Germain.Naf4073General
 import Germain.Exercises
 import Germain.Exercises.Viete
 import Germain.Exercises.Mersenne

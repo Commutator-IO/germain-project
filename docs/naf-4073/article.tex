@@ -17,6 +17,9 @@
 \usepackage[french]{babel}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\setlength{\emergencystretch}{2em}
 \usepackage[margin=2.8cm]{geometry}
 \usepackage[hidelinks]{hyperref}
 
@@ -40,23 +43,25 @@ d'une autre main que celle de la lettre énonce : «~le triangulaire d'un
 quarré est la somme des quarrés des deux Triangulaires consécutifs~», et
 l'écrit
 $\big(\frac{n^2-n}{2}\big)^2+\big(\frac{n^2+n}{2}\big)^2=\frac{n^4+n^2}{2}$.
-C'est la seule ligne de mathématiques du volume ; ni les catalogues ni les
-études que j'ai consultées n'en font mention. Je propose de l'attribuer à
-Germain. Un manuscrit qui lui est attribué, daté «~vers 1797~» par le
-libraire qui l'a vendu et reproduit par Alexanderson \cite{alexanderson},
-donne la même identité, dans la même notation, après les mots «~J'ai aussi
-remarqué que~», et l'écrit en symboles exactement comme la phrase de
-NAF 4073 la dit en mots. L'identité n'est pas nouvelle ; la note l'est.
+C'est la seule ligne de mathématiques du volume, et ni les catalogues ni
+les études que j'ai consultées n'en parlent. Je propose d'y voir la main de
+Germain : le manuscrit «~vers 1797~» que lui attribue le libraire Quaritch,
+reproduit par Alexanderson \cite{alexanderson}, donne la même identité dans
+la même notation, après «~J'ai aussi remarqué que~», et l'écrit en symboles
+comme la phrase de NAF 4073 la dit en mots. L'identité était connue ; la
+note, non.
 \end{abstract}
 
-Au verso d'une enveloppe adressée à Sophie Germain en 1814, une main
-rapide a écrit une formule et la phrase qui la lit : le triangulaire d'un
-carré est la somme des carrés de deux triangulaires consécutifs. Aucun
-catalogue ni aucune étude ne signale cette note. Je la décris
-(section~\ref{sec:feuillet}), j'en donne le sens et la preuve
-(section~\ref{sec:identite}), puis j'expose pourquoi je la crois de Germain
-et ce que cela permet de dire de sa date (section~\ref{sec:main}). Ce qui
-reste ouvert est rassemblé à la fin.
+Cette note est apparue pendant la transcription de NAF 4073, vue par vue : au
+verso d'une enveloppe adressée à Sophie Germain en 1814, une main rapide a
+écrit une formule et la phrase qui la lit. Le volume ne contient pas d'autre
+mathématique, et personne, à ma connaissance, ne l'a signalée. On verra
+d'abord le feuillet, puis ce que dit la formule ; la question de la main
+vient ensuite, parce qu'elle dépend d'un autre manuscrit. Une seconde
+partie démontre des énoncés plus généraux, qui prolongent le calcul de
+Germain.
+
+\part{La note}
 
 \section{Le feuillet}\label{sec:feuillet}
 
@@ -149,7 +154,7 @@ triangulaire, la somme des entiers de $1$ à $k$, ainsi nommé parce que
 $T_k$ points se rangent en triangle de côté $k$ : $T_1 = 1$, $T_2 = 3$,
 $T_3 = 6$, $T_4 = 10$\dots{} «~Le triangulaire d'un carré~» est
 $T_{n^2}$, le triangulaire d'indice $n^2$ ; «~le carré d'un triangulaire~»
-est $(T_k)^2$.
+est $T_k^2$, c'est-à-dire $(T_k)^2$, à ne pas confondre avec $T_{k^2}$.
 
 La formule $1 + 2 + \cdots + k = k(k+1)/2$ est celle de l'anecdote de Gauss
 écolier : prié de faire la somme des entiers de $1$ à $100$, il l'aurait
@@ -160,11 +165,35 @@ $2T_k = k(k+1)$. L'histoire a enflé avec les récits ; le plus ancien, celui
 de Sartorius von Waltershausen en 1856, ne donne ni la suite ni le nombre
 $100$ \cite{hayes}. La formule, elle, est bien plus vieille que Gauss.
 
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.55]
+  \foreach \i in {1,...,5} {
+    \foreach \j in {1,...,\i} {
+      \fill[blue!35] (\j-1, 5-\i) rectangle ++(1,1);
+    }
+    \pgfmathtruncatemacro{\r}{\i+1}
+    \foreach \j in {\r,...,6} {
+      \fill[orange!35] (\j-1, 5-\i) rectangle ++(1,1);
+    }
+  }
+  \draw[step=1, gray!70] (0,0) grid (6,5);
+  \draw[thick] (0,0) rectangle (6,5);
+  \node[left] at (0,2.5) {$k = 5$};
+  \node[below] at (3,0) {$k + 1 = 6$};
+\end{tikzpicture}
+\caption{$2T_k = k(k+1)$ : deux escaliers de $T_5 = 15$ cases, l'un
+retourné, remplissent un rectangle $5 \times 6$. Chaque ligne compte
+$k + 1$ cases, comme chaque paire $1 + 100$, $2 + 99$\dots{} de Gauss
+vaut $101$.}
+\label{fig:gauss}
+\end{figure}
+
 Sur le feuillet, les deux nombres élevés au carré,
 $(n^2-n)/2$ et $(n^2+n)/2$, sont $T_{n-1}$ et $T_n$, et le second membre,
 $(n^4+n^2)/2 = n^2(n^2+1)/2$, est $T_{n^2}$. La note dit donc
 \begin{equation}\label{eq:note}
-(T_{n-1})^{2} + (T_n)^{2} = T_{n^2}.
+T_{n-1}^{2} + T_n^{2} = T_{n^2}.
 \end{equation}
 Pour $n = 2$, $1^2 + 3^2 = 10 = T_4$ ; pour $n = 3$, $3^2 + 6^2 = 45 = T_9$ ;
 pour $n = 4$, $6^2 + 10^2 = 136 = T_{16}$. La suite $1, 10, 45, 136,
@@ -176,7 +205,7 @@ quels triangulaires qui se suivent, ce sont les deux dont le carré $n^2$ est
 la somme, puisque $T_{n-1} + T_n = n^2$.
 
 \begin{proposition}\label{prop:note}
-Pour tout entier $n \geq 1$, $(T_{n-1})^2 + (T_n)^2 = T_{n^2}$.
+Pour tout entier $n \geq 1$, $T_{n-1}^2 + T_n^2 = T_{n^2}$.
 \end{proposition}
 
 \begin{proof}
@@ -189,14 +218,14 @@ Je suis le calcul du manuscrit reproduit par Alexanderson
 \]
 Dans la somme, les termes $\pm 2n^3$ se détruisent :
 \[
-(T_n)^2 + (T_{n-1})^2 = \frac{2n^4 + 2n^2}{4} = \frac{n^4 + n^2}{2}
+T_n^2 + T_{n-1}^2 = \frac{2n^4 + 2n^2}{4} = \frac{n^4 + n^2}{2}
 = \frac{n^2(n^2+1)}{2} = T_{n^2}.
 \]
 \end{proof}
 
 Le même développement donne les deux résultats du manuscrit. Dans la
 différence, ce sont les termes $n^4$ et $n^2$ qui se détruisent, et il reste
-$(T_n)^2 - (T_{n-1})^2 = 4n^3/4 = n^3$, d'où la proposition de Lagrange
+$T_n^2 - T_{n-1}^2 = 4n^3/4 = n^3$, d'où la proposition de Lagrange
 en ajoutant ces égalités de $1$ à $n$ ; dans la somme, ce sont les cubes qui
 s'en vont, et il reste $T_{n^2}$. On peut aussi raisonner sans développer :
 avec $a = T_{n-1}$ et $b = T_n$, on a $a + b = n^2$ et $b - a = n$, donc
@@ -205,43 +234,19 @@ phrase du feuillet suit plutôt cet ordre-là : un carré, puis les deux
 triangulaires dont il est la somme et dont sa racine est la différence.
 Rien de tout cela ne dépasse ce qu'on savait faire en 1797.
 
-L'identité est aussi le cas $m = n$ d'une formule plus générale, facile à
-vérifier et dont je ne connais pas l'origine :
-\[
-T_{mn} = T_m\,T_n + T_{m-1}\,T_{n-1},
-\]
-car $4\,(T_m T_n + T_{m-1} T_{n-1}) = mn\big[(m+1)(n+1) + (m-1)(n-1)\big]
-= mn\,(2mn + 2) = 4\,T_{mn}$. Les termes croisés $\pm(m+n)$ s'y détruisent,
-comme les $\pm 2n^3$ dans le calcul de Germain.
-
-Si l'on joint \eqref{eq:note} à l'identité de Nicomaque,
-$1^3 + \cdots + n^3 = (T_n)^2$, on a $(T_{n-1})^2 = (T_n)^2 - n^3$, et une
-forme que le feuillet ne donne pas :
-
-\begin{proposition}
-Pour tout $n \geq 1$, $T_{n^2} = 2\,(T_n)^2 - n^3$ : le triangulaire d'un
-carré vaut deux fois la somme des $n$ premiers cubes, moins le dernier. Pour
-$n = 3$ : $T_9 = 2 \cdot 36 - 27 = 45$.
-\end{proposition}
 
 \begin{remarque}[La ligne $1 + 64 \quad 189$]
-La ligne n'instancie pas l'identité : $1 + 64 = 65$, et $189$ n'est ni
-triangulaire ($T_{18} = 171$, $T_{19} = 190$) ni carré. Mais $1 = 1^3$,
-$64 = 4^3$, et
+Elle n'instancie pas l'identité : $1 + 64 = 65$, et $189$ n'est ni
+triangulaire ni carré. Pourtant $1 = 1^3$, $64 = 4^3$, et
 \[
-189 = 4^3 + 5^3 = T_{25} - T_{16} = T_{5^2} - T_{4^2}.
+189 = 4^3 + 5^3 = T_{25} - T_{16} = T_{5^2} - T_{4^2}
 \]
-C'est le pas de la suite $T_{n^2}$ entre $n = 4$ et $n = 5$, et ce pas vaut
-toujours $n^3 + (n-1)^3$ : par \eqref{eq:note},
-$T_{n^2} - T_{(n-1)^2} = (T_n)^2 - (T_{n-2})^2$, et chaque
-$(T_k)^2 - (T_{k-1})^2$ vaut $k^3$ (c'est la différence de Germain,
-figure~\ref{fig:quaritch}). C'est aussi la somme des $2n-1$ entiers de
-$(n-1)^2 + 1$ à $n^2$, dont la moyenne est $n^2 - n + 1$ : pour $n = 5$,
-$17 + 18 + \cdots + 25 = 9 \times 21 = 189$. Plus généralement, pour
-$m < n$, $(T_n)^2 - (T_m)^2 = (m+1)^3 + \cdots + n^3$. La ligne serait alors un essai qui relie la note
-aux cubes de la question de Lagrange. Ce n'est qu'une hypothèse : le feuillet
-ne pose pas ce calcul, et un nombre lu après coup se prête toujours à
-quelque propriété.
+est l'écart entre deux termes consécutifs de la suite des $T_{n^2}$, celle
+de la note ; cet écart est toujours une somme de deux cubes consécutifs
+(proposition~\ref{prop:pas}). La ligne pourrait donc être un essai qui
+ramène la note aux cubes de la question de Lagrange. Je m'en méfie un peu :
+le feuillet ne pose pas ce calcul, et un nombre lu après coup se prête
+toujours à quelque propriété.
 \end{remarque}
 
 \section{La main et la date}\label{sec:main}
@@ -259,9 +264,9 @@ naturels pris depuis 1 jusqu'à $n$ inclusivement~». Avec $T_n = 1 + 2 +
 $(1 + 2 + \cdots + n)^2 = 1^3 + 2^3 + \cdots + n^3$. La preuve tient dans
 une différence :
 $\big(\frac{n^2+n}{2}\big)^2 - \big(\frac{n^2-n}{2}\big)^2 = n^3$,
-c'est-à-dire $(T_n)^2 - (T_{n-1})^2 = n^3$ ; en ajoutant ces égalités de
+c'est-à-dire $T_n^2 - T_{n-1}^2 = n^3$ ; en ajoutant ces égalités de
 $1$ à $n$, les termes se compensent deux à deux et il reste
-$(T_n)^2 = 1^3 + \cdots + n^3$. Sous un trait vient la somme des deux mêmes
+$T_n^2 = 1^3 + \cdots + n^3$. Sous un trait vient la somme des deux mêmes
 carrés : «~J'ai aussi remarqué que~»
 $\big(\frac{n^2+n}{2}\big)^2 + \big(\frac{n^2-n}{2}\big)^2 = \frac{n^4+n^2}{2}$,
 «~donc~» $\Delta^a + \Delta^{a-1} = \square^a$ et
@@ -271,7 +276,7 @@ $\big(\frac{n^2+n}{2}\big)^2 + \big(\frac{n^2-n}{2}\big)^2 = \frac{n^4+n^2}{2}$,
 \cite[p.~330]{alexanderson} (figure~\ref{fig:quaritch}). Germain note $\Delta^a$ le triangulaire de $a$,
 notre $T_a$, et $\square^a$ le carré de $a$ ; l'exposant est un indice, non
 une puissance. La première ligne dit donc $T_a + T_{a-1} = a^2$, et la
-seconde $(T_a)^2 + (T_{a-1})^2 = T_{a^2}$, qui est \eqref{eq:note} avec $a$
+seconde $T_a^2 + T_{a-1}^2 = T_{a^2}$, qui est \eqref{eq:note} avec $a$
 pour $n$. Lue à voix haute, cette seconde ligne est la phrase de NAF 4073 :
 le carré du triangulaire de $a$ et celui du triangulaire de $a-1$ font le
 triangulaire du carré de $a$. Alexanderson ne parle pas de NAF 4073.
@@ -287,15 +292,14 @@ somme, puis les mêmes égalités écrites avec $\Delta$ et $\square$.}
 \label{fig:quaritch}
 \end{figure}
 
-Trois sortes d'indices portent l'attribution, et ils n'ont pas le même
-poids. Le plus fort est textuel. Les deux témoins écrivent la formule de la
-même façon : mêmes termes $(n^2 \pm n)/2$ entre parenthèses, l'exposant hors
-de la parenthèse, même second membre $(n^4+n^2)/2$, et non $n^2(n^2+1)/2$,
-qui viendrait aussi naturellement ; et la phrase de NAF 4073 dit en mots ce
-que le manuscrit Quaritch dit en symboles. Le deuxième est matériel : la
-note est écrite sur une lettre adressée à Germain, chez elle, et conservée
-dans ses papiers, passés ensuite par Libri. Le troisième, le plus faible,
-est paléographique. Autant que j'en puisse juger sur les reproductions,
+L'argument qui pèse le plus est textuel. Les deux témoins écrivent la
+formule de la même façon : mêmes termes $(n^2 \pm n)/2$ entre parenthèses,
+l'exposant hors de la parenthèse, même second membre $(n^4+n^2)/2$ là où
+$n^2(n^2+1)/2$ viendrait aussi naturellement ; et la phrase de NAF 4073 dit
+en mots ce que le manuscrit Quaritch dit en symboles. S'y ajoute le support,
+une lettre adressée à Germain, chez elle, restée dans ses papiers avant de
+passer par Libri. L'écriture compte moins, faute d'expertise. Autant que j'en
+puisse juger sur les reproductions,
 l'écriture est compatible avec celle de la figure~2 d'Alexanderson et avec
 la lettre de Germain à Libri du 18~avril 1831 reliée dans le même volume
 (vues~27 à 29) : même inclinaison, même \emph{q} de «~quarré~», même
@@ -314,7 +318,7 @@ connaissait. Ce que le feuillet ajoute tient au manuscrit : un volume que
 tous les catalogues décrivent comme une correspondance contient une ligne de
 théorie des nombres, très probablement de sa main, que personne n'avait relevée.
 
-\section*{Ce qui reste ouvert}
+\section*{Questions ouvertes}
 
 Une expertise paléographique de la note, à partir du fac-similé de Gallica
 et de la figure~2 d'Alexanderson, confirmerait ou non l'attribution. Le fonds
@@ -327,6 +331,187 @@ hypothèse, et un
 détail de lecture : sur le fac-similé, le «~s~» final de «~Triangulaires~»
 est douteux.
 
+\part{Énoncés généraux}
+
+\section{Le calcul de Germain prolongé}\label{sec:prolongements}
+
+Le manuscrit Quaritch tient en deux gestes : développer
+$\big(\frac{n^2 \pm n}{2}\big)^2$, puis comparer la différence et la somme des
+deux carrés. Cette partie mène ces gestes plus loin que Germain. Rien de ce
+qui suit n'est sur les feuillets. Ce sont des identités élémentaires, que je
+crois connues sans pouvoir leur donner d'auteur, sauf la dernière ; je les
+démontre ici, et les ai vérifiées numériquement. Partout $n \geq 1$ et
+$T_0 = 0$.
+
+\begin{proposition}\label{prop:nicomaque}
+$T_{n^2} = 2\,T_n^2 - n^3$ : le triangulaire d'un carré vaut deux fois la
+somme des $n$ premiers cubes, moins le dernier.
+\end{proposition}
+
+\begin{proof}
+La différence de Germain donne $T_{n-1}^2 = T_n^2 - n^3$ ; on le porte dans
+\eqref{eq:note}. Pour $n = 3$ : $T_9 = 2 \cdot 36 - 27 = 45$.
+\end{proof}
+
+\begin{proposition}\label{prop:produit}
+Pour tous $m, n \geq 1$, $T_{mn} = T_m\,T_n + T_{m-1}\,T_{n-1}$.
+\end{proposition}
+
+\begin{proof}
+$4\,(T_m T_n + T_{m-1} T_{n-1}) = mn\big[(m+1)(n+1) + (m-1)(n-1)\big]
+= mn\,(2mn + 2) = 4\,T_{mn}$. Les termes croisés $\pm(m+n)$ se détruisent,
+comme les $\pm 2n^3$ chez Germain.
+\end{proof}
+
+Pour $m = n$, c'est \eqref{eq:note}. La proposition donne aussi le
+triangulaire de toute puissance de $n$.
+
+\begin{proposition}\label{prop:puissance-n}
+Pour $k \geq 2$ et $0 < j < k$,
+\[
+T_{n^k} = T_{n^j}\,T_{n^{k-j}} + T_{n^j - 1}\,T_{n^{k-j} - 1}.
+\]
+Si $k = 2j$ est pair, $T_{n^{2j}} = T_{n^j}^2 + T_{n^j - 1}^2$ : le
+triangulaire d'une puissance paire est la somme des carrés de deux
+triangulaires consécutifs. Enfin
+\[
+T_{n^k} - T_{(n-1)^k}
+= \frac{\big(n^k - (n-1)^k\big)\big(n^k + (n-1)^k + 1\big)}{2}.
+\]
+\end{proposition}
+
+\begin{proof}
+La première égalité est la proposition~\ref{prop:produit} avec $m = n^j$ et
+$n^{k-j}$ ; la deuxième en est le cas $j = k - j$, ou \eqref{eq:note}
+appliquée à $n^j$. La troisième vient de $T_a - T_b = (a-b)(a+b+1)/2$, avec
+$a = n^k$ et $b = (n-1)^k$.
+\end{proof}
+
+Ainsi $T_{n^3} = T_n T_{n^2} + T_{n-1} T_{n^2-1}$ et
+$T_{n^4} = T_{n^2}^2 + T_{n^2-1}^2$. Pour $k = 2$, la dernière formule
+redonne $(2n-1)(n^2-n+1) = n^3 + (n-1)^3$, le pas de la
+proposition~\ref{prop:pas}. Pour un exposant impair, en revanche, $T_{n^k}$
+n'est pas en général une somme de deux carrés de triangulaires : pour
+$T_{n^3}$ et $2 \leq n \leq 6$, on n'en trouve que lorsque $n^3$ est
+lui-même un carré ($T_{64} = T_7^2 + T_8^2$). La note dépend vraiment du
+carré.
+
+\begin{proposition}\label{prop:pas}
+Pour $0 \leq a < b$,
+\[
+T_{b^2} - T_{a^2} = a^3 + 2(a+1)^3 + \cdots + 2(b-1)^3 + b^3
+= \frac{(b^2 - a^2)(a^2 + b^2 + 1)}{2}.
+\]
+En particulier $T_{(a+1)^2} - T_{a^2} = a^3 + (a+1)^3 = (2a+1)(a^2+a+1)$.
+\end{proposition}
+
+\begin{proof}
+Par \eqref{eq:note} écrite en $k$ et en $k-1$,
+$T_{k^2} - T_{(k-1)^2} = T_k^2 - T_{k-2}^2$, et deux différences de Germain
+donnent $k^3 + (k-1)^3$. On ajoute ces égalités de $k = a+1$ à $b$ : les
+$T_{k^2}$ intermédiaires se détruisent, et chaque cube intérieur apparaît
+deux fois, une fois comme $k^3$, une fois comme $(k-1)^3$. La seconde forme
+vient de ce que $T_{b^2} - T_{a^2}$ est la somme des entiers de $a^2 + 1$ à
+$b^2$, au nombre de $b^2 - a^2$ et de moyenne $(a^2 + b^2 + 1)/2$.
+\end{proof}
+
+Pour $a = 4$ : $64 + 125 = 17 + 18 + \cdots + 25 = 189$, le nombre du
+feuillet.
+
+\begin{proposition}\label{prop:puissances}
+Pour tout $k \geq 1$,
+\[
+T_n^k \pm T_{n-1}^k = \Big(\frac{n}{2}\Big)^{k}\big[(n+1)^k \pm (n-1)^k\big].
+\]
+\end{proposition}
+
+\begin{proof}
+$T_n = \frac{n}{2}(n+1)$ et $T_{n-1} = \frac{n}{2}(n-1)$.
+\end{proof}
+
+Les deux lignes du manuscrit Quaritch sont les premiers cas de la somme :
+$k = 1$ donne $T_n + T_{n-1} = n^2$, c'est-à-dire
+$\Delta^a + \Delta^{a-1} = \square^a$, et $k = 2$ donne
+$T_n^2 + T_{n-1}^2 = \frac{n^2}{4}(2n^2 + 2) = T_{n^2}$, la note. En les
+ajoutant, on obtient la dernière ligne du manuscrit,
+$T_n + T_{n-1} + T_{n^2} = n^2 + T_n^2 + T_{n-1}^2$ : trois triangulaires
+font trois carrés. Pour la différence, $k = 2$ redonne $n^3$, la
+différence de Germain ; et pour $k = 4$, les deux lignes du manuscrit se
+multiplient,
+$T_n^4 - T_{n-1}^4 = (T_n^2 - T_{n-1}^2)(T_n^2 + T_{n-1}^2) = n^3\,T_{n^2}$.
+
+Germain ajoute ensuite ses différences de $1$ à $n$ pour obtenir la formule
+de Lagrange. Le même geste, à l'exposant $k$, donne toutes les sommes de
+puissances impaires. Notons $S_p = 1^p + 2^p + \cdots + n^p$.
+
+\begin{proposition}\label{prop:sommes}
+Pour tout $k \geq 1$,
+\[
+2^{k-1}\,T_n^k = \sum_{\substack{j \leq k\\ j \text{ impair}}} \binom{k}{j}\,S_{2k-j}.
+\]
+\end{proposition}
+
+\begin{proof}
+Dans la proposition~\ref{prop:puissances}, le crochet de la différence vaut
+$(m+1)^k - (m-1)^k = 2\sum_{j \text{ impair}} \binom{k}{j} m^{k-j}$, donc
+$2^{k-1}\big(T_m^k - T_{m-1}^k\big) = \sum_{j \text{ impair}} \binom{k}{j}
+m^{2k-j}$. On ajoute ces égalités de $m = 1$ à $n$ : à gauche les termes se
+détruisent deux à deux et il reste $2^{k-1} T_n^k$ ; à droite viennent les
+sommes $S_{2k-j}$.
+\end{proof}
+
+Les premières lignes :
+\[
+\begin{array}{c|l}
+k & \\ \hline
+1 & T_n = S_1 \\
+2 & 2\,T_n^2 = 2\,S_3 \\
+3 & 4\,T_n^3 = 3\,S_5 + S_3 \\
+4 & 8\,T_n^4 = 4\,S_7 + 4\,S_5 \\
+5 & 16\,T_n^5 = 5\,S_9 + 10\,S_7 + S_5
+\end{array}
+\]
+La ligne $k = 2$ est la formule de Lagrange. Le système est triangulaire :
+la ligne $k$ introduit une seule somme nouvelle, $S_{2k-1}$, avec le
+coefficient $k \neq 0$. On le résout de proche en proche :
+\begin{gather*}
+S_3 = T_n^2, \qquad
+S_5 = \frac{T_n^2(4T_n - 1)}{3}, \\
+S_7 = \frac{T_n^2(6T_n^2 - 4T_n + 1)}{3}, \qquad
+S_9 = \frac{T_n^2(16T_n^3 - 20T_n^2 + 12T_n - 3)}{5}.
+\end{gather*}
+Toute somme de puissances impaires est ainsi un polynôme en $T_n$, divisible
+par $T_n^2$ dès $p = 3$ : c'est le théorème de Faulhaber (1631), dont Knuth
+a reconstitué la méthode \cite{knuth}. Les lignes $k = 3$ et $k = 4$ se
+lisent aussi $S_3 + 3S_5 = 4S_1^3$ et $S_5 + S_7 = 2S_3^2$.
+
+Parmi tous ces polynômes, la formule de Lagrange est la seule où la somme
+soit une puissance pure de $T_n$, en dehors du cas trivial $S_1 = T_n$.
+
+\begin{proposition}\label{prop:lagrange}
+Si $S_p = T_n^q$ pour tout $n$, avec $p, q \geq 1$, alors $(p, q) = (1, 1)$
+ou $(p, q) = (3, 2)$.
+\end{proposition}
+
+\begin{proof}
+Il suffit de $n = 2$ : $S_p = 1 + 2^p$ et $T_2^q = 3^q$, donc
+$2^p + 1 = 3^q$. Si $p = 1$, alors $q = 1$. Si $p \geq 2$, alors
+$3^q \equiv 1 \pmod 4$, donc $q = 2r$ est pair, et
+$2^p = (3^r - 1)(3^r + 1)$. Les deux facteurs sont des puissances de $2$ qui
+diffèrent de $2$ : ce sont $2$ et $4$, d'où $r = 1$, $q = 2$ et $p = 3$.
+C'est le théorème de Levi ben Gershon (1343) sur $3^q - 2^p = 1$.
+\end{proof}
+
+Une autre preuve compare les coefficients dominants : $S_p$ est un
+polynôme en $n$ de degré $p + 1$ et de coefficient dominant $1/(p+1)$,
+$T_n^q$ un polynôme de degré $2q$ et de coefficient dominant $1/2^q$, et
+$p + 1 = 2q = 2^q$ ne laisse que $q = 1$ ou $2$.
+
+Les sommes de puissances paires échappent au système : elles ne sont pas des
+polynômes en $T_n$, mais en sont un multiple par
+$2n + 1 = \sqrt{8T_n + 1}$, par exemple $S_2 = T_n(2n+1)/3$ et
+$S_4 = T_n(2n+1)(6T_n - 1)/15$.
+
 \section*{Sources et vérification}
 
 La transcription et la lecture modernisée du volume sont publiées sous
@@ -336,18 +521,18 @@ vue~42, dans \texttt{batch-03.fr.tex}. La transcription a été faite avec un
 modèle de langue lisant les images de Gallica ; les lectures citées ici
 doivent être contrôlées sur le fac-similé.
 
-Les deux propositions et les constats arithmétiques de la remarque sont
-démontrés en Lean~4 avec mathlib, dans le fichier
-\href{https://github.com/Commutator-IO/germain-project/blob/main/lean/Germain/Naf4073.lean}{\texttt{lean/Germain/Naf4073.lean}}
-du même dépôt : la formule du feuillet dans tout corps où $2 \neq 0$,
-l'identité \eqref{eq:note} dans les entiers, la
-conséquence par Nicomaque, le pas $T_{(n+1)^2} - T_{n^2} = n^3 + (n+1)^3$
-et les constats sur $189$. L'intégration continue le
-compile en traitant tout avertissement comme une erreur et refuse tout axiome
-autre que les trois axiomes standard de Lean. La forme démontrée,
-$T_n^2 + T_{n+1}^2 = T_{(n+1)^2}$ pour tout $n$, évite la soustraction
-tronquée des entiers naturels. Aucune preuve ne dit rien, évidemment, de la
-main ni de la date.
+Tous les énoncés des deux parties sont démontrés en Lean~4 avec mathlib,
+dans les fichiers \texttt{Naf4073.lean} (première partie, et la
+proposition~\ref{prop:nicomaque}) et \texttt{Naf4073General.lean} (le reste
+de la seconde partie) du répertoire \texttt{lean/Germain} du dépôt, ainsi
+que dans le dépôt \url{https://github.com/Commutator-IO/GermainArchivesProofs}.
+La formule du feuillet y est établie dans tout corps où $2 \neq 0$, et la
+proposition~\ref{prop:note} sous la forme $T_n^2 + T_{n+1}^2 = T_{(n+1)^2}$
+pour tout $n$, qui évite la soustraction tronquée des entiers naturels ; la
+proposition~\ref{prop:sommes} y est indexée par $m = k - j$. Le dépôt est
+compilé en traitant tout avertissement comme une erreur, et aucune preuve
+n'utilise d'axiome autre que les trois axiomes standard de Lean. Les preuves ne disent évidemment
+rien de la main ni de la date.
 
 \section*{Remerciements}
 
@@ -395,6 +580,11 @@ n\textsuperscript{o}~3 (2006), p.~200.
 C.~Henry, «~Les manuscrits de Sophie Germain et leur récent éditeur.
 Documents nouveaux~», \emph{Revue philosophique de la France et de
 l'étranger} 8 (1879), p.~619--641.
+
+\bibitem{knuth}
+D.~E.~Knuth, «~Johann Faulhaber and sums of powers~», \emph{Mathematics of
+Computation} 61, n\textsuperscript{o}~203 (1993), p.~277--294.
+\href{https://doi.org/10.1090/S0025-5718-1993-1197512-7}{doi:10.1090/S0025-5718-1993-1197512-7}.
 
 \bibitem{laubenbacher-pengelley}
 R.~Laubenbacher et D.~Pengelley, «~“Voici ce que j'ai trouvé:” Sophie
