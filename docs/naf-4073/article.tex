@@ -149,7 +149,7 @@ payant, n'a pas été consulté.
 Notons $T_k = 1 + 2 + \cdots + k = k(k+1)/2$ le $k$-ième nombre
 triangulaire, la somme des entiers de $1$ à $k$, ainsi nommé parce que
 $T_k$ points se rangent en triangle de côté $k$ : $T_1 = 1$, $T_2 = 3$,
-$T_3 = 6$, $T_4 = 10$\dots{} «~Le triangulaire d'un carré~» est
+$T_3 = 6$, $T_4 = 10$\dots{} \cite[A000217]{oeis} «~Le triangulaire d'un carré~» est
 $T_{n^2}$, le triangulaire d'indice $n^2$ ; «~le carré d'un triangulaire~»
 est $T_k^2$, c'est-à-dire $(T_k)^2$, à ne pas confondre avec $T_{k^2}$.
 
@@ -196,7 +196,7 @@ Pour $n = 2$, $1^2 + 3^2 = 10 = T_4$ ; pour $n = 3$, $3^2 + 6^2 = 45 = T_9$ ;
 pour $n = 4$, $6^2 + 10^2 = 136 = T_{16}$. La suite $1, 10, 45, 136,
 325, \dots$ des $T_{n^2}$ est la suite A037270 de l'OEIS, où l'identité
 figure parmi les formules depuis 2013, sans référence historique
-\cite{oeis}. La phrase française dit cela, et
+\cite[A037270]{oeis}. La phrase française dit cela, et
 un peu plus : «~les deux Triangulaires consécutifs~» ne sont pas n'importe
 quels triangulaires qui se suivent, ce sont les deux dont le carré $n^2$ est
 la somme, puisque $T_{n-1} + T_n = n^2$.
@@ -308,7 +308,8 @@ triangulaire ni carré. Pourtant $1 = 1^3$, $64 = 4^3$, et
 189 = 4^3 + 5^3 = T_{25} - T_{16} = T_{5^2} - T_{4^2}
 \]
 est l'écart entre deux termes consécutifs de la suite des $T_{n^2}$, celle
-de la note ; cet écart est toujours une somme de deux cubes consécutifs
+de la note ; cet écart est toujours une somme de deux cubes consécutifs, un «~nombre
+cubique centré~» \cite[A005898]{oeis}
 (proposition~\ref{prop:pas}). La ligne pourrait donc être un essai qui
 ramène la note aux cubes de la question de Lagrange.
 \end{remarque}
@@ -325,7 +326,8 @@ par «~La Grange m'ayant proposé de démontrer / Que le quarré d'un
 triangulaire quelconque est égal à la somme des cubes de tous les nombres
 naturels pris depuis 1 jusqu'à $n$ inclusivement~». Avec $T_n = 1 + 2 +
 \cdots + n$, c'est l'identité de Nicomaque,
-$(1 + 2 + \cdots + n)^2 = 1^3 + 2^3 + \cdots + n^3$. La preuve tient dans
+$(1 + 2 + \cdots + n)^2 = 1^3 + 2^3 + \cdots + n^3$
+\cite[A000537]{oeis}. La preuve tient dans
 une différence :
 $\big(\frac{n^2+n}{2}\big)^2 - \big(\frac{n^2-n}{2}\big)^2 = n^3$,
 c'est-à-dire $T_n^2 - T_{n-1}^2 = n^3$ ; en ajoutant ces égalités de
@@ -601,6 +603,10 @@ font trois carrés. Pour la différence, $k = 2$ redonne $n^3$, la
 différence de Germain ; et pour $k = 4$, les deux lignes du manuscrit se
 multiplient,
 $T_n^4 - T_{n-1}^4 = (T_n^2 - T_{n-1}^2)(T_n^2 + T_{n-1}^2) = n^3\,T_{n^2}$.
+Les différences $T_n^k - T_{n-1}^k$ sont répertoriées pour $k = 4$ et
+$k = 5$ \cite[A168364, A393642]{oeis}, mais pas pour $k = 3$ :
+$n^3(3n^2+1)/4 = 1, 26, 189, 736, \dots$, où l'on retrouve, pour $n = 3$, le
+$189$ du feuillet.
 
 Germain ajoute ensuite ses différences de $1$ à $n$ pour obtenir la formule
 de Lagrange. Le même geste, à l'exposant $k$, donne toutes les sommes de
@@ -771,7 +777,9 @@ que C.~\& C.~Vuong pour leur relecture.
 Pour $1 \leq p \leq 10$, la somme $S_p = 1^p + 2^p + \cdots + n^p$ en fonction
 de $n$, puis de $T = T_n$ : un polynôme en $T$ pour $p$ impair
 (proposition~\ref{prop:sommes}), le produit de $2n + 1$ par un polynôme en
-$T$ pour $p$ pair (proposition~\ref{prop:sommes-paires}). Les formules ont
+$T$ pour $p$ pair (proposition~\ref{prop:sommes-paires}). Ce sont, pour
+$p = 1$ à $10$, les suites A000217, A000330, A000537 à A000542, A007487 et
+A023002 de l'OEIS \cite{oeis}. Les formules ont
 été obtenues par la résolution des deux systèmes et vérifiées pour
 $0 \leq n < 60$.
 
@@ -800,6 +808,25 @@ S_{10} &= \tfrac{1}{66}\big(6n^{11} + 33n^{10} + 55n^{9} - 66n^{7} + 66n^{5} - 3
 &= \tfrac{2n+1}{33}\,(48T^{5} - 80T^{4} + 68T^{3} - 30T^{2} + 5T)
 \end{align*}
 }
+
+\section{Pour aller plus loin, et plus mal}\label{sec:annexe-b}
+
+Pour $p$ complexe quelconque, la somme $S_p(n) = 1^p + \cdots + n^p$
+s'écrit encore avec les fonctions zêta de Riemann et de Hurwitz :
+$S_p(n) = \zeta(-p) - \zeta(-p, n+1)$. Le terme $\zeta(-p)$ en est la partie
+constante, et la formule d'Euler--Maclaurin donne
+$S_p(n) \approx n^{p+1}/(p+1) + n^p/2 + \cdots + \zeta(-p)$. La structure de
+Faulhaber, polynôme en $T_n$ ou produit de $2n+1$ par un polynôme en $T_n$,
+ne survit qu'aux entiers $p \geq 0$. Quelques cas célèbres : pour $p = -1$,
+les nombres harmoniques, qui croissent comme $\ln n$ ; pour $p = -2$ et
+$n \to \infty$, $1 + \frac14 + \frac19 + \cdots = \pi^2/6$, le problème de
+Bâle résolu par Euler ; et pour $p = 1$, la valeur $\zeta(-1) = -1/12$, qui
+n'est pas la somme $1 + 2 + 3 + \cdots$, divergente, mais la valeur du
+prolongement analytique de $\zeta$.
+
+D'où une variante de la conclusion : à l'enfant vraiment pas sage, on
+demande $S_1$ jusqu'à l'infini. S'il répond $-1/12$, il a lu Ramanujan, et
+c'est le maître qui est puni.
 
 {\small\begin{thebibliography}{99}\setlength{\itemsep}{1pt}
 
@@ -867,8 +894,8 @@ Materials~», 1993. \href{https://doi.org/10.1090/clrm/001}{doi:10.1090/clrm/001
 
 \bibitem{oeis}
 OEIS Foundation, \emph{The On-Line Encyclopedia of Integer Sequences},
-suite A037270, «~$a(n) = n^2(n^2 + 1)/2$~», \url{https://oeis.org/A037270},
-consultée le 25 novembre 2026.
+\url{https://oeis.org}, consultée le 25 novembre 2026 ; chaque suite est à
+l'adresse \texttt{https://oeis.org/A\ldots}.
 
 \bibitem{omont}
 H.~Omont, \emph{Catalogue général des manuscrits français. Nouvelles
