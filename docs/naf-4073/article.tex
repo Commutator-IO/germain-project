@@ -33,30 +33,33 @@ attribuée à Sophie Germain (BnF, NAF 4073)}
 
 \begin{abstract}
 Le volume NAF 4073 de la Bibliothèque nationale de France réunit des lettres
-adressées à Sophie Germain ou écrites par elle. Au verso du feuillet~32, qui
-a servi de couverture à une lettre non signée du 13~mars 1814, une note
-d'une autre main que celle de la lettre énonce : «~le triangulaire d'un
-quarré est la somme des quarrés des deux Triangulaires consécutifs~», et
-l'écrit
-$\big(\frac{n^2-n}{2}\big)^2+\big(\frac{n^2+n}{2}\big)^2=\frac{n^4+n^2}{2}$.
-C'est la seule ligne de mathématiques du volume, et ni les catalogues ni
-les études consultées n'en parlent. Elle est de la main de Germain : le manuscrit «~vers 1797~» que lui attribue le libraire Quaritch,
-reproduit par Alexanderson \cite{alexanderson}, donne la même identité dans
-la même notation, après «~J'ai aussi remarqué que~», et l'écrit en symboles
-comme la phrase de NAF 4073 la dit en mots. L'identité était connue ; la
-note, non. Une dernière section prolonge le calcul de Germain jusqu'aux
-sommes de puissances, exprimées en fonction de $T_n$ ; tous les énoncés
-sont démontrés en Lean~4.
+adressées à Sophie Germain ou écrites par elle. Au verso du feuillet~32,
+couverture d'une lettre non signée du 13~mars 1814, une note énonce :
+«~le triangulaire d'un quarré est la somme des quarrés des deux Triangulaires
+consécutifs~», soit $T_{n-1}^2 + T_n^2 = T_{n^2}$ pour les nombres
+triangulaires $T_k = k(k+1)/2$. C'est la seule ligne de mathématiques du
+volume, et aucun catalogue ni aucune étude consultée ne la mentionne. La note
+est de la main de Germain : un manuscrit qui lui est attribué, daté
+«~vers 1797~» et reproduit par Alexanderson \cite{alexanderson}, contient la
+même identité dans la même notation, et l'écrit en symboles comme la note la
+dit en mots. L'identité était connue, la note ne l'était pas. Une dernière
+section rattache au calcul de Germain des résultats classiques sur les sommes
+de puissances, dus à Faulhaber, Tits et Edwards. Tous les énoncés sont
+démontrés en Lean~4.
 \end{abstract}
 
-Cette note est apparue pendant la transcription de NAF 4073, vue par vue : au
-verso d'une enveloppe adressée à Sophie Germain en 1814, une main rapide a
-écrit une formule et la phrase qui la lit. Le volume ne contient pas d'autre
-mathématique, et aucune étude connue ne la signale. On verra
-d'abord le feuillet, puis ce que dit la formule ; la question de la main
-vient ensuite, parce qu'elle dépend d'un autre manuscrit. La dernière
-section démontre des énoncés plus généraux, qui prolongent le calcul de
-Germain.
+Les manuscrits de Sophie Germain conservés à la Bibliothèque nationale de
+France ont surtout été étudiés pour sa théorie des nombres
+\cite{laubenbacher-pengelley}. Le volume NAF 4073 est d'une autre nature :
+c'est un recueil de lettres. Sa transcription, vue par vue, n'y a trouvé
+qu'une ligne de mathématiques, écrite au dos d'une enveloppe de 1814.
+
+La section~\ref{sec:feuillet} décrit le feuillet. La
+section~\ref{sec:identite} explique l'identité et la démontre en suivant le
+calcul de Germain. La section~\ref{sec:main} établit la main et la date à
+l'aide d'un autre manuscrit, publié par Alexanderson. La
+section~\ref{sec:prolongements} rattache à ce calcul des résultats connus
+sur les sommes de puissances.
 
 \section{Le feuillet}\label{sec:feuillet}
 
@@ -411,10 +414,14 @@ raison de celle-ci. Le corps du chapitre de Del~Centina et Fiocca
 
 Le manuscrit Quaritch tient en deux gestes : développer
 $\big(\frac{n^2 \pm n}{2}\big)^2$, puis comparer la différence et la somme des
-deux carrés. Cette section mène ces gestes plus loin que Germain. Rien de ce
-qui suit n'est sur les feuillets. Ce sont des identités élémentaires, sans
-doute connues, mais sans auteur identifié, sauf la dernière ; elles sont
-démontrées ici, et ont été vérifiées numériquement. Partout $n \geq 1$ et
+deux carrés. Cette section mène ces gestes plus loin que Germain ; rien de ce
+qui suit n'est sur les feuillets. Les propositions~\ref{prop:nicomaque}
+à~\ref{prop:puissances} sont des identités élémentaires, sans doute connues.
+Les systèmes des propositions~\ref{prop:sommes} et~\ref{prop:sommes-paires},
+leur forme matricielle et la divisibilité par $T_n^2$ sont dus à Tits et à
+Edwards \cite{tits,edwards}, et les polynômes eux-mêmes étaient connus de
+Faulhaber \cite{knuth}. L'apport de cette section est de les relier au calcul
+de Germain, avec des preuves complètes. Partout $n \geq 1$ et
 $T_0 = 0$.
 
 \begin{proposition}\label{prop:nicomaque}
@@ -648,7 +655,10 @@ S_9 = \frac{T_n^2(16T_n^3 - 20T_n^2 + 12T_n - 3)}{5}.
 \end{gather*}
 Toute somme de puissances impaires est ainsi un polynôme en $T_n$, divisible
 par $T_n^2$ dès $p = 3$ : c'est le théorème de Faulhaber (1631), dont Knuth
-a reconstitué la méthode \cite{knuth}. Les lignes $k = 3$ et $k = 4$ se
+a reconstitué la méthode \cite{knuth}. Le système lui-même vient de Tits ;
+Edwards l'écrit sous forme matricielle, la matrice reprenant un coefficient
+sur deux des lignes du triangle de Pascal, et en tire la divisibilité par
+$T_n^2$ \cite{tits,edwards}. Les lignes $k = 3$ et $k = 4$ se
 lisent aussi $S_3 + 3S_5 = 4S_1^3$ et $S_5 + S_7 = 2S_3^2$.
 
 Parmi tous ces polynômes, la formule de Lagrange est la seule où la somme
@@ -728,7 +738,8 @@ S_8 = \frac{(2n+1)\,T\,(40T^3 - 40T^2 + 18T - 3)}{45}.
 \end{gather*}
 Toute somme de puissances paires est ainsi le produit de $2n + 1$ par un
 polynôme en $T_n$, ce que Faulhaber savait déjà et que Jacobi a démontré en
-1834 par une autre voie \cite{knuth} ; ce n'est pas un polynôme en $T_n$, puisque
+1834 par une autre voie \cite{knuth}. Le système pair et sa matrice sont
+aussi chez Tits et Edwards \cite{tits,edwards} ; ce n'est pas un polynôme en $T_n$, puisque
 $2n + 1 = \sqrt{8T_n + 1}$.
 
 \section*{Conclusion}
@@ -849,6 +860,11 @@ coll. «~Trends in the History of Science~», 2018, p.~147--166.
 L.~Delisle, \emph{Catalogue des manuscrits des fonds Libri et Barrois},
 Paris, H.~Champion, 1888.
 
+\bibitem{edwards}
+A.~W.~F. Edwards, «~A quick route to sums of powers~», \emph{The American
+Mathematical Monthly} 93 (1986), p.~451--455.
+\href{https://doi.org/10.1080/00029890.1986.11971850}{doi:10.1080/00029890.1986.11971850}.
+
 \bibitem{essl}
 G.~Essl, réponse à «~Who wrote this note on triangular numbers in Sophie
 Germain's correspondence (BnF NAF 4073)?~», History of Science and
@@ -898,6 +914,11 @@ citées par leur numéro, par exemple \url{https://oeis.org/A000217}.
 \bibitem{omont}
 H.~Omont, \emph{Catalogue général des manuscrits français. Nouvelles
 acquisitions françaises}, t.~II, \emph{n\textsuperscript{os}~3061--6500}, Paris, E.~Leroux, 1900.
+
+
+\bibitem{tits}
+L.~Tits, «~Sur la sommation des puissances numériques~», \emph{Mathesis} 37
+(1923), p.~353--355.
 
 \end{thebibliography}}
 \end{document}
