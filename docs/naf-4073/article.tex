@@ -662,15 +662,6 @@ sur deux des lignes du triangle de Pascal, et en tire la divisibilité par
 $T_n^2$ \cite{tits,edwards}. Les lignes $k = 3$ et $k = 4$ se
 lisent aussi $S_3 + 3S_5 = 4S_1^3$ et $S_5 + S_7 = 2S_3^2$.
 
-Les coefficients de ces polynômes s'expriment aussi par les nombres de
-Bernoulli. C'est la voie usuelle depuis Jacques Bernoulli (\emph{Ars
-conjectandi}, 1713), qui donne d'un coup toutes les sommes $S_p$
-\cite{knuth,edwards}. Elle est plus astucieuse et plus rapide : une fois les
-nombres de Bernoulli calculés, chaque $S_p$ s'écrit directement, alors que le
-système de la proposition~\ref{prop:sommes} se résout une puissance à la
-fois. Il a pour lui de n'utiliser que des coefficients binomiaux, et de
-prolonger le calcul de Germain.
-
 Parmi tous ces polynômes, la formule de Lagrange est la seule où la somme
 soit une puissance pure de $T_n$, en dehors du cas trivial $S_1 = T_n$.
 
@@ -770,6 +761,15 @@ $S_{2k} = (2n+1)\,T_n\,Q_k(T_n) = 3S_2\,Q_k(S_1)$, puisque
 $3S_2 = (2n+1)T_n$ et $S_1 = T_n$. On pose $R_k = 3Q_k$.
 \end{proof}
 
+Les coefficients de ces polynômes s'expriment aussi par les nombres de
+Bernoulli. C'est la voie usuelle depuis Jacques Bernoulli (\emph{Ars
+conjectandi}, 1713), qui donne d'un coup toutes les sommes $S_p$
+\cite{knuth,edwards}. Elle est plus astucieuse et plus rapide : une fois les
+nombres de Bernoulli calculés, chaque $S_p$ s'écrit directement, alors que
+les systèmes des propositions~\ref{prop:sommes} et~\ref{prop:sommes-paires}
+se résolvent une puissance à la fois. Ceux-ci ont pour eux de n'utiliser que
+des coefficients binomiaux, et de prolonger le calcul de Germain.
+
 \section*{Conclusion}
 
 Le maître de Gauss pensait occuper sa classe avec $S_1$ jusqu'à $100$, et
@@ -778,24 +778,13 @@ enfant qui n'est pas sage, mieux vaut demander $S_p$ avec $p > 1$. Il lui
 faudra refaire le calcul de Germain, puis résoudre l'un des deux systèmes
 triangulaires, ce qui laisse le temps de réfléchir à sa conduite.
 
-Une question reste à lui poser en retour : quand $S_p(n)$ est-il premier ?
-Pour $p$ impair au moins égal à $3$ et $n \geq 2$, jamais, puisque $S_p$ est
-alors divisible par $T_n$ et lui est strictement supérieur. Pour $n = 2$,
-$S_p(2) = 1 + 2^p$ n'est premier que si $p$ est une puissance de $2$, et l'on
-retrouve les nombres premiers de Fermat $3$, $5$, $17$, $257$ et $65\,537$.
-
-Ce détour ramène à Germain. Dans les brouillons de ses lettres à Gauss
-(Français 9118), elle range ces nombres premiers de Fermat parmi les
-$p^4 + q^4$ : «~Les nombres $2^{2^i}+1$ ne sont qu'un cas particulier de la
-forme $p^4+q^4$~», ce qui vaut dès $i = 2$, avec $17 = 2^4 + 1^4$
-\cite[vue~93]{fr9118}. La même liasse annonce qu'elle croit avoir prouvé
-l'impossibilité de $x^n + y^n = z^n$ pour $n = p - 1$, $p$ premier de la
-forme $8k+7$ \cite[vue~44]{fr9118} : avec $n = 2m$, le premier $p = 2m+1$ est
-un premier auxiliaire au sens de son théorème sur l'équation de Fermat
-\cite{laubenbacher-pengelley}. Les sommes de puissances, entrées dans ses
-papiers par une question de Lagrange, rejoignent ainsi, par
-$S_p(2) = 1 + 2^p$, le terrain de ses recherches sur le dernier théorème de
-Fermat.
+Ces sommes ne sont pas étrangères aux autres recherches de Germain. Dans la
+même liasse de brouillons pour Gauss (Français 9118), elle range les nombres
+de Fermat $2^{2^i}+1$ parmi les $p^4 + q^4$ \cite[vue~93]{fr9118} et annonce
+une preuve du dernier théorème de Fermat pour l'exposant $n = p - 1$, $p$
+premier de la forme $8k+7$ \cite[vue~44]{fr9118} : les sommes de puissances,
+arrivées par une question de Lagrange, y côtoient ses recherches sur
+l'équation de Fermat \cite{laubenbacher-pengelley}.
 
 \section*{Sources et vérification}
 
@@ -865,25 +854,6 @@ S_{10} &= \tfrac{1}{66}\big(6n^{11} + 33n^{10} + 55n^{9} - 66n^{7} + 66n^{5} - 3
 &= \tfrac{2n+1}{33}\,(48T^{5} - 80T^{4} + 68T^{3} - 30T^{2} + 5T)
 \end{align*}
 }
-
-\section{Pour aller plus loin, et plus mal}\label{sec:annexe-b}
-
-Pour $p$ complexe quelconque, la somme $S_p(n) = 1^p + \cdots + n^p$
-s'écrit encore avec les fonctions zêta de Riemann et de Hurwitz :
-$S_p(n) = \zeta(-p) - \zeta(-p, n+1)$. Le terme $\zeta(-p)$ en est la partie
-constante, et la formule d'Euler--Maclaurin donne
-$S_p(n) \approx n^{p+1}/(p+1) + n^p/2 + \cdots + \zeta(-p)$. La structure de
-Faulhaber, polynôme en $T_n$ ou produit de $2n+1$ par un polynôme en $T_n$,
-ne survit qu'aux entiers $p \geq 0$. Quelques cas célèbres : pour $p = -1$,
-les nombres harmoniques, qui croissent comme $\ln n$ ; pour $p = -2$ et
-$n \to \infty$, $1 + \frac14 + \frac19 + \cdots = \pi^2/6$, le problème de
-Bâle résolu par Euler ; et pour $p = 1$, la valeur $\zeta(-1) = -1/12$, qui
-n'est pas la somme $1 + 2 + 3 + \cdots$, divergente, mais la valeur du
-prolongement analytique de $\zeta$.
-
-D'où une variante de la conclusion : à l'enfant vraiment pas sage, on
-demande $S_1$ jusqu'à l'infini. S'il répond $-1/12$, il a lu Ramanujan, et
-c'est le maître qui est puni.
 
 {\small\begin{thebibliography}{99}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}
 
