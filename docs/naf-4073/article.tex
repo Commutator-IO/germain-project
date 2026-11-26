@@ -774,6 +774,19 @@ retrouve les nombres premiers de Fermat $3$, $5$, $17$, $257$ et $65\,537$.
 Pour $p$ pair et $n \geq 3$, aucun nombre premier n'apparaît pour
 $p \leq 16$ et $n < 40$, mais aucune démonstration n'en est donnée ici.
 
+Ce détour ramène à Germain. Dans les brouillons de ses lettres à Gauss
+(Français 9118), elle range ces nombres premiers de Fermat parmi les
+$p^4 + q^4$ : «~Les nombres $2^{2^i}+1$ ne sont qu'un cas particulier de la
+forme $p^4+q^4$~», ce qui vaut dès $i = 2$, avec $17 = 2^4 + 1^4$
+\cite[vue~93]{fr9118}. La même liasse annonce qu'elle croit avoir prouvé
+l'impossibilité de $x^n + y^n = z^n$ pour $n = p - 1$, $p$ premier de la
+forme $8k+7$ \cite[vue~44]{fr9118} : avec $n = 2m$, le premier $p = 2m+1$ est
+un premier auxiliaire au sens de son théorème sur l'équation de Fermat
+\cite{laubenbacher-pengelley}. Les sommes de puissances, entrées dans ses
+papiers par une question de Lagrange, rejoignent ainsi, par
+$S_p(2) = 1 + 2^p$, le terrain de ses recherches sur le dernier théorème de
+Fermat.
+
 \section*{Sources et vérification}
 
 Tous les énoncés de l'article sont démontrés en Lean~4 avec mathlib,
@@ -861,7 +874,7 @@ D'où une variante de la conclusion : à l'enfant vraiment pas sage, on
 demande $S_1$ jusqu'à l'infini. S'il répond $-1/12$, il a lu Ramanujan, et
 c'est le maître qui est puni.
 
-{\small\begin{thebibliography}{99}\setlength{\itemsep}{1pt}
+{\small\begin{thebibliography}{99}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}
 
 \bibitem{alexanderson}
 G.~L. Alexanderson, «~About the cover: Sophie Germain and a problem in number
@@ -893,6 +906,10 @@ Mathematical Monthly} 93 (1986), p.~451--455.
 G.~Essl, réponse à «~Who wrote this note on triangular numbers in Sophie
 Germain's correspondence (BnF NAF 4073)?~», History of Science and
 Mathematics, 25 octobre 2026, \url{https://hsm.stackexchange.com/a/19744}.
+
+\bibitem{fr9118}
+Bibliothèque nationale de France, Français 9118 (papiers de Sophie Germain),
+\url{https://gallica.bnf.fr/ark:/12148/btv1b9007572p}.
 
 \bibitem{gallica}
 Bibliothèque nationale de France, Nouvelles acquisitions françaises 4073,
