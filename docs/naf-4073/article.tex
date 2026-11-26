@@ -741,10 +741,25 @@ Toute somme de puissances paires est ainsi le produit de $2n + 1$ par un
 polynôme en $T_n$, ce que Faulhaber savait déjà et que Jacobi a démontré en
 1834 par une autre voie \cite{knuth}. Le système pair et sa matrice sont
 aussi chez Tits et Edwards \cite{tits,edwards}. Ce produit n'est pas un
-polynôme en $T_n$, puisque $2n + 1 = \sqrt{8T_n + 1}$ ; mais comme
-$2n + 1 = 3S_2/S_1$, toute somme paire s'écrit $S_{2k} = S_2 \times$
-(polynôme en $S_1$), par exemple $S_4 = S_2(6S_1 - 1)/5$, et le facteur
-$2n + 1$ disparaît.
+polynôme en $T_n$, puisque $2n + 1 = \sqrt{8T_n + 1}$. Le facteur $2n+1$
+disparaît pourtant si l'on exprime tout avec $S_1$ et $S_2$.
+
+\begin{proposition}\label{prop:s2}
+Pour tout $k \geq 1$, il existe un polynôme $R_k$ à coefficients rationnels
+tel que $S_{2k} = S_2 \, R_k(S_1)$ ; par exemple $R_1 = 1$,
+$R_2(x) = (6x - 1)/5$, $R_3(x) = (12x^2 - 6x + 1)/7$.
+\end{proposition}
+
+\begin{proof}
+Écrivons $S_{2i} = (2n+1)\,P_i(T_n)$, ce que permet la
+proposition~\ref{prop:sommes-paires} : sa ligne $k$ donne
+$(2k+1)\,P_k = 2^{k-1}T^k - \sum_{i<k} b_{k,i} P_i$, où les $b_{k,i}$ sont
+ses coefficients. Par récurrence sur $k$, chaque $P_k$ est sans terme
+constant, puisque $T^k$ et les $P_i$ précédents le sont ; donc
+$P_k(T) = T\,Q_k(T)$ pour un polynôme $Q_k$. Alors
+$S_{2k} = (2n+1)\,T_n\,Q_k(T_n) = 3S_2\,Q_k(S_1)$, puisque
+$3S_2 = (2n+1)T_n$ et $S_1 = T_n$. On pose $R_k = 3Q_k$.
+\end{proof}
 
 \section*{Conclusion}
 
@@ -777,8 +792,9 @@ Fermat.
 
 \section*{Sources et vérification}
 
-Tous les énoncés de l'article sont démontrés en Lean~4 avec mathlib,
-dans le dépôt \url{https://github.com/Commutator-IO/GermainArchivesProofs} :
+Tous les énoncés de l'article sont démontrés en Lean~4 avec mathlib, sauf la
+proposition~\ref{prop:s2} dont seuls les premiers cas ($S_4$, $S_6$, $S_8$)
+le sont, dans le dépôt \url{https://github.com/Commutator-IO/GermainArchivesProofs} :
 \begin{itemize}
 \item la note et la proposition~\ref{prop:nicomaque} :
   \path{NumberTheory/Naf4073Note.lean} ;
