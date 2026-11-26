@@ -18,6 +18,9 @@ difference and the sum. This file proves every statement of that part.
 * `S`, `sum_odd_binom`, `T_pow_eq_sum` (proposition « sommes »):
   `2^(k−1) T_n^k = ∑_{m ≤ k, k − m odd} C(k, m) S_{k+m}`; `S_one`, `S_three`, `S_five`,
   `S_seven` for the first rows.
+* `sum_even_binom`, `T_pow_eq_sum_even` (proposition 10): the even system;
+  `S_two`, `S_four`, `S_six`, `S_eight`, `S_ten` for its first rows, and
+  `S_even_eq_S_two_mul`: `S_{2k} = S₂ · R_k(S₁)` for every `k ≥ 1`.
 * `gersonides`, `lagrange_unique` (proposition « Lagrange »): if `S_p = T^q` for every `n`,
   then `(p, q) = (1, 1)` or `(3, 2)`; `n = 2` alone forces it, through `2^p + 1 = 3^q`
   (Levi ben Gershon).
@@ -298,6 +301,102 @@ theorem S_eight (n : ℕ) :
   have h := T_pow_eq_sum_even 4 n (by norm_num)
   norm_num [sum_range_succ, Nat.choose] at h
   linear_combination (-5 : ℚ) * h - (1 / 3 : ℚ) * S_four n - (10 / 3 : ℚ) * S_six n
+
+theorem S_ten (n : ℕ) :
+    33 * (S 10 n : ℚ)
+      = (2 * n + 1) * T n
+          * (48 * (T n : ℚ) ^ 4 - 80 * (T n : ℚ) ^ 3 + 68 * (T n : ℚ) ^ 2 - 30 * T n + 5) := by
+  have h := T_pow_eq_sum_even 5 n (by norm_num)
+  norm_num [sum_range_succ, Nat.choose] at h
+  linear_combination (-3 : ℚ) * h - 2 * S_eight n - S_six n
+
+/-! ## Every even sum is `S₂` times a polynomial in `T` -/
+
+/-- A function of `n` of the form `(2n+1) T_n Q(T_n)`, `Q` a polynomial with rational
+coefficients. -/
+def IsEvenForm (g : ℕ → ℚ) : Prop :=
+  ∃ Q : Polynomial ℚ, ∀ n, g n = (2 * n + 1) * T n * Q.eval (T n : ℚ)
+
+lemma IsEvenForm.add {f g : ℕ → ℚ} (hf : IsEvenForm f) (hg : IsEvenForm g) :
+    IsEvenForm (f + g) := by
+  obtain ⟨P, hP⟩ := hf
+  obtain ⟨Q, hQ⟩ := hg
+  exact ⟨P + Q, fun n => by simp [hP, hQ]; ring⟩
+
+lemma IsEvenForm.zero : IsEvenForm 0 := ⟨0, fun n => by simp⟩
+
+lemma IsEvenForm.const_mul {g : ℕ → ℚ} (c : ℚ) (hg : IsEvenForm g) :
+    IsEvenForm (fun n => c * g n) := by
+  obtain ⟨Q, hQ⟩ := hg
+  exact ⟨Polynomial.C c * Q, fun n => by simp [hQ]; ring⟩
+
+lemma IsEvenForm.sub {f g : ℕ → ℚ} (hf : IsEvenForm f) (hg : IsEvenForm g) :
+    IsEvenForm (fun n => f n - g n) := by
+  obtain ⟨P, hP⟩ := hf
+  obtain ⟨Q, hQ⟩ := hg
+  exact ⟨P - Q, fun n => by simp [hP, hQ]; ring⟩
+
+lemma IsEvenForm.sum {ι : Type*} (s : Finset ι) (g : ι → ℕ → ℚ)
+    (hg : ∀ i ∈ s, IsEvenForm (g i)) : IsEvenForm (fun n => ∑ i ∈ s, g i n) := by
+  have : IsEvenForm (∑ i ∈ s, g i) :=
+    Finset.sum_induction _ IsEvenForm (fun _ _ => IsEvenForm.add) IsEvenForm.zero hg
+  rwa [show (fun n => ∑ i ∈ s, g i n) = ∑ i ∈ s, g i from
+    funext fun n => (Finset.sum_apply n s g).symm]
+
+/-- `S_{2k} = (2n+1) T Q_k(T)` for every `k ≥ 1`: strong induction on the even system, whose
+terms are all even sums (`k + m` is even when `k − m` is, `k + m + 1` when it is not), the two
+top terms making `(2k+1) S_{2k}`. -/
+theorem S_even_isEvenForm (k : ℕ) (hk : 1 ≤ k) : IsEvenForm (fun n => (S (2 * k) n : ℚ)) := by
+  induction k using Nat.strong_induction_on with
+  | _ k ih =>
+  obtain ⟨k, rfl⟩ : ∃ j, k = j + 1 := ⟨k - 1, by omega⟩
+  -- the row of the even system, its two top terms split off
+  set f : ℕ → ℕ → ℚ := fun m n => ((k + 1).choose m : ℚ)
+      * (if Even (k + 1 - m) then (S (k + 1 + m) n : ℚ) else 2 * (S (k + 1 + m + 1) n : ℚ))
+    with hf
+  have hrow : ∀ n, (2 : ℚ) ^ k * (2 * n + 1) * (T n : ℚ) ^ (k + 1)
+      = ∑ m ∈ range k, f m n + (2 * k + 3) * (S (2 * (k + 1)) n : ℚ) := fun n => by
+    have h := T_pow_eq_sum_even (k + 1) n (by omega)
+    rw [Nat.add_sub_cancel] at h
+    rw [h, sum_range_succ, sum_range_succ]
+    simp only [hf, Nat.sub_self, show k + 1 - k = 1 by omega, Nat.choose_self,
+      Nat.choose_succ_self_right]
+    rw [ite_eq_left (show Even 0 from ⟨0, rfl⟩), ite_eq_right Nat.not_even_one,
+      show k + 1 + (k + 1) = 2 * (k + 1) by ring, show k + 1 + k + 1 = 2 * (k + 1) by ring]
+    push_cast; ring
+  -- every lower term is an even sum of index `2j`, `1 ≤ j ≤ k`
+  have hlow : ∀ m ∈ range k, IsEvenForm (f m) := fun m hm => by
+    have hm := mem_range.1 hm
+    simp only [hf]
+    by_cases he : Even (k + 1 - m)
+    · obtain ⟨j, hj⟩ : ∃ j, k + 1 + m = 2 * j := by
+        obtain ⟨r, hr⟩ := he; exact ⟨m + r, by omega⟩
+      have := (ih j (by omega) (by omega)).const_mul ((k + 1).choose m : ℚ)
+      simpa [he, hj] using this
+    · obtain ⟨j, hj⟩ : ∃ j, k + 1 + m + 1 = 2 * j := by
+        rcases Nat.not_even_iff_odd.1 he with ⟨r, hr⟩; exact ⟨m + r + 1, by omega⟩
+      have := ((ih j (by omega) (by omega)).const_mul 2).const_mul ((k + 1).choose m : ℚ)
+      simpa [he, hj, mul_assoc] using this
+  -- the left side is `(2n+1) T (2^k T^k)`
+  have hlhs : IsEvenForm (fun n => (2 : ℚ) ^ k * (2 * n + 1) * (T n : ℚ) ^ (k + 1)) :=
+    ⟨Polynomial.C ((2 : ℚ) ^ k) * Polynomial.X ^ k, fun n => by simp; ring⟩
+  have key := (hlhs.sub (IsEvenForm.sum (range k) f hlow)).const_mul (1 / (2 * k + 3))
+  refine (show (fun n => (S (2 * (k + 1)) n : ℚ)) = _ from funext fun n => ?_) ▸ key
+  rw [hrow n]
+  have : (2 * (k : ℚ) + 3) ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- **Proposition 10.** For every `k ≥ 1` there is a polynomial `R_k` with rational coefficients
+such that `S_{2k} = S₂ · R_k(S₁)`. -/
+theorem S_even_eq_S_two_mul (k : ℕ) (hk : 1 ≤ k) :
+    ∃ R : Polynomial ℚ, ∀ n, (S (2 * k) n : ℚ) = S 2 n * R.eval (T n : ℚ) := by
+  obtain ⟨Q, hQ⟩ := S_even_isEvenForm k hk
+  refine ⟨Polynomial.C 3 * Q, fun n => ?_⟩
+  have h := hQ n
+  simp only at h
+  rw [h, Polynomial.eval_mul, Polynomial.eval_C]
+  linear_combination (-(Q.eval (T n : ℚ))) * S_two n
 
 /-! ## Lagrange's formula is the only one of its kind -/
 
